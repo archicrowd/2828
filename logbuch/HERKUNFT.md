@@ -4,50 +4,52 @@ Stand: 5. Oktober 2026
 
 ## Was diese Dateien sind
 
-`Versionsgeschichte-TAX-2828.md` (Band I) und `Versionsgeschichte-TAX-2828-BandII.md`
-(Band II) sind **Abschriften** der Dateien `claude/Versionsgeschichte-TAX-2828.md`
-und `claude/Versionsgeschichte-TAX-2828-BandII.md` aus dem Claude-Projekt „2525"
-(Stand im Projekt: Band I vom 3. Oktober 2026, Band II vom 4. Oktober 2026).
-Die Texte wurden unverändert übernommen. Dieser Hinweis steht bewusst in einer
-eigenen Datei, damit die Logbuch-Texte selbst unverändert bleiben.
+**Stand v3.8 (5. Oktober 2026).**
 
-Die Originale waren nicht als Datei übertragbar. Das Projekt lieferte sie nur
-als Text, die Übernahme erfolgte durch erneutes Schreiben.
+- `Versionsgeschichte-TAX-2828.md` (Band I) ist seit v3.8 die **Originaldatei** aus dem Export des
+  Vorchats (`doku/Versionsgeschichte.md`, 1.070 Zeilen, v0.1 bis v3.4, Korrekturen 1 bis 41),
+  byteweise kopiert. Davor lag eine Abschrift bis v3.1 vor (Commit `a5808b1`, von Hand neu
+  geschrieben).
+- `Versionsgeschichte-TAX-2828-BandII.md` (Band II) ist die Abschrift der Projektdatei
+  `claude/Versionsgeschichte-TAX-2828-BandII.md` (Stand 4. Oktober 2026) und mit dem Original
+  im Export **zeilengleich**. Seit v3.8 steht unter der Überschrift „Vorbemerkung zur Lücke" ein
+  gekennzeichneter Berichtigungshinweis (einzige Änderung gegenüber dem Original).
+- `Versionsgeschichte-TAX-2828-BandIII.md` entsteht direkt in diesem Repository.
+
+Die Dateien im Claude-Projekt „2525" wurden in dieser Sitzung **nicht verändert**. Dort steht
+Band II weiter mit der falschen Vorbemerkung (Korrektur 47).
 
 ## Was geprüft ist und was nicht
 
-Zur Prüfung lag eine hochgeladene ältere Fassung von Band I vor
-(Modellstand v0.9, 1. Oktober 2026, 28.023 Byte, SHA-256
-`1a6da02aaa39c1f648a15f7691bb5a1db5859ec8ade9924baa8b22c88985dca9`).
-
 | Teil | Prüfung | Ergebnis |
 |---|---|---|
-| Band I, Abschnitte 1 und 2 | zeilenweiser Vergleich mit der hochgeladenen Fassung | identisch |
-| Band I, Einträge v0.1 bis v0.9 | zeilenweiser Vergleich | identisch |
-| Band I, Abschnitt 5 (Datenbestand) | zeilenweiser Vergleich | identisch |
-| Band I, Korrekturen 1 bis 14 | Vergleich je Tabellenzeile | identisch |
-| Band I, v0.10 bis v3.1, Korrekturen 15 bis 30 (zweite Tabellengruppe), Abschnitte 6 und 7 | **keine Vergleichsquelle** | ungeprüft |
-| Band II vollständig | **keine Vergleichsquelle** | ungeprüft |
+| Band I vollständig | Kopie des Originals aus dem Export; zusätzlich zeilenweiser Vergleich der früheren Abschrift (bis v3.1) mit dem Original | Abschrift bis auf einen Zeilenumbruch (Zeilen 664/665) identisch; v3.2 bis v3.4 und Korrekturen 31 bis 41 fehlten |
+| Band I gegen die ältere Datei v0.9 (28.023 Byte, SHA-256 `1a6da02a…dca9`) | zeilenweiser Vergleich, frühere Sitzung | Abschnitte 1, 2, 5, v0.1 bis v0.9, Korrekturen 1 bis 14 identisch |
+| Band II | `diff` gegen Original im Export | identisch |
+| Inhalt der Einträge | nicht geprüft | Die Logbuchtexte sind Aussagen des Verfassers; nachgerechnet sind nur die Zahlen aus v3.5 (Band III) |
 
-Die ungeprüften Teile sind die jüngeren. Wer sich auf eine Zahl daraus stützt,
-vergleicht sie mit dem Original im Projektraum.
+**Grenze der Prüfung.** Der Vergleich zeigt, dass die Texte übereinstimmen, nicht dass die
+Inhalte stimmen. Der Export ist keine unabhängige Quelle, sondern das Material desselben Vorchats.
 
 ## Bekannte Unstimmigkeiten im Original (nicht korrigiert)
 
-Diese stehen so im Projekt und wurden bewusst nicht verändert:
+Diese stehen so im Original und wurden bewusst nicht verändert:
 
-- Der Kopf von Band I nennt „Modellstand v1.0", der Inhalt reicht bis v3.1.
+- Der Kopf von Band I nennt „Modellstand v1.0", der Inhalt reicht bis v3.4.
 - Die Korrekturnummern 15 und 16 kommen doppelt vor (Tabelle in Abschnitt 4);
   die Reihenfolge 16, 15, 14, 13 ist ebenfalls so übernommen.
 - Abschnitt 2 nennt als Beispiel für den Fußbereich noch „Modellstand v0.4".
 - Die Verweise in Band II auf `claude/...` meinen die Projektpfade, nicht dieses Repository.
+- Band II, „Vorbemerkung zur Lücke" und „Rekonstruktion v3.2 bis v3.4": falsch, siehe
+  Korrekturen 47 und 48 in Band III.
 
-Eine Bereinigung gehört in einen eigenen, im Logbuch vermerkten Schritt
-(Versionsschema: PATCH), nicht in die Abschrift.
+Eine Bereinigung der übrigen Punkte gehört in einen eigenen, im Logbuch vermerkten Schritt
+(Versionsschema: PATCH).
 
-## Prüfsummen (SHA-256) der Abschriften
+## Prüfsummen (SHA-256)
 
 ```
-b50bcc15623f2cfcb632da7191f3b7e161733b1b274ddd9d3109a9bc41372dda  Versionsgeschichte-TAX-2828.md
-438a4cd8210f729b360d249d5e9e6aa1974c0fc43a7fbc5bc3954de89b5f22e1  Versionsgeschichte-TAX-2828-BandII.md
+22f51b0a45066340b147620c38d1853fa0bb68088ed44b0a79f12962321b764b  Versionsgeschichte-TAX-2828.md
+533acd5c96c31b8d33f148eca3b75ea8a87200d971ce03cb302005e20fa5b336  Versionsgeschichte-TAX-2828-BandII.md   (mit Berichtigungshinweis, v3.8)
+438a4cd8210f729b360d249d5e9e6aa1974c0fc43a7fbc5bc3954de89b5f22e1  Versionsgeschichte-TAX-2828-BandII.md   (Original, ohne Hinweis)
 ```

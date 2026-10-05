@@ -8,7 +8,7 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v3.7** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
+**Modellstand: v3.8** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
 
 ## Aufbau
@@ -33,18 +33,21 @@ Schema `MAJOR.MINOR.PATCH` wie im Logbuch (Abschnitt 2):
 Jede Version ist ein Commit mit Git-Tag `vX.Y.Z`. Das Logbuch wird im selben Commit
 fortgeschrieben wie die Rechnung, die es beschreibt.
 
-## Was dieses Repository nicht kann
+## Was dieses Repository (noch) nicht kann
 
-Die Skripte der Versionen bis v3.4 sind nicht enthalten. Sie lagen in einer
-flüchtigen Arbeitsumgebung, die zurückgesetzt wurde (Logbuch Band II,
-„Vorbemerkung zur Lücke"). Was vor diesem Repository gerechnet wurde, ist im
-Logbuch beschrieben, aber aus diesem Repository **nicht reproduzierbar**.
-Reproduzierbar ist nur, was ab dem ersten Skript-Commit hier liegt.
-
-Seit v3.6 liegt `modell/pfad.py`, seit v3.7 auch `modell/aufschlag.py` als
-**Rekonstruktion** vor, nicht als Original. `pfad.py` trifft 35 von 35 Referenzwerten
-(`daten/aggregate/pfad_abgleich.csv`), `aufschlag.py` die Spanne +254 bis −728 EUR.
-Das zeigt Übereinstimmung, nicht, dass das Original so gerechnet hat.
+- **Reproduzierbar** ist der Zeitpfad des Rahmenmodells (Klub A / Gemeinden B) aus den
+  Originalskripten in `modell/rahmen/` und, unabhängig davon, aus `modell/pfad.py` und
+  `modell/aufschlag.py` mit `modell/parameter.toml`. `modell/vergleich_original.py` prüft beide
+  gegeneinander. Die Eingangsdaten (Eurostat 2024) stehen als feste Zahlen im Skript und sind
+  **nicht an der Quelle geprüft**; für acht Länder weichen die Einwohnerzahlen der beiden
+  Datensätze ab (Logbuch Band III, B7).
+- **Noch nicht eingecheckt** sind aus dem Export des Vorchats: das nationale Gesamtmodell
+  (`modell-2828.py` und Ergebnisse), die achtsprachige Webseite mit Quelltext, das
+  Gesamtkonzept als Word und PDF, die Einzelrechnungen (Erbschaft, Immobilien, Vermögen, Klima,
+  OECD) und das Audit. Diese Teile stehen auf dem **älteren, nationalen Stand A**, das
+  Gesamtkonzept auf dem europäischen **Stand B**; beides widerspricht sich (Band III, v3.8, Abschnitt 7).
+- Das Logbuch Band I ist seit v3.8 vollständig (v0.1 bis v3.4). Eine frühere Fassung dieses
+  Textes behauptete, die Einträge bis v3.4 seien verloren; das war falsch (Korrektur 47).
 
 ## Datenauflagen
 

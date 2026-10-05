@@ -661,8 +661,8 @@ nicht mehr, sie ist gestrichen. **Ein Befund wird schärfer:** der unbelegte
 **800 Mrd €**, das Modell liegt 104 Mrd darunter.
 
 **Neu und ungelöst: die Altschulden.** Löst man die nationale Steuerebene auf, muss
-die Schuld irgendwohin. Die Streuung im Klub reicht von 24,1 bis 115,6 % des
-BIP, Faktor 4,8. Vergemeinschaftung wäre ein Transfer mehrerer A-Jahresbudgets;
+die Schuld irgendwohin. Die Streuung im Klub reicht von 24,1 bis 115,6 % des BIP,
+Faktor 4,8. Vergemeinschaftung wäre ein Transfer mehrerer A-Jahresbudgets;
 territoriale Zuordnung hält die nationale Ebene fiskalisch am Leben.
 
 **Und ein Zielkonflikt, den das Konzept bisher umgeht:** ein einheitlicher Satz von
@@ -683,6 +683,226 @@ Fiscal Federalism 1972.*
 CONNECT); die Eurostat-API war nur über die Web-Werkzeuge erreichbar. Kontrolle
 über Summenidentitäten je Land — alle zwanzig Prüfungen gingen mit höchstens
 0,2 Punkten Rundungsrest auf.*
+
+---
+
+### v3.2 — Parität, und der Umbau wird freiwillig
+
+**Zweite Richtungsentscheidung des Nutzers.** Der Entwurf aus v3.1 wird in drei
+Punkten geschärft, und alle drei sind Konstruktionsentscheidungen, keine
+Rechenergebnisse:
+
+1. **A zieht alle Steuern ein** und gibt den Teil an B weiter, der außerhalb der
+   A-Aufgaben liegt. Keine getrennten Steuerhoheiten, keine Zerlegung, kein
+   jährlicher Verteilungsstreit.
+2. **Die Mittelebenen werden nicht abgeschafft, sondern freiwillig.** B kann aus
+   seinem Anteil Abgaben an Pflichtverbände, Kreise, Länder und Nationen leisten
+   — wenn es deren Leistung will. Damit wird aus einer Verfassungsrevolution eine
+   Haushaltsentscheidung, und das „Abholen" kann in der heutigen Struktur
+   geschehen. Der Anreiz trägt den Umbau, nicht der Zwang.
+3. **Pflichtverband bei kleiner Größe, aber Wahlfreiheit des Partners** —
+   regional benachbart oder **strukturverwandt**. Zwei Hafenstädte dürfen
+   zusammengehen statt zweier Nachbarn ohne Gemeinsamkeit.
+
+**Parität stellt sich von selbst ein.** Der Nutzer fragte, ob eine „gewisse
+Parität" zwischen A und B möglich sei — auch in den Aufgaben. Sie fällt aus
+seinen eigenen drei Begründungen heraus:
+
+| Schritt | A | B | A:B |
+| --- | --- | --- | --- |
+| Ausgangslage v3.1 | 7,12 | 11,37 | 39:61 |
+| Verteidigung auf Haager 3,5 % | 9,22 | 11,37 | 45:55 |
+| Übergeordnete Polizei (1/3 von GF0301) | 9,51 | 11,08 | 46:54 |
+| Hochschulen (GF0904) an A | **9,94** | **10,35** | **49:51** |
+
+Verteidigungsfähigkeit, einheitliche Durchsetzung und bedingungslose Mobilität
+sind zusammen 4,53 Punkte des BIP — genau die Größenordnung, die A fehlte.
+Abstand am Ende: **0,41 Punkte oder 50 Mrd €**, weniger als die Unsicherheit der
+vier geschätzten A-Posten.
+
+**Die Digitaldividende wird dadurch zum freien Parameter.** Feste Last: A 9,94 +
+B 10,35 + Altschuldendienst 1,20 = **21,49 % des BIP**. Alles darüber ist
+Dividende:
+
+| Steuerquote | Dividende | € je Monat |
+| --- | --- | --- |
+| 27,9 % (bisheriges Modellniveau) | 6,42 % | 255 |
+| 31,2 % | 9,71 % | 386 |
+| **33,0 %** | **11,51 %** | **457 (heutige Projekthöhe)** |
+| 35,0 % | 13,51 % | 537 |
+
+**Der ehrlichste Befund des Tages: die Gesamtlast bleibt gleich.** Heute erheben
+die zehn 40,76 % des BIP (25,95 Steuern + 14,88 Beiträge). Der Entwurf braucht
+33,00 % Steuern plus 7,75 Punkte kommunal organisierte Gesundheit außerhalb des
+Steuertopfs = **40,75 %**. Der Umbau verschiebt nicht die Höhe der Abgaben,
+sondern ihre Verfassung. Das ist belastbarer als jedes Entlastungsversprechen —
+und es ist die Aussage, mit der das Konzept öffentlich bestehen muss.
+
+**Der Anreiz, quantifiziert.** Die Verwaltung der Mittelebenen kostet 1,96 % des
+BIP oder 934 € je Kopf — **19 % des B-Budgets**. Eine Gemeinde mit 20.000
+Einwohnern verhandelt damit jährlich über **18,7 Mio €**, die heute ohne ihr Zutun
+bei Kreis und Land verbleiben.
+
+**Artikel 113 AEUV ist die Eintrittsschwelle, nicht eine Nebenbedingung.** Der
+Vertragstext verlangt für Steuerharmonisierung ausdrücklich, dass der Rat
+„acting unanimously in accordance with a special legislative procedure"
+beschließt. Die Forderung des Nutzers nach Handlungsfähigkeit statt
+Einstimmigkeit ist im geltenden EU-Rahmen also nicht darstellbar. Entweder
+Vertragsänderung — die wiederum Einstimmigkeit aller 27 braucht — oder der Klub
+konstituiert sich außerhalb. Verstärkte Zusammenarbeit (mindestens neun Staaten,
+der Klub hat zehn) als Zwischenweg ist **ungeprüft** und gehört vor einen
+Europarechtler.
+
+**Klub ohne die Neutralen gerechnet.** Ohne Irland und Österreich: 11,10 statt
+12,16 Bio € BIP, 240,5 statt 255,1 Mio Menschen. Die Staatsquote steigt sogar auf
+50,6 %, weil mit Irland die Konzernbuchungsverzerrung verschwindet. Der Klub
+verliert 8,7 % Wirtschaftsleistung und gewinnt Handlungsfähigkeit.
+
+**Belegstand:** unverändert. Die Parität ist eine Setzung mit Begründung, keine
+Messung — vier A-Posten von zusammen 1,18 Punkten (17 % der Ebene A) sind
+Schätzungen.
+
+*Neue Daten: GF0301 Polizei (0,87 % BIP) und GF0904 Hochschulen (0,74 %) für alle
+zehn. Skripte: `rahmen/daten.py`. Lieferung: `Rahmenstruktur-A-und-B.docx`,
+vier Seiten, zur Korrektur. Quellen zusätzlich: Artikel 113 AEUV, konsolidierte
+Fassung.*
+
+---
+
+### v3.3 — Kalibrierung behoben, und was dabei auffiel
+
+**Drei übertragene Aufgaben.** Der Nutzer stellt die EU-Verträge und die Zuordnung
+der Altschulden zurück (Sache der Communities beim Umstieg), überträgt die weitere
+Berechnung und verweist die Mikrosimulation an Dritte. Vorrang hat ein sauberes,
+nachvollziehbar kommunizierbares Konzept.
+
+**Die Kalibrierung ist behoben — der älteste Auditbefund.** Neue Basis aus
+geprüften Werten: Eurostat-Ist 2024 (4.329,0 Mrd) fortgeschrieben mit den
+nominalen Raten der Frühjahrsprojektion vom 22.4.2026 (+3,3 / +2,8 / +3,8 %),
+2028 vorsichtig mit +3,0 % → **BIP0 = 4.914,9 statt 4.200 Mrd, Faktor 1,1702**.
+Da alle Positionen mit demselben Faktor skalieren, ändert sich keine Quote: die
+Einnahmen bleiben 27,91 % des BIP, Pfad und Investitionsquote bleiben unberührt.
+Der Fehler saß in der Basis, nicht in der Mechanik — wie vermutet.
+
+**Der 696-Mrd-Block ist geklärt, aber anders als gedacht.** Umbasiert sind es
+814,5 Mrd. Der Aufgabenkatalog der Rahmenstruktur kostet **1.056,2 Mrd** —
+Lücke **+241,7 Mrd oder 4,92 Punkte des BIP**. Davon erklärt die Haager Zusage
+103,2 Mrd (Verteidigung 3,5 statt 1,4 %), die übrigen 138,5 Mrd sind **die Ebene
+A, die das Modell nie enthielt**, weil es ein nationales Modell war. Der Block war
+nicht zu niedrig gegriffen, sondern zu eng gefasst.
+
+**Neuer Befund, den niemand gesucht hatte: die Refinanzierungswelle.** Der Klub
+schuldet 9,537 Bio € (78,4 % BIP) und zahlt dafür 146 Mrd Zinsen — ein effektiver
+Satz von **1,53 %** gegen einen Marktzins von **2,78 %**. Die 125 Basispunkte
+Differenz sind kein Vorteil, sondern eine Verzögerung: bei rund 7,5 Jahren
+Restlaufzeit steigt der Zinsdienst auf **265 Mrd oder 2,18 % des BIP**, ein
+Anstieg von 119 Mrd. Das frisst **39 € Dividende je Kopf und Monat**.
+
+**Die Zinsgarantie, gerechnet.** Renditespreizung der zehn 2024: 2,30 % (DK) bis
+3,55 % (EE), 125 Basispunkte. Eine Garantie bei 2,50 % spart **31,5 Mrd im Jahr**
+und fängt 27 % des Zinsanstiegs ab. Das tragende Argument ist neu: **A verfügt
+über 1.354 Mrd Eigeneinnahmen = 14,2 % des Schuldenstands**, gegen 1,6 % beim
+heutigen EU-Haushalt — das 8,8-Fache der Deckung. Die unbequeme Seite:
+Deutschland und Dänemark gewinnen nichts und haften mit, Frankreich und Spanien
+nehmen 83 % des Vorteils. **Die Garantie vermeidet die Vergemeinschaftung nicht,
+sie kleidet sie anders ein** — senkt aber die Gesamtkosten, statt nur umzuverteilen.
+
+**Und daraus folgt die Entscheidung, die das Konzept bisher nicht treffen musste.**
+Feste Last mit Zinsanstieg und Garantie: 22,21 % des BIP. Drei Wege:
+
+| Weg | Steuerquote | Dividende (DE) |
+| --- | --- | --- |
+| A Satz halten, Dividende senken | 27,91 % | 280 € |
+| **B Dividende halten, Quote heben** | **33,72 %** | **565 €** |
+| C Verteidigung auf heutigem Stand | 27,91 % | 383 € |
+
+Empfehlung: **Weg B.** 33,7 % stehen gegen eine heutige Gesamtlast von 40,8 % aus
+Steuern und Beiträgen. Die Aussage „andere Abgaben statt weniger, dafür eine
+Dividende" hält jeder Prüfung stand. Die Aussage „28 % und 457 €" hält ihr nicht
+stand.
+
+**Belegstand:** Kalibrierung von „offen" auf „belegt". Der unbelegte Ausgabenblock
+von „offen" auf „erklärt". Neu offen: die Restlaufzeit der Schulden (mit 7,5 Jahren
+als Erfahrungswert angesetzt, nicht erhoben).
+
+*Skripte: `neu/`, `zins/schuld.py`. Lieferung: `Rechenstand-Oktober.docx`, drei
+Seiten. Quellen zusätzlich: Eurostat gov_10dd_edpt1 und irt_lt_mcby_a (2024);
+Frühjahrsprojektion der Bundesregierung vom 22.4.2026; US Census Bureau
+NST-EST2025-POP.*
+
+---
+
+### v3.4 — Verteidigungsziel 2,5 %, Altschuld geloest, und die 28 traegt
+
+**Zwei Nutzerentscheidungen, beide verbessern die Rechnung.**
+
+**1. Das Verteidigungsziel sinkt von 3,5 auf 2,5 % und schliesst digitale Souveraenitaet
+ein.** Der Nutzer stellt die 3,5 % als politisch diktierte Zahl in Frage. Die Pruefung
+gibt ihm teilweise recht, und zwar aus dem Haager Text selbst: Die Erklaerung teilt ihre
+5 % in **mindestens 3,5 % Kernverteidigung und bis zu 1,5 %** fuer, woertlich, „defend our
+networks, ensure our civil preparedness and resilience, unleash innovation, and strengthen
+our defence industrial base". Netzverteidigung und Innovation stehen dort also schon
+ausserhalb der Kernverteidigung — dass digitale Souveraenitaet zur Verteidigung zaehlt, ist
+die Systematik des Dokuments, nicht eine Umdeutung.
+
+Zusammensetzung der 2,50 %: Kernverteidigung heute 1,40 + Aufwuchs 0,50 + Netze/Cloud/
+Chips 0,35 + eigene autonome Intelligenz 0,25. **Digitalprogramm 0,60 % = 85 Mrd im Jahr**,
+mit der Grundlagenforschung zusammen 195 Mrd.
+
+**Folge: A faellt von 9,94 auf 8,94 % des BIP, das Verhaeltnis von 49:51 auf 46:54.** Die
+Paritaet war eine Beobachtung, kein Konstruktionsziel — sie geht mit dem niedrigeren Ziel
+verloren, und das ist der Preis.
+
+**2. Die Deckelung wird zur Schranke statt zur Zuteilung.** A's Bedarf ist nicht konstant:
+9,04 % des BIP in 2028, Hoechststand 10,49 % in 2035 (= 38,7 % des Einzugs), danach
+fallend. Deshalb **Obergrenze 40 %, nicht fester Schluessel**. A nimmt nur, was die Aufgaben
+kosten; der Rest fliesst durch an B und die Dividende. Eine Obergrenze, die nicht
+ausgeschoepft werden muss, kann nicht zum Anspruch werden.
+
+**DER ENTSCHEIDENDE BEFUND: ueber die Zeit gerechnet traegt der Satz von 28 %.** Die
+statische Rechnung war zu streng, weil sie die Haager Zusage sofort verbuchte — sie gilt
+aber fuer 2035.
+
+| Jahr | Verteidigung | Schuld | Zinsdienst | Dividende Klub | Deutschland |
+| --- | --- | --- | --- | --- | --- |
+| 2028 | 1,40 % | 78,4 % | 1,20 % | **396 €** | 418 € |
+| 2035 | 2,50 % | 63,7 % | 1,55 % | 404 € | 426 € |
+| 2040 | 2,50 % | 55,0 % | 1,37 % | 480 € | 507 € |
+| 2060 | 2,50 % | 30,4 % | 0,76 % | **941 €** | 993 € |
+
+**Kein Einbruch, in keinem Jahr negativ — auch nicht bei 1,5 % Wachstum.** Beim Ziel von
+3,5 % faellt die Dividende bis 2035 auf 347 € und erreicht den Startwert erst 2039 wieder;
+der Unterschied betraegt dauerhaft 66 € im Monat.
+
+**Und die Gesamtlast sinkt tatsaechlich:** 27,91 % Steuern + 7,75 % Gesundheit ausserhalb
+= **35,66 % gegen heute 40,76 %**, eine Entlastung von 5,10 Punkten oder 726 Mrd im Jahr.
+Der Tausch gegen die hoehere Quote ist bezifferbar: 5,09 Punkte weniger Last kosten 237 €
+Dividende im Monat (33 % ergaebe 633 € statt 396).
+
+**Die Altschulden sind geloest, ohne die Communities zu beruehren.** A uebernimmt den
+Zinsdienst — Praezedenzfall ist Hamiltons Schuldenuebernahme von 1790, Besteuerungsrecht
+gegen Schuldenuebernahme. Ohne Ausgleich waere das ein Dauertransfer von +364 EUR je Kopf
+(Frankreich) bis −1.045 EUR (Irland). Deshalb ein **territorialer Aufschlag auf A's Anteil,
+der sich klubweit auf null summiert** und ueber 30 Jahre abschmilzt. **Er erreicht die
+Gemeinden nicht:** jede bekommt ueberall dieselben Betraege je Einwohner und je Kind.
+
+**Nebenbefund, der die Erzaehlung aendert: die Schulden arbeiten sich von selbst ab.** Bei
+ausgeglichenem Haushalt bleibt der Bestand in Euro konstant, das BIP waechst, die Quote
+faellt von 78,4 auf 30,4 % — ohne einen Tilgungseuro. **Aktive Tilgung ist kontraproduktiv:**
+0,50 % des BIP kosten 24 € Dividende im Monat und haben sich bis 2050 nicht zurueckverdient.
+Das gilt, solange der Zins unter dem Wachstum liegt — und genau das sicherzustellen ist der
+eigentliche Wert der Garantie, nicht die 10 € Dividende.
+
+**Zum Namen:** „Europaeische Gemeinschaften" im Plural ist der amtliche Name der EGKS, EWG
+und EURATOM vor Maastricht, auf Englisch ebenso. Vorschlag: **Freie Gemeinschaften Europas**
+— dieselbe Aussage ohne die Kollision.
+
+**Belegstand:** Verteidigungsannahme von „gesetzt" auf „aus dem Haager Text begruendet".
+Altschulden von „ungeloest" auf „Mechanismus benannt, Frist offen". Neu offen: die
+Zusammensetzung der 2,5 % ist eine Setzung und fachlich zu pruefen.
+
+*Skripte: `pfad/dyn.py`. Lieferung: `Rahmenstruktur-A-und-B-v3.docx` und die Webseite in
+zweiter Fassung mit Zeitdiagramm.*
 
 ---
 
@@ -731,6 +951,20 @@ externe Prüfung fehlt.
 | 28 | Sechs Prüfungen lang nur die Steuerseite des Klubs erhoben, nie die Ausgabenseite | Erst die COFOG-Daten zeigen, dass Ebene B mit 11,4 % des BIP größer ist als Ebene A mit 7,1 — die Grundstruktur des Konzepts war unbekannt, während über Freibeträge gestritten wurde | Nutzerauftrag, die Rahmenstruktur aus dem Jetzt zu entwickeln |
 | 29 | 04a als offene Wahl zwischen aufkommensneutral und Hebesatzrecht dargestellt | In der Rahmenstruktur ist es keine Wahl: B hat keine andere eigene Steuer, also ist der hohe Satz Bedingung und nicht Variante | Beim Rechnen des Eigenfinanzierungsgrades (7 %) selbst gemerkt |
 | 30 | Angenommen, eine saubere Zuordnung nach Mobilität würde den Schlüssel ersetzen | Sie erzeugt ihn: nach dem Mobilitätsprinzip fallen 25 der 26 Steuerpunkte an A. Die Zuordnungslehre ist die Ursache des Schlüsselproblems, nicht seine Alternative | Beim Schreiben der Steuerzuordnung |
+
+| 31 | Erwartet, dass Parität zwischen A und B eine Setzung erzwingt | Sie fällt aus den drei Begründungen des Nutzers heraus: 49:51 bei einem Abstand von 0,41 Punkten. Nicht gelegt, sondern gerechnet | Nutzerfrage nach „einer gewissen Parität" |
+| 32 | In v3.1 die Mittelebenen als abzuschaffen dargestellt und die Gebietsreform als unausweichlich bezeichnet | Der Nutzer löst es eleganter: die Ebenen werden freiwillig und müssen gekauft werden. Das Abholen geschieht in der heutigen Struktur, der Anreiz trägt den Umbau | Nutzerentscheidung |
+| 33 | Die Verteilungsfrage zwischen Gemeinden nur geografisch gedacht (Gebietsreform, Nachbarverbände) | Strukturverwandtschaft ist das bessere Kriterium: zwei Hafenstädte teilen mehr als zwei Nachbarn. Stand in keiner meiner Varianten | Nutzervorgabe „regionale oder ggf. auch strukturverwandte Verbände" |
+| 34 | Die Entlastungswirkung des Konzepts nie gegen die heutige Gesamtlast gestellt | Sie ist null: 40,75 gegen 40,76 % des BIP. Das Konzept verschiebt die Verfassung der Abgaben, nicht ihre Höhe — und das muss es auch so sagen | Beim Rechnen der Dividendenvarianten selbst gemerkt |
+
+| 35 | Die Zinsgarantie als eleganten Ausweg um die Vergemeinschaftung herum eingeordnet | Sie ist Vergemeinschaftung, nur in Garantieform: DE und DK haften mit und gewinnen nichts, FR und ES nehmen 83 % des Vorteils. Ihr echter Wert liegt darin, die Gesamtkosten zu senken, nicht die Verteilungsfrage zu umgehen | Beim Rechnen der Laenderwirkung selbst gemerkt |
+| 36 | Den Zinsdienst von 1,20 % des BIP als feste Groesse durch alle Rechnungen getragen | Er ist der effektive Satz eines auslaufenden Altbestands (1,53 %) und steigt bei Umschuldung auf 2,18 % des BIP. Elf Rechnungen lang stand eine Zahl in der festen Last, die sich fast verdoppelt | Beim Vergleich von GF0107 mit den Marktrenditen aufgefallen |
+| 37 | Die Lücke zwischen Modellblock und Aufgabenkatalog als Kalibrierungsproblem erwartet | Sie ist inhaltlich: 138,5 Mrd sind die Ebene A, die im nationalen Modell nicht vorkam, 103,2 Mrd die Haager Zusage. Die Umbasierung allein erklärt nichts davon | Beim Abgleich nach der Umbasierung |
+
+| 38 | Die Haager 3,5 % als Gesamtgroesse der Verteidigung behandelt | Die Erklaerung selbst trennt 3,5 % Kernverteidigung von bis zu 1,5 % fuer Netze, Resilienz und Innovation. Der Nutzer hatte recht, dass Digitales dazugehoert — es steht sogar im Text | Nutzereinwand, dann der Wortlaut nachgelesen |
+| 39 | Den festen Schluessel als Zuteilung konstruiert | A's Bedarf schwankt zwischen 33,4 und 38,7 % des Einzugs. Als Zuteilung erzeugt der Schluessel Ueberschuss oder Luecke; als Obergrenze loest er beides und schuetzt staerker | Beim Rechnen des Zeitpfads |
+| 40 | Die statische Momentaufnahme als Urteil ueber die 28 genommen und drei Wege zur Wahl gestellt | Die Momentaufnahme verbuchte die Haager Zusage sofort, obwohl sie fuer 2035 gilt. Ueber die Zeit traegt die 28 ohne jeden Einbruch. Die ganze Entscheidungstabelle der v3.3 war ein Artefakt der falschen Zeitachse | Nutzerhinweis auf die zeitliche Steigerung |
+| 41 | Angenommen, der territoriale Schuldaufschlag schmelze mit der fallenden Schuldenquote von selbst | Er tut es nicht: Bestand und Zins bleiben in Euro konstant, also auch der Aufschlag. Er sinkt nur relativ zum Einkommen, und das genuegt politisch nicht — es braucht eine ausdrueckliche Frist | Mitten in der eigenen Rechnung widerlegt |
 
 **Panel-Falle, zum Mitschreiben:** `PANELAI` (nur Teilgruppen mit Gewinn) ist
 richtig für Effektivsätze, aber lückenhaft — für Dänemark 4,9 gegen 44,0 Mrd.
@@ -801,7 +1035,7 @@ Altbestand, und dort sinkt der Satz. Der Anhang rechnet derzeit zu vorsichtig.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.1
+## 7 | Offene Punkte, Stand v3.4
 
 | Punkt | Status |
 |---|---|

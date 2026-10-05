@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Zeitpfad 2028 bis 2060 des Klubs (Rekonstruktion, Logbuch Band III v3.6).
 
-ACHTUNG: Dies ist eine Rekonstruktion, nicht das Original. Das Original (pfad.py,
-dyn.py) liegt nicht vor. Das Skript setzt eine Modellstruktur an, die aus den
+ACHTUNG: Dies ist eine Zweitrechnung, nicht das Original. Die Originale liegen seit v3.8
+in modell/rahmen/ (pfad.py, final.py, tilgung.py); modell/vergleich_original.py prüft beide
+gegeneinander (33 Jahreswerte, Aufschlag). Das Skript setzt eine Modellstruktur an, die aus den
 Parametern und Fragmenten des Original-Skripts im Chat abgeleitet wurde, und
 prüft sie gegen die Zeitpfad-Tabelle des Gesamtkonzepts
 (daten/aggregate/referenz_gesamtkonzept.csv). Dass sie die Tabelle trifft, zeigt

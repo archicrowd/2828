@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Territorialer Aufschlag auf den Klubanteil (Rekonstruktion, Logbuch Band III v3.7).
 
-ACHTUNG: Rekonstruktion, nicht das Original (aufschlag.py / altschuld.py liegen
-nicht vor). Aufbau nach Korrektur 44 in Band II und dem Chat-Fragment altschuld.py:
+ACHTUNG: Zweitrechnung, nicht das Original. Das Original liegt seit v3.8 in
+modell/rahmen/aufschlag.py (BIP-Bemessung, +254/-728); modell/rahmen/altschuld.py rechnet mit
+anderer Bemessung (Klubschnitt je Kopf, Band III B8). Aufbau nach Korrektur 44 in Band II und dem Chat-Fragment altschuld.py:
   A übernimmt den Zinsdienst des Altbestands zum Satz 'zins_effektiv_altbestand'.
   Die Beitragsseite folgt dem BIP (A finanziert mit einheitlichem Satz auf das BIP),
   die Auszahlungsseite der Schuld. Der Aufschlag je Gebiet ist

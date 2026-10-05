@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 5. Oktober 2026 · Modellstand **v3.7**
+Stand: 5. Oktober 2026 · Modellstand **v3.8**
 
 ---
 
@@ -243,10 +243,99 @@ getestet; ihre Wahl ist deshalb nur durch die zehn Treffer gestützt, nicht vora
 
 ---
 
+### v3.8 — Vollständiges Logbuch und Originalskripte aus dem Export, Lückenaussage berichtigt
+
+**Art der Änderung: MINOR** (Rekonstruktionen werden an Originalen geprüft, ein vollständiger
+Logbuchband ersetzt eine unvollständige Abschrift). Keine Zahl des Modells ändert sich.
+5. Oktober 2026.
+
+**Datenquelle.** Paket `6001ff54-2828-export.zip`, vom Vorchat „Steuerkonzept von 2525 auf
+3030 umstellen" aus dessen Ausgabeordner zusammengestellt (171 Dateien) und hier
+hochgeladen. **Sekundärquelle** im Sinne von `CLAUDE.md`: Es ist das Material des Verfassers,
+aber nicht amtlich. Die Eurostat-Werte darin sind feste Zahlen in `basis.py`, an Eurostat
+nicht geprüft (die Shell erreicht `ec.europa.eu` nicht).
+
+**Was neu im Repository liegt**
+- `logbuch/Versionsgeschichte-TAX-2828.md` (Band I) ist jetzt die **Originaldatei**: 1.070 Zeilen,
+  v0.1 bis v3.4, Korrekturen 1 bis 41. Vorher lag eine Abschrift bis v3.1 vor.
+- `modell/rahmen/`: sieben Originalskripte des Rahmenmodells (`basis.py`, `pfad.py`, `final.py`,
+  `tilgung.py`, `aufschlag.py`, `altschuld.py`, `kurve.py`), unverändert kopiert.
+- `modell/vergleich_original.py` und `daten/aggregate/vergleich_original.csv`: Zweitrechnung
+  (`modell/pfad.py`, `modell/aufschlag.py`) gegen die Originale.
+
+**Prüfung der Logbuch-Abschrift.** Band II im Repository ist zeilengleich mit dem Original
+(`diff`: 0 Zeilen Unterschied, SHA-256 `438a4cd8…`). Band I im Repository war bis v3.1 bis auf
+einen Zeilenumbruch (Zeilen 664/665) gleich dem Original; es fehlten v3.2 bis v3.4 und die
+Korrekturen 31 bis 41. Damit ist der in `HERKUNFT.md` genannte „ungeprüfte" Teil geprüft.
+
+**Berichtigung der Lückenaussage.** Band II behauptet, die Einträge v3.2 bis v3.4 und die
+Korrekturen 31 bis 41 seien verloren. Das ist falsch (Korrektur 47). Ich habe die Aussage in
+`README.md`, `CLAUDE.md`, `HERKUNFT.md` und in Band III (v3.5.1 bis v3.7) übernommen, ohne den
+Ausgabeordner des Vorchats prüfen zu können; das ist ein eigener Fehler (siehe Arbeitsfehler).
+
+**Befunde aus dem Vergleich mit den Originalskripten**
+1. **Zeitpfad bestätigt.** `final.py` liefert im Zentralfall für Deutschland 550 € (2028), 512 €
+   (2035, Tiefpunkt) und 707 € (2060) bei 0,980 % realem Wachstum je Kopf (= 1,03/1,02 − 1);
+   die Zweitrechnung trifft alle 33 Jahreswerte des Dividendenanteils innerhalb 0,01 Punkten.
+2. **B2 gegen das Original bestätigt.** `tilgung.py` rechnet die Sensitivität mit
+   g_nom = (1+g)·1,02 − 1; die Zeile „1,0 %" liefert 513 € (2035) und 712 € (2060). Die
+   Abweichung 707/712 ist die Kopplung des nominalen an das reale Wachstum, wie in v3.7 vermutet.
+3. **Mindestquote.** Original: 30,611 % ohne reales Wachstum (Bisektion auf `KOPF_DE`), 29,97 %
+   in Preisen von 2028. Die Zweitrechnung nennt 30,616 %: sie skaliert 479 € mit 506/550 statt
+   direkt mit `KOPF_DE`. Differenz 0,005 Punkte, Näherungsfehler der Zweitrechnung.
+4. **Obergrenze von A.** `pfad.py`: Höchstbedarf 10,49 % (2035) geteilt durch 29,78 %
+   (Einzug) = 35,2 %; „vertraglich" wird `round(35,2 + 0,8)` = 36 %. Die 36 % sind also eine
+   **Setzung mit Aufschlag von 0,8 Punkten**, nicht abgeleitet. In v3.4 (Original) stand noch 40 %.
+5. **Territorialer Aufschlag.** `aufschlag.py` liefert +254 (FR) bis −728 (IE) EUR je Kopf und
+   Jahr, die Zweitrechnung +253 bis −726; die Differenz stammt wahrscheinlich aus den Einwohnerzahlen (Befund 6; nicht getrennt nachgerechnet).
+   Das Skript druckt „null, wie gefordert", rechnet aber 0,0955 Mrd EUR, weil `D_START` dort
+   auf den gerundeten Wert 78,4 gesetzt ist (berechnet: 78,445). Rundungsartefakt, kein Fehler im Verfahren.
+6. **Einwohnerzahlen weichen ab.** Für acht Länder (ES, NL, IE, BE, AT, DK, SI, EE) liegen die
+   Werte in `daten/aggregate/laender_2024.csv` um 0,004 bis 0,076 Mio (bis 0,16 %) über denen
+   in `basis.py`; DE und FR sind gleich. Welche stimmen, ist ohne Eurostat-Zugriff nicht zu
+   entscheiden. Für die Gesamtkonzept-Zahlen maßgeblich ist `basis.py`. Die Datei `laender_2024.csv`
+   wird **nicht geändert**, solange die Quelle nicht geprüft ist.
+7. **`altschuld.py` ist eine andere Methode als `aufschlag.py`.** `altschuld.py` bemisst den
+   Beitrag je Kopf am Klubschnitt (+185 FR bis −531 EE), `aufschlag.py` am BIP des Gebiets
+   (+254 FR bis −728 IE). Beide stehen in `modell/rahmen/`; der Gesamtkonzept-Wert stammt aus
+   `aufschlag.py`. Dass die Spanne vom Bemessungsprinzip abhängt, steht bisher nirgends im Text.
+   Die in `altschuld.py` gedruckte Zahl „Dokument nennt +364 bis −1.045" ist der Wert aus v3.4.
+8. **Gegenprobe zur alten Quote.** Bei 27,91 % liegt die Dividende 2028 bei 418 € (DE, Preise
+   2028) und unterschreitet 479 € in 25 Jahren (2028 bis 2052); ohne reales Wachstum in allen 33.
+9. **Aktive Tilgung** (0,50 % des BIP, `tilgung.py`): Dividendenverzicht 25 € je Monat im
+   Startjahr, kumuliert −5.859 € je Kopf bis 2050; Break-even nach 2070.
+10. **Basis-Probe.** `basis.py` meldet selbst: Klub-BIP 2028 aus der Fortschreibung des Istwerts
+    13.802,7 Mrd €, im Dokument 14.227 (Faktor 1,17024 der alten Kalibrierung, 3,07 % höher).
+    Welche Beträge in `TAX-2828-Gesamtkonzept.docx` auf welcher Basis stehen, ist **noch nicht
+    geprüft**; die Datei liegt im Export, aber noch nicht im Repository.
+11. **v3.4 im Original.** Dort gilt Quote 27,91 %, Obergrenze 40 %, Dividende Klub 396 € (2028)
+    und 941 € (2060), Gesamtlast 35,66 %. Die Quote 30,6 % gehört erst zu v3.5
+    (Korrekturen 42 bis 46). Die „Rekonstruktion" in Band II schreibt sie v3.4 zu (Korrektur 48).
+
+**Nicht gelesen.** `zahlen.py`, `pfad.json`, `zahlen.json`, `gesamtkonzept-bau.js`, das Gesamtkonzept
+selbst und alle übrigen Pakete (Kern, Webseite, Dokumente, Einzelrechnungen, Uploads).
+
+**Noch nicht ins Repository übernommen.** Eine Sammelkopie des restlichen Exports wurde in
+dieser Sitzung vom Berechtigungsfilter abgelehnt und nicht umgangen. Offen ist deshalb, ob und
+wie `modell/kern/`, `seite/`, `dokumente/`, `modell/rechnungen/` und das Manifest der Drittdateien
+(SHA-256, ohne die Dateien) eingecheckt werden. Die Drittdateien (PDF, xlsx) gehören nicht hinein.
+
+*Skripte: `modell/rahmen/*.py` (Original), `modell/vergleich_original.py`. Quelle: Export des Vorchats.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
-Keine neue nummerierte Korrektur. **Die Nummer 47 ist frei.** Ob Punkt B1 unten als
-Korrektur geführt wird, entscheidet der Verfasser.
+Neu ab v3.8: die Nummern 47 und 48. **Nächste freie Nummer: 49.** Die Nummern 31 bis 41 sind
+besetzt (Band I). Ob Punkt B1 unten als Korrektur 49 geführt wird, entscheidet der Verfasser.
+
+| Nr. | Was war falsch | Richtig | Wodurch auffiel |
+|---|---|---|---|
+| 47 | Band II, „Vorbemerkung zur Lücke": Die Einträge v3.2 bis v3.4 und die Korrekturen 31 bis 41 seien beim Zurücksetzen der Arbeitsumgebung verloren gegangen; die Nummern blieben deshalb unbesetzt | Beides liegt vollständig vor: `doku/Versionsgeschichte.md` (1.070 Zeilen) im Ausgabeordner des Vorchats. Verloren war nur dessen Arbeitsverzeichnis. Die Nummern 31 bis 41 sind besetzt, 42 bis 46 schließen korrekt an | Bericht des Vorchats nach Prüfung von `/mnt/user-data/outputs`; hier zeilenweiser Vergleich (v3.8). Der Vorchat hatte den Ausgabeordner nicht geprüft, bevor er den Verlust feststellte |
+| 48 | Band II, „v3.2 bis v3.4 — Rekonstruktion": v3.3 sei der „Möglichkeitsraum" (31 Staaten, 534,8 Mio) und in v3.4 werde die Steuerquote 30,6 % abgeleitet | Der Originaleintrag v3.3 heißt „Kalibrierung behoben". Der Möglichkeitsraum steht in keinem Logbucheintrag, nur in einer eigenen Seite (Export). In v3.4 gilt Quote 27,91 % mit Obergrenze 40 %; 30,6 % kommt mit v3.5. Band II widerspricht sich selbst: Zeile 57 „abgeleitet", Zeile 105 „die gesetzten 30,6 %" | Vergleich der Rekonstruktion mit dem Originaleintrag (v3.8). Die Rekonstruktion stammte nicht aus dem Original, sondern aus später gebauten Dokumenten |
+
+Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
+steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
 
 ### Arbeitsfehler beim Aufbau des Repositorys
 
@@ -261,6 +350,8 @@ Fehler des KI-Systems bei der Arbeit an diesem Repository. Sie betreffen die
 | v3.6: `a_ohne_verteidigung_zins_bip_2028` (6,44) als aus der Dividende 2028 zurückgerechnete Restgröße geführt; daraus gefolgert, die Spalte 2028 sei kein unabhängiger Test | 6,44 ist die Summe der sieben A-Posten ohne Verteidigung (= 8,94 − 2,50). Die Spalte 2028 ist ein unabhängiger Test. Die Übereinstimmung mit der Restgröße 6,439 ist keine Kalibrierung | Suche nach 8,94 und 9,04 im Chat (v3.7) |
 | v3.6: Punkt B5 („0,10 Punkte ungeklärt") als Unstimmigkeit geführt | Kein Widerspruch: 8,94 enthält die Verteidigung mit 2,50, die Tabelle 2028 rechnet mit 1,40 (8,94 − 2,50 + 1,40 + 1,20 = 9,04). Ich hatte die Herkunft im Chat nicht gesucht, bevor ich den Punkt eintrug | wie oben |
 | v3.6: Die Zahl „etwa neun unabhängige Werte" | Zu niedrig, weil die Spalte 2028 und die Konstante 6,44 als abhängig gezählt wurden | wie oben |
+| v3.5.1 bis v3.7, `README.md`, `CLAUDE.md`, `HERKUNFT.md`: Die Skripte und Logbucheinträge bis v3.4 seien verloren und nicht reproduzierbar; `pfad.py`, `aufschlag.py` seien mangels Original Rekonstruktionen ohne Vergleichsmöglichkeit | Die Originale lagen im Ausgabeordner des Vorchats. Ich habe die Verlustaussage aus Band II übernommen, ohne nach einem erhaltenen Ausgabeordner zu fragen | Hochgeladener Export, v3.8 |
+| v3.7: `daten/aggregate/nicht-eingetragen.md` und Hinweise in `parameter.toml` nennen `altschuld.py` als Quelle des Aufschlag-Verfahrens | Das Original von `altschuld.py` nutzt eine andere Bemessung (Klubschnitt je Kopf) als `aufschlag.py` (BIP); die Zahlen +254/−728 stammen aus `aufschlag.py` | Vergleich mit den Originalen, v3.8 |
 | Commit-Nachricht von `23b7050` nennt „26 gesamt" | Es sind 25 Parameter | Zählung im Lauf-Skript. Die Nachricht wurde nicht per Force-Push geändert |
 
 **Ablaufnotiz, kein Fehler.** Der Push des Tags `v3.5` wurde von der Verbindung dieser
@@ -270,7 +361,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.7
+## 7 | Offene Punkte, Stand v3.8
 
 | Punkt | Status |
 |---|---|
@@ -280,9 +371,14 @@ nicht geklärt.
 | **B4: Irland, BIP oder GNI\*** | **Sachstand geklärt in v3.7, Entscheidung offen.** Das Klubmodell rechnet mit BIP (Länderliste, Faktor 2,19 im Seitentext). Die ältere Seitenfassung „Klub der Neun" rechnete mit GNI\*. Ersatz durch GNI\* senkte das Klub-BIP um etwa 2,1 %, die Dividende um etwa 2 % (Größenordnung). Welche Bezugsgröße gilt und wie sie ausgewiesen wird, entscheidet der Verfasser |
 | **B5: Ebene A 8,94 % gegen 9,04 %** | **geschlossen in v3.7, war kein Widerspruch** (8,94 enthält Verteidigung 2,50, die Tabelle 2028 rechnet mit 1,40) |
 | **B6: Ausgangslage 2024 als 2028** | **offen, präzisiert in v3.7.** Schuldenquote 78,4 % gilt im Seitentext als Quote 2028 (10,8 Bio EUR), der Eurostat-Stand 2024 sind 9,537 Bio EUR. Effektiver Zins (1,53 %) und Verteidigung (1,401 %) stammen aus 2024. Entscheidung des Verfassers nötig, ob das Auslaufen des Altbestands 2024 oder 2028 beginnt (Sensitivität in v3.6) |
-| **Rechenskripte** | `pfad.py` (seit v3.6, 35 von 35 Referenzwerten) und `aufschlag.py` (seit v3.7) sind **Rekonstruktionen**, nicht Originale. Es fehlen weiterhin `basis.py`, `final.py`, `tilgung.py` (Band II) und alle Skripte bis v3.4. Aus diesem Repository reproduzierbar ist der Zeitpfad ab den Parametern, nicht die Herleitung der Parameter (Kalibrierung, COFOG-Anteile, 6,44 und 10,35) |
+| **Rechenskripte** | seit v3.8 liegen die Originale `basis.py`, `pfad.py`, `final.py`, `tilgung.py`, `aufschlag.py`, `altschuld.py`, `kurve.py` in `modell/rahmen/`. `modell/pfad.py` und `modell/aufschlag.py` bleiben als **unabhängige Zweitrechnung** (`modell/vergleich_original.py`). Ungelesen: `zahlen.py`, `gesamtkonzept-bau.js`, JSON-Ausgaben. Skripte der Versionen bis v3.4 (Kern, Webseite, Audit, Einzelrechnungen) liegen im Export, aber noch nicht im Repository |
+| **B7: Einwohnerzahlen** | **neu, v3.8.** Acht Länder weichen zwischen `basis.py` und `laender_2024.csv` ab (bis 0,16 %). Eurostat-Abruf `demo_gind` nötig; die Shell erreicht `ec.europa.eu` nicht |
+| **B8: Bemessung des Aufschlags** | **neu, v3.8.** `aufschlag.py` (BIP) gegen `altschuld.py` (Klubschnitt je Kopf): +254/−728 gegen +185/−531. Welche Bemessung gilt, ist eine Entwurfsentscheidung und im Text nicht begründet |
+| **B9: Obergrenze 36 %** | **neu, v3.8.** Setzung mit Aufschlag von 0,8 Punkten auf den berechneten Wert 35,2 % (`pfad.py`). Begründung des Aufschlags nicht gefunden |
+| **B10: Basis des Gesamtkonzepts** | **neu, v3.8.** `basis.py` weist für das Gesamtkonzept ein Klub-BIP aus, das 3,07 % über der Fortschreibung des Istwerts liegt. Welche Beträge in der Datei auf welcher Basis stehen, ist nicht geprüft |
+| **Stand A und Stand B** | **neu, v3.8.** Modell (`1-modell`) und achtsprachige Webseite im Export stehen auf dem nationalen Stand (Quote 27,91 % bzw. 33 %, Position 10 Sozialabgaben, Logbuch v2.0); das Gesamtkonzept auf dem europäischen (Quote 30,6 %, v3.5). Die Seite hat den Rahmenwechsel nie gesehen. Zwei Builds der Seite (Tarifstufen 0/9/16/21/26/28 gegen 0/9/19/24/27/28); der Quelltext passt nur zum älteren, die Patch-Skripte sind nicht ausgeführt. Nach Angabe des Exports; von mir nicht geprüft |
 | **Herleitung von 6,44 und 10,35** | Beide sind Summen der COFOG-abgeleiteten Posten aus Band II (v3.2): 6,44 für Ebene A ohne Verteidigung, 10,35 für Ebene B. Die zugrunde liegenden Eurostat-Abrufe (COFOG, zehn Staaten) liegen nicht vor, die Shell erreicht `ec.europa.eu` nicht. Nachgerechnet sind die Summen der Posten, nicht die Posten |
 | **Nicht eingetragene Größen** | Mindestquote, Obergrenze von A, Höchstbedarf, territorialer Aufschlag: Bezugsjahr oder Bezugsgröße fehlt. Siehe `daten/aggregate/nicht-eingetragen.md`, Abschnitt A |
 | **Rohdaten und Abrufe nicht reproduzierbar** | Die Eurostat-Abrufe (zehn Einzelabrufe COFOG GF02, `gov_10a_exp`, `gov_10a_taxag`, `nama_10_gdp`, `demo_gind`) sind im Logbuch nur benannt, die Abrufergebnisse liegen nicht vor. Die Shell erreicht `ec.europa.eu` nicht (Logbuch v3.1) |
-| **Prüfstand der Logbuch-Abschrift** | Band I ab v0.10 und Band II sind Abschriften ohne Vergleichsquelle, siehe `HERKUNFT.md` |
+| **Prüfstand der Logbuch-Abschrift** | **geschlossen in v3.8**: Band I ist die Originaldatei, Band II zeilengleich, siehe `HERKUNFT.md` |
 | Alle offenen Punkte aus Band I (Abschnitt 7) und Band II (Zusatz zu v3.5) | unverändert, soweit hier nicht genannt |

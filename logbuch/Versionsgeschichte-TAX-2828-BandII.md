@@ -9,6 +9,13 @@ Stand: 4. Oktober 2026 · Modellstand **v3.5**
 
 ## Vorbemerkung zur Lücke
 
+> **Berichtigung, Repository v3.8 (5. Oktober 2026).** Die folgende Vorbemerkung ist
+> **falsch** (Korrektur 47 in Band III): Die Einträge v3.2 bis v3.4 und die Korrekturen 31 bis
+> 41 sind vollständig erhalten und stehen in Band I (`Versionsgeschichte-TAX-2828.md`).
+> Die „Rekonstruktion" weiter unten enthält inhaltliche Fehler (Korrektur 48). Maßgeblich
+> ist Band I. Der Text darunter bleibt unverändert stehen, damit der Fehler prüfbar ist.
+
+
 Die Einträge v3.2 bis v3.4 und die Korrekturen 31 bis 41 standen in einer
 lokalen Arbeitsdatei, die beim Zurücksetzen der Sitzungsumgebung verloren ging;
 in den Projektraum geschrieben war nur der Stand v3.1. Was inhaltlich geschah,

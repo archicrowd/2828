@@ -14,9 +14,9 @@
   einer Sitzung. Die Arbeitsumgebung ist flüchtig, das Repository nicht.
 - Versionsschema und Pflichtangaben je Version: siehe `logbuch/` (Abschnitt 2).
   Jede Version nennt Datum, Änderung, Datenquelle, bewegte Zahl und wodurch es auffiel.
-- Korrekturen werden fortlaufend nummeriert. **Nächste freie Nummer: 47.**
-  Die Nummern 31 bis 41 bleiben unbesetzt (siehe Band II, „Vorbemerkung zur Lücke").
-  Nummern werden nie neu vergeben.
+- Korrekturen werden fortlaufend nummeriert. **Nächste freie Nummer: 49.**
+  Alle Nummern bis 48 sind besetzt (31 bis 41 in Band I; die frühere Aussage, sie seien
+  unbesetzt, war falsch, Korrektur 47). Nummern werden nie neu vergeben.
 - Fehler offen führen, auch eigene. Ein Entwurf, dessen Irrtümer offen liegen, ist
   überprüfbar.
 
