@@ -155,4 +155,162 @@ bezugsjahr = 2028
 preisbasis = "keine"
 quelle     = "eigene Setzung"
 status     = "annahme"
-hinweis    = "Logbuch Band II: gesetzt, nicht abgeleitet. Trägt jede künftige Eurozahl; Bandbreite 0 bis 2 % ist größer als jeder Effekt, über den im Konzept gestritten wird"
+hinweis    = "Logbuch Band II: gesetzt, nicht abgeleitet. Entspricht nominal 3,0 % abzüglich 2,0 % Preissteigerung bei konstanter Bevölkerung (Gesamtkonzept). Trägt jede künftige Eurozahl; Bandbreite 0 bis 2 % ist größer als jeder Effekt, über den im Konzept gestritten wird"
+
+# ---------------------------------------------------------------------------
+# Zeitpfad und Annahmen aus dem Gesamtkonzept
+#
+# Quelle: Claude-Chat "Steuerkonzept von 2525 auf 3030 umstellen"
+# (claude.ai/chat/42b9edcd-8601-46bb-a37b-66bbfdd57e24), Zeitpfad-Tabelle und
+# Seitentext im Gesamtkonzept vom 4. Oktober 2026. Das Logbuch Band II nennt
+# diese Reihen ohne Bezugsgruppe und Einheit (siehe nicht-eingetragen.md).
+# Nicht gegen Rohdaten oder Rechenskript geprüft: das Skript pfad.py liegt
+# nicht vor.
+# ---------------------------------------------------------------------------
+
+[[parameter]]
+name       = "wachstum_nominal"
+wert       = 3.0
+einheit    = "% pro Jahr"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "eigene Setzung"
+status     = "annahme"
+hinweis    = "Gesamtkonzept, Zeitpfad (Seitentext)"
+
+[[parameter]]
+name       = "preissteigerung"
+wert       = 2.0
+einheit    = "% pro Jahr"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "eigene Setzung"
+status     = "annahme"
+hinweis    = "Gesamtkonzept, Zeitpfad (Seitentext)"
+
+[[parameter]]
+name       = "garantiezins_klub"
+wert       = 2.5
+einheit    = "% pro Jahr"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "eigene Setzung"
+status     = "annahme"
+hinweis    = "Gesamtkonzept, Zeitpfad (Seitentext): garantierter Zins des Klubs"
+
+[[parameter]]
+name       = "steuerquote_klub"
+wert       = 30.6
+einheit    = "% des BIP"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Logbuch Band II v3.4 und v3.5; Gesamtkonzept"
+status     = "modellrechnung"
+hinweis    = "abgeleitet aus dem Pfad, nicht gesetzt: Mindestquote 30,61 % ohne reales Wachstum, 29,97 % bei 1,0 %. Gilt als konstant über den Pfad; Bezugsjahr 2028 ist der Startpunkt"
+
+[[parameter]]
+name       = "schuldenquote_klub_2028"
+wert       = 78.4
+einheit    = "% des BIP"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Gesamtkonzept, Zeitpfad-Tabelle (Zeile 2028)"
+status     = "modellrechnung"
+hinweis    = "Altschuld 10,8 Billionen EUR laut Seitentext; Quelle der Schuldendaten im Logbuch nicht genannt"
+
+[[parameter]]
+name       = "schuldenquote_klub_2060"
+wert       = 30.5
+einheit    = "% des BIP"
+bezugsjahr = 2060
+preisbasis = "keine"
+quelle     = "Gesamtkonzept, Zeitpfad-Tabelle (Zeile 2060)"
+status     = "modellrechnung"
+hinweis    = "Folge der Annahmen bei ausgeglichenem Haushalt, ohne Tilgung; keine eigene Datenquelle"
+
+[[parameter]]
+name       = "verteidigung_ziel_nato_2035"
+wert       = 2.5
+einheit    = "% des BIP"
+bezugsjahr = 2035
+preisbasis = "keine"
+quelle     = "Logbuch Band II v3.4; Gesamtkonzept, Zeitpfad-Tabelle"
+status     = "annahme"
+hinweis    = "Setzung des Verfassers; Systematik NATO (Haager Erklärung), nicht COFOG. Mit verteidigung_basis_cofog_2024 nicht unmittelbar vergleichbar"
+
+[[parameter]]
+name       = "dividende_klub_monat_2028"
+wert       = 506
+einheit    = "EUR je Kopf und Monat"
+bezugsjahr = 2028
+preisbasis = "real"
+preisjahr  = 2028
+quelle     = "Gesamtkonzept, Zeitpfad-Tabelle (Spalte Klub EUR/Mon)"
+status     = "modellrechnung"
+hinweis    = "Klubschnitt. Nachrechnung: 6.072 EUR je Jahr geteilt durch 12 = 506"
+
+[[parameter]]
+name       = "dividende_klub_monat_2035"
+wert       = 472
+einheit    = "EUR je Kopf und Monat"
+bezugsjahr = 2035
+preisbasis = "real"
+preisjahr  = 2028
+quelle     = "Gesamtkonzept, Zeitpfad-Tabelle (Spalte Klub EUR/Mon)"
+status     = "modellrechnung"
+hinweis    = "Klubschnitt, Tiefpunkt der Reihe"
+
+[[parameter]]
+name       = "dividende_klub_monat_2060"
+wert       = 651
+einheit    = "EUR je Kopf und Monat"
+bezugsjahr = 2060
+preisbasis = "real"
+preisjahr  = 2028
+quelle     = "Gesamtkonzept, Zeitpfad-Tabelle (Spalte Klub EUR/Mon)"
+status     = "modellrechnung"
+hinweis    = "Klubschnitt, bei 1,0 % realem Wachstum je Kopf"
+
+[[parameter]]
+name       = "dividende_de_monat_2028"
+wert       = 550
+einheit    = "EUR je Kopf und Monat"
+bezugsjahr = 2028
+preisbasis = "real"
+preisjahr  = 2028
+quelle     = "Gesamtkonzept, Seitentext und Logbuch Band II v3.5 (Korrektur 43)"
+status     = "modellrechnung"
+hinweis    = "Deutschland. Das Gesamtkonzept erklärt den Abstand zum Klubschnitt mit dem höheren BIP je Kopf (+8,7 %). Nachrechnung: 506 x 1,087 = 550. Das Logbuch nennt die Bezugsgruppe nicht"
+
+[[parameter]]
+name       = "dividende_de_monat_2035"
+wert       = 512
+einheit    = "EUR je Kopf und Monat"
+bezugsjahr = 2035
+preisbasis = "real"
+preisjahr  = 2028
+quelle     = "Gesamtkonzept, Seitentext und Logbuch Band II v3.5 (Korrektur 43)"
+status     = "modellrechnung"
+hinweis    = "Deutschland, Tiefpunkt. Die Sensitivitätstabelle desselben Dokuments nennt für 1,0 % und 2035 den Wert 513 (Differenz 1 EUR, vermutlich Rundung)"
+
+[[parameter]]
+name       = "dividende_de_monat_2060"
+wert       = 707
+einheit    = "EUR je Kopf und Monat"
+bezugsjahr = 2060
+preisbasis = "real"
+preisjahr  = 2028
+quelle     = "Gesamtkonzept, Seitentext und Logbuch Band II v3.5 (Korrektur 43)"
+status     = "modellrechnung"
+hinweis    = "Deutschland, bei 1,0 % realem Wachstum je Kopf. UNSTIMMIG: Die Sensitivitätstabelle desselben Dokuments nennt im Zentralfall 712 (Differenz 0,7 %). Nachrechnung: 651 x 1,087 = 707,6, passt zu 707, nicht zu 712. Siehe nicht-eingetragen.md B2"
+
+[[parameter]]
+name       = "dividende_de_versprechen_monat"
+wert       = 479
+einheit    = "EUR je Kopf und Monat"
+bezugsjahr = 2028
+preisbasis = "real"
+preisjahr  = 2028
+quelle     = "Gesamtkonzept; Logbuch Band II v3.5 (Korrektur 43): Versprechen des Projektstands"
+status     = "modellrechnung"
+hinweis    = "Deutschland. Das Logbuch nennt den Wert als in Kaufkraft gemeint, aber kein Preisjahr; Preisjahr 2028 ist eine Annahme"

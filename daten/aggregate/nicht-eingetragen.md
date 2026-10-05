@@ -3,57 +3,71 @@
 Stand: 5. Oktober 2026 · Modellstand v3.5
 
 Diese Datei gehört zu `modell/parameter.toml`. Sie nennt, was **nicht** als
-Parameter eingetragen wurde und warum. Alle Angaben beruhen auf dem Logbuch
-(Band I bis v3.1, Band II bis v3.5) und sind nicht gegen Rohdaten geprüft.
+Parameter eingetragen wurde und warum, und welche Unstimmigkeiten bei der
+Nachrechnung auffielen. Alle Angaben beruhen auf dem Logbuch (Band I bis v3.1,
+Band II bis v3.5) und auf dem Gesamtkonzept im Chat „Steuerkonzept von 2525 auf
+3030 umstellen". Nichts davon ist gegen Rohdaten oder Rechenskripte geprüft.
 
-## A. Nicht eingetragen, weil Bezugsjahr oder Einheit im Logbuch fehlt
+## A. Nicht eingetragen, weil Bezugsjahr, Einheit oder Bezugsgröße fehlt
 
-| Größe | Logbuch-Wert | Was fehlt |
+| Größe | Wert | Was fehlt |
 |---|---|---|
-| Steuerquote | 30,6 % | Bezugsgröße und Jahr; „abgeleitet aus dem Pfad" |
-| Mindestquote | 30,61 % (ohne Wachstum), 29,97 % (bei 1,0 %) | Bezugsjahr |
-| Schuldenquote | 78,4 % | Bezugsjahr (Datenstand 2024 oder Startjahr des Pfads?) |
-| Obergrenze von A | 36 % | Bezugsgröße (Schuldenstand? Einnahmen?). Korrektur 45 nennt „13,7 % an der Obergrenze von 36 %" |
-| Höchstbedarf | 10,49 % im Jahr 2035 | Bezugsgröße |
-| Verteidigungsziel | 2,5 % (NATO-Systematik) | Zieljahr |
-| Dividende je Kopf | 550 → 512 (2035) → 707 € (2060) | Zeitbezug (Monat oder Jahr?), siehe B1 |
-| Territorialer Aufschlag | +254 bis −728 € je Kopf | Zeitbezug und Preisbasis |
+| Mindestquote | 30,61 % (ohne Wachstum), 29,97 % (bei 1,0 %) | Bezugsjahr; ist Teil der Herleitung von `steuerquote_klub` und dort im Hinweis genannt |
+| Obergrenze von A | 36 % | Bezugsgröße (Schuldenstand? Einnahmen?). Der Seitentext nennt „11,5 % des gesamten Schuldenstands, an seiner Obergrenze 13,7 %" |
+| Höchstbedarf | 10,49 % im Jahr 2035 | Bezugsgröße (laut Zeitpfad-Tabelle „A gesamt" in % des BIP; nicht ausdrücklich bestätigt) |
+| Territorialer Aufschlag | +254 bis −728 € je Kopf | Zeitbezug (Monat oder Jahr) und Preisbasis |
 
-## B. Unstimmigkeiten im Logbuch, die bei der Nachrechnung auffielen
+## B. Unstimmigkeiten
 
-**B1. Die Dividendenreihe 550 → 512 → 707 € passt nicht zur Basis von 6.072 € je Kopf und Jahr.**
-Nachrechnung mit den Werten des Logbuchs:
+**B1. Dividendenreihe 550 → 512 → 707 €: aufgelöst, aber im Logbuch unvollständig dokumentiert.**
+Zuerst schien die Reihe nicht zur Basis von 6.072 € je Kopf und Jahr zu passen
+(505 bis 506 € im Monat). Das Gesamtkonzept klärt es: Die Reihe gilt für
+**Deutschland**, je Kopf und Monat, in Preisen von 2028. Der Klubschnitt steht in
+der Zeitpfad-Tabelle (506 € in 2028, 472 € in 2035, 651 € in 2060). Deutschland
+liegt wegen des höheren BIP je Kopf um 8,7 % darüber.
 
-- 11,21 % von 13.803 Mrd EUR bei 255,1 Mio Personen = 6.066 EUR je Jahr = 505 EUR je Monat.
-  Das stimmt mit den 6.072 EUR des Logbuchs überein (Abweichung 0,1 %).
-- Die Reihe beginnt aber bei **550** (Preise 2028). Das sind rund 8,7 % mehr als 505 bis 506.
-- Dasselbe Verhältnis zeigt sich bei der Aussage „ein Punkt des BIP sind 49 € Dividende im
-  Monat": gerechnet ergeben 1 % von 13.803 Mrd EUR bei 255,1 Mio Personen **45,1** EUR im Monat.
-  Beide Zahlen (550 und 49) passen zueinander, aber nicht zur Basis von 255,1 Mio.
-- Rückgerechnet entspricht 49 EUR je Punkt und Monat einer Bezugsgröße von rund
-  **235 Mio Personen** statt 255,1 Mio.
+Nachrechnung: 506 × 1,087 = 550; 472 × 1,087 = 513; 651 × 1,087 = 707,6. Auch die
+„49 € je BIP-Punkt und Monat" gelten für Deutschland (1 % von 4.914,9 Mrd € bei
+rund 84 Mio Einwohnern). Der erste Verdacht, die Bezugsgröße sei 235 Mio Personen
+statt 255,1 Mio, war damit ein Missverständnis des Logbuchs, kein Fehler im Modell.
 
-Mögliche Erklärungen, **keine davon belegt**: eine andere Bezugsgruppe (etwa nur
-Anspruchsberechtigte), eine andere Bevölkerungszahl für 2028, oder ein anderer
-Zeitbezug. Das Logbuch nennt dazu nichts. Solange das offen ist, werden die
-Werte 550, 512 und 707 nicht als Parameter geführt.
+Was bleibt: **Logbuch Band II (v3.5, Korrektur 43) nennt die Reihe ohne
+Bezugsgruppe („Deutschland") und ohne Zeiteinheit („je Monat").** Wer nur das
+Logbuch liest, kann sie nicht einordnen. Ob das eine Korrektur (Nummer 47) ist,
+entscheidet der Verfasser.
 
-**B2. Zwei Werte für die Dividende 2060.** Der Zeitpfad nennt 707 € (bei 1,0 % realem Wachstum),
-der Punkt „Wachstumsannahme" nennt 712 € als Vergleichswert bei 1,0 %. Der Unterschied beträgt
-0,7 %. Welcher Wert gilt, ist nicht bestimmt.
+**B2. Zwei Werte für Deutschland 2060 und 2035 im selben Dokument.**
+Das Gesamtkonzept nennt im Seitentext und in Korrektur 43: **707 €** (2060) und
+**512 €** (Tiefpunkt). Die Sensitivitätstabelle desselben Dokuments nennt im
+Zentralfall (1,0 %): **712 €** (2060) und **513 €** (2035). Die Abweichung beträgt
+0,7 % bzw. 1 €.
 
-**B3. Das BIP von Deutschland 2028.** Band II nennt 4.914,9 Mrd EUR. Das Audit in Band I (v3.0)
-nennt als „amtlich fortgeschrieben" 4.884 Mrd EUR, ohne Jahr. Ob beide dasselbe Jahr meinen,
-ist nicht erkennbar. Der Wert 4.914,9 ist eingetragen, der Abgleich bleibt offen.
+Welcher Wert aus dem Rechenskript stammt, ist nicht bestimmbar, weil `pfad.py`
+nicht vorliegt. Nachrechnung stützt 707 (651 × 1,087 = 707,6); 712 würde einen
+Klubwert von 655 statt 651 verlangen. Beide Werte stehen in `parameter.toml`
+bzw. im Hinweis; als Parameter geführt ist 707.
+
+**B3. BIP Deutschland.** Band II nennt 4.914,9 Mrd € (2028). Das Audit in Band I
+(v3.0) nennt „amtlich fortgeschrieben 4.884 Mrd €", ohne Jahr. Ob beide dasselbe
+Jahr meinen, ist nicht erkennbar. Eingetragen ist 4.914,9; der Abgleich bleibt offen.
+
+**B4. Irland: BIP oder GNI\*?** Logbuch v0.2 nennt GNI\* als Bezugsgröße für Irland
+(334,0 gegen 602,4 Mrd € BIP). Das Klub-BIP 2024 (12.157 Mrd €) stammt aus dem
+Datensatz `nama_10_gdp`, der BIP führt. Ob Irland dort nach BIP oder GNI\* eingeht,
+nennt das Logbuch nicht. Der Unterschied liegt bei 268 Mrd € (2,2 % des Klub-BIP,
+bezogen auf die Zahlen aus v0.2). Ist das BIP verwendet, sind alle Quoten, die
+das Klub-BIP als Nenner nutzen, für Irland anders gewichtet.
 
 ## C. Was die Nachrechnung bestätigt hat
 
-- 12.157 × 1,13535 = 13.802 (Logbuch: 13.803). Rundungsdifferenz.
-- 14.227 ÷ 12.157 = 1,17027 (Logbuch: 1,17024). Rundung des alten Werts 14.227.
-- 6.072 EUR je Kopf und Jahr stimmen mit 11,21 % des BIP überein (siehe B1).
+- 12.157 × 1,13535 = 13.802 (Logbuch: 13.803). Rundung.
+- 14.227 ÷ 12.157 = 1,17027 (Logbuch: 1,17024). Rundung des alten Werts.
+- 6.072 EUR je Kopf und Jahr entsprechen 11,21 % des BIP bei 255,1 Mio Personen
+  (6.066 EUR) und 506 EUR je Monat.
+- Deutschland liegt 8,7 % über dem Klubschnitt in allen drei Stützjahren.
 
 ## D. Nächster Schritt
 
-Die Punkte B1 bis B3 wären als offene Punkte im Logbuch zu führen. Ob eine davon
-eine Korrektur ist (Nummer 47 ff.), lässt sich erst entscheiden, wenn die
-Bezugsgröße der Dividendenreihe geklärt ist.
+Die Punkte B2 bis B4 wären als offene Punkte im Logbuch zu führen, B1 als
+Dokumentationslücke. Ob eine davon eine Korrektur wird (Nummer 47 ff.), liegt beim
+Verfasser. Für eine echte Prüfung von B2 fehlt das Rechenskript `pfad.py`.
