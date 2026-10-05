@@ -1,0 +1,22 @@
+# Rohdaten (Auflagen: logbuch, Abschnitt 5)
+daten/roh/
+*.zip
+*.parquet
+*.sav
+*.dta
+
+# Lizenzgebundene Quellen
+**/taxplorer*
+**/soep*
+**/eu-silc*
+**/eusilc*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# Lokales
+.env
+.DS_Store
