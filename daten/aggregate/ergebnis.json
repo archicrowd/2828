@@ -1,7 +1,118 @@
 {
   "modellstand": "v3.5",
   "erzeugt": "2026-10-05",
-  "parameterfile_sha256": "0cd7a0fe77b16f6dd20fad964525e970b9bc9aaa66f49cd2e169f0285bfa088a",
-  "parameter": [],
+  "parameterfile_sha256": "0ae9776b61b59fc4ba72ae65c677ea52e53e32f19a822e33b71cbfea74a90f19",
+  "parameter": [
+    {
+      "name": "klub_bip_2024",
+      "wert": 12157,
+      "einheit": "Mrd EUR",
+      "bezugsjahr": 2024,
+      "preisbasis": "nominal",
+      "quelle": "Logbuch Band I v3.1; dort Eurostat nama_10_gdp (2024), zehn Staaten",
+      "status": "modellrechnung",
+      "hinweis": "aus Logbuch übernommen, nicht gegen Eurostat neu abgerufen. Der Datensatz nama_10_gdp ist BIP; ob Irland dort nach BIP oder nach GNI* eingeht, nennt das Logbuch nicht (v0.2 verwendete GNI* als Bezugsgröße). Abgleich offen"
+    },
+    {
+      "name": "klub_einwohner_2024",
+      "wert": 255.1,
+      "einheit": "Mio Personen",
+      "bezugsjahr": 2024,
+      "preisbasis": "keine",
+      "quelle": "Logbuch Band I v3.1; dort Eurostat demo_gind (2024)",
+      "status": "modellrechnung",
+      "hinweis": "aus Logbuch übernommen, nicht neu abgerufen"
+    },
+    {
+      "name": "klub_staatsquote_2024",
+      "wert": 49.5,
+      "einheit": "% des BIP",
+      "bezugsjahr": 2024,
+      "preisbasis": "keine",
+      "quelle": "Logbuch Band I v3.1; dort Eurostat gov_10a_exp (2024)",
+      "status": "modellrechnung",
+      "hinweis": "aus Logbuch übernommen, nicht neu abgerufen"
+    },
+    {
+      "name": "fortschreibung_bip_2024_2028",
+      "wert": 1.13535,
+      "einheit": "Faktor",
+      "bezugsjahr": 2028,
+      "preisbasis": "nominal",
+      "quelle": "Logbuch Band II v3.5 (Korrektur 42): Fortschreibung des Istwerts 2024 mit den Raten der Frühjahrsprojektion",
+      "status": "modellrechnung",
+      "hinweis": "Raten der Frühjahrsprojektion nicht im Logbuch ausgewiesen; Quelle der Raten offen. Nicht verwechseln mit dem alten Kalibrierfaktor 1,17024 der deutschen Modellbasis (Korrektur 42)"
+    },
+    {
+      "name": "klub_bip_2028",
+      "wert": 13803,
+      "einheit": "Mrd EUR",
+      "bezugsjahr": 2028,
+      "preisbasis": "nominal",
+      "quelle": "Logbuch Band II v3.5 (Korrektur 42)",
+      "status": "modellrechnung",
+      "hinweis": "Nachrechnung: 12.157 x 1,13535 = 13.802 (Rundung). Der frühere Wert 14.227 war falsch"
+    },
+    {
+      "name": "de_bip_2028",
+      "wert": 4914.9,
+      "einheit": "Mrd EUR",
+      "bezugsjahr": 2028,
+      "preisbasis": "nominal",
+      "quelle": "Logbuch Band II v3.5 (Korrektur 42)",
+      "status": "modellrechnung",
+      "hinweis": "aus Logbuch übernommen. Das Audit in Band I v3.0 nennt amtlich fortgeschrieben 4.884 Mrd EUR; Bezugsjahr dieses Werts im Logbuch nicht angegeben, Abgleich offen"
+    },
+    {
+      "name": "verteidigung_basis_cofog_2024",
+      "wert": 1.401,
+      "einheit": "% des BIP",
+      "bezugsjahr": 2024,
+      "preisbasis": "keine",
+      "quelle": "Logbuch Band II v3.5; dort Eurostat gov_10a_exp COFOG GF02, zehn Einzelabrufe, BIP-gewichtet",
+      "status": "modellrechnung",
+      "hinweis": "COFOG-Definition. Das Ziel von 2,5 % folgt der NATO-Systematik und ist damit nicht vergleichbar (Logbuch, offener Punkt)"
+    },
+    {
+      "name": "dividende_anteil_bip_2028",
+      "wert": 11.21,
+      "einheit": "% des BIP",
+      "bezugsjahr": 2028,
+      "preisbasis": "keine",
+      "quelle": "Logbuch Band II v3.5",
+      "status": "modellrechnung",
+      "hinweis": "Bezugsjahr aus dem Zusammenhang abgeleitet (Pfad über 32 Jahre bis 2060, Startjahr 2028); im Logbuch nicht ausdrücklich genannt"
+    },
+    {
+      "name": "dividende_anteil_bip_2060",
+      "wert": 10.55,
+      "einheit": "% des BIP",
+      "bezugsjahr": 2060,
+      "preisbasis": "keine",
+      "quelle": "Logbuch Band II v3.5",
+      "status": "modellrechnung",
+      "hinweis": "Bezugsjahr aus dem Zusammenhang abgeleitet (2028 + 32 Jahre); im Logbuch nicht ausdrücklich genannt"
+    },
+    {
+      "name": "dividende_je_kopf_jahr_2028",
+      "wert": 6072,
+      "einheit": "EUR je Kopf und Jahr",
+      "bezugsjahr": 2028,
+      "preisbasis": "nominal",
+      "quelle": "Logbuch Band II v3.5 (Korrektur 42, korrigierter Wert; vorher 6.253)",
+      "status": "modellrechnung",
+      "hinweis": "Nachrechnung: 11,21 % von 13.803 Mrd EUR bei 255,1 Mio Personen = 6.066 EUR (Abweichung 0,1 %). Preisbasis nominal ist eine Annahme, das Logbuch nennt sie nicht"
+    },
+    {
+      "name": "wachstum_real_je_kopf",
+      "wert": 1.0,
+      "einheit": "% pro Jahr",
+      "bezugsjahr": 2028,
+      "preisbasis": "keine",
+      "quelle": "eigene Setzung",
+      "status": "annahme",
+      "hinweis": "Logbuch Band II: gesetzt, nicht abgeleitet. Trägt jede künftige Eurozahl; Bandbreite 0 bis 2 % ist größer als jeder Effekt, über den im Konzept gestritten wird"
+    }
+  ],
   "ergebnisse": []
 }
