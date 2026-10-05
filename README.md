@@ -8,7 +8,7 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v3.5.1** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
+**Modellstand: v3.6** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
 
 ## Aufbau
@@ -40,6 +40,10 @@ flüchtigen Arbeitsumgebung, die zurückgesetzt wurde (Logbuch Band II,
 „Vorbemerkung zur Lücke"). Was vor diesem Repository gerechnet wurde, ist im
 Logbuch beschrieben, aber aus diesem Repository **nicht reproduzierbar**.
 Reproduzierbar ist nur, was ab dem ersten Skript-Commit hier liegt.
+
+Seit v3.6 liegt `modell/pfad.py` als **Rekonstruktion** vor, nicht als Original. Sie
+trifft 23 von 23 Referenzwerten der Zeitpfad-Tabelle (`daten/aggregate/pfad_abgleich.csv`).
+Das zeigt Übereinstimmung, nicht, dass das Original so gerechnet hat.
 
 ## Datenauflagen
 

@@ -58,6 +58,25 @@ nennt das Logbuch nicht. Der Unterschied liegt bei 268 Mrd € (2,2 % des Klub-B
 bezogen auf die Zahlen aus v0.2). Ist das BIP verwendet, sind alle Quoten, die
 das Klub-BIP als Nenner nutzen, für Irland anders gewichtet.
 
+**Stand v3.6 (5. Oktober 2026), Nachtrag zu B2 und neue Punkte B5, B6.**
+
+*B2.* Die Rekonstruktion `modell/pfad.py` erklärt beide Werte: 707 und 512 gehören zu
+0,980 % realem Wachstum je Kopf (= 1,03 / 1,02 − 1), 712 und 513 zu 1,0 %. Hypothese,
+am Original nicht geprüft. Die Entscheidung, welche Zahl gilt, liegt beim Verfasser.
+
+*B5. Ebene A.* Band II (v3.2): 8,94 % des BIP. Zeitpfad-Tabelle 2028, „A gesamt": 9,04 %.
+0,10 Punkte sind nicht erklärt.
+
+*B6. Ausgangslage.* Schuldenquote 78,4 %, effektiver Zins 1,53 % und Verteidigung
+1,401 % stammen aus 2024, stehen im Modell aber als Werte 2028. Sensitivität siehe
+Logbuch Band III, v3.6.
+
+Die „Mindestquote" (Abschnitt A) ist seit v3.6 reproduziert: kleinste Steuerquote, bei
+der die Dividende je Kopf in jedem Jahr mindestens dem Versprechen (479 EUR für
+Deutschland, 441 EUR im Klubschnitt) entspricht; maßgebend ist 2035. Die Bezugsgröße
+ist damit geklärt (% des BIP). Als Parameter eingetragen wird sie nicht, weil sie
+Ergebnis ist, kein Eingang.
+
 ## C. Was die Nachrechnung bestätigt hat
 
 - 12.157 × 1,13535 = 13.802 (Logbuch: 13.803). Rundung.
