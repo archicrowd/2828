@@ -22,3 +22,15 @@ dividende_klub_monat,2035,471.0668,472.0,-0.9332,1.5,ja
 dividende_klub_monat,2060,649.9396,651.0,-1.0604,1.5,ja
 mindestquote_wachstum_0,,30.6157,30.61,0.0057,0.01,ja
 mindestquote_wachstum_1,,29.9706,29.97,0.0006,0.01,ja
+dividende_de_monat_wachstum_0.0,2035,472.8506,473.0,-0.1494,1.5,ja
+dividende_de_monat_wachstum_0.0,2060,503.3414,504.0,-0.6586,1.5,ja
+dividende_de_monat_wachstum_0.5,2035,492.5451,493.0,-0.4549,1.5,ja
+dividende_de_monat_wachstum_0.5,2060,599.2618,600.0,-0.7382,1.5,ja
+dividende_de_monat_wachstum_1.0,2035,512.8363,513.0,-0.1637,1.5,ja
+dividende_de_monat_wachstum_1.0,2060,711.1766,712.0,-0.8234,1.5,ja
+dividende_de_monat_wachstum_1.5,2035,533.7393,534.0,-0.2607,1.5,ja
+dividende_de_monat_wachstum_1.5,2060,841.6533,842.0,-0.3467,1.5,ja
+dividende_de_monat_wachstum_2.0,2035,555.2693,556.0,-0.7307,1.5,ja
+dividende_de_monat_wachstum_2.0,2060,993.6554,994.0,-0.3446,1.5,ja
+dividende_de_monat_2035_text,2035,512.0292,512.0,0.0292,1.5,ja
+dividende_de_monat_2060_text,2060,706.4561,707.0,-0.5439,1.5,ja

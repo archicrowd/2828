@@ -22,3 +22,15 @@ dividende_klub_monat,2035,472,EUR je Kopf und Monat,real (Preise 2028),Gesamtkon
 dividende_klub_monat,2060,651,EUR je Kopf und Monat,real (Preise 2028),Gesamtkonzept Zeitpfad-Tabelle (Chat 4.10.2026)
 mindestquote_wachstum_0,,30.61,% des BIP,keine,Gesamtkonzept (Chat 4.10.2026); Logbuch Band II v3.4 nennt 30.6
 mindestquote_wachstum_1,,29.97,% des BIP,keine,Gesamtkonzept (Chat 4.10.2026)
+dividende_de_monat_wachstum_0.0,2035,473,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland
+dividende_de_monat_wachstum_0.0,2060,504,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland
+dividende_de_monat_wachstum_0.5,2035,493,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland
+dividende_de_monat_wachstum_0.5,2060,600,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland
+dividende_de_monat_wachstum_1.0,2035,513,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland; Zentralfall der Tabelle
+dividende_de_monat_wachstum_1.0,2060,712,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland; Zentralfall der Tabelle
+dividende_de_monat_wachstum_1.5,2035,534,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland
+dividende_de_monat_wachstum_1.5,2060,842,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland
+dividende_de_monat_wachstum_2.0,2035,556,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland
+dividende_de_monat_wachstum_2.0,2060,994,EUR je Kopf und Monat,real (Preise 2028),Sensitivitätstabelle Gesamtkonzept (Chat 4.10.2026); Deutschland
+dividende_de_monat_2035_text,2035,512,EUR je Kopf und Monat,real (Preise 2028),Seitentext und Korrektur 43 (Chat 4.10.2026); Deutschland
+dividende_de_monat_2060_text,2060,707,EUR je Kopf und Monat,real (Preise 2028),Seitentext und Korrektur 43 (Chat 4.10.2026); Deutschland

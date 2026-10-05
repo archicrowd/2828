@@ -13,9 +13,9 @@ Band II bis v3.5) und auf dem Gesamtkonzept im Chat „Steuerkonzept von 2525 au
 | Größe | Wert | Was fehlt |
 |---|---|---|
 | Mindestquote | 30,61 % (ohne Wachstum), 29,97 % (bei 1,0 %) | Bezugsjahr; ist Teil der Herleitung von `steuerquote_klub` und dort im Hinweis genannt |
-| Obergrenze von A | 36 % | Bezugsgröße (Schuldenstand? Einnahmen?). Der Seitentext nennt „11,5 % des gesamten Schuldenstands, an seiner Obergrenze 13,7 %" |
-| Höchstbedarf | 10,49 % im Jahr 2035 | Bezugsgröße (laut Zeitpfad-Tabelle „A gesamt" in % des BIP; nicht ausdrücklich bestätigt) |
-| Territorialer Aufschlag | +254 bis −728 € je Kopf | Zeitbezug (Monat oder Jahr) und Preisbasis |
+| Obergrenze von A | 36 % | **seit v3.7 als Parameter** `obergrenze_a_anteil_einzug` (Bezugsgröße: Einzug von A, 29,78 % des BIP; gegengerechnet gegen 11,5 % und 13,7 %) |
+| Höchstbedarf | 10,49 % im Jahr 2035 | **geklärt in v3.7:** % des BIP, Ergebnis von `pfad.py`, kein Eingang. Entspricht 35,2 % des Einzugs |
+| Territorialer Aufschlag | +254 bis −728 € je Kopf | **geklärt in v3.7:** EUR je Kopf und **Jahr**, nominal 2028 (aus der Rechnung abgeleitet), Ergebnis von `aufschlag.py` (+253 bis −726), kein Eingang |
 
 ## B. Unstimmigkeiten
 
@@ -57,6 +57,11 @@ Datensatz `nama_10_gdp`, der BIP führt. Ob Irland dort nach BIP oder GNI\* eing
 nennt das Logbuch nicht. Der Unterschied liegt bei 268 Mrd € (2,2 % des Klub-BIP,
 bezogen auf die Zahlen aus v0.2). Ist das BIP verwendet, sind alle Quoten, die
 das Klub-BIP als Nenner nutzen, für Irland anders gewichtet.
+
+**Stand v3.7 (5. Oktober 2026): B2, B3, B5 geklärt, B4 und B6 präzisiert, siehe Logbuch
+Band III, v3.7.** Die folgenden Absätze zu v3.6 sind der Zwischenstand und teils überholt:
+B5 war kein Widerspruch (A-Summe 8,94 enthält Verteidigung 2,50), und die Erklärung zu B2
+war unvollständig (nominales Wachstum ist in der Sensitivitätstabelle an das reale gekoppelt).
 
 **Stand v3.6 (5. Oktober 2026), Nachtrag zu B2 und neue Punkte B5, B6.**
 

@@ -58,12 +58,17 @@ def wert(P: dict, name: str) -> float:
     return float(P[name]["wert"])
 
 
-def rechne(P: dict, *, real_exakt: float | None = None, zins_vorlauf: float = 0.0) -> dict:
+def rechne(P: dict, *, real_exakt: float | None = None, zins_vorlauf: float = 0.0,
+           nominal_gekoppelt: bool = False) -> dict:
     """Rechnet den Pfad. real_exakt: reales Wachstum je Kopf in Prozent statt
     aus nominal/Preissteigerung abgeleitet. zins_vorlauf: Jahre, die das Auslaufen
-    des Altbestands vor 2028 begonnen hat (0 = Zentralfall)."""
+    des Altbestands vor 2028 begonnen hat (0 = Zentralfall). nominal_gekoppelt:
+    nominales Wachstum = (1 + real) * (1 + Preissteigerung) - 1; so rechnet nach
+    der Nachrechnung die Sensitivitätstabelle des Gesamtkonzepts (v3.7)."""
     g = wert(P, "wachstum_nominal") / 100
     pi = wert(P, "preissteigerung") / 100
+    if nominal_gekoppelt and real_exakt is not None:
+        g = (1 + real_exakt / 100) * (1 + pi) - 1
     r = real_exakt / 100 if real_exakt is not None else (1 + g) / (1 + pi) - 1
     d0 = wert(P, "schuldenquote_klub_2028")
     alt = wert(P, "zins_effektiv_altbestand")
@@ -138,7 +143,22 @@ def main() -> int:
     for ref in lies_referenz():
         gr = ref["groesse"]
         soll = float(ref["wert"])
-        if gr.startswith("mindestquote"):
+        if gr.startswith("dividende_de_monat_wachstum_"):
+            # Sensitivitätstabelle: Deutschland = Klubwert mal Faktor aus den
+            # Parametern; nominales Wachstum an das reale gekoppelt
+            r_prozent = float(gr.rsplit("_", 1)[1])
+            f_de = (wert(P, "dividende_de_monat_2028") / wert(P, "dividende_klub_monat_2028"))
+            jahr = int(ref["jahr"])
+            ist = rechne(P, real_exakt=r_prozent, nominal_gekoppelt=True)["zeilen"][jahr][
+                "dividende_klub_monat"] * f_de
+            tol = TOL_EURO
+        elif gr.startswith("dividende_de_monat_20"):
+            # Seitentext: Zentralfall mit 3,0 % nominal (nicht gekoppelt), Deutschland
+            f_de = (wert(P, "dividende_de_monat_2028") / wert(P, "dividende_klub_monat_2028"))
+            jahr = int(ref["jahr"])
+            ist = z[jahr]["dividende_klub_monat"] * f_de
+            tol = TOL_EURO
+        elif gr.startswith("mindestquote"):
             r_prozent = float(gr.rsplit("_", 1)[1])
             # "1" in der Referenz bedeutet das Szenario "1,0 %" des Gesamtkonzepts
             ist = mindestquote(P, r_prozent) if r_prozent == 0 else zentral["mindestquote"]

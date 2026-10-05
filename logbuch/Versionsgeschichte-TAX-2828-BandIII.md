@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 5. Oktober 2026 · Modellstand **v3.6**
+Stand: 5. Oktober 2026 · Modellstand **v3.7**
 
 ---
 
@@ -156,6 +156,93 @@ wenn die Ausgangslage 2024 als 2028 geführt wird.
 
 ---
 
+### v3.7 — Offene Punkte aus dem Chat geklärt, zweite Rekonstruktion
+
+**Art der Änderung: MINOR** (Annahmen und offene Punkte durch Quellen ersetzt, eine neue
+Rechnung). Keine Zahl des Modells ändert sich. Berichtigt werden Aussagen aus v3.5.1
+und v3.6, siehe „Arbeitsfehler" unten. 5. Oktober 2026.
+
+**Datenquelle.** Suche im Chat „Steuerkonzept von 2525 auf 3030 umstellen": Fragmente
+der Originalskripte (`altschuld.py`), der Auftrag für die unabhängige Nachrechnung,
+Seitentext, Tabellen. **Sekundärquelle**: die Originalskripte selbst wurden nicht
+eingesehen, nur Teile ihres Codes und ihrer Ausgabe im Chat.
+
+**Was geklärt ist**
+- **B5, kein Widerspruch.** 8,94 % ist die A-Summe der Rahmenstruktur *mit* Verteidigung
+  bei 2,50 % (Ziel 2035). Im Startjahr steht Verteidigung bei 1,40 %: A-Aufgaben 2028 =
+  8,94 − 2,50 + 1,40 = 7,84 %; mit Zinsdienst 1,20 % ergibt das 9,04 %. 2035:
+  8,94 + 1,55 = 10,49 %. Eine frühere Tabelle im Chat nennt genau diese
+  Aufteilung (A-Aufgaben 7,84 und 8,94, Zinsdienst 1,20 und 1,55).
+- **6,44 ist abgeleitet, keine Restgröße.** 6,44 = 3,75 + 0,77 + 0,74 + 0,30 + 0,30 +
+  0,29 + 0,29 (die sieben A-Posten ohne Verteidigung) = 8,94 − 2,50. Die Spalte 2028 der
+  Zeitpfad-Tabelle ist damit ein **unabhängiger** Test, nicht nur eine Kalibrierung.
+- **B2, nachgerechnet.** Die Sensitivitätstabelle koppelt das nominale Wachstum an das
+  reale: g_nominal = (1 + r) × (1 + 2,0 %) − 1. Die Zeile „1,0 % Zentralfall" rechnet
+  also mit 3,02 % nominal, der Seitentext mit 3,0 % nominal und damit 0,980 % real.
+  `modell/pfad.py` trifft alle zehn Werte der Tabelle (2035 und 2060, fünf Zeilen) auf
+  höchstens 0,8 EUR und die Textwerte 512 und 707 auf 0,03 bzw. 0,5 EUR. Ohne die
+  Kopplung weicht die Zeile 2,0 % um bis zu 20 EUR ab. Der Chat gibt die Rechenvorgabe
+  selbst an („das reale Wachstum je Kopf ist also (1.03/1.02 - 1)").
+  **Folge:** Seitentext (707 EUR) und Tabelle (712 EUR) sind zwei verschiedene Läufe
+  mit 0,02 Punkten Unterschied im nominalen Wachstum, nicht ein Rechenfehler. Dass beide
+  als „Zentralfall" auf derselben Seite stehen, bleibt ein Darstellungsproblem.
+- **Obergrenze von A: Bezugsgröße geklärt.** 36 % beziehen sich auf den **Einzug von A**
+  = 30,60 − 0,82 = 29,78 % des BIP. Gegenrechnung: 36 % × 29,78 = 10,72 % des BIP;
+  geteilt durch 78,4 % Schuldenquote 13,7 % (Seitentext: 13,7 %); A 2028 mit 9,04 %
+  geteilt durch 78,4 % ergibt 11,5 % (Seitentext: 11,5 %). Der Höchstbedarf von 10,49 %
+  des BIP (2035) entspricht 35,2 % des Einzugs. Die ältere Angabe 40 % bezog sich auf
+  eine überholte Fassung mit Steuerquote 27,91 % (10,49 / 27,09 = 38,7 %).
+- **Territorialer Aufschlag: Einheit geklärt, nachgerechnet.** Einheit EUR je Kopf und
+  **Jahr** (Startjahr, schmilzt über dreißig Jahre ab), nominal 2028 (die Rechnung nutzt
+  die nominale BIP-Fortschreibung; ausdrücklich dokumentiert ist die Preisbasis nicht).
+  `modell/aufschlag.py` ergibt +253 EUR (Frankreich) bis −726 EUR (Irland) gegen +254
+  und −728 in Korrektur 44; Summe über alle Gebiete null. Die Abweichung von 1 bis 2 EUR
+  liegt vermutlich an gerundeten Schuldenquoten (Summe 78,45 % gegen 78,4 %).
+- **B3, überholt, nicht entschieden.** Beide Werte meinen 2028. 4.884 Mrd EUR nennt der
+  frühe Audit (Band I, v3.0) als „amtlich fortgeschrieben", ohne Quelle für den Pfad.
+  4.914,9 Mrd EUR ergibt sich aus Eurostat-Ist 2024 (4.329,0) mal 1,13535 (= 1,033 ×
+  1,028 × 1,038 × 1,03) und ist seit v3.3 die Basis. Differenz 30,9 Mrd EUR = 0,63 %.
+  Woher 4.884 stammt, bleibt unbekannt; die Basis ändert sich dadurch nicht.
+- **B4, Sachstand geklärt, Entscheidung offen.** Das Klubmodell rechnet mit dem
+  **BIP** Irlands: 561.940 Mio EUR (Eurostat `nama_10_gdp`, 2024) in der Länderliste, und
+  der Seitentext nennt Irlands BIP je Kopf das 2,19-Fache des Klubschnitts (Nachrechnung:
+  118.240 EUR gegen 54.120 EUR = 2,185, 2028). Die ältere Seitenfassung „Klub der Neun"
+  rechnete die Dividendenkosten für Irland dagegen mit GNI\* (334,0 gegen 602,4 Mrd EUR,
+  2025). Beide Bezugsgrößen stehen also im Konzept. **Größenordnung** bei Ersatz durch
+  GNI\* (Annahme: Verhältnis 0,5545 aus 2025 gilt auch 2024): Klub-BIP 2024 um etwa
+  250 Mrd EUR (2,1 %) niedriger, Schuldenquote 80,1 % statt 78,4 %, Dividende im
+  Klubschnitt etwa 2 % niedriger (rund 496 statt 506 EUR 2028). Einfache Skalierung,
+  keine Neurechnung der Anteile.
+- **B6, präzisiert.** Der Seitentext nennt „10,8 Billionen EUR = 78,4 %". Das ist 78,4 %
+  des **BIP 2028** (0,784 × 13.803 = 10.822 Mrd EUR). Der Eurostat-Stand 2024 beträgt
+  9.537 Mrd EUR. Das Modell unterstellt damit, dass der Schuldenstand von 2024 bis 2028
+  um 13,5 % in Euro wächst (Quote konstant), ab 2028 aber konstant bleibt, und dass das
+  Auslaufen des Altbestands erst 2028 beginnt. Der Seitentext nennt kein Bezugsjahr.
+  Sensitivität unverändert (v3.6).
+- **Zwei Fassungen im Chat.** Eine ältere Zeitpfad-Tabelle (Dividende 8,52 %, 396 EUR
+  Klub, 418 EUR Deutschland, Steuerquote 27,91 %) steht im selben Chat und ist
+  überholt. Maßgeblich sind 30,6 % und die Tabelle in v3.6.
+
+**Was neu ist:** `modell/aufschlag.py`, `daten/aggregate/laender_2024.csv` (Länderliste,
+Sekundärquelle, an der Quelle zu prüfen), `aufschlag.csv`; in `pfad.py` der Abgleich der
+Sensitivitätstabelle (jetzt 35 Referenzwerte); Parameter `obergrenze_a_anteil_einzug`
+(30 Parameter); berichtigte Hinweise zu `a_ohne_verteidigung_zins_bip_2028`,
+`b_fachaufgaben_bip_2028`, `dividende_de_monat_2060`, `wachstum_real_je_kopf`.
+
+**Wodurch es auffiel.** Suche nach 8,94 und 9,04 im Chat; dabei erschien die Tabelle
+mit 7,84 + 1,20. Die Abweichung der 0,0-Zeile der Sensitivitätstabelle (−13 EUR in 2060)
+legte die Kopplung nahe.
+
+**Beweiskraft.** Wie in v3.6: Rekonstruktion, Übereinstimmung ist kein Beweis für das
+Original. Neu ist, dass dieselbe Struktur nun drei voneinander getrennte Tabellen trifft
+(Zeitpfad, Sensitivität, Aufschlag) und dass die Kopplungsannahme aus dem Chat selbst
+stammt und nicht aus meiner Anpassung. Die Kopplung wurde aber nach Sicht der Abweichung
+getestet; ihre Wahl ist deshalb nur durch die zehn Treffer gestützt, nicht vorab festgelegt.
+
+*Skripte: `modell/pfad.py`, `modell/aufschlag.py`. Quellen wie v3.6, Sekundärquelle Chat.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Keine neue nummerierte Korrektur. **Die Nummer 47 ist frei.** Ob Punkt B1 unten als
@@ -171,6 +258,9 @@ Fehler des KI-Systems bei der Arbeit an diesem Repository. Sie betreffen die
 | Behauptet, die Sitzung sei keinem Projekt zugeordnet | Sie war an das Projekt „2525" gebunden; die Suche lief auf dessen Chats | Treffer des Chats „Steuerkonzept von 2525 auf 3030 umstellen" |
 | Die hochgeladene Datei als Band I behandelt | Sie war der Stand v0.9 (1. Oktober 2026), nicht der Projektstand v3.1. Nicht committet | Kopfzeile und Versionsüberschriften der Datei |
 | Zwischenhypothese: die Dividendenreihe beruhe auf einer Bezugsgröße von rund 235 Mio Personen, mögliche Folge „Zahlen in verschiedenen Einheiten nebeneinander" | Die Reihe gilt für Deutschland; das Verhältnis zum Klubschnitt (1,087) erklärt alles. Die Hypothese stand kurz als Befund in `nicht-eingetragen.md` (Commit `262e984`) und ist in `23b7050` korrigiert | Suche im Chat des Gesamtkonzepts |
+| v3.6: `a_ohne_verteidigung_zins_bip_2028` (6,44) als aus der Dividende 2028 zurückgerechnete Restgröße geführt; daraus gefolgert, die Spalte 2028 sei kein unabhängiger Test | 6,44 ist die Summe der sieben A-Posten ohne Verteidigung (= 8,94 − 2,50). Die Spalte 2028 ist ein unabhängiger Test. Die Übereinstimmung mit der Restgröße 6,439 ist keine Kalibrierung | Suche nach 8,94 und 9,04 im Chat (v3.7) |
+| v3.6: Punkt B5 („0,10 Punkte ungeklärt") als Unstimmigkeit geführt | Kein Widerspruch: 8,94 enthält die Verteidigung mit 2,50, die Tabelle 2028 rechnet mit 1,40 (8,94 − 2,50 + 1,40 + 1,20 = 9,04). Ich hatte die Herkunft im Chat nicht gesucht, bevor ich den Punkt eintrug | wie oben |
+| v3.6: Die Zahl „etwa neun unabhängige Werte" | Zu niedrig, weil die Spalte 2028 und die Konstante 6,44 als abhängig gezählt wurden | wie oben |
 | Commit-Nachricht von `23b7050` nennt „26 gesamt" | Es sind 25 Parameter | Zählung im Lauf-Skript. Die Nachricht wurde nicht per Force-Push geändert |
 
 **Ablaufnotiz, kein Fehler.** Der Push des Tags `v3.5` wurde von der Verbindung dieser
@@ -180,18 +270,18 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.6
+## 7 | Offene Punkte, Stand v3.7
 
 | Punkt | Status |
 |---|---|
 | **B1: Dokumentationslücke Dividendenreihe** | **neu, 5. Oktober 2026.** Band II (Korrektur 43) nennt 550 → 512 → 707 € ohne Bezugsgruppe („Deutschland") und ohne Zeiteinheit („je Monat"). Inhaltlich aufgelöst, im Logbuch nicht vermerkt. Ob Korrektur 47, entscheidet der Verfasser |
-| **B2: 707 gegen 712 €** | **erklärt in v3.6 (Hypothese), nicht entschieden.** 707 und 512 gehören zu 0,980 % realem Wachstum je Kopf, 712 und 513 zu 1,0 %. Welche Zahl im Gesamtkonzept stehen bleibt, ist eine Entscheidung des Verfassers. Prüfung am Original nicht möglich |
-| **B3: BIP Deutschland 2028** | **neu.** 4.914,9 Mrd € (Band II) gegen „amtlich fortgeschrieben 4.884 Mrd €" (Audit v3.0, ohne Jahr). Ob beide dasselbe Jahr meinen, ist nicht erkennbar |
-| **B4: Irland, BIP oder GNI\*** | **neu.** Logbuch v0.2 nennt GNI\* als Bezugsgröße; das Klub-BIP 2024 stammt aus `nama_10_gdp` (BIP). Ob Irland dort nach BIP oder GNI\* eingeht, steht nicht im Logbuch. Unterschied nach den Zahlen aus v0.2 rund 268 Mrd € (etwa 2 % des Klub-BIP) |
-| **B5: Ebene A 8,94 % gegen 9,04 %** | **neu in v3.6.** Band II v3.2 gegen Zeitpfad-Tabelle 2028; 0,10 Punkte ungeklärt |
-| **B6: Ausgangslage 2024 als 2028** | **neu in v3.6.** Schuldenquote, effektiver Zins und Verteidigung stammen aus 2024. Entscheidung des Verfassers nötig (siehe v3.6) |
-| **Rechenskripte** | `pfad.py` ist seit v3.6 als **Rekonstruktion** vorhanden (23 von 23 Referenzwerten), nicht als Original. Es fehlen weiterhin `basis.py`, `final.py`, `tilgung.py`, `aufschlag.py` (Band II) und alle Skripte bis v3.4. Aus diesem Repository reproduzierbar ist der Zeitpfad ab den Parametern, nicht die Herleitung der Parameter (Kalibrierung, COFOG-Anteile, 6,44 und 10,35) |
-| **Herleitung von 6,44 und 10,35** | `a_ohne_verteidigung_zins_bip_2028` ist eine Restgröße der Dividende 2028, `b_fachaufgaben_bip_2028` stammt aus Band II (v3.2, COFOG). Die COFOG-Abrufe liegen nicht vor, die Shell erreicht `ec.europa.eu` nicht |
+| **B2: 707 gegen 712 €** | **nachgerechnet in v3.7.** Seitentext: 3,0 % nominal (0,980 % real). Tabelle: nominales Wachstum an das reale gekoppelt, Zeile 1,0 % hat 3,02 % nominal. Alle zehn Tabellenwerte auf höchstens 0,8 EUR getroffen. Offen bleibt nur die Darstellung: zwei „Zentralfälle" auf einer Seite. Welche Zahl gilt, entscheidet der Verfasser |
+| **B3: BIP Deutschland 2028** | **überholt, geschlossen in v3.7.** Beide Werte meinen 2028. 4.914,9 hat eine dokumentierte Herleitung und ist seit v3.3 Basis. Quelle von 4.884 unbekannt (Differenz 0,63 %) |
+| **B4: Irland, BIP oder GNI\*** | **Sachstand geklärt in v3.7, Entscheidung offen.** Das Klubmodell rechnet mit BIP (Länderliste, Faktor 2,19 im Seitentext). Die ältere Seitenfassung „Klub der Neun" rechnete mit GNI\*. Ersatz durch GNI\* senkte das Klub-BIP um etwa 2,1 %, die Dividende um etwa 2 % (Größenordnung). Welche Bezugsgröße gilt und wie sie ausgewiesen wird, entscheidet der Verfasser |
+| **B5: Ebene A 8,94 % gegen 9,04 %** | **geschlossen in v3.7, war kein Widerspruch** (8,94 enthält Verteidigung 2,50, die Tabelle 2028 rechnet mit 1,40) |
+| **B6: Ausgangslage 2024 als 2028** | **offen, präzisiert in v3.7.** Schuldenquote 78,4 % gilt im Seitentext als Quote 2028 (10,8 Bio EUR), der Eurostat-Stand 2024 sind 9,537 Bio EUR. Effektiver Zins (1,53 %) und Verteidigung (1,401 %) stammen aus 2024. Entscheidung des Verfassers nötig, ob das Auslaufen des Altbestands 2024 oder 2028 beginnt (Sensitivität in v3.6) |
+| **Rechenskripte** | `pfad.py` (seit v3.6, 35 von 35 Referenzwerten) und `aufschlag.py` (seit v3.7) sind **Rekonstruktionen**, nicht Originale. Es fehlen weiterhin `basis.py`, `final.py`, `tilgung.py` (Band II) und alle Skripte bis v3.4. Aus diesem Repository reproduzierbar ist der Zeitpfad ab den Parametern, nicht die Herleitung der Parameter (Kalibrierung, COFOG-Anteile, 6,44 und 10,35) |
+| **Herleitung von 6,44 und 10,35** | Beide sind Summen der COFOG-abgeleiteten Posten aus Band II (v3.2): 6,44 für Ebene A ohne Verteidigung, 10,35 für Ebene B. Die zugrunde liegenden Eurostat-Abrufe (COFOG, zehn Staaten) liegen nicht vor, die Shell erreicht `ec.europa.eu` nicht. Nachgerechnet sind die Summen der Posten, nicht die Posten |
 | **Nicht eingetragene Größen** | Mindestquote, Obergrenze von A, Höchstbedarf, territorialer Aufschlag: Bezugsjahr oder Bezugsgröße fehlt. Siehe `daten/aggregate/nicht-eingetragen.md`, Abschnitt A |
 | **Rohdaten und Abrufe nicht reproduzierbar** | Die Eurostat-Abrufe (zehn Einzelabrufe COFOG GF02, `gov_10a_exp`, `gov_10a_taxag`, `nama_10_gdp`, `demo_gind`) sind im Logbuch nur benannt, die Abrufergebnisse liegen nicht vor. Die Shell erreicht `ec.europa.eu` nicht (Logbuch v3.1) |
 | **Prüfstand der Logbuch-Abschrift** | Band I ab v0.10 und Band II sind Abschriften ohne Vergleichsquelle, siehe `HERKUNFT.md` |
