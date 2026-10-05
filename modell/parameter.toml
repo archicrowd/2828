@@ -1,0 +1,39 @@
+# Parameterfile des Modells TAX 28:28
+#
+# Jeder Parameter ist ein Block [[parameter]] mit festen Pflichtfeldern.
+# Das Lauf-Skript (lauf.py) lehnt unvollständige Einträge ab.
+#
+# Pflichtfelder
+#   name        eindeutiger Name, nur a-z, 0-9 und Unterstrich
+#   wert        Zahl
+#   einheit     z. B. "Mrd EUR", "EUR je Kopf", "% des BIP", "Anteil", "Mio Personen"
+#   bezugsjahr  Jahr, auf das sich der Wert bezieht (Ganzzahl)
+#   preisbasis  "nominal", "real" oder "keine" (bei Anteilen und Quoten)
+#   quelle      Quelle mit Fundstelle, oder "eigene Setzung"
+#   status      "belegt", "groessenordnung", "modellrechnung", "annahme" oder "offen"
+#
+# Regeln (aus CLAUDE.md und Logbuch, Korrekturen 42 bis 46)
+#   - Geldbeträge brauchen preisbasis "nominal" oder "real", nie "keine".
+#   - Bei preisbasis "real" muss zusätzlich preisjahr gesetzt sein.
+#   - Status "belegt" verlangt eine Quelle, die nicht "eigene Setzung" ist.
+#   - Quellen, die nur sekundär sind, werden im Feld hinweis gekennzeichnet.
+#
+# Optionale Felder
+#   preisjahr   Preisjahr bei preisbasis "real"
+#   hinweis     Freitext, z. B. "Sekundärquelle", "maschinell aus PDF gelesen"
+#
+# Beispiel (auskommentiert, kein echter Wert):
+#
+# [[parameter]]
+# name       = "beispiel_klub_bip"
+# wert       = 0.0
+# einheit    = "Mrd EUR"
+# bezugsjahr = 2028
+# preisbasis = "nominal"
+# quelle     = "Eurostat nama_10_gdp, Fortschreibung Frühjahrsprojektion"
+# status     = "modellrechnung"
+# hinweis    = "Platzhalter, nicht verwenden"
+
+[modell]
+# Modellstand, auf den sich die Ergebnisdatei bezieht (Logbuch-Version).
+version = "v3.5"
