@@ -323,6 +323,9 @@ def main() -> int:
              deckung_luecke_mrd_klub=(q - gedeckt) / 100 * BIP28_KLUB)
 
     W["selbstpruefung_jahre"] = n_geprueft
+    # Externe Kennzahlen der Ausgangslage (nur durchgereicht, Quelle im toml)
+    for k in ("abgabenkeil_de_2024", "abgabenkeil_oecd_2024", "abgeltungsteuer_de", "anteil_mit_mehr_de"):
+        W[k] = float(PAR[k])
 
     # Ausgaben
     (AGG / "gesamtrechnung.json").write_text(json.dumps(W, ensure_ascii=False, indent=1), encoding="utf-8")

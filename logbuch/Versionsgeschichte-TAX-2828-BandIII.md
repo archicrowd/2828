@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 6. Oktober 2026 · Modellstand **v3.12**
+Stand: 6. Oktober 2026 · Modellstand **v3.13**
 
 ---
 
@@ -560,6 +560,38 @@ Quellen: Eurostat `gov_10a_main`, `demo_gind`; nationales Modell `modell/kern/mo
 
 ---
 
+### v3.13 — Kurzfassung des Gesamtkonzepts (zwei Seiten)
+
+**Art der Änderung: MINOR** (neues Dokument, keine Rechnung geändert). 6. Oktober 2026.
+Auftrag des Verfassers: Kurzform auf zwei Seiten mit klarer Erzählung für Laien, anknüpfend an die alte Webseite
+(Komplexität, blockierte Verwaltung, Arbeit höher belastet als Kapital und Maschinen, neues Grundsystem mit gemeinsamem
+Dach, „95 % haben mehr"), danach die neuen Regeln und eine Erklärung zur offenen Entwicklungsarbeit.
+
+**Bewegte Zahl:** keine. Neu in `gesamtrechnung.toml` (nur durchgereicht, mit Quelle): Abgabenkeil Deutschland 47,9 %
+und OECD-Schnitt 34,9 % (OECD, Taxing Wages 2025, Tabelle 3.1, 2024, Alleinstehende ohne Kinder, Durchschnittslohn;
+über die OECD-Seite gelesen, maschinell zusammengefasst, an der Quelle zu prüfen), Abgeltungsteuer 26,375 %
+(§ 32d EStG mit Solidaritätszuschlag), Anteil mit mehr Geld 95 % (Gruppenschätzung Stand A, `modell/kern`, Abschnitt F).
+
+**Neu:** `dokumente/werkzeuge/kurzfassung-bau.js`, `dokumente/TAX-2828-Kurzfassung.{docx,pdf}` (zwei Seiten, alle Zahlen
+aus `gesamtrechnung.json`); `pruefe_konzept.py` prüft zehn Kernzahlen und die Seitenzahl der Kurzfassung.
+
+**Wo die Kurzfassung bewusst vorsichtiger ist als der Auftrag**
+- „95 % haben später mehr in der Tasche": als **Gruppenschätzung des nationalen Modells** ausgewiesen. Sie stammt aus
+  Stand A (Quote 27,91 %, Dividende 515 EUR je Erwachsenem), ist ohne Mikrosimulation entstanden und für Stand B nicht neu
+  gerechnet. Als Tatsache stünde sie nicht im Text, solange sie sich nicht prüfen lässt.
+- „Einkommen aus Arbeit höher besteuert als Kapitalerträge und maschinelle Gewinne": belegt mit dem Abgabenkeil (47,9 %)
+  gegen die Abgeltungsteuer (26,4 %) und dem Umstand, dass Sozialbeiträge nur auf Arbeit anfallen. Nicht behauptet: dass
+  Unternehmensgewinne insgesamt niedriger belastet seien; bei ausgeschütteten Gewinnen kommt die Unternehmensbesteuerung hinzu.
+- „urwaldartig": als Bild in der Erzählung, ohne Zahl; keine unbelegten Superlative.
+- „parteilos": als Selbstbeschreibung des Projekts und als Einladung formuliert.
+- Das Repository ist privat; „öffentliches Logbuch" ist deshalb ersetzt durch „mit der Veröffentlichung zugänglich".
+- Dividende: der Klubschnitt (490 EUR je Einwohner, Preise 2028), nicht der deutsche Wert (siehe B17).
+
+*Skripte: `dokumente/werkzeuge/kurzfassung-bau.js`, `modell/pruefe_konzept.py`. Quellen: OECD Taxing Wages 2025; § 32d EStG;
+nationales Modell (Stand A).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 52. **Nächste freie Nummer: 53.** Die Nummern 31 bis 41 sind
@@ -601,7 +633,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.12
+## 7 | Offene Punkte, Stand v3.13
 
 | Punkt | Status |
 |---|---|
@@ -621,6 +653,8 @@ nicht geklärt.
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
 | **B15: Neu abrufen** | **neu, v3.12.** BIP, Schuldenquoten, Renditen und COFOG-Posten sind seit dem 4. Oktober nicht erneut geprüft; Zinsausgaben Estland geschätzt. Abruf je Land einzeln über das Web-Abrufwerkzeug (Ratenbegrenzung beachten) |
 | **B16: Seite zum Stand B** | **neu, v3.12.** zeigt die Werte der Fassung 4. Oktober; neu bauen, sobald B12 auf Klubebene steht |
+| **B17: Dividende gleich oder je Land?** | **neu, v3.13.** Der Text sagt „jeder Bürger dieselbe Dividende", die Rechnung (`final.py`) bewertet die Dividende für Deutschland aber mit dem deutschen BIP je Kopf (8,7 % über dem Klubschnitt). Beides zugleich geht nicht. Zu klären, ob die Dividende ein klubweit gleicher Eurobetrag ist (dann gilt der Klubschnitt, und das Kriterium 479 EUR wäre am Klubwert zu messen) oder ein gleicher Anteil am örtlichen BIP. Die Wahl verschiebt die Quote. Entscheidung des Verfassers |
+| **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
 | **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |
 | **Stand A und Stand B** | **neu, v3.8.** Modell (`1-modell`) und achtsprachige Webseite im Export stehen auf dem nationalen Stand (Quote 27,91 % bzw. 33 %, Position 10 Sozialabgaben, Logbuch v2.0); das Gesamtkonzept auf dem europäischen (Quote 30,6 %, v3.5). Die Seite hat den Rahmenwechsel nie gesehen. Zwei Builds der Seite (Tarifstufen 0/9/16/21/26/28 gegen 0/9/19/24/27/28); der Quelltext passt nur zum älteren, die Patch-Skripte sind nicht ausgeführt. Nach Angabe des Exports; von mir nicht geprüft |
 | **Herleitung von 6,44 und 10,35** | Beide sind Summen der COFOG-abgeleiteten Posten aus Band II (v3.2): 6,44 für Ebene A ohne Verteidigung, 10,35 für Ebene B. Die zugrunde liegenden Eurostat-Abrufe (COFOG, zehn Staaten) liegen nicht vor, die Shell erreicht `ec.europa.eu` nicht. Nachgerechnet sind die Summen der Posten, nicht die Posten |

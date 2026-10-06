@@ -5,7 +5,7 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.12"
+version = "v3.13"
 fassung = "6. Oktober 2026"
 
 [[parameter]]
@@ -77,3 +77,45 @@ preisbasis = "real 2028"
 quelle     = "bisheriger Projektstand (Logbuch)"
 status     = "setzung"
 hinweis    = "Kriterium der Quotenableitung"
+
+# ---- Ausgangslage für Text und Kurzfassung (externe Kennzahlen, nicht gerechnet) ----
+
+[[parameter]]
+name       = "abgabenkeil_de_2024"
+wert       = 47.9
+einheit    = "% der Arbeitskosten"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "OECD, Taxing Wages 2025, Tabelle 3.1: Alleinstehende ohne Kinder, 100 % des Durchschnittslohns"
+status     = "belegt"
+hinweis    = "Zweithöchster Wert der OECD nach Belgien (52,6 %); am 6.10.2026 über die OECD-Seite gelesen (maschinell zusammengefasst)"
+
+[[parameter]]
+name       = "abgabenkeil_oecd_2024"
+wert       = 34.9
+einheit    = "% der Arbeitskosten"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "OECD, Taxing Wages 2025, Tabelle 3.1"
+status     = "belegt"
+hinweis    = "OECD-Durchschnitt, gleicher Haushaltstyp"
+
+[[parameter]]
+name       = "abgeltungsteuer_de"
+wert       = 26.375
+einheit    = "% des Kapitalertrags"
+bezugsjahr = 2026
+preisbasis = "keine"
+quelle     = "§ 32d EStG (25 %) zuzüglich Solidaritätszuschlag 5,5 % darauf"
+status     = "belegt"
+hinweis    = "ohne Kirchensteuer; auf Ebene der Kapitalgesellschaft kommt bei Dividenden die Unternehmensbesteuerung hinzu"
+
+[[parameter]]
+name       = "anteil_mit_mehr_de"
+wert       = 95
+einheit    = "% der Bevölkerung Deutschlands"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "nationales Modell (Stand A), modell/kern/modell-2828-ergebnisse.txt Abschnitt F; dokumente/28-28-Homepage-Datenblatt.md 4.4"
+status     = "schaetzung"
+hinweis    = "Gruppenschätzung ohne Mikrosimulation, Stand A (Dividende 515 EUR je Erwachsenem, Quote 27,91 %), ohne Bestandsgarantie; mit Garantie über 99 %. Für Stand B nicht neu gerechnet"

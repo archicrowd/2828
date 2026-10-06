@@ -1,6 +1,6 @@
 {
  "fassung": "6. Oktober 2026",
- "version": "v3.12",
+ "version": "v3.13",
  "bip24_klub_mrd": 12157.2991,
  "faktor": 1.13534542536,
  "bip28_klub_mrd": 13802.733917918245,
@@ -500,5 +500,9 @@
  "deckung_gesamt": 29.848571428571432,
  "deckung_luecke": 0.9514285714285684,
  "deckung_luecke_mrd_klub": 131.32315413333603,
- "selbstpruefung_jahre": 33
+ "selbstpruefung_jahre": 33,
+ "abgabenkeil_de_2024": 47.9,
+ "abgabenkeil_oecd_2024": 34.9,
+ "abgeltungsteuer_de": 26.375,
+ "anteil_mit_mehr_de": 95.0
 }

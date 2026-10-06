@@ -78,6 +78,26 @@ def main() -> int:
         ok = alt not in teil
         fehler += not ok
         zeilen.append([f"veraltet: {alt}", alt, "ja (fehlt)" if ok else "NEIN (noch im Text)"])
+    # Kurzfassung (seit v3.13)
+    kurz = WURZEL / "dokumente" / "TAX-2828-Kurzfassung.pdf"
+    kt = " ".join(subprocess.run(["pdftotext", str(kurz), "-"], capture_output=True, text=True).stdout.split()) \
+        if kurz.exists() else ""
+    seiten = subprocess.run(["pdfinfo", str(kurz)], capture_output=True, text=True).stdout if kurz.exists() else ""
+    for name, muster in [
+        ("Kurz: Quote", f"{de(J['quote'], 1)} % des BIP"),
+        ("Kurz: Obergrenze", f"höchstens {de(J['obergrenze'])} %"),
+        ("Kurz: Dividende 2028", f"{de(J['klub_2028'])} € je Einwohner"),
+        ("Kurz: Dividende 2060", f"{de(J['klub_2060'])} €"),
+        ("Kurz: Formel", f"je Einwohner {de(J['formel_einw'])} €"),
+        ("Kurz: Entlastung", f"{de(J['entlastung'], 2)} Punkte"),
+        ("Kurz: Deckungslücke", f"fehlen {de(J['deckung_luecke'], 2)} Punkte"),
+        ("Kurz: Abgabenkeil", f"{de(J['abgabenkeil_de_2024'], 1)} %"),
+        ("Kurz: Schätzung gekennzeichnet", "Gruppenschätzung"),
+        ("Kurz: zwei Seiten", "Pages: 2"),
+    ]:
+        ok = muster in (" ".join(seiten.split()) if name.endswith("Seiten") else kt)
+        fehler += not ok
+        zeilen.append([name, muster, "ja" if ok else "NEIN"])
     with open(WURZEL / "daten" / "aggregate" / "konzept_pruefung.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(["pruefung", "muster", "ergebnis"])

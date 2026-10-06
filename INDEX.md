@@ -1,6 +1,6 @@
 # TAX 28:28 — Wegweiser durch das Repository
 
-Stand: 6. Oktober 2026 · Modellstand v3.12
+Stand: 6. Oktober 2026 · Modellstand v3.13
 
 Dieses Repository enthält **zwei Entwicklungsstände**, die einander in Teilen widersprechen.
 Wer eine Zahl zitiert, nennt den Stand dazu.

@@ -3,6 +3,7 @@
 | Datei | Stand | Rolle |
 |---|---|---|
 | `TAX-2828-Gesamtkonzept.pdf` / `.docx` | 6. Oktober 2026, Stand B, Quote 30,8 % | **maßgeblich**, zwölf Seiten, gebaut aus `daten/aggregate/gesamtrechnung.json`; geprüft mit `modell/pruefe_konzept.py` |
+| `TAX-2828-Kurzfassung.pdf` / `.docx` | 6. Oktober 2026 | zwei Seiten für Laien, gebaut mit `werkzeuge/kurzfassung-bau.js`; geprüft mit `modell/pruefe_konzept.py` |
 | `archiv/TAX-2828-Gesamtkonzept-2026-10-04.*` | 4. Oktober 2026, Quote 30,6 % | abgelöst; Grundlage des Aussagenregisters `aussagen.csv` (Regression), Prüfsumme in `projekt/pruefsummen.sha256` |
 | `28-28-Homepage-Datenblatt.md` | 16. September 2026, Stand A | Datenblatt zur Seite (Modell `modell-2828.py`) |
 | `28-28-Levelanalyse.md` | 16. September 2026, Stand A | Einheitssatz L zwischen 25 und 30 % |
