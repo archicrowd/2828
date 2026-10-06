@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""Führt alle Prüfungen in fester Reihenfolge aus und fasst das Ergebnis zusammen.
+
+Aufruf:  python3 modell/alles.py
+Rückgabe: 0, wenn jede Stufe 0 liefert.
+
+Reihenfolge: Parameter -> Zweitrechnung -> Vergleich mit den Originalen -> Konstanten -> Kennzahlen ->
+Aussagen des Gesamtkonzepts -> Projektprüfung. Jede Stufe schreibt ihre Ergebnisdatei nach daten/aggregate/.
+Ändert sich ein Parameter, ein Skript oder ein Dokument, zeigt dieser Lauf, welcher Baustein betroffen ist.
+"""
+import subprocess
+import sys
+from pathlib import Path
+
+WURZEL = Path(__file__).resolve().parent.parent
+STUFEN = [
+    ("Parameterfile prüfen", ["modell/lauf.py"]),
+    ("Zeitpfad (Zweitrechnung)", ["modell/pfad.py"]),
+    ("Aufschlag (Zweitrechnung)", ["modell/aufschlag.py"]),
+    ("Zweitrechnung gegen Originale", ["modell/vergleich_original.py"]),
+    ("Konstanten der Originalskripte", ["modell/pruefe_konstanten.py"]),
+    ("Kennzahlen", ["modell/kennzahlen.py"]),
+    ("Aussagen des Gesamtkonzepts", ["modell/pruefe_aussagen.py"]),
+    ("Projektprüfung", ["projekt/pruefe_projekt.py"]),
+]
+
+
+def main() -> int:
+    ergebnis = []
+    for name, cmd in STUFEN:
+        p = subprocess.run([sys.executable, *cmd], cwd=WURZEL, capture_output=True, text=True)
+        letzte = (p.stdout.strip().splitlines() or [""])[-1] if p.returncode == 0 else \
+            " | ".join((p.stdout + p.stderr).strip().splitlines()[:3])
+        ergebnis.append((name, p.returncode, letzte[:110]))
+    breite = max(len(n) for n, _, _ in ergebnis)
+    for name, rc, text in ergebnis:
+        print(f"{'OK  ' if rc == 0 else 'FEHL'} {name:<{breite}}  {text}")
+    schlecht = [n for n, rc, _ in ergebnis if rc != 0]
+    print(f"\n{len(ergebnis) - len(schlecht)} von {len(ergebnis)} Stufen ohne Fehler.")
+    return 1 if schlecht else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -8,7 +8,7 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v3.9** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
+**Modellstand: v3.10** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
 
 Einstieg: `INDEX.md` (Wegweiser, Stand A und Stand B, Naht zwischen beiden).

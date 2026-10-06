@@ -1,7 +1,7 @@
 {
-  "modellstand": "v3.9",
+  "modellstand": "v3.10",
   "erzeugt": "2026-10-06",
-  "parameterfile_sha256": "46965490f16f70f16c45361497471494f1686be2beaa73681cffbceb19d35ba4",
+  "parameterfile_sha256": "290ca8b005d50e22fea39498993b9af1f05db52a346e7800171e36807f43b80b",
   "parameter": [
     {
       "name": "klub_bip_2024",
@@ -75,13 +75,13 @@
     },
     {
       "name": "verteidigung_basis_cofog_2024",
-      "wert": 1.401,
+      "wert": 1.4,
       "einheit": "% des BIP",
       "bezugsjahr": 2024,
       "preisbasis": "keine",
-      "quelle": "Logbuch Band II v3.5; dort Eurostat gov_10a_exp COFOG GF02, zehn Einzelabrufe, BIP-gewichtet",
+      "quelle": "Logbuch Band II v3.5; dort Eurostat gov_10a_exp COFOG GF02, zehn Einzelabrufe, BIP-gewichtet (1,401 %, auf 1,40 gerundet); Originalskripte und Gesamtkonzept rechnen mit 1,40",
       "status": "modellrechnung",
-      "hinweis": "COFOG-Definition. Das Ziel von 2,5 % folgt der NATO-Systematik und ist damit nicht vergleichbar (Logbuch, offener Punkt)"
+      "hinweis": "Seit v3.10 1,40 statt 1,401, wie in allen Originalskripten (V_START) und im Gesamtkonzept; der Unterschied beträgt 0,001 Punkte des BIP. COFOG-Definition. Das Ziel von 2,5 % folgt der NATO-Systematik und ist damit nicht vergleichbar (Logbuch, offener Punkt)"
     },
     {
       "name": "dividende_anteil_bip_2028",

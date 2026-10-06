@@ -37,6 +37,17 @@
   (Korrekturen 42 bis 46).
 - Eine Behauptung, die sich prüfen lässt, wird geprüft, bevor sie stehen bleibt.
 
+## Projektverwaltung
+
+- Vor jedem Commit `python3 modell/alles.py` ausführen (acht Stufen, Register in `projekt/`). Rückgabe
+  ungleich 0 oder neuer Fehler: erst beheben oder offen im Logbuch führen.
+- Nach jeder Version `projekt/bausteine.csv` und `projekt/nahtstellen.csv` anpassen. Prüfsummen
+  (`projekt/pruefsummen.sha256`) nur bewusst mit `--aktualisieren` ändern und im Logbuch vermerken.
+- Projektraum "2525" (Band I bis III, `Projektsteuerung.md`) nach jeder Version von Hand nachführen;
+  maßgeblich bleibt das Repository.
+- Autor und Projektverantwortlicher des Konzepts: Arndt Hermann (`CITATION.cff`). Keine weiteren
+  Personennamen oder E-Mail-Adressen aus Quellen übernehmen.
+
 ## Commits
 
 - Eine Version, ein Commit, ein Tag `vX.Y.Z`.

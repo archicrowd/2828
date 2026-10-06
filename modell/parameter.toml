@@ -36,7 +36,7 @@
 
 [modell]
 # Modellstand, auf den sich die Ergebnisdatei bezieht (Logbuch-Version).
-version = "v3.9"
+version = "v3.10"
 
 # ---------------------------------------------------------------------------
 # Strukturgrößen aus dem Logbuch (Band I v3.1, Band II v3.5)
@@ -119,13 +119,13 @@ hinweis    = "aus Logbuch übernommen. Das Audit in Band I v3.0 nennt amtlich fo
 
 [[parameter]]
 name       = "verteidigung_basis_cofog_2024"
-wert       = 1.401
+wert       = 1.40
 einheit    = "% des BIP"
 bezugsjahr = 2024
 preisbasis = "keine"
-quelle     = "Logbuch Band II v3.5; dort Eurostat gov_10a_exp COFOG GF02, zehn Einzelabrufe, BIP-gewichtet"
+quelle     = "Logbuch Band II v3.5; dort Eurostat gov_10a_exp COFOG GF02, zehn Einzelabrufe, BIP-gewichtet (1,401 %, auf 1,40 gerundet); Originalskripte und Gesamtkonzept rechnen mit 1,40"
 status     = "modellrechnung"
-hinweis    = "COFOG-Definition. Das Ziel von 2,5 % folgt der NATO-Systematik und ist damit nicht vergleichbar (Logbuch, offener Punkt)"
+hinweis    = "Seit v3.10 1,40 statt 1,401, wie in allen Originalskripten (V_START) und im Gesamtkonzept; der Unterschied beträgt 0,001 Punkte des BIP. COFOG-Definition. Das Ziel von 2,5 % folgt der NATO-Systematik und ist damit nicht vergleichbar (Logbuch, offener Punkt)"
 
 [[parameter]]
 name       = "dividende_anteil_bip_2028"

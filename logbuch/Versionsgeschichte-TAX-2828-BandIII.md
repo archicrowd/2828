@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 6. Oktober 2026 · Modellstand **v3.9**
+Stand: 6. Oktober 2026 · Modellstand **v3.10**
 
 ---
 
@@ -390,6 +390,54 @@ vom 4. Oktober 2026.*
 
 ---
 
+### v3.10 — Projektverwaltung: Bausteinregister, Aussagenregister, Schnittstelle für Dritte
+
+**Art der Änderung: MINOR** (neue Rechnungen und Prüfungen, eine Annahme durch das Original ersetzt).
+6. Oktober 2026. Auftrag des Verfassers: Überblick über alle Teile behalten, das Ineinandergreifen der
+Bausteine sichern, Rechenwege prüfen und zusammenfassen, Datenverlust vermeiden.
+
+**Bewegte Zahl.** `verteidigung_basis_cofog_2024`: **1,401 → 1,40 % des BIP**. Alle acht Originalskripte
+und das Gesamtkonzept rechnen mit 1,40; die 1,401 stand nur im Logbuch. Wirkung rund 0,001 Punkte des BIP;
+die Abgleiche bleiben innerhalb der Toleranz. Aufgefallen durch den neuen Konstantenvergleich.
+
+**Neu**
+- `modell/kennzahlen.py`: rund 160 benannte Größen aus den Originalskripten (`daten/aggregate/kennzahlen.csv`).
+- `dokumente/aussagen.csv`, `modell/pruefe_aussagen.py`: 131 Zahlen des Gesamtkonzepts und der Seite zum
+  Stand B mit Sollwert, Einheit, Toleranz und Kennzahl. Ergebnis: alle innerhalb der Toleranz, eine bekannt
+  abweichend (A113, siehe B14). Die Sollwerte wurden von Hand aus der PDF übertragen: ein Tippfehler dort fiele
+  auf, ein im Dokument und im Skript gleich falscher Wert nicht.
+- `modell/pruefe_konstanten.py`: vergleicht die im Skript fest stehenden Konstanten der Originale mit
+  `parameter.toml` (ast, ohne Ausführung). Die Originale führen dieselben Konstanten bis zu achtmal doppelt.
+  `modell/rechnungen/pfad/dyn.py` (Verteidigungsziel 3,5 %) wird als veraltet gemeldet.
+- `projekt/bausteine.csv` (19 Bausteine), `projekt/nahtstellen.csv` (11 Nähte), `projekt/pruefsummen.sha256`
+  (Originale), `projekt/pruefe_projekt.py` (Register gegen Dateisystem, einheitlicher Modellstand, lückenlose
+  Korrekturnummern, keine fremden E-Mail-Adressen, keine Rohdatenformate, Prüfsummen).
+- `modell/alles.py`: ein Befehl für alle acht Stufen (letzter Lauf 8 von 8 ohne Fehler).
+- `schnittstelle/` (Entwurf Mikrosimulation, Ergebnisformat, Formprüfung), `beitraege/`, `CONTRIBUTING.md`,
+  `CITATION.cff` (Autor und Projektverantwortlicher: Arndt Hermann), `LIZENZ-VORSCHLAG.md` (keine Lizenz
+  festgelegt, keine Rechtsberatung).
+
+**Befunde aus dem Vorchat** (nur Suche in den Textstellen; Sekundärquelle, der Chat wurde nicht befragt)
+1. **B12 bestätigt.** Der Chat nennt 30,6 % ausdrücklich abgeleitet (Quote, bei der die Dividende 479 EUR hält).
+   In v3.1 steht 31,20 % Bedarf gegen 27,91 % Erhebung (Lücke 3,29 Punkte). Eine Aufstellung, wie die
+   Steuerpositionen 30,6 % aufbringen, wurde nicht gefunden.
+2. **B9 teilweise geklärt.** Chat-Code: Höchstbedarf 2035 = 35,2 % des Einzugs, „Deckelung 36 %". Der Abstand
+   von 0,8 Punkten ist die Aufrundung auf volle Prozent; eine Begründung als Sicherheitsabstand steht nicht dabei.
+3. **B7 Quelle gefunden.** 255,1 Mio stammen aus `modell/rechnungen/rahmen/daten.py` (v3.1), 254,8 Mio aus
+   `basis.py` (v3.5) und dem Gesamtkonzept. Warum acht Länder abweichen, sagt der Chat nicht.
+4. **B14 neu.** Gesamtkonzept und Chat: Steuern 25,95 + Sozialbeiträge 14,88 = 40,83, genannt wird 40,76.
+   Differenz 0,07 Punkte (rund 10 Mrd EUR), ungeklärt. Die Entlastung von 2,41 Punkten bezieht sich auf 40,76.
+
+**Soll der Vorchat nochmals befragt werden?** Ja, gezielt und mit Verlangen nach Fundstelle (Datei, Zeile):
+B9 (Begründung des Aufschlags), B7 (Abrufdatum), B12 (gibt es eine Aufbaurechnung der Quote?), B14 (Herkunft
+von 40,76), B8 (Wahl der BIP-Bemessung). Der Vorchat hat sich schon einmal geirrt (Korrektur 47) und bleibt
+Sekundärquelle, bis eine Datei die Antwort belegt. Entscheidungen des Autors (B4, B6, mittlere Tarifstufen)
+kann er nicht treffen.
+
+*Skripte: siehe oben. Quellen: Gesamtkonzept vom 4. Oktober 2026; Vorchat (Sekundärquelle).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 und 48. **Nächste freie Nummer: 49.** Die Nummern 31 bis 41 sind
@@ -427,7 +475,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.9
+## 7 | Offene Punkte, Stand v3.10
 
 | Punkt | Status |
 |---|---|
@@ -438,12 +486,14 @@ nicht geklärt.
 | **B5: Ebene A 8,94 % gegen 9,04 %** | **geschlossen in v3.7, war kein Widerspruch** (8,94 enthält Verteidigung 2,50, die Tabelle 2028 rechnet mit 1,40) |
 | **B6: Ausgangslage 2024 als 2028** | **offen, präzisiert in v3.7.** Schuldenquote 78,4 % gilt im Seitentext als Quote 2028 (10,8 Bio EUR), der Eurostat-Stand 2024 sind 9,537 Bio EUR. Effektiver Zins (1,53 %) und Verteidigung (1,401 %) stammen aus 2024. Entscheidung des Verfassers nötig, ob das Auslaufen des Altbestands 2024 oder 2028 beginnt (Sensitivität in v3.6) |
 | **Rechenskripte** | seit v3.8 liegen die Originale `basis.py`, `pfad.py`, `final.py`, `tilgung.py`, `aufschlag.py`, `altschuld.py`, `kurve.py` in `modell/rahmen/`. `modell/pfad.py` und `modell/aufschlag.py` bleiben als **unabhängige Zweitrechnung** (`modell/vergleich_original.py`). Ungelesen: `zahlen.py`, `gesamtkonzept-bau.js`, JSON-Ausgaben. Skripte der Versionen bis v3.4 (Kern, Webseite, Audit, Einzelrechnungen) liegen im Export, aber noch nicht im Repository |
-| **B7: Einwohnerzahl** | **geklärt für die Rechnung in v3.9, Ursache offen.** 254,8 Mio (Gesamtkonzept, `basis.py`) gegen 255,1 Mio (Logbuch Band I, v3.1). Parameter und `laender_2024.csv` stehen auf 254,8. Eurostat-Abruf `demo_gind` zur Prüfung nötig; die Shell erreicht `ec.europa.eu` nicht |
+| **B7: Einwohnerzahl** | **Quelle gefunden in v3.10.** 255,1 Mio aus `daten.py` (v3.1), 254,8 Mio aus `basis.py` (v3.5) und Gesamtkonzept; Ursache der Abweichung bei acht Ländern offen. Rechnung und Parameter stehen auf 254,8. Prüfung am Eurostat-Abruf nötig |
 | **B8: Bemessung des Aufschlags** | **neu, v3.8.** `aufschlag.py` (BIP) gegen `altschuld.py` (Klubschnitt je Kopf): +254/−728 gegen +185/−531. Welche Bemessung gilt, ist eine Entwurfsentscheidung und im Text nicht begründet |
-| **B9: Obergrenze 36 %** | **neu, v3.8.** Setzung mit Aufschlag von 0,8 Punkten auf den berechneten Wert 35,2 % (`pfad.py`). Begründung des Aufschlags nicht gefunden |
+| **B9: Obergrenze 36 %** | **teilweise geklärt in v3.10.** Berechnet 35,2 %, im Chat-Code auf 36 % aufgerundet (0,8 Punkte). Begründung eines Abstands fehlt. Setzung des Autors |
 | **B10: Basis des Gesamtkonzepts** | **geschlossen in v3.9.** Das Gesamtkonzept steht auf der korrigierten Basis |
 | **B12: Deckung der Quote 30,6 %** | **neu, v3.9.** Die Steuerpositionen sind nicht zur Quote 30,6 % aufgebaut; das nationale Modell lieferte 27,91 %. Der wichtigste inhaltliche Befund der Naht zwischen Stand A und Stand B |
 | **B13: Bezugsgröße der Obergrenze im Text** | **neu, v3.9.** „des Aufkommens" (Einleitung) gegen „dessen, was A einzieht" (Abschnitt 1.2) |
+| **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **neu, v3.10.** Differenz 0,07 Punkte (rund 10 Mrd EUR), Ursache ungeklärt. Aussage A113 als bekannt geführt |
+| **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |
 | **Stand A und Stand B** | **neu, v3.8.** Modell (`1-modell`) und achtsprachige Webseite im Export stehen auf dem nationalen Stand (Quote 27,91 % bzw. 33 %, Position 10 Sozialabgaben, Logbuch v2.0); das Gesamtkonzept auf dem europäischen (Quote 30,6 %, v3.5). Die Seite hat den Rahmenwechsel nie gesehen. Zwei Builds der Seite (Tarifstufen 0/9/16/21/26/28 gegen 0/9/19/24/27/28); der Quelltext passt nur zum älteren, die Patch-Skripte sind nicht ausgeführt. Nach Angabe des Exports; von mir nicht geprüft |
 | **Herleitung von 6,44 und 10,35** | Beide sind Summen der COFOG-abgeleiteten Posten aus Band II (v3.2): 6,44 für Ebene A ohne Verteidigung, 10,35 für Ebene B. Die zugrunde liegenden Eurostat-Abrufe (COFOG, zehn Staaten) liegen nicht vor, die Shell erreicht `ec.europa.eu` nicht. Nachgerechnet sind die Summen der Posten, nicht die Posten |
 | **Nicht eingetragene Größen** | Mindestquote, Obergrenze von A, Höchstbedarf, territorialer Aufschlag: Bezugsjahr oder Bezugsgröße fehlt. Siehe `daten/aggregate/nicht-eingetragen.md`, Abschnitt A |
