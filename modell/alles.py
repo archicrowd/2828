@@ -5,7 +5,7 @@ Aufruf:  python3 modell/alles.py
 Rückgabe: 0, wenn jede Stufe 0 liefert.
 
 Reihenfolge: Parameter -> Zweitrechnung -> Vergleich mit den Originalen -> Konstanten -> Kennzahlen ->
-Aussagen des Gesamtkonzepts -> Projektprüfung. Jede Stufe schreibt ihre Ergebnisdatei nach daten/aggregate/.
+Aussagen der Fassung 4. Oktober -> Gesamtrechnung -> Gesamtkonzept gegen Rechnung -> Projektprüfung. Jede Stufe schreibt ihre Ergebnisdatei nach daten/aggregate/.
 Ändert sich ein Parameter, ein Skript oder ein Dokument, zeigt dieser Lauf, welcher Baustein betroffen ist.
 """
 import subprocess
@@ -20,7 +20,9 @@ STUFEN = [
     ("Zweitrechnung gegen Originale", ["modell/vergleich_original.py"]),
     ("Konstanten der Originalskripte", ["modell/pruefe_konstanten.py"]),
     ("Kennzahlen", ["modell/kennzahlen.py"]),
-    ("Aussagen des Gesamtkonzepts", ["modell/pruefe_aussagen.py"]),
+    ("Aussagen (Fassung 4.10.)", ["modell/pruefe_aussagen.py"]),
+    ("Gesamtrechnung (Fassung 6.10.)", ["modell/gesamtrechnung.py"]),
+    ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Projektprüfung", ["projekt/pruefe_projekt.py"]),
 ]
 

@@ -14,8 +14,8 @@
   einer Sitzung. Die Arbeitsumgebung ist flüchtig, das Repository nicht.
 - Versionsschema und Pflichtangaben je Version: siehe `logbuch/` (Abschnitt 2).
   Jede Version nennt Datum, Änderung, Datenquelle, bewegte Zahl und wodurch es auffiel.
-- Korrekturen werden fortlaufend nummeriert. **Nächste freie Nummer: 50.**
-  Alle Nummern bis 49 sind besetzt (31 bis 41 in Band I; die frühere Aussage, sie seien
+- Korrekturen werden fortlaufend nummeriert. **Nächste freie Nummer: 53.**
+  Alle Nummern bis 52 sind besetzt (31 bis 41 in Band I; die frühere Aussage, sie seien
   unbesetzt, war falsch, Korrektur 47). Nummern werden nie neu vergeben.
 - Fehler offen führen, auch eigene. Ein Entwurf, dessen Irrtümer offen liegen, ist
   überprüfbar.
@@ -39,7 +39,7 @@
 
 ## Projektverwaltung
 
-- Vor jedem Commit `python3 modell/alles.py` ausführen (acht Stufen, Register in `projekt/`). Rückgabe
+- Vor jedem Commit `python3 modell/alles.py` ausführen (zehn Stufen, Register in `projekt/`). Rückgabe
   ungleich 0 oder neuer Fehler: erst beheben oder offen im Logbuch führen.
 - Nach jeder Version `projekt/bausteine.csv` und `projekt/nahtstellen.csv` anpassen. Prüfsummen
   (`projekt/pruefsummen.sha256`) nur bewusst mit `--aktualisieren` ändern und im Logbuch vermerken.
@@ -47,6 +47,10 @@
   maßgeblich bleibt das Repository.
 - Autor und Projektverantwortlicher des Konzepts: Arndt Hermann (`CITATION.cff`). Keine weiteren
   Personennamen oder E-Mail-Adressen aus Quellen übernehmen.
+
+- Geltende Rechnung: `modell/gesamtrechnung.py` (+ `gesamtrechnung.toml`). Das Gesamtkonzept wird nur über
+  `dokumente/werkzeuge/gesamtkonzept-bau.js` gebaut, nie von Hand; danach `modell/pruefe_konzept.py`.
+- Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`).
 
 ## Commits
 

@@ -30,8 +30,8 @@ VERBOTENE_ENDUNGEN = {".zip", ".parquet", ".sav", ".dta", ".7z", ".gz"}
 BEKANNTE_DOPPELTE_NUMMERN = {15, 16}  # Band I, Abschnitt 4 (siehe logbuch/HERKUNFT.md)
 SUMMEN = WURZEL / "projekt" / "pruefsummen.sha256"
 SUMMEN_DATEIEN = (
-    ["logbuch/Versionsgeschichte-TAX-2828.md", "dokumente/TAX-2828-Gesamtkonzept.pdf",
-     "dokumente/TAX-2828-Gesamtkonzept.docx"]
+    ["logbuch/Versionsgeschichte-TAX-2828.md", "dokumente/archiv/TAX-2828-Gesamtkonzept-2026-10-04.pdf",
+     "dokumente/archiv/TAX-2828-Gesamtkonzept-2026-10-04.docx"]
     + sorted(str(p.relative_to(WURZEL)) for p in (WURZEL / "modell" / "rahmen").glob("*.py"))
 )
 

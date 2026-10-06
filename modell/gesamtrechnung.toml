@@ -1,0 +1,79 @@
+# Parameter der Gesamtrechnung, Fassung des Gesamtkonzepts vom 6. Oktober 2026 (v3.12).
+# parameter.toml bleibt die Parameterbasis der Fassung vom 4. Oktober (Regression gegen die
+# Originalskripte in modell/rahmen/). Hier stehen nur Werte, die sich durch Prüfung oder Entscheidung
+# geändert haben, und die Regeln, nach denen abgeleitet wird. Alle übrigen Eingänge liest
+# modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
+
+[modell]
+version = "v3.12"
+fassung = "6. Oktober 2026"
+
+[[parameter]]
+name       = "auslauf_beginn_jahr"
+wert       = 2024
+einheit    = "Jahr"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "Entscheidung B6 (v3.12)"
+status     = "entscheidung"
+hinweis    = "Der effektive Zins von 2024 ist ein Stand von 2024; der Altbestand wird seit 2024 zu Marktsätzen ersetzt. Das Auslaufen beginnt daher 2024, nicht 2028 (vorsichtige Lesart, Abschnitt 8 des Konzepts)"
+
+[[parameter]]
+name       = "schuldenquote_klub_2028"
+wert       = 78.4
+einheit    = "% des BIP"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Eurostat gov_10dd_edpt1 2024 (basis.py), BIP-gewichtet; als Quote 2028 angesetzt"
+status     = "annahme"
+hinweis    = "Annahme: Defizite 2024 bis 2028 und Wachstumseffekt halten die Quote etwa konstant. Sensitivität 82 % gerechnet"
+
+[[parameter]]
+name       = "garantiezins_klub"
+wert       = 2.50
+einheit    = "%"
+bezugsjahr = 2028
+preisbasis = "nominal"
+quelle     = "Konzept, Klubgarantie"
+status     = "setzung"
+hinweis    = "Marktrendite schuldengewichtet 2024 als Risikofall (basis.py, irt_lt_mcby_a)"
+
+[[parameter]]
+name       = "restlaufzeit_schulden"
+wert       = 7.5
+einheit    = "Jahre"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "Erfahrungswert, nicht erhoben"
+status     = "annahme"
+hinweis    = "Risikofall 5 Jahre"
+
+[[parameter]]
+name       = "quote_rundung"
+wert       = 0.1
+einheit    = "Prozentpunkte"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Entscheidung v3.12"
+status     = "regel"
+hinweis    = "Die Quote ist die strenge Mindestquote (Versprechen hält ohne reales Wachstum in jedem Jahr; real null heißt nominal 2 %, auch für den Schuldenabbau), auf eine Nachkommastelle AUFGERUNDET. Abrunden bräche das Versprechen (Korrektur 51)"
+
+[[parameter]]
+name       = "obergrenze_regel_rundung"
+wert       = 1
+einheit    = "Prozent des Einzugs"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Entscheidung B9 (v3.12)"
+status     = "regel"
+hinweis    = "Obergrenze = höchster Bedarf von A im Zentralfall und in jedem einzelnen Finanzierungsrisiko (Zielzins ohne Garantie, nominales Wachstum 1,5 %, Schuldenquote 82 %; eine kürzere Restlaufzeit ändert das Höchstjahr 2035 nicht, weil der Altbestand dann ohnehin ersetzt ist), auf volle Prozent aufgerundet. Nicht gedeckt: Verteidigungsziel über 2,5 %; das verlangt eine Vertragsänderung"
+
+[[parameter]]
+name       = "versprechen_de_monat"
+wert       = 479
+einheit    = "EUR je Kopf und Monat"
+bezugsjahr = 2028
+preisbasis = "real 2028"
+quelle     = "bisheriger Projektstand (Logbuch)"
+status     = "setzung"
+hinweis    = "Kriterium der Quotenableitung"

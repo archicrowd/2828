@@ -34,9 +34,13 @@
 # status     = "modellrechnung"
 # hinweis    = "Platzhalter, nicht verwenden"
 
+# HINWEIS v3.12: Dieses Parameterfile beschreibt die Fassung des Gesamtkonzepts vom 4. Oktober 2026 und
+# dient als Regressionsbasis gegen die Originalskripte (modell/rahmen/). Die geltende Fassung vom
+# 6. Oktober 2026 rechnet modell/gesamtrechnung.py mit den Abweichungen aus modell/gesamtrechnung.toml.
+
 [modell]
 # Modellstand, auf den sich die Ergebnisdatei bezieht (Logbuch-Version).
-version = "v3.11"
+version = "v3.12"
 
 # ---------------------------------------------------------------------------
 # Strukturgrößen aus dem Logbuch (Band I v3.1, Band II v3.5)

@@ -1,0 +1,504 @@
+{
+ "fassung": "6. Oktober 2026",
+ "version": "v3.12",
+ "bip24_klub_mrd": 12157.2991,
+ "faktor": 1.13534542536,
+ "bip28_klub_mrd": 13802.733917918245,
+ "bip28_de_mrd": 4914.876286020679,
+ "pop_klub_mio": 255.061017,
+ "kopf_klub": 54115.41944066759,
+ "kopf_de": 58849.09943609264,
+ "de_ueber_klub_pct": 8.747377446857051,
+ "de_anteil_bip_pct": 35.60799125193852,
+ "schuld24_mrd": 9536.8188868,
+ "schuldenquote_ber": 78.44521063728703,
+ "schuldenquote_2028": 78.4,
+ "zinsausgaben24_mrd": 180.8749,
+ "zinsausgaben24_pct_bip": 1.4877885171057443,
+ "zins_eff_2024": 1.8965957322556544,
+ "zins_markt_2024": 2.777369048434302,
+ "garantiezins": 2.5,
+ "restlaufzeit": 7.5,
+ "auslauf_beginn": 2024,
+ "irland_faktor": 2.184876973741944,
+ "mindestquote_streng": 30.763652174835784,
+ "mindestquote_original_lesart": 30.651013586985485,
+ "mindestquote_zentral": 30.00623698928983,
+ "quote": 30.8,
+ "boden": 0.82,
+ "einzug": 29.98,
+ "mq_alt_fassung": 30.609790931482387,
+ "mq_alt_fassung_streng": 30.73019535228513,
+ "mq_nur_zins": 30.736196509099152,
+ "mq_nur_auslauf": 30.763652174835784,
+ "a_2028": 9.579234491907936,
+ "zd_2028": 1.7392344919079354,
+ "zins_2028": 2.2184113417193054,
+ "zd_2028_mrd": 240.06190912670968,
+ "div_2028": 10.870765508092065,
+ "b_verfuegt_2028": 21.220765508092065,
+ "a_hoechst": 10.533659362232974,
+ "a_hoechst_jahr": 2035,
+ "div_2060": 10.748859413091546,
+ "div_aenderung_pct": -1.1214122401018933,
+ "de_tief": 520.6781854508412,
+ "de_tief_jahr": 2035,
+ "de_tief_fix": 486.30643019509836,
+ "de_tief_fix_jahr": 2035,
+ "de_tief_ueber_versprechen_pct": 8.701082557586881,
+ "de_rueckgang_pct": -2.3323631474080786,
+ "de_anstieg_2060_pct": 35.110141598556034,
+ "kl_tief": 478.7960847196409,
+ "kl_tief_jahr": 2035,
+ "g_real": 0.009803921568627416,
+ "tabelle_pfad": [
+  {
+   "jahr": 2028,
+   "v": 1.4,
+   "d": 78.4,
+   "zd": 1.7392344919079354,
+   "a": 9.579234491907936,
+   "div": 10.870765508092065,
+   "klub": 490.23002925962004,
+   "de": 533.1123002767966
+  },
+  {
+   "jahr": 2030,
+   "v": 1.7142857142857142,
+   "d": 73.89951927608635,
+   "zd": 1.7583054112712668,
+   "a": 9.912591125556983,
+   "div": 10.537408874443019,
+   "klub": 484.5601786113891,
+   "de": 526.946486391692
+  },
+  {
+   "jahr": 2035,
+   "v": 2.5,
+   "d": 63.74637448931893,
+   "zd": 1.5936593622329733,
+   "a": 10.533659362232974,
+   "div": 9.916340637767027,
+   "klub": 478.7960847196409,
+   "de": 520.6781854508412
+  },
+  {
+   "jahr": 2040,
+   "v": 2.5,
+   "d": 54.98818260712907,
+   "zd": 1.3747045651782266,
+   "a": 10.314704565178229,
+   "div": 10.135295434821773,
+   "klub": 513.8316253333375,
+   "de": 558.7784170425648
+  },
+  {
+   "jahr": 2050,
+   "v": 2.5,
+   "d": 40.91637206919466,
+   "zd": 1.0229093017298665,
+   "a": 9.962909301729868,
+   "div": 10.487090698270132,
+   "klub": 586.1516227993721,
+   "de": 637.4245176565111
+  },
+  {
+   "jahr": 2060,
+   "v": 2.5,
+   "d": 30.44562347633806,
+   "zd": 0.7611405869084515,
+   "a": 9.701140586908453,
+   "div": 10.748859413091546,
+   "klub": 662.3504866913153,
+   "de": 720.2887837832992
+  }
+ ],
+ "de_2028": 533.1123002767966,
+ "klub_2028": 490.23002925962004,
+ "de_2035": 520.6781854508412,
+ "klub_2035": 478.7960847196409,
+ "de_2060": 720.2887837832992,
+ "klub_2060": 662.3504866913153,
+ "tabelle_einzug": [
+  [
+   "Gesamtaufkommen",
+   30.8,
+   16667.549187725617
+  ],
+  [
+   "   davon zieht A ein",
+   29.98,
+   16223.802748312144
+  ],
+  [
+   "   davon erhebt B selbst (Bodenabgabe)",
+   0.82,
+   443.74643941347415
+  ],
+  [
+   "A behält 2028",
+   9.579234491907936,
+   5183.842924501082
+  ],
+  [
+   "B verfügt 2028",
+   21.220765508092065,
+   11483.706263224536
+  ],
+  [
+   "   B Fachaufgaben",
+   10.35,
+   5600.945912109095
+  ],
+  [
+   "   B Dividende",
+   10.870765508092065,
+   5882.76035111544
+  ]
+ ],
+ "tabelle_a": [
+  [
+   "Wirtschaftsraum, Agrar, Energie, Netze",
+   3.75,
+   517.6025219219342
+  ],
+  [
+   "Verteidigung und digitale Souveränität",
+   2.5,
+   345.06834794795617
+  ],
+  [
+   "Grundlagenforschung",
+   0.77,
+   106.28105116797049
+  ],
+  [
+   "Hochschulen",
+   0.74,
+   102.14023099259502
+  ],
+  [
+   "Außenbeziehungen",
+   0.3,
+   41.40820175375474
+  ],
+  [
+   "Bildungs-, Markt- und Produktstandards",
+   0.3,
+   41.40820175375474
+  ],
+  [
+   "Übergeordnete Polizei",
+   0.29,
+   40.02792836196291
+  ],
+  [
+   "Umwelt, grenzüberschreitend",
+   0.29,
+   40.02792836196291
+  ],
+  [
+   "Summe",
+   8.94,
+   1233.964412261891
+  ]
+ ],
+ "tabelle_b": [
+  [
+   "Schulen",
+   3.7,
+   510.7011549629751
+  ],
+  [
+   "Kommunalverwaltung",
+   1.62,
+   223.6042894702756
+  ],
+  [
+   "Nahverkehr, Ortsstraßen",
+   1.48,
+   204.28046198519004
+  ],
+  [
+   "Kultur, Sport, Gemeinschaft",
+   1.22,
+   168.3933537986026
+  ],
+  [
+   "Ordnung, Feuerwehr, Rettung",
+   1.05,
+   144.9287061381416
+  ],
+  [
+   "Wohnen, Gemeinwesen",
+   0.71,
+   97.99941081721954
+  ],
+  [
+   "Wasser, Abwasser, Abfall",
+   0.57,
+   78.675583332134
+  ],
+  [
+   "Summe",
+   10.35,
+   1428.5829605045383
+  ]
+ ],
+ "boden_kopf": 443.74643941347415,
+ "boden_anteil_fach_pct": 7.922705314009662,
+ "formel_einw": 3598.675392804394,
+ "formel_kind": 12624.65648994137,
+ "kind_ant": 15.86,
+ "fach_12": 5113.6341715973585,
+ "fach_schnitt": 5600.945912109095,
+ "fach_20": 6123.606690792669,
+ "verw_anteil_pct": 15.65217391304348,
+ "verw_ersparnis_pkt": 1.0197,
+ "verw_ersparnis_eur": 45.984577669707285,
+ "obergrenze": 36.0,
+ "obergrenze_berechnet": 35.13562162185782,
+ "tabelle_obergrenze": [
+  {
+   "fall": "Zentralfall",
+   "jahr": 2035,
+   "a": 10.533659362232974,
+   "pct_einzug": 35.13562162185782,
+   "abstand": 0.8643783781421774
+  },
+  {
+   "fall": "Zielzins ohne Garantie (2,78 %)",
+   "jahr": 2035,
+   "a": 10.710472074565365,
+   "pct_einzug": 35.72539050889048,
+   "abstand": 0.2746094911095227
+  },
+  {
+   "fall": "nominales Wachstum 1,5 %",
+   "jahr": 2035,
+   "a": 10.706012509689685,
+   "pct_einzug": 35.71051537588287,
+   "abstand": 0.2894846241171294
+  },
+  {
+   "fall": "Schuldenquote 2028 bei 82 %",
+   "jahr": 2035,
+   "a": 10.606837598253875,
+   "pct_einzug": 35.379711802047616,
+   "abstand": 0.6202881979523838
+  },
+  {
+   "fall": "alle drei Finanzierungsrisiken zugleich",
+   "jahr": 2035,
+   "a": 10.992036814550575,
+   "pct_einzug": 36.66456575900792,
+   "abstand": -0.664565759007921
+  },
+  {
+   "fall": "Verteidigung 3,5 % (Haager Zusage)",
+   "jahr": 2035,
+   "a": 11.533659362232974,
+   "pct_einzug": 38.47117865988317,
+   "abstand": -2.471178659883172
+  },
+  {
+   "fall": "Verteidigung 2,0 % (COFOG-vergleichbar)",
+   "jahr": 2035,
+   "a": 10.033659362232974,
+   "pct_einzug": 33.467843102845144,
+   "abstand": 2.532156897154856
+  }
+ ],
+ "obergrenze_anteil_schuld": 13.766326530612243,
+ "a_anteil_schuld": 12.218411341719305,
+ "tabelle_sens": [
+  {
+   "fall": "0,0 %",
+   "e2035": 480.78253064781234,
+   "e2060": 513.4563684212477,
+   "gegen": -3.687015258388038
+  },
+  {
+   "fall": "0,5 %",
+   "e2035": 500.83748763534203,
+   "e2060": 611.132450816741,
+   "gegen": 14.634843446575063
+  },
+  {
+   "fall": "0,98 % (3,0 % nominal) — Zentralfall",
+   "e2035": 520.6781854508412,
+   "e2060": 720.2887837832992,
+   "gegen": 35.110141598556034
+  },
+  {
+   "fall": "1,5 %",
+   "e2035": 542.7856940344251,
+   "e2060": 857.9606111916231,
+   "gegen": 60.9343117287225
+  },
+  {
+   "fall": "2,0 %",
+   "e2035": 564.7097831802013,
+   "e2060": 1012.7449873050181,
+   "gegen": 89.9684150561133
+  }
+ ],
+ "q2791_jahre": 25,
+ "q2791_bis": 2052,
+ "tilg_verzicht": 24.520458098371876,
+ "tilg_break_even": null,
+ "punkt_bip_eur_de": 49.040916196743865,
+ "tabelle_aufschlag": [
+  {
+   "land": "Frankreich",
+   "schuld": 112.6,
+   "aus": 1210.3610128432956,
+   "ein": 843.2240195351015,
+   "auf": 367.13699330819406
+  },
+  {
+   "land": "Belgien",
+   "schuld": 103.9,
+   "aus": 1368.9516044583058,
+   "ein": 1033.5678244849262,
+   "auf": 335.38377997337966
+  },
+  {
+   "land": "Spanien",
+   "schuld": 101.6,
+   "aus": 834.7648784936138,
+   "ein": 644.5207354925279,
+   "auf": 190.24414300108583
+  },
+  {
+   "land": "Österreich",
+   "schuld": 80.0,
+   "aus": 1084.7179609435716,
+   "ein": 1063.6366116033373,
+   "auf": 21.081349340234283
+  },
+  {
+   "land": "Slowenien",
+   "schuld": 66.4,
+   "aus": 529.9873755484682,
+   "ein": 626.1290859940141,
+   "auf": -96.14171044554587
+  },
+  {
+   "land": "Deutschland",
+   "schuld": 62.2,
+   "aus": 812.0303899545497,
+   "ein": 1024.114067264678,
+   "auf": -212.08367731012822
+  },
+  {
+   "land": "Estland",
+   "schuld": 23.5,
+   "aus": 172.0139756739036,
+   "ein": 574.1988320977251,
+   "auf": -402.18485642382154
+  },
+  {
+   "land": "Niederlande",
+   "schuld": 43.8,
+   "aus": 683.7572218563557,
+   "ein": 1224.5999838650234,
+   "auf": -540.8427620086677
+  },
+  {
+   "land": "Dänemark",
+   "schuld": 30.5,
+   "aus": 514.4432536555679,
+   "ein": 1323.134734227617,
+   "auf": -808.691480572049
+  },
+  {
+   "land": "Irland",
+   "schuld": 38.3,
+   "aus": 1004.5900388570332,
+   "ein": 2057.5790392235076,
+   "auf": -1052.9890003664746
+  }
+ ],
+ "aufschlag_summe_mrd": -3.375077994860476e-14,
+ "aufschlag_max_anteil_a": 20.312903297852515,
+ "aufschlag_max_pos_anteil_a": 7.082332521553575,
+ "aufschlag_max_pos_land": "Frankreich",
+ "klub_punkt_bip_eur": 45.096182867222986,
+ "aufschlag_satz": 1.7402374498131747,
+ "last_heute": 40.76,
+ "steuern_heute": 25.95,
+ "sb_heute": 14.88,
+ "gesundheit": 7.75,
+ "last_entwurf": 38.55,
+ "entlastung": 2.210000000000001,
+ "entlastung_mrd": 305.04041958599333,
+ "tabelle_deckung": [
+  [
+   "01 Einkommen (Tarif 0/9/16/21/26/28 %, Dividende steuerpflichtig)",
+   7.4595238095238106,
+   "Kernsystem"
+  ],
+  [
+   "02 Kapital 28 %",
+   1.161904761904762,
+   "Kernsystem"
+  ],
+  [
+   "06 Konsum (Label, effektiv 20,0 %)",
+   8.95,
+   "Kernsystem"
+  ],
+  [
+   "05 Konzerne und Plattformen 28 %",
+   3.7523809523809524,
+   "Kernsystem"
+  ],
+  [
+   "03 Erbschaft 28 %",
+   0.8547619047619047,
+   "Kernsystem"
+  ],
+  [
+   "04c Vermögen, Mindeststeuer (anrechenbar)",
+   0.49285714285714277,
+   "Kernsystem"
+  ],
+  [
+   "07 Klima, CO₂ 100 €/t netto",
+   1.3095238095238095,
+   "Kernsystem"
+  ],
+  [
+   "Sonstige Steuern (Energie, Tabak u. a.)",
+   3.9285714285714284,
+   "Kernsystem"
+  ],
+  [
+   "Vermögensteuer 1 % ab 2 Mio (nicht anrechenbar)",
+   0.2857142857142857,
+   "Baustein"
+  ],
+  [
+   "Abbau klimaschädlicher Subventionen",
+   0.4761904761904762,
+   "Baustein"
+  ],
+  [
+   "CO₂-Pfad 100 → 150 €/t",
+   0.35714285714285715,
+   "Baustein"
+  ],
+  [
+   "04a Bodenwertabgabe (Ebene B, Satz bis 1 %)",
+   0.82,
+   "Stand B"
+  ]
+ ],
+ "deckung_kern": 27.90952380952381,
+ "deckung_mit_bausteinen": 29.028571428571432,
+ "deckung_gesamt": 29.848571428571432,
+ "deckung_luecke": 0.9514285714285684,
+ "deckung_luecke_mrd_klub": 131.32315413333603,
+ "selbstpruefung_jahre": 33
+}

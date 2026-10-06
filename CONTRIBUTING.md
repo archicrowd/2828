@@ -30,5 +30,4 @@ Korrekturen. Entwurf, noch nicht erprobt.
 
 ## Was noch fehlt
 
-Eine Lizenz ist nicht festgelegt (`LIZENZ-VORSCHLAG.md`). Bis zur Entscheidung gilt: keine Weitergabe
-über den Kreis der Eingeladenen hinaus.
+Lizenz (seit v3.12): Skripte MIT (`LICENSE`), Texte und Ergebnisdateien CC BY 4.0 (`LICENSE-DOKUMENTE.md`), siehe `LIZENZ.md`. Ein Beitrag steht unter der Lizenz des Teils, in den er eingeht; das ist im Pull Request zu bestätigen.

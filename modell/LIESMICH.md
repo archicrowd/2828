@@ -5,6 +5,7 @@
 | `rahmen/` | B | **Originalskripte** des Rahmenmodells aus dem Vorchat (4. Oktober 2026), unverändert: `basis.py` (Eurostat 2024, Fortschreibung), `pfad.py`, `final.py`, `tilgung.py`, `aufschlag.py`, `altschuld.py`, `kurve.py`, `zahlen.py`. Jedes Skript importiert `basis.py`, das beim Import druckt. `zahlen.py` schreibt nach `/home/claude/modell/` (absoluter Pfad im Original, nicht geändert); die Ausgaben liegen in `daten/aggregate/rahmen_original/` |
 | `pfad.py`, `aufschlag.py`, `lauf.py` | B | **Zweitrechnung** aus `parameter.toml`, unabhängig von `rahmen/`; `lauf.py` prüft das Parameterfile |
 | `vergleich_original.py` | B | vergleicht Zweitrechnung und Original (Ausgabe `daten/aggregate/vergleich_original.csv`) |
+| `gesamtrechnung.py`, `gesamtrechnung.toml`, `pruefe_konzept.py` | B | **geltende Rechnung** ab v3.12 (Fassung 6. Oktober 2026): Formeln der Originale, geprüfte Eingänge und Entscheidungen; Selbstprüfung gegen `rahmen/final.py`; `pruefe_konzept.py` prüft die PDF gegen das Ergebnis |
 | `parameter.toml` | B | 31 Parameter mit Pflichtfeldern (Einheit, Bezugsjahr, Preisbasis, Quelle, Status) |
 | `kern/` | A | nationales Gesamtmodell `modell-2828.py` (Mikro, Makro, Haushaltspfad), Ergebnisse, Rechnerlogik der Seite. Kalibriert auf BIP 4.200 Modell-Mrd; Korrektur 26 und 42 betreffen diese Basis |
 | `rechnungen/` | A | Einzelrechnungen R1 bis R16 mit Befunden, siehe `rechnungen/LIESMICH.md` |

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 6. Oktober 2026 · Modellstand **v3.11**
+Stand: 6. Oktober 2026 · Modellstand **v3.12**
 
 ---
 
@@ -474,16 +474,105 @@ neu gerechnet. Die Aussage A121 prüft das Konzept und bleibt bei 254,8.
 
 ---
 
+### v3.12 — Gesamtrechnung, Entscheidungen, neue Fassung des Gesamtkonzepts, Lizenz
+
+**Art der Änderung: MAJOR** (Quote, Dividende und Text des Gesamtkonzepts ändern sich).
+6. Oktober 2026. Auftrag des Verfassers: Lizenzvorschlag angenommen; offene Entscheidungen im Sinne des
+Konzepts treffen; Gesamtrechnung ausführen; Gesamtkonzept mit den rechnerischen Erkenntnissen aktualisieren.
+
+**Bewegte Zahlen** (Fassung 4. Oktober → Fassung 6. Oktober 2026; Klub, Preise 2028)
+
+| Größe | vorher | jetzt | Ursache |
+|---|---|---|---|
+| Steuerquote | 30,6 % | **30,8 %** | Auslauf ab 2024 (B6) und strenge Lesart des Kriteriums (Korrektur 51) |
+| effektiver Zins 2024 | 1,53 % (146 Mrd EUR) | **1,90 %** (180,9 Mrd EUR) | Korrektur 50 |
+| Zinsdienst 2028 | 1,20 % des BIP | **1,74 %** (240 Mrd EUR) | Korrektur 50 und B6 |
+| A 2028 | 9,04 % | **9,58 %** | ebenso |
+| Dividende Klub 2028 / 2035 / 2060 | 506 / 472 / 651 EUR | **490 / 479 / 662 EUR** | ebenso |
+| Dividende Deutschland 2028 / Tiefpunkt / 2060 | 550 / 512 / 707 EUR | **533 / 521 / 720 EUR** | ebenso |
+| Formel je Einwohner / je Kind | 3.602 / 12.636 EUR | **3.599 / 12.625 EUR** | Korrektur 49 |
+| Obergrenze von A | 36 % (Setzung) | **36 %** (abgeleitet, berechnet 35,1 %) | B9 |
+| Entlastung | 2,41 Punkte | **2,21 Punkte** (305 Mrd EUR) | höhere Quote |
+| größter Aufschlag / größte Entlastung | +254 FR / −728 IE | **+367 FR / −1.053 IE** EUR je Kopf und Jahr | Zinssatz 2028 2,22 statt 1,53 % |
+
+Datenquellen: Eurostat `gov_10a_main` (D41PAY, S13, 2024, neun Staaten einzeln am 6. Oktober 2026 abgerufen, Antworten
+maschinell gelesen, an der Quelle zu prüfen; Belgien vorläufig; **Estland geschätzt 0,2 Mrd EUR**, Abruf an Ratenbegrenzung
+gescheitert); `demo_gind` (v3.11); übrige Eingänge aus `basis.py` (Abrufe 2. bis 4. Oktober, nicht erneut geprüft).
+
+**Neu**
+- `modell/gesamtrechnung.py` mit `modell/gesamtrechnung.toml`: eine Rechnung für alle Zahlen des Konzepts. Formeln der
+  Originale; **Selbstprüfung**: mit den alten Eingängen trifft sie `final.pfad()` in allen 33 Jahren exakt. Ergebnis
+  `daten/aggregate/gesamtrechnung.json`, `gesamtrechnung_pfad.csv`, `gesamtrechnung_obergrenze.csv`, `deckung_quote.csv`.
+- `daten/aggregate/zinsausgaben_2024.csv` (Aggregat, Quelle je Zeile).
+- `dokumente/werkzeuge/gesamtkonzept-bau.js` liest die Zahlen aus der JSON-Datei; im Text steht keine Zahl mehr von Hand.
+  Doppelter Titelblock der alten Fassung entfernt. Neue Fassung `dokumente/TAX-2828-Gesamtkonzept.{docx,pdf}` (12 Seiten);
+  alte Fassung nach `dokumente/archiv/TAX-2828-Gesamtkonzept-2026-10-04.{docx,pdf}` verschoben, Prüfsummen deshalb
+  bewusst mit `--aktualisieren` auf die neuen Pfade gesetzt (Inhalt unverändert).
+- `modell/pruefe_konzept.py`: sucht 27 Kernzahlen in der Schreibweise des Dokuments im PDF-Text und meldet veraltete
+  Werte. Negativtest: die alte PDF schlägt 29-fach an.
+- `LICENSE` (MIT, Skripte), `LICENSE-DOKUMENTE.md` (CC BY 4.0), `LIZENZ.md` (vorher `LIZENZ-VORSCHLAG.md`), `CITATION.cff`.
+- `parameter.toml` bleibt die Basis der Fassung vom 4. Oktober (Regression); Aussagenregister ebenso.
+
+**Entscheidungen des Bearbeiters im Auftrag des Verfassers** (im Sinne des Konzepts; jede ist ein Parameter oder ein Satz
+im Bauskript und kann zurückgenommen werden)
+
+| Punkt | Entscheidung | Begründung |
+|---|---|---|
+| B1 Dividendenreihe ohne Bezug | als Korrektur 52 geführt | Fehler offen führen |
+| B2 zwei Zentralfälle | ein Zentralfall: 3,0 % nominal = 0,98 % real; Tabelle mit Zeile 0,98 % | eine Rechnung, eine Zahl |
+| B4 Irland BIP oder GNI* | BIP, im Text begründet; Größenordnung GNI* (−2 %) genannt | A's Einnahmen sind ein Anteil am BIP; Steuern knüpfen am Ort der Wertschöpfung an |
+| B6 Ausgangslage | Auslaufen des Altbestands ab 2024; Schuldenquote 2028 = 78,4 % als Annahme, Sensitivität 82 % | der Zins von 2024 ist ein Stand von 2024; Vorsicht (Abschnitt 8 des Konzepts) |
+| B9 Obergrenze | Regel: höchster Bedarf im Zentralfall und in jedem einzelnen Finanzierungsrisiko (Zielzins 2,78 %, Wachstum 1,5 %, Schuld 82 %), auf volle Prozent aufgerundet → 36 % | trägt alle Einzelrisiken (bis 35,7 %), nicht deren Häufung (36,7 %) und nicht 3,5 % Verteidigung (38,5 %); das verlangt eine Vertragsänderung |
+| B13 Bezugsgröße | überall „dessen, was A einzieht" | einheitlich |
+| Tarifstufen | 0/9/16/21/26/28 % | einzige durchgerechnete Fassung (nationales Modell); 9/19/24/27 nie gerechnet; vorläufig bis zur Mikrosimulation |
+| Quotenregel | strenge Mindestquote, auf 0,1 aufgerundet | Abrunden bräche das Versprechen |
+| Reihenfolge | Mikrosimulation erst nach Prüfung der Aggregate (Vorgabe des Verfassers) | |
+
+**B12: Deckung der Quote.** Erstmals gerechnet, auf deutscher Basis: das nationale Modell (Kern, Stufe 50 %) ergibt
+27,91 % der Modellbasis, mit den gesondert ausgewiesenen Bausteinen (Vermögensteuer, Subventionsabbau, CO₂-Pfad) 29,03 %,
+mit der Bodenwertabgabe dieses Entwurfs (0,82 statt 0,48) 29,85 %. **Lücke zur Quote 30,8 %: 0,95 Punkte**, auf den Klub
+übertragen rund 131 Mrd EUR (2028, nominal). Annahmen: Dividende einkommensteuerpflichtig wie im Kern; deutsche
+Steuerstruktur stellvertretend für den Klub (nicht zutreffend, Dänemark etwa hat kaum Sozialbeiträge und 31 % D5); Basis 4.200
+Modell-Mrd mit den bekannten Kalibrierfragen (Korrekturen 26, 42). Der Vorchat nannte 2,69 Punkte (Kern ohne Bausteine);
+die Bausteine standen im Kern gesondert und sind hier mitgezählt. Im Konzept als Abschnitt 7.1 und als wichtigste offene
+Rechnung geführt.
+
+**Unabhängige Prüfung.** Ein getrennter Prüfagent hat die Kernzahlen ohne Import der Gesamtrechnung nachgerechnet
+(alle bestätigt) und den Text gelesen. Befunde und Umgang:
+1. *Fehler:* Die strenge Ableitung des Originals hält den Kopfbetrag fest, lässt die Schuld aber mit 3 % nominal
+   schrumpfen; „real kein Wachstum" heißt nominal 2 %. In stimmiger Lesart 30,764 % statt 30,651 %. **Übernommen**
+   (Korrektur 51), Quote 30,8 %; die Tabellenzeile 0,0 % liegt jetzt über 479 EUR (481 EUR 2035).
+2. „für jeden gleich" gegen „Kinder zur Hälfte": Text präzisiert, Beträge als Schnitt je Einwohner bezeichnet.
+3. „größter Aufschlag 20,3 %" war die Entlastung Irlands: getrennt ausgewiesen (Frankreich +7,1 %, Irland 20,3 %).
+4. Die Quote hängt am Auslauf, nicht am Zinsniveau (Höchstjahr 2035 hat ohnehin 2,5 %); Änderungsabsatz präzisiert, der
+   aussagelose Risikofall „Restlaufzeit 5 Jahre" entfernt.
+5. „jeder Wert einzeln abgerufen" zu pauschal: Herkunft je Datengruppe benannt.
+6. und 7. Deutschland-Werte und Preisbasis gekennzeichnet (25 EUR, 49 EUR; 240 und 131 Mrd EUR 2028 nominal).
+8. „86 % der kommunalen Aufgaben" nicht herleitbar: Zahl gestrichen.
+9. und 10. Verteidigungsbasis belassen (DE-COFOG 1,4 % steht in `daten.py`); „Wie viel", „Gemeinschaften" statt „Communities".
+Einschätzung des Prüfers zur Plausibilität der Zinsausgaben (aus eigenem Wissen, nicht an der Quelle): plausibel; 146 Mrd
+waren eher zu niedrig.
+
+**Nicht neu gebaut:** Seite zum Stand B (`seite/rahmenstruktur-seiten/`, zeigt 506/472/651), Webseite Stand A.
+
+*Skripte: `modell/gesamtrechnung.py`, `modell/pruefe_konzept.py`, `dokumente/werkzeuge/gesamtkonzept-bau.js`, `modell/alles.py`.
+Quellen: Eurostat `gov_10a_main`, `demo_gind`; nationales Modell `modell/kern/modell-2828-ergebnisse.txt`.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
-Neu ab v3.8: die Nummern 47 bis 49. **Nächste freie Nummer: 50.** Die Nummern 31 bis 41 sind
-besetzt (Band I). Ob Punkt B1 unten als Korrektur 50 geführt wird, entscheidet der Verfasser.
+Neu ab v3.8: die Nummern 47 bis 52. **Nächste freie Nummer: 53.** Die Nummern 31 bis 41 sind
+besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 
 | Nr. | Was war falsch | Richtig | Wodurch auffiel |
 |---|---|---|---|
 | 47 | Band II, „Vorbemerkung zur Lücke": Die Einträge v3.2 bis v3.4 und die Korrekturen 31 bis 41 seien beim Zurücksetzen der Arbeitsumgebung verloren gegangen; die Nummern blieben deshalb unbesetzt | Beides liegt vollständig vor: `doku/Versionsgeschichte.md` (1.070 Zeilen) im Ausgabeordner des Vorchats. Verloren war nur dessen Arbeitsverzeichnis. Die Nummern 31 bis 41 sind besetzt, 42 bis 46 schließen korrekt an | Bericht des Vorchats nach Prüfung von `/mnt/user-data/outputs`; hier zeilenweiser Vergleich (v3.8). Der Vorchat hatte den Ausgabeordner nicht geprüft, bevor er den Verlust feststellte |
 | 48 | Band II, „v3.2 bis v3.4 — Rekonstruktion": v3.3 sei der „Möglichkeitsraum" (31 Staaten, 534,8 Mio) und in v3.4 werde die Steuerquote 30,6 % abgeleitet | Der Originaleintrag v3.3 heißt „Kalibrierung behoben". Der Möglichkeitsraum steht in keinem Logbucheintrag, nur in einer eigenen Seite (Export). In v3.4 gilt Quote 27,91 % mit Obergrenze 40 %; 30,6 % kommt mit v3.5. Band II widerspricht sich selbst: Zeile 57 „abgeleitet", Zeile 105 „die gesetzten 30,6 %" | Vergleich der Rekonstruktion mit dem Originaleintrag (v3.8). Die Rekonstruktion stammte nicht aus dem Original, sondern aus später gebauten Dokumenten |
 | 49 | Seit v3.9 (Zweitrechnung, `basis.py`, Gesamtkonzept Abschnitt 9): Klub-Einwohner 254,8 Mio; acht Länderwerte (ES, NL, IE, BE, AT, DK, SI, EE) sind Übertragungsfehler | 255,061 Mio laut Eurostat `demo_gind` (AVG, 2024) und `daten.py`; Kopfbeträge um 0,09 % niedriger. Zweitrechnung korrigiert (v3.11); `basis.py` und Gesamtkonzept bleiben unverändert und sind bei der nächsten Überarbeitung neu zu rechnen | Hinweis des Vorchats, Abruf der zehn Werte einzeln bei Eurostat |
+| 50 | Band I (v3.1) bis Gesamtkonzept 4. Oktober: Zinsausgaben der zehn Staaten 2024 146 Mrd EUR, effektiver Zins 1,53 %, Zinsdienst 2028 1,20 % des BIP | 180,9 Mrd EUR (1,49 % des BIP), effektiver Zins 1,90 %; mit Auslauf ab 2024 Zinsdienst 2028 1,74 % | Abruf Eurostat `gov_10a_main` D41PAY je Land (v3.12); Herkunft der 146 Mrd unbekannt |
+| 51 | Gesamtkonzept 4. Oktober, Abschnitt 4: 30,6 % halte das Versprechen „auch dann in jedem Jahr, wenn die Wirtschaft real überhaupt nicht wächst" | Schon in der Lesart des Originals waren 30,61 % nötig; in stimmiger Lesart (nominal 2 %, auch für den Schuldenabbau) 30,73 %. Neu abgeleitet 30,764 → Quote 30,8 % | Kennzahl `mindestquote_streng` (v3.10) und Prüfagent (v3.12) |
+| 52 | Band II (Korrektur 43): Dividendenreihe 550 → 512 → 707 EUR ohne Bezugsgruppe und Zeiteinheit (B1) | Deutschland, EUR je Kopf und Monat, Preise 2028; seit v3.12 533 → 521 → 720 | Abgleich v3.7 |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -512,24 +601,26 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.11
+## 7 | Offene Punkte, Stand v3.12
 
 | Punkt | Status |
 |---|---|
-| **B1: Dokumentationslücke Dividendenreihe** | **neu, 5. Oktober 2026.** Band II (Korrektur 43) nennt 550 → 512 → 707 € ohne Bezugsgruppe („Deutschland") und ohne Zeiteinheit („je Monat"). Inhaltlich aufgelöst, im Logbuch nicht vermerkt. Ob Korrektur 47, entscheidet der Verfasser |
-| **B2: 707 gegen 712 €** | **nachgerechnet in v3.7.** Seitentext: 3,0 % nominal (0,980 % real). Tabelle: nominales Wachstum an das reale gekoppelt, Zeile 1,0 % hat 3,02 % nominal. Alle zehn Tabellenwerte auf höchstens 0,8 EUR getroffen. Offen bleibt nur die Darstellung: zwei „Zentralfälle" auf einer Seite. Welche Zahl gilt, entscheidet der Verfasser |
+| **B1: Dokumentationslücke Dividendenreihe** | **geschlossen in v3.12 (Korrektur 52)** |
+| **B2: 707 gegen 712 EUR** | **geschlossen in v3.12.** Ein Zentralfall (3,0 % nominal = 0,98 % real), dieselbe Rechnung in Zeitpfad und Tabelle |
 | **B3: BIP Deutschland 2028** | **überholt, geschlossen in v3.7.** Beide Werte meinen 2028. 4.914,9 hat eine dokumentierte Herleitung und ist seit v3.3 Basis. Quelle von 4.884 unbekannt (Differenz 0,63 %) |
-| **B4: Irland, BIP oder GNI\*** | **Sachstand geklärt in v3.7, Entscheidung offen.** Das Klubmodell rechnet mit BIP (Länderliste, Faktor 2,19 im Seitentext). Die ältere Seitenfassung „Klub der Neun" rechnete mit GNI\*. Ersatz durch GNI\* senkte das Klub-BIP um etwa 2,1 %, die Dividende um etwa 2 % (Größenordnung). Welche Bezugsgröße gilt und wie sie ausgewiesen wird, entscheidet der Verfasser |
+| **B4: Irland, BIP oder GNI\*** | **entschieden in v3.12: BIP**, Begründung im Konzept (Abschnitt 5, 9); Größenordnung GNI\* genannt, nicht gerechnet |
 | **B5: Ebene A 8,94 % gegen 9,04 %** | **geschlossen in v3.7, war kein Widerspruch** (8,94 enthält Verteidigung 2,50, die Tabelle 2028 rechnet mit 1,40) |
-| **B6: Ausgangslage 2024 als 2028** | **offen, präzisiert in v3.7.** Schuldenquote 78,4 % gilt im Seitentext als Quote 2028 (10,8 Bio EUR), der Eurostat-Stand 2024 sind 9,537 Bio EUR. Effektiver Zins (1,53 %) und Verteidigung (1,401 %) stammen aus 2024. Entscheidung des Verfassers nötig, ob das Auslaufen des Altbestands 2024 oder 2028 beginnt (Sensitivität in v3.6) |
+| **B6: Ausgangslage 2024 als 2028** | **entschieden in v3.12:** Auslauf ab 2024; Schuldenquote 2028 = 78,4 % bleibt Annahme (Sensitivität 82 %) |
 | **Rechenskripte** | seit v3.8 liegen die Originale `basis.py`, `pfad.py`, `final.py`, `tilgung.py`, `aufschlag.py`, `altschuld.py`, `kurve.py` in `modell/rahmen/`. `modell/pfad.py` und `modell/aufschlag.py` bleiben als **unabhängige Zweitrechnung** (`modell/vergleich_original.py`). Ungelesen: `zahlen.py`, `gesamtkonzept-bau.js`, JSON-Ausgaben. Skripte der Versionen bis v3.4 (Kern, Webseite, Audit, Einzelrechnungen) liegen im Export, aber noch nicht im Repository |
-| **B7: Einwohnerzahl** | **geschlossen für die Zweitrechnung in v3.11 (Korrektur 49).** `basis.py` und Gesamtkonzept stehen weiter auf 254,8 Mio und sind neu zu rechnen (Kopfbeträge −0,09 %) |
+| **B7: Einwohnerzahl** | **geschlossen in v3.12.** Gesamtkonzept rechnet mit 255,061 Mio; `basis.py` bleibt als Original |
 | **B8: Bemessung des Aufschlags** | **geklärt in v3.11.** BIP-Bemessung folgt aus der Finanzierung nach BIP-Anteil; `altschuld.py` überholt (Sekundärquelle) |
-| **B9: Obergrenze 36 %** | **teilweise geklärt in v3.10.** Berechnet 35,2 %, im Chat-Code auf 36 % aufgerundet (0,8 Punkte). Begründung eines Abstands fehlt. Setzung des Autors |
+| **B9: Obergrenze 36 %** | **entschieden in v3.12:** abgeleitete Regel bestätigt 36 %; nicht gedeckt: Häufung der Risiken (36,7 %) und 3,5 % Verteidigung (38,5 %) |
 | **B10: Basis des Gesamtkonzepts** | **geschlossen in v3.9.** Das Gesamtkonzept steht auf der korrigierten Basis |
-| **B12: Deckung der Quote 30,6 %** | **neu, v3.9.** Die Steuerpositionen sind nicht zur Quote 30,6 % aufgebaut; das nationale Modell lieferte 27,91 %. Der wichtigste inhaltliche Befund der Naht zwischen Stand A und Stand B |
-| **B13: Bezugsgröße der Obergrenze im Text** | **neu, v3.9.** „des Aufkommens" (Einleitung) gegen „dessen, was A einzieht" (Abschnitt 1.2) |
+| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 %. Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
+| **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
+| **B15: Neu abrufen** | **neu, v3.12.** BIP, Schuldenquoten, Renditen und COFOG-Posten sind seit dem 4. Oktober nicht erneut geprüft; Zinsausgaben Estland geschätzt. Abruf je Land einzeln über das Web-Abrufwerkzeug (Ratenbegrenzung beachten) |
+| **B16: Seite zum Stand B** | **neu, v3.12.** zeigt die Werte der Fassung 4. Oktober; neu bauen, sobald B12 auf Klubebene steht |
 | **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |
 | **Stand A und Stand B** | **neu, v3.8.** Modell (`1-modell`) und achtsprachige Webseite im Export stehen auf dem nationalen Stand (Quote 27,91 % bzw. 33 %, Position 10 Sozialabgaben, Logbuch v2.0); das Gesamtkonzept auf dem europäischen (Quote 30,6 %, v3.5). Die Seite hat den Rahmenwechsel nie gesehen. Zwei Builds der Seite (Tarifstufen 0/9/16/21/26/28 gegen 0/9/19/24/27/28); der Quelltext passt nur zum älteren, die Patch-Skripte sind nicht ausgeführt. Nach Angabe des Exports; von mir nicht geprüft |
 | **Herleitung von 6,44 und 10,35** | Beide sind Summen der COFOG-abgeleiteten Posten aus Band II (v3.2): 6,44 für Ebene A ohne Verteidigung, 10,35 für Ebene B. Die zugrunde liegenden Eurostat-Abrufe (COFOG, zehn Staaten) liegen nicht vor, die Shell erreicht `ec.europa.eu` nicht. Nachgerechnet sind die Summen der Posten, nicht die Posten |

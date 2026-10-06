@@ -1,23 +1,31 @@
-# Projektsteuerung TAX 28:28 (Stand v3.10, 6. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.12, 6. Oktober 2026)
 
-Maßgeblich ist das private Repository `archicrowd/2828` (main, Commit 4dd9da1). Dieser Projektraum spiegelt nur
-Logbuch Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
-Autor und Projektverantwortlicher des Konzepts: Arndt Hermann.
+Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
+Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
+Autor und Projektverantwortlicher des Konzepts: Arndt Hermann. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.
+
+## Geltende Fassung
+Gesamtkonzept vom 6. Oktober 2026: Quote 30,8 %, Obergrenze von A 36 % des Einzugs, Dividende im Klubschnitt
+490 € je Einwohner und Monat 2028, Tiefpunkt 479 € 2035, 662 € 2060 (Preise 2028). Rechnung `modell/gesamtrechnung.py`.
 
 ## Aufbau
-- `logbuch/` Versionsgeschichte (Band I bis III), Korrekturen fortlaufend nummeriert, nächste freie Nummer 49.
-- `modell/` Parameterfile, Zweitrechnung, `rahmen/` Originalskripte (unverändert), `kennzahlen.py`, Prüfskripte.
-- `dokumente/` Gesamtkonzept (Stand B) und `aussagen.csv` (131 Zahlen mit Sollwert).
-- `projekt/` Bausteinregister (19), Nahtstellen (11), Prüfsummen, `pruefe_projekt.py`.
-- `schnittstelle/`, `beitraege/` Entwurf für Dritte (Mikrosimulation); Tarifmittelstufen offen.
-- `seite/` Webseite Stand A (veraltet) und Seitenstruktur Stand B.
+- `logbuch/` Versionsgeschichte (Band I bis III); Korrekturen fortlaufend, nächste freie Nummer 53.
+- `modell/gesamtrechnung.py` + `gesamtrechnung.toml`: geltende Rechnung (Selbstprüfung gegen die Originale).
+- `modell/rahmen/` Originalskripte (unverändert), `parameter.toml` + Zweitrechnung: Regression der Fassung 4. Oktober.
+- `dokumente/` Gesamtkonzept (aus der Rechnung gebaut), `archiv/` ältere Fassungen.
+- `projekt/` Bausteinregister (20), Nahtstellen (13), Prüfsummen, `pruefe_projekt.py`.
+- `schnittstelle/`, `beitraege/` für Dritte (Mikrosimulation erst nach Prüfung der Aggregate).
 
 ## Ablauf je Änderung
-1. Parameter oder Skript ändern. 2. `python3 modell/alles.py` (acht Stufen). 3. Logbuch-Eintrag mit Datum,
-Änderung, Quelle, bewegter Zahl. 4. Register anpassen. 5. Ein Commit, ein Tag. 6. Projektraum nachführen.
+1. Parameter (`gesamtrechnung.toml`) oder Skript ändern. 2. `NODE_PATH=/opt/npm-tools/node_modules node
+dokumente/werkzeuge/gesamtkonzept-bau.js`, danach in `dokumente/` `soffice --headless --convert-to pdf
+TAX-2828-Gesamtkonzept.docx`. 3. `python3 modell/alles.py` (zehn Stufen). 4. Logbuch-Eintrag mit Datum, Änderung,
+Quelle, bewegter Zahl. 5. Register anpassen. 6. Ein Commit, ein Tag. 7. Projektraum nachführen.
 Tag-Push scheitert über den Sitzungsproxy (HTTP 403); Tags und GitHub Releases setzt der Verantwortliche.
+Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell): je Land und Dimension einzeln, Ratenbegrenzung beachten.
 
-## Offene Entscheidungen des Autors
-Lizenz und Sichtbarkeit (`LIZENZ-VORSCHLAG.md`), Korrektur 49 (B1 und/oder B7), B4 (Irland BIP oder BIP*),
-B6 (Ausgangslage 2024 oder 2028), mittlere Tarifstufen (9/16/21/26 gegen 9/19/24/27).
-Offene Rechenpunkte: B7, B8, B9, B12, B14 (Band III, Abschnitt 7). Der Vorchat ist nur Sekundärquelle.
+## Reihenfolge der offenen Arbeit
+1. **B12 auf Klubebene:** Deckung der Quote aus den Steuerbasen der zehn Staaten (deutsche Basis: Lücke 0,95 Punkte).
+2. **B15:** BIP, Schuldenquoten, Renditen, COFOG-Posten neu abrufen; Zinsausgaben Estland nachholen.
+3. **B16:** Seite zum Stand B neu bauen; Webseite Stand A auf Stand B umstellen.
+4. Haushaltsmikrosimulation (kalibriert die Tarifstufen 0/9/16/21/26/28).
