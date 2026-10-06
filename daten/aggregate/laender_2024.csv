@@ -1,11 +1,12 @@
 land,bip_mio_eur_2024_nominal,schuld_pct_bip_2024,einwohner_mio_2024,quelle,
-DE,4328970.0,62.2,83.516593,"Eurostat nama_10_gdp / gov_10dd_edpt1 / demo_gind laut modell/rahmen/basis.py (Originalskript, Einwohner seit v3.9 aus basis.py; Summe 254,8 Mio wie Gesamtkonzept Abschnitt 9); Sekundaerquelle",[' an der Quelle zu pruefen']
+DE,4328970.0,62.2,83.516593,"Eurostat nama_10_gdp / gov_10dd_edpt1 laut modell/rahmen/basis.py (Sekundaerquelle, nicht neu abgerufen); Einwohner seit v3.11 Eurostat demo_gind AVG 2024 (Summe 255,061 Mio), Korrektur 49",[' an der Quelle zu pruefen']
 FR,2935236.2,112.6,68.775952,wie DE,
-ES,1594330.0,101.6,48.797875,wie DE,
-NL,1115252.0,43.8,17.942942,wie DE,
-IE,561940.5,38.3,5.380300,wie DE; BIP,[' nicht GNI* (Eurostat nama_10_gdp fuehrt BIP)']
-BE,619914.3,103.9,11.796841,wie DE,
-AT,494087.6,80.0,9.158750,wie DE,
-DK,400267.4,30.5,5.961249,wie DE,
-SI,67418.1,66.4,2.123949,wie DE,
-EE,39883.0,23.5,1.369285,wie DE,
+ES,1594330.0,101.6,48.873996,wie DE,
+NL,1115252.0,43.8,17.993485,wie DE,
+IE,561940.5,38.3,5.395980,wie DE; BIP,[' nicht GNI* (Eurostat nama_10_gdp fuehrt BIP)']
+BE,619914.3,103.9,11.850296,wie DE,
+AT,494087.6,80.0,9.177982,wie DE,
+DK,400267.4,30.5,5.976992,wie DE,
+SI,67418.1,66.4,2.127400,wie DE,
+EE,39883.0,23.5,1.372341,wie DE,
+

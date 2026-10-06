@@ -36,7 +36,7 @@
 
 [modell]
 # Modellstand, auf den sich die Ergebnisdatei bezieht (Logbuch-Version).
-version = "v3.10"
+version = "v3.11"
 
 # ---------------------------------------------------------------------------
 # Strukturgrößen aus dem Logbuch (Band I v3.1, Band II v3.5)
@@ -59,13 +59,13 @@ hinweis    = "aus Logbuch übernommen, nicht gegen Eurostat neu abgerufen. Der D
 
 [[parameter]]
 name       = "klub_einwohner_2024"
-wert       = 254.8
+wert       = 255.061017
 einheit    = "Mio Personen"
 bezugsjahr = 2024
 preisbasis = "keine"
-quelle     = "Gesamtkonzept Abschnitt 9 (254,8 Mio) und modell/rahmen/basis.py (Summe 254.823.736); Eurostat demo_gind (2024) laut Skript"
+quelle     = "Eurostat demo_gind, Indikator AVG, 2024, zehn Staaten einzeln am 6.10.2026 abgerufen (Web-Abruf, maschinell gelesen); stimmt mit modell/rechnungen/rahmen/daten.py (POP) ueberein"
 status     = "modellrechnung"
-hinweis    = "Seit v3.9 254,8 statt 255,1. Logbuch Band I (v3.1) nennt 255,1; das Gesamtkonzept und das Originalskript 254,8. Mit 254,8 ergibt 11,21 % des Klub-BIP 506 EUR je Kopf und Monat wie im Gesamtkonzept, mit 255,1 505,4. Ursache der Differenz im Logbuch nicht geklärt; nicht an Eurostat geprüft"
+hinweis    = "Seit v3.11 255,061 Mio (Korrektur 49): die 254,8 in basis.py und im Gesamtkonzept beruhen auf acht Einwohnerzahlen, die in keiner Eurostat-Reihe stehen. Frueher (v3.9): 254,8 statt 255,1. Das Gesamtkonzept und basis.py rechnen weiter mit 254,8 (11,21 % des Klub-BIP = 506 EUR je Kopf und Monat; mit 255,061 rechnerisch 505,5). Einwohner einzeln an Eurostat demo_gind AVG 2024 abgerufen, maschinell gelesen"
 
 [[parameter]]
 name       = "klub_staatsquote_2024"

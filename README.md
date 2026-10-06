@@ -8,7 +8,7 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v3.10** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
+**Modellstand: v3.11** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
 
 Einstieg: `INDEX.md` (Wegweiser, Stand A und Stand B, Naht zwischen beiden).
@@ -43,8 +43,8 @@ fortgeschrieben wie die Rechnung, die es beschreibt.
   Originalskripten in `modell/rahmen/` und, unabhängig davon, aus `modell/pfad.py` und
   `modell/aufschlag.py` mit `modell/parameter.toml`. `modell/vergleich_original.py` prüft beide
   gegeneinander. Die Eingangsdaten (Eurostat 2024) stehen als feste Zahlen im Skript und sind
-  **nicht an der Quelle geprüft**. Die Klub-Einwohnerzahl ist seit v3.9 254,8 Mio (Gesamtkonzept,
-  `basis.py`); Logbuch Band I nennt 255,1 Mio (Band III, B7).
+  **nicht an der Quelle geprüft**. Die Klub-Einwohnerzahl der Zweitrechnung ist seit v3.11 255,061 Mio (Eurostat demo_gind; Korrektur 49);
+  Gesamtkonzept und `basis.py` stehen noch auf 254,8 Mio (Band III, B7).
 - **Stand A und Stand B** widersprechen sich (Quote 27,91 gegen 30,6 %, fünf Ebenen gegen
   zwei). Das nationale Modell, die Webseite und die Einzelrechnungen stehen auf Stand A und
   wurden nach dem Rahmenwechsel nicht neu gerechnet. Ob die Steuerpositionen die Quote 30,6 %

@@ -16,3 +16,6 @@ der Modellbasis 4.200 Mrd und dem nationalen Rahmen. Sie sind nach v3.5 nicht ne
 **Nicht ausgeführt.** In dieser Sitzung wurden nur `lauf.py`, `pfad.py`, `aufschlag.py`,
 `vergleich_original.py` sowie `basis.py`, `pfad.py`, `final.py`, `aufschlag.py`, `altschuld.py`,
 `tilgung.py` aus `rahmen/` ausgeführt. Alle übrigen Skripte wurden nur im Kopf gelesen, nicht gestartet.
+
+
+**Hinweis v3.11 (Sekundärquelle, Vorchat):** `rahmen/altschuld.py` ist ein verworfener erster Versuch (Bemessung je Kopf, Klubschnitt). Maßgeblich ist `rahmen/aufschlag.py` (BIP-Bemessung). Nur zum Nachvollzug von Korrektur 44 behalten.
