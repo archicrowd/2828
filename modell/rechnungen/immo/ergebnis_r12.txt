@@ -1,0 +1,91 @@
+==================================================================================================
+R12 — ENTWURF: NUTZUNG UND VERKAUF ERFASSEN, EIGENNUTZUNG MIT FREIBETRAG
+==================================================================================================
+
+[1] DIE BEIDEN HEBEL, UND WARUM ES ZWEI BRAUCHT
+
+    Laufend (Position 04): die Bodenwertabgabe erfasst den Zuwachs, WÄHREND
+      er entsteht, bei dem, der das Grundstück dann hält. Kein Verkauf nötig,
+      keine Sperrwirkung, kein Streit über den Einstandspreis von 1974.
+    Bei Verkauf (neu): der Veräußerungsgewinn erfasst, was die laufende
+      Abgabe nicht getroffen hat — und verhindert das Ausweichen durch
+      Halten und Vererben.
+
+    Beide zusammen überschneiden sich. Wer den Zuwachs jährlich besteuert
+    UND beim Verkauf noch einmal den vollen Gewinn, besteuert zweimal.
+    Das ist die offene Konstruktionsfrage dieses Entwurfs, und sie hat
+    zwei saubere Antworten:
+      a) gezahlte Bodenwertabgabe vom Veräußerungsgewinn abziehen
+      b) Einstandspreis um die gezahlte Abgabe erhöhen (Indexierung)
+    Beide laufen wirtschaftlich auf dasselbe hinaus. Keines der geprüften
+    Länder macht das — weil keines beide Hebel ernsthaft benutzt.
+
+[2] EIGENNUTZUNG: FREIBETRAG STATT FREISTELLUNG
+    Der Zweck ist benannt: ein Umzug darf nicht zum Armutsrisiko werden.
+    Dafür gibt es zwei Instrumente, und sie wirken verschieden.
+
+    FREIBETRAG deckelt die Entlastung. Die USA machen das seit 1997 mit
+      250.000 USD für Alleinstehende und 500.000 für Verheiratete; die OECD
+      empfiehlt in "Housing Taxation in OECD Countries" ausdrücklich, die
+      Freistellung des Hauptwohnsitzes zu DECKELN, damit die höchsten
+      Gewinne erfasst werden. 29 von 38 Staaten stellen bisher ganz frei.
+    ERSATZBESCHAFFUNG löst das Umzugsproblem direkter. Zürich schiebt die
+      Steuer auf, wenn der Erlös binnen zwei Jahren in ein neues
+      selbstgenutztes Objekt geht — voll bei vollständiger Reinvestition,
+      anteilig sonst, kein Aufschub, wenn das Ersatzobjekt weniger kostet
+      als der Einstandspreis des alten. Beim späteren Verkauf ohne Ersatz
+      wird der GESAMTE aufgelaufene Gewinn versteuert.
+
+    Der Unterschied ist entscheidend: der Freibetrag verschenkt den Zuwachs,
+    die Ersatzbeschaffung verschiebt ihn nur. Wer umzieht, zahlt nichts; wer
+    aussteigt und das Geld mitnimmt, zahlt. Das trifft genau Ihr Ziel und
+    kostet den Staat nichts — dieselbe Logik wie die Stundung in Position 03.
+
+[3] AUFKOMMEN JE FREIBETRAG, Eigennutzung mit Ersatzbeschaffung
+    Annahmen: Gewinnanteil 25 % des Verkaufspreises, 50 % der Fälle
+    selbstgenutzt, 35 % binnen zehn Jahren verkauft (heute steuerpflichtig).
+    Durchschnittlicher Verkaufspreis 306.832 EUR.
+
+      Durchschnittlicher Gewinn je Fall 76.708 EUR
+
+   Freibetrag   Anteil Fälle frei   Basis selbstgen.   Aufkommen davon   zusammen mit Rest
+            0               0,0 %           30,9 Mrd           8,6 Mrd           +12,8 Mrd
+       50.000              49,0 %           15,1 Mrd           4,2 Mrd            +8,3 Mrd
+      100.000              77,2 %            8,1 Mrd           2,3 Mrd            +6,4 Mrd
+      200.000              93,5 %            3,1 Mrd           0,9 Mrd            +5,0 Mrd
+      500.000              99,5 %            0,4 Mrd           0,1 Mrd            +4,2 Mrd
+
+    Gegengerechnet ist überall die Satzwirkung: die heute schon
+    steuerpflichtigen Fälle fallen von rund 42 auf 28 %, das sind
+    −1,5 Mrd EUR.
+
+    Die Verteilung der Gewinne je Fall ist gesetzt (Lognormal, sigma 0,9),
+    nicht erhoben. Sie entscheidet, wie stark ein Freibetrag greift, und
+    gehört zu den Dingen, die nur die Kaufpreissammlungen der
+    Gutachterausschüsse hergeben. Die Spalte ist als Ordnung zu lesen.
+
+[4] WAS DARAUS FOLGT — VORSCHLAG
+
+    Position 04 wird zweiteilig, der Grundsatz bleibt einer:
+
+    04a  Grundsteuer nur auf den Boden, auf regelmässig neu bewerteten
+         Werten. Neubewertung alle zwei Jahre, Ansatz unter dem
+         Bewertungswert (dänisches Vorsichtsprinzip), Satz aufkommens-
+         neutral zur heutigen Grundsteuer. Der Zuwachs wird erfasst,
+         während er entsteht.
+    04b  Veräußerungsgewinne aus Immobilien sind Einkommen, 28 %, OHNE
+         Behaltefrist. Die gezahlte Bodenabgabe wird angerechnet.
+         Selbstgenutztes Wohnen: Steueraufschub bei Ersatzbeschaffung
+         binnen zwei Jahren, dazu ein Freibetrag je Erwerb. Kein Erlass —
+         wer aussteigt, zahlt den aufgelaufenen Gewinn.
+
+    Übergang: ein Rabatt für Alteigentümer nach dänischem Muster, der mit
+    dem Verkauf endet. Und für die Zahlungsschwachen dieselbe Stundung wie
+    in Position 03 — § 154 Abs. 5 BauGB sieht genau das schon vor, wenn dem
+    Eigentümer "nicht zugemutet werden kann, die Verpflichtung bei
+    Fälligkeit mit eigenen oder fremden Mitteln zu erfüllen".
+
+    Nicht übernommen: die französische Abschmelzung und der Schweizer
+    Besitzesdauerrabatt. Beide widersprechen dem Grundsatz. Übernommen vom
+    Schweizer Modell wird nur der ZUSCHLAG für kurze Haltedauer, der echte
+    Spekulation trifft, und die Ersatzbeschaffung.

@@ -1,0 +1,59 @@
+====================================================================================================
+A4 — 04b IM PFAD, UND DIE KALIBRIERUNGSFRAGE
+====================================================================================================
+
+[1] EINNAHMEN NACH ALLEN KORREKTUREN, Jahr 1, Robust, DD-Stufe 50 %
+
+      Einkommensteuer (inkl. steuerpfl. DD)         313,3
+      Kapitalerträge 28 %                            48,8
+      Mehrwertsteuer (Label 5–28 %)                 375,9
+      Unternehmen & Plattformen 28 %                152,0
+      Erbschaft 28 %                                 21,0
+      Vermögen-Mindeststeuer (anrechenbar)           20,7
+      CO₂-Abgabe (BEHG-Korridor, netto)              33,0
+      Verkaufsgewinn Immobilien 28 % (04b)            4,1
+      Sonstige Steuern                              165,0
+      Bausteine                                      29,3
+      ---------------------------------------------------
+      zusammen                                    1.163,1
+      Ausgaben                                    1.171,9
+      SALDO                                          -8,7
+
+[2] DER PFAD, VIER KOMBINATIONEN
+    "BIP 4.200" ist die Modellannahme, "BIP 4.884" die Fortschreibung der
+    amtlichen Zahl (4.469,9 für 2025, 3 % nominal bis 2028).
+
+    BIP               TarifSzenario        Saldo J1  Lücken  Investquote  Fonds Ende   60 %
+  4.200        alt 16/21/26Robust              -8,7       0        92,4 %         306      –
+  4.200        alt 16/21/26Stress             -26,1       4        46,4 %         234      –
+  4.200        neu 19/24/27Robust             +30,1       0        99,4 %         458      –
+  4.200        neu 19/24/27Stress              +9,3       0        78,2 %         361      –
+  4.884        alt 16/21/26Robust              -8,7       0        90,3 %         352      –
+  4.884        alt 16/21/26Stress             -26,1       4        44,7 %         178      –
+  4.884        neu 19/24/27Robust             +30,1       0        98,1 %         435      –
+  4.884        neu 19/24/27Stress              +9,3       0        75,0 %         387      –
+
+[3] WAS DAS BEDEUTET — UND EINE KORREKTUR AN MIR SELBST
+
+    Ich hatte erwartet, dass der Pfad mit dem amtlichen BIP bricht. Er
+    bricht nicht. Die Investitionsquote fällt im Robust-Szenario nur von
+    99,4 auf 98,1 %, im Stress von 78,2 auf 75,0 %, und die Zahl der
+    Lückenjahre bleibt bei null. Der Grund: investiert wird nach Regel 1
+    aus dem ÜBERSCHUSS über dem Puffer, nicht bis zum Ziel. Der Überschuss
+    ist die bindende Grösse, nicht das Ziel — ein höheres BIP hebt beide
+    und hebt sich dabei weitgehend auf.
+
+    DAS IST EIN ERGEBNIS ZUGUNSTEN DES MODELLS. Seine Aussagen hängen
+    nicht am Kalibrierungsniveau. Was weiter gilt:
+      - die VERHÄLTNISSE sind belastbar: Investitionsquote, Lückenjahre,
+        Verteilungswirkung, die Rangfolge der Positionen
+      - die ABSOLUTEN EURO-BETRÄGE sind es nicht. Sie liegen auf dem
+        Niveau etwa 2021/2022 und dürfen nicht als 2028er Werte gelesen
+        werden. Auf der Seite steht das nirgends.
+      - 04b bringt 4,1 Mrd und verbessert den Saldo des ersten Jahres von
+        −12,8 auf −8,7 Mrd.
+
+    Der nächste Arbeitsschritt bleibt die Kalibrierung auf ein Basisjahr —
+    nicht weil der Pfad sonst kippt, sondern weil ein Modell, dessen
+    Euro-Beträge um ein Sechstel neben der amtlichen Statistik liegen, von
+    Dritten zu Recht nicht verwendet wird.

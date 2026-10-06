@@ -1,0 +1,35 @@
+================================================================================================
+R15 — POSITION 04b, ENDFASSUNG
+================================================================================================
+
+[1] DIE REGEL AN DEN FÄLLEN, Verkauf 2026
+
+Fall                                Kauf      Gewinn  greift                       Steuer
+Reihenhaus Landkreis Sachsen        2005     +73.434  einmaliger Freibetrag             0
+Einfamilienhaus Kleinstadt NRW      2000    +160.244  einmaliger Freibetrag             0
+Eigentumswohnung Leipzig            2015    +112.668  Umzugsaufschub                    0
+Altbauwohnung München               2000    +249.461  einmaliger Freibetrag             0
+Eigentumswohnung Berlin             2018    +123.397  Umzugsaufschub                    0
+Einfamilienhaus Münchner Umland     2010    +591.213  Rest über 300.000            81.540
+Vermietetes Haus Hamburg            2012    +907.255  vermietet: kein Schutz      254.031
+Neubau Brandenburg, Kauf im Hoch    2022     -11.850  Verlust, vortragsfähig            0
+                                                      zusammen                    335.571
+
+[2] AUFKOMMEN, Sensitivität über die beiden offenen Annahmen
+
+    Heutiges Recht: 4,5 Mrd EUR. Unten das Mehraufkommen von 04b.
+    Senkrecht der Gewinnanteil am Verkaufspreis, waagerecht der
+    Anteil der selbstgenutzten Verkäufe, die ein Ausstieg sind.
+
+                 Ausstieg 30 %   Ausstieg 40 %   Ausstieg 50 %
+   Gewinn 15 %        +0,7 Mrd        +0,7 Mrd        +0,7 Mrd
+   Gewinn 25 %        +4,2 Mrd        +4,3 Mrd        +4,3 Mrd
+   Gewinn 35 %        +7,9 Mrd        +8,0 Mrd        +8,1 Mrd
+
+    Robust positiv über alle neun Kombinationen. Der mittlere Fall
+    (Gewinn 25 %, Ausstieg 40 %) ergibt +4,3 Mrd EUR.
+
+    WAS DARAN GESETZT IST: der Gewinnanteil, der Ausstiegsanteil und die
+    Streuung der Gewinne je Fall (Lognormal, sigma 0,9). Die Fälle in [1]
+    stehen auf der amtlichen Preisreihe, die Aggregate hier nicht. Belastbar
+    wären sie nur aus den Kaufpreissammlungen der Gutachterausschüsse.

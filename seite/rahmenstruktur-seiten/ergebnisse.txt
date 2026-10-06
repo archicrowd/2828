@@ -1,0 +1,74 @@
+Kalibrierfaktor Altrecht: 0.819
+
+[1] PRUEFUNG BISHERIGER STAND 25:25 PLUS (Basis)
+  Stufe 2: SV 28 %, DD 500/250          -350 (-7.8 % BIP)
+  Stufe 3: SV 18 %, DD 600/300          -550 (-12.3 % BIP)
+
+[2] INTERPOLATION X:X, Zielbild (SV 18 %, DD 600/300, Rentensockel 100 %)
+  25:25  konse    -621  basis    -550  optim    -458
+  26:26  konse    -589  basis    -515  optim    -421
+  27:27  konse    -557  basis    -481  optim    -385
+  28:28  konse    -526  basis    -447  optim    -350
+  29:29  konse    -495  basis    -414  optim    -315
+  30:30  konse    -464  basis    -381  optim    -281
+  -> Zielbild waere erst bei einem Einheitssatz von ca. 43 % ausgeglichen (Basis, Extrapolation)
+
+[3] FRONT: max. finanzierbare DD (Erw., Kinder = 1/2) je SV-Satz, 30:30, Rentensockel 100 %
+  SV   18%: konse   –   basis   –   optim   –   basis   – 
+  SV   22%: konse   –   basis   –   optim   –   basis   – 
+  SV   26%: konse   –   basis   –   optim  196  basis   – 
+  SV   30%: konse   –   basis  130  optim  323  basis   98
+  SV   34%: konse  101  basis  255  optim  443  basis  225
+  SV   38%: konse  226  basis  375  optim  550  basis  345
+  SV 41.9%: konse  343  basis  488  optim  633  basis  458
+
+[4] FRONT je Einheitssatz (SV 38 %, Rentensockel 100 %)
+  25:25  konse   –   basis   –   optim  183
+  26:26  konse   –   basis  103  optim  261
+  27:27  konse   –   basis  173  optim  336
+  28:28  konse  105  basis  241  optim  411
+  29:29  konse  166  basis  308  optim  485
+  30:30  konse  226  basis  375  optim  550
+
+[5] EMPFOHLENE KONFIGURATION: 30:30, SV 38 %, Rentensockel 100 %, DD per Formel
+  konservativ  DD J1  100 J5  200 J10  200 J20  250 | Saldo J1 +0.87 J20 +0.35 % | reformbed. Schuld J20 -10.0 % BIP
+  basis        DD J1  200 J5  350 J10  375 J20  425 | Saldo J1 +0.65 J20 +0.38 % | reformbed. Schuld J20 -9.7 % BIP
+  optimistisch DD J1  300 J5  525 J10  550 J20  600 | Saldo J1 +0.68 J20 +0.59 % | reformbed. Schuld J20 -9.9 % BIP
+  basis (DD lohnindexiert): DD J20 325, Saldo J20 +0.49 %
+  Detail bei DD 350/175 (Preise 2025): Saldo +11.0
+    ESt                +54.9
+    USt                +73.2
+    Kapital            +15.4
+    Unternehmen        +15.3
+    Erbschaft          +17.4
+    Vermoegen           +7.0
+    CO2                +30.0
+    SV                 -21.1
+    A_DD              +334.9
+    A_Rentensockel     -81.8
+    A_Wegfall          -92.0
+    A_Haerte           +40.0
+    A_Buerokratie      -20.0
+
+[6] MISCHVARIANTEN (SV 38 %, Rentensockel 100 %): max. DD ohne Luecke (konservativ | basis)
+  25:25                                          0 |     0
+  28:28                                        105 |   241
+  30:30                                        226 |   375
+  ESt 28 | USt, Kapital, Unternehmen 30        168 |   312
+  ESt 30 | USt 28 | Kapital, Unternehmen 30    189 |   329
+
+[7] MIKRO kons: 30:30, SV 38 %, DD 225/112, Rentensockel 100 % (real, inkl. USt-Preiseffekt)
+  Rentnerin, 1.100 EUR/Monat                         11,748   11,677      -71 (-1 %)
+  Geringverdiener, 20.000 EUR                        15,521   17,350   +1,829 (+12 %)
+  Fachkraft, 42.000 EUR                              28,516   30,937   +2,421 (+8 %)
+  Facharbeiter, 55.000 EUR                           35,596   38,146   +2,549 (+7 %)
+  Familie, 63.000 EUR, 2 Kinder, Alleinverdiener     50,384   50,789     +405 (+1 %)
+  Fuehrungskraft, 150.000 EUR                        86,477   85,552     -925 (-1 %)
+
+[7] MIKRO basis: 30:30, SV 38 %, DD 400/200, Rentensockel 100 % (real, inkl. USt-Preiseffekt)
+  Rentnerin, 1.100 EUR/Monat                         11,748   11,951     +203 (+2 %)
+  Geringverdiener, 20.000 EUR                        15,521   19,176   +3,655 (+24 %)
+  Fachkraft, 42.000 EUR                              28,516   32,497   +3,981 (+14 %)
+  Facharbeiter, 55.000 EUR                           35,596   39,609   +4,012 (+11 %)
+  Familie, 63.000 EUR, 2 Kinder, Alleinverdiener     50,384   54,273   +3,889 (+8 %)
+  Fuehrungskraft, 150.000 EUR                        86,477   86,966     +490 (+1 %)

@@ -1,0 +1,85 @@
+==========================================================================================
+R5b — "GRUNDSTEUER NUR AUF DEN BODEN"
+==========================================================================================
+
+[1] DER WERT DES BODENS, amtlich gerechnet
+  Jahr     Grund und Boden    davon bebaut   Anteil
+  2011         3.104,3 Mrd     2.713,4 Mrd    87,4 %
+  2012         3.198,6 Mrd     2.791,5 Mrd    87,3 %
+  2014         3.529,0 Mrd     3.021,0 Mrd    85,6 %
+
+    Struktur 2012:
+      Siedlungs- und Verkehrsfläche zu Wohnbauten       2.096,4 Mrd    65,5 %
+      Siedlungs- und Verkehrsfläche zu Nichtwohnbauten    695,1 Mrd    21,7 %
+      Landwirtschafts- und Waldfläche                     395,1 Mrd    12,4 %
+      Flächen anderer Nutzung                              11,9 Mrd     0,4 %
+
+    Das Entscheidende steht in der Gegenüberstellung von Fläche und Wert:
+    Landwirtschaft und Wald sind 83 % der FLÄCHE, aber rund 12 % des WERTS.
+    Siedlungs- und Verkehrsfläche ist 17 % der Fläche und 87 % des Werts.
+    Eine Bodenwertsteuer trifft deshalb die Städte, nicht die Felder.
+
+[2] WELCHER SATZ TRÄGT DAS HEUTIGE AUFKOMMEN?
+    Grundsteuer 2023: 15,5 Mrd EUR (Destatis).
+    Der Satz, der dieses Aufkommen allein aus dem Bodenwert holt:
+       Bodenwert      Satz                  entspricht
+       3.529 Mrd   0,439 %     Stand 2014, unverändert
+       4.588 Mrd   0,338 %   Bodenwert +30 % seit 2014
+       5.646 Mrd   0,275 %   Bodenwert +60 % seit 2014
+       7.058 Mrd   0,220 %        Bodenwert verdoppelt
+
+    Die Grössenordnung ist stabil: ein halbes Promille bis gut vier
+    Promille des Bodenwerts. Zum Vergleich: die heutige Grundsteuer
+    entspricht rund 0,439 % des Bodenwerts von 2014.
+
+[3] WAS SICH VERSCHIEBT
+    Bei gleichem Aufkommen gibt es Gewinner und Verlierer, und sie sind
+    vorhersagbar:
+      mehr zahlen   teures Grundstück, wenig darauf — Baulücken, Parkplätze,
+                    flache Bebauung in guter Lage, gehortete Grundstücke
+      weniger zahlen teures Gebäude auf billigem Boden — Neubau im Umland,
+                    hochwertig saniertes Objekt in mittlerer Lage
+    Das ist der eigentliche Zweck: wer Boden in guter Lage hält, ohne ihn
+    zu nutzen, zahlt künftig dafür. Die Höhe dieser Verschiebung lässt sich
+    aus aggregierten Daten NICHT beziffern — dafür bräuchte es die
+    Einzeldaten der Grundsteuerwertestatistik.
+
+[4] WARUM DIE GRUNDSTEUERWERTE DIE RECHNUNG NICHT TRAGEN
+    Naheliegend wäre, die 35,4 Millionen wirtschaftlichen Einheiten der
+    neuen Grundsteuerwertestatistik aufzusummieren. Das geht nicht:
+
+      - Die Statistik ist "durch die Öffnungsklausel KEINE einheitliche
+        Bundesstatistik des Grundvermögens" (Destatis, WISTA 5/2025).
+        Die Länder rechnen nach verschiedenen Modellen; Bayern, Hamburg,
+        Niedersachsen und Hessen nach Flächenmodellen, die überhaupt
+        keinen Wert erzeugen. Baden-Württemberg nutzt ein reines
+        Bodenwertmodell und meldet deshalb ALLE Grundstücke als unbebaut.
+      - Die veröffentlichten Ergebnisse beruhen ausdrücklich auf
+        "nicht plausibilisierten Daten".
+      - Aggregierte Grundsteuerwerte werden in dem Aufsatz gar nicht
+        ausgewiesen, nur Fallzahlen und Anteile.
+
+    Das ist kein Mangel des Entwurfs, sondern der Datenlage. Es ändert
+    sich: mit dem Jahressteuergesetz 2024 wurde der Erhebungskreis
+    erweitert, und Grundsteuerwerte lassen sich künftig mit der Lohn- und
+    Einkommensteuer sowie der Erbschaftsteuer auf Personenebene
+    verknüpfen. Dann wäre die Verschiebung aus Abschnitt 3 rechenbar.
+
+[5] EIN BELEG, DER AUF DER SEITE SCHON STEHT
+    Position 04 verweist darauf, dass Baden-Württemberg die Grundsteuer
+    bereits nach dem Bodenwert erhebt. Die Grundsteuerwertestatistik
+    bestätigt das aus der Verwaltungspraxis: Baden-Württemberg meldet
+    86 % unbebaute Grundstücke, weil das Bodenwertmodell nicht zwischen
+    bebaut und unbebaut unterscheidet. Das Modell ist also kein Entwurf,
+    sondern geltendes Landesrecht in einem Flächenland mit 11 Millionen
+    Einwohnern.
+
+[6] WAS NOCH FEHLT
+    - Ein Preisindex für Bauland, um den Bodenwert von 2014 auf 2026
+      fortzuschreiben. Erst dann wird aus der Satzformel eine Zahl.
+    - Die sektorale Aufteilung des Bodenwerts: wie viel entfällt auf
+      private Haushalte, Unternehmen, den Staat. Der Aufsatz beschreibt
+      das Verfahren, die Tabelle liegt mir nicht vor.
+    - Die Entscheidung, ob land- und forstwirtschaftlicher Boden
+      (395,1 Mrd EUR, 12,4 % des Werts)
+      einbezogen wird. Das ist eine Entwurfsfrage, keine Rechenfrage.

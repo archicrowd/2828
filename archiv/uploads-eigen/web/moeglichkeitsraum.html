@@ -1,0 +1,349 @@
+<title>Der Möglichkeitsraum</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Werkzeug statt Aufsatz: oben die Schwelle als Messlatte, darunter die Staaten zum Anklicken. */
+:root{
+  --paper:#F6F7F4; --card:#FFFFFF; --ink:#0F3B5C; --dim:#5A7186;
+  --line:#B9C9D6; --line-soft:#D8E1E8;
+  --accent:#1D7A4F; --accent-bg:#E7F2EC; --warn:#B4452F; --warn-bg:#F7E9E5;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#0B1F30; --card:#10293E; --ink:#E6EDF3; --dim:#9BB0C2;
+  --line:#2C4760; --line-soft:#1D374D;
+  --accent:#64C295; --accent-bg:#11322A; --warn:#E39079; --warn-bg:#36201B;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0B1F30; --card:#10293E; --ink:#E6EDF3; --dim:#9BB0C2;
+  --line:#2C4760; --line-soft:#1D374D;
+  --accent:#64C295; --accent-bg:#11322A; --warn:#E39079; --warn-bg:#36201B;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:980px;margin:0 auto;padding-inline:24px}
+@media(max-width:480px){.wrap{padding-inline:16px}}
+h1,h2,h3{text-wrap:balance;margin:0}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+header.top{border-bottom:1.5px solid var(--ink)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding-block:12px;flex-wrap:wrap}
+header.top .mark{font-family:var(--disp);font-size:19px;font-weight:700;letter-spacing:-.5px;
+  text-decoration:none}
+header.top .st{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--dim)}
+
+.intro{padding-block:46px 34px}
+.intro h1{font-family:var(--disp);font-weight:700;font-size:clamp(26px,4.2vw,38px);line-height:1.14;
+  max-width:760px}
+.intro p{max-width:680px;color:var(--dim);margin-block:18px 0}
+
+/* Messlatte */
+.gauge{border:1.5px solid var(--ink);background:var(--card);padding:26px;margin-bottom:28px}
+@media(max-width:560px){.gauge{padding:18px}}
+.gauge .head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.gauge .big{font-family:var(--mono);font-size:clamp(32px,6vw,48px);font-weight:500;line-height:1;
+  font-variant-numeric:tabular-nums}
+.gauge .big small{font-size:.42em;color:var(--dim);font-weight:400}
+.gauge .verdict{font-family:var(--disp);font-size:16px;font-weight:500;padding:7px 14px;
+  border:1.5px solid var(--accent);background:var(--accent-bg);color:var(--accent)}
+.gauge .verdict.bad{border-color:var(--warn);background:var(--warn-bg);color:var(--warn)}
+.track{position:relative;height:40px;margin-top:22px;background:var(--line-soft)}
+.fill{position:absolute;inset:0 auto 0 0;background:var(--accent);transition:width .25s}
+.fill.bad{background:var(--warn)}
+.mark{position:absolute;top:-10px;bottom:-10px;width:0;border-left:2px dashed var(--ink)}
+.marklbl{position:absolute;top:-34px;transform:translateX(-50%);white-space:nowrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink)}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;
+  color:var(--dim);margin-top:8px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:22px}
+@media(max-width:560px){.facts{grid-template-columns:1fr}}
+.facts div{background:var(--card);padding:14px 16px}
+.facts .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--dim)}
+.facts .v{font-family:var(--mono);font-size:19px;font-weight:500;margin-top:3px;
+  font-variant-numeric:tabular-nums}
+
+/* Voreinstellungen */
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.presets button{font-family:var(--mono);font-size:12px;padding:9px 13px;border:1px solid var(--line);
+  background:var(--card);color:var(--dim);cursor:pointer}
+.presets button:hover{color:var(--ink);border-color:var(--ink)}
+
+/* Staatenraster */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.st-btn{background:var(--card);border:none;padding:11px 13px;text-align:left;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;font:inherit;
+  color:var(--dim);min-width:0}
+.st-btn .nm{font-family:var(--body);font-size:15px;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;min-width:0}
+.st-btn .pp{font-family:var(--mono);font-size:12.5px;white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.st-btn[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.st-btn[aria-pressed=true] .flag{color:var(--line)}
+.st-btn .flag{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--warn);margin-top:2px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;
+  color:var(--dim);margin-top:14px}
+
+section{padding-block:46px;border-top:1px solid var(--line);margin-top:46px}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(22px,2.8vw,28px);margin-bottom:12px}
+.lede{max-width:680px;color:var(--dim);margin-bottom:26px}
+.find{max-width:820px;border-top:1.5px solid var(--ink)}
+.find>div{padding-block:18px;border-bottom:1px solid var(--line-soft);
+  display:grid;grid-template-columns:auto 1fr;gap:18px}
+.find .z{font-family:var(--mono);font-size:19px;font-weight:500;color:var(--accent);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.find b{font-family:var(--disp);font-weight:500;font-size:17px;display:block;margin-bottom:3px}
+.find p{margin:0;font-size:15.5px;color:var(--dim)}
+.fine{font-size:13.5px;color:var(--dim);line-height:1.6;max-width:780px;margin-top:18px}
+footer{padding-block:34px 52px;border-top:1px solid var(--line);font-size:14px;color:var(--dim)}
+footer p{max-width:800px}
+</style>
+
+<header class="top"><div class="wrap">
+  <a class="mark" href="#">TAX 28:28 · Möglichkeitsraum</a>
+  <span class="st">Entwurf · 4. Oktober 2026</span>
+</div></header>
+
+<div class="wrap">
+  <div class="intro">
+    <h1>Wie viele Staaten darf der Klub verlieren, bevor er zu klein wird?</h1>
+    <p>Statt eine Mitgliederliste festzulegen, lässt sich der Klub über Kriterien definieren und
+      seine Robustheit messen. Die Schwelle ist die Einwohnerzahl der Vereinigten Staaten:
+      341,8 Millionen. Hier lässt sich jeder Staat an- und abwählen.</p>
+  </div>
+
+  <div class="gauge">
+    <div class="head">
+      <div>
+        <div class="big"><span id="gPop">534,8</span><small> Mio Einwohner</small></div>
+        <div class="st" style="margin-top:6px"><span id="gCount">31</span> Staaten ausgewählt</div>
+      </div>
+      <div class="verdict" id="gVerdict">über der Schwelle</div>
+    </div>
+    <div class="track">
+      <div class="fill" id="gFill" style="width:89%"></div>
+      <div class="mark" id="gMark" style="left:57%">
+        <span class="marklbl">USA · 341,8 Mio</span>
+      </div>
+    </div>
+    <div class="scale"><span>0</span><span>600 Mio</span></div>
+    <div class="facts">
+      <div><div class="k">Puffer über der Schwelle</div><div class="v" id="gBuf">+193,0 Mio</div></div>
+      <div><div class="k">Wirtschaftsleistung</div><div class="v" id="gGdp">19,43 Bio €</div></div>
+      <div><div class="k">Noch entbehrlich</div><div class="v" id="gSpare">25 Staaten</div></div>
+    </div>
+  </div>
+
+  <div class="presets" id="presets">
+    <button type="button" data-p="all">Voller Raum</button>
+    <button type="button" data-p="neutral">ohne Neutrale</button>
+    <button type="button" data-p="sonder">ohne Neutrale und Steuersondermodelle</button>
+    <button type="button" data-p="zehn">heutiger Klub der Zehn</button>
+    <button type="button" data-p="sechs">die sechs Größten</button>
+    <button type="button" data-p="none">keiner</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="legend">
+    <span><b style="color:var(--warn)">N</b> verfassungsmäßig neutral</span>
+    <span><b style="color:var(--warn)">S</b> steuerliches Sondermodell</span>
+    <span><b style="color:var(--warn)">E</b> nicht in der EU</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <h2>Was die Rechnung zeigt</h2>
+    <p class="lede">Der Raum ist so groß, dass die Frage nach der kritischen Masse ihre Schärfe
+      verliert. Vier Befunde, alle aus denselben Zahlen.</p>
+    <div class="find">
+      <div><div class="z">36 %</div><div>
+        <b>Der Puffer ist größer als jedes einzelne Mitglied</b>
+        <p>193 Millionen Menschen über der Schwelle — mehr als Deutschland, Frankreich und
+          Spanien zusammen. Der Raum verträgt den Ausfall von zwei beliebigen seiner sechs
+          größten Mitglieder; erst der dritte reißt die Schwelle.</p>
+      </div></div>
+      <div><div class="z">6</div><div>
+        <b>Sechs Staaten genügen</b>
+        <p>Deutschland, das Vereinigte Königreich, Frankreich, Italien, Spanien und Polen kommen
+          zusammen auf 365,8 Millionen. Alle übrigen 25 könnten fernbleiben, ohne dass die
+          Schwelle unterschritten wird.</p>
+      </div></div>
+      <div><div class="z">8 %</div><div>
+        <b>Die Sonderrollen kosten fast nichts</b>
+        <p>Schließt man die verfassungsmäßig Neutralen und die Staaten mit steuerlichem
+          Sondermodell aus, gehen acht Mitglieder und 43,6 Millionen Menschen — nur Österreich,
+          Belgien und die Schweiz liegen über acht Millionen. Es bleiben 23 Staaten und
+          491 Millionen.</p>
+      </div></div>
+      <div><div class="z">84 Mio</div><div>
+        <b>Die Nicht-EU-Staaten sind die leichteren Partner</b>
+        <p>Vereinigtes Königreich, Schweiz, Norwegen und Island sind nicht an Artikel 113 AEUV
+          gebunden, der für Steuerfragen Einstimmigkeit verlangt. Für sie wäre der Klub ein
+          Beitritt und kein Vertragsbruch. Das Vereinigte Königreich allein ist der zweitgrößte
+          Posten des ganzen Raums.</p>
+      </div></div>
+    </div>
+    <p class="fine">Die Mehrheitsregel ist hier Vorgabe und nicht Ergebnis: Der Entwurf setzt
+      Handlungsfähigkeit über Einstimmigkeit und nimmt dafür in Kauf, dass er mit dem geltenden
+      EU-Steuerrecht nicht vereinbar ist. Genau deshalb ist die Frage nach dem Zuschnitt des Klubs
+      offen — und genau deshalb zählt, wie viele Ausfälle er verträgt.</p>
+  </section>
+
+  <section>
+    <h2>Die Kriterien</h2>
+    <p class="lede">Drei Merkmale machen eine Mitgliedschaft schwierig. Keines davon ist ein
+      Urteil über den Staat, jedes ist eine Aussage über die Vereinbarkeit mit diesem Entwurf.</p>
+    <div class="find">
+      <div><div class="z">N</div><div>
+        <b>Verfassungsmäßige Neutralität</b>
+        <p>Österreich (Neutralitätsgesetz 1955, Verfassungsrang), Irland, Malta (Verfassung
+          Art. 1 Abs. 3), Zypern und die Schweiz. Die gemeinsame Verteidigung ist die größte
+          Einzelaufgabe der Ebene A — wer sie nicht mittragen kann, kann den Klub nicht
+          mittragen.</p>
+      </div></div>
+      <div><div class="z">S</div><div>
+        <b>Steuerliches Sondermodell</b>
+        <p>Die Zerlegung der Konzerngewinne nach Tätigkeitsort kostet nach den OECD-Daten des
+          Projekts Irland 94,9, Belgien 24,2 und Dänemark 17,2 Milliarden Dollar. Luxemburg,
+          Malta und Zypern stehen aus demselben Grund auf der Liste. Für diese Staaten ist der
+          Klub kein Gewinn, sondern ein Verlustgeschäft.</p>
+      </div></div>
+      <div><div class="z">E</div><div>
+        <b>Außerhalb der EU</b>
+        <p>Kein Ausschlussgrund, sondern das Gegenteil: Diese Staaten haben keinen Vertrag zu
+          brechen. Sie sind markiert, weil sie den Zuschnitt des Klubs erleichtern statt ihn zu
+          erschweren.</p>
+      </div></div>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <p><b>Zahlen.</b> Einwohnerzahlen und Wirtschaftsleistung aus Eurostat, Berichtsjahr 2024
+    (demo_gind, Durchschnittsbevölkerung; nama_10_gdp, laufende Preise). Jeder Wert einzeln
+    abgerufen und gegen Richtwerte geprüft, nachdem ein Sammelabruf desselben Datensatzes
+    Werte falsch zugeordnet hatte. Für das Vereinigte Königreich veröffentlicht Eurostat kein
+    BIP für 2024 — die ausgewiesene Wirtschaftsleistung ist deshalb untertrieben, sobald das
+    Vereinigte Königreich ausgewählt ist.</p>
+  <p><b>Schwelle.</b> 341.784.857 Einwohner, Stand 1. Juli 2025, aus der Tabelle NST-EST2025-POP
+    des <a href="https://files.hawaii.gov/dbedt/census/popestimate/2025/state-pop/NST-EST2025-POP.pdf">US
+    Census Bureau</a>, Ausgabe Januar 2026. Ein Vergleich der Wirtschaftsleistung mit den
+    Vereinigten Staaten steht hier bewusst nicht: Dafür lag in dieser Sitzung keine belastbare
+    Quelle vor.</p>
+  <p>Liechtenstein ist mit rund 40.000 Einwohnern nicht aufgeführt. Entwurf zur Diskussion.</p>
+</div></footer>
+
+<script>
+(function(){
+  var US = 341.784857, SKALA = 600;
+  var S = [
+    ['DE','Deutschland',83.516593,4328.97,''],
+    ['UK','Vereinigtes Königreich',69.144015,null,'E'],
+    ['FR','Frankreich',68.775952,2935.24,''],
+    ['IT','Italien',58.957347,2202.03,''],
+    ['ES','Spanien',48.873996,1594.33,''],
+    ['PL','Polen',36.559233,852.23,''],
+    ['RO','Rumänien',19.055364,353.63,''],
+    ['NL','Niederlande',17.993485,1115.25,''],
+    ['BE','Belgien',11.850296,619.91,'S'],
+    ['PT','Portugal',11.295785,289.78,''],
+    ['CZ','Tschechien',10.905028,321.23,''],
+    ['SE','Schweden',10.569709,563.57,''],
+    ['EL','Griechenland',10.374050,236.74,''],
+    ['HU','Ungarn',9.562065,206.16,''],
+    ['AT','Österreich',9.177982,494.09,'N'],
+    ['CH','Schweiz',9.006644,896.45,'NE'],
+    ['BG','Bulgarien',6.441421,104.77,''],
+    ['DK','Dänemark',5.976992,400.27,'S'],
+    ['FI','Finnland',5.619911,276.15,''],
+    ['NO','Norwegen',5.572272,462.85,'E'],
+    ['SK','Slowakei',5.422069,130.21,''],
+    ['IE','Irland',5.395980,561.94,'NS'],
+    ['HR','Kroatien',3.868159,85.91,''],
+    ['LT','Litauen',2.888278,79.00,''],
+    ['SI','Slowenien',2.127400,67.42,''],
+    ['LV','Lettland',1.869570,40.65,''],
+    ['EE','Estland',1.374687,39.88,''],
+    ['CY','Zypern',0.974666,34.77,'NS'],
+    ['LU','Luxemburg',0.677012,86.18,'S'],
+    ['MT','Malta',0.568847,23.08,'NS'],
+    ['IS','Island',0.386506,30.65,'E']
+  ];
+  var PRE = {
+    all: function(){ return S.map(function(s){return s[0]}) },
+    none: function(){ return [] },
+    neutral: function(){ return S.filter(function(s){return s[4].indexOf('N')<0}).map(function(s){return s[0]}) },
+    sonder: function(){ return S.filter(function(s){return s[4].indexOf('N')<0 && s[4].indexOf('S')<0}).map(function(s){return s[0]}) },
+    zehn: function(){ return ['DE','FR','ES','NL','IE','BE','AT','DK','SI','EE'] },
+    sechs: function(){ return ['DE','UK','FR','IT','ES','PL'] }
+  };
+  var on = {}; PRE.all().forEach(function(k){ on[k]=true });
+  var nf1 = new Intl.NumberFormat('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1});
+  var nf2 = new Intl.NumberFormat('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2});
+  var grid = document.getElementById('grid');
+
+  S.forEach(function(s){
+    var b = document.createElement('button');
+    b.type='button'; b.className='st-btn'; b.dataset.k=s[0];
+    b.setAttribute('aria-pressed','true');
+    var flags = s[4].split('').join(' ');
+    b.innerHTML = '<span class="nm">'+s[1]+(flags?'<span class="flag">'+flags+'</span>':'')+'</span>'+
+                  '<span class="pp">'+nf1.format(s[2])+'</span>';
+    grid.appendChild(b);
+  });
+
+  function render(){
+    var pop=0, gdp=0, n=0, fehlt=false;
+    S.forEach(function(s){ if(on[s[0]]){ pop+=s[2]; n++; if(s[3]===null){fehlt=true} else {gdp+=s[3]} } });
+    var ueber = pop >= US;
+    document.getElementById('gPop').textContent = nf1.format(pop);
+    document.getElementById('gCount').textContent = n;
+    var v = document.getElementById('gVerdict');
+    v.textContent = ueber ? 'über der Schwelle' : 'unter der Schwelle';
+    v.className = 'verdict' + (ueber ? '' : ' bad');
+    var f = document.getElementById('gFill');
+    f.style.width = Math.min(100, pop/SKALA*100) + '%';
+    f.className = 'fill' + (ueber ? '' : ' bad');
+    document.getElementById('gMark').style.left = (US/SKALA*100) + '%';
+    document.getElementById('gBuf').textContent =
+      (pop>=US?'+':'−') + nf1.format(Math.abs(pop-US)) + ' Mio';
+    document.getElementById('gGdp').textContent =
+      nf2.format(gdp/1000) + ' Bio €' + (fehlt ? ' *' : '');
+    var rest = pop - US, zahl = 0;
+    if(rest > 0){
+      S.slice().sort(function(a,b){return a[2]-b[2]}).forEach(function(s){
+        if(on[s[0]] && rest - s[2] >= 0){ rest -= s[2]; zahl++ }
+      });
+    }
+    document.getElementById('gSpare').textContent =
+      pop>=US ? (zahl + (zahl===1?' Staat':' Staaten')) : 'keiner';
+    Array.prototype.forEach.call(grid.children, function(b){
+      b.setAttribute('aria-pressed', String(!!on[b.dataset.k]));
+    });
+  }
+
+  grid.addEventListener('click', function(e){
+    var b = e.target.closest('.st-btn'); if(!b) return;
+    on[b.dataset.k] = !on[b.dataset.k]; render();
+  });
+  document.getElementById('presets').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    var keys = PRE[b.dataset.p]();
+    on = {}; keys.forEach(function(k){ on[k]=true }); render();
+  });
+  render();
+})();
+</script>

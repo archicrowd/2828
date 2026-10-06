@@ -1,0 +1,83 @@
+========================================================================================================
+A2 — ZEILENWEISER ABGLEICH GEGEN DIE AMTLICHE STEUERSTATISTIK 2025
+========================================================================================================
+
+Modellzeile                              Modell    heute    Delta  entspricht heute
+Einkommensteuer (inkl. steuerpfl. DD)     313,3    341,1    -27,8  Lohnsteuer 262,7 + veranlagte ESt 78,4
+Kapitalerträge 28 %                        48,8     55,9     -7,1  Abgeltungsteuer 24,8 + nicht veranl. 31,1
+Mehrwertsteuer (Label)                    375,9    310,2    +65,7  Steuern vom Umsatz
+Unternehmen & Plattformen 28 %            152,0    114,5    +37,5  Körperschaftsteuer 39,2 + Gewerbesteuer 75,3
+Erbschaft 28 %                             21,0     15,4     +5,6  Erbschaft/Schenkung
+Vermögen-Mindeststeuer                     30,0      0,0    +30,0  existiert heute nicht
+CO2 (BEHG-Korridor)                        33,0      0,0    +33,0  BEHG-Erlöse sind keine Steuer, fliessen in den
+Position 04b Verkaufsgewinn                 4,1      0,0     +4,1  § 23 EStG wird amtlich nicht ausgewiesen
+Sonstige Steuern                          165,0    140,4    +24,6  Energie 37,6 · Versicherung 19,6 · Tabak 17,6 
+--------------------------------------------------------------------------------------------------------
+Steuern zusammen                        1.143,1    977,5   +165,6
+Bausteine                                  29,3      0,0    +29,3
+EINNAHMEN                               1.172,4    989,8   +182,6
+
+    Das Modell erhebt 18,4 % mehr Steuern als heute, also
+    +182,6 Mrd EUR. Bei einem BIP von 4.884 Mrd (2028, 3 % nominal)
+    sind das 3,7 Prozentpunkte zusätzliche Steuerquote.
+    Das ist eine sehr grosse Zahl und sie gehört auf die Seite — bisher
+    steht sie nirgends.
+
+[2] DIE AUSGABENSEITE — HIER IST DIE GRÖSSERE LÜCKE
+
+      Basisausgaben nach Transferersatz          596,0
+      SV-Zuschuss                                 60,0
+      Härtefallfonds                              40,0
+      Digitaldividende                           475,9
+      ------------------------------------------------
+      zusammen                                 1.171,9
+
+    Von diesen 1.171,9 Mrd sind 696,0 Mrd — die drei ersten Zeilen —
+    im Modell NICHT hergeleitet. Der Kommentar nennt sie "Basisausgaben
+    nach Transferersatz/RV/Verwaltung", es gibt aber keine Quelle und keine
+    Rechnung dazu. Die Digitaldividende ist die einzige Ausgabenzeile, die
+    aus einer Formel folgt.
+
+[3] DER EIGENTLICHE BEFUND DIESES AUDITS
+
+    Zwei Blöcke tragen das Modell, und beide sind unbelegt:
+      Einnahmen  "Sonstige Steuern"           165,0 Mrd
+      Ausgaben   "Basis + Zuschuss + Härte"    696,0 Mrd
+      zusammen                                861,0 Mrd
+
+    Das sind 73,4 % der Einnahmen und 59,4 % der Ausgaben.
+    Alles, was wir in R1 bis R16 geprüft haben — Erbschaft 21,0, CO2 33,0,
+    Vermögen 30,0, Verkaufsgewinn 4,1, Aufteilung 152,0 — summiert sich auf
+    240,1 Mrd. Die beiden unbelegten Blöcke sind dreimal so gross.
+
+    Anders gesagt: die Belegstand-Tabelle bewertet zehn Positionen, aber
+    die zwei grössten Zahlen des Modells sind gar keine Position. Das ist
+    die wichtigste Lücke, und sie ist grösser als alle bisher gefundenen
+    zusammen.
+
+[4] DIE SOZIALVERSICHERUNG — SIE FEHLT GANZ, OBWOHL ZWEI POSITIONEN SIE UMBAUEN
+    Beitragseinnahmen 2024: rund 707,7 Mrd EUR (Renten- 304,8, Kranken-
+    298,1, Pflege- 65,4, Arbeitslosenversicherung 39,4).
+    Heutiger Gesamtbeitragssatz: Rente 18,6 + Kranken rund 16,5 + Pflege 3,6
+    + Arbeitslos 2,6 = rund 41,3 %.
+    Position 10 verspricht 28 %, später 18 %.
+
+      Beitragssatz 28 %: Einnahmen 479,8 statt 707,7 Mrd
+        Rückgang -227,9 Mrd — im Modell steht ein Zuschuss von 60 Mrd.
+        Ungedeckt bleiben damit 167,9 Mrd.
+
+      Beitragssatz 18 %: Einnahmen 308,4 statt 707,7 Mrd
+        Rückgang -399,3 Mrd — im Modell steht ein Zuschuss von 60 Mrd.
+        Ungedeckt bleiben damit 339,3 Mrd.
+
+    GEGENARGUMENT, und es ist das tragende: die Digitaldividende von
+    475,9 Mrd soll die Grundsicherungs- und Teile der Rentenfunktion
+    ersetzen. Dann entfallen auf der Ausgabenseite der Sozialversicherung
+    entsprechende Leistungen. Genau diese Verrechnung steckt vermutlich in
+    den 596,0 Mrd "Basisausgaben nach Transferersatz" — nur steht sie
+    nirgends offen.
+
+    SOLANGE DAS NICHT AUFGESCHRIEBEN IST, ist das Modell für Dritte nicht
+    nachrechenbar. Nicht weil die Zahlen falsch wären, sondern weil der
+    grösste Umbau des ganzen Konzepts — ein Transfersystem von über
+    700 Mrd — in einer einzigen unerklärten Zeile verschwindet.

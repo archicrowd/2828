@@ -84,8 +84,9 @@ def rechne(P: dict, *, real_exakt: float | None = None, zins_vorlauf: float = 0.
     bip = wert(P, "klub_bip_2028") * 1e9
     pop = wert(P, "klub_einwohner_2024") * 1e6
     bipk = bip / pop
-    dmin_klub = (wert(P, "dividende_de_versprechen_monat")
-                 * wert(P, "dividende_klub_monat_2028") / wert(P, "dividende_de_monat_2028"))
+    # Mindestquote wie im Original (final.py): Versprechen für Deutschland, BIP je Kopf Deutschland
+    bipk_de = wert(P, "de_bip_2028") * 1e9 / (wert(P, "de_einwohner_2024") * 1e6)
+    dmin_de = wert(P, "dividende_de_versprechen_monat")
 
     zeilen = {}
     for jahr in range(START, ENDE + 1):
@@ -100,7 +101,7 @@ def rechne(P: dict, *, real_exakt: float | None = None, zins_vorlauf: float = 0.
             "schuldenquote": d, "zinssatz": s, "zinsdienst": z, "verteidigung": v,
             "a_gesamt": a, "b": b, "dividende_anteil": anteil,
             "dividende_klub_monat": anteil / 100 * bipk * (1 + r) ** t / 12,
-            "_bedarf": a + b + 12 * dmin_klub / (bipk * (1 + r) ** t) * 100,
+            "_bedarf": a + b + 12 * dmin_de / (bipk_de * (1 + r) ** t) * 100,
         }
     mindestquote = max(z["_bedarf"] for z in zeilen.values())
     return {"zeilen": zeilen, "mindestquote": mindestquote, "r": r, "bipk": bipk}

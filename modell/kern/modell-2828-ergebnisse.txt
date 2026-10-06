@@ -1,0 +1,117 @@
+====================================================================================================
+A | TARIF, LABEL, DIVIDENDE
+====================================================================================================
+ESt-Tarif 28:28: bis 12,348: 0 % | bis 25,000: 9 % | bis 40,000: 16 % | bis 55,000: 21 % | bis 70,000: 26 % | darüber: 28 %
+MwSt-Label: [5, 11, 17, 22, 28]  -> effektiv 20.0 % (heute Projektannahme 16.5 %)
+DD 50 %: Erwachsene 515.00 EUR/M, Kinder 257.50 EUR/M, Kosten brutto 475.9 Mrd., SV gesamt 28 %
+DD 55 %: Erwachsene 566.00 EUR/M, Kinder 283.00 EUR/M, Kosten brutto 523.0 Mrd., SV gesamt 28 %
+DD 60 %: Erwachsene 617.00 EUR/M, Kinder 308.50 EUR/M, Kosten brutto 570.1 Mrd., SV gesamt 18 %
+Hinweis: Kinder-DD 257,50 EUR liegt 1,50 EUR unter dem Kindergeld 2026 (259 EUR).
+
+====================================================================================================
+B | STATISCHER HAUSHALT JE STUFE (Modell-Mrd., Szenario Robust)
+====================================================================================================
+                                                50 %      55 %      60 %
+Einkommensteuer (inkl. steuerpfl. DD)          313.3     318.9     324.5
+Kapitalerträge 28 %                             48.8      48.8      48.8
+Mehrwertsteuer (Label 5–28 %)                  375.9     375.9     375.9
+Unternehmen & Plattformen 28 %                 157.6     157.6     157.6
+Erbschaft 28 %                                  35.9      35.9      35.9
+Vermögen-Mindeststeuer (anrechenbar)            20.7      20.7      20.7
+CO₂-Abgabe 100 €/t (netto)                      55.0      55.0      55.0
+Sonstige Steuern                               165.0     165.0     165.0
+= Einnahmen Kernsystem                        1172.2    1177.8    1183.4
++ Vermögensteuer 1 % ab 2 Mio. (nicht anrechenbar)      12.0      12.0      12.0
++ Bodenwertabgabe statt Grundsteuer             20.0      20.0      20.0
++ Abbau klimaschädlicher Subventionen           20.0      20.0      20.0
++ CO₂-Pfad 100 → 150 €/t (voll ab Jahr 5)       15.0      15.0      15.0
+Ausgaben: Basis                                596.0     596.0     576.0
+Ausgaben: SV-Zuschuss                           60.0      60.0      90.0
+Ausgaben: Härtefall + Gesundheit                40.0      40.0      42.0
+Ausgaben: Digitaldividende                     475.9     523.0     570.1
+= Ausgaben                                    1171.9    1219.0    1278.1
+SALDO ohne Bausteine                            +0.3     -41.2     -94.7
+SALDO mit Bausteinen                           +67.3     +25.8     -27.7
+  in % BIP                                     +1.60     +0.61     -0.66
+Zielsaldo Investitionen: +42
+
+====================================================================================================
+C | HAUSHALTSPFAD 2028-2047 (Startpuffer 100, Puffer 2 % BIP, Investitionen 1 % BIP)
+====================================================================================================
+
+Optimistisch mit Bausteine: Saldo J1 +60 | min. Saldo +57 | Lückenjahre 0 | min. Fonds 118 | 55 % ab 2030 | 60 % ab 2032 | Inv-Quote 100 % | Inv kum. 1118 | Fonds 2047 1531 | DD real min. 100 % des Sollwerts
+  Jahr   2028  2029  2030  2031  2032  2033  2034  2035  2036  2037  2038  2039  2040  2041  2042  2043  2044  2045  2046  2047
+  Stufe    50    50    55    55    60    60    60    60    60    60    60    60    60    60    60    60    60    60    60    60
+  DD €    515   525   589   601   668   681   695   709   723   737   752   767   783   798   814   830   847   864   881   899
+  DD'26   515   515   566   566   617   617   617   617   617   617   617   617   617   617   617   617   617   617   617   617
+  Saldo   +60   +71   +91  +103   +57   +66   +75   +84   +94  +105  +116  +127  +139  +152  +165  +179  +193  +208  +224  +240
+  Inv      42    43    44    46    47    48    50    51    53    54    56    58    59    61    63    65    66    68    70    72
+  Fonds   118   146   192   249   259   277   302   335   376   426   486   556   636   727   829   943  1069  1209  1363  1531
+
+Optimistisch ohne Bausteine: Saldo J1 +5 | min. Saldo +5 | Lückenjahre 0 | min. Fonds 84 | 55 % ab 2031 | 60 % ab 2040 | Inv-Quote 96 % | Inv kum. 1073 | Fonds 2047 482 | DD real min. 96 % des Sollwerts
+
+Robust mit Bausteine: Saldo J1 +55 | min. Saldo +40 | Lückenjahre 0 | min. Fonds 113 | 55 % ab 2030 | 60 % ab 2038 | Inv-Quote 100 % | Inv kum. 1115 | Fonds 2047 418 | DD real min. 100 % des Sollwerts
+  Jahr   2028  2029  2030  2031  2032  2033  2034  2035  2036  2037  2038  2039  2040  2041  2042  2043  2044  2045  2046  2047
+  Stufe    50    50    55    55    55    55    55    55    55    55    60    60    60    60    60    60    60    60    60    60
+  DD €    515   525   589   601   613   625   637   650   663   676   752   767   783   798   814   830   847   864   881   899
+  DD'26   515   515   566   566   566   566   566   566   566   566   617   617   617   617   617   617   617   617   617   617
+  Saldo   +55   +64   +50   +58   +67   +73   +79   +85   +92   +99   +40   +46   +53   +59   +66   +74   +81   +89   +98  +106
+  Inv      42    43    44    46    47    48    50    51    53    54    56    57    59    61    63    64    66    68    70    72
+  Fonds   113   134   139   151   171   195   224   258   298   342   326   315   309   307   311   320   335   356   384   418
+
+Robust ohne Bausteine: Saldo J1 +0 | min. Saldo +0 | Lückenjahre 0 | min. Fonds 84 | 55 % ab 2036 | 60 % ab None | Inv-Quote 95 % | Inv kum. 1057 | Fonds 2047 381 | DD real min. 94 % des Sollwerts
+
+Stress mit Bausteine: Saldo J1 +30 | min. Saldo -45 | Lückenjahre 0 | min. Fonds 52 | 55 % ab None | 60 % ab None | Inv-Quote 85 % | Inv kum. 853 | Fonds 2047 439 | DD real min. 91 % des Sollwerts
+  Jahr   2028  2029  2030  2031  2032  2033  2034  2035  2036  2037  2038  2039  2040  2041  2042  2043  2044  2045  2046  2047
+  Stufe    50    50    50    50    50    50    50    50    50    50    50    50    50    50    50    50    50    50    50    50
+  DD €    515   525   525   525   536   547   547   547   547   557   569   580   592   603   615   628   640   653   666   680
+  DD'26   515   515   505   495   495   495   485   476   466   466   466   466   466   466   466   466   466   466   466   466
+  Saldo   +30   +31   +42   +54   +55   -45   -10   +46   +84   +84   +83   +83   +83   +83   +82   +82   +82   +81   +81   +80
+  Inv      42    34    41    44    45     0     0     3    49    49    50    51    52    53    54    55    56    57    58    59
+  Fonds    88    86    87    96   106    61    52    95   130   165   198   230   260   290   318   345   371   395   418   439
+
+Stress ohne Bausteine: Saldo J1 -8 | min. Saldo -64 | Lückenjahre 1 | min. Fonds -5 | 55 % ab None | 60 % ab None | Inv-Quote 64 % | Inv kum. 641 | Fonds 2047 305 | DD real min. 82 % des Sollwerts
+
+====================================================================================================
+D | MIKROEBENE (EUR/Jahr, Recht 2026 vs. 28:28)
+====================================================================================================
+Profil                                          heute     50 %     55 %     60 %   Δ 50 %    MwSt  Δ netto   in %
+Mia, Studentin (22), ohne Einkommen                 0     6180     6792     7404    +6180    -147    +6033   n.v.
+Tom, Berufseinsteiger                           20180    27653    28167    30081    +7473    -588    +6884    +34
+Sarah, Fachkraft                                28193    37044    37527    40110    +8851    -788    +8062    +29
+Durchschnittsverdiener (51.944 €)               33632    43351    43804    46854    +9719    -923    +8796    +26
+Klaus, Facharbeiter                             35262    45185    45637    48840    +9922    -962    +8960    +25
+Jonas, Ingenieur                                48544    59861    60302    64742   +11317   -1124   +10193    +21
+Dr. Weber, Führungskraft                        85528   100461   100902   108842   +14933   -1509   +13424    +16
+Familie Müller, Alleinverdiener, 2 Kinder       50620    62345    64021    68840   +11725   -1171   +10554    +21
+Anna, alleinerziehend, 1 Kind                   23414    30743    31563    33783    +7329    -654    +6674    +29
+Inge, Rentnerin (880 €/M, heute mit GruSi)      12720    15481    16038    16904    +2761
+
+Durchschnittsverdiener 51.944 €: Abgabenlast heute 35.3 % | 28:28 28.4 / 28.7 / 24.1 % | nach Dividende 16.5 / 15.7 / 9.8 %
+Grenzbelastung (Abgaben je zusätzliche 100 €) bei 51.944 €: heute 46 % | 28:28 40 %
+Gini-Modellwert (verfügbar, Erwachsene, grob): heute 0.525 | 28:28 0.458 / 0.447 / 0.447 | relative Änderung -13 % / -15 %
+  Sensitivität Transfers heute 2000 EUR: relative Änderung -16 %
+  Sensitivität Transfers heute 5000 EUR: relative Änderung -5 %
+
+Dateien: rechner-2828-tabelle.csv, modell-2828-daten.json
+
+====================================================================================================
+F | ANTEIL DER BEVÖLKERUNG MIT MEHR VERFÜGBAREM EINKOMMEN (Schätzung, Mio. Personen)
+====================================================================================================
+  Bürgergeld-Haushalte ohne Erwerbseinkommen (von 5,5 Mio.)       3.50
+  Erwerbsminderungs-Grundsicherung ohne weiteres Einkommen        0.36
+  BAföG mit hohem Förderbetrag                                    0.30
+  Sehr große Vermögen (Netto-Verlierer)                           0.40
+  Anteil mit mehr Geld: ohne Bestandsgarantie 95 % | mit Bestandsgarantie 100 %
+
+====================================================================================================
+E | HOMEPAGE-ZEITREIHEN (hist/ohne = bestehende Homepage-Werte; mit = Robust-Pfad 28:28)
+====================================================================================================
+  schulden  ohne [64, 65, 65, 66, 66, 67, 67, 68, 68, 69]
+            mit  [64, 65, 62.3, 62.9, 62.9, 63.7, 63.4, 64.0, 63.5, 64.0]
+  gini      ohne [0.313, 0.313, 0.314, 0.314, 0.315, 0.315, 0.316, 0.316, 0.317, 0.317]
+            mit  [0.313, 0.313, 0.274, 0.274, 0.269, 0.269, 0.269, 0.269, 0.27, 0.27]
+  co2       ohne [608, 596, 584, 572, 560, 549, 538, 527, 516, 505]
+            mit  [608, 596, 578, 552, 524, 496, 470, 446, 424, 404]
+  last      ohne [36.7, 36.8, 36.9, 37.0, 37.1, 37.2, 37.3, 37.4, 37.5, 37.6]
+            mit  [36.7, 36.8, 29.8, 29.8, 30.3, 30.3, 30.4, 30.5, 30.6, 30.7]

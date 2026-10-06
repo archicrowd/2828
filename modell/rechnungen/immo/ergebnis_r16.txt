@@ -1,0 +1,73 @@
+====================================================================================================
+R16 — DER ABZUG DER GRUNDSTEUER VOM VERKAUFSGEWINN
+====================================================================================================
+
+[1] DIE GRÖSSENORDNUNG — was ich hätte einpreisen müssen
+    Grundsteuer 0,35 % des Bodenwerts im Jahr, Bodenwert jährlich
+    fortgeschrieben mit der amtlichen Preisreihe.
+
+Fall                               Jahre      Gewinn  GrSt kumuliert  in % Gewinn  Steuer ohne  mit Abzug
+Reihenhaus Landkreis Sachsen          21     +73.434           2.027        2,8 %            0          0
+Einfamilienhaus Kleinstadt NRW        26    +160.244           7.409        4,6 %            0          0
+Altbauwohnung München                 26    +249.461          16.187        6,5 %            0          0
+Einfamilienhaus Münchner Umland       16    +591.213          28.007        4,7 %       81.540     73.698
+Vermietetes Haus Hamburg              14    +907.255          36.899        4,1 %      254.031    243.700
+Neubau Brandenburg, Kauf im Hoch       4     -11.850           1.054        8,9 %            0          0
+
+    Der Abzug kostet in diesen Fällen 18.174 EUR von 335.571 EUR,
+    also 5,4 %. Nicht dramatisch — aber meine Fallzahlen waren
+    um diesen Betrag zu hoch.
+
+[2] KORREKTUR AN MIR SELBST: DIE KAPITALISIERUNG IST KEINE ZWEITE LAST
+    Ich war versucht, so zu argumentieren: die Abgabe drückt den Bodenpreis,
+    also hat sie den Zuwachs schon abgeschöpft. Das ist falsch. Der
+    Preisrückgang IST der Barwert der künftigen Abgaben — wer hält und zahlt,
+    trägt die Zahlungen; wer sofort verkauft, trägt den Preisverlust. Niemand
+    trägt beides. Die Kapitalisierung ist der Übertragungsweg der Last, nicht
+    eine zusätzliche Last.
+
+    Der Befund, der daraus wirklich folgt, betrifft nicht den Abzug, sondern
+    das MODELL: eine laufende Bodenabgabe senkt das Preisniveau dauerhaft und
+    damit alle künftigen Gewinne. 04a und 04b sind nicht addierbar.
+    Bei 0,35 % Abgabe und 3 % Diskontsatz liegt der Bodenwert dauerhaft
+    rund 11,7 % niedriger. Bei einem Bodenanteil von durchschnittlich 40 %
+    am Objektwert sind das 4,7 % weniger Verkaufspreis — und damit
+    grob 4,7 % weniger Gewinnvolumen für 04b.
+    Auf die +4,3 Mrd aus R15 angewandt: rund 0,2 Mrd weniger,
+    also etwa 4,1 Mrd. Das gehört in den Haushaltsabgleich.
+
+
+[3] DER ENTSCHEIDENDE PUNKT, DEN ICH ÜBERSEHEN HATTE
+    Bei VERMIETETEN Objekten ist die Grundsteuer bereits Werbungskosten
+    und wird von den Mieteinnahmen abgezogen — heute wie künftig. Ein
+    zweiter Abzug beim Verkauf wäre eine doppelte Entlastung, nicht eine
+    Vermeidung doppelter Belastung.
+
+    Bei SELBSTGENUTZTEN Objekten gibt es keine Einnahme, von der etwas
+    abzuziehen wäre. Dafür gibt es aber auch keinen versteuerten Ertrag:
+    Deutschland besteuert den Nutzungswert des Eigenheims nicht — anders
+    als Dänemark mit der ejendomsværdiskat und die Niederlande. Die
+    Grundsteuer ist hier faktisch der einzige Zugriff auf einen sonst
+    unbesteuerten Konsum. Ein Abzug würde eine Konsumsteuer in
+    Anlagekosten umdeuten.
+
+[4] DER VOLLZUGSEINWAND, der allein schon reicht
+    Ein voller Abzug verlangt, dass jeder Eigentümer die Grundsteuer-
+    bescheide über die gesamte Haltedauer aufbewahrt — in den Fällen oben
+    bis zu 26 Jahre. Dafür ein Effekt von 5,4 % auf die Steuer.
+    Das ist ein schlechtes Verhältnis, und es widerspricht dem Anspruch,
+    dass die Regel erklärbar bleibt.
+
+[5] ERGEBNIS: KEIN ABZUG, UND DIE KACHEL MUSS GEÄNDERT WERDEN
+    Drei unabhängige Gründe, jeder für sich tragend:
+      - verschiedene Bemessungsgrundlagen, keine Doppelbesteuerung
+      - bei Vermietung schon als Werbungskosten abgezogen
+      - bei Eigennutzung Zugriff auf unbesteuerten Nutzungswert
+    Dazu der Vollzugseinwand. Der Satz "die laufend gezahlte Grundsteuer
+    wird abgezogen" fällt aus der Kachel.
+
+    WAS DAGEGEN SPRICHT, fair benannt: in einem Markt mit fallenden Preisen
+    ist die Grundsteuer reine Kosten ohne Gegenwert. Der Brandenburger Fall
+    zahlt 1.054 EUR Grundsteuer auf einen Verlust von
+    11.850 EUR. Das fängt die Verlustverrechnung aber auf,
+    nicht der Abzug — und zwar besser, weil sie am Verlust selbst ansetzt.

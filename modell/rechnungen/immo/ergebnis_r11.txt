@@ -1,0 +1,76 @@
+================================================================================================
+R11 — GEWINNE AUS IMMOBILIENVERKÄUFEN: DIE UNGEBUCHTE POSITION
+================================================================================================
+
+[1] WAS HEUTE SCHON BESTEUERT WIRD, UND WAS NICHT
+    Steuerpflichtig ist der schmale Rand: Verkauf binnen zehn Jahren UND
+    nicht selbstgenutzt. Alles andere ist frei. Die Anteile sind nicht
+    amtlich erhoben; unten drei Annahmen, die die Spanne aufspannen.
+
+     Annahme   <10 Jahre  selbstgenutzt  heute steuerpfl.   heute frei
+                                                (Anteil am Geldumsatz)
+  vorsichtig        25 %           60 %            10,0 %       90,0 %
+      mittel        35 %           50 %            17,5 %       82,5 %
+        weit        45 %           40 %            27,0 %       73,0 %
+
+[2] AUFKOMMEN UNTER 28:28, VARIANTE A — ALLE GEWINNE, AUCH SELBSTGENUTZT
+    Das ist die reine Logik des Konzepts. Gewinnanteil waagerecht.
+
+     Annahme     Gewinn 15 %     Gewinn 25 %     Gewinn 35 %
+  vorsichtig        +8,8 Mrd       +14,7 Mrd       +20,6 Mrd
+      mittel        +7,7 Mrd       +12,8 Mrd       +17,9 Mrd
+        weit        +6,2 Mrd       +10,3 Mrd       +14,4 Mrd
+
+    Gelesen wird die Tabelle als Mehraufkommen gegenüber heute. Sie enthält
+    schon die SATZWIRKUNG: die heute steuerpflichtigen Fälle werden von
+    rund 42 % auf 28 % entlastet, was gegenrechnet.
+
+    DESHALB FÄLLT DIE SPALTE NACH UNTEN, NICHT NACH OBEN. Die "weite"
+    Annahme unterstellt, dass heute schon mehr besteuert wird — und je mehr
+    heute zum persönlichen Satz erfasst ist, desto mehr VERLIERT 28:28 durch
+    den Satz von 28 %. Dieselbe Struktur wie bei Position 05: der eine Satz
+    verbreitert die Basis und senkt gleichzeitig den Satz.
+
+[3] ZERLEGUNG, am mittleren Fall (35 % binnen zehn Jahren, 50 % selbst-
+    genutzt, 25 % Gewinnanteil) — wie bei Position 05
+
+      Gewinnvolumen insgesamt                    61,8 Mrd EUR
+      davon heute steuerpflichtig                10,8 Mrd EUR  (18 %)
+      davon heute frei                           50,9 Mrd EUR  (82 %)
+
+      Mengenwirkung  bisher freie Basis x 28 %        +14,3 Mrd
+      Satzwirkung    steuerpflichtige Basis x (28−42)     -1,5 Mrd
+      --------------------------------------------------------
+      netto                                           +12,8 Mrd
+
+[4] VARIANTE B — SELBSTGENUTZTES WOHNEN BLEIBT FREI
+    Das tun 29 der 38 OECD-Staaten (20 ohne Bedingung, 9 mit). Die OECD
+    empfiehlt in "Housing Taxation in OECD Countries" allerdings, die
+    Freistellung zu DECKELN, damit die höchsten Gewinne erfasst werden.
+
+     Annahme     Gewinn 15 %     Gewinn 25 %     Gewinn 35 %
+  vorsichtig        +2,6 Mrd        +4,3 Mrd        +6,1 Mrd
+      mittel        +2,5 Mrd        +4,1 Mrd        +5,7 Mrd
+        weit        +2,0 Mrd        +3,4 Mrd        +4,7 Mrd
+
+[5] WAS DAVON ABZUZIEHEN IST: DIE SPERRWIRKUNG
+    Eine Steuer auf den Verkaufsgewinn verteuert den Verkauf und hält
+    Eigentümer im Objekt. Das ist der "lock-in", und er ist der am besten
+    belegte Verhaltenseffekt in diesem ganzen Modell — Grund: er wirkt auf
+    den Zeitpunkt, und den kann man frei wählen. Österreich hat die Frist
+    2012 abgeschafft und wäre der Erfahrungsbeweis; eine Auswertung der
+    dortigen Transaktionszahlen liegt mir nicht vor.
+    Mit einem Abschlag von 20 bis 40 % auf das Mehraufkommen:
+
+      Variante A (alle Gewinne)            7,7 bis 10,2   Mrd EUR
+      Variante B (Selbstnutzung frei)      2,5 bis 3,3    Mrd EUR
+
+[6] EINORDNUNG
+    Zum Vergleich: Position 03 (Erbschaft) bringt nach R1b 21,0 Mrd EUR,
+    Position 05 (Konzerne) nach R6 im Median 8 Mrd. Die Größenordnung hier
+    ist also keine Randnotiz — und sie steht bisher in keiner Zeile des
+    Haushalts. Sie würde die Anhebung der mittleren Tarifstufen, über die
+    gestern entschieden wurde, ganz oder teilweise überflüssig machen.
+    Das ist ein Grund, sie zu rechnen, und ein Grund, sie vorsichtig zu
+    rechnen: eine Position, die den unangenehmen Teil der Reform wegnimmt,
+    verdient mehr Misstrauen als eine, die ihn verursacht.

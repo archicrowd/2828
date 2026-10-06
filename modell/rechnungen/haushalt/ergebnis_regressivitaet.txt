@@ -1,0 +1,97 @@
+====================================================================================================
+R10 — DIE MITTLEREN TARIFSTUFEN
+====================================================================================================
+
+    Gegenprobe: Einkommensteuer 313,3 (Modell 313,3) · Mehrwertsteuer 375,9 (Modell 375,9) Mrd EUR.
+    Ausgangssaldo nach Korrektur -12,9, Ziel +42, Lücke 54,9 Mrd EUR.
+
+[1] RASTERSUCHE
+    335 Kombinationen erreichen das Ziel. Davon tragen 0 die
+    Zusatzlast progressiv, also mit dem Einkommen steigend.
+
+[2] DIE SPARSAMSTEN KOMBINATIONEN MIT PROGRESSIVER ZUSATZLAST
+              ESt-Stufen              MwSt   Mehrertrag    Saldo  Last unten  Last oben
+
+[3] ZUM VERGLEICH: SPARSAMSTE OHNE DIE PROGRESSIONSBEDINGUNG
+              ESt-Stufen              MwSt   Mehrertrag    Saldo  Last unten  Last oben
+        0/12/19/24/27/28     5/11/19/26/28        +55,2    +42,3      1,72 %     1,13 %  <- kehrt die Progression um
+        0/12/19/23/27/28     5/11/20/26/28        +55,5    +42,6      1,89 %     1,17 %  <- kehrt die Progression um
+        0/12/19/24/28/28     5/11/19/26/28        +56,2    +43,3      1,72 %     1,18 %  <- kehrt die Progression um
+        0/12/18/24/26/28     5/11/21/26/28        +54,9    +42,0      2,05 %     1,20 %  <- kehrt die Progression um
+
+[4] WARUM NULL — UND WARUM DAS KEIN SUCHFEHLER IST
+
+    Die oberste Gruppe liegt mit 300.000 EUR weit über der letzten Stufen-
+    grenze von 70.000 EUR. Sie zahlt den Spitzensatz, und der bleibt bei
+    28 %. Eine Anhebung der Stufen DARUNTER trifft sie nur mit einem festen
+    Betrag: die zweite Stufe um 3 Punkte anzuheben kostet jeden oberhalb von
+    25.000 EUR dieselben 12.652 x 3 % = 380 EUR. Für ein Einkommen von
+    26.180 EUR sind das 1,45 %, für 306.180 EUR sind es 0,12 %.
+
+    Das ist keine Eigenheit dieses Rasters, sondern eine Eigenschaft des
+    Entwurfs: WENN DER SPITZENSATZ FESTSTEHT, KANN ZUSÄTZLICHES AUFKOMMEN
+    AUS DER EINKOMMENSTEUER NUR AUS DER MITTE KOMMEN — und das ist relativ
+    zur Spitze zwangsläufig regressiv. Die Mehrwertsteuer verstärkt es über
+    die fallende Konsumquote.
+
+    Die Anweisung, die mittleren Stufen anzuheben, ist also ausführbar, aber
+    nicht ohne diesen Preis. Er wird hier beziffert, nicht weggelassen.
+
+[5] SCHWÄCHERES KRITERIUM: UNTEN NICHT MEHR ALS OBEN
+    Auch das erfüllen 0 von 335 Kombinationen.
+
+[6] DIE NETTOPOSITION — WAS DIE REFORM ALS GANZES TUT
+
+    Die Zusatzlast allein ist das falsche Mass. Gegen sie steht die
+    Digitaldividende, ein fester Betrag für alle. Entscheidend ist, was
+    unter dem Strich bleibt. Gerechnet gegen den Tarif 2025.
+
+    Zugrunde gelegt: ESt 0/12/19/24/27/28 · MwSt 5/11/19/26/28 · DD 515 EUR im Monat
+
+  Markteinkommen        DD   ESt 2025  ESt 28:28  MwSt mehr      netto  in % Markt
+           8.000     6.180          0        220        189     +5.771     +72,1 %
+          20.000     6.180        640      1.742        332     +4.746     +23,7 %
+          36.000     6.180      2.580      4.891        495     +3.374      +9,4 %
+          52.000     6.180      5.420      8.827        636     +2.137      +4,1 %
+          69.000     6.180      9.210     13.469        762     +1.160      +1,7 %
+         105.000     6.180     18.190     23.549      1.008       -187      -0,2 %
+         300.000     6.180     66.940     78.149      2.041     -7.070      -2,4 %
+
+    Die Nettoposition ist stark progressiv: unten ein Vielfaches des
+    Markteinkommens, oben ein Minus. Dass der FINANZIERUNGSZUSCHLAG
+    regressiv wirkt, ändert daran nichts — es heisst nur, dass er die
+    Progression der Reform abschwächt und nicht verstärkt.
+
+[7] DIE ALTERNATIVE, DIE DIE MITTE NICHT BERÜHRT
+
+    Von der Lücke von 54,9 Mrd EUR gehen 20 Mrd auf eine einzige
+    Korrektur zurück: die Bodenwertabgabe. Das Modell hatte "Bodenwertabgabe
+    statt Grundsteuer" mit +20 Mrd gebucht, Position 04 beschreibt aber einen
+    Umbau bei gleichem Aufkommen — dann sind es null. R5b zeigt, woher die
+    20 Mrd kommen könnten: der Bodenwert lag 2014 bei 3.529 Mrd EUR, und ein
+    Satz von 0,22 bis 0,44 % trägt die heutigen 15,5 Mrd Grundsteuer. Ein
+    Satz von 1 % ergäbe rund 35 Mrd, also +20 gegenüber heute.
+
+    Das ist keine Spitzfindigkeit, sondern eine Weggabelung:
+      a) Position 04 bleibt aufkommensneutral. Dann fehlen 20 Mrd, und sie
+         müssen aus der Mitte kommen — mit der oben gezeigten Wirkung.
+      b) Position 04 wird als Bodenwertabgabe ÜBER dem heutigen Niveau
+         formuliert. Dann schrumpft die Lücke auf 34,9 Mrd, und die
+         Stufen müssen deutlich weniger steigen. Der Träger ist der Boden,
+         der nicht ausweichen kann, und nach R5b liegen 87 % des Bodenwerts
+         auf 17 % der Fläche — die Last wäre konzentriert, nicht breit.
+
+    Weg b) ist die sachlich bessere Antwort auf die Lücke. Er verlangt aber
+    eine Änderung an Position 04 und damit eine MAJOR-Version.
+
+[8] WEG b) GERECHNET: LÜCKE 34,9 MRD STATT 54,9
+              ESt-Stufen              MwSt   Mehrertrag    Saldo  Last unten  Last oben
+        0/11/19/21/27/28     5/11/17/25/28        +34,9    +42,0      1,01 %     0,65 %
+        0/10/18/23/28/28     5/11/17/26/28        +34,9    +42,0      1,13 %     0,84 %
+        0/10/18/24/26/28     5/11/17/26/28        +35,0    +42,1      1,13 %     0,79 %
+        0/10/19/21/26/28     5/11/18/26/28        +35,1    +42,2      1,30 %     0,77 %
+         0/9/19/24/27/28     5/11/17/26/28        +35,1    +42,2      1,00 %     0,84 %
+
+    Die sparsamste Kombination hebt die Einkommensteuer um einen Punkt in
+    einer Stufe und die Mehrwertsteuer in zwei Stufen — statt vier bzw. drei
+    Anhebungen in Weg a). Die Zusatzlast unten halbiert sich.

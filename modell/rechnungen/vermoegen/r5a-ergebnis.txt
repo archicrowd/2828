@@ -1,0 +1,85 @@
+============================================================================================
+R5a — VERMÖGENSTEUER 1 % AB 2 MIO. EUR
+============================================================================================
+
+[1] DIE VERÖFFENTLICHTEN PUNKTE UND DIE PROBE
+  Freibetrag   Basis Bio EUR    alpha aus Paar
+       1 Mio            5,50                  
+      10 Mio            2,72             1,306
+      20 Mio            2,13             1,353
+     100 Mio            1,12             1,399
+   1.000 Mio            0,36             1,493
+
+    alpha aus den Paaren:
+         1 bis   10 Mio EUR   alpha = 1,306
+        10 bis   20 Mio EUR   alpha = 1,353
+        20 bis  100 Mio EUR   alpha = 1,399
+       100 bis 1.000 Mio EUR   alpha = 1,493
+    Streuung 0,187 — die Beziehung ist über drei Größenordnungen
+    hinreichend stabil. Für die Zwischenrechnung zählt das unterste
+    Paar, 1 bis 10 Mio EUR, mit alpha = 1,306.
+
+[2] BEMESSUNGSGRUNDLAGE BEI 2 MIO. EUR FREIBETRAG
+    aus dem Paar 1 bis 10 Mio (alpha 1,306):   4,45 Billionen EUR
+    Gegenprobe mit alpha aus 10 bis 20 Mio (1,353),
+    von 10 Mio heruntergerechnet:                 4,80 Billionen EUR
+    Abstand 7,9 %. Das ist die Unschärfe der
+    Zwischenrechnung — nicht null, aber klein gegen die
+    Verhaltensreaktion weiter unten.
+    -> Bemessungsgrundlage 4,45 bis 4,80 Billionen EUR
+
+[3] AUFKOMMEN
+    1 % auf 4,45 bis 4,80 Bio EUR        44,5 bis 48,0 Mrd EUR  brutto
+    abzüglich Verwaltung und Befolgung 3,2 %      -1,4
+    abzüglich Wertkorrekturen 1,4 %               -0,6
+    = vor Verhaltensreaktion                       42,4 Mrd EUR
+
+    Verhaltensreaktion. Das DIW rechnet mit Elastizitäten der
+    Bemessungsgrundlage von -0,1 bis -0,25 und kommt auf Minderungen
+    bis 60 %, einschließlich der Rückwirkung auf die Ertragsteuern
+    bis 80 %. Das ist die mit Abstand größte Unsicherheit.
+     Minderung     Aufkommen
+           0 %      42,4 Mrd
+          15 %      36,1 Mrd
+          30 %      29,7 Mrd
+          45 %      23,3 Mrd
+          60 %      17,0 Mrd
+
+    ERGEBNIS  rund 17 bis 42 Mrd EUR,
+              mittlerer Fall um 30 Mrd EUR.
+
+[4] GEGENPROBE
+    Das DIW nennt für 1 % proportional bei 1 Mio EUR persönlichem und
+    5 Mio EUR Unternehmensfreibetrag ein Aufkommen von 42 Mrd EUR auf
+    einer Basis von 4,2 Billionen. 1 % von 4,2 Bio = 42 Mrd — die
+    Angabe ist in sich schlüssig und bestätigt, dass die Basiswerte
+    oben richtig gelesen sind.
+    Position 04 kennt keinen Unternehmensfreibetrag. Die hier
+    gerechnete Basis ist deshalb die ungekürzte.
+
+[5] WIE WEIT LIEGEN DIE QUELLEN AUSEINANDER?
+    Dieselbe Grundgesamtheit, drei Auswertungen, Bezugsjahr 2023:
+
+      IW aus PHF, unkorrigiert, Haushalte
+        Median 103.100 EUR · 90-%-Perzentil 777.200 EUR · Gini 0,724
+      Sachverständigenrat nach Albers u. a., korrigiert, Haushalte
+        Median rund 160.000 EUR · 90-% rund 1,1 Mio · 99-% rund 6 Mio · Gini 0,76
+      DIW, korrigiert, Personen
+        oberstes 1 % ab 2,3 Mio EUR · Gesamtvermögen 16,5 Billionen (2026)
+
+    Zwischen der unkorrigierten und der korrigierten Fassung liegen beim
+    Median rund 55 %, beim 90-%-Perzentil rund 42 %. Die Korrekturmethode
+    verschiebt das Bild also stärker als der Datenjahrgang. Wer eine Zahl
+    aus diesem Feld zitiert, muss sagen, welche Korrektur dahintersteht.
+
+[6] WAS DAMIT NOCH NICHT GEHT
+    - Der Freibetrag in Position 04 ist nicht als "je Person" oder "je
+      Haushalt" bestimmt. Das DIW rechnet je Person. Bei Haushalten läge
+      die Basis niedriger.
+    - Die Bodenwertabgabe ist der zweite Teil von Position 04 und hier
+      gar nicht enthalten. Dafür fehlt der Wert des Grund und Bodens aus
+      den sektoralen Vermögensbilanzen.
+    - Betriebsvermögen: Position 04 sieht keinen Sonderfreibetrag vor.
+      Ob das durchhaltbar ist, ist eine Entwurfsfrage, keine Rechenfrage —
+      beim obersten 1 % besteht rund die Hälfte des Vermögens aus
+      Betriebsvermögen (Sachverständigenrat).

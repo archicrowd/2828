@@ -1,0 +1,101 @@
+====================================================================================================
+SCHLUSSABGLEICH — BELEGE GEGEN MODELL, STUFE 515 EUR, SZENARIO ROBUST
+====================================================================================================
+
+[0] AUSGANGSLAGE
+    Einnahmen Kernsystem 1.172,2 + Bausteine 67,0 = 1.239,2 Mrd
+    Ausgaben 1.171,9 Mrd  ->  Saldo +67,3 Mrd (+1,60 % BIP)
+    Zielsaldo für Investitionen: +42 Mrd (1 % BIP)
+
+[1] KORREKTUREN AUS DEN BELEGEN
+Posten                                           Modell   belegt   Änderung          Spanne
+Erbschaft 28 %                                     35,9     21,0      −14,9   20,3 bis 22,3
+Bodenwertabgabe statt Grundsteuer                  20,0      0,0      −20,0     0,0 bis 0,0
+CO₂ gesamt (Abgabe + Pfad)                         70,0     33,0      −37,0   28,0 bis 40,0
+Vermögen gesamt (Mindest- und Vermögensteuer)      32,7     30,0       −2,7   17,0 bis 42,0
+Unternehmen und Plattformen 28 %                  157,6    152,0       −5,6 149,0 bis 155,0
+Summe der Korrekturen                                                 −80,2
+
+  Erbschaft 28 %
+      R1: amtliche Statistik, 200.000 EUR Freibetrag je Erwerb, keine Verschonungen. Das Model
+      l hatte 400.000 EUR und einen höheren Ansatz.
+  Bodenwertabgabe statt Grundsteuer
+      R5b: Position 04 ist ein UMBAU der Grundsteuer bei gleichem Aufkommen, keine zusätzliche
+       Abgabe. Die Grundsteuer steckt bereits in den sonstigen Steuern. Der Posten war eine Do
+      ppelzählung.
+  CO₂ gesamt (Abgabe + Pfad)
+      R4: § 44 Abs. 2 BEHG, Menge 2026 252,4 Mio t. Bei 100 EUR/t 25,2 Mrd im nationalen Hande
+      l, dazu geschätzt 8 Mrd deutsche Versteigerungserlöse aus dem EU-ETS 1. Der Modellwert v
+      on 70 war nicht belegbar.
+  Vermögen gesamt (Mindest- und Vermögensteuer)
+      R5a: DIW-Verteilung, Pareto-Zwischenrechnung auf 2 Mio EUR Freibetrag, 1 % Satz, nach Ve
+      rwaltungskosten und mittlerer Verhaltensreaktion.
+  Unternehmen und Plattformen 28 %
+      R6: Position 05 bringt im Konzernsegment netto +4,7 bis +10,0 Mrd gegenüber heute, nicht
+       +12,6. Der Satz von 28 % ist für Deutschland eine Senkung; nur die Zerlegung nach dem K
+      undenort trägt den Zuwachs.
+
+[2] UNVERÄNDERT STEHEN GEBLIEBEN, WEIL KEIN BELEG VORLIEGT
+    Abbau klimaschädlicher Subventionen, 20,0 Mrd. Das Umweltbundesamt weist für
+    2018 statisch 47 Mrd als aufkommenswirksam aus; davon ist der Spitzenausgleich
+    entfallen, und der statische Wert einer Steuervergünstigung ist nicht ihr
+    Abbauertrag. 20 Mrd sind rund 44 % des statischen Werts — ein vertretbarer
+    Abschlag, aber eine Setzung.
+    Sonstige Steuern, 165,0 Mrd, und die Ausgabenblöcke: nicht Gegenstand dieser
+    Prüfung.
+
+[3] NEUER SALDO
+    bisher +67,3 Mrd  ->  nach Korrektur −12,9 Mrd (−0,31 % BIP)
+    Lücke zum Zielsaldo von +42 Mrd: 54,9 Mrd
+
+[4] EINBEZIEHUNG VON BEAMTEN UND SELBSTÄNDIGEN
+    Das Ziel ist Gleichbehandlung, nicht Gegenfinanzierung. Die Belege sind
+    hier eindeutig und sprechen gegen die naheliegende Erwartung:
+
+      IW Köln 2025: Werden die rund 1,9 Mio Beamten einbezogen und trägt der
+        Staat den vollen Beitragssatz, entstehen knapp 20 Mrd EUR Mehrkosten
+        im Jahr; bei paritätischer Finanzierung 10 Mrd. Kurzfristig fliessen
+        mehr Beiträge, langfristig steigen auch die Ausgaben, weil die
+        künftigen Beamtenrenten aus dem Umlagesystem zu zahlen wären. Die
+        Altersstruktur der Beamten ist dabei ungünstiger als im Durchschnitt.
+      DIW 2025: Die Pensionen kosten den Staat schon heute über 63 Mrd EUR
+        im Jahr, rund 1,5 % der Wirtschaftsleistung. Durchschnittliche
+        Pension 3.240 EUR gegen 1.599 EUR Durchschnittsrente. Deshalb der
+        Vorschlag, nur NEU eingestellte Beschäftigte nicht mehr zu verbeamten
+        — der "Einführungsgewinn" entsteht dann ohne sofortige Ansprüche.
+      DIW 2025: rund 5 Mio Selbständige, viele solo und mit hohem Armutsrisiko
+        im Alter. Versicherungspflicht wird als gerecht und angemessen
+        bezeichnet, ohne Kostenschätzung.
+
+    EIGENE SCHÄTZUNG, mit offengelegten Setzungen:
+      Selbständige: von 5,0 Mio sind rund 1,5 Mio bereits pflichtversichert
+        (Versorgungswerke, Künstlersozialkasse, Handwerker, Landwirte).
+        Bleiben 3,5 Mio. Durchschnittlich beitragspflichtiges Einkommen
+        30 Tsd EUR — bewusst niedrig, weil Solo-Selbständige
+        überwiegen. Beitrag 28 %, von ihnen allein zu tragen.
+        -> 29,4 Mrd EUR im Jahr.
+      Beamte: der Staat zahlt als Arbeitgeber die Hälfte und schuldet die
+        bestehende Versorgung weiter. Konsolidiert für die öffentliche Hand
+        nach IW rund −10 Mrd EUR.
+      Zusammen +19,4 Mrd EUR.
+
+    DIESER BETRAG WIRD NICHT AUF DEN SALDO ANGERECHNET.
+    Er ist ein Einführungsgewinn: die Beiträge fliessen sofort, die Ansprüche
+    entstehen mit. Wer ihn als dauerhafte Gegenfinanzierung bucht, rechnet
+    sich reich — denselben Fehler macht die Debatte regelmässig. Er steht
+    deshalb als eigene Zeile, nicht in der Summe.
+
+[5] TARIFANPASSUNG — DIE MITTLEREN STUFEN
+    Gegenprobe der nachgebauten Funktionen gegen das Gesamtmodell:
+      Einkommensteuer 313,3 (Modell 313,3) · Mehrwertsteuer 375,9 (Modell 375,9)
+
+    Gesucht: 54,9 Mrd. Oben bleibt 28 %, unten bleibt 0 %.
+    Bewegt werden nur die Stufen dazwischen.
+
+                ESt-Stufen           MwSt-Stufen      ESt     MwSt   zusammen     Saldo
+           0/9/16/21/26/28         5/11/17/22/28     +0,0     +0,0       +0,0     −12,9
+          0/10/17/22/27/28         5/12/18/23/28    +12,5     +7,6      +20,1      +7,2
+          0/10/18/23/27/28         5/12/19/24/28    +18,8    +13,9      +32,6     +19,7
+          0/11/18/23/27/28         5/13/19/24/28    +23,8    +15,1      +38,9     +26,0
+          0/11/19/24/27/28         5/13/20/25/28    +30,0    +21,4      +51,4     +38,5
+          0/12/19/24/27/28         5/13/20/25/28    +35,0    +21,4      +56,4     +43,5

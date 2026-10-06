@@ -1,0 +1,37 @@
+========================================================================================================
+R10c — NETTOPOSITION, KORRIGIERT
+========================================================================================================
+
+    Mehrwertsteuer-Effektivsatz: heute 16,5 % · 28:28 bisher 20,0 % · jetzt 21,5 %
+    Konsumquoten (Setzung nach Muster der EVS): 100 % / 95 % / 88 % / 82 % / 76 % / 68 % / 50 %
+
+    Markt  Dividende  ESt heute   ESt neu  ESt mehr  MwSt mehr     NETTO  in % Markt
+    8.000      6.180          0       165      +165       +501    +5.514     +68,9 %
+   20.000      6.180        640     1.363      +723       +879    +4.579     +22,9 %
+   36.000      6.180      2.580     4.512    +1.932     +1.311    +2.937      +8,2 %
+   52.000      6.180      5.420     8.447    +3.027     +1.685    +1.468      +2,8 %
+   69.000      6.180      9.210    13.089    +3.879     +2.018      +283      +0,4 %
+  105.000      6.180     18.190    23.169    +4.979     +2.671    -1.470      -1,4 %
+  300.000      6.180     66.940    77.769   +10.829     +5.408   -10.057      -3,4 %
+
+    Gewichteter Durchschnitt +2.576 EUR. Die Nettoposition bleibt stark
+    progressiv und kippt zwischen 69.000 und 105.000 EUR Markteinkommen ins
+    Minus — bei der früheren, fehlerhaften Rechnung lag der Kipppunkt
+    oberhalb von 105.000 EUR. Die Richtung des Befundes ändert sich nicht,
+    seine Lage schon.
+
+    ZUM VERGLEICH der Schritt, den NUR diese Tarifänderung ausmacht
+    (Mehrwertsteuer 20,0 -> 21,5 %):
+
+    Markt   ESt mehr   MwSt mehr   zusammen  in % Markt
+    8.000         +0        +146       +146      1,03 %
+   20.000        +35        +256       +291      1,11 %
+   36.000       +515        +382       +897      2,13 %
+   52.000       +932        +491     +1.423      2,45 %
+   69.000     +1.050        +588     +1.638      2,18 %
+  105.000     +1.050        +778     +1.828      1,64 %
+  300.000     +1.050      +1.575     +2.625      0,86 %
+
+    Das ist die Zusatzlast der Anhebung selbst: 0,86 % bis 2,45 %
+    des Einkommens. Beide Tabellen sind nötig: die erste sagt, was die
+    Reform insgesamt bringt, die zweite, was dieser Schritt kostet.

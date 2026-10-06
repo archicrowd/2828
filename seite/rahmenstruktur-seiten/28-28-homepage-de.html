@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAX 28:28 – Das einfache Steuersystem für das 21. Jahrhundert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F7F4; --ink:#0F3B5C; --line:#B9C9D6; --line-soft:#D8E1E8;
+  --accent:#1D7A4F; --accent-bg:#E7F2EC; --warn:#B4452F; --dim:#51677B; --card:#FFFFFF;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --disp:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Source Serif 4',Georgia,'Times New Roman',serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0D1822; --ink:#DCE7F0; --line:#3B5367; --line-soft:#223649;
+    --accent:#52C08B; --accent-bg:#12301F; --warn:#E58A70; --dim:#9FB4C6; --card:#122130;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0D1822; --ink:#DCE7F0; --line:#3B5367; --line-soft:#223649;
+  --accent:#52C08B; --accent-bg:#12301F; --warn:#E58A70; --dim:#9FB4C6; --card:#122130;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:var(--ink)}
+img,svg{max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* Plankopf */
+.titleblock{border-bottom:1.5px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:50}
+.titleblock .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.tb-left{font-family:var(--disp);font-size:19px;font-weight:700;letter-spacing:-.3px;text-decoration:none;white-space:nowrap}
+.tb-left span{color:var(--accent)}
+.tb-right{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:12.5px}
+.tb-right a{text-decoration:none;color:var(--dim)}
+.tb-right a:hover{color:var(--ink)}
+@media (max-width:720px){.tb-right .opt{display:none}.tb-right{gap:12px;font-size:11.5px}}
+
+/* Hero */
+.hero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
+.mark{display:block;margin:0 auto;width:100%;max-width:600px;height:auto}
+.mark .dim-line{stroke:var(--line);stroke-width:1}
+.mark .dim-txt{font-family:var(--mono);font-size:10.5px;fill:var(--dim)}
+.mark .big{font-family:var(--disp);font-weight:700;fill:var(--ink)}
+.mark .tax{font-family:var(--disp);font-weight:500;fill:var(--dim)}
+.mark .colon{fill:var(--accent)}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4.4vw,46px);line-height:1.1;letter-spacing:-.5px;text-align:center;max-width:860px;margin:26px auto 6px;text-wrap:balance}
+.hero .claim2{font-family:var(--disp);font-weight:400;font-size:clamp(20px,2.6vw,27px);text-align:center;color:var(--dim);margin-bottom:22px}
+.hero p.sub{text-align:center;max-width:680px;margin:0 auto 28px;font-size:18.5px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.btn{font-family:var(--disp);font-weight:500;font-size:16px;padding:12px 22px;border:1.5px solid var(--ink);border-radius:2px;text-decoration:none;cursor:pointer;background:transparent;color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.opensrc{text-align:center;font-family:var(--mono);font-size:13px;color:var(--dim);margin-bottom:40px}
+.opensrc a{color:var(--accent)}
+.stamps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto}
+.stamp{border:2px solid var(--accent);outline:1px solid var(--accent);outline-offset:3px;padding:18px 18px 16px;text-align:center;background:var(--card)}
+.stamp .v{font-family:var(--disp);font-weight:700;font-size:40px;line-height:1.05;color:var(--accent)}
+.stamp .l{font-size:15px;line-height:1.4;margin-top:6px}
+.stamp sup{font-size:.55em}
+@media (max-width:760px){.stamps{grid-template-columns:1fr}}
+
+/* Blätter */
+section{padding:72px 0;border-bottom:1px solid var(--line);scroll-margin-top:56px}
+.blatt{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-bottom:10px;display:flex;gap:10px;align-items:center}
+.blatt::after{content:"";flex:1;height:1px;background:var(--line-soft)}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.4vw,36px);line-height:1.15;letter-spacing:-.3px;margin-bottom:12px;max-width:780px;text-wrap:balance}
+.lede{max-width:700px;color:var(--dim);font-size:18px;margin-bottom:36px}
+.fine{font-size:14px;color:var(--dim);margin-top:18px;max-width:780px}
+
+/* Befund */
+.befund{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
+.befund>div{padding:22px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.befund .v{font-family:var(--disp);font-weight:700;font-size:34px;color:var(--warn);line-height:1.1}
+.befund h3{font-family:var(--disp);font-size:17px;margin:6px 0 6px}
+.befund p{font-size:15px;color:var(--dim);line-height:1.5}
+@media (max-width:860px){.befund{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.befund{grid-template-columns:1fr}}
+
+/* Konstruktion */
+.mass-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
+.mass{padding:24px 24px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card)}
+.mass .pos{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.mass h3{font-family:var(--disp);font-weight:700;font-size:21px;line-height:1.2;margin:6px 0 10px}
+.regel{display:inline-block;font-family:var(--mono);font-size:13.5px;background:var(--accent-bg);color:var(--accent);padding:4px 9px;border-radius:2px;margin-bottom:10px;font-weight:500}
+.mass p{font-size:15.5px;line-height:1.55}
+@media (max-width:760px){.mass-grid{grid-template-columns:1fr}}
+.viz{margin:4px 0 12px}
+.viz svg{display:block;width:100%;height:auto}
+.viz text{font-family:var(--mono);font-size:11px;fill:var(--dim)}
+.viz .bar{fill:var(--ink)}
+.viz .bar.acc{fill:var(--accent)}
+.viz .base{stroke:var(--line);stroke-width:1}
+.label-scale{display:flex;flex-direction:column;gap:4px;margin:4px 0 12px}
+.label-scale div{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px}
+.label-scale b{display:inline-block;height:20px;color:#fff;font-family:var(--disp);font-size:13px;line-height:20px;padding-left:8px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%)}
+
+/* Rechner */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:40px;border:1.5px solid var(--ink);padding:30px;background:var(--card)}
+@media (max-width:820px){.calc{grid-template-columns:1fr;padding:22px}}
+.calc label.lbl{display:block;font-family:var(--disp);font-weight:500;font-size:15px;margin:18px 0 8px}
+.calc label.lbl:first-child{margin-top:0}
+.bval{font-family:var(--disp);font-weight:700;font-size:34px}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.seg{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);width:max-content;max-width:100%}
+.seg button{font-family:var(--mono);font-size:13px;padding:8px 12px;border:none;border-right:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.seg button:last-child{border-right:none}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chk{display:flex;gap:10px;align-items:center;font-size:15.5px}
+.chk input{width:18px;height:18px;accent-color:var(--accent)}
+.res-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-soft);font-size:15.5px}
+.res-row .v{font-family:var(--mono);font-weight:500;white-space:nowrap}
+.res-row .v.new{color:var(--accent)}
+.bars{margin:18px 0}
+.bar-lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--dim);margin-top:8px}
+.barbox{height:14px;background:var(--line-soft)}
+.barbox i{display:block;height:100%;background:var(--dim);transition:width .25s}
+.barbox.new i{background:var(--accent)}
+.plus-box{border:2px solid var(--accent);padding:16px;text-align:center;margin-top:14px}
+.plus{font-family:var(--disp);font-weight:700;font-size:40px;color:var(--accent);line-height:1.1}
+.plus.neg{color:var(--warn)}
+.plus-sub{font-size:15px}
+.tscroll{overflow-x:auto;margin-top:34px;border-top:1.5px solid var(--ink)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+caption{text-align:left;font-family:var(--disp);font-weight:700;font-size:20px;padding:16px 0 8px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line-soft);text-align:right;white-space:nowrap}
+th{font-family:var(--disp);font-weight:500;font-size:14px;color:var(--dim)}
+th:first-child,td:first-child{text-align:left;white-space:normal}
+td{font-family:var(--mono);font-size:14px}
+td:first-child{font-family:var(--body);font-size:15.5px}
+td.pos{color:var(--accent);font-weight:500}
+
+/* Simulation */
+.chart-card{border:1.5px solid var(--ink);padding:22px;background:var(--card)}
+.tabs{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);width:max-content;max-width:100%;margin-bottom:6px}
+.tabs button{font-family:var(--disp);font-size:14.5px;padding:8px 14px;border:none;border-right:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button:last-child{border-right:none}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.unit{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin:8px 0 4px}
+#chart{width:100%;height:auto;display:block}
+#chart .grid{stroke:var(--line-soft)}
+#chart .axis{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+#chart .hist{stroke:var(--ink);fill:none;stroke-width:2.5}
+#chart .ohne{stroke:var(--warn);fill:none;stroke-width:2.5;stroke-dasharray:7 6}
+#chart .mit{stroke:var(--accent);fill:none;stroke-width:3.5}
+#chart .marker{stroke:var(--line);stroke-dasharray:3 4}
+.legend{display:flex;flex-wrap:wrap;gap:22px;font-family:var(--mono);font-size:12.5px;margin-top:8px}
+.legend i{display:inline-block;width:26px;height:0;border-top:3px solid;vertical-align:middle;margin-right:8px}
+.l-hist i{border-color:var(--ink)} .l-ohne i{border-color:var(--warn);border-top-style:dashed} .l-mit i{border-color:var(--accent)}
+.haushalt{display:grid;grid-template-columns:1fr 1.4fr;gap:34px;margin-top:40px;align-items:start}
+@media (max-width:860px){.haushalt{grid-template-columns:1fr}}
+.haushalt h3{font-family:var(--disp);font-size:22px;margin-bottom:8px}
+.haushalt table{min-width:0}.haushalt th,.haushalt td{white-space:normal}
+
+/* Sicherungen */
+.rules{counter-reset:r;border-top:1.5px solid var(--ink)}
+.rule{display:grid;grid-template-columns:70px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.rule::before{counter-increment:r;content:counter(r);font-family:var(--disp);font-weight:700;font-size:40px;color:var(--accent);line-height:1}
+.rule b{font-family:var(--disp);font-size:20px;display:block;margin-bottom:4px}
+.rule p{max-width:720px}
+
+/* Anlagen */
+.anl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:820px){.anl{grid-template-columns:1fr}}
+.anl button{all:unset;cursor:pointer;border:1.5px solid var(--ink);padding:20px;background:var(--card);display:block}
+.anl button:hover{border-color:var(--accent)}
+.anl button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.anl .t{font-family:var(--disp);font-weight:700;font-size:19px;display:block}
+.anl .d{font-size:15px;color:var(--dim);display:block;margin-top:4px}
+.anl .f{font-family:var(--mono);font-size:12px;color:var(--accent);display:block;margin-top:10px}
+dialog{margin:auto;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);max-width:min(980px,94vw);width:100%;max-height:88vh;padding:0}
+dialog::backdrop{background:rgba(8,20,30,.55)}
+.dlg-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper)}
+.dlg-head b{font-family:var(--disp);font-size:18px}
+.dlg-body{padding:18px 20px;overflow:auto;max-height:calc(88vh - 60px)}
+.dlg-body pre{font-family:var(--mono);font-size:12.5px;line-height:1.5;white-space:pre;overflow-x:auto;background:var(--card);border:1px solid var(--line-soft);padding:14px}
+.dlg-body ul{padding-left:20px}
+.dlg-body li{margin:6px 0;font-size:15.5px}
+.dlg-body h4{font-family:var(--disp);font-size:17px;margin:16px 0 4px}
+
+footer{padding:46px 0 64px;font-size:14.5px;color:var(--dim)}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
+@media (max-width:720px){footer .wrap{grid-template-columns:1fr}}
+footer h4{font-family:var(--disp);font-size:15px;color:var(--ink);margin-bottom:8px}
+footer a{color:var(--dim)}
+</style>
+</head>
+<body>
+
+<nav class="titleblock" aria-label="Seitennavigation">
+  <div class="wrap">
+    <a class="tb-left" href="#top">TAX 28<span>:</span>28</a>
+    <div class="tb-right">
+      <a href="#konstruktion">Konstruktion</a>
+      <a href="#rechner">Rechner</a>
+      <a href="#simulation">Simulation</a>
+      <a class="opt" href="#sicherungen">Sicherungen</a>
+      <a class="opt" href="#anlagen">Rechenmodelle</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <svg class="mark" viewBox="0 0 560 200" role="img" aria-label="TAX 28:28 – bemaßt wie eine technische Zeichnung">
+      <g class="dim-line">
+        <line x1="66" y1="34" x2="66" y2="14"/><line x1="496" y1="34" x2="496" y2="14"/>
+        <line x1="66" y1="22" x2="496" y2="22"/>
+        <line x1="66" y1="22" x2="74" y2="18"/><line x1="66" y1="22" x2="74" y2="26"/>
+        <line x1="496" y1="22" x2="488" y2="18"/><line x1="496" y1="22" x2="488" y2="26"/>
+        <line x1="190" y1="150" x2="190" y2="172"/><line x1="312" y1="150" x2="312" y2="172"/>
+        <line x1="190" y1="164" x2="312" y2="164"/>
+        <line x1="372" y1="150" x2="372" y2="172"/><line x1="496" y1="150" x2="496" y2="172"/>
+        <line x1="372" y1="164" x2="496" y2="164"/>
+      </g>
+      <text class="dim-txt" x="281" y="12" text-anchor="middle">EIN SYSTEM · KEINE AUSNAHMEN</text>
+      <text class="tax" x="160" y="134" text-anchor="end" font-size="40">TAX</text>
+      <text class="big" x="251" y="134" text-anchor="middle" font-size="104" letter-spacing="-2">28</text>
+      <text class="big colon" x="342" y="130" text-anchor="middle" font-size="104">:</text>
+      <text class="big" x="434" y="134" text-anchor="middle" font-size="104" letter-spacing="-2">28</text>
+      <text class="dim-txt" x="251" y="188" text-anchor="middle">OBERGRENZE FÜR ALLE</text>
+      <text class="dim-txt" x="434" y="188" text-anchor="middle">AUCH FÜR KONZERNE &amp; PLATTFORMEN</text>
+    </svg>
+
+    <h1>Das einfache Steuersystem für das 21.&nbsp;Jahrhundert.</h1>
+    <p class="claim2">Fair, sozial und innovativ.</p>
+    <p class="sub">Höchstens 28&nbsp;% auf jedes Einkommen – und 28&nbsp;% auch für Konzerne, Plattformen, Erben und große Vermögen. Dazu eine Digitaldividende von 515&nbsp;€ im Monat für jeden Erwachsenen, vom ersten Tag an.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#rechner">Eigenes Plus berechnen</a>
+      <a class="btn" href="#konstruktion">Konzept ansehen</a>
+    </div>
+    <p class="opensrc">Alle Rechenmodelle sind hier <a href="#anlagen">open source prüfbar</a>.</p>
+
+    <div class="stamps">
+      <div class="stamp"><div class="v">515&nbsp;€</div><div class="l">Dividende im Monat ab dem ersten Tag – 257,50&nbsp;€ je Kind</div></div>
+      <div class="stamp"><div class="v">über 95&nbsp;%<sup>*</sup></div><div class="l">der Menschen haben mehr im Geldbeutel</div></div>
+      <div class="stamp"><div class="v">+21&nbsp;%</div><div class="l">verfügbares Einkommen für eine Familie mit zwei Kindern</div></div>
+    </div>
+    <p class="fine" style="text-align:center;margin:18px auto 0">* Schätzung aus dem Modell: Ohne Bestandsgarantie stünden rund 5&nbsp;% schlechter, vor allem Haushalte im Bürgergeld ohne Erwerbseinkommen. Mit der Bestandsgarantie (Position 09) betrifft ein Minus nur noch Teile sehr großer Vermögen. Keine Mikrosimulation.</p>
+  </div>
+</header>
+
+<section id="befund">
+  <div class="wrap">
+    <div class="blatt">Blatt 1 · Befund</div>
+    <h2>Zu komplex, um es zu verstehen. Zu löchrig, um gerecht zu sein.</h2>
+    <p class="lede">Und die Gewinne des Fortschritts gehen an uns vorbei. Vier Risse im heutigen System:</p>
+    <div class="befund">
+      <div><div class="v">20.000+</div><h3>Seiten Steuerrecht</h3><p>Gesetze, Verordnungen, Erlasse, Urteile – ohne Beratung durchschaut das kaum jemand.</p></div>
+      <div><div class="v">~40&nbsp;%</div><h3>der Konzerngewinne in Steueroasen</h3><p>Multinationale Gewinne werden dort verbucht, wo kaum Steuern anfallen – nicht dort, wo die Kunden sitzen.</p></div>
+      <div><div class="v">80–90&nbsp;%</div><h3>Abzug beim Hinzuverdienen</h3><p>Wer im Bürgergeld mehr arbeitet, behält von jedem zusätzlichen Euro oft nur 10 bis 20&nbsp;Cent.</p></div>
+      <div><div class="v">0&nbsp;€</div><h3>Fortschrittsdividende</h3><p>KI und Automatisierung steigern die Wertschöpfung – die Erträge konzentrieren sich, die Steuerbasis Arbeit erodiert.</p></div>
+    </div>
+    <p class="fine">Größenordnungen: Seitenzahl aus der Projektrecherche (Beleg wird ergänzt); Gewinnverlagerung nach Tørsløv, Wier &amp; Zucman; Hinzuverdienstregeln im Bürgergeld (Stand 2026).</p>
+  </div>
+</section>
+
+<section id="konstruktion">
+  <div class="wrap">
+    <div class="blatt">Blatt 2 · Konstruktion</div>
+    <h2>Zehn Bauteile, ein Prinzip</h2>
+    <p class="lede">Jedes Element ist irgendwo auf der Welt schon erprobt – von Estlands digitaler Verwaltung bis zu Alaskas Dividende. 28:28 fügt sie zu einem tragenden System.</p>
+    <div class="mass-grid">
+      <div class="mass"><div class="pos">Position 01 · Einkommen</div><h3>Stufentarif mit harter Obergrenze</h3>
+        <div class="viz" aria-hidden="true"><svg viewBox="0 0 420 118">
+          <line class="base" x1="0" y1="96" x2="420" y2="96"/>
+          <rect class="bar" x="0"   y="94" width="62" height="2"/>
+          <rect class="bar" x="66"  y="71" width="62" height="25"/>
+          <rect class="bar" x="132" y="52" width="62" height="44"/>
+          <rect class="bar" x="198" y="38" width="62" height="58"/>
+          <rect class="bar" x="264" y="24" width="62" height="72"/>
+          <rect class="bar acc" x="330" y="18" width="90" height="78"/><text x="375" y="12" text-anchor="middle">28 %</text>
+          <text x="31" y="88" text-anchor="middle">0 %</text><text x="97" y="66" text-anchor="middle">9 %</text>
+          <text x="163" y="47" text-anchor="middle">16 %</text><text x="229" y="33" text-anchor="middle">21 %</text>
+          <text x="295" y="19" text-anchor="middle">26 %</text>
+          <text x="0" y="112">bis 12.348</text><text x="97" y="112" text-anchor="middle">25.000</text>
+          <text x="163" y="112" text-anchor="middle">40.000</text><text x="229" y="112" text-anchor="middle">55.000</text>
+          <text x="295" y="112" text-anchor="middle">70.000</text><text x="420" y="112" text-anchor="end">darüber</text>
+        </svg></div>
+        <p>Besteuert wird das Brutto – ohne Abzüge, ohne Splitting. Das Existenzminimum bleibt steuerfrei; darüber lohnt Arbeit auf jeder Stufe.</p></div>
+      <div class="mass"><div class="pos">Position 02 · Kapital</div><h3>Kapital und Arbeit werden gleich behandelt</h3><span class="regel">28 % auf alle Erträge</span>
+        <p>Auch Veräußerungsgewinne zählen. Lohn in Kapitalertrag umzuwandeln lohnt sich nicht mehr.</p></div>
+      <div class="mass"><div class="pos">Position 03 · Erbschaft</div><h3>Auch Geerbtes ist Einkommen</h3><span class="regel">28 % über 400.000 € je Kind</span>
+        <p>Ein Satz, keine Verschonungsausnahmen. Betriebe können die Steuer stunden.</p></div>
+      <div class="mass"><div class="pos">Position 04 · Vermögen und Boden</div><h3>Große Vermögen und teurer Boden tragen mit</h3><span class="regel">1 % ab 2 Mio. € · Grundsteuer nur auf den Boden</span>
+        <p>Vermögen bis 2&nbsp;Mio.&nbsp;€ bleibt praktisch unberührt. Die Grundsteuer richtet sich nur noch nach dem Wert des Grundstücks, nicht nach dem Haus darauf – so gilt es in Baden-Württemberg schon seit 2025. Wer baut oder saniert, zahlt dafür nicht mehr; ungenutztes Bauland in guter Lage zahlt mit. Auf Mieten darf die Steuer nicht umgelegt werden.</p></div>
+      <div class="mass"><div class="pos">Position 05 · Konzerne und Plattformen</div><h3>Besteuert wird, wo die Kunden sitzen</h3><span class="regel">28 % am Ort der Nutzung</span>
+        <p>Das gilt ausdrücklich für digitale Plattformen. Gewinne lassen sich verschieben, Kundschaft nicht.</p></div>
+      <div class="mass"><div class="pos">Position 06 · Konsum</div><h3>Die Mehrwertsteuer wird zum Label</h3>
+        <div class="label-scale" aria-label="Mehrwertsteuer-Label von A+ bis D">
+          <div><b style="width:64px;background:#1D7A4F">A+</b>5 % · Grundbedarf, Reparatur</div>
+          <div><b style="width:92px;background:#5A9E3C">A</b>11 % · nachhaltige Güter</div>
+          <div><b style="width:120px;background:#B79A1E">B</b>17 % · Standardgüter</div>
+          <div><b style="width:148px;background:#C9702A">C</b>22 % · ressourcenintensiv</div>
+          <div><b style="width:176px;background:#B4452F">D</b>28 % · klimaschädlicher Luxus</div>
+        </div>
+        <p>Wie beim Energielabel sieht man auf einen Blick, was ein Produkt kostet – und warum. Je nachhaltiger, desto günstiger.</p></div>
+      <div class="mass"><div class="pos">Position 07 · Klima</div><h3>CO₂-Preis mit Rückgabe an alle</h3><span class="regel">100 → 150 € je Tonne · keine klimaschädlichen Subventionen</span>
+        <p>Das Geld fließt über die Dividende zurück: Wer wenig verbraucht, gewinnt. Steuervorteile für fossile Nutzung entfallen.</p></div>
+      <div class="mass"><div class="pos">Position 08 · Dividende</div><h3>Die Digitaldividende</h3>
+        <div class="viz" aria-hidden="true"><svg viewBox="0 0 420 110">
+          <line class="base" x1="0" y1="88" x2="420" y2="88"/>
+          <rect class="bar acc" x="0" y="34" width="130" height="54"/>
+          <rect class="bar" x="145" y="28" width="130" height="60" opacity=".75"/>
+          <rect class="bar" x="290" y="23" width="130" height="65" opacity=".55"/>
+          <text x="65" y="26" text-anchor="middle">515 € · Start</text>
+          <text x="210" y="20" text-anchor="middle">566 €</text>
+          <text x="355" y="15" text-anchor="middle">617 €</text>
+          <text x="65" y="104" text-anchor="middle">50 % Existenzmin.</text>
+          <text x="210" y="104" text-anchor="middle">55 %</text>
+          <text x="355" y="104" text-anchor="middle">60 %</text>
+        </svg></div>
+        <p>Für alle Erwachsenen, Kinder erhalten die Hälfte. Die Höhe ist an das amtliche Existenzminimum gekoppelt und steigt per Formel, nicht per Wahlversprechen. Sie ist steuerpflichtig: Unten bleibt fast alles, oben fließen 28&nbsp;% zurück.</p></div>
+      <div class="mass"><div class="pos">Position 09 · Schutz</div><h3>Niemand mit kleinem Einkommen fällt zurück</h3><span class="regel">Bestandsgarantie · 40 Mrd. € für gezielte Hilfe</span>
+        <p>Wer heute Bürgergeld, Grundsicherung oder BAföG bekommt, erhält mindestens das bisherige Niveau – die Differenz zahlt der Härtefallfonds. Er trägt auch Wohnkosten, Pflege, Behinderung und besondere Lebenslagen.</p></div>
+      <div class="mass"><div class="pos">Position 10 · Arbeit</div><h3>Mehr Netto vom Brutto – für alle</h3><span class="regel">Sozialabgaben 42 → 28 → 18 % · ohne Obergrenze</span>
+        <p>Die Beiträge sinken sofort auf 28&nbsp;%, mit der nächsten Dividendenstufe auf 18&nbsp;%. Dafür zahlen hohe Einkommen auf jeden Euro – „keine Ausnahmen“ gilt in beide Richtungen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="wrap">
+    <div class="blatt">Blatt 3 · Lastprobe</div>
+    <h2>Rechnen Sie selbst nach</h2>
+    <p class="lede">Heutiges Recht 2026 gegen 28:28 – mit genau dem Code, der unten unter „Rechenmodelle“ offenliegt.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="brutto">Bruttoeinkommen im Jahr</label>
+        <div class="bval" id="bOut">42.000 €</div>
+        <input type="range" id="brutto" min="0" max="200000" step="1000" value="42000" aria-describedby="bOut">
+        <label class="lbl" id="lSt">Dividendenstufe</label>
+        <div class="seg" role="group" aria-labelledby="lSt">
+          <button data-stufe="50" aria-pressed="true">515 € (Start)</button>
+          <button data-stufe="55" aria-pressed="false">566 €</button>
+          <button data-stufe="60" aria-pressed="false">617 €</button>
+        </div>
+        <label class="lbl" id="lKi">Kinder</label>
+        <div class="seg" role="group" aria-labelledby="lKi">
+          <button data-kinder="0" aria-pressed="true">0</button>
+          <button data-kinder="1" aria-pressed="false">1</button>
+          <button data-kinder="2" aria-pressed="false">2</button>
+          <button data-kinder="3" aria-pressed="false">3</button>
+        </div>
+        <label class="lbl">Haushalt</label>
+        <div class="chk"><input type="checkbox" id="partner"><label for="partner">Partner:in ohne eigenes Einkommen</label></div>
+      </div>
+      <div aria-live="polite">
+        <div class="res-row"><span>Verfügbar heute</span><span class="v" id="rHeute">–</span></div>
+        <div class="res-row"><span>Verfügbar mit 28:28</span><span class="v new" id="rNeu">–</span></div>
+        <div class="res-row"><span>davon Dividende</span><span class="v" id="rDD">–</span></div>
+        <div class="res-row"><span>Steuern und Beiträge in % des Bruttos</span><span class="v" id="rEff">–</span></div>
+        <div class="res-row"><span>Mehrkosten durch das Konsum-Label (geschätzt)</span><span class="v" id="rMw">–</span></div>
+        <div class="bars" aria-hidden="true">
+          <div class="bar-lbl"><span>heute</span><span id="bT"></span></div>
+          <div class="barbox"><i id="barT" style="width:40%"></i></div>
+          <div class="bar-lbl"><span>mit 28:28</span><span id="bN"></span></div>
+          <div class="barbox new"><i id="barN" style="width:60%"></i></div>
+        </div>
+        <div class="plus-box"><div class="plus" id="rPlus">–</div><div class="plus-sub" id="rPlusSub">mehr im Jahr, nach Konsum-Label</div></div>
+      </div>
+    </div>
+    <p class="fine">Heute: Einkommensteuertarif, Solidaritätszuschlag, Beitragssätze und Bemessungsgrenzen 2026, Kindergeld 259&nbsp;€; Kinderfreibetrag-Vergleich nicht berücksichtigt. 28:28: Beiträge 14&nbsp;% (ab der 617-€-Stufe 9&nbsp;%) auf das ganze Brutto, Steuer auf Brutto plus Dividende, Kinderdividende steuerfrei. Konsum-Label: effektiv 20&nbsp;% statt rund 16,5&nbsp;%, nach typischer Konsumquote. Ohne Bürgergeld, Wohngeld und BAföG – dafür gilt die Bestandsgarantie.</p>
+
+    <h3 style="font-family:var(--disp);font-size:22px;margin:40px 0 0">Zehn geprüfte Haushalte (Start mit 515&nbsp;€)</h3>
+    <div class="tscroll" style="margin-top:10px">
+      <table>
+        <thead><tr><th scope="col">Haushalt</th><th scope="col">Brutto</th><th scope="col">heute</th><th scope="col">mit 28:28</th><th scope="col">Plus nach Label</th><th scope="col">in %</th></tr></thead>
+        <tbody>
+<tr><td>Mia, 22, studiert, ohne Einkommen</td><td>–</td><td>–¹</td><td>6.180 €</td><td class='pos'>+6.033 €</td><td class='pos'></td></tr>
+<tr><td>Tom, Berufseinsteiger</td><td>28.000 €</td><td>20.180 €</td><td>27.653 €</td><td class='pos'>+6.884 €</td><td class='pos'>+34 %</td></tr>
+<tr><td>Anna, alleinerziehend, 1 Kind</td><td>28.000 €</td><td>23.414 €</td><td>30.743 €</td><td class='pos'>+6.674 €</td><td class='pos'>+29 %</td></tr>
+<tr><td>Sarah, Pflegefachkraft</td><td>42.000 €</td><td>28.193 €</td><td>37.044 €</td><td class='pos'>+8.062 €</td><td class='pos'>+29 %</td></tr>
+<tr><td>Durchschnittsverdienst 2026</td><td>51.944 €</td><td>33.632 €</td><td>43.351 €</td><td class='pos'>+8.796 €</td><td class='pos'>+26 %</td></tr>
+<tr><td>Klaus, Facharbeiter</td><td>55.000 €</td><td>35.262 €</td><td>45.185 €</td><td class='pos'>+8.960 €</td><td class='pos'>+25 %</td></tr>
+<tr><td>Familie Müller, ein Einkommen, 2 Kinder</td><td>63.000 €</td><td>50.620 €</td><td>62.345 €</td><td class='pos'>+10.554 €</td><td class='pos'>+21 %</td></tr>
+<tr><td>Jonas, Ingenieur</td><td>80.000 €</td><td>48.544 €</td><td>59.861 €</td><td class='pos'>+10.193 €</td><td class='pos'>+21 %</td></tr>
+<tr><td>Dr. Weber, Führungskraft</td><td>150.000 €</td><td>85.528 €</td><td>100.461 €</td><td class='pos'>+13.424 €</td><td class='pos'>+16 %</td></tr>
+<tr><td>Inge, 880 € Rente + Grundsicherung</td><td>10.560 €</td><td>12.720 €</td><td>15.481 €</td><td class='pos'>+2.393 €</td><td class='pos'>+19 %</td></tr>
+
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">¹ Heute je nach Lage BAföG, Bürgergeld oder keine Leistung; die Bestandsgarantie sichert das bisherige Niveau. Inge: heute einschließlich Grundsicherung.</p>
+  </div>
+</section>
+
+<section id="simulation">
+  <div class="wrap">
+    <div class="blatt">Blatt 4 · Simulation</div>
+    <h2>Zwei Zukünfte, eine Entscheidung</h2>
+    <p class="lede">Vier Kenngrößen von 2010 bis 2035: die Entwicklung bis heute und ab 2028 zwei Pfade – weiter wie bisher oder mit 28:28.</p>
+    <div class="chart-card">
+      <div class="tabs" role="tablist" aria-label="Kenngröße wählen" id="tabs"></div>
+      <div class="unit" id="unit"></div>
+      <svg id="chart" viewBox="0 0 960 400" role="img" aria-label="Zeitreihe 2010 bis 2035"></svg>
+      <div class="legend">
+        <span class="l-hist"><i></i>Verlauf bis 2025</span>
+        <span class="l-ohne"><i></i>ohne 28:28</span>
+        <span class="l-mit"><i></i>mit 28:28 (vorsichtige Annahmen)</span>
+      </div>
+      <p class="fine">Pfade ab 2028 sind Modellrechnungen, keine Prognosen. Schulden: Quote abzüglich Fondsreserve. Ungleichheit: Modellschätzung, belastbar ist eine Größenordnung von 2 bis 5 Gini-Punkten. CO₂-Pfad aus der Vorfassung übernommen.</p>
+    </div>
+
+    <div class="haushalt">
+      <div>
+        <h3>Trägt der Haushalt das?</h3>
+        <p>Ja – in allen drei Rechenwegen ohne ein einziges Jahr mit Finanzierungslücke. Vor der ersten Auszahlung entsteht ein Polster; danach bleiben jedes Jahr bis zu 1&nbsp;% des BIP für flexible Investitionen, weitere 2&nbsp;% liegen als Krisenreserve bereit.</p>
+        <p class="fine">Auch im Rezessionstest wird die Dividende nicht gekürzt. Nur die jährliche Anpassung pausiert; ihr Wert sinkt dann zeitweise um bis zu 9&nbsp;%.</p>
+      </div>
+      <div class="tscroll" style="margin-top:0">
+        <table>
+          <thead><tr><th scope="col">Rechenweg</th><th scope="col">Plus im 1. Jahr</th><th scope="col">Lücken&shy;jahre</th><th scope="col">566 € ab</th><th scope="col">617 € ab</th><th scope="col">Investi&shy;tionen</th></tr></thead>
+          <tbody>
+            <tr><td>Optimistisch</td><td>+60 Mrd.&nbsp;€</td><td>0</td><td>2030</td><td>2032</td><td>100 %</td></tr>
+            <tr><td><b>Vorsichtig</b><br><span style="font-size:13px;color:var(--dim)">Grundlage der Grafik</span></td><td>+55 Mrd.&nbsp;€</td><td>0</td><td>2030</td><td>2038</td><td>100 %</td></tr>
+            <tr><td>Rezessionstest</td><td>+30 Mrd.&nbsp;€</td><td>0</td><td>–</td><td>–</td><td>85 %</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sicherungen">
+  <div class="wrap">
+    <div class="blatt">Blatt 5 · Sicherungen</div>
+    <h2>Warum der Haushalt nicht kippen kann</h2>
+    <p class="lede">Ein Entwurf ist so gut wie seine Sicherungen. Fünf Regeln entscheiden – nicht Wahlkämpfe.</p>
+    <div class="rules">
+      <div class="rule"><div><b>Einnahmen zuerst.</b><p>Konzerne, Plattformen, Kapital, Erbschaften, große Vermögen und Boden werden mehrere Monate vor der ersten Auszahlung nach neuem Recht besteuert. Die Dividende startet auf einem Polster, nie auf Kredit.</p></div></div>
+      <div class="rule"><div><b>Formel statt Kalender.</b><p>Die Dividende beträgt die Hälfte des amtlichen Existenzminimums. Sie steigt in Schritten bis 60&nbsp;%, sobald die Krisenreserve gefüllt und die Investitionen gesichert sind.</p></div></div>
+      <div class="rule"><div><b>Nie kürzen – nur pausieren.</b><p>Wird die Reserve angegriffen, setzt nur die jährliche Anpassung aus. Nachgeholt wird ausschließlich aus Überschüssen.</p></div></div>
+      <div class="rule"><div><b>Reserve und Investitionsfonds.</b><p>2&nbsp;% des BIP liegen als Krisenreserve bereit; darüber hinaus fließt jedes Jahr bis zu 1&nbsp;% des BIP in Schulen, Netze und Schienen. Der Staat bleibt handlungsfähig, ohne neue Schulden.</p></div></div>
+      <div class="rule"><div><b>Fiskalrat, offene Zahlen, fester Korridor.</b><p>Ein unabhängiger Rat prüft jährlich alle Annahmen; die Ist-Zahlen sind monatlich öffentlich. Als letzte Sicherung darf der Einheitssatz nur regelgebunden zwischen 25 und 30&nbsp;% gleiten.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="anlagen">
+  <div class="wrap">
+    <div class="blatt">Anlagen · Open Source</div>
+    <h2>Alle Rechenmodelle liegen offen</h2>
+    <p class="lede">Nichts auf dieser Seite muss man glauben. Jede Zahl stammt aus den Modellen unten – vollständig, lesbar, nachrechenbar.</p>
+    <div class="anl">
+      <button data-dlg="dlg-py"><span class="t">Gesamtmodell</span><span class="d">Einnahmen, Ausgaben, Haushaltspfad 2028–2047, Szenarien, Haushaltsprofile</span><span class="f">modell-2828.py · Python</span></button>
+      <button data-dlg="dlg-js"><span class="t">Rechnerlogik</span><span class="d">Der Code, der den Rechner auf dieser Seite antreibt – heute gegen 28:28</span><span class="f">rechner-2828.js · JavaScript</span></button>
+      <button data-dlg="dlg-q"><span class="t">Annahmen und Quellen</span><span class="d">Rechtsstand 2026, Datenbasis, und was noch nicht geprüft ist</span><span class="f">Übersicht</span></button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><h4>Methodik</h4><p>Aufkommen und Haushalt sind über die Einkommensverteilung nachgerechnet und in drei Rechenwegen geprüft – optimistisch, vorsichtig und mit Rezession. Die unbequemen Zahlen stehen mit auf der Seite. Entwickelt nach der Methodik des architektonischen Entwurfs, im Arbeitsdialog mit einem KI-System.</p></div>
+    <div><h4>Kontakt</h4><p>[Name, Anschrift – vor Veröffentlichung ergänzen]<br><a href="#top">Nach oben</a></p></div>
+    <div><h4>Impressum und Datenschutz</h4><p>Keine Cookies, keine Tracker. Schriften von Google Fonts. Alle Modellrechnungen sind Illustrationen ohne Gewähr und ersetzen keine Steuer- oder Rechtsberatung.</p></div>
+  </div>
+</footer>
+
+<dialog id="dlg-py" aria-labelledby="h-py"><div class="dlg-head"><b id="h-py">Gesamtmodell · modell-2828.py</b><button class="btn" data-close>Schließen</button></div>
+<div class="dlg-body"><pre><code>#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+28:28 — GESAMTMODELL (Mikro, Makro, Haushaltspfad, Homepage-Daten)
+Digitaldividende (DD) = 50 % des steuerlichen Existenzminimums (2026: 12.348 EUR/Jahr -&gt; 515 EUR/Monat),
+Kinder-DD = Haelfte (257,50 EUR). Aufstieg per Regel auf 55 % und 60 %.
+Einheitssatz 28 % (ESt-Spitze, Kapital, Unternehmen/Plattformen, Erbschaft, MwSt-Topstufe).
+
+Rechtsstand &quot;heute&quot;: 2026 (§ 32a EStG 2026, SV-Rechengroessen 2026, Soli-Freigrenze 2026, Kindergeld 259 EUR).
+Makro: Kalibrierung Projektmodell (Basis 880 / BIP 4.200 Modell-Mrd.). DD-Betraege werden in Euro 2026
+gegen diese niedrigere Modellbasis gerechnet -&gt; konservativ (Kostenanteil eher ueberzeichnet).
+&quot;&quot;&quot;
+import math, json, csv
+
+# =====================================================================
+# 0  PARAMETER
+# =====================================================================
+EXMIN_2026 = 12348                          # steuerliches Existenzminimum = Grundfreibetrag 2026
+DD_EUR = {50: 515.0, 55: 566.0, 60: 617.0}  # EUR/Monat, gerundet (50/55/60 % von 12.348/12)
+KIND_ANTEIL = 0.5
+L = 28
+TARIF_GRENZEN = [EXMIN_2026, 25000, 40000, 55000, 70000, float(&#x27;inf&#x27;)]
+TARIF_SAETZE  = [0.00, 0.09, 0.16, 0.21, 0.26, 0.28]          # 0-9-16-21-26-28
+MWST_STUFEN   = [5, 11, 17, 22, 28]                            # Label A+ ... D
+MWST_GEWICHTE = [.10, .10, .20, .30, .30]                      # ANNAHME Konsumanteile
+SV_AN = {50: 0.14, 55: 0.14, 60: 0.09}                         # AN-Anteil = Haelfte von 28 % bzw. 18 %
+ERB_FREIBETRAG_KIND = 400000
+KINDER_MIO, ERW_MIO = 14, 70
+
+# ---- Recht 2026 (heute) ----
+BBG_KV, BBG_RV = 69750, 101400
+AN_KV_PV = 0.073 + 0.0145 + 0.018           # KV 7,3 + halber durchschn. Zusatzbeitrag 1,45 + PV 1,8
+AN_KINDERLOS = 0.006
+AN_RV_AV = 0.093 + 0.013
+KINDERGELD = 259
+WK_PAUSCH, SA_PAUSCH = 1230, 36
+SOLI_FG = 20350
+
+# =====================================================================
+# 1  STEUER- UND ABGABENFUNKTIONEN
+# =====================================================================
+def est_2026(zve):
+    zve = math.floor(max(0, zve))
+    if zve &lt;= 12348: return 0.0
+    if zve &lt;= 17799: y = (zve-12348)/1e4; return math.floor((914.51*y+1400)*y)
+    if zve &lt;= 69878: z = (zve-17799)/1e4; return math.floor((173.10*z+2397)*z+1034.87)
+    if zve &lt;= 277825: return math.floor(0.42*zve-11135.63)
+    return math.floor(0.45*zve-19470.38)
+
+def soli_2026(est, split=False):
+    fg = SOLI_FG*(2 if split else 1)
+    if est &lt;= fg: return 0.0
+    return min(0.055*est, 0.119*(est-fg))
+
+def sv_heute(b, kinderlos=True):
+    kvpv = (AN_KV_PV + (AN_KINDERLOS if kinderlos else 0))*min(b, BBG_KV)
+    return kvpv + AN_RV_AV*min(b, BBG_RV)
+
+def netto_heute(b, kinder=0, partner=False):
+    sv = sv_heute(b, kinderlos=(kinder == 0))
+    zve = max(0, b - sv - WK_PAUSCH*(b &gt; 0) - SA_PAUSCH*(2 if partner else 1))
+    est = 2*est_2026(zve/2) if partner else est_2026(zve)
+    soli = soli_2026(est, partner)
+    return dict(netto=b - sv - est - soli + kinder*KINDERGELD*12, est=est+soli, sv=sv)
+
+def est_2828(x, saetze=TARIF_SAETZE, grenzen=TARIF_GRENZEN):
+    s, prev = 0.0, 0.0
+    for g, r in zip(grenzen, saetze):
+        if x &gt; prev: s += (min(x, g)-prev)*r
+        prev = g
+        if x &lt;= g: break
+    return s
+
+def netto_2828(b, kinder=0, partner=False, anteil=50):
+    dd = DD_EUR[anteil]*12
+    sv = SV_AN[anteil]*b                          # keine Bemessungsgrenzen
+    est = est_2828(b + dd)                        # DD steuerpflichtig, Individualbesteuerung
+    kind = kinder*DD_EUR[anteil]*KIND_ANTEIL*12   # Kinder-DD steuerfrei (Annahme)
+    p = 0.0
+    if partner: p = dd - est_2828(dd)             # Partner: eigene DD, eigene Veranlagung
+    return dict(netto=b - sv - est + dd + kind + p, est=est, sv=sv, dd=dd + kind + p)
+
+def r_eff_mwst(stufen=MWST_STUFEN):
+    return sum(w*s for w, s in zip(MWST_GEWICHTE, stufen))/100
+R_EFF_HEUTE = 0.165                               # Projektannahme effektiver Satz heute
+
+def konsumquote(n): return .95 if n &lt; 25000 else .85 if n &lt; 50000 else .75 if n &lt; 80000 else .60
+def mwst_mehrbelastung(netto):
+    r = r_eff_mwst()
+    return netto*konsumquote(netto)*(r/(1+r) - R_EFF_HEUTE/(1+R_EFF_HEUTE))
+
+# =====================================================================
+# 2  MAKRO: AUFKOMMEN UND AUSGABEN JE STUFE (Modell-Mrd.)
+# =====================================================================
+VERT = [(6,8000),(11,20000),(12,36000),(7,52000),(5,69000),(3,105000),(1,300000)]
+S25, G25 = [0,.08,.14,.19,.23,.25], [12000,25000,40000,55000,70000,float(&#x27;inf&#x27;)]
+def _grenz(b, r, g):
+    for gg, x in zip(g, r):
+        if b &lt;= gg: return x
+    return r[-1]
+# Kalibrierung wie Projekt: 25er-Tarif + DD 6.000 = 284 Mrd.
+K_EST = 284/sum(mio*est_2828(b+6000, S25, G25)/1000 for mio, b in VERT)
+
+SZ = {
+ &#x27;Optimistisch&#x27;: dict(g_e=.030,g_a=.026,dd_idx=.02,verh=50,eti=.25,semi=.8,eps=.7,leak=.85,drag=.0003,schock={},schock_a={},hc=1.0),
+ &#x27;Robust&#x27;:       dict(g_e=.030,g_a=.030,dd_idx=.02,verh=20,eti=.35,semi=1.0,eps=.8,leak=.80,drag=.0004,schock={},schock_a={},hc=1.0),
+ &#x27;Stress&#x27;:       dict(g_e=.020,g_a=.020,dd_idx=.02,verh=0, eti=.50,semi=1.5,eps=1.0,leak=.70,drag=.0006,
+                      schock={5:.94,6:.96,7:.98}, schock_a={5:20,6:20}, hc=0.7),
+}
+
+def est_aufkommen(anteil, eti):
+    dd = DD_EUR[anteil]*12; tot = 0.0
+    for mio, b in VERT:
+        m0, m1 = _grenz(b+dd, S25, G25), _grenz(b+dd, TARIF_SAETZE, TARIF_GRENZEN)
+        b1 = b*((1-m1)/(1-m0))**eti
+        tot += mio*est_2828(b1+dd)/1000
+    return K_EST*tot            # 25 Mio. Erwachsene ohne Markteinkommen: DD &lt; Existenzminimum -&gt; 0
+
+def mwst_aufkommen(leak):
+    r0 = 0.18; brutto = 350/(r0/(1+r0)); r1 = r_eff_mwst()
+    return 350 + (brutto*r1/(1+r1) - 350)*leak
+
+def einnahmen(anteil, sc, detail=False):
+    t = L/100
+    d = {
+     &#x27;Einkommensteuer (inkl. steuerpfl. DD)&#x27;: est_aufkommen(anteil, sc[&#x27;eti&#x27;]),
+     &#x27;Kapitalerträge 28 %&#x27;:                   45*(t/.25)*((1-t)/.75)**sc[&#x27;eps&#x27;],
+     &#x27;Mehrwertsteuer (Label 5–28 %)&#x27;:         mwst_aufkommen(sc[&#x27;leak&#x27;]),
+     &#x27;Unternehmen &amp; Plattformen 28 %&#x27;:        145*(t/.25)*math.exp(-sc[&#x27;semi&#x27;]*(L-25)/100),
+     &#x27;Erbschaft 28 %&#x27;:                        33*(t/.25)*math.exp(-(L-25)/100),
+     &#x27;Vermögen-Mindeststeuer (anrechenbar)&#x27;:  22*(1-0.02*(L-25)),
+     &#x27;CO₂-Abgabe 100 €/t (netto)&#x27;:            55,
+     &#x27;Sonstige Steuern&#x27;:                      165,
+    }
+    return (sum(d.values()), d) if detail else sum(d.values())
+
+BAUSTEINE = {   # Zusatzeinnahmen (statisch, Modell-Mrd.), Annahmen gestuetzt auf DIW/UBA/Destatis
+ &#x27;Vermögensteuer 1 % ab 2 Mio. (nicht anrechenbar)&#x27;: 12,
+ &#x27;Bodenwertabgabe statt Grundsteuer&#x27;:               20,
+ &#x27;Abbau klimaschädlicher Subventionen&#x27;:             20,
+ &#x27;CO₂-Pfad 100 → 150 €/t (voll ab Jahr 5)&#x27;:          15,
+}
+def bausteine(t):
+    return sum(BAUSTEINE.values()) - 15 + min(15, 3*(t+1))
+
+AUSG = {  # Basisausgaben nach Transferersatz/RV/Verwaltung, SV-Zuschuss, Haertefall
+ 50: dict(basis=596, zusch=60, haerte=40),   # inkl. Bestandsgarantie (~5 Mrd.) fuer heutige Grundsicherungsbezieher
+ 55: dict(basis=596, zusch=60, haerte=40),
+ 60: dict(basis=576, zusch=90, haerte=42),
+}
+def dd_kosten(a): return (ERW_MIO*DD_EUR[a]*12 + KINDER_MIO*DD_EUR[a]*KIND_ANTEIL*12)/1000
+def ausgaben(a): return sum(AUSG[a].values()) + dd_kosten(a)
+
+# =====================================================================
+# 3  HAUSHALTSPFAD 2028-2047 MIT REGELN
+# =====================================================================
+BIP0, START = 4200, 2028
+INV, PUFFER, STARTPUFFER = 0.01, 0.02, 100.0
+STUFEN = [50, 55, 60]
+
+def simuliere(sc, mit_bausteinen=True, jahre=20):
+    g_e = sc[&#x27;g_e&#x27;] - sc[&#x27;drag&#x27;]*(L-25); g_a = sc[&#x27;g_a&#x27;] - 0.5*sc[&#x27;drag&#x27;]*(L-25)
+    E = {a: einnahmen(a, sc) for a in STUFEN}
+    F, i, idx, idx_voll, letzter_schritt, rows = STARTPUFFER, 0, 1.0, 1.0, -99, []
+    for t in range(jahre):
+        bip = BIP0*(1+g_e)**t
+        if t &gt; 0: idx_voll *= 1+sc[&#x27;dd_idx&#x27;]
+        def saldo(a, ix):
+            e = (E[a] + (bausteine(t)*sc[&#x27;hc&#x27;] if mit_bausteinen else 0))*(1+g_e)**t*sc[&#x27;schock&#x27;].get(t,1.0) \
+                + (sc[&#x27;verh&#x27;] if t &gt;= 2 else 0)
+            x = AUSG[a]; aus = (x[&#x27;basis&#x27;]+x[&#x27;zusch&#x27;]+x[&#x27;haerte&#x27;])*(1+g_a)**t + dd_kosten(a)*ix + sc[&#x27;schock_a&#x27;].get(t,0)
+            return e - aus
+        # Regel 3: jaehrliche Anpassung an das Existenzminimum, solange der Puffer nicht angegriffen ist;
+        #          ausgesetzte Anpassungen werden nur aus Ueberschuessen nachgeholt
+        if t &gt; 0 and F &gt;= PUFFER*bip:
+            idx *= 1+sc[&#x27;dd_idx&#x27;]
+            if idx &lt; idx_voll - 1e-9:
+                kosten = dd_kosten(STUFEN[i])*(idx_voll-idx)
+                if saldo(STUFEN[i], idx_voll) &gt;= INV*bip and F - PUFFER*bip - INV*bip &gt;= 2*kosten: idx = idx_voll
+        # Regel 2: Aufstieg 50-&gt;55-&gt;60 %, fruehestens Jahr 3, Abstand &gt;= 2 Jahre
+        rest = max(F - PUFFER*bip, 0)
+        if i &lt; 2 and t &gt;= 2 and t - letzter_schritt &gt;= 2 and F &gt;= PUFFER*bip \
+           and saldo(STUFEN[i+1], idx) + rest/10 &gt;= INV*bip:
+            i += 1; letzter_schritt = t
+        S = saldo(STUFEN[i], idx); F += S
+        luecke = F &lt; 0
+        inv = min(max(F - PUFFER*bip, 0), INV*bip); F -= inv
+        rows.append(dict(jahr=START+t, t=t+1, anteil=STUFEN[i], dd=DD_EUR[STUFEN[i]]*idx, dd_2026=DD_EUR[STUFEN[i]]*idx/idx_voll, dd_real=idx/idx_voll,
+                         saldo=S, inv=inv, ziel=INV*bip, fonds=F, luecke=luecke, bip=bip))
+    return rows
+
+def kennzahlen(rows):
+    return dict(saldo1=rows[0][&#x27;saldo&#x27;], min_saldo=min(r[&#x27;saldo&#x27;] for r in rows),
+                luecken=sum(r[&#x27;luecke&#x27;] for r in rows), min_fonds=min(r[&#x27;fonds&#x27;] for r in rows),
+                j55=next((r[&#x27;jahr&#x27;] for r in rows if r[&#x27;anteil&#x27;]&gt;=55), None),
+                j60=next((r[&#x27;jahr&#x27;] for r in rows if r[&#x27;anteil&#x27;]&gt;=60), None),
+                invquote=sum(r[&#x27;inv&#x27;] for r in rows)/sum(r[&#x27;ziel&#x27;] for r in rows),
+                inv_kum=sum(r[&#x27;inv&#x27;] for r in rows), fonds_ende=rows[-1][&#x27;fonds&#x27;],
+                dd_real_min=min(r[&#x27;dd_real&#x27;] for r in rows)*1.0)
+
+# =====================================================================
+# 4  AUSGABE
+# =====================================================================
+if __name__ == &#x27;__main__&#x27;:
+    out = {}
+    P = lambda s: print(s)
+    P(&quot;=&quot;*100); P(&quot;A | TARIF, LABEL, DIVIDENDE&quot;); P(&quot;=&quot;*100)
+    P(f&quot;ESt-Tarif 28:28: &quot; + &quot; | &quot;.join(f&quot;bis {g:,.0f}: {r*100:.0f} %&quot; if g != float(&#x27;inf&#x27;) else f&quot;darüber: {r*100:.0f} %&quot; for g, r in zip(TARIF_GRENZEN, TARIF_SAETZE)))
+    P(f&quot;MwSt-Label: {MWST_STUFEN}  -&gt; effektiv {r_eff_mwst()*100:.1f} % (heute Projektannahme {R_EFF_HEUTE*100:.1f} %)&quot;)
+    for a in STUFEN:
+        P(f&quot;DD {a} %: Erwachsene {DD_EUR[a]:.2f} EUR/M, Kinder {DD_EUR[a]*KIND_ANTEIL:.2f} EUR/M, Kosten brutto {dd_kosten(a):.1f} Mrd., SV gesamt {SV_AN[a]*200:.0f} %&quot;)
+    P(f&quot;Hinweis: Kinder-DD 257,50 EUR liegt 1,50 EUR unter dem Kindergeld 2026 (259 EUR).&quot;)
+
+    P(&quot;\n&quot;+&quot;=&quot;*100); P(&quot;B | STATISCHER HAUSHALT JE STUFE (Modell-Mrd., Szenario Robust)&quot;); P(&quot;=&quot;*100)
+    tabB = {}
+    for a in STUFEN:
+        e, d = einnahmen(a, SZ[&#x27;Robust&#x27;], True)
+        tabB[a] = dict(einnahmen=d, einnahmen_summe=e, bausteine=sum(BAUSTEINE.values()),
+                       ausgaben=dict(AUSG[a], dd=dd_kosten(a)), ausgaben_summe=ausgaben(a),
+                       saldo_ohne=e-ausgaben(a), saldo_mit=e+sum(BAUSTEINE.values())-ausgaben(a))
+    keys = list(tabB[50][&#x27;einnahmen&#x27;].keys())
+    P(f&quot;{&#x27;&#x27;:&lt;42}{&#x27;50 %&#x27;:&gt;10}{&#x27;55 %&#x27;:&gt;10}{&#x27;60 %&#x27;:&gt;10}&quot;)
+    for k in keys: P(f&quot;{k:&lt;42}&quot; + &quot;&quot;.join(f&quot;{tabB[a][&#x27;einnahmen&#x27;][k]:&gt;10.1f}&quot; for a in STUFEN))
+    P(f&quot;{&#x27;= Einnahmen Kernsystem&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{tabB[a][&#x27;einnahmen_summe&#x27;]:&gt;10.1f}&quot; for a in STUFEN))
+    for k, v in BAUSTEINE.items(): P(f&quot;{&#x27;+ &#x27;+k:&lt;42}&quot; + f&quot;{v:&gt;10.1f}&quot;*3)
+    P(f&quot;{&#x27;Ausgaben: Basis&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{AUSG[a][&#x27;basis&#x27;]:&gt;10.1f}&quot; for a in STUFEN))
+    P(f&quot;{&#x27;Ausgaben: SV-Zuschuss&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{AUSG[a][&#x27;zusch&#x27;]:&gt;10.1f}&quot; for a in STUFEN))
+    P(f&quot;{&#x27;Ausgaben: Härtefall + Gesundheit&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{AUSG[a][&#x27;haerte&#x27;]:&gt;10.1f}&quot; for a in STUFEN))
+    P(f&quot;{&#x27;Ausgaben: Digitaldividende&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{dd_kosten(a):&gt;10.1f}&quot; for a in STUFEN))
+    P(f&quot;{&#x27;= Ausgaben&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{ausgaben(a):&gt;10.1f}&quot; for a in STUFEN))
+    P(f&quot;{&#x27;SALDO ohne Bausteine&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{tabB[a][&#x27;saldo_ohne&#x27;]:&gt;+10.1f}&quot; for a in STUFEN))
+    P(f&quot;{&#x27;SALDO mit Bausteinen&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{tabB[a][&#x27;saldo_mit&#x27;]:&gt;+10.1f}&quot; for a in STUFEN))
+    P(f&quot;{&#x27;  in % BIP&#x27;:&lt;42}&quot; + &quot;&quot;.join(f&quot;{tabB[a][&#x27;saldo_mit&#x27;]/BIP0*100:&gt;+10.2f}&quot; for a in STUFEN))
+    P(f&quot;Zielsaldo Investitionen: +{INV*BIP0:.0f}&quot;)
+    out[&#x27;statisch&#x27;] = tabB
+
+    P(&quot;\n&quot;+&quot;=&quot;*100); P(&quot;C | HAUSHALTSPFAD 2028-2047 (Startpuffer 100, Puffer 2 % BIP, Investitionen 1 % BIP)&quot;); P(&quot;=&quot;*100)
+    out[&#x27;pfade&#x27;] = {}
+    for name, sc in SZ.items():
+        for mb in (True, False):
+            rows = simuliere(sc, mb); k = kennzahlen(rows)
+            lab = f&quot;{name} {&#x27;mit&#x27; if mb else &#x27;ohne&#x27;} Bausteine&quot;
+            out[&#x27;pfade&#x27;][lab] = dict(rows=rows, kennzahlen=k)
+            P(f&quot;\n{lab}: Saldo J1 {k[&#x27;saldo1&#x27;]:+.0f} | min. Saldo {k[&#x27;min_saldo&#x27;]:+.0f} | Lückenjahre {k[&#x27;luecken&#x27;]} | min. Fonds {k[&#x27;min_fonds&#x27;]:.0f}&quot;
+              f&quot; | 55 % ab {k[&#x27;j55&#x27;]} | 60 % ab {k[&#x27;j60&#x27;]} | Inv-Quote {k[&#x27;invquote&#x27;]*100:.0f} % | Inv kum. {k[&#x27;inv_kum&#x27;]:.0f}&quot;
+              f&quot; | Fonds 2047 {k[&#x27;fonds_ende&#x27;]:.0f} | DD real min. {k[&#x27;dd_real_min&#x27;]*100:.0f} % des Sollwerts&quot;)
+            if mb:
+                P(&quot;  Jahr  &quot; + &quot; &quot;.join(f&quot;{r[&#x27;jahr&#x27;]:&gt;5}&quot; for r in rows))
+                P(&quot;  Stufe &quot; + &quot; &quot;.join(f&quot;{r[&#x27;anteil&#x27;]:&gt;5}&quot; for r in rows))
+                P(&quot;  DD €  &quot; + &quot; &quot;.join(f&quot;{r[&#x27;dd&#x27;]:&gt;5.0f}&quot; for r in rows))
+                P(&quot;  DD&#x27;26 &quot; + &quot; &quot;.join(f&quot;{r[&#x27;dd_2026&#x27;]:&gt;5.0f}&quot; for r in rows))
+                P(&quot;  Saldo &quot; + &quot; &quot;.join(f&quot;{r[&#x27;saldo&#x27;]:&gt;+5.0f}&quot; for r in rows))
+                P(&quot;  Inv   &quot; + &quot; &quot;.join(f&quot;{r[&#x27;inv&#x27;]:&gt;5.0f}&quot; for r in rows))
+                P(&quot;  Fonds &quot; + &quot; &quot;.join(f&quot;{r[&#x27;fonds&#x27;]:&gt;5.0f}&quot; for r in rows))
+
+    P(&quot;\n&quot;+&quot;=&quot;*100); P(&quot;D | MIKROEBENE (EUR/Jahr, Recht 2026 vs. 28:28)&quot;); P(&quot;=&quot;*100)
+    profile = [
+      (&quot;Mia, Studentin (22), ohne Einkommen&quot;, 0, 0, False),
+      (&quot;Tom, Berufseinsteiger&quot;, 28000, 0, False),
+      (&quot;Sarah, Fachkraft&quot;, 42000, 0, False),
+      (&quot;Durchschnittsverdiener (51.944 €)&quot;, 51944, 0, False),
+      (&quot;Klaus, Facharbeiter&quot;, 55000, 0, False),
+      (&quot;Jonas, Ingenieur&quot;, 80000, 0, False),
+      (&quot;Dr. Weber, Führungskraft&quot;, 150000, 0, False),
+      (&quot;Familie Müller, Alleinverdiener, 2 Kinder&quot;, 63000, 2, True),
+      (&quot;Anna, alleinerziehend, 1 Kind&quot;, 28000, 1, False),
+    ]
+    mikro = []
+    P(f&quot;{&#x27;Profil&#x27;:&lt;44}{&#x27;heute&#x27;:&gt;9}{&#x27;50 %&#x27;:&gt;9}{&#x27;55 %&#x27;:&gt;9}{&#x27;60 %&#x27;:&gt;9}{&#x27;Δ 50 %&#x27;:&gt;9}{&#x27;MwSt&#x27;:&gt;8}{&#x27;Δ netto&#x27;:&gt;9}{&#x27;in %&#x27;:&gt;7}&quot;)
+    for n, b, k, p in profile:
+        h = netto_heute(b, k, p)[&#x27;netto&#x27;]
+        v = {a: netto_2828(b, k, p, a)[&#x27;netto&#x27;] for a in STUFEN}
+        mw = mwst_mehrbelastung(v[50])
+        d = v[50]-h; dn = d-mw
+        mikro.append(dict(profil=n, brutto=b, kinder=k, partner=p, heute=h, s50=v[50], s55=v[55], s60=v[60], mwst=mw, delta=d, delta_nach_mwst=dn))
+        pct = f&quot;{dn/h*100:+.0f}&quot; if h &gt; 0 else &quot;n.v.&quot;
+        P(f&quot;{n:&lt;44}{h:&gt;9.0f}{v[50]:&gt;9.0f}{v[55]:&gt;9.0f}{v[60]:&gt;9.0f}{d:&gt;+9.0f}{-mw:&gt;8.0f}{dn:&gt;+9.0f}{pct:&gt;7}&quot;)
+    # Rentnerin
+    rente = 880*12
+    h_inge = 1060*12
+    kv_r_heute_satz = 0.073+0.0145+0.036+0.006
+    inge = {a: rente - rente*(0.1235*(SV_AN[a]/0.2115)) + DD_EUR[a]*12 - est_2828(rente + DD_EUR[a]*12) for a in STUFEN}
+    P(f&quot;{&#x27;Inge, Rentnerin (880 €/M, heute mit GruSi)&#x27;:&lt;44}{h_inge:&gt;9.0f}{inge[50]:&gt;9.0f}{inge[55]:&gt;9.0f}{inge[60]:&gt;9.0f}{inge[50]-h_inge:&gt;+9.0f}&quot;)
+    mikro.append(dict(profil=&#x27;Inge, Rentnerin (880 €/M)&#x27;, brutto=rente, heute=h_inge, s50=inge[50], s55=inge[55], s60=inge[60]))
+    out[&#x27;mikro&#x27;] = mikro
+
+    # Belastung Durchschnittsverdiener
+    b = 51944
+    hh = netto_heute(b)
+    bel_h = (hh[&#x27;est&#x27;]+hh[&#x27;sv&#x27;])/b*100
+    bel = {a: (netto_2828(b,0,False,a)[&#x27;est&#x27;]+netto_2828(b,0,False,a)[&#x27;sv&#x27;])/b*100 for a in STUFEN}
+    beln = {a: (netto_2828(b,0,False,a)[&#x27;est&#x27;]+netto_2828(b,0,False,a)[&#x27;sv&#x27;]-DD_EUR[a]*12)/b*100 for a in STUFEN}
+    P(f&quot;\nDurchschnittsverdiener 51.944 €: Abgabenlast heute {bel_h:.1f} % | 28:28 {bel[50]:.1f} / {bel[55]:.1f} / {bel[60]:.1f} %&quot;
+      f&quot; | nach Dividende {beln[50]:.1f} / {beln[55]:.1f} / {beln[60]:.1f} %&quot;)
+    # Grenzbelastung
+    def grenz_heute(b): return (netto_heute(b+100)[&#x27;netto&#x27;]-netto_heute(b)[&#x27;netto&#x27;])
+    def grenz_neu(b):   return (netto_2828(b+100)[&#x27;netto&#x27;]-netto_2828(b)[&#x27;netto&#x27;])
+    P(f&quot;Grenzbelastung (Abgaben je zusätzliche 100 €) bei 51.944 €: heute {100-grenz_heute(b):.0f} % | 28:28 {100-grenz_neu(b):.0f} %&quot;)
+    out[&#x27;durchschnitt&#x27;] = dict(brutto=b, belastung_heute=bel_h, belastung=bel, belastung_nach_dd=beln,
+                               grenz_heute=100-grenz_heute(b), grenz_neu=100-grenz_neu(b))
+
+    # Gini (grobe Modellschaetzung, Individuen 18+)
+    def gini(pairs):
+        pairs = sorted(pairs, key=lambda x: x[1]); N = sum(w for w, _ in pairs); Y = sum(w*y for w, y in pairs)
+        cum, area = 0.0, 0.0
+        for w, y in pairs:
+            area += w*(cum + w*y/2); cum += w*y
+        return 1 - 2*area/(N*Y)
+    TRANSFER_HEUTE = 3000   # ANNAHME: durchschnittliche Transfers je Erwachsenem ohne Markteinkommen
+    g_h = gini([(m_, netto_heute(b_)[&#x27;netto&#x27;]) for m_, b_ in VERT] + [(25, TRANSFER_HEUTE)])
+    g_n = {a: gini([(m_, netto_2828(b_,0,False,a)[&#x27;netto&#x27;]) for m_, b_ in VERT] + [(25, DD_EUR[a]*12)]) for a in STUFEN}
+    P(f&quot;Gini-Modellwert (verfügbar, Erwachsene, grob): heute {g_h:.3f} | 28:28 {g_n[50]:.3f} / {g_n[55]:.3f} / {g_n[60]:.3f}&quot;
+      f&quot; | relative Änderung {(g_n[50]/g_h-1)*100:+.0f} % / {(g_n[60]/g_h-1)*100:+.0f} %&quot;)
+    for tr in (2000, 5000):
+        gh = gini([(m_, netto_heute(b_)[&#x27;netto&#x27;]) for m_, b_ in VERT] + [(25, tr)])
+        gn = gini([(m_, netto_2828(b_,0,False,50)[&#x27;netto&#x27;]) for m_, b_ in VERT] + [(25, DD_EUR[50]*12)])
+        P(f&quot;  Sensitivität Transfers heute {tr} EUR: relative Änderung {(gn/gh-1)*100:+.0f} %&quot;)
+    out[&#x27;gini&#x27;] = dict(heute=g_h, neu=g_n)
+
+    # Rechner-Tabelle
+    with open(&#x27;rechner-2828-tabelle.csv&#x27;,&#x27;w&#x27;,newline=&#x27;&#x27;) as f:
+        w = csv.writer(f, delimiter=&#x27;;&#x27;)
+        w.writerow([&#x27;brutto&#x27;,&#x27;kinder&#x27;,&#x27;partner&#x27;,&#x27;heute_netto&#x27;,&#x27;heute_est_soli&#x27;,&#x27;heute_sv&#x27;,
+                    &#x27;neu50_netto&#x27;,&#x27;neu50_est&#x27;,&#x27;neu50_sv&#x27;,&#x27;neu55_netto&#x27;,&#x27;neu60_netto&#x27;,&#x27;plus50&#x27;,&#x27;plus60&#x27;])
+        for b in range(0, 200001, 5000):
+            for k in (0,1,2,3):
+                for p in (False, True):
+                    h = netto_heute(b,k,p); n50 = netto_2828(b,k,p,50)
+                    w.writerow([b,k,int(p),round(h[&#x27;netto&#x27;]),round(h[&#x27;est&#x27;]),round(h[&#x27;sv&#x27;]),
+                                round(n50[&#x27;netto&#x27;]),round(n50[&#x27;est&#x27;]),round(n50[&#x27;sv&#x27;]),
+                                round(netto_2828(b,k,p,55)[&#x27;netto&#x27;]),round(netto_2828(b,k,p,60)[&#x27;netto&#x27;]),
+                                round(n50[&#x27;netto&#x27;]-h[&#x27;netto&#x27;]),round(netto_2828(b,k,p,60)[&#x27;netto&#x27;]-h[&#x27;netto&#x27;])])
+    with open(&#x27;modell-2828-daten.json&#x27;,&#x27;w&#x27;) as f:
+        json.dump(out, f, ensure_ascii=False, indent=1, default=float)
+    P(&quot;\nDateien: rechner-2828-tabelle.csv, modell-2828-daten.json&quot;)
+
+    # ================= ANTEIL MIT MEHR IM GELDBEUTEL (grobe Gruppenabschaetzung) =================
+    P(&quot;\n&quot;+&quot;=&quot;*100); P(&quot;F | ANTEIL DER BEVÖLKERUNG MIT MEHR VERFÜGBAREM EINKOMMEN (Schätzung, Mio. Personen)&quot;); P(&quot;=&quot;*100)
+    BEV = 84.0
+    risiko = {   # Personen, die OHNE Bestandsgarantie schlechter stuenden (Annahmen, siehe Datenblatt)
+     &#x27;Bürgergeld-Haushalte ohne Erwerbseinkommen (von 5,5 Mio.)&#x27;: 3.5,
+     &#x27;Erwerbsminderungs-Grundsicherung ohne weiteres Einkommen&#x27;:   0.36,
+     &#x27;BAföG mit hohem Förderbetrag&#x27;:                               0.3,
+     &#x27;Sehr große Vermögen (Netto-Verlierer)&#x27;:                      0.4,
+    }
+    for k_, v_ in risiko.items(): P(f&quot;  {k_:&lt;62} {v_:&gt;5.2f}&quot;)
+    ohne_g = BEV - sum(risiko.values()); mit_g = BEV - risiko[&#x27;Sehr große Vermögen (Netto-Verlierer)&#x27;]
+    P(f&quot;  Anteil mit mehr Geld: ohne Bestandsgarantie {ohne_g/BEV*100:.0f} % | mit Bestandsgarantie {mit_g/BEV*100:.0f} %&quot;)
+    out[&#x27;anteil_gewinner&#x27;] = dict(ohne_garantie=ohne_g/BEV, mit_garantie=mit_g/BEV, risikogruppen=risiko)
+
+    # ================= HOMEPAGE: ZEITREIHEN (2010-2035) =================
+    P(&quot;\n&quot;+&quot;=&quot;*100); P(&quot;E | HOMEPAGE-ZEITREIHEN (hist/ohne = bestehende Homepage-Werte; mit = Robust-Pfad 28:28)&quot;); P(&quot;=&quot;*100)
+    rob = {r[&#x27;jahr&#x27;]: r for r in out[&#x27;pfade&#x27;][&#x27;Robust mit Bausteine&#x27;][&#x27;rows&#x27;]}
+    J = list(range(2026, 2036))
+    OHNE = dict(schulden=[64,65,65,66,66,67,67,68,68,69],
+                gini=[.313,.313,.314,.314,.315,.315,.316,.316,.317,.317],
+                co2=[608,596,584,572,560,549,538,527,516,505],
+                last=[36.7,36.8,36.9,37.0,37.1,37.2,37.3,37.4,37.5,37.6])
+    MIT_CO2_ALT = [608,596,578,552,524,496,470,446,424,404]
+    gfak = {50: g_n[50]/g_h, 55: g_n[55]/g_h, 60: g_n[60]/g_h}
+    lfak = {a: bel[a]/bel_h for a in STUFEN}
+    mit = dict(schulden=[], gini=[], co2=MIT_CO2_ALT, last=[])
+    for k, j in enumerate(J):
+        if j &lt; START:
+            mit[&#x27;schulden&#x27;].append(OHNE[&#x27;schulden&#x27;][k]); mit[&#x27;gini&#x27;].append(OHNE[&#x27;gini&#x27;][k]); mit[&#x27;last&#x27;].append(OHNE[&#x27;last&#x27;][k])
+        else:
+            r = rob[j]
+            mit[&#x27;schulden&#x27;].append(round(OHNE[&#x27;schulden&#x27;][k] - r[&#x27;fonds&#x27;]/r[&#x27;bip&#x27;]*100, 1))
+            mit[&#x27;gini&#x27;].append(round(OHNE[&#x27;gini&#x27;][k]*gfak[r[&#x27;anteil&#x27;]], 3))
+            mit[&#x27;last&#x27;].append(round(OHNE[&#x27;last&#x27;][k]*lfak[r[&#x27;anteil&#x27;]], 1))
+    for key in mit: P(f&quot;  {key:&lt;9} ohne {OHNE[key]}\n  {&#x27;&#x27;:&lt;9} mit  {mit[key]}&quot;)
+    out[&#x27;zeitreihen&#x27;] = dict(jahre=J, ohne=OHNE, mit=mit)
+    with open(&#x27;modell-2828-daten.json&#x27;,&#x27;w&#x27;) as f:
+        json.dump(out, f, ensure_ascii=False, indent=1, default=float)
+</code></pre></div></dialog>
+<dialog id="dlg-js" aria-labelledby="h-js"><div class="dlg-head"><b id="h-js">Rechnerlogik · rechner-2828.js</b><button class="btn" data-close>Schließen</button></div>
+<div class="dlg-body"><pre><code>/* 28:28 – Rechnerlogik (Recht 2026 vs. 28:28). Alle Beträge EUR/Jahr, Preise 2026.
+   Quelle heute: § 32a EStG 2026, SV-Rechengrößen 2026, Soli-Freigrenze 2026, Kindergeld 259 €. */
+const P = {
+  exmin: 12348, dd: {50: 515, 55: 566, 60: 617}, kindAnteil: 0.5,
+  tarifGrenzen: [12348, 25000, 40000, 55000, 70000, Infinity],
+  tarifSaetze:  [0, .09, .16, .21, .26, .28],
+  svAN: {50: .14, 55: .14, 60: .09},
+  bbgKV: 69750, bbgRV: 101400, anKVPV: .1055, anKinderlos: .006, anRVAV: .106,
+  kindergeld: 259, wk: 1230, sa: 36, soliFG: 20350
+};
+function est2026(zve){ zve=Math.floor(Math.max(0,zve));
+  if(zve&lt;=12348) return 0;
+  if(zve&lt;=17799){const y=(zve-12348)/1e4; return Math.floor((914.51*y+1400)*y);}
+  if(zve&lt;=69878){const z=(zve-17799)/1e4; return Math.floor((173.10*z+2397)*z+1034.87);}
+  if(zve&lt;=277825) return Math.floor(.42*zve-11135.63);
+  return Math.floor(.45*zve-19470.38); }
+function soli2026(e,split){const fg=P.soliFG*(split?2:1); return e&lt;=fg?0:Math.min(.055*e,.119*(e-fg));}
+function heute(b,kinder,partner){
+  const sv=(P.anKVPV+(kinder===0?P.anKinderlos:0))*Math.min(b,P.bbgKV)+P.anRVAV*Math.min(b,P.bbgRV);
+  const zve=Math.max(0,b-sv-(b&gt;0?P.wk:0)-P.sa*(partner?2:1));
+  const e=partner?2*est2026(zve/2):est2026(zve); const s=soli2026(e,partner);
+  return {netto:b-sv-e-s+kinder*P.kindergeld*12, steuer:e+s, sv:sv};
+}
+function est2828(x){let s=0,prev=0;
+  for(let i=0;i&lt;P.tarifSaetze.length;i++){const g=P.tarifGrenzen[i];
+    if(x&gt;prev) s+=(Math.min(x,g)-prev)*P.tarifSaetze[i]; prev=g; if(x&lt;=g) break;}
+  return s;}
+function neu(b,kinder,partner,anteil=50){
+  const dd=P.dd[anteil]*12, sv=P.svAN[anteil]*b, e=est2828(b+dd);
+  const kind=kinder*P.dd[anteil]*P.kindAnteil*12;
+  const p=partner?dd-est2828(dd):0;
+  return {netto:b-sv-e+dd+kind+p, steuer:e, sv:sv, dividende:dd+kind+p};
+}
+/* Effektive Abgabenlast (Anzeige &quot;heute → neu&quot;): (Steuer + SV) / Brutto; neu inkl. Steuer auf die Dividende */
+function abgabenlast(r,b){return b&gt;0?(r.steuer+r.sv)/b*100:0;}
+</code></pre></div></dialog>
+<dialog id="dlg-q" aria-labelledby="h-q"><div class="dlg-head"><b id="h-q">Annahmen und Quellen</b><button class="btn" data-close>Schließen</button></div>
+<div class="dlg-body">
+  <h4>Rechtsstand heute (2026)</h4>
+  <ul>
+    <li>Einkommensteuertarif und Grundfreibetrag 12.348 €: <a href="https://www.gesetze-im-internet.de/estg/__32a.html" target="_blank" rel="noopener">§ 32a EStG</a></li>
+    <li>Beitragssätze und Bemessungsgrenzen 2026 (KV/PV 69.750 €, RV/AV 101.400 €, Zusatzbeitrag 2,9 %): <a href="https://www.vdek.com/vertragspartner/arbeitgeber/beitragssaetze.html" target="_blank" rel="noopener">vdek</a></li>
+    <li>Solidaritätszuschlag, Freigrenze 20.350 €: <a href="https://www.tk.de/firmenkunden/service/fachthemen/fachthema-beitraege/solidaritaetszuschlag-2075802" target="_blank" rel="noopener">Techniker Krankenkasse</a></li>
+    <li>Kindergeld 259 €: <a href="https://finanztip.de/kindergeld/" target="_blank" rel="noopener">Finanztip</a> · Bürgergeld-Regelbedarf 563 €, Nullrunde 2026: <a href="https://www.finanz.de/news/buergergeld-2026-verlierer-hoehe-10511/" target="_blank" rel="noopener">finanz.de</a></li>
+    <li>Grundsteuer nur auf den Bodenwert in Baden-Württemberg, vom BFH am 20.05.2026 bestätigt: <a href="https://der-betrieb.de/meldungen/bfh-bestaetigt-grundsteuer-modell-in-baden-wuerttemberg/" target="_blank" rel="noopener">Der Betrieb</a></li>
+  </ul>
+  <h4>Modellannahmen</h4>
+  <ul>
+    <li>Staatshaushalt in Modell-Milliarden (Kalibrierung des Projekts, Modell-BIP 4.200 Mrd.); ausgeglichene Ausgangslage unterstellt – das tatsächliche Staatsdefizit 2025 ist nicht Teil der Reformbilanz.</li>
+    <li>Verhaltensreaktionen nach Literatur (Einkommen: Elastizität 0,25–0,50; Gewinnverlagerung: Semi-Elastizität 0,8–1,5).</li>
+    <li>Zusatzbausteine als Annahmen: Vermögen über 2 Mio. +12, Bodensteuer +20, Subventionsabbau +20, CO₂ 150 €/t +15 Mrd.</li>
+    <li>Existenzminimum wird mit 2 % pro Jahr fortgeschrieben; Konsum-Label: Konsumanteile je Klasse angenommen.</li>
+    <li>Anteil „mehr im Geldbeutel“: Gruppenschätzung (Bürgergeld 5,5 Mio. Beziehende, davon rund 3,5 Mio. in Haushalten ohne Erwerbseinkommen), keine Mikrosimulation.</li>
+  </ul>
+  <h4>Noch offen</h4>
+  <ul>
+    <li>Beleg für die Seitenzahl des Steuerrechts; Primärschätzungen für Bodensteuer und Subventionsabbau.</li>
+    <li>Kinderdividende 257,50 € liegt 1,50 € unter dem Kindergeld 2026 – durch die Bestandsgarantie gedeckt, Entscheidung zur dauerhaften Regel offen.</li>
+    <li>Einbeziehung von Beamtinnen, Beamten und Selbständigen in die Sozialversicherung.</li>
+  </ul>
+</div></dialog>
+
+<script id="rechner-src">
+/* 28:28 – Rechnerlogik (Recht 2026 vs. 28:28). Alle Beträge EUR/Jahr, Preise 2026.
+   Quelle heute: § 32a EStG 2026, SV-Rechengrößen 2026, Soli-Freigrenze 2026, Kindergeld 259 €. */
+const P = {
+  exmin: 12348, dd: {50: 515, 55: 566, 60: 617}, kindAnteil: 0.5,
+  tarifGrenzen: [12348, 25000, 40000, 55000, 70000, Infinity],
+  tarifSaetze:  [0, .09, .16, .21, .26, .28],
+  svAN: {50: .14, 55: .14, 60: .09},
+  bbgKV: 69750, bbgRV: 101400, anKVPV: .1055, anKinderlos: .006, anRVAV: .106,
+  kindergeld: 259, wk: 1230, sa: 36, soliFG: 20350
+};
+function est2026(zve){ zve=Math.floor(Math.max(0,zve));
+  if(zve<=12348) return 0;
+  if(zve<=17799){const y=(zve-12348)/1e4; return Math.floor((914.51*y+1400)*y);}
+  if(zve<=69878){const z=(zve-17799)/1e4; return Math.floor((173.10*z+2397)*z+1034.87);}
+  if(zve<=277825) return Math.floor(.42*zve-11135.63);
+  return Math.floor(.45*zve-19470.38); }
+function soli2026(e,split){const fg=P.soliFG*(split?2:1); return e<=fg?0:Math.min(.055*e,.119*(e-fg));}
+function heute(b,kinder,partner){
+  const sv=(P.anKVPV+(kinder===0?P.anKinderlos:0))*Math.min(b,P.bbgKV)+P.anRVAV*Math.min(b,P.bbgRV);
+  const zve=Math.max(0,b-sv-(b>0?P.wk:0)-P.sa*(partner?2:1));
+  const e=partner?2*est2026(zve/2):est2026(zve); const s=soli2026(e,partner);
+  return {netto:b-sv-e-s+kinder*P.kindergeld*12, steuer:e+s, sv:sv};
+}
+function est2828(x){let s=0,prev=0;
+  for(let i=0;i<P.tarifSaetze.length;i++){const g=P.tarifGrenzen[i];
+    if(x>prev) s+=(Math.min(x,g)-prev)*P.tarifSaetze[i]; prev=g; if(x<=g) break;}
+  return s;}
+function neu(b,kinder,partner,anteil=50){
+  const dd=P.dd[anteil]*12, sv=P.svAN[anteil]*b, e=est2828(b+dd);
+  const kind=kinder*P.dd[anteil]*P.kindAnteil*12;
+  const p=partner?dd-est2828(dd):0;
+  return {netto:b-sv-e+dd+kind+p, steuer:e, sv:sv, dividende:dd+kind+p};
+}
+/* Effektive Abgabenlast (Anzeige "heute → neu"): (Steuer + SV) / Brutto; neu inkl. Steuer auf die Dividende */
+function abgabenlast(r,b){return b>0?(r.steuer+r.sv)/b*100:0;}
+
+</script>
+<script>
+const $ = id => document.getElementById(id);
+const eur = v => Math.round(v).toLocaleString('de-DE') + '\u00a0€';
+let stufe = 50, kinder = 0;
+function konsumquote(n){return n<25000?.95:n<50000?.85:n<80000?.75:.60;}
+function labelKosten(n){const r=.20,r0=.165;return n*konsumquote(n)*(r/(1+r)-r0/(1+r0));}
+function calc(){
+  const b = +$('brutto').value, p = $('partner').checked;
+  $('bOut').textContent = eur(b);
+  const h = heute(b, kinder, p), n = neu(b, kinder, p, stufe);
+  const mw = labelKosten(n.netto), d = n.netto - mw - h.netto;
+  $('rHeute').textContent = eur(h.netto);
+  $('rNeu').textContent = eur(n.netto);
+  $('rDD').textContent = eur(n.dividende);
+  $('rMw').textContent = '−' + eur(mw);
+  $('rEff').textContent = b > 0 ? abgabenlast(h,b).toFixed(0) + '\u00a0% → ' + abgabenlast(n,b).toFixed(0) + '\u00a0%' : '–';
+  const mx = Math.max(h.netto, n.netto, 1);
+  $('barT').style.width = (h.netto/mx*100) + '%'; $('barN').style.width = (n.netto/mx*100) + '%';
+  $('bT').textContent = eur(h.netto); $('bN').textContent = eur(n.netto);
+  const pl = $('rPlus'); pl.textContent = (d >= 0 ? '+' : '−') + eur(Math.abs(d)); pl.classList.toggle('neg', d < 0);
+  $('rPlusSub').textContent = (d >= 0 ? 'mehr' : 'weniger') + ' im Jahr nach Konsum-Label – ' + (d >= 0 ? '+' : '−') + eur(Math.abs(d)/12) + ' im Monat';
+}
+$('brutto').addEventListener('input', calc);
+$('partner').addEventListener('change', calc);
+document.querySelectorAll('[data-stufe]').forEach(bt => bt.addEventListener('click', () => {
+  stufe = +bt.dataset.stufe; document.querySelectorAll('[data-stufe]').forEach(x => x.setAttribute('aria-pressed', x === bt)); calc(); }));
+document.querySelectorAll('[data-kinder]').forEach(bt => bt.addEventListener('click', () => {
+  kinder = +bt.dataset.kinder; document.querySelectorAll('[data-kinder]').forEach(x => x.setAttribute('aria-pressed', x === bt)); calc(); }));
+calc();
+
+/* Zeitreihen */
+const YEARS = []; for (let y = 2010; y <= 2035; y++) YEARS.push(y);
+const METRICS = [{"name": "Staatsschulden", "unit": "% des BIP, netto nach Fondsreserve", "dec": 0, "hist": [82, 79, 81, 78, 75, 72, 69, 65, 62, 59, 68, 69, 66, 64, 63, 63], "ohne": [64, 65, 65, 66, 66, 67, 67, 68, 68, 69], "mit": [64, 65, 62.3, 62.9, 62.9, 63.7, 63.4, 64.0, 63.5, 64.0]}, {"name": "Einkommensungleichheit", "unit": "Gini-Koeffizient", "dec": 2, "hist": [0.286, 0.288, 0.289, 0.292, 0.293, 0.295, 0.297, 0.299, 0.3, 0.297, 0.3, 0.305, 0.308, 0.31, 0.311, 0.312], "ohne": [0.313, 0.313, 0.314, 0.314, 0.315, 0.315, 0.316, 0.316, 0.317, 0.317], "mit": [0.313, 0.313, 0.274, 0.274, 0.269, 0.269, 0.269, 0.269, 0.27, 0.27]}, {"name": "CO₂-Emissionen", "unit": "Mio. t CO₂-Äquivalente", "dec": 0, "hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 620], "ohne": [608, 596, 584, 572, 560, 549, 538, 527, 516, 505], "mit": [608, 596, 578, 552, 524, 496, 470, 446, 424, 404]}, {"name": "Belastung Durchschnittsverdienst", "unit": "% des Bruttos (Einkommensteuer + Beiträge)", "dec": 0, "hist": [35.0, 35.2, 35.4, 35.5, 35.6, 35.7, 35.8, 35.9, 36.0, 35.8, 35.9, 36.1, 36.3, 36.4, 36.5, 36.5], "ohne": [36.7, 36.8, 36.9, 37.0, 37.1, 37.2, 37.3, 37.4, 37.5, 37.6], "mit": [36.7, 36.8, 29.8, 29.8, 30.3, 30.3, 30.4, 30.5, 30.6, 30.7]}];
+let metric = 0;
+const NS = 'http://www.w3.org/2000/svg';
+function el(t, a){const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e;}
+function draw(){
+  const m = METRICS[metric], svg = $('chart'); svg.innerHTML = '';
+  $('unit').textContent = m.unit;
+  const W = 960, H = 400, L = 64, R = 20, T = 20, B = 40;
+  const all = [...m.hist, ...m.ohne, ...m.mit];
+  let lo = Math.min(...all), hi = Math.max(...all); const pad = (hi - lo) * .12 || 1; lo -= pad; hi += pad;
+  const X = i => L + (W - L - R) * i / (YEARS.length - 1);
+  const Y = v => T + (H - T - B) * (1 - (v - lo) / (hi - lo));
+  for (let g = 0; g <= 4; g++){ const v = lo + (hi - lo) * g / 4, y = Y(v);
+    svg.appendChild(el('line', {x1: L, y1: y, x2: W - R, y2: y, class: 'grid'}));
+    const t = el('text', {x: L - 10, y: y + 4, 'text-anchor': 'end', class: 'axis'}); t.textContent = v.toLocaleString('de-DE', {minimumFractionDigits: m.dec, maximumFractionDigits: m.dec}); svg.appendChild(t); }
+  YEARS.forEach((yr, i) => { if (yr % 5 === 0){ const t = el('text', {x: X(i), y: H - B + 24, 'text-anchor': 'middle', class: 'axis'}); t.textContent = yr; svg.appendChild(t); } });
+  const i28 = YEARS.indexOf(2028), x28 = X(i28);
+  svg.appendChild(el('line', {x1: x28, y1: T, x2: x28, y2: H - B, class: 'marker'}));
+  const lb = el('text', {x: x28 + 6, y: T + 12, class: 'axis'}); lb.textContent = 'Start 28:28'; svg.appendChild(lb);
+  const path = (vals, i0, cls) => { let d = ''; vals.forEach((v, i) => { d += (i ? 'L' : 'M') + X(i0 + i).toFixed(1) + ' ' + Y(v).toFixed(1); }); svg.appendChild(el('path', {d, class: cls})); };
+  const last = m.hist.length - 1;
+  path(m.hist, 0, 'hist');
+  path([m.hist[last], ...m.ohne], last, 'ohne');
+  path([m.hist[last], ...m.mit], last, 'mit');
+  const ye = YEARS.length - 1;
+  [['ohne', m.ohne], ['mit', m.mit]].forEach(([c, a]) => { const t = el('text', {x: X(ye) - 4, y: Y(a[a.length-1]) + (c === 'mit' ? 18 : -8), 'text-anchor': 'end', class: 'axis'}); t.textContent = a[a.length-1].toLocaleString('de-DE', {minimumFractionDigits: m.dec, maximumFractionDigits: m.dec}); svg.appendChild(t); });
+}
+const tabs = $('tabs');
+METRICS.forEach((m, i) => { const b = document.createElement('button'); b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', i === 0); b.textContent = m.name;
+  b.addEventListener('click', () => { metric = i; tabs.querySelectorAll('button').forEach((x, j) => x.setAttribute('aria-selected', j === i)); draw(); }); tabs.appendChild(b); });
+draw();
+
+/* Anlagen */
+document.querySelectorAll('[data-dlg]').forEach(b => b.addEventListener('click', () => $(b.dataset.dlg).showModal()));
+document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
+document.querySelectorAll('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
+</script>
+</body>
+</html>

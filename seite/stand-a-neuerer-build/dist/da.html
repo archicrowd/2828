@@ -1,0 +1,1482 @@
+<!DOCTYPE html><html lang="da"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAX 28:28 — Det enkle skattesystem til det 21. århundrede</title>
+<meta name="description" content="Højst 28 % af enhver indkomst, 28 % også for koncerner, platforme, arvinger og store formuer, plus et digitalt udbytte på 515 € om måneden. Alle beregningsmodeller kan efterprøves.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SpaceGrotesk-400.woff2') format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/SpaceGrotesk-500.woff2') format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/SpaceGrotesk-700.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SourceSerif4-400.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/SourceSerif4-600.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/IBMPlexMono-400.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/IBMPlexMono-500.woff2') format('woff2')}
+
+:root{
+  --paper:#F6F7F4; --ink:#0F3B5C; --line:#B9C9D6; --line-soft:#D8E1E8;
+  --accent:#1D7A4F; --accent-bg:#E7F2EC; --warn:#B4452F; --dim:#5A7186;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px;min-width:0}
+a{color:var(--ink)}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* Navigationsleiste */
+.titleblock{border-bottom:1.5px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:50}
+.titleblock .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.tb-left{font-family:var(--disp);font-size:20px;font-weight:700;letter-spacing:-.5px;text-decoration:none;white-space:nowrap}
+.tb-right{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;flex-wrap:wrap;justify-content:flex-end}
+.tb-right a{text-decoration:none;color:var(--dim);text-transform:uppercase}
+.tb-right a:hover,.tb-right a:focus-visible{color:var(--ink)}
+.langsel{display:flex;gap:0;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.langsel a{padding:5px 7px;font-size:11px;border-right:1px solid var(--line);color:var(--dim)}
+.langsel a:last-child{border-right:none}
+.langsel a.active{background:var(--ink);color:var(--paper)}
+@media(max-width:860px){.tb-right .opt{display:none}}
+@media(max-width:640px){.tb-right{gap:10px}.tb-right a{font-size:11px}.tb-left{font-size:17px}}
+
+/* Kopf */
+.hero{padding:64px 0 52px;border-bottom:1px solid var(--line)}
+.hero-mark{display:block;margin:0 auto 6px;max-width:520px;width:100%;height:auto}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(25px,3.7vw,38px);line-height:1.15;text-align:center;max-width:820px;margin:16px auto 6px;text-wrap:balance}
+.hero .claim2{font-family:var(--disp);font-weight:500;font-size:clamp(17px,2.1vw,21px);text-align:center;color:var(--accent);margin:0 auto 16px}
+.hero p.sub{text-align:center;max-width:660px;margin:0 auto 26px;color:var(--dim);font-size:18px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.btn{font-family:var(--disp);font-weight:500;font-size:16px;text-decoration:none;padding:13px 26px;border:1.5px solid var(--ink);border-radius:3px;transition:background .15s,color .15s}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:#0a2c46}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.opensrc{text-align:center;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-bottom:34px}
+.stamps{display:flex;gap:0;justify-content:center;flex-wrap:wrap;border:1px solid var(--line);max-width:880px;margin:0 auto}
+.stamp{flex:1 1 240px;padding:18px 20px;border-right:1px solid var(--line);text-align:center}
+.stamp:last-child{border-right:none}
+.stamp .val{font-family:var(--mono);font-size:26px;font-weight:500;color:var(--accent)}
+.stamp .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--dim);text-transform:uppercase;margin-top:5px;line-height:1.45}
+@media(max-width:720px){.stamp{border-right:none;border-bottom:1px solid var(--line)}.stamp:last-child{border-bottom:none}}
+
+/* Sektionen */
+section{padding:60px 0;border-bottom:1px solid var(--line);overflow-x:clip;scroll-margin-top:72px}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(23px,3vw,31px);margin-bottom:14px;text-wrap:balance}
+.lede{max-width:700px;color:#2c4a63;margin-bottom:34px}
+.fineprint{font-size:13.5px;color:var(--dim);margin-top:20px;line-height:1.6;max-width:820px}
+
+/* Befund */
+.befund-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.befund{background:var(--paper);padding:22px}
+.befund .num{font-family:var(--mono);font-size:24px;color:var(--warn);font-weight:500}
+.befund h3{font-family:var(--disp);font-size:16.5px;font-weight:500;margin:8px 0 6px}
+.befund p{font-size:15px;color:var(--dim);line-height:1.55}
+
+/* Bauteile */
+.mass-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.mass{border:1px solid var(--line);border-radius:3px;padding:20px 22px;background:#fff}
+.mass .pos{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.mass h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 4px}
+.mass .regel{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--paper);border:1px solid var(--line-soft);border-radius:2px;padding:3px 8px;display:inline-block;margin:4px 0 8px}
+.mass p{font-size:15px;color:var(--dim);line-height:1.55}
+.vatlbl,.taxlbl{display:block;margin:10px 0}
+.vatlbl>div,.taxlbl>div{display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.vatlbl b,.taxlbl b{font-weight:400;height:19px;line-height:19px;font-family:var(--mono);font-size:10.5px;
+ letter-spacing:.02em;padding:0 11px 0 8px;white-space:nowrap;flex:0 0 auto;
+ clip-path:polygon(0 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,0 100%)}
+.vatlbl em,.taxlbl em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--dim);
+ white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.vatlbl b{color:#fff}
+/* Leiter um 8px verbreitert: "A+ · 5 %" brauchte 60px bei 52px Kasten.
+   Abstand von 12px je Stufe bleibt, die Proportion also auch. */
+.vatlbl .v1{width:60px;background:#1D7A4F}
+.vatlbl .v2{width:72px;background:#5A9E3C}
+.vatlbl .v3{width:84px;background:#B79A1E}
+.vatlbl .v4{width:96px;background:#C9702A}
+.vatlbl .v5{width:108px;background:#B4452F}
+.taxlbl .t1{width:46px;background:#DCE7EF;color:var(--ink)}
+.taxlbl .t2{width:58px;background:#B9CFE0;color:var(--ink)}
+.taxlbl .t3{width:70px;background:#8FB3CD;color:var(--ink)}
+.taxlbl .t4{width:82px;background:#6497B8;color:#fff}
+.taxlbl .t5{width:94px;background:#3D7196;color:#fff}
+.taxlbl .t6{width:106px;background:#0F3B5C;color:#fff}
+.spark{width:100%;height:auto;display:block;margin:10px 0 8px}
+
+/* Tabellen */
+.tscroll{overflow-x:auto;max-width:100%;min-width:0;border:1px solid var(--line);background:#fff}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:150px}
+thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);border-bottom:1.5px solid var(--ink);vertical-align:bottom;font-weight:400;white-space:normal;max-width:110px;line-height:1.35}
+tbody td{font-family:var(--mono);font-size:14px}
+tbody td:first-child{font-family:var(--body);font-size:15px}
+tbody tr:last-child td{border-bottom:none}
+td.pos{color:var(--accent);font-weight:500}
+td.neg{color:var(--warn);font-weight:500}
+tr.tot td{border-top:1.5px solid var(--ink);font-weight:500}
+
+/* Rechner */
+.calibrate{font-size:13px;color:var(--dim);border-left:2px solid var(--line);padding:6px 12px;margin-bottom:22px;background:#fff}
+.calc{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:30px}
+@media(max-width:860px){.calc{grid-template-columns:1fr;padding:22px}}
+.calc label.lbl{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin:18px 0 8px}
+.calc label.lbl:first-child{margin-top:0}
+.calc input[type=range]{width:100%;accent-color:var(--ink)}
+.calc .bigval{font-family:var(--mono);font-size:30px;font-weight:500}
+.seg{display:flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;width:100%}
+.seg button{flex:1;font-family:var(--mono);font-size:12.5px;padding:9px 4px;background:#fff;border:none;border-right:1px solid var(--line);cursor:pointer;color:var(--dim)}
+.seg button:last-child{border-right:none}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.chk{display:flex;align-items:center;gap:10px;font-size:15.5px;color:var(--ink);margin-top:6px}
+.chk input{width:17px;height:17px;accent-color:var(--ink)}
+.res-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-soft);gap:12px}
+.res-row .k{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+.res-row .v{font-family:var(--mono);font-size:18px;white-space:nowrap}
+.res-row .v.today{color:var(--warn)}
+.res-row .v.new{color:var(--ink);font-weight:500}
+.plus-box{margin-top:18px;background:var(--accent-bg);border:1.5px solid var(--accent);border-radius:3px;padding:16px 20px;text-align:center}
+.plus-box .plus{font-family:var(--mono);font-size:32px;font-weight:500;color:var(--accent)}
+.plus-box .plus.neg{color:var(--warn)}
+.plus-box .sub{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-top:4px;line-height:1.45}
+.bars{margin-top:18px}
+.bar-lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:4px}
+.bar{height:14px;background:var(--line-soft);border-radius:2px;overflow:hidden;margin-bottom:12px}
+.bar>i{display:block;height:100%;transition:width .35s}
+.bar.today>i{background:var(--warn)}
+.bar.new>i{background:var(--accent)}
+h3.sub-h{font-family:var(--disp);font-size:21px;font-weight:700;margin:40px 0 10px}
+
+/* Diagramm */
+.chart-card{border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:26px}
+@media(max-width:640px){.chart-card{padding:16px}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tabs button{font-family:var(--mono);font-size:12.5px;padding:8px 12px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:var(--dim)}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.unit{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:6px}
+.legend{display:flex;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-top:12px}
+.legend i{display:inline-block;width:22px;height:0;border-top:3px solid;vertical-align:middle;margin-right:8px}
+.legend .l-hist i{border-color:var(--ink)}
+.legend .l-ohne i{border-color:var(--warn);border-top-style:dashed}
+.legend .l-mit i{border-color:var(--accent)}
+#chart{width:100%;height:auto;display:block}
+#chart .grid{stroke:var(--line-soft)}
+#chart .axis{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+#chart .hist{stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+#chart .ohne{stroke:var(--warn);fill:none;stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
+#chart .mit{stroke:var(--accent);fill:none;stroke-width:3.5;stroke-linecap:round}
+#chart .marker{stroke:var(--line);stroke-dasharray:3 4}
+.split{display:grid;grid-template-columns:1fr 1.35fr;gap:34px;margin-top:38px;align-items:start}
+.split>div{min-width:0}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:22px}}
+.split h3{font-family:var(--disp);font-size:21px;font-weight:700;margin-bottom:8px}
+.split p{margin-bottom:10px}
+
+/* Sicherungen */
+.sich{max-width:800px;border-top:1.5px solid var(--ink);counter-reset:s}
+.sich>div{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.sich>div::before{counter-increment:s;content:counter(s);font-family:var(--disp);font-weight:700;font-size:34px;color:var(--accent);line-height:1;min-width:38px}
+.sich b{font-family:var(--disp);font-weight:500;font-size:19px;display:block;margin-bottom:2px}
+.sich p{font-size:15.5px;color:var(--dim)}
+
+/* Klub der Sieben */
+.reg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-bottom:34px}
+.reg{border:1px solid var(--line);border-radius:3px;background:#fff;padding:20px 22px}
+.reg .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.reg h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 6px}
+.reg p{font-size:15px;color:var(--dim);line-height:1.55}
+.flagrow{display:grid;grid-template-columns:repeat(10,1fr);border:1px solid var(--line);border-bottom:none;margin-bottom:26px;background:#fff}
+.flagrow div{text-align:center;padding:14px 4px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.flagrow div:nth-child(10n){border-right:none}
+.flagrow .c{font-family:var(--mono);font-size:17px;font-weight:500;color:var(--accent);white-space:nowrap}
+.flagrow .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-top:4px;line-height:1.35}
+@media(max-width:980px){.flagrow{grid-template-columns:repeat(5,1fr)}.flagrow div:nth-child(10n){border-right:1px solid var(--line)}.flagrow div:nth-child(5n){border-right:none}}
+@media(max-width:560px){.flagrow{grid-template-columns:repeat(3,1fr)}.flagrow div:nth-child(5n){border-right:1px solid var(--line)}.flagrow div:nth-child(3n){border-right:none}}
+.effects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.effects>div{background:var(--paper);padding:20px 22px}
+.effects h3{font-family:var(--disp);font-size:16.5px;font-weight:500;margin-bottom:6px}
+.effects p{font-size:15px;color:var(--dim);line-height:1.55}
+.box{border:1.5px solid var(--accent);background:var(--accent-bg);border-radius:3px;padding:22px 24px;margin-top:34px}
+.box h3{font-family:var(--disp);font-size:19px;font-weight:700;margin-bottom:8px}
+.box.warn{border-color:var(--warn);background:#FBF0ED}
+.box.warn h3{color:var(--warn)}
+.box p{font-size:15.5px;margin-bottom:8px}
+.box ul{margin:8px 0 0 20px;font-size:15.5px}
+.box li{margin:5px 0}
+.timeline{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);margin:0 0 34px;background:#fff}
+.timeline div{flex:1 1 200px;padding:16px 18px;border-right:1px solid var(--line)}
+.timeline div:last-child{border-right:none}
+.timeline .y{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--accent)}
+.timeline .t{font-size:14.5px;color:var(--dim);margin-top:4px;line-height:1.5}
+@media(max-width:700px){.timeline div{border-right:none;border-bottom:1px solid var(--line)}.timeline div:last-child{border-bottom:none}}
+
+/* Anlagen */
+.anl{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:16px}
+.anl button{all:unset;cursor:pointer;border:1.5px solid var(--ink);border-radius:3px;padding:20px;background:#fff;display:block}
+.anl button:hover{border-color:var(--accent)}
+.anl button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.anl .t{font-family:var(--disp);font-weight:700;font-size:18px;display:block}
+.anl .d{font-size:14.5px;color:var(--dim);display:block;margin-top:4px;line-height:1.5}
+.anl .f{font-family:var(--mono);font-size:11.5px;color:var(--accent);display:block;margin-top:10px}
+
+footer{padding:44px 0 60px;font-size:14.5px;color:var(--dim)}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:34px}
+@media(max-width:720px){footer .wrap{grid-template-columns:1fr}}
+footer h4{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+footer a{color:var(--dim)}
+.translation-note{max-width:1060px;margin:18px auto 0;padding:0 24px;font-family:var(--mono);font-size:11.5px;color:var(--dim);text-align:center;letter-spacing:.04em;line-height:1.6}
+
+/* Anlagen-Leser */
+.docmodal{display:none;position:fixed;inset:0;background:rgba(15,59,92,.45);z-index:100;align-items:flex-start;justify-content:center;padding:4vh 16px}
+.docpanel{background:var(--paper);border:1.5px solid var(--ink);border-radius:3px;max-width:900px;width:100%;max-height:92vh;display:flex;flex-direction:column}
+.dochead{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 20px;border-bottom:1.5px solid var(--ink)}
+.dochead b{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em}
+.dochead button{font-family:var(--mono);font-size:13px;background:none;border:1px solid var(--ink);border-radius:2px;padding:6px 12px;cursor:pointer;color:var(--ink)}
+.dochead button:hover{background:var(--ink);color:var(--paper)}
+.docbody{overflow-y:auto;padding:22px 26px}
+.docbody pre{font-family:var(--mono);font-size:12.5px;line-height:1.65;white-space:pre-wrap;word-wrap:break-word;color:#1c3a52}
+.docitem{display:none}
+
+/* ---- Belegstand: Stufe doppelt kodiert, als Blockanzeige und als Wort ---- */
+table.beleg{table-layout:fixed;width:100%;min-width:720px}
+.beleg th,.beleg td{text-align:left;white-space:normal;vertical-align:top;
+  font-family:var(--body);font-size:14px;line-height:1.5}
+.beleg col.c1{width:15%}.beleg col.c2{width:21%}.beleg col.c3{width:16%}.beleg col.c4{width:48%}
+.beleg tbody td:first-child{font-family:var(--mono);font-size:12px;color:var(--dim);
+  text-transform:uppercase;letter-spacing:.03em;line-height:1.4}
+.beleg tbody td.claim{font-weight:500;color:var(--ink);font-size:14.5px}
+.beleg td.st{font-family:var(--mono);font-size:12px;letter-spacing:.02em}
+.beleg td.st .w{display:block;margin-top:5px}
+.meter{display:flex;gap:3px}
+.meter i{width:10px;height:10px;border:1.4px solid var(--line);display:block;border-radius:1px}
+.st.s3 .meter i{background:var(--accent);border-color:var(--accent)}
+.st.s2 .meter i:nth-child(-n+2){background:var(--accent);border-color:var(--accent)}
+.st.s1 .meter i:nth-child(1){background:#9A6B18;border-color:#9A6B18}
+.st.s0 .meter i{border-color:var(--warn)}
+.st.s3,.st.s2{color:var(--accent)}
+.st.s1{color:#7A5413}
+.st.s0{color:var(--warn)}
+.verstamp{font-family:var(--mono);font-size:12px;margin-top:12px!important;color:var(--dim)}
+.verstamp b{color:var(--accent);font-weight:500}
+@media(max-width:720px){
+  /* Unter 720px keine Tabelle mehr: je Position ein Block. Sonst scrollt die
+     Begruendungsspalte aus dem Bild und laesst leere hohe Zeilen zurueck. */
+  .belegwrap{overflow:visible;border:none;background:transparent}
+  table.beleg,.beleg tbody,.beleg tr,.beleg td{display:block;width:auto;min-width:0}
+  .beleg thead,.beleg colgroup{display:none}
+  .beleg tr{border:1px solid var(--line);background:#fff;padding:15px 16px;margin-bottom:10px}
+  .beleg td{border:none;padding:0}
+  .beleg tbody td:first-child{margin-bottom:5px}
+  .beleg tbody td.claim{font-size:16.5px;line-height:1.35;margin-bottom:9px}
+  .beleg td.st{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .beleg td.st .w{display:inline;margin-top:0}
+  .beleg tbody td:last-child{font-size:14px;color:var(--dim)}
+}
+
+/* ---- Regeltext zur Stundung unter den Positionen ---- */
+.erbbox{margin-top:36px;max-width:760px}
+.erbbox .sub-h{margin-top:0}
+.erbbox p{font-size:16px;line-height:1.65;color:var(--ink);margin-bottom:14px}
+.erbbox p:last-child{margin-bottom:0;color:var(--dim)}
+</style>
+</head>
+<body>
+
+<nav class="titleblock" id="top" aria-label="Navigation">
+  <div class="wrap">
+    <a class="tb-left" href="#top">TAX 28:28</a>
+    <div class="tb-right">
+      <a href="#concept">Konstruktion</a>
+      <a href="#calc">Beregner</a>
+      <a class="opt" href="#simulation">Simulering</a>
+      <a class="opt" href="#safeguards">Sikringer</a>
+      <a href="#club">Internationalt</a>
+      <a class="opt" href="#evidence">Dokumentation</a>
+      <span class="langsel"><a href="index.html" lang="en">EN</a><a href="de.html" lang="de">DE</a><a href="fr.html" lang="fr">FR</a><a href="es.html" lang="es">ES</a><a href="nl.html" lang="nl">NL</a><a href="da.html" class="active" lang="da">DA</a><a href="sl.html" lang="sl">SL</a><a href="et.html" lang="et">ET</a></span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="hero-mark" viewBox="0 0 560 300" role="img" aria-label="TAX 28:28">
+      <text x="60" y="168" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="196" fill="#0F3B5C" textLength="440" lengthAdjust="spacing">TAX</text>
+      <text x="60" y="286" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C" letter-spacing="-2" textLength="440" lengthAdjust="spacing">28:28</text>
+    </svg>
+    <h1>Det enkle skattesystem til det 21. århundrede.</h1>
+    <p class="claim2">Retfærdigt, socialt og nytænkende.</p>
+    <p class="sub">Højst 28 % af enhver indkomst — og 28 % også for koncerner, platforme, arvinger og store formuer. Dertil et digitalt udbytte på 515 € om måneden til hver voksen, fra første dag.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#calc">Beregn din egen gevinst</a>
+      <a class="btn ghost" href="#concept">Se konceptet</a>
+    </div>
+    <p class="opensrc">Alle beregningsmodeller er <a href="#annex">open source og kan efterprøves her</a>.</p>
+    <div class="stamps">
+      <div class="stamp"><div class="val">515&nbsp;€</div><div class="lbl">i udbytte om måneden fra første dag — 257,50 € pr. barn</div></div>
+      <div class="stamp"><div class="val">over 95 %*</div><div class="lbl">af befolkningen har flere penge til rådighed</div></div>
+      <div class="stamp"><div class="val">+21&nbsp;%</div><div class="lbl">disponibel indkomst for en familie med to børn</div></div>
+    </div>
+    <p class="fineprint" style="text-align:center;margin:16px auto 0">* Skøn fra modellen, ikke en mikrosimulering. Uden overgangsgarantien ville omkring 5 % stå ringere, især husstande på kontanthjælp uden arbejdsindkomst. Med garantien (element 09) rammer et tab kun dele af meget store formuer.</p>
+  </div>
+</header>
+
+<section id="diagnosis">
+  <div class="wrap">
+    <h2>For indviklet til at forstå. For hullet til at være retfærdigt.</h2>
+    <p class="lede">Og fremskridtets gevinster går uden om os. Fire revner i det nuværende system:</p>
+    <div class="befund-grid">
+      <div class="befund"><div class="num">20.000+</div><h3>sider skattelovgivning</h3><p>Love, bekendtgørelser, cirkulærer, domme — næsten ingen gennemskuer det uden rådgivning.</p></div>
+      <div class="befund"><div class="num">~40&nbsp;%</div><h3>af koncernoverskuddene i skattely</h3><p>På De Britiske Jomfruøer falder der 30,2 mio. USD i overskud på hver beskæftiget person, beskattet med 2,1 %. I Tyskland er det 44.345 USD.</p></div>
+      <div class="befund"><div class="num">80–90&nbsp;%</div><h3>modregning ved ekstra indtjening</h3><p>Den, der er på kontanthjælp og arbejder mere, beholder ofte kun 10 til 20 cent af hver ekstra euro.</p></div>
+      <div class="befund"><div class="num">0&nbsp;€</div><h3>fremskridtsudbytte</h3><p>Kunstig intelligens og automatisering øger værdiskabelsen — afkastet samler sig, og skattegrundlaget arbejde eroderer.</p></div>
+    </div>
+    <p class="fineprint">Størrelsesordener, ikke punktskøn. Sidetallet stammer fra projektets research; en solid kilde mangler stadig. Overskudsflytning efter Tørsløv, Wier og Zucman; ifo-instituttet når ud fra de store koncerners landeopdelte rapporter frem til betydeligt lavere beløb. Tyske regler for indtægt ved siden af kontanthjælp, 2026. Overskud pr. beskæftiget person: egen analyse af OECD’s land for land-rapporter, datasæt DSD_CBCR@DF_CBCRI, 2023, undergrupper med positivt overskud.</p>
+  </div>
+</section>
+
+<section id="concept">
+  <div class="wrap">
+    <h2>Ti byggedele, ét princip</h2>
+    <p class="lede">Hver enkelt del er allerede afprøvet et sted i verden — fra Estlands digitale forvaltning og grundskyld til Alaskas udbytte. 28:28 samler dem til et bærende system.</p>
+    <div class="mass-grid">
+
+      <div class="mass"><div class="pos">Element 01 · Indkomst</div><h3>Trinskala med et hårdt loft</h3>
+        <div class="taxlbl" role="img" aria-label="Skattetrin fra 0 til 28 procent">
+          <div><b class="t1">0&nbsp;%</b><em>op til 12.348 €</em></div>
+          <div><b class="t2">9&nbsp;%</b><em>op til 25.000 €</em></div>
+          <div><b class="t3">19&nbsp;%</b><em>op til 40.000 €</em></div>
+          <div><b class="t4">24&nbsp;%</b><em>op til 55.000 €</em></div>
+          <div><b class="t5">27&nbsp;%</b><em>op til 70.000 €</em></div>
+          <div><b class="t6">28&nbsp;%</b><em>derover — loft</em></div>
+        </div>
+        <p>Grundlaget er bruttoindkomsten — uden fradrag, uden sambeskatning. Eksistensminimum er skattefrit; derover betaler det sig at arbejde på hvert trin.</p></div>
+
+      <div class="mass"><div class="pos">Element 02 · Kapital</div><h3>Kapital og arbejde behandles ens</h3><span class="regel">28 % af alt afkast</span><p>Også realiserede gevinster tæller med. At omdanne løn til kapitalindkomst betaler sig ikke længere.</p></div>
+
+      <div class="mass"><div class="pos">Element 03 · Arv</div><h3>Også arv er indkomst</h3><span class="regel">28 % over 200.000 € pr. erhvervelse</span><p>Én sats, ingen lempelser. Den der arver en virksomhed eller et hus, kan få henstand med skatten: først til statens egen refinansieringsrente, stigende over ti år til markedets udlånsrente. Intet eftergives – restbeløbet bliver en byrde på aktivet og forfalder ved salg.</p></div>
+
+      <div class="mass"><div class="pos">Element 04 · Formue og jord</div><h3>Store formuer og dyr jord bidrager</h3><span class="regel">1 % over 2 mio. € · ejendomsskat kun på grunden</span><p>Formue op til 2 mio. € berøres praktisk talt ikke. Ejendomsskatten følger alene grundens værdi, ikke huset på den — som i Baden-Württemberg siden 2025 og i Estland siden 1993. At bygge eller renovere hæver ikke længere regningen; ubenyttet byggegrund på en god placering betaler med. Skatten må ikke væltes over på huslejen.</p></div>
+
+      <div class="mass"><div class="pos">Element 05 · Koncerner og platforme</div><h3>Der beskattes, hvor kunderne er</h3><span class="regel">28 % på anvendelsesstedet</span><p>Det gælder udtrykkeligt digitale platforme. Overskud kan flyttes, kunder kan ikke.</p></div>
+
+      <div class="mass"><div class="pos">Element 06 · Forbrug</div><h3>Momsen bliver et mærke</h3>
+        <div class="vatlbl" role="img" aria-label="Momsmærke fra A plus til D">
+          <div><b class="v1">A+ &middot; 5&nbsp;%</b><em>basisvarer, reparation</em></div>
+          <div><b class="v2">A &middot; 11&nbsp;%</b><em>bæredygtige varer</em></div>
+          <div><b class="v3">B &middot; 20&nbsp;%</b><em>standardvarer</em></div>
+          <div><b class="v4">C &middot; 25&nbsp;%</b><em>ressourcetung</em></div>
+          <div><b class="v5">D &middot; 28&nbsp;%</b><em>klimaskadelig luksus</em></div>
+        </div>
+        <p>Som med energimærket ser man med det samme, hvad en vare koster — og hvorfor. Jo mere bæredygtig, desto billigere. Effektiv sats på en standardkurv: omkring 21,5 %.</p></div>
+
+      <div class="mass"><div class="pos">Element 07 · Klima</div><h3>CO₂-pris, der gives tilbage til alle</h3><span class="regel">Europæisk prisspor · tilbageført gennem udbyttet</span><p>Fra 2028 fastsættes CO₂-prisen af den europæiske kvotehandel, ikke af den tyske forbundsdag. 28:28 fastsætter derfor ingen national pris, men kræver et fælles spor langs de aftalte klimamål – en opgave for klubben. Indtægterne vender tilbage gennem udbyttet: den der forbruger lidt, vinder. Skattefordele for fossil anvendelse bortfalder.</p></div>
+
+      <div class="mass"><div class="pos">Element 08 · Udbytte</div><h3>Det digitale udbytte</h3>
+        <svg class="spark" viewBox="0 0 260 86" role="img" aria-label="Udbyttetrin på 515, 566 og 617 euro om måneden">
+          <line x1="8" y1="72" x2="252" y2="72" stroke="#D8E1E8"></line>
+          <path d="M8 56 H90 V36 H172 V16 H252" fill="none" stroke="#1D7A4F" stroke-width="2.5" stroke-linejoin="round"></path>
+          <text x="10" y="50" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">515 €</text>
+          <text x="94" y="30" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">566 €</text>
+          <text x="176" y="11" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">617 €</text>
+          <text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#5A7186">50 %</text>
+          <text x="94" y="82" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#5A7186">55 %</text>
+          <text x="176" y="82" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#5A7186">60 %</text></svg>
+        <p>Til alle voksne; børn får det halve. Beløbet er knyttet til det officielle eksistensminimum og stiger efter en formel, ikke efter et valgløfte. Det er skattepligtigt: nederst bliver næsten alt, øverst flyder 28 % tilbage.</p></div>
+
+      <div class="mass"><div class="pos">Element 09 · Beskyttelse</div><h3>Ingen med lav indkomst går tilbage</h3><span class="regel">Overgangsgaranti · 40 mia. € til målrettet hjælp</span><p>Den, der i dag får kontanthjælp, ældrecheck eller uddannelsesstøtte, får mindst det hidtidige niveau — forskellen betaler hårdfaldsfonden. Den dækker også boligudgifter, pleje, handicap og særlige livssituationer.</p></div>
+
+      <div class="mass"><div class="pos">Element 10 · Arbejde</div><h3>Mere netto af bruttoen — for alle</h3><span class="regel">Sociale bidrag 42 → 28 → 18 % · uden loft</span><p>Bidragene falder straks til 28 % og med det næste udbyttetrin til 18 %. Til gengæld betaler høje indkomster af hver euro — „ingen undtagelser” gælder begge veje.</p></div>
+    </div>
+
+    <div class="erbbox">
+      <h3 class="sub-h">Ingen undtagelse, men en fair overgang</h3>
+      <p>Den nuværende lempelse for virksomhedsformue virker stærkest dér, hvor de største formuer skifter hænder. Den bortfalder uden erstatning. Den der arver en virksomhed eller et hus, står dermed over for en skat på formue, der ikke er penge.</p>
+      <p>I stedet træder henstand. Den forrentes først til den sats, hvortil staten selv refinansierer sig; over ti år stiger satsen til markedets udlånsrente. Kun renten forfalder løbende. Den der heller ikke kan bære den, får den lagt til restbeløbet. Dette bliver som en byrde på det arvede aktiv og forfalder, når det sælges eller gives videre.</p>
+      <p>Dermed behøver ingen at sælge for at betale skatten – og ingen får noget forærende. Intet eftergives, intet kan forældes. Henstanden forbliver henstand.</p>
+    </div>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="wrap">
+    <h2>Regn selv efter</h2>
+    <p class="lede">Tysk ret i 2026 over for 28:28 — med præcis den kode, der ligger åbent nedenfor.</p>
+    <p class="calibrate">Kalibrering: Tyskland som eksempeløkonomi. Logikken kan overføres til andre udviklede lande; parametrene fastsættes land for land.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="brutto">Årlig bruttoindkomst</label>
+        <div class="bigval" id="bOut">–</div>
+        <input type="range" id="brutto" min="0" max="200000" step="1000" value="42000" aria-describedby="bOut">
+        <label class="lbl" id="lSt">Udbyttetrin</label>
+        <div class="seg" role="group" aria-labelledby="lSt">
+          <button type="button" data-stufe="50" aria-pressed="true">515 € &middot; start</button>
+          <button type="button" data-stufe="55" aria-pressed="false">566 €</button>
+          <button type="button" data-stufe="60" aria-pressed="false">617 €</button>
+        </div>
+        <label class="lbl" id="lKi">Børn</label>
+        <div class="seg" role="group" aria-labelledby="lKi">
+          <button type="button" data-kinder="0" aria-pressed="true">0</button>
+          <button type="button" data-kinder="1" aria-pressed="false">1</button>
+          <button type="button" data-kinder="2" aria-pressed="false">2</button>
+          <button type="button" data-kinder="3" aria-pressed="false">3</button>
+        </div>
+        <label class="lbl">Husstand</label>
+        <div class="chk"><input type="checkbox" id="partner"><label for="partner" style="all:unset;cursor:pointer">Partner uden egen indkomst</label></div>
+      </div>
+      <div aria-live="polite">
+        <div class="res-row"><span class="k">Til rådighed i dag</span><span class="v today" id="rHeute">–</span></div>
+        <div class="res-row"><span class="k">Til rådighed med 28:28</span><span class="v new" id="rNeu">–</span></div>
+        <div class="res-row"><span class="k">heraf udbytte</span><span class="v" id="rDD">–</span></div>
+        <div class="res-row"><span class="k">Skat og bidrag i % af bruttoen</span><span class="v" id="rEff">–</span></div>
+        <div class="res-row"><span class="k">Merudgift fra forbrugsmærket (skøn)</span><span class="v" id="rMw">–</span></div>
+        <div class="bars" aria-hidden="true">
+          <div class="bar-lbl"><span>i dag</span><span id="bT"></span></div>
+          <div class="bar today"><i id="barT" style="width:40%"></i></div>
+          <div class="bar-lbl"><span>med 28:28</span><span id="bN"></span></div>
+          <div class="bar new"><i id="barN" style="width:60%"></i></div>
+        </div>
+        <div class="plus-box"><div class="plus" id="rPlus">–</div><div class="sub" id="rPlusSub">&nbsp;</div></div>
+      </div>
+    </div>
+    <p class="fineprint">I dag: tysk indkomstskatteskala, solidaritetstillæg, bidragssatser og -lofter 2026, børneydelse 259 €; sammenligningen med børnefradraget indgår ikke. 28:28: bidrag på 14 % (9 % fra trinnet på 617 €) af hele bruttoen, skat af brutto plus udbytte, børneudbytte skattefrit. Forbrugsmærke: effektivt 20 % i stedet for omkring 16,5 %, ved en typisk forbrugskvote. Uden kontanthjælp, boligstøtte og uddannelsesstøtte — der gælder overgangsgarantien.</p>
+
+    <h3 class="sub-h">Ti gennemregnede husstande (start med 515 €)</h3>
+    <div class="tscroll"><table><thead><tr><th scope="col">Husstand</th><th scope="col">Brutto</th><th scope="col">i dag</th><th scope="col">med 28:28</th><th scope="col">gevinst efter mærke</th><th scope="col">i %</th></tr></thead><tbody><tr><td>Mia, 22, studerende, ingen indkomst</td><td>–</td><td>–¹</td><td>6.180 €</td><td class="pos">+6.033 €</td><td class="pos">–</td></tr><tr><td>Tom, nystartet på arbejdsmarkedet</td><td>28.000 €</td><td>20.180 €</td><td>27.653 €</td><td class="pos">+6.884 €</td><td class="pos">+34 %</td></tr><tr><td>Anna, enlig forsørger, 1 barn</td><td>28.000 €</td><td>23.414 €</td><td>30.743 €</td><td class="pos">+6.674 €</td><td class="pos">+29 %</td></tr><tr><td>Sarah, sygeplejerske</td><td>42.000 €</td><td>28.193 €</td><td>37.044 €</td><td class="pos">+8.062 €</td><td class="pos">+29 %</td></tr><tr><td>Gennemsnitsløn 2026</td><td>51.944 €</td><td>33.632 €</td><td>43.351 €</td><td class="pos">+8.796 €</td><td class="pos">+26 %</td></tr><tr><td>Klaus, faglært</td><td>55.000 €</td><td>35.262 €</td><td>45.185 €</td><td class="pos">+8.960 €</td><td class="pos">+25 %</td></tr><tr><td>Familien Müller, én indkomst, 2 børn</td><td>63.000 €</td><td>50.620 €</td><td>62.345 €</td><td class="pos">+10.554 €</td><td class="pos">+21 %</td></tr><tr><td>Jonas, ingeniør</td><td>80.000 €</td><td>48.544 €</td><td>59.861 €</td><td class="pos">+10.193 €</td><td class="pos">+21 %</td></tr><tr><td>Dr. Weber, leder</td><td>150.000 €</td><td>85.528 €</td><td>100.461 €</td><td class="pos">+13.424 €</td><td class="pos">+16 %</td></tr><tr><td>Inge, 880 € pension og tillæg</td><td>10.560 €</td><td>12.720 €</td><td>15.481 €</td><td class="pos">+2.393 €</td><td class="pos">+19 %</td></tr></tbody></table></div>
+    <p class="fineprint">¹ I dag afhængigt af situationen uddannelsesstøtte, kontanthjælp eller ingen ydelse; overgangsgarantien sikrer det hidtidige niveau. Inge: i dag inklusive ældrecheck.</p>
+  </div>
+</section>
+
+<section id="simulation">
+  <div class="wrap">
+    <h2>To fremtider, ét valg</h2>
+    <p class="lede">Fire nøgletal fra 2010 til 2035: udviklingen frem til i dag og fra 2028 to veje — som hidtil eller med 28:28.</p>
+    <div class="chart-card">
+      <div class="tabs" role="group" aria-label="Vælg nøgletal" id="tabs"></div>
+      <div class="unit" id="unit"></div>
+      <svg id="chart" viewBox="0 0 960 400" role="img" aria-label="Tidsrække 2010 til 2035"></svg>
+      <div class="legend">
+        <span class="l-hist"><i></i>forløb indtil 2025</span>
+        <span class="l-ohne"><i></i>uden 28:28</span>
+        <span class="l-mit"><i></i>med 28:28 (forsigtige antagelser)</span>
+      </div>
+      <p class="fineprint">Forløb fra 2028 er modelberegninger, ikke prognoser. Gæld: kvoten fratrukket fondsreserven. Ulighed: modelskøn; kun en størrelsesorden på 2 til 5 Gini-point kan forsvares. CO₂-forløbet er overtaget fra den tidligere udgave.</p>
+    </div>
+    <div class="split">
+      <div>
+        <h3>Kan budgettet bære det?</h3>
+        <p>Ja — i alle tre beregninger, uden et eneste år med finansieringshul. Før den første udbetaling opbygges en pude; derefter er der hvert år op til 1 % af BNP til fleksible investeringer, og yderligere 2 % står klar som krisereserve.</p>
+        <p class="fineprint" style="margin-top:0">Heller ikke i recessionstesten skæres udbyttet. Kun den årlige regulering sættes på pause; værdien falder da midlertidigt med op til 9 %. Statens eksisterende strukturelle underskud på omkring 2,7 % af BNP er bevidst holdt uden for denne beregning — det skulle lukkes oveni.</p>
+      </div>
+      <div><div class="tscroll"><table><thead><tr><th scope="col">Beregning</th><th scope="col">gevinst, år 1</th><th scope="col">år med hul</th><th scope="col">566 € fra</th><th scope="col">617 € fra</th><th scope="col">investe&shy;ringer</th></tr></thead><tbody><tr><td>Optimistisk</td><td>+60 mia. €</td><td>0</td><td>2030</td><td>2032</td><td>100 %</td></tr><tr><td><b>Forsigtig</b><br><span style="font-size:13px;color:var(--dim)">grundlag for grafen</span></td><td>+55 mia. €</td><td>0</td><td>2030</td><td>2038</td><td>100 %</td></tr><tr><td>Recessionstest</td><td>+30 mia. €</td><td>0</td><td>–</td><td>–</td><td>85 %</td></tr></tbody></table></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="safeguards">
+  <div class="wrap">
+    <h2>Hvorfor budgettet ikke kan vælte</h2>
+    <p class="lede">Et udkast er ikke bedre end sine sikringer. Fem regler afgør — ikke valgkampe.</p>
+    <div class="sich">
+      <div><div><b>Indtægterne først.</b><p>Koncerner, platforme, kapital, arv, store formuer og jord beskattes efter de nye regler flere måneder før den første udbetaling. Udbyttet starter på en pude, aldrig på kredit.</p></div></div>
+      <div><div><b>Formel frem for kalender.</b><p>Udbyttet udgør halvdelen af det officielle eksistensminimum. Det stiger trinvis til 60 %, så snart krisereserven er fyldt og investeringerne er sikret.</p></div></div>
+      <div><div><b>Aldrig skære — kun sætte på pause.</b><p>Bruges der af reserven, sættes kun den årlige regulering i bero. Der indhentes udelukkende af overskud.</p></div></div>
+      <div><div><b>Reserve og investeringsfond.</b><p>2 % af BNP står klar som krisereserve; derudover går op til 1 % af BNP hvert år til skoler, net og jernbane. Staten bevarer sin handlekraft uden ny gæld.</p></div></div>
+      <div><div><b>Finansråd, åbne tal, fast korridor.</b><p>Et uafhængigt råd efterprøver årligt alle antagelser; de faktiske tal er offentlige hver måned. Som sidste sikring må enhedssatsen kun glide efter regler, mellem 25 og 30 %.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="club">
+  <div class="wrap">
+    <h2>Én model til mange lande</h2>
+    <p class="lede">Tyskland er i dette udkast kun regneeksemplet. Systemet er bygget, så økonomien kan udskiftes: samme regler overalt, nationale værdier overalt. Målet er at vinde flere lande for en fælles start inden 2028.</p>
+
+    <div class="timeline">
+      <div><div class="y">2026 · Åben efterprøvning</div><div class="t">Modellerne ligger åbent. Fagfolk, myndigheder og kritikere er inviteret til at regne dem efter og påpege fejlene.</div></div>
+      <div><div class="y">2027 · Landefiler</div><div class="t">For hvert interesseret land fyldes den samme beregning med nationale data — efterprøvelig med EUROMOD, EU's åbne skatte- og overførselsmodel.</div></div>
+      <div><div class="y">2028 · Fælles start</div><div class="t">Det tidligste realistiske år efter lovgivning og administrativ opbygning. Den, der kommer senere, følger det samme regelsæt.</div></div>
+      <div><div class="y">fra 2029 · Udvidelse</div><div class="t">Hvert yderligere land forstærker virkningen, især ved beskatning der, hvor kunderne er.</div></div>
+    </div>
+
+    <div class="reg-grid">
+      <div class="reg"><div class="n">Ens i alle lande</div><h3>Enhedssatsen</h3><p>Én sats for indkomst, for overskud og for det øverste forbrugstrin. Den må kun glide efter regler, mellem 25 og 30 % — korridoren, hvor hvert land finder sin værdi.</p></div>
+      <div class="reg"><div class="n">Forskelligt fra land til land</div><h3>Udbyttets størrelse</h3><p>Det er en fast andel af den nationale medianindkomst: 21,4 %, afledt af de 515 € i Tyskland. Børn får det halve. Reglen er ens overalt; beløbet følger landets indkomstniveau.</p></div>
+      <div class="reg"><div class="n">Virker kun i fællesskab</div><h3>Beskatningsstedet</h3><p>Overskud beskattes der, hvor kunderne er. Det er den eneste del, der bliver stærkere med hvert nyt medlem: jo større kredsen er, desto færre smutveje er der tilbage.</p></div>
+    </div>
+
+    <h3 class="sub-h" style="margin-top:8px">Eksempel: ti landefiler</h3>
+    <p class="lede">Den samme regel anvendt på ti økonomier: Tyskland, Frankrig, Spanien, Nederlandene, Irland, Belgien, Østrig, Danmark, Slovenien og Estland. Tilsammen 257,2 mio. indbyggere — 56,9 % af EU's befolkning — og omkring 70 % af produktionen. Forstærket samarbejde kræver ni medlemsstater, så ti filer giver én plads i overskud. De skal ikke alle være med. Slovenien står for det almindelige tilfælde, et mellemstort euroland uden særlig rolle; Irland for det sværeste. Efter den ene udbytteregel giver det disse månedlige beløb for voksne:</p>
+    <div class="flagrow"><div><div class="c">515 €</div><div class="n">Tyskland</div></div><div><div class="c">472 €</div><div class="n">Frankrig</div></div><div><div class="c">363 €</div><div class="n">Spanien</div></div><div><div class="c">614 €</div><div class="n">Nederlandene</div></div><div><div class="c">626 €</div><div class="n">Irland</div></div><div><div class="c">558 €</div><div class="n">Belgien</div></div><div><div class="c">651 €</div><div class="n">Østrig</div></div><div><div class="c">645 €</div><div class="n">Danmark</div></div><div><div class="c">364 €</div><div class="n">Slovenien</div></div><div><div class="c">306 €</div><div class="n">Estland</div></div></div>
+    <div class="tscroll"><table><thead><tr><th scope="col">Land</th><th scope="col">udbytte / måned</th><th scope="col">omkostning, % BNP</th><th scope="col">topsats i dag</th><th scope="col">selskaber i dag</th><th scope="col">gæld 2025</th><th scope="col">beregnet sats</th></tr></thead><tbody><tr><td>Tyskland</td><td>515 €</td><td>10,2 %</td><td>47,5 %</td><td>30,1 %</td><td>63,5 %</td><td>28,0</td></tr><tr><td>Frankrig</td><td>472 €</td><td>11,5 %</td><td>55,4 %</td><td>25,8 %</td><td>115,6 %</td><td>30,4</td></tr><tr><td>Spanien</td><td>363 €</td><td>11,3 %</td><td>54,0 %</td><td>25,0 %</td><td>100,7 %</td><td>30,0</td></tr><tr><td>Nederlandene</td><td>614 €</td><td>9,9 %</td><td>49,5 %</td><td>25,8 %</td><td>44,4 %</td><td>27,4</td></tr><tr><td>Irland</td><td>626 €</td><td>10,2 %²</td><td>48,0 %</td><td>12,5 %</td><td>32,9 %</td><td>27,9</td></tr><tr><td>Belgien</td><td>558 €</td><td>10,9 %</td><td>53,5 %</td><td>25,0 %</td><td>107,9 %</td><td>29,3</td></tr><tr><td>Østrig</td><td>651 €</td><td>12,5 %</td><td>55,0 %</td><td>23,0 %</td><td>81,5 %</td><td>32,1</td></tr><tr><td>Danmark</td><td>645 €</td><td>9,9 %</td><td>60,5 %</td><td>22,0 %</td><td>27,9 %</td><td>27,4</td></tr><tr><td>Slovenien</td><td>364 €</td><td>11,5 %</td><td>50,0 %</td><td>22,0 %</td><td>65,7 %</td><td>30,4</td></tr><tr><td>Estland</td><td>306 €</td><td>10,4 %</td><td>24,0 %</td><td>22,0 %</td><td>24,1 %</td><td>28,4</td></tr><tr class="tot"><td>Ti lande</td><td>–</td><td>10,8 %</td><td>–</td><td>–</td><td>–</td><td>–</td></tr></tbody></table></div>
+    <p class="fineprint">Udbytte: 21,4 % af den nationale ækvivalerede medianindkomst, børn det halve. Omkostning: bruttoudgiften til udbyttet i % af produktionen. ² For Irland er referencen den modificerede bruttonationalindkomst GNI*, ikke BNP: irsk BNP er oppustet af multinationale selskabers bogføring, og GNI* udgør 55,5 % heraf. Målt på BNP ville tallet være 5,6 %. Beregnet sats: den tyske model (28) forskudt lineært med udbyttets merudgift eller besparelse — en indplacering, ikke en national beregning. Kilder: BNP og BNP pr. indbygger IMF, prognose april 2026, omregnet til ECB's gennemsnitskurs for 2026; ækvivaleret medianindkomst fra en WKO-sammenstilling af EU-SILC-data, 2025 (ikke en primær kilde, værdierne derfor foreløbige); topskattesatser og selskabsskat Tax Foundation 2026, Estland ifølge det estiske handelskammer; gæld ultimo 2025 Eurostat, euroindikatorer af 22. april 2026; irsk GNI* fra Central Statistics Office. Produktionsandelen sammenholder landeprognoser for 2026 med EU-summen for 2025 og er derfor en øvre grænse.</p>
+
+    <div class="effects">
+      <div><h3>Størrelsen sætter standarden</h3><p>57 % af EU's befolkning og omkring 70 % af produktionen. En kreds af den størrelse sætter regler i stedet for at følge dem — også over for de store platforme. Ni lande ville allerede være nok til det.</p></div>
+      <div><h3>Tre af EU's fem skattely ville være med</h3><p>Tørsløv, Wier og Zucman tæller fem skattely inden for EU: Belgien, Irland, Luxembourg, Malta og Nederlandene. I 2016 flød omkring 117 mia. USD flyttet overskud til Irland, 90 mia. til Nederlandene og 15 mia. til Belgien. Tre af dem står på denne liste; Luxembourg og Malta gør ikke. Alle tre ville miste provenu — det kræver en overgangsudligning betalt af de øvrige syv landes merprovenu.</p></div>
+      <div><h3>Ni sænker, én hæver</h3><p>I ni af de ti lande falder topskattesatsen, i Danmark med 32 point. Kun Estland skulle hæve, fra 24 til 28 %. For selskabsskatten er det omvendt: den stiger i ni lande — i Irland med 15,5 point — og falder kun i Tyskland.</p></div>
+      <div><h3>Ni er nok, ti er beregnet</h3><p>Forstærket samarbejde efter EU-traktaten kræver mindst ni medlemsstater. Klubben ville derfor kunne starte inden for EU-retten uden at vente på enstemmighed blandt alle 27. Ti landefiler betyder, at ét land kan sige fra, uden at vejen er spærret.</p></div>
+      <div><h3>Flytning inden for klubben</h3><p>Udbyttet spænder fra 306 € i Estland til 651 € i Østrig; i købekraft er forskellen mindre. For erhvervsaktive gælder fuld ligebehandling. For tilflytning uden arbejdsindkomst måtte en venteperiode overvejes, som Alaska har ved sit udbytte.</p></div>
+      <div><h3>Tiltrækning udefra</h3><p>Fordi topsatserne falder i hele klubben, bliver den mere attraktiv for høje indkomster og for nye virksomheder — en modvægt til fraflytning på grund af formue- og arveskat.</p></div>
+    </div>
+
+    <div class="box">
+      <h3>Hvorfor Estland er med i klubben</h3>
+      <p>Med 1,4 mio. indbyggere er Estland det mindste medlem — og i dag tættest på byggeprincippet i 28:28.</p>
+      <ul>
+        <li>Fra januar 2026 gælder én sats på 24 % for indkomst, for udloddet overskud og for moms. Det er reelt et 24:24.</li>
+        <li>Grundskylden er siden 1993 alene baseret på jordens værdi; bygninger beskattes ikke. Det er element 04, i drift i over tredive år.</li>
+        <li>Selvangivelsen klares digitalt på få minutter — den administrative forudsætning for element 01.</li>
+        <li>Med 24,1 % har Estland EU's laveste gældskvote: pilotlandet med mest råderum og mindst risiko.</li>
+      </ul>
+    </div>
+
+    <div class="box warn">
+      <h3>Det sværeste tilfælde: Irland</h3>
+      <p>Irland står på denne liste, fordi et udkast ikke må skjule vinderne i det nuværende system. Som tidligt deltagende land er det samtidig det mest usandsynlige af de ti.</p>
+      <ul>
+        <li>Selskabsskatten skulle stige fra 12,5 til 28 % — det største enkeltskridt på hele listen. Den irske selskabsskat er desuden ekstremt koncentreret: ifølge det irske finansråd betalte tre koncerner i 2024 omkring 46 % af den, cirka 13 mia. €.</li>
+        <li>Irsk BNP er oppustet af multinationale selskabers bogføring. Målt på den modificerede bruttonationalindkomst GNI*, som det irske statistikkontor offentliggør netop derfor, koster udbyttet 10,2 % — det samme som i Tyskland, og ikke de 5,6 %, BNP antyder.</li>
+        <li>Element 05 har ikke brug for Irland. Der beskattes, hvor salget sker, uanset hvor overskuddet bogføres. Elementet virker ensidigt — det er netop pointen. Irlands tiltrædelse giver noget andet: retsfred inden for EU frem for en sag mod en medlemsstat.</li>
+        <li>For den irske befolkning ville regnestykket være gunstigt: topsats fra 48 til 28 %, et udbytte på 626 € om måneden. Det, der ville gå tabt, er en statslig indtægtskilde, der hænger på få udenlandske koncerner — ikke befolkningens velstand.</li>
+      </ul>
+    </div>
+
+    <p class="fineprint">Hvad denne beregning ikke gør: der findes ingen flerlandemodel. Kun bruttoomkostningen ved udbyttet ved nationale indkomstniveauer er beregnet; provenuet fra skalaen, virksomheder, forbrug, jord, CO₂ og bidragsomlægningen er ikke modelleret land for land. Eksisterende ydelser og bidragssystemer er meget forskellige — Danmark og Estland finansierer overvejende velfærdsstaten over skatten, så håndtaget „sænk bidragene” mangler i vid udstrækning der. Belgien, Irland og Nederlandene ville miste provenu ved beskatning på kundens sted, hvilket ikke er modregnet her. Købekraftsforskelle er ikke beregnet. Det bliver først holdbart med EUROMOD, som gengiver alle skatte- og overførselssystemer på ét grundlag.</p>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="wrap">
+    <h2>Dokumentationsstatus</h2>
+    <p class="lede">Hvad hvert tal hviler på, position for position. Fire niveauer: beregnet ud fra en officiel kilde; egen beregning med tilnærmelse; beregnet ud fra fordelingsantagelser; ikke beregnet. I dag er to rækker dokumenteret, og to er åbne. Hver ny beregning flytter en række.</p>
+    <div class="tscroll belegwrap"><table class="beleg"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup><thead><tr><th scope="col">Position</th><th scope="col">Det der hævdes</th><th scope="col">Niveau</th><th scope="col">Grundlag og næste skridt</th></tr></thead><tbody><tr><td>Element 01 · Indkomst</td><td class="claim">Trinskala med et hårdt loft</td><td class="st s1"><span class="meter"><i></i><i></i><i></i></span><span class="w">modelberegning</span></td><td>Skala og beregningsgrundlag 2026 er dokumenteret (§ 32a i den tyske indkomstskattelov). Provenuet er anslået ud fra indkomstfordelingen i tre scenarier, ikke beregnet på primære data. De mellemste trin er hævet fra 16/21/26 til 19/24/27 % — ikke af grunde i skalaen selv, men på grund af budgetforløbet: uden dette tillæg giver stress-scenariet fem år med finansieringshul. Indgangstrinnet og topsatsen er uændrede. Det har en pris: fordi topsatsen ligger fast på 28 %, rammer en forhøjelse af de mellemste trin kun toppen med et fast beløb — merbyrden stiger derfor ikke med indkomsten. Næste skridt: officiel løn- og indkomstskattestatistik efter størrelsesklasse.</td></tr><tr><td>Element 02 · Kapital</td><td class="claim">Kapital og arbejde behandles ens</td><td class="st s1"><span class="meter"><i></i><i></i><i></i></span><span class="w">modelberegning</span></td><td>Retstilstanden 2026 er dokumenteret. Provenuvirkningen hviler på en realisationselasticitet på 0,7 til 1,0 — en antagelse fra litteraturen. Næste skridt: statistikken over kapitalindkomster.</td></tr><tr><td>Element 03 · Arv</td><td class="claim">Også arv er indkomst</td><td class="st s3"><span class="meter"><i></i><i></i><i></i></span><span class="w">dokumenteret</span></td><td>Egen analyse af den officielle tyske arve- og gaveafgiftsstatistik 2024 (245.540 erhvervelser, 113,2 mia. €). Den der arver 150.000 € betaler effektivt 13,5 %; den der arver 15 mio. € betaler 9,6 % — i den klasse fritages 61,9 % af erhvervelsen. Virksomhedslempelsen dækker 79,4 % af den overførte virksomhedsformue og koster 3,9 til 5,1 mia. € om året. Position 03 ville indbringe 20,98 mia. € i stedet for 13,28, altså +7,7 mia. € — beregnet på en eksakt klassegrænse i den officielle statistik. Lempelsen erstattes af henstand: staten taber intet, indrømmelsen begrænser sig til bankmarginen i de første år og udgør omkring 0,7 mia. €.</td></tr><tr><td>Element 04 · Formue og jord</td><td class="claim">Store formuer og dyr jord bidrager</td><td class="st s2"><span class="meter"><i></i><i></i><i></i></span><span class="w">størrelsesorden</span></td><td>Egen beregning på statistikken over grundskatteværdier 2025 og på jordens værdi fra de sektorale formueopgørelser: jordværdi 3.529 mia. €, hvoraf 87 % ligger på 17 % af arealet. En sats på 0,22 til 0,44 % bærer de nuværende 15,5 mia. € i grundskat. Position 04 er dermed en omlægning ved uændret provenu, ikke en merindtægt — de 20 mia. €, der var bogført i modellen, er slettet. En sats på 1 % ville give omkring 35 mia. €, altså +20; det ville være en anden position og er ikke fastsat. Næste skridt: fremskrive jordværdien til 2026 ud fra de nye grundskatteværdier.</td></tr><tr><td>Element 05 · Koncerner og platforme</td><td class="claim">Der beskattes, hvor kunderne er</td><td class="st s2"><span class="meter"><i></i><i></i><i></i></span><span class="w">størrelsesorden</span></td><td>Egen analyse af OECD's land for land-rapporter, 2016 til 2023, 63 hjemstedsstater. Prøvet med to fordelingsnøgler og på et fast panel af stater, der rapporterer uafbrudt: for Tyskland +5 til +14 mia. €, median +8. At fordele efter omsætning alene er et designvalg: reglen bliver ensidigt håndhævelig, men virker svagere mod skattely.</td></tr><tr><td>Element 06 · Forbrug</td><td class="claim">Momsen bliver et mærke</td><td class="st s1"><span class="meter"><i></i><i></i><i></i></span><span class="w">modelberegning</span></td><td>De fem trin er fastsat; deres vægte 10/10/20/30/30 er en antagelse. De mellemste trin B og C er hævet fra 17 og 22 til 20 og 25 %, hvilket giver en effektiv sats på 21,5 % i stedet for 20,0 %. Det er modellens regressive instrument: fordi forbrugskvoten falder med indkomsten, rammer momsen lavere indkomster forholdsmæssigt hårdere. Derfor er grundtrinnet på 5 % og trin A på 11 % uændrede. Næste skridt: fordele forbrugsudgifter efter formål på trinnene.</td></tr><tr><td>Element 07 · Klima</td><td class="claim">CO₂-pris, der gives tilbage til alle</td><td class="st s2"><span class="meter"><i></i><i></i><i></i></span><span class="w">størrelsesorden</span></td><td>Egen beregning på den tredje ændringslov til den tyske lov om kvotehandel med brændstoffer. § 44(2) fastlægger emissionsmængderne frem til 2030: 301,0 → 180,6 mio. ton, −40 %. § 10(2) punktum 4 fastsætter et priskorridor på 55 til 65 € for 2026 og 2027. Provenuet i det nationale system udgør dermed 13,9 til 16,4 mia. € i 2026. Fra 2028 fastsættes prisen af den europæiske kvotehandel — et nationalt spor er da ikke længere muligt, deraf den europæiske formulering. Afviklingen af subsidier er fortsat åben: af de 65,4 mia. € fra det tyske miljøagentur (dataår 2018) ville omkring 47 give provenu, 12,7 er lettelser i elprisen, der aldrig når budgettet — og flere poster er siden bortfaldet.</td></tr><tr><td>Element 08 · Udbytte</td><td class="claim">Det digitale udbytte</td><td class="st s3"><span class="meter"><i></i><i></i><i></i></span><span class="w">dokumenteret</span></td><td>Niveau og kobling er dokumenteret: 50 % af det officielle eksistensminimum 2026, trin ved 55 og 60 %. Det tyveårige forløb er beregnet med de korrigerede indtægter: i alle tre scenarier er der ingen år med finansieringshul, det forsigtige scenarie når 99,5 % af investeringsmålet på 1 % af BNP, og trinnet på 55 % kan dér bæres fra 2032. Trinnet på 60 % nås kun i det optimistiske scenarie — det er fortsat et mål, ikke et tilsagn.</td></tr><tr><td>Element 09 · Beskyttelse</td><td class="claim">Ingen med lav indkomst går tilbage</td><td class="st s0"><span class="meter"><i></i><i></i><i></i></span><span class="w">åben</span></td><td>Ikke beregnet. Bestandsgarantien og hårdhedsfonden kræver en mikrosimulering på husstandsniveau. Det forudsætter en datakontrakt for SOEP eller EU-SILC.</td></tr><tr><td>Element 10 · Arbejde</td><td class="claim">Mere netto af bruttoen — for alle</td><td class="st s1"><span class="meter"><i></i><i></i><i></i></span><span class="w">modelberegning</span></td><td>Bidragssatser og grænser for 2026 er dokumenteret. At bidragene kan falde til 28 og senere 18 % følger af den samlede beregning og er ikke mere holdbart end den. At omfatte embedsmænd og selvstændige er begrundet i ligebehandling, ikke som finansiering: ifølge IW Köln koster det staten 10 til 20 mia. € om året at omfatte embedsmændene, fordi den betaler som arbejdsgiver og fortsat skylder de bestående pensioner på over 63 mia. € (DIW). Bidragene fra de ca. 3,5 mio. endnu ikke forsikrede selvstændige giver groft regnet 29 mia. € — men som en indfasningsgevinst, der følges af rettigheder. Budgetafstemningen medregner derfor ikke dette beløb.</td></tr></tbody></table></div>
+    <p class="fineprint">■■■ beregnet ud fra en officiel kilde og reproducerbart · ■■□ egen beregning ud fra en officiel kilde, med designvalg eller tilnærmelse · ■□□ beregnet ud fra fordelingsantagelser, uden primære data · □□□ ikke beregnet.</p>
+    <div class="calibrate" style="margin-top:18px;margin-bottom:0">Denne tabel er grunden til, at udkastet kan efterprøves: den siger også, hvor tallene er tynde. Scripterne ligger i bilaget, regneskridtene i logbogen.</div>
+  </div>
+</section>
+
+<section id="annex">
+  <div class="wrap">
+    <h2>Alle beregningsmodeller ligger åbent</h2>
+    <p class="lede">Intet på denne side skal tages på tro. Hvert tal kommer fra modellerne nedenfor — fuldstændige, læsbare, mulige at regne efter.</p>
+    <div class="anl">
+      <button type="button" class="doclink" data-doc="doc-model"><span class="t">Samlet model</span><span class="d">Indtægter, udgifter, budgetforløb 2028–2047, scenarier, husstandsprofiler</span><span class="f">modell-2828.py &middot; Python</span></button>
+      <button type="button" class="doclink" data-doc="doc-calc"><span class="t">Beregnerlogik</span><span class="d">Koden bag beregneren på denne side — i dag over for 28:28</span><span class="f">rechner-2828.js &middot; JavaScript</span></button>
+      <button type="button" class="doclink" data-doc="doc-club"><span class="t">Klubberegning</span><span class="d">Overførsel til ti lande: udbytteregel, omkostning, indplacering</span><span class="f">klub10.py &middot; Python</span></button>
+      <button type="button" class="doclink" data-doc="doc-src"><span class="t">Antagelser og kilder</span><span class="d">Retstilstand 2026, datagrundlag og hvad der endnu ikke er efterprøvet</span><span class="f">oversigt · EN</span></button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><h4>Metode</h4><p>Provenu og budget er regnet efter over hele indkomstfordelingen og afprøvet på tre måder — optimistisk, forsigtigt og med recession. De ubekvemme tal står også på siden. Udviklet efter den arkitektoniske projekteringsmetode, i arbejdsdialog med et AI-system.</p><p class="verstamp">Modelversion <b>v1.0 · 2. oktober 2026</b></p></div>
+    <div><h4>Kontakt</h4><p>Initiative 28 : 28 — Arndt Hermann<br><a href="mailto:2828@archicrowd.de?subject=28%3A28">Send kritik</a><br><a href="#top">Til toppen</a></p></div>
+    <div><h4>Kolofon og persondata</h4><p>Ansvarlig for indholdet: Initiative 28 : 28 — Arndt Hermann, 2828@archicrowd.de. Denne side bruger hverken cookies eller sporing og indlæser intet indhold fra tredjepart. Der indsamles ingen personoplysninger. Skrifterne Space Grotesk, Source Serif 4 og IBM Plex Mono ligger lokalt under SIL Open Font License 1.1. Alle modelberegninger er illustrationer uden garanti og erstatter ikke skatte- eller juridisk rådgivning. Siden er udelukket fra søgemaskiner.</p></div>
+  </div>
+  <p class="translation-note">Tysk er udkastets oprindelige sprog. De øvrige sprogudgaver er oversættelser og er ikke fagligt gennemlæst. Bilaget med antagelser og kilder er på engelsk.</p>
+</footer>
+
+<div class="docmodal" id="docmodal" role="dialog" aria-modal="true" aria-labelledby="doctitle">
+  <div class="docpanel">
+    <div class="dochead"><b id="doctitle"></b><button type="button" id="docclose">Luk</button></div>
+    <div class="docbody">
+      <div class="docitem" id="doc-model" data-title="Samlet model"><pre>#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+28:28 — GESAMTMODELL (Mikro, Makro, Haushaltspfad, Homepage-Daten)
+Digitaldividende (DD) = 50 % des steuerlichen Existenzminimums (2026: 12.348 EUR/Jahr -&gt; 515 EUR/Monat),
+Kinder-DD = Haelfte (257,50 EUR). Aufstieg per Regel auf 55 % und 60 %.
+Einheitssatz 28 % (ESt-Spitze, Kapital, Unternehmen/Plattformen, Erbschaft, MwSt-Topstufe).
+
+Rechtsstand "heute": 2026 (§ 32a EStG 2026, SV-Rechengroessen 2026, Soli-Freigrenze 2026, Kindergeld 259 EUR).
+Makro: Kalibrierung Projektmodell (Basis 880 / BIP 4.200 Modell-Mrd.). DD-Betraege werden in Euro 2026
+gegen diese niedrigere Modellbasis gerechnet -&gt; konservativ (Kostenanteil eher ueberzeichnet).
+"""
+import math, json, csv
+
+# =====================================================================
+# 0  PARAMETER
+# =====================================================================
+EXMIN_2026 = 12348                          # steuerliches Existenzminimum = Grundfreibetrag 2026
+DD_EUR = {50: 515.0, 55: 566.0, 60: 617.0}  # EUR/Monat, gerundet (50/55/60 % von 12.348/12)
+KIND_ANTEIL = 0.5
+L = 28
+TARIF_GRENZEN = [EXMIN_2026, 25000, 40000, 55000, 70000, float('inf')]
+TARIF_SAETZE  = [0.00, 0.09, 0.16, 0.21, 0.26, 0.28]          # 0-9-16-21-26-28
+MWST_STUFEN   = [5, 11, 17, 22, 28]                            # Label A+ ... D
+MWST_GEWICHTE = [.10, .10, .20, .30, .30]                      # ANNAHME Konsumanteile
+SV_AN = {50: 0.14, 55: 0.14, 60: 0.09}                         # AN-Anteil = Haelfte von 28 % bzw. 18 %
+ERB_FREIBETRAG_KIND = 400000
+KINDER_MIO, ERW_MIO = 14, 70
+
+# ---- Recht 2026 (heute) ----
+BBG_KV, BBG_RV = 69750, 101400
+AN_KV_PV = 0.073 + 0.0145 + 0.018           # KV 7,3 + halber durchschn. Zusatzbeitrag 1,45 + PV 1,8
+AN_KINDERLOS = 0.006
+AN_RV_AV = 0.093 + 0.013
+KINDERGELD = 259
+WK_PAUSCH, SA_PAUSCH = 1230, 36
+SOLI_FG = 20350
+
+# =====================================================================
+# 1  STEUER- UND ABGABENFUNKTIONEN
+# =====================================================================
+def est_2026(zve):
+    zve = math.floor(max(0, zve))
+    if zve &lt;= 12348: return 0.0
+    if zve &lt;= 17799: y = (zve-12348)/1e4; return math.floor((914.51*y+1400)*y)
+    if zve &lt;= 69878: z = (zve-17799)/1e4; return math.floor((173.10*z+2397)*z+1034.87)
+    if zve &lt;= 277825: return math.floor(0.42*zve-11135.63)
+    return math.floor(0.45*zve-19470.38)
+
+def soli_2026(est, split=False):
+    fg = SOLI_FG*(2 if split else 1)
+    if est &lt;= fg: return 0.0
+    return min(0.055*est, 0.119*(est-fg))
+
+def sv_heute(b, kinderlos=True):
+    kvpv = (AN_KV_PV + (AN_KINDERLOS if kinderlos else 0))*min(b, BBG_KV)
+    return kvpv + AN_RV_AV*min(b, BBG_RV)
+
+def netto_heute(b, kinder=0, partner=False):
+    sv = sv_heute(b, kinderlos=(kinder == 0))
+    zve = max(0, b - sv - WK_PAUSCH*(b &gt; 0) - SA_PAUSCH*(2 if partner else 1))
+    est = 2*est_2026(zve/2) if partner else est_2026(zve)
+    soli = soli_2026(est, partner)
+    return dict(netto=b - sv - est - soli + kinder*KINDERGELD*12, est=est+soli, sv=sv)
+
+def est_2828(x, saetze=TARIF_SAETZE, grenzen=TARIF_GRENZEN):
+    s, prev = 0.0, 0.0
+    for g, r in zip(grenzen, saetze):
+        if x &gt; prev: s += (min(x, g)-prev)*r
+        prev = g
+        if x &lt;= g: break
+    return s
+
+def netto_2828(b, kinder=0, partner=False, anteil=50):
+    dd = DD_EUR[anteil]*12
+    sv = SV_AN[anteil]*b                          # keine Bemessungsgrenzen
+    est = est_2828(b + dd)                        # DD steuerpflichtig, Individualbesteuerung
+    kind = kinder*DD_EUR[anteil]*KIND_ANTEIL*12   # Kinder-DD steuerfrei (Annahme)
+    p = 0.0
+    if partner: p = dd - est_2828(dd)             # Partner: eigene DD, eigene Veranlagung
+    return dict(netto=b - sv - est + dd + kind + p, est=est, sv=sv, dd=dd + kind + p)
+
+def r_eff_mwst(stufen=MWST_STUFEN):
+    return sum(w*s for w, s in zip(MWST_GEWICHTE, stufen))/100
+R_EFF_HEUTE = 0.165                               # Projektannahme effektiver Satz heute
+
+def konsumquote(n): return .95 if n &lt; 25000 else .85 if n &lt; 50000 else .75 if n &lt; 80000 else .60
+def mwst_mehrbelastung(netto):
+    r = r_eff_mwst()
+    return netto*konsumquote(netto)*(r/(1+r) - R_EFF_HEUTE/(1+R_EFF_HEUTE))
+
+# =====================================================================
+# 2  MAKRO: AUFKOMMEN UND AUSGABEN JE STUFE (Modell-Mrd.)
+# =====================================================================
+VERT = [(6,8000),(11,20000),(12,36000),(7,52000),(5,69000),(3,105000),(1,300000)]
+S25, G25 = [0,.08,.14,.19,.23,.25], [12000,25000,40000,55000,70000,float('inf')]
+def _grenz(b, r, g):
+    for gg, x in zip(g, r):
+        if b &lt;= gg: return x
+    return r[-1]
+# Kalibrierung wie Projekt: 25er-Tarif + DD 6.000 = 284 Mrd.
+K_EST = 284/sum(mio*est_2828(b+6000, S25, G25)/1000 for mio, b in VERT)
+
+SZ = {
+ 'Optimistisch': dict(g_e=.030,g_a=.026,dd_idx=.02,verh=50,eti=.25,semi=.8,eps=.7,leak=.85,drag=.0003,schock={},schock_a={},hc=1.0),
+ 'Robust':       dict(g_e=.030,g_a=.030,dd_idx=.02,verh=20,eti=.35,semi=1.0,eps=.8,leak=.80,drag=.0004,schock={},schock_a={},hc=1.0),
+ 'Stress':       dict(g_e=.020,g_a=.020,dd_idx=.02,verh=0, eti=.50,semi=1.5,eps=1.0,leak=.70,drag=.0006,
+                      schock={5:.94,6:.96,7:.98}, schock_a={5:20,6:20}, hc=0.7),
+}
+
+def est_aufkommen(anteil, eti):
+    dd = DD_EUR[anteil]*12; tot = 0.0
+    for mio, b in VERT:
+        m0, m1 = _grenz(b+dd, S25, G25), _grenz(b+dd, TARIF_SAETZE, TARIF_GRENZEN)
+        b1 = b*((1-m1)/(1-m0))**eti
+        tot += mio*est_2828(b1+dd)/1000
+    return K_EST*tot            # 25 Mio. Erwachsene ohne Markteinkommen: DD &lt; Existenzminimum -&gt; 0
+
+def mwst_aufkommen(leak):
+    r0 = 0.18; brutto = 350/(r0/(1+r0)); r1 = r_eff_mwst()
+    return 350 + (brutto*r1/(1+r1) - 350)*leak
+
+def einnahmen(anteil, sc, detail=False):
+    t = L/100
+    d = {
+     'Einkommensteuer (inkl. steuerpfl. DD)': est_aufkommen(anteil, sc['eti']),
+     'Kapitalerträge 28 %':                   45*(t/.25)*((1-t)/.75)**sc['eps'],
+     'Mehrwertsteuer (Label 5–28 %)':         mwst_aufkommen(sc['leak']),
+     'Unternehmen &amp; Plattformen 28 %':        145*(t/.25)*math.exp(-sc['semi']*(L-25)/100),
+     'Erbschaft 28 %':                        33*(t/.25)*math.exp(-(L-25)/100),
+     'Vermögen-Mindeststeuer (anrechenbar)':  22*(1-0.02*(L-25)),
+     'CO₂-Abgabe 100 €/t (netto)':            55,
+     'Sonstige Steuern':                      165,
+    }
+    return (sum(d.values()), d) if detail else sum(d.values())
+
+BAUSTEINE = {   # Zusatzeinnahmen (statisch, Modell-Mrd.), Annahmen gestuetzt auf DIW/UBA/Destatis
+ 'Vermögensteuer 1 % ab 2 Mio. (nicht anrechenbar)': 12,
+ 'Bodenwertabgabe statt Grundsteuer':               20,
+ 'Abbau klimaschädlicher Subventionen':             20,
+ 'CO₂-Pfad 100 → 150 €/t (voll ab Jahr 5)':          15,
+}
+def bausteine(t):
+    return sum(BAUSTEINE.values()) - 15 + min(15, 3*(t+1))
+
+AUSG = {  # Basisausgaben nach Transferersatz/RV/Verwaltung, SV-Zuschuss, Haertefall
+ 50: dict(basis=596, zusch=60, haerte=40),   # inkl. Bestandsgarantie (~5 Mrd.) fuer heutige Grundsicherungsbezieher
+ 55: dict(basis=596, zusch=60, haerte=40),
+ 60: dict(basis=576, zusch=90, haerte=42),
+}
+def dd_kosten(a): return (ERW_MIO*DD_EUR[a]*12 + KINDER_MIO*DD_EUR[a]*KIND_ANTEIL*12)/1000
+def ausgaben(a): return sum(AUSG[a].values()) + dd_kosten(a)
+
+# =====================================================================
+# 3  HAUSHALTSPFAD 2028-2047 MIT REGELN
+# =====================================================================
+BIP0, START = 4200, 2028
+INV, PUFFER, STARTPUFFER = 0.01, 0.02, 100.0
+STUFEN = [50, 55, 60]
+
+def simuliere(sc, mit_bausteinen=True, jahre=20):
+    g_e = sc['g_e'] - sc['drag']*(L-25); g_a = sc['g_a'] - 0.5*sc['drag']*(L-25)
+    E = {a: einnahmen(a, sc) for a in STUFEN}
+    F, i, idx, idx_voll, letzter_schritt, rows = STARTPUFFER, 0, 1.0, 1.0, -99, []
+    for t in range(jahre):
+        bip = BIP0*(1+g_e)**t
+        if t &gt; 0: idx_voll *= 1+sc['dd_idx']
+        def saldo(a, ix):
+            e = (E[a] + (bausteine(t)*sc['hc'] if mit_bausteinen else 0))*(1+g_e)**t*sc['schock'].get(t,1.0) \
+                + (sc['verh'] if t &gt;= 2 else 0)
+            x = AUSG[a]; aus = (x['basis']+x['zusch']+x['haerte'])*(1+g_a)**t + dd_kosten(a)*ix + sc['schock_a'].get(t,0)
+            return e - aus
+        # Regel 3: jaehrliche Anpassung an das Existenzminimum, solange der Puffer nicht angegriffen ist;
+        #          ausgesetzte Anpassungen werden nur aus Ueberschuessen nachgeholt
+        if t &gt; 0 and F &gt;= PUFFER*bip:
+            idx *= 1+sc['dd_idx']
+            if idx &lt; idx_voll - 1e-9:
+                kosten = dd_kosten(STUFEN[i])*(idx_voll-idx)
+                if saldo(STUFEN[i], idx_voll) &gt;= INV*bip and F - PUFFER*bip - INV*bip &gt;= 2*kosten: idx = idx_voll
+        # Regel 2: Aufstieg 50-&gt;55-&gt;60 %, fruehestens Jahr 3, Abstand &gt;= 2 Jahre
+        rest = max(F - PUFFER*bip, 0)
+        if i &lt; 2 and t &gt;= 2 and t - letzter_schritt &gt;= 2 and F &gt;= PUFFER*bip \
+           and saldo(STUFEN[i+1], idx) + rest/10 &gt;= INV*bip:
+            i += 1; letzter_schritt = t
+        S = saldo(STUFEN[i], idx); F += S
+        luecke = F &lt; 0
+        inv = min(max(F - PUFFER*bip, 0), INV*bip); F -= inv
+        rows.append(dict(jahr=START+t, t=t+1, anteil=STUFEN[i], dd=DD_EUR[STUFEN[i]]*idx, dd_2026=DD_EUR[STUFEN[i]]*idx/idx_voll, dd_real=idx/idx_voll,
+                         saldo=S, inv=inv, ziel=INV*bip, fonds=F, luecke=luecke, bip=bip))
+    return rows
+
+def kennzahlen(rows):
+    return dict(saldo1=rows[0]['saldo'], min_saldo=min(r['saldo'] for r in rows),
+                luecken=sum(r['luecke'] for r in rows), min_fonds=min(r['fonds'] for r in rows),
+                j55=next((r['jahr'] for r in rows if r['anteil']&gt;=55), None),
+                j60=next((r['jahr'] for r in rows if r['anteil']&gt;=60), None),
+                invquote=sum(r['inv'] for r in rows)/sum(r['ziel'] for r in rows),
+                inv_kum=sum(r['inv'] for r in rows), fonds_ende=rows[-1]['fonds'],
+                dd_real_min=min(r['dd_real'] for r in rows)*1.0)
+
+# =====================================================================
+# 4  AUSGABE
+# =====================================================================
+if __name__ == '__main__':
+    out = {}
+    P = lambda s: print(s)
+    P("="*100); P("A | TARIF, LABEL, DIVIDENDE"); P("="*100)
+    P(f"ESt-Tarif 28:28: " + " | ".join(f"bis {g:,.0f}: {r*100:.0f} %" if g != float('inf') else f"darüber: {r*100:.0f} %" for g, r in zip(TARIF_GRENZEN, TARIF_SAETZE)))
+    P(f"MwSt-Label: {MWST_STUFEN}  -&gt; effektiv {r_eff_mwst()*100:.1f} % (heute Projektannahme {R_EFF_HEUTE*100:.1f} %)")
+    for a in STUFEN:
+        P(f"DD {a} %: Erwachsene {DD_EUR[a]:.2f} EUR/M, Kinder {DD_EUR[a]*KIND_ANTEIL:.2f} EUR/M, Kosten brutto {dd_kosten(a):.1f} Mrd., SV gesamt {SV_AN[a]*200:.0f} %")
+    P(f"Hinweis: Kinder-DD 257,50 EUR liegt 1,50 EUR unter dem Kindergeld 2026 (259 EUR).")
+
+    P("\n"+"="*100); P("B | STATISCHER HAUSHALT JE STUFE (Modell-Mrd., Szenario Robust)"); P("="*100)
+    tabB = {}
+    for a in STUFEN:
+        e, d = einnahmen(a, SZ['Robust'], True)
+        tabB[a] = dict(einnahmen=d, einnahmen_summe=e, bausteine=sum(BAUSTEINE.values()),
+                       ausgaben=dict(AUSG[a], dd=dd_kosten(a)), ausgaben_summe=ausgaben(a),
+                       saldo_ohne=e-ausgaben(a), saldo_mit=e+sum(BAUSTEINE.values())-ausgaben(a))
+    keys = list(tabB[50]['einnahmen'].keys())
+    P(f"{'':&lt;42}{'50 %':&gt;10}{'55 %':&gt;10}{'60 %':&gt;10}")
+    for k in keys: P(f"{k:&lt;42}" + "".join(f"{tabB[a]['einnahmen'][k]:&gt;10.1f}" for a in STUFEN))
+    P(f"{'= Einnahmen Kernsystem':&lt;42}" + "".join(f"{tabB[a]['einnahmen_summe']:&gt;10.1f}" for a in STUFEN))
+    for k, v in BAUSTEINE.items(): P(f"{'+ '+k:&lt;42}" + f"{v:&gt;10.1f}"*3)
+    P(f"{'Ausgaben: Basis':&lt;42}" + "".join(f"{AUSG[a]['basis']:&gt;10.1f}" for a in STUFEN))
+    P(f"{'Ausgaben: SV-Zuschuss':&lt;42}" + "".join(f"{AUSG[a]['zusch']:&gt;10.1f}" for a in STUFEN))
+    P(f"{'Ausgaben: Härtefall + Gesundheit':&lt;42}" + "".join(f"{AUSG[a]['haerte']:&gt;10.1f}" for a in STUFEN))
+    P(f"{'Ausgaben: Digitaldividende':&lt;42}" + "".join(f"{dd_kosten(a):&gt;10.1f}" for a in STUFEN))
+    P(f"{'= Ausgaben':&lt;42}" + "".join(f"{ausgaben(a):&gt;10.1f}" for a in STUFEN))
+    P(f"{'SALDO ohne Bausteine':&lt;42}" + "".join(f"{tabB[a]['saldo_ohne']:&gt;+10.1f}" for a in STUFEN))
+    P(f"{'SALDO mit Bausteinen':&lt;42}" + "".join(f"{tabB[a]['saldo_mit']:&gt;+10.1f}" for a in STUFEN))
+    P(f"{'  in % BIP':&lt;42}" + "".join(f"{tabB[a]['saldo_mit']/BIP0*100:&gt;+10.2f}" for a in STUFEN))
+    P(f"Zielsaldo Investitionen: +{INV*BIP0:.0f}")
+    out['statisch'] = tabB
+
+    P("\n"+"="*100); P("C | HAUSHALTSPFAD 2028-2047 (Startpuffer 100, Puffer 2 % BIP, Investitionen 1 % BIP)"); P("="*100)
+    out['pfade'] = {}
+    for name, sc in SZ.items():
+        for mb in (True, False):
+            rows = simuliere(sc, mb); k = kennzahlen(rows)
+            lab = f"{name} {'mit' if mb else 'ohne'} Bausteine"
+            out['pfade'][lab] = dict(rows=rows, kennzahlen=k)
+            P(f"\n{lab}: Saldo J1 {k['saldo1']:+.0f} | min. Saldo {k['min_saldo']:+.0f} | Lückenjahre {k['luecken']} | min. Fonds {k['min_fonds']:.0f}"
+              f" | 55 % ab {k['j55']} | 60 % ab {k['j60']} | Inv-Quote {k['invquote']*100:.0f} % | Inv kum. {k['inv_kum']:.0f}"
+              f" | Fonds 2047 {k['fonds_ende']:.0f} | DD real min. {k['dd_real_min']*100:.0f} % des Sollwerts")
+            if mb:
+                P("  Jahr  " + " ".join(f"{r['jahr']:&gt;5}" for r in rows))
+                P("  Stufe " + " ".join(f"{r['anteil']:&gt;5}" for r in rows))
+                P("  DD €  " + " ".join(f"{r['dd']:&gt;5.0f}" for r in rows))
+                P("  DD'26 " + " ".join(f"{r['dd_2026']:&gt;5.0f}" for r in rows))
+                P("  Saldo " + " ".join(f"{r['saldo']:&gt;+5.0f}" for r in rows))
+                P("  Inv   " + " ".join(f"{r['inv']:&gt;5.0f}" for r in rows))
+                P("  Fonds " + " ".join(f"{r['fonds']:&gt;5.0f}" for r in rows))
+
+    P("\n"+"="*100); P("D | MIKROEBENE (EUR/Jahr, Recht 2026 vs. 28:28)"); P("="*100)
+    profile = [
+      ("Mia, Studentin (22), ohne Einkommen", 0, 0, False),
+      ("Tom, Berufseinsteiger", 28000, 0, False),
+      ("Sarah, Fachkraft", 42000, 0, False),
+      ("Durchschnittsverdiener (51.944 €)", 51944, 0, False),
+      ("Klaus, Facharbeiter", 55000, 0, False),
+      ("Jonas, Ingenieur", 80000, 0, False),
+      ("Dr. Weber, Führungskraft", 150000, 0, False),
+      ("Familie Müller, Alleinverdiener, 2 Kinder", 63000, 2, True),
+      ("Anna, alleinerziehend, 1 Kind", 28000, 1, False),
+    ]
+    mikro = []
+    P(f"{'Profil':&lt;44}{'heute':&gt;9}{'50 %':&gt;9}{'55 %':&gt;9}{'60 %':&gt;9}{'Δ 50 %':&gt;9}{'MwSt':&gt;8}{'Δ netto':&gt;9}{'in %':&gt;7}")
+    for n, b, k, p in profile:
+        h = netto_heute(b, k, p)['netto']
+        v = {a: netto_2828(b, k, p, a)['netto'] for a in STUFEN}
+        mw = mwst_mehrbelastung(v[50])
+        d = v[50]-h; dn = d-mw
+        mikro.append(dict(profil=n, brutto=b, kinder=k, partner=p, heute=h, s50=v[50], s55=v[55], s60=v[60], mwst=mw, delta=d, delta_nach_mwst=dn))
+        pct = f"{dn/h*100:+.0f}" if h &gt; 0 else "n.v."
+        P(f"{n:&lt;44}{h:&gt;9.0f}{v[50]:&gt;9.0f}{v[55]:&gt;9.0f}{v[60]:&gt;9.0f}{d:&gt;+9.0f}{-mw:&gt;8.0f}{dn:&gt;+9.0f}{pct:&gt;7}")
+    # Rentnerin
+    rente = 880*12
+    h_inge = 1060*12
+    kv_r_heute_satz = 0.073+0.0145+0.036+0.006
+    inge = {a: rente - rente*(0.1235*(SV_AN[a]/0.2115)) + DD_EUR[a]*12 - est_2828(rente + DD_EUR[a]*12) for a in STUFEN}
+    P(f"{'Inge, Rentnerin (880 €/M, heute mit GruSi)':&lt;44}{h_inge:&gt;9.0f}{inge[50]:&gt;9.0f}{inge[55]:&gt;9.0f}{inge[60]:&gt;9.0f}{inge[50]-h_inge:&gt;+9.0f}")
+    mikro.append(dict(profil='Inge, Rentnerin (880 €/M)', brutto=rente, heute=h_inge, s50=inge[50], s55=inge[55], s60=inge[60]))
+    out['mikro'] = mikro
+
+    # Belastung Durchschnittsverdiener
+    b = 51944
+    hh = netto_heute(b)
+    bel_h = (hh['est']+hh['sv'])/b*100
+    bel = {a: (netto_2828(b,0,False,a)['est']+netto_2828(b,0,False,a)['sv'])/b*100 for a in STUFEN}
+    beln = {a: (netto_2828(b,0,False,a)['est']+netto_2828(b,0,False,a)['sv']-DD_EUR[a]*12)/b*100 for a in STUFEN}
+    P(f"\nDurchschnittsverdiener 51.944 €: Abgabenlast heute {bel_h:.1f} % | 28:28 {bel[50]:.1f} / {bel[55]:.1f} / {bel[60]:.1f} %"
+      f" | nach Dividende {beln[50]:.1f} / {beln[55]:.1f} / {beln[60]:.1f} %")
+    # Grenzbelastung
+    def grenz_heute(b): return (netto_heute(b+100)['netto']-netto_heute(b)['netto'])
+    def grenz_neu(b):   return (netto_2828(b+100)['netto']-netto_2828(b)['netto'])
+    P(f"Grenzbelastung (Abgaben je zusätzliche 100 €) bei 51.944 €: heute {100-grenz_heute(b):.0f} % | 28:28 {100-grenz_neu(b):.0f} %")
+    out['durchschnitt'] = dict(brutto=b, belastung_heute=bel_h, belastung=bel, belastung_nach_dd=beln,
+                               grenz_heute=100-grenz_heute(b), grenz_neu=100-grenz_neu(b))
+
+    # Gini (grobe Modellschaetzung, Individuen 18+)
+    def gini(pairs):
+        pairs = sorted(pairs, key=lambda x: x[1]); N = sum(w for w, _ in pairs); Y = sum(w*y for w, y in pairs)
+        cum, area = 0.0, 0.0
+        for w, y in pairs:
+            area += w*(cum + w*y/2); cum += w*y
+        return 1 - 2*area/(N*Y)
+    TRANSFER_HEUTE = 3000   # ANNAHME: durchschnittliche Transfers je Erwachsenem ohne Markteinkommen
+    g_h = gini([(m_, netto_heute(b_)['netto']) for m_, b_ in VERT] + [(25, TRANSFER_HEUTE)])
+    g_n = {a: gini([(m_, netto_2828(b_,0,False,a)['netto']) for m_, b_ in VERT] + [(25, DD_EUR[a]*12)]) for a in STUFEN}
+    P(f"Gini-Modellwert (verfügbar, Erwachsene, grob): heute {g_h:.3f} | 28:28 {g_n[50]:.3f} / {g_n[55]:.3f} / {g_n[60]:.3f}"
+      f" | relative Änderung {(g_n[50]/g_h-1)*100:+.0f} % / {(g_n[60]/g_h-1)*100:+.0f} %")
+    for tr in (2000, 5000):
+        gh = gini([(m_, netto_heute(b_)['netto']) for m_, b_ in VERT] + [(25, tr)])
+        gn = gini([(m_, netto_2828(b_,0,False,50)['netto']) for m_, b_ in VERT] + [(25, DD_EUR[50]*12)])
+        P(f"  Sensitivität Transfers heute {tr} EUR: relative Änderung {(gn/gh-1)*100:+.0f} %")
+    out['gini'] = dict(heute=g_h, neu=g_n)
+
+    # Rechner-Tabelle
+    with open('rechner-2828-tabelle.csv','w',newline='') as f:
+        w = csv.writer(f, delimiter=';')
+        w.writerow(['brutto','kinder','partner','heute_netto','heute_est_soli','heute_sv',
+                    'neu50_netto','neu50_est','neu50_sv','neu55_netto','neu60_netto','plus50','plus60'])
+        for b in range(0, 200001, 5000):
+            for k in (0,1,2,3):
+                for p in (False, True):
+                    h = netto_heute(b,k,p); n50 = netto_2828(b,k,p,50)
+                    w.writerow([b,k,int(p),round(h['netto']),round(h['est']),round(h['sv']),
+                                round(n50['netto']),round(n50['est']),round(n50['sv']),
+                                round(netto_2828(b,k,p,55)['netto']),round(netto_2828(b,k,p,60)['netto']),
+                                round(n50['netto']-h['netto']),round(netto_2828(b,k,p,60)['netto']-h['netto'])])
+    with open('modell-2828-daten.json','w') as f:
+        json.dump(out, f, ensure_ascii=False, indent=1, default=float)
+    P("\nDateien: rechner-2828-tabelle.csv, modell-2828-daten.json")
+
+    # ================= ANTEIL MIT MEHR IM GELDBEUTEL (grobe Gruppenabschaetzung) =================
+    P("\n"+"="*100); P("F | ANTEIL DER BEVÖLKERUNG MIT MEHR VERFÜGBAREM EINKOMMEN (Schätzung, Mio. Personen)"); P("="*100)
+    BEV = 84.0
+    risiko = {   # Personen, die OHNE Bestandsgarantie schlechter stuenden (Annahmen, siehe Datenblatt)
+     'Bürgergeld-Haushalte ohne Erwerbseinkommen (von 5,5 Mio.)': 3.5,
+     'Erwerbsminderungs-Grundsicherung ohne weiteres Einkommen':   0.36,
+     'BAföG mit hohem Förderbetrag':                               0.3,
+     'Sehr große Vermögen (Netto-Verlierer)':                      0.4,
+    }
+    for k_, v_ in risiko.items(): P(f"  {k_:&lt;62} {v_:&gt;5.2f}")
+    ohne_g = BEV - sum(risiko.values()); mit_g = BEV - risiko['Sehr große Vermögen (Netto-Verlierer)']
+    P(f"  Anteil mit mehr Geld: ohne Bestandsgarantie {ohne_g/BEV*100:.0f} % | mit Bestandsgarantie {mit_g/BEV*100:.0f} %")
+    out['anteil_gewinner'] = dict(ohne_garantie=ohne_g/BEV, mit_garantie=mit_g/BEV, risikogruppen=risiko)
+
+    # ================= HOMEPAGE: ZEITREIHEN (2010-2035) =================
+    P("\n"+"="*100); P("E | HOMEPAGE-ZEITREIHEN (hist/ohne = bestehende Homepage-Werte; mit = Robust-Pfad 28:28)"); P("="*100)
+    rob = {r['jahr']: r for r in out['pfade']['Robust mit Bausteine']['rows']}
+    J = list(range(2026, 2036))
+    OHNE = dict(schulden=[64,65,65,66,66,67,67,68,68,69],
+                gini=[.313,.313,.314,.314,.315,.315,.316,.316,.317,.317],
+                co2=[608,596,584,572,560,549,538,527,516,505],
+                last=[36.7,36.8,36.9,37.0,37.1,37.2,37.3,37.4,37.5,37.6])
+    MIT_CO2_ALT = [608,596,578,552,524,496,470,446,424,404]
+    gfak = {50: g_n[50]/g_h, 55: g_n[55]/g_h, 60: g_n[60]/g_h}
+    lfak = {a: bel[a]/bel_h for a in STUFEN}
+    mit = dict(schulden=[], gini=[], co2=MIT_CO2_ALT, last=[])
+    for k, j in enumerate(J):
+        if j &lt; START:
+            mit['schulden'].append(OHNE['schulden'][k]); mit['gini'].append(OHNE['gini'][k]); mit['last'].append(OHNE['last'][k])
+        else:
+            r = rob[j]
+            mit['schulden'].append(round(OHNE['schulden'][k] - r['fonds']/r['bip']*100, 1))
+            mit['gini'].append(round(OHNE['gini'][k]*gfak[r['anteil']], 3))
+            mit['last'].append(round(OHNE['last'][k]*lfak[r['anteil']], 1))
+    for key in mit: P(f"  {key:&lt;9} ohne {OHNE[key]}\n  {'':&lt;9} mit  {mit[key]}")
+    out['zeitreihen'] = dict(jahre=J, ohne=OHNE, mit=mit)
+    with open('modell-2828-daten.json','w') as f:
+        json.dump(out, f, ensure_ascii=False, indent=1, default=float)
+</pre></div>
+      <div class="docitem" id="doc-calc" data-title="Beregnerlogik"><pre>/* 28:28 – Rechnerlogik (Recht 2026 vs. 28:28). Alle Beträge EUR/Jahr, Preise 2026.
+   Quelle heute: § 32a EStG 2026, SV-Rechengrößen 2026, Soli-Freigrenze 2026, Kindergeld 259 €. */
+const P = {
+  exmin: 12348, dd: {50: 515, 55: 566, 60: 617}, kindAnteil: 0.5,
+  tarifGrenzen: [12348, 25000, 40000, 55000, 70000, Infinity],
+  tarifSaetze:  [0, .09, .16, .21, .26, .28],
+  svAN: {50: .14, 55: .14, 60: .09},
+  bbgKV: 69750, bbgRV: 101400, anKVPV: .1055, anKinderlos: .006, anRVAV: .106,
+  kindergeld: 259, wk: 1230, sa: 36, soliFG: 20350
+};
+function est2026(zve){ zve=Math.floor(Math.max(0,zve));
+  if(zve&lt;=12348) return 0;
+  if(zve&lt;=17799){const y=(zve-12348)/1e4; return Math.floor((914.51*y+1400)*y);}
+  if(zve&lt;=69878){const z=(zve-17799)/1e4; return Math.floor((173.10*z+2397)*z+1034.87);}
+  if(zve&lt;=277825) return Math.floor(.42*zve-11135.63);
+  return Math.floor(.45*zve-19470.38); }
+function soli2026(e,split){const fg=P.soliFG*(split?2:1); return e&lt;=fg?0:Math.min(.055*e,.119*(e-fg));}
+function heute(b,kinder,partner){
+  const sv=(P.anKVPV+(kinder===0?P.anKinderlos:0))*Math.min(b,P.bbgKV)+P.anRVAV*Math.min(b,P.bbgRV);
+  const zve=Math.max(0,b-sv-(b&gt;0?P.wk:0)-P.sa*(partner?2:1));
+  const e=partner?2*est2026(zve/2):est2026(zve); const s=soli2026(e,partner);
+  return {netto:b-sv-e-s+kinder*P.kindergeld*12, steuer:e+s, sv:sv};
+}
+function est2828(x){let s=0,prev=0;
+  for(let i=0;i&lt;P.tarifSaetze.length;i++){const g=P.tarifGrenzen[i];
+    if(x&gt;prev) s+=(Math.min(x,g)-prev)*P.tarifSaetze[i]; prev=g; if(x&lt;=g) break;}
+  return s;}
+function neu(b,kinder,partner,anteil=50){
+  const dd=P.dd[anteil]*12, sv=P.svAN[anteil]*b, e=est2828(b+dd);
+  const kind=kinder*P.dd[anteil]*P.kindAnteil*12;
+  const p=partner?dd-est2828(dd):0;
+  return {netto:b-sv-e+dd+kind+p, steuer:e, sv:sv, dividende:dd+kind+p};
+}
+/* Effektive Abgabenlast (Anzeige "heute → neu"): (Steuer + SV) / Brutto; neu inkl. Steuer auf die Dividende */
+function abgabenlast(r,b){return b&gt;0?(r.steuer+r.sv)/b*100:0;}
+</pre></div>
+      <div class="docitem" id="doc-club" data-title="Klubberegning"><pre># -*- coding: utf-8 -*-
+"""
+ZEHN LÄNDERDATEIEN  —  Überschlagsrechnung zur Übertragbarkeit von TAX 28:28
+Deutschland, Frankreich, Spanien, Niederlande, Irland, Belgien, Österreich,
+Dänemark, Slowenien, Estland
+
+Die verstärkte Zusammenarbeit nach dem EU-Vertrag verlangt mindestens neun
+Mitgliedstaaten. Zehn Dateien lassen also Spielraum: Es müssen nicht alle
+mitmachen, damit der Verbund zustande kommt.
+
+METHODE UND GRENZEN (bitte mitlesen)
+  Dies ist KEIN Mehrländermodell. Gerechnet wird ausschliesslich die Bruttokostenseite
+  der Digitaldividende bei landesspezifischen Einkommensniveaus. Alle übrigen Bausteine
+  (Tarifaufkommen, Unternehmen, Konsum, Boden, CO2, Abgabenumbau) sind NICHT je Land
+  modelliert; der "rechnerische Satz" ist eine lineare Skalierung des deutschen Modells
+  und ersetzt keine nationale Rechnung.
+
+  IRLAND: Das irische BIP ist durch die Bilanzierung multinationaler Konzerne stark
+  überhöht. Das irische Statistikamt weist deshalb das modifizierte Bruttonationaleinkommen
+  GNI* aus: 334,0 Mrd. EUR gegenüber 602,4 Mrd. EUR BIP im Jahr 2025, also 55,5 %.
+  Für Irland werden beide Bezugsgrössen gerechnet. Massgeblich ist GNI*.
+
+QUELLEN (alle Abrufe September 2026)
+  BIP nominal und BIP/Kopf 2026 (Projektion)   IWF, World Economic Outlook April 2026,
+                                               abgerufen über Worldometer
+  Umrechnung USD/EUR                           EZB-Durchschnittskurs 2026: 0,8611 EUR je USD
+  Median-Äquivalenzeinkommen, Stand 2025       WKO, "Einkommen &amp; Armutsgefährdung",
+                                               Zusammenstellung aus EU-SILC
+                                               -&gt; KEINE Primärquelle, Werte vorläufig
+  Spitzensatz Einkommensteuer 2026             Tax Foundation; Estland: estnische
+                                               Handelskammer (24 % ab 01.01.2026)
+  Unternehmensteuer 2026                       Tax Foundation; Estland auf ausgeschüttete
+                                               Gewinne; Irland 12,5 %, für grosse Konzerne
+                                               faktisch 15 % (globale Mindeststeuer)
+  Mehrwertsteuer-Normalsatz                    allgemein bekannt; Estland 24 % ab 07/2025
+  Defizit 2025, Schulden Ende 2025             Eurostat, Euroindikatoren 22.04.2026
+  Irland GNI* und BIP 2025                     Central Statistics Office Ireland
+  Verlagerte Gewinne, Einstufung als Oase       Tørsløv, Wier und Zucman,
+                                               aktualisierte Zahlen 2019 (Daten 2016)
+  Anteil 0-14 Jahre                            Weltbank; Estland, Irland und Slowenien
+                                               geschätzt
+  EU-Bevölkerung 2025                          Eurostat
+  EU-BIP je Einwohner 2025 (41.570 EUR)        Eurostat
+"""
+
+# ---------------------------------------------------------------- Rahmengrössen
+EUR_JE_USD = 0.8611          # EZB-Durchschnitt 2026
+EU_BEV     = 452.0           # Mio., 2025
+EU_BIP_PK  = 41570.0         # EUR je Einwohner, 2025
+EU_BIP     = EU_BEV * EU_BIP_PK / 1000   # Mrd. EUR, 2025
+L_DE       = 28              # Einheitssatz des deutschen Referenzmodells
+PP_ERTRAG  = 0.55            # % BIP je Prozentpunkt Einheitssatz (deutsches Modell)
+
+# ------------------------------------------------------------------ Länderdaten
+#  bip_usd  BIP nominal 2026, Mrd. USD        pk_usd  BIP/Kopf 2026, USD
+#  median   Median-Äquivalenzeinkommen, EUR/Jahr, Stand 2025
+#  k014     Anteil 0-14 Jahre, %              est     Spitzensatz Einkommensteuer, %
+#  kst      Unternehmensteuer, %              mwst    Mehrwertsteuer-Normalsatz, %
+#  defizit  Finanzierungssaldo 2025, % BIP    schuld  Schuldenstand Ende 2025, % BIP
+#  bezug    Korrekturfaktor der Bezugsgrösse (nur Irland: GNI* statt BIP)
+LAND = {
+ 'Deutschland': dict(bip_usd=5450.00, pk_usd=65303,  median=28891, k014=14,
+                     est=47.5, kst=30.1, mwst=19, defizit=-2.7, schuld=63.5,
+                     bezug=1.0, verlag='verliert'),
+ 'Frankreich':  dict(bip_usd=3600.00, pk_usd=52083,  median=26459, k014=17,
+                     est=55.4, kst=25.8, mwst=20, defizit=-5.1, schuld=115.6,
+                     bezug=1.0, verlag='verliert'),
+ 'Spanien':     dict(bip_usd=2090.00, pk_usd=41563,  median=20367, k014=14,
+                     est=54.0, kst=25.0, mwst=21, defizit=-2.4, schuld=100.7,
+                     bezug=1.0, verlag='verliert'),
+ 'Niederlande': dict(bip_usd=1450.00, pk_usd=79918,  median=34466, k014=15,
+                     est=49.5, kst=25.8, mwst=21, defizit=-1.6, schuld=44.4,
+                     bezug=1.0, verlag='OASE, 90 Mrd. USD zugeflossen (2016)'),
+ 'Irland':      dict(bip_usd=779.38,  pk_usd=140186, median=35138, k014=19,
+                     est=48.0, kst=12.5, mwst=23, defizit=+1.8, schuld=32.9,
+                     bezug=334.0/602.4, verlag='OASE, 117 Mrd. USD zugeflossen (2016)'),
+ 'Belgien':     dict(bip_usd=776.73,  pk_usd=65112,  median=31299, k014=17,
+                     est=53.5, kst=25.0, mwst=21, defizit=-5.2, schuld=107.9,
+                     bezug=1.0, verlag='OASE, 15 Mrd. USD zugeflossen (2016)'),
+ 'Österreich':  dict(bip_usd=623.72,  pk_usd=67761,  median=36546, k014=14,
+                     est=55.0, kst=23.0, mwst=20, defizit=-4.2, schuld=81.5,
+                     bezug=1.0, verlag='verliert'),
+ 'Dänemark':    dict(bip_usd=503.77,  pk_usd=83445,  median=36192, k014=16,
+                     est=60.5, kst=22.0, mwst=25, defizit=+2.9, schuld=27.9,
+                     bezug=1.0, verlag='verliert'),
+ 'Slowenien':   dict(bip_usd=86.73,   pk_usd=40630,  median=20416, k014=15,
+                     est=50.0, kst=22.0, mwst=22, defizit=-2.5, schuld=65.7,
+                     bezug=1.0, verlag='verliert'),
+ 'Estland':     dict(bip_usd=51.63,   pk_usd=37718,  median=17146, k014=15,
+                     est=24.0, kst=22.0, mwst=24, defizit=-2.0, schuld=24.1,
+                     bezug=1.0, verlag='verliert'),
+}
+REIHE = ['Deutschland', 'Frankreich', 'Spanien', 'Niederlande', 'Irland',
+         'Belgien', 'Österreich', 'Dänemark', 'Slowenien', 'Estland']
+
+# ------------------------------------------------- Die eine Regel: der Dividendenanker
+# Deutschland: 515 EUR/Monat = 50 % des amtlichen Existenzminimums 2026 (12.348 EUR/Jahr).
+# Als übertragbare Regel: ein fester Anteil des nationalen Median-Äquivalenzeinkommens.
+DD_DE_MONAT = 515.0
+ANKER = DD_DE_MONAT * 12 / LAND['Deutschland']['median']
+KIND_ANTEIL = 0.5
+
+
+def rechne(d):
+    bip_eur = d['bip_usd'] * EUR_JE_USD                      # Mrd. EUR
+    bev     = d['bip_usd'] * 1000 / d['pk_usd']              # Mio. Einwohner
+    kinder  = bev * d['k014'] / 100
+    erw     = bev - kinder
+    dd_m    = d['median'] * ANKER / 12                       # EUR/Monat, Erwachsene
+    kosten  = (erw * dd_m + kinder * dd_m * KIND_ANTEIL) * 12 / 1000   # Mrd. EUR/Jahr
+    return dict(bip_eur=bip_eur, bezug_eur=bip_eur * d['bezug'], bev=bev,
+                kinder=kinder, erw=erw, dd_m=dd_m, dd_k=dd_m * KIND_ANTEIL,
+                kosten=kosten,
+                quote=kosten / bip_eur * 100,
+                quote_bezug=kosten / (bip_eur * d['bezug']) * 100)
+
+
+R = {k: rechne(v) for k, v in LAND.items()}
+Q_DE = R['Deutschland']['quote']
+for k in REIHE:
+    # Einordnung: das deutsche Modell um die Mehr- oder Minderkosten verschoben
+    R[k]['l_impl'] = L_DE + (R[k]['quote_bezug'] - Q_DE) / PP_ERTRAG
+
+# --------------------------------------------------------------------- Ausgabe
+def de(x, n=0):
+    return f'{x:,.{n}f}'.replace(',', '§').replace('.', ',').replace('§', '.')
+
+print('=' * 104)
+print('ZEHN LÄNDERDATEIEN  —  TAX 28:28, Übertragbarkeit (Überschlag, kein Mehrländermodell)')
+print('=' * 104)
+print(f'Anker der Dividendenregel: {ANKER*100:.2f} % des nationalen Median-Äquivalenzeinkommens')
+print(f'  abgeleitet aus Deutschland: {DD_DE_MONAT:.0f} EUR/Monat bei Median {de(LAND["Deutschland"]["median"])} EUR')
+print(f'  Kinder: {KIND_ANTEIL*100:.0f} % des Erwachsenenbetrags')
+print(f'  Umrechnung: {EUR_JE_USD} EUR je USD (EZB-Durchschnitt 2026)')
+print()
+
+print('[1] GRÖSSE DES KLUBS')
+b_sum = sum(R[k]['bev'] for k in REIHE)
+g_sum = sum(R[k]['bip_eur'] for k in REIHE)
+z_sum = sum(R[k]['bezug_eur'] for k in REIHE)
+k_sum = sum(R[k]['kosten'] for k in REIHE)
+print(f'{"Land":&lt;14}{"Einw. Mio":&gt;11}{"BIP Mrd EUR":&gt;13}{"Bezug Mrd":&gt;12}{"BIP/Kopf EUR":&gt;14}')
+for k in REIHE:
+    r = R[k]
+    print(f'{k:&lt;14}{r["bev"]:&gt;11.2f}{de(r["bip_eur"]):&gt;13}{de(r["bezug_eur"]):&gt;12}'
+          f'{de(LAND[k]["pk_usd"]*EUR_JE_USD):&gt;14}')
+print(f'{"KLUB":&lt;14}{b_sum:&gt;11.2f}{de(g_sum):&gt;13}{de(z_sum):&gt;12}')
+print(f'  Anteil an der EU: Bevölkerung {b_sum/EU_BEV*100:.1f} %, '
+      f'Wirtschaftsleistung rund {g_sum/EU_BIP*100:.0f} %')
+print(f'  (EU-Summe {de(EU_BIP)} Mrd. EUR, Stand 2025; Länderwerte sind Projektionen für 2026,')
+print(f'   die Wirtschaftsquote ist daher eher die Obergrenze)')
+print()
+
+print('[2] DIVIDENDE NACH DER EINEN REGEL UND IHRE BRUTTOKOSTEN')
+print(f'{"Land":&lt;14}{"Median EUR":&gt;11}{"DD EUR/M":&gt;10}{"Kind EUR/M":&gt;12}'
+      f'{"Kosten Mrd":&gt;12}{"% BIP":&gt;8}{"% Bezug":&gt;9}{"rechn. Satz":&gt;13}')
+for k in REIHE:
+    r = R[k]
+    print(f'{k:&lt;14}{de(LAND[k]["median"]):&gt;11}{r["dd_m"]:&gt;10.0f}{r["dd_k"]:&gt;12.0f}'
+          f'{de(r["kosten"]):&gt;12}{r["quote"]:&gt;8.1f}{r["quote_bezug"]:&gt;9.1f}{r["l_impl"]:&gt;13.1f}')
+print(f'{"KLUB":&lt;14}{"":&gt;11}{"":&gt;10}{"":&gt;12}{de(k_sum):&gt;12}'
+      f'{k_sum/g_sum*100:&gt;8.1f}{k_sum/z_sum*100:&gt;9.1f}')
+print('  Bei Irland weicht "% Bezug" vom BIP ab: Bezugsgrösse ist GNI* (55,5 % des BIP).')
+print()
+
+print('[3] WEG ZUM EINHEITSSATZ 28 (Prozentpunkte, + = Erhöhung, - = Senkung)')
+print(f'{"Land":&lt;14}{"ESt heute":&gt;10}{"-&gt; 28":&gt;8}{"KSt heute":&gt;11}{"-&gt; 28":&gt;8}'
+      f'{"MwSt":&gt;7}{"Defizit":&gt;9}{"Schulden":&gt;10}')
+for k in REIHE:
+    d = LAND[k]
+    print(f'{k:&lt;14}{d["est"]:&gt;10.1f}{28-d["est"]:&gt;+8.1f}{d["kst"]:&gt;11.1f}{28-d["kst"]:&gt;+8.1f}'
+          f'{d["mwst"]:&gt;7.0f}{d["defizit"]:&gt;+9.1f}{d["schuld"]:&gt;10.1f}')
+print()
+
+print('[4] GEWINNVERLAGERUNG')
+for k in REIHE:
+    print(f'  {k:&lt;14}{LAND[k]["verlag"]}')
+print()
+
+print('[5] PRÜFGRÖSSEN')
+n_ab = sum(1 for k in REIHE if LAND[k]['est'] &gt; 28)
+n_auf = sum(1 for k in REIHE if LAND[k]['est'] &lt; 28)
+print(f'  Spitzensatz sinkt in {n_ab} von 10 Ländern, steigt in {n_auf}.')
+print(f'  Unternehmensteuer sinkt in {sum(1 for k in REIHE if LAND[k]["kst"] &gt; 28)} von 10, '
+      f'steigt in {sum(1 for k in REIHE if LAND[k]["kst"] &lt; 28)}.')
+print(f'  Rechnerischer Satz im Korridor 25-30: '
+      f'{sum(1 for k in REIHE if 25 &lt;= R[k]["l_impl"] &lt;= 30)} von 10.')
+print(f'  Spanne der Dividende: {min(R[k]["dd_m"] for k in REIHE):.0f} bis '
+      f'{max(R[k]["dd_m"] for k in REIHE):.0f} EUR/Monat.')
+print('  Verstärkte Zusammenarbeit nach EU-Vertrag verlangt mindestens 9 Mitgliedstaaten:')
+print('  zehn Dateien lassen einen Platz Spielraum.')
+print('  Von den fünf EU-Steueroasen bei Tørsløv, Wier und Zucman (Belgien, Irland,')
+print('  Luxemburg, Malta, Niederlande) sind drei dabei; Luxemburg und Malta fehlen.')
+print()
+
+print('[6] WAS DIESE RECHNUNG NICHT ZEIGT')
+for s in ['Bestehende Sozialleistungen, Beitragssysteme und Steuerbasen je Land.',
+          'Kaufkraftunterschiede: 306 EUR in Estland sind mehr wert als 306 EUR in Irland.',
+          'Dänemark und Estland finanzieren ihren Sozialstaat überwiegend aus Steuern;',
+          '  der Hebel "Beiträge senken" fehlt dort weitgehend.',
+          'Belgien, Irland und die Niederlande verlieren bei der Besteuerung am Kundenort',
+          '  Aufkommen; das ist hier nicht gegengerechnet.',
+          'Irlands Körperschaftsteuer trägt einen aussergewöhnlich hohen Anteil des',
+          '  Staatshaushalts; der Übergang wäre dort der härteste des Klubs.',
+          'Der Median-Wert stammt aus einer Zusammenstellung, nicht aus der Primärstatistik.']:
+    print('  - ' + s)
+
+# ------------------------------------------------------- Zahlen für die Webseite
+import json
+web = {k: dict(dd=round(R[k]['dd_m']), dd_kind=round(R[k]['dd_k']),
+               kosten=round(R[k]['kosten']), quote=round(R[k]['quote'], 1),
+               quote_bezug=round(R[k]['quote_bezug'], 1),
+               l=round(R[k]['l_impl'], 1), bev=round(R[k]['bev'], 2),
+               bip=round(R[k]['bip_eur']),
+               **{x: LAND[k][x] for x in ('median', 'est', 'kst', 'mwst',
+                                          'defizit', 'schuld')})
+       for k in REIHE}
+web['_klub'] = dict(bev=round(b_sum, 1), bip=round(g_sum), kosten=round(k_sum),
+                    quote=round(k_sum / g_sum * 100, 1),
+                    eu_bev=round(b_sum / EU_BEV * 100, 1),
+                    eu_bip=round(g_sum / EU_BIP * 100),
+                    anker=round(ANKER * 100, 1))
+json.dump(web, open('/home/claude/site/klub10-daten.json', 'w'), indent=1, ensure_ascii=False)
+print('\n-&gt; /home/claude/site/klub10-daten.json')
+</pre></div>
+      <div class="docitem" id="doc-src" data-title="Antagelser og kilder"><pre>ASSUMPTIONS AND SOURCES — TAX 28:28
+As of September 2026. This list also names what is not evidenced.
+
+1 | GERMAN LAW 2026 (basis of the calculator)
+  Income tax schedule, § 32a EStG 2026, basic allowance 12,348 €
+  Solidarity surcharge, exemption threshold 20,350 €
+  Contribution rates and ceilings 2026: ceiling for health and
+    long-term care insurance 69,750 €, for pension and
+    unemployment insurance 101,400 €; employee share of health
+    and care insurance 10.55 %, childless surcharge 0.6 %,
+    pension and unemployment insurance 10.6 %
+  Child benefit 259 € a month
+  Average earnings 51,944 €
+  Not included: comparison with the child tax allowance,
+    church tax, work-related expenses above the standard amount
+
+2 | PARAMETERS OF 28:28
+  Bracket tariff 0 / 9 / 19 / 24 / 27 / 28 %
+    thresholds 12,348 / 25,000 / 40,000 / 55,000 / 70,000 €
+  VAT label 5 / 11 / 20 / 25 / 28 %, effective rate 21.5 %
+    weights of the steps 10 / 10 / 20 / 30 / 30 % — ASSUMPTION
+  Inheritance: allowance 200,000 € per acquisition, rate 28 %, no
+    exemptions. Deferral for businesses and real property: rate in year t
+    = refinancing rate + (t-1)/9 x margin, full market rate from year 10.
+    No write-off; the balance is a charge on the asset, due on sale.
+    Only the interest is payable as it falls due; the balance stays
+    a charge on the asset. Present value to the state per 100 EUR:
+    102 after five, 108 after ten, 121 after twenty years — no loss,
+    and the longer the deferral, the more.
+  Carbon: no nationally set price. Volumes under § 44(2) of the Fuel
+    Emissions Trading Act (third amending act): 252.4 m t in 2026,
+    180.6 m t in 2030. Price corridor under § 10(2) sentence 4: 55 to
+    65 EUR for 2026 and 2027. From 2028 a market-based price following
+    the EU ETS 1 average (§ 10(3) sentence 2 no. 4); transition into
+    ETS 2, whose start Regulation (EU) 2026/667 postponed by a year.
+    The price path is therefore a European demand, not a national one.
+  Property tax: on land only, revenue-neutral. Land value
+    3,529 bn EUR from the sectoral balance sheets; a rate of 0.22 to
+    0.44 % carries today's 15.5 bn EUR. NOT additional revenue.
+  Digital dividend 50 % of subsistence income = 515 € a month,
+    steps 55 % = 566 € and 60 % = 617 €, children half
+  Employee social contributions 14 %, 9 % from the 617 € step
+  Crisis reserve 2 % of GDP, flexible investment up to 1 % a year
+
+3 | BEHAVIOURAL RESPONSES (literature)
+  Elasticity of taxable income 0.25 / 0.35 / 0.50 by scenario.
+    Literature: Doerrenberg, Peichl and Siegloch 0.35 to 0.68;
+    Werdt 0.36
+  Semi-elasticity of reported profits 0.8 / 1.0 / 1.5;
+    meta-analysis Heckemeyer and Overesch about 0.8
+  Realisation elasticity for capital gains
+    0.7 / 0.8 / 1.0 — ASSUMPTION
+
+4 | EVIDENCE STATUS (in full in the "Evidence status" section)
+  Substantiated from an official source:
+    Position 03 Inheritance — Federal Statistical Office of Germany,
+      inheritance and gift tax statistics 2024, statistical report
+      73611, tables 73611-01, -04, -05, -06, -07. 245,540
+      acquisitions, 113.2 bn EUR. Revenue at a 200,000 EUR
+      allowance and 28 %: 20.98 bn EUR against 13.28 bn today.
+    Position 08 Dividend — level and link to the subsistence minimum.
+  Order of magnitude with a source:
+    Position 05 Corporations — OECD, Corporate Tax Statistics,
+      dataset DSD_CBCR@DF_CBCRI (1.1), 2016 to 2023, 63 reporting
+      jurisdictions. Own apportionment under four keys, normalised
+      on 26 continuously reporting states: +5 to +14 bn EUR,
+      median +8. The single-factor key is a design choice.
+  Not yet computed:
+    Revenue from the land value charge
+    Size of the climate-damaging subsidies to be removed. The Federal
+      Environment Agency reports 65.4 bn EUR for 2018. Own allocation:
+      about 47 bn of that would raise revenue, 12.7 bn are
+      electricity-price reliefs with no budget effect, 4.8 bn are
+      spending. Several items have since lapsed (EEG levy 2022,
+      peak-load compensation 2023). A current edition is missing.
+    Weights of the VAT steps
+    Page count of tax law (the figure in the diagnosis)
+    The share of winners is a model estimate, not a
+      microsimulation. A check with GETTSIM or EUROMOD on SOEP
+      or EU-SILC microdata is still outstanding.
+  Open from the decisions on deferral:
+    Transition gap of about 4.5 bn EUR a year over ten years
+      (45 bn cumulative) — a pure shift in timing, but it belongs
+      in the budget of the early years.
+    Compatibility of the interest ladder with § 234 of the German
+      Fiscal Code.
+    Administrative effort at a 200,000 EUR allowance: the statistics
+      do not say how many estates would newly have to be assessed;
+      they only cover what reaches the tax office today.
+    The assessed tax of 13.28 bn EUR is a gross figure; the
+      remissions under the exemption needs test (§ 28a Inheritance
+      Tax Act) are not included. The additional revenue is therefore
+      understated rather than overstated.
+
+5 | BUDGET RECONCILIATION
+  Checks R1 to R6 corrected six items of the model, all downwards:
+  inheritance 35.9 to 21.0 (allowance 200,000 instead of none); carbon
+  70.0 to 33.0 (the statutory price corridor instead of 100 to 150 EUR);
+  land levy 20.0 to 0.0 (revenue-neutral, see section 2); companies
+  157.6 to 152.0; wealth 32.7 to 30.0. Together −80.2 bn EUR. The
+  first-year balance therefore falls from +67.3 to −12.9 bn EUR.
+  The path carries that nonetheless: the fund starts with 100 bn EUR,
+  and investment comes out of the fund under rule 1, not out of the
+  annual balance. What was tested is therefore not the annual balance
+  but the twenty-year path. Without a counter-measure it has no gap
+  year in the first two scenarios and five in the stress scenario.
+  COUNTER-MEASURE: the middle steps of both taxes rise by 3 points —
+  income tax 16/21/26 to 19/24/27 %, VAT 17/22 to 20/25 %. That yields
+  38.9 bn EUR against a need of 36.1. After it no scenario has a gap
+  year, and the cautious one reaches 99.5 % of the investment target.
+  WHAT IT COSTS: because the top rate is fixed at 28 %, the increase
+  hits the top only with a fixed amount. The additional burden runs
+  from 0.86 % of income at the top to 2.45 % in the middle, so it does
+  not rise with income. None of the 335 combinations tested avoids
+  this — with a fixed top rate it is unavoidable. The net position
+  including the dividend remains progressive.
+
+  Reference point: this range measures the step of this change
+  (VAT 20.0 to 21.5 %). Measured against CURRENT law (16.5 %) the net
+  position including the dividend turns negative between 69,000 and
+  105,000 EUR of market income.
+  NOT COUNTED: including civil servants and the self-employed. It is
+  justified as equal treatment, not as financing — see position 10 in
+  the evidence table.
+
+6 | NOT PART OF THIS CALCULATION
+  The state's existing structural deficit of around 2.7 % of
+  GDP. The reform balances in itself; it does not also repair
+  the inherited position.
+
+7 | COUNTRY FILES
+  GDP and GDP per capita: IMF, April 2026 projection
+  Conversion: ECB average rate 2026, 0.8611 EUR per USD
+  Median equivalised income: WKO compilation of EU-SILC
+    data, as of 2025 — not a primary source
+  Top income tax and corporate rates: Tax Foundation 2026;
+    Estonia from January 2026 per the Estonian Chamber of
+    Commerce, on distributed profits
+  Deficit 2025 and debt at end-2025: Eurostat, euro
+    indicators of 22 April 2026
+  Ireland: GNI* 334.0 bn EUR against GDP 602.4 bn EUR (2025),
+    Central Statistics Office Ireland. For Ireland GNI* is
+    the reference measure. Concentration of corporation tax:
+    Irish Fiscal Advisory Council, 2024 data.
+  Shifted profits and classification as a tax haven:
+    Tørsløv, Wier and Zucman, updated figures 2019 (2016
+    data). Belgium, Ireland, Luxembourg, Malta and the
+    Netherlands are counted there as EU tax havens.
+  Share aged 0 to 14: World Bank; Estonia, Ireland, Belgium
+    and Slovenia estimated
+  Estonian land tax: Estonian Tax and Customs Board
+</pre></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---- Rechnerlogik: Recht 2026 gegen 28:28. Alle Beträge EUR/Jahr, Preise 2026. ---- */
+const P={exmin:12348,dd:{50:515,55:566,60:617},kindAnteil:.5,
+ tarifGrenzen:[12348,25000,40000,55000,70000,Infinity],tarifSaetze:[0,.09,.19,.24,.27,.28],
+ svAN:{50:.14,55:.14,60:.09},bbgKV:69750,bbgRV:101400,anKVPV:.1055,anKinderlos:.006,
+ anRVAV:.106,kindergeld:259,wk:1230,sa:36,soliFG:20350};
+function est2026(z){z=Math.floor(Math.max(0,z));
+ if(z<=12348)return 0;
+ if(z<=17799){const y=(z-12348)/1e4;return Math.floor((914.51*y+1400)*y);}
+ if(z<=69878){const x=(z-17799)/1e4;return Math.floor((173.10*x+2397)*x+1034.87);}
+ if(z<=277825)return Math.floor(.42*z-11135.63);
+ return Math.floor(.45*z-19470.38);}
+function soli2026(e,sp){const fg=P.soliFG*(sp?2:1);return e<=fg?0:Math.min(.055*e,.119*(e-fg));}
+function heute(b,k,p){const sv=(P.anKVPV+(k===0?P.anKinderlos:0))*Math.min(b,P.bbgKV)+P.anRVAV*Math.min(b,P.bbgRV);
+ const z=Math.max(0,b-sv-(b>0?P.wk:0)-P.sa*(p?2:1));
+ const e=p?2*est2026(z/2):est2026(z),s=soli2026(e,p);
+ return {netto:b-sv-e-s+k*P.kindergeld*12,steuer:e+s,sv:sv};}
+function est2828(x){let s=0,pr=0;for(let i=0;i<P.tarifSaetze.length;i++){const g=P.tarifGrenzen[i];
+ if(x>pr)s+=(Math.min(x,g)-pr)*P.tarifSaetze[i];pr=g;if(x<=g)break;}return s;}
+function neu(b,k,p,a){const dd=P.dd[a]*12,sv=P.svAN[a]*b,e=est2828(b+dd);
+ const kd=k*P.dd[a]*P.kindAnteil*12,pt=p?dd-est2828(dd):0;
+ return {netto:b-sv-e+dd+kd+pt,steuer:e,sv:sv,dividende:dd+kd+pt};}
+function last(r,b){return b>0?(r.steuer+r.sv)/b*100:0;}
+
+const LOC='da-DK';
+const $=id=>document.getElementById(id);
+/* useGrouping:'always' — ohne das lassen es-ES und et-EE vierstellige Zahlen
+   ungetrennt, was in einer Spalte neben 29.120 wie ein Fehler aussieht. */
+const eur=v=>Math.round(v).toLocaleString(LOC,{useGrouping:'always'})+' €';
+let stufe=50,kinder=0;
+function konsumquote(n){return n<25000?.95:n<50000?.85:n<80000?.75:.60;}
+function labelKosten(n){const r=.215,r0=.165;return n*konsumquote(n)*(r/(1+r)-r0/(1+r0));}
+function calc(){
+ const b=+$('brutto').value,p=$('partner').checked;
+ $('bOut').textContent=eur(b);
+ const h=heute(b,kinder,p),n=neu(b,kinder,p,stufe);
+ const mw=labelKosten(n.netto),d=n.netto-mw-h.netto;
+ $('rHeute').textContent=eur(h.netto);$('rNeu').textContent=eur(n.netto);
+ $('rDD').textContent=eur(n.dividende);$('rMw').textContent='−'+eur(mw);
+ $('rEff').textContent=b>0?last(h,b).toFixed(0)+' % → '+last(n,b).toFixed(0)+' %':'–';
+ const mx=Math.max(h.netto,n.netto,1);
+ $('barT').style.width=(h.netto/mx*100)+'%';$('barN').style.width=(n.netto/mx*100)+'%';
+ $('bT').textContent=eur(h.netto);$('bN').textContent=eur(n.netto);
+ const pl=$('rPlus');pl.textContent=(d>=0?'+':'−')+eur(Math.abs(d));pl.classList.toggle('neg',d<0);
+ $('rPlusSub').textContent=(d>=0?'mere om året efter forbrugsmærket,':'mindre om året efter forbrugsmærket,')+' '+(d>=0?'+':'−')+eur(Math.abs(d)/12)+' om måneden';}
+['brutto'].forEach(i=>$(i).addEventListener('input',calc));
+$('partner').addEventListener('change',calc);
+document.querySelectorAll('[data-stufe]').forEach(bt=>bt.addEventListener('click',()=>{stufe=+bt.dataset.stufe;
+ document.querySelectorAll('[data-stufe]').forEach(x=>x.setAttribute('aria-pressed',x===bt));calc();}));
+document.querySelectorAll('[data-kinder]').forEach(bt=>bt.addEventListener('click',()=>{kinder=+bt.dataset.kinder;
+ document.querySelectorAll('[data-kinder]').forEach(x=>x.setAttribute('aria-pressed',x===bt));calc();}));
+calc();
+
+/* ---- Zeitreihen ---- */
+const YEARS=[];for(let y=2010;y<=2035;y++)YEARS.push(y);
+const METRICS=[{"name": "Statsgæld", "unit": "% af BNP, netto efter fondsreserve", "dec": 0, "hist": [82, 79, 81, 78, 75, 72, 69, 65, 62, 59, 68, 69, 66, 64, 63, 63], "ohne": [64, 65, 65, 66, 66, 67, 67, 68, 68, 69], "mit": [64, 65, 62.3, 62.9, 62.9, 63.7, 63.4, 64.0, 63.5, 64.0]}, {"name": "Indkomstulighed", "unit": "Gini-koefficient", "dec": 2, "hist": [0.286, 0.288, 0.289, 0.292, 0.293, 0.295, 0.297, 0.299, 0.3, 0.297, 0.3, 0.305, 0.308, 0.31, 0.311, 0.312], "ohne": [0.313, 0.313, 0.314, 0.314, 0.315, 0.315, 0.316, 0.316, 0.317, 0.317], "mit": [0.313, 0.313, 0.274, 0.274, 0.269, 0.269, 0.269, 0.269, 0.27, 0.27]}, {"name": "CO₂-udledning", "unit": "mio. t CO₂-ækvivalenter", "dec": 0, "hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 620], "ohne": [608, 596, 584, 572, 560, 549, 538, 527, 516, 505], "mit": [608, 596, 578, 552, 524, 496, 470, 446, 424, 404]}, {"name": "Belastning af gennemsnitslønnen", "unit": "% af bruttoen (indkomstskat og bidrag)", "dec": 0, "hist": [35.0, 35.2, 35.4, 35.5, 35.6, 35.7, 35.8, 35.9, 36.0, 35.8, 35.9, 36.1, 36.3, 36.4, 36.5, 36.5], "ohne": [36.7, 36.8, 36.9, 37.0, 37.1, 37.2, 37.3, 37.4, 37.5, 37.6], "mit": [36.7, 36.8, 29.8, 29.8, 30.3, 30.3, 30.4, 30.5, 30.6, 30.7]}];
+let metric=0;
+const NS='http://www.w3.org/2000/svg';
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+const tabs=$('tabs');
+METRICS.forEach((m,i)=>{const b=document.createElement('button');b.type='button';b.textContent=m.name;
+ b.setAttribute('aria-pressed',i===0);b.addEventListener('click',()=>{metric=i;
+ [...tabs.children].forEach((x,j)=>x.setAttribute('aria-pressed',j===i));draw();});tabs.appendChild(b);});
+function draw(){
+ const m=METRICS[metric],svg=$('chart');svg.innerHTML='';$('unit').textContent=m.unit;
+ const W=960,H=400,L=64,R=26,T=20,B=40;
+ const all=[...m.hist,...m.ohne,...m.mit];
+ let lo=Math.min(...all),hi=Math.max(...all);const pad=(hi-lo)*.12||1;lo-=pad;hi+=pad;
+ const X=i=>L+(W-L-R)*i/(YEARS.length-1);
+ const Y=v=>T+(H-T-B)*(1-(v-lo)/(hi-lo));
+ for(let g=0;g<=4;g++){const v=lo+(hi-lo)*g/4,y=Y(v);
+  svg.appendChild(el('line',{x1:L,y1:y,x2:W-R,y2:y,class:'grid'}));
+  const t=el('text',{x:L-10,y:y+4,'text-anchor':'end',class:'axis'});
+  t.textContent=v.toLocaleString(LOC,{minimumFractionDigits:m.dec,maximumFractionDigits:m.dec});svg.appendChild(t);}
+ YEARS.forEach((yr,i)=>{if(yr%5===0){const t=el('text',{x:X(i),y:H-B+24,'text-anchor':'middle',class:'axis'});
+  t.textContent=yr;svg.appendChild(t);}});
+ const x28=X(YEARS.indexOf(2028));
+ svg.appendChild(el('line',{x1:x28,y1:T,x2:x28,y2:H-B,class:'marker'}));
+ const lb=el('text',{x:x28+6,y:T+12,class:'axis'});lb.textContent='Start 28:28';svg.appendChild(lb);
+ const path=(v,i0,c)=>{let d='';v.forEach((y,i)=>{d+=(i?'L':'M')+X(i0+i).toFixed(1)+' '+Y(y).toFixed(1);});
+  svg.appendChild(el('path',{d:d,class:c}));};
+ const lastI=m.hist.length-1;
+ path(m.hist,0,'hist');path([m.hist[lastI],...m.ohne],lastI,'ohne');path([m.hist[lastI],...m.mit],lastI,'mit');
+ [['#B4452F',m.ohne],['#1D7A4F',m.mit]].forEach(([c,a])=>{
+  const t=el('text',{x:X(YEARS.length-1)+4,y:Y(a[a.length-1])+4,'text-anchor':'start',
+   'font-family':'IBM Plex Mono,monospace','font-size':12,'font-weight':500,fill:c});
+  t.textContent=a[a.length-1].toLocaleString(LOC,{minimumFractionDigits:m.dec,maximumFractionDigits:m.dec});
+  svg.appendChild(t);});}
+draw();
+
+/* ---- Anlagen ---- */
+(function(){const modal=$('docmodal'),title=$('doctitle');
+ document.querySelectorAll('.doclink').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();
+  document.querySelectorAll('.docitem').forEach(d=>d.style.display='none');
+  const d=$(a.dataset.doc);d.style.display='block';title.textContent=d.dataset.title;
+  modal.style.display='flex';document.body.style.overflow='hidden';
+  modal.querySelector('.docbody').scrollTop=0;}));
+ const close=()=>{modal.style.display='none';document.body.style.overflow='';};
+ $('docclose').addEventListener('click',close);
+ modal.addEventListener('click',e=>{if(e.target===modal)close();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});})();
+</script>
+</body></html>

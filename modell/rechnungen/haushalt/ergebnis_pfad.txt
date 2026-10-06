@@ -1,0 +1,95 @@
+====================================================================================================
+R9 — DER 20-JAHRES-PFAD MIT KORRIGIERTEN EINNAHMEN
+====================================================================================================
+
+[1] GEGENPROBE: das Modell läuft unverändert
+      Einkommensteuer (inkl. steuerpfl. DD)         313,3
+      Kapitalerträge 28 %                            48,8
+      Mehrwertsteuer (Label 5–28 %)                 375,9
+      Unternehmen & Plattformen 28 %                157,6
+      Erbschaft 28 %                                 35,9
+      Vermögen-Mindeststeuer (anrechenbar)           20,7
+      CO₂-Abgabe 100 €/t (netto)                     55,0
+      Sonstige Steuern                              165,0
+      Bausteine Jahr 1                               55,0
+
+[2] DIE KORREKTUREN, AUF DIE KONSTANTEN DES MODELLS ZURÜCKGERECHNET
+    Die Prüfungen liefern Zielwerte nach Verhaltensanpassung. Die Konstanten
+    werden so gesetzt, dass die Formeln des Modells diese Zielwerte treffen.
+
+      CO2 (Einnahmen)           55,0 -> 33,0     R4: BEHG-Korridor 55-65 EUR, Menge sinkt
+      Erbschaft                 33,0 -> 19,3     R1b: 21,0 Mrd bei 200.000 EUR Freibetrag
+      Unternehmen              145,0 -> 139,8    R6: Aufteilung bringt weniger als gebucht
+      Vermögensteuer-Baustein   12,0 -> 9,3      R5a: 30 Mrd nach Verhaltensanpassung
+      Bodenwertabgabe           20,0 -> 0,0      Position 04 ist aufkommensneutral
+      CO2-Pfad-Baustein         15,0 -> 0,0      R4: ab 2028 kein nationaler Preis
+
+[3] EINNAHMEN NACH KORREKTUR, Jahr 1, Szenario Robust, DD-Stufe 50 %
+      Einkommensteuer (inkl. steuerpfl. DD)         313,3
+      Kapitalerträge 28 %                            48,8
+      Mehrwertsteuer (Label 5–28 %)                 375,9
+      Unternehmen & Plattformen 28 %                152,0
+      Erbschaft 28 %                                 21,0
+      Vermögen-Mindeststeuer (anrechenbar)           20,7
+      CO₂-Abgabe (BEHG-Korridor, netto)              33,0
+      Sonstige Steuern                              165,0
+      Bausteine                                      29,3
+      ---------------------------------------------------
+      Einnahmen zusammen                          1.159,0
+      Ausgaben                                    1.171,9
+      SALDO JAHR 1                                  -12,8
+
+[4] DER PFAD BEIM UNVERÄNDERTEN TARIF 0/9/16/21/26/28 · 5/11/17/22/28
+Szenario        Saldo J1  min. Saldo  Jahre mit Lücke  Investquote  Fonds Ende   55 %   60 %
+Optimistisch        -8,3        -8,3                0       93,5 %         384   2032   2042
+Robust             -12,8       -12,8                0       91,1 %         353   2038      –
+Stress             -30,2       -86,4                5       42,4 %         247      –      –
+
+[5] DAS ERSETZT DEN ZIELSALDO VON +42 MRD
+
+    Der Saldo des ersten Jahres ist negativ, und der Pfad trägt trotzdem.
+    Der Fonds startet mit 100 Mrd EUR, die Einnahmen wachsen mit 3 %, die
+    Ausgaben der Digitaldividende werden nur angepasst, solange der Puffer
+    steht. In Robust und Optimistisch entsteht in 20 Jahren KEIN Lückenjahr,
+    und 91 bis 94 % des Investitionsziels werden erreicht.
+
+    Mein bisheriges Kriterium "Saldo Jahr 1 = +42 Mrd" war falsch gewählt.
+    Es ist das Investitionsziel EINES Jahres, nicht die Bedingung, unter der
+    die Regel funktioniert. Die Lücke von 54,9 Mrd EUR, die ich daraus
+    abgeleitet habe, ist damit gegenstandslos. Das Kriterium, das bleibt:
+
+      kein Lückenjahr in 20 Jahren, auch im Stress-Szenario,
+      und eine Investitionsquote nahe 100 % im Robust-Szenario.
+
+    Daran gemessen fehlt etwas — aber viel weniger.
+
+[6] WIE VIEL ZUSÄTZLICHES AUFKOMMEN DIE KRITERIEN VERLANGEN
+      kein Lückenjahr im Stress-Szenario              24,0 Mrd EUR
+      Investitionsquote 99 % im Robust-Szenario       36,1 Mrd EUR
+      beides zusammen                                 36,1 Mrd EUR
+
+[7] DER PFAD MIT DEM ZUSATZ VON 36,1 MRD EUR
+Szenario        Saldo J1  min. Saldo  Jahre mit Lücke  Investquote  Fonds Ende   55 %   60 %
+Optimistisch       +27,8       +27,8                0      100,0 %         720   2031   2036
+Robust             +23,3       +23,3                0       99,0 %         385   2033      –
+Stress              +5,9       -49,3                0       75,8 %         136   2042      –
+
+[8] GEGENPROBE: DER GEWÄHLTE TARIF IM PFADMODELL
+    Einkommensteuer 0/9/19/24/27/28 · Mehrwertsteuer 5/11/20/25/28
+    Statische Schätzung aus R7c: +38,9 Mrd EUR.
+
+Szenario        Saldo J1  min. Saldo  Jahre mit Lücke  Investquote  Fonds Ende   55 %   60 %
+Optimistisch       +32,4       +32,4                0      100,0 %         773   2031   2035
+Robust             +26,0       +26,0                0       99,5 %         420   2032      –
+Stress              +5,2       -50,0                0       75,2 %         220   2044      –
+
+    Das Modell rechnet den Tarif mit seinem eigenen Code und kommt im
+    Robust-Szenario auf +38,9 Mrd EUR gegenüber dem alten Tarif, gegen
+    +38,9 aus meiner Nachimplementierung — Abweichung 0,00 Mrd.
+    Das bestätigt die Übertragung, nicht die Ökonomie: es sind dieselben
+    Formeln, zweimal getippt. Geprüft ist damit, dass ich mich nicht
+    verrechnet habe, nicht dass die Elastizitäten stimmen.
+
+    Alle drei Szenarien ohne Lückenjahr. Damit ist das Kriterium aus [5]
+    erfüllt, und zwar auch im Stress-Szenario, das bisher fünf Lückenjahre
+    hatte.

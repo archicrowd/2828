@@ -1,0 +1,494 @@
+<title>Rahmenstruktur A und B</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: schmale Textspalte auf Papiergrund, Rechenwerk in Karten, Zahlen durchweg in Mono. */
+:root{
+  --paper:#F6F7F4; --card:#FFFFFF; --ink:#0F3B5C; --dim:#5A7186;
+  --line:#B9C9D6; --line-soft:#D8E1E8;
+  --accent:#1D7A4F; --accent-bg:#E7F2EC; --warn:#B4452F;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#0B1F30; --card:#10293E; --ink:#E6EDF3; --dim:#9BB0C2;
+  --line:#2C4760; --line-soft:#1D374D;
+  --accent:#64C295; --accent-bg:#11322A; --warn:#E39079;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0B1F30; --card:#10293E; --ink:#E6EDF3; --dim:#9BB0C2;
+  --line:#2C4760; --line-soft:#1D374D;
+  --accent:#64C295; --accent-bg:#11322A; --warn:#E39079;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.65;-webkit-text-size-adjust:100%}
+.wrap{max-width:1020px;margin:0 auto;padding-inline:24px}
+@media(max-width:480px){.wrap{padding-inline:16px}}
+h1,h2,h3{text-wrap:balance;margin:0}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Kopfleiste */
+.tb{border-bottom:1.5px solid var(--ink);background:var(--paper);position:sticky;
+  top:env(safe-area-inset-top,0px);z-index:50}
+.tb .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding-block:12px}
+.tb .mark{font-family:var(--disp);font-size:19px;font-weight:700;letter-spacing:-.5px;
+  text-decoration:none}
+.tb nav{display:flex;gap:18px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+  flex-wrap:wrap;justify-content:flex-end}
+.tb nav a{text-decoration:none;color:var(--dim);text-transform:uppercase}
+.tb nav a:hover{color:var(--ink)}
+@media(max-width:620px){.tb nav a:nth-child(n+4){display:none}}
+
+/* Kopf */
+.hero{padding-block:58px 46px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);text-align:center;margin-bottom:18px}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(27px,4.4vw,42px);
+  line-height:1.12;text-align:center;max-width:800px;margin-inline:auto}
+.hero .claim{font-family:var(--disp);font-weight:500;font-size:clamp(17px,2.2vw,21px);
+  text-align:center;color:var(--accent);margin-block:14px 0}
+.hero p.sub{text-align:center;max-width:640px;margin:20px auto 32px;color:var(--dim);font-size:17px}
+.stamps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);
+  background:var(--line);gap:1px}
+@media(max-width:760px){.stamps{grid-template-columns:repeat(2,1fr)}}
+.stamp{background:var(--paper);padding:18px 14px;text-align:center}
+.stamp .v{font-family:var(--mono);font-size:clamp(20px,3vw,26px);font-weight:500;color:var(--accent);
+  font-variant-numeric:tabular-nums}
+.stamp .l{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--dim);
+  text-transform:uppercase;margin-top:6px;line-height:1.45}
+
+/* Abschnitte */
+section{padding-block:56px;border-bottom:1px solid var(--line);scroll-margin-top:68px}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(23px,3vw,30px);margin-bottom:12px}
+.lede{max-width:680px;color:var(--dim);margin-bottom:30px}
+.fine{font-size:13.5px;color:var(--dim);line-height:1.6;max-width:760px;margin-top:18px}
+
+/* Drei Sätze */
+.satz{display:grid;grid-template-columns:auto 1fr;gap:20px;padding-block:20px;
+  border-bottom:1px solid var(--line-soft);max-width:800px}
+.satz:last-of-type{border-bottom:none}
+.satz .n{font-family:var(--disp);font-weight:700;font-size:34px;color:var(--accent);line-height:1}
+.satz b{font-family:var(--disp);font-weight:500;font-size:19px;display:block;margin-bottom:4px}
+.satz p{margin:0;color:var(--dim);font-size:16px}
+.schluss{max-width:800px;margin-top:24px;padding:18px 22px;background:var(--accent-bg);
+  border-left:3px solid var(--accent);font-size:16px}
+
+/* Zwei Ebenen */
+.ebenen{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.ebenen{grid-template-columns:1fr}}
+.ebene{border:1.5px solid var(--ink);background:var(--card);padding:22px;min-width:0}
+.ebene .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim)}
+.ebene h3{font-family:var(--disp);font-size:20px;font-weight:700;margin-block:4px 2px}
+.ebene .quote{font-family:var(--mono);font-size:24px;color:var(--accent);font-weight:500;
+  font-variant-numeric:tabular-nums}
+.ebene .quote small{font-family:var(--mono);font-size:12px;color:var(--dim);display:block;
+  font-weight:400;letter-spacing:.04em;text-transform:uppercase;margin-top:2px}
+.ebene ul{list-style:none;padding:0;margin:16px 0 0;font-size:15px}
+.ebene li{display:flex;justify-content:space-between;gap:12px;padding-block:7px;
+  border-bottom:1px solid var(--line-soft)}
+.ebene li:last-child{border-bottom:none}
+.ebene li span{font-family:var(--mono);font-size:13.5px;color:var(--dim);white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+
+/* Geldfluss */
+.flow{border:1.5px solid var(--ink);background:var(--card);padding:26px}
+@media(max-width:560px){.flow{padding:18px}}
+.flow .cap{font-family:var(--disp);font-size:14px;font-weight:500}
+.flow .sum{font-family:var(--mono);font-size:22px;font-weight:500;margin-block:2px 14px;
+  font-variant-numeric:tabular-nums}
+.flow .step+.step{margin-top:30px;padding-top:26px;border-top:1px solid var(--line-soft)}
+.bar{display:flex;gap:2px;margin-top:10px}
+.bar>div{padding:11px 13px;min-width:0}
+.bar b{font-family:var(--mono);font-size:15px;font-weight:500;display:block;
+  font-variant-numeric:tabular-nums}
+.bar i{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+  font-style:normal;display:block;margin-top:3px;line-height:1.4}
+.bar .a{background:var(--ink);color:var(--paper)}
+.bar .a i{color:var(--line)}
+.bar .b{background:var(--line-soft)}
+.bar .b i{color:var(--dim)}
+.bar .f{background:var(--dim);color:var(--paper)}
+.bar .f i{color:var(--line-soft)}
+.bar .d{background:var(--accent);color:#fff}
+.bar .d i{color:rgba(255,255,255,.82)}
+@media(max-width:620px){.bar{flex-direction:column}.bar>div{flex:none!important}}
+
+/* Formel */
+.formel{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:28px}
+@media(max-width:620px){.formel{grid-template-columns:1fr}}
+.formel div{background:var(--card);padding:24px;text-align:center}
+.formel .z{font-family:var(--mono);font-size:clamp(26px,4.5vw,36px);font-weight:500;
+  color:var(--accent);font-variant-numeric:tabular-nums}
+.formel .t{font-family:var(--disp);font-size:15px;margin-top:6px}
+
+/* Rechner */
+.calc{display:grid;grid-template-columns:1fr 1.15fr;gap:34px;border:1.5px solid var(--ink);
+  background:var(--card);padding:28px}
+@media(max-width:820px){.calc{grid-template-columns:1fr;gap:26px;padding:20px}}
+.calc>div{min-width:0}
+.calc label{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--dim);margin-block:20px 8px}
+.calc label:first-child{margin-top:0}
+.calc input[type=range]{width:100%;accent-color:var(--accent)}
+.bigval{font-family:var(--mono);font-size:28px;font-weight:500;font-variant-numeric:tabular-nums}
+.bigval small{font-size:14px;color:var(--dim)}
+.seg{display:flex;border:1px solid var(--line);overflow:hidden}
+.seg button{flex:1;font-family:var(--mono);font-size:12px;padding:10px 4px;background:var(--card);
+  border:none;border-right:1px solid var(--line);cursor:pointer;color:var(--dim)}
+.seg button:last-child{border-right:none}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-block:11px;
+  border-bottom:1px solid var(--line-soft)}
+.row .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--dim)}
+.row .v{font-family:var(--mono);font-size:17px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.divbox{margin-top:20px;background:var(--accent-bg);border:1.5px solid var(--accent);
+  padding:18px 20px;text-align:center}
+.divbox .d{font-family:var(--mono);font-size:34px;font-weight:500;color:var(--accent);
+  font-variant-numeric:tabular-nums}
+.divbox .s{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--accent);margin-top:4px;line-height:1.45}
+
+/* Tabelle */
+.tscroll{overflow-x:auto;border:1px solid var(--line);background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:right;padding:10px 14px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:170px}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--dim);border-bottom:1.5px solid var(--ink);font-weight:400}
+tbody td{font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums}
+tbody td:first-child{font-family:var(--body);font-size:15px}
+tbody tr:last-child td{border-bottom:none}
+tr.tot td{border-top:1.5px solid var(--ink);font-weight:500;background:var(--accent-bg)}
+
+/* Offene Punkte */
+.offen{max-width:820px;border-top:1.5px solid var(--ink)}
+.offen>div{padding-block:18px;border-bottom:1px solid var(--line-soft)}
+.offen b{font-family:var(--disp);font-weight:500;font-size:18px;display:block;margin-bottom:3px}
+.offen p{margin:0;font-size:15.5px;color:var(--dim)}
+
+footer{padding-block:40px 56px;font-size:14px;color:var(--dim)}
+footer .wrap>div{max-width:820px}
+footer a{color:var(--dim)}
+.stand{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:14px}
+</style>
+
+<header class="tb">
+  <div class="wrap">
+    <a class="mark" href="#top">TAX 28:28</a>
+    <nav>
+      <a href="#ebenen">Zwei Ebenen</a>
+      <a href="#geld">Weg des Geldes</a>
+      <a href="#formel">Die Formel</a>
+      <a href="#last">Was es kostet</a>
+      <a href="#offen">Offen</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Entwurf · Stand 4. Oktober 2026</div>
+    <h1>Zwei Ebenen tragen den Staat. Die kleinere ist die europäische.</h1>
+    <div class="claim">Ein Einzug, ein fester Schlüssel, eine Dividende.</div>
+    <p class="sub">Der Klub zieht alle Steuern ein und behält ein Drittel für Verteidigung,
+      Binnenmarkt und Standards. Zwei Drittel gehen an die Kommunen — nach Einwohnern und
+      Kindern. Was dort übrig bleibt, wird ausgezahlt.</p>
+    <div class="stamps">
+      <div class="stamp"><div class="v">35 : 65</div><div class="l">Klub zu Kommunen</div></div>
+      <div class="stamp"><div class="v">457 €</div><div class="l">Dividende je Monat</div></div>
+      <div class="stamp"><div class="v">40,8 %</div><div class="l">Gesamtlast wie heute</div></div>
+      <div class="stamp"><div class="v">2</div><div class="l">Verwaltungsebenen</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="saetze">
+  <div class="wrap">
+    <h2>Worum es geht</h2>
+    <p class="lede">Drei Sätze, und jeder von ihnen hat eine Rückseite, die mitgesagt werden muss.</p>
+
+    <div class="satz"><div class="n">1</div><div>
+      <b>Der Bürger</b>
+      <p>zahlt einen Satz statt vieler und keine Sozialabgaben mehr. Entlastet wird die Arbeit,
+        getragen wird das von Verbrauch, Boden und Unternehmen.</p>
+    </div></div>
+    <div class="satz"><div class="n">2</div><div>
+      <b>Die Community</b>
+      <p>erhält zwei Drittel des Aufkommens, nach Einwohnern und Kindern, und entscheidet selbst
+        über Aufgaben, Verwaltung und Verbände. Was sie spart, zahlt sie ihren Bürgern als höhere
+        Dividende aus.</p>
+    </div></div>
+    <div class="satz"><div class="n">3</div><div>
+      <b>Die Ebene A</b>
+      <p>hält ein Drittel, im Vertrag gedeckelt, und sichert dafür Verteidigung, Binnenmarkt,
+        Standards und Mobilität.</p>
+    </div></div>
+
+    <div class="schluss">Das Steuersystem ist maximal digitalisiert und versorgt beide Ebenen aus
+      einem Einzug. Die Gesamtlast bleibt wie heute; neu verteilt sind Entscheidung und Ertrag —
+      Ersparnis erhöht nicht den Haushalt, sondern die Dividende.</div>
+  </div>
+</section>
+
+<section id="ebenen">
+  <div class="wrap">
+    <h2>Zwei Ebenen, fast gleich groß</h2>
+    <p class="lede">Die Aufgaben sind aus dem Jetzt abgeleitet: Was die Gemeinden heute tatsächlich
+      tragen, bleibt bei ihnen; der Rest geht an den Klub. Drei Posten wandern nach oben —
+      Verteidigung auf das zugesagte Niveau, eine übergeordnete Polizei, die Hochschulen.
+      Das Ergebnis ist Parität, ohne dass jemand sie gelegt hätte.</p>
+
+    <div class="ebenen">
+      <div class="ebene">
+        <div class="tag">Ebene A</div>
+        <h3>Der Klub</h3>
+        <div class="quote">9,94 %<small>des Klub-BIP · 4.738 € je Kopf</small></div>
+        <ul>
+          <li>Wirtschaftsraum, Agrar, Netze <span>3,75</span></li>
+          <li>Verteidigung <span>3,50</span></li>
+          <li>Grundlagenforschung <span>0,77</span></li>
+          <li>Hochschulen <span>0,74</span></li>
+          <li>Außenbeziehungen <span>0,30</span></li>
+          <li>Bildungs- und Produktstandards <span>0,30</span></li>
+          <li>Übergeordnete Polizei <span>0,29</span></li>
+          <li>Umwelt, grenzüberschreitend <span>0,29</span></li>
+        </ul>
+      </div>
+      <div class="ebene">
+        <div class="tag">Ebene B</div>
+        <h3>Die Kommunen</h3>
+        <div class="quote">10,35 %<small>des Klub-BIP · 4.936 € je Kopf</small></div>
+        <ul>
+          <li>Schulen <span>3,70</span></li>
+          <li>Kommunalverwaltung <span>1,62</span></li>
+          <li>Nahverkehr, Ortsstraßen <span>1,48</span></li>
+          <li>Kultur, Sport, Gemeinschaft <span>1,22</span></li>
+          <li>Ordnung, Feuerwehr, Rettung <span>1,05</span></li>
+          <li>Wohnen, Gemeinwesen <span>0,71</span></li>
+          <li>Wasser, Abwasser, Abfall <span>0,57</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Angaben in Prozent des Klub-BIP. Der Abstand zwischen beiden Ebenen beträgt
+      0,41 Punkte — weniger als die Unsicherheit der vier geschätzten A-Posten. Kreis, Land und
+      Nation werden nicht abgeschafft, sondern freiwillig: B kann aus seinem Anteil Abgaben an sie
+      leisten, wenn es ihre Leistungen will.</p>
+  </div>
+</section>
+
+<section id="geld">
+  <div class="wrap">
+    <h2>Der Weg des Geldes</h2>
+    <p class="lede">15.729 € je Kopf und Jahr, einmal eingezogen und zweimal geteilt. Die
+      Bodenwertabgabe erhebt die Gemeinde selbst — sie ist ihr einziger eigener Hebel und zugleich
+      der Anreiz, Bebauung zuzulassen.</p>
+    <div class="flow">
+      <div class="step">
+        <div class="cap">Erster Schnitt — der feste Schlüssel</div>
+        <div class="sum">15.729 €</div>
+        <div class="bar">
+          <div class="a" style="flex:338"><b>5.310 €</b><i>Ebene A · 35 %</i></div>
+          <div class="b" style="flex:662"><b>10.419 €</b><i>Ebene B · 65 % zuzüglich eigener Bodenabgabe</i></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="cap">Zweiter Schnitt — die Kommune teilt ihre 10.419 €</div>
+        <div class="bar">
+          <div class="f" style="flex:473"><b>4.933 €</b><i>Fachaufgaben</i></div>
+          <div class="d" style="flex:527"><b>5.486 €</b><i>Dividende · 457 € je Monat</i></div>
+        </div>
+      </div>
+    </div>
+    <p class="fine">Die Gesundheit steht mit 3.694 € je Kopf außerhalb dieses Topfes und wird
+      kommunal oder privat organisiert. Der zweite Schnitt ist der einzige, über den die Gemeinde
+      selbst bestimmt — nach unten begrenzt durch das Dividenden-Soll.</p>
+  </div>
+</section>
+
+<section id="formel">
+  <div class="wrap">
+    <h2>Die Formel sind zwei Zahlen</h2>
+    <p class="lede">Von den sieben kommunalen Aufgaben ist nur eine altersgetrieben: die Schule.
+      Alles Übrige folgt der Einwohnerzahl. Mehr als diese beiden Beträge braucht die ganze
+      Verteilung nicht.</p>
+
+    <div class="formel">
+      <div><div class="z">3.170 €</div><div class="t">je Einwohner</div></div>
+      <div><div class="z">11.119 €</div><div class="t">je Kind zwischen 5 und 19</div></div>
+    </div>
+
+    <div class="calc">
+      <div>
+        <label for="ew">Einwohner der Gemeinde</label>
+        <div class="bigval"><span id="ewOut">20.000</span></div>
+        <input type="range" id="ew" min="2000" max="120000" step="1000" value="20000">
+
+        <label for="ka">Anteil der 5- bis 19-Jährigen</label>
+        <div class="bigval"><span id="kaOut">15,9</span><small> %</small></div>
+        <input type="range" id="ka" min="100" max="220" step="1" value="159">
+
+        <label>Verwaltung</label>
+        <div class="seg" id="seg">
+          <button type="button" data-s="0" aria-pressed="true">heute</button>
+          <button type="button" data-s="334" aria-pressed="false">modernisiert</button>
+          <button type="button" data-s="491" aria-pressed="false">estnisches Niveau</button>
+        </div>
+      </div>
+      <div>
+        <div class="row"><span class="k">Zuteilung Fachbudget</span><span class="v" id="rFachKopf">4.933 €</span></div>
+        <div class="row"><span class="k">Zuteilung Dividende</span><span class="v" id="rDivKopf">5.486 €</span></div>
+        <div class="row"><span class="k">Gemeindehaushalt gesamt</span><span class="v" id="rGes">208,4 Mio €</span></div>
+        <div class="row"><span class="k">davon Fachaufgaben</span><span class="v" id="rFachGes">98,7 Mio €</span></div>
+        <div class="row"><span class="k">davon Auszahlung</span><span class="v" id="rDivGes">109,7 Mio €</span></div>
+        <div class="divbox">
+          <div class="d" id="rDivMon">457 €</div>
+          <div class="s">Dividende je Kopf und Monat</div>
+        </div>
+        <p class="fine" id="rHinweis">Das Soll liegt bei 457 € — darunter darf keine Gemeinde
+          gehen, darüber entscheidet sie selbst.</p>
+      </div>
+    </div>
+    <p class="fine">Die 11.119 € sind nicht gesetzt, sondern gerechnet: 3,70 % des Klub-BIP für
+      Schulen, verteilt auf die 15,86 % der Bevölkerung in diesem Alter. Jedes Kind bekommt
+      denselben Betrag, jeder Einwohner denselben Betrag. Dass Gemeinden trotzdem unterschiedlich
+      viel erhalten, folgt allein daraus, dass eine Gemeinde mit mehr Kindern mehr Schulkosten hat.</p>
+  </div>
+</section>
+
+<section id="wettbewerb">
+  <div class="wrap">
+    <h2>Sparsamkeit zahlt sich sichtbar aus</h2>
+    <p class="lede">Die Dividende ist die Restgröße. Jeder Euro, den eine Gemeinde in der
+      Verwaltung spart, erscheint im Folgemonat auf dem Konto ihrer Bürger. Das ist der ganze
+      Wettbewerb — und er läuft über Sparsamkeit, nicht über Reichtum.</p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Verwaltung erreicht</th><th>Ersparnis</th><th>Dividende je Monat</th></tr></thead>
+        <tbody>
+          <tr><td>heutiges Niveau</td><td>—</td><td>457 €</td></tr>
+          <tr><td>12,5 % des Haushalts</td><td>1,26 Punkte</td><td>507 €</td></tr>
+          <tr><td>9,1 % — slowenisches Niveau</td><td>2,06 Punkte</td><td>539 €</td></tr>
+          <tr class="tot"><td>5,8 % — estnisches Niveau</td><td>2,73 Punkte</td><td>566 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Belastbar ist der Vergleich der Klubstaaten untereinander: Estlands Gemeinden
+      geben 5,8 % ihres Haushalts für allgemeine Verwaltung aus, Deutschlands 16,8 %, Frankreichs
+      19,5 %, Spaniens 32,8 % — bei fast gleichem Aufgabenvolumen. Der gesamte Verwaltungstopf
+      beider Ebenen beträgt 3,88 % des BIP oder 472 Mrd €; mehr kann niemand sparen.</p>
+  </div>
+</section>
+
+<section id="last">
+  <div class="wrap">
+    <h2>Was es kostet</h2>
+    <p class="lede">Der Vergleich, auf den es ankommt, lautet neu gegen heute. Die Gesamtlast
+      ändert sich nicht. Was sich ändert, ist ihre Verfassung — von Beiträgen auf Steuern, von
+      Zweckbindung auf Dividende, von nationaler auf kommunale und europäische Entscheidung.</p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th></th><th>heute</th><th>Entwurf</th></tr></thead>
+        <tbody>
+          <tr><td>Steuern</td><td>25,95</td><td>33,00</td></tr>
+          <tr><td>Sozialbeiträge</td><td>14,88</td><td>0,00</td></tr>
+          <tr><td>Gesundheit, außerhalb des Steuertopfs</td><td>enthalten</td><td>7,75</td></tr>
+          <tr class="tot"><td>Gesamtlast in % des BIP</td><td>40,76</td><td>40,75</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Entlastet wird der Faktor Arbeit: Heute ruhen 28,53 % des BIP auf Arbeit und
+      Einkommen, davon 14,88 Punkte Sozialbeiträge, die vollständig entfallen. Gegenfinanziert wird
+      das über Verbrauch, CO₂, Boden und Unternehmen. Beides gehört in denselben Satz.</p>
+  </div>
+</section>
+
+<section id="offen">
+  <div class="wrap">
+    <h2>Was offen ist</h2>
+    <p class="lede">Sechs Punkte sind ungeklärt, und zwei davon entscheiden, ob der Entwurf
+      überhaupt tragfähig ist.</p>
+    <div class="offen">
+      <div><b>Die Altschulden</b><p>Löst man die nationale Steuerebene auf, muss die aufgelaufene
+        Schuld irgendwohin. Im Klub streut sie von 24 bis 116 % des BIP — Faktor 4,8.</p></div>
+      <div><b>Die Einstimmigkeit</b><p>Artikel 113 AEUV verlangt für Steuerharmonisierung
+        ausdrücklich Einstimmigkeit im Rat. Ein Klub, der mit Mehrheit entscheidet, ist im
+        geltenden EU-Rahmen nicht darstellbar.</p></div>
+      <div><b>Hebesatz oder Einheitssatz</b><p>Ein Satz von 28 % überall und kommunale
+        Hebesatzautonomie schließen einander aus. Dänemark hat sich für die Autonomie entschieden.</p></div>
+      <div><b>Die Standards</b><p>Der einzige Mechanismus ohne Zahl. Dort entscheidet sich die
+        Qualität der Schulen — und dort ist der Entwurf am wenigsten festgelegt.</p></div>
+      <div><b>Verteidigung und Neutralität</b><p>Irland und Österreich tragen die Haager Zusage
+        nicht; die österreichische Neutralität hat Verfassungsrang.</p></div>
+      <div><b>Schulgeld und Schulort</b><p>Das Geld folgt dem Wohnort, der Schulplatz liegt oft in
+        der Nachbargemeinde. Dafür braucht es einen Ausgleich.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><div>
+    <div class="stand">Datenstand · Eurostat 2024 · zehn Klubstaaten</div>
+    <p>Deutschland, Frankreich, Spanien, Niederlande, Irland, Belgien, Österreich, Dänemark,
+      Slowenien und Estland — zusammen 12,157 Billionen € Wirtschaftsleistung und 255,1 Millionen
+      Menschen. Alle Struktur- und Aufkommenszahlen aus den Eurostat-Datensätzen
+      gov_10a_exp, gov_10a_taxag, nama_10_gdp, demo_gind und demo_pjangroup, Berichtsjahr 2024.
+      Verteidigungsziel nach der <a href="https://www.ncia.nato.int/newsroom/news/the-hague-summit-declaration">Haager
+      Gipfelerklärung</a> vom 25. Juni 2025.</p>
+    <p>Die Klubwerte sind BIP-gewichtete Mittel; Deutschland trägt darin 35,6 % Gewicht. Vier Posten
+      der Ebene A sind Schätzungen von je rund 0,30 Punkten, zusammen 17 % dieser Ebene. Irlands BIP
+      je Kopf liegt wegen Konzernbuchungen beim 2,18-Fachen des Klubschnitts und drückt jeden
+      Mittelwert nach unten.</p>
+    <p>Entwurf zur Diskussion, keine beschlossene Fassung.</p>
+  </div></div>
+</footer>
+
+<script>
+(function(){
+  var FIX = 3170, PROKIND = 11119, DIV0 = 5486, SOLL = 457;
+  var ew = document.getElementById('ew'), ka = document.getElementById('ka');
+  var seg = document.getElementById('seg'), spar = 0;
+  var nf = new Intl.NumberFormat('de-DE');
+  function eur(x){ return nf.format(Math.round(x)) + ' €'; }
+  function mio(x){ return (x/1e6).toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' Mio €'; }
+  function render(){
+    var E = +ew.value, k = (+ka.value)/10;
+    var fachKopf = FIX + PROKIND * k/100;
+    var divKopf = DIV0 + spar;
+    var fachAus = fachKopf - spar;
+    document.getElementById('ewOut').textContent = nf.format(E);
+    document.getElementById('kaOut').textContent = k.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1});
+    document.getElementById('rFachKopf').textContent = eur(fachKopf);
+    document.getElementById('rDivKopf').textContent = eur(divKopf);
+    document.getElementById('rGes').textContent = mio((fachKopf + divKopf) * E);
+    document.getElementById('rFachGes').textContent = mio(fachAus * E);
+    document.getElementById('rDivGes').textContent = mio(divKopf * E);
+    var mon = divKopf/12;
+    document.getElementById('rDivMon').textContent = eur(mon);
+    var plus = Math.round(mon - SOLL);
+    document.getElementById('rHinweis').textContent = plus > 0
+      ? 'Das Soll liegt bei 457 €. Diese Gemeinde zahlt ' + plus + ' € im Monat mehr aus, weil sie ihre Verwaltung günstiger führt.'
+      : 'Das Soll liegt bei 457 € — darunter darf keine Gemeinde gehen, darüber entscheidet sie selbst.';
+  }
+  ew.addEventListener('input', render);
+  ka.addEventListener('input', render);
+  seg.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    Array.prototype.forEach.call(seg.querySelectorAll('button'), function(x){
+      x.setAttribute('aria-pressed', String(x === b));
+    });
+    spar = +b.dataset.s; render();
+  });
+  render();
+})();
+</script>

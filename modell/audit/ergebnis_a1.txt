@@ -1,0 +1,69 @@
+==============================================================================================
+A1 — STIMMT DER AUSGANGSPUNKT DES MODELLS?
+==============================================================================================
+
+[1] DAS BIP — HIER LIEGT DER ERSTE FEHLER
+    Das Modell setzt BIP0 = 4.200 Mrd für das Startjahr 2028.
+    Amtlich 2025: 4.469,9 Mrd. Nominales Wachstum 2025: +3,3 %.
+      bei 2,5 % nominal bis 2028: 4.813,6 Mrd  -> Modell ist -12,7 % zu niedrig
+      bei 3,0 % nominal bis 2028: 4.884,4 Mrd  -> Modell ist -14,0 % zu niedrig
+      bei 3,5 % nominal bis 2028: 4.955,9 Mrd  -> Modell ist -15,3 % zu niedrig
+
+    FOLGE: das Investitionsziel von 1 % des BIP sind nicht 42, sondern
+    48,8 Mrd EUR. Der Puffer von 2 % sind 97,7 statt 84 Mrd.
+    Der gesamte Haushaltsabgleich lief gegen ein zu kleines Ziel.
+
+[2] DIE EINKOMMENSTEUER-KALIBRIERUNG — DER ZWEITE FEHLER
+    Das Modell kalibriert K_EST so, dass der Tarif 2025 plus Dividende
+    von 6.000 EUR genau 284 Mrd ergibt.
+    Amtlich 2025: Lohnsteuer 262,7 + veranlagte Einkommensteuer 78,4
+    = 341,1 Mrd. Ohne Soli, ohne Kapitalertragsteuern.
+    Das Modell liegt damit -16,7 % zu niedrig.
+
+[3] DER BEFUND, DER BEIDE ERKLÄRT
+    BIP zu niedrig um 14,0 %, Einkommensteuer zu niedrig um 16,7 %.
+    Beide Abweichungen gehen in dieselbe Richtung und sind etwa gleich gross.
+    Das Modell ist also nicht falsch gerechnet, sondern auf ein FRÜHERES
+    NIVEAU kalibriert — grob 2021/2022 — und als Startjahr 2028 etikettiert.
+    Intern konsistent, aber die Euro-Beträge sind keine 2028er Werte.
+
+    WO ES WIRKLICH WEHTUT: die Ausgabenseite ist NICHT mitskaliert. Die
+    Digitaldividende von 515 EUR ist 50 % des Existenzminimums 2026, also
+    ein aktueller Wert. Einnahmen auf 2021er Niveau, Ausgaben auf 2026er
+    Niveau — der Saldo ist dadurch systematisch zu schlecht.
+
+    Grössenordnung: die Dividende kostet 475,9 Mrd. Würde man die
+    Einnahmen auf dasselbe Niveau heben wie die Ausgaben — also um die
+    20,1 % der Einkommensteuer-Abweichung —, wären es bei
+    1.159 Mrd Einnahmen rund 233,0 Mrd mehr.
+    Mein Saldo von −12,9 Mrd ist damit zu pessimistisch, und zwar deutlich.
+
+[4] DIE BLACKBOX "SONSTIGE STEUERN 165" — AUFGELÖST
+    Was bleibt amtlich übrig, wenn die benannten Positionen abgezogen sind?
+
+      Energiesteuer                            37,6
+      Versicherungsteuer                       19,6
+      Tabaksteuer                              17,6
+      Grunderwerbsteuer                        15,1
+      Solidaritätszuschlag                     12,9
+      Kraftfahrzeugsteuer                       9,6
+      Gewerbesteuerumlagen                      6,6
+      Stromsteuer                               5,9
+      Zölle                                     5,9
+      Rennwett-/Lotteriesteuer                  2,5
+      übrige Bundes-/Ländersteuern              2,4
+      Luftverkehrsteuer                         2,1
+      Alkoholsteuer                             2,1
+      Biersteuer                                0,5
+      ---------------------------------------------
+      zusammen                                140,4
+
+    Amtlich bleiben 140,4 Mrd. Das Modell bucht 165 — also
+    24,6 Mrd zu viel. Dafür gibt es zwei mögliche Erklärungen,
+    und beide sind Probleme:
+      a) die Grundsteuer von 16,0 Mrd steckt darin. Dann ist Position 04a
+         doppelt gezählt, denn sie ist aufkommensneutral zur Grundsteuer.
+      b) es ist dieselbe Niveau-Abweichung wie oben, nur mit umgekehrtem
+         Vorzeichen. Dann ist der Posten einfach nicht hergeleitet.
+    In beiden Fällen gilt: 165 Mrd ist der grösste unbelegte Einzelposten
+    des Modells, grösser als Erbschaft, Vermögen und CO2 zusammen.

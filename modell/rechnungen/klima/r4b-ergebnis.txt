@@ -1,0 +1,64 @@
+================================================================================================
+R4b — WAS VON DEN 65,4 MRD EUR KLIMASCHÄDLICHER SUBVENTIONEN AUFKOMMEN WÄRE
+================================================================================================
+
+    Erfasste Posten: 34, Summe 65,4 Mrd EUR.
+    Das trifft die UBA-Summe von 65,4 Mrd EUR auf den Euro genau — die
+    Liste ist also vollständig. Nicht enthalten sind die Posten, die das
+    Umweltbundesamt als nicht quantifizierbar ausweist und deshalb auch
+    selbst nicht summiert: EU-Agrar- und Fischereiförderung, Kernenergie,
+    Kreuzfahrtfinanzierung, Flugsicherheitsgebühren, Arbeitnehmer-Spar-
+    zulage und die Gemeinschaftsaufgabe regionale Wirtschaftsstruktur.
+
+[1] NACH ART DES POSTENS
+       Art     Mio EUR   Anteil   Bedeutung
+    STEUER      44.890    68,6 %   Steuervergünstigung — Abbau bringt Aufkommen
+     ZERTI       2.134     3,3 %   kostenfreie Zuteilung — Abbau bringt Versteigerungserlös
+    UMLAGE      12.660    19,4 %   Entlastung im Strompreis — erreicht den Haushalt nicht
+   AUSGABE       4.814     7,4 %   Zuschuss oder Programm — Abbau mindert Ausgaben
+    UNKLAR         927     1,4 %   aus der Tabelle nicht eindeutig zuzuordnen
+
+    AUFKOMMENSWIRKSAM wäre der Abbau von 47,0 Mrd EUR, nicht 65,4.
+    12,7 Mrd EUR sind Entlastungen im Strompreis — ihr Abbau verteilt
+    zwischen Stromkunden um, er füllt keinen Haushalt. 4,8 Mrd EUR sind
+    Ausgaben; ihr Wegfall entlastet den Haushalt, erzeugt aber kein Aufkommen
+    und gehört deshalb nicht in die Gegenfinanzierung einer Steuerreform.
+
+[2] DIE GRÖSSTEN AUFKOMMENSWIRKSAMEN POSTEN
+Posten                                                       Mio EUR
+Energiesteuerbefreiung des Kerosins                            8.357
+Energiesteuervergünstigung für Dieselkraftstoff                8.202
+Entfernungspauschale                                           6.000
+Mehrwertsteuerermäßigung für tierische Produkte (min.)         5.242
+Mehrwertsteuerbefreiung für internationale Flüge               3.997
+Pauschale Besteuerung privat genutzter Dienstwagen (min.       3.100
+Kostenfreie Zuteilung der CO2-Emissionsberechtigungen          2.134
+Energiesteuervergünstigung für die Stromerzeugung              2.003
+Spitzenausgleich bei der Ökosteuer                             1.720
+Energiesteuerbefreiung nicht-energetische Nutzung (min.)       1.299
+
+[3] WARUM DIE ZAHL TROTZDEM NICHT VERWENDBAR IST
+
+    Datenjahr 2018, veröffentlicht 2021. Seither ist mehreres entfallen
+    oder grundlegend geändert worden:
+      - Die EEG-Umlage wurde 2022 abgeschafft. Die Besondere Ausgleichs-
+        regelung und das Eigenstromprivileg (zusammen 9,1 Mrd EUR) gibt
+        es in dieser Form nicht mehr.
+      - Der Spitzenausgleich bei der Ökosteuer (1,7 Mrd EUR) ist Ende
+        2023 ausgelaufen.
+      - Die Steinkohlesubventionen (1,3 Mrd EUR) endeten 2018.
+      - Die kostenfreie Zuteilung von CO2-Berechtigungen (2,1 Mrd EUR)
+        läuft nach der Reform des EU-Emissionshandels bis 2034 aus; der
+        Posten verschwindet also ohnehin.
+    Mehrere Posten sind zudem als "min." ausgewiesen, also Untergrenzen.
+
+    Und grundsätzlich: der statische Wert einer Steuervergünstigung ist
+    nicht das, was ihr Abbau einbringt. Wer den Dieselsteuersatz anhebt,
+    bekommt nicht 8,2 Mrd EUR, weil weniger Diesel getankt wird — was
+    hier ja gerade der Zweck ist.
+
+[4] WAS AUF DIE SEITE GEHÖRT
+    Nicht "65 Mrd EUR klimaschädliche Subventionen abbauen". Sondern:
+    die vier grössten steuerlichen Posten mit Namen und Jahr, als
+    Grössenordnung, mit dem Hinweis auf das Datenjahr 2018 — und die
+    Feststellung, dass eine aktuelle Fassung fehlt.

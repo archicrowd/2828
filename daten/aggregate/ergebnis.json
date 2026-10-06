@@ -1,7 +1,7 @@
 {
-  "modellstand": "v3.8",
-  "erzeugt": "2026-10-05",
-  "parameterfile_sha256": "4e999a04e83dd85c4a60a509bb9167dd31e49e3a78ea1729086adb64be7e6919",
+  "modellstand": "v3.9",
+  "erzeugt": "2026-10-06",
+  "parameterfile_sha256": "46965490f16f70f16c45361497471494f1686be2beaa73681cffbceb19d35ba4",
   "parameter": [
     {
       "name": "klub_bip_2024",
@@ -15,13 +15,13 @@
     },
     {
       "name": "klub_einwohner_2024",
-      "wert": 255.1,
+      "wert": 254.8,
       "einheit": "Mio Personen",
       "bezugsjahr": 2024,
       "preisbasis": "keine",
-      "quelle": "Logbuch Band I v3.1; dort Eurostat demo_gind (2024)",
+      "quelle": "Gesamtkonzept Abschnitt 9 (254,8 Mio) und modell/rahmen/basis.py (Summe 254.823.736); Eurostat demo_gind (2024) laut Skript",
       "status": "modellrechnung",
-      "hinweis": "aus Logbuch übernommen, nicht neu abgerufen"
+      "hinweis": "Seit v3.9 254,8 statt 255,1. Logbuch Band I (v3.1) nennt 255,1; das Gesamtkonzept und das Originalskript 254,8. Mit 254,8 ergibt 11,21 % des Klub-BIP 506 EUR je Kopf und Monat wie im Gesamtkonzept, mit 255,1 505,4. Ursache der Differenz im Logbuch nicht geklärt; nicht an Eurostat geprüft"
     },
     {
       "name": "klub_staatsquote_2024",
@@ -42,6 +42,16 @@
       "quelle": "Logbuch Band II v3.5 (Korrektur 42): Fortschreibung des Istwerts 2024 mit den Raten der Frühjahrsprojektion",
       "status": "modellrechnung",
       "hinweis": "Raten der Frühjahrsprojektion nicht im Logbuch ausgewiesen; Quelle der Raten offen. Nicht verwechseln mit dem alten Kalibrierfaktor 1,17024 der deutschen Modellbasis (Korrektur 42)"
+    },
+    {
+      "name": "de_einwohner_2024",
+      "wert": 83.516593,
+      "einheit": "Mio Personen",
+      "bezugsjahr": 2024,
+      "preisbasis": "keine",
+      "quelle": "modell/rahmen/basis.py (POP['DE'] = 83.516.593); Eurostat demo_gind (2024) laut Skript",
+      "status": "modellrechnung",
+      "hinweis": "Neu in v3.9. Nenner der Dividende je Kopf für Deutschland (BIP je Kopf 2028 = de_bip_2028 / de_einwohner_2024 = 58.849 EUR). Gleicher Wert in laender_2024.csv. Nicht an Eurostat geprüft"
     },
     {
       "name": "klub_bip_2028",
@@ -101,7 +111,7 @@
       "preisbasis": "nominal",
       "quelle": "Logbuch Band II v3.5 (Korrektur 42, korrigierter Wert; vorher 6.253)",
       "status": "modellrechnung",
-      "hinweis": "Nachrechnung: 11,21 % von 13.803 Mrd EUR bei 255,1 Mio Personen = 6.066 EUR (Abweichung 0,1 %). Preisbasis nominal ist eine Annahme, das Logbuch nennt sie nicht"
+      "hinweis": "Nachrechnung: 11,21 % von 13.803 Mrd EUR bei 254,8 Mio Personen = 6.072 EUR. Preisbasis nominal ist eine Annahme, das Logbuch nennt sie nicht"
     },
     {
       "name": "wachstum_real_je_kopf",

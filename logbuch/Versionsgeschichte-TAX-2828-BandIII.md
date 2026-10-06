@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 5. Oktober 2026 · Modellstand **v3.8**
+Stand: 6. Oktober 2026 · Modellstand **v3.9**
 
 ---
 
@@ -324,6 +324,72 @@ wie `modell/kern/`, `seite/`, `dokumente/`, `modell/rechnungen/` und das Manifes
 
 ---
 
+### v3.9 — Übernahme des Exports, Einwohnerzahl berichtigt, Wegweiser
+
+**Art der Änderung: MINOR** (Quelle ersetzt Annahme: Einwohnerzahl; neue Dateien kommen hinzu).
+6. Oktober 2026. Auftrag des Verfassers: Dateien lesen und danach einchecken (Frage 1), Band II im
+Projektraum berichtigen (Frage 2), übrige Entscheidungen nach meinem Ermessen (Frage 3).
+
+**Bewegte Zahl.** Klub-Einwohner 2024: **255,1 → 254,8 Mio** (Parameter `klub_einwohner_2024`).
+Folge: Mindestquote der Zweitrechnung 29,960 → 29,965 % (zentral) und 30,604 → 30,610 % (streng),
+Original 29,966 und 30,611. Dividende Klub 2028: 505,4 → 506,0 € je Monat, wie im Gesamtkonzept.
+Neuer Parameter `de_einwohner_2024` (83,516593 Mio). Keine Zahl des Gesamtkonzepts ändert sich.
+
+**Wodurch es auffiel.** Das Gesamtkonzept (Abschnitt 9) nennt 254,8 Mio; die Summe der Einwohner in
+`basis.py` ist 254.823.736. Logbuch Band I (v3.1) und mein Parameter nannten 255,1 Mio. Ursache der
+Differenz im Logbuch nicht geklärt; ob sie Korrektur 49 wird, entscheidet der Verfasser (zusammen
+mit B1). `daten/aggregate/laender_2024.csv` übernimmt seitdem die Einwohnerzahlen aus `basis.py`.
+
+**Zweitrechnung angeglichen.** Die Mindestquote der Zweitrechnung rechnet wie das Original auf das BIP
+je Kopf Deutschlands (`final.py`) statt über das Verhältnis 506/550. `vergleich_original.py` prüft jetzt
+56 Größen (Einwohner, 33 Jahreswerte, Mindestquote zweifach, zehn Aufschläge), alle innerhalb der
+Toleranz (Mindestquote 0,0009 Punkte, Aufschlag höchstens 1,5 €).
+
+**Was neu im Repository liegt** (Quelle: Export des Vorchats; Sekundärquelle)
+`modell/rahmen/zahlen.py`; `modell/kern/` (nationales Gesamtmodell); `modell/rechnungen/` (R1 bis R16,
+ohne die Rechercheliste); `modell/audit/`; `seite/` (acht Sprachfassungen, zwei Builds, Seite zum Stand B);
+`dokumente/` (Gesamtkonzept als PDF und Word, ältere Dokumente, Bauskript); `archiv/uploads-eigen/`;
+`daten/herkunft/uploads-manifest.csv` (sieben Drittdateien mit Größe und SHA-256, ohne die Dateien);
+`daten/aggregate/rahmen_original/` (zwei JSON-Ausgaben des Originals); `INDEX.md` und je Bereich eine
+`LIESMICH.md`. Nicht eingecheckt: Drittdateien, OECD-Rohdaten, Rechercheliste (persönliche E-Mail-Adressen
+von sechs externen Forschenden). Die Datei `.gitignore` bleibt unverändert.
+
+**Gelesen und nicht gelesen.** Vollständig gelesen: Gesamtkonzept (PDF), `basis.py`, `pfad.py`, `final.py`,
+`tilgung.py`, `aufschlag.py`, `altschuld.py`, `kurve.py`, `zahlen.py`, beide JSON-Dateien; vom Logbuch
+Band II und III vollständig, von Band I der Eintrag v3.4, der Beginn von v3.2, die Korrekturen 31 bis 41 und
+Abschnitt 7. Nur im Kopf gelesen: alle übrigen Python-Dateien (Docstring), `modell-2828.py` (Kopf), die
+Seiten (Titel, externe Verweise), die ersten Zeilen der Word- und Markdown-Dokumente. Nicht gelesen:
+Rechnungsergebnisse, Befunddateien, Quelltext der Seite im Einzelnen, `gesamtkonzept-bau.js`. Der
+Hinweis in den `LIESMICH.md` gilt entsprechend. Durchsuchung nach Zugangsdaten und Adressen: nur
+die Adresse `2828@archicrowd.de` der Seite und die Forscher-Adressen (ausgeschlossen) gefunden.
+
+**Befunde beim Lesen des Gesamtkonzepts**
+1. **B10 geschlossen.** Das Gesamtkonzept steht auf der korrigierten Basis (Klub-BIP 13.803 Mrd €,
+   Aufkommen 16.575 € je Kopf, Dividende 6.072 €, Formel 3.602/12.636 €). Die Spalte „Dokument" in
+   `pfad.py` bezeichnet die Vorfassung, nicht diese Datei.
+2. **Wortlaut der Obergrenze.** Die Einleitung sagt, der Klub dürfe „höchstens 36 % des Aufkommens
+   behalten", Abschnitt 1.2 „36 % dessen, was A einzieht". Das sind verschiedene Bezugsgrößen (30,60 gegen
+   29,78 % des BIP; 11,0 gegen 10,72 % des BIP). Gerechnet ist die zweite (B13).
+3. **B12: Deckung der Quote.** Das Gesamtkonzept nennt als Gegenfinanzierung „Verbrauch, CO₂, Boden und
+   Unternehmen", rechnet sie aber nicht. Die Quote 30,6 % ist aus dem Versprechen von 479 € abgeleitet, nicht
+   aus den Steuerpositionen aufgebaut. Das nationale Modell (Stand A) lieferte 27,91 % (Band I, v3.4).
+4. **Dividendenversprechen.** Die Tabelle im Gesamtkonzept nennt 1,0 % realen Wachstum, die Rechnung
+   0,980 % (3,0 % nominal, 2,0 % Preise). Bekannt aus B2; das Dokument sagt „1,0 %" und nennt
+   daneben 707/512 € (Text) und 712/513 € (Tabelle).
+5. **Veröffentlichte Seite.** `archicrowd.de` zeigt nach einem Abruf in dieser Sitzung den älteren
+   Build (Tarif 0/9/16/21/26/28, Mehrwertsteuer 5/11/17/22/28), mit `noindex`. Kurzauszug des Abrufwerkzeugs,
+   nicht Zeile für Zeile verglichen. Das Impressum der Seite nennt eine Person mit Namen.
+
+**Projektraum.** Band I (vollständig), Band II (mit Berichtigungshinweis) und Band III sind im Projekt
+„2525" unter `claude/` aktualisiert beziehungsweise neu angelegt; die Änderung erfolgte auf Weisung
+des Verfassers. Der Projektraum wird nicht automatisch nachgeführt: nach jeder Version ist er neu
+zu schreiben (Abweichung vom Wortlaut von `CLAUDE.md`, die das Repository als maßgeblich führt).
+
+*Skripte: `modell/vergleich_original.py`, `modell/pfad.py`. Quellen: Export des Vorchats, Gesamtkonzept
+vom 4. Oktober 2026.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 und 48. **Nächste freie Nummer: 49.** Die Nummern 31 bis 41 sind
@@ -361,7 +427,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.8
+## 7 | Offene Punkte, Stand v3.9
 
 | Punkt | Status |
 |---|---|
@@ -372,10 +438,12 @@ nicht geklärt.
 | **B5: Ebene A 8,94 % gegen 9,04 %** | **geschlossen in v3.7, war kein Widerspruch** (8,94 enthält Verteidigung 2,50, die Tabelle 2028 rechnet mit 1,40) |
 | **B6: Ausgangslage 2024 als 2028** | **offen, präzisiert in v3.7.** Schuldenquote 78,4 % gilt im Seitentext als Quote 2028 (10,8 Bio EUR), der Eurostat-Stand 2024 sind 9,537 Bio EUR. Effektiver Zins (1,53 %) und Verteidigung (1,401 %) stammen aus 2024. Entscheidung des Verfassers nötig, ob das Auslaufen des Altbestands 2024 oder 2028 beginnt (Sensitivität in v3.6) |
 | **Rechenskripte** | seit v3.8 liegen die Originale `basis.py`, `pfad.py`, `final.py`, `tilgung.py`, `aufschlag.py`, `altschuld.py`, `kurve.py` in `modell/rahmen/`. `modell/pfad.py` und `modell/aufschlag.py` bleiben als **unabhängige Zweitrechnung** (`modell/vergleich_original.py`). Ungelesen: `zahlen.py`, `gesamtkonzept-bau.js`, JSON-Ausgaben. Skripte der Versionen bis v3.4 (Kern, Webseite, Audit, Einzelrechnungen) liegen im Export, aber noch nicht im Repository |
-| **B7: Einwohnerzahlen** | **neu, v3.8.** Acht Länder weichen zwischen `basis.py` und `laender_2024.csv` ab (bis 0,16 %). Eurostat-Abruf `demo_gind` nötig; die Shell erreicht `ec.europa.eu` nicht |
+| **B7: Einwohnerzahl** | **geklärt für die Rechnung in v3.9, Ursache offen.** 254,8 Mio (Gesamtkonzept, `basis.py`) gegen 255,1 Mio (Logbuch Band I, v3.1). Parameter und `laender_2024.csv` stehen auf 254,8. Eurostat-Abruf `demo_gind` zur Prüfung nötig; die Shell erreicht `ec.europa.eu` nicht |
 | **B8: Bemessung des Aufschlags** | **neu, v3.8.** `aufschlag.py` (BIP) gegen `altschuld.py` (Klubschnitt je Kopf): +254/−728 gegen +185/−531. Welche Bemessung gilt, ist eine Entwurfsentscheidung und im Text nicht begründet |
 | **B9: Obergrenze 36 %** | **neu, v3.8.** Setzung mit Aufschlag von 0,8 Punkten auf den berechneten Wert 35,2 % (`pfad.py`). Begründung des Aufschlags nicht gefunden |
-| **B10: Basis des Gesamtkonzepts** | **neu, v3.8.** `basis.py` weist für das Gesamtkonzept ein Klub-BIP aus, das 3,07 % über der Fortschreibung des Istwerts liegt. Welche Beträge in der Datei auf welcher Basis stehen, ist nicht geprüft |
+| **B10: Basis des Gesamtkonzepts** | **geschlossen in v3.9.** Das Gesamtkonzept steht auf der korrigierten Basis |
+| **B12: Deckung der Quote 30,6 %** | **neu, v3.9.** Die Steuerpositionen sind nicht zur Quote 30,6 % aufgebaut; das nationale Modell lieferte 27,91 %. Der wichtigste inhaltliche Befund der Naht zwischen Stand A und Stand B |
+| **B13: Bezugsgröße der Obergrenze im Text** | **neu, v3.9.** „des Aufkommens" (Einleitung) gegen „dessen, was A einzieht" (Abschnitt 1.2) |
 | **Stand A und Stand B** | **neu, v3.8.** Modell (`1-modell`) und achtsprachige Webseite im Export stehen auf dem nationalen Stand (Quote 27,91 % bzw. 33 %, Position 10 Sozialabgaben, Logbuch v2.0); das Gesamtkonzept auf dem europäischen (Quote 30,6 %, v3.5). Die Seite hat den Rahmenwechsel nie gesehen. Zwei Builds der Seite (Tarifstufen 0/9/16/21/26/28 gegen 0/9/19/24/27/28); der Quelltext passt nur zum älteren, die Patch-Skripte sind nicht ausgeführt. Nach Angabe des Exports; von mir nicht geprüft |
 | **Herleitung von 6,44 und 10,35** | Beide sind Summen der COFOG-abgeleiteten Posten aus Band II (v3.2): 6,44 für Ebene A ohne Verteidigung, 10,35 für Ebene B. Die zugrunde liegenden Eurostat-Abrufe (COFOG, zehn Staaten) liegen nicht vor, die Shell erreicht `ec.europa.eu` nicht. Nachgerechnet sind die Summen der Posten, nicht die Posten |
 | **Nicht eingetragene Größen** | Mindestquote, Obergrenze von A, Höchstbedarf, territorialer Aufschlag: Bezugsjahr oder Bezugsgröße fehlt. Siehe `daten/aggregate/nicht-eingetragen.md`, Abschnitt A |

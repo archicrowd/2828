@@ -1,0 +1,85 @@
+==============================================================================================
+R4 — CO2-BEPREISUNG: GELTENDES RECHT GEGEN POSITION 07
+==============================================================================================
+
+[1] DIE GESETZLICHE MENGE
+  Jahr    Emissionsmenge Mio t   gegen Vorjahr   gegen 2021
+  2021                   301,0               –        0,0 %
+  2022                   291,1          -3,3 %       -3,3 %
+  2023                   280,1          -3,8 %       -6,9 %
+  2024                   276,0          -1,5 %       -8,3 %
+  2025                   260,1          -5,8 %      -13,6 %
+  2026                   252,4          -3,0 %      -16,2 %
+  2027                   234,4          -7,1 %      -22,1 %
+  2028                   216,5          -7,7 %      -28,1 %
+  2029                   198,5          -8,3 %      -34,1 %
+  2030                   180,6          -9,0 %      -40,0 %
+
+    Die Menge sinkt von 301,0 auf 180,6 Mio Tonnen,
+    also um 40,0 % in neun Jahren. Das ist der Zweck der Sache —
+    und zugleich der Grund, warum das Aufkommen nicht mit dem Preis mitwächst.
+
+[2] AUFKOMMEN: RECHTSPFAD GEGEN ENTWURF
+    Preiskorridor 55 bis 65 EUR gilt nach dem Gesetz für 2026 und 2027.
+  Jahr   Menge Mio t   bei 55 EUR   bei 65 EUR   bei 100 EUR   bei 150 EUR
+  2026         252,4     13,9 Mrd     16,4 Mrd      25,2 Mrd      37,9 Mrd
+  2027         234,4     12,9 Mrd     15,2 Mrd      23,4 Mrd      35,2 Mrd
+  2028         216,5     11,9 Mrd     14,1 Mrd      21,6 Mrd      32,5 Mrd
+  2029         198,5     10,9 Mrd     12,9 Mrd      19,9 Mrd      29,8 Mrd
+  2030         180,6      9,9 Mrd     11,7 Mrd      18,1 Mrd      27,1 Mrd
+
+[3] WAS POSITION 07 GEGENÜBER DEM RECHTSPFAD BRINGT
+  Jahr    Rechtspfad 55-65   Position 07 bei 100     Mehraufkommen
+  2026   13,9 bis 16,4 Mrd              25,2 Mrd    +8,8 bis +11,4
+  2027   12,9 bis 15,2 Mrd              23,4 Mrd    +8,2 bis +10,5
+
+    Bei 150 EUR und der Menge von 2026: 37,9 Mrd EUR,
+    gegenüber dem Rechtspfad also +21,5 bis +24,0 Mrd EUR.
+
+[4] DIE SCHERE: PREIS STEIGT, MENGE FÄLLT
+    Bei einem auf 150 EUR festgehaltenen Preis:
+  Jahr   Menge Mio t     Aufkommen   gegen 2026
+  2026         252,4      37,9 Mrd        0,0 %
+  2027         234,4      35,2 Mrd       -7,1 %
+  2028         216,5      32,5 Mrd      -14,2 %
+  2029         198,5      29,8 Mrd      -21,3 %
+  2030         180,6      27,1 Mrd      -28,4 %
+
+    Das Aufkommen fällt binnen vier Jahren um 28,4 %, obwohl der Preis
+    unverändert bleibt. Wer die Dividende aus dem CO2-Preis speist,
+    finanziert sie aus einer schrumpfenden Quelle. Das ist kein Fehler
+    des Entwurfs, aber es gehört in die Haushaltsrechnung.
+
+[5] DER HARTE BEFUND: AB 2028 GIBT ES KEINEN NATIONALEN PREIS MEHR
+
+    § 10 Absatz 3 Satz 2 Nummer 4 BEHG in der neuen Fassung sieht für die
+    Jahre ab 2028 den Verkauf zu einem "marktbasierten Preis" vor, der dem
+    mengengewichteten Durchschnittspreis der Versteigerungen im
+    europäischen Emissionshandel entspricht. Der nationale Brennstoff-
+    emissionshandel läuft in den europäischen ETS 2 nach Kapitel IVa der
+    Emissionshandelsrichtlinie über; dessen Start wurde durch die
+    Verordnung (EU) 2026/667 vom 11. März 2026 um ein Jahr verschoben.
+
+    Daraus folgt: Ein nationaler CO2-Preis von 100 oder 150 EUR ab 2028
+    ist mit dem geltenden Recht nicht vereinbar. Der Preis wird dann am
+    europäischen Markt gebildet. Deutschland könnte einen höheren Preis
+    nur als ZUSÄTZLICHE nationale Abgabe oben drauf setzen — das wäre
+    etwas anderes als ein CO2-Preis, rechtlich wie politisch.
+
+    Position 07 muss das benennen. Drei Wege stehen offen:
+      a) Den Preispfad als europäische Forderung formulieren, nicht als
+         nationale Setzung. Passt zur Klub-Logik der Seite.
+      b) Eine nationale Zusatzabgabe vorsehen und sie so nennen.
+      c) Den Preispfad auf das absenken, was national gilt — 55 bis 65 EUR
+         bis 2027, danach Marktpreis.
+
+[6] WAS DIESE RECHNUNG NICHT ABDECKT
+    - Nur der nationale Brennstoffemissionshandel: Wärme und Verkehr.
+      Strom und Industrie liegen im EU-ETS 1 und fehlen hier ganz.
+    - Die gesetzliche Emissionsmenge ist eine Obergrenze. Verkauft wird,
+      was an Emissionen anfällt; liegt die Nachfrage darunter, fällt das
+      Aufkommen entsprechend geringer aus.
+    - Eine Reserve von 40 Millionen Zertifikaten kann die Menge in einem
+      Jahr erhöhen (§ 10 Absatz 3 Satz 2 Nummer 2 neu).
+    - Der Abbau klimaschädlicher Subventionen, der zweite Teil von
+      Position 07, ist hier nicht enthalten.

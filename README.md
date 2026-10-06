@@ -8,19 +8,23 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v3.8** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
+**Modellstand: v3.9** (Logbuch Band III, 5. Oktober 2026). Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
+
+Einstieg: `INDEX.md` (Wegweiser, Stand A und Stand B, Naht zwischen beiden).
 
 ## Aufbau
 
 | Ordner | Inhalt |
 |---|---|
 | `logbuch/` | Versionsgeschichte, Korrekturen, Datenbestand, Rechenplan, offene Punkte |
-| `modell/` | Rechenskripte (Python), je Rechnung eine Datei, mit Parameterfile |
-| `daten/aggregate/` | Ergebnisdateien (`.csv`) und aufbereitete Aggregate mit Quellenangabe |
+| `modell/` | Rechenskripte: `rahmen/` (Originale Stand B), Zweitrechnung, Parameterfile, `kern/`, `rechnungen/`, `audit/` (Stand A); siehe `modell/LIESMICH.md` |
+| `daten/aggregate/` | Ergebnisdateien (`.csv`, `.json`) und aufbereitete Aggregate mit Quellenangabe |
+| `daten/herkunft/` | Manifest der Drittdateien (nicht eingecheckt) |
 | `daten/roh/` | **nur lokal, wird nicht versioniert** (siehe `.gitignore`) |
-| `seite/` | Webseite in den Sprachfassungen |
-| `dokumente/` | Ausgearbeitete Dokumente (Gesamtkonzept, Audit, Rahmenstruktur) |
+| `seite/` | Webseite, Stand A, acht Sprachen; siehe `seite/LIESMICH.md` |
+| `dokumente/` | Gesamtkonzept (maßgeblich), ältere Dokumente, Werkzeuge |
+| `archiv/` | eigene Dateien aus früheren Sitzungen, teils abweichende Fassung |
 
 ## Versionierung
 
@@ -39,13 +43,16 @@ fortgeschrieben wie die Rechnung, die es beschreibt.
   Originalskripten in `modell/rahmen/` und, unabhängig davon, aus `modell/pfad.py` und
   `modell/aufschlag.py` mit `modell/parameter.toml`. `modell/vergleich_original.py` prüft beide
   gegeneinander. Die Eingangsdaten (Eurostat 2024) stehen als feste Zahlen im Skript und sind
-  **nicht an der Quelle geprüft**; für acht Länder weichen die Einwohnerzahlen der beiden
-  Datensätze ab (Logbuch Band III, B7).
-- **Noch nicht eingecheckt** sind aus dem Export des Vorchats: das nationale Gesamtmodell
-  (`modell-2828.py` und Ergebnisse), die achtsprachige Webseite mit Quelltext, das
-  Gesamtkonzept als Word und PDF, die Einzelrechnungen (Erbschaft, Immobilien, Vermögen, Klima,
-  OECD) und das Audit. Diese Teile stehen auf dem **älteren, nationalen Stand A**, das
-  Gesamtkonzept auf dem europäischen **Stand B**; beides widerspricht sich (Band III, v3.8, Abschnitt 7).
+  **nicht an der Quelle geprüft**. Die Klub-Einwohnerzahl ist seit v3.9 254,8 Mio (Gesamtkonzept,
+  `basis.py`); Logbuch Band I nennt 255,1 Mio (Band III, B7).
+- **Stand A und Stand B** widersprechen sich (Quote 27,91 gegen 30,6 %, fünf Ebenen gegen
+  zwei). Das nationale Modell, die Webseite und die Einzelrechnungen stehen auf Stand A und
+  wurden nach dem Rahmenwechsel nicht neu gerechnet. Ob die Steuerpositionen die Quote 30,6 %
+  tragen, ist nicht gerechnet (Logbuch Band III, B12).
+- **Nicht ausgeführt**: die Skripte in `modell/kern/`, `modell/rechnungen/`, `modell/audit/` und
+  die Patch-Skripte der Seite. Eingecheckt ist, was im Export lag.
+- **Nicht eingecheckt**: Drittdateien (nur Manifest), OECD-Rohdaten, die Rechercheliste der
+  Institute (enthält persönliche E-Mail-Adressen Dritter).
 - Das Logbuch Band I ist seit v3.8 vollständig (v0.1 bis v3.4). Eine frühere Fassung dieses
   Textes behauptete, die Einträge bis v3.4 seien verloren; das war falsch (Korrektur 47).
 

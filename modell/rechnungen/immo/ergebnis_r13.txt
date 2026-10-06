@@ -1,0 +1,106 @@
+========================================================================================================
+R13 — ZIELGENAUIGKEIT DES FREIBETRAGS VON 100.000 EUR
+========================================================================================================
+
+[1] DIE FÄLLE, Verkauf 2026
+
+Fall                                Kauf     Preis   Verkauf    Gewinn  davon Boden  steuerpfl.   Steuer
+Reihenhaus Landkreis Sachsen        2005   110.000   182.000   +72.000       14.400           0        0
+Einfamilienhaus Kleinstadt NRW      1995   185.000   346.455  +161.455       56.509      61.455   17.207
+Eigentumswohnung Leipzig            2015   145.000   237.282   +92.282       50.755           0        0
+Einfamilienhaus Münchner Umland     2010   420.000 1.006.473  +586.473      410.531     486.473  136.212
+Altbauwohnung München               1990   180.000   431.345  +251.345      175.942     151.345   42.377
+Eigentumswohnung Berlin             2018   310.000   417.177  +107.177       58.947           0        0
+Vermietetes Haus Hamburg            2012   890.000 1.717.262  +827.262      454.994     827.262  231.633
+Neubau Brandenburg, Kauf im Hoch    2022   395.000   382.599   -12.401       -2.480           0        0
+
+[2] WER WIRD FREIGESTELLT, UND WARUM
+
+    Frei durch UMZUGSAUFSCHUB (zahlt nichts, egal wie hoch der Gewinn):
+      Reihenhaus Landkreis Sachsen               Gewinn   +72.000 EUR
+      Eigentumswohnung Leipzig                   Gewinn   +92.282 EUR
+      Eigentumswohnung Berlin                    Gewinn  +107.177 EUR
+
+    Frei durch FREIBETRAG (Gewinn positiv, aber unter 100.000):
+      keiner in dieser Auswahl — die kurzen Haltedauern liegen
+      alle schon im Umzugsaufschub
+
+    VERLUST, eigene Frage:
+      Neubau Brandenburg, Kauf im Hoch           Verlust  -12.401 EUR
+      Kauf im Hoch 2022, Verkauf 2026 nach der Korrektur. Unter
+      "alles ist Einkommen" muss ein Verlust abziehbar sein —
+      sonst ist die Regel einseitig. Das ist bisher nicht geklärt.
+
+    ZAHLT:
+      Einfamilienhaus Kleinstadt NRW             Steuer    17.207 EUR (10,7 % des Gewinns)
+      Einfamilienhaus Münchner Umland            Steuer   136.212 EUR (23,2 % des Gewinns)
+      Altbauwohnung München                      Steuer    42.377 EUR (16,9 % des Gewinns)
+      Vermietetes Haus Hamburg                   Steuer   231.633 EUR (28,0 % des Gewinns)
+
+[3] DAS MUSTER — UND ES IST DAS GEWOLLTE
+
+    Der Freibetrag von 100.000 EUR wirkt als REGIONALER UND ZEITLICHER
+    FILTER, ohne eine Region zu nennen. Getroffen wird, wer lange in einem
+    Ballungsraum gehalten hat — also genau dort, wo die öffentliche
+    Investition am meisten in den Bodenwert gewandert ist. Nicht getroffen
+    wird, wer auf dem Land oder kurz gehalten hat.
+
+    Das ist kein Zufall, sondern folgt aus der Spreizung der Baulandpreise:
+    15 bis 2.000 EUR je m², Faktor 133 (BBSR). Ein Gewinn über 100.000 EUR
+    entsteht in ländlichen Kreisen nur bei sehr grossen Objekten, in München
+    schon beim Durchschnittsfall.
+
+[4] WAS DER UMZUGSAUFSCHUB NICHT FÄNGT — DIE ECHTEN HÄRTEN
+    Der Aufschub setzt voraus, dass wieder in selbstgenutztes Wohneigentum
+    investiert wird. Drei Gruppen tun das nicht:
+
+      Umzug ins Heim oder betreute Wohnen
+        verkauft und mietet. Kein Ersatzobjekt, also kein Aufschub. Der
+        Gewinn ist voll steuerpflichtig, obwohl das Geld die Pflege zahlt.
+
+      Verkleinern in die Miete im Alter
+        genau die Mobilität, die man wohnungspolitisch will — grosse Wohnung
+        frei für eine Familie. Der Aufschub bestraft sie.
+
+      Erbfall
+        der Erbe tritt nach heutigem Recht in die Anschaffung des Erblassers
+        ein und übernimmt den gesamten latenten Gewinn. Zusammen mit
+        Position 03 trifft denselben Vorgang zweimal.
+
+
+[5] DIE ERBFALL-KOLLISION, GERECHNET
+    Beispiel: Erblasser kauft 1985 in Frankfurt für 150.000, Wert 2026
+      Wert bei Erbfall                        326.727 EUR
+      Position 03, Freibetrag 200.000          35.484 EUR Erbschaftsteuer
+      Position 04b, Freibetrag 100.000         21.484 EUR auf den Verkaufsgewinn
+      zusammen                                 56.967 EUR = 17,4 % des Werts
+
+    Das ist zu viel, und zwar nicht wegen der Höhe, sondern wegen der
+    Begründung: derselbe Wertzuwachs wird zweimal als Einkommen erfasst,
+    einmal beim Erben und einmal beim Verkaufen. Die saubere Lösung ist
+    der SCHRITT AUF DEN VERKEHRSWERT: mit der Erbschaftsteuer wird der
+    Wert zum Todestag neuer Einstandspreis. Was danach wächst, ist der
+    Gewinn des Erben; was davor wuchs, hat die Erbschaftsteuer erfasst.
+    Jeder Vorgang einmal — das ist Ihr Grundsatz, nicht mein Zusatz.
+      mit Schritt auf den Verkehrswert         35.484 EUR = 10,9 % des Werts
+
+[6] DIE ZWEITE OFFENE FRAGE: GANZER GEWINN ODER NUR DER BODEN?
+    Der Grundsatz begründet nur den BODENanteil — das Gebäude hat der
+    Eigentümer bezahlt, und es verbraucht sich. Gerechnet macht das viel aus.
+
+Fall                                Steuer ganzer Gewinn   nur Bodenanteil   Differenz
+Reihenhaus Landkreis Sachsen                           0                 0           0
+Einfamilienhaus Kleinstadt NRW                    17.207                 0      17.207
+Eigentumswohnung Leipzig                               0                 0           0
+Einfamilienhaus Münchner Umland                  136.212            86.949      49.264
+Altbauwohnung München                             42.377            21.264      21.113
+Eigentumswohnung Berlin                                0                 0           0
+Vermietetes Haus Hamburg                         231.633           127.398     104.235
+Neubau Brandenburg, Kauf im Hoch                       0                 0           0
+zusammen                                         427.430           235.611     191.819
+
+    Nur der Bodenanteil wäre 45 % weniger Aufkommen — aber genau
+    das, was der Grundsatz hergibt. Der ganze Gewinn ist leichter zu
+    erklären und zu prüfen (ein Kaufpreis, ein Verkaufspreis), erfasst
+    aber auch Inflation auf dem Gebäude. Das ist eine Entscheidung
+    zwischen Prinzipientreue und Vollziehbarkeit.

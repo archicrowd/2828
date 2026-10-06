@@ -64,8 +64,21 @@ for _ in range(90):
     else:
         hi = m
 q_orig = (lo + hi) / 2
-ZEILEN.append(["Mindestquote", "streng (ohne reales Wachstum)", f"{q_orig:.4f}", "29.97/30.616 (Logbuch v3.7)",
-               "", "% des BIP", "Zweitrechnung 30,616: Näherung 479 x 506/550, Original rechnet direkt mit KOPF_DE (30,611)"])
+import pfad as zweit_pfad  # noqa: E402  (Zweitrechnung)
+
+P_ZWEIT = zweit_pfad.lade()
+lo, hi = 25.0, 40.0
+for _ in range(90):
+    m = (lo + hi) / 2
+    if min(r["de_real"] for r in final.pfad(m)) < final.VERSPRECHEN:
+        lo = m
+    else:
+        hi = m
+q_orig_real = (lo + hi) / 2
+melde("Mindestquote", "streng (ohne reales Wachstum)", q_orig, zweit_pfad.rechne(P_ZWEIT, real_exakt=0.0)["mindestquote"],
+      0.005, "% des BIP")
+melde("Mindestquote", "zentral (0,98 % real)", q_orig_real,
+      zweit_pfad.rechne(P_ZWEIT, real_exakt=final.G_REAL * 100)["mindestquote"], 0.005, "% des BIP")
 
 # 4. Aufschlag: Original (aufschlag.py) neu gerechnet gegen daten/aggregate/aufschlag.csv
 satz = 78.4 * 1.53 / 100  # aufschlag.py setzt D_START = 78.4 fest (gerundet), nicht den berechneten Wert
