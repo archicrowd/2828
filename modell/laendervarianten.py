@@ -8,8 +8,9 @@ Lesarten der Dividende (je Erwachsenem und Monat, 2028, Preise 2028; Kinder zur 
   V1  gleicher Eurobetrag im Klub
   V2  gleicher Anteil am örtlichen BIP je Kopf
   V3a halbes Existenzminimum am Wohnort, budgetneutral: der Klubtopf wird nach Einwohnern x Preisniveau verteilt
-  V3b halbes Existenzminimum am Wohnort, verankert: 514,50 EUR in Deutschland, übrige Länder nach Preisniveau;
-      Vergleich mit dem verfügbaren Topf (Deckungsgrad)
+  V3b halbes Existenzminimum am Wohnort, verankert: halber Grundfreibetrag Deutschland in Preisen 2028 (535,29 EUR;
+      bis v3.19 irrtümlich 514,50 EUR in Preisen 2026, Korrektur 54), übrige Länder nach Preisniveau; Deckungsgrad
+Entscheidung der Initiative (v3.20): V3a wird ausgezahlt, V3b ist der Boden, den die Quote in jedem Jahr sichert.
 Gemeinden: Formel je Einwohner und je Kind als Anteil am BIP je Kopf des eigenen Landes ("Pro-Kopf-Variante des
 Länderbeitrags"), dazu der klubweit einheitliche Betrag zum Vergleich.
 
@@ -37,7 +38,8 @@ div = J["div_2028"] / 100                     # Dividendenanteil am BIP 2028
 B, SCHULE, KIND = J["b_fach"] / 100, 3.70 / 100, J["kind_ant"] / 100
 pop_k = sum(POP[c] for c in L)
 pli_k = sum(POP[c] * PLI[c] for c in L) / pop_k
-anker_de = float(PAR["existenzminimum_de_jahr"]) / 12 / 2
+# Korrektur 54 (v3.20): Grundfreibetrag 2026 (nominal) in Preise 2028 fortgeschrieben (2 % je Jahr, Annahme)
+anker_de = J["anker_de"]
 
 zeilen, topf, bedarf_v3b = [], 0.0, 0.0
 for c in L:

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.19**
+Stand: 7. Oktober 2026 · Modellstand **v3.20**
 
 ---
 
@@ -847,6 +847,89 @@ Grafik auf `de.html` als Bildschirmfoto gesichtet (Anschluss 2028 ohne Sprung).
 
 ---
 
+### v3.20 — Dividende nach Preisniveau, Umzugsregel, Quotenkriterium halbes Existenzminimum (B17)
+
+**Art der Änderung: MINOR, bewegt die Quote.** 7. Oktober 2026.
+Entscheidungen der Initiative: „Länderbezogene Anpassung der Dividende (mein Vorschlag). Umzugswartedauer 3 Jahre mit Nachweis
+einer Steuerzahlung. Deine Entscheidung zur Quote."
+
+**1. Dividende je Land (entschieden).** Lesart V3a aus v3.17: Der Dividendentopf des Klubs wird nach Einwohnern × Preisniveau
+verteilt (Eurostat `prc_ppp_ind`, Individualverbrauch 2024, EU27 = 100; Klub einwohnergewichtet 108,17), Kinder zur Hälfte.
+Deutschland erhält das Klubmittel × 1,0086. Der ganze Topf wird ausgezahlt. **Vereinfachung (Annahme):** gleicher
+Minderjährigenanteil in allen Ländern; sonst ist die Verteilung nicht exakt budgetneutral.
+
+**2. Umzugsregel (entschieden).** Bei Umzug innerhalb des Klubs gilt die Dividende des bisherigen Landes, bis drei Jahre Wohnsitz und
+eine nachgewiesene Steuerzahlung im neuen Land vorliegen (`umzug_wartezeit_jahre = 3`). Ohne Wirkung auf die Rechnung. **Offen**
+(Gesamtkonzept Abschnitt 8): was als Steuerzahlung gilt (Rentner, Studierende, Personen ohne Einkommensteuer), Kinder, und die
+Vereinbarkeit mit Freizügigkeit und Gleichbehandlung (Art. 45 AEUV, VO 883/2004) beim Umzug in ein teureres Land. Keine Rechtsprüfung.
+
+**3. Quotenkriterium (Entscheidung des KI-Systems im Auftrag der Initiative).** Neu: Die Quote ist die kleinste, bei der der
+Klubtopf in jedem Jahr 2028–2060 das halbe Existenzminimum am Wohnort deckt, bei null realem Wachstum (strenge Lesart, Korrektur 51).
+Maß: halber Grundfreibetrag Deutschland 2026 (12.348 EUR, § 32a EStG), mit 2 % je Jahr in Preise 2028 fortgeschrieben = **535,29 EUR
+je Erwachsenem und Monat**, mit dem Preisniveau übertragen. Das ergibt 486,48 EUR je Klub-Einwohner und Monat.
+
+Begründung: (a) Mit der Dividende nach Preisniveau zählt der Topf des Klubs, nicht mehr das deutsche BIP je Kopf; das alte
+Kriterium (479 EUR je Kopf, nach örtlichem BIP, Lesart von `final.py`) passt nicht mehr zur Auszahlungsregel. (b) 479 EUR war eine
+Setzung aus dem Projektstand ohne Herleitung; das halbe Existenzminimum ist amtlich verankert und ist der Vorschlag der Initiative.
+(c) Die strenge Lesart bleibt, weil ein Boden, der nur bei Wachstum hält, kein Boden ist.
+
+| Kriterium (alle mit Dividende nach Preisniveau, außer erster Zeile) | Mindestquote | Quote |
+|---|---:|---:|
+| bisher: 479 EUR je Kopf DE nach örtlichem BIP, streng (v3.19) | 30,827 | 30,9 |
+| 479 EUR je Kopf DE, streng | 31,590 | 31,6 |
+| halbes Existenzminimum ohne Fortschreibung (514,50 EUR), streng | 31,428 | 31,5 |
+| halbes Existenzminimum, Preise 2028, nur Zentralfall (3,0 % nominal) | 31,018 | 31,1 |
+| **halbes Existenzminimum, Preise 2028, streng (gewählt)** | **31,847** | **31,9** |
+
+**Kritisch.** Das gewählte Kriterium hebt die Quote um einen vollen Punkt. Folgen: Deckungslücke 1,05 → **2,05 Punkte
+(283 Mrd EUR Klub 2028)**, Entlastung 2,11 → **1,11 Punkte (153 Mrd EUR)**.
+Im Zentralfall liegt die Dividende dafür deutlich über dem Boden (2028: 10,4 %). Wer die Quote niedriger halten
+will, wählt den Zentralfall (31,1 %); dann fällt die Dividende bei null Wachstum unter den Boden. Die Entscheidung ist ein
+Parameter und kann von der Initiative revidiert werden. Das Existenzminimum ist mit der Preissteigerung fortgeschrieben (Annahme);
+der Grundfreibetrag folgt tatsächlich dem Existenzminimumbericht und stieg zuletzt schneller als die Preise.
+
+**Dividende je Erwachsenem und Monat, Preise 2028 (`tabelle_laender_div`):**
+
+| Land | Preisniveau | Boden | 2028 | 2035 | 2060 | Tiefpunkt bei null Wachstum |
+|---|---:|---:|---:|---:|---:|---:|
+| Dänemark | 142,8 | 701 | 773 | 762 | 1.049 | 704 |
+| Irland | 141,2 | 693 | 765 | 753 | 1.037 | 696 |
+| Niederlande | 121,0 | 594 | 655 | 646 | 889 | 597 |
+| Österreich | 119,7 | 587 | 648 | 639 | 879 | 590 |
+| Belgien | 118,7 | 582 | 643 | 633 | 872 | 585 |
+| Deutschland | 109,1 | 535 | 591 | 582 | 801 | 538 |
+| Frankreich | 107,9 | 529 | 584 | 576 | 793 | 532 |
+| Estland | 96,5 | 473 | 523 | 515 | 709 | 476 |
+| Slowenien | 91,0 | 446 | 493 | 486 | 669 | 449 |
+| Spanien | 90,7 | 445 | 491 | 484 | 666 | 447 |
+
+**Bewegte Zahlen** (gegen v3.19): Quote 30,9 → **31,9 %**; Obergrenze von A 36 → **35 %** (Regel aus Zentralfall und Einzelrisiken,
+berechnet 34,08 %, Einzelrisiken bis 34,67 %; Häufung der Risiken 35,59 %
+weiterhin nicht gedeckt); Klubschnitt je Einwohner 2028 491,8 → 536,9 EUR, Tiefpunkt 480,8 (2035) → 528,7 EUR
+(2032), 2060 666,8 → 728,4 EUR; Deutschland je Erwachsenem 2028 536,6 (Klubmittel, bisher auf der Seite) →
+**590,8 EUR**, je Kind 295,4 EUR, 2060 801,5 EUR. Der Tiefpunkt verschiebt sich auf 2032, weil
+der höhere Dividendenanteil das Wachstum stärker zur Geltung bringt. Höchstbedarf von A unverändert (10,59 % BIP, 2035).
+
+**Geändert:** `modell/gesamtrechnung.py` (Preisniveaus, Feld `de_land`, Kriterium, Ländertabelle; Selbstprüfung gegen `final.pfad()`
+unverändert 33 Jahre exakt, weil die Originalfelder erhalten bleiben), `gesamtrechnung.toml` (`versprechen_de_monat` nur Vergleich,
+`umzug_wartezeit_jahre`), `laendervarianten.py` (Korrektur 54), Gesamtkonzept (1.4 neu mit Ländertabelle und Umzugsregel, Abschnitt 4
+Kriterium und „Was das Kriterium kostet", Abschnitt 8 zwei neue offene Punkte, Abschnitt 9 Änderungsabsatz; die Zahlen im
+Änderungsabsatz zum 4. Oktober sind jetzt fest geschrieben statt aus der laufenden Rechnung), Kurzfassung, Seite in sechs Sprachen
+(Dividende Deutschland statt Klubmittel, ein Satz zur gleichen Kaufkraft; Übersetzung nicht muttersprachlich geprüft),
+`pruefe_konzept.py`.
+
+**Wodurch aufgefallen:** Entscheidung der Initiative; bei der Umsetzung zeigte sich, dass das alte Kriterium auf dem deutschen BIP
+je Kopf ruhte und mit der Dividende nach Preisniveau nicht mehr gilt, und dass der Anker 514,50 EUR nicht in Preisen 2028 stand
+(Korrektur 54).
+
+**Geprüft:** `python3 modell/alles.py`; `pruefe_konzept.py` (57 Prüfungen); Seite in drei Sprachen automatisch bedient (Rechner 2060,
+zwei Erwachsene und zwei Kinder: 2.404 EUR im Monat = 2 × 801 + 2 × 401); Gesamtkonzept zwölf, Kurzfassung zwei Seiten.
+
+*Skripte: `modell/gesamtrechnung.py`, `modell/laendervarianten.py`, `dokumente/werkzeuge/gesamtkonzept-bau.js`,
+`dokumente/werkzeuge/kurzfassung-bau.js`, `seite/werkzeuge/seite_bau.py`, `seite/werkzeuge/sprachen/*.json`, `modell/pruefe_konzept.py`.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -861,6 +944,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 51 | Gesamtkonzept 4. Oktober, Abschnitt 4: 30,6 % halte das Versprechen „auch dann in jedem Jahr, wenn die Wirtschaft real überhaupt nicht wächst" | Schon in der Lesart des Originals waren 30,61 % nötig; in stimmiger Lesart (nominal 2 %, auch für den Schuldenabbau) 30,73 %. Neu abgeleitet 30,764 → Quote 30,8 % | Kennzahl `mindestquote_streng` (v3.10) und Prüfagent (v3.12) |
 | 52 | Band II (Korrektur 43): Dividendenreihe 550 → 512 → 707 EUR ohne Bezugsgruppe und Zeiteinheit (B1) | Deutschland, EUR je Kopf und Monat, Preise 2028; seit v3.12 533 → 521 → 720 | Abgleich v3.7 |
 | 53 | Veröffentlichte Webseite (Stand A, Kasten „Warum Estland im Klub ist"): „Ab Januar 2026 gilt ein Satz von 24 %" | Estland bleibt 2026 bei 22 %; die geplante Anhebung wurde 2025 aufgegeben (Sekundärquellen, amtlich zu prüfen) | Recherche für die Länderbeispiele der neuen Seite (v3.15) |
+| 54 | v3.17, Lesart V3b (`laendervarianten.py`, Logbuch v3.17): halbes Existenzminimum 514,50 EUR je Erwachsenem „in Preisen 2028", Deckungsgrad 104,8 % | 514,50 EUR ist der Grundfreibetrag 2026 nominal; in Preisen 2028 (2 % je Jahr, Annahme) 535,29 EUR. Deckungsgrad 2028 bei Quote 30,9 % damit rund 101 %, nicht 105 % | Umsetzung der Entscheidung B17 (v3.20): Preisbasis des Ankers gegen die der Rechnung geprüft |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -889,7 +973,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.19
+## 7 | Offene Punkte, Stand v3.20
 
 | Punkt | Status |
 |---|---|
@@ -902,14 +986,14 @@ nicht geklärt.
 | **Rechenskripte** | Originale in `modell/rahmen/` (unverändert, Prüfsummen); geltende Rechnung `modell/gesamtrechnung.py` (v3.12); Zweitrechnung als Regression. Das Bauskript `gesamtkonzept-bau.js` ist seit v3.12 gelesen und neu geschrieben. Skripte bis v3.4 liegen in `modell/kern/`, `rechnungen/`, `audit/` (Stand A, nicht erneut ausgeführt) |
 | **B7: Einwohnerzahl** | **geschlossen in v3.12.** Gesamtkonzept rechnet mit 255,061 Mio; `basis.py` bleibt als Original |
 | **B8: Bemessung des Aufschlags** | **geklärt in v3.11.** BIP-Bemessung folgt aus der Finanzierung nach BIP-Anteil; `altschuld.py` überholt (Sekundärquelle) |
-| **B9: Obergrenze 36 %** | **entschieden in v3.12:** abgeleitete Regel bestätigt 36 %; nicht gedeckt: Häufung der Risiken (36,7 %) und 3,5 % Verteidigung (38,5 %) |
+| **B9: Obergrenze** | **entschieden in v3.12:** abgeleitete Regel (36 % bis v3.19). **Seit v3.20: 35 %** (größerer Einzug bei Quote 31,9 %); nicht gedeckt: Häufung der Risiken (35,6 %) und 3,5 % Verteidigung (37,3 %) |
 | **B10: Basis des Gesamtkonzepts** | **geschlossen in v3.9.** Das Gesamtkonzept steht auf der korrigierten Basis |
-| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 % (seit v3.19: 1,05 Punkte zu 30,9 %, 145 Mrd EUR Klub). Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
+| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; **seit v3.20: 2,05 Punkte zu 31,9 %, 283 Mrd EUR Klub**). Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
 | **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
 | **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte (Schuldenstände 2010–2025 und Defizite 2025 seit v3.19 neu abgerufen), Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
 | **B16: Seite zum Stand B** | **sechs Sprachen in v3.18.** Offen: muttersprachliches Gegenlesen, Länderanpassung (eigene Zahlen je Land statt Referenzland Deutschland), Veröffentlichung mit `fonts/` |
-| **B17: Dividende gleich oder je Land?** | **weitergeführt in v3.17.** Preisniveaus abgerufen, vier Lesarten gerechnet (`laendervarianten.csv`). Gemeinden als Pro-Kopf-Variante des Länderbeitrags (Vorschlag der Initiative). Offen: V3a oder V3b, Umzugsregel, Quotenkriterium; danach Neurechnung |
+| **B17: Dividende gleich oder je Land?** | **entschieden in v3.20:** Dividende nach Preisniveau (V3a), Boden halbes Existenzminimum am Wohnort (Quotenkriterium, streng), Umzugsregel drei Jahre mit Steuernachweis. Offen: Einzelheiten der Umzugsregel und Europarecht; jährliche Fortschreibung der Preisniveaus; Fortschreibung des Existenzminimums |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
 | **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |
 | **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |

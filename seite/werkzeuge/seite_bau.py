@@ -129,8 +129,8 @@ def werte(sp):
     """Alle Zahlen, die in Texten vorkommen, sprachgerecht formatiert."""
     og = J["obergrenze"]
     return {
-        "erw_2028": eur(J["erw_2028"], sp), "kind_2028": eur(J["kind_2028"], sp),
-        "erw_2060": eur(J["erw_2060"], sp), "mehr": pct(J["anteil_mit_mehr_de"], sp),
+        "erw_2028": eur(J["erw_de_2028"], sp), "kind_2028": eur(J["kind_de_2028"], sp),
+        "erw_2060": eur(J["erw_de_2060"], sp), "mehr": pct(J["anteil_mit_mehr_de"], sp),
         "keil_de": pct(J["abgabenkeil_de_2024"], sp, 1), "keil_oecd": pct(J["abgabenkeil_oecd_2024"], sp, 1),
         "abgeltung": pct(J["abgeltungsteuer_de"], sp, 1), "og": pct(og, sp), "mind": pct(100 - og, sp),
         "formel_einw": eur(J["formel_einw"], sp), "formel_kind": eur(J["formel_kind"], sp),
@@ -156,8 +156,8 @@ def baue(sp, T, V):
     pts = " ".join(f"{(x - xs[0]) / (xs[-1] - xs[0]) * 280 + 10:.1f},{70 - (v - lo) / (hi - lo) * 55:.1f}" for x, v in zip(xs, r))
     spark = (f'<svg class="spark" viewBox="0 0 300 84" role="img" aria-label="{t("baustein_div_titel")}">'
              f'<polyline points="{pts}" fill="none" stroke="#1D7A4F" stroke-width="2.5"/>'
-             f'<text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · {eur(J["erw_2028"], sp)}</text>'
-             f'<text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · {eur(J["erw_2060"], sp)}</text></svg>')
+             f'<text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · {eur(J["erw_de_2028"], sp)}</text>'
+             f'<text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · {eur(J["erw_de_2060"], sp)}</text></svg>')
     raum_knoepfe = "".join(
         f'<button type="button" aria-pressed="false" data-k="{x["land"]}" data-iso="{ISO.get(x["land"], x["land"])}" data-de="{x["name"]}"'
         + (' class="neu"' if x["land"] == "CA" else "")

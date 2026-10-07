@@ -1,7 +1,7 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.19",
- "fassung_gesamtkonzept": "6. Oktober 2026",
+ "modellstand": "v3.20",
+ "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
  "repository": "https://github.com/archicrowd/2828 (privat; Zugang auf Anfrage)",
@@ -31,18 +31,18 @@
   "werkzeuge": "LibreOffice (soffice), poppler-utils (pdftotext, pdfinfo)"
  },
  "kernergebnisse": {
-  "quote": 30.9,
-  "obergrenze": 36.0,
-  "mindestquote_streng": 30.826767787785286,
-  "klub_2028": 491.8384329236564,
-  "klub_2035": 480.77816604974686,
-  "klub_2060": 666.7776489726463,
-  "de_2028": 534.8613970801954,
+  "quote": 31.9,
+  "obergrenze": 35.0,
+  "mindestquote_streng": 31.84694767991205,
+  "klub_2028": 536.9346157908793,
+  "klub_2035": 529.0617115842875,
+  "klub_2060": 728.3981857418413,
+  "de_2028": 541.5626488775991,
   "formel_einw": 3598.675392804394,
   "formel_kind": 12624.65648994137,
-  "entlastung": 2.1099999999999994,
+  "entlastung": 1.1099999999999994,
   "deckung_gesamt": 29.848571428571432,
-  "deckung_luecke": 1.0514285714285663,
+  "deckung_luecke": 2.0514285714285663,
   "zins_eff_2024": 1.8965957322556544,
   "pop_klub_mio": 255.061017,
   "bip28_klub_mrd": 13802.733917918245
@@ -287,7 +287,7 @@
    "nach": "B03 Rahmenmodell (Stand B)",
    "was": "Steuerpositionen des Kerns tragen die Quote 30,6 % des Rahmens",
    "status": "offen",
-   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %); Klubebene fehlt (deckung_quote.csv)"
+   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %); Klubebene fehlt (deckung_quote.csv)"
   },
   {
    "id": "N06",

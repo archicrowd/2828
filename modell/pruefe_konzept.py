@@ -40,8 +40,10 @@ def main() -> int:
     soll = [
         ("Quote", f"Steuerquote {de(J['quote'], 1)} %"),
         ("Obergrenze", f"{de(J['obergrenze'])} % dessen, was A einzieht"),
-        ("Klubdividende 2028", f"bei {de(J['klub_2028'])} €"),
-        ("Klubdividende Tiefpunkt", f"auf {de(J['kl_tief'])} €"),
+        ("Klubdividende 2028", f"sind es {de(J['klub_2028'])} € je Einwohner"),
+        ("Klubdividende Tiefpunkt", f"{de(J['kl_tief'])} € im Tiefpunkt {J['kl_tief_jahr']}"),
+        ("DE je Erwachsenem 2028", f"bei {de(J['erw_de_2028'])} € je Erwachsenem"),
+        ("Boden halbes Existenzminimum", f"{de(J['anker_de'], 2)} € je Erwachsenem"),
         ("Formel je Einwohner", f"{de(J['formel_einw'])} € je Einwohner"),
         ("Formel je Kind", f"{de(J['formel_kind'])} € je Kind"),
         ("Einwohner", f"{de(J['pop_klub_mio'], 1)} Mio Menschen"),
@@ -50,7 +52,7 @@ def main() -> int:
         ("Höchstbedarf", f"Höchststand {de(J['a_hoechst'], 2)} %"),
         ("Zins 2024", f"effektiver Satz von {de(J['zins_eff_2024'], 2)} %"),
         ("Zinsdienst 2028 Mrd", f"{de(J['zd_2028_mrd'])} Mrd €"),
-        ("DE 2028", f"{de(J['de_2028'])} € im Startjahr"),
+        ("DE 2028", f"{de(J['de_2028'])} € je Einwohner im Startjahr"),
         ("DE 2060", f"{de(J['de_2060'])} € im Jahr 2060"),
         ("Strenge Mindestquote", f"genügen {de(J['mindestquote_streng'], 2)} %"),
         ("Anteilsverlust", f"vermindert um {de(-J['div_aenderung_pct'], 1)} %"),
@@ -86,8 +88,8 @@ def main() -> int:
     for name, muster in [
         ("Kurz: Quote", f"{de(J['quote'], 1)} % des BIP"),
         ("Kurz: Obergrenze", f"höchstens {de(J['obergrenze'])} %"),
-        ("Kurz: Dividende 2028", f"{de(J['klub_2028'])} € je Einwohner"),
-        ("Kurz: Dividende 2060", f"{de(J['klub_2060'])} €"),
+        ("Kurz: Dividende 2028", f"{de(J['erw_de_2028'])} € je Erwachsenem"),
+        ("Kurz: Dividende 2060", f"{de(J['erw_de_2060'])} €"),
         ("Kurz: Formel", f"je Einwohner {de(J['formel_einw'])} €"),
         ("Kurz: Entlastung", f"{de(J['entlastung'], 2)} Punkte"),
         ("Kurz: Deckungslücke", f"fehlen {de(J['deckung_luecke'], 2)} Punkte"),
@@ -101,7 +103,7 @@ def main() -> int:
     # Webseite Stand B (seit v3.15): Kernzahlen im Quelltext, Schätzung gekennzeichnet
     seite = WURZEL / "seite" / "stand-b" / "de.html"
     st = (seite.read_text(encoding="utf-8") if seite.exists() else "").replace("\u00a0", " ").replace("&nbsp;", " ").replace("\u202f", " ")
-    for name, muster in [("Seite: Dividende je Erwachsenem", f"{de(J['erw_2028'])} €"),
+    for name, muster in [("Seite: Dividende je Erwachsenem", f"{de(J['erw_de_2028'])} €"),
                          ("Seite: Formel", f"{de(J['formel_einw'])} € je Einwohner"),
                          ("Seite: Obergrenze", f"höchstens {de(J['obergrenze'])} %"),
                          ("Seite: Abgabenkeil", f"{de(J['abgabenkeil_de_2024'], 1)} %"),

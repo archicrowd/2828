@@ -12,6 +12,11 @@ Eingänge und Regeln, und zwar aus Prüfung oder Entscheidung (Logbuch Band III,
   * Quote = strenge Mindestquote, auf 0,1 Punkte aufgerundet (Korrektur 51, Regel)
   * Obergrenze von A aus Zentralfall und Einzelrisiken, auf volle Prozent aufgerundet (Entscheidung B9)
   * Sensitivität: Zentralfall 3,0 % nominal = 0,98 % real (Entscheidung B2)
+  * Dividende je Land nach Preisniveau (Entscheidung B17, v3.20): der Dividendentopf des Klubs wird nach
+    Einwohnern x Preisniveau verteilt; Deutschland erhält das Klubmittel x PLI_DE / PLI_Klub
+  * Quotenkriterium (v3.20): die Dividende deckt in jedem Land und jedem Jahr das halbe Existenzminimum
+    (halber Grundfreibetrag Deutschland in Preisen 2028, mit dem Preisniveau übertragen), auch ohne reales
+    Wachstum; vorher 479 EUR je Kopf in Deutschland nach örtlichem BIP (Lesart von final.py)
 
 Selbstprüfung: Mit den Eingängen der Fassung vom 4. Oktober (Zins 1,53, Auslauf 2028, Quote 30,6,
 Einwohner aus basis.py) muss der Pfad final.pfad() aus dem Original exakt treffen. Sonst Abbruch.
@@ -66,6 +71,8 @@ GDP, SCHULD, RENDITE = basis.GDP, basis.SCHULD, basis.RENDITE          # Eurosta
 F2428 = basis.F2428
 with open(AGG / "laender_2024.csv", encoding="utf-8") as f:
     POP = {r["land"]: float(r["einwohner_mio_2024"]) * 1e6 for r in csv.DictReader(f)}
+with open(AGG / "preisniveau_2024.csv", encoding="utf-8") as f:
+    PLI = {r["land"]: float(r["preisniveau_eu27_100"]) for r in csv.DictReader(f)}
 with open(AGG / "zinsausgaben_2024.csv", encoding="utf-8") as f:
     ZINS = {r["land"]: float(r["zinsausgaben_mio_eur_2024_nominal"]) for r in csv.DictReader(f)}
 
@@ -87,6 +94,13 @@ BIP28_DE = GDP["DE"] / 1000 * F2428
 POP_KLUB = sum(POP.values())
 KOPF_KLUB = BIP28_KLUB * 1e9 / POP_KLUB
 KOPF_DE = BIP28_DE * 1e9 / POP["DE"]
+
+# Länderdividende und Quotenkriterium (v3.20)
+K_MINDER = float(PAR["anteil_minderjaehrige"]) / 100
+PLI_KLUB = sum(POP[c] * PLI[c] for c in POP) / POP_KLUB          # einwohnergewichtet
+R_DE = PLI["DE"] / PLI_KLUB                                         # Deutschland gegen Klubmittel
+ANKER_DE = (float(PAR["existenzminimum_de_jahr"]) * (1 + PREIS) ** (2028 - 2026) / 12 / 2)  # je Erw., Preise 2028
+SCHWELLE_KLUB = ANKER_DE / R_DE * (1 - K_MINDER / 2)                # je Einwohner des Klubs und Monat
 D_ABS24 = sum(GDP[k] * SCHULD[k] / 100 for k in GDP)                   # Mio EUR
 D_START_BER = D_ABS24 / sum(GDP.values()) * 100                         # 78,45 %
 I_ALT = sum(ZINS.values()) / D_ABS24 * 100                              # effektiver Zins 2024
@@ -116,16 +130,18 @@ def pfad(quote, *, i_alt=None, vorlauf=None, d0=None, v_ziel=V_ZIEL, g_nom=G_NOM
         out.append(dict(jahr=j, v=v, d=d, s=s, zd=zd, a=a, div=div,
                         de_fix=div / 100 * kopf_de / 12,
                         de_real=div / 100 * kopf_de * (1 + g_real) ** t / 12,
-                        kl_real=div / 100 * kopf_klub * (1 + g_real) ** t / 12))
+                        kl_real=div / 100 * kopf_klub * (1 + g_real) ** t / 12,
+                        de_land=div / 100 * kopf_klub * R_DE * (1 + g_real) ** t / 12))
         d = (d - tl) / (1 + g_nom)
     return out
 
 
-def mindestquote(feld="de_fix", **kw):
+def mindestquote(feld="de_fix", schwelle=None, **kw):
+    schwelle = VERSPRECHEN if schwelle is None else schwelle
     lo, hi = 20.0, 45.0
     for _ in range(90):
         m = (lo + hi) / 2
-        if min(r[feld] for r in pfad(m, **kw)) < VERSPRECHEN:
+        if min(r[feld] for r in pfad(m, **kw)) < schwelle:
             lo = m
         else:
             hi = m
@@ -167,9 +183,15 @@ def main() -> int:
     # Quote
     # Strenge Lesart (v3.12, Korrektur 51): real kein Wachstum heißt nominal = Preissteigerung, auch für
     # den Schuldenabbau. final.py hielt nur den Kopfbetrag fest und ließ die Schuld mit 3 % nominal schrumpfen.
-    mq_streng = mindestquote("de_real", g_nom=PREIS)
+    # Seit v3.20: Kriterium halbes Existenzminimum am Wohnort (Klubtopf gegen Bedarf), streng
+    mq_streng = mindestquote("kl_real", schwelle=SCHWELLE_KLUB, g_nom=PREIS)
     mq_original_lesart = mindestquote("de_fix")
-    mq_zentral = mindestquote("de_real")
+    mq_zentral = mindestquote("kl_real", schwelle=SCHWELLE_KLUB)
+    W.update(mq_479_v2_streng=mindestquote("de_real", g_nom=PREIS),
+             mq_479_v3a_streng=mindestquote("kl_real", schwelle=VERSPRECHEN / R_DE, g_nom=PREIS),
+             mq_514_v3a_streng=mindestquote("kl_real", schwelle=SCHWELLE_KLUB * (1 + PREIS) ** -2, g_nom=PREIS),
+             anker_de=ANKER_DE, schwelle_klub=SCHWELLE_KLUB, schwelle_de_kopf=ANKER_DE * (1 - K_MINDER / 2),
+             pli_klub=PLI_KLUB, r_de=R_DE)
     q = round(aufrunden(mq_streng, float(PAR["quote_rundung"])), 2)
     W.update(mindestquote_streng=mq_streng, mindestquote_original_lesart=mq_original_lesart,
              mindestquote_zentral=mq_zentral, quote=q, boden=BODEN,
@@ -184,25 +206,25 @@ def main() -> int:
     by = {r["jahr"]: r for r in P}
     p0 = P[0]
     mx = max(P, key=lambda r: r["a"])
-    tief = min(P, key=lambda r: r["de_real"])
+    tief = min(P, key=lambda r: r["de_land"])
     tief_fix = min(P, key=lambda r: r["de_fix"])
     W.update(a_2028=p0["a"], zd_2028=p0["zd"], zins_2028=p0["s"], zd_2028_mrd=p0["zd"] / 100 * BIP28_KLUB,
              div_2028=p0["div"], b_verfuegt_2028=q - p0["a"],
              a_hoechst=mx["a"], a_hoechst_jahr=mx["jahr"], div_2060=P[32]["div"],
              div_aenderung_pct=(P[32]["div"] / p0["div"] - 1) * 100,
-             de_tief=tief["de_real"], de_tief_jahr=tief["jahr"],
+             de_tief=tief["de_land"], de_tief_jahr=tief["jahr"],
              de_tief_fix=tief_fix["de_fix"], de_tief_fix_jahr=tief_fix["jahr"],
-             de_tief_ueber_versprechen_pct=(tief["de_real"] / VERSPRECHEN - 1) * 100,
-             de_rueckgang_pct=(tief["de_real"] / p0["de_real"] - 1) * 100,
-             de_anstieg_2060_pct=(P[32]["de_real"] / p0["de_real"] - 1) * 100,
+             de_tief_ueber_versprechen_pct=(tief["de_land"] / (ANKER_DE * (1 - K_MINDER / 2)) - 1) * 100,
+             de_rueckgang_pct=(tief["de_land"] / p0["de_land"] - 1) * 100,
+             de_anstieg_2060_pct=(P[32]["de_land"] / p0["de_land"] - 1) * 100,
              kl_tief=min(r["kl_real"] for r in P),
              kl_tief_jahr=min(P, key=lambda r: r["kl_real"])["jahr"],
              g_real=(1 + G_NOM) / (1 + PREIS) - 1)
     W["tabelle_pfad"] = [dict(jahr=j, v=by[j]["v"], d=by[j]["d"], zd=by[j]["zd"], a=by[j]["a"],
-                              div=by[j]["div"], klub=by[j]["kl_real"], de=by[j]["de_real"])
+                              div=by[j]["div"], klub=by[j]["kl_real"], de=by[j]["de_land"])
                          for j in (2028, 2030, 2035, 2040, 2050, 2060)]
     for j in (2028, 2035, 2060):
-        W[f"de_{j}"] = by[j]["de_real"]
+        W[f"de_{j}"] = by[j]["de_land"]
         W[f"klub_{j}"] = by[j]["kl_real"]
 
     # Struktur 2028 in EUR je Kopf
@@ -256,24 +278,24 @@ def main() -> int:
                     (0.015, "1,5 %"), (0.020, "2,0 %")):
         gn = G_NOM if g is None else (1 + g) * (1 + PREIS) - 1
         S = pfad(q, g_nom=gn)
-        sens.append(dict(fall=name, e2035=S[7]["de_real"], e2060=S[32]["de_real"],
-                         gegen=(S[32]["de_real"] / S[0]["de_real"] - 1) * 100))
+        sens.append(dict(fall=name, e2035=S[7]["de_land"], e2060=S[32]["de_land"],
+                         gegen=(S[32]["de_land"] / S[0]["de_land"] - 1) * 100))
     W["tabelle_sens"] = sens
 
     # Gegenprobe: Quote 27,91 (nationales Modell)
     Q = pfad(27.91)
-    unter = [r["jahr"] for r in Q if r["de_real"] < VERSPRECHEN]
+    unter = [r["jahr"] for r in Q if r["kl_real"] < SCHWELLE_KLUB]
     W.update(q2791_jahre=len(unter), q2791_bis=unter[-1] if unter else None)
 
     # Tilgung
     O, M = pfad(q, jahre=43), pfad(q, tilg=0.50, jahre=43)
     kum, be = 0.0, None
     for a, b in zip(O, M):
-        kum += b["de_real"] - a["de_real"]
+        kum += b["de_land"] - a["de_land"]
         if be is None and kum >= 0 and a["jahr"] > 2029:
             be = a["jahr"]
-    W.update(tilg_verzicht=O[0]["de_real"] - M[0]["de_real"], tilg_break_even=be)
-    W["punkt_bip_eur_de"] = 1.0 / 100 * KOPF_DE / 12
+    W.update(tilg_verzicht=O[0]["de_land"] - M[0]["de_land"], tilg_break_even=be)
+    W["punkt_bip_eur_de"] = 1.0 / 100 * KOPF_KLUB * R_DE / 12
 
     # Aufschlag (Bemessung am BIP, aufschlag.py; Satz des Startjahrs 2028)
     s28 = p0["s"]
@@ -330,12 +352,25 @@ def main() -> int:
     for j in (2028, 2035, 2060):
         W[f"erw_{j}"] = W[f"klub_{j}"] / (1 - k / 2)
         W[f"kind_{j}"] = W[f"erw_{j}"] / 2
+        W[f"erw_de_{j}"] = W[f"erw_{j}"] * R_DE
+        W[f"kind_de_{j}"] = W[f"erw_de_{j}"] / 2
+    # Länderdividende (B17, v3.20): je Erwachsenem und Monat, Preise 2028; Boden = halbes Existenzminimum
+    ST = pfad(q, g_nom=PREIS)
+    st_min = min(r["kl_real"] for r in ST) / (1 - k / 2)
+    W["tabelle_laender_div"] = [dict(
+        land=c, name=NAMEN[c], pli=PLI[c], boden=ANKER_DE * PLI[c] / PLI["DE"],
+        e2028=W["erw_2028"] * PLI[c] / PLI_KLUB, e2035=W["erw_2035"] * PLI[c] / PLI_KLUB,
+        e2060=W["erw_2060"] * PLI[c] / PLI_KLUB, streng_min=st_min * PLI[c] / PLI_KLUB)
+        for c in sorted(LAENDER, key=lambda c: -PLI[c])]
+    W["streng_min_erw_klub"] = st_min
+    W["streng_min_jahr"] = min(ST, key=lambda r: r["kl_real"])["jahr"]
+    W["deckung_boden_2028_pct"] = p0["kl_real"] / SCHWELLE_KLUB * 100
     # Reihen für die Webseite: Dividende je Erwachsenem (Klub, Preise 2028) je Wachstumsfall; Anteile am Aufkommen
     W["reihe_jahre"] = [r["jahr"] for r in P]
     W["reihe_erw"] = {}
     for name, g in (("0,0", 0.0), ("0,5", 0.005), ("1,0", None), ("1,5", 0.015), ("2,0", 0.020)):
         gn = G_NOM if g is None else (1 + g) * (1 + PREIS) - 1
-        W["reihe_erw"][name] = [r["kl_real"] / (1 - k / 2) for r in pfad(q, g_nom=gn)]
+        W["reihe_erw"][name] = [r["de_land"] / (1 - k / 2) for r in pfad(q, g_nom=gn)]
     W["reihe_a"] = [r["a"] for r in P]
     W["reihe_d"] = [r["d"] for r in P]
     W["reihe_div"] = [r["div"] for r in P]
@@ -369,17 +404,20 @@ def main() -> int:
         w.writerow(["Lücke", f"{q - gedeckt:.3f}", "offen"])
 
     print(f"Selbstprüfung gegen final.pfad(): {n_geprueft} Jahre exakt")
+    print(f"Kriterium: halbes Existenzminimum DE {ANKER_DE:.2f} EUR/Erw. (Preise 2028), PLI Klub {PLI_KLUB:.2f}, "
+          f"R_DE {R_DE:.4f}, Schwelle {SCHWELLE_KLUB:.2f} EUR je Klub-Einwohner; Vergleich 479-DE alt "
+          f"{W['mq_479_v2_streng']:.3f}, 479-DE V3a {W['mq_479_v3a_streng']:.3f}, 514,50 V3a {W['mq_514_v3a_streng']:.3f}")
     print(f"Einwohner {POP_KLUB/1e6:.3f} Mio, Zins 2024 {I_ALT:.3f} % ({sum(ZINS.values())/1000:.1f} Mrd), "
           f"Marktrendite {I_MARKT:.2f} %, Auslauf ab {2028 - VORLAUF}")
     print(f"Original-Lesart (Kopfbetrag fest, Schuld 3 % nominal): {mq_original_lesart:.3f}")
     print(f"Mindestquote streng {mq_streng:.3f} (alt {W['mq_alt_fassung']:.3f}, nur Zins {W['mq_nur_zins']:.3f}, "
           f"nur Auslauf {W['mq_nur_auslauf']:.3f}), zentral {mq_zentral:.3f} -> Quote {q:.1f} %")
     print(f"2028: Zinsdienst {p0['zd']:.3f} % ({p0['s']:.3f} %), A {p0['a']:.3f}, Dividende {p0['div']:.3f} % "
-          f"= Klub {p0['kl_real']:.1f} / DE {p0['de_real']:.1f} EUR")
+          f"= Klub {p0['kl_real']:.1f} / DE {p0['de_land']:.1f} EUR je Kopf (nach örtlichem BIP {p0['de_real']:.1f})")
     print(f"Höchstbedarf A {mx['a']:.3f} % ({mx['jahr']}) = {og[0]['pct_einzug']:.2f} % des Einzugs -> Obergrenze {obergrenze:.0f} %")
     for o in og:
         print(f"   {o['fall']:<45}{o['jahr']:>6}{o['a']:>8.2f}{o['pct_einzug']:>8.2f}{o['abstand']:>7.2f}")
-    print(f"Tiefpunkt DE {tief['de_real']:.1f} ({tief['jahr']}), streng {tief_fix['de_fix']:.1f}; 2060 DE {P[32]['de_real']:.1f}, "
+    print(f"Tiefpunkt DE {tief['de_land']:.1f} ({tief['jahr']}), streng Klub je Erw. {W['streng_min_erw_klub']:.1f} ({W['streng_min_jahr']}); 2060 DE {P[32]['de_land']:.1f}, "
           f"Klub 2035 {by[2035]['kl_real']:.1f}, 2060 {by[2060]['kl_real']:.1f}")
     print(f"Deckung (B12): Kern {kernsumme:.2f} + Bausteine -> {mit_bausteinen:.2f} + Boden -> {gedeckt:.2f}; "
           f"Lücke {q-gedeckt:.2f} Punkte = {W['deckung_luecke_mrd_klub']:.0f} Mrd EUR Klub 2028")
