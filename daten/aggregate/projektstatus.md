@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.13 · höchste Korrekturnummer 52 · 226 Dateien im Repository
+Modellstand v3.14 · höchste Korrekturnummer 52 · 234 Dateien im Repository
 
 ## Bausteine
 
@@ -26,6 +26,7 @@ Modellstand v3.13 · höchste Korrekturnummer 52 · 226 Dateien im Repository
 | B18 | Werkzeuge | B | geprueft | modell/pruefe_konzept.py |
 | B19 | Hintergrunddokumente Stand A | A | veraltet | keine |
 | B20 | Gesamtrechnung | B | geprueft | modell/gesamtrechnung.py (Selbstprüfung gegen final.pfad);modell/pruefe_konzept.py |
+| B21 | Datenzugang für Dritte | A+B | geprueft | projekt/manifest.py;modell/eingangswerte.py |
 
 ## Nahtstellen
 
@@ -44,6 +45,7 @@ Modellstand v3.13 · höchste Korrekturnummer 52 · 226 Dateien im Repository
 | N11 | B09 Einzelrechnungen | B08 Kern | ungeprueft |
 | N12 | B03 Rahmenmodell | B20 Gesamtrechnung | ok |
 | N13 | B20 Gesamtrechnung | B07 Gesamtkonzept | ok |
+| N14 | B21 Datenzugang | extern: Dritte | ok |
 
 ## Ergebnis dieses Laufs
 

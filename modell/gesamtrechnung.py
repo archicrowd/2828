@@ -73,8 +73,8 @@ A_POSTEN, B_POSTEN = opfad.A_POSTEN, opfad.B_POSTEN
 A_SUM, B_AUFG, V_ZIEL = opfad.A_SUM, opfad.B_AUFG, opfad.V_ZIEL
 A_OHNE_V = opfad.A_OHNE_V
 BODEN, KIND_ANT, SCHULE = opfad.BODEN, opfad.KIND_ANT, opfad.SCHULE
-V_START, V_JAHR = 1.40, 2035
-G_NOM, PREIS = 0.030, 0.020
+V_START, V_JAHR = float(PAR["verteidigung_start"]), int(PAR["verteidigung_zieljahr"])
+G_NOM, PREIS = float(PAR["wachstum_nominal"]) / 100, float(PAR["preissteigerung"]) / 100
 VERSPRECHEN = float(PAR["versprechen_de_monat"])
 I_ZIEL = float(PAR["garantiezins_klub"])
 REST = float(PAR["restlaufzeit_schulden"])
@@ -298,9 +298,10 @@ def main() -> int:
              aufschlag_satz=satz)
 
     # Last
-    W.update(last_heute=40.76, steuern_heute=25.95, sb_heute=14.88, gesundheit=7.75,
-             last_entwurf=q + 7.75, entlastung=40.76 - (q + 7.75),
-             entlastung_mrd=(40.76 - (q + 7.75)) / 100 * BIP28_KLUB)
+    LH, GS = float(PAR["last_heute"]), float(PAR["gesundheit_ausserhalb"])
+    W.update(last_heute=LH, steuern_heute=float(PAR["steuern_heute"]), sb_heute=float(PAR["sozialbeitraege_heute"]),
+             gesundheit=GS, last_entwurf=q + GS, entlastung=LH - (q + GS),
+             entlastung_mrd=(LH - (q + GS)) / 100 * BIP28_KLUB)
 
     # B12: Deckungsrahmen aus dem nationalen Modell (Stand A), deutsche Basis
     # Quelle: modell/kern/modell-2828-ergebnisse.txt, Abschnitt B, Stufe 50 %, Modellbasis 4.200 Mrd

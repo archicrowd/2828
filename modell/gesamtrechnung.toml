@@ -5,7 +5,7 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.13"
+version = "v3.14"
 fassung = "6. Oktober 2026"
 
 [[parameter]]
@@ -87,8 +87,8 @@ einheit    = "% der Arbeitskosten"
 bezugsjahr = 2024
 preisbasis = "keine"
 quelle     = "OECD, Taxing Wages 2025, Tabelle 3.1: Alleinstehende ohne Kinder, 100 % des Durchschnittslohns"
-status     = "belegt"
-hinweis    = "Zweithöchster Wert der OECD nach Belgien (52,6 %); am 6.10.2026 über die OECD-Seite gelesen (maschinell zusammengefasst)"
+status     = "gelesen"
+hinweis    = "Maschinell gelesen (OECD-Seite, Web-Abruf 6.10.2026), an der Quelle zu prüfen. Zweithöchster Wert der OECD nach Belgien (52,6 %); am 6.10.2026 über die OECD-Seite gelesen (maschinell zusammengefasst)"
 
 [[parameter]]
 name       = "abgabenkeil_oecd_2024"
@@ -97,8 +97,8 @@ einheit    = "% der Arbeitskosten"
 bezugsjahr = 2024
 preisbasis = "keine"
 quelle     = "OECD, Taxing Wages 2025, Tabelle 3.1"
-status     = "belegt"
-hinweis    = "OECD-Durchschnitt, gleicher Haushaltstyp"
+status     = "gelesen"
+hinweis    = "Maschinell gelesen, an der Quelle zu prüfen. OECD-Durchschnitt, gleicher Haushaltstyp"
 
 [[parameter]]
 name       = "abgeltungsteuer_de"
@@ -119,3 +119,85 @@ preisbasis = "keine"
 quelle     = "nationales Modell (Stand A), modell/kern/modell-2828-ergebnisse.txt Abschnitt F; dokumente/28-28-Homepage-Datenblatt.md 4.4"
 status     = "schaetzung"
 hinweis    = "Gruppenschätzung ohne Mikrosimulation, Stand A (Dividende 515 EUR je Erwachsenem, Quote 27,91 %), ohne Bestandsgarantie; mit Garantie über 99 %. Für Stand B nicht neu gerechnet"
+
+# ---- Feste Rechengrößen (seit v3.14 hier statt im Skript) ----
+
+[[parameter]]
+name       = "verteidigung_start"
+wert       = 1.40
+einheit    = "% des BIP"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "Eurostat gov_10a_exp GF02, S13, BIP-gewichtet über zehn Staaten (nachgerechnet 1,4006)"
+status     = "uebernommen"
+hinweis    = "COFOG-Definition, enger als NATO"
+
+[[parameter]]
+name       = "verteidigung_zieljahr"
+wert       = 2035
+einheit    = "Jahr"
+bezugsjahr = 2035
+preisbasis = "keine"
+quelle     = "Konzept; Zielwert 2,50 % in modell/rahmen/pfad.py (A_POSTEN)"
+status     = "setzung"
+hinweis    = "linearer Aufbau 2028 bis 2035"
+
+[[parameter]]
+name       = "wachstum_nominal"
+wert       = 3.0
+einheit    = "% je Jahr"
+bezugsjahr = 2028
+preisbasis = "nominal"
+quelle     = "Konzept (Zentralfall)"
+status     = "annahme"
+hinweis    = "real 0,98 % bei 2,0 % Preissteigerung"
+
+[[parameter]]
+name       = "preissteigerung"
+wert       = 2.0
+einheit    = "% je Jahr"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Konzept; Inflationsziel der EZB"
+status     = "annahme"
+hinweis    = "auch Grundlage der strengen Lesart (real null = nominal 2 %)"
+
+[[parameter]]
+name       = "last_heute"
+wert       = 40.76
+einheit    = "% des BIP"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "Eurostat gov_10a_taxag D2_D5_D91_D61_M_D995, BIP-gewichtet über zehn Staaten (modell/rechnungen/rahmen/daten.py, TAX; nachgerechnet 40,760)"
+status     = "uebernommen"
+hinweis    = "Aggregat nach Abzug D995 (B14)"
+
+[[parameter]]
+name       = "steuern_heute"
+wert       = 25.95
+einheit    = "% des BIP"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "Eurostat gov_10a_taxag D2+D5+D91, BIP-gewichtet (nachgerechnet 25,947)"
+status     = "uebernommen"
+hinweis    = ""
+
+[[parameter]]
+name       = "sozialbeitraege_heute"
+wert       = 14.88
+einheit    = "% des BIP"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "Eurostat gov_10a_taxag D61, BIP-gewichtet (nachgerechnet 14,877)"
+status     = "uebernommen"
+hinweis    = ""
+
+[[parameter]]
+name       = "gesundheit_ausserhalb"
+wert       = 7.75
+einheit    = "% des BIP"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "Eurostat gov_10a_exp GF07, S13, BIP-gewichtet (nachgerechnet 7,750 am 7.10.2026)"
+status     = "uebernommen"
+hinweis    = "Herkunft im Logbuch Band I als offen geführt; seit v3.14 nachgerechnet"

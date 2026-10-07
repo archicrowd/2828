@@ -78,10 +78,11 @@ def main() -> int:
         w.writerow(["datei", "konstante", "wert_im_skript", "parameter", "wert_parameter", "gleich", "gruppe"])
         w.writerows(zeilen)
     aktuell = [z for z in zeilen if z[-1] == "aktuell"]
-    print(f"{len(aktuell)} Konstanten in {len(AKTUELL)} aktuellen Skripten geprüft, {abweichungen} abweichend.")
     for z in zeilen:
         if z[5] == "NEIN":
             print("  ", z[-1].upper(), z[0], z[1], z[2], "<>", z[3], z[4])
+    print(f"{len(aktuell)} Konstanten in {len(AKTUELL)} aktuellen Skripten geprüft, {abweichungen} abweichend "
+          f"(veraltete Skripte nur gemeldet).")
     return 2 if abweichungen else 0
 
 

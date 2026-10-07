@@ -1,0 +1,636 @@
+{
+ "projekt": "TAX 28:28",
+ "modellstand": "v3.14",
+ "fassung_gesamtkonzept": "6. Oktober 2026",
+ "autor_und_projektverantwortung": "Arndt Hermann",
+ "kontakt": "2828@archicrowd.de",
+ "repository": "https://github.com/archicrowd/2828 (privat; Zugang auf Anfrage)",
+ "lizenz": {
+  "skripte": "MIT (LICENSE)",
+  "texte_und_ergebnisse": "CC BY 4.0 (LICENSE-DOKUMENTE.md)",
+  "daten_dritter": "Bedingungen der Anbieter, siehe daten/quellen.csv Spalte weitergabe"
+ },
+ "einstieg": {
+  "menschen": "DATENZUGANG.md",
+  "ki_agenten": "AGENTS.md",
+  "arbeitsregeln": "CLAUDE.md",
+  "uebersicht": "INDEX.md",
+  "logbuch": "logbuch/Versionsgeschichte-TAX-2828-BandIII.md"
+ },
+ "befehle": {
+  "alles_pruefen": "python3 modell/alles.py",
+  "gesamtrechnung": "python3 modell/gesamtrechnung.py",
+  "eingangswerte_verzeichnen": "python3 modell/eingangswerte.py",
+  "eingangswerte_an_eurostat_pruefen": "python3 modell/eingangswerte.py --abrufen",
+  "gesamtkonzept_bauen": "NODE_PATH=<pfad zu node_modules mit docx> node dokumente/werkzeuge/gesamtkonzept-bau.js && cd dokumente && soffice --headless --convert-to pdf TAX-2828-Gesamtkonzept.docx",
+  "kurzfassung_bauen": "NODE_PATH=<...> node dokumente/werkzeuge/kurzfassung-bau.js && cd dokumente && soffice --headless --convert-to pdf TAX-2828-Kurzfassung.docx"
+ },
+ "voraussetzungen": {
+  "python": ">= 3.11 (tomllib), nur Standardbibliothek",
+  "node": ">= 18 mit Paket docx (nur zum Bauen der Dokumente)",
+  "werkzeuge": "LibreOffice (soffice), poppler-utils (pdftotext, pdfinfo)"
+ },
+ "kernergebnisse": {
+  "quote": 30.8,
+  "obergrenze": 36.0,
+  "mindestquote_streng": 30.763652174835784,
+  "klub_2028": 490.23002925962004,
+  "klub_2035": 478.7960847196409,
+  "klub_2060": 662.3504866913153,
+  "de_2028": 533.1123002767966,
+  "formel_einw": 3598.675392804394,
+  "formel_kind": 12624.65648994137,
+  "entlastung": 2.210000000000001,
+  "deckung_gesamt": 29.848571428571432,
+  "deckung_luecke": 0.9514285714285684,
+  "zins_eff_2024": 1.8965957322556544,
+  "pop_klub_mio": 255.061017,
+  "bip28_klub_mrd": 13802.733917918245
+ },
+ "kernergebnisse_einheiten": "Quote, Obergrenze, Deckung in % (BIP bzw. Einzug); Dividenden EUR je Einwohner und Monat, Preise 2028; Formel EUR je Jahr 2028 nominal; BIP Mrd EUR 2028 nominal",
+ "ergebnisdateien": {
+  "daten/aggregate/gesamtrechnung.json": "alle Zahlen des Gesamtkonzepts, ungerundet",
+  "daten/aggregate/gesamtrechnung_pfad.csv": "Zeitpfad 2028-2060",
+  "daten/aggregate/gesamtrechnung_obergrenze.csv": "Risikofälle der Obergrenze",
+  "daten/aggregate/deckung_quote.csv": "Deckung der Quote durch die Steuerpositionen (B12)",
+  "daten/aggregate/eingangswerte.csv": "jeder amtliche Eingangswert mit Abruf-URL",
+  "daten/aggregate/konzept_pruefung.csv": "Prüfung der Dokumente gegen die Rechnung",
+  "daten/aggregate/projektstatus.md": "Ergebnis der Projektprüfung"
+ },
+ "bausteine": [
+  {
+   "id": "B01",
+   "name": "Logbuch",
+   "pfad": "logbuch/",
+   "stand": "A+B",
+   "status": "geprueft",
+   "pruefung": "projekt/pruefe_projekt.py (Nummernfolge, Version)",
+   "anmerkung": "Band I Original; Band II mit Berichtigungshinweis; Band III entsteht hier. Spiegel im Projektraum 2525 von Hand nachzuführen"
+  },
+  {
+   "id": "B02",
+   "name": "Parameterfile",
+   "pfad": "modell/parameter.toml;modell/lauf.py",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/lauf.py",
+   "anmerkung": "Parameterbasis der Fassung vom 4. Oktober 2026 (Regression gegen die Originale); die geltende Fassung rechnet mit modell/gesamtrechnung.toml (B20)"
+  },
+  {
+   "id": "B03",
+   "name": "Rahmenmodell, Original",
+   "pfad": "modell/rahmen/",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/pruefe_konstanten.py;projekt/pruefsummen.sha256",
+   "anmerkung": "unverändert aus dem Vorchat; Konstanten in 8 Skripten doppelt geführt"
+  },
+  {
+   "id": "B04",
+   "name": "Zweitrechnung Rahmenmodell",
+   "pfad": "modell/pfad.py;modell/aufschlag.py;modell/vergleich_original.py",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/vergleich_original.py",
+   "anmerkung": "unabhängige Implementierung aus dem Parameterfile; 56 Größen gegen B03"
+  },
+  {
+   "id": "B05",
+   "name": "Kennzahlen",
+   "pfad": "modell/kennzahlen.py;daten/aggregate/kennzahlen.csv",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/pruefe_aussagen.py",
+   "anmerkung": "benannte Größen aus den Originalskripten (Anzahl siehe kennzahlen.csv)"
+  },
+  {
+   "id": "B06",
+   "name": "Aussagenregister",
+   "pfad": "dokumente/aussagen.csv;modell/pruefe_aussagen.py",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/pruefe_aussagen.py",
+   "anmerkung": "131 Aussagen der Fassung vom 4. Oktober 2026 (dokumente/archiv/); Sollwerte von Hand aus der PDF übertragen. Regression, nicht die geltende Fassung"
+  },
+  {
+   "id": "B07",
+   "name": "Gesamtkonzept",
+   "pfad": "dokumente/TAX-2828-Gesamtkonzept.pdf;dokumente/TAX-2828-Gesamtkonzept.docx;dokumente/TAX-2828-Kurzfassung.pdf;dokumente/TAX-2828-Kurzfassung.docx",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/pruefe_konzept.py",
+   "anmerkung": "Gesamtkonzept und Kurzfassung (2 Seiten), Fassung 6. Oktober 2026, beide aus gesamtrechnung.json gebaut; Fassung 4. Oktober in dokumente/archiv/ (Prüfsumme)"
+  },
+  {
+   "id": "B08",
+   "name": "Nationales Gesamtmodell (Kern)",
+   "pfad": "modell/kern/",
+   "stand": "A",
+   "status": "ungeprueft",
+   "pruefung": "keine",
+   "anmerkung": "nicht ausgeführt; Basis 4.200 Modell-Mrd; liefert Quote 27,91 %"
+  },
+  {
+   "id": "B09",
+   "name": "Einzelrechnungen R1 bis R16",
+   "pfad": "modell/rechnungen/",
+   "stand": "A",
+   "status": "ungeprueft",
+   "pruefung": "keine",
+   "anmerkung": "nicht ausgeführt; nach Rahmenwechsel nicht neu gerechnet; enthält veraltetes pfad/dyn.py"
+  },
+  {
+   "id": "B10",
+   "name": "Audit der Gesamtlogik",
+   "pfad": "modell/audit/",
+   "stand": "A",
+   "status": "ungeprueft",
+   "pruefung": "keine",
+   "anmerkung": "v3.0; nicht ausgeführt"
+  },
+  {
+   "id": "B11",
+   "name": "Webseite Stand A",
+   "pfad": "seite/stand-a-national/;seite/stand-a-neuerer-build/;seite/LIESMICH.md",
+   "stand": "A",
+   "status": "veraltet",
+   "pruefung": "keine",
+   "anmerkung": "hat den Rahmenwechsel nie gesehen; veröffentlicht ist der ältere Build"
+  },
+  {
+   "id": "B12",
+   "name": "Seite zum Stand B",
+   "pfad": "seite/rahmenstruktur-seiten/",
+   "stand": "B",
+   "status": "veraltet",
+   "pruefung": "modell/pruefe_aussagen.py (A130 bis A132)",
+   "anmerkung": "zeigt 506/472/651 EUR der Fassung 4. Oktober; geltend 490/479/662 (v3.12). Nicht neu gebaut"
+  },
+  {
+   "id": "B13",
+   "name": "Ergebnisdateien",
+   "pfad": "daten/aggregate/",
+   "stand": "A+B",
+   "status": "geprueft",
+   "pruefung": "modell/alles.py",
+   "anmerkung": "maschinenlesbar, mit Quelle im Skript"
+  },
+  {
+   "id": "B14",
+   "name": "Herkunft Drittdateien",
+   "pfad": "daten/herkunft/",
+   "stand": "A",
+   "status": "ungeprueft",
+   "pruefung": "keine",
+   "anmerkung": "nur Manifest (Name, Größe, SHA-256); Herausgeber und Abrufdatum fehlen"
+  },
+  {
+   "id": "B15",
+   "name": "Schnittstelle für Dritte",
+   "pfad": "schnittstelle/;beitraege/;CONTRIBUTING.md",
+   "stand": "B",
+   "status": "entwurf",
+   "pruefung": "schnittstelle/pruefe_beitrag.py;projekt/pruefe_projekt.py",
+   "anmerkung": "Entwurf; Tarifstufen seit v3.12 festgelegt (0/9/16/21/26/28), Kalibrierung durch Mikrosimulation erst nach Prüfung der Aggregate"
+  },
+  {
+   "id": "B16",
+   "name": "Archiv eigener Dateien",
+   "pfad": "archiv/;dokumente/archiv/",
+   "stand": "A",
+   "status": "veraltet",
+   "pruefung": "keine",
+   "anmerkung": "ältere Fassungen, nur zum Vergleich"
+  },
+  {
+   "id": "B17",
+   "name": "Projektverwaltung",
+   "pfad": "projekt/;modell/alles.py;modell/LIESMICH.md;modell/pruefe_konstanten.py;dokumente/LIESMICH.md;INDEX.md;README.md;CLAUDE.md;CITATION.cff;LIZENZ.md;LICENSE;LICENSE-DOKUMENTE.md",
+   "stand": "A+B",
+   "status": "geprueft",
+   "pruefung": "modell/alles.py",
+   "anmerkung": "Bausteinregister, Nahtstellen, Prüfsummen, Gesamtlauf"
+  },
+  {
+   "id": "B18",
+   "name": "Werkzeuge",
+   "pfad": "dokumente/werkzeuge/",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/pruefe_konzept.py",
+   "anmerkung": "gesamtkonzept-bau.js und kurzfassung-bau.js lesen gesamtrechnung.json; keine Zahl von Hand. Aufruf: NODE_PATH=/opt/npm-tools/node_modules node dokumente/werkzeuge/<skript>, danach soffice --convert-to pdf"
+  },
+  {
+   "id": "B19",
+   "name": "Hintergrunddokumente Stand A",
+   "pfad": "dokumente/28-28-Homepage-Datenblatt.md;dokumente/28-28-Levelanalyse.md;dokumente/DD-Startniveau-500-600.md",
+   "stand": "A",
+   "status": "veraltet",
+   "pruefung": "keine",
+   "anmerkung": "16. September 2026; Quote 25 bis 30 %, Dividende 515 EUR; nur im Kopf gelesen"
+  },
+  {
+   "id": "B20",
+   "name": "Gesamtrechnung",
+   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/gesamtrechnung.py (Selbstprüfung gegen final.pfad);modell/pruefe_konzept.py",
+   "anmerkung": "geltende Rechnung ab v3.12; unabhängig nachgerechnet (Prüfagent, 6.10.2026)"
+  },
+  {
+   "id": "B21",
+   "name": "Datenzugang für Dritte",
+   "pfad": "DATENZUGANG.md;AGENTS.md;daten/quellen.csv;modell/eingangswerte.py;daten/aggregate/eingangswerte.csv;projekt/manifest.py;projekt/manifest.json",
+   "stand": "A+B",
+   "status": "geprueft",
+   "pruefung": "projekt/manifest.py;modell/eingangswerte.py",
+   "anmerkung": "21 Quellen mit Status und Weitergaberecht; 120 Eingangswerte mit Abruf-URL; Abruf mit --abrufen hier nicht getestet (Shell ohne Netz)"
+  }
+ ],
+ "nahtstellen": [
+  {
+   "id": "N01",
+   "von": "B02 Parameterfile",
+   "nach": "B04 Zweitrechnung",
+   "was": "Parameter speisen die Zweitrechnung",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "vergleich_original.py: 56 Größen innerhalb Toleranz"
+  },
+  {
+   "id": "N02",
+   "von": "B03 Rahmenmodell",
+   "nach": "B05 Kennzahlen",
+   "was": "Originalskripte liefern benannte Größen",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "kennzahlen.py"
+  },
+  {
+   "id": "N03",
+   "von": "B05 Kennzahlen",
+   "nach": "B06 Aussagen",
+   "was": "jede Zahl des Gesamtkonzepts hängt an einer Kennzahl",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "alle Aussagen innerhalb Toleranz; Sollwerte von Hand übertragen"
+  },
+  {
+   "id": "N04",
+   "von": "B03 Rahmenmodell",
+   "nach": "B02 Parameterfile",
+   "was": "Konstanten in Skripten gleich Parameter",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "pruefe_konstanten.py; 1,40 statt 1,401 seit v3.10"
+  },
+  {
+   "id": "N05",
+   "von": "B08 Kern (Stand A)",
+   "nach": "B03 Rahmenmodell (Stand B)",
+   "was": "Steuerpositionen des Kerns tragen die Quote 30,6 % des Rahmens",
+   "status": "offen",
+   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 %; Klubebene fehlt (deckung_quote.csv)"
+  },
+  {
+   "id": "N06",
+   "von": "B08 Kern",
+   "nach": "B11 Seite Stand A",
+   "was": "Seitenzahlen kommen aus modell-2828-daten.json",
+   "status": "ungeprueft",
+   "beleg_oder_offener_punkt": "Build nicht ausgeführt"
+  },
+  {
+   "id": "N07",
+   "von": "B03 Rahmenmodell",
+   "nach": "B11 Seite Stand A",
+   "was": "die veröffentlichte Seite zeigt den Rahmen",
+   "status": "fehlt",
+   "beleg_oder_offener_punkt": "Seite hat Rahmenwechsel nie gesehen"
+  },
+  {
+   "id": "N08",
+   "von": "B05 Kennzahlen",
+   "nach": "B12 Seite Stand B",
+   "was": "drei Werte der Seite rahmenstruktur-aktuell",
+   "status": "veraltet",
+   "beleg_oder_offener_punkt": "Seite zeigt Werte der Fassung 4. Oktober; geltend 490/479/662 EUR"
+  },
+  {
+   "id": "N09",
+   "von": "B07 Gesamtkonzept",
+   "nach": "B01 Logbuch",
+   "was": "Zahlen und Korrekturen 42 bis 46 stimmen mit dem Dokument",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "Band II; Aussagen A001 bis A127"
+  },
+  {
+   "id": "N10",
+   "von": "B15 Schnittstelle",
+   "nach": "extern: Mikrosimulation",
+   "was": "Dritte erhalten Parameter, Kennzahlen und Aussagenregister, liefern Ergebnisdateien zurück",
+   "status": "entwurf",
+   "beleg_oder_offener_punkt": "schnittstelle/MIKROSIMULATION.md"
+  },
+  {
+   "id": "N11",
+   "von": "B09 Einzelrechnungen",
+   "nach": "B08 Kern",
+   "was": "Einzelergebnisse fließen in das nationale Modell",
+   "status": "ungeprueft",
+   "beleg_oder_offener_punkt": "nach Rahmenwechsel nicht neu gerechnet"
+  },
+  {
+   "id": "N12",
+   "von": "B03 Rahmenmodell",
+   "nach": "B20 Gesamtrechnung",
+   "was": "Gesamtrechnung trifft mit den alten Eingängen die Originale exakt",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "Selbstprüfung in gesamtrechnung.py, 33 Jahre"
+  },
+  {
+   "id": "N13",
+   "von": "B20 Gesamtrechnung",
+   "nach": "B07 Gesamtkonzept",
+   "was": "jede Kernzahl des Dokuments kommt aus gesamtrechnung.json",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "pruefe_konzept.py: 33 Prüfungen; Negativtest mit alter PDF schlägt 29-fach an"
+  },
+  {
+   "id": "N14",
+   "von": "B21 Datenzugang",
+   "nach": "extern: Dritte",
+   "was": "jeder amtliche Eingangswert ist einzeln an der Quelle prüfbar",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "eingangswerte.csv (120 Werte, 21 mit getesteter Abrufform); manifest.py prüft Quellen-IDs und genannte Dateien"
+  }
+ ],
+ "quellen": [
+  {
+   "id": "Q01",
+   "quelle": "Bruttoinlandsprodukt",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "nama_10_gdp (B1GQ, CP_MEUR)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Klub-BIP, Kopfbeträge, Gewichte",
+   "datei_im_repo": "modell/rahmen/basis.py",
+   "status": "übernommen (Abruf 2.-4.10.2026), nicht erneut geprüft (B15)",
+   "zugang": "offen: Eurostat-API ohne Anmeldung",
+   "weitergabe": "Eurostat-Bedingungen (Wiederverwendung mit Quellenangabe)"
+  },
+  {
+   "id": "Q02",
+   "quelle": "Einwohner, Jahresdurchschnitt",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "demo_gind (AVG)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Kopfbeträge, Formel, Dividende",
+   "datei_im_repo": "daten/aggregate/laender_2024.csv",
+   "status": "abgerufen 6.10.2026 (Korrektur 49)",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q03",
+   "quelle": "Schuldenstand",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "gov_10dd_edpt1 (GD, PC_GDP, S13)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Schuldenquote, Aufschlag",
+   "datei_im_repo": "modell/rahmen/basis.py",
+   "status": "übernommen, nicht erneut geprüft (B15)",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q04",
+   "quelle": "Rendite zehnjähriger Staatsanleihen",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "irt_lt_mcby_a (MCBY)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Risikofall Zielzins ohne Garantie (2,78 %)",
+   "datei_im_repo": "modell/rahmen/basis.py",
+   "status": "übernommen, nicht erneut geprüft (B15)",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q05",
+   "quelle": "Zinsausgaben des Staates",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "gov_10a_main (D41PAY, MIO_EUR, S13)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "effektiver Zins 1,90 %, Zinsdienst",
+   "datei_im_repo": "daten/aggregate/zinsausgaben_2024.csv",
+   "status": "abgerufen 6.10.2026 (Korrektur 50); Estland geschätzt, Belgien vorläufig",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q06",
+   "quelle": "Staatsausgaben nach Aufgaben (COFOG)",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "gov_10a_exp (TE, PC_GDP, S13 und S1313)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Ebene A und B (8,94 / 10,35), Verteidigung 1,40, Gesundheit 7,75 (GF07 BIP-gewichtet, nachgerechnet 7,750)",
+   "datei_im_repo": "modell/rechnungen/rahmen/daten.py; modell/rahmen/pfad.py",
+   "status": "übernommen (Abruf 2.10.2026); Zuordnung der Posten zu A und B ist eine Modellsetzung (Band II v3.2)",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q07",
+   "quelle": "Steuern und Sozialbeiträge",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "gov_10a_taxag (D2, D5, D91, D61, D2_D5_D91_D61_M_D995, D995)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Gesamtlast heute 40,76, Steuern 25,95, Sozialbeiträge 14,88",
+   "datei_im_repo": "modell/rechnungen/rahmen/daten.py",
+   "status": "übernommen; D995 Dänemark am 6.10.2026 geprüft (B14)",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q08",
+   "quelle": "Bevölkerung nach Altersgruppen",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "demo_pjangroup (5 bis 19 Jahre)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Kinderanteil 15,86 % (Formel je Kind)",
+   "datei_im_repo": "modell/rahmen/pfad.py (KIND_ANT)",
+   "status": "übernommen, Abruf nicht dokumentiert (B15)",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q09",
+   "quelle": "Regionales BIP, NUTS 2",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "nama_10r_2gdp",
+   "bezugsjahr": "2023 oder 2024",
+   "verwendet_fuer": "Spreizung Hamburg/Chemnitz 1,66 (verworfene BIP-Gewichtung)",
+   "datei_im_repo": "nicht im Repository",
+   "status": "Rechnung aus dem Vorchat, nicht reproduziert",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q10",
+   "quelle": "Frühjahrsprojektion",
+   "herausgeber": "Bundesregierung",
+   "datensatz_oder_fundstelle": "Frühjahrsprojektion vom 22.4.2026, nominal +3,3 / +2,8 / +3,8 %",
+   "bezugsjahr": "2025-2027",
+   "verwendet_fuer": "Fortschreibung 2024 auf 2028 (Faktor 1,13535; 2028 mit +3,0 % angesetzt)",
+   "datei_im_repo": "modell/rahmen/basis.py (RATEN)",
+   "status": "übernommen, Fundstelle nicht im Repository (B15)",
+   "zugang": "offen: Veröffentlichung der Bundesregierung",
+   "weitergabe": "frei zitierbar"
+  },
+  {
+   "id": "Q11",
+   "quelle": "Taxing Wages 2025",
+   "herausgeber": "OECD",
+   "datensatz_oder_fundstelle": "Tabelle 3.1 (Alleinstehende ohne Kinder, 100 % Durchschnittslohn)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Abgabenkeil 47,9 % (DE) und 34,9 % (OECD)",
+   "datei_im_repo": "modell/gesamtrechnung.toml",
+   "status": "gelesen 6.10.2026 über die OECD-Seite (maschinell zusammengefasst, an der Quelle zu prüfen)",
+   "zugang": "offen: oecd.org",
+   "weitergabe": "OECD-Bedingungen"
+  },
+  {
+   "id": "Q12",
+   "quelle": "Einkommensteuergesetz",
+   "herausgeber": "Bund",
+   "datensatz_oder_fundstelle": "§ 32d EStG, Solidaritätszuschlaggesetz",
+   "bezugsjahr": "2026",
+   "verwendet_fuer": "Abgeltungsteuer 26,375 %",
+   "datei_im_repo": "modell/gesamtrechnung.toml",
+   "status": "belegt (Gesetzestext)",
+   "zugang": "offen: gesetze-im-internet.de",
+   "weitergabe": "amtliches Werk"
+  },
+  {
+   "id": "Q13",
+   "quelle": "The Hague Summit Declaration",
+   "herausgeber": "NATO",
+   "datensatz_oder_fundstelle": "25.6.2025 (3,5 % Kernverteidigung)",
+   "bezugsjahr": "2025",
+   "verwendet_fuer": "Verteidigungsziel, Risikofall 3,5 %, NATO-Konflikt",
+   "datei_im_repo": "Gesamtkonzept Abschnitt 8",
+   "status": "zitiert, im Repository nicht abgelegt",
+   "zugang": "offen: nato.int",
+   "weitergabe": "frei zitierbar"
+  },
+  {
+   "id": "Q14",
+   "quelle": "Verteidigungsausgaben nach NATO-Systematik",
+   "herausgeber": "NATO / EPRS",
+   "datensatz_oder_fundstelle": "Deutschland 2,12 % des BIP",
+   "bezugsjahr": "2024 oder 2025",
+   "verwendet_fuer": "Abstand COFOG zu NATO",
+   "datei_im_repo": "Gesamtkonzept Abschnitt 8",
+   "status": "Sekundärquelle, Jahr und Fundstelle zu prüfen",
+   "zugang": "offen",
+   "weitergabe": "frei zitierbar"
+  },
+  {
+   "id": "Q15",
+   "quelle": "Bevölkerung der Vereinigten Staaten",
+   "herausgeber": "US Census Bureau",
+   "datensatz_oder_fundstelle": "NST-EST2025-POP (341,8 Mio)",
+   "bezugsjahr": "2025",
+   "verwendet_fuer": "Schwelle des Möglichkeitsraums",
+   "datei_im_repo": "Gesamtkonzept Abschnitt 6",
+   "status": "übernommen, nicht erneut geprüft",
+   "zugang": "offen: census.gov",
+   "weitergabe": "gemeinfrei"
+  },
+  {
+   "id": "Q16",
+   "quelle": "Nationales Gesamtmodell (Stand A)",
+   "herausgeber": "Projekt",
+   "datensatz_oder_fundstelle": "modell/kern/modell-2828.py und modell-2828-ergebnisse.txt",
+   "bezugsjahr": "2026 (Modellbasis 4.200 Mrd)",
+   "verwendet_fuer": "Deckungsrahmen B12, Gruppenschätzung 95 %, Tarif",
+   "datei_im_repo": "modell/kern/",
+   "status": "eigene Rechnung, nicht erneut ausgeführt; Kalibrierfragen (Korrekturen 26, 42)",
+   "zugang": "im Repository",
+   "weitergabe": "MIT (Skripte), CC BY 4.0 (Ergebnisse)"
+  },
+  {
+   "id": "Q17",
+   "quelle": "Dividendenversprechen 479 EUR",
+   "herausgeber": "Projekt",
+   "datensatz_oder_fundstelle": "bisheriger Projektstand (Logbuch Band I)",
+   "bezugsjahr": "2028",
+   "verwendet_fuer": "Kriterium der Quotenableitung",
+   "datei_im_repo": "modell/gesamtrechnung.toml",
+   "status": "Setzung",
+   "zugang": "im Repository",
+   "weitergabe": "CC BY 4.0"
+  },
+  {
+   "id": "Q18",
+   "quelle": "Country-by-Country Reporting",
+   "herausgeber": "OECD",
+   "datensatz_oder_fundstelle": "CbCR-Länderberichte (nur Panel _T, nicht PANELAI)",
+   "bezugsjahr": "2017-2021",
+   "verwendet_fuer": "Einzelrechnungen Stand A (Gewinne am Ort der Nutzung)",
+   "datei_im_repo": "modell/rechnungen/oecd-cbcr/",
+   "status": "Aggregate im Repository, Rohdaten nicht",
+   "zugang": "offen: oecd.org",
+   "weitergabe": "OECD-Bedingungen"
+  },
+  {
+   "id": "Q19",
+   "quelle": "Taxplorer",
+   "herausgeber": "Taxplorer-Projekt",
+   "datensatz_oder_fundstelle": "Rohdatenbank",
+   "bezugsjahr": "div.",
+   "verwendet_fuer": "Einzelrechnungen Stand A",
+   "datei_im_repo": "nicht im Repository",
+   "status": "nur Aggregate mit Zitat",
+   "zugang": "eigene Anmeldung beim Anbieter",
+   "weitergabe": "NEIN: CC BY-NC-ND 4.0, Rohdaten nie weitergeben"
+  },
+  {
+   "id": "Q20",
+   "quelle": "Mikrodaten SOEP und EU-SILC",
+   "herausgeber": "DIW / Eurostat",
+   "datensatz_oder_fundstelle": "Haushaltsmikrodaten",
+   "bezugsjahr": "—",
+   "verwendet_fuer": "künftige Mikrosimulation",
+   "datei_im_repo": "nicht im Repository",
+   "status": "nicht verwendet",
+   "zugang": "nur mit eigenem Datenvertrag",
+   "weitergabe": "NEIN: nur Vertragsnehmer"
+  },
+  {
+   "id": "Q21",
+   "quelle": "Drittdateien aus dem Vorchat",
+   "herausgeber": "verschiedene",
+   "datensatz_oder_fundstelle": "daten/herkunft/uploads-manifest.csv (Name, Größe, SHA-256)",
+   "bezugsjahr": "div.",
+   "verwendet_fuer": "Einzelrechnungen Stand A",
+   "datei_im_repo": "nur Manifest",
+   "status": "Herausgeber und Abrufdatum fehlen",
+   "zugang": "beim Herausgeber",
+   "weitergabe": "NEIN: Urheberrecht der Herausgeber"
+  }
+ ],
+ "nicht_im_repository": [
+  "Rohdaten jeder Art",
+  "Taxplorer-Rohdatenbank (CC BY-NC-ND 4.0)",
+  "SOEP- und EU-SILC-Mikrodaten (Datenvertrag)",
+  "Drittdateien (nur Manifest mit SHA-256)",
+  "Vorchat (Projektraum 2525 auf claude.ai, nicht öffentlich)"
+ ],
+ "invarianten": [
+  "Originalskripte in modell/rahmen/ werden nicht verändert (Prüfsummen).",
+  "Dokumente nur über die Bauskripte erzeugen, nie von Hand ändern.",
+  "Jede Rechnung ändert das Logbuch (neue Version, bewegte Zahl, Quelle).",
+  "Korrekturnummern fortlaufend, nie neu vergeben; nächste freie Nummer steht in CLAUDE.md.",
+  "Euro-Beträge immer mit Bezugsjahr und Preisbasis.",
+  "OECD-Aufkommensrechnungen nur mit Panel _T.",
+  "Eurostat je Land und Größe einzeln abrufen, alle Dimensionen festlegen."
+ ],
+ "offene_punkte": "logbuch/Versionsgeschichte-TAX-2828-BandIII.md, Abschnitt 7"
+}

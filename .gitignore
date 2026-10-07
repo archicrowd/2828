@@ -20,3 +20,6 @@ __pycache__/
 # Lokales
 .env
 .DS_Store
+
+# Bauwerkzeug der Dokumente
+node_modules/

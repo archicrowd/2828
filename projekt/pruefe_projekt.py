@@ -25,7 +25,9 @@ WURZEL = Path(__file__).resolve().parent.parent
 PROJEKT_MAIL = "2828@archicrowd.de"
 ERLAUBT_PANELAI = {"modell/rechnungen/oecd-cbcr/wirkung_28.py", "modell/rechnungen/oecd-cbcr/t1-panelAI.csv",
                    "CLAUDE.md", "projekt/pruefe_projekt.py", "logbuch/Versionsgeschichte-TAX-2828.md",
-                   "modell/rechnungen/LIESMICH.md", "seite/stand-a-national/quelltext/oecd/wirkung_28.py"}
+                   "modell/rechnungen/LIESMICH.md", "seite/stand-a-national/quelltext/oecd/wirkung_28.py",
+                   # Regeltexte, die PANELAI nur als Verbot nennen (seit v3.14), und der Prüfbericht selbst
+                   "AGENTS.md", "daten/quellen.csv", "projekt/manifest.json", "daten/aggregate/projektstatus.md"}
 VERBOTENE_ENDUNGEN = {".zip", ".parquet", ".sav", ".dta", ".7z", ".gz"}
 BEKANNTE_DOPPELTE_NUMMERN = {15, 16}  # Band I, Abschnitt 4 (siehe logbuch/HERKUNFT.md)
 SUMMEN = WURZEL / "projekt" / "pruefsummen.sha256"

@@ -12,3 +12,4 @@ N10,B15 Schnittstelle,extern: Mikrosimulation,"Dritte erhalten Parameter, Kennza
 N11,B09 Einzelrechnungen,B08 Kern,Einzelergebnisse fließen in das nationale Modell,ungeprueft,nach Rahmenwechsel nicht neu gerechnet
 N12,B03 Rahmenmodell,B20 Gesamtrechnung,Gesamtrechnung trifft mit den alten Eingängen die Originale exakt,ok,"Selbstprüfung in gesamtrechnung.py, 33 Jahre"
 N13,B20 Gesamtrechnung,B07 Gesamtkonzept,jede Kernzahl des Dokuments kommt aus gesamtrechnung.json,ok,pruefe_konzept.py: 33 Prüfungen; Negativtest mit alter PDF schlägt 29-fach an
+N14,B21 Datenzugang,extern: Dritte,jeder amtliche Eingangswert ist einzeln an der Quelle prüfbar,ok,"eingangswerte.csv (120 Werte, 21 mit getesteter Abrufform); manifest.py prüft Quellen-IDs und genannte Dateien"

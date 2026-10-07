@@ -39,7 +39,7 @@
 
 ## Projektverwaltung
 
-- Vor jedem Commit `python3 modell/alles.py` ausführen (zehn Stufen, Register in `projekt/`). Rückgabe
+- Vor jedem Commit `python3 modell/alles.py` ausführen (alle Stufen, Register in `projekt/`). Rückgabe
   ungleich 0 oder neuer Fehler: erst beheben oder offen im Logbuch führen.
 - Nach jeder Version `projekt/bausteine.csv` und `projekt/nahtstellen.csv` anpassen. Prüfsummen
   (`projekt/pruefsummen.sha256`) nur bewusst mit `--aktualisieren` ändern und im Logbuch vermerken.

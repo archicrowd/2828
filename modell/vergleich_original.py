@@ -103,7 +103,9 @@ with open(pfad_aus, "w", encoding="utf-8", newline="") as f:
     w.writerows(ZEILEN)
 
 nein = [z for z in ZEILEN if z[-1] == "NEIN"]
-print(f"{len(ZEILEN)} Zeilen, davon außerhalb der Toleranz: {len(nein)}")
 for z in nein:
     print("  ", z)
+bekannt = sum(1 for z in nein if z[0] == "Einwohner 2024")
+print(f"{len(ZEILEN)} Zeilen, außerhalb der Toleranz {len(nein)}, davon bekannt {bekannt} "
+      f"(Einwohner in basis.py, Korrektur 49)")
 sys.exit(2 if ABWEICHUNG else 0)

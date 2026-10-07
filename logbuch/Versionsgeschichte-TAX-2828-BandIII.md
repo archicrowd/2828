@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 6. Oktober 2026 · Modellstand **v3.13**
+Stand: 7. Oktober 2026 · Modellstand **v3.14**
 
 ---
 
@@ -592,6 +592,49 @@ nationales Modell (Stand A).*
 
 ---
 
+### v3.14 — Datenzugang für Dritte (Menschen und KI-Agenten)
+
+**Art der Änderung: MINOR** (neue Zugangsdateien und Prüfungen; Ergebnis der Rechnung unverändert). 7. Oktober 2026.
+Auftrag des Verfassers: eine Sammlung von Informationen, mit denen Dritte, Menschen oder KI-Agenten, Zugriff auf die
+nötigen Daten bekommen, um alle Bestandteile des Konzepts zu prüfen und weiterzubearbeiten.
+
+**Bewegte Zahl:** keine. `gesamtrechnung.json` ist vor und nach der Umstellung schlüsselgleich und wertgleich (geprüft).
+
+**Neu**
+- `DATENZUGANG.md` (für Menschen): Zugang, Weg von der Quelle zum Dokument, Prüfen in vier Schritten, gesperrte Daten,
+  Weiterbearbeiten, Begriffe. `AGENTS.md` (für KI-Agenten): Lesereihenfolge, Befehle, Invarianten, Abrufregeln,
+  Kennzeichnung, Rückgabeformat.
+- `daten/quellen.csv`: 21 Quellen mit Herausgeber, Datensatz, Verwendung, Datei, Status, Zugang und Weitergaberecht.
+- `modell/eingangswerte.py` → `daten/aggregate/eingangswerte.csv`: 125 Eingangswerte, je amtlichem Wert eine Eurostat-URL
+  (ein Land, eine Größe); `--abrufen` gleicht mit Netzzugang alle Werte ab (in der Projektumgebung nicht ausführbar, Shell ohne Netz).
+- `projekt/manifest.py` → `projekt/manifest.json`: maschinenlesbare Projektkarte; prüft Quellen-IDs und alle in den
+  Zugangsdateien genannten Dateien.
+- `dokumente/werkzeuge/package.json` (docx 9.7.1) für reproduzierbares Bauen der Dokumente.
+- `alles.py` um zwei Stufen erweitert (Eingangswerte, Projektkarte).
+- Feste Rechengrößen aus `gesamtrechnung.py` nach `gesamtrechnung.toml` verlegt (Verteidigung 1,40 und 2035, Wachstum 3,0,
+  Preise 2,0, Last heute 40,76, Steuern 25,95, Sozialbeiträge 14,88, Gesundheit 7,75), je mit Quelle und Status.
+- **Gesundheit 7,75 % nachgerechnet:** BIP-gewichteter COFOG-Wert GF07 (S13, 2024) der zehn Staaten = 7,750. Die Herkunft
+  galt in Band I als offen. Ebenso Verteidigung 1,40 = GF02 gewichtet (1,4006).
+
+**Externer Test.** Ein getrennter Prüfagent hat nur mit `AGENTS.md` begonnen. Ergebnis: Einstieg gelingt, `alles.py`
+läuft, Zins und Einwohner lassen sich lückenlos bis zur Quelle verfolgen, die Dividende nur teilweise (Posten der
+Ebenen A und B, Bodenwertabgabe, Kinderanteil, Fortschreibungsfaktor ohne Abrufadresse, siehe B19). Zwölf Befunde,
+eingearbeitet: Stufenzahl, Lizenzverweis, Hinweis „alles.py schreibt", feste Größen ins Parameterfile, fehlerhafte
+Spalte in `laender_2024.csv` entfernt, Status „gelesen" statt „belegt" für die OECD-Werte, Abschnitt 7 nachgeführt,
+irreführende Schlusszeilen zweier Stufen, `package.json`, nicht gemeldeter Wert (Estland D91) ausdrücklich geführt.
+Drei Abrufformen getestet (nama_10_gdp, gov_10dd_edpt1, gov_10a_exp für DE): alle eindeutig.
+
+**Befund für B15: Revision des deutschen BIP.** Eurostat meldet seit dem 6. Oktober 2026 für Deutschland ein BIP 2024 von
+4.386.940 Mio EUR (vorläufig; maschinell gelesen am 7. Oktober 2026), das Modell rechnet mit 4.328.970 (+1,34 %).
+Schuldenquote (62,2) und Verteidigung (1,4) stimmen. Grobe Wirkung (nicht gerechnet): Klub-BIP 2024 +0,5 %. Nicht übernommen,
+weil die übrigen neun Länder nicht neu abgerufen sind und ein gemischter Datenstand schlechter wäre als ein einheitlich
+älterer. Vorgehen: alle zehn BIP-Werte, Schuldenquoten und Zinsausgaben in einem Durchgang neu abrufen, dann neu rechnen;
+bestätigt sich die Abweichung, als Korrektur 53 führen (Ursache: Revision, kein Übertragungsfehler).
+
+*Skripte: `modell/eingangswerte.py`, `projekt/manifest.py`, `modell/alles.py`. Quellen: Eurostat (Abrufformen), Register.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 52. **Nächste freie Nummer: 53.** Die Nummern 31 bis 41 sind
@@ -633,7 +676,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.13
+## 7 | Offene Punkte, Stand v3.14
 
 | Punkt | Status |
 |---|---|
@@ -643,7 +686,7 @@ nicht geklärt.
 | **B4: Irland, BIP oder GNI\*** | **entschieden in v3.12: BIP**, Begründung im Konzept (Abschnitt 5, 9); Größenordnung GNI\* genannt, nicht gerechnet |
 | **B5: Ebene A 8,94 % gegen 9,04 %** | **geschlossen in v3.7, war kein Widerspruch** (8,94 enthält Verteidigung 2,50, die Tabelle 2028 rechnet mit 1,40) |
 | **B6: Ausgangslage 2024 als 2028** | **entschieden in v3.12:** Auslauf ab 2024; Schuldenquote 2028 = 78,4 % bleibt Annahme (Sensitivität 82 %) |
-| **Rechenskripte** | seit v3.8 liegen die Originale `basis.py`, `pfad.py`, `final.py`, `tilgung.py`, `aufschlag.py`, `altschuld.py`, `kurve.py` in `modell/rahmen/`. `modell/pfad.py` und `modell/aufschlag.py` bleiben als **unabhängige Zweitrechnung** (`modell/vergleich_original.py`). Ungelesen: `zahlen.py`, `gesamtkonzept-bau.js`, JSON-Ausgaben. Skripte der Versionen bis v3.4 (Kern, Webseite, Audit, Einzelrechnungen) liegen im Export, aber noch nicht im Repository |
+| **Rechenskripte** | Originale in `modell/rahmen/` (unverändert, Prüfsummen); geltende Rechnung `modell/gesamtrechnung.py` (v3.12); Zweitrechnung als Regression. Das Bauskript `gesamtkonzept-bau.js` ist seit v3.12 gelesen und neu geschrieben. Skripte bis v3.4 liegen in `modell/kern/`, `rechnungen/`, `audit/` (Stand A, nicht erneut ausgeführt) |
 | **B7: Einwohnerzahl** | **geschlossen in v3.12.** Gesamtkonzept rechnet mit 255,061 Mio; `basis.py` bleibt als Original |
 | **B8: Bemessung des Aufschlags** | **geklärt in v3.11.** BIP-Bemessung folgt aus der Finanzierung nach BIP-Anteil; `altschuld.py` überholt (Sekundärquelle) |
 | **B9: Obergrenze 36 %** | **entschieden in v3.12:** abgeleitete Regel bestätigt 36 %; nicht gedeckt: Häufung der Risiken (36,7 %) und 3,5 % Verteidigung (38,5 %) |
@@ -651,14 +694,15 @@ nicht geklärt.
 | **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 %. Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
 | **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
-| **B15: Neu abrufen** | **neu, v3.12.** BIP, Schuldenquoten, Renditen und COFOG-Posten sind seit dem 4. Oktober nicht erneut geprüft; Zinsausgaben Estland geschätzt. Abruf je Land einzeln über das Web-Abrufwerkzeug (Ratenbegrenzung beachten) |
+| **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte, Schuldenquoten, Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
 | **B16: Seite zum Stand B** | **neu, v3.12.** zeigt die Werte der Fassung 4. Oktober; neu bauen, sobald B12 auf Klubebene steht |
 | **B17: Dividende gleich oder je Land?** | **neu, v3.13.** Der Text sagt „jeder Bürger dieselbe Dividende", die Rechnung (`final.py`) bewertet die Dividende für Deutschland aber mit dem deutschen BIP je Kopf (8,7 % über dem Klubschnitt). Beides zugleich geht nicht. Zu klären, ob die Dividende ein klubweit gleicher Eurobetrag ist (dann gilt der Klubschnitt, und das Kriterium 479 EUR wäre am Klubwert zu messen) oder ein gleicher Anteil am örtlichen BIP. Die Wahl verschiebt die Quote. Entscheidung des Verfassers |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
+| **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |
 | **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |
 | **Stand A und Stand B** | **neu, v3.8.** Modell (`1-modell`) und achtsprachige Webseite im Export stehen auf dem nationalen Stand (Quote 27,91 % bzw. 33 %, Position 10 Sozialabgaben, Logbuch v2.0); das Gesamtkonzept auf dem europäischen (Quote 30,6 %, v3.5). Die Seite hat den Rahmenwechsel nie gesehen. Zwei Builds der Seite (Tarifstufen 0/9/16/21/26/28 gegen 0/9/19/24/27/28); der Quelltext passt nur zum älteren, die Patch-Skripte sind nicht ausgeführt. Nach Angabe des Exports; von mir nicht geprüft |
-| **Herleitung von 6,44 und 10,35** | Beide sind Summen der COFOG-abgeleiteten Posten aus Band II (v3.2): 6,44 für Ebene A ohne Verteidigung, 10,35 für Ebene B. Die zugrunde liegenden Eurostat-Abrufe (COFOG, zehn Staaten) liegen nicht vor, die Shell erreicht `ec.europa.eu` nicht. Nachgerechnet sind die Summen der Posten, nicht die Posten |
+| **Herleitung von 6,44 und 10,35** | Summen der COFOG-abgeleiteten Posten (Band II, v3.2). Siehe B19. Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell); die Posten lassen sich damit nachholen |
 | **Nicht eingetragene Größen** | Mindestquote, Obergrenze von A, Höchstbedarf, territorialer Aufschlag: Bezugsjahr oder Bezugsgröße fehlt. Siehe `daten/aggregate/nicht-eingetragen.md`, Abschnitt A |
-| **Rohdaten und Abrufe nicht reproduzierbar** | Die Eurostat-Abrufe (zehn Einzelabrufe COFOG GF02, `gov_10a_exp`, `gov_10a_taxag`, `nama_10_gdp`, `demo_gind`) sind im Logbuch nur benannt, die Abrufergebnisse liegen nicht vor. Die Shell erreicht `ec.europa.eu` nicht (Logbuch v3.1) |
+| **Rohdaten und Abrufe nicht reproduzierbar** | **teilweise behoben in v3.14:** jede amtliche Eingangsgröße hat eine Abrufadresse (`daten/aggregate/eingangswerte.csv`); Abrufergebnisse selbst liegen nicht als Rohdaten vor (Regel: keine Rohdaten im Repository) |
 | **Prüfstand der Logbuch-Abschrift** | **geschlossen in v3.8**: Band I ist die Originaldatei, Band II zeilengleich, siehe `HERKUNFT.md` |
 | Alle offenen Punkte aus Band I (Abschnitt 7) und Band II (Zusatz zu v3.5) | unverändert, soweit hier nicht genannt |

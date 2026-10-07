@@ -4,8 +4,10 @@
 Aufruf:  python3 modell/alles.py
 Rückgabe: 0, wenn jede Stufe 0 liefert.
 
-Reihenfolge: Parameter -> Zweitrechnung -> Vergleich mit den Originalen -> Konstanten -> Kennzahlen ->
-Aussagen der Fassung 4. Oktober -> Gesamtrechnung -> Gesamtkonzept gegen Rechnung -> Projektprüfung. Jede Stufe schreibt ihre Ergebnisdatei nach daten/aggregate/.
+Reihenfolge: siehe Liste STUFEN unten (Parameter, Zweitrechnung und Vergleich mit den Originalen, Konstanten,
+Kennzahlen, Aussagen der Fassung 4. Oktober, Gesamtrechnung, Dokumente gegen Rechnung, Datenzugang, Projektprüfung).
+Der Lauf schreibt Ergebnisdateien nach daten/aggregate/ und projekt/manifest.json; er ist wiederholbar
+(gleicher Stand ergibt gleiche Dateien). Wer nichts verändern will, arbeitet in einer Kopie. Jede Stufe schreibt ihre Ergebnisdatei nach daten/aggregate/.
 Ändert sich ein Parameter, ein Skript oder ein Dokument, zeigt dieser Lauf, welcher Baustein betroffen ist.
 """
 import subprocess
@@ -23,6 +25,8 @@ STUFEN = [
     ("Aussagen (Fassung 4.10.)", ["modell/pruefe_aussagen.py"]),
     ("Gesamtrechnung (Fassung 6.10.)", ["modell/gesamtrechnung.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
+    ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),
+    ("Projektkarte (Datenzugang)", ["projekt/manifest.py"]),
     ("Projektprüfung", ["projekt/pruefe_projekt.py"]),
 ]
 

@@ -1,0 +1,9 @@
+{
+  "name": "tax2828-dokumente",
+  "private": true,
+  "description": "Bauskripte für Gesamtkonzept und Kurzfassung (TAX 28:28)",
+  "license": "MIT",
+  "dependencies": {
+    "docx": "9.7.1"
+  }
+}
