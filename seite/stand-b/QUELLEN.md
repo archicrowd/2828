@@ -26,3 +26,8 @@ Geprüft am 7. Oktober 2026 über Web-Abruf (maschinell gelesen, an der Quelle z
 | Kanada: CETA; Sicherheits- und Verteidigungspartnerschaft mit der EU seit 2025 | EAD / Europäische Kommission: Unterzeichnung beim 20. Gipfel EU–Kanada am 23./24.6.2025 | gelesen 7.10.2026 |
 | Großbritannien nicht an Art. 113 AEUV gebunden | Vertragstext (Austritt 2020) | allgemein bekannt |
 | „Sechs genügen" (DE, UK, FR, IT, ES, PL: 365,9 Mio) | Summe aus `moeglichkeitsraum.csv` | Rechnung |
+| Grafik Staatsschulden: Euroraum 2010–2025 | Eurostat gov_10dd_edpt1, EA20, GD, PC_GDP (Web-Abruf 7.10.2026) | gelesen 7.10.2026 |
+| Grafik Staatsschulden: Klub ab 2028 | `daten/aggregate/gesamtrechnung.json` (reihe_d) | Rechnung |
+| Grafik CO₂: Deutschland 2010–2024 | Werte der bisherigen Webseite (Umweltbundesamt laut Vorchat) | Sekundärquelle |
+| Grafik CO₂: 2025 = 649 Mio t; 1990 = 1.253 Mio t; Ziel 2030 = 438 Mio t; Neutralität 2045 | Umweltbundesamt, „Treibhausgas-Emissionen in Deutschland" (vorläufige Daten 2025) | gelesen 7.10.2026 |
+| Grafik CO₂: Ziel 2040 = 150 Mio t | Klimaschutzgesetz: −88 % gegenüber 1990 (1.253 × 0,12) | Rechnung aus Gesetzesziel |

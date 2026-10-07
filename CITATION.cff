@@ -4,11 +4,9 @@ title: "TAX 28:28 - Modell, Logbuch und Dokumentation"
 type: software
 license: MIT
 authors:
-  - family-names: "Hermann"
-    given-names: "Arndt"
+  - name: "Initiative 28:28"
     email: "2828@archicrowd.de"
-    role: "Autor des Konzepts und Projektverantwortlicher"
-version: "v3.16"
+version: "v3.17"
 date-released: "2026-10-06"
 abstract: >-
   Modell und Dokumentation eines Steuer- und Abgabenkonzepts mit einheitlichem Satz von 28 %

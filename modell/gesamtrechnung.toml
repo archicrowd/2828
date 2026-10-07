@@ -5,7 +5,7 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.16"
+version = "v3.17"
 fassung = "6. Oktober 2026"
 
 [[parameter]]
@@ -211,3 +211,13 @@ preisbasis = "keine"
 quelle     = "nationales Modell (Stand A), modell/kern/modell-2828.py: 14 Mio Kinder von 84 Mio Einwohnern (Deutschland)"
 status     = "annahme"
 hinweis    = "für den Klub übernommen; dient nur der Aufteilung der Dividende je Einwohner auf Erwachsene (voll) und Kinder (halb)"
+
+[[parameter]]
+name       = "existenzminimum_de_jahr"
+wert       = 12348
+einheit    = "EUR je Erwachsenem und Jahr"
+bezugsjahr = 2026
+preisbasis = "nominal"
+quelle     = "Grundfreibetrag 2026, § 32a EStG (wie im nationalen Modell, modell/kern)"
+status     = "belegt"
+hinweis    = "Anker der Lesart 'halbes Existenzminimum am Wohnort' (B17): 12.348 / 12 / 2 = 514,50 EUR je Erwachsenem und Monat in Deutschland"

@@ -58,6 +58,13 @@ ZUSATZ_CSS = """
 .ebenen .ag{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#pg)}
 .ebenen.mob{display:none;max-width:420px;margin:6px auto 4px}
 @media(max-width:640px){.ebenen.wide{display:none}.ebenen.mob{display:block}}
+#chart2{width:100%;height:auto;display:block}
+#chart2 .grid{stroke:var(--line-soft)}
+#chart2 .axis{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+#chart2 .hist{stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+#chart2 .ohne{stroke:var(--warn);fill:none;stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
+#chart2 .mit{stroke:var(--accent);fill:none;stroke-width:3.5;stroke-linecap:round}
+#chart2 .marker{stroke:var(--line);stroke-dasharray:3 4}
 .kicker{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:10px}
 .kicker.alt{color:var(--warn)}.kicker.neu{color:var(--accent)}
 .raum{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:14px 0 18px}
@@ -140,6 +147,17 @@ def ebenen_svg():
 </svg>'''
 
 
+# Zeitreihen der Grafik „Wohin die Reise geht" (Quellen: seite/stand-b/QUELLEN.md)
+ZEITREIHEN = {
+    "schuld_hist_jahre": list(range(2010, 2026)),
+    "schuld_hist": [85.4, 87.3, 90.8, 92.8, 92.9, 91.0, 89.9, 87.5, 85.5, 83.6, 96.5, 93.8, 89.3, 86.9, 87.0, 87.8],
+    "co2_hist_jahre": list(range(2010, 2026)),
+    "co2_hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 649],
+    "co2_ziel_jahre": [2025, 2030, 2040, 2045],
+    "co2_ziel": [649, 438, 150, 0],
+}
+
+
 def raum_pop(k):
     return next(float(x["einwohner_mio"]) for x in RAUM if x["land"] == k)
 
@@ -159,6 +177,7 @@ def main():
         "fachKopf": J["tabelle_einzug"][5][2], "verwAnt": J["verw_anteil_pct"],
         "tarif": [[g if g else 1e12, s] for g, s in TARIF],
         "raum": {x["land"]: float(x["einwohner_mio"]) for x in RAUM}, "us": raum_pop("US"),
+        "d": J["reihe_d"], "zeit": ZEITREIHEN,
     }, ensure_ascii=False)
 
     html = f'''<!DOCTYPE html><html lang="de"><head>
@@ -391,6 +410,14 @@ def main():
       <div><h3>Kanada</h3><p>Durch das Handelsabkommen CETA wirtschaftlich eng mit Europa verbunden, seit 2025 auch durch eine Sicherheits- und Verteidigungspartnerschaft mit der EU. {de(raum_pop("CA"), 1)} Mio Menschen, gleiche Werte, gemeinsame Aufgaben.</p></div>
       <div><h3>Sechs genügen</h3><p>Deutschland, Großbritannien, Frankreich, Italien, Spanien und Polen erreichen gemeinsam die Größe der Vereinigten Staaten. Jedes weitere Land macht den Klub stärker, keines macht ihn unmöglich.</p></div>
     </div>
+    <h3 class="sub-h">Wohin die Reise geht</h3>
+    <div class="chart-card">
+      <div class="tabs" id="ztabs"><button type="button" aria-pressed="true" data-v="schuld">Staatsschulden</button><button type="button" aria-pressed="false" data-v="co2">CO₂-Emissionen</button></div>
+      <div class="unit" id="zunit"></div>
+      <svg id="chart2" viewBox="0 0 900 360" role="img" aria-label="Entwicklung bis 2060"></svg>
+      <div class="legend" id="zleg"></div>
+      <p class="fineprint" id="ztext" style="margin-top:12px"></p>
+    </div>
     <div class="timeline" style="margin-top:34px">
       <div><div class="y">2026 · Offene Prüfung</div><div class="t">Konzept und Rechnungen liegen offen. Fachleute, Verwaltungen und Kritiker sind eingeladen.</div></div>
       <div><div class="y">2027 · Gemeinschaften bilden</div><div class="t">Gemeinden und Regionen finden Partner, Länder prüfen den Beitritt.</div></div>
@@ -416,7 +443,7 @@ def main():
 <footer>
   <div class="wrap">
     <div><h4>Methodik</h4><p>Alle Zahlen stammen aus einer offenen Gesamtrechnung auf Grundlage amtlicher Statistiken (Eurostat, OECD). Entwickelt nach der Methodik des architektonischen Entwurfs, im Arbeitsdialog mit einem KI-System. Skripte unter MIT-Lizenz, Texte unter CC BY 4.0.</p><p class="verstamp">Modellstand <b>{J["version"]} · {J["fassung"]}</b></p></div>
-    <div><h4>Kontakt</h4><p>Initiative 28 : 28 – Arndt Hermann<br><a href="mailto:2828@archicrowd.de?subject=28%3A28">Kritik einreichen</a><br><a href="#top">Nach oben</a></p></div>
+    <div><h4>Kontakt</h4><p>Initiative 28 : 28<br><a href="mailto:2828@archicrowd.de?subject=28%3A28">Kritik einreichen</a><br><a href="#top">Nach oben</a></p></div>
     <div><h4>Impressum und Datenschutz</h4><p>Verantwortlich für den Inhalt: Initiative 28 : 28 – Arndt Hermann, 2828@archicrowd.de. Diese Seite verwendet keine Cookies, keine Tracker und lädt keine Inhalte von Dritten. Es werden keine personenbezogenen Daten erhoben. Die Schriften Space Grotesk, Source Serif 4 und IBM Plex Mono liegen lokal, unter der SIL Open Font License 1.1. Alle Modellrechnungen sind Illustrationen ohne Gewähr und ersetzen keine Steuer- oder Rechtsberatung. Die Seite ist für Suchmaschinen gesperrt.</p></div>
   </div>
 </footer>
@@ -470,6 +497,25 @@ function vorwahl(v){{const s=new Set(VOR[v]);document.querySelectorAll('#raum bu
 $('raum').addEventListener('click',e=>{{const b=e.target.closest('button');if(!b)return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
   document.querySelectorAll('#raumvor button').forEach(x=>x.setAttribute('aria-pressed','false'));raum();}});
 seg('raumvor',vorwahl);vorwahl('europa');
+
+// Wohin die Reise geht
+function chart2(t){{const Z=D.zeit,W=900,H=360,L=60,R=30,T=20,B=40;let ser,lo,hi,x0=2010,x1=2060,step;
+  if(t==='schuld'){{ser=[['hist',Z.schuld_hist_jahre,Z.schuld_hist],['mit',D.jahre,D.d]];lo=20;hi=100;step=20;
+    $('zunit').textContent='Staatsschulden in % der Wirtschaftsleistung';
+    $('zleg').innerHTML='<span class="l-hist"><i></i>Euroraum bis heute</span><span class="l-mit"><i></i>Klub mit 28:28, ab 2028</span>';
+    $('ztext').textContent='Ohne neue Schulden sinkt die Last von selbst, weil die Wirtschaft wächst: von '+de(D.d[0])+' auf '+de(D.d[D.d.length-1])+' % bis 2060 – ohne einen Tilgungseuro.';}}
+  else{{ser=[['hist',Z.co2_hist_jahre,Z.co2_hist],['ohne',Z.co2_ziel_jahre,Z.co2_ziel]];lo=0;hi=1000;step=200;x1=2045;
+    $('zunit').textContent='Treibhausgase Deutschlands in Mio. Tonnen CO₂-Äquivalenten';
+    $('zleg').innerHTML='<span class="l-hist"><i></i>bis heute</span><span class="l-ohne"><i></i>Klimaziel bis 2045</span>';
+    $('ztext').textContent='Seit 1990 fast halbiert – die zweite Hälfte steht noch bevor. TAX 28:28 setzt dafür auf einen gemeinsamen europäischen CO₂-Preis und gibt die Einnahmen über die Dividende an alle zurück.';}}
+  const X=x=>L+(x-x0)/(x1-x0)*(W-L-R),Y=y=>T+(hi-y)/(hi-lo)*(H-T-B);let g='';
+  for(let y=lo;y<=hi;y+=step)g+=`<line class="grid" x1="${{L}}" x2="${{W-R}}" y1="${{Y(y)}}" y2="${{Y(y)}}"/><text class="axis" x="${{L-8}}" y="${{Y(y)+4}}" text-anchor="end">${{de(y)}}</text>`;
+  for(let x=x0;x<=x1;x+=(x1-x0>40?10:5))g+=`<text class="axis" x="${{X(x)}}" y="${{H-12}}" text-anchor="middle">${{x}}</text>`;
+  g+=`<line class="marker" x1="${{X(2026)}}" x2="${{X(2026)}}" y1="${{T}}" y2="${{H-B}}"/>`;
+  for(const [c,xs,ys] of ser){{g+=`<polyline class="${{c}}" points="${{ys.map((v,i)=>X(xs[i])+','+Y(v)).join(' ')}}"/>`;
+    const e=ys[ys.length-1];g+=`<text class="axis" x="${{X(xs[xs.length-1])-4}}" y="${{Y(e)-10}}" text-anchor="end">${{de(e)}}</text>`;}}
+  $('chart2').innerHTML=g;}}
+seg('ztabs',chart2);chart2('schuld');
 
 // Zeitpfad
 function chart(f){{const s=D.erw[f],xs=D.jahre,W=900,H=360,L=60,R=30,T=20,B=40;

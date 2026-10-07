@@ -1,8 +1,8 @@
-# Projektsteuerung TAX 28:28 (Stand v3.16, 7. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.17, 7. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
-Autor und Projektverantwortlicher des Konzepts: Arndt Hermann. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.
+Autorin des Konzepts: Initiative 28:28 (Name nur im Impressum der Webseite). Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.
 
 ## Geltende Fassung
 Gesamtkonzept vom 6. Oktober 2026 (dazu Kurzfassung, zwei Seiten): Quote 30,8 %, Obergrenze von A 36 % des Einzugs, Dividende im Klubschnitt

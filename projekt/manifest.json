@@ -1,8 +1,8 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.16",
+ "modellstand": "v3.17",
  "fassung_gesamtkonzept": "6. Oktober 2026",
- "autor_und_projektverantwortung": "Arndt Hermann",
+ "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
  "repository": "https://github.com/archicrowd/2828 (privat; Zugang auf Anfrage)",
  "lizenz": {
@@ -232,7 +232,7 @@
   {
    "id": "B20",
    "name": "Gesamtrechnung",
-   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv",
+   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv;modell/laendervarianten.py;daten/aggregate/laendervarianten.csv;daten/aggregate/preisniveau_2024.csv",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/gesamtrechnung.py (Selbstprüfung gegen final.pfad);modell/pruefe_konzept.py",
@@ -614,6 +614,30 @@
    "status": "Herausgeber und Abrufdatum fehlen",
    "zugang": "beim Herausgeber",
    "weitergabe": "NEIN: Urheberrecht der Herausgeber"
+  },
+  {
+   "id": "Q22",
+   "quelle": "Preisniveauindizes",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "prc_ppp_ind (PLI_EU27_2020, A01 Individualverbrauch)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Lesart halbes Existenzminimum am Wohnort (B17)",
+   "datei_im_repo": "daten/aggregate/preisniveau_2024.csv",
+   "status": "abgerufen 7.10.2026 (maschinell gelesen)",
+   "zugang": "offen",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q23",
+   "quelle": "Grundfreibetrag 2026",
+   "herausgeber": "Bund",
+   "datensatz_oder_fundstelle": "§ 32a EStG (12.348 EUR)",
+   "bezugsjahr": "2026",
+   "verwendet_fuer": "Anker 514,50 EUR je Erwachsenem und Monat",
+   "datei_im_repo": "modell/gesamtrechnung.toml",
+   "status": "belegt",
+   "zugang": "offen: gesetze-im-internet.de",
+   "weitergabe": "amtliches Werk"
   }
  ],
  "nicht_im_repository": [

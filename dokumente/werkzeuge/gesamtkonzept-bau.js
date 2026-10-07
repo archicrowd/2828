@@ -41,7 +41,7 @@ const kinder=[
 new Paragraph({spacing:{after:60},children:[new TextRun({text:"TAX 28:28",font:"Calibri",bold:true,size:40,color:"1F3864"})]}),
 new Paragraph({spacing:{after:60},children:[new TextRun({text:"Das Gesamtkonzept",font:"Calibri",size:30,color:"1F3864"})]}),
 new Paragraph({spacing:{after:60},children:[new TextRun({text:`Stand ${J.fassung} · Modellstand ${J.version} · Steuerquote ${de(q,1)} % · Startjahr 2028 · zehn Klubstaaten`,font:"Calibri",italics:true,size:19,color:"595959"})]}),
-new Paragraph({spacing:{after:300},children:[new TextRun({text:"Konzept und Projektverantwortung: Arndt Hermann",font:"Calibri",italics:true,size:19,color:"595959"})]}),
+new Paragraph({spacing:{after:300},children:[new TextRun({text:"Initiative 28:28",font:"Calibri",italics:true,size:19,color:"595959"})]}),
 HR(),
 
 H("Was es ist",H1),
@@ -197,9 +197,9 @@ R([[`Einschränkungen: Irlands BIP je Kopf liegt wegen Konzernbuchungen beim ${d
 R([["Gegenüber der Fassung vom 4. Oktober 2026 geändert: ",true],[`Einwohnerzahl (255,1 statt 254,8 Mio, acht Länderwerte waren falsch übertragen), effektiver Zins 2024 (${de(J.zins_eff_2024,2)} statt 1,53 %, die Zinsausgaben lagen bei ${de(J.zinsausgaben24_mrd)} statt 146 Mrd €), Auslaufen des Altbestands ab 2024 statt 2028 und die strenge Lesart des Quotenkriteriums (real null heißt nominal 2 %); daraus die Quote ${de(q,1)} statt 30,6 %. Der höhere Zins senkt die Dividende der ersten Jahre: ${de(J.klub_2028)} statt 506 € im Startjahr. Die Obergrenze von ${de(og)} % ist jetzt abgeleitet und bestätigt. Einzelheiten im Logbuch, Band III, v3.12.`]]),
 HR(),
 P("Rechnung: modell/gesamtrechnung.py (Formeln der Originalskripte modell/rahmen/basis.py, pfad.py, final.py, tilgung.py, aufschlag.py), Ergebnis daten/aggregate/gesamtrechnung.json. Entwurf zur Diskussion, keine beschlossene Fassung.",{i:true,sz:19}),
-P("Text: Arndt Hermann, Lizenz CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Eingangsdaten Dritter unterliegen deren Bedingungen.",{i:true,sz:19}),
+P("Text: Initiative 28:28, Lizenz CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Eingangsdaten Dritter unterliegen deren Bedingungen.",{i:true,sz:19}),
 ];
 
-const doc=new Document({creator:"Arndt Hermann",title:"TAX 28:28 — Das Gesamtkonzept",styles:{default:{document:{run:{font:"Calibri",size:21}}}},sections:[{
+const doc=new Document({creator:"Initiative 28:28",title:"TAX 28:28 — Das Gesamtkonzept",styles:{default:{document:{run:{font:"Calibri",size:21}}}},sections:[{
 properties:{page:{margin:{top:1134,bottom:1134,left:1134,right:1134}}},children:kinder}]});
 Packer.toBuffer(doc).then(b=>{const ziel=path.join(WURZEL,'dokumente','TAX-2828-Gesamtkonzept.docx');fs.writeFileSync(ziel,b);console.log("ok",ziel,b.length)});

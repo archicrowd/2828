@@ -24,6 +24,7 @@ STUFEN = [
     ("Kennzahlen", ["modell/kennzahlen.py"]),
     ("Aussagen (Fassung 4.10.)", ["modell/pruefe_aussagen.py"]),
     ("Gesamtrechnung (Fassung 6.10.)", ["modell/gesamtrechnung.py"]),
+    ("Ländervarianten (B17)", ["modell/laendervarianten.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),
     ("Projektkarte (Datenzugang)", ["projekt/manifest.py"]),

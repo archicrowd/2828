@@ -51,7 +51,7 @@ def main() -> int:
         "projekt": "TAX 28:28",
         "modellstand": version,
         "fassung_gesamtkonzept": J["fassung"],
-        "autor_und_projektverantwortung": "Arndt Hermann",
+        "autor": "Initiative 28:28",
         "kontakt": "2828@archicrowd.de",
         "repository": "https://github.com/archicrowd/2828 (privat; Zugang auf Anfrage)",
         "lizenz": {"skripte": "MIT (LICENSE)", "texte_und_ergebnisse": "CC BY 4.0 (LICENSE-DOKUMENTE.md)",

@@ -4,7 +4,7 @@ Diese Seite ist für Dritte geschrieben: Fachleute, Prüferinnen und Prüfer, St
 wo jede Zahl herkommt, wie man sie nachprüft und wie man am Konzept weiterarbeitet. KI-Agenten lesen zusätzlich
 `AGENTS.md`. Die Projektkarte in Maschinenform steht in `projekt/manifest.json`.
 
-Stand: Modellstand und Fassung siehe `INDEX.md`. Verantwortlich für Konzept und Projekt: Arndt Hermann,
+Stand: Modellstand und Fassung siehe `INDEX.md`. Autorin: Initiative 28:28,
 2828@archicrowd.de.
 
 ## 1 Zugang zum Material

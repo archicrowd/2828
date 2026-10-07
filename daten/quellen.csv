@@ -20,3 +20,5 @@ Q18,Country-by-Country Reporting,OECD,"CbCR-Länderberichte (nur Panel _T, nicht
 Q19,Taxplorer,Taxplorer-Projekt,Rohdatenbank,div.,Einzelrechnungen Stand A,nicht im Repository,nur Aggregate mit Zitat,eigene Anmeldung beim Anbieter,"NEIN: CC BY-NC-ND 4.0, Rohdaten nie weitergeben"
 Q20,Mikrodaten SOEP und EU-SILC,DIW / Eurostat,Haushaltsmikrodaten,—,künftige Mikrosimulation,nicht im Repository,nicht verwendet,nur mit eigenem Datenvertrag,NEIN: nur Vertragsnehmer
 Q21,Drittdateien aus dem Vorchat,verschiedene,"daten/herkunft/uploads-manifest.csv (Name, Größe, SHA-256)",div.,Einzelrechnungen Stand A,nur Manifest,Herausgeber und Abrufdatum fehlen,beim Herausgeber,NEIN: Urheberrecht der Herausgeber
+Q22,Preisniveauindizes,Eurostat,"prc_ppp_ind (PLI_EU27_2020, A01 Individualverbrauch)",2024,Lesart halbes Existenzminimum am Wohnort (B17),daten/aggregate/preisniveau_2024.csv,abgerufen 7.10.2026 (maschinell gelesen),offen,Eurostat-Bedingungen
+Q23,Grundfreibetrag 2026,Bund,§ 32a EStG (12.348 EUR),2026,"Anker 514,50 EUR je Erwachsenem und Monat",modell/gesamtrechnung.toml,belegt,offen: gesetze-im-internet.de,amtliches Werk

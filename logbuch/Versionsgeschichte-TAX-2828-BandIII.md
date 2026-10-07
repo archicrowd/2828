@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.16**
+Stand: 7. Oktober 2026 · Modellstand **v3.17**
 
 ---
 
@@ -715,6 +715,52 @@ Entscheidung des Verfassers. Bis dahin nennt die Seite die Dividende im Klubschn
 
 ---
 
+### v3.17 — Autorschaft Initiative 28:28, Preisniveaus und Ländervarianten (B17), Grafiken der Webseite
+
+**Art der Änderung: MINOR** (neue Rechnung ohne Wirkung auf die geltende Quote; Texte und Seite). 7. Oktober 2026.
+
+**Autorschaft.** Auf Wunsch der Initiative steht als Autorin durchgängig „Initiative 28:28": `CITATION.cff`, `LICENSE`,
+`LICENSE-DOKUMENTE.md`, `LIZENZ.md`, `CONTRIBUTING.md`, `DATENZUGANG.md`, `CLAUDE.md`, Projektkarte, Gesamtkonzept,
+Kurzfassung, Fußzeile der neuen Seite. Der Name des Verantwortlichen steht nur noch im Impressum der Webseite. Nicht geändert:
+frühere Logbucheinträge (Geschichte) und die archivierten Seiten des Stands A. Hinweis: Eine Initiative ohne Rechtsform ist
+keine Rechtsperson; Urheber im Rechtssinn bleiben die beteiligten Personen (Einschätzung, keine Rechtsberatung).
+
+**Preisniveaus (neu, Quelle Q22).** Eurostat `prc_ppp_ind`, Preisniveauindex des Individualverbrauchs 2024 (EU27 = 100), je Land
+einzeln abgerufen, maschinell gelesen: DE 109,1 · FR 107,9 · ES 90,7 · NL 121,0 · IE 141,2 · BE 118,7 · AT 119,7 · DK 142,8 ·
+SI 91,0 · EE 96,5; einwohnergewichtet 108,2. → `daten/aggregate/preisniveau_2024.csv`.
+
+**Ländervarianten (neu, `modell/laendervarianten.py`).** Dividende je Erwachsenem 2028 (Preise 2028):
+
+| | DE | FR | ES | NL | IE | BE | AT | DK | SI | EE |
+|---|---|---|---|---|---|---|---|---|---|---|
+| V1 gleicher Betrag | 535 | 535 | 535 | 535 | 535 | 535 | 535 | 535 | 535 | 535 |
+| V2 Anteil am örtlichen BIP | 582 | 479 | 366 | 695 | 1.168 | 587 | 604 | 751 | 356 | 326 |
+| V3a Preisniveau, budgetneutral | 539 | 533 | 448 | 598 | 698 | 587 | 592 | 706 | 450 | 477 |
+| V3b halbes Existenzminimum, verankert | 514 | 509 | 428 | 571 | 666 | 560 | 564 | 673 | 429 | 455 |
+
+V3b setzt in Deutschland die Hälfte des Grundfreibetrags 2026 an (12.348 / 24 = 514,50 EUR) und überträgt mit dem Preisniveau;
+der Dividendentopf 2028 deckt das zu **104,8 %**. Die Lesart ist also mit der geltenden Quote finanzierbar, mit kleiner Reserve.
+Gemeinden als Pro-Kopf-Variante des Länderbeitrags (10,35 % des BIP je Kopf des eigenen Landes): DE 6.091, FR 5.015, ES 3.833,
+NL 7.283, IE 12.237, BE 6.147, AT 6.326, DK 7.869, SI 3.724, EE 3.415 EUR je Einwohner und Jahr (Klubschnitt 5.601). Keine
+Umverteilung zwischen den Ländern über die Gemeindebudgets; die Irland-Anomalie wird nach Entscheidung der Initiative
+hingenommen (Begründung der Initiative: Mit der Besteuerung am Ort der Nutzung entfällt die Gewinnverlagerung, das irische BIP
+normalisiert sich).
+
+**Offen (Entscheidung der Initiative):** V3a oder V3b; Wartezeit der Umzugsregel; ob das Quotenkriterium künftig am halben
+Existenzminimum (514,50 EUR je Erwachsenem in Deutschland) statt an 479 EUR je Kopf gemessen wird. Erst dann Neurechnung von
+Quote, Gesamtkonzept und Seite.
+
+**Webseite.** Grafik „Wohin die Reise geht" hinter „Sechs genügen" wiederhergestellt, mit zwei Reitern: Staatsschulden
+(Euroraum 2010–2025 nach Eurostat, Klub ab 2028 aus der Gesamtrechnung) und CO₂-Emissionen Deutschlands (2010–2025, Klimaziele
+2030, 2040, 2045 nach Umweltbundesamt und Klimaschutzgesetz). Nicht wiederhergestellt: „Einkommensungleichheit" und „Belastung
+Durchschnittsverdienst" der früheren Seite; beide stammen aus dem nationalen Modell und gelten für Stand B nicht ohne
+Haushaltsmikrosimulation und ohne geklärte Finanzierung der Gesundheit.
+
+*Skripte: `modell/laendervarianten.py`, `seite/werkzeuge/seite_bau.py`. Quellen: Eurostat prc_ppp_ind, gov_10dd_edpt1;
+Umweltbundesamt; § 32a EStG.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -757,7 +803,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.16
+## 7 | Offene Punkte, Stand v3.17
 
 | Punkt | Status |
 |---|---|
@@ -777,7 +823,7 @@ nicht geklärt.
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
 | **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte, Schuldenquoten, Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
 | **B16: Seite zum Stand B** | **deutsch erledigt in v3.15** (`seite/stand-b/de.html`). Offen: Übersetzungen, Veröffentlichung (Schriften `fonts/` daneben legen), Neubau nach jeder Änderung der Rechnung |
-| **B17: Dividende gleich oder je Land?** | **präzisiert in v3.16.** Drei Lesarten gerechnet bzw. beschrieben (gleicher Eurobetrag 535 EUR; Anteil am örtlichen BIP, verzerrt durch Irland 1.168 EUR; halbes Existenzminimum am Wohnort über Preisniveau mit Umzugsregel). Empfehlung: Preisniveau-Lesart. Entscheidung des Verfassers, dann Neurechnung |
+| **B17: Dividende gleich oder je Land?** | **weitergeführt in v3.17.** Preisniveaus abgerufen, vier Lesarten gerechnet (`laendervarianten.csv`). Gemeinden als Pro-Kopf-Variante des Länderbeitrags (Vorschlag der Initiative). Offen: V3a oder V3b, Umzugsregel, Quotenkriterium; danach Neurechnung |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
 | **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |
 | **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |

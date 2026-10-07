@@ -1,6 +1,6 @@
 # Lizenz
 
-Festgelegt am 6. Oktober 2026 durch den Autor und Projektverantwortlichen Arndt Hermann
+Festgelegt am 6. Oktober 2026 durch die Initiative 28:28
 (Annahme des Vorschlags vom selben Tag, Logbuch Band III, v3.12). Keine Rechtsberatung.
 
 | Teil | Lizenz | Datei |

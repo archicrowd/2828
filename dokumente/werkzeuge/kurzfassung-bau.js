@@ -23,7 +23,7 @@ const q=J.quote, og=J.obergrenze;
 const kinder=[
 new Paragraph({spacing:{after:0},children:[T("TAX 28:28",{b:true,sz:36,c:BLAU}),T("   Ein neues Grundsystem für Steuern und Gemeinwesen",{sz:24,c:BLAU})]}),
 new Paragraph({spacing:{after:120},border:{bottom:{style:BorderStyle.SINGLE,size:6,color:"BFBFBF",space:4}},children:[
-  T(`Kurzfassung · Stand ${J.fassung} · Modellstand ${J.version} · Konzept und Projektverantwortung: Arndt Hermann`,{i:true,sz:16,c:GRAU})]}),
+  T(`Kurzfassung · Stand ${J.fassung} · Modellstand ${J.version} · Initiative 28:28`,{i:true,sz:16,c:GRAU})]}),
 
 H("Warum es ein neues System braucht"),
 P("Die heutige Steuer- und Abgabenordnung ist über Jahrzehnte gewachsen, Schicht um Schicht, Ausnahme um Ausnahme. Kaum jemand kann sie noch überblicken, und wer etwas verändern will, verliert sich in Zuständigkeiten. Eine Gemeinde, die eine Schule sanieren will, verhandelt mit Kreis, Land und Bund über Geld, das zweckgebunden ankommt und über das anderswo entschieden wurde. Was sie spart, bekommt sie nicht. Bürgerinnen und Bürger, Vereine und Gemeinden stehen vor einem Dickicht, das sie weder durchschauen noch beeinflussen können. So verliert ein Land Zeit, Vertrauen und Anschluss im internationalen Wettbewerb."),
@@ -54,8 +54,8 @@ H("Offene Entwicklungsarbeit"),
 P("TAX 28:28 ist ein Entwurf zur Diskussion, unabhängig von Parteien und Interessengruppen entwickelt. Die Eingangsdaten stammen aus amtlichen Statistiken (Eurostat, OECD), jede Rechnung liegt als Skript vor und lässt sich nachrechnen. Ein Logbuch führt jede Änderung und jeden Fehler mit Nummer, Ursache und Korrektur; bis heute sind 52 Korrekturen eingetragen. Annahmen und Schätzungen sind als solche gekennzeichnet. Rechnungen und Logbuch werden mit der Veröffentlichung des Projekts frei zugänglich."),
 P("Das Projekt lädt Fachleute ohne Parteibindung ein, mitzuarbeiten: aus Finanzwissenschaft, Verwaltung, Kommunalpraxis, Recht und Statistik. Gebraucht werden vor allem die Steuerbasen der zehn Staaten, eine Haushaltsmikrosimulation und die rechtliche Prüfung des Klubvertrags. Beiträge werden offen geprüft und im Logbuch vermerkt. Die Skripte stehen unter MIT-Lizenz, Texte und Ergebnisse unter CC BY 4.0."),
 new Paragraph({spacing:{before:60,after:0},border:{top:{style:BorderStyle.SINGLE,size:4,color:"BFBFBF",space:4}},children:[
-  T(`Kontakt: 2828@archicrowd.de · Ausführliche Fassung: TAX 28:28 — Das Gesamtkonzept (${J.fassung}) · Quellen: OECD, Taxing Wages 2025 (Tabelle 3.1); § 32d EStG; Eurostat (2024); Gruppenschätzung „über ${de(J.anteil_mit_mehr_de)} %“ aus dem nationalen Modell ohne Mikrosimulation. Text: Arndt Hermann, CC BY 4.0.`,{i:true,sz:15,c:GRAU})]}),
+  T(`Kontakt: 2828@archicrowd.de · Ausführliche Fassung: TAX 28:28 — Das Gesamtkonzept (${J.fassung}) · Quellen: OECD, Taxing Wages 2025 (Tabelle 3.1); § 32d EStG; Eurostat (2024); Gruppenschätzung „über ${de(J.anteil_mit_mehr_de)} %“ aus dem nationalen Modell ohne Mikrosimulation. Text: Initiative 28:28, CC BY 4.0.`,{i:true,sz:15,c:GRAU})]}),
 ];
-const doc=new Document({creator:"Arndt Hermann",title:"TAX 28:28 — Kurzfassung",styles:{default:{document:{run:{font:F,size:SZ}}}},
+const doc=new Document({creator:"Initiative 28:28",title:"TAX 28:28 — Kurzfassung",styles:{default:{document:{run:{font:F,size:SZ}}}},
   sections:[{properties:{page:{margin:{top:850,bottom:780,left:1134,right:1134}}},children:kinder}]});
 Packer.toBuffer(doc).then(b=>{const z=path.join(WURZEL,'dokumente','TAX-2828-Kurzfassung.docx');fs.writeFileSync(z,b);console.log('ok',z,b.length)});

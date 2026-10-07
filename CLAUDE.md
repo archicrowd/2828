@@ -45,8 +45,8 @@
   (`projekt/pruefsummen.sha256`) nur bewusst mit `--aktualisieren` ändern und im Logbuch vermerken.
 - Projektraum "2525" (Band I bis III, `Projektsteuerung.md`) nach jeder Version von Hand nachführen;
   maßgeblich bleibt das Repository.
-- Autor und Projektverantwortlicher des Konzepts: Arndt Hermann (`CITATION.cff`). Keine weiteren
-  Personennamen oder E-Mail-Adressen aus Quellen übernehmen.
+- Autorschaft durchgängig: Initiative 28:28 (`CITATION.cff`). Der Name des Verantwortlichen erscheint nur im
+  Impressum der Webseite. Keine weiteren Personennamen oder E-Mail-Adressen aus Quellen übernehmen.
 
 - Geltende Rechnung: `modell/gesamtrechnung.py` (+ `gesamtrechnung.toml`). Das Gesamtkonzept wird nur über
   `dokumente/werkzeuge/gesamtkonzept-bau.js` gebaut, nie von Hand; danach `modell/pruefe_konzept.py`.

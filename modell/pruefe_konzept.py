@@ -64,7 +64,7 @@ def main() -> int:
         ("Tilgungsverzicht", f"im Startjahr {de(J['tilg_verzicht'])} € Dividende"),
         ("Dividende Tabelle 2035", de(tp[2035]["klub"])),
         ("Dividende Tabelle 2060", de(tp[2060]["klub"])),
-        ("Autor", "Arndt Hermann"),
+        ("Autorin", "Initiative 28:28"),
         ("Lizenz", "CC BY 4.0"),
     ]
     zeilen, fehler = [], 0

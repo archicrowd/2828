@@ -1,7 +1,6 @@
 # Mitarbeit von außen
 
-Das Repository ist privat; Zugang erhält, wer vom Projektverantwortlichen (Arndt Hermann,
-2828@archicrowd.de) eingeladen wird. Vorgesehen sind Beiträge Dritter, vor allem
+Das Repository ist privat; Zugang erhält, wer von der Initiative 28:28 (2828@archicrowd.de) eingeladen wird. Vorgesehen sind Beiträge Dritter, vor allem
 **Mikrosimulationen** (siehe `schnittstelle/MIKROSIMULATION.md`), Prüfungen einzelner Zahlen und
 Korrekturen. Entwurf, noch nicht erprobt.
 

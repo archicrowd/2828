@@ -337,6 +337,7 @@ def main() -> int:
         gn = G_NOM if g is None else (1 + g) * (1 + PREIS) - 1
         W["reihe_erw"][name] = [r["kl_real"] / (1 - k / 2) for r in pfad(q, g_nom=gn)]
     W["reihe_a"] = [r["a"] for r in P]
+    W["reihe_d"] = [r["d"] for r in P]
     W["reihe_div"] = [r["div"] for r in P]
     W["b_fach"] = B_AUFG
     # Externe Kennzahlen der Ausgangslage (nur durchgereicht, Quelle im toml)
