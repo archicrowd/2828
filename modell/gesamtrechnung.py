@@ -324,6 +324,21 @@ def main() -> int:
              deckung_luecke_mrd_klub=(q - gedeckt) / 100 * BIP28_KLUB)
 
     W["selbstpruefung_jahre"] = n_geprueft
+    # Dividende je Erwachsenem und je Kind (Kinder zur Hälfte): Schnitt je Einwohner / (1 - k/2)
+    k = float(PAR["anteil_minderjaehrige"]) / 100
+    W["anteil_minderjaehrige"] = k * 100
+    for j in (2028, 2035, 2060):
+        W[f"erw_{j}"] = W[f"klub_{j}"] / (1 - k / 2)
+        W[f"kind_{j}"] = W[f"erw_{j}"] / 2
+    # Reihen für die Webseite: Dividende je Erwachsenem (Klub, Preise 2028) je Wachstumsfall; Anteile am Aufkommen
+    W["reihe_jahre"] = [r["jahr"] for r in P]
+    W["reihe_erw"] = {}
+    for name, g in (("0,0", 0.0), ("0,5", 0.005), ("1,0", None), ("1,5", 0.015), ("2,0", 0.020)):
+        gn = G_NOM if g is None else (1 + g) * (1 + PREIS) - 1
+        W["reihe_erw"][name] = [r["kl_real"] / (1 - k / 2) for r in pfad(q, g_nom=gn)]
+    W["reihe_a"] = [r["a"] for r in P]
+    W["reihe_div"] = [r["div"] for r in P]
+    W["b_fach"] = B_AUFG
     # Externe Kennzahlen der Ausgangslage (nur durchgereicht, Quelle im toml)
     for k in ("abgabenkeil_de_2024", "abgabenkeil_oecd_2024", "abgeltungsteuer_de", "anteil_mit_mehr_de"):
         W[k] = float(PAR[k])

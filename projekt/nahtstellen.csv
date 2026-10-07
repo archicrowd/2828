@@ -6,7 +6,7 @@ N04,B03 Rahmenmodell,B02 Parameterfile,Konstanten in Skripten gleich Parameter,o
 N05,B08 Kern (Stand A),B03 Rahmenmodell (Stand B),"Steuerpositionen des Kerns tragen die Quote 30,6 % des Rahmens",offen,"v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 %; Klubebene fehlt (deckung_quote.csv)"
 N06,B08 Kern,B11 Seite Stand A,Seitenzahlen kommen aus modell-2828-daten.json,ungeprueft,Build nicht ausgeführt
 N07,B03 Rahmenmodell,B11 Seite Stand A,die veröffentlichte Seite zeigt den Rahmen,fehlt,Seite hat Rahmenwechsel nie gesehen
-N08,B05 Kennzahlen,B12 Seite Stand B,drei Werte der Seite rahmenstruktur-aktuell,veraltet,Seite zeigt Werte der Fassung 4. Oktober; geltend 490/479/662 EUR
+N08,B20 Gesamtrechnung,B12 Seite Stand B,Zahlen der Seite zum Stand B,ok,seite_bau.py liest gesamtrechnung.json; pruefe_konzept.py prüft sechs Kernzahlen im Quelltext
 N09,B07 Gesamtkonzept,B01 Logbuch,Zahlen und Korrekturen 42 bis 46 stimmen mit dem Dokument,ok,Band II; Aussagen A001 bis A127
 N10,B15 Schnittstelle,extern: Mikrosimulation,"Dritte erhalten Parameter, Kennzahlen und Aussagenregister, liefern Ergebnisdateien zurück",entwurf,schnittstelle/MIKROSIMULATION.md
 N11,B09 Einzelrechnungen,B08 Kern,Einzelergebnisse fließen in das nationale Modell,ungeprueft,nach Rahmenwechsel nicht neu gerechnet

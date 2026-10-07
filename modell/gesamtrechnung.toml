@@ -5,7 +5,7 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.14"
+version = "v3.15"
 fassung = "6. Oktober 2026"
 
 [[parameter]]
@@ -201,3 +201,13 @@ preisbasis = "keine"
 quelle     = "Eurostat gov_10a_exp GF07, S13, BIP-gewichtet (nachgerechnet 7,750 am 7.10.2026)"
 status     = "uebernommen"
 hinweis    = "Herkunft im Logbuch Band I als offen geführt; seit v3.14 nachgerechnet"
+
+[[parameter]]
+name       = "anteil_minderjaehrige"
+wert       = 16.67
+einheit    = "% der Bevölkerung"
+bezugsjahr = 2026
+preisbasis = "keine"
+quelle     = "nationales Modell (Stand A), modell/kern/modell-2828.py: 14 Mio Kinder von 84 Mio Einwohnern (Deutschland)"
+status     = "annahme"
+hinweis    = "für den Klub übernommen; dient nur der Aufteilung der Dividende je Einwohner auf Erwachsene (voll) und Kinder (halb)"

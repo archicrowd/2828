@@ -98,6 +98,18 @@ def main() -> int:
         ok = muster in (" ".join(seiten.split()) if name.endswith("Seiten") else kt)
         fehler += not ok
         zeilen.append([name, muster, "ja" if ok else "NEIN"])
+    # Webseite Stand B (seit v3.15): Kernzahlen im Quelltext, Schätzung gekennzeichnet
+    seite = WURZEL / "seite" / "stand-b" / "de.html"
+    st = seite.read_text(encoding="utf-8") if seite.exists() else ""
+    for name, muster in [("Seite: Dividende je Erwachsenem", f"{de(J['erw_2028'])}&nbsp;€"),
+                         ("Seite: Formel", f"{de(J['formel_einw'])} € je Einwohner"),
+                         ("Seite: Obergrenze", f"höchstens {de(J['obergrenze'])} %"),
+                         ("Seite: Abgabenkeil", f"{de(J['abgabenkeil_de_2024'], 1)} %"),
+                         ("Seite: Schätzung gekennzeichnet", "* Schätzung"),
+                         ("Seite: Modellstand", J["version"])]:
+        ok = muster in st
+        fehler += not ok
+        zeilen.append([name, muster, "ja" if ok else "NEIN"])
     with open(WURZEL / "daten" / "aggregate" / "konzept_pruefung.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(["pruefung", "muster", "ergebnis"])

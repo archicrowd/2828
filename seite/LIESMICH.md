@@ -5,9 +5,13 @@
 
 | Ordner | Inhalt |
 |---|---|
+| `stand-b/` | **neue deutsche Seite zum Stand B** (v3.15): `de.html`, gebaut mit `werkzeuge/seite_bau.py` aus `daten/aggregate/gesamtrechnung.json`; Stylesheet unverändert aus `stand-a-national/de.html`; Quellen der Länderbeispiele in `stand-b/QUELLEN.md`. Für die Veröffentlichung den Ordner `fonts/` der laufenden Seite daneben legen. Andere Sprachen folgen |
+| `werkzeuge/` | Bauskript der neuen Seite |
 | `stand-a-national/` | acht Sprachfassungen (`index` = EN, `de`, `fr`, `es`, `nl`, `da`, `sl`, `et`) und `quelltext/` (`build.py`, `css.py`, `tpl.py`, `lang/*.json`, `klub10.py`, vier Patch-Skripte). Tarif 0/9/16/21/26/28, Mehrwertsteuer 5/11/17/22/28. Der Quelltext passt zu genau diesem Build. Eigene `LIESMICH.md` |
 | `stand-a-neuerer-build/` | späterer Build (`dist/`, Tarif 0/9/19/24/27/28, Mehrwertsteuer 5/11/20/25/28, Effektivsatz 21,5 %) mit drei Patch-Skripten und `qa_tarif.py`. Der dazugehörige Quelltext ist **nicht erhalten** |
 | `rahmenstruktur-seiten/` | Seite zum Stand B (`rahmenstruktur-aktuell.html`, 506/472/651 €), alte deutsche Homepage, 3030-Haushaltspfad, Social-Grafik |
+
+**Fehler auf der veröffentlichten Seite (Korrektur 53):** Der Kasten „Warum Estland im Klub ist" nennt für 2026 einen Satz von 24 %; Estland bleibt bei 22 %. Mit der Veröffentlichung von `stand-b/de.html` entfällt die Aussage.
 
 **Veröffentlichte Seite.** `archicrowd.de` zeigt nach Abruf in dieser Sitzung (Kurzauszug, nicht
 Zeile für Zeile verglichen) Tarif 0/9/16/21/26/28 und Mehrwertsteuer 5/11/17/22/28, also den Stand von

@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.14",
+ "modellstand": "v3.15",
  "fassung_gesamtkonzept": "6. Oktober 2026",
  "autor_und_projektverantwortung": "Arndt Hermann",
  "kontakt": "2828@archicrowd.de",
@@ -160,11 +160,11 @@
   {
    "id": "B12",
    "name": "Seite zum Stand B",
-   "pfad": "seite/rahmenstruktur-seiten/",
+   "pfad": "seite/stand-b/;seite/werkzeuge/seite_bau.py;seite/rahmenstruktur-seiten/",
    "stand": "B",
-   "status": "veraltet",
-   "pruefung": "modell/pruefe_aussagen.py (A130 bis A132)",
-   "anmerkung": "zeigt 506/472/651 EUR der Fassung 4. Oktober; geltend 490/479/662 (v3.12). Nicht neu gebaut"
+   "status": "geprueft",
+   "pruefung": "modell/pruefe_konzept.py",
+   "anmerkung": "neue deutsche Seite seite/stand-b/de.html (v3.15), aus gesamtrechnung.json gebaut, Gestaltung der veröffentlichten Seite; rahmenstruktur-seiten/ als Archiv. Schriften (fonts/) nur auf dem Server"
   },
   {
    "id": "B13",
@@ -307,11 +307,11 @@
   },
   {
    "id": "N08",
-   "von": "B05 Kennzahlen",
+   "von": "B20 Gesamtrechnung",
    "nach": "B12 Seite Stand B",
-   "was": "drei Werte der Seite rahmenstruktur-aktuell",
-   "status": "veraltet",
-   "beleg_oder_offener_punkt": "Seite zeigt Werte der Fassung 4. Oktober; geltend 490/479/662 EUR"
+   "was": "Zahlen der Seite zum Stand B",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "seite_bau.py liest gesamtrechnung.json; pruefe_konzept.py prüft sechs Kernzahlen im Quelltext"
   },
   {
    "id": "N09",

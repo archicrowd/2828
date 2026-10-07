@@ -1,0 +1,445 @@
+#!/usr/bin/env python3
+"""Baut die deutsche Webseite zum Stand B: seite/stand-b/de.html.
+
+Gestaltung: Das Stylesheet wird unverändert aus der veröffentlichten Seite (seite/stand-a-national/de.html)
+übernommen; neue Bauteile ergänzen es nur. Zahlen: ausschließlich aus daten/aggregate/gesamtrechnung.json
+(modell/gesamtrechnung.py) und daten/aggregate/laender_2024.csv; Regeln des Konzepts (Tarifstufen, Label) als
+Konstanten unten. Länderbeispiele: Quellen in seite/stand-b/QUELLEN.md.
+
+Aufruf:  python3 seite/werkzeuge/seite_bau.py
+"""
+import csv
+import json
+import shutil
+from pathlib import Path
+
+WURZEL = Path(__file__).resolve().parents[2]
+ALT = WURZEL / "seite" / "stand-a-national" / "de.html"
+ZIEL = WURZEL / "seite" / "stand-b"
+J = json.loads((WURZEL / "daten/aggregate/gesamtrechnung.json").read_text(encoding="utf-8"))
+with open(WURZEL / "daten/aggregate/laender_2024.csv", encoding="utf-8") as f:
+    POP = {r["land"]: float(r["einwohner_mio_2024"]) for r in csv.DictReader(f)}
+
+TARIF = [(12348, 0), (25000, 9), (40000, 16), (55000, 21), (70000, 26), (None, 28)]
+NAMEN = [("DE", "Deutschland"), ("FR", "Frankreich"), ("ES", "Spanien"), ("NL", "Niederlande"), ("BE", "Belgien"),
+         ("AT", "Österreich"), ("DK", "Dänemark"), ("IE", "Irland"), ("SI", "Slowenien"), ("EE", "Estland")]
+
+
+def de(x, nk=0):
+    s = f"{x:,.{nk}f}"
+    return s.replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def stylesheet() -> str:
+    s = ALT.read_text(encoding="utf-8")
+    return s[s.find("<style>") + 7:s.find("</style>")]
+
+
+ZUSATZ_CSS = """
+/* ---- Ergänzungen Stand B (gleiche Farben, Schriften, Linien) ---- */
+.flow{border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:26px;margin-top:30px}
+@media(max-width:640px){.flow{padding:16px}}
+.flow .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.flow .year{font-family:var(--mono);font-size:30px;font-weight:500}
+.stack{display:flex;height:46px;border:1px solid var(--ink);border-radius:2px;overflow:hidden;margin:16px 0 8px;position:relative}
+.stack i{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12.5px;font-style:normal;color:#fff;transition:flex-basis .35s;white-space:nowrap;overflow:hidden}
+.stack .sa{background:var(--ink)}.stack .sb{background:#6497B8}.stack .sd{background:var(--accent)}
+.stack .cap{position:absolute;top:-4px;bottom:-4px;border-left:2px dashed var(--warn)}
+.flowleg{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.flowleg b{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+.ebenen{width:100%;height:auto;display:block;margin:6px 0 4px}
+.ebenen .bx{fill:#fff;stroke:var(--ink);stroke-width:1.5}
+.ebenen .bxa{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.5}
+.ebenen text{font-family:var(--disp);fill:var(--ink)}
+.ebenen .s{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+.ebenen .ar{stroke:var(--ink);stroke-width:1.5;fill:none;marker-end:url(#pf)}
+.ebenen .ag{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#pg)}
+.ebenen.mob{display:none;max-width:420px;margin:6px auto 4px}
+@media(max-width:640px){.ebenen.wide{display:none}.ebenen.mob{display:block}}
+.land{border:1px solid var(--line);border-radius:3px;background:#fff;padding:20px 22px}
+.land .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.land h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 6px}
+.land p{font-size:15px;color:var(--dim);line-height:1.55}
+.land .k{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--paper);border:1px solid var(--line-soft);border-radius:2px;padding:3px 8px;display:inline-block;margin:2px 0 8px}
+.anl a{all:unset;cursor:pointer;border:1.5px solid var(--ink);border-radius:3px;padding:20px;background:#fff;display:block}
+.anl a:hover{border-color:var(--accent)}
+.anl a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+"""
+
+
+def tarifkarte():
+    zeilen, unten = [], 0
+    for i, (grenze, satz) in enumerate(TARIF, 1):
+        txt = f"bis {de(grenze)} €" if grenze else "darüber — Obergrenze"
+        zeilen.append(f'<div><b class="t{i}">{satz}&nbsp;%</b><em>{txt}</em></div>')
+    return "\n".join(zeilen)
+
+
+def spark():
+    r = J["reihe_erw"]["1,0"]
+    xs = J["reihe_jahre"]
+    lo, hi = min(r) * 0.97, max(r) * 1.02
+    pts = " ".join(f"{(x - xs[0]) / (xs[-1] - xs[0]) * 280 + 10:.1f},{70 - (v - lo) / (hi - lo) * 55:.1f}" for x, v in zip(xs, r))
+    return (f'<svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Dividende 2028 bis 2060">'
+            f'<polyline points="{pts}" fill="none" stroke="#1D7A4F" stroke-width="2.5"/>'
+            f'<text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · {de(J["erw_2028"])} €</text>'
+            f'<text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · {de(J["erw_2060"])} €</text></svg>')
+
+
+def ebenen_svg():
+    og = de(J["obergrenze"])
+    mob = f'''<svg class="ebenen mob" viewBox="0 0 360 380" role="img" aria-label="Zwei Ebenen und ein Dach">
+  <rect class="bx" x="20" y="10" width="320" height="64" rx="3"/>
+  <text x="180" y="38" text-anchor="middle" font-size="19" font-weight="700">Das gemeinsame Dach</text>
+  <text class="s" x="180" y="60" text-anchor="middle">behält höchstens {og} %</text>
+  <rect class="bx" x="20" y="180" width="140" height="70" rx="3"/>
+  <text x="90" y="212" text-anchor="middle" font-size="18" font-weight="700">Sie</text>
+  <text class="s" x="90" y="234" text-anchor="middle">gleiche Sätze</text>
+  <rect class="bx" x="200" y="180" width="140" height="70" rx="3"/>
+  <text x="270" y="212" text-anchor="middle" font-size="18" font-weight="700">Gemeinde</text>
+  <text class="s" x="270" y="234" text-anchor="middle">entscheidet selbst</text>
+  <path class="ar" d="M90,178 L90,80"/><text class="s" x="98" y="130">ein Einzug</text>
+  <path class="ar" d="M270,80 L270,178"/><text class="s" x="262" y="130" text-anchor="end">Formel</text>
+  <path class="ag" d="M270,252 C270,330 90,330 90,256"/>
+  <text class="s" x="180" y="350" text-anchor="middle" fill="#1D7A4F">jeden Monat:</text>
+  <text class="s" x="180" y="368" text-anchor="middle" fill="#1D7A4F">die Dividende</text>
+</svg>'''
+    return mob + f'''<svg class="ebenen wide" viewBox="0 0 900 300" role="img" aria-label="Zwei Ebenen und ein Dach: Einzug, Gemeinde, Dach, Dividende">
+  <defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0F3B5C"/></marker>
+  <marker id="pg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1D7A4F"/></marker></defs>
+  <rect class="bx" x="290" y="14" width="320" height="70" rx="3"/>
+  <text x="450" y="44" text-anchor="middle" font-size="19" font-weight="700">Das gemeinsame Dach</text>
+  <text class="s" x="450" y="66" text-anchor="middle">behält höchstens {og} % · Rest fließt durch</text>
+  <rect class="bx" x="30" y="190" width="220" height="80" rx="3"/>
+  <text x="140" y="224" text-anchor="middle" font-size="19" font-weight="700">Sie</text>
+  <text class="s" x="140" y="248" text-anchor="middle">wenige, gleiche Sätze</text>
+  <rect class="bx" x="650" y="190" width="220" height="80" rx="3"/>
+  <text x="760" y="224" text-anchor="middle" font-size="19" font-weight="700">Ihre Gemeinde</text>
+  <text class="s" x="760" y="248" text-anchor="middle">entscheidet selbst</text>
+  <path class="ar" d="M250,205 C300,140 330,110 350,88"/>
+  <text class="s" x="215" y="140">ein Einzug</text>
+  <path class="ar" d="M550,88 C590,120 620,160 655,198"/>
+  <text class="s" x="615" y="140">je Einwohner, je Kind</text>
+  <path class="ag" d="M650,250 C520,285 380,285 252,250"/>
+  <text class="s" x="450" y="252" text-anchor="middle" fill="#1D7A4F">jeden Monat: die Dividende</text>
+</svg>'''
+
+
+def main():
+    q, og = J["quote"], J["obergrenze"]
+    einzug_anteil = (q - J["boden"]) / q
+    flagrow = "\n".join(f'<div><div class="c">{de(POP[k], 1)}</div><div class="n">{n}</div></div>' for k, n in NAMEN)
+    daten_js = json.dumps({
+        "jahre": J["reihe_jahre"], "erw": J["reihe_erw"], "a": J["reihe_a"], "div": J["reihe_div"],
+        "b": J["b_fach"], "q": q, "og": og, "einzugAnteil": einzug_anteil,
+        "einw": J["formel_einw"], "kind": J["formel_kind"], "kindAnt": J["kind_ant"],
+        "fachKopf": J["tabelle_einzug"][5][2], "verwAnt": J["verw_anteil_pct"],
+        "tarif": [[g if g else 1e12, s] for g, s in TARIF],
+    }, ensure_ascii=False)
+
+    html = f'''<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAX 28:28 — Das einfache Steuersystem für das 21. Jahrhundert</title>
+<meta name="description" content="Höchstens 28 % auf jedes Einkommen, keine Sozialabgaben, jeden Monat eine Dividende. Gemeinden entscheiden selbst, ein gemeinsames Dach sichert nach außen.">
+<meta name="robots" content="noindex, nofollow">
+<style>{stylesheet()}{ZUSATZ_CSS}</style>
+</head>
+<body>
+
+<nav class="titleblock" id="top" aria-label="Seitennavigation">
+  <div class="wrap">
+    <a class="tb-left" href="#top">TAX 28:28</a>
+    <div class="tb-right">
+      <a href="#konzept">Konstruktion</a>
+      <a href="#rechner">Rechner</a>
+      <a class="opt" href="#gemeinde">Gemeinde</a>
+      <a class="opt" href="#zeitpfad">Zeitpfad</a>
+      <a href="#erfahrung">International</a>
+      <a class="opt" href="#offen">Mitmachen</a>
+      <span class="langsel"><a href="de.html" class="active" lang="de">DE</a></span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="hero-mark" viewBox="0 0 560 300" role="img" aria-label="TAX 28:28">
+      <text x="60" y="168" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="196" fill="#0F3B5C" textLength="440" lengthAdjust="spacing">TAX</text>
+      <text x="60" y="286" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C" letter-spacing="-2" textLength="440" lengthAdjust="spacing">28:28</text>
+    </svg>
+    <h1>Das einfache Steuersystem für das 21. Jahrhundert.</h1>
+    <p class="claim2">Fair, sozial und innovativ.</p>
+    <p class="sub">Höchstens 28 % auf jedes Einkommen, keine Sozialabgaben – und jeden Monat eine Dividende für alle. Gemeinden entscheiden selbst, ein gemeinsames europäisches Dach sichert, was keiner allein kann.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#rechner">Eigene Dividende berechnen</a>
+      <a class="btn ghost" href="#konzept">Konzept ansehen</a>
+    </div>
+    <p class="opensrc">Alle Rechenmodelle sind <a href="#offen">offen prüfbar</a>.</p>
+    <div class="stamps">
+      <div class="stamp"><div class="val">{de(J["erw_2028"])}&nbsp;€</div><div class="lbl">Dividende im Monat je Erwachsenem — {de(J["kind_2028"])} € je Kind</div></div>
+      <div class="stamp"><div class="val">höchstens 28&nbsp;%</div><div class="lbl">auf jedes Einkommen — keine Sozialabgaben</div></div>
+      <div class="stamp"><div class="val">über {de(J["anteil_mit_mehr_de"])} %*</div><div class="lbl">der Menschen haben mehr im Geldbeutel</div></div>
+    </div>
+    <p class="fineprint" style="text-align:center;margin:16px auto 0">* Schätzung des Projekts. Beträge in Preisen von 2028.</p>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <h2>Zu komplex, um es zu verstehen. Zu löchrig, um gerecht zu sein.</h2>
+    <p class="lede">Das heutige System ist Schicht um Schicht gewachsen. Es belastet Arbeit stärker als alles andere und lässt Bürger wie Gemeinden ratlos zurück.</p>
+    <div class="befund-grid">
+      <div class="befund"><div class="num">{de(J["abgabenkeil_de_2024"], 1)} %</div><h3>Abgaben auf einen Durchschnittslohn</h3><p>Der zweithöchste Wert aller OECD-Staaten. Der Durchschnitt liegt bei {de(J["abgabenkeil_oecd_2024"], 1)} %.</p></div>
+      <div class="befund"><div class="num">{de(J["abgeltungsteuer_de"], 1)} %</div><h3>auf Zinsen und Kursgewinne</h3><p>Ein Euro aus Kapital trägt deutlich weniger als ein Euro aus Arbeit.</p></div>
+      <div class="befund"><div class="num">5 Ebenen</div><h3>verhandeln über jeden Euro</h3><p>Gemeinde, Kreis, Land, Bund und EU. Geld kommt zweckgebunden an – was eine Gemeinde spart, bekommt sie nicht.</p></div>
+      <div class="befund"><div class="num">0 €</div><h3>Sozialbeiträge auf Maschinen</h3><p>Sozialabgaben fallen nur auf menschliche Arbeit. Wer Arbeit durch Automaten ersetzt, spart Abgaben.</p></div>
+    </div>
+    <p class="fineprint">Quellen: OECD, Taxing Wages 2025 (Alleinstehende, Durchschnittslohn, 2024); § 32d EStG mit Solidaritätszuschlag.</p>
+  </div>
+</section>
+
+<section id="konzept">
+  <div class="wrap">
+    <h2>Zwei Ebenen, ein gemeinsames Dach</h2>
+    <p class="lede">Statt fünf Ebenen gibt es zwei. Die Gemeinde erhält den größten Teil des Geldes und entscheidet selbst. Ein europäisches Dach übernimmt nur, was keine Gemeinde allein kann – und darf sich nicht mehr nehmen, als im Vertrag steht.</p>
+    {ebenen_svg()}
+    <div class="effects">
+      <div><h3>Dem Einzelnen wird zugetraut,</h3><p>mit seinem Geld umzugehen: ein Satz statt eines Tarifdschungels, keine Sozialabgaben, keine Sonderregeln. Jeden Monat eine Dividende, ohne Antrag.</p></div>
+      <div><h3>Der Gemeinde wird zugetraut,</h3><p>ihre Angelegenheiten zu führen: Sie bekommt je Einwohner und je Kind feste Beträge und entscheidet, welche Schule, welche Verwaltung, und ob sie Kreis oder Land für deren Leistungen bezahlt.</p></div>
+      <div><h3>Dem Dach wird zugetraut,</h3><p>was nur gemeinsam geht: Verteidigung und digitale Souveränität, ein Binnenmarkt ohne Grenzen, gemeinsame Standards. Es entscheidet mit Mehrheit.</p></div>
+    </div>
+
+    <div class="flow" id="fluss">
+      <div class="row"><div><label class="lbl" for="jahr" style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)">Wohin fließen 100 € Steuern im Jahr</label></div><div class="year" id="jahrval">2028</div></div>
+      <input type="range" id="jahr" min="2028" max="2060" step="1" value="2028" style="width:100%;accent-color:var(--ink)" aria-label="Jahr">
+      <div class="stack" aria-live="polite"><i class="sa" id="sa"></i><i class="sb" id="sb"></i><i class="sd" id="sd"></i><span class="cap" id="cap" title="Obergrenze des Dachs"></span></div>
+      <div class="flowleg"><span><b style="background:var(--ink)"></b>Dach</span><span><b style="background:#6497B8"></b>Aufgaben der Gemeinde</span><span><b style="background:var(--accent)"></b>Ihre Dividende</span><span><b style="border-left:2px dashed var(--warn);width:0;height:12px"></b>Obergrenze des Dachs</span></div>
+      <p class="fineprint" id="flusstext" style="margin-top:12px"></p>
+    </div>
+  </div>
+</section>
+
+<section id="bausteine">
+  <div class="wrap">
+    <h2>Wenige Regeln, ein Prinzip</h2>
+    <p class="lede">Jeder Baustein ist irgendwo auf der Welt schon erprobt. TAX 28:28 fügt sie zu einem System, das man auf einer Seite erklären kann.</p>
+    <div class="mass-grid">
+      <div class="mass"><div class="pos">Einkommen</div><h3>Stufentarif mit harter Obergrenze</h3>
+        <div class="taxlbl" role="img" aria-label="Tarifstufen von 0 bis 28 Prozent">{tarifkarte()}</div>
+        <p>Besteuert wird das Brutto – ohne Abzüge, ohne Splitting. Das Existenzminimum bleibt frei; darüber lohnt Arbeit auf jeder Stufe.</p></div>
+      <div class="mass"><div class="pos">Arbeit</div><h3>Keine Sozialabgaben mehr</h3><span class="regel">0 % auf den Lohn</span><p>Arbeit wird nicht länger doppelt belastet. So machen es Länder, die ihren Sozialstaat aus Steuern bezahlen – Dänemark erhebt kaum Sozialbeiträge.</p></div>
+      <div class="mass"><div class="pos">Kapital</div><h3>Kapital und Arbeit gleich behandelt</h3><span class="regel">28 % auf alle Erträge</span><p>Auch Veräußerungsgewinne zählen. Lohn in Kapitalertrag umzuwandeln lohnt sich nicht mehr.</p></div>
+      <div class="mass"><div class="pos">Erbschaft</div><h3>Auch Geerbtes ist Einkommen</h3><span class="regel">28 % über 200.000 € je Erwerb</span><p>Keine Verschonungsausnahmen. Wer Betrieb oder Haus erbt, kann die Steuer stunden – niemand muss verkaufen, um sie zu zahlen.</p></div>
+      <div class="mass"><div class="pos">Boden · Gemeinde</div><h3>Die Gemeinde besteuert den Boden</h3><span class="regel">0,1 bis 1 % auf den Bodenwert</span><p>Nur der Grundstückswert zählt, nicht das Haus. Wer baut oder saniert, zahlt dafür nicht mehr. Nicht auf Mieten umlegbar.</p></div>
+      <div class="mass"><div class="pos">Vermögen</div><h3>Große Vermögen tragen mit</h3><span class="regel">1 % ab 2 Mio. €</span><p>Vermögen bis 2 Mio. € bleibt unberührt. Darüber greift eine Mindeststeuer, anrechenbar auf die Einkommensteuer.</p></div>
+      <div class="mass"><div class="pos">Konzerne und Plattformen</div><h3>Besteuert wird, wo die Kunden sitzen</h3><span class="regel">28 % am Ort der Nutzung</span><p>Das gilt ausdrücklich für digitale Plattformen. Gewinne lassen sich verschieben, Kundschaft nicht.</p></div>
+      <div class="mass"><div class="pos">Konsum</div><h3>Die Mehrwertsteuer wird zum Label</h3>
+        <div class="vatlbl" role="img" aria-label="Mehrwertsteuer-Label von A plus bis D">
+          <div><b class="v1">A+ · 5&nbsp;%</b><em>Grundbedarf, Reparatur</em></div>
+          <div><b class="v2">A · 11&nbsp;%</b><em>nachhaltige Güter</em></div>
+          <div><b class="v3">B · 17&nbsp;%</b><em>Standardgüter</em></div>
+          <div><b class="v4">C · 22&nbsp;%</b><em>ressourcenintensiv</em></div>
+          <div><b class="v5">D · 28&nbsp;%</b><em>klimaschädlicher Luxus</em></div>
+        </div>
+        <p>Wie beim Energielabel sieht man auf einen Blick, was ein Produkt kostet und warum.</p></div>
+      <div class="mass"><div class="pos">Klima</div><h3>CO₂-Preis mit Rückgabe an alle</h3><span class="regel">Europäischer Preispfad · Rückgabe über die Dividende</span><p>Wer wenig verbraucht, gewinnt. Die Schweiz gibt ihre CO₂-Abgabe seit Jahren gleichmäßig an alle zurück.</p></div>
+      <div class="mass"><div class="pos">Dividende</div><h3>Jeden Monat, für alle</h3>{spark()}<p>Erwachsene voll, Kinder zur Hälfte, ohne Antrag. Sie ist, was nach den Aufgaben übrig bleibt – und wächst mit der Wirtschaft.</p></div>
+      <div class="mass"><div class="pos">Schutz</div><h3>Niemand fällt zurück</h3><span class="regel">Bestandsgarantie · Härtefallfonds</span><p>Wer heute Bürgergeld, Grundsicherung oder BAföG bekommt, erhält mindestens das bisherige Niveau. Der Fonds trägt auch Wohnkosten, Pflege und besondere Lebenslagen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="wrap">
+    <h2>Rechnen Sie selbst nach</h2>
+    <p class="lede">Was Ihr Haushalt an Dividende bekommt und was Sie nach dem neuen Tarif an Einkommensteuer zahlen.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="brutto">Bruttoeinkommen im Jahr</label>
+        <div class="bigval" id="bruttoval">42.000 €</div>
+        <input type="range" id="brutto" min="0" max="150000" step="1000" value="42000">
+        <label class="lbl">Erwachsene im Haushalt</label>
+        <div class="seg" id="erw"><button type="button" aria-pressed="true" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">Kinder</label>
+        <div class="seg" id="kin"><button type="button" aria-pressed="true" data-v="0">0</button><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl" for="rjahr">Jahr</label>
+        <div class="seg" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button><button type="button" aria-pressed="false" data-v="2045">2045</button><button type="button" aria-pressed="false" data-v="2060">2060</button></div>
+      </div>
+      <div>
+        <div class="res-row"><span class="k">Einkommensteuer nach 28:28</span><span class="v" id="r-st"></span></div>
+        <div class="res-row"><span class="k">Ihr Durchschnittssatz</span><span class="v" id="r-satz"></span></div>
+        <div class="res-row"><span class="k">Sozialabgaben</span><span class="v">0 €</span></div>
+        <div class="res-row"><span class="k">Dividende des Haushalts im Monat</span><span class="v new" id="r-mon"></span></div>
+        <div class="bars"><div class="bar-lbl"><span>Einkommensteuer</span><span id="b-st"></span></div><div class="bar today"><i id="bi-st"></i></div>
+        <div class="bar-lbl"><span>Dividende im Jahr</span><span id="b-dv"></span></div><div class="bar new"><i id="bi-dv"></i></div></div>
+        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub">Dividende im Jahr für Ihren Haushalt</div></div>
+      </div>
+    </div>
+    <p class="fineprint">Tarif auf das Brutto ohne Abzüge. Dividende in Preisen von 2028.</p>
+  </div>
+</section>
+
+<section id="gemeinde">
+  <div class="wrap">
+    <h2>Ihre Gemeinde rechnet selbst</h2>
+    <p class="lede">Die ganze Verteilung sind zwei Zahlen: {de(J["formel_einw"])} € je Einwohner und {de(J["formel_kind"])} € je Kind im Jahr. Mehr Kinder heißt mehr Geld für Schulen. Und was die Gemeinde in der Verwaltung spart, landet bei ihren Bürgern.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="g-ein">Einwohner</label><div class="bigval" id="g-einval"></div>
+        <input type="range" id="g-ein" min="2000" max="200000" step="1000" value="30000">
+        <label class="lbl" for="g-kin">Anteil Kinder von 5 bis 19 Jahren</label><div class="bigval" id="g-kinval" style="font-size:22px"></div>
+        <input type="range" id="g-kin" min="10" max="24" step="0.5" value="{J["kind_ant"]:.1f}">
+        <label class="lbl" for="g-verw">Anteil der Verwaltung am Gemeindehaushalt</label><div class="bigval" id="g-verwval" style="font-size:22px"></div>
+        <input type="range" id="g-verw" min="5.5" max="25" step="0.1" value="{J["verw_anteil_pct"]:.1f}">
+        <p class="fineprint" style="margin-top:8px">Estlands Gemeinden kommen mit 5,8 % aus, Deutschlands mit 16,8 %.</p>
+      </div>
+      <div>
+        <div class="res-row"><span class="k">Budget der Gemeinde im Jahr</span><span class="v new" id="g-bud"></span></div>
+        <div class="res-row"><span class="k">davon für Schulen</span><span class="v" id="g-sch"></span></div>
+        <div class="res-row"><span class="k">je Einwohner</span><span class="v" id="g-kopf"></span></div>
+        <div class="plus-box"><div class="plus" id="g-plus"></div><div class="sub">mehr oder weniger Dividende je Einwohner und Monat, je nachdem wie sparsam die Verwaltung arbeitet</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zeitpfad">
+  <div class="wrap">
+    <h2>Die Dividende wächst mit</h2>
+    <p class="lede">Bis {J["kl_tief_jahr"]} bauen die Länder ihre Verteidigung auf, und alte, billige Schulden werden teurer ersetzt. Danach wächst die Dividende mit der Wirtschaft – und die Schulden arbeiten sich von selbst ab: von {de(J["tabelle_pfad"][0]["d"])} % auf {de(J["tabelle_pfad"][5]["d"])} % der Wirtschaftsleistung, ohne einen Tilgungseuro.</p>
+    <div class="chart-card">
+      <div class="tabs" id="gtabs"><button type="button" aria-pressed="false" data-v="0,5">Zurückhaltend</button><button type="button" aria-pressed="true" data-v="1,0">Mittleres Wachstum</button><button type="button" aria-pressed="false" data-v="1,5">Kräftig</button></div>
+      <div class="unit">Dividende je Erwachsenem und Monat, Euro in Preisen von 2028</div>
+      <svg id="chart" viewBox="0 0 900 360" role="img" aria-label="Dividende 2028 bis 2060"></svg>
+      <div class="legend"><span class="l-mit"><i></i>Dividende</span><span class="l-hist"><i></i>Start 2028</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sicherungen">
+  <div class="wrap">
+    <h2>Warum das Dach nicht ausufert</h2>
+    <p class="lede">Ein gemeinsames Dach ist nur so gut wie seine Grenzen. Fünf Regeln stehen im Vertrag.</p>
+    <div class="sich">
+      <div><span><b>Eine Obergrenze, keine Zuteilung</b><p>Das Dach behält höchstens {de(og)} % dessen, was es einzieht – und nur, was die Aufgaben wirklich kosten.</p></span></div>
+      <div><span><b>Was nicht gebraucht wird, fließt durch</b><p>Jeder Euro über dem Bedarf geht an die Gemeinden und in die Dividende. Eine Grenze, die nicht ausgeschöpft werden muss, wird nie zum Anspruch.</p></span></div>
+      <div><span><b>Formel statt Verhandlung</b><p>Die Gemeinden bekommen feste Beträge je Einwohner und je Kind. Niemand muss bitten, niemand kann kürzen.</p></span></div>
+      <div><span><b>Alte Schulden gemeinsam tragen</b><p>Das Dach übernimmt den Zinsdienst und garantiert einen gemeinsamen Zins. Wer mehr Altschulden mitbringt, gleicht das über dreißig Jahre aus – die Gemeinden merken davon nichts.</p></span></div>
+      <div><span><b>Entscheiden mit Mehrheit</b><p>Ein Bündnis, in dem jeder ein Veto hat, kann in der Stunde der Entscheidung nicht entscheiden.</p></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="erfahrung">
+  <div class="wrap">
+    <h2>Was anderswo schon funktioniert</h2>
+    <p class="lede">Nichts an TAX 28:28 ist ein Experiment ins Blaue. Jeder Baustein läuft heute schon irgendwo – oft seit Jahrzehnten.</p>
+    <div class="reg-grid">
+      <div class="land"><div class="n">Estland</div><h3>Ein Satz, digital in Minuten</h3><span class="k">22 % Einheitssatz · Bodensteuer seit 1993</span><p>Die Steuererklärung ist in wenigen Minuten online erledigt. Die Grundsteuer bemisst sich allein nach dem Bodenwert, Gebäude bleiben unbesteuert.</p></div>
+      <div class="land"><div class="n">Dänemark</div><h3>Starke Gemeinden, Sozialstaat aus Steuern</h3><span class="k">98 Kommunen seit 2007</span><p>Die Gemeinden tragen Schulen, Pflege und Soziales. Sozialbeiträge spielen kaum eine Rolle – der Sozialstaat wird aus Steuern bezahlt.</p></div>
+      <div class="land"><div class="n">Schweiz</div><h3>CO₂-Abgabe, an alle zurückgegeben</h3><span class="k">seit 2008 · gleicher Betrag für jeden</span><p>Die Einnahmen der CO₂-Abgabe gehen gleichmäßig an alle Einwohner zurück, verrechnet mit der Krankenkassenprämie. Gemeinden setzen ihre Steuern selbst fest.</p></div>
+      <div class="land"><div class="n">Alaska</div><h3>Eine Dividende für alle</h3><span class="k">seit 1982 · jährlich</span><p>Jeder Einwohner erhält einmal im Jahr einen Anteil am gemeinsamen Fonds, ohne Bedürftigkeitsprüfung. Seit über vierzig Jahren.</p></div>
+      <div class="land"><div class="n">Baden-Württemberg</div><h3>Grundsteuer nur auf den Boden</h3><span class="k">seit 2025</span><p>Besteuert wird nur der Wert des Grundstücks. Wer baut, wird nicht bestraft; brachliegendes Bauland zahlt mit.</p></div>
+      <div class="land"><div class="n">Neuseeland</div><h3>Mehrwertsteuer ohne Ausnahmen</h3><span class="k">ein Satz, breite Basis</span><p>Fast alle Güter und Leistungen tragen denselben Satz. Das macht die Steuer einfach, billig zu erheben und schwer zu umgehen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="klub">
+  <div class="wrap">
+    <h2>Ein Klub für Europa</h2>
+    <p class="lede">Das Dach ist kein Superstaat, sondern ein Klub, dem Länder beitreten. Gerechnet ist es für zehn Staaten mit zusammen {de(J["pop_klub_mio"], 1)} Mio Menschen – überall dieselben Regeln, dieselbe Formel, dieselbe Dividende.</p>
+    <div class="flagrow">{flagrow}</div>
+    <div class="timeline">
+      <div><div class="y">2026 · Offene Prüfung</div><div class="t">Konzept und Rechnungen liegen offen. Fachleute, Verwaltungen und Kritiker sind eingeladen.</div></div>
+      <div><div class="y">2027 · Gemeinschaften bilden</div><div class="t">Gemeinden und Regionen finden Partner, Länder prüfen den Beitritt.</div></div>
+      <div><div class="y">2028 · Gemeinsamer Start</div><div class="t">Frühestens nach Gesetzgebung und Verwaltungsaufbau.</div></div>
+      <div><div class="y">ab 2029 · Erweiterung</div><div class="t">Jedes weitere Land stärkt den Klub – vor allem bei der Besteuerung am Ort der Kunden.</div></div>
+    </div>
+    <p class="fineprint">Einwohner 2024 in Millionen (Eurostat).</p>
+  </div>
+</section>
+
+<section id="offen">
+  <div class="wrap">
+    <h2>Offen entwickelt – machen Sie mit</h2>
+    <p class="lede">TAX 28:28 wird unabhängig von Parteien und Interessengruppen entwickelt. Jede Zahl stammt aus amtlichen Statistiken, jede Rechnung lässt sich nachrechnen, jeder Fehler wird offen korrigiert. Gesucht sind Fachleute aus Finanzwissenschaft, Verwaltung, Kommunalpraxis, Recht und Statistik.</p>
+    <div class="anl">
+      <a href="dokumente/TAX-2828-Kurzfassung.pdf"><span class="t">Kurzfassung</span><span class="d">Das Konzept auf zwei Seiten.</span><span class="f">PDF</span></a>
+      <a href="dokumente/TAX-2828-Gesamtkonzept.pdf"><span class="t">Gesamtkonzept</span><span class="d">Alle Bausteine, Zahlen und Rechenwege.</span><span class="f">PDF</span></a>
+      <a href="mailto:2828@archicrowd.de?subject=28%3A28%20Mitarbeit"><span class="t">Mitarbeiten</span><span class="d">Rechnungen, Daten und Logbuch für Fachleute.</span><span class="f">2828@archicrowd.de</span></a>
+      <a href="mailto:2828@archicrowd.de?subject=28%3A28%20Kritik"><span class="t">Kritik einreichen</span><span class="d">Jeder Einwand wird geprüft und beantwortet.</span><span class="f">E-Mail</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><h4>Methodik</h4><p>Alle Zahlen stammen aus einer offenen Gesamtrechnung auf Grundlage amtlicher Statistiken (Eurostat, OECD). Entwickelt nach der Methodik des architektonischen Entwurfs, im Arbeitsdialog mit einem KI-System. Skripte unter MIT-Lizenz, Texte unter CC BY 4.0.</p><p class="verstamp">Modellstand <b>{J["version"]} · {J["fassung"]}</b></p></div>
+    <div><h4>Kontakt</h4><p>Initiative 28 : 28 – Arndt Hermann<br><a href="mailto:2828@archicrowd.de?subject=28%3A28">Kritik einreichen</a><br><a href="#top">Nach oben</a></p></div>
+    <div><h4>Impressum und Datenschutz</h4><p>Verantwortlich für den Inhalt: Initiative 28 : 28 – Arndt Hermann, 2828@archicrowd.de. Diese Seite verwendet keine Cookies, keine Tracker und lädt keine Inhalte von Dritten. Es werden keine personenbezogenen Daten erhoben. Die Schriften Space Grotesk, Source Serif 4 und IBM Plex Mono liegen lokal, unter der SIL Open Font License 1.1. Alle Modellrechnungen sind Illustrationen ohne Gewähr und ersetzen keine Steuer- oder Rechtsberatung. Die Seite ist für Suchmaschinen gesperrt.</p></div>
+  </div>
+</footer>
+
+<script>
+const D={daten_js};
+const de=(x,nk=0)=>Number(x).toLocaleString('de-DE',{{minimumFractionDigits:nk,maximumFractionDigits:nk}});
+const $=id=>document.getElementById(id);
+function seg(id,cb){{const el=$(id);el.addEventListener('click',e=>{{const b=e.target.closest('button');if(!b)return;
+  el.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));cb(b.dataset.v);}});}}
+const val=id=>$(id).querySelector('[aria-pressed=true]').dataset.v;
+const idx=j=>D.jahre.indexOf(+j);
+
+// Fluss des Steuer-Euros
+function fluss(){{const j=+$('jahr').value,i=idx(j);const a=D.a[i]/D.q*100,b=D.b/D.q*100,d=D.div[i]/D.q*100;
+  $('jahrval').textContent=j;
+  [['sa',a],['sb',b],['sd',d]].forEach(([k,v])=>{{$(k).style.flexBasis=v+'%';$(k).textContent=de(v)+' €';}});
+  $('cap').style.left=(D.og*D.einzugAnteil)+'%';
+  $('flusstext').textContent='Im Jahr '+j+' behält das Dach '+de(a)+' € von 100 € – erlaubt wären bis zu '+de(D.og*D.einzugAnteil)+' €. Die Gemeinde verwendet '+de(b)+' € für ihre Aufgaben, '+de(d)+' € gehen als Dividende an die Bürger.';}}
+$('jahr').addEventListener('input',fluss);fluss();
+
+// Haushaltsrechner
+function steuer(x){{let s=0,u=0;for(const [g,p] of D.tarif){{if(x>u)s+=(Math.min(x,g)-u)*p/100;u=g;}}return s;}}
+function rechner(){{const br=+$('brutto').value,e=+val('erw'),k=+val('kin'),j=val('rj'),i=idx(j);
+  const erw=D.erw['1,0'][i],mon=e*erw+k*erw/2,jahr=mon*12,st=steuer(br);
+  $('bruttoval').textContent=de(br)+' €';$('r-st').textContent=de(st)+' €';
+  $('r-satz').textContent=br?de(st/br*100,1)+' %':'–';$('r-mon').textContent=de(mon)+' €';
+  $('r-jahr').textContent=de(jahr)+' €';$('r-jahrsub').textContent='Dividende im Jahr '+j+' für '+e+(e>1?' Erwachsene':' Erwachsenen')+(k?' und '+k+(k>1?' Kinder':' Kind'):'');
+  const m=Math.max(st,jahr,1);$('bi-st').style.width=st/m*100+'%';$('bi-dv').style.width=jahr/m*100+'%';
+  $('b-st').textContent=de(st)+' €';$('b-dv').textContent=de(jahr)+' €';}}
+$('brutto').addEventListener('input',rechner);['erw','kin','rj'].forEach(x=>seg(x,rechner));rechner();
+
+// Gemeinderechner
+function gemeinde(){{const n=+$('g-ein').value,k=+$('g-kin').value/100,v=+$('g-verw').value;
+  const bud=n*D.einw+n*k*D.kind,sch=n*k*D.kind,plus=(D.verwAnt-v)/100*D.fachKopf/12;
+  $('g-einval').textContent=de(n);$('g-kinval').textContent=de(k*100,1)+' %';$('g-verwval').textContent=de(v,1)+' %';
+  $('g-bud').textContent=de(bud/1e6,1)+' Mio €';$('g-sch').textContent=de(sch/1e6,1)+' Mio €';$('g-kopf').textContent=de(bud/n)+' €';
+  const pb=$('g-plus');pb.textContent=Math.abs(plus)<0.5?'± 0 € im Monat':(plus>0?'+':'−')+de(Math.abs(plus))+' € im Monat';pb.classList.toggle('neg',plus<=-0.5);}}
+['g-ein','g-kin','g-verw'].forEach(x=>$(x).addEventListener('input',gemeinde));gemeinde();
+
+// Zeitpfad
+function chart(f){{const s=D.erw[f],xs=D.jahre,W=900,H=360,L=60,R=30,T=20,B=40;
+  const all=[].concat(D.erw['0,5'],D.erw['1,5']);const lo=Math.floor(Math.min(...all)/100)*100,hi=Math.ceil(Math.max(...all)/100)*100;
+  const X=x=>L+(x-xs[0])/(xs[xs.length-1]-xs[0])*(W-L-R),Y=y=>T+(hi-y)/(hi-lo)*(H-T-B);let g='';
+  for(let y=lo;y<=hi;y+=100)g+=`<line class="grid" x1="${{L}}" x2="${{W-R}}" y1="${{Y(y)}}" y2="${{Y(y)}}"/><text class="axis" x="${{L-8}}" y="${{Y(y)+4}}" text-anchor="end">${{de(y)}}</text>`;
+  for(const x of [2028,2035,2040,2050,2060])g+=`<text class="axis" x="${{X(x)}}" y="${{H-12}}" text-anchor="middle">${{x}}</text>`;
+  g+=`<line class="hist" x1="${{L}}" x2="${{W-R}}" y1="${{Y(s[0])}}" y2="${{Y(s[0])}}" stroke-dasharray="2 5" stroke-width="1.5"/>`;
+  g+=`<polyline class="mit" points="${{s.map((v,i)=>X(xs[i])+','+Y(v)).join(' ')}}"/>`;
+  const e=s[s.length-1];g+=`<text class="axis" x="${{W-R}}" y="${{Y(e)-10}}" text-anchor="end" style="fill:#1D7A4F;font-size:14px">${{de(e)}} €</text>`;
+  g+=`<text class="axis" x="${{L+6}}" y="${{Y(s[0])-8}}">${{de(s[0])}} €</text>`;
+  $('chart').innerHTML=g;}}
+seg('gtabs',chart);chart('1,0');
+</script>
+</body></html>
+'''
+    ZIEL.mkdir(parents=True, exist_ok=True)
+    (ZIEL / "de.html").write_text(html, encoding="utf-8")
+    (ZIEL / "dokumente").mkdir(exist_ok=True)
+    for name in ("TAX-2828-Kurzfassung.pdf", "TAX-2828-Gesamtkonzept.pdf"):
+        shutil.copy2(WURZEL / "dokumente" / name, ZIEL / "dokumente" / name)
+    print("geschrieben:", ZIEL / "de.html", len(html), "Zeichen")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.14 · höchste Korrekturnummer 52 · 234 Dateien im Repository
+Modellstand v3.15 · höchste Korrekturnummer 53 · 239 Dateien im Repository
 
 ## Bausteine
 
@@ -17,7 +17,7 @@ Modellstand v3.14 · höchste Korrekturnummer 52 · 234 Dateien im Repository
 | B09 | Einzelrechnungen R1 bis R16 | A | ungeprueft | keine |
 | B10 | Audit der Gesamtlogik | A | ungeprueft | keine |
 | B11 | Webseite Stand A | A | veraltet | keine |
-| B12 | Seite zum Stand B | B | veraltet | modell/pruefe_aussagen.py (A130 bis A132) |
+| B12 | Seite zum Stand B | B | geprueft | modell/pruefe_konzept.py |
 | B13 | Ergebnisdateien | A+B | geprueft | modell/alles.py |
 | B14 | Herkunft Drittdateien | A | ungeprueft | keine |
 | B15 | Schnittstelle für Dritte | B | entwurf | schnittstelle/pruefe_beitrag.py;projekt/pruefe_projekt.py |
@@ -39,7 +39,7 @@ Modellstand v3.14 · höchste Korrekturnummer 52 · 234 Dateien im Repository
 | N05 | B08 Kern (Stand A) | B03 Rahmenmodell (Stand B) | offen |
 | N06 | B08 Kern | B11 Seite Stand A | ungeprueft |
 | N07 | B03 Rahmenmodell | B11 Seite Stand A | fehlt |
-| N08 | B05 Kennzahlen | B12 Seite Stand B | veraltet |
+| N08 | B20 Gesamtrechnung | B12 Seite Stand B | ok |
 | N09 | B07 Gesamtkonzept | B01 Logbuch | ok |
 | N10 | B15 Schnittstelle | extern: Mikrosimulation | entwurf |
 | N11 | B09 Einzelrechnungen | B08 Kern | ungeprueft |

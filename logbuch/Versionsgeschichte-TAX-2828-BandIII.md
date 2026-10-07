@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.14**
+Stand: 7. Oktober 2026 · Modellstand **v3.15**
 
 ---
 
@@ -635,9 +635,50 @@ bestätigt sich die Abweichung, als Korrektur 53 führen (Ursache: Revision, kei
 
 ---
 
+### v3.15 — Neue deutsche Webseite zum Stand B
+
+**Art der Änderung: MINOR** (neue Seite; Rechnung um Reihen für die Seite ergänzt, keine bisherige Zahl bewegt). 7. Oktober 2026.
+Auftrag des Verfassers: die Webseite aktualisieren, zunächst deutsch, unter strenger Beachtung der vorhandenen Gestaltung;
+kompakt und einfach; neue Elemente gut darstellen, bisherige aktualisieren oder zur Disposition stellen; anschauliche,
+spielerisch bedienbare Elemente; keine technischen Details und keine Klarstellungen zu Ungenauigkeiten; Hinweise auf
+erfolgreiche Erfahrungen in anderen Ländern.
+
+**Neu:** `seite/stand-b/de.html` (gebaut mit `seite/werkzeuge/seite_bau.py`, alle Zahlen aus `gesamtrechnung.json`; das
+Stylesheet wird beim Bau wörtlich aus der veröffentlichten Seite übernommen und nur ergänzt), `seite/stand-b/QUELLEN.md`.
+In `gesamtrechnung.py`: Dividende je Erwachsenem und je Kind (Klubschnitt je Einwohner / (1 − k/2), k = Anteil
+Minderjähriger 16,67 %, Annahme aus dem nationalen Modell) → **535 EUR je Erwachsenem, 267 EUR je Kind** (2028, Preise 2028);
+Reihen 2028–2060 je Wachstumsfall und die Anteile von Dach und Dividende für die Grafiken. `pruefe_konzept.py` prüft sechs
+Kernzahlen im Quelltext der Seite.
+
+**Aufbau der Seite:** Kopf mit drei Kennzahlen; „Zu komplex …" mit belegten Werten (Abgabenkeil, Abgeltungsteuer, fünf
+Ebenen, keine Beiträge auf Maschinen); „Zwei Ebenen, ein Dach" mit Schaubild und Regler „Wohin fließen 100 € Steuern"
+(2028–2060, mit Obergrenze); elf Bausteine; Rechner (Einkommensteuer nach Tarif, Dividende des Haushalts); Gemeinderechner
+(Einwohner, Kinderanteil, Verwaltungsanteil → Budget und Dividendenplus); Zeitpfad der Dividende mit drei Wachstumsfällen;
+fünf Sicherungen des Dachs; sechs Länderbeispiele (Estland, Dänemark, Schweiz, Alaska, Baden-Württemberg, Neuseeland);
+Klub mit Einwohnern der zehn Staaten und Zeitleiste; „Offen entwickelt" mit Kurzfassung und Gesamtkonzept.
+
+**Zur Disposition gestellt und entfallen:** Vergleich „heute gegen 28:28" je Haushalt und die zehn Musterhaushalte (Stand A;
+für Stand B nicht gerechnet, weil die Finanzierung der Gesundheit außerhalb des Steuertopfs je Haushalt nicht festgelegt
+ist), „Zwei Zukünfte" (Pfade des nationalen Modells), Haushaltsregeln des nationalen Modells, Länderdividenden je Land
+(Stand A; im Stand B gilt eine Dividende), Kasten Irland, Belegstand-Tabelle, Anhang mit Quelltexten (ersetzt durch
+„Offen entwickelt"). Die Einschränkungen stehen weiter im Gesamtkonzept und im Logbuch, nicht auf der Seite.
+
+**Bewusst beibehalten:** der Hinweis „* Schätzung des Projekts" bei „über 95 %" (eine Zeile). Ohne ihn stünde eine
+ungeprüfte Zahl als Tatsache auf der Seite.
+
+**Geprüft:** Darstellung bei 1280 und 390 Pixel Breite; Bedienelemente automatisch getestet (Regler, Schaltflächen,
+Rechenwerte: Steuer bei 80.000 EUR 13.389 EUR; Dividende 2060 für zwei Erwachsene und zwei Kinder 2.168 EUR je Monat;
+Verwaltung auf 5,8 % → +46 EUR); keine Skriptfehler; fehlende Ressourcen nur die Schriftdateien (`fonts/`, liegen auf dem Server).
+
+**Korrektur 53** (siehe Abschnitt 4): Die veröffentlichte Seite nennt für Estland ab 2026 einen Satz von 24 %; es bleiben 22 %.
+
+*Skripte: `seite/werkzeuge/seite_bau.py`, `modell/gesamtrechnung.py`, `modell/pruefe_konzept.py`. Quellen: `seite/stand-b/QUELLEN.md`.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
-Neu ab v3.8: die Nummern 47 bis 52. **Nächste freie Nummer: 53.** Die Nummern 31 bis 41 sind
+Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
 besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 
 | Nr. | Was war falsch | Richtig | Wodurch auffiel |
@@ -648,6 +689,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 50 | Band I (v3.1) bis Gesamtkonzept 4. Oktober: Zinsausgaben der zehn Staaten 2024 146 Mrd EUR, effektiver Zins 1,53 %, Zinsdienst 2028 1,20 % des BIP | 180,9 Mrd EUR (1,49 % des BIP), effektiver Zins 1,90 %; mit Auslauf ab 2024 Zinsdienst 2028 1,74 % | Abruf Eurostat `gov_10a_main` D41PAY je Land (v3.12); Herkunft der 146 Mrd unbekannt |
 | 51 | Gesamtkonzept 4. Oktober, Abschnitt 4: 30,6 % halte das Versprechen „auch dann in jedem Jahr, wenn die Wirtschaft real überhaupt nicht wächst" | Schon in der Lesart des Originals waren 30,61 % nötig; in stimmiger Lesart (nominal 2 %, auch für den Schuldenabbau) 30,73 %. Neu abgeleitet 30,764 → Quote 30,8 % | Kennzahl `mindestquote_streng` (v3.10) und Prüfagent (v3.12) |
 | 52 | Band II (Korrektur 43): Dividendenreihe 550 → 512 → 707 EUR ohne Bezugsgruppe und Zeiteinheit (B1) | Deutschland, EUR je Kopf und Monat, Preise 2028; seit v3.12 533 → 521 → 720 | Abgleich v3.7 |
+| 53 | Veröffentlichte Webseite (Stand A, Kasten „Warum Estland im Klub ist"): „Ab Januar 2026 gilt ein Satz von 24 %" | Estland bleibt 2026 bei 22 %; die geplante Anhebung wurde 2025 aufgegeben (Sekundärquellen, amtlich zu prüfen) | Recherche für die Länderbeispiele der neuen Seite (v3.15) |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -676,7 +718,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.14
+## 7 | Offene Punkte, Stand v3.15
 
 | Punkt | Status |
 |---|---|
@@ -695,7 +737,7 @@ nicht geklärt.
 | **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
 | **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte, Schuldenquoten, Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
-| **B16: Seite zum Stand B** | **neu, v3.12.** zeigt die Werte der Fassung 4. Oktober; neu bauen, sobald B12 auf Klubebene steht |
+| **B16: Seite zum Stand B** | **deutsch erledigt in v3.15** (`seite/stand-b/de.html`). Offen: Übersetzungen, Veröffentlichung (Schriften `fonts/` daneben legen), Neubau nach jeder Änderung der Rechnung |
 | **B17: Dividende gleich oder je Land?** | **neu, v3.13.** Der Text sagt „jeder Bürger dieselbe Dividende", die Rechnung (`final.py`) bewertet die Dividende für Deutschland aber mit dem deutschen BIP je Kopf (8,7 % über dem Klubschnitt). Beides zugleich geht nicht. Zu klären, ob die Dividende ein klubweit gleicher Eurobetrag ist (dann gilt der Klubschnitt, und das Kriterium 479 EUR wäre am Klubwert zu messen) oder ein gleicher Anteil am örtlichen BIP. Die Wahl verschiebt die Quote. Entscheidung des Verfassers |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
 | **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |
