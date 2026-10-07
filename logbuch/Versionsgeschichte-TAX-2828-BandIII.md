@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.15**
+Stand: 7. Oktober 2026 · Modellstand **v3.16**
 
 ---
 
@@ -676,6 +676,45 @@ Verwaltung auf 5,8 % → +46 EUR); keine Skriptfehler; fehlende Ressourcen nur d
 
 ---
 
+### v3.16 — Webseite: Überarbeitung nach Durchsicht des Verfassers, Möglichkeitsraum
+
+**Art der Änderung: PATCH** (Text und Bedienelemente der Seite; keine Zahl der Rechnung bewegt). 7. Oktober 2026.
+
+**Umgesetzt nach Vorgabe des Verfassers:** „keine Sozialabgaben" aus Kopf und Kennzahl entfernt; „sichert die gemeinsamen
+Interessen"; Leitzeilen „Das heutige System:" und „Das Konzept:" in großer Schrift; „frustriert"; Abgabenkeil als
+Durchschnitt in Deutschland ausgewiesen (der OECD-Schnitt bleibt als Vergleich, damit die Aussage stimmt); „Gelder und
+Aufgaben werden hin und her verwaltet, Ziele nicht erreicht"; im Schaubild „Steuerbeitrag" und „mindestens 64 % gehen weiter
+an die Gemeinde" (64 = 100 − Obergrenze 36; „mindestens", weil das Dach meist weniger braucht, 2028 rund 32 %); neuer Kasten
+„Warum eine Dividende?" (Rückfluss aus gemeinsam geerbtem Fortschritt und Automatisierung, Ausgleich der Umbauaufgaben);
+Texte zu Einzelnem, Gemeinde (Mitgliedschaften in Kreisen und Verbünden) und Dach (Mehrheit der Mitglieder); Regler startet
+2033; Zeitpfad-Text „bis 2035 müssen alte Fehler gekittet werden …" (im Auftrag stand „bis 2025"; gemeint ist der Tiefpunkt
+2035, so umgesetzt); Beispiele Baden-Württemberg und Neuseeland entfernt; Abschnitt „Ein Klub mit Raum zum Wachsen" mit
+wählbaren Staaten (31 europäische und Kanada), Schwelle Vereinigte Staaten, Vorwahlen und Kästen zu Großbritannien,
+Kanada und „Sechs genügen".
+
+**Neu:** `daten/aggregate/moeglichkeitsraum.csv` (33 Zeilen: zehn Klubstaaten aus `laender_2024.csv`, 21 Staaten aus der
+Möglichkeitsraum-Seite des Vorchats als Sekundärquelle, Kanada nach Statistics Canada 2025, Schwelle USA). Quellen in
+`seite/stand-b/QUELLEN.md`.
+
+**B17 präzisiert (Frage des Verfassers: gleiche Dividende überall oder das halbe Existenzminimum am Wohnort?).**
+Drei Lesarten, Dividende je Erwachsenem 2028 (Preise 2028), eigene Rechnung:
+1. *Gleicher Eurobetrag im ganzen Klub* (jetziger Text): 535 EUR überall. Einfach, aber ungleiche Kaufkraft (in Estland viel
+   mehr wert als in Dänemark) und Anreiz, von der Dividende in günstige Regionen zu ziehen.
+2. *Gleicher Anteil am örtlichen BIP je Kopf* (so rechnet `final.py` für Deutschland): DE 582, FR 479, ES 366, NL 695, BE 587,
+   AT 604, DK 751, SI 356, EE 326, **IE 1.168 EUR**. Das irische BIP (Konzernbuchungen) verzerrt diese Lesart; ungeeignet.
+3. *Halbes Existenzminimum am Wohnort* (Vorschlag des Verfassers): gleiche Kaufkraft statt gleicher Eurobetrag. Für einen
+   Klub braucht es ein einheitliches Maß; nationale gesetzliche Existenzminima sind politisch gesetzt und schwer vergleichbar.
+   Neutraler wäre ein Klubwert, der mit dem Preisniveau des Wohnlandes gewichtet wird (Eurostat, Preisniveauindizes
+   für den Konsum). Umzugsregel: Anspruch auf den neuen Satz erst nach einer Wartezeit mit Wohnsitz und Steuerpflicht
+   (Vorbild Alaska: ein volles Kalenderjahr Wohnsitz). Rechnerisch nicht umgesetzt; braucht die Preisniveaus der zehn
+   Staaten (Abruf) und eine Entscheidung, ob auch die Formel der Gemeinden nach Preisniveau gewichtet wird.
+Entscheidung des Verfassers. Bis dahin nennt die Seite die Dividende im Klubschnitt und behauptet keine Gleichheit mehr
+(„dieselbe Dividende" im Klubabschnitt entfernt).
+
+*Skript: `seite/werkzeuge/seite_bau.py`. Quellen: `seite/stand-b/QUELLEN.md`, Statistics Canada, EAD.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -718,7 +757,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.15
+## 7 | Offene Punkte, Stand v3.16
 
 | Punkt | Status |
 |---|---|
@@ -738,7 +777,7 @@ nicht geklärt.
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
 | **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte, Schuldenquoten, Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
 | **B16: Seite zum Stand B** | **deutsch erledigt in v3.15** (`seite/stand-b/de.html`). Offen: Übersetzungen, Veröffentlichung (Schriften `fonts/` daneben legen), Neubau nach jeder Änderung der Rechnung |
-| **B17: Dividende gleich oder je Land?** | **neu, v3.13.** Der Text sagt „jeder Bürger dieselbe Dividende", die Rechnung (`final.py`) bewertet die Dividende für Deutschland aber mit dem deutschen BIP je Kopf (8,7 % über dem Klubschnitt). Beides zugleich geht nicht. Zu klären, ob die Dividende ein klubweit gleicher Eurobetrag ist (dann gilt der Klubschnitt, und das Kriterium 479 EUR wäre am Klubwert zu messen) oder ein gleicher Anteil am örtlichen BIP. Die Wahl verschiebt die Quote. Entscheidung des Verfassers |
+| **B17: Dividende gleich oder je Land?** | **präzisiert in v3.16.** Drei Lesarten gerechnet bzw. beschrieben (gleicher Eurobetrag 535 EUR; Anteil am örtlichen BIP, verzerrt durch Irland 1.168 EUR; halbes Existenzminimum am Wohnort über Preisniveau mit Umzugsregel). Empfehlung: Preisniveau-Lesart. Entscheidung des Verfassers, dann Neurechnung |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
 | **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |
 | **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |

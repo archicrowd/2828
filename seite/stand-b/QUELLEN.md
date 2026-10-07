@@ -20,3 +20,9 @@ Geprüft am 7. Oktober 2026 über Web-Abruf (maschinell gelesen, an der Quelle z
 | Einwohner der zehn Staaten | Eurostat demo_gind AVG 2024 (`daten/aggregate/laender_2024.csv`) | abgerufen 6.10.2026 |
 | Dividende je Erwachsenem / Kind | Klubschnitt je Einwohner (Gesamtrechnung), Kinder zur Hälfte, Anteil Minderjähriger 16,67 % (Annahme, nationales Modell) | Rechnung |
 | „über 95 %" | Gruppenschätzung des nationalen Modells (Stand A), ohne Mikrosimulation | Schätzung (Logbuch B18) |
+| Möglichkeitsraum: Einwohner von 31 europäischen Staaten | `daten/aggregate/moeglichkeitsraum.csv`: zehn Klubstaaten Eurostat demo_gind AVG 2024 (abgerufen 6.10.2026); übrige 21 aus `archiv/uploads-eigen/web/moeglichkeitsraum.html` (Vorchat, laut Seite Eurostat-Einzelabrufe 2024) | Sekundärquelle für 21 Staaten |
+| Schwelle Vereinigte Staaten 341,8 Mio | US Census Bureau NST-EST2025-POP laut moeglichkeitsraum.html | Sekundärquelle |
+| Kanada 41,7 Mio | Statistics Canada, The Daily vom 24.9.2025: 41.651.653 am 1.7.2025 | gelesen 7.10.2026 |
+| Kanada: CETA; Sicherheits- und Verteidigungspartnerschaft mit der EU seit 2025 | EAD / Europäische Kommission: Unterzeichnung beim 20. Gipfel EU–Kanada am 23./24.6.2025 | gelesen 7.10.2026 |
+| Großbritannien nicht an Art. 113 AEUV gebunden | Vertragstext (Austritt 2020) | allgemein bekannt |
+| „Sechs genügen" (DE, UK, FR, IT, ES, PL: 365,9 Mio) | Summe aus `moeglichkeitsraum.csv` | Rechnung |

@@ -19,6 +19,8 @@ ZIEL = WURZEL / "seite" / "stand-b"
 J = json.loads((WURZEL / "daten/aggregate/gesamtrechnung.json").read_text(encoding="utf-8"))
 with open(WURZEL / "daten/aggregate/laender_2024.csv", encoding="utf-8") as f:
     POP = {r["land"]: float(r["einwohner_mio_2024"]) for r in csv.DictReader(f)}
+with open(WURZEL / "daten/aggregate/moeglichkeitsraum.csv", encoding="utf-8") as f:
+    RAUM = list(csv.DictReader(f))
 
 TARIF = [(12348, 0), (25000, 9), (40000, 16), (55000, 21), (70000, 26), (None, 28)]
 NAMEN = [("DE", "Deutschland"), ("FR", "Frankreich"), ("ES", "Spanien"), ("NL", "Niederlande"), ("BE", "Belgien"),
@@ -56,6 +58,19 @@ ZUSATZ_CSS = """
 .ebenen .ag{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#pg)}
 .ebenen.mob{display:none;max-width:420px;margin:6px auto 4px}
 @media(max-width:640px){.ebenen.wide{display:none}.ebenen.mob{display:block}}
+.kicker{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:10px}
+.kicker.alt{color:var(--warn)}.kicker.neu{color:var(--accent)}
+.raum{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:14px 0 18px}
+.raum button{font-family:var(--mono);font-size:12px;text-align:left;padding:7px 9px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:var(--dim);display:flex;justify-content:space-between;gap:6px}
+.raum button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.raum button.neu{border-color:var(--accent)}
+.raum button.neu[aria-pressed=true]{background:var(--accent);border-color:var(--accent)}
+.raum button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.schwelle{position:relative;height:30px;background:var(--line-soft);border-radius:2px;overflow:visible;margin:8px 0 26px}
+.schwelle>i{display:block;height:100%;background:var(--accent);border-radius:2px;transition:width .35s}
+.schwelle>i.unter{background:var(--warn)}
+.schwelle .us{position:absolute;top:-6px;bottom:-6px;border-left:2px dashed var(--ink)}
+.schwelle .us span{position:absolute;top:38px;left:-40px;width:80px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink)}
 .land{border:1px solid var(--line);border-radius:3px;background:#fff;padding:20px 22px}
 .land .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .land h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 6px}
@@ -89,16 +104,16 @@ def spark():
 def ebenen_svg():
     og = de(J["obergrenze"])
     mob = f'''<svg class="ebenen mob" viewBox="0 0 360 380" role="img" aria-label="Zwei Ebenen und ein Dach">
-  <rect class="bx" x="20" y="10" width="320" height="64" rx="3"/>
+  <rect class="bx" x="10" y="10" width="340" height="64" rx="3"/>
   <text x="180" y="38" text-anchor="middle" font-size="19" font-weight="700">Das gemeinsame Dach</text>
-  <text class="s" x="180" y="60" text-anchor="middle">behält höchstens {og} %</text>
+  <text class="s" x="180" y="60" text-anchor="middle">mindestens {de(100 - J["obergrenze"])} % gehen weiter an die Gemeinde</text>
   <rect class="bx" x="20" y="180" width="140" height="70" rx="3"/>
   <text x="90" y="212" text-anchor="middle" font-size="18" font-weight="700">Sie</text>
   <text class="s" x="90" y="234" text-anchor="middle">gleiche Sätze</text>
   <rect class="bx" x="200" y="180" width="140" height="70" rx="3"/>
   <text x="270" y="212" text-anchor="middle" font-size="18" font-weight="700">Gemeinde</text>
   <text class="s" x="270" y="234" text-anchor="middle">entscheidet selbst</text>
-  <path class="ar" d="M90,178 L90,80"/><text class="s" x="98" y="130">ein Einzug</text>
+  <path class="ar" d="M90,178 L90,80"/><text class="s" x="98" y="130">Steuerbeitrag</text>
   <path class="ar" d="M270,80 L270,178"/><text class="s" x="262" y="130" text-anchor="end">Formel</text>
   <path class="ag" d="M270,252 C270,330 90,330 90,256"/>
   <text class="s" x="180" y="350" text-anchor="middle" fill="#1D7A4F">jeden Monat:</text>
@@ -107,9 +122,9 @@ def ebenen_svg():
     return mob + f'''<svg class="ebenen wide" viewBox="0 0 900 300" role="img" aria-label="Zwei Ebenen und ein Dach: Einzug, Gemeinde, Dach, Dividende">
   <defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0F3B5C"/></marker>
   <marker id="pg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1D7A4F"/></marker></defs>
-  <rect class="bx" x="290" y="14" width="320" height="70" rx="3"/>
+  <rect class="bx" x="270" y="14" width="360" height="70" rx="3"/>
   <text x="450" y="44" text-anchor="middle" font-size="19" font-weight="700">Das gemeinsame Dach</text>
-  <text class="s" x="450" y="66" text-anchor="middle">behält höchstens {og} % · Rest fließt durch</text>
+  <text class="s" x="450" y="66" text-anchor="middle">mindestens {de(100 - J["obergrenze"])} % gehen weiter an die Gemeinde</text>
   <rect class="bx" x="30" y="190" width="220" height="80" rx="3"/>
   <text x="140" y="224" text-anchor="middle" font-size="19" font-weight="700">Sie</text>
   <text class="s" x="140" y="248" text-anchor="middle">wenige, gleiche Sätze</text>
@@ -117,7 +132,7 @@ def ebenen_svg():
   <text x="760" y="224" text-anchor="middle" font-size="19" font-weight="700">Ihre Gemeinde</text>
   <text class="s" x="760" y="248" text-anchor="middle">entscheidet selbst</text>
   <path class="ar" d="M250,205 C300,140 330,110 350,88"/>
-  <text class="s" x="215" y="140">ein Einzug</text>
+  <text class="s" x="205" y="140">Steuerbeitrag</text>
   <path class="ar" d="M550,88 C590,120 620,160 655,198"/>
   <text class="s" x="615" y="140">je Einwohner, je Kind</text>
   <path class="ag" d="M650,250 C520,285 380,285 252,250"/>
@@ -125,9 +140,17 @@ def ebenen_svg():
 </svg>'''
 
 
+def raum_pop(k):
+    return next(float(x["einwohner_mio"]) for x in RAUM if x["land"] == k)
+
+
 def main():
     q, og = J["quote"], J["obergrenze"]
     einzug_anteil = (q - J["boden"]) / q
+    raum_knoepfe = "".join(
+        f'<button type="button" aria-pressed="false" data-k="{x["land"]}"' + (' class="neu"' if x["land"] == "CA" else "")
+        + f'><span>{x["name"]}</span><span>{de(float(x["einwohner_mio"]), 1)}</span></button>'
+        for x in RAUM if x["land"] != "US")
     flagrow = "\n".join(f'<div><div class="c">{de(POP[k], 1)}</div><div class="n">{n}</div></div>' for k, n in NAMEN)
     daten_js = json.dumps({
         "jahre": J["reihe_jahre"], "erw": J["reihe_erw"], "a": J["reihe_a"], "div": J["reihe_div"],
@@ -135,6 +158,7 @@ def main():
         "einw": J["formel_einw"], "kind": J["formel_kind"], "kindAnt": J["kind_ant"],
         "fachKopf": J["tabelle_einzug"][5][2], "verwAnt": J["verw_anteil_pct"],
         "tarif": [[g if g else 1e12, s] for g, s in TARIF],
+        "raum": {x["land"]: float(x["einwohner_mio"]) for x in RAUM}, "us": raum_pop("US"),
     }, ensure_ascii=False)
 
     html = f'''<!DOCTYPE html><html lang="de"><head>
@@ -170,7 +194,7 @@ def main():
     </svg>
     <h1>Das einfache Steuersystem für das 21. Jahrhundert.</h1>
     <p class="claim2">Fair, sozial und innovativ.</p>
-    <p class="sub">Höchstens 28 % auf jedes Einkommen, keine Sozialabgaben – und jeden Monat eine Dividende für alle. Gemeinden entscheiden selbst, ein gemeinsames europäisches Dach sichert, was keiner allein kann.</p>
+    <p class="sub">Höchstens 28 % auf jedes Einkommen – und jeden Monat eine Dividende für alle. Gemeinden entscheiden selbst, ein gemeinsames europäisches Dach sichert die gemeinsamen Interessen.</p>
     <div class="cta-row">
       <a class="btn primary" href="#rechner">Eigene Dividende berechnen</a>
       <a class="btn ghost" href="#konzept">Konzept ansehen</a>
@@ -178,7 +202,7 @@ def main():
     <p class="opensrc">Alle Rechenmodelle sind <a href="#offen">offen prüfbar</a>.</p>
     <div class="stamps">
       <div class="stamp"><div class="val">{de(J["erw_2028"])}&nbsp;€</div><div class="lbl">Dividende im Monat je Erwachsenem — {de(J["kind_2028"])} € je Kind</div></div>
-      <div class="stamp"><div class="val">höchstens 28&nbsp;%</div><div class="lbl">auf jedes Einkommen — keine Sozialabgaben</div></div>
+      <div class="stamp"><div class="val">höchstens 28&nbsp;%</div><div class="lbl">auf jedes Einkommen</div></div>
       <div class="stamp"><div class="val">über {de(J["anteil_mit_mehr_de"])} %*</div><div class="lbl">der Menschen haben mehr im Geldbeutel</div></div>
     </div>
     <p class="fineprint" style="text-align:center;margin:16px auto 0">* Schätzung des Projekts. Beträge in Preisen von 2028.</p>
@@ -187,12 +211,13 @@ def main():
 
 <section id="problem">
   <div class="wrap">
+    <p class="kicker alt">Das heutige System:</p>
     <h2>Zu komplex, um es zu verstehen. Zu löchrig, um gerecht zu sein.</h2>
-    <p class="lede">Das heutige System ist Schicht um Schicht gewachsen. Es belastet Arbeit stärker als alles andere und lässt Bürger wie Gemeinden ratlos zurück.</p>
+    <p class="lede">Das heutige System ist Schicht um Schicht gewachsen. Es belastet Arbeit stärker als alles andere und lässt Bürger wie Gemeinden frustriert zurück.</p>
     <div class="befund-grid">
-      <div class="befund"><div class="num">{de(J["abgabenkeil_de_2024"], 1)} %</div><h3>Abgaben auf einen Durchschnittslohn</h3><p>Der zweithöchste Wert aller OECD-Staaten. Der Durchschnitt liegt bei {de(J["abgabenkeil_oecd_2024"], 1)} %.</p></div>
+      <div class="befund"><div class="num">{de(J["abgabenkeil_de_2024"], 1)} %</div><h3>Abgaben auf einen Durchschnittslohn</h3><p>Der Durchschnitt in Deutschland – der zweithöchste Wert aller OECD-Staaten. Im OECD-Schnitt sind es {de(J["abgabenkeil_oecd_2024"], 1)} %.</p></div>
       <div class="befund"><div class="num">{de(J["abgeltungsteuer_de"], 1)} %</div><h3>auf Zinsen und Kursgewinne</h3><p>Ein Euro aus Kapital trägt deutlich weniger als ein Euro aus Arbeit.</p></div>
-      <div class="befund"><div class="num">5 Ebenen</div><h3>verhandeln über jeden Euro</h3><p>Gemeinde, Kreis, Land, Bund und EU. Geld kommt zweckgebunden an – was eine Gemeinde spart, bekommt sie nicht.</p></div>
+      <div class="befund"><div class="num">5 Ebenen</div><h3>verhandeln über jeden Euro</h3><p>Gemeinde, Kreis, Land, Bund und EU. Gelder und Aufgaben werden hin und her verwaltet, Ziele nicht erreicht.</p></div>
       <div class="befund"><div class="num">0 €</div><h3>Sozialbeiträge auf Maschinen</h3><p>Sozialabgaben fallen nur auf menschliche Arbeit. Wer Arbeit durch Automaten ersetzt, spart Abgaben.</p></div>
     </div>
     <p class="fineprint">Quellen: OECD, Taxing Wages 2025 (Alleinstehende, Durchschnittslohn, 2024); § 32d EStG mit Solidaritätszuschlag.</p>
@@ -201,18 +226,24 @@ def main():
 
 <section id="konzept">
   <div class="wrap">
+    <p class="kicker neu">Das Konzept:</p>
     <h2>Zwei Ebenen, ein gemeinsames Dach</h2>
     <p class="lede">Statt fünf Ebenen gibt es zwei. Die Gemeinde erhält den größten Teil des Geldes und entscheidet selbst. Ein europäisches Dach übernimmt nur, was keine Gemeinde allein kann – und darf sich nicht mehr nehmen, als im Vertrag steht.</p>
     {ebenen_svg()}
+    <div class="box">
+      <h3>Warum eine Dividende?</h3>
+      <p>Was wir heute erwirtschaften, ruht auf dem, was Generationen vor uns aufgebaut haben: Wissen, Technik, Infrastruktur. Immer mehr davon leisten Maschinen und Software. Die Dividende gibt jedem den gleichen Anteil an diesem gemeinsam geerbten Fortschritt zurück – als Rückfluss aus den Gewinnen der Automatisierung.</p>
+      <p>Und sie gleicht aus, was der Umbau von Arbeit, Energie und Wirtschaft jedem Einzelnen abverlangt: Wer sich neu orientieren muss, steht nicht mit leeren Händen da.</p>
+    </div>
     <div class="effects">
-      <div><h3>Dem Einzelnen wird zugetraut,</h3><p>mit seinem Geld umzugehen: ein Satz statt eines Tarifdschungels, keine Sozialabgaben, keine Sonderregeln. Jeden Monat eine Dividende, ohne Antrag.</p></div>
-      <div><h3>Der Gemeinde wird zugetraut,</h3><p>ihre Angelegenheiten zu führen: Sie bekommt je Einwohner und je Kind feste Beträge und entscheidet, welche Schule, welche Verwaltung, und ob sie Kreis oder Land für deren Leistungen bezahlt.</p></div>
-      <div><h3>Dem Dach wird zugetraut,</h3><p>was nur gemeinsam geht: Verteidigung und digitale Souveränität, ein Binnenmarkt ohne Grenzen, gemeinsame Standards. Es entscheidet mit Mehrheit.</p></div>
+      <div><h3>Dem Einzelnen wird zugetraut,</h3><p>mit seinem Geld umzugehen: ein Satz statt eines Tarifdschungels, keine Sonderregeln. Jeden Monat eine Dividende, ohne Antrag.</p></div>
+      <div><h3>Der Gemeinde wird zugetraut,</h3><p>ihre Angelegenheiten zu führen: Sie bekommt je Einwohner und je Kind feste Beträge. Sie entscheidet über Mitgliedschaften in Kreisen und Verbünden.</p></div>
+      <div><h3>Dem Dach wird zugetraut,</h3><p>was nur gemeinsam geht: Verteidigung und digitale Souveränität, ein Binnenmarkt ohne Grenzen, gemeinsame Standards. Das Dach entscheidet mit der Mehrheit der Mitglieder.</p></div>
     </div>
 
     <div class="flow" id="fluss">
-      <div class="row"><div><label class="lbl" for="jahr" style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)">Wohin fließen 100 € Steuern im Jahr</label></div><div class="year" id="jahrval">2028</div></div>
-      <input type="range" id="jahr" min="2028" max="2060" step="1" value="2028" style="width:100%;accent-color:var(--ink)" aria-label="Jahr">
+      <div class="row"><div><label class="lbl" for="jahr" style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)">Wohin fließen 100 € Steuern im Jahr</label></div><div class="year" id="jahrval">2033</div></div>
+      <input type="range" id="jahr" min="2028" max="2060" step="1" value="2033" style="width:100%;accent-color:var(--ink)" aria-label="Jahr">
       <div class="stack" aria-live="polite"><i class="sa" id="sa"></i><i class="sb" id="sb"></i><i class="sd" id="sd"></i><span class="cap" id="cap" title="Obergrenze des Dachs"></span></div>
       <div class="flowleg"><span><b style="background:var(--ink)"></b>Dach</span><span><b style="background:#6497B8"></b>Aufgaben der Gemeinde</span><span><b style="background:var(--accent)"></b>Ihre Dividende</span><span><b style="border-left:2px dashed var(--warn);width:0;height:12px"></b>Obergrenze des Dachs</span></div>
       <p class="fineprint" id="flusstext" style="margin-top:12px"></p>
@@ -307,7 +338,7 @@ def main():
 <section id="zeitpfad">
   <div class="wrap">
     <h2>Die Dividende wächst mit</h2>
-    <p class="lede">Bis {J["kl_tief_jahr"]} bauen die Länder ihre Verteidigung auf, und alte, billige Schulden werden teurer ersetzt. Danach wächst die Dividende mit der Wirtschaft – und die Schulden arbeiten sich von selbst ab: von {de(J["tabelle_pfad"][0]["d"])} % auf {de(J["tabelle_pfad"][5]["d"])} % der Wirtschaftsleistung, ohne einen Tilgungseuro.</p>
+    <p class="lede">Bis {J["kl_tief_jahr"]} müssen alte Fehler gekittet werden: Die Verteidigungsausgaben sind erhöht worden, und alte Schulden müssen mit höheren Zinsen weiter bedient werden. Danach wächst die Dividende mit der Wirtschaft – und die Schulden arbeiten sich von selbst ab: von {de(J["tabelle_pfad"][0]["d"])} % auf {de(J["tabelle_pfad"][5]["d"])} % der Wirtschaftsleistung, ohne einen Tilgungseuro.</p>
     <div class="chart-card">
       <div class="tabs" id="gtabs"><button type="button" aria-pressed="false" data-v="0,5">Zurückhaltend</button><button type="button" aria-pressed="true" data-v="1,0">Mittleres Wachstum</button><button type="button" aria-pressed="false" data-v="1,5">Kräftig</button></div>
       <div class="unit">Dividende je Erwachsenem und Monat, Euro in Preisen von 2028</div>
@@ -335,29 +366,37 @@ def main():
   <div class="wrap">
     <h2>Was anderswo schon funktioniert</h2>
     <p class="lede">Nichts an TAX 28:28 ist ein Experiment ins Blaue. Jeder Baustein läuft heute schon irgendwo – oft seit Jahrzehnten.</p>
-    <div class="reg-grid">
+    <div class="reg-grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
       <div class="land"><div class="n">Estland</div><h3>Ein Satz, digital in Minuten</h3><span class="k">22 % Einheitssatz · Bodensteuer seit 1993</span><p>Die Steuererklärung ist in wenigen Minuten online erledigt. Die Grundsteuer bemisst sich allein nach dem Bodenwert, Gebäude bleiben unbesteuert.</p></div>
       <div class="land"><div class="n">Dänemark</div><h3>Starke Gemeinden, Sozialstaat aus Steuern</h3><span class="k">98 Kommunen seit 2007</span><p>Die Gemeinden tragen Schulen, Pflege und Soziales. Sozialbeiträge spielen kaum eine Rolle – der Sozialstaat wird aus Steuern bezahlt.</p></div>
       <div class="land"><div class="n">Schweiz</div><h3>CO₂-Abgabe, an alle zurückgegeben</h3><span class="k">seit 2008 · gleicher Betrag für jeden</span><p>Die Einnahmen der CO₂-Abgabe gehen gleichmäßig an alle Einwohner zurück, verrechnet mit der Krankenkassenprämie. Gemeinden setzen ihre Steuern selbst fest.</p></div>
       <div class="land"><div class="n">Alaska</div><h3>Eine Dividende für alle</h3><span class="k">seit 1982 · jährlich</span><p>Jeder Einwohner erhält einmal im Jahr einen Anteil am gemeinsamen Fonds, ohne Bedürftigkeitsprüfung. Seit über vierzig Jahren.</p></div>
-      <div class="land"><div class="n">Baden-Württemberg</div><h3>Grundsteuer nur auf den Boden</h3><span class="k">seit 2025</span><p>Besteuert wird nur der Wert des Grundstücks. Wer baut, wird nicht bestraft; brachliegendes Bauland zahlt mit.</p></div>
-      <div class="land"><div class="n">Neuseeland</div><h3>Mehrwertsteuer ohne Ausnahmen</h3><span class="k">ein Satz, breite Basis</span><p>Fast alle Güter und Leistungen tragen denselben Satz. Das macht die Steuer einfach, billig zu erheben und schwer zu umgehen.</p></div>
     </div>
   </div>
 </section>
 
 <section id="klub">
   <div class="wrap">
-    <h2>Ein Klub für Europa</h2>
-    <p class="lede">Das Dach ist kein Superstaat, sondern ein Klub, dem Länder beitreten. Gerechnet ist es für zehn Staaten mit zusammen {de(J["pop_klub_mio"], 1)} Mio Menschen – überall dieselben Regeln, dieselbe Formel, dieselbe Dividende.</p>
-    <div class="flagrow">{flagrow}</div>
-    <div class="timeline">
+    <h2>Ein Klub mit Raum zum Wachsen</h2>
+    <p class="lede">Das Dach ist kein fester Kreis, sondern ein Angebot. Gerechnet ist es für zehn Staaten – möglich sind über dreißig in Europa, und auch Partner darüber hinaus. Wählen Sie selbst: Ab der Einwohnerzahl der Vereinigten Staaten spielt der Klub in derselben Liga.</p>
+    <div class="flow">
+      <div class="tabs" id="raumvor"><button type="button" aria-pressed="false" data-v="zehn">Die zehn gerechneten</button><button type="button" aria-pressed="false" data-v="sechs">Die sechs Größten</button><button type="button" aria-pressed="true" data-v="europa">Ganz Europa</button><button type="button" aria-pressed="false" data-v="plus">Europa und Kanada</button></div>
+      <div class="raum" id="raum">{raum_knoepfe}</div>
+      <div class="row"><div class="res-row" style="flex:1;border:none"><span class="k">Menschen im Klub</span><span class="v new" id="raumsum"></span></div><div class="res-row" style="flex:1;border:none"><span class="k">Staaten</span><span class="v" id="raumn"></span></div></div>
+      <div class="schwelle"><i id="raumbar"></i><span class="us" id="raumus"><span>USA</span></span></div>
+      <p class="fineprint" id="raumtext" style="margin-top:0"></p>
+    </div>
+    <div class="effects">
+      <div><h3>Großbritannien</h3><p>Nicht an die Einstimmigkeit der EU-Verträge gebunden: Für das Vereinigte Königreich wäre der Klub ein Beitritt, kein Vertragsbruch – und ein Weg zurück in einen gemeinsamen Wirtschaftsraum. Mit {de(raum_pop("UK"), 1)} Mio Menschen der zweitgrößte Partner.</p></div>
+      <div><h3>Kanada</h3><p>Durch das Handelsabkommen CETA wirtschaftlich eng mit Europa verbunden, seit 2025 auch durch eine Sicherheits- und Verteidigungspartnerschaft mit der EU. {de(raum_pop("CA"), 1)} Mio Menschen, gleiche Werte, gemeinsame Aufgaben.</p></div>
+      <div><h3>Sechs genügen</h3><p>Deutschland, Großbritannien, Frankreich, Italien, Spanien und Polen erreichen gemeinsam die Größe der Vereinigten Staaten. Jedes weitere Land macht den Klub stärker, keines macht ihn unmöglich.</p></div>
+    </div>
+    <div class="timeline" style="margin-top:34px">
       <div><div class="y">2026 · Offene Prüfung</div><div class="t">Konzept und Rechnungen liegen offen. Fachleute, Verwaltungen und Kritiker sind eingeladen.</div></div>
       <div><div class="y">2027 · Gemeinschaften bilden</div><div class="t">Gemeinden und Regionen finden Partner, Länder prüfen den Beitritt.</div></div>
       <div><div class="y">2028 · Gemeinsamer Start</div><div class="t">Frühestens nach Gesetzgebung und Verwaltungsaufbau.</div></div>
       <div><div class="y">ab 2029 · Erweiterung</div><div class="t">Jedes weitere Land stärkt den Klub – vor allem bei der Besteuerung am Ort der Kunden.</div></div>
     </div>
-    <p class="fineprint">Einwohner 2024 in Millionen (Eurostat).</p>
   </div>
 </section>
 
@@ -417,6 +456,20 @@ function gemeinde(){{const n=+$('g-ein').value,k=+$('g-kin').value/100,v=+$('g-v
   $('g-bud').textContent=de(bud/1e6,1)+' Mio €';$('g-sch').textContent=de(sch/1e6,1)+' Mio €';$('g-kopf').textContent=de(bud/n)+' €';
   const pb=$('g-plus');pb.textContent=Math.abs(plus)<0.5?'± 0 € im Monat':(plus>0?'+':'−')+de(Math.abs(plus))+' € im Monat';pb.classList.toggle('neg',plus<=-0.5);}}
 ['g-ein','g-kin','g-verw'].forEach(x=>$(x).addEventListener('input',gemeinde));gemeinde();
+
+// Möglichkeitsraum
+const VOR={{zehn:['DE','FR','ES','NL','IE','BE','AT','DK','SI','EE'],sechs:['DE','UK','FR','IT','ES','PL'],
+  europa:Object.keys(D.raum).filter(k=>k!=='US'&&k!=='CA'),plus:Object.keys(D.raum).filter(k=>k!=='US')}};
+const SK=600;
+function raum(){{const on=[...document.querySelectorAll('#raum button[aria-pressed=true]')].map(b=>b.dataset.k);
+  const sum=on.reduce((a,k)=>a+D.raum[k],0);$('raumsum').textContent=de(sum,1)+' Mio';$('raumn').textContent=on.length;
+  const bar=$('raumbar');bar.style.width=Math.min(sum/SK*100,100)+'%';bar.classList.toggle('unter',sum<D.us);
+  $('raumus').style.left=(D.us/SK*100)+'%';
+  $('raumtext').textContent=sum>=D.us?'Der Klub ist größer als die Vereinigten Staaten ('+de(D.us,1)+' Mio) – um '+de(sum-D.us,1)+' Mio Menschen.':'Noch '+de(D.us-sum,1)+' Mio Menschen bis zur Größe der Vereinigten Staaten.';}}
+function vorwahl(v){{const s=new Set(VOR[v]);document.querySelectorAll('#raum button').forEach(b=>b.setAttribute('aria-pressed',s.has(b.dataset.k)?'true':'false'));raum();}}
+$('raum').addEventListener('click',e=>{{const b=e.target.closest('button');if(!b)return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
+  document.querySelectorAll('#raumvor button').forEach(x=>x.setAttribute('aria-pressed','false'));raum();}});
+seg('raumvor',vorwahl);vorwahl('europa');
 
 // Zeitpfad
 function chart(f){{const s=D.erw[f],xs=D.jahre,W=900,H=360,L=60,R=30,T=20,B=40;
