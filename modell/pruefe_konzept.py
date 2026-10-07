@@ -100,8 +100,8 @@ def main() -> int:
         zeilen.append([name, muster, "ja" if ok else "NEIN"])
     # Webseite Stand B (seit v3.15): Kernzahlen im Quelltext, Schätzung gekennzeichnet
     seite = WURZEL / "seite" / "stand-b" / "de.html"
-    st = seite.read_text(encoding="utf-8") if seite.exists() else ""
-    for name, muster in [("Seite: Dividende je Erwachsenem", f"{de(J['erw_2028'])}&nbsp;€"),
+    st = (seite.read_text(encoding="utf-8") if seite.exists() else "").replace("\u00a0", " ").replace("&nbsp;", " ").replace("\u202f", " ")
+    for name, muster in [("Seite: Dividende je Erwachsenem", f"{de(J['erw_2028'])} €"),
                          ("Seite: Formel", f"{de(J['formel_einw'])} € je Einwohner"),
                          ("Seite: Obergrenze", f"höchstens {de(J['obergrenze'])} %"),
                          ("Seite: Abgabenkeil", f"{de(J['abgabenkeil_de_2024'], 1)} %"),
@@ -110,6 +110,15 @@ def main() -> int:
         ok = muster in st
         fehler += not ok
         zeilen.append([name, muster, "ja" if ok else "NEIN"])
+    # Sprachfassungen (seit v3.18): Datei vorhanden, Modellstand und Formel je Einwohner (ohne Trennzeichen) enthalten
+    ziffern = f"{J['formel_einw']:.0f}"
+    for sp in ("de", "en", "fr", "it", "es", "pl"):
+        f = WURZEL / "seite" / "stand-b" / f"{sp}.html"
+        txt = f.read_text(encoding="utf-8") if f.exists() else ""
+        rein = "".join(ch for ch in txt if ch.isdigit() or ch == "\n")
+        ok = bool(txt) and J["version"] in txt and ziffern in rein
+        fehler += not ok
+        zeilen.append([f"Sprachfassung {sp}", f"{J['version']} / {ziffern}", "ja" if ok else "NEIN"])
     with open(WURZEL / "daten" / "aggregate" / "konzept_pruefung.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(["pruefung", "muster", "ergebnis"])

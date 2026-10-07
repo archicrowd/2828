@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TAX 28:28 — Das einfache Steuersystem für das 21. Jahrhundert</title>
-<meta name="description" content="Höchstens 28 % auf jedes Einkommen, keine Sozialabgaben, jeden Monat eine Dividende. Gemeinden entscheiden selbst, ein gemeinsames Dach sichert nach außen.">
+<meta name="description" content="Höchstens 28 % auf jedes Einkommen und jeden Monat eine Dividende. Gemeinden entscheiden selbst, ein gemeinsames Dach sichert die gemeinsamen Interessen.">
 <meta name="robots" content="noindex, nofollow">
 <style>
 @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SpaceGrotesk-400.woff2') format('woff2')}
@@ -296,7 +296,6 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 .flowleg b{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
 .ebenen{width:100%;height:auto;display:block;margin:6px 0 4px}
 .ebenen .bx{fill:#fff;stroke:var(--ink);stroke-width:1.5}
-.ebenen .bxa{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.5}
 .ebenen text{font-family:var(--disp);fill:var(--ink)}
 .ebenen .s{font-family:var(--mono);font-size:12px;fill:var(--dim)}
 .ebenen .ar{stroke:var(--ink);stroke-width:1.5;fill:none;marker-end:url(#pf)}
@@ -309,7 +308,9 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 #chart2 .hist{stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
 #chart2 .ohne{stroke:var(--warn);fill:none;stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
 #chart2 .mit{stroke:var(--accent);fill:none;stroke-width:3.5;stroke-linecap:round}
+#chart2 .prog{stroke:var(--accent);fill:none;stroke-width:2.5;stroke-dasharray:6 6;stroke-linecap:round}
 #chart2 .marker{stroke:var(--line);stroke-dasharray:3 4}
+.legend .l-prog i{border-color:var(--accent);border-top-style:dashed}
 .kicker{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:10px}
 .kicker.alt{color:var(--warn)}.kicker.neu{color:var(--accent)}
 .raum{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:14px 0 18px}
@@ -345,7 +346,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
       <a class="opt" href="#zeitpfad">Zeitpfad</a>
       <a href="#erfahrung">International</a>
       <a class="opt" href="#offen">Mitmachen</a>
-      <span class="langsel"><a href="de.html" class="active" lang="de">DE</a></span>
+      <span class="langsel"><a href="de.html" class="active" lang="de">DE</a><a href="en.html" lang="en">EN</a><a href="fr.html" lang="fr">FR</a><a href="it.html" lang="it">IT</a><a href="es.html" lang="es">ES</a><a href="pl.html" lang="pl">PL</a></span>
     </div>
   </div>
 </nav>
@@ -365,9 +366,9 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     </div>
     <p class="opensrc">Alle Rechenmodelle sind <a href="#offen">offen prüfbar</a>.</p>
     <div class="stamps">
-      <div class="stamp"><div class="val">535&nbsp;€</div><div class="lbl">Dividende im Monat je Erwachsenem — 267 € je Kind</div></div>
-      <div class="stamp"><div class="val">höchstens 28&nbsp;%</div><div class="lbl">auf jedes Einkommen</div></div>
-      <div class="stamp"><div class="val">über 95 %*</div><div class="lbl">der Menschen haben mehr im Geldbeutel</div></div>
+      <div class="stamp"><div class="val">535 €</div><div class="lbl">Dividende im Monat je Erwachsenem — 267 € je Kind</div></div>
+      <div class="stamp"><div class="val">höchstens 28 %</div><div class="lbl">auf jedes Einkommen</div></div>
+      <div class="stamp"><div class="val">über 95 %*</div><div class="lbl">der Menschen haben mehr im Geldbeutel</div></div>
     </div>
     <p class="fineprint" style="text-align:center;margin:16px auto 0">* Schätzung des Projekts. Beträge in Preisen von 2028.</p>
   </div>
@@ -379,8 +380,8 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <h2>Zu komplex, um es zu verstehen. Zu löchrig, um gerecht zu sein.</h2>
     <p class="lede">Das heutige System ist Schicht um Schicht gewachsen. Es belastet Arbeit stärker als alles andere und lässt Bürger wie Gemeinden frustriert zurück.</p>
     <div class="befund-grid">
-      <div class="befund"><div class="num">47,9 %</div><h3>Abgaben auf einen Durchschnittslohn</h3><p>Der Durchschnitt in Deutschland – der zweithöchste Wert aller OECD-Staaten. Im OECD-Schnitt sind es 34,9 %.</p></div>
-      <div class="befund"><div class="num">26,4 %</div><h3>auf Zinsen und Kursgewinne</h3><p>Ein Euro aus Kapital trägt deutlich weniger als ein Euro aus Arbeit.</p></div>
+      <div class="befund"><div class="num">47,9 %</div><h3>Abgaben auf einen Durchschnittslohn</h3><p>Der Durchschnitt in Deutschland – der zweithöchste Wert aller OECD-Staaten. Im OECD-Schnitt sind es 34,9 %.</p></div>
+      <div class="befund"><div class="num">26,4 %</div><h3>auf Zinsen und Kursgewinne</h3><p>Ein Euro aus Kapital trägt deutlich weniger als ein Euro aus Arbeit.</p></div>
       <div class="befund"><div class="num">5 Ebenen</div><h3>verhandeln über jeden Euro</h3><p>Gemeinde, Kreis, Land, Bund und EU. Gelder und Aufgaben werden hin und her verwaltet, Ziele nicht erreicht.</p></div>
       <div class="befund"><div class="num">0 €</div><h3>Sozialbeiträge auf Maschinen</h3><p>Sozialabgaben fallen nur auf menschliche Arbeit. Wer Arbeit durch Automaten ersetzt, spart Abgaben.</p></div>
     </div>
@@ -393,10 +394,10 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <p class="kicker neu">Das Konzept:</p>
     <h2>Zwei Ebenen, ein gemeinsames Dach</h2>
     <p class="lede">Statt fünf Ebenen gibt es zwei. Die Gemeinde erhält den größten Teil des Geldes und entscheidet selbst. Ein europäisches Dach übernimmt nur, was keine Gemeinde allein kann – und darf sich nicht mehr nehmen, als im Vertrag steht.</p>
-    <svg class="ebenen mob" viewBox="0 0 360 380" role="img" aria-label="Zwei Ebenen und ein Dach">
+<svg class="ebenen mob" viewBox="0 0 360 380" role="img" aria-label="Zwei Ebenen, ein gemeinsames Dach">
   <rect class="bx" x="10" y="10" width="340" height="64" rx="3"/>
   <text x="180" y="38" text-anchor="middle" font-size="19" font-weight="700">Das gemeinsame Dach</text>
-  <text class="s" x="180" y="60" text-anchor="middle">mindestens 64 % gehen weiter an die Gemeinde</text>
+  <text class="s" x="180" y="60" text-anchor="middle">mindestens 64 % gehen weiter an die Gemeinde</text>
   <rect class="bx" x="20" y="180" width="140" height="70" rx="3"/>
   <text x="90" y="212" text-anchor="middle" font-size="18" font-weight="700">Sie</text>
   <text class="s" x="90" y="234" text-anchor="middle">gleiche Sätze</text>
@@ -408,12 +409,13 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
   <path class="ag" d="M270,252 C270,330 90,330 90,256"/>
   <text class="s" x="180" y="350" text-anchor="middle" fill="#1D7A4F">jeden Monat:</text>
   <text class="s" x="180" y="368" text-anchor="middle" fill="#1D7A4F">die Dividende</text>
-</svg><svg class="ebenen wide" viewBox="0 0 900 300" role="img" aria-label="Zwei Ebenen und ein Dach: Einzug, Gemeinde, Dach, Dividende">
+</svg>
+<svg class="ebenen wide" viewBox="0 0 900 300" role="img" aria-label="Zwei Ebenen, ein gemeinsames Dach">
   <defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0F3B5C"/></marker>
   <marker id="pg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1D7A4F"/></marker></defs>
   <rect class="bx" x="270" y="14" width="360" height="70" rx="3"/>
   <text x="450" y="44" text-anchor="middle" font-size="19" font-weight="700">Das gemeinsame Dach</text>
-  <text class="s" x="450" y="66" text-anchor="middle">mindestens 64 % gehen weiter an die Gemeinde</text>
+  <text class="s" x="450" y="66" text-anchor="middle">mindestens 64 % gehen weiter an die Gemeinde</text>
   <rect class="bx" x="30" y="190" width="220" height="80" rx="3"/>
   <text x="140" y="224" text-anchor="middle" font-size="19" font-weight="700">Sie</text>
   <text class="s" x="140" y="248" text-anchor="middle">wenige, gleiche Sätze</text>
@@ -439,9 +441,9 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     </div>
 
     <div class="flow" id="fluss">
-      <div class="row"><div><label class="lbl" for="jahr" style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)">Wohin fließen 100 € Steuern im Jahr</label></div><div class="year" id="jahrval">2033</div></div>
+      <div class="row"><div><label class="lbl" for="jahr" style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)">Wohin fließen 100 € Steuern im Jahr</label></div><div class="year" id="jahrval">2033</div></div>
       <input type="range" id="jahr" min="2028" max="2060" step="1" value="2033" style="width:100%;accent-color:var(--ink)" aria-label="Jahr">
-      <div class="stack" aria-live="polite"><i class="sa" id="sa"></i><i class="sb" id="sb"></i><i class="sd" id="sd"></i><span class="cap" id="cap" title="Obergrenze des Dachs"></span></div>
+      <div class="stack" aria-live="polite"><i class="sa" id="sa"></i><i class="sb" id="sb"></i><i class="sd" id="sd"></i><span class="cap" id="cap"></span></div>
       <div class="flowleg"><span><b style="background:var(--ink)"></b>Dach</span><span><b style="background:#6497B8"></b>Aufgaben der Gemeinde</span><span><b style="background:var(--accent)"></b>Ihre Dividende</span><span><b style="border-left:2px dashed var(--warn);width:0;height:12px"></b>Obergrenze des Dachs</span></div>
       <p class="fineprint" id="flusstext" style="margin-top:12px"></p>
     </div>
@@ -454,21 +456,21 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <p class="lede">Jeder Baustein ist irgendwo auf der Welt schon erprobt. TAX 28:28 fügt sie zu einem System, das man auf einer Seite erklären kann.</p>
     <div class="mass-grid">
       <div class="mass"><div class="pos">Einkommen</div><h3>Stufentarif mit harter Obergrenze</h3>
-        <div class="taxlbl" role="img" aria-label="Tarifstufen von 0 bis 28 Prozent"><div><b class="t1">0&nbsp;%</b><em>bis 12.348 €</em></div>
-<div><b class="t2">9&nbsp;%</b><em>bis 25.000 €</em></div>
-<div><b class="t3">16&nbsp;%</b><em>bis 40.000 €</em></div>
-<div><b class="t4">21&nbsp;%</b><em>bis 55.000 €</em></div>
-<div><b class="t5">26&nbsp;%</b><em>bis 70.000 €</em></div>
-<div><b class="t6">28&nbsp;%</b><em>darüber — Obergrenze</em></div></div>
+        <div class="taxlbl" role="img" aria-label="Stufentarif mit harter Obergrenze"><div><b class="t1">0 %</b><em>bis 12.348 €</em></div>
+<div><b class="t2">9 %</b><em>bis 25.000 €</em></div>
+<div><b class="t3">16 %</b><em>bis 40.000 €</em></div>
+<div><b class="t4">21 %</b><em>bis 55.000 €</em></div>
+<div><b class="t5">26 %</b><em>bis 70.000 €</em></div>
+<div><b class="t6">28 %</b><em>darüber — Obergrenze</em></div></div>
         <p>Besteuert wird das Brutto – ohne Abzüge, ohne Splitting. Das Existenzminimum bleibt frei; darüber lohnt Arbeit auf jeder Stufe.</p></div>
-      <div class="mass"><div class="pos">Arbeit</div><h3>Keine Sozialabgaben mehr</h3><span class="regel">0 % auf den Lohn</span><p>Arbeit wird nicht länger doppelt belastet. So machen es Länder, die ihren Sozialstaat aus Steuern bezahlen – Dänemark erhebt kaum Sozialbeiträge.</p></div>
-      <div class="mass"><div class="pos">Kapital</div><h3>Kapital und Arbeit gleich behandelt</h3><span class="regel">28 % auf alle Erträge</span><p>Auch Veräußerungsgewinne zählen. Lohn in Kapitalertrag umzuwandeln lohnt sich nicht mehr.</p></div>
-      <div class="mass"><div class="pos">Erbschaft</div><h3>Auch Geerbtes ist Einkommen</h3><span class="regel">28 % über 200.000 € je Erwerb</span><p>Keine Verschonungsausnahmen. Wer Betrieb oder Haus erbt, kann die Steuer stunden – niemand muss verkaufen, um sie zu zahlen.</p></div>
-      <div class="mass"><div class="pos">Boden · Gemeinde</div><h3>Die Gemeinde besteuert den Boden</h3><span class="regel">0,1 bis 1 % auf den Bodenwert</span><p>Nur der Grundstückswert zählt, nicht das Haus. Wer baut oder saniert, zahlt dafür nicht mehr. Nicht auf Mieten umlegbar.</p></div>
+      <div class="mass"><div class="pos">Arbeit</div><h3>Keine Sozialabgaben mehr</h3><span class="regel">0 % auf den Lohn</span><p>Arbeit wird nicht länger doppelt belastet. So machen es Länder, die ihren Sozialstaat aus Steuern bezahlen – Dänemark erhebt kaum Sozialbeiträge.</p></div>
+      <div class="mass"><div class="pos">Kapital</div><h3>Kapital und Arbeit gleich behandelt</h3><span class="regel">28 % auf alle Erträge</span><p>Auch Veräußerungsgewinne zählen. Lohn in Kapitalertrag umzuwandeln lohnt sich nicht mehr.</p></div>
+      <div class="mass"><div class="pos">Erbschaft</div><h3>Auch Geerbtes ist Einkommen</h3><span class="regel">28 % über 200.000 € je Erwerb</span><p>Keine Verschonungsausnahmen. Wer Betrieb oder Haus erbt, kann die Steuer stunden – niemand muss verkaufen, um sie zu zahlen.</p></div>
+      <div class="mass"><div class="pos">Boden · Gemeinde</div><h3>Die Gemeinde besteuert den Boden</h3><span class="regel">0,1–1 % auf den Bodenwert</span><p>Nur der Grundstückswert zählt, nicht das Haus. Wer baut oder saniert, zahlt dafür nicht mehr. Nicht auf Mieten umlegbar.</p></div>
       <div class="mass"><div class="pos">Vermögen</div><h3>Große Vermögen tragen mit</h3><span class="regel">1 % ab 2 Mio. €</span><p>Vermögen bis 2 Mio. € bleibt unberührt. Darüber greift eine Mindeststeuer, anrechenbar auf die Einkommensteuer.</p></div>
-      <div class="mass"><div class="pos">Konzerne und Plattformen</div><h3>Besteuert wird, wo die Kunden sitzen</h3><span class="regel">28 % am Ort der Nutzung</span><p>Das gilt ausdrücklich für digitale Plattformen. Gewinne lassen sich verschieben, Kundschaft nicht.</p></div>
+      <div class="mass"><div class="pos">Konzerne und Plattformen</div><h3>Besteuert wird, wo die Kunden sitzen</h3><span class="regel">28 % am Ort der Nutzung</span><p>Das gilt ausdrücklich für digitale Plattformen. Gewinne lassen sich verschieben, Kundschaft nicht.</p></div>
       <div class="mass"><div class="pos">Konsum</div><h3>Die Mehrwertsteuer wird zum Label</h3>
-        <div class="vatlbl" role="img" aria-label="Mehrwertsteuer-Label von A plus bis D">
+        <div class="vatlbl" role="img" aria-label="Die Mehrwertsteuer wird zum Label">
           <div><b class="v1">A+ · 5&nbsp;%</b><em>Grundbedarf, Reparatur</em></div>
           <div><b class="v2">A · 11&nbsp;%</b><em>nachhaltige Güter</em></div>
           <div><b class="v3">B · 17&nbsp;%</b><em>Standardgüter</em></div>
@@ -477,7 +479,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
         </div>
         <p>Wie beim Energielabel sieht man auf einen Blick, was ein Produkt kostet und warum.</p></div>
       <div class="mass"><div class="pos">Klima</div><h3>CO₂-Preis mit Rückgabe an alle</h3><span class="regel">Europäischer Preispfad · Rückgabe über die Dividende</span><p>Wer wenig verbraucht, gewinnt. Die Schweiz gibt ihre CO₂-Abgabe seit Jahren gleichmäßig an alle zurück.</p></div>
-      <div class="mass"><div class="pos">Dividende</div><h3>Jeden Monat, für alle</h3><svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Dividende 2028 bis 2060"><polyline points="10.0,63.3 18.8,64.0 27.5,64.8 36.2,65.5 45.0,65.9 53.8,66.0 62.5,66.1 71.2,66.3 80.0,64.4 88.8,62.6 97.5,60.8 106.2,59.0 115.0,57.1 123.8,55.3 132.5,53.4 141.2,51.6 150.0,49.7 158.8,47.8 167.5,45.9 176.2,44.0 185.0,42.1 193.8,40.2 202.5,38.3 211.2,36.4 220.0,34.4 228.8,32.5 237.5,30.5 246.2,28.5 255.0,26.5 263.8,24.5 272.5,22.5 281.2,20.5 290.0,18.5" fill="none" stroke="#1D7A4F" stroke-width="2.5"/><text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · 535 €</text><text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · 723 €</text></svg><p>Erwachsene voll, Kinder zur Hälfte, ohne Antrag. Sie ist, was nach den Aufgaben übrig bleibt – und wächst mit der Wirtschaft.</p></div>
+      <div class="mass"><div class="pos">Dividende</div><h3>Jeden Monat, für alle</h3><svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Jeden Monat, für alle"><polyline points="10.0,63.3 18.8,64.0 27.5,64.8 36.2,65.5 45.0,65.9 53.8,66.0 62.5,66.1 71.2,66.3 80.0,64.4 88.8,62.6 97.5,60.8 106.2,59.0 115.0,57.1 123.8,55.3 132.5,53.4 141.2,51.6 150.0,49.7 158.8,47.8 167.5,45.9 176.2,44.0 185.0,42.1 193.8,40.2 202.5,38.3 211.2,36.4 220.0,34.4 228.8,32.5 237.5,30.5 246.2,28.5 255.0,26.5 263.8,24.5 272.5,22.5 281.2,20.5 290.0,18.5" fill="none" stroke="#1D7A4F" stroke-width="2.5"/><text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · 535 €</text><text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · 723 €</text></svg><p>Erwachsene voll, Kinder zur Hälfte, ohne Antrag. Sie ist, was nach den Aufgaben übrig bleibt – und wächst mit der Wirtschaft.</p></div>
       <div class="mass"><div class="pos">Schutz</div><h3>Niemand fällt zurück</h3><span class="regel">Bestandsgarantie · Härtefallfonds</span><p>Wer heute Bürgergeld, Grundsicherung oder BAföG bekommt, erhält mindestens das bisherige Niveau. Der Fonds trägt auch Wohnkosten, Pflege und besondere Lebenslagen.</p></div>
     </div>
   </div>
@@ -490,23 +492,23 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <div class="calc">
       <div>
         <label class="lbl" for="brutto">Bruttoeinkommen im Jahr</label>
-        <div class="bigval" id="bruttoval">42.000 €</div>
+        <div class="bigval" id="bruttoval"></div>
         <input type="range" id="brutto" min="0" max="150000" step="1000" value="42000">
         <label class="lbl">Erwachsene im Haushalt</label>
         <div class="seg" id="erw"><button type="button" aria-pressed="true" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
         <label class="lbl">Kinder</label>
         <div class="seg" id="kin"><button type="button" aria-pressed="true" data-v="0">0</button><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
-        <label class="lbl" for="rjahr">Jahr</label>
+        <label class="lbl">Jahr</label>
         <div class="seg" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button><button type="button" aria-pressed="false" data-v="2045">2045</button><button type="button" aria-pressed="false" data-v="2060">2060</button></div>
       </div>
       <div>
         <div class="res-row"><span class="k">Einkommensteuer nach 28:28</span><span class="v" id="r-st"></span></div>
         <div class="res-row"><span class="k">Ihr Durchschnittssatz</span><span class="v" id="r-satz"></span></div>
-        <div class="res-row"><span class="k">Sozialabgaben</span><span class="v">0 €</span></div>
+        <div class="res-row"><span class="k">Sozialabgaben</span><span class="v" id="r-soz"></span></div>
         <div class="res-row"><span class="k">Dividende des Haushalts im Monat</span><span class="v new" id="r-mon"></span></div>
         <div class="bars"><div class="bar-lbl"><span>Einkommensteuer</span><span id="b-st"></span></div><div class="bar today"><i id="bi-st"></i></div>
         <div class="bar-lbl"><span>Dividende im Jahr</span><span id="b-dv"></span></div><div class="bar new"><i id="bi-dv"></i></div></div>
-        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub">Dividende im Jahr für Ihren Haushalt</div></div>
+        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub"></div></div>
       </div>
     </div>
     <p class="fineprint">Tarif auf das Brutto ohne Abzüge. Dividende in Preisen von 2028.</p>
@@ -516,7 +518,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 <section id="gemeinde">
   <div class="wrap">
     <h2>Ihre Gemeinde rechnet selbst</h2>
-    <p class="lede">Die ganze Verteilung sind zwei Zahlen: 3.599 € je Einwohner und 12.625 € je Kind im Jahr. Mehr Kinder heißt mehr Geld für Schulen. Und was die Gemeinde in der Verwaltung spart, landet bei ihren Bürgern.</p>
+    <p class="lede">Die ganze Verteilung sind zwei Zahlen: 3.599 € je Einwohner und 12.625 € je Kind im Jahr. Mehr Kinder heißt mehr Geld für Schulen. Und was die Gemeinde in der Verwaltung spart, landet bei ihren Bürgern.</p>
     <div class="calc">
       <div>
         <label class="lbl" for="g-ein">Einwohner</label><div class="bigval" id="g-einval"></div>
@@ -525,7 +527,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
         <input type="range" id="g-kin" min="10" max="24" step="0.5" value="15.9">
         <label class="lbl" for="g-verw">Anteil der Verwaltung am Gemeindehaushalt</label><div class="bigval" id="g-verwval" style="font-size:22px"></div>
         <input type="range" id="g-verw" min="5.5" max="25" step="0.1" value="15.7">
-        <p class="fineprint" style="margin-top:8px">Estlands Gemeinden kommen mit 5,8 % aus, Deutschlands mit 16,8 %.</p>
+        <p class="fineprint" style="margin-top:8px">Estlands Gemeinden kommen mit 5,8 % aus, Deutschlands mit 16,8 %.</p>
       </div>
       <div>
         <div class="res-row"><span class="k">Budget der Gemeinde im Jahr</span><span class="v new" id="g-bud"></span></div>
@@ -540,11 +542,11 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 <section id="zeitpfad">
   <div class="wrap">
     <h2>Die Dividende wächst mit</h2>
-    <p class="lede">Bis 2035 müssen alte Fehler gekittet werden: Die Verteidigungsausgaben sind erhöht worden, und alte Schulden müssen mit höheren Zinsen weiter bedient werden. Danach wächst die Dividende mit der Wirtschaft – und die Schulden arbeiten sich von selbst ab: von 78 % auf 30 % der Wirtschaftsleistung, ohne einen Tilgungseuro.</p>
+    <p class="lede">Bis 2035 müssen alte Fehler gekittet werden: Die Verteidigungsausgaben sind erhöht worden, und alte Schulden müssen mit höheren Zinsen weiter bedient werden. Danach wächst die Dividende mit der Wirtschaft – und die Schulden arbeiten sich von selbst ab: von 78 % auf 30 % der Wirtschaftsleistung, ohne einen Tilgungseuro.</p>
     <div class="chart-card">
       <div class="tabs" id="gtabs"><button type="button" aria-pressed="false" data-v="0,5">Zurückhaltend</button><button type="button" aria-pressed="true" data-v="1,0">Mittleres Wachstum</button><button type="button" aria-pressed="false" data-v="1,5">Kräftig</button></div>
       <div class="unit">Dividende je Erwachsenem und Monat, Euro in Preisen von 2028</div>
-      <svg id="chart" viewBox="0 0 900 360" role="img" aria-label="Dividende 2028 bis 2060"></svg>
+      <svg id="chart" viewBox="0 0 900 360" role="img" aria-label="Die Dividende wächst mit"></svg>
       <div class="legend"><span class="l-mit"><i></i>Dividende</span><span class="l-hist"><i></i>Start 2028</span></div>
     </div>
   </div>
@@ -555,7 +557,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <h2>Warum das Dach nicht ausufert</h2>
     <p class="lede">Ein gemeinsames Dach ist nur so gut wie seine Grenzen. Fünf Regeln stehen im Vertrag.</p>
     <div class="sich">
-      <div><span><b>Eine Obergrenze, keine Zuteilung</b><p>Das Dach behält höchstens 36 % dessen, was es einzieht – und nur, was die Aufgaben wirklich kosten.</p></span></div>
+      <div><span><b>Eine Obergrenze, keine Zuteilung</b><p>Das Dach behält höchstens 36 % dessen, was es einzieht – und nur, was die Aufgaben wirklich kosten.</p></span></div>
       <div><span><b>Was nicht gebraucht wird, fließt durch</b><p>Jeder Euro über dem Bedarf geht an die Gemeinden und in die Dividende. Eine Grenze, die nicht ausgeschöpft werden muss, wird nie zum Anspruch.</p></span></div>
       <div><span><b>Formel statt Verhandlung</b><p>Die Gemeinden bekommen feste Beträge je Einwohner und je Kind. Niemand muss bitten, niemand kann kürzen.</p></span></div>
       <div><span><b>Alte Schulden gemeinsam tragen</b><p>Das Dach übernimmt den Zinsdienst und garantiert einen gemeinsamen Zins. Wer mehr Altschulden mitbringt, gleicht das über dreißig Jahre aus – die Gemeinden merken davon nichts.</p></span></div>
@@ -583,7 +585,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <p class="lede">Das Dach ist kein fester Kreis, sondern ein Angebot. Gerechnet ist es für zehn Staaten – möglich sind über dreißig in Europa, und auch Partner darüber hinaus. Wählen Sie selbst: Ab der Einwohnerzahl der Vereinigten Staaten spielt der Klub in derselben Liga.</p>
     <div class="flow">
       <div class="tabs" id="raumvor"><button type="button" aria-pressed="false" data-v="zehn">Die zehn gerechneten</button><button type="button" aria-pressed="false" data-v="sechs">Die sechs Größten</button><button type="button" aria-pressed="true" data-v="europa">Ganz Europa</button><button type="button" aria-pressed="false" data-v="plus">Europa und Kanada</button></div>
-      <div class="raum" id="raum"><button type="button" aria-pressed="false" data-k="DE"><span>Deutschland</span><span>83,5</span></button><button type="button" aria-pressed="false" data-k="UK"><span>Vereinigtes Königreich</span><span>69,1</span></button><button type="button" aria-pressed="false" data-k="FR"><span>Frankreich</span><span>68,8</span></button><button type="button" aria-pressed="false" data-k="IT"><span>Italien</span><span>59,0</span></button><button type="button" aria-pressed="false" data-k="ES"><span>Spanien</span><span>48,9</span></button><button type="button" aria-pressed="false" data-k="PL"><span>Polen</span><span>36,6</span></button><button type="button" aria-pressed="false" data-k="RO"><span>Rumänien</span><span>19,1</span></button><button type="button" aria-pressed="false" data-k="NL"><span>Niederlande</span><span>18,0</span></button><button type="button" aria-pressed="false" data-k="BE"><span>Belgien</span><span>11,9</span></button><button type="button" aria-pressed="false" data-k="PT"><span>Portugal</span><span>11,3</span></button><button type="button" aria-pressed="false" data-k="CZ"><span>Tschechien</span><span>10,9</span></button><button type="button" aria-pressed="false" data-k="SE"><span>Schweden</span><span>10,6</span></button><button type="button" aria-pressed="false" data-k="EL"><span>Griechenland</span><span>10,4</span></button><button type="button" aria-pressed="false" data-k="HU"><span>Ungarn</span><span>9,6</span></button><button type="button" aria-pressed="false" data-k="AT"><span>Österreich</span><span>9,2</span></button><button type="button" aria-pressed="false" data-k="CH"><span>Schweiz</span><span>9,0</span></button><button type="button" aria-pressed="false" data-k="BG"><span>Bulgarien</span><span>6,4</span></button><button type="button" aria-pressed="false" data-k="DK"><span>Dänemark</span><span>6,0</span></button><button type="button" aria-pressed="false" data-k="FI"><span>Finnland</span><span>5,6</span></button><button type="button" aria-pressed="false" data-k="NO"><span>Norwegen</span><span>5,6</span></button><button type="button" aria-pressed="false" data-k="SK"><span>Slowakei</span><span>5,4</span></button><button type="button" aria-pressed="false" data-k="IE"><span>Irland</span><span>5,4</span></button><button type="button" aria-pressed="false" data-k="HR"><span>Kroatien</span><span>3,9</span></button><button type="button" aria-pressed="false" data-k="LT"><span>Litauen</span><span>2,9</span></button><button type="button" aria-pressed="false" data-k="SI"><span>Slowenien</span><span>2,1</span></button><button type="button" aria-pressed="false" data-k="LV"><span>Lettland</span><span>1,9</span></button><button type="button" aria-pressed="false" data-k="EE"><span>Estland</span><span>1,4</span></button><button type="button" aria-pressed="false" data-k="CY"><span>Zypern</span><span>1,0</span></button><button type="button" aria-pressed="false" data-k="LU"><span>Luxemburg</span><span>0,7</span></button><button type="button" aria-pressed="false" data-k="MT"><span>Malta</span><span>0,6</span></button><button type="button" aria-pressed="false" data-k="IS"><span>Island</span><span>0,4</span></button><button type="button" aria-pressed="false" data-k="CA" class="neu"><span>Kanada</span><span>41,7</span></button></div>
+      <div class="raum" id="raum"><button type="button" aria-pressed="false" data-k="DE" data-iso="DE" data-de="Deutschland"><span class="nm">Deutschland</span><span>83,5</span></button><button type="button" aria-pressed="false" data-k="UK" data-iso="GB" data-de="Vereinigtes Königreich"><span class="nm">Vereinigtes Königreich</span><span>69,1</span></button><button type="button" aria-pressed="false" data-k="FR" data-iso="FR" data-de="Frankreich"><span class="nm">Frankreich</span><span>68,8</span></button><button type="button" aria-pressed="false" data-k="IT" data-iso="IT" data-de="Italien"><span class="nm">Italien</span><span>59,0</span></button><button type="button" aria-pressed="false" data-k="ES" data-iso="ES" data-de="Spanien"><span class="nm">Spanien</span><span>48,9</span></button><button type="button" aria-pressed="false" data-k="PL" data-iso="PL" data-de="Polen"><span class="nm">Polen</span><span>36,6</span></button><button type="button" aria-pressed="false" data-k="RO" data-iso="RO" data-de="Rumänien"><span class="nm">Rumänien</span><span>19,1</span></button><button type="button" aria-pressed="false" data-k="NL" data-iso="NL" data-de="Niederlande"><span class="nm">Niederlande</span><span>18,0</span></button><button type="button" aria-pressed="false" data-k="BE" data-iso="BE" data-de="Belgien"><span class="nm">Belgien</span><span>11,9</span></button><button type="button" aria-pressed="false" data-k="PT" data-iso="PT" data-de="Portugal"><span class="nm">Portugal</span><span>11,3</span></button><button type="button" aria-pressed="false" data-k="CZ" data-iso="CZ" data-de="Tschechien"><span class="nm">Tschechien</span><span>10,9</span></button><button type="button" aria-pressed="false" data-k="SE" data-iso="SE" data-de="Schweden"><span class="nm">Schweden</span><span>10,6</span></button><button type="button" aria-pressed="false" data-k="EL" data-iso="GR" data-de="Griechenland"><span class="nm">Griechenland</span><span>10,4</span></button><button type="button" aria-pressed="false" data-k="HU" data-iso="HU" data-de="Ungarn"><span class="nm">Ungarn</span><span>9,6</span></button><button type="button" aria-pressed="false" data-k="AT" data-iso="AT" data-de="Österreich"><span class="nm">Österreich</span><span>9,2</span></button><button type="button" aria-pressed="false" data-k="CH" data-iso="CH" data-de="Schweiz"><span class="nm">Schweiz</span><span>9,0</span></button><button type="button" aria-pressed="false" data-k="BG" data-iso="BG" data-de="Bulgarien"><span class="nm">Bulgarien</span><span>6,4</span></button><button type="button" aria-pressed="false" data-k="DK" data-iso="DK" data-de="Dänemark"><span class="nm">Dänemark</span><span>6,0</span></button><button type="button" aria-pressed="false" data-k="FI" data-iso="FI" data-de="Finnland"><span class="nm">Finnland</span><span>5,6</span></button><button type="button" aria-pressed="false" data-k="NO" data-iso="NO" data-de="Norwegen"><span class="nm">Norwegen</span><span>5,6</span></button><button type="button" aria-pressed="false" data-k="SK" data-iso="SK" data-de="Slowakei"><span class="nm">Slowakei</span><span>5,4</span></button><button type="button" aria-pressed="false" data-k="IE" data-iso="IE" data-de="Irland"><span class="nm">Irland</span><span>5,4</span></button><button type="button" aria-pressed="false" data-k="HR" data-iso="HR" data-de="Kroatien"><span class="nm">Kroatien</span><span>3,9</span></button><button type="button" aria-pressed="false" data-k="LT" data-iso="LT" data-de="Litauen"><span class="nm">Litauen</span><span>2,9</span></button><button type="button" aria-pressed="false" data-k="SI" data-iso="SI" data-de="Slowenien"><span class="nm">Slowenien</span><span>2,1</span></button><button type="button" aria-pressed="false" data-k="LV" data-iso="LV" data-de="Lettland"><span class="nm">Lettland</span><span>1,9</span></button><button type="button" aria-pressed="false" data-k="EE" data-iso="EE" data-de="Estland"><span class="nm">Estland</span><span>1,4</span></button><button type="button" aria-pressed="false" data-k="CY" data-iso="CY" data-de="Zypern"><span class="nm">Zypern</span><span>1,0</span></button><button type="button" aria-pressed="false" data-k="LU" data-iso="LU" data-de="Luxemburg"><span class="nm">Luxemburg</span><span>0,7</span></button><button type="button" aria-pressed="false" data-k="MT" data-iso="MT" data-de="Malta"><span class="nm">Malta</span><span>0,6</span></button><button type="button" aria-pressed="false" data-k="IS" data-iso="IS" data-de="Island"><span class="nm">Island</span><span>0,4</span></button><button type="button" aria-pressed="false" data-k="CA" data-iso="CA" data-de="Kanada" class="neu"><span class="nm">Kanada</span><span>41,7</span></button></div>
       <div class="row"><div class="res-row" style="flex:1;border:none"><span class="k">Menschen im Klub</span><span class="v new" id="raumsum"></span></div><div class="res-row" style="flex:1;border:none"><span class="k">Staaten</span><span class="v" id="raumn"></span></div></div>
       <div class="schwelle"><i id="raumbar"></i><span class="us" id="raumus"><span>USA</span></span></div>
       <p class="fineprint" id="raumtext" style="margin-top:0"></p>
@@ -597,7 +599,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <div class="chart-card">
       <div class="tabs" id="ztabs"><button type="button" aria-pressed="true" data-v="schuld">Staatsschulden</button><button type="button" aria-pressed="false" data-v="co2">CO₂-Emissionen</button></div>
       <div class="unit" id="zunit"></div>
-      <svg id="chart2" viewBox="0 0 900 360" role="img" aria-label="Entwicklung bis 2060"></svg>
+      <svg id="chart2" viewBox="0 0 900 360" role="img" aria-label="Wohin die Reise geht"></svg>
       <div class="legend" id="zleg"></div>
       <p class="fineprint" id="ztext" style="margin-top:12px"></p>
     </div>
@@ -617,54 +619,65 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <div class="anl">
       <a href="dokumente/TAX-2828-Kurzfassung.pdf"><span class="t">Kurzfassung</span><span class="d">Das Konzept auf zwei Seiten.</span><span class="f">PDF</span></a>
       <a href="dokumente/TAX-2828-Gesamtkonzept.pdf"><span class="t">Gesamtkonzept</span><span class="d">Alle Bausteine, Zahlen und Rechenwege.</span><span class="f">PDF</span></a>
-      <a href="mailto:2828@archicrowd.de?subject=28%3A28%20Mitarbeit"><span class="t">Mitarbeiten</span><span class="d">Rechnungen, Daten und Logbuch für Fachleute.</span><span class="f">2828@archicrowd.de</span></a>
-      <a href="mailto:2828@archicrowd.de?subject=28%3A28%20Kritik"><span class="t">Kritik einreichen</span><span class="d">Jeder Einwand wird geprüft und beantwortet.</span><span class="f">E-Mail</span></a>
+      <a href="mailto:2828@archicrowd.de?subject=28%3A28"><span class="t">Mitarbeiten</span><span class="d">Rechnungen, Daten und Logbuch für Fachleute.</span><span class="f">2828@archicrowd.de</span></a>
+      <a href="mailto:2828@archicrowd.de?subject=28%3A28"><span class="t">Kritik einreichen</span><span class="d">Jeder Einwand wird geprüft und beantwortet.</span><span class="f">E-Mail</span></a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div><h4>Methodik</h4><p>Alle Zahlen stammen aus einer offenen Gesamtrechnung auf Grundlage amtlicher Statistiken (Eurostat, OECD). Entwickelt nach der Methodik des architektonischen Entwurfs, im Arbeitsdialog mit einem KI-System. Skripte unter MIT-Lizenz, Texte unter CC BY 4.0.</p><p class="verstamp">Modellstand <b>v3.17 · 6. Oktober 2026</b></p></div>
+    <div><h4>Methodik</h4><p>Alle Zahlen stammen aus einer offenen Gesamtrechnung auf Grundlage amtlicher Statistiken (Eurostat, OECD). Entwickelt nach der Methodik des architektonischen Entwurfs, im Arbeitsdialog mit einem KI-System. Skripte unter MIT-Lizenz, Texte unter CC BY 4.0.</p><p class="verstamp">Modellstand <b>v3.18 · 6. Oktober 2026</b></p></div>
     <div><h4>Kontakt</h4><p>Initiative 28 : 28<br><a href="mailto:2828@archicrowd.de?subject=28%3A28">Kritik einreichen</a><br><a href="#top">Nach oben</a></p></div>
     <div><h4>Impressum und Datenschutz</h4><p>Verantwortlich für den Inhalt: Initiative 28 : 28 – Arndt Hermann, 2828@archicrowd.de. Diese Seite verwendet keine Cookies, keine Tracker und lädt keine Inhalte von Dritten. Es werden keine personenbezogenen Daten erhoben. Die Schriften Space Grotesk, Source Serif 4 und IBM Plex Mono liegen lokal, unter der SIL Open Font License 1.1. Alle Modellrechnungen sind Illustrationen ohne Gewähr und ersetzen keine Steuer- oder Rechtsberatung. Die Seite ist für Suchmaschinen gesperrt.</p></div>
   </div>
+  <p class="translation-note">Deutsch ist die Ursprungsfassung dieses Entwurfs. Referenzland aller Länderangaben ist Deutschland.</p>
 </footer>
 
 <script>
-const D={"jahre": [2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060], "erw": {"0,0": [534.8061193035728, 525.7106623369808, 516.701613657419, 507.7761093267562, 500.3647689001913, 494.38056671327985, 488.36211526007463, 482.31008609481665, 483.9560523719131, 485.56974480043897, 487.1517962009546, 488.7028269857739, 490.22344540226317, 491.7142477713706, 493.17581872147576, 494.6087314176572, 496.0135477864628, 497.390818736272, 498.74108437333985, 500.06487421360265, 501.36270739033074, 502.635092857711, 503.88252959043706, 505.10550677938414, 506.30450402344974, 507.47999151763184, 508.63243023741825, 509.7622721195617, 510.8699602393102, 511.9559289841617, 513.0206042242121, 514.0644034791635, 515.0877360820571], "0,5": [534.8061193035728, 528.7738616111513, 522.7658257815825, 516.7786427053816, 512.2424232693386, 509.0696296212091, 505.79835852537207, 502.42876224190985, 507.0065937308756, 511.5668106973298, 516.1101192584634, 520.6372134897038, 525.1487756698465, 529.6454765214253, 534.1279754464146, 538.5969207573544, 543.0529499039918, 547.4966896955222, 551.9287565185201, 556.3497565506424, 560.7602859701892, 565.1609311616025, 569.5522689169815, 573.9348666336948, 578.3092825081658, 582.6760657259049, 587.0357566478664, 591.3888869931955, 595.735980018446, 600.0775506933267, 604.4141058730564, 608.746144467386, 613.074157606354], "1,0": [534.8061193035728, 531.7169354235897, 528.6207152254286, 525.5129282909724, 523.8225040009575, 523.4607025175847, 522.9643978545421, 522.332498466853, 529.9223547302119, 537.5382105762382, 545.1812701336414, 552.8527307239451, 560.5537831596984, 568.2856120384545, 576.0493960326164, 583.8463081752476, 591.6775161419387, 599.5441825288286, 607.4474651268697, 615.3885171924292, 623.3684877143099, 631.3885216772853, 639.4497603222301, 647.5533414029275, 655.700399439643, 663.8920659695399, 672.1294697940186, 680.4137372230576, 688.7459923166319, 697.1273571232878, 705.5589519159447, 714.0418954249989, 722.5773050687998], "1,5": [534.8061193035728, 534.9002601594925, 534.9849863709202, 535.0542311080922, 536.5353365079849, 539.3379234461946, 541.9971733712466, 544.5102476332447, 555.5830318268185, 566.7649444405689, 578.0587393290875, 589.4671897542298, 600.9930891056468, 612.639251623706, 624.4085131249971, 636.3037317306326, 648.3277885975335, 660.4835886529099, 672.7740613321282, 685.2021613201734, 697.7708692969013, 710.4831926862812, 723.3421664098366, 736.3508536444757, 749.5123465849186, 762.8297672109237, 776.3062680595102, 789.9450330023861, 803.7492780287778, 817.7222520338726, 831.8672376130694, 846.1875518622544, 860.6865471842954], "2,0": [534.8061193035728, 537.963459433663, 541.1399348360941, 544.3281818992161, 548.954167426973, 554.9260556026923, 560.7774869322841, 566.5039945965588, 581.1589263682248, 596.0417636012115, 611.1583427022775, 626.5145917416577, 642.1165327777994, 657.9702842189524, 674.0820632225436, 690.4581881332814, 707.1050809609341, 724.0292698987677, 741.2373918836201, 758.7361951986228, 776.5325421195862, 794.6334116060866, 813.0459020383147, 831.777234000754, 850.8347531137819, 870.2259329143052, 889.9583777865596, 910.0398259442206, 930.4781524649973, 951.2813723788973, 972.457643811377, 994.0152711826064, 1015.9627084641035]}, "a": [9.579234491907936, 9.746958732252383, 9.912591125556983, 10.076244550417433, 10.21000604248618, 10.316427503107247, 10.424326285957106, 10.533659362232974, 10.487242099255315, 10.44217679539351, 10.398424073197582, 10.355945702133575, 10.314704565178229, 10.27466462638663, 10.235790899404494, 10.198049416897568, 10.161407200871425, 10.125832233855752, 10.091293430927914, 10.057760612551373, 10.025204478205216, 9.993596580781764, 9.962909301729868, 9.9331158269222, 9.904190123225439, 9.876106915752853, 9.848841665779469, 9.822370549300455, 9.796670436214034, 9.771718870110712, 9.747494048651177, 9.723974804515706, 9.701140586908453], "div": [10.870765508092065, 10.703041267747617, 10.537408874443019, 10.37375544958257, 10.23999395751382, 10.133572496892755, 10.025673714042897, 9.916340637767027, 9.962757900744686, 10.00782320460649, 10.05157592680242, 10.094054297866426, 10.135295434821773, 10.175335373613374, 10.214209100595506, 10.251950583102433, 10.288592799128574, 10.324167766144251, 10.358706569072085, 10.392239387448628, 10.424795521794787, 10.456403419218235, 10.487090698270132, 10.5168841730778, 10.545809876774564, 10.573893084247148, 10.60115833422053, 10.627629450699546, 10.653329563785968, 10.678281129889287, 10.702505951348824, 10.726025195484295, 10.748859413091546], "b": 10.35, "q": 30.8, "og": 36.0, "einzugAnteil": 0.9733766233766233, "einw": 3598.675392804394, "kind": 12624.65648994137, "kindAnt": 15.86, "fachKopf": 5600.945912109095, "verwAnt": 15.65217391304348, "tarif": [[12348, 0], [25000, 9], [40000, 16], [55000, 21], [70000, 26], [1000000000000.0, 28]], "raum": {"DE": 83.516593, "UK": 69.144015, "FR": 68.775952, "IT": 58.957347, "ES": 48.873996, "PL": 36.559233, "RO": 19.055364, "NL": 17.993485, "BE": 11.850296, "PT": 11.295785, "CZ": 10.905028, "SE": 10.569709, "EL": 10.37405, "HU": 9.562065, "AT": 9.177982, "CH": 9.006644, "BG": 6.441421, "DK": 5.976992, "FI": 5.619911, "NO": 5.572272, "SK": 5.422069, "IE": 5.39598, "HR": 3.868159, "LT": 2.888278, "SI": 2.1274, "LV": 1.86957, "EE": 1.372341, "CY": 0.974666, "LU": 0.677012, "MT": 0.568847, "IS": 0.386506, "CA": 41.651653, "US": 341.784857}, "us": 341.784857, "d": [78.4, 76.11650485436894, 73.89951927608635, 71.74710609328771, 69.65738455659002, 67.62852869571846, 65.6587657239985, 63.74637448931893, 61.88968397021255, 60.08707181574034, 58.33696292790324, 56.637828085342946, 54.98818260712907, 53.38658505546511, 51.83163597617972, 50.32197667590264, 48.85628803485693, 47.43328935423003, 46.05173723711653, 44.71042450205488, 43.408179128208616, 42.1438632312705, 40.91637206919466, 39.72463307688802, 38.56760492901749, 37.44427663011407, 36.353666631178704, 35.294821972018156, 34.26681744856131, 33.26875480442846, 32.29976194604705, 31.358992180628203, 30.44562347633806], "zeit": {"schuld_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "schuld_hist": [85.4, 87.3, 90.8, 92.8, 92.9, 91.0, 89.9, 87.5, 85.5, 83.6, 96.5, 93.8, 89.3, 86.9, 87.0, 87.8], "co2_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "co2_hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 649], "co2_ziel_jahre": [2025, 2030, 2040, 2045], "co2_ziel": [649, 438, 150, 0]}};
-const de=(x,nk=0)=>Number(x).toLocaleString('de-DE',{minimumFractionDigits:nk,maximumFractionDigits:nk});
+const D={"lang": "de", "fmt": [".", ",", "nach", " "], "jahre": [2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060], "erw": {"0,0": [534.8061193035728, 525.7106623369808, 516.701613657419, 507.7761093267562, 500.3647689001913, 494.38056671327985, 488.36211526007463, 482.31008609481665, 483.9560523719131, 485.56974480043897, 487.1517962009546, 488.7028269857739, 490.22344540226317, 491.7142477713706, 493.17581872147576, 494.6087314176572, 496.0135477864628, 497.390818736272, 498.74108437333985, 500.06487421360265, 501.36270739033074, 502.635092857711, 503.88252959043706, 505.10550677938414, 506.30450402344974, 507.47999151763184, 508.63243023741825, 509.7622721195617, 510.8699602393102, 511.9559289841617, 513.0206042242121, 514.0644034791635, 515.0877360820571], "0,5": [534.8061193035728, 528.7738616111513, 522.7658257815825, 516.7786427053816, 512.2424232693386, 509.0696296212091, 505.79835852537207, 502.42876224190985, 507.0065937308756, 511.5668106973298, 516.1101192584634, 520.6372134897038, 525.1487756698465, 529.6454765214253, 534.1279754464146, 538.5969207573544, 543.0529499039918, 547.4966896955222, 551.9287565185201, 556.3497565506424, 560.7602859701892, 565.1609311616025, 569.5522689169815, 573.9348666336948, 578.3092825081658, 582.6760657259049, 587.0357566478664, 591.3888869931955, 595.735980018446, 600.0775506933267, 604.4141058730564, 608.746144467386, 613.074157606354], "1,0": [534.8061193035728, 531.7169354235897, 528.6207152254286, 525.5129282909724, 523.8225040009575, 523.4607025175847, 522.9643978545421, 522.332498466853, 529.9223547302119, 537.5382105762382, 545.1812701336414, 552.8527307239451, 560.5537831596984, 568.2856120384545, 576.0493960326164, 583.8463081752476, 591.6775161419387, 599.5441825288286, 607.4474651268697, 615.3885171924292, 623.3684877143099, 631.3885216772853, 639.4497603222301, 647.5533414029275, 655.700399439643, 663.8920659695399, 672.1294697940186, 680.4137372230576, 688.7459923166319, 697.1273571232878, 705.5589519159447, 714.0418954249989, 722.5773050687998], "1,5": [534.8061193035728, 534.9002601594925, 534.9849863709202, 535.0542311080922, 536.5353365079849, 539.3379234461946, 541.9971733712466, 544.5102476332447, 555.5830318268185, 566.7649444405689, 578.0587393290875, 589.4671897542298, 600.9930891056468, 612.639251623706, 624.4085131249971, 636.3037317306326, 648.3277885975335, 660.4835886529099, 672.7740613321282, 685.2021613201734, 697.7708692969013, 710.4831926862812, 723.3421664098366, 736.3508536444757, 749.5123465849186, 762.8297672109237, 776.3062680595102, 789.9450330023861, 803.7492780287778, 817.7222520338726, 831.8672376130694, 846.1875518622544, 860.6865471842954], "2,0": [534.8061193035728, 537.963459433663, 541.1399348360941, 544.3281818992161, 548.954167426973, 554.9260556026923, 560.7774869322841, 566.5039945965588, 581.1589263682248, 596.0417636012115, 611.1583427022775, 626.5145917416577, 642.1165327777994, 657.9702842189524, 674.0820632225436, 690.4581881332814, 707.1050809609341, 724.0292698987677, 741.2373918836201, 758.7361951986228, 776.5325421195862, 794.6334116060866, 813.0459020383147, 831.777234000754, 850.8347531137819, 870.2259329143052, 889.9583777865596, 910.0398259442206, 930.4781524649973, 951.2813723788973, 972.457643811377, 994.0152711826064, 1015.9627084641035]}, "a": [9.579234491907936, 9.746958732252383, 9.912591125556983, 10.076244550417433, 10.21000604248618, 10.316427503107247, 10.424326285957106, 10.533659362232974, 10.487242099255315, 10.44217679539351, 10.398424073197582, 10.355945702133575, 10.314704565178229, 10.27466462638663, 10.235790899404494, 10.198049416897568, 10.161407200871425, 10.125832233855752, 10.091293430927914, 10.057760612551373, 10.025204478205216, 9.993596580781764, 9.962909301729868, 9.9331158269222, 9.904190123225439, 9.876106915752853, 9.848841665779469, 9.822370549300455, 9.796670436214034, 9.771718870110712, 9.747494048651177, 9.723974804515706, 9.701140586908453], "div": [10.870765508092065, 10.703041267747617, 10.537408874443019, 10.37375544958257, 10.23999395751382, 10.133572496892755, 10.025673714042897, 9.916340637767027, 9.962757900744686, 10.00782320460649, 10.05157592680242, 10.094054297866426, 10.135295434821773, 10.175335373613374, 10.214209100595506, 10.251950583102433, 10.288592799128574, 10.324167766144251, 10.358706569072085, 10.392239387448628, 10.424795521794787, 10.456403419218235, 10.487090698270132, 10.5168841730778, 10.545809876774564, 10.573893084247148, 10.60115833422053, 10.627629450699546, 10.653329563785968, 10.678281129889287, 10.702505951348824, 10.726025195484295, 10.748859413091546], "b": 10.35, "q": 30.8, "og": 36.0, "einzugAnteil": 0.9733766233766233, "einw": 3598.675392804394, "kind": 12624.65648994137, "fachKopf": 5600.945912109095, "verwAnt": 15.65217391304348, "tarif": [[12348, 0], [25000, 9], [40000, 16], [55000, 21], [70000, 26], [1000000000000.0, 28]], "raum": {"DE": 83.516593, "UK": 69.144015, "FR": 68.775952, "IT": 58.957347, "ES": 48.873996, "PL": 36.559233, "RO": 19.055364, "NL": 17.993485, "BE": 11.850296, "PT": 11.295785, "CZ": 10.905028, "SE": 10.569709, "EL": 10.37405, "HU": 9.562065, "AT": 9.177982, "CH": 9.006644, "BG": 6.441421, "DK": 5.976992, "FI": 5.619911, "NO": 5.572272, "SK": 5.422069, "IE": 5.39598, "HR": 3.868159, "LT": 2.888278, "SI": 2.1274, "LV": 1.86957, "EE": 1.372341, "CY": 0.974666, "LU": 0.677012, "MT": 0.568847, "IS": 0.386506, "CA": 41.651653, "US": 341.784857}, "us": 341.784857, "d": [78.4, 76.11650485436894, 73.89951927608635, 71.74710609328771, 69.65738455659002, 67.62852869571846, 65.6587657239985, 63.74637448931893, 61.88968397021255, 60.08707181574034, 58.33696292790324, 56.637828085342946, 54.98818260712907, 53.38658505546511, 51.83163597617972, 50.32197667590264, 48.85628803485693, 47.43328935423003, 46.05173723711653, 44.71042450205488, 43.408179128208616, 42.1438632312705, 40.91637206919466, 39.72463307688802, 38.56760492901749, 37.44427663011407, 36.353666631178704, 35.294821972018156, 34.26681744856131, 33.26875480442846, 32.29976194604705, 31.358992180628203, 30.44562347633806], "zeit": {"schuld_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "schuld_hist": [85.4, 87.3, 90.8, 92.8, 92.9, 91.0, 89.9, 87.5, 85.5, 83.6, 96.5, 93.8, 89.3, 86.9, 87.0, 87.8], "schuld_prog_jahre": [2024, 2028], "schuld_prog": [78.45, 78.4], "co2_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "co2_hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 649], "co2_ziel_jahre": [2025, 2030, 2040, 2045], "co2_ziel": [649, 438, 150, 0]}, "T": {"js_fluss": "Im Jahr {j} behält das Dach {a} von {hundert} – erlaubt wären bis zu {cap}. Die Gemeinde verwendet {b} für ihre Aufgaben, {d} gehen als Dividende an die Bürger.", "js_rechner_sub": "Dividende im Jahr {j} für {hh}", "js_erw_1": "{n} Erwachsenen", "js_erw_n": "{n} Erwachsene", "js_kind_1": "{n} Kind", "js_kind_n": "{n} Kinder", "js_und": " und ", "js_mio": "{x} Mio €", "js_monat": "{x} im Monat", "js_mio_menschen": "{x} Mio", "js_raum_ueber": "Der Klub ist größer als die Vereinigten Staaten ({us} Mio) – um {x} Mio Menschen.", "js_raum_unter": "Noch {x} Mio Menschen bis zur Größe der Vereinigten Staaten.", "js_schuld_unit": "Staatsschulden in % der Wirtschaftsleistung", "js_schuld_l1": "Euroraum bis heute", "js_schuld_l2": "Klub bis zum Start (Schätzung)", "js_schuld_l3": "Klub mit 28:28, ab 2028", "js_schuld_text": "Ohne neue Schulden sinkt die Last von selbst, weil die Wirtschaft wächst: von {a} auf {b} bis 2060 – ohne einen Tilgungseuro.", "js_co2_unit": "Treibhausgase Deutschlands in Mio. Tonnen CO₂-Äquivalenten", "js_co2_l1": "bis heute", "js_co2_l2": "Klimaziel bis 2045", "js_co2_text": "Seit 1990 fast halbiert – die zweite Hälfte steht noch bevor. TAX 28:28 setzt dafür auf einen gemeinsamen europäischen CO₂-Preis und gibt die Einnahmen über die Dividende an alle zurück."}};
+const T=D.T;
+const [TAU,DEZ,EURPOS,PSP]=D.fmt;
+function zahl(x,nk=0){const s=Math.abs(x).toFixed(nk).split('.');s[0]=s[0].replace(/\B(?=(\d{3})+(?!\d))/g,TAU);return (x<0?'−':'')+s.join(DEZ);}
+const eur=(x,nk=0)=>EURPOS==='vor'?'€'+zahl(x,nk):zahl(x,nk)+' €';
+const pct=(x,nk=0)=>zahl(x,nk)+(PSP?' ':'')+'%';
+const fill=(s,o)=>s.replace(/\{(\w+)\}/g,(m,k)=>o[k]);
 const $=id=>document.getElementById(id);
 function seg(id,cb){const el=$(id);el.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
   el.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));cb(b.dataset.v);});}
 const val=id=>$(id).querySelector('[aria-pressed=true]').dataset.v;
 const idx=j=>D.jahre.indexOf(+j);
 
+// Ländernamen in der Sprache der Seite
+if(D.lang!=='de'&&window.Intl&&Intl.DisplayNames){try{const dn=new Intl.DisplayNames([D.lang],{type:'region'});
+  document.querySelectorAll('#raum button').forEach(b=>{const n=dn.of(b.dataset.iso);if(n)b.querySelector('.nm').textContent=n;});}catch(e){}}
+
 // Fluss des Steuer-Euros
-function fluss(){const j=+$('jahr').value,i=idx(j);const a=D.a[i]/D.q*100,b=D.b/D.q*100,d=D.div[i]/D.q*100;
+function fluss(){const j=+$('jahr').value,i=idx(j);const a=D.a[i]/D.q*100,b=D.b/D.q*100,d=D.div[i]/D.q*100,c=D.og*D.einzugAnteil;
   $('jahrval').textContent=j;
-  [['sa',a],['sb',b],['sd',d]].forEach(([k,v])=>{$(k).style.flexBasis=v+'%';$(k).textContent=de(v)+' €';});
-  $('cap').style.left=(D.og*D.einzugAnteil)+'%';
-  $('flusstext').textContent='Im Jahr '+j+' behält das Dach '+de(a)+' € von 100 € – erlaubt wären bis zu '+de(D.og*D.einzugAnteil)+' €. Die Gemeinde verwendet '+de(b)+' € für ihre Aufgaben, '+de(d)+' € gehen als Dividende an die Bürger.';}
+  [['sa',a],['sb',b],['sd',d]].forEach(([k,v])=>{$(k).style.flexBasis=v+'%';$(k).textContent=eur(v);});
+  $('cap').style.left=c+'%';
+  $('flusstext').textContent=fill(T.js_fluss,{j:j,a:eur(a),cap:eur(c),b:eur(b),d:eur(d),hundert:eur(100)});}
 $('jahr').addEventListener('input',fluss);fluss();
 
 // Haushaltsrechner
 function steuer(x){let s=0,u=0;for(const [g,p] of D.tarif){if(x>u)s+=(Math.min(x,g)-u)*p/100;u=g;}return s;}
 function rechner(){const br=+$('brutto').value,e=+val('erw'),k=+val('kin'),j=val('rj'),i=idx(j);
   const erw=D.erw['1,0'][i],mon=e*erw+k*erw/2,jahr=mon*12,st=steuer(br);
-  $('bruttoval').textContent=de(br)+' €';$('r-st').textContent=de(st)+' €';
-  $('r-satz').textContent=br?de(st/br*100,1)+' %':'–';$('r-mon').textContent=de(mon)+' €';
-  $('r-jahr').textContent=de(jahr)+' €';$('r-jahrsub').textContent='Dividende im Jahr '+j+' für '+e+(e>1?' Erwachsene':' Erwachsenen')+(k?' und '+k+(k>1?' Kinder':' Kind'):'');
+  $('bruttoval').textContent=eur(br);$('r-st').textContent=eur(st);$('r-soz').textContent=eur(0);
+  $('r-satz').textContent=br?pct(st/br*100,1):'–';$('r-mon').textContent=eur(mon);
+  const hh=fill(e>1?T.js_erw_n:T.js_erw_1,{n:e})+(k?T.js_und+fill(k>1?T.js_kind_n:T.js_kind_1,{n:k}):'');
+  $('r-jahr').textContent=eur(jahr);$('r-jahrsub').textContent=fill(T.js_rechner_sub,{j:j,hh:hh});
   const m=Math.max(st,jahr,1);$('bi-st').style.width=st/m*100+'%';$('bi-dv').style.width=jahr/m*100+'%';
-  $('b-st').textContent=de(st)+' €';$('b-dv').textContent=de(jahr)+' €';}
+  $('b-st').textContent=eur(st);$('b-dv').textContent=eur(jahr);}
 $('brutto').addEventListener('input',rechner);['erw','kin','rj'].forEach(x=>seg(x,rechner));rechner();
 
 // Gemeinderechner
 function gemeinde(){const n=+$('g-ein').value,k=+$('g-kin').value/100,v=+$('g-verw').value;
   const bud=n*D.einw+n*k*D.kind,sch=n*k*D.kind,plus=(D.verwAnt-v)/100*D.fachKopf/12;
-  $('g-einval').textContent=de(n);$('g-kinval').textContent=de(k*100,1)+' %';$('g-verwval').textContent=de(v,1)+' %';
-  $('g-bud').textContent=de(bud/1e6,1)+' Mio €';$('g-sch').textContent=de(sch/1e6,1)+' Mio €';$('g-kopf').textContent=de(bud/n)+' €';
-  const pb=$('g-plus');pb.textContent=Math.abs(plus)<0.5?'± 0 € im Monat':(plus>0?'+':'−')+de(Math.abs(plus))+' € im Monat';pb.classList.toggle('neg',plus<=-0.5);}
+  $('g-einval').textContent=zahl(n);$('g-kinval').textContent=pct(k*100,1);$('g-verwval').textContent=pct(v,1);
+  $('g-bud').textContent=fill(T.js_mio,{x:zahl(bud/1e6,1)});$('g-sch').textContent=fill(T.js_mio,{x:zahl(sch/1e6,1)});$('g-kopf').textContent=eur(bud/n);
+  const pb=$('g-plus');pb.textContent=Math.abs(plus)<0.5?fill(T.js_monat,{x:'± '+eur(0)}):fill(T.js_monat,{x:(plus>0?'+':'−')+eur(Math.abs(plus))});pb.classList.toggle('neg',plus<=-0.5);}
 ['g-ein','g-kin','g-verw'].forEach(x=>$(x).addEventListener('input',gemeinde));gemeinde();
 
 // Möglichkeitsraum
@@ -672,44 +685,44 @@ const VOR={zehn:['DE','FR','ES','NL','IE','BE','AT','DK','SI','EE'],sechs:['DE',
   europa:Object.keys(D.raum).filter(k=>k!=='US'&&k!=='CA'),plus:Object.keys(D.raum).filter(k=>k!=='US')};
 const SK=600;
 function raum(){const on=[...document.querySelectorAll('#raum button[aria-pressed=true]')].map(b=>b.dataset.k);
-  const sum=on.reduce((a,k)=>a+D.raum[k],0);$('raumsum').textContent=de(sum,1)+' Mio';$('raumn').textContent=on.length;
+  const sum=on.reduce((a,k)=>a+D.raum[k],0);$('raumsum').textContent=fill(T.js_mio_menschen,{x:zahl(sum,1)});$('raumn').textContent=on.length;
   const bar=$('raumbar');bar.style.width=Math.min(sum/SK*100,100)+'%';bar.classList.toggle('unter',sum<D.us);
   $('raumus').style.left=(D.us/SK*100)+'%';
-  $('raumtext').textContent=sum>=D.us?'Der Klub ist größer als die Vereinigten Staaten ('+de(D.us,1)+' Mio) – um '+de(sum-D.us,1)+' Mio Menschen.':'Noch '+de(D.us-sum,1)+' Mio Menschen bis zur Größe der Vereinigten Staaten.';}
+  $('raumtext').textContent=sum>=D.us?fill(T.js_raum_ueber,{us:zahl(D.us,1),x:zahl(sum-D.us,1)}):fill(T.js_raum_unter,{x:zahl(D.us-sum,1)});}
 function vorwahl(v){const s=new Set(VOR[v]);document.querySelectorAll('#raum button').forEach(b=>b.setAttribute('aria-pressed',s.has(b.dataset.k)?'true':'false'));raum();}
 $('raum').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
   document.querySelectorAll('#raumvor button').forEach(x=>x.setAttribute('aria-pressed','false'));raum();});
 seg('raumvor',vorwahl);vorwahl('europa');
 
 // Wohin die Reise geht
-function chart2(t){const Z=D.zeit,W=900,H=360,L=60,R=30,T=20,B=40;let ser,lo,hi,x0=2010,x1=2060,step;
-  if(t==='schuld'){ser=[['hist',Z.schuld_hist_jahre,Z.schuld_hist],['mit',D.jahre,D.d]];lo=20;hi=100;step=20;
-    $('zunit').textContent='Staatsschulden in % der Wirtschaftsleistung';
-    $('zleg').innerHTML='<span class="l-hist"><i></i>Euroraum bis heute</span><span class="l-mit"><i></i>Klub mit 28:28, ab 2028</span>';
-    $('ztext').textContent='Ohne neue Schulden sinkt die Last von selbst, weil die Wirtschaft wächst: von '+de(D.d[0])+' auf '+de(D.d[D.d.length-1])+' % bis 2060 – ohne einen Tilgungseuro.';}
+function chart2(t){const Z=D.zeit,W=900,H=360,L=60,R=30,TP=20,B=40;let ser,lo,hi,x0=2010,x1=2060,step;
+  if(t==='schuld'){ser=[['hist',Z.schuld_hist_jahre,Z.schuld_hist],['prog',Z.schuld_prog_jahre,Z.schuld_prog],['mit',D.jahre,D.d]];lo=20;hi=100;step=20;
+    $('zunit').textContent=T.js_schuld_unit;
+    $('zleg').innerHTML='<span class="l-hist"><i></i>'+T.js_schuld_l1+'</span><span class="l-prog"><i></i>'+T.js_schuld_l2+'</span><span class="l-mit"><i></i>'+T.js_schuld_l3+'</span>';
+    $('ztext').textContent=fill(T.js_schuld_text,{a:pct(D.d[0]),b:pct(D.d[D.d.length-1])});}
   else{ser=[['hist',Z.co2_hist_jahre,Z.co2_hist],['ohne',Z.co2_ziel_jahre,Z.co2_ziel]];lo=0;hi=1000;step=200;x1=2045;
-    $('zunit').textContent='Treibhausgase Deutschlands in Mio. Tonnen CO₂-Äquivalenten';
-    $('zleg').innerHTML='<span class="l-hist"><i></i>bis heute</span><span class="l-ohne"><i></i>Klimaziel bis 2045</span>';
-    $('ztext').textContent='Seit 1990 fast halbiert – die zweite Hälfte steht noch bevor. TAX 28:28 setzt dafür auf einen gemeinsamen europäischen CO₂-Preis und gibt die Einnahmen über die Dividende an alle zurück.';}
-  const X=x=>L+(x-x0)/(x1-x0)*(W-L-R),Y=y=>T+(hi-y)/(hi-lo)*(H-T-B);let g='';
-  for(let y=lo;y<=hi;y+=step)g+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${de(y)}</text>`;
+    $('zunit').textContent=T.js_co2_unit;
+    $('zleg').innerHTML='<span class="l-hist"><i></i>'+T.js_co2_l1+'</span><span class="l-ohne"><i></i>'+T.js_co2_l2+'</span>';
+    $('ztext').textContent=T.js_co2_text;}
+  const X=x=>L+(x-x0)/(x1-x0)*(W-L-R),Y=y=>TP+(hi-y)/(hi-lo)*(H-TP-B);let g='';
+  for(let y=lo;y<=hi;y+=step)g+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${zahl(y)}</text>`;
   for(let x=x0;x<=x1;x+=(x1-x0>40?10:5))g+=`<text class="axis" x="${X(x)}" y="${H-12}" text-anchor="middle">${x}</text>`;
-  g+=`<line class="marker" x1="${X(2026)}" x2="${X(2026)}" y1="${T}" y2="${H-B}"/>`;
+  g+=`<line class="marker" x1="${X(2026)}" x2="${X(2026)}" y1="${TP}" y2="${H-B}"/>`;
   for(const [c,xs,ys] of ser){g+=`<polyline class="${c}" points="${ys.map((v,i)=>X(xs[i])+','+Y(v)).join(' ')}"/>`;
-    const e=ys[ys.length-1];g+=`<text class="axis" x="${X(xs[xs.length-1])-4}" y="${Y(e)-10}" text-anchor="end">${de(e)}</text>`;}
+    if(c!=='prog'){const e=ys[ys.length-1];g+=`<text class="axis" x="${X(xs[xs.length-1])-4}" y="${Y(e)-10}" text-anchor="end">${zahl(e)}</text>`;}}
   $('chart2').innerHTML=g;}
 seg('ztabs',chart2);chart2('schuld');
 
 // Zeitpfad
-function chart(f){const s=D.erw[f],xs=D.jahre,W=900,H=360,L=60,R=30,T=20,B=40;
+function chart(f){const s=D.erw[f],xs=D.jahre,W=900,H=360,L=60,R=30,TP=20,B=40;
   const all=[].concat(D.erw['0,5'],D.erw['1,5']);const lo=Math.floor(Math.min(...all)/100)*100,hi=Math.ceil(Math.max(...all)/100)*100;
-  const X=x=>L+(x-xs[0])/(xs[xs.length-1]-xs[0])*(W-L-R),Y=y=>T+(hi-y)/(hi-lo)*(H-T-B);let g='';
-  for(let y=lo;y<=hi;y+=100)g+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${de(y)}</text>`;
+  const X=x=>L+(x-xs[0])/(xs[xs.length-1]-xs[0])*(W-L-R),Y=y=>TP+(hi-y)/(hi-lo)*(H-TP-B);let g='';
+  for(let y=lo;y<=hi;y+=100)g+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${zahl(y)}</text>`;
   for(const x of [2028,2035,2040,2050,2060])g+=`<text class="axis" x="${X(x)}" y="${H-12}" text-anchor="middle">${x}</text>`;
   g+=`<line class="hist" x1="${L}" x2="${W-R}" y1="${Y(s[0])}" y2="${Y(s[0])}" stroke-dasharray="2 5" stroke-width="1.5"/>`;
   g+=`<polyline class="mit" points="${s.map((v,i)=>X(xs[i])+','+Y(v)).join(' ')}"/>`;
-  const e=s[s.length-1];g+=`<text class="axis" x="${W-R}" y="${Y(e)-10}" text-anchor="end" style="fill:#1D7A4F;font-size:14px">${de(e)} €</text>`;
-  g+=`<text class="axis" x="${L+6}" y="${Y(s[0])-8}">${de(s[0])} €</text>`;
+  const e=s[s.length-1];g+=`<text class="axis" x="${W-R}" y="${Y(e)-10}" text-anchor="end" style="fill:#1D7A4F;font-size:14px">${eur(e)}</text>`;
+  g+=`<text class="axis" x="${L+6}" y="${Y(s[0])-8}">${eur(s[0])}</text>`;
   $('chart').innerHTML=g;}
 seg('gtabs',chart);chart('1,0');
 </script>

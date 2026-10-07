@@ -1,0 +1,729 @@
+<!DOCTYPE html><html lang="pl"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAX 28:28 — Prosty system podatkowy na XXI wiek</title>
+<meta name="description" content="Najwyżej 28% od każdego dochodu i dywidenda co miesiąc. Gminy decydują same, wspólny dach chroni wspólne interesy.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SpaceGrotesk-400.woff2') format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/SpaceGrotesk-500.woff2') format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/SpaceGrotesk-700.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SourceSerif4-400.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/SourceSerif4-600.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/IBMPlexMono-400.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/IBMPlexMono-500.woff2') format('woff2')}
+
+:root{
+  --paper:#F6F7F4; --ink:#0F3B5C; --line:#B9C9D6; --line-soft:#D8E1E8;
+  --accent:#1D7A4F; --accent-bg:#E7F2EC; --warn:#B4452F; --dim:#5A7186;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px;min-width:0}
+a{color:var(--ink)}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* Navigationsleiste */
+.titleblock{border-bottom:1.5px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:50}
+.titleblock .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.tb-left{font-family:var(--disp);font-size:20px;font-weight:700;letter-spacing:-.5px;text-decoration:none;white-space:nowrap}
+.tb-right{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;flex-wrap:wrap;justify-content:flex-end}
+.tb-right a{text-decoration:none;color:var(--dim);text-transform:uppercase}
+.tb-right a:hover,.tb-right a:focus-visible{color:var(--ink)}
+.langsel{display:flex;gap:0;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.langsel a{padding:5px 7px;font-size:11px;border-right:1px solid var(--line);color:var(--dim)}
+.langsel a:last-child{border-right:none}
+.langsel a.active{background:var(--ink);color:var(--paper)}
+@media(max-width:860px){.tb-right .opt{display:none}}
+@media(max-width:640px){.tb-right{gap:10px}.tb-right a{font-size:11px}.tb-left{font-size:17px}}
+
+/* Kopf */
+.hero{padding:64px 0 52px;border-bottom:1px solid var(--line)}
+.hero-mark{display:block;margin:0 auto 6px;max-width:520px;width:100%;height:auto}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(25px,3.7vw,38px);line-height:1.15;text-align:center;max-width:820px;margin:16px auto 6px;text-wrap:balance}
+.hero .claim2{font-family:var(--disp);font-weight:500;font-size:clamp(17px,2.1vw,21px);text-align:center;color:var(--accent);margin:0 auto 16px}
+.hero p.sub{text-align:center;max-width:660px;margin:0 auto 26px;color:var(--dim);font-size:18px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.btn{font-family:var(--disp);font-weight:500;font-size:16px;text-decoration:none;padding:13px 26px;border:1.5px solid var(--ink);border-radius:3px;transition:background .15s,color .15s}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:#0a2c46}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.opensrc{text-align:center;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-bottom:34px}
+.stamps{display:flex;gap:0;justify-content:center;flex-wrap:wrap;border:1px solid var(--line);max-width:880px;margin:0 auto}
+.stamp{flex:1 1 240px;padding:18px 20px;border-right:1px solid var(--line);text-align:center}
+.stamp:last-child{border-right:none}
+.stamp .val{font-family:var(--mono);font-size:26px;font-weight:500;color:var(--accent)}
+.stamp .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--dim);text-transform:uppercase;margin-top:5px;line-height:1.45}
+@media(max-width:720px){.stamp{border-right:none;border-bottom:1px solid var(--line)}.stamp:last-child{border-bottom:none}}
+
+/* Sektionen */
+section{padding:60px 0;border-bottom:1px solid var(--line);overflow-x:clip;scroll-margin-top:72px}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(23px,3vw,31px);margin-bottom:14px;text-wrap:balance}
+.lede{max-width:700px;color:#2c4a63;margin-bottom:34px}
+.fineprint{font-size:13.5px;color:var(--dim);margin-top:20px;line-height:1.6;max-width:820px}
+
+/* Befund */
+.befund-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.befund{background:var(--paper);padding:22px}
+.befund .num{font-family:var(--mono);font-size:24px;color:var(--warn);font-weight:500}
+.befund h3{font-family:var(--disp);font-size:16.5px;font-weight:500;margin:8px 0 6px}
+.befund p{font-size:15px;color:var(--dim);line-height:1.55}
+
+/* Bauteile */
+.mass-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.mass{border:1px solid var(--line);border-radius:3px;padding:20px 22px;background:#fff}
+.mass .pos{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.mass h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 4px}
+.mass .regel{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--paper);border:1px solid var(--line-soft);border-radius:2px;padding:3px 8px;display:inline-block;margin:4px 0 8px}
+.mass p{font-size:15px;color:var(--dim);line-height:1.55}
+.vatlbl,.taxlbl{display:block;margin:10px 0}
+.vatlbl>div,.taxlbl>div{display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.vatlbl b,.taxlbl b{font-weight:400;height:19px;line-height:19px;font-family:var(--mono);font-size:10.5px;
+ letter-spacing:.02em;padding:0 11px 0 8px;white-space:nowrap;flex:0 0 auto;
+ clip-path:polygon(0 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,0 100%)}
+.vatlbl em,.taxlbl em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--dim);
+ white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.vatlbl b{color:#fff}
+/* Leiter um 8px verbreitert: "A+ · 5 %" brauchte 60px bei 52px Kasten.
+   Abstand von 12px je Stufe bleibt, die Proportion also auch. */
+.vatlbl .v1{width:60px;background:#1D7A4F}
+.vatlbl .v2{width:72px;background:#5A9E3C}
+.vatlbl .v3{width:84px;background:#B79A1E}
+.vatlbl .v4{width:96px;background:#C9702A}
+.vatlbl .v5{width:108px;background:#B4452F}
+.taxlbl .t1{width:46px;background:#DCE7EF;color:var(--ink)}
+.taxlbl .t2{width:58px;background:#B9CFE0;color:var(--ink)}
+.taxlbl .t3{width:70px;background:#8FB3CD;color:var(--ink)}
+.taxlbl .t4{width:82px;background:#6497B8;color:#fff}
+.taxlbl .t5{width:94px;background:#3D7196;color:#fff}
+.taxlbl .t6{width:106px;background:#0F3B5C;color:#fff}
+.spark{width:100%;height:auto;display:block;margin:10px 0 8px}
+
+/* Tabellen */
+.tscroll{overflow-x:auto;max-width:100%;min-width:0;border:1px solid var(--line);background:#fff}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:150px}
+thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);border-bottom:1.5px solid var(--ink);vertical-align:bottom;font-weight:400;white-space:normal;max-width:110px;line-height:1.35}
+tbody td{font-family:var(--mono);font-size:14px}
+tbody td:first-child{font-family:var(--body);font-size:15px}
+tbody tr:last-child td{border-bottom:none}
+td.pos{color:var(--accent);font-weight:500}
+td.neg{color:var(--warn);font-weight:500}
+tr.tot td{border-top:1.5px solid var(--ink);font-weight:500}
+
+/* Rechner */
+.calibrate{font-size:13px;color:var(--dim);border-left:2px solid var(--line);padding:6px 12px;margin-bottom:22px;background:#fff}
+.calc{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:30px}
+@media(max-width:860px){.calc{grid-template-columns:1fr;padding:22px}}
+.calc label.lbl{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin:18px 0 8px}
+.calc label.lbl:first-child{margin-top:0}
+.calc input[type=range]{width:100%;accent-color:var(--ink)}
+.calc .bigval{font-family:var(--mono);font-size:30px;font-weight:500}
+.seg{display:flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;width:100%}
+.seg button{flex:1;font-family:var(--mono);font-size:12.5px;padding:9px 4px;background:#fff;border:none;border-right:1px solid var(--line);cursor:pointer;color:var(--dim)}
+.seg button:last-child{border-right:none}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.chk{display:flex;align-items:center;gap:10px;font-size:15.5px;color:var(--ink);margin-top:6px}
+.chk input{width:17px;height:17px;accent-color:var(--ink)}
+.res-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-soft);gap:12px}
+.res-row .k{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+.res-row .v{font-family:var(--mono);font-size:18px;white-space:nowrap}
+.res-row .v.today{color:var(--warn)}
+.res-row .v.new{color:var(--ink);font-weight:500}
+.plus-box{margin-top:18px;background:var(--accent-bg);border:1.5px solid var(--accent);border-radius:3px;padding:16px 20px;text-align:center}
+.plus-box .plus{font-family:var(--mono);font-size:32px;font-weight:500;color:var(--accent)}
+.plus-box .plus.neg{color:var(--warn)}
+.plus-box .sub{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-top:4px;line-height:1.45}
+.bars{margin-top:18px}
+.bar-lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:4px}
+.bar{height:14px;background:var(--line-soft);border-radius:2px;overflow:hidden;margin-bottom:12px}
+.bar>i{display:block;height:100%;transition:width .35s}
+.bar.today>i{background:var(--warn)}
+.bar.new>i{background:var(--accent)}
+h3.sub-h{font-family:var(--disp);font-size:21px;font-weight:700;margin:40px 0 10px}
+
+/* Diagramm */
+.chart-card{border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:26px}
+@media(max-width:640px){.chart-card{padding:16px}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tabs button{font-family:var(--mono);font-size:12.5px;padding:8px 12px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:var(--dim)}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.unit{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:6px}
+.legend{display:flex;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-top:12px}
+.legend i{display:inline-block;width:22px;height:0;border-top:3px solid;vertical-align:middle;margin-right:8px}
+.legend .l-hist i{border-color:var(--ink)}
+.legend .l-ohne i{border-color:var(--warn);border-top-style:dashed}
+.legend .l-mit i{border-color:var(--accent)}
+#chart{width:100%;height:auto;display:block}
+#chart .grid{stroke:var(--line-soft)}
+#chart .axis{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+#chart .hist{stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+#chart .ohne{stroke:var(--warn);fill:none;stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
+#chart .mit{stroke:var(--accent);fill:none;stroke-width:3.5;stroke-linecap:round}
+#chart .marker{stroke:var(--line);stroke-dasharray:3 4}
+.split{display:grid;grid-template-columns:1fr 1.35fr;gap:34px;margin-top:38px;align-items:start}
+.split>div{min-width:0}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:22px}}
+.split h3{font-family:var(--disp);font-size:21px;font-weight:700;margin-bottom:8px}
+.split p{margin-bottom:10px}
+
+/* Sicherungen */
+.sich{max-width:800px;border-top:1.5px solid var(--ink);counter-reset:s}
+.sich>div{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.sich>div::before{counter-increment:s;content:counter(s);font-family:var(--disp);font-weight:700;font-size:34px;color:var(--accent);line-height:1;min-width:38px}
+.sich b{font-family:var(--disp);font-weight:500;font-size:19px;display:block;margin-bottom:2px}
+.sich p{font-size:15.5px;color:var(--dim)}
+
+/* Klub der Sieben */
+.reg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-bottom:34px}
+.reg{border:1px solid var(--line);border-radius:3px;background:#fff;padding:20px 22px}
+.reg .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.reg h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 6px}
+.reg p{font-size:15px;color:var(--dim);line-height:1.55}
+.flagrow{display:grid;grid-template-columns:repeat(10,1fr);border:1px solid var(--line);border-bottom:none;margin-bottom:26px;background:#fff}
+.flagrow div{text-align:center;padding:14px 4px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.flagrow div:nth-child(10n){border-right:none}
+.flagrow .c{font-family:var(--mono);font-size:17px;font-weight:500;color:var(--accent);white-space:nowrap}
+.flagrow .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-top:4px;line-height:1.35}
+@media(max-width:980px){.flagrow{grid-template-columns:repeat(5,1fr)}.flagrow div:nth-child(10n){border-right:1px solid var(--line)}.flagrow div:nth-child(5n){border-right:none}}
+@media(max-width:560px){.flagrow{grid-template-columns:repeat(3,1fr)}.flagrow div:nth-child(5n){border-right:1px solid var(--line)}.flagrow div:nth-child(3n){border-right:none}}
+.effects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.effects>div{background:var(--paper);padding:20px 22px}
+.effects h3{font-family:var(--disp);font-size:16.5px;font-weight:500;margin-bottom:6px}
+.effects p{font-size:15px;color:var(--dim);line-height:1.55}
+.box{border:1.5px solid var(--accent);background:var(--accent-bg);border-radius:3px;padding:22px 24px;margin-top:34px}
+.box h3{font-family:var(--disp);font-size:19px;font-weight:700;margin-bottom:8px}
+.box.warn{border-color:var(--warn);background:#FBF0ED}
+.box.warn h3{color:var(--warn)}
+.box p{font-size:15.5px;margin-bottom:8px}
+.box ul{margin:8px 0 0 20px;font-size:15.5px}
+.box li{margin:5px 0}
+.timeline{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);margin:0 0 34px;background:#fff}
+.timeline div{flex:1 1 200px;padding:16px 18px;border-right:1px solid var(--line)}
+.timeline div:last-child{border-right:none}
+.timeline .y{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--accent)}
+.timeline .t{font-size:14.5px;color:var(--dim);margin-top:4px;line-height:1.5}
+@media(max-width:700px){.timeline div{border-right:none;border-bottom:1px solid var(--line)}.timeline div:last-child{border-bottom:none}}
+
+/* Anlagen */
+.anl{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:16px}
+.anl button{all:unset;cursor:pointer;border:1.5px solid var(--ink);border-radius:3px;padding:20px;background:#fff;display:block}
+.anl button:hover{border-color:var(--accent)}
+.anl button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.anl .t{font-family:var(--disp);font-weight:700;font-size:18px;display:block}
+.anl .d{font-size:14.5px;color:var(--dim);display:block;margin-top:4px;line-height:1.5}
+.anl .f{font-family:var(--mono);font-size:11.5px;color:var(--accent);display:block;margin-top:10px}
+
+footer{padding:44px 0 60px;font-size:14.5px;color:var(--dim)}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:34px}
+@media(max-width:720px){footer .wrap{grid-template-columns:1fr}}
+footer h4{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+footer a{color:var(--dim)}
+.translation-note{max-width:1060px;margin:18px auto 0;padding:0 24px;font-family:var(--mono);font-size:11.5px;color:var(--dim);text-align:center;letter-spacing:.04em;line-height:1.6}
+
+/* Anlagen-Leser */
+.docmodal{display:none;position:fixed;inset:0;background:rgba(15,59,92,.45);z-index:100;align-items:flex-start;justify-content:center;padding:4vh 16px}
+.docpanel{background:var(--paper);border:1.5px solid var(--ink);border-radius:3px;max-width:900px;width:100%;max-height:92vh;display:flex;flex-direction:column}
+.dochead{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 20px;border-bottom:1.5px solid var(--ink)}
+.dochead b{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em}
+.dochead button{font-family:var(--mono);font-size:13px;background:none;border:1px solid var(--ink);border-radius:2px;padding:6px 12px;cursor:pointer;color:var(--ink)}
+.dochead button:hover{background:var(--ink);color:var(--paper)}
+.docbody{overflow-y:auto;padding:22px 26px}
+.docbody pre{font-family:var(--mono);font-size:12.5px;line-height:1.65;white-space:pre-wrap;word-wrap:break-word;color:#1c3a52}
+.docitem{display:none}
+
+/* ---- Belegstand: Stufe doppelt kodiert, als Blockanzeige und als Wort ---- */
+table.beleg{table-layout:fixed;width:100%;min-width:720px}
+.beleg th,.beleg td{text-align:left;white-space:normal;vertical-align:top;
+  font-family:var(--body);font-size:14px;line-height:1.5}
+.beleg col.c1{width:15%}.beleg col.c2{width:21%}.beleg col.c3{width:16%}.beleg col.c4{width:48%}
+.beleg tbody td:first-child{font-family:var(--mono);font-size:12px;color:var(--dim);
+  text-transform:uppercase;letter-spacing:.03em;line-height:1.4}
+.beleg tbody td.claim{font-weight:500;color:var(--ink);font-size:14.5px}
+.beleg td.st{font-family:var(--mono);font-size:12px;letter-spacing:.02em}
+.beleg td.st .w{display:block;margin-top:5px}
+.meter{display:flex;gap:3px}
+.meter i{width:10px;height:10px;border:1.4px solid var(--line);display:block;border-radius:1px}
+.st.s3 .meter i{background:var(--accent);border-color:var(--accent)}
+.st.s2 .meter i:nth-child(-n+2){background:var(--accent);border-color:var(--accent)}
+.st.s1 .meter i:nth-child(1){background:#9A6B18;border-color:#9A6B18}
+.st.s0 .meter i{border-color:var(--warn)}
+.st.s3,.st.s2{color:var(--accent)}
+.st.s1{color:#7A5413}
+.st.s0{color:var(--warn)}
+.verstamp{font-family:var(--mono);font-size:12px;margin-top:12px!important;color:var(--dim)}
+.verstamp b{color:var(--accent);font-weight:500}
+@media(max-width:720px){
+  /* Unter 720px keine Tabelle mehr: je Position ein Block. Sonst scrollt die
+     Begruendungsspalte aus dem Bild und laesst leere hohe Zeilen zurueck. */
+  .belegwrap{overflow:visible;border:none;background:transparent}
+  table.beleg,.beleg tbody,.beleg tr,.beleg td{display:block;width:auto;min-width:0}
+  .beleg thead,.beleg colgroup{display:none}
+  .beleg tr{border:1px solid var(--line);background:#fff;padding:15px 16px;margin-bottom:10px}
+  .beleg td{border:none;padding:0}
+  .beleg tbody td:first-child{margin-bottom:5px}
+  .beleg tbody td.claim{font-size:16.5px;line-height:1.35;margin-bottom:9px}
+  .beleg td.st{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .beleg td.st .w{display:inline;margin-top:0}
+  .beleg tbody td:last-child{font-size:14px;color:var(--dim)}
+}
+
+/* ---- Regeltext zur Stundung unter den Positionen ---- */
+.erbbox{margin-top:36px;max-width:760px}
+.erbbox .sub-h{margin-top:0}
+.erbbox p{font-size:16px;line-height:1.65;color:var(--ink);margin-bottom:14px}
+.erbbox p:last-child{margin-bottom:0;color:var(--dim)}
+
+/* ---- Ergänzungen Stand B (gleiche Farben, Schriften, Linien) ---- */
+.flow{border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:26px;margin-top:30px}
+@media(max-width:640px){.flow{padding:16px}}
+.flow .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.flow .year{font-family:var(--mono);font-size:30px;font-weight:500}
+.stack{display:flex;height:46px;border:1px solid var(--ink);border-radius:2px;overflow:hidden;margin:16px 0 8px;position:relative}
+.stack i{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12.5px;font-style:normal;color:#fff;transition:flex-basis .35s;white-space:nowrap;overflow:hidden}
+.stack .sa{background:var(--ink)}.stack .sb{background:#6497B8}.stack .sd{background:var(--accent)}
+.stack .cap{position:absolute;top:-4px;bottom:-4px;border-left:2px dashed var(--warn)}
+.flowleg{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.flowleg b{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+.ebenen{width:100%;height:auto;display:block;margin:6px 0 4px}
+.ebenen .bx{fill:#fff;stroke:var(--ink);stroke-width:1.5}
+.ebenen text{font-family:var(--disp);fill:var(--ink)}
+.ebenen .s{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+.ebenen .ar{stroke:var(--ink);stroke-width:1.5;fill:none;marker-end:url(#pf)}
+.ebenen .ag{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#pg)}
+.ebenen.mob{display:none;max-width:420px;margin:6px auto 4px}
+@media(max-width:640px){.ebenen.wide{display:none}.ebenen.mob{display:block}}
+#chart2{width:100%;height:auto;display:block}
+#chart2 .grid{stroke:var(--line-soft)}
+#chart2 .axis{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+#chart2 .hist{stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+#chart2 .ohne{stroke:var(--warn);fill:none;stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
+#chart2 .mit{stroke:var(--accent);fill:none;stroke-width:3.5;stroke-linecap:round}
+#chart2 .prog{stroke:var(--accent);fill:none;stroke-width:2.5;stroke-dasharray:6 6;stroke-linecap:round}
+#chart2 .marker{stroke:var(--line);stroke-dasharray:3 4}
+.legend .l-prog i{border-color:var(--accent);border-top-style:dashed}
+.kicker{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:10px}
+.kicker.alt{color:var(--warn)}.kicker.neu{color:var(--accent)}
+.raum{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:14px 0 18px}
+.raum button{font-family:var(--mono);font-size:12px;text-align:left;padding:7px 9px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:var(--dim);display:flex;justify-content:space-between;gap:6px}
+.raum button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.raum button.neu{border-color:var(--accent)}
+.raum button.neu[aria-pressed=true]{background:var(--accent);border-color:var(--accent)}
+.raum button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.schwelle{position:relative;height:30px;background:var(--line-soft);border-radius:2px;overflow:visible;margin:8px 0 26px}
+.schwelle>i{display:block;height:100%;background:var(--accent);border-radius:2px;transition:width .35s}
+.schwelle>i.unter{background:var(--warn)}
+.schwelle .us{position:absolute;top:-6px;bottom:-6px;border-left:2px dashed var(--ink)}
+.schwelle .us span{position:absolute;top:38px;left:-40px;width:80px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink)}
+.land{border:1px solid var(--line);border-radius:3px;background:#fff;padding:20px 22px}
+.land .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.land h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 6px}
+.land p{font-size:15px;color:var(--dim);line-height:1.55}
+.land .k{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--paper);border:1px solid var(--line-soft);border-radius:2px;padding:3px 8px;display:inline-block;margin:2px 0 8px}
+.anl a{all:unset;cursor:pointer;border:1.5px solid var(--ink);border-radius:3px;padding:20px;background:#fff;display:block}
+.anl a:hover{border-color:var(--accent)}
+.anl a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="titleblock" id="top" aria-label="Nawigacja">
+  <div class="wrap">
+    <a class="tb-left" href="#top">TAX 28:28</a>
+    <div class="tb-right">
+      <a href="#konzept">Konstrukcja</a>
+      <a href="#rechner">Kalkulator</a>
+      <a class="opt" href="#gemeinde">Gmina</a>
+      <a class="opt" href="#zeitpfad">Ścieżka</a>
+      <a href="#erfahrung">Międzynarodowo</a>
+      <a class="opt" href="#offen">Dołącz</a>
+      <span class="langsel"><a href="de.html" lang="de">DE</a><a href="en.html" lang="en">EN</a><a href="fr.html" lang="fr">FR</a><a href="it.html" lang="it">IT</a><a href="es.html" lang="es">ES</a><a href="pl.html" class="active" lang="pl">PL</a></span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="hero-mark" viewBox="0 0 560 300" role="img" aria-label="TAX 28:28">
+      <text x="60" y="168" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="196" fill="#0F3B5C" textLength="440" lengthAdjust="spacing">TAX</text>
+      <text x="60" y="286" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C" letter-spacing="-2" textLength="440" lengthAdjust="spacing">28:28</text>
+    </svg>
+    <h1>Prosty system podatkowy na XXI wiek.</h1>
+    <p class="claim2">Sprawiedliwy, społeczny i innowacyjny.</p>
+    <p class="sub">Najwyżej 28% od każdego dochodu – i co miesiąc dywidenda dla wszystkich. Gminy decydują same, wspólny europejski dach chroni wspólne interesy.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#rechner">Oblicz swoją dywidendę</a>
+      <a class="btn ghost" href="#konzept">Zobacz koncepcję</a>
+    </div>
+    <p class="opensrc">Wszystkie modele obliczeniowe są <a href="#offen">otwarte do sprawdzenia</a>.</p>
+    <div class="stamps">
+      <div class="stamp"><div class="val">535 €</div><div class="lbl">dywidendy miesięcznie na osobę dorosłą — 267 € na dziecko</div></div>
+      <div class="stamp"><div class="val">najwyżej 28 %</div><div class="lbl">od każdego dochodu</div></div>
+      <div class="stamp"><div class="val">ponad 95 %*</div><div class="lbl">ludzi ma więcej pieniędzy w portfelu</div></div>
+    </div>
+    <p class="fineprint" style="text-align:center;margin:16px auto 0">* Szacunek projektu. Kwoty w cenach z 2028 roku.</p>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <p class="kicker alt">Dzisiejszy system:</p>
+    <h2>Zbyt skomplikowany, by go zrozumieć. Zbyt dziurawy, by był sprawiedliwy.</h2>
+    <p class="lede">Dzisiejszy system narastał warstwa po warstwie. Obciąża pracę bardziej niż cokolwiek innego i zostawia obywateli i gminy sfrustrowanych. Kraj odniesienia: Niemcy.</p>
+    <div class="befund-grid">
+      <div class="befund"><div class="num">47,9 %</div><h3>obciążeń od przeciętnej pensji</h3><p>Średnia w Niemczech – druga najwyższa wśród państw OECD. Średnia OECD wynosi 34,9 %.</p></div>
+      <div class="befund"><div class="num">26,4 %</div><h3>od odsetek i zysków kapitałowych</h3><p>Euro z kapitału jest obciążone znacznie mniej niż euro z pracy.</p></div>
+      <div class="befund"><div class="num">5 szczebli</div><h3>negocjuje o każde euro</h3><p>Gmina, powiat, kraj związkowy, federacja i UE. Pieniądze i zadania krążą tam i z powrotem, cele nie są osiągane.</p></div>
+      <div class="befund"><div class="num">0 €</div><h3>składek społecznych od maszyn</h3><p>Składki społeczne obciążają wyłącznie pracę ludzką. Kto zastępuje pracę maszynami, oszczędza na składkach.</p></div>
+    </div>
+    <p class="fineprint">Źródła: OECD, Taxing Wages 2025 (osoba samotna, przeciętne wynagrodzenie, 2024); niemiecka ustawa o podatku dochodowym, § 32d, wraz z dodatkiem solidarnościowym.</p>
+  </div>
+</section>
+
+<section id="konzept">
+  <div class="wrap">
+    <p class="kicker neu">Koncepcja:</p>
+    <h2>Dwa szczeble, jeden wspólny dach</h2>
+    <p class="lede">Zamiast pięciu szczebli są dwa. Gmina otrzymuje największą część pieniędzy i decyduje sama. Europejski dach przejmuje tylko to, czego żadna gmina nie zrobi sama – i nie może wziąć więcej, niż stanowi traktat.</p>
+<svg class="ebenen mob" viewBox="0 0 360 380" role="img" aria-label="Dwa szczeble, jeden wspólny dach">
+  <rect class="bx" x="10" y="10" width="340" height="64" rx="3"/>
+  <text x="180" y="38" text-anchor="middle" font-size="19" font-weight="700">Wspólny dach</text>
+  <text class="s" x="180" y="60" text-anchor="middle">co najmniej 64 % trafia dalej do gminy</text>
+  <rect class="bx" x="20" y="180" width="140" height="70" rx="3"/>
+  <text x="90" y="212" text-anchor="middle" font-size="18" font-weight="700">Ty</text>
+  <text class="s" x="90" y="234" text-anchor="middle">równe stawki</text>
+  <rect class="bx" x="200" y="180" width="140" height="70" rx="3"/>
+  <text x="270" y="212" text-anchor="middle" font-size="18" font-weight="700">Gmina</text>
+  <text class="s" x="270" y="234" text-anchor="middle">decyduje sama</text>
+  <path class="ar" d="M90,178 L90,80"/><text class="s" x="98" y="130">wkład podatkowy</text>
+  <path class="ar" d="M270,80 L270,178"/><text class="s" x="262" y="130" text-anchor="end">wzór</text>
+  <path class="ag" d="M270,252 C270,330 90,330 90,256"/>
+  <text class="s" x="180" y="350" text-anchor="middle" fill="#1D7A4F">co miesiąc:</text>
+  <text class="s" x="180" y="368" text-anchor="middle" fill="#1D7A4F">dywidenda</text>
+</svg>
+<svg class="ebenen wide" viewBox="0 0 900 300" role="img" aria-label="Dwa szczeble, jeden wspólny dach">
+  <defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0F3B5C"/></marker>
+  <marker id="pg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1D7A4F"/></marker></defs>
+  <rect class="bx" x="270" y="14" width="360" height="70" rx="3"/>
+  <text x="450" y="44" text-anchor="middle" font-size="19" font-weight="700">Wspólny dach</text>
+  <text class="s" x="450" y="66" text-anchor="middle">co najmniej 64 % trafia dalej do gminy</text>
+  <rect class="bx" x="30" y="190" width="220" height="80" rx="3"/>
+  <text x="140" y="224" text-anchor="middle" font-size="19" font-weight="700">Ty</text>
+  <text class="s" x="140" y="248" text-anchor="middle">kilka równych stawek</text>
+  <rect class="bx" x="650" y="190" width="220" height="80" rx="3"/>
+  <text x="760" y="224" text-anchor="middle" font-size="19" font-weight="700">Twoja gmina</text>
+  <text class="s" x="760" y="248" text-anchor="middle">decyduje sama</text>
+  <path class="ar" d="M250,205 C300,140 330,110 350,88"/>
+  <text class="s" x="205" y="140">wkład podatkowy</text>
+  <path class="ar" d="M550,88 C590,120 620,160 655,198"/>
+  <text class="s" x="615" y="140">na mieszkańca, na dziecko</text>
+  <path class="ag" d="M650,250 C520,285 380,285 252,250"/>
+  <text class="s" x="450" y="252" text-anchor="middle" fill="#1D7A4F">co miesiąc: dywidenda</text>
+</svg>
+    <div class="box">
+      <h3>Dlaczego dywidenda?</h3>
+      <p>To, co dziś wytwarzamy, opiera się na tym, co zbudowały pokolenia przed nami: wiedzy, technice, infrastrukturze. Coraz więcej z tego wykonują maszyny i oprogramowanie. Dywidenda zwraca każdemu równy udział w tym wspólnie odziedziczonym postępie – jako zwrot z zysków automatyzacji.</p>
+      <p>I wyrównuje to, czego przemiana pracy, energii i gospodarki wymaga od każdego: kto musi zmienić kierunek, nie zostaje z pustymi rękami.</p>
+    </div>
+    <div class="effects">
+      <div><h3>Jednostce ufamy,</h3><p>że poradzi sobie z własnymi pieniędzmi: jedna stawka zamiast podatkowej dżungli, żadnych wyjątków. Co miesiąc dywidenda, bez wniosku.</p></div>
+      <div><h3>Gminie ufamy,</h3><p>że poprowadzi własne sprawy: otrzymuje stałe kwoty na mieszkańca i na dziecko. Decyduje o członkostwie w powiatach i związkach gmin.</p></div>
+      <div><h3>Dachowi powierzamy</h3><p>to, co da się zrobić tylko razem: obronę i suwerenność cyfrową, jednolity rynek bez granic, wspólne standardy. Dach decyduje większością członków.</p></div>
+    </div>
+
+    <div class="flow" id="fluss">
+      <div class="row"><div><label class="lbl" for="jahr" style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)">Dokąd trafia 100 € podatków rocznie</label></div><div class="year" id="jahrval">2033</div></div>
+      <input type="range" id="jahr" min="2028" max="2060" step="1" value="2033" style="width:100%;accent-color:var(--ink)" aria-label="Rok">
+      <div class="stack" aria-live="polite"><i class="sa" id="sa"></i><i class="sb" id="sb"></i><i class="sd" id="sd"></i><span class="cap" id="cap"></span></div>
+      <div class="flowleg"><span><b style="background:var(--ink)"></b>Dach</span><span><b style="background:#6497B8"></b>Zadania gminy</span><span><b style="background:var(--accent)"></b>Twoja dywidenda</span><span><b style="border-left:2px dashed var(--warn);width:0;height:12px"></b>Górna granica dachu</span></div>
+      <p class="fineprint" id="flusstext" style="margin-top:12px"></p>
+    </div>
+  </div>
+</section>
+
+<section id="bausteine">
+  <div class="wrap">
+    <h2>Mało reguł, jedna zasada</h2>
+    <p class="lede">Każdy element został już gdzieś na świecie wypróbowany. TAX 28:28 łączy je w system, który mieści się na jednej stronie.</p>
+    <div class="mass-grid">
+      <div class="mass"><div class="pos">Dochód</div><h3>Skala progresywna ze sztywnym pułapem</h3>
+        <div class="taxlbl" role="img" aria-label="Skala progresywna ze sztywnym pułapem"><div><b class="t1">0 %</b><em>do 12 348 €</em></div>
+<div><b class="t2">9 %</b><em>do 25 000 €</em></div>
+<div><b class="t3">16 %</b><em>do 40 000 €</em></div>
+<div><b class="t4">21 %</b><em>do 55 000 €</em></div>
+<div><b class="t5">26 %</b><em>do 70 000 €</em></div>
+<div><b class="t6">28 %</b><em>powyżej — górna granica</em></div></div>
+        <p>Opodatkowany jest dochód brutto – bez odliczeń, bez wspólnego rozliczenia małżonków. Minimum egzystencji pozostaje wolne; powyżej praca opłaca się na każdym progu.</p></div>
+      <div class="mass"><div class="pos">Praca</div><h3>Koniec ze składkami społecznymi</h3><span class="regel">0 % od wynagrodzenia</span><p>Praca nie jest już obciążana podwójnie. Tak robią państwa finansujące państwo opiekuńcze z podatków – Dania prawie nie pobiera składek społecznych.</p></div>
+      <div class="mass"><div class="pos">Kapitał</div><h3>Kapitał i praca traktowane jednakowo</h3><span class="regel">28 % od wszystkich dochodów</span><p>Liczą się też zyski ze sprzedaży. Zamiana pensji na dochód kapitałowy przestaje się opłacać.</p></div>
+      <div class="mass"><div class="pos">Spadek</div><h3>Spadek to także dochód</h3><span class="regel">28 % powyżej 200 000 € na spadkobiercę</span><p>Bez zwolnień. Kto dziedziczy firmę lub dom, może odroczyć podatek – nikt nie musi sprzedawać, by go zapłacić.</p></div>
+      <div class="mass"><div class="pos">Grunt · gmina</div><h3>Gmina opodatkowuje grunt</h3><span class="regel">0,1–1 % wartości gruntu</span><p>Liczy się tylko wartość działki, nie budynek. Kto buduje lub remontuje, nie płaci za to. Nie można przerzucać na czynsz.</p></div>
+      <div class="mass"><div class="pos">Majątek</div><h3>Wielkie majątki dokładają się</h3><span class="regel">1% powyżej 2 mln €</span><p>Majątek do 2 mln euro pozostaje nietknięty. Powyżej obowiązuje podatek minimalny, zaliczany na poczet podatku dochodowego.</p></div>
+      <div class="mass"><div class="pos">Koncerny i platformy</div><h3>Podatek płaci się tam, gdzie są klienci</h3><span class="regel">28 % w miejscu korzystania</span><p>Dotyczy to wprost platform cyfrowych. Zyski można przesunąć, klientów nie.</p></div>
+      <div class="mass"><div class="pos">Konsumpcja</div><h3>VAT staje się etykietą</h3>
+        <div class="vatlbl" role="img" aria-label="VAT staje się etykietą">
+          <div><b class="v1">A+ · 5&nbsp;%</b><em>podstawowe potrzeby, naprawy</em></div>
+          <div><b class="v2">A · 11&nbsp;%</b><em>towary zrównoważone</em></div>
+          <div><b class="v3">B · 17&nbsp;%</b><em>towary standardowe</em></div>
+          <div><b class="v4">C · 22&nbsp;%</b><em>zasobochłonne</em></div>
+          <div><b class="v5">D · 28&nbsp;%</b><em>luksus szkodliwy dla klimatu</em></div>
+        </div>
+        <p>Jak na etykiecie energetycznej, od razu widać, ile kosztuje produkt i dlaczego.</p></div>
+      <div class="mass"><div class="pos">Klimat</div><h3>Cena CO₂ zwracana wszystkim</h3><span class="regel">europejska ścieżka cen · zwrot przez dywidendę</span><p>Kto mało zużywa, zyskuje. Szwajcaria od lat zwraca swoją opłatę za CO₂ wszystkim w równych częściach.</p></div>
+      <div class="mass"><div class="pos">Dywidenda</div><h3>Co miesiąc, dla wszystkich</h3><svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Co miesiąc, dla wszystkich"><polyline points="10.0,63.3 18.8,64.0 27.5,64.8 36.2,65.5 45.0,65.9 53.8,66.0 62.5,66.1 71.2,66.3 80.0,64.4 88.8,62.6 97.5,60.8 106.2,59.0 115.0,57.1 123.8,55.3 132.5,53.4 141.2,51.6 150.0,49.7 158.8,47.8 167.5,45.9 176.2,44.0 185.0,42.1 193.8,40.2 202.5,38.3 211.2,36.4 220.0,34.4 228.8,32.5 237.5,30.5 246.2,28.5 255.0,26.5 263.8,24.5 272.5,22.5 281.2,20.5 290.0,18.5" fill="none" stroke="#1D7A4F" stroke-width="2.5"/><text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · 535 €</text><text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · 723 €</text></svg><p>Dorośli w całości, dzieci w połowie, bez wniosku. To, co zostaje po opłaceniu zadań – i rośnie razem z gospodarką.</p></div>
+      <div class="mass"><div class="pos">Ochrona</div><h3>Nikt nie traci</h3><span class="regel">gwarancja praw nabytych · fundusz na trudne przypadki</span><p>Kto dziś otrzymuje zasiłek podstawowy lub stypendium (w Niemczech: Bürgergeld, Grundsicherung, BAföG), zachowuje co najmniej obecny poziom. Fundusz pokrywa też koszty mieszkania, opieki i szczególnych sytuacji.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="wrap">
+    <h2>Policz sam</h2>
+    <p class="lede">Ile Twoje gospodarstwo domowe otrzyma dywidendy i ile zapłacisz podatku dochodowego według nowej skali.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="brutto">Roczny dochód brutto</label>
+        <div class="bigval" id="bruttoval"></div>
+        <input type="range" id="brutto" min="0" max="150000" step="1000" value="42000">
+        <label class="lbl">Dorośli w gospodarstwie</label>
+        <div class="seg" id="erw"><button type="button" aria-pressed="true" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">Dzieci</label>
+        <div class="seg" id="kin"><button type="button" aria-pressed="true" data-v="0">0</button><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">Rok</label>
+        <div class="seg" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button><button type="button" aria-pressed="false" data-v="2045">2045</button><button type="button" aria-pressed="false" data-v="2060">2060</button></div>
+      </div>
+      <div>
+        <div class="res-row"><span class="k">Podatek dochodowy według 28:28</span><span class="v" id="r-st"></span></div>
+        <div class="res-row"><span class="k">Twoja przeciętna stawka</span><span class="v" id="r-satz"></span></div>
+        <div class="res-row"><span class="k">Składki społeczne</span><span class="v" id="r-soz"></span></div>
+        <div class="res-row"><span class="k">Dywidenda gospodarstwa miesięcznie</span><span class="v new" id="r-mon"></span></div>
+        <div class="bars"><div class="bar-lbl"><span>Podatek dochodowy</span><span id="b-st"></span></div><div class="bar today"><i id="bi-st"></i></div>
+        <div class="bar-lbl"><span>Dywidenda rocznie</span><span id="b-dv"></span></div><div class="bar new"><i id="bi-dv"></i></div></div>
+        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub"></div></div>
+      </div>
+    </div>
+    <p class="fineprint">Skala stosowana do dochodu brutto bez odliczeń. Dywidenda w cenach z 2028 roku.</p>
+  </div>
+</section>
+
+<section id="gemeinde">
+  <div class="wrap">
+    <h2>Twoja gmina liczy sama</h2>
+    <p class="lede">Cały podział to dwie liczby: 3 599 € na mieszkańca i 12 625 € na dziecko rocznie. Więcej dzieci to więcej pieniędzy na szkoły. A to, co gmina zaoszczędzi na administracji, trafia do jej mieszkańców.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="g-ein">Mieszkańcy</label><div class="bigval" id="g-einval"></div>
+        <input type="range" id="g-ein" min="2000" max="200000" step="1000" value="30000">
+        <label class="lbl" for="g-kin">Udział dzieci w wieku od 5 do 19 lat</label><div class="bigval" id="g-kinval" style="font-size:22px"></div>
+        <input type="range" id="g-kin" min="10" max="24" step="0.5" value="15.9">
+        <label class="lbl" for="g-verw">Udział administracji w budżecie gminy</label><div class="bigval" id="g-verwval" style="font-size:22px"></div>
+        <input type="range" id="g-verw" min="5.5" max="25" step="0.1" value="15.7">
+        <p class="fineprint" style="margin-top:8px">Gminy w Estonii radzą sobie z 5,8 %, w Niemczech potrzebują 16,8 %.</p>
+      </div>
+      <div>
+        <div class="res-row"><span class="k">Budżet gminy rocznie</span><span class="v new" id="g-bud"></span></div>
+        <div class="res-row"><span class="k">w tym na szkoły</span><span class="v" id="g-sch"></span></div>
+        <div class="res-row"><span class="k">na mieszkańca</span><span class="v" id="g-kopf"></span></div>
+        <div class="plus-box"><div class="plus" id="g-plus"></div><div class="sub">więcej lub mniej dywidendy na mieszkańca miesięcznie, zależnie od oszczędności administracji</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zeitpfad">
+  <div class="wrap">
+    <h2>Dywidenda rośnie razem z gospodarką</h2>
+    <p class="lede">Do 2035 trzeba naprawić dawne błędy: wydatki na obronę zostały podniesione, a stare długi trzeba nadal obsługiwać przy wyższych odsetkach. Potem dywidenda rośnie razem z gospodarką – a dług topnieje sam: z 78 % do 30 % PKB, bez jednego euro spłaty.</p>
+    <div class="chart-card">
+      <div class="tabs" id="gtabs"><button type="button" aria-pressed="false" data-v="0,5">Ostrożnie</button><button type="button" aria-pressed="true" data-v="1,0">Średni wzrost</button><button type="button" aria-pressed="false" data-v="1,5">Silny wzrost</button></div>
+      <div class="unit">Dywidenda na osobę dorosłą miesięcznie, euro w cenach z 2028 roku</div>
+      <svg id="chart" viewBox="0 0 900 360" role="img" aria-label="Dywidenda rośnie razem z gospodarką"></svg>
+      <div class="legend"><span class="l-mit"><i></i>Dywidenda</span><span class="l-hist"><i></i>Start 2028</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sicherungen">
+  <div class="wrap">
+    <h2>Dlaczego dach się nie rozrasta</h2>
+    <p class="lede">Wspólny dach jest tyle wart, ile jego granice. Pięć zasad zapisano w traktacie.</p>
+    <div class="sich">
+      <div><span><b>Górna granica, nie przydział</b><p>Dach zatrzymuje najwyżej 36 % tego, co pobiera – i tylko tyle, ile naprawdę kosztują jego zadania.</p></span></div>
+      <div><span><b>Co niepotrzebne, płynie dalej</b><p>Każde euro ponad potrzeby trafia do gmin i do dywidendy. Granica, której nie trzeba wyczerpać, nigdy nie staje się roszczeniem.</p></span></div>
+      <div><span><b>Wzór zamiast negocjacji</b><p>Gminy otrzymują stałe kwoty na mieszkańca i na dziecko. Nikt nie musi prosić, nikt nie może obciąć.</p></span></div>
+      <div><span><b>Wspólnie dźwigać stare długi</b><p>Dach przejmuje obsługę odsetek i gwarantuje wspólną stopę. Kto wnosi więcej starego długu, wyrównuje to w ciągu trzydziestu lat – gminy tego nie odczuwają.</p></span></div>
+      <div><span><b>Decyzje większością</b><p>Sojusz, w którym każdy ma weto, nie potrafi zdecydować w chwili decyzji.</p></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="erfahrung">
+  <div class="wrap">
+    <h2>Co już działa gdzie indziej</h2>
+    <p class="lede">Nic w TAX 28:28 nie jest eksperymentem na ślepo. Każdy element już dziś gdzieś działa – często od dziesięcioleci.</p>
+    <div class="reg-grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+      <div class="land"><div class="n">Estonia</div><h3>Jedna stawka, zeznanie w kilka minut</h3><span class="k">stawka liniowa 22% · podatek od gruntu od 1993</span><p>Zeznanie podatkowe składa się online w kilka minut. Podatek od nieruchomości liczy się wyłącznie od wartości gruntu, budynki nie są opodatkowane.</p></div>
+      <div class="land"><div class="n">Dania</div><h3>Silne gminy, państwo opiekuńcze z podatków</h3><span class="k">98 gmin od 2007</span><p>Gminy prowadzą szkoły, opiekę i pomoc społeczną. Składki społeczne prawie nie mają znaczenia – państwo opiekuńcze opłacane jest z podatków.</p></div>
+      <div class="land"><div class="n">Szwajcaria</div><h3>Opłata za CO₂ zwracana wszystkim</h3><span class="k">od 2008 · ta sama kwota dla każdego</span><p>Wpływy z opłaty za CO₂ wracają do wszystkich mieszkańców w równych częściach, zaliczane na poczet składki zdrowotnej. Gminy same ustalają swoje podatki.</p></div>
+      <div class="land"><div class="n">Alaska</div><h3>Dywidenda dla wszystkich</h3><span class="k">od 1982 · co roku</span><p>Każdy mieszkaniec otrzymuje raz w roku udział we wspólnym funduszu, bez badania dochodów. Od ponad czterdziestu lat.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="klub">
+  <div class="wrap">
+    <h2>Klub z miejscem na rozwój</h2>
+    <p class="lede">Dach nie jest zamkniętym kręgiem, lecz ofertą. Obliczono go dla dziesięciu państw – w Europie możliwych jest ponad trzydzieści, a także partnerzy spoza niej. Wybierz sam: od liczby ludności Stanów Zjednoczonych klub gra w tej samej lidze.</p>
+    <div class="flow">
+      <div class="tabs" id="raumvor"><button type="button" aria-pressed="false" data-v="zehn">Dziesięć obliczonych</button><button type="button" aria-pressed="false" data-v="sechs">Sześć największych</button><button type="button" aria-pressed="true" data-v="europa">Cała Europa</button><button type="button" aria-pressed="false" data-v="plus">Europa i Kanada</button></div>
+      <div class="raum" id="raum"><button type="button" aria-pressed="false" data-k="DE" data-iso="DE" data-de="Deutschland"><span class="nm">Deutschland</span><span>83,5</span></button><button type="button" aria-pressed="false" data-k="UK" data-iso="GB" data-de="Vereinigtes Königreich"><span class="nm">Vereinigtes Königreich</span><span>69,1</span></button><button type="button" aria-pressed="false" data-k="FR" data-iso="FR" data-de="Frankreich"><span class="nm">Frankreich</span><span>68,8</span></button><button type="button" aria-pressed="false" data-k="IT" data-iso="IT" data-de="Italien"><span class="nm">Italien</span><span>59,0</span></button><button type="button" aria-pressed="false" data-k="ES" data-iso="ES" data-de="Spanien"><span class="nm">Spanien</span><span>48,9</span></button><button type="button" aria-pressed="false" data-k="PL" data-iso="PL" data-de="Polen"><span class="nm">Polen</span><span>36,6</span></button><button type="button" aria-pressed="false" data-k="RO" data-iso="RO" data-de="Rumänien"><span class="nm">Rumänien</span><span>19,1</span></button><button type="button" aria-pressed="false" data-k="NL" data-iso="NL" data-de="Niederlande"><span class="nm">Niederlande</span><span>18,0</span></button><button type="button" aria-pressed="false" data-k="BE" data-iso="BE" data-de="Belgien"><span class="nm">Belgien</span><span>11,9</span></button><button type="button" aria-pressed="false" data-k="PT" data-iso="PT" data-de="Portugal"><span class="nm">Portugal</span><span>11,3</span></button><button type="button" aria-pressed="false" data-k="CZ" data-iso="CZ" data-de="Tschechien"><span class="nm">Tschechien</span><span>10,9</span></button><button type="button" aria-pressed="false" data-k="SE" data-iso="SE" data-de="Schweden"><span class="nm">Schweden</span><span>10,6</span></button><button type="button" aria-pressed="false" data-k="EL" data-iso="GR" data-de="Griechenland"><span class="nm">Griechenland</span><span>10,4</span></button><button type="button" aria-pressed="false" data-k="HU" data-iso="HU" data-de="Ungarn"><span class="nm">Ungarn</span><span>9,6</span></button><button type="button" aria-pressed="false" data-k="AT" data-iso="AT" data-de="Österreich"><span class="nm">Österreich</span><span>9,2</span></button><button type="button" aria-pressed="false" data-k="CH" data-iso="CH" data-de="Schweiz"><span class="nm">Schweiz</span><span>9,0</span></button><button type="button" aria-pressed="false" data-k="BG" data-iso="BG" data-de="Bulgarien"><span class="nm">Bulgarien</span><span>6,4</span></button><button type="button" aria-pressed="false" data-k="DK" data-iso="DK" data-de="Dänemark"><span class="nm">Dänemark</span><span>6,0</span></button><button type="button" aria-pressed="false" data-k="FI" data-iso="FI" data-de="Finnland"><span class="nm">Finnland</span><span>5,6</span></button><button type="button" aria-pressed="false" data-k="NO" data-iso="NO" data-de="Norwegen"><span class="nm">Norwegen</span><span>5,6</span></button><button type="button" aria-pressed="false" data-k="SK" data-iso="SK" data-de="Slowakei"><span class="nm">Slowakei</span><span>5,4</span></button><button type="button" aria-pressed="false" data-k="IE" data-iso="IE" data-de="Irland"><span class="nm">Irland</span><span>5,4</span></button><button type="button" aria-pressed="false" data-k="HR" data-iso="HR" data-de="Kroatien"><span class="nm">Kroatien</span><span>3,9</span></button><button type="button" aria-pressed="false" data-k="LT" data-iso="LT" data-de="Litauen"><span class="nm">Litauen</span><span>2,9</span></button><button type="button" aria-pressed="false" data-k="SI" data-iso="SI" data-de="Slowenien"><span class="nm">Slowenien</span><span>2,1</span></button><button type="button" aria-pressed="false" data-k="LV" data-iso="LV" data-de="Lettland"><span class="nm">Lettland</span><span>1,9</span></button><button type="button" aria-pressed="false" data-k="EE" data-iso="EE" data-de="Estland"><span class="nm">Estland</span><span>1,4</span></button><button type="button" aria-pressed="false" data-k="CY" data-iso="CY" data-de="Zypern"><span class="nm">Zypern</span><span>1,0</span></button><button type="button" aria-pressed="false" data-k="LU" data-iso="LU" data-de="Luxemburg"><span class="nm">Luxemburg</span><span>0,7</span></button><button type="button" aria-pressed="false" data-k="MT" data-iso="MT" data-de="Malta"><span class="nm">Malta</span><span>0,6</span></button><button type="button" aria-pressed="false" data-k="IS" data-iso="IS" data-de="Island"><span class="nm">Island</span><span>0,4</span></button><button type="button" aria-pressed="false" data-k="CA" data-iso="CA" data-de="Kanada" class="neu"><span class="nm">Kanada</span><span>41,7</span></button></div>
+      <div class="row"><div class="res-row" style="flex:1;border:none"><span class="k">Ludzie w klubie</span><span class="v new" id="raumsum"></span></div><div class="res-row" style="flex:1;border:none"><span class="k">Państwa</span><span class="v" id="raumn"></span></div></div>
+      <div class="schwelle"><i id="raumbar"></i><span class="us" id="raumus"><span>USA</span></span></div>
+      <p class="fineprint" id="raumtext" style="margin-top:0"></p>
+    </div>
+    <div class="effects">
+      <div><h3>Wielka Brytania</h3><p>Niezwiązana jednomyślnością traktatów UE: dla Zjednoczonego Królestwa klub byłby przystąpieniem, a nie złamaniem traktatu – i drogą powrotu do wspólnego obszaru gospodarczego. Z 69,1 mln mieszkańców drugi co do wielkości partner.</p></div>
+      <div><h3>Kanada</h3><p>Ściśle związana z Europą umową handlową CETA, a od 2025 roku także partnerstwem w dziedzinie bezpieczeństwa i obrony z UE. 41,7 mln ludzi, wspólne wartości, wspólne zadania.</p></div>
+      <div><h3>Sześć wystarczy</h3><p>Niemcy, Wielka Brytania, Francja, Włochy, Hiszpania i Polska razem dorównują liczbie ludności Stanów Zjednoczonych. Każde kolejne państwo wzmacnia klub, żadne nie czyni go niemożliwym.</p></div>
+    </div>
+    <h3 class="sub-h">Dokąd zmierzamy</h3>
+    <div class="chart-card">
+      <div class="tabs" id="ztabs"><button type="button" aria-pressed="true" data-v="schuld">Dług publiczny</button><button type="button" aria-pressed="false" data-v="co2">Emisje CO₂</button></div>
+      <div class="unit" id="zunit"></div>
+      <svg id="chart2" viewBox="0 0 900 360" role="img" aria-label="Dokąd zmierzamy"></svg>
+      <div class="legend" id="zleg"></div>
+      <p class="fineprint" id="ztext" style="margin-top:12px"></p>
+    </div>
+    <div class="timeline" style="margin-top:34px">
+      <div><div class="y">2026 · Otwarta weryfikacja</div><div class="t">Koncepcja i obliczenia są jawne. Zapraszamy ekspertów, administrację i krytyków.</div></div>
+      <div><div class="y">2027 · Tworzenie wspólnot</div><div class="t">Gminy i regiony znajdują partnerów, państwa rozważają przystąpienie.</div></div>
+      <div><div class="y">2028 · Wspólny start</div><div class="t">Najwcześniej po uchwaleniu przepisów i zbudowaniu administracji.</div></div>
+      <div><div class="y">od 2029 · Rozszerzenie</div><div class="t">Każde kolejne państwo wzmacnia klub – przede wszystkim przy opodatkowaniu tam, gdzie są klienci.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="offen">
+  <div class="wrap">
+    <h2>Rozwijany jawnie – dołącz</h2>
+    <p class="lede">TAX 28:28 powstaje niezależnie od partii i grup interesu. Każda liczba pochodzi z oficjalnych statystyk, każde obliczenie można sprawdzić, każdy błąd jest jawnie poprawiany. Szukamy specjalistów od finansów publicznych, administracji, samorządu, prawa i statystyki.</p>
+    <div class="anl">
+      <a href="dokumente/TAX-2828-Kurzfassung.pdf"><span class="t">Streszczenie</span><span class="d">Koncepcja na dwóch stronach (po niemiecku).</span><span class="f">PDF</span></a>
+      <a href="dokumente/TAX-2828-Gesamtkonzept.pdf"><span class="t">Pełna koncepcja</span><span class="d">Wszystkie elementy, liczby i obliczenia (po niemiecku).</span><span class="f">PDF</span></a>
+      <a href="mailto:2828@archicrowd.de?subject=28%3A28"><span class="t">Współpracuj</span><span class="d">Obliczenia, dane i dziennik dla specjalistów.</span><span class="f">2828@archicrowd.de</span></a>
+      <a href="mailto:2828@archicrowd.de?subject=28%3A28"><span class="t">Zgłoś krytykę</span><span class="d">Każdy zarzut zostanie sprawdzony i otrzyma odpowiedź.</span><span class="f">E-mail</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><h4>Metoda</h4><p>Wszystkie liczby pochodzą z otwartego rachunku całościowego opartego na oficjalnych statystykach (Eurostat, OECD). Opracowane metodą projektu architektonicznego, w roboczym dialogu z systemem AI. Skrypty na licencji MIT, teksty na CC BY 4.0.</p><p class="verstamp">Wersja modelu <b>v3.18 · 6. Oktober 2026</b></p></div>
+    <div><h4>Kontakt</h4><p>Initiative 28 : 28<br><a href="mailto:2828@archicrowd.de?subject=28%3A28">Zgłoś krytykę</a><br><a href="#top">Do góry</a></p></div>
+    <div><h4>Nota prawna i prywatność</h4><p>Odpowiedzialny za treść: Initiative 28 : 28 – Arndt Hermann, 2828@archicrowd.de. Ta strona nie używa plików cookie ani narzędzi śledzących i nie wczytuje treści stron trzecich. Nie są zbierane żadne dane osobowe. Kroje Space Grotesk, Source Serif 4 i IBM Plex Mono są przechowywane lokalnie na licencji SIL Open Font License 1.1. Wszystkie obliczenia są ilustracjami bez gwarancji i nie zastępują porady podatkowej ani prawnej. Strona jest zablokowana dla wyszukiwarek.</p></div>
+  </div>
+  <p class="translation-note">Wersją oryginalną tego projektu jest wersja niemiecka; to jest tłumaczenie. Kraj odniesienia dla wszystkich danych krajowych: Niemcy.</p>
+</footer>
+
+<script>
+const D={"lang": "pl", "fmt": [" ", ",", "nach", " "], "jahre": [2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060], "erw": {"0,0": [534.8061193035728, 525.7106623369808, 516.701613657419, 507.7761093267562, 500.3647689001913, 494.38056671327985, 488.36211526007463, 482.31008609481665, 483.9560523719131, 485.56974480043897, 487.1517962009546, 488.7028269857739, 490.22344540226317, 491.7142477713706, 493.17581872147576, 494.6087314176572, 496.0135477864628, 497.390818736272, 498.74108437333985, 500.06487421360265, 501.36270739033074, 502.635092857711, 503.88252959043706, 505.10550677938414, 506.30450402344974, 507.47999151763184, 508.63243023741825, 509.7622721195617, 510.8699602393102, 511.9559289841617, 513.0206042242121, 514.0644034791635, 515.0877360820571], "0,5": [534.8061193035728, 528.7738616111513, 522.7658257815825, 516.7786427053816, 512.2424232693386, 509.0696296212091, 505.79835852537207, 502.42876224190985, 507.0065937308756, 511.5668106973298, 516.1101192584634, 520.6372134897038, 525.1487756698465, 529.6454765214253, 534.1279754464146, 538.5969207573544, 543.0529499039918, 547.4966896955222, 551.9287565185201, 556.3497565506424, 560.7602859701892, 565.1609311616025, 569.5522689169815, 573.9348666336948, 578.3092825081658, 582.6760657259049, 587.0357566478664, 591.3888869931955, 595.735980018446, 600.0775506933267, 604.4141058730564, 608.746144467386, 613.074157606354], "1,0": [534.8061193035728, 531.7169354235897, 528.6207152254286, 525.5129282909724, 523.8225040009575, 523.4607025175847, 522.9643978545421, 522.332498466853, 529.9223547302119, 537.5382105762382, 545.1812701336414, 552.8527307239451, 560.5537831596984, 568.2856120384545, 576.0493960326164, 583.8463081752476, 591.6775161419387, 599.5441825288286, 607.4474651268697, 615.3885171924292, 623.3684877143099, 631.3885216772853, 639.4497603222301, 647.5533414029275, 655.700399439643, 663.8920659695399, 672.1294697940186, 680.4137372230576, 688.7459923166319, 697.1273571232878, 705.5589519159447, 714.0418954249989, 722.5773050687998], "1,5": [534.8061193035728, 534.9002601594925, 534.9849863709202, 535.0542311080922, 536.5353365079849, 539.3379234461946, 541.9971733712466, 544.5102476332447, 555.5830318268185, 566.7649444405689, 578.0587393290875, 589.4671897542298, 600.9930891056468, 612.639251623706, 624.4085131249971, 636.3037317306326, 648.3277885975335, 660.4835886529099, 672.7740613321282, 685.2021613201734, 697.7708692969013, 710.4831926862812, 723.3421664098366, 736.3508536444757, 749.5123465849186, 762.8297672109237, 776.3062680595102, 789.9450330023861, 803.7492780287778, 817.7222520338726, 831.8672376130694, 846.1875518622544, 860.6865471842954], "2,0": [534.8061193035728, 537.963459433663, 541.1399348360941, 544.3281818992161, 548.954167426973, 554.9260556026923, 560.7774869322841, 566.5039945965588, 581.1589263682248, 596.0417636012115, 611.1583427022775, 626.5145917416577, 642.1165327777994, 657.9702842189524, 674.0820632225436, 690.4581881332814, 707.1050809609341, 724.0292698987677, 741.2373918836201, 758.7361951986228, 776.5325421195862, 794.6334116060866, 813.0459020383147, 831.777234000754, 850.8347531137819, 870.2259329143052, 889.9583777865596, 910.0398259442206, 930.4781524649973, 951.2813723788973, 972.457643811377, 994.0152711826064, 1015.9627084641035]}, "a": [9.579234491907936, 9.746958732252383, 9.912591125556983, 10.076244550417433, 10.21000604248618, 10.316427503107247, 10.424326285957106, 10.533659362232974, 10.487242099255315, 10.44217679539351, 10.398424073197582, 10.355945702133575, 10.314704565178229, 10.27466462638663, 10.235790899404494, 10.198049416897568, 10.161407200871425, 10.125832233855752, 10.091293430927914, 10.057760612551373, 10.025204478205216, 9.993596580781764, 9.962909301729868, 9.9331158269222, 9.904190123225439, 9.876106915752853, 9.848841665779469, 9.822370549300455, 9.796670436214034, 9.771718870110712, 9.747494048651177, 9.723974804515706, 9.701140586908453], "div": [10.870765508092065, 10.703041267747617, 10.537408874443019, 10.37375544958257, 10.23999395751382, 10.133572496892755, 10.025673714042897, 9.916340637767027, 9.962757900744686, 10.00782320460649, 10.05157592680242, 10.094054297866426, 10.135295434821773, 10.175335373613374, 10.214209100595506, 10.251950583102433, 10.288592799128574, 10.324167766144251, 10.358706569072085, 10.392239387448628, 10.424795521794787, 10.456403419218235, 10.487090698270132, 10.5168841730778, 10.545809876774564, 10.573893084247148, 10.60115833422053, 10.627629450699546, 10.653329563785968, 10.678281129889287, 10.702505951348824, 10.726025195484295, 10.748859413091546], "b": 10.35, "q": 30.8, "og": 36.0, "einzugAnteil": 0.9733766233766233, "einw": 3598.675392804394, "kind": 12624.65648994137, "fachKopf": 5600.945912109095, "verwAnt": 15.65217391304348, "tarif": [[12348, 0], [25000, 9], [40000, 16], [55000, 21], [70000, 26], [1000000000000.0, 28]], "raum": {"DE": 83.516593, "UK": 69.144015, "FR": 68.775952, "IT": 58.957347, "ES": 48.873996, "PL": 36.559233, "RO": 19.055364, "NL": 17.993485, "BE": 11.850296, "PT": 11.295785, "CZ": 10.905028, "SE": 10.569709, "EL": 10.37405, "HU": 9.562065, "AT": 9.177982, "CH": 9.006644, "BG": 6.441421, "DK": 5.976992, "FI": 5.619911, "NO": 5.572272, "SK": 5.422069, "IE": 5.39598, "HR": 3.868159, "LT": 2.888278, "SI": 2.1274, "LV": 1.86957, "EE": 1.372341, "CY": 0.974666, "LU": 0.677012, "MT": 0.568847, "IS": 0.386506, "CA": 41.651653, "US": 341.784857}, "us": 341.784857, "d": [78.4, 76.11650485436894, 73.89951927608635, 71.74710609328771, 69.65738455659002, 67.62852869571846, 65.6587657239985, 63.74637448931893, 61.88968397021255, 60.08707181574034, 58.33696292790324, 56.637828085342946, 54.98818260712907, 53.38658505546511, 51.83163597617972, 50.32197667590264, 48.85628803485693, 47.43328935423003, 46.05173723711653, 44.71042450205488, 43.408179128208616, 42.1438632312705, 40.91637206919466, 39.72463307688802, 38.56760492901749, 37.44427663011407, 36.353666631178704, 35.294821972018156, 34.26681744856131, 33.26875480442846, 32.29976194604705, 31.358992180628203, 30.44562347633806], "zeit": {"schuld_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "schuld_hist": [85.4, 87.3, 90.8, 92.8, 92.9, 91.0, 89.9, 87.5, 85.5, 83.6, 96.5, 93.8, 89.3, 86.9, 87.0, 87.8], "schuld_prog_jahre": [2024, 2028], "schuld_prog": [78.45, 78.4], "co2_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "co2_hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 649], "co2_ziel_jahre": [2025, 2030, 2040, 2045], "co2_ziel": [649, 438, 150, 0]}, "T": {"js_fluss": "W roku {j} dach zatrzymuje {a} ze {hundert} – dozwolone byłoby do {cap}. Gmina przeznacza {b} na swoje zadania, {d} trafia do mieszkańców jako dywidenda.", "js_rechner_sub": "Dywidenda w roku {j} dla: {hh}", "js_erw_1": "{n} osoba dorosła", "js_erw_n": "{n} osoby dorosłe", "js_kind_1": "{n} dziecko", "js_kind_n": "{n} dzieci", "js_und": " i ", "js_mio": "{x} mln €", "js_monat": "{x} miesięcznie", "js_mio_menschen": "{x} mln", "js_raum_ueber": "Klub jest większy niż Stany Zjednoczone ({us} mln) – o {x} mln ludzi.", "js_raum_unter": "Brakuje jeszcze {x} mln ludzi do wielkości Stanów Zjednoczonych.", "js_schuld_unit": "Dług publiczny w % PKB", "js_schuld_l1": "Strefa euro do dziś", "js_schuld_l2": "Klub do startu (szacunek)", "js_schuld_l3": "Klub z 28:28, od 2028", "js_schuld_text": "Bez nowego zadłużenia ciężar spada sam, bo gospodarka rośnie: z {a} do {b} do 2060 roku – bez jednego euro spłaty.", "js_co2_unit": "Gazy cieplarniane Niemiec, mln ton ekwiwalentu CO₂", "js_co2_l1": "do dziś", "js_co2_l2": "cel klimatyczny do 2045", "js_co2_text": "Od 1990 roku prawie o połowę mniej – druga połowa jest jeszcze przed nami. TAX 28:28 stawia na wspólną europejską cenę CO₂ i zwraca wpływy wszystkim przez dywidendę."}};
+const T=D.T;
+const [TAU,DEZ,EURPOS,PSP]=D.fmt;
+function zahl(x,nk=0){const s=Math.abs(x).toFixed(nk).split('.');s[0]=s[0].replace(/\B(?=(\d{3})+(?!\d))/g,TAU);return (x<0?'−':'')+s.join(DEZ);}
+const eur=(x,nk=0)=>EURPOS==='vor'?'€'+zahl(x,nk):zahl(x,nk)+' €';
+const pct=(x,nk=0)=>zahl(x,nk)+(PSP?' ':'')+'%';
+const fill=(s,o)=>s.replace(/\{(\w+)\}/g,(m,k)=>o[k]);
+const $=id=>document.getElementById(id);
+function seg(id,cb){const el=$(id);el.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  el.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));cb(b.dataset.v);});}
+const val=id=>$(id).querySelector('[aria-pressed=true]').dataset.v;
+const idx=j=>D.jahre.indexOf(+j);
+
+// Ländernamen in der Sprache der Seite
+if(D.lang!=='de'&&window.Intl&&Intl.DisplayNames){try{const dn=new Intl.DisplayNames([D.lang],{type:'region'});
+  document.querySelectorAll('#raum button').forEach(b=>{const n=dn.of(b.dataset.iso);if(n)b.querySelector('.nm').textContent=n;});}catch(e){}}
+
+// Fluss des Steuer-Euros
+function fluss(){const j=+$('jahr').value,i=idx(j);const a=D.a[i]/D.q*100,b=D.b/D.q*100,d=D.div[i]/D.q*100,c=D.og*D.einzugAnteil;
+  $('jahrval').textContent=j;
+  [['sa',a],['sb',b],['sd',d]].forEach(([k,v])=>{$(k).style.flexBasis=v+'%';$(k).textContent=eur(v);});
+  $('cap').style.left=c+'%';
+  $('flusstext').textContent=fill(T.js_fluss,{j:j,a:eur(a),cap:eur(c),b:eur(b),d:eur(d),hundert:eur(100)});}
+$('jahr').addEventListener('input',fluss);fluss();
+
+// Haushaltsrechner
+function steuer(x){let s=0,u=0;for(const [g,p] of D.tarif){if(x>u)s+=(Math.min(x,g)-u)*p/100;u=g;}return s;}
+function rechner(){const br=+$('brutto').value,e=+val('erw'),k=+val('kin'),j=val('rj'),i=idx(j);
+  const erw=D.erw['1,0'][i],mon=e*erw+k*erw/2,jahr=mon*12,st=steuer(br);
+  $('bruttoval').textContent=eur(br);$('r-st').textContent=eur(st);$('r-soz').textContent=eur(0);
+  $('r-satz').textContent=br?pct(st/br*100,1):'–';$('r-mon').textContent=eur(mon);
+  const hh=fill(e>1?T.js_erw_n:T.js_erw_1,{n:e})+(k?T.js_und+fill(k>1?T.js_kind_n:T.js_kind_1,{n:k}):'');
+  $('r-jahr').textContent=eur(jahr);$('r-jahrsub').textContent=fill(T.js_rechner_sub,{j:j,hh:hh});
+  const m=Math.max(st,jahr,1);$('bi-st').style.width=st/m*100+'%';$('bi-dv').style.width=jahr/m*100+'%';
+  $('b-st').textContent=eur(st);$('b-dv').textContent=eur(jahr);}
+$('brutto').addEventListener('input',rechner);['erw','kin','rj'].forEach(x=>seg(x,rechner));rechner();
+
+// Gemeinderechner
+function gemeinde(){const n=+$('g-ein').value,k=+$('g-kin').value/100,v=+$('g-verw').value;
+  const bud=n*D.einw+n*k*D.kind,sch=n*k*D.kind,plus=(D.verwAnt-v)/100*D.fachKopf/12;
+  $('g-einval').textContent=zahl(n);$('g-kinval').textContent=pct(k*100,1);$('g-verwval').textContent=pct(v,1);
+  $('g-bud').textContent=fill(T.js_mio,{x:zahl(bud/1e6,1)});$('g-sch').textContent=fill(T.js_mio,{x:zahl(sch/1e6,1)});$('g-kopf').textContent=eur(bud/n);
+  const pb=$('g-plus');pb.textContent=Math.abs(plus)<0.5?fill(T.js_monat,{x:'± '+eur(0)}):fill(T.js_monat,{x:(plus>0?'+':'−')+eur(Math.abs(plus))});pb.classList.toggle('neg',plus<=-0.5);}
+['g-ein','g-kin','g-verw'].forEach(x=>$(x).addEventListener('input',gemeinde));gemeinde();
+
+// Möglichkeitsraum
+const VOR={zehn:['DE','FR','ES','NL','IE','BE','AT','DK','SI','EE'],sechs:['DE','UK','FR','IT','ES','PL'],
+  europa:Object.keys(D.raum).filter(k=>k!=='US'&&k!=='CA'),plus:Object.keys(D.raum).filter(k=>k!=='US')};
+const SK=600;
+function raum(){const on=[...document.querySelectorAll('#raum button[aria-pressed=true]')].map(b=>b.dataset.k);
+  const sum=on.reduce((a,k)=>a+D.raum[k],0);$('raumsum').textContent=fill(T.js_mio_menschen,{x:zahl(sum,1)});$('raumn').textContent=on.length;
+  const bar=$('raumbar');bar.style.width=Math.min(sum/SK*100,100)+'%';bar.classList.toggle('unter',sum<D.us);
+  $('raumus').style.left=(D.us/SK*100)+'%';
+  $('raumtext').textContent=sum>=D.us?fill(T.js_raum_ueber,{us:zahl(D.us,1),x:zahl(sum-D.us,1)}):fill(T.js_raum_unter,{x:zahl(D.us-sum,1)});}
+function vorwahl(v){const s=new Set(VOR[v]);document.querySelectorAll('#raum button').forEach(b=>b.setAttribute('aria-pressed',s.has(b.dataset.k)?'true':'false'));raum();}
+$('raum').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
+  document.querySelectorAll('#raumvor button').forEach(x=>x.setAttribute('aria-pressed','false'));raum();});
+seg('raumvor',vorwahl);vorwahl('europa');
+
+// Wohin die Reise geht
+function chart2(t){const Z=D.zeit,W=900,H=360,L=60,R=30,TP=20,B=40;let ser,lo,hi,x0=2010,x1=2060,step;
+  if(t==='schuld'){ser=[['hist',Z.schuld_hist_jahre,Z.schuld_hist],['prog',Z.schuld_prog_jahre,Z.schuld_prog],['mit',D.jahre,D.d]];lo=20;hi=100;step=20;
+    $('zunit').textContent=T.js_schuld_unit;
+    $('zleg').innerHTML='<span class="l-hist"><i></i>'+T.js_schuld_l1+'</span><span class="l-prog"><i></i>'+T.js_schuld_l2+'</span><span class="l-mit"><i></i>'+T.js_schuld_l3+'</span>';
+    $('ztext').textContent=fill(T.js_schuld_text,{a:pct(D.d[0]),b:pct(D.d[D.d.length-1])});}
+  else{ser=[['hist',Z.co2_hist_jahre,Z.co2_hist],['ohne',Z.co2_ziel_jahre,Z.co2_ziel]];lo=0;hi=1000;step=200;x1=2045;
+    $('zunit').textContent=T.js_co2_unit;
+    $('zleg').innerHTML='<span class="l-hist"><i></i>'+T.js_co2_l1+'</span><span class="l-ohne"><i></i>'+T.js_co2_l2+'</span>';
+    $('ztext').textContent=T.js_co2_text;}
+  const X=x=>L+(x-x0)/(x1-x0)*(W-L-R),Y=y=>TP+(hi-y)/(hi-lo)*(H-TP-B);let g='';
+  for(let y=lo;y<=hi;y+=step)g+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${zahl(y)}</text>`;
+  for(let x=x0;x<=x1;x+=(x1-x0>40?10:5))g+=`<text class="axis" x="${X(x)}" y="${H-12}" text-anchor="middle">${x}</text>`;
+  g+=`<line class="marker" x1="${X(2026)}" x2="${X(2026)}" y1="${TP}" y2="${H-B}"/>`;
+  for(const [c,xs,ys] of ser){g+=`<polyline class="${c}" points="${ys.map((v,i)=>X(xs[i])+','+Y(v)).join(' ')}"/>`;
+    if(c!=='prog'){const e=ys[ys.length-1];g+=`<text class="axis" x="${X(xs[xs.length-1])-4}" y="${Y(e)-10}" text-anchor="end">${zahl(e)}</text>`;}}
+  $('chart2').innerHTML=g;}
+seg('ztabs',chart2);chart2('schuld');
+
+// Zeitpfad
+function chart(f){const s=D.erw[f],xs=D.jahre,W=900,H=360,L=60,R=30,TP=20,B=40;
+  const all=[].concat(D.erw['0,5'],D.erw['1,5']);const lo=Math.floor(Math.min(...all)/100)*100,hi=Math.ceil(Math.max(...all)/100)*100;
+  const X=x=>L+(x-xs[0])/(xs[xs.length-1]-xs[0])*(W-L-R),Y=y=>TP+(hi-y)/(hi-lo)*(H-TP-B);let g='';
+  for(let y=lo;y<=hi;y+=100)g+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${zahl(y)}</text>`;
+  for(const x of [2028,2035,2040,2050,2060])g+=`<text class="axis" x="${X(x)}" y="${H-12}" text-anchor="middle">${x}</text>`;
+  g+=`<line class="hist" x1="${L}" x2="${W-R}" y1="${Y(s[0])}" y2="${Y(s[0])}" stroke-dasharray="2 5" stroke-width="1.5"/>`;
+  g+=`<polyline class="mit" points="${s.map((v,i)=>X(xs[i])+','+Y(v)).join(' ')}"/>`;
+  const e=s[s.length-1];g+=`<text class="axis" x="${W-R}" y="${Y(e)-10}" text-anchor="end" style="fill:#1D7A4F;font-size:14px">${eur(e)}</text>`;
+  g+=`<text class="axis" x="${L+6}" y="${Y(s[0])-8}">${eur(s[0])}</text>`;
+  $('chart').innerHTML=g;}
+seg('gtabs',chart);chart('1,0');
+</script>
+</body></html>

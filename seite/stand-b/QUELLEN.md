@@ -31,3 +31,5 @@ Geprüft am 7. Oktober 2026 über Web-Abruf (maschinell gelesen, an der Quelle z
 | Grafik CO₂: Deutschland 2010–2024 | Werte der bisherigen Webseite (Umweltbundesamt laut Vorchat) | Sekundärquelle |
 | Grafik CO₂: 2025 = 649 Mio t; 1990 = 1.253 Mio t; Ziel 2030 = 438 Mio t; Neutralität 2045 | Umweltbundesamt, „Treibhausgas-Emissionen in Deutschland" (vorläufige Daten 2025) | gelesen 7.10.2026 |
 | Grafik CO₂: Ziel 2040 = 150 Mio t | Klimaschutzgesetz: −88 % gegenüber 1990 (1.253 × 0,12) | Rechnung aus Gesetzesziel |
+| Grafik Staatsschulden: gestrichelte Linie 2024–2028 | Klub-Schuldenquote 2024 BIP-gewichtet (78,45 %, `basis.py`) bis zur Startannahme 2028 (78,4 %, `gesamtrechnung.toml`) | Annahme der Gesamtrechnung |
+| Ländernamen in den Sprachfassungen | Browserfunktion `Intl.DisplayNames` (CLDR) | technisch |

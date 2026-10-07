@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.17",
+ "modellstand": "v3.18",
  "fassung_gesamtkonzept": "6. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -160,11 +160,11 @@
   {
    "id": "B12",
    "name": "Seite zum Stand B",
-   "pfad": "seite/stand-b/;seite/werkzeuge/seite_bau.py;seite/rahmenstruktur-seiten/",
+   "pfad": "seite/stand-b/;seite/werkzeuge/;seite/rahmenstruktur-seiten/",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/pruefe_konzept.py",
-   "anmerkung": "neue deutsche Seite seite/stand-b/de.html (v3.15), aus gesamtrechnung.json gebaut, Gestaltung der veröffentlichten Seite; rahmenstruktur-seiten/ als Archiv. Schriften (fonts/) nur auf dem Server"
+   "anmerkung": "Seite Stand B in sechs Sprachen (de, en, fr, it, es, pl; v3.18), Vorlage seite/werkzeuge/vorlage.html, Texte seite/werkzeuge/sprachen/*.json, Referenzland Deutschland; aus gesamtrechnung.json gebaut. Schriften (fonts/) nur auf dem Server"
   },
   {
    "id": "B13",

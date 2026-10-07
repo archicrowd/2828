@@ -1,4 +1,4 @@
-# Projektsteuerung TAX 28:28 (Stand v3.17, 7. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.18, 7. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
@@ -31,5 +31,5 @@ Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell): je 
 ## Reihenfolge der offenen Arbeit
 1. **B12 auf Klubebene:** Deckung der Quote aus den Steuerbasen der zehn Staaten (deutsche Basis: Lücke 0,95 Punkte).
 2. **B15:** BIP (DE bei Eurostat revidiert, +1,34 %), Schuldenquoten, Renditen, COFOG-Posten neu abrufen; Zinsausgaben Estland nachholen. **B19:** Zuordnung der Posten dokumentieren.
-3. **B16:** Neue deutsche Seite `seite/stand-b/de.html` liegt vor (Bau: `python3 seite/werkzeuge/seite_bau.py`); Übersetzungen und Veröffentlichung offen.
+3. **B16:** Seite in sechs Sprachen (`seite/stand-b/*.html`, Bau: `python3 seite/werkzeuge/seite_bau.py`); Gegenlesen, Länderanpassung und Veröffentlichung offen.
 4. Haushaltsmikrosimulation (kalibriert die Tarifstufen 0/9/16/21/26/28).

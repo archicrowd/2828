@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.17**
+Stand: 7. Oktober 2026 · Modellstand **v3.18**
 
 ---
 
@@ -761,6 +761,35 @@ Umweltbundesamt; § 32a EStG.*
 
 ---
 
+### v3.18 — Sprachfassungen der Webseite, Prognoselinie Staatsschulden
+
+**Art der Änderung: MINOR** (Seite in sechs Sprachen; keine Zahl der Rechnung bewegt). 7. Oktober 2026.
+Auftrag der Initiative: Staatsschulden-Grafik um eine gestrichelte Prognose für den fehlenden Zeitraum ergänzen; Länderversionen
+zunächst als Übersetzungen mit Referenzland Deutschland; Frage nach einer international tragfähigen Rechtsform.
+
+**Seite.** Die Vorlage ist von den Texten getrennt: `seite/werkzeuge/vorlage.html` (Aufbau, Grafiken, Rechner),
+`seite/werkzeuge/sprachen/<sprache>.json` (alle Texte, 250 Schlüssel), `seite_bau.py` prüft, dass jede Sprache genau die Schlüssel der
+deutschen Fassung hat, und formatiert Zahlen, Euro und Prozent je Sprache. Sprachen: Deutsch (Referenz), Englisch, Französisch,
+Italienisch, Spanisch, Polnisch – die Sprachen der „Sechs genügen", Englisch zugleich für Großbritannien, Irland und Kanada.
+Ländernamen im Möglichkeitsraum kommen aus dem Browser (`Intl.DisplayNames`). Alle Zahlen und Länderangaben beziehen sich auf
+Deutschland; das steht in jeder Übersetzung im Abschnitt „Das heutige System" und in der Fußzeile. Gesamtkonzept und Kurzfassung
+bleiben deutsch (Hinweis an den Links). Übersetzungen durch das KI-System, **nicht muttersprachlich gegengelesen**.
+
+**Staatsschulden-Grafik.** Gestrichelte Linie 2024–2028 für den Klub: von der BIP-gewichteten Schuldenquote 2024 (78,45 %) zur
+Startannahme 2028 (78,4 %), beschriftet „Klub bis zum Start (Schätzung)". Sie füllt die Lücke zwischen Euroraum-Reihe und Klubpfad.
+
+**Geprüft:** alle sechs Seiten gebaut und automatisch bedient (Regler, Rechner, Gemeinde, Möglichkeitsraum, Grafiken); Rechenwerte in
+allen Sprachen gleich (Steuer bei 80.000 EUR 13.389 EUR, Dividende 2060 zwei Erwachsene und zwei Kinder 2.168 EUR, Verwaltung 5,8 % →
++46 EUR); keine Skriptfehler. `pruefe_konzept.py` prüft je Sprachfassung Modellstand und Formelbetrag.
+
+**Rechtsform (Antwort an die Initiative, keine Rechtsberatung).** Siehe Antwort im Gespräch; kurz: Einstieg als eingetragener Verein
+in Deutschland oder als Verein nach Schweizer ZGB; europäisches Dach später als belgische AISBL; die geplante EU-Richtlinie über
+europäische grenzüberschreitende Vereine (Parlament März 2024) ist noch nicht verabschiedet.
+
+*Skripte: `seite/werkzeuge/seite_bau.py`, `seite/werkzeuge/vorlage.html`, `seite/werkzeuge/sprachen/*.json`, `modell/pruefe_konzept.py`.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -803,7 +832,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.17
+## 7 | Offene Punkte, Stand v3.18
 
 | Punkt | Status |
 |---|---|
@@ -822,7 +851,7 @@ nicht geklärt.
 | **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
 | **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte, Schuldenquoten, Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
-| **B16: Seite zum Stand B** | **deutsch erledigt in v3.15** (`seite/stand-b/de.html`). Offen: Übersetzungen, Veröffentlichung (Schriften `fonts/` daneben legen), Neubau nach jeder Änderung der Rechnung |
+| **B16: Seite zum Stand B** | **sechs Sprachen in v3.18.** Offen: muttersprachliches Gegenlesen, Länderanpassung (eigene Zahlen je Land statt Referenzland Deutschland), Veröffentlichung mit `fonts/` |
 | **B17: Dividende gleich oder je Land?** | **weitergeführt in v3.17.** Preisniveaus abgerufen, vier Lesarten gerechnet (`laendervarianten.csv`). Gemeinden als Pro-Kopf-Variante des Länderbeitrags (Vorschlag der Initiative). Offen: V3a oder V3b, Umzugsregel, Quotenkriterium; danach Neurechnung |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
 | **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |

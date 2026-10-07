@@ -5,7 +5,7 @@
 
 | Ordner | Inhalt |
 |---|---|
-| `stand-b/` | **neue deutsche Seite zum Stand B** (v3.15): `de.html`, gebaut mit `werkzeuge/seite_bau.py` aus `daten/aggregate/gesamtrechnung.json`; Stylesheet unverändert aus `stand-a-national/de.html`; Quellen der Länderbeispiele in `stand-b/QUELLEN.md`. Für die Veröffentlichung den Ordner `fonts/` der laufenden Seite daneben legen. Andere Sprachen folgen |
+| `stand-b/` | **Seite zum Stand B** in sechs Sprachen (`de`, `en`, `fr`, `it`, `es`, `pl`; seit v3.18), gebaut mit `werkzeuge/seite_bau.py` aus `werkzeuge/vorlage.html` und `werkzeuge/sprachen/*.json` aus `daten/aggregate/gesamtrechnung.json`; Stylesheet unverändert aus `stand-a-national/de.html`; Quellen der Länderbeispiele in `stand-b/QUELLEN.md`. Für die Veröffentlichung den Ordner `fonts/` der laufenden Seite daneben legen. Andere Sprachen folgen |
 | `werkzeuge/` | Bauskript der neuen Seite |
 | `stand-a-national/` | acht Sprachfassungen (`index` = EN, `de`, `fr`, `es`, `nl`, `da`, `sl`, `et`) und `quelltext/` (`build.py`, `css.py`, `tpl.py`, `lang/*.json`, `klub10.py`, vier Patch-Skripte). Tarif 0/9/16/21/26/28, Mehrwertsteuer 5/11/17/22/28. Der Quelltext passt zu genau diesem Build. Eigene `LIESMICH.md` |
 | `stand-a-neuerer-build/` | späterer Build (`dist/`, Tarif 0/9/19/24/27/28, Mehrwertsteuer 5/11/20/25/28, Effektivsatz 21,5 %) mit drei Patch-Skripten und `qa_tarif.py`. Der dazugehörige Quelltext ist **nicht erhalten** |
