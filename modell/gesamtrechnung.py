@@ -328,10 +328,10 @@ def main() -> int:
     # B12: Deckungsrahmen aus dem nationalen Modell (Stand A), deutsche Basis
     # Quelle: modell/kern/modell-2828-ergebnisse.txt, Abschnitt B, Stufe 50 %, Modellbasis 4.200 Mrd
     basis_kern = 4200.0
-    # Einkommen seit v3.21: Stufen beim 1- bis 5-fachen Grundbedarf (modell/tarif_grundbedarf.py, gleiche
+    # Einkommen seit v3.22: Stufen beim 1- bis 4-fachen Grundbedarf (v3.21: bis 5-fach) (modell/tarif_grundbedarf.py, gleiche
     # Aufkommensfunktion des nationalen Modells); vorher 313,3 Mrd mit Stufen 12.348/25.000/40.000/55.000/70.000
     TG = json.loads((AGG / "tarif_grundbedarf.json").read_text(encoding="utf-8"))
-    kern = [("01 Einkommen (Stufen 1- bis 5-facher Grundbedarf, 0/9/16/21/26/28 %, Dividende steuerpflichtig)",
+    kern = [("01 Einkommen (Stufen 1- bis 4-facher Grundbedarf, 0/9/16/21/28 %, Dividende steuerpflichtig)",
              TG["einkommen_modell_mrd_neu"]),
             ("02 Kapital 28 %", 48.8), ("06 Konsum (Label, effektiv 20,0 %)", 375.9),
             ("05 Konzerne und Plattformen 28 %", 157.6), ("03 Erbschaft 28 %", 35.9),

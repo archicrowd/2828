@@ -26,7 +26,7 @@ J = json.loads((WURZEL / "daten/aggregate/gesamtrechnung.json").read_text(encodi
 with open(WURZEL / "daten/aggregate/moeglichkeitsraum.csv", encoding="utf-8") as f:
     RAUM = list(csv.DictReader(f))
 
-# Seit v3.21: Stufen beim 1- bis 5-fachen Grundbedarf, Euro 2028 (wie die Dividende); vorher feste Euro 2026 (Korrektur 55)
+# Seit v3.21 Stufen am Grundbedarf (seit v3.22: 1- bis 4-fach, 28 % ab 4-fach), Euro 2028 (wie die Dividende); vorher feste Euro 2026 (Korrektur 55)
 _TG = json.loads((WURZEL / "daten/aggregate/tarif_grundbedarf.json").read_text(encoding="utf-8"))
 TARIF = [(g, s) for g, s in zip(_TG["stufen_de_2028"], _TG["saetze"])] + [(None, _TG["saetze"][-1])]
 # Eurostat-Kürzel -> ISO-Kürzel für die Ländernamen der Sprache (Intl.DisplayNames im Browser)

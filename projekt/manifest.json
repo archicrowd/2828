@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.21",
+ "modellstand": "v3.22",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -41,8 +41,8 @@
   "formel_einw": 3598.675392804394,
   "formel_kind": 12624.65648994137,
   "entlastung": 1.1099999999999994,
-  "deckung_gesamt": 30.109761904761903,
-  "deckung_luecke": 1.7902380952380952,
+  "deckung_gesamt": 30.166666666666668,
+  "deckung_luecke": 1.7333333333333307,
   "zins_eff_2024": 1.8965957322556544,
   "pop_klub_mio": 255.061017,
   "bip28_klub_mrd": 13802.733917918245
@@ -287,7 +287,7 @@
    "nach": "B03 Rahmenmodell (Stand B)",
    "was": "Steuerpositionen des Kerns tragen die Quote 30,6 % des Rahmens",
    "status": "offen",
-   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte, Tarif am Grundbedarf); Klubebene fehlt (deckung_quote.csv)"
+   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; v3.22: 1,73 Punkte, Tarif 0/9/16/21/28 am Grundbedarf); Klubebene fehlt (deckung_quote.csv)"
   },
   {
    "id": "N06",

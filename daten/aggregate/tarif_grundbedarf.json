@@ -5,99 +5,86 @@
   1,
   2,
   3,
-  4,
-  5
+  4
  ],
  "saetze": [
   0,
   9,
   16,
   21,
-  26,
   28
  ],
  "stufen_de_2028": [
   12847,
   25694,
   38541,
-  51387,
-  64234
+  51387
  ],
  "stufen_laender_2028": {
   "DK": [
    16815,
    33630,
    50445,
-   67261,
-   84076
+   67261
   ],
   "IE": [
    16627,
    33253,
    49880,
-   66507,
-   83134
+   66507
   ],
   "NL": [
    14248,
    28496,
    42744,
-   56992,
-   71241
+   56992
   ],
   "AT": [
    14095,
    28190,
    42285,
-   56380,
-   70475
+   56380
   ],
   "BE": [
    13977,
    27955,
    41932,
-   55909,
-   69886
+   55909
   ],
   "DE": [
    12847,
    25694,
    38541,
-   51387,
-   64234
+   51387
   ],
   "FR": [
    12706,
    25411,
    38117,
-   50822,
-   63528
+   50822
   ],
   "EE": [
    11363,
    22726,
    34090,
-   45453,
-   56816
+   45453
   ],
   "SI": [
    10716,
    21431,
    32147,
-   42862,
-   53578
+   42862
   ],
   "ES": [
    10680,
    21360,
    32041,
-   42721,
-   53401
+   42721
   ]
  },
- "einkommen_pct_bip_neu": 7.721,
- "einkommen_modell_mrd_neu": 324.27,
- "aenderung_pct_bip": 0.261,
+ "einkommen_pct_bip_neu": 7.778,
+ "einkommen_modell_mrd_neu": 326.66,
+ "aenderung_pct_bip": 0.318,
  "varianten": [
   {
    "variante": "heute",
@@ -114,7 +101,7 @@
   },
   {
    "variante": "grundbedarf_1_5",
-   "beschreibung": "Stufen beim 1- bis 5-fachen Grundbedarf (gewählt, v3.21)",
+   "beschreibung": "Stufen beim 1- bis 5-fachen Grundbedarf (v3.21, verworfen in v3.22)",
    "grenzen_eur_2026": "12348/24696/37044/49392/61740",
    "saetze_pct": "0/9/16/21/26/28",
    "aufkommen_modell_mrd": 324.27,
@@ -127,7 +114,7 @@
   },
   {
    "variante": "grundbedarf_1_4",
-   "beschreibung": "Stufen beim 1- bis 4-fachen Grundbedarf, 28 % ab dem 4-fachen (ohne 26 %)",
+   "beschreibung": "Stufen beim 1- bis 4-fachen Grundbedarf, 28 % ab dem 4-fachen (gewählt, v3.22)",
    "grenzen_eur_2026": "12348/24696/37044/49392",
    "saetze_pct": "0/9/16/21/28",
    "aufkommen_modell_mrd": 326.66,

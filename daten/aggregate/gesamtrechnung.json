@@ -1,6 +1,6 @@
 {
  "fassung": "7. Oktober 2026",
- "version": "v3.21",
+ "version": "v3.22",
  "bip24_klub_mrd": 12157.2991,
  "faktor": 1.13534542536,
  "bip28_klub_mrd": 13802.733917918245,
@@ -443,8 +443,8 @@
  "entlastung_mrd": 153.21034648889244,
  "tabelle_deckung": [
   [
-   "01 Einkommen (Stufen 1- bis 5-facher Grundbedarf, 0/9/16/21/26/28 %, Dividende steuerpflichtig)",
-   7.720714285714285,
+   "01 Einkommen (Stufen 1- bis 4-facher Grundbedarf, 0/9/16/21/28 %, Dividende steuerpflichtig)",
+   7.777619047619049,
    "Kernsystem"
   ],
   [
@@ -503,11 +503,11 @@
    "Stand B"
   ]
  ],
- "deckung_kern": 28.170714285714283,
- "deckung_mit_bausteinen": 29.289761904761903,
- "deckung_gesamt": 30.109761904761903,
- "deckung_luecke": 1.7902380952380952,
- "deckung_luecke_mrd_klub": 247.10180078292208,
+ "deckung_kern": 28.227619047619047,
+ "deckung_mit_bausteinen": 29.346666666666668,
+ "deckung_gesamt": 30.166666666666668,
+ "deckung_luecke": 1.7333333333333307,
+ "deckung_luecke_mrd_klub": 239.24738791058257,
  "selbstpruefung_jahre": 33,
  "anteil_minderjaehrige": 16.67,
  "erw_2028": 585.7575037264816,
@@ -949,10 +949,9 @@
   12847,
   25694,
   38541,
-  51387,
-  64234
+  51387
  ],
- "tarif_aenderung_pct_bip": 0.261,
+ "tarif_aenderung_pct_bip": 0.318,
  "abgabenkeil_de_2024": 47.9,
  "abgabenkeil_oecd_2024": 34.9,
  "abgeltungsteuer_de": 26.375,

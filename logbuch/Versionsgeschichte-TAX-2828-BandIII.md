@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.21**
+Stand: 7. Oktober 2026 · Modellstand **v3.22**
 
 ---
 
@@ -979,6 +979,34 @@ Korrektur 55).
 
 ---
 
+### v3.22 — Tarif 0 / 9 / 16 / 21 / 28 % mit vier Stufen am Grundbedarf; Umzugsregel: Zweck des Nachweises
+
+**Art der Änderung: MINOR, bewegt die Deckung, nicht die Quote.** 7. Oktober 2026.
+Entscheidung der Initiative: „Die alternative Lesart ist einfacher und zukunftssicherer. Der Steuernachweis trägt die Idee, dass
+Umzüge nur dann belohnt werden, wenn ein neues Einkommen vor Ort gesichert ist. Man kann das zunächst ausklammern."
+
+**1. Tarif.** Sätze 0 / 9 / 16 / 21 / 28 %, Stufen beim 1-, 2-, 3- und 4-fachen Grundbedarf; 28 % ab dem Vierfachen. Der Satz 26 %
+des nationalen Modells entfällt. Deutschland 2028: **12.847 / 25.694 / 38.541 / 51.387 EUR** (Preise 2028). Länder 2028 (1- bis 4-fach): DK 16.815–67.261; IE 16.627–66.507; NL 14.248–56.992; AT 14.095–56.380; BE 13.977–55.909; DE 12.847–51.387; FR 12.706–50.822; EE 11.363–45.453; SI 10.716–42.862; ES 10.680–42.721 EUR.
+
+**2. Umzugsregel.** Zweck des Steuernachweises im Konzept festgehalten: Ein Umzug wird nur belohnt, wenn vor Ort ein neues
+Einkommen gesichert ist. Kinder und Studierende ohne Nachweis (v3.21). Personen ohne steuerpflichtiges Einkommen über dem
+Grundbedarf (etwa Rentner mit kleiner Rente): **vorerst ausgeklammert**; der Vorschlag aus v3.21 (Veranlagung statt Zahlung) ist
+zurückgezogen.
+
+**Bewegte Zahlen** (grobe Aufkommensfunktion des nationalen Modells, deutsche Basis, siehe v3.21): Einkommensteuer 7,72 → **7,78 % BIP**
+(gegen die festen Stufen bis v3.20: +0,32 Punkte); nachgewiesene Deckung 30,11 → **30,17 %**; Deckungslücke 1,79 →
+**1,73 Punkte (239 Mrd EUR Klub 2028)**. Rechner der Seite: Steuer bei 80.000 EUR 13.664 → **13.921 EUR**
+(Preise 2028, von Hand nachgerechnet). Quote 31,9 %, Dividende und Obergrenze unverändert. Dieselbe Einschränkung wie in
+v3.21: Größenordnung, keine Mikrosimulation; für die übrigen neun Länder nicht gerechnet.
+
+**Wodurch aufgefallen:** Entscheidung der Initiative.
+
+**Geprüft:** `python3 modell/alles.py`; `pruefe_konzept.py`; Seite bedient (Rechner 13.921 EUR, keine Skriptfehler).
+
+*Skripte: `modell/tarif_grundbedarf.py`, `modell/gesamtrechnung.py`, `gesamtrechnung.toml`, Bauskripte, `seite/werkzeuge/sprachen/*.json`.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -1023,7 +1051,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.21
+## 7 | Offene Punkte, Stand v3.22
 
 | Punkt | Status |
 |---|---|
@@ -1038,12 +1066,12 @@ nicht geklärt.
 | **B8: Bemessung des Aufschlags** | **geklärt in v3.11.** BIP-Bemessung folgt aus der Finanzierung nach BIP-Anteil; `altschuld.py` überholt (Sekundärquelle) |
 | **B9: Obergrenze** | **entschieden in v3.12:** abgeleitete Regel (36 % bis v3.19). **Seit v3.20: 35 %** (größerer Einzug bei Quote 31,9 %); nicht gedeckt: Häufung der Risiken (35,6 %) und 3,5 % Verteidigung (37,3 %) |
 | **B10: Basis des Gesamtkonzepts** | **geschlossen in v3.9.** Das Gesamtkonzept steht auf der korrigierten Basis |
-| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; **seit v3.21: 1,79 Punkte, 247 Mrd EUR Klub**, Tarifstufen am Grundbedarf). Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
+| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; **seit v3.22: 1,73 Punkte, 239 Mrd EUR Klub**, Tarif 0/9/16/21/28 am Grundbedarf). Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
 | **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
 | **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte (Schuldenstände 2010–2025 und Defizite 2025 seit v3.19 neu abgerufen), Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
 | **B16: Seite zum Stand B** | **sechs Sprachen in v3.18.** Offen: muttersprachliches Gegenlesen, Länderanpassung (eigene Zahlen je Land statt Referenzland Deutschland), Veröffentlichung mit `fonts/` |
-| **B17: Dividende gleich oder je Land?** | **entschieden in v3.20:** Dividende nach Preisniveau (V3a), Boden halbes Existenzminimum am Wohnort (Quotenkriterium, streng), Umzugsregel drei Jahre mit Steuernachweis. Umzugsregel v3.21: Kinder und Studierende ohne Steuernachweis; Vorschlag Veranlagung statt Mindestzahlung (offen). Offen: Europarecht; jährliche Fortschreibung der Preisniveaus; Fortschreibung des Existenzminimums |
+| **B17: Dividende gleich oder je Land?** | **entschieden in v3.20:** Dividende nach Preisniveau (V3a), Boden halbes Existenzminimum am Wohnort (Quotenkriterium, streng), Umzugsregel drei Jahre mit Steuernachweis. Umzugsregel v3.21: Kinder und Studierende ohne Steuernachweis; Fälle ohne Einkommen vorerst ausgeklammert (v3.22). Offen: Europarecht; jährliche Fortschreibung der Preisniveaus; Fortschreibung des Existenzminimums |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
 | **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |
 | **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |

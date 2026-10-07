@@ -76,7 +76,7 @@
  "tarif_darueber": "oltre — limite massimo",
  "b1_pos": "Reddito",
  "b1_h": "Aliquote a scaglioni con tetto fisso",
- "b1_p": "Si tassa il lordo – senza deduzioni, senza splitting. Il minimo vitale resta esente; oltre, lavorare conviene a ogni scaglione. Gli scaglioni partono da una a cinque volte il fabbisogno di base del luogo di residenza e crescono con esso.",
+ "b1_p": "Si tassa il lordo – senza deduzioni, senza splitting. Il minimo vitale resta esente; oltre, lavorare conviene a ogni scaglione. Gli scaglioni partono da una a quattro volte il fabbisogno di base del luogo di residenza e crescono con esso.",
  "b2_pos": "Lavoro",
  "b2_h": "Niente più contributi sociali",
  "b2_r": "{p0} sul salario",

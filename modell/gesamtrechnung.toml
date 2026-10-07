@@ -5,7 +5,7 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.21"
+version = "v3.22"
 fassung = "7. Oktober 2026"
 
 [[parameter]]
@@ -238,6 +238,6 @@ wert       = 1.0
 einheit    = "Vielfaches des Grundbedarfs je Stufe"
 bezugsjahr = 2028
 preisbasis = "real, am Wohnort"
-quelle     = "Vorschlag der Initiative, 7. Oktober 2026 (v3.21)"
+quelle     = "Vorschlag der Initiative, 7. Oktober 2026 (v3.21, Lesart v3.22)"
 status     = "regel"
-hinweis    = "Stufen 0/9/16/21/26/28 % beginnen beim 1-, 2-, 3-, 4- und 5-fachen Grundbedarf (existenzminimum_de_jahr, fortgeschrieben, mit dem Preisniveau übertragen). Aufkommen: modell/tarif_grundbedarf.py"
+hinweis    = "Seit v3.22: Stufen 0/9/16/21/28 % beginnen beim 1-, 2-, 3- und 4-fachen Grundbedarf (v3.21: 0/9/16/21/26/28 bis 5-fach) (existenzminimum_de_jahr, fortgeschrieben, mit dem Preisniveau übertragen). Aufkommen: modell/tarif_grundbedarf.py"
