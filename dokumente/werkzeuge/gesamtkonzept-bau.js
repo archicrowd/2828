@@ -185,7 +185,7 @@ tab([{t:"Punkt",w:2800},{t:"Stand",w:6226}],
  ["Artikel 113 AEUV","Der Vertragstext verlangt für Steuerharmonisierung Einstimmigkeit im Rat. Ein Klub mit Mehrheitsentscheid ist im geltenden EU-Rahmen nicht darstellbar. Vereinbarungsgemäß zurückgestellt — Sache der Gemeinschaften beim Umstieg"],
  ["A-Standards","Der einzige Mechanismus ohne Zahl. Dort entscheidet sich die Qualität der Schulen, und dort ist der Entwurf am wenigsten festgelegt"],
  ["Schulgeld und Schulort","Das Geld folgt dem Wohnort, der Schulplatz liegt oft in der Nachbargemeinde. Braucht einen Ausgleich, wie ihn deutsche Gastschulbeiträge kennen"],
- ["Restlaufzeit und Schuldenstand 2028","Restlaufzeit mit 7,5 Jahren als Erfahrungswert angesetzt, nicht erhoben. Die Schuldenquote 2028 ist mit dem Stand 2024 angesetzt; steigt sie bis dahin auf 82 %, braucht A im Höchstjahr "+de(ogf.find(o=>o.fall.startsWith('Schuldenquote')).pct_einzug,1)+" % des Einzugs"],
+ ["Restlaufzeit und Schuldenstand 2028","Restlaufzeit mit 7,5 Jahren als Erfahrungswert angesetzt, nicht erhoben. Die Schuldenquote 2028 ist aus dem heutigen Kurs fortgeschrieben ("+de(J.schuldenquote_2028,1)+" %, gleich bleibende Defizite); liegt sie 3,5 Punkte höher, braucht A im Höchstjahr "+de(ogf.find(o=>o.fall.startsWith('Schuldenquote')).pct_einzug,1)+" % des Einzugs"],
  ["Mindestgröße der Gemeinden","Dänischer Richtwert 20.000, besser 30.000 Einwohner. Ohne Gebietsreform oder Pflichtverbände kann B seine Aufgaben nicht tragen"],
  ["Stichprobe statt Klub","Alle Zahlen beruhen auf zehn Staaten mit vollständigen Daten, nicht auf dem Möglichkeitsraum von einunddreißig. Polen und Italien fehlen"]]),
 

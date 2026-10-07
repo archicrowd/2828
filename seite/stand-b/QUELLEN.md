@@ -31,5 +31,7 @@ Geprüft am 7. Oktober 2026 über Web-Abruf (maschinell gelesen, an der Quelle z
 | Grafik CO₂: Deutschland 2010–2024 | Werte der bisherigen Webseite (Umweltbundesamt laut Vorchat) | Sekundärquelle |
 | Grafik CO₂: 2025 = 649 Mio t; 1990 = 1.253 Mio t; Ziel 2030 = 438 Mio t; Neutralität 2045 | Umweltbundesamt, „Treibhausgas-Emissionen in Deutschland" (vorläufige Daten 2025) | gelesen 7.10.2026 |
 | Grafik CO₂: Ziel 2040 = 150 Mio t | Klimaschutzgesetz: −88 % gegenüber 1990 (1.253 × 0,12) | Rechnung aus Gesetzesziel |
-| Grafik Staatsschulden: gestrichelte Linie 2024–2028 | Klub-Schuldenquote 2024 BIP-gewichtet (78,45 %, `basis.py`) bis zur Startannahme 2028 (78,4 %, `gesamtrechnung.toml`) | Annahme der Gesamtrechnung |
+| Grafik Staatsschulden: gestrichelte Linie 2024–2028 | Klub-Schuldenquote 2024 BIP-gewichtet (78,45 %, `basis.py`) bis zur Startannahme 2028 (78,4 %, `gesamtrechnung.toml`) | Annahme der Gesamtrechnung; **überholt in v3.19** (siehe nächste Zeilen) |
 | Ländernamen in den Sprachfassungen | Browserfunktion `Intl.DisplayNames` (CLDR) | technisch |
+| Grafik Staatsschulden ab v3.19: Klub der zehn 2010–2025 | Eurostat gov_10dd_edpt1, GD, je Land einzeln abgerufen 7.10.2026, mit dem BIP 2024 gewichtet (`daten/aggregate/schulden_2010_2025.csv`, `modell/schuldenpfad.py`) | gelesen 7.10.2026 |
+| Grafik Staatsschulden: gestrichelte Fortschreibung 2025–2028 | gleich bleibende Defizite 2025 (B9, gewichtet −2,93 % des BIP) und 3,0 % nominales Wachstum (`schuldenpfad.json`); ersetzt die Euroraum-Reihe und die frühere Annahme 78,4 % | Rechnung |

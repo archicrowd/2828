@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.18",
+ "modellstand": "v3.19",
  "fassung_gesamtkonzept": "6. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -31,18 +31,18 @@
   "werkzeuge": "LibreOffice (soffice), poppler-utils (pdftotext, pdfinfo)"
  },
  "kernergebnisse": {
-  "quote": 30.8,
+  "quote": 30.9,
   "obergrenze": 36.0,
-  "mindestquote_streng": 30.763652174835784,
-  "klub_2028": 490.23002925962004,
-  "klub_2035": 478.7960847196409,
-  "klub_2060": 662.3504866913153,
-  "de_2028": 533.1123002767966,
+  "mindestquote_streng": 30.826767787785286,
+  "klub_2028": 491.8384329236564,
+  "klub_2035": 480.77816604974686,
+  "klub_2060": 666.7776489726463,
+  "de_2028": 534.8613970801954,
   "formel_einw": 3598.675392804394,
   "formel_kind": 12624.65648994137,
-  "entlastung": 2.210000000000001,
+  "entlastung": 2.1099999999999994,
   "deckung_gesamt": 29.848571428571432,
-  "deckung_luecke": 0.9514285714285684,
+  "deckung_luecke": 1.0514285714285663,
   "zins_eff_2024": 1.8965957322556544,
   "pop_klub_mio": 255.061017,
   "bip28_klub_mrd": 13802.733917918245
@@ -232,7 +232,7 @@
   {
    "id": "B20",
    "name": "Gesamtrechnung",
-   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv;modell/laendervarianten.py;daten/aggregate/laendervarianten.csv;daten/aggregate/preisniveau_2024.csv",
+   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv;modell/laendervarianten.py;daten/aggregate/laendervarianten.csv;daten/aggregate/preisniveau_2024.csv;modell/schuldenpfad.py;daten/aggregate/schulden_2010_2025.csv;daten/aggregate/schuldenpfad.json",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/gesamtrechnung.py (Selbstprüfung gegen final.pfad);modell/pruefe_konzept.py",
@@ -287,7 +287,7 @@
    "nach": "B03 Rahmenmodell (Stand B)",
    "was": "Steuerpositionen des Kerns tragen die Quote 30,6 % des Rahmens",
    "status": "offen",
-   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 %; Klubebene fehlt (deckung_quote.csv)"
+   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %); Klubebene fehlt (deckung_quote.csv)"
   },
   {
    "id": "N06",
@@ -391,11 +391,11 @@
    "id": "Q03",
    "quelle": "Schuldenstand",
    "herausgeber": "Eurostat",
-   "datensatz_oder_fundstelle": "gov_10dd_edpt1 (GD, PC_GDP, S13)",
+   "datensatz_oder_fundstelle": "gov_10dd_edpt1 (GD und B9, PC_GDP, S13), 2010-2025",
    "bezugsjahr": "2024",
-   "verwendet_fuer": "Schuldenquote, Aufschlag",
-   "datei_im_repo": "modell/rahmen/basis.py",
-   "status": "übernommen, nicht erneut geprüft (B15)",
+   "verwendet_fuer": "Schuldenquote 2024, Schuldenpfad 2010-2025, Fortschreibung bis 2028, Aufschlag",
+   "datei_im_repo": "modell/rahmen/basis.py; daten/aggregate/schulden_2010_2025.csv",
+   "status": "je Land einzeln abgerufen 7.10.2026 (maschinell gelesen); Werte 2024 stimmen mit basis.py überein",
    "zugang": "offen",
    "weitergabe": "Eurostat-Bedingungen"
   },

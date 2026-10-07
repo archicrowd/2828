@@ -1,30 +1,30 @@
 pruefung,muster,ergebnis
-Quote,"Steuerquote 30,8 %",ja
+Quote,"Steuerquote 30,9 %",ja
 Obergrenze,"36 % dessen, was A einzieht",ja
-Klubdividende 2028,bei 490 €,ja
-Klubdividende Tiefpunkt,auf 479 €,ja
+Klubdividende 2028,bei 492 €,ja
+Klubdividende Tiefpunkt,auf 481 €,ja
 Formel je Einwohner,3.599 € je Einwohner,ja
 Formel je Kind,12.625 € je Kind,ja
 Einwohner,"255,1 Mio Menschen",ja
 Klub-BIP 2028,13.803 Mrd €,ja
-A 2028,"9,58 % des BIP im Startjahr",ja
-Höchstbedarf,"Höchststand 10,53 %",ja
+A 2028,"9,64 % des BIP im Startjahr",ja
+Höchstbedarf,"Höchststand 10,59 %",ja
 Zins 2024,"effektiver Satz von 1,90 %",ja
-Zinsdienst 2028 Mrd,240 Mrd €,ja
-DE 2028,533 € im Startjahr,ja
-DE 2060,720 € im Jahr 2060,ja
-Strenge Mindestquote,"genügen 30,76 %",ja
-Anteilsverlust,"vermindert um 1,1 %",ja
-Entlastung,"Entlastung von 2,21 Punkten",ja
-Gesamtlast Entwurf,"38,55",ja
+Zinsdienst 2028 Mrd,249 Mrd €,ja
+DE 2028,535 € im Startjahr,ja
+DE 2060,725 € im Jahr 2060,ja
+Strenge Mindestquote,"genügen 30,83 %",ja
+Anteilsverlust,"vermindert um 0,8 %",ja
+Entlastung,"Entlastung von 2,11 Punkten",ja
+Gesamtlast Entwurf,"38,65",ja
 Deckung nachgewiesen,"29,85",ja
-Deckungslücke,"0,95 Punkte des BIP",ja
-Aufschlag größter Anteil,"7,1 % dessen",ja
-Entlastung Irland,"(Irland) 20,3 %",ja
+Deckungslücke,"1,05 Punkte des BIP",ja
+Aufschlag größter Anteil,"7,0 % dessen",ja
+Entlastung Irland,"(Irland) 20,2 %",ja
 Verwaltung,bis zu 46 € im Monat,ja
 Tilgungsverzicht,im Startjahr 25 € Dividende,ja
-Dividende Tabelle 2035,479,ja
-Dividende Tabelle 2060,662,ja
+Dividende Tabelle 2035,481,ja
+Dividende Tabelle 2060,667,ja
 Autorin,Initiative 28:28,ja
 Lizenz,CC BY 4.0,ja
 "veraltet: 30,60","30,60",ja (fehlt)
@@ -32,25 +32,25 @@ Lizenz,CC BY 4.0,ja
 veraltet: bei 506 €,bei 506 €,ja (fehlt)
 veraltet: 3.602 €,3.602 €,ja (fehlt)
 "veraltet: 254,8 Mio","254,8 Mio",ja (fehlt)
-Kurz: Quote,"30,8 % des BIP",ja
+Kurz: Quote,"30,9 % des BIP",ja
 Kurz: Obergrenze,höchstens 36 %,ja
-Kurz: Dividende 2028,490 € je Einwohner,ja
-Kurz: Dividende 2060,662 €,ja
+Kurz: Dividende 2028,492 € je Einwohner,ja
+Kurz: Dividende 2060,667 €,ja
 Kurz: Formel,je Einwohner 3.599 €,ja
-Kurz: Entlastung,"2,21 Punkte",ja
-Kurz: Deckungslücke,"fehlen 0,95 Punkte",ja
+Kurz: Entlastung,"2,11 Punkte",ja
+Kurz: Deckungslücke,"fehlen 1,05 Punkte",ja
 Kurz: Abgabenkeil,"47,9 %",ja
 Kurz: Schätzung gekennzeichnet,Gruppenschätzung,ja
 Kurz: zwei Seiten,Pages: 2,ja
-Seite: Dividende je Erwachsenem,535 €,ja
+Seite: Dividende je Erwachsenem,537 €,ja
 Seite: Formel,3.599 € je Einwohner,ja
 Seite: Obergrenze,höchstens 36 %,ja
 Seite: Abgabenkeil,"47,9 %",ja
 Seite: Schätzung gekennzeichnet,* Schätzung,ja
-Seite: Modellstand,v3.18,ja
-Sprachfassung de,v3.18 / 3599,ja
-Sprachfassung en,v3.18 / 3599,ja
-Sprachfassung fr,v3.18 / 3599,ja
-Sprachfassung it,v3.18 / 3599,ja
-Sprachfassung es,v3.18 / 3599,ja
-Sprachfassung pl,v3.18 / 3599,ja
+Seite: Modellstand,v3.19,ja
+Sprachfassung de,v3.19 / 3599,ja
+Sprachfassung en,v3.19 / 3599,ja
+Sprachfassung fr,v3.19 / 3599,ja
+Sprachfassung it,v3.19 / 3599,ja
+Sprachfassung es,v3.19 / 3599,ja
+Sprachfassung pl,v3.19 / 3599,ja

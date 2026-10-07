@@ -1,12 +1,12 @@
-# Projektsteuerung TAX 28:28 (Stand v3.18, 7. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.19, 7. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
 Autorin des Konzepts: Initiative 28:28 (Name nur im Impressum der Webseite). Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.
 
 ## Geltende Fassung
-Gesamtkonzept vom 6. Oktober 2026 (dazu Kurzfassung, zwei Seiten): Quote 30,8 %, Obergrenze von A 36 % des Einzugs, Dividende im Klubschnitt
-490 € je Einwohner und Monat 2028, Tiefpunkt 479 € 2035, 662 € 2060 (Preise 2028). Rechnung `modell/gesamtrechnung.py`.
+Gesamtkonzept vom 7. Oktober 2026 (dazu Kurzfassung, zwei Seiten): Quote 30,9 %, Obergrenze von A 36 % des Einzugs, Dividende im Klubschnitt
+492 € je Einwohner und Monat 2028, Tiefpunkt 481 € 2035, 667 € 2060 (Preise 2028); Schuldenquote 2028 81,3 % (Fortschreibung des Status quo, seit v3.19). Rechnung `modell/gesamtrechnung.py`.
 
 ## Einstieg für Dritte
 `DATENZUGANG.md` (Menschen), `AGENTS.md` (KI-Agenten), `projekt/manifest.json` (maschinenlesbar),

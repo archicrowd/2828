@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.18**
+Stand: 7. Oktober 2026 · Modellstand **v3.19**
 
 ---
 
@@ -790,6 +790,63 @@ europäische grenzüberschreitende Vereine (Parlament März 2024) ist noch nicht
 
 ---
 
+### v3.19 — Staatsschulden: Fortschreibung des Status quo bis zum Systemwechsel
+
+**Art der Änderung: MINOR, bewegt Zahlen der Rechnung.** 7. Oktober 2026.
+Auftrag der Initiative: „Die Strichlinie in der Grafik soll sich aus einer Prognose der Weiterentwicklung des Status quo darstellen
+bis zum Systemwechsel und folgt erst dann dem neuen Pfad."
+
+**Daten.** Bruttoschuldenstand (GD) 2010–2025 und Finanzierungssaldo (B9) 2025 der zehn Klubstaaten, Eurostat `gov_10dd_edpt1`
+(Sektor S13, % des BIP), abgerufen 7. Oktober 2026 über das Web-Abrufwerkzeug, je Land und Größe ein Abruf. Ablage als Aggregat
+`daten/aggregate/schulden_2010_2025.csv` (eine Zeile je Land, keine Rohantwort). Prüfung: die Werte 2024 stimmen mit `basis.py`
+überein. Werte 2025 sind die Meldung vom Oktober 2026 und können noch revidiert werden (**vorläufig**).
+
+**Rechnung (`modell/schuldenpfad.py`).** Klubquote je Jahr BIP-gewichtet (Gewichte BIP 2024 aus `basis.py`; Annahme: feste Gewichte
+über den ganzen Zeitraum, vereinfachend). Fortschreibung 2026–2028 mit `d(t) = d(t−1)/(1+g) − saldo_2025`, g = 3,0 % nominal
+(`gesamtrechnung.toml`), Saldo 2025 gewichtet −2,93 % des BIP, als gleich bleibend angenommen (**Annahme „Status quo"**: keine
+Konsolidierung, keine Verteidigungsaufwüchse über 2025 hinaus). Ergebnis: Klub 2025 79,5 %, 2026 80,1 %, 2027 80,7 %, **2028 81,3 %**.
+Ausgabe `daten/aggregate/schuldenpfad.json`.
+
+**Folge für das Modell.** Damit der neue Pfad an die Strichlinie anschließt, startet die Gesamtrechnung 2028 mit 81,3 % statt der
+Annahme 78,4 % (Stand 2024). Der Risikofall „Schuldenquote 2028 höher" ist jetzt +3,5 Punkte (84,8 %), vorher 82 %.
+
+**Bewegte Zahlen** (alle Preise 2028, Klub):
+
+| Größe | v3.18 | v3.19 |
+|---|---:|---:|
+| Schuldenquote 2028 | 78,4 % (Annahme) | 81,3 % (Fortschreibung) |
+| strenge Mindestquote | 30,76 % | 30,83 % |
+| **Quote (aufgerundet)** | **30,8 %** | **30,9 %** |
+| Ebene A 2028 | 9,58 % BIP | 9,64 % BIP |
+| Zinsdienst 2028 | 1,74 % BIP | 1,80 % BIP |
+| Dividende 2028 je Einwohner/Monat | 490,2 € | 491,8 € |
+| Tiefpunkt 2035 | 478,8 € | 480,8 € |
+| Dividende 2060 | 662,4 € | 666,8 € |
+| Erwachsene 2028 / Kinder 2028 | 534,8 / 267,4 € | 536,6 / 268,3 € |
+| Obergrenze berechnet / festgesetzt | 35,14 % / 36 % | 35,21 % / 36 % |
+| Entlastung (deutsche Basis) | 2,21 Punkte = 305 Mrd € | 2,11 Punkte = 291 Mrd € |
+| Deckungslücke zur Quote | 0,95 Punkte = 131 Mrd € | 1,05 Punkte = 145 Mrd € |
+
+Die Dividende steigt trotz höherer Schuld leicht, weil die Quote auf 30,9 % aufgerundet wird und der Rundungsüberschuss in die Dividende
+fließt. Eine Quote von 30,83 % (streng) ergäbe etwa die alte Dividende. **Kritisch:** die Fortschreibung hängt an einer einzigen
+Saldo-Annahme; bei einem Defizit von −2 % statt −2,93 % läge die Quote 2028 bei 78,6 % (2,7 Punkte tiefer), die strenge Mindestquote
+bei rund 30,77 %, also aufgerundet wieder 30,8 % (nachgerechnet mit `pfad(d0=…)`). Die Quote steht damit genau an einer Rundungsschwelle.
+
+**Grafik der Seite.** Linie „Klub der zehn bis heute" 2010–2025 (ersetzt die Euroraum-Reihe), gestrichelt „Fortschreibung bis zum
+Systemwechsel" 2025–2028, durchgezogen „mit 28:28 ab 2028" von 81,3 % auf 32 % 2060. Beschriftungen in allen sechs Sprachen.
+Gesamtkonzept §8 und Kurzfassung neu gebaut.
+
+**Wodurch aufgefallen:** Auftrag der Initiative; bei der Umsetzung zeigte sich, dass eine Strichlinie aus dem Status quo nicht an die
+Startannahme 78,4 % anschließt (Bruch von knapp 3 Punkten), daher die Änderung des Startwerts.
+
+**Geprüft:** `python3 modell/alles.py` (14 Stufen); Selbstprüfung der Gesamtrechnung gegen `final.pfad()` (mit dessen Startwert, unverändert 33 Jahre gleich);
+Grafik auf `de.html` als Bildschirmfoto gesichtet (Anschluss 2028 ohne Sprung).
+
+*Skripte: `modell/schuldenpfad.py` (neu), `modell/gesamtrechnung.py`, `modell/gesamtrechnung.toml`, `seite/werkzeuge/seite_bau.py`,
+`seite/werkzeuge/sprachen/*.json`, `dokumente/werkzeuge/gesamtkonzept-bau.js`, `modell/alles.py`.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -832,7 +889,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.18
+## 7 | Offene Punkte, Stand v3.19
 
 | Punkt | Status |
 |---|---|
@@ -841,16 +898,16 @@ nicht geklärt.
 | **B3: BIP Deutschland 2028** | **überholt, geschlossen in v3.7.** Beide Werte meinen 2028. 4.914,9 hat eine dokumentierte Herleitung und ist seit v3.3 Basis. Quelle von 4.884 unbekannt (Differenz 0,63 %) |
 | **B4: Irland, BIP oder GNI\*** | **entschieden in v3.12: BIP**, Begründung im Konzept (Abschnitt 5, 9); Größenordnung GNI\* genannt, nicht gerechnet |
 | **B5: Ebene A 8,94 % gegen 9,04 %** | **geschlossen in v3.7, war kein Widerspruch** (8,94 enthält Verteidigung 2,50, die Tabelle 2028 rechnet mit 1,40) |
-| **B6: Ausgangslage 2024 als 2028** | **entschieden in v3.12:** Auslauf ab 2024; Schuldenquote 2028 = 78,4 % bleibt Annahme (Sensitivität 82 %) |
+| **B6: Ausgangslage 2024 als 2028** | **entschieden in v3.12, geändert in v3.19:** Schuldenquote 2028 = 81,3 % als Fortschreibung des Status quo (`modell/schuldenpfad.py`, gleich bleibende Defizite 2025, 3,0 % nominales Wachstum); Risikofall +3,5 Punkte (84,8 %). Vorher Annahme 78,4 % (= Stand 2024) |
 | **Rechenskripte** | Originale in `modell/rahmen/` (unverändert, Prüfsummen); geltende Rechnung `modell/gesamtrechnung.py` (v3.12); Zweitrechnung als Regression. Das Bauskript `gesamtkonzept-bau.js` ist seit v3.12 gelesen und neu geschrieben. Skripte bis v3.4 liegen in `modell/kern/`, `rechnungen/`, `audit/` (Stand A, nicht erneut ausgeführt) |
 | **B7: Einwohnerzahl** | **geschlossen in v3.12.** Gesamtkonzept rechnet mit 255,061 Mio; `basis.py` bleibt als Original |
 | **B8: Bemessung des Aufschlags** | **geklärt in v3.11.** BIP-Bemessung folgt aus der Finanzierung nach BIP-Anteil; `altschuld.py` überholt (Sekundärquelle) |
 | **B9: Obergrenze 36 %** | **entschieden in v3.12:** abgeleitete Regel bestätigt 36 %; nicht gedeckt: Häufung der Risiken (36,7 %) und 3,5 % Verteidigung (38,5 %) |
 | **B10: Basis des Gesamtkonzepts** | **geschlossen in v3.9.** Das Gesamtkonzept steht auf der korrigierten Basis |
-| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 %. Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
+| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 % (seit v3.19: 1,05 Punkte zu 30,9 %, 145 Mrd EUR Klub). Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
 | **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
-| **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte, Schuldenquoten, Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
+| **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte (Schuldenstände 2010–2025 und Defizite 2025 seit v3.19 neu abgerufen), Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
 | **B16: Seite zum Stand B** | **sechs Sprachen in v3.18.** Offen: muttersprachliches Gegenlesen, Länderanpassung (eigene Zahlen je Land statt Referenzland Deutschland), Veröffentlichung mit `fonts/` |
 | **B17: Dividende gleich oder je Land?** | **weitergeführt in v3.17.** Preisniveaus abgerufen, vier Lesarten gerechnet (`laendervarianten.csv`). Gemeinden als Pro-Kopf-Variante des Länderbeitrags (Vorschlag der Initiative). Offen: V3a oder V3b, Umzugsregel, Quotenkriterium; danach Neurechnung |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |

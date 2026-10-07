@@ -31,11 +31,12 @@ TARIF = [(12348, 0), (25000, 9), (40000, 16), (55000, 21), (70000, 26), (None, 2
 ISO = {"UK": "GB", "EL": "GR"}
 
 # Zeitreihen der Grafik „Wohin die Reise geht" (Quellen: seite/stand-b/QUELLEN.md)
+SP = json.loads((WURZEL / "daten/aggregate/schuldenpfad.json").read_text(encoding="utf-8"))
 ZEITREIHEN = {
-    "schuld_hist_jahre": list(range(2010, 2026)),
-    "schuld_hist": [85.4, 87.3, 90.8, 92.8, 92.9, 91.0, 89.9, 87.5, 85.5, 83.6, 96.5, 93.8, 89.3, 86.9, 87.0, 87.8],
-    "schuld_prog_jahre": [2024, 2028],
-    "schuld_prog": [round(J["schuldenquote_ber"], 2), J["schuldenquote_2028"]],
+    "schuld_hist_jahre": SP["jahre"],
+    "schuld_hist": [round(x, 2) for x in SP["klub"]],
+    "schuld_prog_jahre": SP["prog_jahre"],
+    "schuld_prog": [round(x, 2) for x in SP["prog"]],
     "co2_hist_jahre": list(range(2010, 2026)),
     "co2_hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 649],
     "co2_ziel_jahre": [2025, 2030, 2040, 2045],

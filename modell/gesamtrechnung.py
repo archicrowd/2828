@@ -233,8 +233,8 @@ def main() -> int:
     faelle = [("Zentralfall", {}),
               (f"Zielzins ohne Garantie ({I_MARKT:.2f} %)".replace(".", ","), dict(i_ziel=I_MARKT)),
               ("nominales Wachstum 1,5 %", dict(g_nom=0.015)),
-              ("Schuldenquote 2028 bei 82 %", dict(d0=82.0)),
-              ("alle drei Finanzierungsrisiken zugleich", dict(i_ziel=I_MARKT, g_nom=0.015, d0=82.0)),
+              (f"Schuldenquote 2028 bei {D28 + 3.5:.1f} %".replace(".", ","), dict(d0=D28 + 3.5)),
+              ("alle drei Finanzierungsrisiken zugleich", dict(i_ziel=I_MARKT, g_nom=0.015, d0=D28 + 3.5)),
               ("Verteidigung 3,5 % (Haager Zusage)", dict(v_ziel=3.5)),
               ("Verteidigung 2,0 % (COFOG-vergleichbar)", dict(v_ziel=2.0))]
     og = []

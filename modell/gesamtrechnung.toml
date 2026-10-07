@@ -5,7 +5,7 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.18"
+version = "v3.19"
 fassung = "6. Oktober 2026"
 
 [[parameter]]
@@ -20,13 +20,13 @@ hinweis    = "Der effektive Zins von 2024 ist ein Stand von 2024; der Altbestand
 
 [[parameter]]
 name       = "schuldenquote_klub_2028"
-wert       = 78.4
+wert       = 81.3
 einheit    = "% des BIP"
 bezugsjahr = 2028
 preisbasis = "keine"
-quelle     = "Eurostat gov_10dd_edpt1 2024 (basis.py), BIP-gewichtet; als Quote 2028 angesetzt"
-status     = "annahme"
-hinweis    = "Annahme: Defizite 2024 bis 2028 und Wachstumseffekt halten die Quote etwa konstant. Sensitivität 82 % gerechnet"
+quelle     = "modell/schuldenpfad.py: Klub 2025 = 79,5 % (Eurostat gov_10dd_edpt1, BIP-gewichtet), fortgeschrieben mit gleich bleibenden Defiziten 2025 (Saldo -2,93 % des BIP) und 3,0 % nominalem Wachstum"
+status     = "fortschreibung"
+hinweis    = "Seit v3.19 Fortschreibung des Status quo bis zum Systemwechsel (vorher Annahme 78,4 % = Stand 2024). Risikofall: 3,5 Punkte höher"
 
 [[parameter]]
 name       = "garantiezins_klub"

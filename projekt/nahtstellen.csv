@@ -3,7 +3,7 @@ N01,B02 Parameterfile,B04 Zweitrechnung,Parameter speisen die Zweitrechnung,ok,v
 N02,B03 Rahmenmodell,B05 Kennzahlen,Originalskripte liefern benannte Größen,ok,kennzahlen.py
 N03,B05 Kennzahlen,B06 Aussagen,jede Zahl des Gesamtkonzepts hängt an einer Kennzahl,ok,alle Aussagen innerhalb Toleranz; Sollwerte von Hand übertragen
 N04,B03 Rahmenmodell,B02 Parameterfile,Konstanten in Skripten gleich Parameter,ok,"pruefe_konstanten.py; 1,40 statt 1,401 seit v3.10"
-N05,B08 Kern (Stand A),B03 Rahmenmodell (Stand B),"Steuerpositionen des Kerns tragen die Quote 30,6 % des Rahmens",offen,"v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 %; Klubebene fehlt (deckung_quote.csv)"
+N05,B08 Kern (Stand A),B03 Rahmenmodell (Stand B),"Steuerpositionen des Kerns tragen die Quote 30,6 % des Rahmens",offen,"v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %); Klubebene fehlt (deckung_quote.csv)"
 N06,B08 Kern,B11 Seite Stand A,Seitenzahlen kommen aus modell-2828-daten.json,ungeprueft,Build nicht ausgeführt
 N07,B03 Rahmenmodell,B11 Seite Stand A,die veröffentlichte Seite zeigt den Rahmen,fehlt,Seite hat Rahmenwechsel nie gesehen
 N08,B20 Gesamtrechnung,B12 Seite Stand B,Zahlen der Seite zum Stand B,ok,seite_bau.py liest gesamtrechnung.json; pruefe_konzept.py prüft sechs Kernzahlen im Quelltext
