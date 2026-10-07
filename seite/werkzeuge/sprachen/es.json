@@ -76,7 +76,7 @@
  "tarif_darueber": "por encima — límite",
  "b1_pos": "Renta",
  "b1_h": "Tarifa por tramos con techo firme",
- "b1_p": "Se grava la renta bruta – sin deducciones ni tributación conjunta. El mínimo vital queda exento; por encima, trabajar compensa en cada tramo.",
+ "b1_p": "Se grava la renta bruta – sin deducciones ni tributación conjunta. El mínimo vital queda exento; por encima, trabajar compensa en cada tramo. Los tramos empiezan en una a cinco veces la necesidad básica del lugar de residencia y crecen con ella.",
  "b2_pos": "Trabajo",
  "b2_h": "Sin cotizaciones sociales",
  "b2_r": "{p0} sobre el salario",

@@ -76,7 +76,7 @@
  "tarif_darueber": "above — upper limit",
  "b1_pos": "Income",
  "b1_h": "Graduated rates with a firm ceiling",
- "b1_p": "Gross income is taxed – no deductions, no income splitting. The subsistence minimum stays tax-free; above it, work pays at every step.",
+ "b1_p": "Gross income is taxed – no deductions, no income splitting. The subsistence minimum stays tax-free; above it, work pays at every step. The brackets start at one to five times the basic need where you live and rise with it.",
  "b2_pos": "Work",
  "b2_h": "No more social contributions",
  "b2_r": "{p0} on wages",

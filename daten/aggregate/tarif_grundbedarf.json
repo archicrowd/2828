@@ -1,0 +1,142 @@
+{
+ "grundbedarf_2026": 12348.0,
+ "grundbedarf_2028": 12846.8592,
+ "vielfache": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "saetze": [
+  0,
+  9,
+  16,
+  21,
+  26,
+  28
+ ],
+ "stufen_de_2028": [
+  12847,
+  25694,
+  38541,
+  51387,
+  64234
+ ],
+ "stufen_laender_2028": {
+  "DK": [
+   16815,
+   33630,
+   50445,
+   67261,
+   84076
+  ],
+  "IE": [
+   16627,
+   33253,
+   49880,
+   66507,
+   83134
+  ],
+  "NL": [
+   14248,
+   28496,
+   42744,
+   56992,
+   71241
+  ],
+  "AT": [
+   14095,
+   28190,
+   42285,
+   56380,
+   70475
+  ],
+  "BE": [
+   13977,
+   27955,
+   41932,
+   55909,
+   69886
+  ],
+  "DE": [
+   12847,
+   25694,
+   38541,
+   51387,
+   64234
+  ],
+  "FR": [
+   12706,
+   25411,
+   38117,
+   50822,
+   63528
+  ],
+  "EE": [
+   11363,
+   22726,
+   34090,
+   45453,
+   56816
+  ],
+  "SI": [
+   10716,
+   21431,
+   32147,
+   42862,
+   53578
+  ],
+  "ES": [
+   10680,
+   21360,
+   32041,
+   42721,
+   53401
+  ]
+ },
+ "einkommen_pct_bip_neu": 7.721,
+ "einkommen_modell_mrd_neu": 324.27,
+ "aenderung_pct_bip": 0.261,
+ "varianten": [
+  {
+   "variante": "heute",
+   "beschreibung": "Stufen 12.348 / 25.000 / 40.000 / 55.000 / 70.000 EUR (bis v3.20)",
+   "grenzen_eur_2026": "12348/25000/40000/55000/70000",
+   "saetze_pct": "0/9/16/21/26/28",
+   "aufkommen_modell_mrd": 313.32,
+   "pct_bip_deutsche_basis": 7.46,
+   "aenderung_mrd": 0.0,
+   "aenderung_pct_bip": 0.0,
+   "steuer_25000": 1139,
+   "steuer_40000": 3539,
+   "steuer_80000": 13389
+  },
+  {
+   "variante": "grundbedarf_1_5",
+   "beschreibung": "Stufen beim 1- bis 5-fachen Grundbedarf (gewählt, v3.21)",
+   "grenzen_eur_2026": "12348/24696/37044/49392/61740",
+   "saetze_pct": "0/9/16/21/26/28",
+   "aufkommen_modell_mrd": 324.27,
+   "pct_bip_deutsche_basis": 7.721,
+   "aenderung_mrd": 10.95,
+   "aenderung_pct_bip": 0.261,
+   "steuer_25000": 1160,
+   "steuer_40000": 3708,
+   "steuer_80000": 14003
+  },
+  {
+   "variante": "grundbedarf_1_4",
+   "beschreibung": "Stufen beim 1- bis 4-fachen Grundbedarf, 28 % ab dem 4-fachen (ohne 26 %)",
+   "grenzen_eur_2026": "12348/24696/37044/49392",
+   "saetze_pct": "0/9/16/21/28",
+   "aufkommen_modell_mrd": 326.66,
+   "pct_bip_deutsche_basis": 7.778,
+   "aenderung_mrd": 13.34,
+   "aenderung_pct_bip": 0.318,
+   "steuer_25000": 1160,
+   "steuer_40000": 3708,
+   "steuer_80000": 14250
+  }
+ ]
+}

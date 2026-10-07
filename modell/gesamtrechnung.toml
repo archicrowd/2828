@@ -5,7 +5,7 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.20"
+version = "v3.21"
 fassung = "7. Oktober 2026"
 
 [[parameter]]
@@ -231,3 +231,13 @@ preisbasis = "keine"
 quelle     = "Entscheidung der Initiative, 7. Oktober 2026 (B17)"
 status     = "regel"
 hinweis    = "Dividende des bisherigen Landes, bis drei Jahre Wohnsitz und eine nachgewiesene Steuerzahlung im neuen Land vorliegen. Ohne Wirkung auf die Rechnung"
+
+[[parameter]]
+name       = "tarif_stufenabstand_grundbedarf"
+wert       = 1.0
+einheit    = "Vielfaches des Grundbedarfs je Stufe"
+bezugsjahr = 2028
+preisbasis = "real, am Wohnort"
+quelle     = "Vorschlag der Initiative, 7. Oktober 2026 (v3.21)"
+status     = "regel"
+hinweis    = "Stufen 0/9/16/21/26/28 % beginnen beim 1-, 2-, 3-, 4- und 5-fachen Grundbedarf (existenzminimum_de_jahr, fortgeschrieben, mit dem Preisniveau übertragen). Aufkommen: modell/tarif_grundbedarf.py"

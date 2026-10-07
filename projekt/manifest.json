@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.20",
+ "modellstand": "v3.21",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -41,8 +41,8 @@
   "formel_einw": 3598.675392804394,
   "formel_kind": 12624.65648994137,
   "entlastung": 1.1099999999999994,
-  "deckung_gesamt": 29.848571428571432,
-  "deckung_luecke": 2.0514285714285663,
+  "deckung_gesamt": 30.109761904761903,
+  "deckung_luecke": 1.7902380952380952,
   "zins_eff_2024": 1.8965957322556544,
   "pop_klub_mio": 255.061017,
   "bip28_klub_mrd": 13802.733917918245
@@ -232,7 +232,7 @@
   {
    "id": "B20",
    "name": "Gesamtrechnung",
-   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv;modell/laendervarianten.py;daten/aggregate/laendervarianten.csv;daten/aggregate/preisniveau_2024.csv;modell/schuldenpfad.py;daten/aggregate/schulden_2010_2025.csv;daten/aggregate/schuldenpfad.json",
+   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv;modell/laendervarianten.py;daten/aggregate/laendervarianten.csv;daten/aggregate/preisniveau_2024.csv;modell/schuldenpfad.py;daten/aggregate/schulden_2010_2025.csv;daten/aggregate/schuldenpfad.json;modell/tarif_grundbedarf.py;daten/aggregate/tarif_grundbedarf.csv;daten/aggregate/tarif_grundbedarf.json",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/gesamtrechnung.py (Selbstprüfung gegen final.pfad);modell/pruefe_konzept.py",
@@ -287,7 +287,7 @@
    "nach": "B03 Rahmenmodell (Stand B)",
    "was": "Steuerpositionen des Kerns tragen die Quote 30,6 % des Rahmens",
    "status": "offen",
-   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %); Klubebene fehlt (deckung_quote.csv)"
+   "beleg_oder_offener_punkt": "v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte, Tarif am Grundbedarf); Klubebene fehlt (deckung_quote.csv)"
   },
   {
    "id": "N06",

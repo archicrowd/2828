@@ -35,7 +35,7 @@ P([["Was beim Einzelnen ankommt. ",{b:true}],`Jeden Monat eine Dividende, ohne A
 
 H("Die neuen Regeln"),
 regeln([
- ["Einkommen",`Stufentarif 0 / 9 / 16 / 21 / 26 / 28 % auf das Brutto, Grundfreibetrag 12.348 €; kein Splitting, keine Abzüge`],
+ ["Einkommen",`Stufentarif 0 / 9 / 16 / 21 / 26 / 28 % auf das Brutto; Stufen beim 1- bis 5-fachen Grundbedarf am Wohnort (Deutschland 2028: ${J.tarif_stufen_de_2028.map(x=>de(x)).join(" / ")} €); kein Splitting, keine Abzüge`],
  ["Kapital und Erbschaft","28 % auf alle Kapitalerträge wie auf Arbeit; 28 % auf Erbschaften über 200.000 €, Stundung statt Verschonung"],
  ["Unternehmen","28 % auf Gewinne am Ort der Nutzung, also dort, wo die Kunden sind; gilt ausdrücklich für digitale Plattformen"],
  ["Konsum und Klima","Mehrwertsteuer als Label von A+ bis D: je nachhaltiger, desto günstiger; europäischer CO₂-Preis, Erlöse fließen in die Dividende"],

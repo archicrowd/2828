@@ -1,4 +1,4 @@
-# Projektsteuerung TAX 28:28 (Stand v3.20, 7. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.21, 7. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
@@ -6,7 +6,7 @@ Autorin des Konzepts: Initiative 28:28 (Name nur im Impressum der Webseite). Liz
 
 ## Geltende Fassung
 Gesamtkonzept vom 7. Oktober 2026 (dazu Kurzfassung, zwei Seiten): Quote 31,9 %, Obergrenze von A 35 % des Einzugs, Dividende nach Preisniveau des Wohnlandes (seit v3.20), Boden halbes
-Existenzminimum; Deutschland 591 € je Erwachsenem und Monat 2028, 801 € 2060; Klubschnitt 537 € je Einwohner 2028, Tiefpunkt 529 € 2032 (Preise 2028); Umzugsregel drei Jahre mit Steuernachweis; Schuldenquote 2028 81,3 % (Fortschreibung des Status quo, seit v3.19). Rechnung `modell/gesamtrechnung.py`.
+Existenzminimum; Deutschland 591 € je Erwachsenem und Monat 2028, 801 € 2060; Klubschnitt 537 € je Einwohner 2028, Tiefpunkt 529 € 2032 (Preise 2028); Umzugsregel drei Jahre mit Steuernachweis (Kinder, Studierende ohne); Tarifstufen beim 1- bis 5-fachen Grundbedarf (DE 2028: 12.847 / 25.694 / 38.541 / 51.387 / 64.234 €, seit v3.21); Schuldenquote 2028 81,3 % (Fortschreibung des Status quo, seit v3.19). Rechnung `modell/gesamtrechnung.py`.
 
 ## Einstieg für Dritte
 `DATENZUGANG.md` (Menschen), `AGENTS.md` (KI-Agenten), `projekt/manifest.json` (maschinenlesbar),

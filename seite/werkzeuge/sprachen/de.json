@@ -76,7 +76,7 @@
  "tarif_darueber": "darüber — Obergrenze",
  "b1_pos": "Einkommen",
  "b1_h": "Stufentarif mit harter Obergrenze",
- "b1_p": "Besteuert wird das Brutto – ohne Abzüge, ohne Splitting. Das Existenzminimum bleibt frei; darüber lohnt Arbeit auf jeder Stufe.",
+ "b1_p": "Besteuert wird das Brutto – ohne Abzüge, ohne Splitting. Das Existenzminimum bleibt frei; darüber lohnt Arbeit auf jeder Stufe. Die Stufen liegen beim Ein- bis Fünffachen des Grundbedarfs am Wohnort und wachsen mit ihm.",
  "b2_pos": "Arbeit",
  "b2_h": "Keine Sozialabgaben mehr",
  "b2_r": "{p0} auf den Lohn",

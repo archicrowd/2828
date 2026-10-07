@@ -1,5 +1,5 @@
 position,pct_bip_deutsche_basis,art
-"01 Einkommen (Tarif 0/9/16/21/26/28 %, Dividende steuerpflichtig)",7.460,Kernsystem
+"01 Einkommen (Stufen 1- bis 5-facher Grundbedarf, 0/9/16/21/26/28 %, Dividende steuerpflichtig)",7.721,Kernsystem
 02 Kapital 28 %,1.162,Kernsystem
 "06 Konsum (Label, effektiv 20,0 %)",8.950,Kernsystem
 05 Konzerne und Plattformen 28 %,3.752,Kernsystem
@@ -11,6 +11,6 @@ Vermögensteuer 1 % ab 2 Mio (nicht anrechenbar),0.286,Baustein
 Abbau klimaschädlicher Subventionen,0.476,Baustein
 CO₂-Pfad 100 → 150 €/t,0.357,Baustein
 "04a Bodenwertabgabe (Ebene B, Satz bis 1 %)",0.820,Stand B
-Summe gedeckt,29.849,
+Summe gedeckt,30.110,
 "Quote 31,9",31.900,
-Lücke,2.051,offen
+Lücke,1.790,offen

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.20**
+Stand: 7. Oktober 2026 · Modellstand **v3.21**
 
 ---
 
@@ -930,6 +930,55 @@ zwei Erwachsene und zwei Kinder: 2.404 EUR im Monat = 2 × 801 + 2 × 401); Gesa
 
 ---
 
+### v3.21 — Tarifstufen am Grundbedarf, Umzugsregel präzisiert
+
+**Art der Änderung: MINOR, bewegt die Deckung, nicht die Quote.** 7. Oktober 2026.
+Vorgaben der Initiative: „Für Studenten, Kinder entfällt der Steuernachweis, Rentner sind doch eigentlich nicht steuerbefreit? Was
+den Grundbedarf (Existenzminimum) angeht, ist das ein wesentliches Kriterium als dynamische Stellschraube. Es hat Orts- und
+Zeitbezug. Ggf. sollte daher auch die Steuerdynamik 0–28 in der Form reagieren, dass die Stufen vom 1-, 2-, 3-, 4-fachen
+Grundbedarf ausgehen, bis sie die 28 % erreichen."
+
+**1. Umzugsregel.** Kinder und Studierende: kein Steuernachweis, die drei Jahre Wohnsitz gelten weiter. Rentner: Renten sind in
+Deutschland einkommensteuerpflichtig (Besteuerungsanteil bei Rentenbeginn 2026: 84 %, § 22 EStG; Zahl aus Sekundärquellen, amtlich
+zu prüfen); im Entwurf wird ohnehin das Brutto besteuert. Wer mit allen Einkünften unter dem Grundbedarf bleibt, zahlt aber keine
+Einkommensteuer und kann keine Zahlung nachweisen. **Vorschlag, nicht entschieden:** Als Nachweis genügt die Veranlagung im neuen
+Land (unbeschränkte Steuerpflicht), ohne Mindestzahlung. Offen auch: wer als Studierender gilt.
+
+**2. Tarifstufen am Grundbedarf (umgesetzt).** Lesart: Die sechs Sätze 0 / 9 / 16 / 21 / 26 / 28 % beginnen beim 1-, 2-, 3-, 4- und
+5-fachen Grundbedarf; 28 % gilt ab dem Fünffachen. Grundbedarf = Grundfreibetrag 2026 (12.348 EUR), mit 2 % je Jahr fortgeschrieben
+(Annahme), am Wohnort mit dem Preisniveau übertragen. Deutschland 2028: **12.847 / 25.694 / 38.541 / 51.387 / 64.234 EUR** (Preise 2028). Länder 2028 (1- bis 5-fach):
+DK 16.815–84.076; IE 16.627–83.134; NL 14.248–71.241; AT 14.095–70.475; BE 13.977–69.886; DE 12.847–64.234; FR 12.706–63.528; EE 11.363–56.816; SI 10.716–53.578; ES 10.680–53.401 EUR. Damit hängen Dividende (½ Grundbedarf) und Tarif an einer Größe; steigt sie, wandern die Stufen mit (keine kalte
+Progression). Alternative Lesart „28 % ab dem Vierfachen" (Satz 26 % entfällt) mitgerechnet.
+
+**Aufkommen (`modell/tarif_grundbedarf.py`).** Aufkommensfunktion des nationalen Modells (`modell/kern/modell-2828.py`,
+`est_aufkommen`, Szenario Robust, Elastizität 0,35, Dividendenstufe 50 %), deutsche Basis, Modellbasis 4.200 Mrd, Euro 2026:
+
+| Variante | Stufen (EUR 2026) | Einkommensteuer | Änderung | Steuer bei 80.000 EUR |
+|---|---|---:|---:|---:|
+| bisher | 12.348 / 25.000 / 40.000 / 55.000 / 70.000 | 313,3 Mrd | – | 13.389 |
+| **1- bis 5-facher Grundbedarf (gewählt)** | 12348 / 24696 / 37044 / 49392 / 61740 | 324,3 Mrd | +0,26 Pkt. BIP | 14.003 |
+| 1- bis 4-fach, 28 % ab 4-fach | 12348 / 24696 / 37044 / 49392 | 326,7 Mrd | +0,32 Pkt. BIP | 14.250 |
+
+**Kritisch.** Die Funktion rechnet mit sieben Einkommensgruppen und einer Kalibrierung des Stands A; sie ist eine Größenordnung,
+keine Mikrosimulation. Die Stufen liegen ab der zweiten etwas tiefer als bisher, daher das Mehraufkommen. Für die übrigen neun
+Länder gibt es keine Aufkommensrechnung; die Folge der ortsbezogenen Stufen für den Klub ist offen (Mikrosimulation, nach
+Entscheidung der Initiative erst, wenn alles andere geprüft ist).
+
+**Bewegte Zahlen:** Einkommensteuer (deutsche Basis) 7,46 → 7,72 % BIP; nachgewiesene Deckung
+29,85 → **30,11 %**; Deckungslücke 2,05 → **1,79 Punkte (247 Mrd EUR Klub 2028)**. Quote (31,9 %),
+Dividende, Obergrenze unverändert. Rechner der Seite: Steuer bei 80.000 EUR 13.389 → **13.664 EUR** (jetzt Stufen in Preisen 2028,
+Korrektur 55).
+
+**Wodurch aufgefallen:** Vorschlag der Initiative; Korrektur 55 beim Umstellen des Rechners.
+
+**Geprüft:** `python3 modell/alles.py` (15 Stufen, neue Stufe „Tarif nach Grundbedarf"); `pruefe_konzept.py`; Rechner nachgerechnet
+(13.664 EUR von Hand mit den Stufen 2028).
+
+*Skripte: `modell/tarif_grundbedarf.py` (neu), `modell/gesamtrechnung.py`, `gesamtrechnung.toml` (`tarif_stufenabstand_grundbedarf`),
+`seite/werkzeuge/seite_bau.py`, `seite/werkzeuge/sprachen/*.json`, Bauskripte Gesamtkonzept und Kurzfassung, `modell/alles.py`.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -945,6 +994,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 52 | Band II (Korrektur 43): Dividendenreihe 550 → 512 → 707 EUR ohne Bezugsgruppe und Zeiteinheit (B1) | Deutschland, EUR je Kopf und Monat, Preise 2028; seit v3.12 533 → 521 → 720 | Abgleich v3.7 |
 | 53 | Veröffentlichte Webseite (Stand A, Kasten „Warum Estland im Klub ist"): „Ab Januar 2026 gilt ein Satz von 24 %" | Estland bleibt 2026 bei 22 %; die geplante Anhebung wurde 2025 aufgegeben (Sekundärquellen, amtlich zu prüfen) | Recherche für die Länderbeispiele der neuen Seite (v3.15) |
 | 54 | v3.17, Lesart V3b (`laendervarianten.py`, Logbuch v3.17): halbes Existenzminimum 514,50 EUR je Erwachsenem „in Preisen 2028", Deckungsgrad 104,8 % | 514,50 EUR ist der Grundfreibetrag 2026 nominal; in Preisen 2028 (2 % je Jahr, Annahme) 535,29 EUR. Deckungsgrad 2028 bei Quote 30,9 % damit rund 101 %, nicht 105 % | Umsetzung der Entscheidung B17 (v3.20): Preisbasis des Ankers gegen die der Rechnung geprüft |
+| 55 | Rechner der Seite zum Stand B: Tarifstufen 12.348 / 25.000 / … EUR (Euro 2026) zusammen mit der Dividende in Preisen 2028 | Beide in Preisen 2028; seit v3.21 Stufen beim 1- bis 5-fachen Grundbedarf 2028 | Umstellung des Tarifs auf den Grundbedarf (v3.21) |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -973,7 +1023,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.20
+## 7 | Offene Punkte, Stand v3.21
 
 | Punkt | Status |
 |---|---|
@@ -988,12 +1038,12 @@ nicht geklärt.
 | **B8: Bemessung des Aufschlags** | **geklärt in v3.11.** BIP-Bemessung folgt aus der Finanzierung nach BIP-Anteil; `altschuld.py` überholt (Sekundärquelle) |
 | **B9: Obergrenze** | **entschieden in v3.12:** abgeleitete Regel (36 % bis v3.19). **Seit v3.20: 35 %** (größerer Einzug bei Quote 31,9 %); nicht gedeckt: Häufung der Risiken (35,6 %) und 3,5 % Verteidigung (37,3 %) |
 | **B10: Basis des Gesamtkonzepts** | **geschlossen in v3.9.** Das Gesamtkonzept steht auf der korrigierten Basis |
-| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; **seit v3.20: 2,05 Punkte zu 31,9 %, 283 Mrd EUR Klub**). Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
+| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; **seit v3.21: 1,79 Punkte, 247 Mrd EUR Klub**, Tarifstufen am Grundbedarf). Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
 | **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
 | **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
 | **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte (Schuldenstände 2010–2025 und Defizite 2025 seit v3.19 neu abgerufen), Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
 | **B16: Seite zum Stand B** | **sechs Sprachen in v3.18.** Offen: muttersprachliches Gegenlesen, Länderanpassung (eigene Zahlen je Land statt Referenzland Deutschland), Veröffentlichung mit `fonts/` |
-| **B17: Dividende gleich oder je Land?** | **entschieden in v3.20:** Dividende nach Preisniveau (V3a), Boden halbes Existenzminimum am Wohnort (Quotenkriterium, streng), Umzugsregel drei Jahre mit Steuernachweis. Offen: Einzelheiten der Umzugsregel und Europarecht; jährliche Fortschreibung der Preisniveaus; Fortschreibung des Existenzminimums |
+| **B17: Dividende gleich oder je Land?** | **entschieden in v3.20:** Dividende nach Preisniveau (V3a), Boden halbes Existenzminimum am Wohnort (Quotenkriterium, streng), Umzugsregel drei Jahre mit Steuernachweis. Umzugsregel v3.21: Kinder und Studierende ohne Steuernachweis; Vorschlag Veranlagung statt Mindestzahlung (offen). Offen: Europarecht; jährliche Fortschreibung der Preisniveaus; Fortschreibung des Existenzminimums |
 | **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
 | **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |
 | **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |
