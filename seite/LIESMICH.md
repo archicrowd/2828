@@ -11,6 +11,20 @@
 | `stand-a-neuerer-build/` | späterer Build (`dist/`, Tarif 0/9/19/24/27/28, Mehrwertsteuer 5/11/20/25/28, Effektivsatz 21,5 %) mit drei Patch-Skripten und `qa_tarif.py`. Der dazugehörige Quelltext ist **nicht erhalten** |
 | `rahmenstruktur-seiten/` | Seite zum Stand B (`rahmenstruktur-aktuell.html`, 506/472/651 €), alte deutsche Homepage, 3030-Haushaltspfad, Social-Grafik |
 
+**Veröffentlichung (seit v3.22.1).** `python3 seite/werkzeuge/paket_bau.py` stellt das Upload-Paket zusammen
+(`seite/paket/` und `seite/paket.zip`, nicht im Repository). Auf dem Server ersetzen bzw. neu anlegen:
+
+| Datei | Aktion |
+|---|---|
+| `de.html`, `fr.html`, `es.html` | ersetzen (Stand B statt Stand A) |
+| `en.html`, `it.html`, `pl.html` | neu |
+| `index.html` | ersetzen: war die englische Seite, ist jetzt eine Weiterleitung nach Browsersprache (ohne Cookies), sonst Englisch |
+| `da.html`, `nl.html`, `sl.html`, `et.html` | ersetzen durch Weiterleitung auf `en.html` (Sprachen entfallen; alte Links bleiben gültig) |
+| `dokumente/TAX-2828-Gesamtkonzept.pdf`, `dokumente/TAX-2828-Kurzfassung.pdf` | neu (Ordner `dokumente/`) |
+| `fonts/` | **unverändert lassen**; das Skript prüft, dass die neuen Seiten nur die sieben Schriftdateien verlangen, die schon die alte Seite verlangt |
+
+Alle Seiten tragen weiter `noindex, nofollow`.
+
 **Fehler auf der veröffentlichten Seite (Korrektur 53):** Der Kasten „Warum Estland im Klub ist" nennt für 2026 einen Satz von 24 %; Estland bleibt bei 22 %. Mit der Veröffentlichung von `stand-b/de.html` entfällt die Aussage.
 
 **Veröffentlichte Seite.** `archicrowd.de` zeigt nach Abruf in dieser Sitzung (Kurzauszug, nicht

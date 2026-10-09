@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.22**
+Stand: 7. Oktober 2026 · Modellstand **v3.22.1**
 
 ---
 
@@ -1004,6 +1004,23 @@ v3.21: Größenordnung, keine Mikrosimulation; für die übrigen neun Länder ni
 **Geprüft:** `python3 modell/alles.py`; `pruefe_konzept.py`; Seite bedient (Rechner 13.921 EUR, keine Skriptfehler).
 
 *Skripte: `modell/tarif_grundbedarf.py`, `modell/gesamtrechnung.py`, `gesamtrechnung.toml`, Bauskripte, `seite/werkzeuge/sprachen/*.json`.*
+
+---
+
+### v3.22.1 — Upload-Paket der Webseite
+
+**Art der Änderung: PATCH** (Werkzeug, keine Zahl bewegt). 9. Oktober 2026. Auftrag der Initiative: die Dateien zusammenstellen, die
+auf der Homepage ersetzt werden müssen; die Schriften liegen dort.
+
+Neu `seite/werkzeuge/paket_bau.py`: kopiert die sechs Sprachfassungen und die beiden PDF nach `seite/paket/` (nicht im
+Repository, `.gitignore`) und packt sie als Zip. Neu erzeugt: `index.html` (bisher die englische Seite; jetzt Weiterleitung nach
+Browsersprache, sonst Englisch, ohne Cookies) und Weiterleitungen `da.html`, `nl.html`, `sl.html`, `et.html` auf `en.html`, weil diese
+Sprachen entfallen und alte Links sonst den Stand A mit überholten Zahlen zeigen würden. `fonts/` bleibt auf dem Server; das Skript
+bricht ab, wenn eine neue Seite eine Schriftdatei verlangt, die die alte Seite nicht verlangt (geprüft: sieben Dateien, alle
+vorhanden in der alten Seite). Anleitung in `seite/LIESMICH.md`.
+
+**Geprüft:** Weiterleitung im Browser mit Sprache de-DE → `de.html`, pl-PL → `pl.html`, nl-NL → `en.html`, `da.html` → `en.html`.
+Nicht geprüft: ob auf dem Server weitere Dateien der alten Seite liegen (nicht einsehbar); sie bleiben unberührt.
 
 ---
 

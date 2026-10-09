@@ -23,3 +23,6 @@ __pycache__/
 
 # Bauwerkzeug der Dokumente
 node_modules/
+
+# Upload-Paket der Webseite (gebaut mit seite/werkzeuge/paket_bau.py)
+seite/paket/
