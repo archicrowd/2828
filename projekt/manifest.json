@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.37",
+ "modellstand": "v3.38",
  "fassung_gesamtkonzept": "10. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -37,7 +37,7 @@
   "klub_2028": 534.6798066475181,
   "klub_2035": 526.6475343075606,
   "klub_2060": 725.3171589033814,
-  "de_2028": 539.288404721086,
+  "de_2028": 581.4502674671021,
   "formel_einw": 3598.675392804394,
   "formel_kind": 12624.65648994137,
   "entlastung": 2.809999999999995,
@@ -164,7 +164,7 @@
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/pruefe_konzept.py",
-   "anmerkung": "Seite Stand B in sechs Sprachen (de, en, fr, it, es, pl; v3.18), Vorlage seite/werkzeuge/vorlage.html, Texte seite/werkzeuge/sprachen/*.json, Referenzland Deutschland; aus gesamtrechnung.json gebaut. Schriften (fonts/) nur auf dem Server"
+   "anmerkung": "Seite Stand B in sechs Sprachen (de, en, fr, it, es, pl; v3.18), Vorlage seite/werkzeuge/vorlage.html, Texte seite/werkzeuge/sprachen/*.json, Referenzland Deutschland; aus gesamtrechnung.json gebaut. Schriften (fonts/) nur auf dem Server v3.38: Formel und Dividende Referenzland DE nach V2/E3 (gemeinde_einw_de); Entwurf de in seite/entwurf/."
   },
   {
    "id": "B13",
@@ -263,7 +263,7 @@
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/laendervergleich.py",
-   "anmerkung": "v3.28: elf Länder; Dividende, Tarifstufen, Musterhaushalte (Rechenregel des Rechners), Gemeinde, Schulden, heutige Last soweit belegt; Gegenprobe DE gegen gesamtrechnung.json"
+   "anmerkung": "v3.28: elf Länder; Dividende, Tarifstufen, Musterhaushalte (Rechenregel des Rechners), Gemeinde, Schulden, heutige Last soweit belegt; Gegenprobe DE gegen gesamtrechnung.json v3.38: Dividende nach V2 (gesamtrechnung.json)."
   },
   {
    "id": "B24",
@@ -300,6 +300,15 @@
    "status": "geprueft",
    "pruefung": "modell/tragfaehigkeit.py",
    "anmerkung": "v3.33: Deckung nach E1 C (Lücke 2,92); Dividende −10 % verletzt Mindestdividende im Klubschnitt 10 Jahre; Stufen 1/1,5/2/3 bei 28 % +1,14 Punkte; Wachstumsunabhängigkeit der Quote v3.37: Entscheidungen in der Gesamtrechnung eingerechnet; tragfaehigkeit.py prüft Lücke −0,24, Reserve 1,08, stabil; justierung.py auf Eingängen v3.36 eingefroren, Korrektur 59."
+  },
+  {
+   "id": "B28",
+   "name": "Textentwurf zur Freigabe",
+   "pfad": "dokumente/entwurf/;seite/entwurf/",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/pruefe_konzept.py --entwurf",
+   "anmerkung": "v3.38: deutscher Entwurf von Gesamtkonzept, Kurzfassung und Webseite (de) mit den Entscheidungen vom 10.10.2026; nach Freigabe in B07/B12 übernehmen und Ordner leeren"
   }
  ],
  "nahtstellen": [
@@ -428,8 +437,8 @@
    "von": "B23 Ländervergleich",
    "nach": "B12 Seite zum Stand B",
    "was": "länderspezifische Darstellung übernimmt Zahlen nur aus laendervergleich.json",
-   "status": "offen",
-   "beleg_oder_offener_punkt": "Standard 6; Seite zeigt bisher die Klubformel der Gemeinden statt der Pro-Kopf-Variante je Land (v3.17)"
+   "status": "ok",
+   "beleg_oder_offener_punkt": "seit v3.38: Seite zeigt die Gemeindeformel Deutschlands (je Land, E3) und den Klubschnitt zum Vergleich; Entwurf seite/entwurf/de.html"
   },
   {
    "id": "N17",
@@ -464,7 +473,7 @@
    "nach": "B07 Gesamtkonzept",
    "was": "Texte übernehmen die Zahlen der Rechnung v3.37",
    "status": "offen",
-   "beleg_oder_offener_punkt": "Textentwurf zur Freigabe; bis dahin Prüfstufe Gesamtkonzept gegen Rechnung rot (Logbuch v3.37)"
+   "beleg_oder_offener_punkt": "v3.38: Textentwurf (B28) geprüft, 54 Prüfungen ohne Fehler; Übernahme in B07 nach Freigabe"
   }
  ],
  "quellen": [

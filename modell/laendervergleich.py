@@ -72,10 +72,15 @@ def land(cc):
     if cc in LV:
         if abs(LV[cc]["div_v3b"] - boden) > 0.01:
             sys.exit(f"{cc}: Dividendenboden weicht von laendervarianten.json ab")
-        div, div_art = LV[cc]["div_v3a"], "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)"
+        # seit v3.38 (Entscheidung E2): V2, gleicher Anteil am eigenen BIP je Kopf (gesamtrechnung.json, tabelle_laender_div)
+        v2 = next((r for r in GR["tabelle_laender_div"] if r["land"] == cc), None)
+        if v2 and "v2_e2028" in v2:
+            div, div_art = v2["v2_e2028"], "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)"
+        else:
+            div, div_art = LV[cc]["div_v3a"], "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)"
     else:
-        div, div_art = boden, "Boden (V3b, halbes Existenzminimum am Wohnort); V3a nur im Gewichtsbestand der Gesamtrechnung"
-        luecken.append("Dividende: nur Boden (V3b), keine ausgezahlte Dividende V3a")
+        div, div_art = boden, "Boden (V3b, halbes Existenzminimum am Wohnort); V2 nur für die zehn Staaten der Gesamtrechnung"
+        luecken.append("Dividende: nur Boden (V3b), keine ausgezahlte Dividende V2 (BIP je Kopf nicht in der Gesamtrechnung)")
     # Einwohner
     if cc in STAMM:
         einw, einw_q = float(STAMM[cc]["einwohner_mio_2024"]), "laender_2024.csv (Eurostat demo_gind, AVG 2024)"

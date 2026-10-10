@@ -3,7 +3,7 @@ Quote,"Steuerquote 30,2 %",NEIN
 Obergrenze,"32 % dessen, was A einzieht",NEIN
 Klubdividende 2028,sind es 535 € je Einwohner,NEIN
 Klubdividende Tiefpunkt,526 € im Tiefpunkt 2032,NEIN
-DE je Erwachsenem 2028,bei 588 € je Erwachsenem,NEIN
+DE je Erwachsenem 2028,bei 634 € je Erwachsenem,NEIN
 Boden halbes Existenzminimum,"535,29 € je Erwachsenem",ja
 Formel je Einwohner,3.599 € je Einwohner,ja
 Formel je Kind,12.625 € je Kind,ja
@@ -13,18 +13,18 @@ A 2028,"7,99 % des BIP im Startjahr",NEIN
 Höchstbedarf,"Höchststand 8,94 %",NEIN
 Zins 2024,"effektiver Satz von 1,90 %",ja
 Zinsdienst 2028 Mrd,249 Mrd €,ja
-DE 2028,539 € je Einwohner im Startjahr,NEIN
-DE 2060,732 € im Jahr 2060,NEIN
+DE 2028,581 € je Einwohner im Startjahr,NEIN
+DE 2060,789 € im Jahr 2060,NEIN
 Strenge Mindestquote,"genügen 30,20 %",NEIN
 Anteilsverlust,"vermindert um 0,7 %",ja
 Entlastung,"Entlastung von 2,81 Punkten",NEIN
 Gesamtlast Entwurf,"37,95",NEIN
 Deckung nachgewiesen,"30,44",NEIN
-Deckungslücke,"-0,24 Punkte des BIP",NEIN
+Deckungslücke,"Überschuss von 0,24 Punkten",NEIN
 Aufschlag größter Anteil,"8,5 % dessen",NEIN
 Entlastung Irland,"(Irland) 24,3 %",NEIN
-Verwaltung,bis zu 46 € im Monat,ja
-Tilgungsverzicht,im Startjahr 23 € Dividende,ja
+Verwaltung,etwa 7 € im Monat je Einwohner,NEIN
+Tilgungsverzicht,im Startjahr 25 € Dividende,NEIN
 Dividende Tabelle 2035,527,NEIN
 Dividende Tabelle 2060,725,NEIN
 Autorin,Initiative 28:28,ja
@@ -34,25 +34,27 @@ Lizenz,CC BY 4.0,ja
 veraltet: bei 506 €,bei 506 €,ja (fehlt)
 veraltet: 3.602 €,3.602 €,ja (fehlt)
 "veraltet: 254,8 Mio","254,8 Mio",ja (fehlt)
+veraltet: bei vergleichbarem Aufgabenvolumen,bei vergleichbarem Aufgabenvolumen,NEIN (noch im Text)
+veraltet: estnischem Niveau,estnischem Niveau,NEIN (noch im Text)
 Kurz: Quote,"30,2 % des BIP",NEIN
 Kurz: Obergrenze,höchstens 32 %,NEIN
-Kurz: Dividende 2028,588 € je Erwachsenem,NEIN
-Kurz: Dividende 2060,798 €,NEIN
+Kurz: Dividende 2028,634 € je Erwachsenem,NEIN
+Kurz: Dividende 2060,860 €,NEIN
 Kurz: Formel,je Einwohner 3.599 €,ja
 Kurz: Entlastung,"2,81 Punkte",NEIN
-Kurz: Deckungslücke,"fehlen -0,24 Punkte",NEIN
+Kurz: Deckungslücke,"Überschuss von 0,24 Punkten",NEIN
 Kurz: Abgabenkeil,"47,9 %",ja
 Kurz: Schätzung gekennzeichnet,Gruppenschätzung,ja
 Kurz: zwei Seiten,Pages: 2,ja
-Seite: Dividende je Erwachsenem,588 €,NEIN
-Seite: Formel,3.599 € je Einwohner,ja
+Seite: Dividende je Erwachsenem,634 €,NEIN
+Seite: Formel,3.913 € je Einwohner,NEIN
 Seite: Obergrenze,höchstens 32 %,NEIN
 Seite: Abgabenkeil,"47,9 %",ja
 Seite: Schätzung gekennzeichnet,* Schätzung,ja
-Seite: Modellstand,v3.37,NEIN
-Sprachfassung de,v3.37 / 3599,NEIN
-Sprachfassung en,v3.37 / 3599,NEIN
-Sprachfassung fr,v3.37 / 3599,NEIN
-Sprachfassung it,v3.37 / 3599,NEIN
-Sprachfassung es,v3.37 / 3599,NEIN
-Sprachfassung pl,v3.37 / 3599,NEIN
+Seite: Modellstand,v3.38,NEIN
+Sprachfassung de,v3.38 / 3913,NEIN
+Sprachfassung en,v3.38 / 3913,NEIN
+Sprachfassung fr,v3.38 / 3913,NEIN
+Sprachfassung it,v3.38 / 3913,NEIN
+Sprachfassung es,v3.38 / 3913,NEIN
+Sprachfassung pl,v3.38 / 3913,NEIN

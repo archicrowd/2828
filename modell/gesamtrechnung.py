@@ -103,7 +103,8 @@ KOPF_DE = BIP28_DE * 1e9 / POP["DE"]
 # Länderdividende und Quotenkriterium (v3.20)
 K_MINDER = float(PAR["anteil_minderjaehrige"]) / 100
 PLI_KLUB = sum(POP[c] * PLI[c] for c in POP) / POP_KLUB          # einwohnergewichtet
-R_DE = PLI["DE"] / PLI_KLUB                                         # Deutschland gegen Klubmittel
+R_DE = PLI["DE"] / PLI_KLUB                                         # Deutschland gegen Klubmittel (Preisniveau)
+F_DE = KOPF_DE / KOPF_KLUB      # v3.38 (E2 V2): Deutschland gegen Klubmittel nach BIP je Kopf; bis v3.37 R_DE (V3a)
 ANKER_DE = (float(PAR["existenzminimum_de_jahr"]) * (1 + PREIS) ** (2028 - 2026) / 12 / 2)  # je Erw., Preise 2028
 SCHWELLE_KLUB = ANKER_DE / R_DE * (1 - K_MINDER / 2)                # je Einwohner des Klubs und Monat
 D_ABS24 = sum(GDP[k] * SCHULD[k] / 100 for k in GDP)                   # Mio EUR
@@ -137,7 +138,7 @@ def pfad(quote, *, i_alt=None, vorlauf=None, d0=None, v_ziel=V_ZIEL, g_nom=G_NOM
                         de_fix=div / 100 * kopf_de / 12,
                         de_real=div / 100 * kopf_de * (1 + g_real) ** t / 12,
                         kl_real=div / 100 * kopf_klub * (1 + g_real) ** t / 12,
-                        de_land=div / 100 * kopf_klub * R_DE * (1 + g_real) ** t / 12))
+                        de_land=div / 100 * kopf_klub * F_DE * (1 + g_real) ** t / 12))
         d = (d - tl) / (1 + g_nom)
     return out
 
@@ -197,7 +198,7 @@ def main() -> int:
              mq_479_v3a_streng=mindestquote("kl_real", schwelle=VERSPRECHEN / R_DE, g_nom=PREIS),
              mq_514_v3a_streng=mindestquote("kl_real", schwelle=SCHWELLE_KLUB * (1 + PREIS) ** -2, g_nom=PREIS),
              anker_de=ANKER_DE, schwelle_klub=SCHWELLE_KLUB, schwelle_de_kopf=ANKER_DE * (1 - K_MINDER / 2),
-             pli_klub=PLI_KLUB, r_de=R_DE)
+             pli_klub=PLI_KLUB, r_de=R_DE, f_de=F_DE)
     q = round(aufrunden(mq_streng, float(PAR["quote_rundung"])), 2)
     # Vergleich: Quote ohne Kürzung des Dachs (Stand v3.36)
     mq_ohne_dach = mindestquote("kl_real", schwelle=SCHWELLE_KLUB, g_nom=PREIS, a_ohne_v=A_OHNE_V_ORIG)
@@ -306,7 +307,7 @@ def main() -> int:
         if be is None and kum >= 0 and a["jahr"] > 2029:
             be = a["jahr"]
     W.update(tilg_verzicht=O[0]["de_land"] - M[0]["de_land"], tilg_break_even=be)
-    W["punkt_bip_eur_de"] = 1.0 / 100 * KOPF_KLUB * R_DE / 12
+    W["punkt_bip_eur_de"] = 1.0 / 100 * KOPF_KLUB * F_DE / 12
 
     # Aufschlag (Bemessung am BIP, aufschlag.py; Satz des Startjahrs 2028)
     s28 = p0["s"]
@@ -359,7 +360,7 @@ def main() -> int:
     verm_mehr = (20.7 + 12.0) * (vs - 1.0) * (1 - ausw)
     bausteine = [("Vermögensteuer 1 % ab 2 Mio (nicht anrechenbar)", 12.0),
                  ("Abbau klimaschädlicher Subventionen", 20.0), ("CO₂-Pfad 100 → 150 €/t", 15.0),
-                 (f"Erbschaft, Freibetrag {fb:,.0f} € statt 200.000 € (Annahme zur Zahl der Erwerbe)".replace(",", "."), erb_mehr),
+                 (f"Erbschaft, Freibetrag {fb:,.0f}".replace(",", ".") + " € statt 200.000 € (Annahme zur Zahl der Erwerbe)", erb_mehr),
                  (f"Vermögensteuer {vs:.1f} % statt 1 % (Hälfte Ausweichen, Annahme)".replace(".", ","), verm_mehr)]
     zeilen = [(n, m / basis_kern * 100, "Kernsystem") for n, m in kern]
     zeilen += [(n, m / basis_kern * 100, "Baustein") for n, m in bausteine]
@@ -384,7 +385,7 @@ def main() -> int:
     for j in (2028, 2035, 2060):
         W[f"erw_{j}"] = W[f"klub_{j}"] / (1 - k / 2)
         W[f"kind_{j}"] = W[f"erw_{j}"] / 2
-        W[f"erw_de_{j}"] = W[f"erw_{j}"] * R_DE
+        W[f"erw_de_{j}"] = W[f"erw_{j}"] * F_DE
         W[f"kind_de_{j}"] = W[f"erw_de_{j}"] / 2
     # Länderdividende (B17, v3.20): je Erwachsenem und Monat, Preise 2028; Boden = halbes Existenzminimum
     ST = pfad(q, g_nom=PREIS)
@@ -402,6 +403,13 @@ def main() -> int:
         r.update(bip_kopf_klub=f_bip, v2_e2028=W["erw_2028"] * f_bip, v2_e2035=W["erw_2035"] * f_bip,
                  v2_e2060=W["erw_2060"] * f_bip, v2_unter_boden=W["erw_2028"] * f_bip < r["boden"],
                  gemeinde_einw=je_einw * f_bip, gemeinde_kind=je_kind * f_bip)
+    de_r = next(r for r in W["tabelle_laender_div"] if r["land"] == "DE")
+    for j in (2028, 2035, 2060):
+        W[f"erw_de_v2_{j}"] = de_r[f"v2_e{j}"]
+        W[f"kind_de_v2_{j}"] = de_r[f"v2_e{j}"] / 2
+    W.update(gemeinde_einw_de=de_r["gemeinde_einw"], gemeinde_kind_de=de_r["gemeinde_kind"],
+             laender_unter_boden_v2=[r["name"] for r in W["tabelle_laender_div"] if r["v2_unter_boden"]],
+             verw_zehntel_eur=0.1 * dict(B_POSTEN)["Kommunalverwaltung"] / 100 * KOPF_KLUB / 12)
     W["dividende_regel"] = "V2: gleicher Anteil am eigenen BIP je Kopf (Entscheidung E2, v3.37); V3a-Spalten zum Vergleich"
     W["streng_min_erw_klub"] = st_min
     W["streng_min_jahr"] = min(ST, key=lambda r: r["kl_real"])["jahr"]

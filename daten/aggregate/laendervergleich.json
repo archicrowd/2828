@@ -44,9 +44,9 @@
    "preisniveau_2024": 109.1,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.0,
-   "dividende_erwachsener_monat": 588.33,
-   "dividende_kind_monat": 294.16,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 634.32,
+   "dividende_kind_monat": 317.16,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 535.29,
    "tarifstufen": [
     12847,
@@ -67,32 +67,32 @@
      "einkommensteuer": 1606,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7060,
-     "dividende_minus_steuer": 5454
+     "dividende_jahr": 7612,
+     "dividende_minus_steuer": 6006
     },
     "single_4gb": {
      "brutto": 51387,
      "einkommensteuer": 7901,
      "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 7060,
-     "dividende_minus_steuer": -841
+     "dividende_jahr": 7612,
+     "dividende_minus_steuer": -289
     },
     "familie_3gb": {
      "brutto": 38541,
      "einkommensteuer": 4304,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 21180,
-     "dividende_minus_steuer": 16876
+     "dividende_jahr": 22836,
+     "dividende_minus_steuer": 18532
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 4712,
      "durchschnittssatz_pct": 11.78,
      "sozialabgaben": 0,
-     "dividende_jahr": 7060,
-     "dividende_minus_steuer": 2348
+     "dividende_jahr": 7612,
+     "dividende_minus_steuer": 2900
     }
    },
    "gemeinde": {
@@ -133,9 +133,9 @@
    "preisniveau_2024": 107.9,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 0.989,
-   "dividende_erwachsener_monat": 581.85,
-   "dividende_kind_monat": 290.93,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 522.28,
+   "dividende_kind_monat": 261.14,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 529.4,
    "tarifstufen": [
     12706,
@@ -156,32 +156,32 @@
      "einkommensteuer": 1588,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 6982,
-     "dividende_minus_steuer": 5394
+     "dividende_jahr": 6267,
+     "dividende_minus_steuer": 4679
     },
     "single_4gb": {
      "brutto": 50822,
      "einkommensteuer": 7814,
      "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 6982,
-     "dividende_minus_steuer": -832
+     "dividende_jahr": 6267,
+     "dividende_minus_steuer": -1547
     },
     "familie_3gb": {
      "brutto": 38117,
      "einkommensteuer": 4256,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 20947,
-     "dividende_minus_steuer": 16690
+     "dividende_jahr": 18802,
+     "dividende_minus_steuer": 14546
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 4784,
      "durchschnittssatz_pct": 11.96,
      "sozialabgaben": 0,
-     "dividende_jahr": 6982,
-     "dividende_minus_steuer": 2199
+     "dividende_jahr": 6267,
+     "dividende_minus_steuer": 1484
     }
    },
    "gemeinde": {
@@ -221,9 +221,9 @@
    "preisniveau_2024": 90.7,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 0.8313,
-   "dividende_erwachsener_monat": 489.1,
-   "dividende_kind_monat": 244.55,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 399.21,
+   "dividende_kind_monat": 199.6,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 445.01,
    "tarifstufen": [
     10680,
@@ -244,32 +244,32 @@
      "einkommensteuer": 1335,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 5869,
-     "dividende_minus_steuer": 4534
+     "dividende_jahr": 4790,
+     "dividende_minus_steuer": 3455
     },
     "single_4gb": {
      "brutto": 42721,
      "einkommensteuer": 6568,
      "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
-     "dividende_jahr": 5869,
-     "dividende_minus_steuer": -699
+     "dividende_jahr": 4790,
+     "dividende_minus_steuer": -1778
     },
     "familie_3gb": {
      "brutto": 32041,
      "einkommensteuer": 3578,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 17608,
-     "dividende_minus_steuer": 14030
+     "dividende_jahr": 14371,
+     "dividende_minus_steuer": 10794
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 5807,
      "durchschnittssatz_pct": 14.52,
      "sozialabgaben": 0,
-     "dividende_jahr": 5869,
-     "dividende_minus_steuer": 63
+     "dividende_jahr": 4790,
+     "dividende_minus_steuer": -1016
     }
    },
    "gemeinde": {
@@ -309,9 +309,9 @@
    "preisniveau_2024": 121.0,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.1091,
-   "dividende_erwachsener_monat": 652.5,
-   "dividende_kind_monat": 326.25,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 758.5,
+   "dividende_kind_monat": 379.25,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 593.67,
    "tarifstufen": [
     14248,
@@ -332,32 +332,32 @@
      "einkommensteuer": 1781,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7830,
-     "dividende_minus_steuer": 6049
+     "dividende_jahr": 9102,
+     "dividende_minus_steuer": 7321
     },
     "single_4gb": {
      "brutto": 56992,
      "einkommensteuer": 8763,
      "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
-     "dividende_jahr": 7830,
-     "dividende_minus_steuer": -933
+     "dividende_jahr": 9102,
+     "dividende_minus_steuer": 339
     },
     "familie_3gb": {
      "brutto": 42744,
      "einkommensteuer": 4773,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 23490,
-     "dividende_minus_steuer": 18717
+     "dividende_jahr": 27306,
+     "dividende_minus_steuer": 22533
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 4197,
      "durchschnittssatz_pct": 10.49,
      "sozialabgaben": 0,
-     "dividende_jahr": 7830,
-     "dividende_minus_steuer": 3633
+     "dividende_jahr": 9102,
+     "dividende_minus_steuer": 4905
     }
    },
    "gemeinde": {
@@ -397,9 +397,9 @@
    "preisniveau_2024": 141.2,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.2942,
-   "dividende_erwachsener_monat": 761.43,
-   "dividende_kind_monat": 380.71,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 1274.43,
+   "dividende_kind_monat": 637.22,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 692.78,
    "tarifstufen": [
     16627,
@@ -420,32 +420,32 @@
      "einkommensteuer": 2078,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 9137,
-     "dividende_minus_steuer": 7059
+     "dividende_jahr": 15293,
+     "dividende_minus_steuer": 13215
     },
     "single_4gb": {
      "brutto": 66507,
      "einkommensteuer": 10225,
      "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
-     "dividende_jahr": 9137,
-     "dividende_minus_steuer": -1088
+     "dividende_jahr": 15293,
+     "dividende_minus_steuer": 5068
     },
     "familie_3gb": {
      "brutto": 49880,
      "einkommensteuer": 5570,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 27411,
-     "dividende_minus_steuer": 21841
+     "dividende_jahr": 45880,
+     "dividende_minus_steuer": 40310
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 3495,
      "durchschnittssatz_pct": 8.74,
      "sozialabgaben": 0,
-     "dividende_jahr": 9137,
-     "dividende_minus_steuer": 5642
+     "dividende_jahr": 15293,
+     "dividende_minus_steuer": 11798
     }
    },
    "gemeinde": {
@@ -484,9 +484,9 @@
    "preisniveau_2024": 118.7,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.088,
-   "dividende_erwachsener_monat": 640.09,
-   "dividende_kind_monat": 320.05,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 640.18,
+   "dividende_kind_monat": 320.09,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 582.39,
    "tarifstufen": [
     13977,
@@ -507,32 +507,32 @@
      "einkommensteuer": 1747,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7681,
-     "dividende_minus_steuer": 5934
+     "dividende_jahr": 7682,
+     "dividende_minus_steuer": 5935
     },
     "single_4gb": {
      "brutto": 55909,
      "einkommensteuer": 8596,
      "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 7681,
-     "dividende_minus_steuer": -915
+     "dividende_jahr": 7682,
+     "dividende_minus_steuer": -914
     },
     "familie_3gb": {
      "brutto": 41932,
      "einkommensteuer": 4682,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 23043,
-     "dividende_minus_steuer": 18361
+     "dividende_jahr": 23046,
+     "dividende_minus_steuer": 18364
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 4277,
      "durchschnittssatz_pct": 10.69,
      "sozialabgaben": 0,
-     "dividende_jahr": 7681,
-     "dividende_minus_steuer": 3404
+     "dividende_jahr": 7682,
+     "dividende_minus_steuer": 3405
     }
    },
    "gemeinde": {
@@ -572,9 +572,9 @@
    "preisniveau_2024": 119.7,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.0972,
-   "dividende_erwachsener_monat": 645.49,
-   "dividende_kind_monat": 322.74,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 658.8,
+   "dividende_kind_monat": 329.4,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 587.29,
    "tarifstufen": [
     14095,
@@ -595,32 +595,32 @@
      "einkommensteuer": 1762,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7746,
-     "dividende_minus_steuer": 5984
+     "dividende_jahr": 7906,
+     "dividende_minus_steuer": 6144
     },
     "single_4gb": {
      "brutto": 56380,
      "einkommensteuer": 8668,
      "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 7746,
-     "dividende_minus_steuer": -923
+     "dividende_jahr": 7906,
+     "dividende_minus_steuer": -763
     },
     "familie_3gb": {
      "brutto": 42285,
      "einkommensteuer": 4722,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 23238,
-     "dividende_minus_steuer": 18516
+     "dividende_jahr": 23717,
+     "dividende_minus_steuer": 18995
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 4242,
      "durchschnittssatz_pct": 10.6,
      "sozialabgaben": 0,
-     "dividende_jahr": 7746,
-     "dividende_minus_steuer": 3504
+     "dividende_jahr": 7906,
+     "dividende_minus_steuer": 3664
     }
    },
    "gemeinde": {
@@ -659,9 +659,9 @@
    "preisniveau_2024": 142.8,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.3089,
-   "dividende_erwachsener_monat": 770.05,
-   "dividende_kind_monat": 385.03,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 819.53,
+   "dividende_kind_monat": 409.76,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 700.63,
    "tarifstufen": [
     16815,
@@ -682,32 +682,32 @@
      "einkommensteuer": 2102,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 9241,
-     "dividende_minus_steuer": 7139
+     "dividende_jahr": 9834,
+     "dividende_minus_steuer": 7732
     },
     "single_4gb": {
      "brutto": 67261,
      "einkommensteuer": 10341,
      "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
-     "dividende_jahr": 9241,
-     "dividende_minus_steuer": -1101
+     "dividende_jahr": 9834,
+     "dividende_minus_steuer": -507
     },
     "familie_3gb": {
      "brutto": 50445,
      "einkommensteuer": 5633,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 27722,
-     "dividende_minus_steuer": 22089
+     "dividende_jahr": 29503,
+     "dividende_minus_steuer": 23870
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 3440,
      "durchschnittssatz_pct": 8.6,
      "sozialabgaben": 0,
-     "dividende_jahr": 9241,
-     "dividende_minus_steuer": 5801
+     "dividende_jahr": 9834,
+     "dividende_minus_steuer": 6395
     }
    },
    "gemeinde": {
@@ -746,9 +746,9 @@
    "preisniveau_2024": 91.0,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 0.8341,
-   "dividende_erwachsener_monat": 490.72,
-   "dividende_kind_monat": 245.36,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 387.81,
+   "dividende_kind_monat": 193.91,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 446.48,
    "tarifstufen": [
     10716,
@@ -769,32 +769,32 @@
      "einkommensteuer": 1339,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 5889,
-     "dividende_minus_steuer": 4549
+     "dividende_jahr": 4654,
+     "dividende_minus_steuer": 3314
     },
     "single_4gb": {
      "brutto": 42862,
      "einkommensteuer": 6590,
      "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 5889,
-     "dividende_minus_steuer": -701
+     "dividende_jahr": 4654,
+     "dividende_minus_steuer": -1936
     },
     "familie_3gb": {
      "brutto": 32147,
      "einkommensteuer": 3590,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 17666,
-     "dividende_minus_steuer": 14076
+     "dividende_jahr": 13961,
+     "dividende_minus_steuer": 10372
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 5789,
      "durchschnittssatz_pct": 14.47,
      "sozialabgaben": 0,
-     "dividende_jahr": 5889,
-     "dividende_minus_steuer": 100
+     "dividende_jahr": 4654,
+     "dividende_minus_steuer": -1135
     }
    },
    "gemeinde": {
@@ -833,9 +833,9 @@
    "preisniveau_2024": 96.5,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 0.8845,
-   "dividende_erwachsener_monat": 520.38,
-   "dividende_kind_monat": 260.19,
-   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_erwachsener_monat": 355.65,
+   "dividende_kind_monat": 177.83,
+   "dividende_art": "ausgezahlt (V2, gleicher Anteil am eigenen BIP je Kopf)",
    "dividende_boden_monat": 473.47,
    "tarifstufen": [
     11363,
@@ -856,32 +856,32 @@
      "einkommensteuer": 1420,
      "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 6245,
-     "dividende_minus_steuer": 4824
+     "dividende_jahr": 4268,
+     "dividende_minus_steuer": 2847
     },
     "single_4gb": {
      "brutto": 45453,
      "einkommensteuer": 6988,
      "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 6245,
-     "dividende_minus_steuer": -744
+     "dividende_jahr": 4268,
+     "dividende_minus_steuer": -2721
     },
     "familie_3gb": {
      "brutto": 34090,
      "einkommensteuer": 3807,
      "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 18734,
-     "dividende_minus_steuer": 14927
+     "dividende_jahr": 12803,
+     "dividende_minus_steuer": 8997
     },
     "single_40000": {
      "brutto": 40000,
      "einkommensteuer": 5462,
      "durchschnittssatz_pct": 13.65,
      "sozialabgaben": 0,
-     "dividende_jahr": 6245,
-     "dividende_minus_steuer": 783
+     "dividende_jahr": 4268,
+     "dividende_minus_steuer": -1194
     }
    },
    "gemeinde": {
@@ -922,7 +922,7 @@
    "faktor_gegen_de": 0.6434,
    "dividende_erwachsener_monat": 344.43,
    "dividende_kind_monat": 172.21,
-   "dividende_art": "Boden (V3b, halbes Existenzminimum am Wohnort); V3a nur im Gewichtsbestand der Gesamtrechnung",
+   "dividende_art": "Boden (V3b, halbes Existenzminimum am Wohnort); V2 nur für die zehn Staaten der Gesamtrechnung",
    "dividende_boden_monat": 344.43,
    "tarifstufen": [
     8266,
@@ -986,7 +986,7 @@
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
-    "Dividende: nur Boden (V3b), keine ausgezahlte Dividende V3a",
+    "Dividende: nur Boden (V3b), keine ausgezahlte Dividende V2 (BIP je Kopf nicht in der Gesamtrechnung)",
     "Gemeindebudget: nicht gerechnet (Land nicht in laendervarianten.json)",
     "heute: Kapitalertragsteuer nicht belegt",
     "heute: Spitzensatz Einkommensteuer nicht belegt",

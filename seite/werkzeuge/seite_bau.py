@@ -10,7 +10,11 @@ Quellen der Länderbeispiele und Zeitreihen: seite/stand-b/QUELLEN.md.
 Platzhalter in der Vorlage: @@schluessel@@ = Text der Sprache (darin {wert} = Zahl, sprachgerecht formatiert).
 
 Aufruf:  python3 seite/werkzeuge/seite_bau.py
+         ENTWURF=1 python3 seite/werkzeuge/seite_bau.py   (seit v3.38: nur Deutsch nach seite/entwurf/, PDFs aus dokumente/entwurf/)
+Seit v3.38 (Entscheidungen E2 V2, E3 je Land): Dividende und Gemeindeformel für das Referenzland Deutschland nach der
+eigenen Wirtschaftsleistung je Kopf (gesamtrechnung.json: erw_de_*, gemeinde_einw_de, gemeinde_kind_de).
 """
+import os
 import csv
 import json
 import re
@@ -19,7 +23,8 @@ from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parents[2]
 ALT = WURZEL / "seite" / "stand-a-national" / "de.html"
-ZIEL = WURZEL / "seite" / "stand-b"
+ENTWURF = bool(os.environ.get("ENTWURF"))
+ZIEL = WURZEL / "seite" / ("entwurf" if ENTWURF else "stand-b")
 SPRACHEN_DIR = Path(__file__).resolve().parent / "sprachen"
 SPRACHEN = ["de", "en", "fr", "it", "es", "pl"]
 J = json.loads((WURZEL / "daten/aggregate/gesamtrechnung.json").read_text(encoding="utf-8"))
@@ -135,7 +140,10 @@ def werte(sp):
         "erw_2060": eur(J["erw_de_2060"], sp), "mehr": pct(J["anteil_mit_mehr_de"], sp),
         "keil_de": pct(J["abgabenkeil_de_2024"], sp, 1), "keil_oecd": pct(J["abgabenkeil_oecd_2024"], sp, 1),
         "abgeltung": pct(J["abgeltungsteuer_de"], sp, 1), "og": pct(og, sp), "mind": pct(100 - og, sp),
-        "formel_einw": eur(J["formel_einw"], sp), "formel_kind": eur(J["formel_kind"], sp),
+        "formel_einw": eur(J.get("gemeinde_einw_de", J["formel_einw"]), sp),
+        "formel_kind": eur(J.get("gemeinde_kind_de", J["formel_kind"]), sp),
+        "klub_einw": eur(J["formel_einw"], sp), "klub_kind": eur(J["formel_kind"], sp),
+        "verw_klub": pct(J["verw_anteil_pct"], sp, 1),
         "tief_jahr": str(J["kl_tief_jahr"]), "d0": pct(J["tabelle_pfad"][0]["d"], sp), "d1": pct(J["tabelle_pfad"][5]["d"], sp),
         "uk": zahl(next(float(x["einwohner_mio"]) for x in RAUM if x["land"] == "UK"), 1, sp),
         "ca": zahl(next(float(x["einwohner_mio"]) for x in RAUM if x["land"] == "CA"), 1, sp),
@@ -169,7 +177,8 @@ def baue(sp, T, V):
     daten = {
         "lang": sp, "fmt": FORMAT[sp], "jahre": J["reihe_jahre"], "erw": J["reihe_erw"], "a": J["reihe_a"],
         "div": J["reihe_div"], "b": J["b_fach"], "q": q, "og": J["obergrenze"], "einzugAnteil": (q - J["boden"]) / q,
-        "einw": J["formel_einw"], "kind": J["formel_kind"], "fachKopf": J["tabelle_einzug"][5][2],
+        "einw": J.get("gemeinde_einw_de", J["formel_einw"]), "kind": J.get("gemeinde_kind_de", J["formel_kind"]),
+        "fachKopf": J["tabelle_einzug"][5][2] * J.get("f_de", 1.0),
         "verwAnt": J["verw_anteil_pct"], "tarif": [[g if g else 1e12, s] for g, s in TARIF],
         "raum": {x["land"]: float(x["einwohner_mio"]) for x in RAUM}, "us": next(float(x["einwohner_mio"]) for x in RAUM if x["land"] == "US"),
         "d": J["reihe_d"], "zeit": ZEITREIHEN, "T": {k: T[k] for k in T if k.startswith("js_")},
@@ -192,17 +201,20 @@ def baue(sp, T, V):
 def main():
     ref = json.loads((SPRACHEN_DIR / "de.json").read_text(encoding="utf-8"))
     ZIEL.mkdir(parents=True, exist_ok=True)
-    for sp in SPRACHEN:
+    for sp in (["de"] if ENTWURF else SPRACHEN):
         T = json.loads((SPRACHEN_DIR / f"{sp}.json").read_text(encoding="utf-8"))
         fehlt, zuviel = set(ref) - set(T), set(T) - set(ref)
         if fehlt or zuviel:
             raise SystemExit(f"{sp}: Schlüssel weichen von de.json ab: fehlt {sorted(fehlt)}, zu viel {sorted(zuviel)}")
         html = baue(sp, T, werte(sp))
+        if ENTWURF:
+            html = re.sub(r"(<body[^>]*>)", r'\1<div style="background:#B03A2E;color:#fff;font-family:monospace;padding:8px 16px;text-align:center">'
+                          r'ENTWURF ZUR FREIGABE – nicht veröffentlichen</div>', html, count=1)
         (ZIEL / f"{sp}.html").write_text(html, encoding="utf-8")
-        print(f"geschrieben: seite/stand-b/{sp}.html ({len(html)} Zeichen)")
+        print(f"geschrieben: {ZIEL.relative_to(WURZEL)}/{sp}.html ({len(html)} Zeichen)")
     (ZIEL / "dokumente").mkdir(exist_ok=True)
     for name in ("TAX-2828-Kurzfassung.pdf", "TAX-2828-Gesamtkonzept.pdf"):
-        shutil.copy2(WURZEL / "dokumente" / name, ZIEL / "dokumente" / name)
+        shutil.copy2(WURZEL / "dokumente" / ("entwurf" if ENTWURF else "") / name, ZIEL / "dokumente" / name)
 
 
 if __name__ == "__main__":

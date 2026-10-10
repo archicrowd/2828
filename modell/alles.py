@@ -35,6 +35,7 @@ STUFEN = [
     ("Tragfähigkeit (Entscheidungen)", ["modell/tragfaehigkeit.py"]),
     ("Justierung und Stabilität", ["modell/justierung.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
+    ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),
     ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),
     ("Projektkarte (Datenzugang)", ["projekt/manifest.py"]),
     ("Projektprüfung", ["projekt/pruefe_projekt.py"]),

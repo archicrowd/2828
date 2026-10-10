@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.37**
+Stand: 10. Oktober 2026 · Modellstand **v3.38**
 
 ---
 
@@ -1706,6 +1706,43 @@ innerhalb dieser Unsicherheit.
 *Skripte: `modell/gesamtrechnung.py`, `modell/tarif_grundbedarf.py`, `modell/tragfaehigkeit.py`, `modell/justierung.py`, `modell/nachfrage.py`,
 `modell/laender/rechne.py`, `modell/anreize.py`, `modell/laendervergleich.py`. Quellen wie v3.33 bis v3.36.*
 
+### v3.38 — Deutscher Textentwurf zur Freigabe; Deutschland nach V2
+
+**Art der Änderung: MINOR (Text und Darstellung); in der Rechnung bewegt sich nur die Reihe Deutschland (V2 statt V3a).** 10. Oktober 2026.
+
+**Entscheidung der Initiative (10.10.2026):** „Wie vorgeschlagen“: Die Ersparnis am Dach senkt die Quote (30,2 %), sie erhöht nicht die
+Dividende.
+
+**Rechnung.** `gesamtrechnung.py`: Die Reihe Deutschland (`de_land`, `erw_de_*`, `punkt_bip_eur_de`, Sensitivität, Webseite) folgt jetzt
+der Entscheidung E2 (V2: BIP je Kopf Deutschland gegen Klub, Faktor `f_de` 1,0875) statt dem Preisniveau (`r_de` 1,0086, V3a).
+Bewegte Zahlen (Euro je Monat, Preise 2028): Deutschland je Einwohner 2028 539 → 581, Tiefpunkt 531 → 572 (2032), 2060 732 → 789;
+je Erwachsenem 2028 588 → 634, 2060 798 → 860; ein Punkt des BIP 45 → 49 € (Deutschland). Klubwerte, Quote und Deckung unverändert.
+Neu ausgegeben: `gemeinde_einw_de` 3.913 €, `gemeinde_kind_de` 13.729 € (Jahr, 2028, nominal), `verw_zehntel_eur` 7 €, `laender_unter_boden_v2`.
+`laendervergleich.py`: Dividende der zehn Staaten nach V2 (übrige Länder weiter Boden, als Lücke gekennzeichnet).
+
+**Text (Entwurf, `ENTWURF=1`):** Gesamtkonzept (15 Seiten) und Kurzfassung (2 Seiten) in `dokumente/entwurf/`, Webseite Deutsch in
+`seite/entwurf/de.html` mit rotem Hinweis „Entwurf zur Freigabe“. Die veröffentlichte Fassung (7. Oktober 2026) bleibt unberührt.
+Inhalt der Änderungen: Dividende und Gemeindeformel nach V2/E3 mit Ländertabellen; Boden als Kriterium im Klubschnitt, vier Länder
+darunter offen genannt; Dach auf Kernaufgaben (Posten 3,75 → 2,10, Herleitung COFOG GF04); Label nach Fußabdruck, effektiv 16,9 %, regionale
+Wirkung nicht belegt (−0,04 % des BIP), Salienz empirisch offen; Tarifstufen 1/1,5/2/3; Erbschaft 100.000 €; Vermögen 1,5 %; Deckung mit
+Überschuss 0,24 innerhalb der Unsicherheit; Stabilität (Reserve 1,08); Ablösung der Sozialverwaltung außerhalb der Quote (Korrektur 59);
+Länderstandard und Klubquote 81,55 % bei Regierungspfaden FR/ES/NL; Rechtsrahmen nach Entscheidung nicht bindend, Kollisionen benannt
+(Art. 113, 110, 3 AEUV); Estland-Aussage zurückgezogen (Korrektur 58); Webseite: Verwaltungsvergleich mit Estland ersetzt.
+
+**Geprüft:** Behauptung „über 95 % haben mehr“ gegen die engeren Stufen: Im Kernmodell (`modell/kern/modell-2828.py`, Stand A, Euro 2026,
+Alleinstehende ohne Kinder, Dividendenstufe 50 %, nach Mehrwertsteuer-Mehrbelastung) bleibt der Nettovorteil für alle Bruttoeinkommen von
+15.000 bis 150.000 € positiv (+6.362 bis +12.157 € im Jahr statt +6.548 bis +14.071 €). Die 95 % beruhen dort auf Risikogruppen
+(Transferbezieher, sehr große Vermögen), nicht auf Erwerbseinkommen; die Aussage bleibt mit Kennzeichnung „Schätzung“ stehen. **Grenze:**
+Stand A (Quote 27,91 %, Label 20 %), keine Mikrosimulation.
+
+**Prüfung:** `modell/pruefe_konzept.py --entwurf` (neu, 54 Prüfungen, 0 Fehler), neue Stufe „Textentwurf gegen Rechnung“ in `alles.py`
+(23 Stufen). Die Stufe „Gesamtkonzept gegen Rechnung“ bleibt bis zur Übernahme des Entwurfs bewusst rot (v3.37).
+
+**Wodurch aufgefallen:** Auftrag der Initiative; V2-Reihe Deutschland beim Lesen des Entwurfs (Abschnitt 4 nannte noch das Preisniveau).
+
+*Skripte: `dokumente/werkzeuge/gesamtkonzept-bau.js`, `kurzfassung-bau.js`, `seite/werkzeuge/seite_bau.py`, `modell/pruefe_konzept.py`,
+`modell/gesamtrechnung.py`, `modell/laendervergleich.py`. Quellen wie v3.33 bis v3.37.*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -1756,9 +1793,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.37
+## 7 | Offene Punkte, Stand v3.38
 
-Neu seit v3.23 (Stand v3.37): **Textentwurf (deutsch) von Gesamtkonzept, Kurzfassung und Webseite zur Freigabe, danach Version und fünf Sprachfassungen; bis dahin schlägt die Prüfstufe „Gesamtkonzept gegen Rechnung“ bewusst fehl; Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten; Text Verwaltung (Korrektur 58)**; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.38): **Freigabe des deutschen Textentwurfs (v3.38, `dokumente/entwurf/`, `seite/entwurf/`), danach Übernahme, Version und fünf Sprachfassungen; bis dahin schlägt die Prüfstufe „Gesamtkonzept gegen Rechnung“ bewusst fehl; Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten; Text Verwaltung (Korrektur 58)**; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|
