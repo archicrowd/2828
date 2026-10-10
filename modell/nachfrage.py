@@ -94,11 +94,24 @@ def main():
               steuernd_kaeuferpreise=kanal3(0.5, None, None, ST))
     ls = labelsatz()
     ls_st = labelsatz(ST)
+    orig = {g["id"]: g["elast"] for g in P["gruppe"]}
+    salienz = {}
+    for f in P["salienz_faktoren"]:
+        for g in P["gruppe"]:
+            g["elast"] = orig[g["id"]] * f
+        a, b = kanal3(1.0, None, None, ST), kanal3(1.0, 1.0, 1.0, ST)
+        salienz[str(f)] = dict(zentral_punkte=a["aenderung_punkte_konsum"], zentral_pct_bip=a["aenderung_pct_bip"],
+                               volle_weitergabe_pct_bip=b["aenderung_pct_bip"])
+    for g in P["gruppe"]:
+        g["elast"] = orig[g["id"]]
+    k3["salienz_steuernd"] = salienz
     E = dict(version=P["version"], kanal1_umverteilung=k1, kanal2_angebot=k2, kanal3_label=k3, labelsatz=ls, labelsatz_steuernd=ls_st)
     (AGG / "nachfrage.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"Kanal 1 (Nachfrage, Niveau BIP %): {k1['min']} bis {k1['max']}, zentral {k1['zentral']} ({k1['zentral_annahmen']})")
     print(f"Kanal 2 (Angebot, Obergrenze, nicht eingerechnet): {k2['obergrenze_niveau_pct']}")
     for n, x in k3.items():
+        if n == "salienz_steuernd":
+            continue
         print(f"Kanal 3 Label [{n}]: Inlandsanteil {x['inland_anteil_vorher']} -> {x['inland_anteil_nachher']} % "
               f"({x['aenderung_punkte_konsum']:+.3f} Punkte des Konsums, {x['aenderung_pct_bip']:+.3f} % BIP)")
     print("   Umschichtung ‰ (zentral):", {k: v for k, v in k3["zentral"]["umschichtung"].items() if abs(v) > 0.3})
@@ -106,6 +119,7 @@ def main():
           f"Konsumaufkommen {ls['konsumaufkommen_kern_pct_bip']} -> {ls['konsumaufkommen_bei_zuordnung_pct_bip']} % BIP ({ls['differenz_pct_bip']:+.2f})")
     print(f"Labelsatz steuernd: C/D-Anteil {ls_st['anteil_c_d_pct']} %, effektiv {ls_st['effektiv_label_zuordnung_pct']} %; "
           f"Konsumaufkommen {ls_st['konsumaufkommen_bei_zuordnung_pct_bip']} % BIP ({ls_st['differenz_pct_bip']:+.2f})")
+    print("Salienz (steuernd):", {f: (x["zentral_pct_bip"], x["volle_weitergabe_pct_bip"]) for f, x in salienz.items()})
     return 0
 
 

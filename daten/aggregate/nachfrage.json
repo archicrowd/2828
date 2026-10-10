@@ -1,5 +1,5 @@
 {
- "version": "v3.31",
+ "version": "v3.32",
  "kanal1_umverteilung": {
   "entlastung_pct_bip": 1.1099999999999994,
   "min": 0.17,
@@ -322,6 +322,28 @@
     "gaststaetten_hotels": -0.39,
     "reparatur_persoenliche_dienste": -0.41,
     "sonstiges": 0.53
+   }
+  },
+  "salienz_steuernd": {
+   "1.0": {
+    "zentral_punkte": -0.069,
+    "zentral_pct_bip": -0.036,
+    "volle_weitergabe_pct_bip": -0.053
+   },
+   "1.5": {
+    "zentral_punkte": 0.062,
+    "zentral_pct_bip": 0.032,
+    "volle_weitergabe_pct_bip": 0.039
+   },
+   "2.0": {
+    "zentral_punkte": 0.195,
+    "zentral_pct_bip": 0.101,
+    "volle_weitergabe_pct_bip": 0.132
+   },
+   "3.0": {
+    "zentral_punkte": 0.462,
+    "zentral_pct_bip": 0.24,
+    "volle_weitergabe_pct_bip": 0.319
    }
   }
  },

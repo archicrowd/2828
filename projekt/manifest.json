@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.31",
+ "modellstand": "v3.32",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -290,7 +290,7 @@
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/nachfrage.py",
-   "anmerkung": "v3.31: Umverteilung und Konsumneigung (Bandbreite 0,2 bis 1,9 % BIP Niveau), Label nach Produktgruppen (kaum Umlenkung), effektiver Labelsatz 14,9 bis 16,9 % statt 20 % (Konsumaufkommen 1,2 bis 2,0 % BIP niedriger)"
+   "anmerkung": "v3.31: Umverteilung und Konsumneigung (Bandbreite 0,2 bis 1,9 % BIP Niveau), Label nach Produktgruppen (kaum Umlenkung), effektiver Labelsatz 14,9 bis 16,9 % statt 20 % (Konsumaufkommen 1,2 bis 2,0 % BIP niedriger); v3.32 Salienz: regionale Umlenkung höchstens 0,3 % BIP"
   }
  ],
  "nahtstellen": [

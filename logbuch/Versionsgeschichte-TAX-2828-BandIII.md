@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.31**
+Stand: 10. Oktober 2026 · Modellstand **v3.32**
 
 ---
 
@@ -1458,6 +1458,32 @@ Skans (2018); Tillväxtanalys (Schweden, Restaurants); Benedek u. a. (2015, IWF)
 
 ---
 
+### v3.32 — Nachfrageprüfung: Sichtbarkeit (Salienz) des Mehrwertsteuer-Labels
+
+**Art der Änderung: PATCH, keine Zahl des Konzepts bewegt.** 10. Oktober 2026. Hinweis der Initiative: Ungeprüft ist, wie das Label
+psychologisch wirkt; es gibt Kunden eine leichte Handhabe, umwelt- und regionalbewusster zu kaufen; vermutlich keine ausreichende Evidenz.
+
+**Evidenz (selbst abgerufen, Kurzfassungen).** Richtung belegt, Größe nicht: Chetty, Looney, Kroft (2009, AER 99(4); FEDS 2009-11):
+Ausweis des Steueranteils am Regal senkte die Nachfrage der betroffenen Produkte um 8 %; Kunden reagieren auf verdeckte Steuern zu
+schwach. Potter u. a. (2021, Environment and Behavior), systematische Übersicht, 56 Studien: Umweltlabels erhöhen die Wahl nachhaltiger
+Lebensmittel überwiegend (60 von 76 Vergleichen), 41 Studien hypothetisch, 39 mit unklarem oder hohem Verzerrungsrisiko, keine gepoolte
+Effektgröße. Für ein Label, das Steuersatz und Umweltstufe verbindet, keine Studie gefunden. Die Vermutung der Initiative trifft zu.
+
+**Rechnung.** Faktor auf die Preiselastizitäten bei steuernder Zuordnung (1,0 / 1,5 / 2,0 / 3,0; **Annahme**). Veränderung des
+inländischen Wertschöpfungsanteils am Konsum, in % des BIP: −0,04 / +0,03 / +0,10 / +0,24 (volle Weitergabe: −0,05 / +0,04 / +0,13
+/ +0,32). Die Umlenkung in die Region beginnt erst ab etwa der 1,3-fachen Preisreaktion der Literatur; selbst bei dreifacher Reaktion
+bleibt sie unter 0,35 % des BIP. Der Ressourceneffekt (Mengen) wird mit der Salienz größer.
+
+**Folge.** Für die Kommunikation tragfähig: Das Label macht den Umweltgehalt sichtbar und senkt den Ressourcenverbrauch; die Richtung der
+Verhaltenswirkung ist belegt. Nicht belegt: eine nennenswerte Verlagerung von Wertschöpfung in die Region. Ein Feldversuch wäre der Weg,
+die Größe zu bestimmen.
+
+**Geprüft:** `python3 modell/alles.py`. **Wodurch aufgefallen:** Hinweis der Initiative.
+
+*Skript: `modell/nachfrage.py`. Quellen: Chetty, Looney, Kroft (2009); Potter u. a. (2021).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
@@ -1504,7 +1530,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.31
+## 7 | Offene Punkte, Stand v3.32
 
 Neu seit v3.23 (Stand v3.31): **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 

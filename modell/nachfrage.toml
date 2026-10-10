@@ -1,5 +1,10 @@
 # Nachfrageprüfung (modell/nachfrage.py, Logbuch v3.31). Alle Größen mit Quelle und Status; Bandbreiten statt Punktwerte.
-version = "v3.31"
+version = "v3.32"
+# Sichtbarkeit des Labels (Salienz), v3.32: Faktor auf die Preiselastizitäten der Produktgruppen bei steuernder Zuordnung.
+# Stütze für die Richtung: Chetty, Looney, Kroft (2009/2009 AER 99(4)): ausgewiesener Steueranteil senkt die Nachfrage um 8 %;
+# Potter u. a. (2021, Environment and Behavior): Umweltlabels erhöhen die Wahl nachhaltiger Lebensmittel überwiegend (60 von 76
+# Vergleichen), aber meist hypothetisch und mit hohem Verzerrungsrisiko. Für die Größe gibt es keine Evidenz; Faktoren sind Annahmen.
+salienz_faktoren = [1.0, 1.5, 2.0, 3.0]
 konsum_anteil_bip = 0.52        # Konsum der privaten Haushalte, Anteil am BIP, Größenordnung EU (Annahme, nicht abgerufen)
 
 # Kanal 1: Umverteilung von oben nach unten und Nettoentlastung
