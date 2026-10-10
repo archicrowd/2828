@@ -1,0 +1,168 @@
+# Nachfrageprüfung (modell/nachfrage.py, Logbuch v3.31). Alle Größen mit Quelle und Status; Bandbreiten statt Punktwerte.
+version = "v3.31"
+konsum_anteil_bip = 0.52        # Konsum der privaten Haushalte, Anteil am BIP, Größenordnung EU (Annahme, nicht abgerufen)
+
+# Kanal 1: Umverteilung von oben nach unten und Nettoentlastung
+# Umfang der Umverteilung zwischen Haushalten (% des BIP): kein Klub-Verteilungsmodell vorhanden, daher Szenarien (Annahme).
+umverteilung_pct_bip = [2.0, 4.0, 6.0]
+# Abstand der Konsumneigung unten gegen oben: 0,1 (HFCS, 22 Länder, Albacete/Fessler/Pekanov, SUERF) bis 0,3
+# (Italien, Jappelli/Pistaferri 2014, AEJ Macro 6(4)); Durchschnittsneigungen Q1 130 % / Q5 56 % (Eurostat icw_sr_10, keine MPC).
+mpc_abstand = [0.1, 0.3]
+# Konsumneigung aus der Nettoentlastung insgesamt: 0,2 (nicht-dauerhafte Güter, Christelis u. a. 2020) bis 0,5 (HFCS, inkl. Gebrauchsgüter)
+mpc_entlastung = [0.2, 0.5]
+# Importanteil des Konsums: Frankreich 18,7 % (Insee Première 1756, 2015); Euroraum Güter 51 %, Dienste 13 % (EZB 2024). Mittel 0,20 (Annahme).
+importanteil = 0.20
+# Abschlag durch Geldpolitik und Angebotsgrenzen: 0 (Nullzinsgrenze) bis 0,5 (Klub als großer Teil des Euroraums, EZB gleicht teilweise aus; Annahme)
+abschlag_geldpolitik = [0.0, 0.5]
+
+# Kanal 2: Angebot (aus modell/anreize.py): Niveaueffekt klubweit, bisher nicht eingerechnet. Nur als Obergrenze ausgewiesen.
+
+# Kanal 3: Mehrwertsteuer-Label nach Produktgruppen
+# Weitergabe an die Preise: Senkungen 0,13 bis 0,5 (Benzarti u. a. 2017; Kosonen 2015; Benedek u. a. 2015: ermäßigte Sätze 0,3),
+# Erhöhungen 0,55 bis 1,0 (Benzarti u. a.; Benedek u. a.: Normalsatz etwa 1). Zentral: 0,3 / 0,8.
+weitergabe_senkung = 0.3
+weitergabe_erhoehung = 0.8
+# Referenz heute: deutsche Sätze 19 / 7 % (Annahme für den Klub).
+# Zuordnung zum Label: Datenblatt (A+ 5 % Grundnahrungsmittel, Reparatur, Kreislaufprodukte; A 11 % nachhaltige Güter;
+# B 17 % Standard; C 22 % ressourcenintensiv; D 28 % klimaschädliche Luxusgüter). Die Zuordnung der Gruppen ist eine ANNAHME
+# dieser Prüfung, keine Festlegung des Konzepts. Budgetanteile ‰: Eurostat hbs_str_t223, EU27, 2020, Q1 und Q5, Mittelwert.
+# Importanteile: Insee 2019 (Basispreise, Obergrenze); zu Käuferpreisen etwa die Hälfte (EZB 2022, Annahme).
+# Elastizitäten: Labandeira u. a. 2017 (Energie, langfristig), Andreyeva u. a. 2010 (Lebensmittel), Dybczak u. a. 2010 (Tschechien,
+# Kleidung, Möbel, Verkehr), Kosonen 2015 (Friseure fast unelastisch), Nelson 2013 (Alkohol).
+# Alternative, steuernde Zuordnung (ANNAHME dieser Prüfung, näher am Kernmodell mit 60 % des Konsums in C/D):
+# ressourcen- und importintensive Güter in C (22 %) oder D (28 %), Dienste und Grundbedarf in A+/A/B.
+[label_steuernd]
+kleidung = 22
+einrichtung = 22
+haushaltsenergie = 22
+fahrzeuge = 28
+kraftstoffe = 28
+freizeit = 22
+alkohol_tabak = 28
+sonstiges = 22
+kommunikation = 17
+gaststaetten_hotels = 11
+verkehrsdienste = 5
+reparatur_persoenliche_dienste = 5
+lebensmittel = 5
+
+[[gruppe]]
+id = "lebensmittel"
+q1 = 183
+q5 = 144
+heute = 7
+label = 5
+elast = -0.5
+import = 0.42
+[[gruppe]]
+id = "alkohol_tabak"
+q1 = 29
+q5 = 21
+heute = 19
+label = 17
+elast = -0.5
+import = 0.40
+[[gruppe]]
+id = "kleidung"
+q1 = 32
+q5 = 45
+heute = 19
+label = 17
+elast = -0.5
+import = 0.87
+[[gruppe]]
+id = "wohnen_miete"          # 75 % von CP04 (Annahme), umsatzsteuerfrei
+q1 = 298.5
+q5 = 211.5
+heute = 0
+label = 0
+elast = 0.0
+import = 0.025
+[[gruppe]]
+id = "haushaltsenergie"      # 25 % von CP04 (Annahme)
+q1 = 99.5
+q5 = 70.5
+heute = 19
+label = 22
+elast = -0.65
+import = 0.25
+[[gruppe]]
+id = "einrichtung"
+q1 = 37
+q5 = 57
+heute = 19
+label = 17
+elast = -0.5
+import = 0.80
+[[gruppe]]
+id = "gesundheit_bildung"    # weitgehend steuerfrei
+q1 = 42
+q5 = 49
+heute = 0
+label = 0
+elast = 0.0
+import = 0.10
+[[gruppe]]
+id = "fahrzeuge"             # 40 % von CP07 (Annahme)
+q1 = 28.4
+q5 = 53.2
+heute = 19
+label = 22
+elast = -1.0
+import = 0.84
+[[gruppe]]
+id = "kraftstoffe"           # 35 % von CP07 (Annahme); CO2-Preis gesondert
+q1 = 24.85
+q5 = 46.55
+heute = 19
+label = 22
+elast = -0.7
+import = 0.72
+[[gruppe]]
+id = "verkehrsdienste"       # 25 % von CP07 (Annahme); Mischung ermäßigt/Normalsatz bleibt
+q1 = 17.75
+q5 = 33.25
+heute = 13
+label = 13
+elast = -0.5
+import = 0.24
+[[gruppe]]
+id = "kommunikation"
+q1 = 37
+q5 = 28
+heute = 19
+label = 17
+elast = -0.5
+import = 0.24
+[[gruppe]]
+id = "freizeit"
+q1 = 55
+q5 = 81
+heute = 19
+label = 17
+elast = -0.5
+import = 0.40
+[[gruppe]]
+id = "gaststaetten_hotels"
+q1 = 37
+q5 = 64
+heute = 19
+label = 17
+elast = -0.75
+import = 0.15
+[[gruppe]]
+id = "reparatur_persoenliche_dienste"   # 15 ‰ aus CP12 (Annahme)
+q1 = 15
+q5 = 15
+heute = 19
+label = 5
+elast = -0.3
+import = 0.135
+[[gruppe]]
+id = "sonstiges"             # CP12 ohne Reparatur und persönliche Dienste; Versicherungen teils steuerfrei
+q1 = 62
+q5 = 81
+heute = 19
+label = 17
+elast = -0.5
+import = 0.20

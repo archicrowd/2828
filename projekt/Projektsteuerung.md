@@ -1,4 +1,4 @@
-# Projektsteuerung TAX 28:28 (Stand v3.30, 10. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.31, 10. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
@@ -20,6 +20,7 @@ Existenzminimum; Deutschland 591 € je Erwachsenem und Monat 2028, 801 € 2060
 - `modell/laendervergleich.py` + `modell/laender/vergleich.toml`: Ländervergleich nach den Kriterien der Webseite (elf Länder), Ergebnis `daten/aggregate/laendervergleich.json`. Arbeitsweise für nachfolgende Agenten: `modell/laender/ARBEITSANWEISUNG.md` (Kopie im Projektraum).
 - `modell/uebergang.py` + `uebergang.toml`: Übergangsrechnung 2028–2060 nach der Leitlinie v3.29 (nationaler Ausgangspunkt, Angleichung durch gleiche Regeln): Dividende je Land nach V3a und V2B, Angleichung als Szenario.
 - `modell/anreize.py` + `anreize.toml`: Abgabenkeil heute (OECD Taxing Wages 2025) gegen 28:28 und Wachstumszuschlag je Land (relativ zum Klub).
+- `modell/nachfrage.py` + `nachfrage.toml`: Nachfrageprüfung (Umverteilung, Produktgruppen, Label); Prüfbefund zum Konsumaufkommen (Nahtstelle N19).
 - `dokumente/` Gesamtkonzept (aus der Rechnung gebaut), `archiv/` ältere Fassungen.
 - `projekt/` Bausteinregister (22), Nahtstellen (13), Prüfsummen, `pruefe_projekt.py`.
 - `schnittstelle/`, `beitraege/` für Dritte (Mikrosimulation erst nach Prüfung der Aggregate).
@@ -33,6 +34,7 @@ Tag-Push scheitert über den Sitzungsproxy (HTTP 403); Tags und GitHub Releases 
 Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell): je Land und Dimension einzeln, Ratenbegrenzung beachten.
 
 ## Reihenfolge der offenen Arbeit
+0. **Konsumaufkommen (v3.31):** Zuordnung der Produkte zu den Labelstufen festlegen; effektiver Satz 14,9 bis 16,9 % statt 20 % würde die Deckungslücke um 1,2 bis 2,0 Punkte vergrößern.
 1. **B12 auf Klubebene:** Deckung der Quote aus den Steuerbasen der zehn Staaten (deutsche Basis: Lücke 0,95 Punkte).
 2. **B15:** BIP (DE bei Eurostat revidiert, +1,34 %), Schuldenquoten, Renditen, COFOG-Posten neu abrufen; Zinsausgaben Estland nachholen. **B19:** Zuordnung der Posten dokumentieren.
 3. **B16:** Seite in sechs Sprachen (`seite/stand-b/*.html`, Bau: `python3 seite/werkzeuge/seite_bau.py`); Gegenlesen, Länderanpassung und Veröffentlichung offen.

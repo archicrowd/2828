@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.30",
+ "modellstand": "v3.31",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -282,6 +282,15 @@
    "status": "geprueft",
    "pruefung": "modell/anreize.py",
    "anmerkung": "v3.30: OECD Taxing Wages 2025 (Stichprobe geprüft); Keil heute gegen 28:28 beim Durchschnittslohn; Wachstumszuschlag relativ zum Klub (kappa 0,28 / 0,14), klubweiter Effekt nicht eingerechnet"
+  },
+  {
+   "id": "B26",
+   "name": "Nachfrageprüfung",
+   "pfad": "modell/nachfrage.py;modell/nachfrage.toml;daten/aggregate/nachfrage.json",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/nachfrage.py",
+   "anmerkung": "v3.31: Umverteilung und Konsumneigung (Bandbreite 0,2 bis 1,9 % BIP Niveau), Label nach Produktgruppen (kaum Umlenkung), effektiver Labelsatz 14,9 bis 16,9 % statt 20 % (Konsumaufkommen 1,2 bis 2,0 % BIP niedriger)"
   }
  ],
  "nahtstellen": [
@@ -428,6 +437,17 @@
    "was": "Wachstumszuschlag je Land aus dem Abbau des Abgabenkeils",
    "status": "ok",
    "beleg_oder_offener_punkt": "uebergang.py liest anreize.json (delta_zentral, aufbau_jahre); Zuschlag relativ, Klubsumme durch Skalierung null"
+  },
+  {
+   "id": "N19",
+   "von": "B26 Nachfrageprüfung",
+   "nach": "B20 Gesamtrechnung",
+   "was": "Konsumaufkommen 8",
+   "status": "95 % BIP beruht auf effektivem Labelsatz 20 % (Kernmodell: 60 % des Konsums in C/D)",
+   "beleg_oder_offener_punkt": "offen",
+   "null": [
+    "nachfrage.json: bei Zuordnung nach Datenblatt 14,9 %, steuernd 16,9 %; Entscheidung der Initiative über Zuordnung und Sätze"
+   ]
   }
  ],
  "quellen": [

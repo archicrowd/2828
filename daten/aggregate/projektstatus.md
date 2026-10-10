@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.30 · höchste Korrekturnummer 57 · 295 Dateien im Repository
+Modellstand v3.31 · höchste Korrekturnummer 57 · 298 Dateien im Repository
 
 ## Bausteine
 
@@ -31,6 +31,7 @@ Modellstand v3.30 · höchste Korrekturnummer 57 · 295 Dateien im Repository
 | B23 | Ländervergleich nach den Kriterien der Webseite | B | geprueft | modell/laendervergleich.py |
 | B24 | Übergangsrechnung Dividende je Land | B | geprueft | modell/uebergang.py (Selbstprüfung V3a gegen Gesamtrechnung) |
 | B25 | Anreizbewertung je Land (Abgabenkeil) | B | geprueft | modell/anreize.py |
+| B26 | Nachfrageprüfung | B | geprueft | modell/nachfrage.py |
 
 ## Nahtstellen
 
@@ -54,6 +55,7 @@ Modellstand v3.30 · höchste Korrekturnummer 57 · 295 Dateien im Repository
 | N16 | B23 Ländervergleich | B12 Seite zum Stand B | offen |
 | N17 | B20 Gesamtrechnung | B24 Übergangsrechnung | ok |
 | N18 | B25 Anreizbewertung | B24 Übergangsrechnung | ok |
+| N19 | B26 Nachfrageprüfung | B20 Gesamtrechnung | 95 % BIP beruht auf effektivem Labelsatz 20 % (Kernmodell: 60 % des Konsums in C/D) |
 
 ## Ergebnis dieses Laufs
 

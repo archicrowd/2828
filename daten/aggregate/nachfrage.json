@@ -1,0 +1,348 @@
+{
+ "version": "v3.31",
+ "kanal1_umverteilung": {
+  "entlastung_pct_bip": 1.1099999999999994,
+  "min": 0.17,
+  "max": 1.88,
+  "zentral": 0.71,
+  "zentral_annahmen": "Umverteilung 4 % des BIP, Abstand 0,2, Konsumneigung 0,35, Abschlag 0,25",
+  "faelle": [
+   {
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 0.34
+   },
+   {
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.17
+   },
+   {
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 0.6
+   },
+   {
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.3
+   },
+   {
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 0.66
+   },
+   {
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.33
+   },
+   {
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 0.92
+   },
+   {
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.46
+   },
+   {
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 0.5
+   },
+   {
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.25
+   },
+   {
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 0.76
+   },
+   {
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.38
+   },
+   {
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 1.14
+   },
+   {
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.57
+   },
+   {
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 1.4
+   },
+   {
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.7
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 0.66
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.33
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 0.92
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.46
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 1.62
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.2,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.81
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 1.88
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 0.94
+   }
+  ]
+ },
+ "kanal2_angebot": {
+  "abbau_klub_punkte": 28.5,
+  "obergrenze_niveau_pct": {
+   "zentral": 8.0,
+   "niedrig": 4.0
+  },
+  "hinweis": "lineare Übertragung über den Bereich der Literatur hinaus; Obergrenze, nicht Prognose"
+ },
+ "kanal3_label": {
+  "zentral": {
+   "inland_anteil_vorher": 69.28,
+   "inland_anteil_nachher": 69.28,
+   "aenderung_punkte_konsum": 0.004,
+   "aenderung_pct_bip": 0.002,
+   "umschichtung": {
+    "lebensmittel": -0.32,
+    "alkohol_tabak": -0.04,
+    "kleidung": -0.06,
+    "wohnen_miete": 0.22,
+    "haushaltsenergie": 0.65,
+    "einrichtung": -0.08,
+    "gesundheit_bildung": 0.04,
+    "fahrzeuge": 0.02,
+    "kraftstoffe": 0.24,
+    "verkehrsdienste": 0.02,
+    "kommunikation": -0.05,
+    "freizeit": -0.11,
+    "gaststaetten_hotels": -0.02,
+    "reparatur_persoenliche_dienste": -0.36,
+    "sonstiges": -0.12
+   }
+  },
+  "import_kaeuferpreise": {
+   "inland_anteil_vorher": 84.64,
+   "inland_anteil_nachher": 84.64,
+   "aenderung_punkte_konsum": 0.002,
+   "aenderung_pct_bip": 0.001,
+   "umschichtung": {
+    "lebensmittel": -0.32,
+    "alkohol_tabak": -0.04,
+    "kleidung": -0.06,
+    "wohnen_miete": 0.22,
+    "haushaltsenergie": 0.65,
+    "einrichtung": -0.08,
+    "gesundheit_bildung": 0.04,
+    "fahrzeuge": 0.02,
+    "kraftstoffe": 0.24,
+    "verkehrsdienste": 0.02,
+    "kommunikation": -0.05,
+    "freizeit": -0.11,
+    "gaststaetten_hotels": -0.02,
+    "reparatur_persoenliche_dienste": -0.36,
+    "sonstiges": -0.12
+   }
+  },
+  "volle_weitergabe": {
+   "inland_anteil_vorher": 69.28,
+   "inland_anteil_nachher": 69.3,
+   "aenderung_punkte_konsum": 0.024,
+   "aenderung_pct_bip": 0.013,
+   "umschichtung": {
+    "lebensmittel": -0.82,
+    "alkohol_tabak": -0.1,
+    "kleidung": -0.15,
+    "wohnen_miete": 1.17,
+    "haushaltsenergie": 1.11,
+    "einrichtung": -0.19,
+    "gesundheit_bildung": 0.21,
+    "fahrzeuge": 0.16,
+    "kraftstoffe": 0.42,
+    "verkehrsdienste": 0.12,
+    "kommunikation": -0.13,
+    "freizeit": -0.27,
+    "gaststaetten_hotels": 0.01,
+    "reparatur_persoenliche_dienste": -1.24,
+    "sonstiges": -0.29
+   }
+  },
+  "steuernd": {
+   "inland_anteil_vorher": 69.28,
+   "inland_anteil_nachher": 69.21,
+   "aenderung_punkte_konsum": -0.069,
+   "aenderung_pct_bip": -0.036,
+   "umschichtung": {
+    "lebensmittel": -0.86,
+    "alkohol_tabak": 0.65,
+    "kleidung": 0.29,
+    "wohnen_miete": -0.63,
+    "haushaltsenergie": 0.37,
+    "einrichtung": 0.35,
+    "gesundheit_bildung": -0.11,
+    "fahrzeuge": -0.25,
+    "kraftstoffe": 0.47,
+    "verkehrsdienste": -0.34,
+    "kommunikation": -0.16,
+    "freizeit": 0.5,
+    "gaststaetten_hotels": -0.39,
+    "reparatur_persoenliche_dienste": -0.41,
+    "sonstiges": 0.53
+   }
+  },
+  "steuernd_volle_weitergabe": {
+   "inland_anteil_vorher": 69.28,
+   "inland_anteil_nachher": 69.17,
+   "aenderung_punkte_konsum": -0.102,
+   "aenderung_pct_bip": -0.053,
+   "umschichtung": {
+    "lebensmittel": -1.5,
+    "alkohol_tabak": 0.88,
+    "kleidung": 0.49,
+    "wohnen_miete": 0.08,
+    "haushaltsenergie": 0.74,
+    "einrichtung": 0.59,
+    "gesundheit_bildung": 0.02,
+    "fahrzeuge": -0.22,
+    "kraftstoffe": 0.68,
+    "verkehrsdienste": -0.96,
+    "kommunikation": -0.27,
+    "freizeit": 0.86,
+    "gaststaetten_hotels": -1.0,
+    "reparatur_persoenliche_dienste": -1.29,
+    "sonstiges": 0.9
+   }
+  },
+  "steuernd_kaeuferpreise": {
+   "inland_anteil_vorher": 84.64,
+   "inland_anteil_nachher": 84.6,
+   "aenderung_punkte_konsum": -0.035,
+   "aenderung_pct_bip": -0.018,
+   "umschichtung": {
+    "lebensmittel": -0.86,
+    "alkohol_tabak": 0.65,
+    "kleidung": 0.29,
+    "wohnen_miete": -0.63,
+    "haushaltsenergie": 0.37,
+    "einrichtung": 0.35,
+    "gesundheit_bildung": -0.11,
+    "fahrzeuge": -0.25,
+    "kraftstoffe": 0.47,
+    "verkehrsdienste": -0.34,
+    "kommunikation": -0.16,
+    "freizeit": 0.5,
+    "gaststaetten_hotels": -0.39,
+    "reparatur_persoenliche_dienste": -0.41,
+    "sonstiges": 0.53
+   }
+  }
+ },
+ "labelsatz": {
+  "anteil_c_d_pct": 23.1,
+  "effektiv_label_zuordnung_pct": 14.94,
+  "effektiv_heute_de_saetze_pct": 15.97,
+  "kernmodell_pct": 20.0,
+  "konsumaufkommen_kern_pct_bip": 8.95,
+  "konsumaufkommen_bei_zuordnung_pct_bip": 6.98,
+  "differenz_pct_bip": -1.97,
+  "hinweis": "Kernmodell: 60 % des Konsums in C/D (22/28 %). Bei der Zuordnung dieser Prüfung liegt der größte Teil in B (17 %)."
+ },
+ "labelsatz_steuernd": {
+  "anteil_c_d_pct": 58.9,
+  "effektiv_label_zuordnung_pct": 16.88,
+  "effektiv_heute_de_saetze_pct": 15.97,
+  "kernmodell_pct": 20.0,
+  "konsumaufkommen_kern_pct_bip": 8.95,
+  "konsumaufkommen_bei_zuordnung_pct_bip": 7.76,
+  "differenz_pct_bip": -1.19,
+  "hinweis": "Kernmodell: 60 % des Konsums in C/D (22/28 %). Bei der Zuordnung dieser Prüfung liegt der größte Teil in B (17 %)."
+ }
+}

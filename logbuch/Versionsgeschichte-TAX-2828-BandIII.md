@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.30**
+Stand: 10. Oktober 2026 · Modellstand **v3.31**
 
 ---
 
@@ -1406,6 +1406,58 @@ Quellenliste mit Status: Agentenbericht vom 10.10.2026 (im Logbuch zusammengefas
 
 ---
 
+### v3.31 — Nachfrageprüfung: Umverteilung, Produktgruppen, Mehrwertsteuer-Label; Prüfbefund Konsumaufkommen
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt; ein Prüfbefund zur Deckung.** 10. Oktober 2026.
+Auftrag der Initiative: Den Zusammenhang zwischen höherem verfügbaren Einkommen für rund 95 % der Bevölkerung und Nachfrage/Wachstum erneut
+und nach Produkten prüfen; ob die gestaffelten Mehrwertsteuersätze regionales Wachstum vor internationalen Ressourcenkonsum setzen.
+
+**Klarstellung zu v3.30.** Der klubweite Angebotseffekt (Abbau des Abgabenkeils, zentral 8,0 % BIP-Niveau) war dort bewusst nicht
+eingerechnet, nur die Unterschiede zwischen den Ländern. Ein Nachfragekanal fehlte im Modell ganz. Der geringe Effekt in v3.30 war eine
+Folge dieser Methode, kein Befund über die Wirkung.
+
+**Rechnung (`modell/nachfrage.py`, `modell/nachfrage.toml`, neu).** Grundlagen: zwei Rechercheagenten (Konsumneigung und Multiplikatoren;
+Produktgruppen, Importanteile, Elastizitäten, Erfahrungen mit ermäßigten Sätzen), je Zeile mit Status in `nachfrage.toml`.
+1. **Umverteilung und Nettoentlastung.** Die Nettoentlastung insgesamt beträgt nur 1.11 % des BIP; der größere
+   Teil ist Umverteilung (das Konsum-Label hebt den effektiven Satz im Kernmodell von 16,5 auf 20 % und nimmt einen Teil des Nettogewinns
+   über die Preise zurück). Mehrkonsum = Umverteilung (Szenarien 2, 4, 6 % des BIP, **Annahme**, kein Verteilungsmodell für den Klub) ×
+   Abstand der Konsumneigung unten gegen oben (0,1 HFCS bis 0,3 Italien) + Entlastung × Konsumneigung (0,2 bis 0,5), abzüglich
+   Importanteil 20 % und Abschlag für Geldpolitik und Angebotsgrenzen (0 bis 50 %, **Annahme**). Ergebnis: BIP-Niveau
+   **+0.17 bis +1.88 %**, zentral +0.71 %. Ein Niveaueffekt, dauerhaft nur, weil die Dividende dauerhaft ist; kein
+   zusätzliches jährliches Wachstum. Kein Modell einer steuerfinanzierten Bürgerdividende mit Nachfragewirkung für Europa gefunden.
+2. **Angebot.** Klubweiter Niveaueffekt aus dem Abbau des Abgabenkeils: Obergrenze 4,0 bis 8,0 % (lineare Übertragung, nicht gedeckt).
+3. **Mehrwertsteuer-Label nach Produktgruppen** (Budgetanteile Eurostat hbs_str_t223 2020; Importanteile Insee 2019; Elastizitäten
+   Labandeira u. a. 2017, Andreyeva u. a. 2010, Dybczak u. a. 2010; Weitergabe Senkung 30 %, Erhöhung 80 %; Referenz deutsche Sätze).
+   Zuordnung der Gruppen ist eine **Annahme dieser Prüfung**. Ergebnis: Der Inlandsanteil am Konsum ändert sich praktisch nicht
+   (+0.004 Punkte bei Zuordnung nach Datenblatt; -0.069 Punkte bei steuernder Zuordnung). Gründe: geringe Satzabstände gegenüber heute
+   (17/22/5 gegen 19/19/7 %), unvollständige Weitergabe von Senkungen (Literatur 13 bis 50 %), unelastische Nachfrage. Bei unelastischer
+   Nachfrage steigen die Ausgaben für teurer besteuerte Güter, obwohl die Mengen sinken (Kraftstoffe, Fahrzeuge etwa −4 bis −6 %);
+   das Geld fließt nicht in regionale Dienste. Das Label senkt den Ressourcenverbrauch, lenkt aber kaum Kaufkraft in die Region.
+   Erfahrungen: Reparatur-Ermäßigung Schweden 2017 ohne messbaren Effekt; Restaurants Finnland 2010 ohne, Schweden 2012 mit
+   Beschäftigungseffekt (+5 Punkte je Jahr); Lebensmittel haben hohe Importanteile (Frankreich 40 bis 52 %).
+
+**Prüfbefund Konsumaufkommen (Entscheidung offen, keine Zahl geändert).** Das Kernmodell setzt den effektiven Labelsatz mit 20 % an
+(Gewichte 10/10/20/30/30 % für A+ bis D, als Annahme gekennzeichnet): 60 % des Konsums in C und D. Bei einer Zuordnung nach den
+Produktgruppen des Datenblatts ergeben sich 14.94 % (Konsumaufkommen 6.98 statt 8.95 % des BIP, -1.97), bei einer
+steuernden Zuordnung mit 58.9 % in C/D 16.88 % (7.76 % des BIP, -1.19). Die Deckungslücke (1,73 Punkte) würde damit
+um 1,2 bis 2,0 Punkte größer. Zu entscheiden: Zuordnung der Produkte zu den Labelstufen und die Sätze; danach Neurechnung der Deckung.
+Mögliche Korrektur, sobald die Zuordnung feststeht.
+
+**Was die Prüfung für die Kommunikation bedeutet.** Die Aussage „mehr Geld für 95 %“ ist eine Verteilungsaussage. Gesamtwirtschaftlich
+ist die Nachfragewirkung ein moderater Niveaueffekt; der größere mögliche Effekt liegt auf der Angebotsseite (Arbeit), ist aber nicht
+belegt. Die These „Label setzt regionales Wachstum vor Ressourcenkonsum“ trägt für die Mengen (Ressourcen), nicht für die Wertschöpfung.
+
+**Geprüft:** `python3 modell/alles.py` (20 Stufen, neu „Nachfrageprüfung“).
+
+**Wodurch aufgefallen:** Nachfrage der Initiative; beim Abgleich der Produktgruppen mit den Labelgewichten des Kernmodells.
+
+*Skripte: `modell/nachfrage.py` (neu). Quellen: Jappelli und Pistaferri (2014); Albacete, Fessler, Pekanov (SUERF, HFCS); Christelis u. a.
+(2020); Roeger und in 't Veld (2010); Eurostat hbs_str_t223 (2020), icw_sr_10; Insee Première 1756 (2019); EZB Wirtschaftsbericht 3/2024;
+Labandeira u. a. (2017); Andreyeva u. a. (2010); Dybczak u. a. (2010); Benzarti u. a. (2017); Kosonen (2015); Harju, Kosonen, Nordström
+Skans (2018); Tillväxtanalys (Schweden, Restaurants); Benedek u. a. (2015, IWF). Status je Zeile in `nachfrage.toml`.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
@@ -1452,9 +1504,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.30
+## 7 | Offene Punkte, Stand v3.31
 
-Neu seit v3.23 (Stand v3.30): Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.31): **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|
