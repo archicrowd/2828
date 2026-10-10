@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.38",
+ "modellstand": "v3.39",
  "fassung_gesamtkonzept": "10. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -119,7 +119,7 @@
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/pruefe_konzept.py",
-   "anmerkung": "Gesamtkonzept und Kurzfassung (2 Seiten), Fassung 6. Oktober 2026, beide aus gesamtrechnung.json gebaut; Fassung 4. Oktober in dokumente/archiv/ (Prüfsumme) v3.37: Rechnung neu (Quote 30,2 %), Texte bis zur Freigabe auf v3.36; Prüfstufe schlägt bewusst fehl."
+   "anmerkung": "Gesamtkonzept und Kurzfassung (2 Seiten), Fassung 6. Oktober 2026, beide aus gesamtrechnung.json gebaut; Fassung 4. Oktober in dokumente/archiv/ (Prüfsumme) v3.37: Rechnung neu (Quote 30,2 %), Texte bis zur Freigabe auf v3.36; Prüfstufe schlägt bewusst fehl. v3.39: Fassung 10. Oktober 2026 übernommen (freigegeben)."
   },
   {
    "id": "B08",
@@ -164,7 +164,7 @@
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/pruefe_konzept.py",
-   "anmerkung": "Seite Stand B in sechs Sprachen (de, en, fr, it, es, pl; v3.18), Vorlage seite/werkzeuge/vorlage.html, Texte seite/werkzeuge/sprachen/*.json, Referenzland Deutschland; aus gesamtrechnung.json gebaut. Schriften (fonts/) nur auf dem Server v3.38: Formel und Dividende Referenzland DE nach V2/E3 (gemeinde_einw_de); Entwurf de in seite/entwurf/."
+   "anmerkung": "Seite Stand B in sechs Sprachen (de, en, fr, it, es, pl; v3.18), Vorlage seite/werkzeuge/vorlage.html, Texte seite/werkzeuge/sprachen/*.json, Referenzland Deutschland; aus gesamtrechnung.json gebaut. Schriften (fonts/) nur auf dem Server v3.38: Formel und Dividende Referenzland DE nach V2/E3 (gemeinde_einw_de); Entwurf de in seite/entwurf/. v3.39: sechs Sprachen auf Stand 10.10.2026; Dreiecksgrafik neu; geänderte Texte maschinell übersetzt, Gegenlesen offen (B16)."
   },
   {
    "id": "B13",
@@ -300,15 +300,6 @@
    "status": "geprueft",
    "pruefung": "modell/tragfaehigkeit.py",
    "anmerkung": "v3.33: Deckung nach E1 C (Lücke 2,92); Dividende −10 % verletzt Mindestdividende im Klubschnitt 10 Jahre; Stufen 1/1,5/2/3 bei 28 % +1,14 Punkte; Wachstumsunabhängigkeit der Quote v3.37: Entscheidungen in der Gesamtrechnung eingerechnet; tragfaehigkeit.py prüft Lücke −0,24, Reserve 1,08, stabil; justierung.py auf Eingängen v3.36 eingefroren, Korrektur 59."
-  },
-  {
-   "id": "B28",
-   "name": "Textentwurf zur Freigabe",
-   "pfad": "dokumente/entwurf/;seite/entwurf/",
-   "stand": "B",
-   "status": "geprueft",
-   "pruefung": "modell/pruefe_konzept.py --entwurf",
-   "anmerkung": "v3.38: deutscher Entwurf von Gesamtkonzept, Kurzfassung und Webseite (de) mit den Entscheidungen vom 10.10.2026; nach Freigabe in B07/B12 übernehmen und Ordner leeren"
   }
  ],
  "nahtstellen": [
@@ -472,8 +463,8 @@
    "von": "B20 Gesamtrechnung",
    "nach": "B07 Gesamtkonzept",
    "was": "Texte übernehmen die Zahlen der Rechnung v3.37",
-   "status": "offen",
-   "beleg_oder_offener_punkt": "v3.38: Textentwurf (B28) geprüft, 54 Prüfungen ohne Fehler; Übernahme in B07 nach Freigabe"
+   "status": "ok",
+   "beleg_oder_offener_punkt": "v3.39: Entwurf freigegeben und übernommen; pruefe_konzept.py 59 Prüfungen ohne Fehler"
   }
  ],
  "quellen": [

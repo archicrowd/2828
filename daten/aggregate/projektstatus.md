@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.38 · höchste Korrekturnummer 59 · 313 Dateien im Repository
+Modellstand v3.39 · höchste Korrekturnummer 59 · 306 Dateien im Repository
 
 ## Bausteine
 
@@ -33,7 +33,6 @@ Modellstand v3.38 · höchste Korrekturnummer 59 · 313 Dateien im Repository
 | B25 | Anreizbewertung je Land (Abgabenkeil) | B | geprueft | modell/anreize.py |
 | B26 | Nachfrageprüfung | B | geprueft | modell/nachfrage.py |
 | B27 | Tragfähigkeitsprüfung | B | geprueft | modell/tragfaehigkeit.py |
-| B28 | Textentwurf zur Freigabe | B | geprueft | modell/pruefe_konzept.py --entwurf |
 
 ## Nahtstellen
 
@@ -58,11 +57,10 @@ Modellstand v3.38 · höchste Korrekturnummer 59 · 313 Dateien im Repository
 | N17 | B20 Gesamtrechnung | B24 Übergangsrechnung | ok |
 | N18 | B25 Anreizbewertung | B24 Übergangsrechnung | ok |
 | N19 | B26 Nachfrageprüfung | B20 Gesamtrechnung | ok |
-| N20 | B20 Gesamtrechnung | B07 Gesamtkonzept | offen |
+| N20 | B20 Gesamtrechnung | B07 Gesamtkonzept | ok |
 
 ## Ergebnis dieses Laufs
 
 - keine Fehler
 - Hinweis: Naht N05 offen: B08 Kern (Stand A) -> B03 Rahmenmodell (Stand B): v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; v3.22: 1,73 Punkte, Tarif 0/9/16/21/28 am Grundbedarf); Klubebene fehlt (deckung_quote.csv)
 - Hinweis: Naht N07 fehlt: B03 Rahmenmodell -> B11 Seite Stand A: Seite hat Rahmenwechsel nie gesehen
-- Hinweis: Naht N20 offen: B20 Gesamtrechnung -> B07 Gesamtkonzept: v3.38: Textentwurf (B28) geprüft, 54 Prüfungen ohne Fehler; Übernahme in B07 nach Freigabe

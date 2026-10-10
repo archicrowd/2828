@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.38**
+Stand: 10. Oktober 2026 · Modellstand **v3.39**
 
 ---
 
@@ -1743,6 +1743,25 @@ Stand A (Quote 27,91 %, Label 20 %), keine Mikrosimulation.
 *Skripte: `dokumente/werkzeuge/gesamtkonzept-bau.js`, `kurzfassung-bau.js`, `seite/werkzeuge/seite_bau.py`, `modell/pruefe_konzept.py`,
 `modell/gesamtrechnung.py`, `modell/laendervergleich.py`. Quellen wie v3.33 bis v3.37.*
 
+### v3.39 — Freigabe: Fassung 10. Oktober 2026 übernommen, sechs Sprachfassungen
+
+**Art der Änderung: MINOR (Veröffentlichung), keine Zahl der Rechnung bewegt.** 10. Oktober 2026.
+
+**Freigabe der Initiative (10.10.2026)** mit Korrekturen an der Webseite: Hinweis unter den Kennzahlen nur „* Schätzung des Projekts.“
+(„Beträge in Preisen von 2028“ gestrichen); Zwischentitel „Das heutige System:“ und „Das Konzept:“ dunkelblau wie der übrige Text (vorher
+Rot bzw. Grün); Untertitel „Starke Gemeinden, starke Bürger, ein starkes europäisches Dach“; Text „… entscheidet selbst über Finanzen und
+die Weitergabe an andere Verwaltungen“; Dreiecksgrafik neu gesetzt (Dreiecksfläche, gerade Pfeile mit Beschriftung entlang der Seiten,
+Dividende als Grundlinie); „Du“ statt „Sie“ mit Untertitel „klar geregelte Abgaben“, dazu „Deine Gemeinde“ (Angleichung an das Du).
+Nebenbefund: In der mobilen Grafik fehlten seit v3.15 die Pfeilspitzen (Marker lagen in der ausgeblendeten breiten Grafik); behoben.
+
+**Übernahme:** Gesamtkonzept und Kurzfassung in `dokumente/` (Fassung 10. Oktober 2026, Quote 30,2 %, Obergrenze 32 %), Webseite in sechs
+Sprachen in `seite/stand-b/`. Entwurfsordner entfernt (Inhalt in v3.38). Die geänderten Textschlüssel (17) sind für EN, FR, IT, ES, PL vom
+KI-System übersetzt; **muttersprachlich zu prüfen** (B16), mindestens Französisch und Polnisch. Informelle Anrede in der Grafik:
+Toi / Tu / Tú / Ty.
+
+**Geprüft:** `python3 modell/alles.py`; `pruefe_konzept.py` 59 Prüfungen ohne Fehler (die bewusst rote Stufe aus v3.37 ist damit grün);
+Grafik in allen sechs Sprachen bei 1.200 und 390 Pixel Breite angesehen. **Wodurch aufgefallen:** Durchsicht des Entwurfs durch die Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -1793,9 +1812,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.38
+## 7 | Offene Punkte, Stand v3.39
 
-Neu seit v3.23 (Stand v3.38): **Freigabe des deutschen Textentwurfs (v3.38, `dokumente/entwurf/`, `seite/entwurf/`), danach Übernahme, Version und fünf Sprachfassungen; bis dahin schlägt die Prüfstufe „Gesamtkonzept gegen Rechnung“ bewusst fehl; Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten; Text Verwaltung (Korrektur 58)**; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.39): **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

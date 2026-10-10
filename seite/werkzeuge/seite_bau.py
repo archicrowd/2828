@@ -90,10 +90,12 @@ ZUSATZ_CSS = """
 .flowleg{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--dim)}
 .flowleg b{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
 .ebenen{width:100%;height:auto;display:block;margin:6px 0 4px}
-.ebenen .bx{fill:#fff;stroke:var(--ink);stroke-width:1.5}
+.ebenen .bx{fill:#fff;stroke:var(--ink);stroke-width:1.25}
+.ebenen .tri{fill:#EDF2F6;stroke:var(--line-soft);stroke-width:1;stroke-linejoin:round}
+.ebenen .s.lab{font-size:10px;letter-spacing:.02em}
 .ebenen text{font-family:var(--disp);fill:var(--ink)}
 .ebenen .s{font-family:var(--mono);font-size:12px;fill:var(--dim)}
-.ebenen .ar{stroke:var(--ink);stroke-width:1.5;fill:none;marker-end:url(#pf)}
+.ebenen .ar{stroke:var(--ink);stroke-width:1.25;fill:none;marker-end:url(#pf)}
 .ebenen .ag{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#pg)}
 .ebenen.mob{display:none;max-width:420px;margin:6px auto 4px}
 @media(max-width:640px){.ebenen.wide{display:none}.ebenen.mob{display:block}}
@@ -107,7 +109,7 @@ ZUSATZ_CSS = """
 #chart2 .marker{stroke:var(--line);stroke-dasharray:3 4}
 .legend .l-prog i{border-color:var(--accent);border-top-style:dashed}
 .kicker{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:10px}
-.kicker.alt{color:var(--warn)}.kicker.neu{color:var(--accent)}
+.kicker.alt,.kicker.neu{color:var(--ink)}
 .raum{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:14px 0 18px}
 .raum button{font-family:var(--mono);font-size:12px;text-align:left;padding:7px 9px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:var(--dim);display:flex;justify-content:space-between;gap:6px}
 .raum button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}

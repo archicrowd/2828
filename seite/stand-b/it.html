@@ -295,10 +295,12 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 .flowleg{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--dim)}
 .flowleg b{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
 .ebenen{width:100%;height:auto;display:block;margin:6px 0 4px}
-.ebenen .bx{fill:#fff;stroke:var(--ink);stroke-width:1.5}
+.ebenen .bx{fill:#fff;stroke:var(--ink);stroke-width:1.25}
+.ebenen .tri{fill:#EDF2F6;stroke:var(--line-soft);stroke-width:1;stroke-linejoin:round}
+.ebenen .s.lab{font-size:10px;letter-spacing:.02em}
 .ebenen text{font-family:var(--disp);fill:var(--ink)}
 .ebenen .s{font-family:var(--mono);font-size:12px;fill:var(--dim)}
-.ebenen .ar{stroke:var(--ink);stroke-width:1.5;fill:none;marker-end:url(#pf)}
+.ebenen .ar{stroke:var(--ink);stroke-width:1.25;fill:none;marker-end:url(#pf)}
 .ebenen .ag{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#pg)}
 .ebenen.mob{display:none;max-width:420px;margin:6px auto 4px}
 @media(max-width:640px){.ebenen.wide{display:none}.ebenen.mob{display:block}}
@@ -312,7 +314,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 #chart2 .marker{stroke:var(--line);stroke-dasharray:3 4}
 .legend .l-prog i{border-color:var(--accent);border-top-style:dashed}
 .kicker{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:10px}
-.kicker.alt{color:var(--warn)}.kicker.neu{color:var(--accent)}
+.kicker.alt,.kicker.neu{color:var(--ink)}
 .raum{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:14px 0 18px}
 .raum button{font-family:var(--mono);font-size:12px;text-align:left;padding:7px 9px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:var(--dim);display:flex;justify-content:space-between;gap:6px}
 .raum button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
@@ -366,11 +368,11 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     </div>
     <p class="opensrc">Tutti i modelli di calcolo sono <a href="#offen">verificabili apertamente</a>.</p>
     <div class="stamps">
-      <div class="stamp"><div class="val">591 €</div><div class="lbl">dividendo al mese per adulto — 295 € per figlio</div></div>
+      <div class="stamp"><div class="val">634 €</div><div class="lbl">dividendo al mese per adulto — 317 € per figlio</div></div>
       <div class="stamp"><div class="val">al massimo 28 %</div><div class="lbl">su ogni reddito</div></div>
       <div class="stamp"><div class="val">oltre il 95 %*</div><div class="lbl">delle persone ha più soldi in tasca</div></div>
     </div>
-    <p class="fineprint" style="text-align:center;margin:16px auto 0">* Stima del progetto. Importi a prezzi 2028.</p>
+    <p class="fineprint" style="text-align:center;margin:16px auto 0">* Stima del progetto.</p>
   </div>
 </header>
 
@@ -392,52 +394,58 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 <section id="konzept">
   <div class="wrap">
     <p class="kicker neu">Il concetto:</p>
-    <h2>Due livelli, un tetto comune</h2>
-    <p class="lede">Invece di cinque livelli ce ne sono due. Il comune riceve la parte maggiore delle risorse e decide da solo. Un tetto europeo si occupa solo di ciò che nessun comune può fare da solo – e non può prendere più di quanto stabilito dal trattato.</p>
-<svg class="ebenen mob" viewBox="0 0 360 380" role="img" aria-label="Due livelli, un tetto comune">
-  <rect class="bx" x="10" y="10" width="340" height="64" rx="3"/>
-  <text x="180" y="38" text-anchor="middle" font-size="19" font-weight="700">Il tetto comune</text>
-  <text class="s" x="180" y="60" text-anchor="middle">almeno il 65 % va al comune</text>
-  <rect class="bx" x="20" y="180" width="140" height="70" rx="3"/>
-  <text x="90" y="212" text-anchor="middle" font-size="18" font-weight="700">Tu</text>
-  <text class="s" x="90" y="234" text-anchor="middle">aliquote uguali</text>
-  <rect class="bx" x="200" y="180" width="140" height="70" rx="3"/>
-  <text x="270" y="212" text-anchor="middle" font-size="18" font-weight="700">Comune</text>
-  <text class="s" x="270" y="234" text-anchor="middle">decide da solo</text>
-  <path class="ar" d="M90,178 L90,80"/><text class="s" x="98" y="130">contributo fiscale</text>
-  <path class="ar" d="M270,80 L270,178"/><text class="s" x="262" y="130" text-anchor="end">formula</text>
-  <path class="ag" d="M270,252 C270,330 90,330 90,256"/>
-  <text class="s" x="180" y="350" text-anchor="middle" fill="#1D7A4F">ogni mese:</text>
-  <text class="s" x="180" y="368" text-anchor="middle" fill="#1D7A4F">il dividendo</text>
+    <h2>Comuni forti, cittadini forti, un tetto europeo forte</h2>
+    <p class="lede">Invece di cinque livelli ce ne sono due. Il comune riceve la parte maggiore del denaro e decide da sé sulle proprie finanze e su ciò che trasferisce ad altre amministrazioni. Un tetto europeo si occupa solo di ciò che nessun comune può fare da solo – e non può prendere più di quanto stabilisce il trattato.</p>
+<svg class="ebenen mob" viewBox="0 0 360 400" role="img" aria-label="Comuni forti, cittadini forti, un tetto europeo forte">
+  <defs><marker id="pf2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0F3B5C"/></marker>
+  <marker id="pg2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1D7A4F"/></marker></defs>
+  <polygon class="tri" points="180,60 90,262 270,262"/>
+  <rect class="bx" x="20" y="14" width="320" height="70" rx="10"/>
+  <text x="180" y="44" text-anchor="middle" font-size="19" font-weight="700">Il tetto comune</text>
+  <text class="s" x="180" y="66" text-anchor="middle" style="font-size:10px">almeno il 68 % va al comune</text>
+  <path class="ar" style="marker-end:url(#pf2)" d="M78,222 L132,90"/>
+  <text class="s lab" transform="translate(92,152) rotate(-67.7)" text-anchor="middle">contributo fiscale</text>
+  <path class="ar" style="marker-end:url(#pf2)" d="M228,90 L282,222"/>
+  <text class="s lab" transform="translate(268,152) rotate(67.7)" text-anchor="middle">formula</text>
+  <rect class="bx" x="10" y="226" width="160" height="72" rx="10"/>
+  <text x="90" y="257" text-anchor="middle" font-size="19" font-weight="700">Tu</text>
+  <text class="s" x="90" y="280" text-anchor="middle" style="font-size:10px">tributi chiari</text>
+  <rect class="bx" x="190" y="226" width="160" height="72" rx="10"/>
+  <text x="270" y="257" text-anchor="middle" font-size="19" font-weight="700">Comune</text>
+  <text class="s" x="270" y="280" text-anchor="middle" style="font-size:10px">decide da solo</text>
+  <path class="ag" style="marker-end:url(#pg2)" d="M270,302 C270,350 90,350 90,306"/>
+  <text class="s" x="180" y="372" text-anchor="middle" fill="#1D7A4F">ogni mese:</text>
+  <text class="s" x="180" y="390" text-anchor="middle" fill="#1D7A4F">il dividendo</text>
 </svg>
-<svg class="ebenen wide" viewBox="0 0 900 300" role="img" aria-label="Due livelli, un tetto comune">
+<svg class="ebenen wide" viewBox="0 0 900 320" role="img" aria-label="Comuni forti, cittadini forti, un tetto europeo forte">
   <defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0F3B5C"/></marker>
   <marker id="pg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1D7A4F"/></marker></defs>
-  <rect class="bx" x="270" y="14" width="360" height="70" rx="3"/>
-  <text x="450" y="44" text-anchor="middle" font-size="19" font-weight="700">Il tetto comune</text>
-  <text class="s" x="450" y="66" text-anchor="middle">almeno il 65 % va al comune</text>
-  <rect class="bx" x="30" y="190" width="220" height="80" rx="3"/>
-  <text x="140" y="224" text-anchor="middle" font-size="19" font-weight="700">Tu</text>
-  <text class="s" x="140" y="248" text-anchor="middle">poche aliquote, uguali</text>
-  <rect class="bx" x="650" y="190" width="220" height="80" rx="3"/>
-  <text x="760" y="224" text-anchor="middle" font-size="19" font-weight="700">Il tuo comune</text>
-  <text class="s" x="760" y="248" text-anchor="middle">decide da solo</text>
-  <path class="ar" d="M250,205 C300,140 330,110 350,88"/>
-  <text class="s" x="205" y="140">contributo fiscale</text>
-  <path class="ar" d="M550,88 C590,120 620,160 655,198"/>
-  <text class="s" x="615" y="140">per abitante, per figlio</text>
-  <path class="ag" d="M650,250 C520,285 380,285 252,250"/>
-  <text class="s" x="450" y="252" text-anchor="middle" fill="#1D7A4F">ogni mese: il dividendo</text>
+  <polygon class="tri" points="450,70 160,250 740,250"/>
+  <rect class="bx" x="280" y="16" width="340" height="74" rx="10"/>
+  <text x="450" y="48" text-anchor="middle" font-size="20" font-weight="700">Il tetto comune</text>
+  <text class="s" x="450" y="72" text-anchor="middle">almeno il 68 % va al comune</text>
+  <path class="ar" d="M215,208 L338,98"/>
+  <text class="s lab" transform="translate(271,147) rotate(-41.8)" text-anchor="middle">contributo fiscale</text>
+  <path class="ar" d="M562,98 L685,208"/>
+  <text class="s lab" transform="translate(629,147) rotate(41.8)" text-anchor="middle">per abitante, per figlio</text>
+  <rect class="bx" x="40" y="212" width="240" height="80" rx="10"/>
+  <text x="160" y="246" text-anchor="middle" font-size="20" font-weight="700">Tu</text>
+  <text class="s" x="160" y="270" text-anchor="middle">tributi chiaramente regolati</text>
+  <rect class="bx" x="620" y="212" width="240" height="80" rx="10"/>
+  <text x="740" y="246" text-anchor="middle" font-size="20" font-weight="700">Il tuo comune</text>
+  <text class="s" x="740" y="270" text-anchor="middle">decide da solo</text>
+  <path class="ag" d="M616,252 L286,252"/>
+  <text class="s" x="450" y="240" text-anchor="middle" fill="#1D7A4F">ogni mese: il dividendo</text>
 </svg>
     <div class="box">
       <h3>Perché un dividendo?</h3>
-      <p>Ciò che produciamo oggi poggia su quanto hanno costruito le generazioni prima di noi: conoscenza, tecnica, infrastrutture. Una parte crescente la svolgono macchine e software. Il dividendo restituisce a ciascuno una quota uguale di questo progresso ereditato in comune – un ritorno dai guadagni dell'automazione. In tutto il club lo stesso potere d'acquisto: segue i prezzi del luogo di residenza e copre almeno metà del minimo vitale.</p>
+      <p>Ciò che produciamo oggi poggia su ciò che hanno costruito le generazioni prima di noi: conoscenza, tecnica, infrastrutture. Una parte sempre maggiore la svolgono macchine e software. Il dividendo restituisce a ciascuno una quota uguale di questo progresso ereditato in comune – come ritorno dai guadagni dell'automazione. Ogni paese versa la stessa quota della propria produzione: stessi diritti per tutti, con il proprio paese come punto di partenza. Nella media del club copre almeno la metà del minimo vitale; dove oggi la produzione è più bassa, all'inizio resta al di sotto e cresce con le stesse regole.</p>
       <p>E compensa ciò che la trasformazione del lavoro, dell'energia e dell'economia chiede a ognuno: chi deve cambiare strada non resta a mani vuote.</p>
     </div>
     <div class="effects">
       <div><h3>Al singolo si dà fiducia</h3><p>nel gestire il proprio denaro: un'aliquota invece di una giungla fiscale, niente regole speciali. Un dividendo ogni mese, senza domanda.</p></div>
-      <div><h3>Al comune si dà fiducia</h3><p>nel gestire i propri affari: riceve importi fissi per abitante e per figlio. Decide sull'adesione a consorzi e unioni.</p></div>
-      <div><h3>Al tetto si affida</h3><p>ciò che si può fare solo insieme: difesa e sovranità digitale, un mercato unico senza confini, standard comuni. Il tetto decide a maggioranza dei membri.</p></div>
+      <div><h3>Al comune si dà fiducia</h3><p>di gestire i propri affari: riceve importi fissi per abitante e per bambino, con la stessa regola in ogni paese. Decide sull'adesione a enti e consorzi e sui programmi di sostegno locali.</p></div>
+      <div><h3>Al tetto si affida</h3><p>ciò che si può fare solo insieme: difesa e sovranità digitale, un mercato unico senza frontiere, standard comuni. Niente di più. Il tetto decide a maggioranza dei membri.</p></div>
     </div>
 
     <div class="flow" id="fluss">
@@ -457,16 +465,16 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <div class="mass-grid">
       <div class="mass"><div class="pos">Reddito</div><h3>Aliquote a scaglioni con tetto fisso</h3>
         <div class="taxlbl" role="img" aria-label="Aliquote a scaglioni con tetto fisso"><div><b class="t1">0 %</b><em>fino a 12.847 €</em></div>
-<div><b class="t2">9 %</b><em>fino a 25.694 €</em></div>
-<div><b class="t3">16 %</b><em>fino a 38.541 €</em></div>
-<div><b class="t4">21 %</b><em>fino a 51.387 €</em></div>
+<div><b class="t2">9 %</b><em>fino a 19.270 €</em></div>
+<div><b class="t3">16 %</b><em>fino a 25.694 €</em></div>
+<div><b class="t4">21 %</b><em>fino a 38.541 €</em></div>
 <div><b class="t5">28 %</b><em>oltre — limite massimo</em></div></div>
-        <p>Si tassa il lordo – senza deduzioni, senza splitting. Il minimo vitale resta esente; oltre, lavorare conviene a ogni scaglione. Gli scaglioni partono da una a quattro volte il fabbisogno di base del luogo di residenza e crescono con esso.</p></div>
+        <p>Si tassa il reddito lordo – senza deduzioni, senza tassazione congiunta. Il minimo vitale resta esente; al di sopra il lavoro conviene a ogni scaglione. Gli scaglioni iniziano a una, una volta e mezza, due e tre volte il fabbisogno di base del luogo di residenza e crescono con esso.</p></div>
       <div class="mass"><div class="pos">Lavoro</div><h3>Niente più contributi sociali</h3><span class="regel">0 % sul salario</span><p>Il lavoro non viene più tassato due volte. Così fanno i paesi che finanziano lo stato sociale con le imposte – la Danimarca non preleva quasi contributi sociali.</p></div>
       <div class="mass"><div class="pos">Capitale</div><h3>Capitale e lavoro trattati allo stesso modo</h3><span class="regel">28 % su tutti i rendimenti</span><p>Contano anche le plusvalenze. Trasformare il salario in reddito da capitale non conviene più.</p></div>
-      <div class="mass"><div class="pos">Successione</div><h3>Anche ciò che si eredita è reddito</h3><span class="regel">28 % oltre 200.000 € per erede</span><p>Nessuna esenzione. Chi eredita un'impresa o una casa può differire l'imposta – nessuno deve vendere per pagarla.</p></div>
+      <div class="mass"><div class="pos">Successione</div><h3>Anche ciò che si eredita è reddito</h3><span class="regel">28 % oltre 100.000 € per erede</span><p>Nessuna esenzione. Chi eredita un'impresa o una casa può differire l'imposta – nessuno deve vendere per pagarla.</p></div>
       <div class="mass"><div class="pos">Suolo · comune</div><h3>Il comune tassa il suolo</h3><span class="regel">0,1–1 % del valore del terreno</span><p>Conta solo il valore del terreno, non la casa. Chi costruisce o ristruttura non paga più per questo. Non trasferibile sugli affitti.</p></div>
-      <div class="mass"><div class="pos">Patrimonio</div><h3>I grandi patrimoni contribuiscono</h3><span class="regel">1% oltre 2 milioni di €</span><p>Il patrimonio fino a 2 milioni di euro resta intatto. Oltre si applica un'imposta minima, detraibile dall'imposta sul reddito.</p></div>
+      <div class="mass"><div class="pos">Patrimonio</div><h3>I grandi patrimoni contribuiscono</h3><span class="regel">1,5 % oltre 2 mln €</span><p>Il patrimonio fino a 2 milioni di euro resta intatto. Oltre si applica un'imposta minima, detraibile dall'imposta sul reddito.</p></div>
       <div class="mass"><div class="pos">Gruppi e piattaforme</div><h3>Si paga dove sono i clienti</h3><span class="regel">28 % nel luogo di utilizzo</span><p>Vale espressamente per le piattaforme digitali. Gli utili si spostano, i clienti no.</p></div>
       <div class="mass"><div class="pos">Consumi</div><h3>L'IVA diventa un'etichetta</h3>
         <div class="vatlbl" role="img" aria-label="L'IVA diventa un'etichetta">
@@ -476,9 +484,9 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
           <div><b class="v4">C · 22&nbsp;%</b><em>ad alto uso di risorse</em></div>
           <div><b class="v5">D · 28&nbsp;%</b><em>lusso dannoso per il clima</em></div>
         </div>
-        <p>Come l'etichetta energetica, si vede a colpo d'occhio quanto costa un prodotto e perché.</p></div>
+        <p>Come per l'etichetta energetica, si vede a colpo d'occhio quanto costa un prodotto e perché. La classe dipende dall'impronta di risorse e CO₂, non dall'origine.</p></div>
       <div class="mass"><div class="pos">Clima</div><h3>Un prezzo della CO₂ restituito a tutti</h3><span class="regel">percorso europeo dei prezzi · restituzione col dividendo</span><p>Chi consuma poco ci guadagna. La Svizzera restituisce da anni la sua tassa sulla CO₂ a tutti in parti uguali.</p></div>
-      <div class="mass"><div class="pos">Dividendo</div><h3>Ogni mese, per tutti</h3><svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Ogni mese, per tutti"><polyline points="10.0,64.2 18.8,64.8 27.5,65.4 36.2,66.0 45.0,66.2 53.8,66.2 62.5,66.1 71.2,66.1 80.0,64.3 88.8,62.5 97.5,60.7 106.2,58.9 115.0,57.1 123.8,55.2 132.5,53.4 141.2,51.5 150.0,49.7 158.8,47.8 167.5,45.9 176.2,44.0 185.0,42.1 193.8,40.2 202.5,38.3 211.2,36.4 220.0,34.4 228.8,32.5 237.5,30.5 246.2,28.5 255.0,26.5 263.8,24.6 272.5,22.5 281.2,20.5 290.0,18.5" fill="none" stroke="#1D7A4F" stroke-width="2.5"/><text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · 591 €</text><text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · 801 €</text></svg><p>Adulti per intero, figli per metà, senza domanda. È ciò che resta dopo aver pagato i compiti – e cresce con l'economia.</p></div>
+      <div class="mass"><div class="pos">Dividendo</div><h3>Ogni mese, per tutti</h3><svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Ogni mese, per tutti"><polyline points="10.0,64.2 18.8,64.8 27.5,65.4 36.2,66.0 45.0,66.2 53.8,66.2 62.5,66.1 71.2,66.1 80.0,64.3 88.8,62.5 97.5,60.7 106.2,58.9 115.0,57.1 123.8,55.2 132.5,53.4 141.2,51.5 150.0,49.7 158.8,47.8 167.5,45.9 176.2,44.0 185.0,42.1 193.8,40.2 202.5,38.3 211.2,36.4 220.0,34.4 228.8,32.5 237.5,30.5 246.2,28.5 255.0,26.5 263.8,24.6 272.5,22.5 281.2,20.5 290.0,18.5" fill="none" stroke="#1D7A4F" stroke-width="2.5"/><text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · 634 €</text><text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · 860 €</text></svg><p>Adulti per intero, bambini per metà, senza domanda. Ogni paese versa la stessa quota della propria produzione. È ciò che resta dopo i compiti – e cresce con l'economia.</p></div>
       <div class="mass"><div class="pos">Tutela</div><h3>Nessuno resta indietro</h3><span class="regel">garanzia dei diritti acquisiti · fondo per i casi di disagio</span><p>Chi oggi riceve un sostegno al reddito o una borsa di studio (in Germania: Bürgergeld, Grundsicherung, BAföG) mantiene almeno il livello attuale. Il fondo copre anche affitto, assistenza e situazioni particolari.</p></div>
     </div>
   </div>
@@ -517,7 +525,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 <section id="gemeinde">
   <div class="wrap">
     <h2>Il tuo comune fa i conti da sé</h2>
-    <p class="lede">Tutta la ripartizione si riduce a due numeri: 3.599 € per abitante e 12.625 € per figlio all'anno. Più figli significa più soldi per le scuole. E ciò che il comune risparmia sull'amministrazione arriva ai suoi cittadini.</p>
+    <p class="lede">Tutta la ripartizione sta in due numeri: 3.913 € per abitante e 13.729 € per bambino all'anno (Germania; ogni paese applica la stessa regola alla propria produzione, media del club 3.599 € e 12.625 €). Più bambini significa più soldi per le scuole. E ciò che il comune risparmia nell'amministrazione va ai suoi cittadini.</p>
     <div class="calc">
       <div>
         <label class="lbl" for="g-ein">Abitanti</label><div class="bigval" id="g-einval"></div>
@@ -526,7 +534,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
         <input type="range" id="g-kin" min="10" max="24" step="0.5" value="15.9">
         <label class="lbl" for="g-verw">Quota dell'amministrazione nel bilancio comunale</label><div class="bigval" id="g-verwval" style="font-size:22px"></div>
         <input type="range" id="g-verw" min="5.5" max="25" step="0.1" value="15.7">
-        <p class="fineprint" style="margin-top:8px">I comuni estoni se la cavano con il 5,8 %, quelli tedeschi con il 16,8 %.</p>
+        <p class="fineprint" style="margin-top:8px">Nella media del club l'amministrazione assorbe 15,7 % del bilancio comunale. I compiti dei comuni variano da paese a paese; un confronto diretto delle quote dice quindi poco.</p>
       </div>
       <div>
         <div class="res-row"><span class="k">Bilancio comunale all'anno</span><span class="v new" id="g-bud"></span></div>
@@ -556,7 +564,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
     <h2>Perché il tetto non si allarga oltre misura</h2>
     <p class="lede">Un tetto comune vale quanto i suoi limiti. Cinque regole sono scritte nel trattato.</p>
     <div class="sich">
-      <div><span><b>Un tetto, non un'assegnazione</b><p>Il tetto trattiene al massimo il 35 % di ciò che incassa – e solo quanto costano davvero i suoi compiti.</p></span></div>
+      <div><span><b>Un tetto, non un'assegnazione</b><p>Il tetto trattiene al massimo il 32 % di ciò che incassa – e solo quanto costano davvero i suoi compiti.</p></span></div>
       <div><span><b>Ciò che non serve passa oltre</b><p>Ogni euro oltre il fabbisogno va ai comuni e al dividendo. Un limite che non deve essere esaurito non diventa mai un diritto.</p></span></div>
       <div><span><b>Formula invece di trattativa</b><p>I comuni ricevono importi fissi per abitante e per figlio. Nessuno deve chiedere, nessuno può tagliare.</p></span></div>
       <div><span><b>Portare insieme i vecchi debiti</b><p>Il tetto si fa carico degli interessi e garantisce un tasso comune. Chi porta più debito pregresso compensa in trent'anni – i comuni non se ne accorgono.</p></span></div>
@@ -626,7 +634,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 
 <footer>
   <div class="wrap">
-    <div><h4>Metodo</h4><p>Tutte le cifre provengono da un calcolo complessivo aperto basato su statistiche ufficiali (Eurostat, OCSE). Sviluppato con il metodo del progetto architettonico, in dialogo di lavoro con un sistema di IA. Script con licenza MIT, testi con CC BY 4.0.</p><p class="verstamp">Versione del modello <b>v3.36 · 7. Oktober 2026</b></p></div>
+    <div><h4>Metodo</h4><p>Tutte le cifre provengono da un calcolo complessivo aperto basato su statistiche ufficiali (Eurostat, OCSE). Sviluppato con il metodo del progetto architettonico, in dialogo di lavoro con un sistema di IA. Script con licenza MIT, testi con CC BY 4.0.</p><p class="verstamp">Versione del modello <b>v3.39 · 10. Oktober 2026</b></p></div>
     <div><h4>Contatto</h4><p>Initiative 28 : 28<br><a href="mailto:2828@archicrowd.de?subject=28%3A28">Invia una critica</a><br><a href="#top">Torna su</a></p></div>
     <div><h4>Note legali e privacy</h4><p>Responsabile dei contenuti: Initiative 28 : 28 – Arndt Hermann, 2828@archicrowd.de. Questo sito non usa cookie né tracker e non carica contenuti di terzi. Non vengono raccolti dati personali. I caratteri Space Grotesk, Source Serif 4 e IBM Plex Mono sono ospitati localmente con licenza SIL Open Font License 1.1. Tutti i calcoli sono illustrazioni senza garanzia e non sostituiscono una consulenza fiscale o legale. Il sito è bloccato per i motori di ricerca.</p></div>
   </div>
@@ -634,7 +642,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 </footer>
 
 <script>
-const D={"lang": "it", "fmt": [".", ",", "nach", " "], "jahre": [2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060], "erw": {"0,0": [590.8063588911789, 581.5815957086779, 572.4472093717123, 563.4002044072438, 555.9369058438507, 549.966291103684, 543.959854097437, 537.9182972224837, 539.63985941396, 541.3276654840347, 542.9823773174415, 544.6046438207813, 546.1951011769968, 547.7543730948552, 549.2830710535399, 550.7817945424465, 552.2511312962763, 553.6916575255214, 555.1039381424281, 556.4885269825329, 557.8459670218514, 559.1767905898106, 560.481519578006, 561.7606656448643, 563.0147304162938, 564.2442056824012, 565.4495735903495, 566.6313068334364, 567.7898688364626, 568.9257139374686, 570.039287565906, 571.1310264173151, 572.201358624579], "0,5": [590.8063588911789, 584.9441120629244, 579.1108842201162, 573.3031771869639, 569.0168097962134, 566.1602497587373, 563.2044777360089, 560.1496793156002, 565.1109882624809, 570.0547398217368, 574.9816768717708, 579.8925297178212, 584.7880163484606, 589.6688426871151, 594.5357028386996, 599.3892793314711, 604.2302433541848, 609.0592549886583, 613.8769634378194, 618.68400724934, 623.4810145349312, 628.2686031853947, 633.0473810815066, 637.8179463008212, 642.5808873204692, 647.3367832160363, 652.086203856592, 656.8297100959486, 661.5678539602262, 666.3011788317898, 671.0302196296376, 675.7555029863039, 680.4775474213518], "1,0": [590.8063588911789, 588.1747650307301, 585.5445443112075, 582.9110718502347, 581.7690198726082, 582.0256893001507, 582.1508735409064, 582.143550177786, 590.433183172626, 598.7534528970773, 607.1056525383351, 615.4910684947012, 623.9109806907371, 632.366662888022, 640.8593829916176, 649.3904033523462, 657.9609810649769, 666.5723682624224, 675.2258124060421, 683.9225565721409, 692.663839734767, 701.4508970448895, 710.2849601060542, 719.1672572465967, 728.0990137885117, 737.0814523130504, 746.1157929231399, 755.203253502703, 764.3450499729548, 773.5423965457674, 782.7965059741665, 792.1085898000464, 801.479858599178], "1,5": [590.8063588911789, 591.6691447714177, 592.5379397750054, 593.4067021475188, 595.7686382304474, 599.5295328663913, 603.1576119789617, 606.6502330270241, 618.7885437903849, 631.0493496609226, 643.435656291799, 655.9504915145709, 668.5969061210097, 681.3779746478448, 694.2967961646407, 707.3564950650302, 720.5602218615154, 733.9111539840553, 747.4124965826568, 761.0674833341818, 774.8793772535913, 788.8514715098432, 802.9870902466555, 817.2895894083599, 831.7623575710585, 846.4088167793038, 861.2324233885223, 876.236668913398, 891.4250808824402, 906.8012236989528, 922.3686995086285, 938.1311490739951, 954.0922526559256], "2,0": [590.8063588911789, 595.0316611256646, 599.3013204814906, 603.6082396906085, 609.4444963226757, 616.7146704911722, 623.885704653366, 630.9535912015823, 647.0502186523961, 663.4005912869949, 680.0111210162162, 696.888321773287, 714.0388120683081, 731.4693175837481, 749.1866738119663, 767.1978287357966, 785.5098455532491, 804.1299054473886, 823.0653104024888, 842.3234860675499, 861.9119846683242, 881.8384879689685, 902.1108102845023, 922.7369015452459, 943.7248504144387, 965.0828874602645, 986.8193883835255, 1008.9428773022314, 1031.462030094389, 1054.3856778003092, 1077.7228100857585, 1101.4825787673203, 1125.67430140134]}, "a": [9.643568420817795, 9.811684064367403, 9.977630483882066, 10.141524733313705, 10.274421353460067, 10.378966639975099, 10.48504389456667, 10.592608496805367, 10.544474268743075, 10.497742008488423, 10.452370882027594, 10.408321244686984, 10.365554606492218, 10.324033598536134, 10.283721940326345, 10.24458440808383, 10.206586803964882, 10.169695926179498, 10.133879539980095, 10.099106349495237, 10.065345970383726, 10.03256890328517, 10.000746508043855, 9.969850978683354, 9.939855319110054, 9.910733319524324, 9.88245953351876, 9.855009255843457, 9.82835850081889, 9.802483981377563, 9.777363088716081, 9.752973872539885, 9.729295021883383], "div": [11.906431579182206, 11.738315935632594, 11.572369516117933, 11.408475266686294, 11.275578646539932, 11.171033360024902, 11.064956105433327, 10.95739150319463, 11.005525731256926, 11.052257991511576, 11.097629117972405, 11.141678755313015, 11.184445393507781, 11.225966401463866, 11.266278059673654, 11.305415591916168, 11.343413196035117, 11.380304073820499, 11.416120460019906, 11.450893650504762, 11.484654029616275, 11.517431096714828, 11.549253491956145, 11.580149021316645, 11.610144680889947, 11.639266680475673, 11.667540466481237, 11.694990744156543, 11.721641499181109, 11.747516018622436, 11.77263691128392, 11.797026127460116, 11.820704978116618], "b": 10.35, "q": 31.9, "og": 35.0, "einzugAnteil": 0.974294670846395, "einw": 3598.675392804394, "kind": 12624.65648994137, "fachKopf": 5600.945912109095, "verwAnt": 15.65217391304348, "tarif": [[12847, 0], [25694, 9], [38541, 16], [51387, 21], [1000000000000.0, 28]], "raum": {"DE": 83.516593, "UK": 69.144015, "FR": 68.775952, "IT": 58.957347, "ES": 48.873996, "PL": 36.559233, "RO": 19.055364, "NL": 17.993485, "BE": 11.850296, "PT": 11.295785, "CZ": 10.905028, "SE": 10.569709, "EL": 10.37405, "HU": 9.562065, "AT": 9.177982, "CH": 9.006644, "BG": 6.441421, "DK": 5.976992, "FI": 5.619911, "NO": 5.572272, "SK": 5.422069, "IE": 5.39598, "HR": 3.868159, "LT": 2.888278, "SI": 2.1274, "LV": 1.86957, "EE": 1.372341, "CY": 0.974666, "LU": 0.677012, "MT": 0.568847, "IS": 0.386506, "CA": 41.651653, "US": 341.784857}, "us": 341.784857, "d": [81.3, 78.93203883495146, 76.63304741257423, 74.40101690541186, 72.2339969955455, 70.13009417043251, 68.08747006838108, 66.10433987221464, 64.17897074972295, 62.30968033953684, 60.494835281103725, 58.732849787479346, 57.022184259688686, 55.36134394144533, 53.748877613053715, 52.18337632335312, 50.66347215859526, 49.18783704717986, 47.755181599203745, 46.36425397980946, 45.01383881534899, 43.70275613140679, 42.42986032175416, 41.19403914733414, 39.99421276440207, 38.829332780972884, 37.69838134075037, 36.600370233738225, 35.53434003275556, 34.49935925510248, 33.49452354864319, 32.51895490159533, 31.57180087533527], "zeit": {"schuld_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "schuld_hist": [77.25, 79.72, 84.46, 85.87, 85.29, 82.32, 80.96, 78.28, 75.92, 73.9, 86.19, 84.31, 80.59, 78.47, 78.45, 79.5], "schuld_prog_jahre": [2025, 2026, 2027, 2028], "schuld_prog": [79.5, 80.11, 80.71, 81.29], "co2_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "co2_hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 649], "co2_ziel_jahre": [2025, 2030, 2040, 2045], "co2_ziel": [649, 438, 150, 0]}, "T": {"js_fluss": "Nel {j} il tetto trattiene {a} su {hundert} – sarebbero consentiti fino a {cap}. Il comune spende {b} per i suoi compiti, {d} vanno ai cittadini come dividendo.", "js_rechner_sub": "Dividendo nel {j} per {hh}", "js_erw_1": "{n} adulto", "js_erw_n": "{n} adulti", "js_kind_1": "{n} figlio", "js_kind_n": "{n} figli", "js_und": " e ", "js_mio": "{x} mln €", "js_monat": "{x} al mese", "js_mio_menschen": "{x} mln", "js_raum_ueber": "Il club è più grande degli Stati Uniti ({us} mln) – di {x} milioni di persone.", "js_raum_unter": "Mancano {x} milioni di persone per raggiungere la dimensione degli Stati Uniti.", "js_schuld_unit": "Debito pubblico in % del prodotto", "js_schuld_l1": "Club dei dieci fino a oggi", "js_schuld_l2": "andamento attuale fino al cambio", "js_schuld_l3": "con 28:28 dal 2028", "js_schuld_text": "Senza nuovo debito il peso scende da sé perché l'economia cresce: dal {a} al {b} entro il 2060 – senza un euro di rimborso.", "js_co2_unit": "Gas serra della Germania, milioni di tonnellate di CO₂ equivalente", "js_co2_l1": "fino a oggi", "js_co2_l2": "obiettivo climatico al 2045", "js_co2_text": "Quasi dimezzate dal 1990 – la seconda metà è ancora da fare. TAX 28:28 punta su un prezzo europeo comune della CO₂ e restituisce il gettito a tutti con il dividendo."}};
+const D={"lang": "it", "fmt": [".", ",", "nach", " "], "jahre": [2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060], "erw": {"0,0": [634.3209157989442, 624.3749555802, 614.5264379182571, 604.7721331523555, 596.725349821058, 590.2879491515433, 583.8119256115735, 577.2980365123334, 579.154191378509, 580.9739510512301, 582.7580291617411, 584.5071253485166, 586.2219255316297, 587.9031021817407, 589.5513145838104, 591.1672090956433, 592.7514194013617, 594.3045667599094, 595.8272602486813, 597.3200970023796, 598.7836624471818, 600.2185305303211, 601.6252639451637, 603.0044143518721, 604.3565225937429, 605.6821189093027, 606.9817231402435, 608.2558449352836, 609.5049839500289, 610.7296300429163, 611.9302634673157, 613.1073550598643, 614.261366425108], "0,5": [634.3209157989442, 627.9869802655186, 621.6842655625169, 615.4089996904745, 610.7739450814066, 607.6804130639796, 604.4798443912124, 601.1724388189016, 606.5077753700465, 611.8241126361614, 617.1222512280335, 622.4029781985766, 627.6670673193767, 632.9152793518628, 638.1483623132192, 643.3670517371355, 648.5720709294981, 653.7641312191225, 658.943932203627, 664.1121619905362, 669.2694974337155, 674.4166043652241, 679.5541378226773, 684.6827422722098, 689.8030518271186, 694.9156904622815, 700.0212722244237, 705.1204014383212, 710.2136729090178, 715.3016721201366, 720.3849754283586, 725.4641502541485, 730.5397552687999], "1,0": [634.3209157989442, 631.457356923962, 628.5950214294263, 625.7289203364045, 624.4705776171411, 624.7200443583858, 624.8274789834353, 624.7917765210374, 633.7014183940364, 642.6438169069812, 651.6203636502672, 660.632442868178, 669.6814317984182, 678.7687010069022, 687.8956147179175, 697.0635311397639, 706.2738027859867, 715.5277767922978, 724.8267952293022, 734.1721954111174, 743.565310199998, 753.0074683070596, 762.4999945891968, 772.0442103422905, 781.6414335908057, 791.2929793738591, 801.000160027857, 810.7642854657885, 820.5866634532567, 830.4685998813457, 840.4113990363892, 850.4163638667453, 860.4847962466374], "1,5": [634.3209157989442, 635.2110296361558, 636.1070205165369, 637.0023653098444, 639.5070008833159, 643.5193369859343, 647.3878351648181, 651.1096367013699, 664.1523945906903, 677.3265563319035, 690.6353525419338, 704.0820375997213, 717.669890486912, 731.4022156316614, 745.2823437557887, 759.3136327255107, 773.4994684059864, 787.8432655199126, 802.3484685103939, 817.0185524083271, 831.8570237045278, 846.8674212268367, 862.0533170224357, 877.4183172456126, 892.9660630511991, 908.7002314939298, 924.6245364339494, 940.742729448704, 957.0586007514597, 973.5759801166782, 990.2987378124928, 1007.2307855405284, 1024.3760773832914], "2,0": [634.3209157989442, 638.8230543214745, 643.3719478262971, 647.9599227769995, 654.1956863564973, 661.9763364346751, 669.6489374808313, 677.2091454062148, 694.5027611440138, 712.0687309057909, 729.913943307139, 748.0453964705682, 766.470200769868, 785.1955816184894, 804.2288823030398, 823.5775668630031, 843.2492230178146, 863.2515651424371, 883.5924372926058, 904.2798162809278, 925.3218148050469, 946.7266846290894, 968.502819819653, 990.6587600375967, 1013.203193886928, 1036.1449623220974, 1059.4930621150397, 1083.2566493833217, 1107.4450431807736, 1132.0677291520215, 1157.134363252349, 1182.654775534344, 1208.6389740028228]}, "a": [7.993568420817795, 8.161684064367403, 8.327630483882066, 8.491524733313705, 8.624421353460066, 8.728966639975098, 8.83504389456667, 8.942608496805367, 8.894474268743075, 8.84774200848842, 8.802370882027594, 8.758321244686984, 8.715554606492217, 8.674033598536134, 8.633721940326343, 8.59458440808383, 8.556586803964882, 8.519695926179496, 8.483879539980094, 8.449106349495237, 8.415345970383726, 8.38256890328517, 8.350746508043855, 8.319850978683354, 8.289855319110051, 8.260733319524322, 8.232459533518758, 8.205009255843455, 8.17835850081889, 8.152483981377562, 8.12736308871608, 8.102973872539883, 8.079295021883382], "div": [11.856431579182205, 11.688315935632597, 11.522369516117935, 11.358475266686293, 11.225578646539931, 11.121033360024901, 11.01495610543333, 10.907391503194633, 10.955525731256925, 11.002257991511579, 11.047629117972408, 11.091678755313014, 11.134445393507784, 11.175966401463866, 11.216278059673657, 11.25541559191617, 11.29341319603512, 11.330304073820502, 11.366120460019905, 11.400893650504765, 11.434654029616274, 11.467431096714828, 11.499253491956145, 11.530149021316648, 11.56014468088995, 11.589266680475676, 11.61754046648124, 11.644990744156546, 11.671641499181108, 11.697516018622439, 11.722636911283919, 11.747026127460119, 11.770704978116617], "b": 10.35, "q": 30.2, "og": 32.0, "einzugAnteil": 0.9728476821192052, "einw": 3913.465112500161, "kind": 13728.98284448568, "fachKopf": 6090.881791635588, "verwAnt": 15.65217391304348, "tarif": [[12847, 0], [19270, 9], [25694, 16], [38541, 21], [1000000000000.0, 28]], "raum": {"DE": 83.516593, "UK": 69.144015, "FR": 68.775952, "IT": 58.957347, "ES": 48.873996, "PL": 36.559233, "RO": 19.055364, "NL": 17.993485, "BE": 11.850296, "PT": 11.295785, "CZ": 10.905028, "SE": 10.569709, "EL": 10.37405, "HU": 9.562065, "AT": 9.177982, "CH": 9.006644, "BG": 6.441421, "DK": 5.976992, "FI": 5.619911, "NO": 5.572272, "SK": 5.422069, "IE": 5.39598, "HR": 3.868159, "LT": 2.888278, "SI": 2.1274, "LV": 1.86957, "EE": 1.372341, "CY": 0.974666, "LU": 0.677012, "MT": 0.568847, "IS": 0.386506, "CA": 41.651653, "US": 341.784857}, "us": 341.784857, "d": [81.3, 78.93203883495146, 76.63304741257423, 74.40101690541186, 72.2339969955455, 70.13009417043251, 68.08747006838108, 66.10433987221464, 64.17897074972295, 62.30968033953684, 60.494835281103725, 58.732849787479346, 57.022184259688686, 55.36134394144533, 53.748877613053715, 52.18337632335312, 50.66347215859526, 49.18783704717986, 47.755181599203745, 46.36425397980946, 45.01383881534899, 43.70275613140679, 42.42986032175416, 41.19403914733414, 39.99421276440207, 38.829332780972884, 37.69838134075037, 36.600370233738225, 35.53434003275556, 34.49935925510248, 33.49452354864319, 32.51895490159533, 31.57180087533527], "zeit": {"schuld_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "schuld_hist": [77.25, 79.72, 84.46, 85.87, 85.29, 82.32, 80.96, 78.28, 75.92, 73.9, 86.19, 84.31, 80.59, 78.47, 78.45, 79.5], "schuld_prog_jahre": [2025, 2026, 2027, 2028], "schuld_prog": [79.5, 80.11, 80.71, 81.29], "co2_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "co2_hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 649], "co2_ziel_jahre": [2025, 2030, 2040, 2045], "co2_ziel": [649, 438, 150, 0]}, "T": {"js_fluss": "Nel {j} il tetto trattiene {a} su {hundert} – sarebbero consentiti fino a {cap}. Il comune spende {b} per i suoi compiti, {d} vanno ai cittadini come dividendo.", "js_rechner_sub": "Dividendo nel {j} per {hh}", "js_erw_1": "{n} adulto", "js_erw_n": "{n} adulti", "js_kind_1": "{n} figlio", "js_kind_n": "{n} figli", "js_und": " e ", "js_mio": "{x} mln €", "js_monat": "{x} al mese", "js_mio_menschen": "{x} mln", "js_raum_ueber": "Il club è più grande degli Stati Uniti ({us} mln) – di {x} milioni di persone.", "js_raum_unter": "Mancano {x} milioni di persone per raggiungere la dimensione degli Stati Uniti.", "js_schuld_unit": "Debito pubblico in % del prodotto", "js_schuld_l1": "Club dei dieci fino a oggi", "js_schuld_l2": "andamento attuale fino al cambio", "js_schuld_l3": "con 28:28 dal 2028", "js_schuld_text": "Senza nuovo debito il peso scende da sé perché l'economia cresce: dal {a} al {b} entro il 2060 – senza un euro di rimborso.", "js_co2_unit": "Gas serra della Germania, milioni di tonnellate di CO₂ equivalente", "js_co2_l1": "fino a oggi", "js_co2_l2": "obiettivo climatico al 2045", "js_co2_text": "Quasi dimezzate dal 1990 – la seconda metà è ancora da fare. TAX 28:28 punta su un prezzo europeo comune della CO₂ e restituisce il gettito a tutti con il dividendo."}};
 const T=D.T;
 const [TAU,DEZ,EURPOS,PSP]=D.fmt;
 function zahl(x,nk=0){const s=Math.abs(x).toFixed(nk).split('.');s[0]=s[0].replace(/\B(?=(\d{3})+(?!\d))/g,TAU);return (x<0?'−':'')+s.join(DEZ);}
