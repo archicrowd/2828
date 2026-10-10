@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.24**
+Stand: 10. Oktober 2026 · Modellstand **v3.25**
 
 ---
 
@@ -1125,6 +1125,59 @@ Webseite und Konzepttexten (Standard 6); Verfassungswortlaut Polens (Art. 15 und
 
 ---
 
+### v3.25 — Polen: fehlende Werte nachrecherchiert; Standard Fassung 1.1 (Wohnort, Bestandsanpassung)
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026.
+Auftrag der Initiative: intensiver nach den fehlenden Werten suchen, notfalls in seriöser Sekundärliteratur.
+
+**Gefunden (Polen).**
+- Preisniveau 2024 (Individualverbrauch, EU27 = 100): **70,2** (Eurostat `prc_ppp_ind`, WebFetch). Gegenprobe Deutschland mit derselben
+  Abfrage: 109,1 = Repository-Wert, also gleiche Abgrenzung.
+- Verlauf der Schuldenquote 2010–2025 (Eurostat): 53,7 … 49,5 (2023), 54,8 (2024), 59,7 (2025).
+- Fortschrittsbericht der Regierung zum Mittelfristplan (Ministerrat 28.04.2026, amtlich): Saldo 2026 −6,8 %, Schuld 2026 65,1 %,
+  nominales Wachstum 2026 6,2 %. Saldo 2025 −7,3 % bestätigt; die −7,2 % von GUS waren vorläufig.
+- EU-Kommission, Frühjahrsprognose 21.05.2026 (amtlich): Saldo −6,5 / −6,3 %, Schuld 64,5 / 68,3 % (2026 / 2027).
+- Schuldenstrategie 2027–2030 (Ministerrat Ende September 2026): Schuld nach EU-Definition 67,6 % (2026), 69,3 % (2027), 76,6 % (2030).
+  **Sekundärquelle:** rp.pl, Parkiet und Interia nennen übereinstimmend dieselben Werte; das Original (Sejm-Drucksache 3150) war nicht
+  abrufbar (Zugangsprüfung).
+
+**Nicht gefunden:** Schuldenquote und Saldo 2028. In der Rechnung: Schuld 2028 **Annahme** 71,7 % (linear zwischen 2027 und 2030),
+Saldo 2028 **Annahme** −7,1 % (gleich 2027). Verfassungswortlaut: Abruf wartete auf Freigabe und wurde zurückgezogen.
+
+**Rechnung Polen (nach Standard).** Pfad A 2028: 75,9 %; Pfad B: 75,3 %; Pfad C (Regierung): 67,6 / 69,3 / 71,7 %. Pfad C liegt 2028
+3,6 Punkte unter B. Grund: Der Standard setzt 3,0 % nominales Wachstum, Polen erwartet 6,2 %. **Befund:** Die einheitliche
+Wachstumsannahme überzeichnet den Schuldenanstieg in Ländern mit hohem nominalem Wachstum. Entscheidung der Initiative, ob das
+Wachstum je Land gesetzt wird.
+**Bestandsanpassung 2026:** 4,3 Punkte. Die Strategie lässt die Quote um 7,9 Punkte steigen, Saldo und Wachstum erklären 63,3 %. Ursache
+nicht geprüft. Das implizite Wachstum im Pfad C (−1,3 % für 2026) ist deshalb keine Wachstumsprognose.
+
+**Wohnort Polen (Euro 2028, nominal).** Dividendenboden 344,43 € je Erwachsenem und Monat (Kind 172,22 €); Tarifstufen 8.266 /
+16.533 / 24.799 / 33.065 €. Kaufkraftgleich zu 535,29 € und 12.847 / 25.694 / 38.541 / 51.387 € in Deutschland.
+
+**Standard Fassung 1.1 (`modell/laender/STANDARD.md`).** Neu: lineare Interpolation einzelner Prognosejahre als Annahme (2.3);
+Ausweis der Bestandsanpassung, wenn das Regierungswachstum vorliegt (2.3); Abschnitt Wohnort mit Dividendenboden und Tarifstufen
+(2.6). Das Preisniveau weiterer Länder steht nur in der Länderdatei, nicht in `preisniveau_2024.csv`, weil diese Tabelle die
+Gesamtrechnung speist. Prüfung: Für Frankreich reproduziert der Wohnort-Abschnitt `laendervarianten.json` (Boden 529,40 €, V3a
+584,31 €) und `tarif_grundbedarf.json` (12.706 / 25.411 / 38.117 / 50.822 €). Die Stufe „Länderpfade nach Standard“ läuft jetzt
+nach den Ländervarianten, weil sie deren Ergebnis liest.
+
+**Korrigiert (Arbeitsfehler).** In v3.24 stand, das Preisniveau Polens sei „nicht abrufbar“. Ursache war meine Abfrage: A01 wurde als
+`na_item` gesetzt, gehört aber zur Dimension `ppp_cat`. Mit richtiger Abfrage war der Wert sofort abrufbar. Der in v3.24 genannte
+Grund war damit falsch; eine Zahl war nicht betroffen.
+
+**Geprüft:** `python3 modell/alles.py`; Frankreich unverändert gegen v3.23/v3.24 (Pfade, Klubwirkung, Boden, Stufen).
+
+**Wodurch aufgefallen:** Auftrag der Initiative; die Gegenprobe Deutschland machte die frühere Fehlabfrage sichtbar.
+
+**Offen:** Schuld und Saldo Polens 2028 aus dem Original; Schuldenstrategie im Original; Verfassungswortlaut Polens; Wachstum je Land
+(Entscheidung); Spanien nach dem Standard rechnen.
+
+*Skripte: `modell/laender/rechne.py` (Wohnort, Bestandsanpassung). Quellen: Eurostat `gov_10dd_edpt1`, `prc_ppp_ind`, `nama_10_gdp`,
+`demo_gind` (WebFetch 10.10.2026); Fortschrittsbericht zum Mittelfristplan, gov.pl, 28.04.2026; EU-Kommission, Frühjahrsprognose
+2026; rp.pl, Parkiet (29.09.2026), Interia, Strefa Biznesu (05.10.2026), Notes from Poland (Sekundärquellen).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -1169,9 +1222,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.24
+## 7 | Offene Punkte, Stand v3.25
 
-Neu seit v3.23: Polen, Preisniveau (PLI) nicht abrufbar; Schuldenquoten-Prognose Polens fehlt; Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.25): Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

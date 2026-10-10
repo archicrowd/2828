@@ -1,5 +1,5 @@
 {
- "standard": "modell/laender/STANDARD.md, Fassung 1 (v3.24)",
+ "standard": "modell/laender/STANDARD.md, Fassung 1.1 (v3.25)",
  "land": "PL",
  "name": "Polen",
  "bezugsjahr_ausgang": 2025,
@@ -7,9 +7,9 @@
  "wachstum_nominal_pct": 3.0,
  "ausgang": {
   "schuld_2025_pct_bip": 59.7,
-  "quelle": "Eurostat gov_10dd_edpt1, GD, S13, 2025 (Abruf 10.10.2026 über WebFetch, amtlich, maschinell gelesen). GUS, Veröffentlichung 01.04.2026: 59,7 % (amtlich, Original). Beide Werte stimmen überein.",
+  "quelle": "Eurostat gov_10dd_edpt1, GD, S13, 2025 (Abruf 10.10.2026 über WebFetch, amtlich, maschinell gelesen). Gleicher Wert: GUS 01.04.2026, Fortschrittsbericht der Regierung 28.04.2026, EU-Kommission Frühjahr 2026.",
   "saldo_2025_pct_bip": -7.3,
-  "saldo_quelle": "Eurostat gov_10dd_edpt1, B9, 2025 (Abruf 10.10.2026 über WebFetch, amtlich, maschinell gelesen). GUS, vorläufig 01.04.2026: 7,2 %. Abweichung 0,1 Punkte; gewählt wird der Eurostat-Wert, weil er die gemeinsame Quelle aller Länder ist (Standard 1.3). An der Quelle zu prüfen."
+  "saldo_quelle": "Eurostat gov_10dd_edpt1, B9, 2025 (WebFetch, amtlich, maschinell). Gleicher Wert: Fortschrittsbericht 28.04.2026, EU-Kommission Frühjahr 2026. GUS vorläufig 01.04.2026: 7,2 %."
  },
  "regierung": {
   "saldo_pct_bip": {
@@ -17,8 +17,12 @@
    "2027": -7.1,
    "2028": -7.1
   },
-  "quote_pct_bip": null,
-  "quelle": "Entwurf des Haushalts 2027, Ministerrat 28.08.2026: Defizit 7,1 % des BIP für 2026 und 2027 (Sekundärquelle: Notes from Poland, 28.08.2026, Bezug auf den Ministerratsbeschluss). 2028: keine Angabe; Annahme gleich 2027. Keine Schuldenquoten-Prognose der Regierung gefunden; der Mittelfristplan 2025–2028 nennt nur Ziele (unter 3 % Defizit 2028, unter 60 % Schuld mittelfristig), Stand 2024."
+  "quote_pct_bip": {
+   "2026": 67.6,
+   "2027": 69.3,
+   "2028": 71.7
+  },
+  "quelle": "Saldo: Entwurf Haushalt 2027, Ministerrat 28.08.2026, 7,1 % des BIP für 2026 und 2027 (Sekundärquellen: Notes from Poland 28.08.2026; rp.pl). Älter: Fortschrittsbericht 28.04.2026, 2026: −6,8 % (amtlich); EU-Kommission Frühjahr 2026: −6,5 % / −6,3 % (amtlich, Prognose). 2028: keine Angabe gefunden, Annahme gleich 2027. Quote: Schuldenstrategie 2027–2030 (Ministerrat, Ende September 2026), Schuld nach EU-Definition 67,6 % (2026), 69,3 % (2027), 76,6 % (2030); Original (Sejm-Drucksache 3150) nicht abrufbar, Werte übereinstimmend in rp.pl (29.09.2026), Parkiet (29.09.2026) und Interia (Sekundärquellen)."
  },
  "pfade": {
   "A_status_quo": {
@@ -38,19 +42,62 @@
    }
   },
   "C_regierungsschuldenquote": {
-   "entfaellt": "keine Schuldenquoten-Prognose eingetragen"
+   "beschreibung": "Regierungsquote, implizites Wachstum (reproduziert die Prognose)",
+   "werte": {
+    "2026": 67.6,
+    "2027": 69.3,
+    "2028": 71.7
+   },
+   "wachstum_implizit_pct": {
+    "2026": -1.32,
+    "2027": 8.68,
+    "2028": 7.28
+   },
+   "hinweis": "2028 nicht veröffentlicht gefunden; Annahme: lineare Interpolation zwischen 2027 (69,3 %) und 2030 (76,6 %) = 71,7 %.",
+   "wachstum_nominal_regierung_pct": {
+    "2026": 6.2
+   },
+   "bestandsanpassung_pct_bip": {
+    "2026": 4.29
+   }
   }
  },
- "abweichung_2028": null,
+ "abweichung_2028": {
+  "B_minus_C_2028": 3.62,
+  "A_minus_C_2028": 4.2
+ },
  "gewichtung": {
   "entfaellt": "Land nicht im Gewichtsbestand der Gesamtrechnung (modell/rahmen/basis.py)"
  },
+ "wohnort": {
+  "preisniveau_2024": 70.2,
+  "faktor_gegen_de": 0.6434,
+  "dividende_boden_2028_eur_monat": 344.43,
+  "dividende_boden_kind_2028_eur_monat": 172.21,
+  "tarifstufen_2028_eur_jahr": [
+   8266,
+   16533,
+   24799,
+   33065
+  ],
+  "tarifsaetze_pct": [
+   0,
+   9,
+   16,
+   21,
+   28
+  ],
+  "einheit": "Euro 2028, nominal. Dividende je Erwachsenem und Monat (Kinder zur Hälfte); Tarifstufen je Jahr",
+  "grundlage": "Boden: halbes Existenzminimum am Wohnort (V3b, v3.20); Stufen: 1- bis 4-facher Grundbedarf (v3.22)",
+  "dividende_ausgezahlt_v3a_2028_eur_monat": null,
+  "hinweis_v3a": "V3a verteilt den Klubtopf und gilt nur im Gewichtsbestand der Gesamtrechnung; ausgewiesen ist der Boden"
+ },
  "eingaben": "daten/aggregate/laender/pl_eingaben.md",
  "luecken": [
-  "Preisniveau Polen (PLI, EU27 = 100) nicht eingetragen: Eurostat-Abruf fehlgeschlagen. Ohne diesen Wert ist die Dividendenrechnung für Polen nicht möglich.",
-  "Schuldenquoten-Prognose der Regierung 2026 bis 2028 nicht gefunden (Mittelfristplan nennt nur Ziele)",
+  "Schuldenquote 2028 der Regierung nicht veröffentlicht gefunden (interpoliert, Annahme)",
   "Saldo 2028 ist Annahme (gleich 2027)",
-  "Verlauf der Schuldenquote 2010 bis 2024 nicht eingetragen",
-  "Verfassung (Selbstverwaltung der Gemeinden und Regionen) nicht geprüft"
+  "Nominales Wachstum der Regierung nur für 2026 (6,2 %, Fortschrittsbericht April 2026) gefunden",
+  "Schuldenstrategie 2027–2030 nicht am Original geprüft (Sejm-Seite mit Zugangsprüfung)",
+  "Verfassung (Art. 15, 16, 167, 216 Abs. 5) nicht im Wortlaut geprüft; Abruf wartete auf Freigabe"
  ]
 }

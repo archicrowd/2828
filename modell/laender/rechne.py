@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Länderrechnungen nach dem Standard (modell/laender/STANDARD.md, Modellstand v3.24).
+"""Länderrechnungen nach dem Standard (modell/laender/STANDARD.md, Modellstand v3.25).
 
 Ein gemeinsames Skript für alle Länder. Eingaben je Land: modell/laender/<cc>.toml.
 Ausgabe: daten/aggregate/laender/<cc>.json und daten/aggregate/laender_vergleich.csv.
@@ -36,6 +36,40 @@ _sp = json.loads((AGG / "schuldenpfad.json").read_text(encoding="utf-8"))
 if abs(_sp["saldo_2025"] - KLUB_SALDO) > 0.01:
     sys.exit(f"Klub-Saldo {_sp['saldo_2025']:.3f} weicht von {KLUB_SALDO} ab; KLUB_SALDO anpassen und im Logbuch vermerken")
 D_KLUB_25 = sum(GDP[k] * KLUB[k] for k in GDP) / TOT
+
+# Wohnort (Standard 2.6): Dividendenboden und Tarifstufen nach Preisniveau, Euro 2028 nominal
+with open(AGG / "preisniveau_2024.csv", encoding="utf-8") as _f:
+    PLI_CSV = {r["land"]: float(r["preisniveau_eu27_100"]) for r in csv.DictReader(_f)}
+PLI_DE = PLI_CSV["DE"]
+ANKER_DE = float(json.loads((AGG / "gesamtrechnung.json").read_text(encoding="utf-8"))["anker_de"])
+_tg = json.loads((AGG / "tarif_grundbedarf.json").read_text(encoding="utf-8"))
+G28, SAETZE, STUFEN_REF = float(_tg["grundbedarf_2028"]), _tg["saetze"], _tg["stufen_laender_2028"]
+_lv = json.loads((AGG / "laendervarianten.json").read_text(encoding="utf-8"))["zeilen"]
+LV = {z["land"]: z for z in _lv}
+
+
+def wohnort(cc, pli):
+    if pli is None:
+        return dict(entfaellt="Preisniveau nicht eingetragen")
+    if cc in PLI_CSV and abs(PLI_CSV[cc] - float(pli)) > 0.001:
+        sys.exit(f"{cc}: Preisniveau {pli} weicht von preisniveau_2024.csv ({PLI_CSV[cc]}) ab")
+    f = float(pli) / PLI_DE
+    w = dict(preisniveau_2024=float(pli), faktor_gegen_de=round(f, 4),
+             dividende_boden_2028_eur_monat=round(ANKER_DE * f, 2),
+             dividende_boden_kind_2028_eur_monat=round(ANKER_DE * f / 2, 2),
+             tarifstufen_2028_eur_jahr=[round(G28 * f * k) for k in (1, 2, 3, 4)], tarifsaetze_pct=SAETZE,
+             einheit="Euro 2028, nominal. Dividende je Erwachsenem und Monat (Kinder zur Hälfte); Tarifstufen je Jahr",
+             grundlage="Boden: halbes Existenzminimum am Wohnort (V3b, v3.20); Stufen: 1- bis 4-facher Grundbedarf (v3.22)")
+    if cc in LV:
+        if abs(LV[cc]["div_v3b"] - ANKER_DE * f) > 0.01:
+            sys.exit(f"{cc}: Dividendenboden weicht von laendervarianten.json ab")
+        w["dividende_ausgezahlt_v3a_2028_eur_monat"] = round(LV[cc]["div_v3a"], 2)
+    else:
+        w["dividende_ausgezahlt_v3a_2028_eur_monat"] = None
+        w["hinweis_v3a"] = "V3a verteilt den Klubtopf und gilt nur im Gewichtsbestand der Gesamtrechnung; ausgewiesen ist der Boden"
+    if cc in STUFEN_REF and STUFEN_REF[cc] != w["tarifstufen_2028_eur_jahr"]:
+        sys.exit(f"{cc}: Tarifstufen weichen von tarif_grundbedarf.json ab")
+    return w
 
 
 def rund(d):
@@ -98,6 +132,17 @@ def rechne(p):
                 sys.exit(f"{cc}: Pfad C reproduziert die Regierungsquote {j} nicht ({C[j]:.2f} gegen {qreg[j]})")
         pfad_c = dict(beschreibung="Regierungsquote, implizites Wachstum (reproduziert die Prognose)",
                       werte=rund(C), wachstum_implizit_pct=rund(gimp))
+        if p.get("quote_regierung_hinweis"):
+            pfad_c["hinweis"] = p["quote_regierung_hinweis"]
+        g_reg = {int(k): float(v) for k, v in p.get("wachstum_nominal_regierung", {}).items()}
+        if g_reg:   # Standard 2.3: Bestandsanpassung = Regierungsquote minus Fortschreibung mit Regierungswachstum
+            sfa, d_prev = {}, d25
+            for j in JAHRE:
+                if j in g_reg:
+                    sfa[j] = qreg[j] - (d_prev / (1 + g_reg[j] / 100) - sreg[j])
+                d_prev = qreg[j]
+            pfad_c["wachstum_nominal_regierung_pct"] = {str(j): v for j, v in g_reg.items()}
+            pfad_c["bestandsanpassung_pct_bip"] = rund(sfa)
         abw = dict(B_minus_C_2028=round(B[2028] - C[2028], 2), A_minus_C_2028=round(A[2028] - C[2028], 2))
     else:
         C = None
@@ -114,7 +159,7 @@ def rechne(p):
     else:
         gew = dict(entfaellt="Land nicht im Gewichtsbestand der Gesamtrechnung (modell/rahmen/basis.py)")
     return dict(
-        standard="modell/laender/STANDARD.md, Fassung 1 (v3.24)", land=cc, name=p["name"],
+        standard="modell/laender/STANDARD.md, Fassung 1.1 (v3.25)", land=cc, name=p["name"],
         bezugsjahr_ausgang=2025, preisbasis="Verhältniszahl (% des BIP), laufende Preise",
         wachstum_nominal_pct=G_NOM,
         ausgang=dict(schuld_2025_pct_bip=d25, quelle=p["schuld_2025_quelle"],
@@ -125,7 +170,8 @@ def rechne(p):
         pfade=dict(A_status_quo=dict(beschreibung="Saldo 2025 bleibt 2026 bis 2028", werte=rund(A)),
                    B_regierungsdefizit=dict(beschreibung="Regierungssaldo, nominales Wachstum 3,0 %", werte=rund(B)),
                    C_regierungsschuldenquote=pfad_c),
-        abweichung_2028=abw, gewichtung=gew, eingaben=p["eingaben"], luecken=p["luecken"],
+        abweichung_2028=abw, gewichtung=gew, wohnort=wohnort(cc, p.get("preisniveau_2024")),
+        eingaben=p["eingaben"], luecken=p["luecken"],
     )
 
 
@@ -144,12 +190,15 @@ def main():
         (OUT / f"{r['land'].lower()}.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
     with open(AGG / "laender_vergleich.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["land", "name", "schuld_2025_pct_bip", "saldo_2025_pct_bip", "A_2028", "B_2028", "C_2028", "B_minus_C_2028"])
+        w.writerow(["land", "name", "schuld_2025_pct_bip", "saldo_2025_pct_bip", "A_2028", "B_2028", "C_2028", "B_minus_C_2028",
+                    "preisniveau_2024", "dividende_boden_2028_eur_monat", "tarifstufe1_2028_eur_jahr"])
         for r in ergebnisse:
-            c = r["pfade"]["C_regierungsschuldenquote"]
+            c, wo = r["pfade"]["C_regierungsschuldenquote"], r["wohnort"]
             w.writerow([r["land"], r["name"], r["ausgang"]["schuld_2025_pct_bip"], r["ausgang"]["saldo_2025_pct_bip"],
                         r["pfade"]["A_status_quo"]["werte"]["2028"], r["pfade"]["B_regierungsdefizit"]["werte"]["2028"],
-                        c.get("werte", {}).get("2028", ""), (r["abweichung_2028"] or {}).get("B_minus_C_2028", "")])
+                        c.get("werte", {}).get("2028", ""), (r["abweichung_2028"] or {}).get("B_minus_C_2028", ""),
+                        wo.get("preisniveau_2024", ""), wo.get("dividende_boden_2028_eur_monat", ""),
+                        (wo.get("tarifstufen_2028_eur_jahr") or [""])[0]])
     for r in ergebnisse:
         a, b = r["pfade"]["A_status_quo"]["werte"], r["pfade"]["B_regierungsdefizit"]["werte"]
         print(f"{r['land']}: 2025 {r['ausgang']['schuld_2025_pct_bip']} % | A {a['2026']} / {a['2027']} / {a['2028']} | "
@@ -157,6 +206,13 @@ def main():
         if "werte" in r["pfade"]["C_regierungsschuldenquote"]:
             cc_ = r["pfade"]["C_regierungsschuldenquote"]["werte"]
             print(f"   C (Regierung) {cc_['2026']} / {cc_['2027']} / {cc_['2028']}")
+        if "bestandsanpassung_pct_bip" in r["pfade"]["C_regierungsschuldenquote"]:
+            print(f"   Bestandsanpassung (Regierungsquote gegen Regierungswachstum): "
+                  f"{r['pfade']['C_regierungsschuldenquote']['bestandsanpassung_pct_bip']}")
+        if "dividende_boden_2028_eur_monat" in r["wohnort"]:
+            wo = r["wohnort"]
+            print(f"   Wohnort: PLI {wo['preisniveau_2024']} | Dividendenboden {wo['dividende_boden_2028_eur_monat']} EUR/Monat | "
+                  f"Stufen {wo['tarifstufen_2028_eur_jahr']} | V3a {wo['dividende_ausgezahlt_v3a_2028_eur_monat']}")
         if "klub_2028_referenz" in r["gewichtung"]:
             g = r["gewichtung"]
             print(f"   Klub 2028: Referenz {g['klub_2028_referenz']} | mit Land Status quo {g['klub_2028_mit_land_status_quo']} | "

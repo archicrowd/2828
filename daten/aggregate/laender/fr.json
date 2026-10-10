@@ -1,5 +1,5 @@
 {
- "standard": "modell/laender/STANDARD.md, Fassung 1 (v3.24)",
+ "standard": "modell/laender/STANDARD.md, Fassung 1.1 (v3.25)",
  "land": "FR",
  "name": "Frankreich",
  "bezugsjahr_ausgang": 2025,
@@ -66,6 +66,28 @@
   "klub_2028_mit_land_regierungsdefizit": 81.29,
   "klub_2028_mit_land_regierungsdefizit_und_wachstum": 81.96,
   "hinweis": "Sensitivität, kein Ersatz für die Gesamtrechnung (Standard 2.4)"
+ },
+ "wohnort": {
+  "preisniveau_2024": 107.9,
+  "faktor_gegen_de": 0.989,
+  "dividende_boden_2028_eur_monat": 529.4,
+  "dividende_boden_kind_2028_eur_monat": 264.7,
+  "tarifstufen_2028_eur_jahr": [
+   12706,
+   25411,
+   38117,
+   50822
+  ],
+  "tarifsaetze_pct": [
+   0,
+   9,
+   16,
+   21,
+   28
+  ],
+  "einheit": "Euro 2028, nominal. Dividende je Erwachsenem und Monat (Kinder zur Hälfte); Tarifstufen je Jahr",
+  "grundlage": "Boden: halbes Existenzminimum am Wohnort (V3b, v3.20); Stufen: 1- bis 4-facher Grundbedarf (v3.22)",
+  "dividende_ausgezahlt_v3a_2028_eur_monat": 584.31
  },
  "eingaben": "daten/aggregate/laender/fr_eingaben.md",
  "luecken": [

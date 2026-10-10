@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.24",
+ "modellstand": "v3.25",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -254,7 +254,7 @@
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/laender/rechne.py",
-   "anmerkung": "Standard Fassung 1 (v3.24). Frankreich reproduziert v3.23 exakt. Polen: Schulden und Saldo, kein PLI. Spanien: Eingaben, noch ohne Rechnung"
+   "anmerkung": "Standard Fassung 1.1 (v3.25). Frankreich reproduziert v3.23 exakt (Pfade, Klubwirkung, Boden, Stufen). Polen: Pfade A/B/C, Wohnort (PLI 70,2), 2028 Annahmen. Spanien: Eingaben, noch ohne Rechnung"
   }
  ],
  "nahtstellen": [
