@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.27**
+Stand: 10. Oktober 2026 · Modellstand **v3.28**
 
 ---
 
@@ -1254,6 +1254,52 @@ EU-Kommission, Sekundärquellen, je Zeile gekennzeichnet).*
 
 ---
 
+### v3.28 — Ländervergleich nach den Kriterien der Webseite; Arbeitsanweisung für nachfolgende Agenten
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026. Auftrag der Initiative: Arbeitsanweisungen im
+Projektraum sichern; neue Rechnung auf Basis der verfügbaren Daten; Ländervergleich nach den Kriterien der Kommunikation auf der Webseite.
+
+**Kriterien (aus `seite/werkzeuge/sprachen/de.json`).** Dividende je Erwachsenem und je Kind 2028; höchstens 28 % mit Stufen am
+Grundbedarf; Rechner (Einkommensteuer, Durchschnittssatz, Haushaltsdividende, Sozialabgaben 0); Gemeindebudget je Einwohner und je Kind;
+heutige Last (Abgabenkeil, Kapitalertragsteuer, Sozialabgaben); Staatsschulden.
+
+**Rechnung (`modell/laendervergleich.py`, neu; Eingaben `modell/laender/vergleich.toml`).** Elf Länder (zehn Klubländer und Polen).
+Rechenregel des Rechners der Seite (Funktion `steuer` in `vorlage.html`). Euro 2028, nominal. Gegenproben: Deutschland 590,81 € je
+Erwachsenem = `gesamtrechnung.json`; Tarifstufen und Dividendenboden gegen `tarif_grundbedarf.json` und `laendervarianten.json`.
+Ergebnisse (`daten/aggregate/laendervergleich.json`, `.csv`):
+- Dividende je Erwachsenem und Monat: von 344,43 € (Polen, nur Boden) und 491,17 € (Spanien) bis 773,30 € (Dänemark). In den
+  Klubländern kaufkraftgleich (V3a proportional zum Preisniveau). Polen erhält nur den Boden (V3b) und liegt kaufkraftbereinigt rund
+  10 % unter den Klubländern.
+- Kaufkraftgleiche Musterhaushalte haben überall denselben Durchschnittssatz: 4,5 % beim 2-fachen, 11,5 % beim 4-fachen Grundbedarf.
+- Gleicher Eurobetrag (40.000 € brutto): Durchschnittssatz 6,3 % (Dänemark) bis 14,4 % (Polen); Dividende minus Steuer von +6.747 €
+  (Dänemark) bis −1.611 € (Polen) im Jahr.
+- Familie (zwei Erwachsene, zwei Kinder, ein Einkommen beim 3-fachen Grundbedarf): Dividende minus Steuer +10.333 € (Polen) bis +23.635 €
+  (Dänemark), Deutschland +18.057 €.
+- Gemeinde je Einwohner (Pro-Kopf-Variante je Land, v3.17): 2.194 € (Estland) bis 7.863 € (Irland); Polen nicht gerechnet.
+- Schulden 2028 im Status quo für alle elf Länder; Regierungspfad für Frankreich, Spanien, Niederlande, Polen.
+
+**Befunde für die Kommunikation.** (1) Die Webseite zeigt die klubweite Gemeindeformel (3.599 € je Einwohner, 12.625 € je Kind),
+die Entscheidung v3.17 nennt die Pro-Kopf-Variante je Land; für eine länderspezifische Seite ist das zu klären (Nahtstelle N16).
+(2) Die heutige Last ist nur lückenhaft belegt: Abgabenkeil nur Deutschland (47,9 %) und OECD-Schnitt (34,9 %); Kapitalertragsteuer
+für DE, FR, ES, NL; Spitzensatz für FR, NL, BE; Sozialbeiträge für DE, FR, ES. Für einen Vergleich „heute gegen 28:28“ fehlen die
+Abgabenkeile je Land (OECD Taxing Wages 2025).
+
+**Arbeitsanweisung (`modell/laender/ARBEITSANWEISUNG.md`, neu; Kopie im Projektraum `claude/Arbeitsanweisung-Laender.md`).** Ablauf je
+Land, Datenzugang (Eurostat nur über WebFetch, Dimension `ppp_cat`), gesperrte Seiten, Regeln aus den Korrekturen 56 und 57,
+Reihenfolge beim Abschluss einer Version, Projektraum.
+
+**Nebenbei behoben:** `rechne.py` las jede `.toml`-Datei im Ordner als Länderdatei; jetzt nur `<cc>.toml` (zweistellig).
+
+**Geprüft:** `python3 modell/alles.py` (17 Stufen, neu „Ländervergleich (Webseite)“); Gegenproben im Skript.
+
+**Wodurch aufgefallen:** Auftrag der Initiative.
+
+*Skripte: `modell/laendervergleich.py` (neu). Quellen: Ergebnisse der Gesamtrechnung, Ländervarianten, Tarif am Grundbedarf und
+Länderrechnung; heutige Last je Zeile in `vergleich.toml` belegt (OECD Taxing Wages 2025, Eurostat, nationale Steuerverwaltungen,
+Sekundärquellen gekennzeichnet).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
@@ -1300,9 +1346,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.27
+## 7 | Offene Punkte, Stand v3.28
 
-Neu seit v3.23 (Stand v3.27): Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.28): Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

@@ -1,0 +1,961 @@
+{
+ "einheit": "Euro 2028, nominal; Dividende je Monat; Steuer, Brutto und Dividende im Jahr",
+ "grundbedarf_de_2028": 12846.86,
+ "muster": [
+  {
+   "id": "single_2gb",
+   "beschreibung": "Alleinstehend, ein Einkommen in Höhe des 2-fachen Grundbedarfs am Wohnort (kaufkraftgleich)",
+   "erwachsene": 1,
+   "kinder": 0,
+   "brutto_vielfaches_grundbedarf": 2.0
+  },
+  {
+   "id": "single_4gb",
+   "beschreibung": "Alleinstehend, ein Einkommen in Höhe des 4-fachen Grundbedarfs am Wohnort (kaufkraftgleich)",
+   "erwachsene": 1,
+   "kinder": 0,
+   "brutto_vielfaches_grundbedarf": 4.0
+  },
+  {
+   "id": "familie_3gb",
+   "beschreibung": "Paar mit zwei Kindern, ein Einkommen in Höhe des 3-fachen Grundbedarfs am Wohnort (kaufkraftgleich)",
+   "erwachsene": 2,
+   "kinder": 2,
+   "brutto_vielfaches_grundbedarf": 3.0
+  },
+  {
+   "id": "single_40000",
+   "beschreibung": "Alleinstehend, 40.000 Euro brutto im Jahr in jedem Land (gleicher Eurobetrag, nicht kaufkraftgleich)",
+   "erwachsene": 1,
+   "kinder": 0,
+   "brutto_eur": 40000.0
+  }
+ ],
+ "oecd": {
+  "abgabenkeil_pct": 34.9,
+  "abgabenkeil_quelle": "OECD, Taxing Wages 2025, Tab. 3.1, OECD-Schnitt 2024; amtlich"
+ },
+ "laender": [
+  {
+   "land": "DE",
+   "name": "Deutschland",
+   "einwohner_mio": 83.516593,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 109.1,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 1.0,
+   "dividende_erwachsener_monat": 590.81,
+   "dividende_kind_monat": 295.4,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 535.29,
+   "tarifstufen": [
+    12847,
+    25694,
+    38541,
+    51387
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 25694,
+     "einkommensteuer": 1156,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7090,
+     "dividende_minus_steuer": 5933
+    },
+    "single_4gb": {
+     "brutto": 51387,
+     "einkommensteuer": 5910,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7090,
+     "dividende_minus_steuer": 1180
+    },
+    "familie_3gb": {
+     "brutto": 38541,
+     "einkommensteuer": 3212,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 21269,
+     "dividende_minus_steuer": 18057
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 3518,
+     "durchschnittssatz_pct": 8.8,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7090,
+     "dividende_minus_steuer": 3572
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 3913,
+    "je_kind_land": 13729,
+    "budget_je_kopf_land": 6091,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 63.5,
+    "saldo_2025": -2.7,
+    "status_quo_2028": 65.98,
+    "regierung_2028": null,
+    "regierungsdefizit_2028": null
+   },
+   "heute": {
+    "abgabenkeil_pct": 47.9,
+    "abgabenkeil_quelle": "OECD, Taxing Wages 2025, Tab. 3.1, Alleinstehende, Durchschnittslohn, 2024 (seite/stand-b/QUELLEN.md); amtlich",
+    "kapital_pct": 26.375,
+    "kapital_quelle": "§ 32d EStG mit Solidaritätszuschlag (gesamtrechnung.json); amtlich",
+    "sozialbeitraege_pct_bip": 17.5,
+    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024, vorläufig (WebFetch 10.10.2026, fr_eingaben.md); amtlich, maschinell"
+   },
+   "luecken": [
+    "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
+    "heute: Spitzensatz Einkommensteuer nicht belegt"
+   ]
+  },
+  {
+   "land": "FR",
+   "name": "Frankreich",
+   "einwohner_mio": 68.775952,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 107.9,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 0.989,
+   "dividende_erwachsener_monat": 584.31,
+   "dividende_kind_monat": 292.15,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 529.4,
+   "tarifstufen": [
+    12706,
+    25411,
+    38117,
+    50822
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 25411,
+     "einkommensteuer": 1143,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7012,
+     "dividende_minus_steuer": 5868
+    },
+    "single_4gb": {
+     "brutto": 50822,
+     "einkommensteuer": 5845,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7012,
+     "dividende_minus_steuer": 1167
+    },
+    "familie_3gb": {
+     "brutto": 38117,
+     "einkommensteuer": 3176,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 21035,
+     "dividende_minus_steuer": 17859
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 3572,
+     "durchschnittssatz_pct": 8.93,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7012,
+     "dividende_minus_steuer": 3440
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 3222,
+    "je_kind_land": 11304,
+    "budget_je_kopf_land": 5015,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 115.6,
+    "saldo_2025": -5.1,
+    "status_quo_2028": 120.65,
+    "regierung_2028": 122.4,
+    "regierungsdefizit_2028": 119.63
+   },
+   "heute": {
+    "spitzensatz_pct": 45.0,
+    "spitzensatz_quelle": "service-public.gouv.fr F1419, Tarif 2026 (fr_eingaben.md); amtlich, Agent, nicht selbst geprüft",
+    "kapital_pct": 31.4,
+    "kapital_quelle": "impots.gouv.fr, PFU ab 2026 (fr_eingaben.md); amtlich, Agent",
+    "sozialbeitraege_pct_bip": 16.5,
+    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)"
+   },
+   "luecken": [
+    "heute: Abgabenkeil nicht belegt"
+   ]
+  },
+  {
+   "land": "ES",
+   "name": "Spanien",
+   "einwohner_mio": 48.873996,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 90.7,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 0.8313,
+   "dividende_erwachsener_monat": 491.17,
+   "dividende_kind_monat": 245.58,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 445.01,
+   "tarifstufen": [
+    10680,
+    21360,
+    32041,
+    42721
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 21360,
+     "einkommensteuer": 961,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 5894,
+     "dividende_minus_steuer": 4933
+    },
+    "single_4gb": {
+     "brutto": 42721,
+     "einkommensteuer": 4913,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 5894,
+     "dividende_minus_steuer": 981
+    },
+    "familie_3gb": {
+     "brutto": 32041,
+     "einkommensteuer": 2670,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 17682,
+     "dividende_minus_steuer": 15012
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 4342,
+     "durchschnittssatz_pct": 10.85,
+     "sozialabgaben": 0,
+     "dividende_jahr": 5894,
+     "dividende_minus_steuer": 1552
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 2463,
+    "je_kind_land": 8640,
+    "budget_je_kopf_land": 3833,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 100.7,
+    "saldo_2025": -2.4,
+    "status_quo_2028": 99.15,
+    "regierung_2028": 96.4,
+    "regierungsdefizit_2028": 97.48
+   },
+   "heute": {
+    "kapital_pct": 30.0,
+    "kapital_quelle": "Base del ahorro, Spitzensatz ab 300.000 Euro, Ley 7/2024 (es_eingaben.md); Sekundärquelle",
+    "sozialbeitraege_pct_bip": 13.2,
+    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)"
+   },
+   "luecken": [
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Spitzensatz Einkommensteuer nicht belegt"
+   ]
+  },
+  {
+   "land": "NL",
+   "name": "Niederlande",
+   "einwohner_mio": 17.993485,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 121.0,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 1.1091,
+   "dividende_erwachsener_monat": 655.25,
+   "dividende_kind_monat": 327.62,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 593.67,
+   "tarifstufen": [
+    14248,
+    28496,
+    42744,
+    56992
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 28496,
+     "einkommensteuer": 1282,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7863,
+     "dividende_minus_steuer": 6581
+    },
+    "single_4gb": {
+     "brutto": 56992,
+     "einkommensteuer": 6554,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7863,
+     "dividende_minus_steuer": 1309
+    },
+    "familie_3gb": {
+     "brutto": 42744,
+     "einkommensteuer": 3562,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 23589,
+     "dividende_minus_steuer": 20027
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 3123,
+     "durchschnittssatz_pct": 7.81,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7863,
+     "dividende_minus_steuer": 4740
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 4680,
+    "je_kind_land": 16417,
+    "budget_je_kopf_land": 7283,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 44.4,
+    "saldo_2025": -1.6,
+    "status_quo_2028": 45.29,
+    "regierung_2028": 47.4,
+    "regierungsdefizit_2028": 48.12
+   },
+   "heute": {
+    "spitzensatz_pct": 49.5,
+    "spitzensatz_quelle": "Belastingdienst, Box 1 2026 (nl_eingaben.md); amtlich, Agent, nicht selbst geprüft",
+    "kapital_pct": 36.0,
+    "kapital_quelle": "Box 3, Satz auf eine fiktive Rendite (nl_eingaben.md); amtlich, Agent; nicht direkt mit einem Satz auf tatsächliche Erträge vergleichbar"
+   },
+   "luecken": [
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Sozialbeiträge nicht belegt"
+   ]
+  },
+  {
+   "land": "IE",
+   "name": "Irland",
+   "einwohner_mio": 5.39598,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 141.2,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 1.2942,
+   "dividende_erwachsener_monat": 764.64,
+   "dividende_kind_monat": 382.32,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 692.78,
+   "tarifstufen": [
+    16627,
+    33253,
+    49880,
+    66507
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 33253,
+     "einkommensteuer": 1496,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 9176,
+     "dividende_minus_steuer": 7679
+    },
+    "single_4gb": {
+     "brutto": 66507,
+     "einkommensteuer": 7648,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 9176,
+     "dividende_minus_steuer": 1527
+    },
+    "familie_3gb": {
+     "brutto": 49880,
+     "einkommensteuer": 4157,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 27527,
+     "dividende_minus_steuer": 23370
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 2576,
+     "durchschnittssatz_pct": 6.44,
+     "sozialabgaben": 0,
+     "dividende_jahr": 9176,
+     "dividende_minus_steuer": 6600
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 7863,
+    "je_kind_land": 27583,
+    "budget_je_kopf_land": 12237,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 32.9,
+    "saldo_2025": 1.8,
+    "status_quo_2028": 24.86,
+    "regierung_2028": null,
+    "regierungsdefizit_2028": null
+   },
+   "heute": {},
+   "luecken": [
+    "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Kapitalertragsteuer nicht belegt",
+    "heute: Spitzensatz Einkommensteuer nicht belegt",
+    "heute: Sozialbeiträge nicht belegt"
+   ]
+  },
+  {
+   "land": "BE",
+   "name": "Belgien",
+   "einwohner_mio": 11.850296,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 118.7,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 1.088,
+   "dividende_erwachsener_monat": 642.79,
+   "dividende_kind_monat": 321.4,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 582.39,
+   "tarifstufen": [
+    13977,
+    27955,
+    41932,
+    55909
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 27955,
+     "einkommensteuer": 1258,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7714,
+     "dividende_minus_steuer": 6456
+    },
+    "single_4gb": {
+     "brutto": 55909,
+     "einkommensteuer": 6430,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7714,
+     "dividende_minus_steuer": 1284
+    },
+    "familie_3gb": {
+     "brutto": 41932,
+     "einkommensteuer": 3494,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 23141,
+     "dividende_minus_steuer": 19646
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 3185,
+     "durchschnittssatz_pct": 7.96,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7714,
+     "dividende_minus_steuer": 4528
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 3950,
+    "je_kind_land": 13856,
+    "budget_je_kopf_land": 6147,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 107.9,
+    "saldo_2025": -5.2,
+    "status_quo_2028": 113.89,
+    "regierung_2028": null,
+    "regierungsdefizit_2028": 113.32
+   },
+   "heute": {
+    "spitzensatz_pct": 50.0,
+    "spitzensatz_quelle": "Einkommensteuer 2026 ohne Gemeindezuschlag (be_eingaben.md); Sekundärquelle"
+   },
+   "luecken": [
+    "Schulden: keine Regierungsschuldenquote 2028 (Pfad C entfällt)",
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Kapitalertragsteuer nicht belegt",
+    "heute: Sozialbeiträge nicht belegt"
+   ]
+  },
+  {
+   "land": "AT",
+   "name": "Österreich",
+   "einwohner_mio": 9.177982,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 119.7,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 1.0972,
+   "dividende_erwachsener_monat": 648.21,
+   "dividende_kind_monat": 324.1,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 587.29,
+   "tarifstufen": [
+    14095,
+    28190,
+    42285,
+    56380
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 28190,
+     "einkommensteuer": 1269,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7778,
+     "dividende_minus_steuer": 6510
+    },
+    "single_4gb": {
+     "brutto": 56380,
+     "einkommensteuer": 6484,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7778,
+     "dividende_minus_steuer": 1295
+    },
+    "familie_3gb": {
+     "brutto": 42285,
+     "einkommensteuer": 3524,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 23335,
+     "dividende_minus_steuer": 19812
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 3158,
+     "durchschnittssatz_pct": 7.9,
+     "sozialabgaben": 0,
+     "dividende_jahr": 7778,
+     "dividende_minus_steuer": 4620
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 4064,
+    "je_kind_land": 14259,
+    "budget_je_kopf_land": 6326,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 81.5,
+    "saldo_2025": -4.2,
+    "status_quo_2028": 86.82,
+    "regierung_2028": null,
+    "regierungsdefizit_2028": null
+   },
+   "heute": {},
+   "luecken": [
+    "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Kapitalertragsteuer nicht belegt",
+    "heute: Spitzensatz Einkommensteuer nicht belegt",
+    "heute: Sozialbeiträge nicht belegt"
+   ]
+  },
+  {
+   "land": "DK",
+   "name": "Dänemark",
+   "einwohner_mio": 5.976992,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 142.8,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 1.3089,
+   "dividende_erwachsener_monat": 773.3,
+   "dividende_kind_monat": 386.65,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 700.63,
+   "tarifstufen": [
+    16815,
+    33630,
+    50445,
+    67261
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 33630,
+     "einkommensteuer": 1513,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 9280,
+     "dividende_minus_steuer": 7766
+    },
+    "single_4gb": {
+     "brutto": 67261,
+     "einkommensteuer": 7735,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 9280,
+     "dividende_minus_steuer": 1545
+    },
+    "familie_3gb": {
+     "brutto": 50445,
+     "einkommensteuer": 4204,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 27839,
+     "dividende_minus_steuer": 23635
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 2533,
+     "durchschnittssatz_pct": 6.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 9280,
+     "dividende_minus_steuer": 6747
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 5056,
+    "je_kind_land": 17738,
+    "budget_je_kopf_land": 7869,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 27.9,
+    "saldo_2025": 2.9,
+    "status_quo_2028": 17.08,
+    "regierung_2028": null,
+    "regierungsdefizit_2028": null
+   },
+   "heute": {},
+   "luecken": [
+    "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Kapitalertragsteuer nicht belegt",
+    "heute: Spitzensatz Einkommensteuer nicht belegt",
+    "heute: Sozialbeiträge nicht belegt"
+   ]
+  },
+  {
+   "land": "SI",
+   "name": "Slowenien",
+   "einwohner_mio": 2.1274,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 91.0,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 0.8341,
+   "dividende_erwachsener_monat": 492.79,
+   "dividende_kind_monat": 246.39,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 446.48,
+   "tarifstufen": [
+    10716,
+    21431,
+    32147,
+    42862
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 21431,
+     "einkommensteuer": 964,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 5913,
+     "dividende_minus_steuer": 4949
+    },
+    "single_4gb": {
+     "brutto": 42862,
+     "einkommensteuer": 4929,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 5913,
+     "dividende_minus_steuer": 984
+    },
+    "familie_3gb": {
+     "brutto": 32147,
+     "einkommensteuer": 2679,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 17740,
+     "dividende_minus_steuer": 15062
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 4328,
+     "durchschnittssatz_pct": 10.82,
+     "sozialabgaben": 0,
+     "dividende_jahr": 5913,
+     "dividende_minus_steuer": 1585
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 2393,
+    "je_kind_land": 8394,
+    "budget_je_kopf_land": 3724,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 65.7,
+    "saldo_2025": -2.5,
+    "status_quo_2028": 67.41,
+    "regierung_2028": null,
+    "regierungsdefizit_2028": null
+   },
+   "heute": {},
+   "luecken": [
+    "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Kapitalertragsteuer nicht belegt",
+    "heute: Spitzensatz Einkommensteuer nicht belegt",
+    "heute: Sozialbeiträge nicht belegt"
+   ]
+  },
+  {
+   "land": "EE",
+   "name": "Estland",
+   "einwohner_mio": 1.372341,
+   "einwohner_quelle": "laender_2024.csv (Eurostat demo_gind, AVG 2024)",
+   "preisniveau_2024": 96.5,
+   "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
+   "faktor_gegen_de": 0.8845,
+   "dividende_erwachsener_monat": 522.57,
+   "dividende_kind_monat": 261.29,
+   "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
+   "dividende_boden_monat": 473.47,
+   "tarifstufen": [
+    11363,
+    22726,
+    34090,
+    45453
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 22726,
+     "einkommensteuer": 1023,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 6271,
+     "dividende_minus_steuer": 5248
+    },
+    "single_4gb": {
+     "brutto": 45453,
+     "einkommensteuer": 5227,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 6271,
+     "dividende_minus_steuer": 1044
+    },
+    "familie_3gb": {
+     "brutto": 34090,
+     "einkommensteuer": 2841,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 18813,
+     "dividende_minus_steuer": 15972
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 4082,
+     "durchschnittssatz_pct": 10.21,
+     "sozialabgaben": 0,
+     "dividende_jahr": 6271,
+     "dividende_minus_steuer": 2189
+    }
+   },
+   "gemeinde": {
+    "je_einwohner_land": 2194,
+    "je_kind_land": 7698,
+    "budget_je_kopf_land": 3415,
+    "je_einwohner_klubformel": 3599,
+    "je_kind_klubformel": 12625,
+    "hinweis": "Land: Pro-Kopf-Variante des Länderbeitrags (Logbuch v3.17); Klubformel: wie auf der Webseite gezeigt"
+   },
+   "schulden": {
+    "schuld_2025": 24.1,
+    "saldo_2025": -2.0,
+    "status_quo_2028": 27.88,
+    "regierung_2028": null,
+    "regierungsdefizit_2028": null
+   },
+   "heute": {},
+   "luecken": [
+    "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Kapitalertragsteuer nicht belegt",
+    "heute: Spitzensatz Einkommensteuer nicht belegt",
+    "heute: Sozialbeiträge nicht belegt"
+   ]
+  },
+  {
+   "land": "PL",
+   "name": "Polen",
+   "einwohner_mio": 36.559233,
+   "einwohner_quelle": "Eurostat demo_gind, AVG, 2024 (WebFetch 10.10.2026, amtlich, maschinell)",
+   "preisniveau_2024": 70.2,
+   "preisniveau_quelle": "laender/pl.json (Standard 2.6)",
+   "faktor_gegen_de": 0.6434,
+   "dividende_erwachsener_monat": 344.43,
+   "dividende_kind_monat": 172.21,
+   "dividende_art": "Boden (V3b, halbes Existenzminimum am Wohnort); V3a nur im Gewichtsbestand der Gesamtrechnung",
+   "dividende_boden_monat": 344.43,
+   "tarifstufen": [
+    8266,
+    16533,
+    24799,
+    33065
+   ],
+   "tarifsaetze_pct": [
+    0.0,
+    9.0,
+    16.0,
+    21.0,
+    28.0
+   ],
+   "muster": {
+    "single_2gb": {
+     "brutto": 16533,
+     "einkommensteuer": 744,
+     "durchschnittssatz_pct": 4.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 4133,
+     "dividende_minus_steuer": 3389
+    },
+    "single_4gb": {
+     "brutto": 33065,
+     "einkommensteuer": 3802,
+     "durchschnittssatz_pct": 11.5,
+     "sozialabgaben": 0,
+     "dividende_jahr": 4133,
+     "dividende_minus_steuer": 331
+    },
+    "familie_3gb": {
+     "brutto": 24799,
+     "einkommensteuer": 2067,
+     "durchschnittssatz_pct": 8.33,
+     "sozialabgaben": 0,
+     "dividende_jahr": 12399,
+     "dividende_minus_steuer": 10333
+    },
+    "single_40000": {
+     "brutto": 40000,
+     "einkommensteuer": 5744,
+     "durchschnittssatz_pct": 14.36,
+     "sozialabgaben": 0,
+     "dividende_jahr": 4133,
+     "dividende_minus_steuer": -1611
+    }
+   },
+   "gemeinde": null,
+   "schulden": {
+    "schuld_2025": 59.7,
+    "saldo_2025": -7.3,
+    "status_quo_2028": 75.9,
+    "regierung_2028": 71.7,
+    "regierungsdefizit_2028": 75.32
+   },
+   "heute": {},
+   "luecken": [
+    "Dividende: nur Boden (V3b), keine ausgezahlte Dividende V3a",
+    "Gemeindebudget: nicht gerechnet (Land nicht in laendervarianten.json)",
+    "heute: Abgabenkeil nicht belegt",
+    "heute: Kapitalertragsteuer nicht belegt",
+    "heute: Spitzensatz Einkommensteuer nicht belegt",
+    "heute: Sozialbeiträge nicht belegt"
+   ]
+  }
+ ],
+ "hinweis": "Kaufkraftgleiche Musterhaushalte haben in jedem Land denselben Durchschnittssatz; Unterschiede entstehen beim gleichen Eurobetrag (single_40000) und bei der Dividende (V3a gegen Boden)."
+}

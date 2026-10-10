@@ -1,0 +1,88 @@
+# Ländervergleich nach den Kriterien der Webseite: Eingaben für modell/laendervergleich.py (seit v3.28)
+# Beträge in Euro 2028, nominal. Musterhaushalte wie der Rechner der Webseite: Tarif auf das Brutto ohne Abzüge,
+# kein Splitting, Sozialabgaben 0, Dividende Erwachsene voll und Kinder zur Hälfte.
+
+laender = ["DE", "FR", "ES", "NL", "IE", "BE", "AT", "DK", "SI", "EE", "PL"]
+
+[namen]
+DE = "Deutschland"
+FR = "Frankreich"
+ES = "Spanien"
+NL = "Niederlande"
+IE = "Irland"
+BE = "Belgien"
+AT = "Österreich"
+DK = "Dänemark"
+SI = "Slowenien"
+EE = "Estland"
+PL = "Polen"
+
+[[muster]]
+id = "single_2gb"
+beschreibung = "Alleinstehend, ein Einkommen in Höhe des 2-fachen Grundbedarfs am Wohnort (kaufkraftgleich)"
+erwachsene = 1
+kinder = 0
+brutto_vielfaches_grundbedarf = 2.0
+
+[[muster]]
+id = "single_4gb"
+beschreibung = "Alleinstehend, ein Einkommen in Höhe des 4-fachen Grundbedarfs am Wohnort (kaufkraftgleich)"
+erwachsene = 1
+kinder = 0
+brutto_vielfaches_grundbedarf = 4.0
+
+[[muster]]
+id = "familie_3gb"
+beschreibung = "Paar mit zwei Kindern, ein Einkommen in Höhe des 3-fachen Grundbedarfs am Wohnort (kaufkraftgleich)"
+erwachsene = 2
+kinder = 2
+brutto_vielfaches_grundbedarf = 3.0
+
+[[muster]]
+id = "single_40000"
+beschreibung = "Alleinstehend, 40.000 Euro brutto im Jahr in jedem Land (gleicher Eurobetrag, nicht kaufkraftgleich)"
+erwachsene = 1
+kinder = 0
+brutto_eur = 40000.0
+
+# Stammdaten für Länder außerhalb von laender_2024.csv
+[stamm.PL]
+einwohner_mio = 36.559233
+einwohner_quelle = "Eurostat demo_gind, AVG, 2024 (WebFetch 10.10.2026, amtlich, maschinell)"
+
+# Heutige Last, nur belegte Angaben. Status in der Quelle angeben. Fehlende Größen bleiben weg (Lücke).
+[heute.DE]
+abgabenkeil_pct = 47.9
+abgabenkeil_quelle = "OECD, Taxing Wages 2025, Tab. 3.1, Alleinstehende, Durchschnittslohn, 2024 (seite/stand-b/QUELLEN.md); amtlich"
+kapital_pct = 26.375
+kapital_quelle = "§ 32d EStG mit Solidaritätszuschlag (gesamtrechnung.json); amtlich"
+sozialbeitraege_pct_bip = 17.5
+sozial_quelle = "Eurostat gov_10a_taxag, D61, S13, 2024, vorläufig (WebFetch 10.10.2026, fr_eingaben.md); amtlich, maschinell"
+
+[heute.FR]
+spitzensatz_pct = 45.0
+spitzensatz_quelle = "service-public.gouv.fr F1419, Tarif 2026 (fr_eingaben.md); amtlich, Agent, nicht selbst geprüft"
+kapital_pct = 31.4
+kapital_quelle = "impots.gouv.fr, PFU ab 2026 (fr_eingaben.md); amtlich, Agent"
+sozialbeitraege_pct_bip = 16.5
+sozial_quelle = "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)"
+
+[heute.ES]
+kapital_pct = 30.0
+kapital_quelle = "Base del ahorro, Spitzensatz ab 300.000 Euro, Ley 7/2024 (es_eingaben.md); Sekundärquelle"
+sozialbeitraege_pct_bip = 13.2
+sozial_quelle = "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)"
+
+[heute.NL]
+spitzensatz_pct = 49.5
+spitzensatz_quelle = "Belastingdienst, Box 1 2026 (nl_eingaben.md); amtlich, Agent, nicht selbst geprüft"
+kapital_pct = 36.0
+kapital_quelle = "Box 3, Satz auf eine fiktive Rendite (nl_eingaben.md); amtlich, Agent; nicht direkt mit einem Satz auf tatsächliche Erträge vergleichbar"
+
+[heute.BE]
+spitzensatz_pct = 50.0
+spitzensatz_quelle = "Einkommensteuer 2026 ohne Gemeindezuschlag (be_eingaben.md); Sekundärquelle"
+
+[heute.OECD]
+abgabenkeil_pct = 34.9
+abgabenkeil_quelle = "OECD, Taxing Wages 2025, Tab. 3.1, OECD-Schnitt 2024; amtlich"

@@ -182,7 +182,7 @@ def rechne(p):
 
 def main():
     ergebnisse = []
-    for datei in sorted(PAR.glob("*.toml")):
+    for datei in sorted(PAR.glob("??.toml")):   # nur Länderdateien <cc>.toml (nicht vergleich.toml)
         p = tomllib.loads(datei.read_text(encoding="utf-8"))
         fehlend = [k for k in PFLICHT if k not in p]
         if fehlend:

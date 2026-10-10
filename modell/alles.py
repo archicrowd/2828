@@ -28,6 +28,7 @@ STUFEN = [
     ("Gesamtrechnung (Fassung 6.10.)", ["modell/gesamtrechnung.py"]),
     ("Ländervarianten (B17)", ["modell/laendervarianten.py"]),
     ("Länderpfade nach Standard", ["modell/laender/rechne.py"]),
+    ("Ländervergleich (Webseite)", ["modell/laendervergleich.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),
     ("Projektkarte (Datenzugang)", ["projekt/manifest.py"]),
