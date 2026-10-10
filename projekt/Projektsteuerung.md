@@ -1,4 +1,4 @@
-# Projektsteuerung TAX 28:28 (Stand v3.34, 10. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.35, 10. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
@@ -13,7 +13,7 @@ Existenzminimum; Deutschland 591 € je Erwachsenem und Monat 2028, 801 € 2060
 `daten/quellen.csv` (21 Quellen), `daten/aggregate/eingangswerte.csv` (125 Werte mit Abrufadresse).
 
 ## Aufbau
-- `logbuch/` Versionsgeschichte (Band I bis III); Korrekturen fortlaufend, nächste freie Nummer 58.
+- `logbuch/` Versionsgeschichte (Band I bis III); Korrekturen fortlaufend, nächste freie Nummer 59.
 - `modell/gesamtrechnung.py` + `gesamtrechnung.toml`: geltende Rechnung (Selbstprüfung gegen die Originale).
 - `modell/rahmen/` Originalskripte (unverändert), `parameter.toml` + Zweitrechnung: Regression der Fassung 4. Oktober.
 - `modell/laender/` Länderrechnungen nach Standard (`STANDARD.md`, Fassung 1.3): ein Skript `rechne.py`, je Land `<cc>.toml`; Ergebnisse `daten/aggregate/laender/`. Gerechnet: Frankreich, Spanien, Niederlande, Belgien, Polen; gemeinsame Klubwirkung FR+ES+NL 81,55 % (`laender_klub.json`, nach Korrektur 57).
@@ -34,7 +34,7 @@ Tag-Push scheitert über den Sitzungsproxy (HTTP 403); Tags und GitHub Releases 
 Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell): je Land und Dimension einzeln, Ratenbegrenzung beachten.
 
 ## Reihenfolge der offenen Arbeit
-0. **Entscheidungen v3.33:** E1 C, E2 V2, E3 je Land, E4 81,3 %. Offen: zusätzliche Lücke 1,19 ohne Verletzung der Mindestdividende schließen (Stufen 1/1,5/2/3 bei 28 %: +1,14; oder Bausteine). Justierungspakete v3.34 (P1 bis P3, `justierung.json`): Paket, Reserve-Hebel, Stabilitätsmechanismus und Name entscheiden. Danach Neurechnung und Textentwurf.
+0. **Entscheidungen v3.33:** E1 C, E2 V2, E3 je Land, E4 81,3 %. Offen: zusätzliche Lücke 1,19 ohne Verletzung der Mindestdividende schließen (Stufen 1/1,5/2/3 bei 28 %: +1,14; oder Bausteine). v3.35: 28:28 bleibt, Verteidigung außen vor, Strategie Verwaltung (belegt 0,1 bis 0,3 % BIP). Paket P4 oder P5 wählen; Ausgleichsrücklage rechnen; Aufgabenliste. Danach Neurechnung und Textentwurf.
    **Konsumaufkommen (v3.31):** Zuordnung der Produkte zu den Labelstufen festlegen; effektiver Satz 14,9 bis 16,9 % statt 20 % würde die Deckungslücke um 1,2 bis 2,0 Punkte vergrößern.
 1. **B12 auf Klubebene:** Deckung der Quote aus den Steuerbasen der zehn Staaten (deutsche Basis: Lücke 0,95 Punkte).
 2. **B15:** BIP (DE bei Eurostat revidiert, +1,34 %), Schuldenquoten, Renditen, COFOG-Posten neu abrufen; Zinsausgaben Estland nachholen. **B19:** Zuordnung der Posten dokumentieren.

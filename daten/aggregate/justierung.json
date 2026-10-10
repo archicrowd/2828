@@ -10,12 +10,17 @@
   "vermoegen_125": 0.1,
   "vermoegen_150": 0.19,
   "label_plus1": 0.38,
-  "label_plus2": 0.77
+  "label_plus2": 0.77,
+  "label_plus3": 1.14,
+  "einkommen_28_stufen_1_15_2_3": 1.14,
+  "verwaltung_niedrig": 0.1,
+  "verwaltung_hoch": 0.3
  },
  "erbschaft_mitte": 0.14,
  "label_effektiv": {
   "plus1": 17.88,
-  "plus2": 18.88
+  "plus2": 18.88,
+  "plus3": 19.88
  },
  "luecke_vorher": 2.92,
  "reserve_heute_pkt": 0.88,
@@ -25,18 +30,49 @@
    "mehr_pct_bip": 0.92,
    "luecke_danach": 2.0,
    "reserve_mindestdividende": -1.12,
+   "reserve_mit_ueberschuss": -1.12,
    "stabil": false
   },
   "P2 kräftig (29:29, Erbe 100k, Vermögen 1,5 %, Label +2)": {
    "mehr_pct_bip": 1.4,
    "luecke_danach": 1.52,
    "reserve_mindestdividende": -0.64,
+   "reserve_mit_ueberschuss": -0.64,
    "stabil": false
   },
   "P3 wie P2, Stufen 1/1,5/2/3 bei 29 %": {
    "mehr_pct_bip": 2.59,
    "luecke_danach": 0.33,
    "reserve_mindestdividende": 0.55,
+   "reserve_mit_ueberschuss": 0.55,
+   "stabil": false
+  },
+  "P4 Entscheidung v3.35 (28 % bleibt, Stufen 1/1,5/2/3, Erbe 100k, Vermögen 1,5 %, Label +2, Verwaltung 0,1)": {
+   "mehr_pct_bip": 2.34,
+   "luecke_danach": 0.58,
+   "reserve_mindestdividende": 0.3,
+   "reserve_mit_ueberschuss": 0.3,
+   "stabil": false
+  },
+  "P4 wie oben, Verwaltung 0,3": {
+   "mehr_pct_bip": 2.54,
+   "luecke_danach": 0.38,
+   "reserve_mindestdividende": 0.5,
+   "reserve_mit_ueberschuss": 0.5,
+   "stabil": false
+  },
+  "P5 wie P4, Label +3, Verwaltung 0,1": {
+   "mehr_pct_bip": 2.71,
+   "luecke_danach": 0.21,
+   "reserve_mindestdividende": 0.67,
+   "reserve_mit_ueberschuss": 0.67,
+   "stabil": false
+  },
+  "P5 wie P4, Label +3, Verwaltung 0,3": {
+   "mehr_pct_bip": 2.91,
+   "luecke_danach": 0.01,
+   "reserve_mindestdividende": 0.87,
+   "reserve_mit_ueberschuss": 0.87,
    "stabil": false
   }
  },

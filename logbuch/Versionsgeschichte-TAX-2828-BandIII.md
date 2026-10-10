@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.34**
+Stand: 10. Oktober 2026 · Modellstand **v3.35**
 
 ---
 
@@ -1560,9 +1560,51 @@ Rheinland-Pfalz, Erbschaft- und Schenkungsteuerstatistik 2024 (Bericht L4093, Ta
 
 ---
 
+### v3.35 — Entscheidungen: 28:28 bleibt, Verteidigung außen vor, Strategie Verwaltung; Belege zur Digitalisierung; Korrektur 58
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026.
+
+**Entscheidungen der Initiative.** (1) Verteidigung wird weiter nicht gesondert gerechnet: Der Wert von 3,5 % ist politisch gesetzt und
+sagt nichts über die Verteidigungsfähigkeit. (2) Die Obergrenze des Dachs (35 %) kann notfalls angepasst werden. (3) Statt neuer Steuern
+eine Strategie und Verpflichtung zu Entbürokratisierung, Digitalisierung und Aufgabenstreichung, damit die Budgets besser wirken. (4) 28:28
+bleibt; die übrigen Potenziale werden ausgeschöpft (kein 29:29).
+
+**Belege zur Digitalisierung der Verwaltung (Rechercheagent, Kernzahlen selbst nicht am Original geprüft).** Keine Ex-post-Messung gefunden,
+die einen Rückgang der Verwaltungsausgaben am BIP durch Digitalisierung zeigt. Ex-ante für Deutschland: NKR/Fraunhofer FOKUS 2015, Verwaltung
+−0,7 Mrd. € je Jahr (60 Leistungen); NKR/McKinsey 2017, Verwaltung −3,9 Mrd. € je Jahr, einmalige Investition 2,5 Mrd. €; zusammen etwa
+0,02 bis 0,12 % des BIP. Eurostat COFOG 2024: Verwaltungskern (GF0101) DE 2,1, DK 1,7, EE 1,8, EU 1,9 % des BIP; Estlands GF01 ist seit 2014
+nicht gesunken. Kausale Belege nur für einzelne Prozesse (z. B. elektronische Steuererklärung Tadschikistan −40 % Aufwand; elektronische
+Zahlungen Indien −19 bis −24 % Programmausgaben durch weniger Abfluss). Umsetzungsrisiken: OZG Ende 2022 19 % der Leistungen online
+(Bundesrechnungshof); IT-Projekte im Mittel +27 % Kosten (Flyvbjerg/Budzier 2013). Als Werbung, nicht als Beleg: „2 % des BIP“ (e-Estonia,
+Erwartung von 2002), „1.407 Jahre Arbeitszeit“ (Hersteller), „5 Mrd. €“ (EU, hochgerechnet aus einem dänischen Programm), „146 Mrd. €“ (ifo,
+BIP-Verlust, keine Verwaltungskosten). **Annahme für das Modell:** Verwaltung netto 0,1 bis 0,3 % des BIP nach 8 bis 12 Jahren; mehr als
+0,4 Punkte spekulativ. Aufgabenstreichung ist davon getrennt und nur mit benannten Aufgaben bezifferbar.
+
+**Rechnung (`modell/justierung.py`, erweitert).** Pakete nach den Entscheidungen (28 % bleibt; Stufen beim 1-/1,5-/2-/3-fachen Grundbedarf;
+Erbschaftsfreibetrag 100.000 €; Vermögensteuer 1,5 %; Mehrwertsteuer +2 oder +3; Verwaltung 0,1 oder 0,3):
+  - P4 Entscheidung v3.35 (28 % bleibt, Stufen 1/1,5/2/3, Erbe 100k, Vermögen 1,5 %, Label +2, Verwaltung 0,1): +2.34; Lücke 0.58; Reserve 0.3
+  - P4 wie oben, Verwaltung 0,3: +2.54; Lücke 0.38; Reserve 0.5
+  - P5 wie P4, Label +3, Verwaltung 0,1: +2.71; Lücke 0.21; Reserve 0.67
+  - P5 wie P4, Label +3, Verwaltung 0,3: +2.91; Lücke 0.01; Reserve 0.87
+Nur mit allen Hebeln am oberen Rand (Mehrwertsteuer +3, effektiv 19.88 %, Preise etwa +2,9 % gegen heute; Verwaltung 0,3)
+ist die Lücke geschlossen; die Reserve der Mindestdividende bleibt mit 0,87 Punkten unter dem Vorschlag von 1,0.
+
+**Korrektur 58** (Abschnitt 4): Aussage im Gesamtkonzept zur Verwaltung in Estland und zu 1,02 Punkten des BIP nicht belegt.
+
+**Offen:** Stabilitätsmechanismus ohne neue Steuer (Ausgleichsrücklage, Dividende über gleitenden Mehrjahresdurchschnitt); Liste der Aufgaben,
+die gestrichen werden können; Wahl zwischen P4 und P5.
+
+**Geprüft:** `python3 modell/alles.py`. **Wodurch aufgefallen:** Frage der Initiative nach Belegen; Abgleich mit dem Konzepttext.
+
+*Skript: `modell/justierung.py`. Quellen: NKR/Fraunhofer FOKUS (2015); NKR/McKinsey (2017); NKR-Jahresbericht 2025 (BT-Drs. 21/3050); Eurostat
+gov_10a_exp (COFOG GF01, GF0101); Okunogbe und Pouliquen (2022); Banerjee u. a. (2020); Bundesrechnungshof (2023); Flyvbjerg und Budzier (2013);
+e-Estonia; Falck, Guo, Pfaffl (ifo Schnelldienst 11/2024).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
-Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
+Neu ab v3.8: die Nummern 47 bis 58. **Nächste freie Nummer: 59.** Die Nummern 31 bis 41 sind
 besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 
 | Nr. | Was war falsch | Richtig | Wodurch auffiel |
@@ -1578,6 +1620,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 55 | Rechner der Seite zum Stand B: Tarifstufen 12.348 / 25.000 / … EUR (Euro 2026) zusammen mit der Dividende in Preisen 2028 | Beide in Preisen 2028; seit v3.21 Stufen beim 1- bis 5-fachen Grundbedarf 2028 | Umstellung des Tarifs auf den Grundbedarf (v3.21) |
 | 56 | v3.24, `daten/aggregate/laender/pl_eingaben.md`, Zeile „Defizit, Regierungsprognose“: „7,1 % BIP (2026 und 2027); 282,6 Mrd. Zł (2027)“ | 7,1 % ist das Defizit des Gesamtstaats; 282,6 Mrd. Zł ist das Defizit des Staatshaushalts (zentraler Haushalt), eine andere Abgrenzung. Seit v3.25 nicht mehr in der Zeile; seit v3.26 als eigene Zeile gekennzeichnet. Keine Rechnung betroffen | Forsal/PAP 28.08.2026 nennt die 282,6 Mrd. Zł ausdrücklich als „deficyt państwa“ (Nachrecherche v3.26) |
 | 57 | v3.23 (Frankreich), v3.24 bis v3.26 (Standard 2.4): Klubwirkung mit einem Rest-Saldo der übrigen Länder, der den Klub-Gesamtsaldo bei −2,93 % festhielt. Daraus: „Ein französisches Regierungsdefizit wirkt also neutral; das Wachstum entscheidet“ (v3.23); Frankreich B 81,29 %, C 81,96 %; Spanien C 81,15 %; Frankreich und Spanien gemeinsam 81,82 % (v3.26) | Die übrigen Länder behalten ihren eigenen Saldo 2025 (Status quo). Frankreich B 81,05 %, C 81,72 %; Spanien B 81,07 %, C 80,93 %; Niederlande C 81,49 %; Frankreich, Spanien und Niederlande gemeinsam 81,55 %. Die Neutralität des Defizits war ein Artefakt der Methode. Gesamtrechnung und Konzept nicht betroffen (Sensitivität) | v3.27: Die Spalte „Regierungsdefizit“ ergab für jedes Land genau den Referenzwert 81,29 %; das ließ sich nur aus der Bauart erklären |
+| 58 | Gesamtkonzept (seit v3.12), Abschnitt Gemeinden: „Estlands Gemeinden geben 5,8 % aus, Deutschlands 16,8 % … bei vergleichbarem Aufgabenvolumen. Der Weg auf estnisches Niveau setzt 1,02 Punkte des BIP frei.“ | Das vergleichbare Aufgabenvolumen ist nicht belegt; die Aufgaben der Gemeinden unterscheiden sich je Land. Belegt ist eine Einsparung der Verwaltung von netto etwa 0,1 bis 0,3 % des BIP nach 8 bis 12 Jahren (deutsche Ex-ante-Studien); der Verwaltungskern (COFOG GF0101) liegt in Estland mit 1,8 % auf EU-Niveau (1,9 %). Die 1,02 Punkte sind eine rechnerische Obergrenze, keine erreichbare Einsparung. Keine Rechnung betroffen (nicht in der Deckung); Text in der nächsten Fassung zu ändern | Recherche zur Wirkung der Verwaltungsdigitalisierung (v3.35) |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -1606,9 +1649,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.34
+## 7 | Offene Punkte, Stand v3.35
 
-Neu seit v3.23 (Stand v3.34): **Justierungspaket und Stabilitätsreserve (v3.34: kein Paket erreicht Lücke 0 und Reserve 1,0; P3 am nächsten); Name 28:28 oder 29:29; Obergrenze des Dachs gegen kombinierte Risiken**; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.35): **Paket P4 oder P5 (28 % bleibt; nur P5 mit allen Hebeln schließt die Lücke, Reserve 0,87); Stabilitätsmechanismus (Ausgleichsrücklage); Aufgabenliste für Streichungen; Text Verwaltung (Korrektur 58)**; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|
