@@ -1,0 +1,105 @@
+{
+ "standard": "modell/laender/STANDARD.md, Fassung 1.2 (v3.26)",
+ "land": "ES",
+ "name": "Spanien",
+ "bezugsjahr_ausgang": 2025,
+ "preisbasis": "Verhältniszahl (% des BIP), laufende Preise",
+ "wachstum_nominal_pct": 3.0,
+ "ausgang": {
+  "schuld_2025_pct_bip": 100.7,
+  "quelle": "Eurostat gov_10dd_edpt1, GD, S13, 2025 (WebFetch 10.10.2026, amtlich, maschinell). Gleich: Banco de España 31.03.2026, EU-Kommission Frühjahr 2026.",
+  "saldo_2025_pct_bip": -2.4,
+  "saldo_quelle": "Eurostat gov_10dd_edpt1, B9, S13, 2025 (WebFetch 10.10.2026, amtlich, maschinell). Gleich: EU-Kommission Frühjahr 2026."
+ },
+ "regierung": {
+  "saldo_pct_bip": {
+   "2026": -2.1,
+   "2027": -1.8,
+   "2028": -1.6
+  },
+  "quote_pct_bip": {
+   "2026": 99.1,
+   "2027": 97.6,
+   "2028": 96.4
+  },
+  "quelle": "2027 und 2028: Stabilitätsziele 2027–2029, Ministerrat 07.07.2026, Pressemitteilung des Finanzministeriums (Hacienda), amtlich, Prognose/Ziel (WebFetch der Originalseite): Defizit −1,8 % / −1,6 %, Schuld 97,6 % / 96,4 % (2029: −1,5 % / 95,3 %). 2026: Saldo −2,1 % aus dem Informe de Progreso Anual 2026 (30.04.2026), über El Debate 01.05.2026 (Sekundärquelle; Original für den Abruf gesperrt). Schuld 2026 99,1 % abgeleitet aus der Hacienda-Mitteilung („1,5 Punkte weniger“ für 2027); der Informe de Progreso nannte im April 99,3 %."
+ },
+ "pfade": {
+  "A_status_quo": {
+   "beschreibung": "Saldo 2025 bleibt 2026 bis 2028",
+   "werte": {
+    "2026": 100.17,
+    "2027": 99.65,
+    "2028": 99.15
+   }
+  },
+  "B_regierungsdefizit": {
+   "beschreibung": "Regierungssaldo, nominales Wachstum 3,0 %",
+   "werte": {
+    "2026": 99.87,
+    "2027": 98.76,
+    "2028": 97.48
+   }
+  },
+  "C_regierungsschuldenquote": {
+   "beschreibung": "Regierungsquote, implizites Wachstum (reproduziert die Prognose)",
+   "werte": {
+    "2026": 99.1,
+    "2027": 97.6,
+    "2028": 96.4
+   },
+   "wachstum_implizit_pct": {
+    "2026": 3.81,
+    "2027": 3.44,
+    "2028": 2.95
+   },
+   "wachstum_nominal_regierung_pct": {
+    "2026": 5.4
+   },
+   "bestandsanpassung_pct_bip": {
+    "2026": 1.46
+   }
+  }
+ },
+ "abweichung_2028": {
+  "B_minus_C_2028": 1.08,
+  "A_minus_C_2028": 2.75
+ },
+ "gewichtung": {
+  "anteil_klub_bip_pct": 13.1,
+  "klub_2028_referenz": 81.29,
+  "klub_2028_mit_land_status_quo": 81.29,
+  "klub_2028_mit_land_regierungsdefizit": 81.29,
+  "klub_2028_mit_land_regierungsdefizit_und_wachstum": 81.15,
+  "hinweis": "Sensitivität, kein Ersatz für die Gesamtrechnung (Standard 2.4)"
+ },
+ "wohnort": {
+  "preisniveau_2024": 90.7,
+  "faktor_gegen_de": 0.8313,
+  "dividende_boden_2028_eur_monat": 445.01,
+  "dividende_boden_kind_2028_eur_monat": 222.5,
+  "tarifstufen_2028_eur_jahr": [
+   10680,
+   21360,
+   32041,
+   42721
+  ],
+  "tarifsaetze_pct": [
+   0,
+   9,
+   16,
+   21,
+   28
+  ],
+  "einheit": "Euro 2028, nominal. Dividende je Erwachsenem und Monat (Kinder zur Hälfte); Tarifstufen je Jahr",
+  "grundlage": "Boden: halbes Existenzminimum am Wohnort (V3b, v3.20); Stufen: 1- bis 4-facher Grundbedarf (v3.22)",
+  "dividende_ausgezahlt_v3a_2028_eur_monat": 491.17
+ },
+ "eingaben": "daten/aggregate/laender/es_eingaben.md",
+ "luecken": [
+  "Saldo 2026 der Regierung nur über Sekundärquelle (El Debate); Informe de Progreso Anual nicht abrufbar",
+  "Schuld 2026 der Regierung abgeleitet (99,1 %), nicht direkt veröffentlicht gefunden",
+  "Nominales Wachstum 2026 abgeleitet aus real 2,2 % und Deflator 3,1 % (Annahme); 2027 und 2028 nicht gefunden",
+  "Anzahl der Gemeinden (Municipios) nicht belegt"
+ ]
+}

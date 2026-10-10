@@ -1,4 +1,4 @@
-# Projektsteuerung TAX 28:28 (Stand v3.25, 10. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.26, 10. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
@@ -13,10 +13,10 @@ Existenzminimum; Deutschland 591 € je Erwachsenem und Monat 2028, 801 € 2060
 `daten/quellen.csv` (21 Quellen), `daten/aggregate/eingangswerte.csv` (125 Werte mit Abrufadresse).
 
 ## Aufbau
-- `logbuch/` Versionsgeschichte (Band I bis III); Korrekturen fortlaufend, nächste freie Nummer 56.
+- `logbuch/` Versionsgeschichte (Band I bis III); Korrekturen fortlaufend, nächste freie Nummer 57.
 - `modell/gesamtrechnung.py` + `gesamtrechnung.toml`: geltende Rechnung (Selbstprüfung gegen die Originale).
 - `modell/rahmen/` Originalskripte (unverändert), `parameter.toml` + Zweitrechnung: Regression der Fassung 4. Oktober.
-- `modell/laender/` Länderrechnungen nach Standard (`STANDARD.md`, Fassung 1.1): ein Skript `rechne.py`, je Land `<cc>.toml`; Ergebnisse `daten/aggregate/laender/`. Gerechnet: Frankreich, Polen; Spanien nur Eingaben.
+- `modell/laender/` Länderrechnungen nach Standard (`STANDARD.md`, Fassung 1.2): ein Skript `rechne.py`, je Land `<cc>.toml`; Ergebnisse `daten/aggregate/laender/`. Gerechnet: Frankreich, Spanien, Polen; gemeinsame Klubwirkung FR+ES 81,82 % (`laender_klub.json`).
 - `dokumente/` Gesamtkonzept (aus der Rechnung gebaut), `archiv/` ältere Fassungen.
 - `projekt/` Bausteinregister (22), Nahtstellen (13), Prüfsummen, `pruefe_projekt.py`.
 - `schnittstelle/`, `beitraege/` für Dritte (Mikrosimulation erst nach Prüfung der Aggregate).
@@ -34,4 +34,4 @@ Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell): je 
 2. **B15:** BIP (DE bei Eurostat revidiert, +1,34 %), Schuldenquoten, Renditen, COFOG-Posten neu abrufen; Zinsausgaben Estland nachholen. **B19:** Zuordnung der Posten dokumentieren.
 3. **B16:** Seite in sechs Sprachen (`seite/stand-b/*.html`, Bau: `python3 seite/werkzeuge/seite_bau.py`); Gegenlesen, Länderanpassung und Veröffentlichung offen.
 4. Haushaltsmikrosimulation (kalibriert die Tarifstufen 0/9/16/21/28 am Grundbedarf).
-5. **Länderrechnungen:** Spanien nach dem Standard; Polen 2028 aus dem Original; Entscheidung über Wachstum je Land (Polen 6,2 % nominal statt 3,0 %); Umsetzung in Webseite und Konzepttexten (Standard 6).
+5. **Länderrechnungen:** Polen 2028 aus dem Original; weitere Länder; Entscheidung über Wachstum je Land (Polen 6,2 % nominal statt 3,0 %); Umsetzung in Webseite und Konzepttexten (Standard 6).

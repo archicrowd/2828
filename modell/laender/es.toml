@@ -1,0 +1,26 @@
+# Spanien: Eingaben für modell/laender/rechne.py (Standard, modell/laender/STANDARD.md)
+# Eingabedatei mit Quellen und Status: daten/aggregate/laender/es_eingaben.md
+
+land = "ES"
+name = "Spanien"
+
+schuld_2025 = 100.7
+schuld_2025_quelle = "Eurostat gov_10dd_edpt1, GD, S13, 2025 (WebFetch 10.10.2026, amtlich, maschinell). Gleich: Banco de España 31.03.2026, EU-Kommission Frühjahr 2026."
+
+saldo_2025 = -2.4
+saldo_2025_quelle = "Eurostat gov_10dd_edpt1, B9, S13, 2025 (WebFetch 10.10.2026, amtlich, maschinell). Gleich: EU-Kommission Frühjahr 2026."
+
+saldo_regierung = [-2.1, -1.8, -1.6]
+quote_regierung = [99.1, 97.6, 96.4]
+regierung_quelle = "2027 und 2028: Stabilitätsziele 2027–2029, Ministerrat 07.07.2026, Pressemitteilung des Finanzministeriums (Hacienda), amtlich, Prognose/Ziel (WebFetch der Originalseite): Defizit −1,8 % / −1,6 %, Schuld 97,6 % / 96,4 % (2029: −1,5 % / 95,3 %). 2026: Saldo −2,1 % aus dem Informe de Progreso Anual 2026 (30.04.2026), über El Debate 01.05.2026 (Sekundärquelle; Original für den Abruf gesperrt). Schuld 2026 99,1 % abgeleitet aus der Hacienda-Mitteilung („1,5 Punkte weniger“ für 2027); der Informe de Progreso nannte im April 99,3 %."
+
+wachstum_nominal_regierung = { "2026" = 5.4 }
+preisniveau_2024 = 90.7   # Eurostat prc_ppp_ind, PLI_EU27_2020, A01 (wie daten/aggregate/preisniveau_2024.csv)
+
+eingaben = "daten/aggregate/laender/es_eingaben.md"
+luecken = [
+  "Saldo 2026 der Regierung nur über Sekundärquelle (El Debate); Informe de Progreso Anual nicht abrufbar",
+  "Schuld 2026 der Regierung abgeleitet (99,1 %), nicht direkt veröffentlicht gefunden",
+  "Nominales Wachstum 2026 abgeleitet aus real 2,2 % und Deflator 3,1 % (Annahme); 2027 und 2028 nicht gefunden",
+  "Anzahl der Gemeinden (Municipios) nicht belegt",
+]

@@ -1,6 +1,6 @@
 # Spanien: Eingangsdaten für die länderspezifische Fassung
 
-Stand: 10. Oktober 2026 · Modellstand v3.24 (Modellwerte unverändert) · Bausteine: B20 (Gesamtrechnung), dieser Datei. Keine Rechnung in diesem Schritt; die Modellwerte bleiben unverändert (Elastizität der Annahmen).
+Stand: 10. Oktober 2026 · Modellstand v3.26 (Modellwerte unverändert); Rechnung nach Standard seit v3.26: `modell/laender/es.toml`, Ergebnis `daten/aggregate/laender/es.json` · Bausteine: B20 (Gesamtrechnung), dieser Datei. Keine Rechnung in diesem Schritt; die Modellwerte bleiben unverändert (Elastizität der Annahmen).
 
 Abgerufen am 10.10.2026 durch Rechercheagenten (WebFetch/WebSearch). **Nicht von mir gegen die Originale geprüft.** Eurostat-Werte aus der Array-Position abgeleitet, an der Datenbank gegenzuprüfen. Status: amtlich, Sekundärquelle, Prognose, Annahme.
 
@@ -15,6 +15,20 @@ Abgerufen am 10.10.2026 durch Rechercheagenten (WebFetch/WebSearch). **Nicht von
 | Schuldenstand, Prognose | 2026: 99,1 % (Hacienda), 99,9 % (AIReF); 2027: 97,6 % (Hacienda), 98,2 % (AIReF), 97,9 % (BdE) | 2026–2027 | El Independiente 08.07.2026; Bolsamania 18.06.2026 | Prognose, **Sekundärquelle** |
 | Defizit, Prognose | 2026: 2,4 % (BdE), 2,1 % (Regierung, Nov. 2025); 2027: 2,3 % (BdE), 1,8 % (Regierung); 2028: 1,6 % (Regierung) | 2026–2028 | Bolsamania; Forbes 18.11.2025 | Prognose, **Sekundärquelle** |
 | Schuldenstand 2028 | nicht gefunden | — | — | Lücke |
+
+**Nachrecherche v3.26 (10.10.2026):**
+
+| Größe | 2026 | 2027 | 2028 | 2029 | Quelle | Status |
+|---|---|---|---|---|---|---|
+| Defizit, Stabilitätsziele | — | −1,8 | −1,6 | −1,5 | Finanzministerium, Pressemitteilung 07.07.2026 (Ministerrat), WebFetch der Originalseite | amtlich, Ziel |
+| Schuld, Stabilitätsziele | 99,1 (abgeleitet) | 97,6 | 96,4 | 95,3 | wie oben; 2026 aus „1,5 Punkte weniger“ abgeleitet | amtlich, Ziel |
+| Defizit / Schuld, Informe de Progreso Anual | −2,1 / 99,3 | — | — | — | Informe 30.04.2026, über El Debate 01.05.2026 (Original für Abruf gesperrt) | Prognose, Sekundärquelle |
+| Wachstum real / Deflator | 2,2 % / 3,1 % | — | — | — | wie oben; nominal 5,4 % daraus abgeleitet | Sekundärquelle, Ableitung = Annahme |
+| Saldo / Schuld, EU-Kommission | −2,4 / 99,6 | −2,0 / 98,9 | — | — | Frühjahrsprognose 21.05.2026 | amtlich, Prognose |
+
+Der Widerspruch Defizit 2026 Regierung 2,1 % gegen BdE 2,4 % bleibt: Die EU-Kommission sieht ebenfalls 2,4 %. Die Lücke „Schuldenstand 2028“ ist geschlossen (96,4 %, amtliches Ziel).
+
+**Ergebnis nach Standard (v3.26):** Pfad A 2028 99,2 %, Pfad B 97,5 %, Pfad C (Regierung) 96,4 %. Bestandsanpassung 2026: 1,5 Punkte (mit abgeleitetem Wachstum, Annahme). Wohnort (Euro 2028, nominal): Dividendenboden 445,01 € je Erwachsenem und Monat, ausgezahlt (V3a) 491,17 €; Tarifstufen 10.680 / 21.360 / 32.041 / 42.721 €. Klubwirkung: mit Spanien auf dem Regierungspfad 81,15 % statt 81,29 %.
 
 Haushalt 2026: Nach Presse (Forbes 26.04.2026) wurden die Presupuestos 2026 nicht vorgelegt; es gelten die verlängerten Haushalte von 2023 (prorrogados). **Sekundärquelle**, Congreso/BOE nicht geprüft.
 

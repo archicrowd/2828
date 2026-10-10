@@ -1,4 +1,4 @@
-# Polen: Eingangsdaten für die Länderrechnung (Standard Fassung 1.1, Modellstand v3.25)
+# Polen: Eingangsdaten für die Länderrechnung (Standard Fassung 1.2, Modellstand v3.26)
 
 Stand: 10. Oktober 2026. Rechnung: `modell/laender/rechne.py`; Parameter: `modell/laender/pl.toml`; Ergebnis: `daten/aggregate/laender/pl.json`.
 
@@ -20,13 +20,14 @@ Die Abweichung beim Saldo 2025 ist geklärt. Eurostat, der Fortschrittsbericht u
 
 | Größe | 2026 | 2027 | 2028 | 2030 | Quelle | Status |
 |---|---|---|---|---|---|---|
-| Saldo, Haushaltsentwurf 2027 | −7,1 | −7,1 | — | — | Ministerrat 28.08.2026, über Notes from Poland und rp.pl | Prognose, Sekundärquelle (zwei Quellen) |
+| Saldo Gesamtstaat, Haushaltsentwurf 2027 | −7,1 | −7,1 | — | — | Ministerrat 28.08.2026; 2027: PAP Biznes (Überschrift), Notes from Poland; 2026: rp.pl („tyle ile rok wcześniej“), Notes from Poland | Prognose, Sekundärquelle (je zwei Quellen) |
+| Defizit des Staatshaushalts (nicht Gesamtstaat) | — | 282,6 Mrd. Zł | — | — | Forsal/PAP 28.08.2026 | Sekundärquelle; nicht in der Rechnung. In v3.24 irrtümlich in der Zeile zum Gesamtstaat geführt (Korrektur 56) |
 | Saldo, Fortschrittsbericht | −6,8 | — | — | — | Fortschrittsbericht 28.04.2026, Tabelle 7 (gov.pl) | amtlich, Prognose (älter) |
 | Saldo, EU-Kommission | −6,5 | −6,3 | — | — | Frühjahrsprognose 21.05.2026 (Länderseite der Kommission) | amtlich, Prognose |
-| Schuld (EU-Def.), Schuldenstrategie 2027–2030 | 67,6 | 69,3 | — | 76,6 | Ministerrat Ende September 2026; rp.pl 29.09.2026, Parkiet 29.09.2026, Interia | Prognose, **Sekundärquelle** (drei übereinstimmende Quellen); Original (Sejm-Drucksache 3150) nicht abrufbar |
+| Schuld (EU-Def.), Schuldenstrategie 2027–2030 | 67,6 | 69,3 | — | 76,6 | Ministerrat Ende September 2026; rp.pl 29.09.2026, Parkiet 29.09.2026, Interia | Prognose, **Sekundärquelle** (vier übereinstimmende Quellen: zusätzlich Forsal/PAP 29.09.2026); Original (Sejm-Drucksache 3150) nicht abrufbar |
 | Schuld (EU-Def.), Fortschrittsbericht | 65,1 | — | — | — | Fortschrittsbericht 28.04.2026 | amtlich, Prognose (älter) |
 | Schuld (EU-Def.), EU-Kommission | 64,5 | 68,3 | — | — | Frühjahrsprognose 21.05.2026 | amtlich, Prognose |
-| Schuld, nationale Definition (PDP) | — | 55,9 | 58,6 | — | Schuldenstrategie 2027–2030, über Parkiet und Interia | Sekundärquelle; Strefa Biznesu nennt 55,09 für 2027 (Widerspruch, vermutlich Schreibfehler) |
+| Schuld, nationale Definition (PDP) | 55,3 | 55,9 | 58,6 | 58,3 | Schuldenstrategie 2027–2030, über Parkiet und Interia | Sekundärquelle; Strefa Biznesu nennt 55,09 für 2027 (Widerspruch, vermutlich Schreibfehler) |
 | Nominales BIP-Wachstum | 6,2 % | — | — | — | Fortschrittsbericht 28.04.2026, Tabelle 3 | amtlich, Annahme der Regierung |
 
 In der Rechnung verwendet: Saldo −7,1 % (2026, 2027) aus dem jüngsten Regierungsdokument, 2028 Annahme gleich 2027. Schuldenquote 67,6 / 69,3 % aus der Schuldenstrategie. 2028: **Annahme** 71,7 %, linear interpoliert zwischen 2027 und 2030 (Standard 2.3).
@@ -66,6 +67,7 @@ Nicht im Wortlaut geprüft. Der Abruf des englischen Verfassungstexts beim Sejm 
 3. Nominales Wachstum der Regierung nur für 2026.
 4. Schuldenstrategie 2027–2030 und Haushaltsentwurf 2027 nicht am Original geprüft.
 5. Verfassungswortlaut.
+6. Anzahl der Gemeinden (gminy) nicht belegt; die Übersicht des Geoportals (Stand 01.01.2026) nennt keine Zahl im Text.
 
 ## 7. Abrufe am 10.10.2026 (WebFetch)
 

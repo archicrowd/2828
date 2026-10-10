@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Länderrechnungen nach dem Standard (modell/laender/STANDARD.md, Modellstand v3.25).
+"""Länderrechnungen nach dem Standard (modell/laender/STANDARD.md, Modellstand v3.26).
 
 Ein gemeinsames Skript für alle Länder. Eingaben je Land: modell/laender/<cc>.toml.
 Ausgabe: daten/aggregate/laender/<cc>.json und daten/aggregate/laender_vergleich.csv.
@@ -159,7 +159,7 @@ def rechne(p):
     else:
         gew = dict(entfaellt="Land nicht im Gewichtsbestand der Gesamtrechnung (modell/rahmen/basis.py)")
     return dict(
-        standard="modell/laender/STANDARD.md, Fassung 1.1 (v3.25)", land=cc, name=p["name"],
+        standard="modell/laender/STANDARD.md, Fassung 1.2 (v3.26)", land=cc, name=p["name"],
         bezugsjahr_ausgang=2025, preisbasis="Verhältniszahl (% des BIP), laufende Preise",
         wachstum_nominal_pct=G_NOM,
         ausgang=dict(schuld_2025_pct_bip=d25, quelle=p["schuld_2025_quelle"],
@@ -186,6 +186,29 @@ def main():
             sys.exit(f"{datei.name}: saldo_regierung braucht 3 Werte, quote_regierung 0 oder 3")
         ergebnisse.append(rechne(p))
     OUT.mkdir(parents=True, exist_ok=True)
+    # Standard 2.4, gemeinsame Wirkung: alle Länder mit Regierungspfad C im Gewichtsbestand zugleich auf ihrem Pfad,
+    # die übrigen Länder tragen den Rest-Saldo des Klubs (Klub-Gesamtsaldo bleibt −2,93 %), Wachstum 3,0 %.
+    L = [r for r in ergebnisse if r["land"] in GDP and "werte" in r["pfade"]["C_regierungsschuldenquote"]]
+    if L:
+        w_l = sum(GDP[r["land"]] for r in L)
+        rest = TOT - w_l
+        d_rest = sum(GDP[k] * KLUB[k] for k in GDP if k not in {r["land"] for r in L}) / rest
+        d_l = {r["land"]: KLUB[r["land"]] for r in L}
+        for j in JAHRE:
+            s = {r["land"]: r["regierung"]["saldo_pct_bip"][str(j)] for r in L}
+            g = {r["land"]: r["pfade"]["C_regierungsschuldenquote"]["wachstum_implizit_pct"][str(j)] for r in L}
+            s_rest_j = (KLUB_SALDO * TOT - sum(s[c] * GDP[c] for c in s)) / rest
+            d_rest = d_rest / (1 + G_NOM / 100) - s_rest_j
+            for c in d_l:
+                d_l[c] = d_l[c] / (1 + g[c] / 100) - s[c]
+        k_gem = (d_rest * rest + sum(d_l[c] * GDP[c] for c in d_l)) / TOT
+        gem = dict(laender=[r["land"] for r in L], anteil_klub_bip_pct=round(w_l / TOT * 100, 1),
+                   klub_2028_referenz=round(klub_referenz(), 2), klub_2028_gemeinsam=round(k_gem, 2),
+                   hinweis="Alle genannten Länder zugleich auf ihrem Regierungspfad (Saldo und implizites Wachstum); "
+                           "Sensitivität, kein Ersatz für die Gesamtrechnung (Standard 2.4)")
+        (AGG / "laender_klub.json").write_text(json.dumps(gem, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"Klub 2028 gemeinsam ({', '.join(gem['laender'])}, {gem['anteil_klub_bip_pct']} % des Klub-BIP): "
+              f"{gem['klub_2028_gemeinsam']} gegen Referenz {gem['klub_2028_referenz']}")
     for r in ergebnisse:
         (OUT / f"{r['land'].lower()}.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
     with open(AGG / "laender_vergleich.csv", "w", encoding="utf-8", newline="") as f:

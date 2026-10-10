@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.25**
+Stand: 10. Oktober 2026 · Modellstand **v3.26**
 
 ---
 
@@ -1178,9 +1178,47 @@ Grund war damit falsch; eine Zahl war nicht betroffen.
 
 ---
 
+### v3.26 — Spanien nach dem Standard, Polen nachrecherchiert, gemeinsame Klubwirkung; Korrektur 56
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026. Auftrag der Initiative: „wühl dich weiter“.
+
+**Spanien (Rechnung nach Standard, `modell/laender/es.toml`).** Neu gefunden: Stabilitätsziele 2027–2029 (Ministerrat 07.07.2026,
+Pressemitteilung des Finanzministeriums, amtlich): Defizit −1,8 / −1,6 / −1,5 %, Schuld 97,6 / 96,4 / 95,3 %. Schuld 2026 99,1 %
+daraus abgeleitet. Saldo 2026 −2,1 % und Wachstum real 2,2 % / Deflator 3,1 % aus dem Informe de Progreso Anual (30.04.2026) über
+El Debate (Sekundärquelle; Original für den Abruf gesperrt). EU-Kommission Frühjahr 2026 (amtlich): −2,4 / −2,0 %, 99,6 / 98,9 %.
+Ergebnis 2028: Pfad A 99,2 %, B 97,5 %, C (Regierung) 96,4 %. Wohnort: Dividendenboden 445,01 €, ausgezahlt (V3a) 491,17 € je
+Erwachsenem und Monat; Tarifstufen 10.680 / 21.360 / 32.041 / 42.721 € (Euro 2028, nominal). Prüfungen gegen `laendervarianten.json`
+und `tarif_grundbedarf.json` bestanden. Eurostat-Werte aus dem Agentenbericht schon in v3.24 per WebFetch bestätigt.
+
+**Gemeinsame Klubwirkung (Standard Fassung 1.2, 2.4).** Frankreich und Spanien zugleich auf ihrem Regierungspfad (37,3 % des Klub-BIP):
+Klubquote 2028 **81,82 %** statt 81,29 %. Einzeln: Frankreich 81,96 %, Spanien 81,15 %; die Summe der Einzelabweichungen (+0,53) ergibt
+den gemeinsamen Wert. Ausgabe `daten/aggregate/laender_klub.json`. Die Entscheidung 81,3 oder 82,0 % bleibt bei der Initiative; der
+gemeinsame Wert liegt näher an 82,0 %, beruht aber auf zwei von zehn Ländern.
+
+**Polen, nachrecherchiert.** Schuldenstrategie 2027–2030: vierte übereinstimmende Quelle (Forsal/PAP 29.09.2026); nationale Schuld
+(PDP) 55,3 % (2026), 58,3 % (2030). Saldo 2027 −7,1 % für den Gesamtstaat bestätigt (PAP Biznes, Überschrift), 2026 ebenso (rp.pl,
+Überschrift „tyle ile rok wcześniej“). Weiter **nicht gefunden:** Schuld und Saldo 2028; die Zahlen des mehrjährigen Finanzplans (WPFP)
+sind in den erreichbaren Quellen nicht genannt. Annahmen aus v3.25 bleiben.
+
+**Korrektur 56.** In v3.24 stand in `pl_eingaben.md` „282,6 Mrd. Zł (2027)“ in der Zeile zum Gesamtstaatsdefizit. Das ist das
+Defizit des Staatshaushalts. Keine Rechnung betroffen.
+
+**Nicht gefunden:** Zahl der Gemeinden in Spanien und Polen (keine Zahl in den erreichbaren amtlichen Seiten); Verfassungswortlaut Polens.
+Gesperrt für den Abruf: Informe de Progreso Anual (Ministerium, robots), AIReF-Bericht (robots), Sejm-Drucksache 3150.
+
+**Geprüft:** `python3 modell/alles.py`; Frankreich unverändert; gemeinsame Wirkung gegen die Summe der Einzelwirkungen.
+
+**Wodurch aufgefallen:** Nachrecherche; die Korrektur 56 beim Abgleich der Haushaltsangaben (Forsal/PAP: „deficyt państwa“).
+
+*Skripte: `modell/laender/rechne.py` (gemeinsame Wirkung), `modell/laender/es.toml` (neu). Quellen: Hacienda, Pressemitteilung
+07.07.2026; EU-Kommission, Frühjahrsprognose 2026 (Spanien); El Debate 01.05.2026; Forsal/PAP 28.08. und 29.09.2026;
+PAP Biznes und rp.pl (Überschriften, 28.08.2026).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
-Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
+Neu ab v3.8: die Nummern 47 bis 56. **Nächste freie Nummer: 57.** Die Nummern 31 bis 41 sind
 besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 
 | Nr. | Was war falsch | Richtig | Wodurch auffiel |
@@ -1194,6 +1232,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 53 | Veröffentlichte Webseite (Stand A, Kasten „Warum Estland im Klub ist"): „Ab Januar 2026 gilt ein Satz von 24 %" | Estland bleibt 2026 bei 22 %; die geplante Anhebung wurde 2025 aufgegeben (Sekundärquellen, amtlich zu prüfen) | Recherche für die Länderbeispiele der neuen Seite (v3.15) |
 | 54 | v3.17, Lesart V3b (`laendervarianten.py`, Logbuch v3.17): halbes Existenzminimum 514,50 EUR je Erwachsenem „in Preisen 2028", Deckungsgrad 104,8 % | 514,50 EUR ist der Grundfreibetrag 2026 nominal; in Preisen 2028 (2 % je Jahr, Annahme) 535,29 EUR. Deckungsgrad 2028 bei Quote 30,9 % damit rund 101 %, nicht 105 % | Umsetzung der Entscheidung B17 (v3.20): Preisbasis des Ankers gegen die der Rechnung geprüft |
 | 55 | Rechner der Seite zum Stand B: Tarifstufen 12.348 / 25.000 / … EUR (Euro 2026) zusammen mit der Dividende in Preisen 2028 | Beide in Preisen 2028; seit v3.21 Stufen beim 1- bis 5-fachen Grundbedarf 2028 | Umstellung des Tarifs auf den Grundbedarf (v3.21) |
+| 56 | v3.24, `daten/aggregate/laender/pl_eingaben.md`, Zeile „Defizit, Regierungsprognose“: „7,1 % BIP (2026 und 2027); 282,6 Mrd. Zł (2027)“ | 7,1 % ist das Defizit des Gesamtstaats; 282,6 Mrd. Zł ist das Defizit des Staatshaushalts (zentraler Haushalt), eine andere Abgrenzung. Seit v3.25 nicht mehr in der Zeile; seit v3.26 als eigene Zeile gekennzeichnet. Keine Rechnung betroffen | Forsal/PAP 28.08.2026 nennt die 282,6 Mrd. Zł ausdrücklich als „deficyt państwa“ (Nachrecherche v3.26) |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -1222,9 +1261,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.25
+## 7 | Offene Punkte, Stand v3.26
 
-Neu seit v3.23 (Stand v3.25): Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.26): Klubquote 2028, gemeinsame Wirkung FR+ES 81,82 % (Entscheidung 81,3 / 82,0 %); Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

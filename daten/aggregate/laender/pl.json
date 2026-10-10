@@ -1,5 +1,5 @@
 {
- "standard": "modell/laender/STANDARD.md, Fassung 1.1 (v3.25)",
+ "standard": "modell/laender/STANDARD.md, Fassung 1.2 (v3.26)",
  "land": "PL",
  "name": "Polen",
  "bezugsjahr_ausgang": 2025,
@@ -22,7 +22,7 @@
    "2027": 69.3,
    "2028": 71.7
   },
-  "quelle": "Saldo: Entwurf Haushalt 2027, Ministerrat 28.08.2026, 7,1 % des BIP für 2026 und 2027 (Sekundärquellen: Notes from Poland 28.08.2026; rp.pl). Älter: Fortschrittsbericht 28.04.2026, 2026: −6,8 % (amtlich); EU-Kommission Frühjahr 2026: −6,5 % / −6,3 % (amtlich, Prognose). 2028: keine Angabe gefunden, Annahme gleich 2027. Quote: Schuldenstrategie 2027–2030 (Ministerrat, Ende September 2026), Schuld nach EU-Definition 67,6 % (2026), 69,3 % (2027), 76,6 % (2030); Original (Sejm-Drucksache 3150) nicht abrufbar, Werte übereinstimmend in rp.pl (29.09.2026), Parkiet (29.09.2026) und Interia (Sekundärquellen)."
+  "quelle": "Saldo: Entwurf Haushalt 2027, Ministerrat 28.08.2026, Gesamtstaat 7,1 % des BIP für 2027 (PAP Biznes, Überschrift; Notes from Poland 28.08.2026) und für 2026 („tyle ile rok wcześniej“, rp.pl, Überschrift; Notes from Poland). Sekundärquellen. Die 282,6 Mrd. Zł sind das Defizit des Staatshaushalts, nicht des Gesamtstaats (Forsal/PAP 28.08.2026). Älter: Fortschrittsbericht 28.04.2026, 2026: −6,8 % (amtlich); EU-Kommission Frühjahr 2026: −6,5 % / −6,3 % (amtlich, Prognose). 2028: keine Angabe gefunden, Annahme gleich 2027. Quote: Schuldenstrategie 2027–2030 (Ministerrat, Ende September 2026), Schuld nach EU-Definition 67,6 % (2026), 69,3 % (2027), 76,6 % (2030); Original (Sejm-Drucksache 3150) nicht abrufbar, Werte übereinstimmend in rp.pl (29.09.2026), Parkiet (29.09.2026), Forsal/PAP (29.09.2026) und Interia (Sekundärquellen)."
  },
  "pfade": {
   "A_status_quo": {
