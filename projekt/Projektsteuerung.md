@@ -1,4 +1,4 @@
-# Projektsteuerung TAX 28:28 (Stand v3.22.1, 9. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.23, 10. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.

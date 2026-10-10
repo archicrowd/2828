@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.22.1**
+Stand: 7. Oktober 2026 · Modellstand **v3.23**
 
 ---
 
@@ -1024,6 +1024,53 @@ Nicht geprüft: ob auf dem Server weitere Dateien der alten Seite liegen (nicht 
 
 ---
 
+### v3.23 — Frankreich: Eingangsdaten und Schuldenfortschreibung (erste länderspezifische Rechnung)
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026.
+Auftrag der Initiative: länderspezifische Betrachtung für die französische Seite; Freigabe der Eurostat-Abrufe.
+
+**Recherche (Agent, geprüft in Teilen).** Eingangsdaten zu Schulden, Sozialbeiträgen, Rente, Einkommensteuer, Kapitalsteuer,
+Mehrwertsteuer, Kommunen, Verfassung, mit Status je Zeile: `daten/aggregate/frankreich_eingaben.md`. Amtlich: INSEE (Schuldenquote
+2025 115,6 %, Defizit 5,1 %), Regierungsprognose (Saldo −5,4 / −5,0 / −3,9 % für 2026–2028, PLF-Anhang und RESF 2027), DGCL
+(34.875 Gemeinden), DGFiP (PFU 31,4 % ab 2026, Quotient familial 1.807 € je Halbanteil). Sekundärquellen gekennzeichnet (Zinsausgaben
+Cour des comptes, HCFP-Einschätzung). **Vom Agenten abgerufen, nicht von mir gegen die Originale geprüft:** alle Einträge mit
+„Agent“ in der Datei.
+
+**Eurostat, selbst abgerufen (10.10.2026):** Sozialbeiträge netto (D61) 2024: Frankreich 16,5 % BIP (Sozialversicherung 14,5 %),
+Deutschland 17,5 % (vorläufig). Alterssicherung (COFOG 10.2) 2024: Frankreich 13,4 %, Deutschland 9,9 % (vorläufig). Die COR-Zahl
+für Rente (14,1 %) hat eine andere Abgrenzung und ist nicht vergleichbar.
+
+**Rechnung (`modell/frankreich.py`, neu).** Schuldenquote Frankreichs mit d(t) = d(t−1)/(1+g) − Saldo (wie `schuldenpfad.py`).
+Drei Pfade: A Klubannahme (Defizit −5,1 %, g 3,0 %) 120,6 % 2028; B Regierungsdefizit, g 3,0 % 119,6 %; C Regierungsdefizit mit
+implizitem Wachstum (1,49 / 2,23 / 2,70 %) 122,4 % = Regierungsprognose. Ergebnis `daten/aggregate/frankreich.json`.
+
+**Wirkung auf den Klub (Sensitivität, kein Ersatz).** Frankreich hat 24,1 % des Klub-BIP. Klubquote 2028: 81,29 % (Konzept
+unverändert), mit Frankreich auf Pfad B 81,29 %, auf Pfad C 81,96 %. Ein französisches Regierungsdefizit wirkt also neutral; das
+Wachstum entscheidet. C liegt innerhalb des Risikofalls im Konzept (+3,5 Punkte, 84,8 %). **Entscheidung der Initiative:** ob die
+Klubquote 2028 auf 82,0 % gesetzt wird.
+
+**Korrigiert (Arbeitsfehler, nicht veröffentlicht):** In der Zwischenrechnung zur Klubwirkung stand 81,04 % für Pfad B. Ursache:
+der Rest-Saldo wurde konstant gehalten, obwohl er sich mit dem Saldo Frankreichs jährlich ändert. Korrekt: 81,29 %. Die Ausgabe des
+Skripts ist die korrekte Fassung.
+
+**Offen:** Mehrwertsteuer-Aufkommen Frankreich (D211), Verwaltungsanteil der Gemeinden (COFOG S1313), Zuständigkeiten der
+Départements und Régions, Verfassungstext (Art. 1 und 72, Abruf fehlgeschlagen), Schuldenstand 2028 in Mrd. €. Vorläufige Werte
+(Eurostat „p“) sind als solche zu führen.
+
+**Früher falsche Angabe, jetzt belegt:** Die Zahl der französischen Gemeinden lag in meiner Antwort bei „rund 35.000“. Amtlich
+sind es 34.875 (1.1.2026).
+
+**Wodurch aufgefallen:** Auftrag der Initiative; die Zwischenrechnung zur Klubwirkung ergab zunächst eine Wirkung, die sich bei
+Prüfung als Rechenfehler erwies.
+
+**Geprüft:** `python3 modell/alles.py` (16 Stufen, neue Stufe „Frankreich Schuldenpfad“); Ausgabe des Skripts gegen die Regierungs-
+prognose (Pfad C reproduziert sie).
+
+*Skripte: `modell/frankreich.py` (neu). Quellen: INSEE IR78; PLF 2027 (Rapport sur la dette); RESF 2027; DGCL Bulletin BIS 206;
+DGFiP Brochure „Calcul de l'impôt“; Eurostat gov_10a_taxag, gov_10a_exp (Abruf 10.10.2026).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -1068,7 +1115,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.22
+## 7 | Offene Punkte, Stand v3.23
 
 | Punkt | Status |
 |---|---|

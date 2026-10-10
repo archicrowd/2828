@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.22.1",
+ "modellstand": "v3.23",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -232,7 +232,7 @@
   {
    "id": "B20",
    "name": "Gesamtrechnung",
-   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv;modell/laendervarianten.py;daten/aggregate/laendervarianten.csv;daten/aggregate/preisniveau_2024.csv;modell/schuldenpfad.py;daten/aggregate/schulden_2010_2025.csv;daten/aggregate/schuldenpfad.json;modell/tarif_grundbedarf.py;daten/aggregate/tarif_grundbedarf.csv;daten/aggregate/tarif_grundbedarf.json",
+   "pfad": "modell/gesamtrechnung.py;modell/gesamtrechnung.toml;modell/pruefe_konzept.py;daten/aggregate/gesamtrechnung.json;daten/aggregate/zinsausgaben_2024.csv;daten/aggregate/deckung_quote.csv;modell/laendervarianten.py;daten/aggregate/laendervarianten.csv;daten/aggregate/preisniveau_2024.csv;modell/schuldenpfad.py;daten/aggregate/schulden_2010_2025.csv;daten/aggregate/schuldenpfad.json;modell/tarif_grundbedarf.py;daten/aggregate/tarif_grundbedarf.csv;daten/aggregate/tarif_grundbedarf.json;modell/frankreich.py;daten/aggregate/frankreich.json;daten/aggregate/frankreich_eingaben.md",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/gesamtrechnung.py (Selbstprüfung gegen final.pfad);modell/pruefe_konzept.py",

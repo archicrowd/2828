@@ -1,0 +1,54 @@
+{
+ "eingaben": {
+  "schuld_2025": 115.6,
+  "saldo_2025": -5.1,
+  "regierung_saldo": {
+   "2026": -5.4,
+   "2027": -5.0,
+   "2028": -3.9
+  },
+  "regierung_quote": {
+   "2026": 119.3,
+   "2027": 121.7,
+   "2028": 122.4
+  },
+  "g_nominal_annahme": 3.0
+ },
+ "pfad_A_klub_annahme": {
+  "2026": 117.33,
+  "2027": 119.02,
+  "2028": 120.65
+ },
+ "pfad_B_regierung_defizit_g3": {
+  "2026": 117.63,
+  "2027": 119.21,
+  "2028": 119.63
+ },
+ "pfad_C_regierung_implizites_wachstum": {
+  "2026": 119.3,
+  "2027": 121.7,
+  "2028": 122.4
+ },
+ "nominales_wachstum_implizit": {
+  "2026": 1.49,
+  "2027": 2.23,
+  "2028": 2.7
+ },
+ "regierung_quote": {
+  "2026": 119.3,
+  "2027": 121.7,
+  "2028": 122.4
+ },
+ "abweichung_B_gegen_regierung_2028": -2.77,
+ "abweichung_A_gegen_regierung_2028": -1.75,
+ "hinweis": "Pfad C reproduziert die Regierungsquote per Konstruktion. Pfad A entspricht der Klubannahme für Frankreich; die Klubannahme (gewichtet −2,93 %) gilt nicht für Frankreich allein.",
+ "klub_2028": {
+  "schulden_klub_2028_schuldenpfad_py": 81.29,
+  "klub_2028_fr_annahme_wie_klub": 81.29,
+  "klub_2028_fr_regierungsdefizit_g3": 81.29,
+  "klub_2028_fr_regierungsdefizit_und_wachstum": 81.96,
+  "fr_2028_pfad_c": 122.4,
+  "fr_gewicht_klub_bip_pct": 24.1,
+  "hinweis": "Klubquote 2028 mit Frankreich auf eigenem Pfad. Die Klubquote im Konzept (81,3 %) bleibt bis zur Entscheidung unverändert."
+ }
+}
