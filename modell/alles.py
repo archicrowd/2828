@@ -25,7 +25,7 @@ STUFEN = [
     ("Aussagen (Fassung 4.10.)", ["modell/pruefe_aussagen.py"]),
     ("Schuldenpfad bis 2028", ["modell/schuldenpfad.py"]),
     ("Tarif nach Grundbedarf", ["modell/tarif_grundbedarf.py"]),
-    ("Frankreich Schuldenpfad", ["modell/frankreich.py"]),
+    ("Länderpfade nach Standard", ["modell/laender/rechne.py"]),
     ("Gesamtrechnung (Fassung 6.10.)", ["modell/gesamtrechnung.py"]),
     ("Ländervarianten (B17)", ["modell/laendervarianten.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),

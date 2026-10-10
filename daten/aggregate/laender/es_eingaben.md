@@ -1,6 +1,6 @@
 # Spanien: Eingangsdaten für die länderspezifische Fassung
 
-Stand: 10. Oktober 2026 · Modellstand v3.23 (unverändert) · Bausteine: B20 (Gesamtrechnung), dieser Datei. Keine Rechnung in diesem Schritt; die Modellwerte bleiben unverändert (Elastizität der Annahmen).
+Stand: 10. Oktober 2026 · Modellstand v3.24 (Modellwerte unverändert) · Bausteine: B20 (Gesamtrechnung), dieser Datei. Keine Rechnung in diesem Schritt; die Modellwerte bleiben unverändert (Elastizität der Annahmen).
 
 Abgerufen am 10.10.2026 durch Rechercheagenten (WebFetch/WebSearch). **Nicht von mir gegen die Originale geprüft.** Eurostat-Werte aus der Array-Position abgeleitet, an der Datenbank gegenzuprüfen. Status: amtlich, Sekundärquelle, Prognose, Annahme.
 
@@ -24,7 +24,7 @@ Widersprüche: Defizit 2026 Regierung 2,1 % gegen BdE 2,4 % (nicht erklärt). Sc
 
 | Größe | Wert | Bezugsjahr | Quelle | Status |
 |---|---|---|---|---|
-| Sozialbeiträge netto (D61), Gesamtstaat | 13,2 % BIP (davon Sozialversicherung S1314: 12,5 %) | 2024 | Eurostat gov_10a_taxag, D61 | amtlich, aus Array abgeleitet |
+| Sozialbeiträge netto (D61), Gesamtstaat | 13,2 % BIP (davon Sozialversicherung S1314: 12,5 %) | 2024 | Eurostat gov_10a_taxag, D61 | amtlich, per WebFetch bestätigt |
 | Gesundheitsausgaben (COFOG 07) | 6,5 % BIP | 2024 | Eurostat gov_10a_exp, GF07, S13 | amtlich, vorläufig |
 
 Zum Vergleich mit den bisherigen Angaben: Frankreich 16,5 % (S1314 14,5 %), Deutschland 17,5 % (vorläufig). Die Rolle des Sistema Nacional de Salud (Comunidades Autónomas als Träger) ist nicht recherchiert.
@@ -64,7 +64,7 @@ Die Comunidades Autónomas setzen eigene Tramos. Splitting im engeren Sinn ist i
 | Größe | Wert | Quelle | Status |
 |---|---|---|---|
 | Normalsatz / ermäßigt / superermäßigt | 21 % / 10 % / 4 % (Ley 37/1992) | SparkReceipt (kommerziell), AEAT nicht abrufbar | Sekundärquelle |
-| Aufkommen (D211, S13) | 6,4 % BIP | Eurostat gov_10a_taxag, 2024, aus Array | amtlich, abgeleitet |
+| Aufkommen (D211, S13) | 6,4 % BIP | Eurostat gov_10a_taxag, 2024, aus Array | amtlich, per WebFetch bestätigt |
 | Befristete Senkungen 2026 | Kraftstoff, Strom, Gas auf 10 % bis 30.06.2026 (RDL 7/2026); Strom/Gas danach bedingt (RDL 18/2026) | Hacienda 20.03.2026; PwC-Newsletter Juli 2026 | amtlich (Mitteilung); Sekundärquelle für Folgeregel; BOE-Wortlaut nicht geprüft |
 
 ## 7. Gemeinden und Regionen
@@ -89,12 +89,15 @@ BOE-A-1978-31229 (BOE Nr. 311, 29.12.1978). Art. 137, 143 und 156 (Autonomie und
 - Originaldokumente der Prognosen (BdE, Hacienda, AIReF) und der Haushaltsverlängerung: nicht abgerufen.
 - Verfassungswortlaut.
 
-## Eurostat-Werte: nicht gegengeprüft
+## Eurostat-Werte: per WebFetch bestätigt (10.10.2026)
 
-Am 10.10.2026 hat die Shell-Umgebung keinen Zugriff auf ec.europa.eu (Proxy: HTTP 403). Die folgenden Werte stammen aus dem Rechercheagenten, der sie aus der Array-Position abgeleitet hat. Sie sind **nicht verifiziert** und vor einer Verwendung in einer Rechnung gegen die Datenbank zu prüfen.
+Die Shell erreicht Eurostat nicht (HTTP 403). Die Abrufe erfolgten über WebFetch (maschinell gelesen). Alle sechs Werte stimmen mit dem Agentenbericht überein.
 
-Zu prüfende Reihen (Agentenangabe):
-
-- `gov_10dd_edpt1`, ES, GD und B9, 2024–2025: 100,7 % / −2,4 % (2025)
-- `gov_10a_taxag`, ES, PC_GDP, D61 und D211, 2024: 13,2 % / 6,4 %
-- `gov_10a_exp`, ES, PC_GDP, GF07, GF1002, TOTAL (S13 bzw. S1313), 2024: 6,5 % / 10,4 % / 6,1 %
+| Reihe | Wert | Bezugsjahr | Status in der Datenbank |
+|---|---|---|---|
+| `gov_10dd_edpt1`, GD, S13 | 100,7 % BIP | 2025 | amtlich |
+| `gov_10dd_edpt1`, B9, S13 | −2,4 % BIP | 2025 | amtlich |
+| `gov_10a_taxag`, D61, S13 | 13,2 % BIP | 2024 | nicht angegeben |
+| `gov_10a_taxag`, D211, S13 | 6,4 % BIP | 2024 | nicht angegeben |
+| `gov_10a_exp`, GF07, S13 | 6,5 % BIP | 2024 | vorläufig (p) |
+| `gov_10a_exp`, GF1002, S13 | 10,4 % BIP | 2024 | vorläufig (p) |

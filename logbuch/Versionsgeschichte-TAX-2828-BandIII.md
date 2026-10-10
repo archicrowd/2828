@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 7. Oktober 2026 · Modellstand **v3.23**
+Stand: 10. Oktober 2026 · Modellstand **v3.24**
 
 ---
 
@@ -1071,6 +1071,60 @@ DGFiP Brochure „Calcul de l'impôt“; Eurostat gov_10a_taxag, gov_10a_exp (Ab
 
 ---
 
+### v3.24 — Standard für Länderrechnungen, Polen, Umstellung Frankreich
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026.
+Auftrag der Initiative: Die Vergleichsrechnungen sollen einen gemeinsamen Standard haben. Der Standard soll das Rechenmodell
+insgesamt festigen und 28:28 länderspezifisch kommunizieren. Danach Polen. Eine Unterscheidung der Länder nach Klub und
+Möglichkeitsraum ist nicht gewünscht und kommt im Standard nicht vor.
+
+**Standard (`modell/laender/STANDARD.md`, Fassung 1).** Jede Eingabe mit Quellenstatus (amtlich, Original geprüft / amtlich,
+maschinell / Sekundärquelle / Prognose / Annahme / Lücke). Staatsschuld und Saldo aus einer gemeinsamen Quelle (Eurostat
+`gov_10dd_edpt1`, S13). Drei Pfade: A Status quo, B Regierungsdefizit, C Regierungsschuldenquote (nur mit Prognose). Der
+Gewichtungsschritt (Wirkung auf die Klubquote 2028) läuft nur für Länder im Gewichtsbestand der Gesamtrechnung und hat eine
+Begründung, wenn er entfällt. Ein gemeinsames Skript `modell/laender/rechne.py` rechnet alle Länder gleich. Je Land eine
+Parameterdatei `modell/laender/<cc>.toml` und eine Eingabedatei `daten/aggregate/laender/<cc>_eingaben.md`.
+
+**Umstellung Frankreich.** `modell/frankreich.py` ist durch `rechne.py` ersetzt. Die neue Ausgabe reproduziert die v3.23-Werte
+auf zwei Stellen: Pfad A 120,65 %, Pfad B 119,63 %, Pfad C 122,4 % (2028). Klubwirkung 81,29 % (Pfad B) und 81,96 % (Pfad C).
+Die Ausgabe ist jetzt `daten/aggregate/laender/fr.json`. Keine Zahl des Konzepts ändert sich.
+
+**Polen (erste Rechnung nach dem Standard).** Schuldenquote 2025: 59,7 % BIP (Eurostat, und GUS: gleiche Zahl). Saldo 2025:
+−7,3 % BIP (Eurostat; GUS vorläufig −7,2 %). Ergebnis 2028: Pfad A (Status quo) 75,9 %; Pfad B (Haushaltsentwurf 2027 mit
+−7,1 % für 2026 und 2027, 2028 gleich 2027 als Annahme) 75,3 %. Pfad C entfällt: keine Schuldenquoten-Prognose der Regierung
+gefunden. Die Gewichtungsrechnung entfällt: Polen steht nicht im Gewichtsbestand der Gesamtrechnung.
+- Bevölkerung 2024 (36.559.233) und BIP 2024 (852.229,8 Mio. €) aus Eurostat abgerufen. Vorher war die Bevölkerung nur
+  aus einer Sekundärquelle bekannt.
+- Quartalswert Schuldenquote 1. Quartal 2026: 61,6 % (Finanzministerium, Sekundärquelle, Kontrollwert, geht nicht in die Rechnung).
+- Der Mittelfristplan 2024 (Ziel: Defizit unter 3 % 2028) ist überholt und nicht eingerechnet.
+- **Offen:** Preisniveau Polen (PLI, EU27 = 100) nicht abrufbar, zweimal fehlgeschlagen. Ohne diesen Wert ist die
+  Dividendenrechnung für Polen nicht möglich. Erneuter Abruf nötig.
+
+**Spanien.** Die Eingaben stehen jetzt unter `daten/aggregate/laender/es_eingaben.md`. Die Rechnung ist noch nicht nach dem
+Standard gerechnet (Entscheidung der Initiative ausstehend). Die Eurostat-Werte aus dem Agentenbericht vom 10.10.2026 sind
+jetzt per WebFetch bestätigt: Schuld 2025 100,7 %; Saldo 2025 −2,4 %; Sozialbeiträge D61 2024 13,2 %; Umsatzsteuer D211 2024
+6,4 %; Gesundheit GF07 2024 6,5 % (vorläufig); Alterssicherung GF1002 2024 10,4 % (vorläufig). Die Abrufe per Shell-Befehl
+waren zuvor nicht möglich (HTTP 403). Der Status „vorläufig“ fehlt bei D61 und D211.
+
+**Korrigiert (Arbeitsfehler, nicht veröffentlicht):** Die Datei `es_eingaben.md` hatte den Abschnitt „Abrufe (Eurostat, 10.10.2026)“
+mit Werten, die ich nicht selbst abgerufen hatte; sie stammten aus dem Agentenbericht. Die Datei ist korrigiert. Die Werte sind jetzt
+per WebFetch bestätigt.
+
+**Geprüft:** `python3 modell/alles.py` (16 Stufen, Stufe „Länderpfade nach Standard“ ersetzt „Frankreich Schuldenpfad“).
+Pfad C reproduziert die Regierungsquote (Prüfung in `rechne.py`). Frankreich gegen v3.23: Abweichung 0,00.
+
+**Wodurch aufgefallen:** Auftrag der Initiative. Die Frankreich-Rechnung war nur eine Einzelrechnung; die Vergleichbarkeit
+mit weiteren Ländern war nicht festgelegt.
+
+**Offen:** Preisniveau Polen; Schuldenquoten-Prognose Polens; Spanien nach dem Standard rechnen; Umsetzung des Standards in
+Webseite und Konzepttexten (Standard 6); Verfassungswortlaut Polens (Art. 15 und 16) nicht geprüft.
+
+*Skripte: `modell/laender/rechne.py` (neu), `modell/frankreich.py` (ersetzt, entfernt). Quellen: Eurostat `gov_10dd_edpt1`,
+`nama_10_gdp`, `demo_gind`, `gov_10a_taxag`, `gov_10a_exp` (WebFetch, 10.10.2026); GUS, 01.04.2026; Notes from Poland,
+12.06.2026 und 28.08.2026 (Sekundärquellen); gov.pl, Mittelfristplan, 08.10.2024.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 53. **Nächste freie Nummer: 54.** Die Nummern 31 bis 41 sind
@@ -1115,7 +1169,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.23
+## 7 | Offene Punkte, Stand v3.24
+
+Neu seit v3.23: Polen, Preisniveau (PLI) nicht abrufbar; Schuldenquoten-Prognose Polens fehlt; Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

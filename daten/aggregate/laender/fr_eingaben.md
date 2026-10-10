@@ -1,6 +1,6 @@
 # Frankreich: Eingangsdaten für die länderspezifische Fassung
 
-Stand: 10. Oktober 2026 · Modellstand v3.23 · Bausteinen: `modell/frankreich.py` (Rechnung), `daten/aggregate/frankreich.json` (Ergebnis)
+Stand: 10. Oktober 2026 · Modellstand v3.24 · Bausteinen: `modell/laender/rechne.py` (Rechnung), `daten/aggregate/laender/fr.json` (Ergebnis)
 
 Die Angaben stammen aus einer Recherche über Abrufe (WebFetch) am 10.10.2026. Die Einträge mit „Agent“ sind von einem
 Rechercheagenten abgerufen und **nicht von mir selbst gegen die Originale geprüft**. Die Einträge mit „geprüft“ habe ich
@@ -87,7 +87,7 @@ Die beiden Rentenzahlen (14,1 % und 13,4 %) stammen aus verschiedenen Abgrenzung
 Artikel 1 und 72 der Verfassung vom 4. Oktober 1958: Légifrance JORFTEXT000000571356 (Fassung 23.07.2017). Der Abruf ist
 fehlgeschlagen; der Wortlaut ist nicht geprüft. Keine Bewertung der Zulässigkeit (keine Rechtsberatung).
 
-## 9. Klub-Rechnung (Ergebnis `modell/frankreich.py`)
+## 9. Klub-Rechnung (Ergebnis `modell/laender/rechne.py`)
 
 Schuldenquote Frankreich 2025: 115,6 %. Gewicht Frankreich am Klub-BIP: 24,1 % (Gewichte BIP 2024, basis.py).
 

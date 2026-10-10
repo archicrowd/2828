@@ -1,0 +1,22 @@
+# Frankreich: Eingaben für modell/laender/rechne.py (Standard, modell/laender/STANDARD.md)
+# Eingabedatei mit Quellen und Status: daten/aggregate/laender/fr_eingaben.md
+
+land = "FR"
+name = "Frankreich"
+
+schuld_2025 = 115.6
+schuld_2025_quelle = "INSEE, Schuldenquote 2025 (IR78, 27.03.2026); amtlich. Die Eurostat-Tabelle gov_10dd_edpt1 ist für Frankreich noch nicht gegengeprüft; Widerspruch 115,6 gegen 115,7 im PLF (Quellen-Text, siehe Eingabedatei)."
+
+saldo_2025 = -5.1
+saldo_2025_quelle = "INSEE, Finanzierungssaldo 2025 (IR78, 27.03.2026); amtlich, Original geprüft im Agentenabruf (Abweichung zum Repository-Wert: keine)."
+
+saldo_regierung = [-5.4, -5.0, -3.9]
+quote_regierung = [119.3, 121.7, 122.4]
+regierung_quelle = "Rapport sur la dette 2027 (PLF 2027) und RESF 2027 (06.10.2026); amtliche Prognose der französischen Regierung. Abruf über Rechercheagenten, nicht selbst gegen das Original geprüft."
+
+eingaben = "daten/aggregate/laender/fr_eingaben.md"
+luecken = [
+  "Schuldenstand 2028 in Mrd. Euro nicht eingetragen (nur Quote)",
+  "Eurostat-Abgleich der Schuldenquote 2025 nicht erfolgt",
+  "Regierungs-Schuldenquote 2025 im PLF: 115,7 (Widerspruch zu INSEE, Ursache ungeklärt)",
+]

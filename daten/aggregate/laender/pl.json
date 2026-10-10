@@ -1,0 +1,56 @@
+{
+ "standard": "modell/laender/STANDARD.md, Fassung 1 (v3.24)",
+ "land": "PL",
+ "name": "Polen",
+ "bezugsjahr_ausgang": 2025,
+ "preisbasis": "Verhältniszahl (% des BIP), laufende Preise",
+ "wachstum_nominal_pct": 3.0,
+ "ausgang": {
+  "schuld_2025_pct_bip": 59.7,
+  "quelle": "Eurostat gov_10dd_edpt1, GD, S13, 2025 (Abruf 10.10.2026 über WebFetch, amtlich, maschinell gelesen). GUS, Veröffentlichung 01.04.2026: 59,7 % (amtlich, Original). Beide Werte stimmen überein.",
+  "saldo_2025_pct_bip": -7.3,
+  "saldo_quelle": "Eurostat gov_10dd_edpt1, B9, 2025 (Abruf 10.10.2026 über WebFetch, amtlich, maschinell gelesen). GUS, vorläufig 01.04.2026: 7,2 %. Abweichung 0,1 Punkte; gewählt wird der Eurostat-Wert, weil er die gemeinsame Quelle aller Länder ist (Standard 1.3). An der Quelle zu prüfen."
+ },
+ "regierung": {
+  "saldo_pct_bip": {
+   "2026": -7.1,
+   "2027": -7.1,
+   "2028": -7.1
+  },
+  "quote_pct_bip": null,
+  "quelle": "Entwurf des Haushalts 2027, Ministerrat 28.08.2026: Defizit 7,1 % des BIP für 2026 und 2027 (Sekundärquelle: Notes from Poland, 28.08.2026, Bezug auf den Ministerratsbeschluss). 2028: keine Angabe; Annahme gleich 2027. Keine Schuldenquoten-Prognose der Regierung gefunden; der Mittelfristplan 2025–2028 nennt nur Ziele (unter 3 % Defizit 2028, unter 60 % Schuld mittelfristig), Stand 2024."
+ },
+ "pfade": {
+  "A_status_quo": {
+   "beschreibung": "Saldo 2025 bleibt 2026 bis 2028",
+   "werte": {
+    "2026": 65.26,
+    "2027": 70.66,
+    "2028": 75.9
+   }
+  },
+  "B_regierungsdefizit": {
+   "beschreibung": "Regierungssaldo, nominales Wachstum 3,0 %",
+   "werte": {
+    "2026": 65.06,
+    "2027": 70.27,
+    "2028": 75.32
+   }
+  },
+  "C_regierungsschuldenquote": {
+   "entfaellt": "keine Schuldenquoten-Prognose eingetragen"
+  }
+ },
+ "abweichung_2028": null,
+ "gewichtung": {
+  "entfaellt": "Land nicht im Gewichtsbestand der Gesamtrechnung (modell/rahmen/basis.py)"
+ },
+ "eingaben": "daten/aggregate/laender/pl_eingaben.md",
+ "luecken": [
+  "Preisniveau Polen (PLI, EU27 = 100) nicht eingetragen: Eurostat-Abruf fehlgeschlagen. Ohne diesen Wert ist die Dividendenrechnung für Polen nicht möglich.",
+  "Schuldenquoten-Prognose der Regierung 2026 bis 2028 nicht gefunden (Mittelfristplan nennt nur Ziele)",
+  "Saldo 2028 ist Annahme (gleich 2027)",
+  "Verlauf der Schuldenquote 2010 bis 2024 nicht eingetragen",
+  "Verfassung (Selbstverwaltung der Gemeinden und Regionen) nicht geprüft"
+ ]
+}

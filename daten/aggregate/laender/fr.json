@@ -1,0 +1,76 @@
+{
+ "standard": "modell/laender/STANDARD.md, Fassung 1 (v3.24)",
+ "land": "FR",
+ "name": "Frankreich",
+ "bezugsjahr_ausgang": 2025,
+ "preisbasis": "Verhältniszahl (% des BIP), laufende Preise",
+ "wachstum_nominal_pct": 3.0,
+ "ausgang": {
+  "schuld_2025_pct_bip": 115.6,
+  "quelle": "INSEE, Schuldenquote 2025 (IR78, 27.03.2026); amtlich. Die Eurostat-Tabelle gov_10dd_edpt1 ist für Frankreich noch nicht gegengeprüft; Widerspruch 115,6 gegen 115,7 im PLF (Quellen-Text, siehe Eingabedatei).",
+  "saldo_2025_pct_bip": -5.1,
+  "saldo_quelle": "INSEE, Finanzierungssaldo 2025 (IR78, 27.03.2026); amtlich, Original geprüft im Agentenabruf (Abweichung zum Repository-Wert: keine)."
+ },
+ "regierung": {
+  "saldo_pct_bip": {
+   "2026": -5.4,
+   "2027": -5.0,
+   "2028": -3.9
+  },
+  "quote_pct_bip": {
+   "2026": 119.3,
+   "2027": 121.7,
+   "2028": 122.4
+  },
+  "quelle": "Rapport sur la dette 2027 (PLF 2027) und RESF 2027 (06.10.2026); amtliche Prognose der französischen Regierung. Abruf über Rechercheagenten, nicht selbst gegen das Original geprüft."
+ },
+ "pfade": {
+  "A_status_quo": {
+   "beschreibung": "Saldo 2025 bleibt 2026 bis 2028",
+   "werte": {
+    "2026": 117.33,
+    "2027": 119.02,
+    "2028": 120.65
+   }
+  },
+  "B_regierungsdefizit": {
+   "beschreibung": "Regierungssaldo, nominales Wachstum 3,0 %",
+   "werte": {
+    "2026": 117.63,
+    "2027": 119.21,
+    "2028": 119.63
+   }
+  },
+  "C_regierungsschuldenquote": {
+   "beschreibung": "Regierungsquote, implizites Wachstum (reproduziert die Prognose)",
+   "werte": {
+    "2026": 119.3,
+    "2027": 121.7,
+    "2028": 122.4
+   },
+   "wachstum_implizit_pct": {
+    "2026": 1.49,
+    "2027": 2.23,
+    "2028": 2.7
+   }
+  }
+ },
+ "abweichung_2028": {
+  "B_minus_C_2028": -2.77,
+  "A_minus_C_2028": -1.75
+ },
+ "gewichtung": {
+  "anteil_klub_bip_pct": 24.1,
+  "klub_2028_referenz": 81.29,
+  "klub_2028_mit_land_status_quo": 81.29,
+  "klub_2028_mit_land_regierungsdefizit": 81.29,
+  "klub_2028_mit_land_regierungsdefizit_und_wachstum": 81.96,
+  "hinweis": "Sensitivität, kein Ersatz für die Gesamtrechnung (Standard 2.4)"
+ },
+ "eingaben": "daten/aggregate/laender/fr_eingaben.md",
+ "luecken": [
+  "Schuldenstand 2028 in Mrd. Euro nicht eingetragen (nur Quote)",
+  "Eurostat-Abgleich der Schuldenquote 2025 nicht erfolgt",
+  "Regierungs-Schuldenquote 2025 im PLF: 115,7 (Widerspruch zu INSEE, Ursache ungeklärt)"
+ ]
+}
