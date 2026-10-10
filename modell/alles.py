@@ -33,6 +33,7 @@ STUFEN = [
     ("Übergangsrechnung 2028–2060", ["modell/uebergang.py"]),
     ("Nachfrageprüfung", ["modell/nachfrage.py"]),
     ("Tragfähigkeit (Entscheidungen)", ["modell/tragfaehigkeit.py"]),
+    ("Justierung und Stabilität", ["modell/justierung.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),
     ("Projektkarte (Datenzugang)", ["projekt/manifest.py"]),

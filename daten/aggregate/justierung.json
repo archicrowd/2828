@@ -1,0 +1,44 @@
+{
+ "hebel": {
+  "einkommen_29": 0.1,
+  "einkommen_29_stufen_1_15_2_3": 1.29,
+  "kapital_29": 0.04,
+  "konzerne_29": 0.13,
+  "erbschaft_satz_29": 0.03,
+  "erbschaft_freibetrag_100k_niedrig": 0.09,
+  "erbschaft_freibetrag_100k_hoch": 0.18,
+  "vermoegen_125": 0.1,
+  "vermoegen_150": 0.19,
+  "label_plus1": 0.38,
+  "label_plus2": 0.77
+ },
+ "erbschaft_mitte": 0.14,
+ "label_effektiv": {
+  "plus1": 17.88,
+  "plus2": 18.88
+ },
+ "luecke_vorher": 2.92,
+ "reserve_heute_pkt": 0.88,
+ "stabilitaetskriterium": "Lücke <= 0 und Reserve >= 1,0 Punkte des BIP (Vorschlag)",
+ "pakete": {
+  "P1 moderat (29:29, Erbe 100k, Vermögen 1,25 %, Label +1)": {
+   "mehr_pct_bip": 0.92,
+   "luecke_danach": 2.0,
+   "reserve_mindestdividende": -1.12,
+   "stabil": false
+  },
+  "P2 kräftig (29:29, Erbe 100k, Vermögen 1,5 %, Label +2)": {
+   "mehr_pct_bip": 1.4,
+   "luecke_danach": 1.52,
+   "reserve_mindestdividende": -0.64,
+   "stabil": false
+  },
+  "P3 wie P2, Stufen 1/1,5/2/3 bei 29 %": {
+   "mehr_pct_bip": 2.59,
+   "luecke_danach": 0.33,
+   "reserve_mindestdividende": 0.55,
+   "stabil": false
+  }
+ },
+ "hinweis": "Hebel grob (deutsche Basis, Kernmodell); Erbschaft und Vermögen mit gekennzeichneten Annahmen"
+}

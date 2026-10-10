@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.33**
+Stand: 10. Oktober 2026 · Modellstand **v3.34**
 
 ---
 
@@ -1521,6 +1521,45 @@ tiefer legen (z. B. 1/1,5/2/3-facher Grundbedarf) oder weitere Bausteine; die al
 
 ---
 
+### v3.34 — Justierungspakete (29:29, Erbschaft, Vermögen, Mehrwertsteuer) und Stabilitätsprüfung
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026. Vorschlag der Initiative: mehrere kleine Justierungen
+(29:29 in allen Konzeptteilen; Erbschaftsfreibetrag 100.000 € je Erwerb; Vermögensteuer etwas höher; Mehrwertsteuer über Produktgruppen
+oder Sätze leicht anheben). Ziel: Stabilität auf allen Ebenen, keine Belastung durch kleine Ausreißer.
+
+**Rechnung (`modell/justierung.py`, neu).** Hebel in Punkten des BIP (grob; Einkommensteuer über das Kernmodell, deutsche Basis; übrige
+proportional): Einkommensteuer 29 % +0.10; mit Stufen beim 1-/1,5-/2-/3-fachen Grundbedarf +1.29; Kapital 29 % +0.04;
+Konzerne 29 % +0.13; Erbschaftssatz 29 % +0.03; Erbschaftsfreibetrag 100.000 € +0.09 bis +0.18 (**Annahme**: 100.000 bis
+200.000 Erwerbe über 200.000 € je Jahr in Deutschland; die Landesstatistik Rheinland-Pfalz 2024 zeigt die Konzentration, aber nur nach
+heutigen Freibeträgen); Vermögensteuer 1,25 % +0.10, 1,5 % +0.19 (**Annahme**: die Hälfte der Mehreinnahme geht durch Ausweichen
+verloren); Mehrwertsteuer-Label (steuernd) alle Sätze +1 +0.38 (effektiv 17.88 %), +2 +0.77 (effektiv 18.88 %).
+Pakete gegen die Lücke nach E1 C (2.92):
+  - P1 moderat (29:29, Erbe 100k, Vermögen 1,25 %, Label +1): +0.92 Punkte; Lücke danach 2.0; Reserve -1.12
+  - P2 kräftig (29:29, Erbe 100k, Vermögen 1,5 %, Label +2): +1.4 Punkte; Lücke danach 1.52; Reserve -0.64
+  - P3 wie P2, Stufen 1/1,5/2/3 bei 29 %: +2.59 Punkte; Lücke danach 0.33; Reserve 0.55
+
+**Stabilität.** Reserve heute: Der Dividendenanteil darf um 0.88 Punkte des BIP sinken, bevor die Mindestdividende im Klubschnitt
+in einem Jahr bricht (Tiefpunkt 108,7 %, 2032). Jede Deckungslücke zehrt diese Reserve auf. Schon die alte Lücke (1,73) übersteigt sie;
+das geltende Konzept ist also nur stabil, wenn die Lücke tatsächlich geschlossen wird. Vorgeschlagenes Kriterium: Lücke geschlossen und
+Reserve mindestens 1,0 Punkte. **Kein Paket erfüllt es**; P3 kommt am nächsten (Restlücke 0,33, Reserve 0,55). Dach: Abstand zur Obergrenze
+35 % im Zentralfall 0,92 Punkte; alle drei Finanzierungsrisiken zugleich −0,59; Verteidigung 3,5 % (Haager Zusage) −2,30.
+
+**Einordnung.** 29:29 bringt zusammen nur +0,30 Punkte; der größte Hebel ist die Lage der Tarifstufen, danach die Mehrwertsteuer. Das
+Schließen der Lücke erhöht die Abgabenlast nicht über die Quote von 31,9 % hinaus; es sorgt dafür, dass die Instrumente die Quote
+tatsächlich erbringen. Die Umbenennung (TAX 28:28, Initiative 28:28) wäre eine eigene Entscheidung.
+
+**Offen (Entscheidung der Initiative):** Paket; zusätzlicher Hebel für die Reserve (etwa 0,8 Punkte, z. B. Label +3 oder Bausteine);
+Stabilitätsmechanismus ohne neue Steuer (Ausgleichsrücklage, Dividende über einen gleitenden Mehrjahresdurchschnitt wie beim Alaska-Fonds);
+Name 28:28 oder 29:29; Obergrenze des Dachs gegen kombinierte Risiken und Verteidigungszusage.
+
+**Geprüft:** `python3 modell/alles.py` (22 Stufen, neu „Justierung und Stabilität“). **Wodurch aufgefallen:** Vorschlag der Initiative;
+Reserve gegen Lücke gestellt.
+
+*Skript: `modell/justierung.py` (neu). Quellen: Gesamtrechnung, Tragfähigkeit, Nachfrageprüfung, Kernmodell; Statistisches Landesamt
+Rheinland-Pfalz, Erbschaft- und Schenkungsteuerstatistik 2024 (Bericht L4093, Tabelle T 5).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
@@ -1567,9 +1606,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.33
+## 7 | Offene Punkte, Stand v3.34
 
-Neu seit v3.23 (Stand v3.33): **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.34): **Justierungspaket und Stabilitätsreserve (v3.34: kein Paket erreicht Lücke 0 und Reserve 1,0; P3 am nächsten); Name 28:28 oder 29:29; Obergrenze des Dachs gegen kombinierte Risiken**; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|
