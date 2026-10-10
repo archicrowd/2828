@@ -1,0 +1,23 @@
+# Anreizbewertung je Land: Wachstumszuschläge aus dem Abbau des Abgabenkeils (modell/anreize.py, Logbuch v3.30)
+# Leitlinie v3.30: Wachstumsannahmen je Land aus der Bewertung des Modells und seiner Anreize, möglichst ohne neue Regeln.
+
+version = "v3.30"
+
+# Wirkung je Prozentpunkt Abbau des Abgabenkeils auf das BIP-Niveau (langfristig), % je Punkt.
+# zentral: Attinasi, Prammer, Stähler, Tasso, van Parys (2019), International Journal of Central Banking 15(4):
+#   Senkung der Arbeitgeberbeiträge um 2,98 Punkte (1 % des BIP, über Konsumsteuer gegenfinanziert) -> BIP +0,83 % => 0,28 % je Punkt.
+#   (Variante Einkommensteuer: +1,04 % => 0,35 % je Punkt.) DSGE-Modell, nicht empirisch geschätzt; vom Agenten im Original gelesen.
+# niedrig: halbe Wirkung, weil Wechselwirkungen den Effekt laut Bassanini und Duval (2006, OECD WP 486) etwa halbieren (Annahme).
+kappa_zentral = 0.28
+kappa_niedrig = 0.14
+
+# Die Literaturwerte gelten für Änderungen um wenige Punkte. Eingerechnet wird deshalb nur der Unterschied zwischen den Ländern
+# (Klubsumme null); der klubweite Niveaueffekt wird ausgewiesen, aber nicht eingerechnet.
+einbinden = "relativ"
+
+# Der Niveaueffekt baut sich über diese Zahl von Jahren auf (Annahme), danach kein Zuschlag mehr.
+aufbau_jahre = 10
+
+# Inzidenz: Die Arbeitgeberbeiträge gehen langfristig in den Bruttolohn über (Arbeitskosten unverändert).
+# Stütze: González-Páramo und Melguizo (2013), etwa zwei Drittel bis 90 % tragen die Beschäftigten (Annahme: voll).
+inzidenz = "voll"

@@ -35,6 +35,8 @@ PLI = {k: float(v["preisniveau_eu27_100"]) for k, v in lies_csv("preisniveau_202
 STAMM = lies_csv("laender_2024.csv")
 SCHULD = lies_csv("schulden_2010_2025.csv")
 PLI_DE = PLI["DE"]
+KEIL = lies_csv("abgabenkeil_2024.csv")                     # OECD Taxing Wages 2025 (seit v3.30)
+ANR = json.loads((AGG / "anreize.json").read_text(encoding="utf-8"))["laender"]
 
 
 def steuer(x, stufen):
@@ -117,6 +119,13 @@ def land(cc):
         elif schuld["regierung_2028"] is None:
             luecken.append("Schulden: keine Regierungsschuldenquote 2028 (Pfad C entfällt)")
     heute = dict(P.get("heute", {}).get(cc, {}))
+    if cc in KEIL:
+        heute["abgabenkeil_pct"] = float(KEIL[cc]["abgabenkeil_pct"])
+        heute["abgabenkeil_quelle"] = "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)"
+    if cc in ANR:
+        heute["keil_2828_pct"] = ANR[cc]["keil_2828_pct"]
+        heute["keil_2828_hinweis"] = ("Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; "
+                                      "ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)")
     for k, lbl in (("abgabenkeil_pct", "Abgabenkeil"), ("kapital_pct", "Kapitalertragsteuer"),
                    ("spitzensatz_pct", "Spitzensatz Einkommensteuer"), ("sozialbeitraege_pct_bip", "Sozialbeiträge")):
         if k not in heute:
@@ -144,7 +153,7 @@ def main():
     for m in P["muster"]:
         spalten += [f"{m['id']}_steuer", f"{m['id']}_satz_pct", f"{m['id']}_dividende_minus_steuer"]
     spalten += ["gemeinde_je_einwohner_land", "gemeinde_je_kind_land", "schuld_2025", "schuld_2028_status_quo",
-                "schuld_2028_regierung", "abgabenkeil_pct", "kapital_pct", "spitzensatz_pct", "sozialbeitraege_pct_bip", "luecken"]
+                "schuld_2028_regierung", "abgabenkeil_pct", "keil_2828_pct", "kapital_pct", "spitzensatz_pct", "sozialbeitraege_pct_bip", "luecken"]
     with open(AGG / "laendervergleich.csv", "w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(spalten)
@@ -156,7 +165,7 @@ def main():
                 row += [mm["einkommensteuer"], mm["durchschnittssatz_pct"], mm["dividende_minus_steuer"]]
             g, s, h = x["gemeinde"] or {}, x["schulden"] or {}, x["heute"]
             row += [g.get("je_einwohner_land", ""), g.get("je_kind_land", ""), s.get("schuld_2025", ""), s.get("status_quo_2028", ""),
-                    s.get("regierung_2028") or "", h.get("abgabenkeil_pct", ""), h.get("kapital_pct", ""),
+                    s.get("regierung_2028") or "", h.get("abgabenkeil_pct", ""), h.get("keil_2828_pct", ""), h.get("kapital_pct", ""),
                     h.get("spitzensatz_pct", ""), h.get("sozialbeitraege_pct_bip", ""), len(x["luecken"])]
             w.writerow(row)
     print(f"{'Land':<4}{'PLI':>7}{'Div Erw':>9}{'Stufe1':>8}{'40k Satz':>9}{'40k D-S':>9}{'Fam D-S':>9}{'Gem/Einw':>9}{'Schuld28 SQ':>12}{'Reg':>7}")

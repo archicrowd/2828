@@ -112,11 +112,13 @@
    },
    "heute": {
     "abgabenkeil_pct": 47.9,
-    "abgabenkeil_quelle": "OECD, Taxing Wages 2025, Tab. 3.1, Alleinstehende, Durchschnittslohn, 2024 (seite/stand-b/QUELLEN.md); amtlich",
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
     "kapital_pct": 26.375,
     "kapital_quelle": "§ 32d EStG mit Solidaritätszuschlag (gesamtrechnung.json); amtlich",
     "sozialbeitraege_pct_bip": 17.5,
-    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024, vorläufig (WebFetch 10.10.2026, fr_eingaben.md); amtlich, maschinell"
+    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024, vorläufig (WebFetch 10.10.2026, fr_eingaben.md); amtlich, maschinell",
+    "keil_2828_pct": 18.1,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
     "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
@@ -203,11 +205,13 @@
     "kapital_pct": 31.4,
     "kapital_quelle": "impots.gouv.fr, PFU ab 2026 (fr_eingaben.md); amtlich, Agent",
     "sozialbeitraege_pct_bip": 16.5,
-    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)"
+    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)",
+    "abgabenkeil_pct": 47.2,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 15.86,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
-   "luecken": [
-    "heute: Abgabenkeil nicht belegt"
-   ]
+   "luecken": []
   },
   {
    "land": "ES",
@@ -287,10 +291,13 @@
     "kapital_pct": 30.0,
     "kapital_quelle": "Base del ahorro, Spitzensatz ab 300.000 Euro, Ley 7/2024 (es_eingaben.md); Sekundärquelle",
     "sozialbeitraege_pct_bip": 13.2,
-    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)"
+    "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)",
+    "abgabenkeil_pct": 40.6,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 12.87,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
-    "heute: Abgabenkeil nicht belegt",
     "heute: Spitzensatz Einkommensteuer nicht belegt"
    ]
   },
@@ -372,10 +379,13 @@
     "spitzensatz_pct": 49.5,
     "spitzensatz_quelle": "Belastingdienst, Box 1 2026 (nl_eingaben.md); amtlich, Agent, nicht selbst geprüft",
     "kapital_pct": 36.0,
-    "kapital_quelle": "Box 3, Satz auf eine fiktive Rendite (nl_eingaben.md); amtlich, Agent; nicht direkt mit einem Satz auf tatsächliche Erträge vergleichbar"
+    "kapital_quelle": "Box 3, Satz auf eine fiktive Rendite (nl_eingaben.md); amtlich, Agent; nicht direkt mit einem Satz auf tatsächliche Erträge vergleichbar",
+    "abgabenkeil_pct": 35.1,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 16.67,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
-    "heute: Abgabenkeil nicht belegt",
     "heute: Sozialbeiträge nicht belegt"
    ]
   },
@@ -453,10 +463,14 @@
     "regierung_2028": null,
     "regierungsdefizit_2028": null
    },
-   "heute": {},
+   "heute": {
+    "abgabenkeil_pct": 35.2,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 14.32,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
+   },
    "luecken": [
     "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
-    "heute: Abgabenkeil nicht belegt",
     "heute: Kapitalertragsteuer nicht belegt",
     "heute: Spitzensatz Einkommensteuer nicht belegt",
     "heute: Sozialbeiträge nicht belegt"
@@ -538,11 +552,14 @@
    },
    "heute": {
     "spitzensatz_pct": 50.0,
-    "spitzensatz_quelle": "Einkommensteuer 2026 ohne Gemeindezuschlag (be_eingaben.md); Sekundärquelle"
+    "spitzensatz_quelle": "Einkommensteuer 2026 ohne Gemeindezuschlag (be_eingaben.md); Sekundärquelle",
+    "abgabenkeil_pct": 52.6,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 17.4,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
     "Schulden: keine Regierungsschuldenquote 2028 (Pfad C entfällt)",
-    "heute: Abgabenkeil nicht belegt",
     "heute: Kapitalertragsteuer nicht belegt",
     "heute: Sozialbeiträge nicht belegt"
    ]
@@ -621,10 +638,14 @@
     "regierung_2028": null,
     "regierungsdefizit_2028": null
    },
-   "heute": {},
+   "heute": {
+    "abgabenkeil_pct": 47.0,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 17.5,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
+   },
    "luecken": [
     "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
-    "heute: Abgabenkeil nicht belegt",
     "heute: Kapitalertragsteuer nicht belegt",
     "heute: Spitzensatz Einkommensteuer nicht belegt",
     "heute: Sozialbeiträge nicht belegt"
@@ -704,10 +725,14 @@
     "regierung_2028": null,
     "regierungsdefizit_2028": null
    },
-   "heute": {},
+   "heute": {
+    "abgabenkeil_pct": 36.1,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 13.64,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
+   },
    "luecken": [
     "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
-    "heute: Abgabenkeil nicht belegt",
     "heute: Kapitalertragsteuer nicht belegt",
     "heute: Spitzensatz Einkommensteuer nicht belegt",
     "heute: Sozialbeiträge nicht belegt"
@@ -787,10 +812,14 @@
     "regierung_2028": null,
     "regierungsdefizit_2028": null
    },
-   "heute": {},
+   "heute": {
+    "abgabenkeil_pct": 44.6,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 9.78,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
+   },
    "luecken": [
     "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
-    "heute: Abgabenkeil nicht belegt",
     "heute: Kapitalertragsteuer nicht belegt",
     "heute: Spitzensatz Einkommensteuer nicht belegt",
     "heute: Sozialbeiträge nicht belegt"
@@ -870,10 +899,14 @@
     "regierung_2028": null,
     "regierungsdefizit_2028": null
    },
-   "heute": {},
+   "heute": {
+    "abgabenkeil_pct": 40.6,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 9.02,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
+   },
    "luecken": [
     "Schulden: nur Status quo, Land noch nicht nach dem Standard gerechnet",
-    "heute: Abgabenkeil nicht belegt",
     "heute: Kapitalertragsteuer nicht belegt",
     "heute: Spitzensatz Einkommensteuer nicht belegt",
     "heute: Sozialbeiträge nicht belegt"
@@ -946,11 +979,15 @@
     "regierung_2028": 71.7,
     "regierungsdefizit_2028": 75.32
    },
-   "heute": {},
+   "heute": {
+    "abgabenkeil_pct": 34.7,
+    "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
+    "keil_2828_pct": 10.29,
+    "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
+   },
    "luecken": [
     "Dividende: nur Boden (V3b), keine ausgezahlte Dividende V3a",
     "Gemeindebudget: nicht gerechnet (Land nicht in laendervarianten.json)",
-    "heute: Abgabenkeil nicht belegt",
     "heute: Kapitalertragsteuer nicht belegt",
     "heute: Spitzensatz Einkommensteuer nicht belegt",
     "heute: Sozialbeiträge nicht belegt"

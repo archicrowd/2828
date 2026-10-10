@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.29",
+ "modellstand": "v3.30",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -273,6 +273,15 @@
    "status": "geprueft",
    "pruefung": "modell/uebergang.py (Selbstprüfung V3a gegen Gesamtrechnung)",
    "anmerkung": "v3.29: Leitlinie der Initiative; V3a gegen V2B (eigener BIP-Anteil mit Boden), Angleichung als Szenario (beta 0 / 2 %); Gesamtrechnung unverändert"
+  },
+  {
+   "id": "B25",
+   "name": "Anreizbewertung je Land (Abgabenkeil)",
+   "pfad": "modell/anreize.py;modell/anreize.toml;daten/aggregate/anreize.json;daten/aggregate/abgabenkeil_2024.csv",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/anreize.py",
+   "anmerkung": "v3.30: OECD Taxing Wages 2025 (Stichprobe geprüft); Keil heute gegen 28:28 beim Durchschnittslohn; Wachstumszuschlag relativ zum Klub (kappa 0,28 / 0,14), klubweiter Effekt nicht eingerechnet"
   }
  ],
  "nahtstellen": [
@@ -411,6 +420,14 @@
    "was": "derselbe Klubtopf je Jahr (reihe_div) wird nach zwei Regeln verteilt",
    "status": "ok",
    "beleg_oder_offener_punkt": "uebergang.py: V3a ohne Angleichung = tabelle_laender_div (2028, 2035, 2060); V2B budgetneutral je Jahr geprüft"
+  },
+  {
+   "id": "N18",
+   "von": "B25 Anreizbewertung",
+   "nach": "B24 Übergangsrechnung",
+   "was": "Wachstumszuschlag je Land aus dem Abbau des Abgabenkeils",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "uebergang.py liest anreize.json (delta_zentral, aufbau_jahre); Zuschlag relativ, Klubsumme durch Skalierung null"
   }
  ],
  "quellen": [

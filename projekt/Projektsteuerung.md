@@ -1,4 +1,4 @@
-# Projektsteuerung TAX 28:28 (Stand v3.29, 10. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.30, 10. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
@@ -19,6 +19,7 @@ Existenzminimum; Deutschland 591 € je Erwachsenem und Monat 2028, 801 € 2060
 - `modell/laender/` Länderrechnungen nach Standard (`STANDARD.md`, Fassung 1.3): ein Skript `rechne.py`, je Land `<cc>.toml`; Ergebnisse `daten/aggregate/laender/`. Gerechnet: Frankreich, Spanien, Niederlande, Belgien, Polen; gemeinsame Klubwirkung FR+ES+NL 81,55 % (`laender_klub.json`, nach Korrektur 57).
 - `modell/laendervergleich.py` + `modell/laender/vergleich.toml`: Ländervergleich nach den Kriterien der Webseite (elf Länder), Ergebnis `daten/aggregate/laendervergleich.json`. Arbeitsweise für nachfolgende Agenten: `modell/laender/ARBEITSANWEISUNG.md` (Kopie im Projektraum).
 - `modell/uebergang.py` + `uebergang.toml`: Übergangsrechnung 2028–2060 nach der Leitlinie v3.29 (nationaler Ausgangspunkt, Angleichung durch gleiche Regeln): Dividende je Land nach V3a und V2B, Angleichung als Szenario.
+- `modell/anreize.py` + `anreize.toml`: Abgabenkeil heute (OECD Taxing Wages 2025) gegen 28:28 und Wachstumszuschlag je Land (relativ zum Klub).
 - `dokumente/` Gesamtkonzept (aus der Rechnung gebaut), `archiv/` ältere Fassungen.
 - `projekt/` Bausteinregister (22), Nahtstellen (13), Prüfsummen, `pruefe_projekt.py`.
 - `schnittstelle/`, `beitraege/` für Dritte (Mikrosimulation erst nach Prüfung der Aggregate).
@@ -36,5 +37,5 @@ Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell): je 
 2. **B15:** BIP (DE bei Eurostat revidiert, +1,34 %), Schuldenquoten, Renditen, COFOG-Posten neu abrufen; Zinsausgaben Estland nachholen. **B19:** Zuordnung der Posten dokumentieren.
 3. **B16:** Seite in sechs Sprachen (`seite/stand-b/*.html`, Bau: `python3 seite/werkzeuge/seite_bau.py`); Gegenlesen, Länderanpassung und Veröffentlichung offen.
 4. Haushaltsmikrosimulation (kalibriert die Tarifstufen 0/9/16/21/28 am Grundbedarf).
-5. **Leitlinie v3.29 (Entscheidungen):** Regel der Dividende V3a oder V2B; Irland; Entzugsrate am Boden; Anreizzuschlag und Wachstum je Land; Boden der Gemeinden.
+5. **Leitlinie v3.29/v3.30 (Entscheidungen):** Regel der Dividende (V2 nach Leitlinie, gleiches Recht, auch Irland); Mindestdividende im Klubschnitt oder je Land; Anreize für Investition, Binnenmarkt und Arbeitsangebot quantifizieren (Literatur widersprüchlich).
 6. **Länderrechnungen:** Polen 2028 aus dem Original; weitere Länder; Entscheidung über Wachstum je Land (Polen 6,2 % nominal statt 3,0 %); Umsetzung in Webseite und Konzepttexten (Standard 6, Nahtstelle N16); Abgabenkeil je Land (OECD Taxing Wages) für den Vergleich „heute gegen 28:28“.

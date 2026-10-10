@@ -1,6 +1,6 @@
 # Arbeitsanweisung für Länderrechnungen und Ländervergleich (für nachfolgende Agenten)
 
-Stand: 10. Oktober 2026, Modellstand v3.29. Sicherung der Arbeitsweise aus den Sitzungen v3.23 bis v3.28. Maßgeblich bleiben `CLAUDE.md`, `modell/laender/STANDARD.md` und das Logbuch (Band III). Diese Anweisung beschreibt, **wie** gearbeitet wurde und welche Fehler vermieden werden müssen.
+Stand: 10. Oktober 2026, Modellstand v3.30. Sicherung der Arbeitsweise aus den Sitzungen v3.23 bis v3.28. Maßgeblich bleiben `CLAUDE.md`, `modell/laender/STANDARD.md` und das Logbuch (Band III). Diese Anweisung beschreibt, **wie** gearbeitet wurde und welche Fehler vermieden werden müssen.
 
 ## 1. Was es gibt
 
@@ -63,6 +63,7 @@ Die Webseite kommuniziert länderbezogen: Dividende je Erwachsenem und je Kind (
 ## 7. Leitlinie der Initiative (v3.29) und Übergangsrechnung
 
 Leitlinie (10.10.2026): Nationalstaaten sind der Ausgangspunkt und werden nicht in Frage gestellt. Mindestens in einer Übergangszeit gelten unterschiedliche Preise und Dividenden. Die Angleichung entsteht durch gleiche Regeln und Chancen über die Zeit von selbst. Wachstumsannahmen sind je Land und mit Bezug auf die Anreize des Modells zu setzen. Wettbewerbsanreize für Gemeinden und Regionen bleiben bei allen Solidarmechanismen bestehen.
+Klarstellung v3.30: gleiches Recht zwingend, keine Sonderbehandlung (auch nicht Irland); keine Aufstockung im Konzept (EU-Förderkulissen, niedrigere Produktionskosten); „Mindestdividende“ statt „Boden“ (Boden = Bodenwertabgabe). Wachstumszuschläge aus `modell/anreize.py` (Abgabenkeil, OECD Taxing Wages 2025), nur relativ zum Klub eingerechnet.
 Umsetzung als Rechnung: `modell/uebergang.py` + `modell/uebergang.toml` (V3a gegen V2B, Angleichung als Szenario, Anreizmaß „Rückfluss“). Die Gesamtrechnung ist nicht verändert; eine Änderung der geltenden Regel ist eine Entscheidung der Initiative.
 
 ## 8. Offene Punkte (Stand v3.29)

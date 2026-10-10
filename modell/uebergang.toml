@@ -2,8 +2,11 @@
 # Leitlinie der Initiative (10.10.2026): Nationalstaaten sind der Ausgangspunkt; unterschiedliche Preise und Dividenden
 # mindestens in einer Übergangszeit; Angleichung entsteht durch gleiche Regeln über die Zeit von selbst;
 # Wettbewerbsanreize für Gemeinden und Regionen bleiben bei allen Solidarmechanismen bestehen.
+# Klarstellung (v3.30): gleiches Recht zwingend, keine Sonderbehandlung (auch nicht Irland); Streuung vorübergehend geduldet;
+# Nachteile von Regionen über EU-Förderkulissen; Selbstregulierung über niedrigere Produktionskosten; Wachstum je Land aus der
+# Bewertung der Anreize des Modells (Arbeitsaufnahme, Investition, Binnenmarkt), möglichst ohne neue Regeln.
 
-version = "v3.29"
+version = "v3.30"
 jahre_ausgabe = [2028, 2035, 2045, 2060]
 
 # Preisniveau folgt dem relativen Realeinkommen (Balassa-Samuelson): ln PLI_c steigt mit epsilon * ln(relatives Einkommen).
@@ -21,6 +24,15 @@ beta = 0.0
 [[szenario]]
 id = "angleichung_2pct"
 beta = 0.02
+# Wachstumszuschlag je Land aus modell/anreize.py (Abbau des Abgabenkeils gegen den Klubschnitt, über 10 Jahre; v3.30)
+[[szenario]]
+id = "anreiz_ohne_angleichung"
+beta = 0.0
+delta = "anreize"
+[[szenario]]
+id = "anreiz_angleichung_2pct"
+beta = 0.02
+delta = "anreize"
 
 
 # Wachstumszuschlag je Land aus den Anreizen des Modells (Prozentpunkte je Jahr). Noch nicht belegt; Vorgabe 0.

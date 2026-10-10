@@ -28,6 +28,7 @@ STUFEN = [
     ("Gesamtrechnung (Fassung 6.10.)", ["modell/gesamtrechnung.py"]),
     ("Ländervarianten (B17)", ["modell/laendervarianten.py"]),
     ("Länderpfade nach Standard", ["modell/laender/rechne.py"]),
+    ("Anreize je Land (Abgabenkeil)", ["modell/anreize.py"]),
     ("Ländervergleich (Webseite)", ["modell/laendervergleich.py"]),
     ("Übergangsrechnung 2028–2060", ["modell/uebergang.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),

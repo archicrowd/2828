@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.29 · höchste Korrekturnummer 57 · 291 Dateien im Repository
+Modellstand v3.30 · höchste Korrekturnummer 57 · 295 Dateien im Repository
 
 ## Bausteine
 
@@ -30,6 +30,7 @@ Modellstand v3.29 · höchste Korrekturnummer 57 · 291 Dateien im Repository
 | B22 | Länderrechnungen nach Standard | B | geprueft | modell/laender/rechne.py |
 | B23 | Ländervergleich nach den Kriterien der Webseite | B | geprueft | modell/laendervergleich.py |
 | B24 | Übergangsrechnung Dividende je Land | B | geprueft | modell/uebergang.py (Selbstprüfung V3a gegen Gesamtrechnung) |
+| B25 | Anreizbewertung je Land (Abgabenkeil) | B | geprueft | modell/anreize.py |
 
 ## Nahtstellen
 
@@ -52,6 +53,7 @@ Modellstand v3.29 · höchste Korrekturnummer 57 · 291 Dateien im Repository
 | N15 | B22 Länderrechnungen | B23 Ländervergleich | ok |
 | N16 | B23 Ländervergleich | B12 Seite zum Stand B | offen |
 | N17 | B20 Gesamtrechnung | B24 Übergangsrechnung | ok |
+| N18 | B25 Anreizbewertung | B24 Übergangsrechnung | ok |
 
 ## Ergebnis dieses Laufs
 

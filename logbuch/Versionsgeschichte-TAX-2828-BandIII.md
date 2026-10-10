@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.29**
+Stand: 10. Oktober 2026 · Modellstand **v3.30**
 
 ---
 
@@ -1351,6 +1351,61 @@ Barro, R. J., Sala-i-Martin, X. (1992): Convergence, Journal of Political Econom
 
 ---
 
+### v3.30 — Klarstellung der Leitlinie: gleiches Recht; Anreizbewertung je Land aus dem Abgabenkeil
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026.
+
+**Klarstellung der Initiative (10.10.2026, sinngemäß).** Ausgangspunkt sind aus statistischen und politischen Gründen die
+Nationalstaaten; Preise und Dividenden unterscheiden sich zwangsläufig. Die Angleichung wird nicht verordnet, sie entsteht aus
+gleichen Regeln über die Zeit. Wachstumsannahmen für Prognosen werden je Land angesetzt, aus der Bewertung des Modells und seiner
+Anreize (Bereitschaft, Arbeit aufzunehmen, zu investieren, Dynamisierung des Binnenmarkts), möglichst ohne neue Regeln. Gemeinden und
+Regionen haben bei Nachteilen die Förderkulissen der EU; Selbstregulierung im Konzept über niedrigere Produktionskosten. Der
+Irland-Effekt erfordert keine Sonderbehandlung; gleiches Recht ist zwingend; Streuung kann vorübergehend geduldet werden.
+
+**Begriff.** In v3.29 stand „Boden“ für die Mindestdividende (halbes Existenzminimum am Wohnort, Entscheidung v3.20). „Boden“ bezeichnet
+im Konzept aber die Bodenwertabgabe. Ab v3.30 heißt es „Mindestdividende“.
+
+**Übergangsrechnung angepasst (`modell/uebergang.py`).** Hauptvariante jetzt **V2** (gleicher Anteil am eigenen BIP je Kopf, ohne
+Aufstockung, ohne Sonderbehandlung Irlands). V2B (mit Aufstockung) bleibt nur als Vergleich. Ausgewiesen wird, wo V2 die Mindestdividende
+unterschreitet: 2028 Frankreich 524 statt 529 €, Spanien 401 statt 445 €, Slowenien 389 statt 446 €, Estland 357 statt 473 €
+(je Erwachsenem und Monat, Preise 2028). Ohne Angleichung bleiben Slowenien und Estland bis nach 2045 darunter; mit Angleichung (beta 2 %)
+Estland bis etwa 2045. **Konflikt mit v3.20:** Dort sichert die Quote die Mindestdividende in jedem Jahr. Unter V2 gilt das nur im
+Klubschnitt, nicht in jedem Land. Entscheidung der Initiative: Mindestdividende als Rechenkriterium der Quote im Klubschnitt (ohne
+Garantie je Land) oder als Zusage je Land (verlangt eine Aufstockung, also eine Sonderregel).
+
+**Anreizbewertung (`modell/anreize.py`, `modell/anreize.toml`, neu; Daten `daten/aggregate/abgabenkeil_2024.csv`).** Abgabenkeil heute
+laut OECD Taxing Wages 2025 (Daten 2024, Alleinstehende, Durchschnittslohn; Rechercheagent, Stichprobe von sechs Werten selbst am Original
+geprüft; DE 47,9 % und OECD 34,9 % gleich Repository). Keil unter 28:28: Arbeitskosten 2028 gleich, Arbeitgeberbeiträge gehen in den
+Bruttolohn über (Inzidenz voll, **Annahme**; Literatur: zwei Drittel bis 90 %), Einkommensteuer nach den Stufen am Grundbedarf des Landes.
+Abbau des Keils: BE 35,2, SI 34,8, EE 31,6, FR 31,3, DE 29,8, AT 29,5, ES 27,7, PL 24,4, DK 22,5, IE 20,9, NL 18,4 Punkte
+(Klubschnitt, BIP-gewichtet, 28,5). Wirkung je Punkt auf das BIP-Niveau: 0,28 % (Attinasi u. a. 2019, IJCB 15(4), DSGE-Modell;
+Agent las das Original) und 0,14 % (halbe Wirkung wegen Wechselwirkungen, Bassanini und Duval 2006, **Annahme**). **Eingerechnet wird nur
+der Unterschied zum Klubschnitt**, aufgebaut über 10 Jahre (**Annahme**): Wachstumszuschlag von +0,19 Punkten je Jahr (Belgien) bis
+−0,28 Punkte je Jahr (Niederlande). Der klubweite Niveaueffekt (zentral 8,0 %) wird nicht eingerechnet: Die Literaturwerte gelten für
+Änderungen um wenige Punkte, nicht für einen Abbau um 20 bis 35 Punkte. **Einschränkung:** Der OECD-Keil enthält keine Konsumsteuern;
+28:28 verlagert Last auf Kapital, Boden, Konsum und Konzerne. Der Vergleich überzeichnet deshalb die Entlastung der Arbeit.
+
+**Ergebnis.** Die Anreize wirken in Richtung Angleichung (stärkster Zuschlag für Länder mit hohem Keil und niedrigerem Einkommen). Die
+Kaufkraftspreizung unter V2 (ohne Irland) sinkt 2060 von 1,70 auf 1,64 ohne und von 1,32 auf 1,30 mit beta-Konvergenz.
+
+**Nicht quantifiziert (Literatur widersprüchlich oder ohne passende Größe):** Investitionen und Unternehmenssteuer (Gechert und Heimberger
+2021: kein Effekt nach Korrektur des Publikationsbias, gegen die OECD-Rangfolge); Dividende und Arbeitsangebot (von null, Alaska, bis
+−4,2 Punkte Erwerbsbeteiligung, US-Experiment 2024); Vertiefung des Binnenmarkts (nur klubweite Szenarien, IWF 2025: +3 % in 10 Jahren);
+Bodenwertabgabe (OECD: Verlagerung zur Grundsteuer am wenigsten schädlich; Größe 0,25 bis 1 % je Prozent des Aufkommens, unsicher).
+Quellenliste mit Status: Agentenbericht vom 10.10.2026 (im Logbuch zusammengefasst, nicht als Datei).
+
+**Ländervergleich ergänzt.** Abgabenkeil heute und unter 28:28 für alle elf Länder (`laendervergleich.json`).
+
+**Geprüft:** `python3 modell/alles.py` (19 Stufen, neu „Anreize je Land (Abgabenkeil)“); Stufen gegen `tarif_grundbedarf.json`.
+
+**Wodurch aufgefallen:** Klarstellung der Initiative; Prüfung der Variante V2 gegen die Entscheidung v3.20.
+
+*Skripte: `modell/anreize.py` (neu), `modell/uebergang.py`, `modell/laendervergleich.py`. Quellen: OECD, Taxing Wages 2025, Tab. 1.2,
+1.4, 1.7; Eurostat `ert_bil_eur_a` (Wechselkurse 2024: 7,4589 DKK, 4,3058 PLN je Euro); Attinasi u. a. (2019); Bassanini und Duval
+(2006); González-Páramo und Melguizo (2013); weitere im Text.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
@@ -1397,9 +1452,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.29
+## 7 | Offene Punkte, Stand v3.30
 
-Neu seit v3.23 (Stand v3.29): Leitlinie v3.29: Regel der Dividende (V3a oder V2B), Irland, Entzugsrate am Boden, Anreizzuschlag und nationale Wachstumsannahmen, Boden der Gemeinden; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.30): Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|
