@@ -86,6 +86,14 @@ def main():
     # Verwaltung (v3.35): netto 0,1 bis 0,3 % des BIP nach 8 bis 12 Jahren (Rechercheagent 10.10.2026: deutsche Ex-ante-Studien
     # NKR/ÖFIT 2015, NKR/McKinsey 2017; COFOG-Abstand im Verwaltungskern DE 2,1 gegen DK 1,7 / EE 1,8 als Obergrenze 0,4). ANNAHME.
     h["verwaltung_niedrig"], h["verwaltung_hoch"] = 0.1, 0.3
+    # Ablösung (v3.36): Verwaltung der Sozialschutzsysteme Deutschland 1,12 % BIP (Eurostat tps00098 x tps00101, 2024 vorläufig);
+    # entfällt durch Steuerfinanzierung ohne Beiträge und automatische Dividende zu 40 bis 70 % (ANNAHME; Gesundheit und Renten-
+    # übergang bleiben zu verwalten). Übertragung auf den Klub mit dem deutschen Anteil (Annahme).
+    h["abloesung_sozialverwaltung_niedrig"], h["abloesung_sozialverwaltung_hoch"] = 1.12 * 0.4, 1.12 * 0.7
+    # Dach (v3.36): Posten Wirtschaftsraum 3,75 = COFOG GF04 (EU27 2024: 5,3) ohne örtlichen Verkehr. Streichung bzw. Abgabe an die
+    # Gemeindeebene ohne zusätzliches Gemeindebudget (Entscheidung der Initiative): S1 Landwirtschaft 0,3 + Industrie 0,2 + halbe Energie 0,3;
+    # S2 dazu halbe allgemeine Wirtschafts- und Arbeitsmarktangelegenheiten 0,5 und halber Rest 0,35. EU27-Anteile als Annahme für den Klub.
+    h["dach_s1"], h["dach_s2"] = 0.3 + 0.2 + 0.3, 0.3 + 0.2 + 0.3 + 0.5 + 0.35
     h = {k: round(v, 2) for k, v in h.items()}
     erb_mitte = round((h["erbschaft_freibetrag_100k_niedrig"] + h["erbschaft_freibetrag_100k_hoch"]) / 2, 2)
     satz29 = h["einkommen_29"] + h["kapital_29"] + h["konzerne_29"] + h["erbschaft_satz_29"]
@@ -100,6 +108,11 @@ def main():
     pakete["P4 wie oben, Verwaltung 0,3"] = basis4 + h["label_plus2"] + h["verwaltung_hoch"]
     pakete["P5 wie P4, Label +3, Verwaltung 0,1"] = basis4 + h["label_plus3"] + h["verwaltung_niedrig"]
     pakete["P5 wie P4, Label +3, Verwaltung 0,3"] = basis4 + h["label_plus3"] + h["verwaltung_hoch"]
+    basis6 = h["einkommen_28_stufen_1_15_2_3"] + erb_mitte + h["vermoegen_150"]
+    for ab, abn in (("abloesung_sozialverwaltung_niedrig", "Ablösung 0,45"), ("abloesung_sozialverwaltung_hoch", "Ablösung 0,78")):
+        pakete[f"P6 ohne Mehrwertsteuer-Erhöhung, {abn}, Dach S1"] = basis6 + h[ab] + h["dach_s1"]
+        pakete[f"P7 Mehrwertsteuer +1, {abn}, Dach S1"] = basis6 + h["label_plus1"] + h[ab] + h["dach_s1"]
+        pakete[f"P8 ohne Mehrwertsteuer-Erhöhung, {abn}, Dach S2"] = basis6 + h[ab] + h["dach_s2"]
     luecke0, res = T["deckung"]["luecke_nach_e1c"], reserve()
     erg = {}
     for n, v in pakete.items():

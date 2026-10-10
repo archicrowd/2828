@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.35**
+Stand: 10. Oktober 2026 · Modellstand **v3.36**
 
 ---
 
@@ -1602,6 +1602,50 @@ e-Estonia; Falck, Guo, Pfaffl (ifo Schnelldienst 11/2024).*
 
 ---
 
+### v3.36 — Ablösung statt Umbau der Verwaltung; Dach auf Kernaufgaben; stabile Pakete
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026.
+
+**Leitlinie der Initiative (10.10.2026, sinngemäß).** Größere Digitalisierungsgewinne entstehen, wenn neue Regeln von Beginn an digital
+umgesetzt werden; die bisherigen Belege betreffen überwiegend nachträglich umgebaute Strukturen. 28:28 strebt eine Ablösung an, die alte
+Regeln und Verfahrenswege vollständig ersetzt; 1 % des BIP erscheint dann eher vorsichtig (Vergleich: Onlinehandel gegen Ladengeschäft bei
+Raum- und Personalkosten). Das Dach beschränkt sich auf die benannten Kernaufgaben; Steuerungs- und Subventionsmechanismen werden weitreichend
+auf die Gemeindeebene verlagert (Beispiel Agrarförderung: Schutz über die Mehrwertsteuer und ihre Regionalität, notfalls handelt das Dach
+protektionistisch, ohne einzelnen Ländern Subventionen zuzuweisen). Eine gewisse Freiheit gegenüber Studien, die im heutigen Regelwerk
+verhaftet sind, ist angebracht.
+
+**Umsetzung als prüfbare Setzung.** Statt Umbau-Studien die Verwaltungskosten der Verfahren, die 28:28 abschafft:
+- Verwaltung der Sozialschutzsysteme in Deutschland: 1,12 % des BIP (Eurostat tps00098: Sozialschutzausgaben 31,28 % des BIP; tps00101:
+  davon Verwaltung 3,59 %; 2024 vorläufig). Entfällt durch Steuerfinanzierung ohne Beiträge und automatische Dividende zu 40 bis 70 %
+  (**Setzung**; Gesundheit und Rentenübergang bleiben zu verwalten): 0,45 bis 0,78 % des BIP. Übertragung auf den Klub: **Annahme**.
+- Dach: Der Posten „Wirtschaftsraum, Agrar, Energie, Netze“ (3,75 %) entspricht den Wirtschaftsausgaben (COFOG GF04, EU27 2024: 5,3 %)
+  ohne örtlichen Verkehr (1,48 bei den Gemeinden). Zerlegung EU27 2024: Verkehr 2,5; allgemeine Wirtschafts- und Arbeitsmarktangelegenheiten
+  1,0; Energie 0,6; Landwirtschaft 0,3; Industrie und Bau 0,2; Rest 0,7 (`daten/aggregate/dach_verwaltung_2024.csv`). Abgabe an die
+  Gemeindeebene ohne zusätzliches Gemeindebudget: S1 Landwirtschaft, Industrie, halbe Energie = 0,8; S2 dazu halbe allgemeine Wirtschafts-
+  und Arbeitsmarktangelegenheiten und halber Rest = 1,65 (**Setzung**; EU27-Anteile als Annahme für den Klub; Energie 2024 noch erhöht).
+
+**Pakete (`modell/justierung.py`, erweitert; Grundlage: 28 % bleibt, Stufen 1/1,5/2/3, Erbschaftsfreibetrag 100.000 €, Vermögensteuer 1,5 %):**
+  - P6 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,45, Dach S1: +2.72; Lücke 0.2; Reserve 0.68; stabil nein
+  - P7 Mehrwertsteuer +1, Ablösung 0,45, Dach S1: +3.1; Lücke -0.18; Reserve 1.06; stabil ja
+  - P8 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,45, Dach S2: +3.57; Lücke -0.65; Reserve 1.53; stabil ja
+  - P6 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,78, Dach S1: +3.05; Lücke -0.13; Reserve 1.01; stabil ja
+  - P7 Mehrwertsteuer +1, Ablösung 0,78, Dach S1: +3.43; Lücke -0.51; Reserve 1.39; stabil ja
+  - P8 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,78, Dach S2: +3.9; Lücke -0.98; Reserve 1.86; stabil ja
+Ohne Mehrwertsteuererhöhung ist das Konzept stabil, wenn die Ablösung am oberen Rand gelingt (P6) oder das Dach weitreichend entlastet wird (P8).
+
+**Rechtliche Vorbehalte (nach Kenntnis, in dieser Sitzung nicht geprüft):** Eine Mehrwertsteuer, die nach Herkunft unterscheidet, wäre mit dem
+Diskriminierungsverbot (Art. 110 AEUV) und der Mehrwertsteuer-Systemrichtlinie nicht vereinbar; zulässig erscheint eine Staffelung nach
+Fußabdruck, die Transportwege einschließt und so regionale Ware indirekt begünstigt. Außenzölle und Handelspolitik sind ausschließliche
+Zuständigkeit der EU (Art. 3 Abs. 1 AEUV); ein Klub von EU-Staaten kann nicht selbst protektionistisch handeln.
+
+**Offen:** Wahl des Pakets; Aufgabenliste des Dachs im Einzelnen; Stabilitätsmechanismus (Ausgleichsrücklage) als zusätzliche Sicherung.
+
+**Geprüft:** `python3 modell/alles.py`. **Wodurch aufgefallen:** Leitlinie der Initiative.
+
+*Skript: `modell/justierung.py`. Quellen: Eurostat gov_10a_exp (COFOG GF04 und Teilposten, EU27 2024), tps00098, tps00101 (WebFetch 10.10.2026).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 58. **Nächste freie Nummer: 59.** Die Nummern 31 bis 41 sind
@@ -1649,9 +1693,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.35
+## 7 | Offene Punkte, Stand v3.36
 
-Neu seit v3.23 (Stand v3.35): **Paket P4 oder P5 (28 % bleibt; nur P5 mit allen Hebeln schließt die Lücke, Reserve 0,87); Stabilitätsmechanismus (Ausgleichsrücklage); Aufgabenliste für Streichungen; Text Verwaltung (Korrektur 58)**; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.36): **Paketwahl (stabil: P6 mit Ablösung 0,78, P7, P8; ohne Mehrwertsteuererhöhung P6/P8); Aufgabenliste des Dachs; rechtliche Prüfung Mehrwertsteuer nach Fußabdruck und Handelsschutz; Text Verwaltung (Korrektur 58)**; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

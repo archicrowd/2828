@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.35",
+ "modellstand": "v3.36",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -295,7 +295,7 @@
   {
    "id": "B27",
    "name": "Tragfähigkeitsprüfung",
-   "pfad": "modell/tragfaehigkeit.py;daten/aggregate/tragfaehigkeit.json;modell/justierung.py;daten/aggregate/justierung.json",
+   "pfad": "modell/tragfaehigkeit.py;daten/aggregate/tragfaehigkeit.json;modell/justierung.py;daten/aggregate/justierung.json;daten/aggregate/dach_verwaltung_2024.csv",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/tragfaehigkeit.py",

@@ -1,0 +1,11 @@
+groesse,wert,einheit,bezug,quelle,status
+cofog_gf04_wirtschaft,5.3,% BIP,EU27 2024 Gesamtstaat,Eurostat gov_10a_exp TE S13 (WebFetch 10.10.2026),"amtlich, maschinell"
+cofog_gf0401_wirtschaft_arbeit,1.0,% BIP,EU27 2024,wie oben,"amtlich, maschinell"
+cofog_gf0402_landwirtschaft,0.3,% BIP,EU27 2024,"wie oben; Zahlungen der EU-Agrarpolitik möglicherweise nicht vollständig enthalten (nicht geprüft)","amtlich, maschinell"
+cofog_gf0403_energie,0.6,% BIP,EU27 2024,"wie oben; 2024 noch durch Entlastungen der Energiekrise erhöht (Annahme)","amtlich, maschinell"
+cofog_gf0404_industrie_bau,0.2,% BIP,EU27 2024,wie oben,"amtlich, maschinell"
+cofog_gf0405_verkehr,2.5,% BIP,EU27 2024,"wie oben; davon im Modell 1,48 bei den Gemeinden (Nahverkehr, Ortsstraßen)","amtlich, maschinell"
+cofog_gf04_rest,0.7,% BIP,EU27 2024,"Differenz GF04 minus 0401 bis 0405 (Kommunikation, sonstige Wirtschaftsbereiche, angewandte Forschung, n. e. c.), eigene Rechnung","abgeleitet"
+sozialschutz_ausgaben_de,31.28,% BIP,Deutschland 2024 vorläufig,Eurostat tps00098 (WebFetch 10.10.2026),"amtlich, maschinell"
+sozialschutz_verwaltung_anteil_de,3.59,% der Sozialschutzausgaben,Deutschland 2024 vorläufig,Eurostat tps00101 (WebFetch 10.10.2026),"amtlich, maschinell"
+sozialschutz_verwaltung_de,1.12,% BIP,Deutschland 2024,"31,28 x 3,59 %, eigene Rechnung",abgeleitet

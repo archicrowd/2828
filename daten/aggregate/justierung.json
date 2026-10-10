@@ -14,7 +14,11 @@
   "label_plus3": 1.14,
   "einkommen_28_stufen_1_15_2_3": 1.14,
   "verwaltung_niedrig": 0.1,
-  "verwaltung_hoch": 0.3
+  "verwaltung_hoch": 0.3,
+  "abloesung_sozialverwaltung_niedrig": 0.45,
+  "abloesung_sozialverwaltung_hoch": 0.78,
+  "dach_s1": 0.8,
+  "dach_s2": 1.65
  },
  "erbschaft_mitte": 0.14,
  "label_effektiv": {
@@ -74,6 +78,48 @@
    "reserve_mindestdividende": 0.87,
    "reserve_mit_ueberschuss": 0.87,
    "stabil": false
+  },
+  "P6 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,45, Dach S1": {
+   "mehr_pct_bip": 2.72,
+   "luecke_danach": 0.2,
+   "reserve_mindestdividende": 0.68,
+   "reserve_mit_ueberschuss": 0.68,
+   "stabil": false
+  },
+  "P7 Mehrwertsteuer +1, Ablösung 0,45, Dach S1": {
+   "mehr_pct_bip": 3.1,
+   "luecke_danach": -0.18,
+   "reserve_mindestdividende": 0.88,
+   "reserve_mit_ueberschuss": 1.06,
+   "stabil": true
+  },
+  "P8 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,45, Dach S2": {
+   "mehr_pct_bip": 3.57,
+   "luecke_danach": -0.65,
+   "reserve_mindestdividende": 0.88,
+   "reserve_mit_ueberschuss": 1.53,
+   "stabil": true
+  },
+  "P6 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,78, Dach S1": {
+   "mehr_pct_bip": 3.05,
+   "luecke_danach": -0.13,
+   "reserve_mindestdividende": 0.88,
+   "reserve_mit_ueberschuss": 1.01,
+   "stabil": true
+  },
+  "P7 Mehrwertsteuer +1, Ablösung 0,78, Dach S1": {
+   "mehr_pct_bip": 3.43,
+   "luecke_danach": -0.51,
+   "reserve_mindestdividende": 0.88,
+   "reserve_mit_ueberschuss": 1.39,
+   "stabil": true
+  },
+  "P8 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,78, Dach S2": {
+   "mehr_pct_bip": 3.9,
+   "luecke_danach": -0.98,
+   "reserve_mindestdividende": 0.88,
+   "reserve_mit_ueberschuss": 1.86,
+   "stabil": true
   }
  },
  "hinweis": "Hebel grob (deutsche Basis, Kernmodell); Erbschaft und Vermögen mit gekennzeichneten Annahmen"
