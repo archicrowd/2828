@@ -1,7 +1,7 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.36",
- "fassung_gesamtkonzept": "7. Oktober 2026",
+ "modellstand": "v3.37",
+ "fassung_gesamtkonzept": "10. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
  "repository": "https://github.com/archicrowd/2828 (privat; Zugang auf Anfrage)",
@@ -31,18 +31,18 @@
   "werkzeuge": "LibreOffice (soffice), poppler-utils (pdftotext, pdfinfo)"
  },
  "kernergebnisse": {
-  "quote": 31.9,
-  "obergrenze": 35.0,
-  "mindestquote_streng": 31.84694767991205,
-  "klub_2028": 536.9346157908793,
-  "klub_2035": 529.0617115842875,
-  "klub_2060": 728.3981857418413,
-  "de_2028": 541.5626488775991,
+  "quote": 30.2,
+  "obergrenze": 32.0,
+  "mindestquote_streng": 30.19694767991205,
+  "klub_2028": 534.6798066475181,
+  "klub_2035": 526.6475343075606,
+  "klub_2060": 725.3171589033814,
+  "de_2028": 539.288404721086,
   "formel_einw": 3598.675392804394,
   "formel_kind": 12624.65648994137,
-  "entlastung": 1.1099999999999994,
-  "deckung_gesamt": 30.166666666666668,
-  "deckung_luecke": 1.7333333333333307,
+  "entlastung": 2.809999999999995,
+  "deckung_gesamt": 30.438655764153708,
+  "deckung_luecke": -0.23865576415370882,
   "zins_eff_2024": 1.8965957322556544,
   "pop_klub_mio": 255.061017,
   "bip28_klub_mrd": 13802.733917918245
@@ -119,7 +119,7 @@
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/pruefe_konzept.py",
-   "anmerkung": "Gesamtkonzept und Kurzfassung (2 Seiten), Fassung 6. Oktober 2026, beide aus gesamtrechnung.json gebaut; Fassung 4. Oktober in dokumente/archiv/ (Prüfsumme)"
+   "anmerkung": "Gesamtkonzept und Kurzfassung (2 Seiten), Fassung 6. Oktober 2026, beide aus gesamtrechnung.json gebaut; Fassung 4. Oktober in dokumente/archiv/ (Prüfsumme) v3.37: Rechnung neu (Quote 30,2 %), Texte bis zur Freigabe auf v3.36; Prüfstufe schlägt bewusst fehl."
   },
   {
    "id": "B08",
@@ -295,11 +295,11 @@
   {
    "id": "B27",
    "name": "Tragfähigkeitsprüfung",
-   "pfad": "modell/tragfaehigkeit.py;daten/aggregate/tragfaehigkeit.json;modell/justierung.py;daten/aggregate/justierung.json;daten/aggregate/dach_verwaltung_2024.csv",
+   "pfad": "modell/tragfaehigkeit.py;daten/aggregate/tragfaehigkeit.json;modell/justierung.py;daten/aggregate/justierung.json;daten/aggregate/dach_verwaltung_2024.csv;daten/aggregate/justierung_basis_v336.json",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/tragfaehigkeit.py",
-   "anmerkung": "v3.33: Deckung nach E1 C (Lücke 2,92); Dividende −10 % verletzt Mindestdividende im Klubschnitt 10 Jahre; Stufen 1/1,5/2/3 bei 28 % +1,14 Punkte; Wachstumsunabhängigkeit der Quote"
+   "anmerkung": "v3.33: Deckung nach E1 C (Lücke 2,92); Dividende −10 % verletzt Mindestdividende im Klubschnitt 10 Jahre; Stufen 1/1,5/2/3 bei 28 % +1,14 Punkte; Wachstumsunabhängigkeit der Quote v3.37: Entscheidungen in der Gesamtrechnung eingerechnet; tragfaehigkeit.py prüft Lücke −0,24, Reserve 1,08, stabil; justierung.py auf Eingängen v3.36 eingefroren, Korrektur 59."
   }
  ],
  "nahtstellen": [
@@ -452,11 +452,19 @@
    "von": "B26 Nachfrageprüfung",
    "nach": "B20 Gesamtrechnung",
    "was": "Konsumaufkommen 8",
-   "status": "95 % BIP beruht auf effektivem Labelsatz 20 % (Kernmodell: 60 % des Konsums in C/D)",
-   "beleg_oder_offener_punkt": "offen",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "seit v3.37: label_effektiv_pct 16,88 in gesamtrechnung.toml (E1 C), Konsum 7,76 % BIP; tragfaehigkeit.py prüft Gleichlauf mit nachfrage.json",
    "null": [
     "nachfrage.json: bei Zuordnung nach Datenblatt 14,9 %, steuernd 16,9 %; Entscheidung der Initiative über Zuordnung und Sätze"
    ]
+  },
+  {
+   "id": "N20",
+   "von": "B20 Gesamtrechnung",
+   "nach": "B07 Gesamtkonzept",
+   "was": "Texte übernehmen die Zahlen der Rechnung v3.37",
+   "status": "offen",
+   "beleg_oder_offener_punkt": "Textentwurf zur Freigabe; bis dahin Prüfstufe Gesamtkonzept gegen Rechnung rot (Logbuch v3.37)"
   }
  ],
  "quellen": [

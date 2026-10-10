@@ -2,3 +2,4 @@ variante,beschreibung,grenzen_eur_2026,saetze_pct,aufkommen_modell_mrd,pct_bip_d
 heute,Stufen 12.348 / 25.000 / 40.000 / 55.000 / 70.000 EUR (bis v3.20),12348/25000/40000/55000/70000,0/9/16/21/26/28,313.32,7.46,0.0,0.0,1139,3539,13389
 grundbedarf_1_5,"Stufen beim 1- bis 5-fachen Grundbedarf (v3.21, verworfen in v3.22)",12348/24696/37044/49392/61740,0/9/16/21/26/28,324.27,7.721,10.95,0.261,1160,3708,14003
 grundbedarf_1_4,"Stufen beim 1- bis 4-fachen Grundbedarf, 28 % ab dem 4-fachen (gewählt, v3.22)",12348/24696/37044/49392,0/9/16/21/28,326.66,7.778,13.34,0.318,1160,3708,14250
+grundbedarf_1_15_2_3,"Stufen beim 1-, 1,5-, 2- und 3-fachen Grundbedarf, 28 % ab dem 3-fachen (gewählt, v3.37)",12348/18522/24696/37044,0/9/16/21/28,374.62,8.92,61.3,1.46,1607,4964,16164

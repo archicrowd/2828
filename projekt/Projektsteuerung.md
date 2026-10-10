@@ -1,4 +1,4 @@
-# Projektsteuerung TAX 28:28 (Stand v3.36, 10. Oktober 2026)
+# Projektsteuerung TAX 28:28 (Stand v3.37, 10. Oktober 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
@@ -34,7 +34,7 @@ Tag-Push scheitert über den Sitzungsproxy (HTTP 403); Tags und GitHub Releases 
 Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell): je Land und Dimension einzeln, Ratenbegrenzung beachten.
 
 ## Reihenfolge der offenen Arbeit
-0. **Entscheidungen v3.33:** E1 C, E2 V2, E3 je Land, E4 81,3 %. Offen: zusätzliche Lücke 1,19 ohne Verletzung der Mindestdividende schließen (Stufen 1/1,5/2/3 bei 28 %: +1,14; oder Bausteine). v3.35: 28:28 bleibt, Verteidigung außen vor, Strategie Verwaltung (belegt 0,1 bis 0,3 % BIP). v3.36: Ablösung der Sozialverwaltung (0,45 bis 0,78) und Dach auf Kernaufgaben (0,8 bis 1,65) machen Pakete stabil (P6 bis P8); Paket wählen, Aufgabenliste des Dachs, rechtliche Prüfung. Danach Neurechnung und Textentwurf.
+0. **Entscheidungen v3.33:** E1 C, E2 V2, E3 je Land, E4 81,3 %. Offen: zusätzliche Lücke 1,19 ohne Verletzung der Mindestdividende schließen (Stufen 1/1,5/2/3 bei 28 %: +1,14; oder Bausteine). v3.35: 28:28 bleibt, Verteidigung außen vor, Strategie Verwaltung (belegt 0,1 bis 0,3 % BIP). v3.36: Ablösung der Sozialverwaltung (0,45 bis 0,78) und Dach auf Kernaufgaben (0,8 bis 1,65) machen Pakete stabil (P6 bis P8); **v3.37: P8 und alle Empfehlungen eingerechnet: Quote 30,2 %, Obergrenze 32 %, Deckung 30,44 (Überschuss 0,24), Reserve 1,08, stabil; Korrektur 59 (Ablösung schließt keine Lücke der Quote); EU-Rechtsrahmen nach Entscheidung nicht bindend.** Nächster Schritt: deutscher Textentwurf zur Freigabe; Aufgabenliste des Dachs.
    **Konsumaufkommen (v3.31):** Zuordnung der Produkte zu den Labelstufen festlegen; effektiver Satz 14,9 bis 16,9 % statt 20 % würde die Deckungslücke um 1,2 bis 2,0 Punkte vergrößern.
 1. **B12 auf Klubebene:** Deckung der Quote aus den Steuerbasen der zehn Staaten (deutsche Basis: Lücke 0,95 Punkte).
 2. **B15:** BIP (DE bei Eurostat revidiert, +1,34 %), Schuldenquoten, Renditen, COFOG-Posten neu abrufen; Zinsausgaben Estland nachholen. **B19:** Zuordnung der Posten dokumentieren.

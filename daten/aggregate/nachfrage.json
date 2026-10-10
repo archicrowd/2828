@@ -1,10 +1,10 @@
 {
  "version": "v3.32",
  "kanal1_umverteilung": {
-  "entlastung_pct_bip": 1.1099999999999994,
-  "min": 0.17,
-  "max": 1.88,
-  "zentral": 0.71,
+  "entlastung_pct_bip": 2.809999999999995,
+  "min": 0.3,
+  "max": 2.56,
+  "zentral": 1.07,
   "zentral_annahmen": "Umverteilung 4 % des BIP, Abstand 0,2, Konsumneigung 0,35, Abschlag 0,25",
   "faelle": [
    {
@@ -12,176 +12,176 @@
     "mpc_abstand": 0.1,
     "mpc_entlastung": 0.2,
     "abschlag": 0.0,
-    "bip_niveau_pct": 0.34
+    "bip_niveau_pct": 0.61
    },
    {
     "umverteilung": 2.0,
     "mpc_abstand": 0.1,
     "mpc_entlastung": 0.2,
-    "abschlag": 0.5,
-    "bip_niveau_pct": 0.17
-   },
-   {
-    "umverteilung": 2.0,
-    "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.5,
-    "abschlag": 0.0,
-    "bip_niveau_pct": 0.6
-   },
-   {
-    "umverteilung": 2.0,
-    "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.5,
     "abschlag": 0.5,
     "bip_niveau_pct": 0.3
    },
    {
     "umverteilung": 2.0,
-    "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.2,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.0,
-    "bip_niveau_pct": 0.66
+    "bip_niveau_pct": 1.28
    },
    {
     "umverteilung": 2.0,
-    "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.2,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.5,
-    "bip_niveau_pct": 0.33
+    "bip_niveau_pct": 0.64
    },
    {
     "umverteilung": 2.0,
     "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.0,
-    "bip_niveau_pct": 0.92
+    "bip_niveau_pct": 0.93
    },
    {
     "umverteilung": 2.0,
     "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.5,
     "bip_niveau_pct": 0.46
    },
    {
-    "umverteilung": 4.0,
-    "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.2,
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.0,
-    "bip_niveau_pct": 0.5
+    "bip_niveau_pct": 1.6
    },
    {
-    "umverteilung": 4.0,
-    "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.2,
+    "umverteilung": 2.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.5,
-    "bip_niveau_pct": 0.25
+    "bip_niveau_pct": 0.8
    },
    {
     "umverteilung": 4.0,
     "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.0,
-    "bip_niveau_pct": 0.76
+    "bip_niveau_pct": 0.77
    },
    {
     "umverteilung": 4.0,
     "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.5,
     "bip_niveau_pct": 0.38
    },
    {
     "umverteilung": 4.0,
-    "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.2,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.0,
-    "bip_niveau_pct": 1.14
+    "bip_niveau_pct": 1.44
    },
    {
     "umverteilung": 4.0,
-    "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.2,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.5,
-    "bip_niveau_pct": 0.57
+    "bip_niveau_pct": 0.72
    },
    {
     "umverteilung": 4.0,
     "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.0,
-    "bip_niveau_pct": 1.4
+    "bip_niveau_pct": 1.41
    },
    {
     "umverteilung": 4.0,
     "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.5,
     "bip_niveau_pct": 0.7
    },
    {
-    "umverteilung": 6.0,
-    "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.2,
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.0,
-    "bip_niveau_pct": 0.66
+    "bip_niveau_pct": 2.08
    },
    {
-    "umverteilung": 6.0,
-    "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.2,
+    "umverteilung": 4.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.5,
-    "bip_niveau_pct": 0.33
+    "bip_niveau_pct": 1.04
    },
    {
     "umverteilung": 6.0,
     "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.0,
-    "bip_niveau_pct": 0.92
+    "bip_niveau_pct": 0.93
    },
    {
     "umverteilung": 6.0,
     "mpc_abstand": 0.1,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.5,
     "bip_niveau_pct": 0.46
    },
    {
     "umverteilung": 6.0,
-    "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.2,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.0,
-    "bip_niveau_pct": 1.62
+    "bip_niveau_pct": 1.6
    },
    {
     "umverteilung": 6.0,
-    "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.2,
+    "mpc_abstand": 0.1,
+    "mpc_entlastung": 0.5,
     "abschlag": 0.5,
-    "bip_niveau_pct": 0.81
+    "bip_niveau_pct": 0.8
    },
    {
     "umverteilung": 6.0,
     "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.0,
-    "bip_niveau_pct": 1.88
+    "bip_niveau_pct": 1.89
    },
    {
     "umverteilung": 6.0,
     "mpc_abstand": 0.3,
-    "mpc_entlastung": 0.5,
+    "mpc_entlastung": 0.2,
     "abschlag": 0.5,
     "bip_niveau_pct": 0.94
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.0,
+    "bip_niveau_pct": 2.56
+   },
+   {
+    "umverteilung": 6.0,
+    "mpc_abstand": 0.3,
+    "mpc_entlastung": 0.5,
+    "abschlag": 0.5,
+    "bip_niveau_pct": 1.28
    }
   ]
  },
  "kanal2_angebot": {
-  "abbau_klub_punkte": 28.5,
+  "abbau_klub_punkte": 25.76,
   "obergrenze_niveau_pct": {
-   "zentral": 8.0,
-   "niedrig": 4.0
+   "zentral": 7.2,
+   "niedrig": 3.6
   },
   "hinweis": "lineare Übertragung über den Bereich der Literatur hinaus; Obergrenze, nicht Prognose"
  },

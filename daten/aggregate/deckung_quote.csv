@@ -1,7 +1,7 @@
 position,pct_bip_deutsche_basis,art
-"01 Einkommen (Stufen 1- bis 4-facher Grundbedarf, 0/9/16/21/28 %, Dividende steuerpflichtig)",7.778,Kernsystem
+"01 Einkommen (Stufen beim 1/1,5/2/3-fachen Grundbedarf, 0/9/16/21/28 %, Dividende steuerpflichtig)",8.920,Kernsystem
 02 Kapital 28 %,1.162,Kernsystem
-"06 Konsum (Label, effektiv 20,0 %)",8.950,Kernsystem
+"06 Konsum (Label, steuernde Zuordnung, effektiv 16,9 %)",7.755,Kernsystem
 05 Konzerne und Plattformen 28 %,3.752,Kernsystem
 03 Erbschaft 28 %,0.855,Kernsystem
 "04c Vermögen, Mindeststeuer (anrechenbar)",0.493,Kernsystem
@@ -10,7 +10,9 @@ position,pct_bip_deutsche_basis,art
 Vermögensteuer 1 % ab 2 Mio (nicht anrechenbar),0.286,Baustein
 Abbau klimaschädlicher Subventionen,0.476,Baustein
 CO₂-Pfad 100 → 150 €/t,0.357,Baustein
+Erbschaft. Freibetrag 100.000 € statt 200.000 € (Annahme zur Zahl der Erwerbe),0.130,Baustein
+"Vermögensteuer 1,5 % statt 1 % (Hälfte Ausweichen, Annahme)",0.195,Baustein
 "04a Bodenwertabgabe (Ebene B, Satz bis 1 %)",0.820,Stand B
-Summe gedeckt,30.167,
-"Quote 31,9",31.900,
-Lücke,1.733,offen
+Summe gedeckt,30.439,
+"Quote 30,2",30.200,
+Lücke,-0.239,offen

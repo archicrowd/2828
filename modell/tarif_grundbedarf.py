@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Tarifstufen als Vielfache des Grundbedarfs (Logbuch v3.21, Vorschlag der Initiative).
 
-Regel (seit v3.22): Die Stufen des Einkommensteuertarifs 0 / 9 / 16 / 21 / 28 % beginnen beim 1-, 2-, 3- und 4-fachen
+Regel (seit v3.37: Stufen beim 1-, 1,5-, 2- und 3-fachen Grundbedarf, Parameter tarif_stufen_vielfache; v3.22 bis v3.36): Die Stufen des Einkommensteuertarifs 0 / 9 / 16 / 21 / 28 % beginnen beim 1-, 2-, 3- und 4-fachen
 Grundbedarf; 28 % ab dem Vierfachen (v3.21: fünf Stufen bis zum 5-fachen mit 26 %, verworfen). Grundbedarf = steuerliches Existenzminimum eines Erwachsenen (Grundfreibetrag Deutschland, 12.348 EUR
 2026), am Wohnort mit dem Preisniveau übertragen und jährlich fortgeschrieben. Die Dividende ist der halbe Grundbedarf.
 
@@ -33,6 +33,8 @@ VARIANTEN = [
      [G26 * k for k in (1, 2, 3, 4, 5)] + [INF]),
     ("grundbedarf_1_4", "Stufen beim 1- bis 4-fachen Grundbedarf, 28 % ab dem 4-fachen (gewählt, v3.22)",
      [0.00, 0.09, 0.16, 0.21, 0.28], [G26 * k for k in (1, 2, 3, 4)] + [INF]),
+    ("grundbedarf_1_15_2_3", "Stufen beim 1-, 1,5-, 2- und 3-fachen Grundbedarf, 28 % ab dem 3-fachen (gewählt, v3.37)",
+     [0.00, 0.09, 0.16, 0.21, 0.28], [G26 * k for k in (1, 1.5, 2, 3)] + [INF]),
 ]
 ETI = kern.SZ["Robust"]["eti"]
 BASIS = kern.BIP0
@@ -56,14 +58,17 @@ with open(AGG / "tarif_grundbedarf.csv", "w", encoding="utf-8", newline="") as f
 
 # Stufen je Land in Euro 2028 (Grundbedarf x Preisniveau / Preisniveau DE)
 PLI = {r["land"]: float(r["preisniveau_eu27_100"]) for r in csv.DictReader(open(AGG / "preisniveau_2024.csv", encoding="utf-8"))}
-VIELFACHE, SATZ_GEW = (1, 2, 3, 4), [0, 9, 16, 21, 28]
+VIELFACHE, SATZ_GEW = tuple(float(x) for x in PAR["tarif_stufen_vielfache"]), [0, 9, 16, 21, 28]
 laender = {c: [round(G28 * PLI[c] / PLI["DE"] * k) for k in VIELFACHE] for c in sorted(PLI, key=lambda c: -PLI[c])}
-gew = next(z for z in zeilen if z["variante"] == "grundbedarf_1_4")
+GEWAEHLT = {(1.0, 2.0, 3.0, 4.0): "grundbedarf_1_4", (1.0, 1.5, 2.0, 3.0): "grundbedarf_1_15_2_3"}[VIELFACHE]
+gew = next(z for z in zeilen if z["variante"] == GEWAEHLT)
+alt = next(z for z in zeilen if z["variante"] == "grundbedarf_1_4")
 (AGG / "tarif_grundbedarf.json").write_text(json.dumps(dict(
     grundbedarf_2026=G26, grundbedarf_2028=G28, vielfache=list(VIELFACHE), saetze=SATZ_GEW,
     stufen_de_2028=[round(G28 * k) for k in VIELFACHE], stufen_laender_2028=laender,
     einkommen_pct_bip_neu=gew["pct_bip_deutsche_basis"], einkommen_modell_mrd_neu=gew["aufkommen_modell_mrd"],
-    aenderung_pct_bip=gew["aenderung_pct_bip"], varianten=zeilen), ensure_ascii=False, indent=1), encoding="utf-8")
+    aenderung_pct_bip=gew["aenderung_pct_bip"], variante=GEWAEHLT, einkommen_modell_mrd_1_4=alt["aufkommen_modell_mrd"],
+    varianten=zeilen), ensure_ascii=False, indent=1), encoding="utf-8")
 
 for z in zeilen:
     print(f"{z['variante']:<17}{z['aufkommen_modell_mrd']:>8.1f} Mrd ({z['pct_bip_deutsche_basis']:.2f} % BIP) "

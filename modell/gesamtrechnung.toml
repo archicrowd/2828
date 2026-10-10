@@ -5,8 +5,8 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.36"
-fassung = "7. Oktober 2026"
+version = "v3.37"
+fassung = "10. Oktober 2026"
 
 [[parameter]]
 name       = "auslauf_beginn_jahr"
@@ -241,3 +241,74 @@ preisbasis = "real, am Wohnort"
 quelle     = "Vorschlag der Initiative, 7. Oktober 2026 (v3.21, Lesart v3.22)"
 status     = "regel"
 hinweis    = "Seit v3.22: Stufen 0/9/16/21/28 % beginnen beim 1-, 2-, 3- und 4-fachen Grundbedarf (v3.21: 0/9/16/21/26/28 bis 5-fach) (existenzminimum_de_jahr, fortgeschrieben, mit dem Preisniveau übertragen). Aufkommen: modell/tarif_grundbedarf.py"
+
+# ---------------------------------------------------------------- Entscheidungen der Initiative vom 10.10.2026 (v3.37)
+[[parameter]]
+name       = "dach_kuerzung_wirtschaftsraum"
+wert       = 1.65
+einheit    = "Punkte des BIP"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Entscheidung P8 (Dach S2), modell/justierung.py; Gliederung daten/aggregate/dach_verwaltung_2024.csv (Eurostat gov_10a_exp, COFOG GF04, EU27 2024)"
+status     = "entscheidung"
+hinweis    = "Posten 'Wirtschaftsraum, Agrar, Energie, Netze' 3,75 -> 2,10: Landwirtschaft 0,3, Industrie 0,2, halbe Energie 0,3, halbe allgemeine Wirtschafts- und Arbeitsmarktangelegenheiten 0,5, halber Rest 0,35 werden gestrichen oder ohne zusätzliches Budget an die Gemeindeebene abgegeben. EU27-Anteile für den Klub übernommen (ANNAHME). Die Selbstprüfung rechnet weiter mit dem Original 3,75"
+
+[[parameter]]
+name       = "label_effektiv_pct"
+wert       = 16.88
+einheit    = "% auf den steuerpflichtigen Konsum"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Entscheidung E1 C (steuernde Zuordnung), modell/nachfrage.py, labelsatz_steuernd"
+status     = "entscheidung"
+hinweis    = "Ersetzt den Satz des Kernmodells (20 %, Gewichte 10/10/20/30/30, Annahme). Konsumaufkommen = Kernmodell x (r/(100+r)) / (20/120). modell/tragfaehigkeit.py prüft den Gleichlauf mit nachfrage.json"
+
+[[parameter]]
+name       = "tarif_stufen_vielfache"
+wert       = [1.0, 1.5, 2.0, 3.0]
+einheit    = "Vielfache des Grundbedarfs (Beginn der Stufen 9/16/21/28 %)"
+bezugsjahr = 2028
+preisbasis = "real, am Wohnort"
+quelle     = "Entscheidung P8, 10. Oktober 2026; Aufkommen modell/tarif_grundbedarf.py"
+status     = "entscheidung"
+hinweis    = "Ersetzt die Stufen beim 1-, 2-, 3- und 4-fachen Grundbedarf (v3.22). Sätze bleiben 0/9/16/21/28 %"
+
+[[parameter]]
+name       = "erbschaft_freibetrag_eur"
+wert       = 100000
+einheit    = "EUR je Erwerb"
+bezugsjahr = 2028
+preisbasis = "nominal"
+quelle     = "Entscheidung P8, 10. Oktober 2026 (vorher 200.000 EUR)"
+status     = "entscheidung"
+hinweis    = "Mehraufkommen: Erwerbe über 200.000 EUR x (100.000 + anteilig 30.000 EUR) x 28 %"
+
+[[parameter]]
+name       = "erbschaft_erwerbe_ueber_200k_de"
+wert       = 150000
+einheit    = "Erwerbe je Jahr, Deutschland"
+bezugsjahr = 2024
+preisbasis = "keine"
+quelle     = "ANNAHME, Mitte der Spanne 100.000 bis 200.000 (keine Verteilung der Bruttoerwerbe gefunden; modell/justierung.py)"
+status     = "annahme"
+hinweis    = "Zusätzlich je Erwerb anteilig 30.000 EUR aus Erwerben zwischen 100.000 und 200.000 EUR (Annahme justierung.py)"
+
+[[parameter]]
+name       = "vermoegensteuer_satz_pct"
+wert       = 1.5
+einheit    = "% des Nettovermögens über 2 Mio EUR"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "Entscheidung P8, 10. Oktober 2026 (vorher 1 %)"
+status     = "entscheidung"
+hinweis    = "Mehraufkommen proportional zu Vermögensteuer und Mindeststeuer (32,7 Mrd deutsche Basis), die Hälfte geht durch Ausweichen verloren (ANNAHME, Parameter vermoegensteuer_ausweichen)"
+
+[[parameter]]
+name       = "vermoegensteuer_ausweichen"
+wert       = 0.5
+einheit    = "Anteil der statischen Mehreinnahme"
+bezugsjahr = 2028
+preisbasis = "keine"
+quelle     = "ANNAHME (modell/justierung.py)"
+status     = "annahme"
+hinweis    = "Literatur zur Ausweichreaktion auf Vermögensteuern streut stark; keine eigene Schätzung"

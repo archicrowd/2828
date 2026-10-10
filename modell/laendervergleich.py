@@ -65,7 +65,7 @@ def land(cc):
     else:
         return None
     f = pli / PLI_DE
-    stufen = [round(G28 * f * k) for k in (1, 2, 3, 4)]
+    stufen = [round(G28 * f * k) for k in TG["vielfache"]]
     if cc in TG["stufen_laender_2028"] and TG["stufen_laender_2028"][cc] != stufen:
         sys.exit(f"{cc}: Tarifstufen weichen von tarif_grundbedarf.json ab")
     boden = float(GR["anker_de"]) * f

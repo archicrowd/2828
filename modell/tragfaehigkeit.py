@@ -21,10 +21,22 @@ N = json.loads((AGG / "nachfrage.json").read_text(encoding="utf-8"))
 
 
 def deckung():
-    zusatz = -N["labelsatz_steuernd"]["differenz_pct_bip"]
-    return dict(quote=G["quote"], deckung_bisher=round(G["deckung_gesamt"], 2), luecke_bisher=round(G["deckung_luecke"], 2),
-                zusatzluecke_label_c=round(zusatz, 2), deckung_nach_e1c=round(G["deckung_gesamt"] - zusatz, 2),
-                luecke_nach_e1c=round(G["deckung_luecke"] + zusatz, 2))
+    # Seit v3.37 ist E1 C in der Gesamtrechnung eingerechnet (label_effektiv). Gleichlauf mit der Nachfrageprüfung:
+    eff = N["labelsatz_steuernd"]["effektiv_label_zuordnung_pct"]
+    if abs(G.get("label_effektiv", 20.0) - eff) > 0.005:
+        sys.exit(f"FEHLER: label_effektiv_pct {G.get('label_effektiv')} weicht von nachfrage.json ({eff}) ab")
+    return dict(quote=G["quote"], deckung=round(G["deckung_gesamt"], 2), luecke=round(G["deckung_luecke"], 2),
+                label_effektiv=eff, aenderung_v337={k: round(v, 2) for k, v in G["deckung_aenderung_v337"].items()},
+                dach_kuerzung=G["dach_kuerzung"], quote_ohne_dachkuerzung=G["quote_ohne_dachkuerzung"])
+
+
+def reserve():
+    """Um wie viele Punkte des BIP darf der Dividendenanteil sinken, bevor die Mindestdividende im Klubschnitt bricht?"""
+    lo, hi = 0.0, 5.0
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        lo, hi = (mid, hi) if mindestdividende(mid)["tiefpunkt_pct"] >= 100 else (lo, mid)
+    return round(lo, 2)
 
 
 def mindestdividende(kuerzung):
@@ -42,17 +54,17 @@ def tarif():
     with contextlib.redirect_stdout(io.StringIO()):
         spec.loader.exec_module(kern)
     g26, eti, inf = 12348.0, kern.SZ["Robust"]["eti"], float("inf")
-    ek = next(x[1] for x in G["tabelle_deckung"] if x[0].startswith("01"))
+    ek = G["einkommen_1_4_pct_bip"]          # Bezug: Stufen 1/2/3/4 (v3.22 bis v3.36)
 
     def auf(s, m):
         kern.TARIF_SAETZE[:] = s
         kern.TARIF_GRENZEN[:] = [g26 * x for x in m] + [inf]
         return kern.est_aufkommen(50, eti)
     base = auf([0, .09, .16, .21, .28], (1, 2, 3, 4))
-    var = [("geltend 0/9/16/21/28, Stufen 1/2/3/4", [0, .09, .16, .21, .28], (1, 2, 3, 4)),
+    var = [("bis v3.36: 0/9/16/21/28, Stufen 1/2/3/4", [0, .09, .16, .21, .28], (1, 2, 3, 4)),
            ("Spitze 32 %", [0, .09, .16, .21, .32], (1, 2, 3, 4)), ("Spitze 35 %", [0, .09, .16, .21, .35], (1, 2, 3, 4)),
            ("0/10/18/24/32", [0, .10, .18, .24, .32], (1, 2, 3, 4)), ("0/10/20/26/35", [0, .10, .20, .26, .35], (1, 2, 3, 4)),
-           ("28 % bleibt, Stufen 1/1,5/2/3", [0, .09, .16, .21, .28], (1, 1.5, 2, 3)),
+           ("gewählt v3.37: 28 % bleibt, Stufen 1/1,5/2/3", [0, .09, .16, .21, .28], (1, 1.5, 2, 3)),
            ("28 % bleibt, 0/12/20/24/28", [0, .12, .20, .24, .28], (1, 2, 3, 4))]
     return [dict(variante=n, einkommensteuer_pct_bip=round(ek * auf(s, m) / base, 2), aenderung=round(ek * (auf(s, m) / base - 1), 2))
             for n, s, m in var]
@@ -60,7 +72,11 @@ def tarif():
 
 def main():
     d = deckung()
-    md = [mindestdividende(x) for x in (0.0, d["zusatzluecke_label_c"], d["luecke_nach_e1c"])]
+    md = [mindestdividende(x) for x in (0.0, 0.5, 1.0)]
+    res = reserve()
+    d.update(reserve_pkt=res, reserve_mit_ueberschuss=round(res - d["luecke"], 2),
+             stabil=bool(d["luecke"] <= 0 and res - d["luecke"] >= 1.0),
+             stabilitaetskriterium="Lücke <= 0 und Reserve einschließlich Überschuss >= 1,0 Punkte des BIP (v3.34)")
     t = tarif()
     co2 = sum(x[1] for x in G["tabelle_deckung"] if "CO₂" in x[0])
     E = dict(deckung=d, mindestdividende=md, tarif=t,

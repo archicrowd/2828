@@ -2,10 +2,10 @@
  "grundbedarf_2026": 12348.0,
  "grundbedarf_2028": 12846.8592,
  "vielfache": [
-  1,
-  2,
-  3,
-  4
+  1.0,
+  1.5,
+  2.0,
+  3.0
  ],
  "saetze": [
   0,
@@ -16,75 +16,77 @@
  ],
  "stufen_de_2028": [
   12847,
+  19270,
   25694,
-  38541,
-  51387
+  38541
  ],
  "stufen_laender_2028": {
   "DK": [
    16815,
+   25223,
    33630,
-   50445,
-   67261
+   50445
   ],
   "IE": [
    16627,
+   24940,
    33253,
-   49880,
-   66507
+   49880
   ],
   "NL": [
    14248,
+   21372,
    28496,
-   42744,
-   56992
+   42744
   ],
   "AT": [
    14095,
+   21143,
    28190,
-   42285,
-   56380
+   42285
   ],
   "BE": [
    13977,
+   20966,
    27955,
-   41932,
-   55909
+   41932
   ],
   "DE": [
    12847,
+   19270,
    25694,
-   38541,
-   51387
+   38541
   ],
   "FR": [
    12706,
+   19058,
    25411,
-   38117,
-   50822
+   38117
   ],
   "EE": [
    11363,
+   17045,
    22726,
-   34090,
-   45453
+   34090
   ],
   "SI": [
    10716,
+   16073,
    21431,
-   32147,
-   42862
+   32147
   ],
   "ES": [
    10680,
+   16020,
    21360,
-   32041,
-   42721
+   32041
   ]
  },
- "einkommen_pct_bip_neu": 7.778,
- "einkommen_modell_mrd_neu": 326.66,
- "aenderung_pct_bip": 0.318,
+ "einkommen_pct_bip_neu": 8.92,
+ "einkommen_modell_mrd_neu": 374.62,
+ "aenderung_pct_bip": 1.46,
+ "variante": "grundbedarf_1_15_2_3",
+ "einkommen_modell_mrd_1_4": 326.66,
  "varianten": [
   {
    "variante": "heute",
@@ -124,6 +126,19 @@
    "steuer_25000": 1160,
    "steuer_40000": 3708,
    "steuer_80000": 14250
+  },
+  {
+   "variante": "grundbedarf_1_15_2_3",
+   "beschreibung": "Stufen beim 1-, 1,5-, 2- und 3-fachen Grundbedarf, 28 % ab dem 3-fachen (gewählt, v3.37)",
+   "grenzen_eur_2026": "12348/18522/24696/37044",
+   "saetze_pct": "0/9/16/21/28",
+   "aufkommen_modell_mrd": 374.62,
+   "pct_bip_deutsche_basis": 8.92,
+   "aenderung_mrd": 61.3,
+   "aenderung_pct_bip": 1.46,
+   "steuer_25000": 1607,
+   "steuer_40000": 4964,
+   "steuer_80000": 16164
   }
  ]
 }

@@ -1,0 +1,106 @@
+{
+ "hinweis": "Eingänge der Justierungsrechnung, eingefroren auf Stand v3.36 (gesamtrechnung.json und tragfaehigkeit.json, Commit fb68d17). Seit v3.37 sind die Entscheidungen in der Gesamtrechnung eingerechnet; die Justierung dokumentiert die Entscheidungsgrundlage.",
+ "version": "v3.36",
+ "tabelle_deckung": [
+  [
+   "01 Einkommen (Stufen 1- bis 4-facher Grundbedarf, 0/9/16/21/28 %, Dividende steuerpflichtig)",
+   7.777619047619049,
+   "Kernsystem"
+  ],
+  [
+   "02 Kapital 28 %",
+   1.161904761904762,
+   "Kernsystem"
+  ],
+  [
+   "06 Konsum (Label, effektiv 20,0 %)",
+   8.95,
+   "Kernsystem"
+  ],
+  [
+   "05 Konzerne und Plattformen 28 %",
+   3.7523809523809524,
+   "Kernsystem"
+  ],
+  [
+   "03 Erbschaft 28 %",
+   0.8547619047619047,
+   "Kernsystem"
+  ],
+  [
+   "04c Vermögen, Mindeststeuer (anrechenbar)",
+   0.49285714285714277,
+   "Kernsystem"
+  ],
+  [
+   "07 Klima, CO₂ 100 €/t netto",
+   1.3095238095238095,
+   "Kernsystem"
+  ],
+  [
+   "Sonstige Steuern (Energie, Tabak u. a.)",
+   3.9285714285714284,
+   "Kernsystem"
+  ],
+  [
+   "Vermögensteuer 1 % ab 2 Mio (nicht anrechenbar)",
+   0.2857142857142857,
+   "Baustein"
+  ],
+  [
+   "Abbau klimaschädlicher Subventionen",
+   0.4761904761904762,
+   "Baustein"
+  ],
+  [
+   "CO₂-Pfad 100 → 150 €/t",
+   0.35714285714285715,
+   "Baustein"
+  ],
+  [
+   "04a Bodenwertabgabe (Ebene B, Satz bis 1 %)",
+   0.82,
+   "Stand B"
+  ]
+ ],
+ "schwelle_klub": 486.4766112211943,
+ "kopf_klub": 54115.41944066759,
+ "g_real": 0.009803921568627416,
+ "reihe_div": [
+  11.906431579182206,
+  11.738315935632594,
+  11.572369516117933,
+  11.408475266686294,
+  11.275578646539932,
+  11.171033360024902,
+  11.064956105433327,
+  10.95739150319463,
+  11.005525731256926,
+  11.052257991511576,
+  11.097629117972405,
+  11.141678755313015,
+  11.184445393507781,
+  11.225966401463866,
+  11.266278059673654,
+  11.305415591916168,
+  11.343413196035117,
+  11.380304073820499,
+  11.416120460019906,
+  11.450893650504762,
+  11.484654029616275,
+  11.517431096714828,
+  11.549253491956145,
+  11.580149021316645,
+  11.610144680889947,
+  11.639266680475673,
+  11.667540466481237,
+  11.694990744156543,
+  11.721641499181109,
+  11.747516018622436,
+  11.77263691128392,
+  11.797026127460116,
+  11.820704978116618
+ ],
+ "quote": 31.9,
+ "luecke_nach_e1c": 2.92
+}

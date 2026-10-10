@@ -11,15 +11,18 @@ Hebel (Punkte des BIP gegen den Stand nach Entscheidung E1 C, Deckung 28,98 %, L
   Mehrwertsteuer-Label: steuernde Zuordnung (E1 C), alle Sätze +1 bzw. +2 Punkte (modell/nachfrage.py).
 Stabilität: Wie weit darf der Dividendenanteil sinken, bevor die Mindestdividende im Klubschnitt in einem Jahr bricht?
 Eine Deckungslücke senkt den Dividendenanteil um denselben Betrag. Stabil heißt: Lücke geschlossen und Reserve >= Schwelle.
-Ausgabe: daten/aggregate/justierung.json. Keine Änderung der Gesamtrechnung.
+Korrektur 59 (v3.37): Die Ablösung der Verwaltung der Sozialschutzsysteme schließt keine Lücke der Quote. Diese Kosten trägt
+heute der Beitragshaushalt; die Posten von Quote, Ebene A und B enthalten sie nicht. Sie senken die Gesamtlast außerhalb der
+Quote und sind Voraussetzung dafür, dass der Wegfall der Beiträge trägt. Sie werden getrennt ausgewiesen.
+Ausgabe: daten/aggregate/justierung.json. Eingänge eingefroren auf Stand v3.36 (justierung_basis_v336.json).
 """
 import contextlib, importlib.util, io, json, sys
 from pathlib import Path
 
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
-G = json.loads((AGG / "gesamtrechnung.json").read_text(encoding="utf-8"))
-T = json.loads((AGG / "tragfaehigkeit.json").read_text(encoding="utf-8"))
+# Seit v3.37: Eingänge auf Stand v3.36 eingefroren (die Entscheidungen sind in der Gesamtrechnung eingerechnet)
+G = json.loads((AGG / "justierung_basis_v336.json").read_text(encoding="utf-8"))
 ZEILE = {r[0]: r[1] for r in G["tabelle_deckung"]}
 
 
@@ -109,11 +112,11 @@ def main():
     pakete["P5 wie P4, Label +3, Verwaltung 0,1"] = basis4 + h["label_plus3"] + h["verwaltung_niedrig"]
     pakete["P5 wie P4, Label +3, Verwaltung 0,3"] = basis4 + h["label_plus3"] + h["verwaltung_hoch"]
     basis6 = h["einkommen_28_stufen_1_15_2_3"] + erb_mitte + h["vermoegen_150"]
-    for ab, abn in (("abloesung_sozialverwaltung_niedrig", "Ablösung 0,45"), ("abloesung_sozialverwaltung_hoch", "Ablösung 0,78")):
-        pakete[f"P6 ohne Mehrwertsteuer-Erhöhung, {abn}, Dach S1"] = basis6 + h[ab] + h["dach_s1"]
-        pakete[f"P7 Mehrwertsteuer +1, {abn}, Dach S1"] = basis6 + h["label_plus1"] + h[ab] + h["dach_s1"]
-        pakete[f"P8 ohne Mehrwertsteuer-Erhöhung, {abn}, Dach S2"] = basis6 + h[ab] + h["dach_s2"]
-    luecke0, res = T["deckung"]["luecke_nach_e1c"], reserve()
+    # Korrektur 59: Ablösung nicht gegen die Lücke der Quote (bis v3.36 eingerechnet)
+    pakete["P6 ohne Mehrwertsteuer-Erhöhung, Dach S1"] = basis6 + h["dach_s1"]
+    pakete["P7 Mehrwertsteuer +1, Dach S1"] = basis6 + h["label_plus1"] + h["dach_s1"]
+    pakete["P8 ohne Mehrwertsteuer-Erhöhung, Dach S2 (Entscheidung)"] = basis6 + h["dach_s2"]
+    luecke0, res = G["luecke_nach_e1c"], reserve()
     erg = {}
     for n, v in pakete.items():
         l = round(luecke0 - v, 2)
@@ -122,7 +125,10 @@ def main():
                       stabil=bool(l <= 0 and res + max(-l, 0) >= 1.0))
     E = dict(hebel=h, erbschaft_mitte=erb_mitte, label_effektiv=dict(plus1=eff1, plus2=eff2, plus3=eff3), luecke_vorher=luecke0,
              reserve_heute_pkt=res, stabilitaetskriterium="Lücke <= 0 und Reserve >= 1,0 Punkte des BIP (Vorschlag)",
-             pakete=erg, hinweis="Hebel grob (deutsche Basis, Kernmodell); Erbschaft und Vermögen mit gekennzeichneten Annahmen")
+             pakete=erg, ausserhalb_quote=dict(
+                 abloesung_sozialverwaltung=[h["abloesung_sozialverwaltung_niedrig"], h["abloesung_sozialverwaltung_hoch"]],
+                 hinweis="senkt die Gesamtlast (Beitragshaushalt), schließt keine Lücke der Quote (Korrektur 59)"),
+             hinweis="Hebel grob (deutsche Basis, Kernmodell); Erbschaft und Vermögen mit gekennzeichneten Annahmen")
     (AGG / "justierung.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print("Hebel:", h, "| Erbschaft Mitte", erb_mitte, "| Label effektiv", eff1, eff2)
     print(f"Reserve heute (Mindestdividende im Klubschnitt): {res} Punkte; Lücke nach E1 C {luecke0}")

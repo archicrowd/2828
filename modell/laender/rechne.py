@@ -59,7 +59,7 @@ def wohnort(cc, pli):
     w = dict(preisniveau_2024=float(pli), faktor_gegen_de=round(f, 4),
              dividende_boden_2028_eur_monat=round(ANKER_DE * f, 2),
              dividende_boden_kind_2028_eur_monat=round(ANKER_DE * f / 2, 2),
-             tarifstufen_2028_eur_jahr=[round(G28 * f * k) for k in (1, 2, 3, 4)], tarifsaetze_pct=SAETZE,
+             tarifstufen_2028_eur_jahr=[round(G28 * f * k) for k in _tg["vielfache"]], tarifsaetze_pct=SAETZE,
              einheit="Euro 2028, nominal. Dividende je Erwachsenem und Monat (Kinder zur Hälfte); Tarifstufen je Jahr",
              grundlage="Boden: halbes Existenzminimum am Wohnort (V3b, v3.20); Stufen: 1- bis 4-facher Grundbedarf (v3.22)")
     if cc in LV:

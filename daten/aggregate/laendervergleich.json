@@ -44,15 +44,15 @@
    "preisniveau_2024": 109.1,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.0,
-   "dividende_erwachsener_monat": 590.81,
-   "dividende_kind_monat": 295.4,
+   "dividende_erwachsener_monat": 588.33,
+   "dividende_kind_monat": 294.16,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 535.29,
    "tarifstufen": [
     12847,
+    19270,
     25694,
-    38541,
-    51387
+    38541
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -64,35 +64,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 25694,
-     "einkommensteuer": 1156,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1606,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7090,
-     "dividende_minus_steuer": 5933
+     "dividende_jahr": 7060,
+     "dividende_minus_steuer": 5454
     },
     "single_4gb": {
      "brutto": 51387,
-     "einkommensteuer": 5910,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 7901,
+     "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 7090,
-     "dividende_minus_steuer": 1180
+     "dividende_jahr": 7060,
+     "dividende_minus_steuer": -841
     },
     "familie_3gb": {
      "brutto": 38541,
-     "einkommensteuer": 3212,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 4304,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 21269,
-     "dividende_minus_steuer": 18057
+     "dividende_jahr": 21180,
+     "dividende_minus_steuer": 16876
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 3518,
-     "durchschnittssatz_pct": 8.8,
+     "einkommensteuer": 4712,
+     "durchschnittssatz_pct": 11.78,
      "sozialabgaben": 0,
-     "dividende_jahr": 7090,
-     "dividende_minus_steuer": 3572
+     "dividende_jahr": 7060,
+     "dividende_minus_steuer": 2348
     }
    },
    "gemeinde": {
@@ -117,7 +117,7 @@
     "kapital_quelle": "§ 32d EStG mit Solidaritätszuschlag (gesamtrechnung.json); amtlich",
     "sozialbeitraege_pct_bip": 17.5,
     "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024, vorläufig (WebFetch 10.10.2026, fr_eingaben.md); amtlich, maschinell",
-    "keil_2828_pct": 18.1,
+    "keil_2828_pct": 20.42,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -133,15 +133,15 @@
    "preisniveau_2024": 107.9,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 0.989,
-   "dividende_erwachsener_monat": 584.31,
-   "dividende_kind_monat": 292.15,
+   "dividende_erwachsener_monat": 581.85,
+   "dividende_kind_monat": 290.93,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 529.4,
    "tarifstufen": [
     12706,
+    19058,
     25411,
-    38117,
-    50822
+    38117
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -153,35 +153,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 25411,
-     "einkommensteuer": 1143,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1588,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7012,
-     "dividende_minus_steuer": 5868
+     "dividende_jahr": 6982,
+     "dividende_minus_steuer": 5394
     },
     "single_4gb": {
      "brutto": 50822,
-     "einkommensteuer": 5845,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 7814,
+     "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 7012,
-     "dividende_minus_steuer": 1167
+     "dividende_jahr": 6982,
+     "dividende_minus_steuer": -832
     },
     "familie_3gb": {
      "brutto": 38117,
-     "einkommensteuer": 3176,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 4256,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 21035,
-     "dividende_minus_steuer": 17859
+     "dividende_jahr": 20947,
+     "dividende_minus_steuer": 16690
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 3572,
-     "durchschnittssatz_pct": 8.93,
+     "einkommensteuer": 4784,
+     "durchschnittssatz_pct": 11.96,
      "sozialabgaben": 0,
-     "dividende_jahr": 7012,
-     "dividende_minus_steuer": 3440
+     "dividende_jahr": 6982,
+     "dividende_minus_steuer": 2199
     }
    },
    "gemeinde": {
@@ -208,7 +208,7 @@
     "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)",
     "abgabenkeil_pct": 47.2,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 15.86,
+    "keil_2828_pct": 18.71,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": []
@@ -221,15 +221,15 @@
    "preisniveau_2024": 90.7,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 0.8313,
-   "dividende_erwachsener_monat": 491.17,
-   "dividende_kind_monat": 245.58,
+   "dividende_erwachsener_monat": 489.1,
+   "dividende_kind_monat": 244.55,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 445.01,
    "tarifstufen": [
     10680,
+    16020,
     21360,
-    32041,
-    42721
+    32041
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -241,35 +241,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 21360,
-     "einkommensteuer": 961,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1335,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 5894,
-     "dividende_minus_steuer": 4933
+     "dividende_jahr": 5869,
+     "dividende_minus_steuer": 4534
     },
     "single_4gb": {
      "brutto": 42721,
-     "einkommensteuer": 4913,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 6568,
+     "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
-     "dividende_jahr": 5894,
-     "dividende_minus_steuer": 981
+     "dividende_jahr": 5869,
+     "dividende_minus_steuer": -699
     },
     "familie_3gb": {
      "brutto": 32041,
-     "einkommensteuer": 2670,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 3578,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 17682,
-     "dividende_minus_steuer": 15012
+     "dividende_jahr": 17608,
+     "dividende_minus_steuer": 14030
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 4342,
-     "durchschnittssatz_pct": 10.85,
+     "einkommensteuer": 5807,
+     "durchschnittssatz_pct": 14.52,
      "sozialabgaben": 0,
-     "dividende_jahr": 5894,
-     "dividende_minus_steuer": 1552
+     "dividende_jahr": 5869,
+     "dividende_minus_steuer": 63
     }
    },
    "gemeinde": {
@@ -294,7 +294,7 @@
     "sozial_quelle": "Eurostat gov_10a_taxag, D61, S13, 2024 (WebFetch 10.10.2026, geprüft)",
     "abgabenkeil_pct": 40.6,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 12.87,
+    "keil_2828_pct": 16.42,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -309,15 +309,15 @@
    "preisniveau_2024": 121.0,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.1091,
-   "dividende_erwachsener_monat": 655.25,
-   "dividende_kind_monat": 327.62,
+   "dividende_erwachsener_monat": 652.5,
+   "dividende_kind_monat": 326.25,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 593.67,
    "tarifstufen": [
     14248,
+    21372,
     28496,
-    42744,
-    56992
+    42744
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -329,35 +329,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 28496,
-     "einkommensteuer": 1282,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1781,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7863,
-     "dividende_minus_steuer": 6581
+     "dividende_jahr": 7830,
+     "dividende_minus_steuer": 6049
     },
     "single_4gb": {
      "brutto": 56992,
-     "einkommensteuer": 6554,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 8763,
+     "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
-     "dividende_jahr": 7863,
-     "dividende_minus_steuer": 1309
+     "dividende_jahr": 7830,
+     "dividende_minus_steuer": -933
     },
     "familie_3gb": {
      "brutto": 42744,
-     "einkommensteuer": 3562,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 4773,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 23589,
-     "dividende_minus_steuer": 20027
+     "dividende_jahr": 23490,
+     "dividende_minus_steuer": 18717
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 3123,
-     "durchschnittssatz_pct": 7.81,
+     "einkommensteuer": 4197,
+     "durchschnittssatz_pct": 10.49,
      "sozialabgaben": 0,
-     "dividende_jahr": 7863,
-     "dividende_minus_steuer": 4740
+     "dividende_jahr": 7830,
+     "dividende_minus_steuer": 3633
     }
    },
    "gemeinde": {
@@ -382,7 +382,7 @@
     "kapital_quelle": "Box 3, Satz auf eine fiktive Rendite (nl_eingaben.md); amtlich, Agent; nicht direkt mit einem Satz auf tatsächliche Erträge vergleichbar",
     "abgabenkeil_pct": 35.1,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 16.67,
+    "keil_2828_pct": 19.33,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -397,15 +397,15 @@
    "preisniveau_2024": 141.2,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.2942,
-   "dividende_erwachsener_monat": 764.64,
-   "dividende_kind_monat": 382.32,
+   "dividende_erwachsener_monat": 761.43,
+   "dividende_kind_monat": 380.71,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 692.78,
    "tarifstufen": [
     16627,
+    24940,
     33253,
-    49880,
-    66507
+    49880
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -417,35 +417,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 33253,
-     "einkommensteuer": 1496,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 2078,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 9176,
-     "dividende_minus_steuer": 7679
+     "dividende_jahr": 9137,
+     "dividende_minus_steuer": 7059
     },
     "single_4gb": {
      "brutto": 66507,
-     "einkommensteuer": 7648,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 10225,
+     "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
-     "dividende_jahr": 9176,
-     "dividende_minus_steuer": 1527
+     "dividende_jahr": 9137,
+     "dividende_minus_steuer": -1088
     },
     "familie_3gb": {
      "brutto": 49880,
-     "einkommensteuer": 4157,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 5570,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 27527,
-     "dividende_minus_steuer": 23370
+     "dividende_jahr": 27411,
+     "dividende_minus_steuer": 21841
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 2576,
-     "durchschnittssatz_pct": 6.44,
+     "einkommensteuer": 3495,
+     "durchschnittssatz_pct": 8.74,
      "sozialabgaben": 0,
-     "dividende_jahr": 9176,
-     "dividende_minus_steuer": 6600
+     "dividende_jahr": 9137,
+     "dividende_minus_steuer": 5642
     }
    },
    "gemeinde": {
@@ -466,7 +466,7 @@
    "heute": {
     "abgabenkeil_pct": 35.2,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 14.32,
+    "keil_2828_pct": 17.53,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -484,15 +484,15 @@
    "preisniveau_2024": 118.7,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.088,
-   "dividende_erwachsener_monat": 642.79,
-   "dividende_kind_monat": 321.4,
+   "dividende_erwachsener_monat": 640.09,
+   "dividende_kind_monat": 320.05,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 582.39,
    "tarifstufen": [
     13977,
+    20966,
     27955,
-    41932,
-    55909
+    41932
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -504,35 +504,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 27955,
-     "einkommensteuer": 1258,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1747,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7714,
-     "dividende_minus_steuer": 6456
+     "dividende_jahr": 7681,
+     "dividende_minus_steuer": 5934
     },
     "single_4gb": {
      "brutto": 55909,
-     "einkommensteuer": 6430,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 8596,
+     "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 7714,
-     "dividende_minus_steuer": 1284
+     "dividende_jahr": 7681,
+     "dividende_minus_steuer": -915
     },
     "familie_3gb": {
      "brutto": 41932,
-     "einkommensteuer": 3494,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 4682,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 23141,
-     "dividende_minus_steuer": 19646
+     "dividende_jahr": 23043,
+     "dividende_minus_steuer": 18361
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 3185,
-     "durchschnittssatz_pct": 7.96,
+     "einkommensteuer": 4277,
+     "durchschnittssatz_pct": 10.69,
      "sozialabgaben": 0,
-     "dividende_jahr": 7714,
-     "dividende_minus_steuer": 4528
+     "dividende_jahr": 7681,
+     "dividende_minus_steuer": 3404
     }
    },
    "gemeinde": {
@@ -555,7 +555,7 @@
     "spitzensatz_quelle": "Einkommensteuer 2026 ohne Gemeindezuschlag (be_eingaben.md); Sekundärquelle",
     "abgabenkeil_pct": 52.6,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 17.4,
+    "keil_2828_pct": 19.89,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -572,15 +572,15 @@
    "preisniveau_2024": 119.7,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.0972,
-   "dividende_erwachsener_monat": 648.21,
-   "dividende_kind_monat": 324.1,
+   "dividende_erwachsener_monat": 645.49,
+   "dividende_kind_monat": 322.74,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 587.29,
    "tarifstufen": [
     14095,
+    21143,
     28190,
-    42285,
-    56380
+    42285
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -592,35 +592,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 28190,
-     "einkommensteuer": 1269,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1762,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 7778,
-     "dividende_minus_steuer": 6510
+     "dividende_jahr": 7746,
+     "dividende_minus_steuer": 5984
     },
     "single_4gb": {
      "brutto": 56380,
-     "einkommensteuer": 6484,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 8668,
+     "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 7778,
-     "dividende_minus_steuer": 1295
+     "dividende_jahr": 7746,
+     "dividende_minus_steuer": -923
     },
     "familie_3gb": {
      "brutto": 42285,
-     "einkommensteuer": 3524,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 4722,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 23335,
-     "dividende_minus_steuer": 19812
+     "dividende_jahr": 23238,
+     "dividende_minus_steuer": 18516
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 3158,
-     "durchschnittssatz_pct": 7.9,
+     "einkommensteuer": 4242,
+     "durchschnittssatz_pct": 10.6,
      "sozialabgaben": 0,
-     "dividende_jahr": 7778,
-     "dividende_minus_steuer": 4620
+     "dividende_jahr": 7746,
+     "dividende_minus_steuer": 3504
     }
    },
    "gemeinde": {
@@ -641,7 +641,7 @@
    "heute": {
     "abgabenkeil_pct": 47.0,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 17.5,
+    "keil_2828_pct": 19.96,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -659,15 +659,15 @@
    "preisniveau_2024": 142.8,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 1.3089,
-   "dividende_erwachsener_monat": 773.3,
-   "dividende_kind_monat": 386.65,
+   "dividende_erwachsener_monat": 770.05,
+   "dividende_kind_monat": 385.03,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 700.63,
    "tarifstufen": [
     16815,
+    25223,
     33630,
-    50445,
-    67261
+    50445
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -679,35 +679,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 33630,
-     "einkommensteuer": 1513,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 2102,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 9280,
-     "dividende_minus_steuer": 7766
+     "dividende_jahr": 9241,
+     "dividende_minus_steuer": 7139
     },
     "single_4gb": {
      "brutto": 67261,
-     "einkommensteuer": 7735,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 10341,
+     "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
-     "dividende_jahr": 9280,
-     "dividende_minus_steuer": 1545
+     "dividende_jahr": 9241,
+     "dividende_minus_steuer": -1101
     },
     "familie_3gb": {
      "brutto": 50445,
-     "einkommensteuer": 4204,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 5633,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 27839,
-     "dividende_minus_steuer": 23635
+     "dividende_jahr": 27722,
+     "dividende_minus_steuer": 22089
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 2533,
-     "durchschnittssatz_pct": 6.33,
+     "einkommensteuer": 3440,
+     "durchschnittssatz_pct": 8.6,
      "sozialabgaben": 0,
-     "dividende_jahr": 9280,
-     "dividende_minus_steuer": 6747
+     "dividende_jahr": 9241,
+     "dividende_minus_steuer": 5801
     }
    },
    "gemeinde": {
@@ -728,7 +728,7 @@
    "heute": {
     "abgabenkeil_pct": 36.1,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 13.64,
+    "keil_2828_pct": 17.01,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -746,15 +746,15 @@
    "preisniveau_2024": 91.0,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 0.8341,
-   "dividende_erwachsener_monat": 492.79,
-   "dividende_kind_monat": 246.39,
+   "dividende_erwachsener_monat": 490.72,
+   "dividende_kind_monat": 245.36,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 446.48,
    "tarifstufen": [
     10716,
+    16073,
     21431,
-    32147,
-    42862
+    32147
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -766,35 +766,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 21431,
-     "einkommensteuer": 964,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1339,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 5913,
-     "dividende_minus_steuer": 4949
+     "dividende_jahr": 5889,
+     "dividende_minus_steuer": 4549
     },
     "single_4gb": {
      "brutto": 42862,
-     "einkommensteuer": 4929,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 6590,
+     "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 5913,
-     "dividende_minus_steuer": 984
+     "dividende_jahr": 5889,
+     "dividende_minus_steuer": -701
     },
     "familie_3gb": {
      "brutto": 32147,
-     "einkommensteuer": 2679,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 3590,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 17740,
-     "dividende_minus_steuer": 15062
+     "dividende_jahr": 17666,
+     "dividende_minus_steuer": 14076
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 4328,
-     "durchschnittssatz_pct": 10.82,
+     "einkommensteuer": 5789,
+     "durchschnittssatz_pct": 14.47,
      "sozialabgaben": 0,
-     "dividende_jahr": 5913,
-     "dividende_minus_steuer": 1585
+     "dividende_jahr": 5889,
+     "dividende_minus_steuer": 100
     }
    },
    "gemeinde": {
@@ -815,7 +815,7 @@
    "heute": {
     "abgabenkeil_pct": 44.6,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 9.78,
+    "keil_2828_pct": 13.09,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -833,15 +833,15 @@
    "preisniveau_2024": 96.5,
    "preisniveau_quelle": "preisniveau_2024.csv (Eurostat prc_ppp_ind, A01)",
    "faktor_gegen_de": 0.8845,
-   "dividende_erwachsener_monat": 522.57,
-   "dividende_kind_monat": 261.29,
+   "dividende_erwachsener_monat": 520.38,
+   "dividende_kind_monat": 260.19,
    "dividende_art": "ausgezahlt (V3a, Klubtopf nach Einwohnern x Preisniveau)",
    "dividende_boden_monat": 473.47,
    "tarifstufen": [
     11363,
+    17045,
     22726,
-    34090,
-    45453
+    34090
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -853,35 +853,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 22726,
-     "einkommensteuer": 1023,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1420,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
-     "dividende_jahr": 6271,
-     "dividende_minus_steuer": 5248
+     "dividende_jahr": 6245,
+     "dividende_minus_steuer": 4824
     },
     "single_4gb": {
      "brutto": 45453,
-     "einkommensteuer": 5227,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 6988,
+     "durchschnittssatz_pct": 15.37,
      "sozialabgaben": 0,
-     "dividende_jahr": 6271,
-     "dividende_minus_steuer": 1044
+     "dividende_jahr": 6245,
+     "dividende_minus_steuer": -744
     },
     "familie_3gb": {
      "brutto": 34090,
-     "einkommensteuer": 2841,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 3807,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
-     "dividende_jahr": 18813,
-     "dividende_minus_steuer": 15972
+     "dividende_jahr": 18734,
+     "dividende_minus_steuer": 14927
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 4082,
-     "durchschnittssatz_pct": 10.21,
+     "einkommensteuer": 5462,
+     "durchschnittssatz_pct": 13.65,
      "sozialabgaben": 0,
-     "dividende_jahr": 6271,
-     "dividende_minus_steuer": 2189
+     "dividende_jahr": 6245,
+     "dividende_minus_steuer": 783
     }
    },
    "gemeinde": {
@@ -902,7 +902,7 @@
    "heute": {
     "abgabenkeil_pct": 40.6,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 9.02,
+    "keil_2828_pct": 12.08,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [
@@ -926,9 +926,9 @@
    "dividende_boden_monat": 344.43,
    "tarifstufen": [
     8266,
+    12399,
     16533,
-    24799,
-    33065
+    24799
    ],
    "tarifsaetze_pct": [
     0.0,
@@ -940,35 +940,35 @@
    "muster": {
     "single_2gb": {
      "brutto": 16533,
-     "einkommensteuer": 744,
-     "durchschnittssatz_pct": 4.5,
+     "einkommensteuer": 1033,
+     "durchschnittssatz_pct": 6.25,
      "sozialabgaben": 0,
      "dividende_jahr": 4133,
-     "dividende_minus_steuer": 3389
+     "dividende_minus_steuer": 3100
     },
     "single_4gb": {
      "brutto": 33065,
-     "einkommensteuer": 3802,
-     "durchschnittssatz_pct": 11.5,
+     "einkommensteuer": 5084,
+     "durchschnittssatz_pct": 15.38,
      "sozialabgaben": 0,
      "dividende_jahr": 4133,
-     "dividende_minus_steuer": 331
+     "dividende_minus_steuer": -951
     },
     "familie_3gb": {
      "brutto": 24799,
-     "einkommensteuer": 2067,
-     "durchschnittssatz_pct": 8.33,
+     "einkommensteuer": 2769,
+     "durchschnittssatz_pct": 11.17,
      "sozialabgaben": 0,
      "dividende_jahr": 12399,
-     "dividende_minus_steuer": 10333
+     "dividende_minus_steuer": 9630
     },
     "single_40000": {
      "brutto": 40000,
-     "einkommensteuer": 5744,
-     "durchschnittssatz_pct": 14.36,
+     "einkommensteuer": 7026,
+     "durchschnittssatz_pct": 17.56,
      "sozialabgaben": 0,
      "dividende_jahr": 4133,
-     "dividende_minus_steuer": -1611
+     "dividende_minus_steuer": -2892
     }
    },
    "gemeinde": null,
@@ -982,7 +982,7 @@
    "heute": {
     "abgabenkeil_pct": 34.7,
     "abgabenkeil_quelle": "OECD Taxing Wages 2025, Tab. 1.2 (abgabenkeil_2024.csv)",
-    "keil_2828_pct": 10.29,
+    "keil_2828_pct": 13.77,
     "keil_2828_hinweis": "Alleinstehende beim Durchschnittslohn, Arbeitskosten 2028 gleich, Einkommensteuer nach 28:28; ohne Konsumsteuern (wie OECD), daher überzeichnet der Vergleich die Entlastung (modell/anreize.py)"
    },
    "luecken": [

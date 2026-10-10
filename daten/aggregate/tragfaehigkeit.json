@@ -1,41 +1,51 @@
 {
  "deckung": {
-  "quote": 31.9,
-  "deckung_bisher": 30.17,
-  "luecke_bisher": 1.73,
-  "zusatzluecke_label_c": 1.19,
-  "deckung_nach_e1c": 28.98,
-  "luecke_nach_e1c": 2.92
+  "quote": 30.2,
+  "deckung": 30.44,
+  "luecke": -0.24,
+  "label_effektiv": 16.88,
+  "aenderung_v337": {
+   "einkommen_stufen": 1.14,
+   "konsum_label": -1.19,
+   "erbschaft": 0.13,
+   "vermoegen": 0.19
+  },
+  "dach_kuerzung": 1.65,
+  "quote_ohne_dachkuerzung": 31.9,
+  "reserve_pkt": 0.84,
+  "reserve_mit_ueberschuss": 1.08,
+  "stabil": true,
+  "stabilitaetskriterium": "Lücke <= 0 und Reserve einschließlich Überschuss >= 1,0 Punkte des BIP (v3.34)"
  },
  "mindestdividende": [
   {
    "kuerzung_pkt_bip": 0.0,
    "dividende_minus_pct": 0.0,
-   "deckung_2028_pct": 110.4,
-   "tiefpunkt_pct": 108.7,
+   "deckung_2028_pct": 109.9,
+   "tiefpunkt_pct": 108.2,
    "tiefpunkt_jahr": 2032,
    "jahre_unter_100": 0
   },
   {
-   "kuerzung_pkt_bip": 1.19,
-   "dividende_minus_pct": 10.0,
-   "deckung_2028_pct": 99.3,
-   "tiefpunkt_pct": 96.9,
+   "kuerzung_pkt_bip": 0.5,
+   "dividende_minus_pct": 4.2,
+   "deckung_2028_pct": 105.3,
+   "tiefpunkt_pct": 103.3,
    "tiefpunkt_jahr": 2035,
-   "jahre_unter_100": 10
+   "jahre_unter_100": 0
   },
   {
-   "kuerzung_pkt_bip": 2.92,
-   "dividende_minus_pct": 24.5,
-   "deckung_2028_pct": 83.3,
-   "tiefpunkt_pct": 79.8,
+   "kuerzung_pkt_bip": 1.0,
+   "dividende_minus_pct": 8.4,
+   "deckung_2028_pct": 100.6,
+   "tiefpunkt_pct": 98.3,
    "tiefpunkt_jahr": 2035,
-   "jahre_unter_100": 23
+   "jahre_unter_100": 7
   }
  ],
  "tarif": [
   {
-   "variante": "geltend 0/9/16/21/28, Stufen 1/2/3/4",
+   "variante": "bis v3.36: 0/9/16/21/28, Stufen 1/2/3/4",
    "einkommensteuer_pct_bip": 7.78,
    "aenderung": 0.0
   },
@@ -60,7 +70,7 @@
    "aenderung": 1.32
   },
   {
-   "variante": "28 % bleibt, Stufen 1/1,5/2/3",
+   "variante": "gewählt v3.37: 28 % bleibt, Stufen 1/1,5/2/3",
    "einkommensteuer_pct_bip": 8.92,
    "aenderung": 1.14
   },
@@ -74,36 +84,36 @@
   "sensitivitaet": [
    {
     "fall": "0,0 %",
-    "e2035": 493.08280714898973,
-    "e2060": 524.5083753832204,
-    "gegen": -3.149085988430733
+    "e2035": 490.80856299247654,
+    "e2060": 522.2341312267073,
+    "gegen": -3.162366063330979
    },
    {
     "fall": "0,5 %",
-    "e2035": 513.461203544645,
-    "e2060": 623.7597438437821,
-    "gegen": 15.177762930390104
+    "e2035": 511.1061568647549,
+    "e2060": 621.0919573856805,
+    "gegen": 15.16879501737154
    },
    {
     "fall": "0,98 % (3,0 % nominal) — Zentralfall",
-    "e2035": 533.6218852704675,
-    "e2060": 734.6765123849365,
-    "gegen": 35.658637815508555
+    "e2035": 531.1868993291746,
+    "e2060": 731.5689290650539,
+    "gegen": 35.654488889560554
    },
    {
     "fall": "1,5 %",
-    "e2035": 556.0859361042217,
-    "e2060": 874.5686633970541,
-    "gegen": 61.48984151872688
+    "e2035": 553.5618777964189,
+    "e2060": 870.9063927218502,
+    "gegen": 61.49177046969394
    },
    {
     "fall": "2,0 %",
-    "e2035": 578.3636093749304,
-    "e2060": 1031.8493483795382,
-    "gegen": 90.53185268926308
+    "e2035": 575.7512177076086,
+    "e2060": 1027.56344295024,
+    "gegen": 90.54061499462138
    }
   ],
-  "mindestquote_strenge_lesart": 31.84694767991205,
+  "mindestquote_strenge_lesart": 30.19694767991205,
   "hinweis": "Quote nach strenger Lesart (real 0 % = nominal 2 %); die Mindestdividende hält auch ohne reales Wachstum"
  },
  "lenkung": {

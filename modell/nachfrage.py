@@ -76,7 +76,8 @@ def labelsatz(zuordnung=None):
     r_heute = sum(w[k] * steuerpfl[k]["heute"] for k in steuerpfl) / s
     kern = 20.0
     faktor = (r / (100 + r)) / (kern / (100 + kern))
-    konsum_kern = next(x[1] for x in GR["tabelle_deckung"] if x[0].startswith("06"))
+    # Konsumaufkommen bei 20 % (Kernmodell); seit v3.37 trägt die Deckungszeile 06 schon den Satz der Entscheidung E1 C
+    konsum_kern = GR.get("konsum_kern_20_pct_bip") or next(x[1] for x in GR["tabelle_deckung"] if x[0].startswith("06"))
     return dict(anteil_c_d_pct=round(anteil_cd * 100, 1), effektiv_label_zuordnung_pct=round(r, 2), effektiv_heute_de_saetze_pct=round(r_heute, 2), kernmodell_pct=kern,
                 konsumaufkommen_kern_pct_bip=round(konsum_kern, 2),
                 konsumaufkommen_bei_zuordnung_pct_bip=round(konsum_kern * faktor, 2),

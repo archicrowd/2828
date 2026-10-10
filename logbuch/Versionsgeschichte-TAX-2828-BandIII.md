@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.36**
+Stand: 10. Oktober 2026 · Modellstand **v3.37**
 
 ---
 
@@ -1644,11 +1644,73 @@ Zuständigkeit der EU (Art. 3 Abs. 1 AEUV); ein Klub von EU-Staaten kann nicht s
 
 *Skript: `modell/justierung.py`. Quellen: Eurostat gov_10a_exp (COFOG GF04 und Teilposten, EU27 2024), tps00098, tps00101 (WebFetch 10.10.2026).*
 
+### v3.37 — Entscheidungen eingerechnet: Quote 30,2 %, Deckung ohne Lücke; Korrektur 59
+
+**Art der Änderung: MAJOR in der Rechnung (Quote, Obergrenze, Deckung bewegt); die veröffentlichten Texte bleiben bis zur Freigabe auf
+v3.36 (Fassung 7. Oktober 2026).** 10. Oktober 2026.
+
+**Entscheidungen der Initiative (10.10.2026).** „Wir folgen allen Empfehlungen“ (E1 C, E2 V2 im Klubschnitt, E3 je Land, E4 81,3 %); Paket
+P8; 28:28 bleibt; Verteidigung bleibt außer Betracht; die Obergrenze des Dachs darf sich anpassen. Zum Rechtsrahmen: „Auf den aktuellen
+Rechtsrahmen der EU nehmen wir nicht zwingend Rücksicht. Eine starke Gruppe kann neue Forderungen durchsetzen.“ Die Vorbehalte aus v3.36
+(Art. 110 AEUV, Art. 3 Abs. 1 AEUV) bleiben als Sachinformation im Logbuch; sie sind keine Bedingung der Rechnung mehr.
+
+**Umsetzung in `modell/gesamtrechnung.py` (neue Parameter in `gesamtrechnung.toml`, Originale in `modell/rahmen/` unverändert):**
+- `dach_kuerzung_wirtschaftsraum` 1,65: Posten „Wirtschaftsraum, Agrar, Energie, Netze“ 3,75 → 2,10 % des BIP; Summe A 8,94 → 7,29.
+  Die Selbstprüfung gegen `final.pfad()` rechnet weiter mit dem Original (33 Jahre exakt).
+- `label_effektiv_pct` 16,88 (E1 C): Konsum 8,95 → 7,76 % des BIP (deutsche Basis). `tragfaehigkeit.py` bricht ab, wenn der Parameter von
+  `nachfrage.json` abweicht.
+- `tarif_stufen_vielfache` 1/1,5/2/3: Einkommen 7,78 → 8,92 % (Kernmodell, grob); Stufen DE 2028: 12.847 / 19.270 / 25.694 / 38.541 €.
+  Länderrechnungen, Anreize und Ländervergleich lesen die Vielfachen jetzt aus `tarif_grundbedarf.json`.
+- Erbschaftsfreibetrag 100.000 €: +0,13 % (150.000 Erwerbe über 200.000 € je Jahr, **Annahme**; Satz 28 % statt 29 % in v3.36).
+- Vermögensteuer 1,5 %: +0,19 % (Hälfte Ausweichen, **Annahme**).
+- E2/E3: `tabelle_laender_div` führt V2 (gleicher Anteil am eigenen BIP je Kopf) und die Gemeindeformel je Land; V3a zum Vergleich.
+  2028 unter der Mindestdividende (halbes Existenzminimum am Wohnort): FR 522/529, ES 399/445, SI 388/446, EE 356/473 €
+  je Erwachsenem und Monat (Euro 2028, nominal). Das Kriterium der Quote gilt für den Klubschnitt.
+
+**Bewegte Zahlen:**
+
+| Größe | v3.36 | v3.37 |
+|---|---|---|
+| strenge Mindestquote | 31,85 | 30,20 |
+| Quote (% des BIP) | 31,9 | **30,2** |
+| Obergrenze (% dessen, was A einzieht) | 35 | **32** |
+| Ebene A 2028 / Höchstbedarf (2035) | 9,64 / 10,59 | 7,99 / 8,94 |
+| Deckung nachgewiesen (deutsche Basis) | 30,17 | **30,44** |
+| Lücke (Quote minus Deckung) | 1,73 (nach E1 C 2,92) | **−0,24** (Überschuss, 33 Mrd € Klub 2028) |
+| Reserve bis zur Mindestdividende / mit Überschuss | 0,88 / – | 0,84 / **1,08** (Kriterium 1,0: stabil) |
+| Entlastung gegen heute | 1,11 | 2,81 Punkte (388 Mrd € Klub 2028) |
+| Klubdividende 2028 je Einwohner (€ im Monat, Euro 2028) | 537 | 535 (durch das Kriterium bestimmt; Unterschied aus der Rundung der Quote) |
+
+Die Dividende bleibt nahezu gleich, weil die Quote aus der Mindestdividende abgeleitet wird: Die Kürzung des Dachs senkt die Quote, nicht die
+Dividende. Eine höhere Dividende statt einer niedrigeren Quote wäre eine eigene Entscheidung (Quote 31,9 hielte die Dividende um 1,65 Punkte
+des BIP höher, die Deckung reichte dann nicht).
+
+**Nebenwirkung der steileren Stufen (`modell/anreize.py`):** Der Abgabenkeil unter 28:28 steigt bei den Modellhaushalten um 2,3 bis 3,5
+Punkte (z. B. 18,10 → 20,42 %); der Abbau des Keils gegen heute sinkt im Klubschnitt von 28,5 auf 25,8 Punkte, der nicht eingerechnete
+Niveaueffekt des Angebots (Obergrenze, zentral) von 8,0 auf 7,2 %. Die Übergangsrechnung (V2B) braucht 2,03 statt 1,86 % des Topfes.
+
+**Obergrenze 32 %:** nicht gedeckt sind die Häufung der drei Finanzierungsrisiken (32,04 %) und Verteidigung 3,5 % (33,84 %; außer Betracht).
+
+**Korrektur 59** (Abschnitt 4): Ablösung der Sozialverwaltung in v3.36 gegen die Lücke der Quote gerechnet.
+
+**Folgen außerhalb der Rechnung:** `modell/pruefe_konzept.py` meldet 21 von 22 Stufen; die Stufe „Gesamtkonzept gegen Rechnung“ schlägt
+**bewusst** fehl, weil Gesamtkonzept, Kurzfassung und Webseite bis zur Freigabe des Textentwurfs auf v3.36 stehen. `justierung.py` rechnet
+seit v3.37 auf eingefrorenen Eingängen (Stand v3.36, `daten/aggregate/justierung_basis_v336.json`) und dokumentiert die Entscheidungsgrundlage.
+
+**Grenzen:** Deckung auf deutscher Basis (B12 auf Klubebene offen); Einkommensteuer aus dem Kernmodell mit sieben Gruppen; Erbschaft,
+Vermögen, Dach S2 und die Übertragung der EU27-Anteile auf den Klub sind Annahmen oder Setzungen. Der Überschuss von 0,24 Punkten liegt
+innerhalb dieser Unsicherheit.
+
+**Geprüft:** `python3 modell/alles.py` (21 von 22, siehe oben). **Wodurch aufgefallen:** Auftrag der Initiative („P8 … Go on“).
+
+*Skripte: `modell/gesamtrechnung.py`, `modell/tarif_grundbedarf.py`, `modell/tragfaehigkeit.py`, `modell/justierung.py`, `modell/nachfrage.py`,
+`modell/laender/rechne.py`, `modell/anreize.py`, `modell/laendervergleich.py`. Quellen wie v3.33 bis v3.36.*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
 
-Neu ab v3.8: die Nummern 47 bis 58. **Nächste freie Nummer: 59.** Die Nummern 31 bis 41 sind
+Neu ab v3.8: die Nummern 47 bis 59. **Nächste freie Nummer: 60.** Die Nummern 31 bis 41 sind
 besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 
 | Nr. | Was war falsch | Richtig | Wodurch auffiel |
@@ -1665,6 +1727,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 56 | v3.24, `daten/aggregate/laender/pl_eingaben.md`, Zeile „Defizit, Regierungsprognose“: „7,1 % BIP (2026 und 2027); 282,6 Mrd. Zł (2027)“ | 7,1 % ist das Defizit des Gesamtstaats; 282,6 Mrd. Zł ist das Defizit des Staatshaushalts (zentraler Haushalt), eine andere Abgrenzung. Seit v3.25 nicht mehr in der Zeile; seit v3.26 als eigene Zeile gekennzeichnet. Keine Rechnung betroffen | Forsal/PAP 28.08.2026 nennt die 282,6 Mrd. Zł ausdrücklich als „deficyt państwa“ (Nachrecherche v3.26) |
 | 57 | v3.23 (Frankreich), v3.24 bis v3.26 (Standard 2.4): Klubwirkung mit einem Rest-Saldo der übrigen Länder, der den Klub-Gesamtsaldo bei −2,93 % festhielt. Daraus: „Ein französisches Regierungsdefizit wirkt also neutral; das Wachstum entscheidet“ (v3.23); Frankreich B 81,29 %, C 81,96 %; Spanien C 81,15 %; Frankreich und Spanien gemeinsam 81,82 % (v3.26) | Die übrigen Länder behalten ihren eigenen Saldo 2025 (Status quo). Frankreich B 81,05 %, C 81,72 %; Spanien B 81,07 %, C 80,93 %; Niederlande C 81,49 %; Frankreich, Spanien und Niederlande gemeinsam 81,55 %. Die Neutralität des Defizits war ein Artefakt der Methode. Gesamtrechnung und Konzept nicht betroffen (Sensitivität) | v3.27: Die Spalte „Regierungsdefizit“ ergab für jedes Land genau den Referenzwert 81,29 %; das ließ sich nur aus der Bauart erklären |
 | 58 | Gesamtkonzept (seit v3.12), Abschnitt Gemeinden: „Estlands Gemeinden geben 5,8 % aus, Deutschlands 16,8 % … bei vergleichbarem Aufgabenvolumen. Der Weg auf estnisches Niveau setzt 1,02 Punkte des BIP frei.“ | Das vergleichbare Aufgabenvolumen ist nicht belegt; die Aufgaben der Gemeinden unterscheiden sich je Land. Belegt ist eine Einsparung der Verwaltung von netto etwa 0,1 bis 0,3 % des BIP nach 8 bis 12 Jahren (deutsche Ex-ante-Studien); der Verwaltungskern (COFOG GF0101) liegt in Estland mit 1,8 % auf EU-Niveau (1,9 %). Die 1,02 Punkte sind eine rechnerische Obergrenze, keine erreichbare Einsparung. Keine Rechnung betroffen (nicht in der Deckung); Text in der nächsten Fassung zu ändern | Recherche zur Wirkung der Verwaltungsdigitalisierung (v3.35) |
+| 59 | v3.36, `modell/justierung.py`, Pakete P6 bis P8: Die Ablösung der Verwaltung der Sozialschutzsysteme (0,45 bis 0,78 % des BIP) schließe die Lücke der Quote; P8 mit Lücke −0,65 bzw. −0,98 und Reserve 1,53 bzw. 1,86 | Diese Verwaltungskosten trägt heute der Beitragshaushalt; die Posten der Quote (Ebenen A und B) enthalten sie nicht. Ihr Wegfall gehört zur Entlastung gegen heute und ist Voraussetzung dafür, dass der Wegfall der Beiträge trägt; er schließt keine Lücke der Quote. P8 ohne Ablösung: +3,12, Lücke −0,20, Reserve 1,08, stabil; P6 und P7 nicht stabil | Durchsicht der Pakete vor dem Einrechnen in die Gesamtrechnung (v3.37) |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -1693,9 +1756,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.36
+## 7 | Offene Punkte, Stand v3.37
 
-Neu seit v3.23 (Stand v3.36): **Paketwahl (stabil: P6 mit Ablösung 0,78, P7, P8; ohne Mehrwertsteuererhöhung P6/P8); Aufgabenliste des Dachs; rechtliche Prüfung Mehrwertsteuer nach Fußabdruck und Handelsschutz; Text Verwaltung (Korrektur 58)**; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.37): **Textentwurf (deutsch) von Gesamtkonzept, Kurzfassung und Webseite zur Freigabe, danach Version und fünf Sprachfassungen; bis dahin schlägt die Prüfstufe „Gesamtkonzept gegen Rechnung“ bewusst fehl; Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten; Text Verwaltung (Korrektur 58)**; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

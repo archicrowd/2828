@@ -78,7 +78,12 @@ with open(AGG / "zinsausgaben_2024.csv", encoding="utf-8") as f:
 
 A_POSTEN, B_POSTEN = opfad.A_POSTEN, opfad.B_POSTEN
 A_SUM, B_AUFG, V_ZIEL = opfad.A_SUM, opfad.B_AUFG, opfad.V_ZIEL
-A_OHNE_V = opfad.A_OHNE_V
+A_OHNE_V_ORIG = opfad.A_OHNE_V                                       # nur für die Selbstprüfung
+# v3.37 (Entscheidung P8, Dach S2): Posten Wirtschaftsraum gekürzt; die Originale in modell/rahmen/ bleiben unverändert
+DACH_KUERZUNG = float(PAR["dach_kuerzung_wirtschaftsraum"])
+A_POSTEN = [(n, round(v - DACH_KUERZUNG, 2) if n.startswith("Wirtschaftsraum") else v) for n, v in A_POSTEN]
+A_SUM = round(sum(v for _, v in A_POSTEN), 2)
+A_OHNE_V = round(A_SUM - V_ZIEL, 2)
 BODEN, KIND_ANT, SCHULE = opfad.BODEN, opfad.KIND_ANT, opfad.SCHULE
 V_START, V_JAHR = float(PAR["verteidigung_start"]), int(PAR["verteidigung_zieljahr"])
 G_NOM, PREIS = float(PAR["wachstum_nominal"]) / 100, float(PAR["preissteigerung"]) / 100
@@ -109,7 +114,8 @@ I_MARKT = sum(GDP[k] * SCHULD[k] / 100 * RENDITE[k] for k in GDP) / D_ABS24
 
 # ---------------------------------------------------------------- Zeitpfad
 def pfad(quote, *, i_alt=None, vorlauf=None, d0=None, v_ziel=V_ZIEL, g_nom=G_NOM, preis=PREIS,
-         i_ziel=None, rest=None, tilg=0.0, jahre=33, kopf_de=None, kopf_klub=None):
+         i_ziel=None, rest=None, tilg=0.0, jahre=33, kopf_de=None, kopf_klub=None, a_ohne_v=None):
+    a_ohne_v = A_OHNE_V if a_ohne_v is None else a_ohne_v
     i_alt = I_ALT if i_alt is None else i_alt
     vorlauf = VORLAUF if vorlauf is None else vorlauf
     d = D28 if d0 is None else d0
@@ -125,7 +131,7 @@ def pfad(quote, *, i_alt=None, vorlauf=None, d0=None, v_ziel=V_ZIEL, g_nom=G_NOM
         s = i_alt + (i_ziel - i_alt) * min((t + vorlauf) / rest, 1.0)
         zd = d * s / 100
         tl = tilg if d > tilg else max(d, 0.0)
-        a = A_OHNE_V + v + zd
+        a = a_ohne_v + v + zd
         div = quote - a - B_AUFG - tl
         out.append(dict(jahr=j, v=v, d=d, s=s, zd=zd, a=a, div=div,
                         de_fix=div / 100 * kopf_de / 12,
@@ -152,7 +158,7 @@ def mindestquote(feld="de_fix", schwelle=None, **kw):
 def selbstpruefung():
     ref = final.pfad()
     neu = pfad(30.60, i_alt=1.53, vorlauf=0, d0=basis.D_START,
-               kopf_de=basis.KOPF_DE, kopf_klub=basis.KOPF_KLUB)
+               kopf_de=basis.KOPF_DE, kopf_klub=basis.KOPF_KLUB, a_ohne_v=A_OHNE_V_ORIG)
     for a, b in zip(ref, neu):
         for k in ("v", "d", "zd", "a", "div", "de_fix", "de_real", "kl_real"):
             if abs(a[k] - b[k]) > 1e-9:
@@ -193,6 +199,11 @@ def main() -> int:
              anker_de=ANKER_DE, schwelle_klub=SCHWELLE_KLUB, schwelle_de_kopf=ANKER_DE * (1 - K_MINDER / 2),
              pli_klub=PLI_KLUB, r_de=R_DE)
     q = round(aufrunden(mq_streng, float(PAR["quote_rundung"])), 2)
+    # Vergleich: Quote ohne Kürzung des Dachs (Stand v3.36)
+    mq_ohne_dach = mindestquote("kl_real", schwelle=SCHWELLE_KLUB, g_nom=PREIS, a_ohne_v=A_OHNE_V_ORIG)
+    W.update(dach_kuerzung=DACH_KUERZUNG, a_ohne_v=A_OHNE_V, a_ohne_v_original=A_OHNE_V_ORIG,
+             mindestquote_streng_ohne_dachkuerzung=mq_ohne_dach,
+             quote_ohne_dachkuerzung=round(aufrunden(mq_ohne_dach, float(PAR["quote_rundung"])), 2))
     W.update(mindestquote_streng=mq_streng, mindestquote_original_lesart=mq_original_lesart,
              mindestquote_zentral=mq_zentral, quote=q, boden=BODEN,
              einzug=q - BODEN)
@@ -331,14 +342,25 @@ def main() -> int:
     # Einkommen seit v3.22: Stufen beim 1- bis 4-fachen Grundbedarf (v3.21: bis 5-fach) (modell/tarif_grundbedarf.py, gleiche
     # Aufkommensfunktion des nationalen Modells); vorher 313,3 Mrd mit Stufen 12.348/25.000/40.000/55.000/70.000
     TG = json.loads((AGG / "tarif_grundbedarf.json").read_text(encoding="utf-8"))
-    kern = [("01 Einkommen (Stufen 1- bis 4-facher Grundbedarf, 0/9/16/21/28 %, Dividende steuerpflichtig)",
+    vf = "/".join(f"{x:g}".replace(".", ",") for x in TG["vielfache"])
+    # v3.37 (E1 C): Konsum mit dem effektiven Satz der steuernden Zuordnung statt 20 % des Kernmodells
+    KONSUM_KERN20, r = 375.9, float(PAR["label_effektiv_pct"])
+    konsum = KONSUM_KERN20 * (r / (100 + r)) / (20 / 120)
+    kern = [(f"01 Einkommen (Stufen beim {vf}-fachen Grundbedarf, 0/9/16/21/28 %, Dividende steuerpflichtig)",
              TG["einkommen_modell_mrd_neu"]),
-            ("02 Kapital 28 %", 48.8), ("06 Konsum (Label, effektiv 20,0 %)", 375.9),
+            ("02 Kapital 28 %", 48.8), (f"06 Konsum (Label, steuernde Zuordnung, effektiv {r:.1f} %)".replace(".", ","), konsum),
             ("05 Konzerne und Plattformen 28 %", 157.6), ("03 Erbschaft 28 %", 35.9),
             ("04c Vermögen, Mindeststeuer (anrechenbar)", 20.7), ("07 Klima, CO₂ 100 €/t netto", 55.0),
             ("Sonstige Steuern (Energie, Tabak u. a.)", 165.0)]
+    # v3.37 (P8): Erbschaftsfreibetrag 100.000 EUR, Vermögensteuer 1,5 % (beide mit gekennzeichneten Annahmen)
+    fb, n_erw = float(PAR["erbschaft_freibetrag_eur"]), float(PAR["erbschaft_erwerbe_ueber_200k_de"])
+    erb_mehr = n_erw * ((200000 - fb) + 30000 * (200000 - fb) / 100000) * 0.28 / 1e9
+    vs, ausw = float(PAR["vermoegensteuer_satz_pct"]), float(PAR["vermoegensteuer_ausweichen"])
+    verm_mehr = (20.7 + 12.0) * (vs - 1.0) * (1 - ausw)
     bausteine = [("Vermögensteuer 1 % ab 2 Mio (nicht anrechenbar)", 12.0),
-                 ("Abbau klimaschädlicher Subventionen", 20.0), ("CO₂-Pfad 100 → 150 €/t", 15.0)]
+                 ("Abbau klimaschädlicher Subventionen", 20.0), ("CO₂-Pfad 100 → 150 €/t", 15.0),
+                 (f"Erbschaft, Freibetrag {fb:,.0f} € statt 200.000 € (Annahme zur Zahl der Erwerbe)".replace(",", "."), erb_mehr),
+                 (f"Vermögensteuer {vs:.1f} % statt 1 % (Hälfte Ausweichen, Annahme)".replace(".", ","), verm_mehr)]
     zeilen = [(n, m / basis_kern * 100, "Kernsystem") for n, m in kern]
     zeilen += [(n, m / basis_kern * 100, "Baustein") for n, m in bausteine]
     kernsumme = sum(m for _, m in kern) / basis_kern * 100
@@ -347,7 +369,13 @@ def main() -> int:
     gedeckt = mit_bausteinen + BODEN
     W.update(tabelle_deckung=zeilen, deckung_kern=kernsumme, deckung_mit_bausteinen=mit_bausteinen,
              deckung_gesamt=gedeckt, deckung_luecke=q - gedeckt,
-             deckung_luecke_mrd_klub=(q - gedeckt) / 100 * BIP28_KLUB)
+             deckung_luecke_mrd_klub=(q - gedeckt) / 100 * BIP28_KLUB,
+             konsum_kern_20_pct_bip=KONSUM_KERN20 / basis_kern * 100, label_effektiv=r,
+             einkommen_1_4_pct_bip=TG["einkommen_modell_mrd_1_4"] / basis_kern * 100,
+             deckung_aenderung_v337=dict(
+                 einkommen_stufen=(TG["einkommen_modell_mrd_neu"] - TG["einkommen_modell_mrd_1_4"]) / basis_kern * 100,
+                 konsum_label=(konsum - KONSUM_KERN20) / basis_kern * 100,
+                 erbschaft=erb_mehr / basis_kern * 100, vermoegen=verm_mehr / basis_kern * 100))
 
     W["selbstpruefung_jahre"] = n_geprueft
     # Dividende je Erwachsenem und je Kind (Kinder zur Hälfte): Schnitt je Einwohner / (1 - k/2)
@@ -366,6 +394,15 @@ def main() -> int:
         e2028=W["erw_2028"] * PLI[c] / PLI_KLUB, e2035=W["erw_2035"] * PLI[c] / PLI_KLUB,
         e2060=W["erw_2060"] * PLI[c] / PLI_KLUB, streng_min=st_min * PLI[c] / PLI_KLUB)
         for c in sorted(LAENDER, key=lambda c: -PLI[c])]
+    # v3.37 (E2 V2, E3 je Land): gleicher Anteil am eigenen BIP je Kopf; Gemeindeformel mit dem eigenen BIP je Kopf.
+    # Mindestdividende nur als Rechenkriterium im Klubschnitt. Fortschreibung 2035/2060 mit dem Klubwachstum (keine Angleichung angenommen).
+    for r in W["tabelle_laender_div"]:
+        c = r["land"]
+        f_bip = (GDP[c] * 1e6 / POP[c]) / (BIP24_KLUB * 1e9 / POP_KLUB)
+        r.update(bip_kopf_klub=f_bip, v2_e2028=W["erw_2028"] * f_bip, v2_e2035=W["erw_2035"] * f_bip,
+                 v2_e2060=W["erw_2060"] * f_bip, v2_unter_boden=W["erw_2028"] * f_bip < r["boden"],
+                 gemeinde_einw=je_einw * f_bip, gemeinde_kind=je_kind * f_bip)
+    W["dividende_regel"] = "V2: gleicher Anteil am eigenen BIP je Kopf (Entscheidung E2, v3.37); V3a-Spalten zum Vergleich"
     W["streng_min_erw_klub"] = st_min
     W["streng_min_jahr"] = min(ST, key=lambda r: r["kl_real"])["jahr"]
     W["deckung_boden_2028_pct"] = p0["kl_real"] / SCHWELLE_KLUB * 100

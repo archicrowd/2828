@@ -84,9 +84,9 @@
   "dividende_boden_kind_2028_eur_monat": 296.84,
   "tarifstufen_2028_eur_jahr": [
    14248,
+   21372,
    28496,
-   42744,
-   56992
+   42744
   ],
   "tarifsaetze_pct": [
    0,
@@ -97,7 +97,7 @@
   ],
   "einheit": "Euro 2028, nominal. Dividende je Erwachsenem und Monat (Kinder zur Hälfte); Tarifstufen je Jahr",
   "grundlage": "Boden: halbes Existenzminimum am Wohnort (V3b, v3.20); Stufen: 1- bis 4-facher Grundbedarf (v3.22)",
-  "dividende_ausgezahlt_v3a_2028_eur_monat": 655.25
+  "dividende_ausgezahlt_v3a_2028_eur_monat": 652.5
  },
  "eingaben": "daten/aggregate/laender/nl_eingaben.md",
  "luecken": [

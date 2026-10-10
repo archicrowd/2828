@@ -1,8 +1,8 @@
 fall,jahr_hoechstbedarf,a_pct_bip,pct_des_einzugs,abstand_zur_obergrenze
-Zentralfall,2035,10.593,34.08,0.92
-"Zielzins ohne Garantie (2,78 %)",2035,10.776,34.67,0.33
-"nominales Wachstum 1,5 %",2035,10.771,34.66,0.34
-"Schuldenquote 2028 bei 84,8 %",2035,10.664,34.31,0.69
-alle drei Finanzierungsrisiken zugleich,2035,11.062,35.59,-0.59
-"Verteidigung 3,5 % (Haager Zusage)",2035,11.593,37.30,-2.30
-"Verteidigung 2,0 % (COFOG-vergleichbar)",2035,10.093,32.47,2.53
+Zentralfall,2035,8.943,30.44,1.56
+"Zielzins ohne Garantie (2,78 %)",2035,9.126,31.06,0.94
+"nominales Wachstum 1,5 %",2035,9.121,31.05,0.95
+"Schuldenquote 2028 bei 84,8 %",2035,9.014,30.68,1.32
+alle drei Finanzierungsrisiken zugleich,2035,9.412,32.04,-0.04
+"Verteidigung 3,5 % (Haager Zusage)",2035,9.943,33.84,-1.84
+"Verteidigung 2,0 % (COFOG-vergleichbar)",2035,8.443,28.74,3.26

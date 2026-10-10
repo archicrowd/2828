@@ -47,7 +47,7 @@ def main():
         if c == "OECD" or c not in PLI:
             continue
         f = PLI[c] / PLI["DE"]
-        stufen = [round(G28 * f * k) for k in (1, 2, 3, 4)]
+        stufen = [round(G28 * f * k) for k in TG["vielfache"]]
         if c in TG["stufen_laender_2028"] and TG["stufen_laender_2028"][c] != stufen:
             sys.exit(f"{c}: Tarifstufen weichen ab")
         er = float(r["sv_arbeitgeber_pct"])

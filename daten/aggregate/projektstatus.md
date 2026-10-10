@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.36 · höchste Korrekturnummer 58 · 304 Dateien im Repository
+Modellstand v3.37 · höchste Korrekturnummer 59 · 305 Dateien im Repository
 
 ## Bausteine
 
@@ -56,7 +56,8 @@ Modellstand v3.36 · höchste Korrekturnummer 58 · 304 Dateien im Repository
 | N16 | B23 Ländervergleich | B12 Seite zum Stand B | offen |
 | N17 | B20 Gesamtrechnung | B24 Übergangsrechnung | ok |
 | N18 | B25 Anreizbewertung | B24 Übergangsrechnung | ok |
-| N19 | B26 Nachfrageprüfung | B20 Gesamtrechnung | 95 % BIP beruht auf effektivem Labelsatz 20 % (Kernmodell: 60 % des Konsums in C/D) |
+| N19 | B26 Nachfrageprüfung | B20 Gesamtrechnung | ok |
+| N20 | B20 Gesamtrechnung | B07 Gesamtkonzept | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -64,3 +65,4 @@ Modellstand v3.36 · höchste Korrekturnummer 58 · 304 Dateien im Repository
 - Hinweis: Naht N05 offen: B08 Kern (Stand A) -> B03 Rahmenmodell (Stand B): v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; v3.22: 1,73 Punkte, Tarif 0/9/16/21/28 am Grundbedarf); Klubebene fehlt (deckung_quote.csv)
 - Hinweis: Naht N07 fehlt: B03 Rahmenmodell -> B11 Seite Stand A: Seite hat Rahmenwechsel nie gesehen
 - Hinweis: Naht N16 offen: B23 Ländervergleich -> B12 Seite zum Stand B: Standard 6; Seite zeigt bisher die Klubformel der Gemeinden statt der Pro-Kopf-Variante je Land (v3.17)
+- Hinweis: Naht N20 offen: B20 Gesamtrechnung -> B07 Gesamtkonzept: Textentwurf zur Freigabe; bis dahin Prüfstufe Gesamtkonzept gegen Rechnung rot (Logbuch v3.37)

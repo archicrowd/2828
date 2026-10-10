@@ -79,48 +79,34 @@
    "reserve_mit_ueberschuss": 0.87,
    "stabil": false
   },
-  "P6 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,45, Dach S1": {
-   "mehr_pct_bip": 2.72,
-   "luecke_danach": 0.2,
-   "reserve_mindestdividende": 0.68,
-   "reserve_mit_ueberschuss": 0.68,
+  "P6 ohne Mehrwertsteuer-Erhöhung, Dach S1": {
+   "mehr_pct_bip": 2.27,
+   "luecke_danach": 0.65,
+   "reserve_mindestdividende": 0.23,
+   "reserve_mit_ueberschuss": 0.23,
    "stabil": false
   },
-  "P7 Mehrwertsteuer +1, Ablösung 0,45, Dach S1": {
-   "mehr_pct_bip": 3.1,
-   "luecke_danach": -0.18,
-   "reserve_mindestdividende": 0.88,
-   "reserve_mit_ueberschuss": 1.06,
-   "stabil": true
+  "P7 Mehrwertsteuer +1, Dach S1": {
+   "mehr_pct_bip": 2.65,
+   "luecke_danach": 0.27,
+   "reserve_mindestdividende": 0.61,
+   "reserve_mit_ueberschuss": 0.61,
+   "stabil": false
   },
-  "P8 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,45, Dach S2": {
-   "mehr_pct_bip": 3.57,
-   "luecke_danach": -0.65,
+  "P8 ohne Mehrwertsteuer-Erhöhung, Dach S2 (Entscheidung)": {
+   "mehr_pct_bip": 3.12,
+   "luecke_danach": -0.2,
    "reserve_mindestdividende": 0.88,
-   "reserve_mit_ueberschuss": 1.53,
-   "stabil": true
-  },
-  "P6 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,78, Dach S1": {
-   "mehr_pct_bip": 3.05,
-   "luecke_danach": -0.13,
-   "reserve_mindestdividende": 0.88,
-   "reserve_mit_ueberschuss": 1.01,
-   "stabil": true
-  },
-  "P7 Mehrwertsteuer +1, Ablösung 0,78, Dach S1": {
-   "mehr_pct_bip": 3.43,
-   "luecke_danach": -0.51,
-   "reserve_mindestdividende": 0.88,
-   "reserve_mit_ueberschuss": 1.39,
-   "stabil": true
-  },
-  "P8 ohne Mehrwertsteuer-Erhöhung, Ablösung 0,78, Dach S2": {
-   "mehr_pct_bip": 3.9,
-   "luecke_danach": -0.98,
-   "reserve_mindestdividende": 0.88,
-   "reserve_mit_ueberschuss": 1.86,
+   "reserve_mit_ueberschuss": 1.08,
    "stabil": true
   }
+ },
+ "ausserhalb_quote": {
+  "abloesung_sozialverwaltung": [
+   0.45,
+   0.78
+  ],
+  "hinweis": "senkt die Gesamtlast (Beitragshaushalt), schließt keine Lücke der Quote (Korrektur 59)"
  },
  "hinweis": "Hebel grob (deutsche Basis, Kernmodell); Erbschaft und Vermögen mit gekennzeichneten Annahmen"
 }

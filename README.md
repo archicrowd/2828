@@ -8,7 +8,7 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v3.36** (Logbuch Band III, 10. Oktober 2026). Geltende Fassung des Gesamtkonzepts: 7. Oktober 2026, Quote 31,9 %, dazu eine Kurzfassung (zwei Seiten), gerechnet von `modell/gesamtrechnung.py`. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`). **Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`.** Das Release `v3.5`
+**Modellstand: v3.37** (Logbuch Band III, 10. Oktober 2026). Rechnung v3.37: Quote 30,2 % (Entscheidungen vom 10. Oktober eingerechnet), Textentwurf zur Freigabe ausstehend. Veröffentlichte Fassung des Gesamtkonzepts: 7. Oktober 2026, Quote 31,9 %, dazu eine Kurzfassung (zwei Seiten), gerechnet von `modell/gesamtrechnung.py`. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`). **Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`.** Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
 
 Einstieg: `INDEX.md` (Wegweiser, Stand A und Stand B, Naht zwischen beiden).
