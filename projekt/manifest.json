@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.28",
+ "modellstand": "v3.29",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -264,6 +264,15 @@
    "status": "geprueft",
    "pruefung": "modell/laendervergleich.py",
    "anmerkung": "v3.28: elf Länder; Dividende, Tarifstufen, Musterhaushalte (Rechenregel des Rechners), Gemeinde, Schulden, heutige Last soweit belegt; Gegenprobe DE gegen gesamtrechnung.json"
+  },
+  {
+   "id": "B24",
+   "name": "Übergangsrechnung Dividende je Land",
+   "pfad": "modell/uebergang.py;modell/uebergang.toml;daten/aggregate/uebergang.json;daten/aggregate/uebergang.csv",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/uebergang.py (Selbstprüfung V3a gegen Gesamtrechnung)",
+   "anmerkung": "v3.29: Leitlinie der Initiative; V3a gegen V2B (eigener BIP-Anteil mit Boden), Angleichung als Szenario (beta 0 / 2 %); Gesamtrechnung unverändert"
   }
  ],
  "nahtstellen": [
@@ -394,6 +403,14 @@
    "was": "länderspezifische Darstellung übernimmt Zahlen nur aus laendervergleich.json",
    "status": "offen",
    "beleg_oder_offener_punkt": "Standard 6; Seite zeigt bisher die Klubformel der Gemeinden statt der Pro-Kopf-Variante je Land (v3.17)"
+  },
+  {
+   "id": "N17",
+   "von": "B20 Gesamtrechnung",
+   "nach": "B24 Übergangsrechnung",
+   "was": "derselbe Klubtopf je Jahr (reihe_div) wird nach zwei Regeln verteilt",
+   "status": "ok",
+   "beleg_oder_offener_punkt": "uebergang.py: V3a ohne Angleichung = tabelle_laender_div (2028, 2035, 2060); V2B budgetneutral je Jahr geprüft"
   }
  ],
  "quellen": [

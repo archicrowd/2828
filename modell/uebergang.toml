@@ -1,0 +1,38 @@
+# Übergangsrechnung 2028–2060: Dividende je Land unter gleichen Regeln (modell/uebergang.py, Logbuch v3.29)
+# Leitlinie der Initiative (10.10.2026): Nationalstaaten sind der Ausgangspunkt; unterschiedliche Preise und Dividenden
+# mindestens in einer Übergangszeit; Angleichung entsteht durch gleiche Regeln über die Zeit von selbst;
+# Wettbewerbsanreize für Gemeinden und Regionen bleiben bei allen Solidarmechanismen bestehen.
+
+version = "v3.29"
+jahre_ausgabe = [2028, 2035, 2045, 2060]
+
+# Preisniveau folgt dem relativen Realeinkommen (Balassa-Samuelson): ln PLI_c steigt mit epsilon * ln(relatives Einkommen).
+# epsilon wird im Skript aus dem Querschnitt der Klubländer 2028 geschätzt (ohne Irland, Ausreißer), eigene Schätzung, kleine
+# Stichprobe. Zum Vergleich wird die Schätzung ausgegeben; verwendet wird der Wert hier, damit er bewusst gesetzt ist.
+epsilon = "schaetzung"
+
+# Konvergenz des realen Einkommens je Kopf (Kaufkraftstandard) zum Klubschnitt: g_c = g_klub + beta * ln(y_klub / y_c) + delta_c,
+# danach so skaliert, dass der Klub insgesamt mit g_real der Gesamtrechnung wächst (der Klubtopf bleibt unverändert).
+# beta = 0: keine Angleichung. beta = 0,02: Literaturwert der beta-Konvergenz („2 % je Jahr“, Barro und Sala-i-Martin 1992,
+# Journal of Political Economy 100(2)); in dieser Sitzung nicht am Original geprüft. Beides sind Annahmen, keine Prognosen.
+[[szenario]]
+id = "ohne_angleichung"
+beta = 0.0
+[[szenario]]
+id = "angleichung_2pct"
+beta = 0.02
+
+
+# Wachstumszuschlag je Land aus den Anreizen des Modells (Prozentpunkte je Jahr). Noch nicht belegt; Vorgabe 0.
+# Hier wäre z. B. die Wirkung des Wegfalls der Sozialabgaben auf Arbeit einzutragen, sobald eine Quelle vorliegt.
+[delta]
+DE = 0.0
+FR = 0.0
+ES = 0.0
+NL = 0.0
+IE = 0.0
+BE = 0.0
+AT = 0.0
+DK = 0.0
+SI = 0.0
+EE = 0.0

@@ -1,6 +1,6 @@
 # Arbeitsanweisung für Länderrechnungen und Ländervergleich (für nachfolgende Agenten)
 
-Stand: 10. Oktober 2026, Modellstand v3.28. Sicherung der Arbeitsweise aus den Sitzungen v3.23 bis v3.28. Maßgeblich bleiben `CLAUDE.md`, `modell/laender/STANDARD.md` und das Logbuch (Band III). Diese Anweisung beschreibt, **wie** gearbeitet wurde und welche Fehler vermieden werden müssen.
+Stand: 10. Oktober 2026, Modellstand v3.29. Sicherung der Arbeitsweise aus den Sitzungen v3.23 bis v3.28. Maßgeblich bleiben `CLAUDE.md`, `modell/laender/STANDARD.md` und das Logbuch (Band III). Diese Anweisung beschreibt, **wie** gearbeitet wurde und welche Fehler vermieden werden müssen.
 
 ## 1. Was es gibt
 
@@ -13,6 +13,7 @@ Stand: 10. Oktober 2026, Modellstand v3.28. Sicherung der Arbeitsweise aus den S
 | `daten/aggregate/laender/<cc>.json`, `laender_vergleich.csv`, `laender_klub.json` | Ergebnisse der Länderrechnung |
 | `modell/laendervergleich.py` + `modell/laender/vergleich.toml` | Ländervergleich nach den Kriterien der Webseite (seit v3.28) |
 | `daten/aggregate/laendervergleich.json`, `.csv` | Ergebnis des Ländervergleichs |
+| `modell/uebergang.py` + `modell/uebergang.toml` | Übergangsrechnung 2028–2060: Dividende je Land nach V3a und V2B, Angleichung als Szenario (seit v3.29) |
 
 ## 2. Ablauf für ein neues Land
 
@@ -59,6 +60,11 @@ Stand: 10. Oktober 2026, Modellstand v3.28. Sicherung der Arbeitsweise aus den S
 
 Die Webseite kommuniziert länderbezogen: Dividende je Erwachsenem und je Kind (2028), höchstens 28 % mit Stufen am Grundbedarf, den Rechner (Einkommensteuer, Durchschnittssatz, Haushaltsdividende, Sozialabgaben 0), das Gemeindebudget je Einwohner und je Kind, die heutige Last (Abgabenkeil, Kapitalertragsteuer, Sozialabgaben) und die Staatsschulden. `modell/laendervergleich.py` rechnet diese Größen je Land mit derselben Rechenregel wie der Rechner der Seite (`seite/werkzeuge/vorlage.html`, Funktion `steuer`). Musterhaushalte und Angaben zur heutigen Last stehen in `modell/laender/vergleich.toml`, jede Angabe mit Quelle. Fehlende Angaben bleiben leer und erscheinen als Lücke.
 
-## 7. Offene Punkte (Stand v3.28)
+## 7. Leitlinie der Initiative (v3.29) und Übergangsrechnung
 
-Siehe Logbuch Band III, Abschnitt 7. Wichtigste: Entscheidung Klubquote 2028 (81,3 / 82,0 %; Länderwirkung bisher +0,26 Punkte); Wachstum je Land; Irland, Österreich, Dänemark, Slowenien, Estland nach dem Standard; Abgabenkeil je Land (OECD Taxing Wages); Polen 2028 und Verfassung; Widerspruch Miljoenennota/CPB; belgischer Haushalt 2027.
+Leitlinie (10.10.2026): Nationalstaaten sind der Ausgangspunkt und werden nicht in Frage gestellt. Mindestens in einer Übergangszeit gelten unterschiedliche Preise und Dividenden. Die Angleichung entsteht durch gleiche Regeln und Chancen über die Zeit von selbst. Wachstumsannahmen sind je Land und mit Bezug auf die Anreize des Modells zu setzen. Wettbewerbsanreize für Gemeinden und Regionen bleiben bei allen Solidarmechanismen bestehen.
+Umsetzung als Rechnung: `modell/uebergang.py` + `modell/uebergang.toml` (V3a gegen V2B, Angleichung als Szenario, Anreizmaß „Rückfluss“). Die Gesamtrechnung ist nicht verändert; eine Änderung der geltenden Regel ist eine Entscheidung der Initiative.
+
+## 8. Offene Punkte (Stand v3.29)
+
+Siehe Logbuch Band III, Abschnitt 7. Wichtigste: Regel der Dividende nach der Leitlinie v3.29 (V3a oder V2B, Irland, Entzugsrate am Boden, Anreizzuschlag delta); Entscheidung Klubquote 2028 (81,3 / 82,0 %; Länderwirkung bisher +0,26 Punkte); Wachstum je Land; Irland, Österreich, Dänemark, Slowenien, Estland nach dem Standard; Abgabenkeil je Land (OECD Taxing Wages); Polen 2028 und Verfassung; Widerspruch Miljoenennota/CPB; belgischer Haushalt 2027.

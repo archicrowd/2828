@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.28**
+Stand: 10. Oktober 2026 · Modellstand **v3.29**
 
 ---
 
@@ -1300,6 +1300,57 @@ Sekundärquellen gekennzeichnet).*
 
 ---
 
+### v3.29 — Leitlinie „nationaler Ausgangspunkt, Angleichung durch gleiche Regeln“; Übergangsrechnung der Dividende
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026.
+
+**Leitlinie der Initiative (10.10.2026, sinngemäß):** Mindestens für eine Übergangszeit sind unterschiedliche Preise, Dividenden usw. zu
+berücksichtigen, weil die Nationalstaaten der Ausgangspunkt sind und nicht generell in Frage gestellt werden. Das spiegelt sich auch in den
+Wachstumsannahmen, die auf das Modell und seine Anreize bezogen zu setzen sind. Die Angleichung soll durch die gleichen Regeln und Chancen
+über die Zeit selbstständig entstehen; Wettbewerbsanreize für Gemeinden und Regionen bleiben bei allen Solidarmechanismen bestehen.
+
+**Prüfung des geltenden Modells gegen die Leitlinie.**
+- Dividende V3a (v3.20, Klubtopf nach Einwohnern × Preisniveau): Die Kaufkraft je Kopf ist vom ersten Jahr an in allen Ländern gleich; die
+  Euro-Beträge unterscheiden sich nur nach Preisniveau. Rückfluss eines zusätzlichen Euro BIP je Kopf in die eigene Dividende (Anteil am
+  Topf): DE 33,0 %, FR 26,9 %, ES 16,1 %, NL 7,9 %, BE 5,1 %, AT 4,0 %, DK 3,1 %, IE 2,8 %, SI 0,7 %, EE 0,5 %. Für kleine Länder
+  fast kein eigener Anreiz. V3a entspricht der Leitlinie damit nicht: Angleichung ist sofort verordnet, nicht durch Regeln erwachsen.
+- Gemeinden (Pro-Kopf-Variante je Land, v3.17: 10,35 % des eigenen BIP je Kopf): gleiche Regel, nationaler Ausgangspunkt, voller
+  eigener Anreiz; entspricht der Leitlinie. Einen Boden für Gemeinden gibt es nicht.
+- Altschulden (Aufschlag je Land über dreißig Jahre): Jedes Land trägt seine eigene Last; entspricht der Leitlinie.
+- Wachstum: im ganzen Modell einheitlich (real 0,98 %, nominal 3,0 %); entspricht der Leitlinie nicht.
+
+**Rechnung (`modell/uebergang.py`, `modell/uebergang.toml`, neu).** Derselbe Klubtopf je Jahr (Dividendenanteil am Klub-BIP aus der
+Gesamtrechnung) nach zwei Regeln: V3a (geltend) und **V2B** (jedes Land erhält denselben Anteil am eigenen BIP je Kopf; Boden V3b,
+halbes Existenzminimum am Wohnort, als Solidarmechanismus, budgetneutral von den übrigen Ländern getragen). Angleichung als Szenario:
+beta-Konvergenz des realen Einkommens je Kopf, beta = 0 und beta = 2 % je Jahr (Literaturwert, Barro und Sala-i-Martin 1992; nicht am
+Original geprüft, **Annahme**); Preisniveau folgt dem relativen Einkommen mit epsilon = 0,681 (**eigene Schätzung**, Querschnitt der neun
+Klubländer ohne Irland 2028, kleine Stichprobe). Anreizzuschlag delta je Land: vorgesehen, Vorgabe 0 (keine Quelle). Selbstprüfung:
+V3a ohne Angleichung reproduziert die Länderdividende der Gesamtrechnung 2028, 2035, 2060; V2B ist in jedem Jahr budgetneutral.
+
+**Ergebnisse (Euro je Erwachsenem und Monat, Preise 2028).**
+- 2028, V2B gegen V3a: DE 618 / 591, FR 529 / 584, ES 445 / 491, NL 739 / 655, IE 1.241 / 765, BE 624 / 643, AT 642 / 648,
+  DK 798 / 773, SI 446 / 493, EE 473 / 523. Auf dem Boden: FR, ES, SI, EE (Aufstockung 1,9 % des Topfes). Unter V2B erhalten
+  einkommensstarke Länder mehr, Länder auf dem Boden weniger als unter V3a.
+- Kaufkraftspreizung unter V2B (höchste zu niedrigster, ohne Irland): 2028 1,25. Ohne Angleichung steigt sie bis 2060 auf 1,70, weil der
+  Boden real konstant bleibt und die Einkommen wachsen; mit beta = 2 % sinkt sie auf 1,32 (2060), die Aufstockung endet um 2045.
+- Irland: unter V2B 1.241 € (2028), Folge des verzerrten BIP (2,18-facher Klubschnitt). Unter V3a 765 €.
+- Anreiz unter V2B: 100 % Rückfluss oberhalb des Bodens; **0 % für Länder auf dem Boden**, solange sie dort liegen (volle Entzugsrate).
+
+**Entscheidungen der Initiative, die aus der Leitlinie folgen (offen).** (1) V2B als Regel statt V3a, oder ein Pfad von V2B zu V3a.
+(2) Irland: BIP-Verzerrung hinnehmen (wie bei den Gemeinden) oder ein bereinigtes Maß. (3) Entzugsrate am Boden: Bei voller Aufstockung
+haben Länder auf dem Boden keinen eigenen Anreiz; eine Entzugsrate unter 100 % hielte ihn, kostet aber mehr Topf. (4) Anreizzuschlag
+delta je Land und nationale Wachstumsannahmen (eine Quelle fehlt). (5) Boden der Gemeinden. Bis dahin gilt V3a; die Gesamtrechnung ist
+unverändert.
+
+**Geprüft:** `python3 modell/alles.py` (18 Stufen, neu „Übergangsrechnung 2028–2060“); Selbstprüfung und Budgetneutralität im Skript.
+
+**Wodurch aufgefallen:** Leitlinie der Initiative; Prüfung der geltenden Regeln auf eigenen Anreiz.
+
+*Skripte: `modell/uebergang.py` (neu). Quellen: Ergebnisse der Gesamtrechnung und der Ländervarianten (Eurostat-Eingänge dort);
+Barro, R. J., Sala-i-Martin, X. (1992): Convergence, Journal of Political Economy 100(2) (Literaturwert, nicht am Original geprüft).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
@@ -1346,9 +1397,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.28
+## 7 | Offene Punkte, Stand v3.29
 
-Neu seit v3.23 (Stand v3.28): Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.29): Leitlinie v3.29: Regel der Dividende (V3a oder V2B), Irland, Entzugsrate am Boden, Anreizzuschlag und nationale Wachstumsannahmen, Boden der Gemeinden; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

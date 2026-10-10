@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.28 · höchste Korrekturnummer 57 · 287 Dateien im Repository
+Modellstand v3.29 · höchste Korrekturnummer 57 · 291 Dateien im Repository
 
 ## Bausteine
 
@@ -29,6 +29,7 @@ Modellstand v3.28 · höchste Korrekturnummer 57 · 287 Dateien im Repository
 | B21 | Datenzugang für Dritte | A+B | geprueft | projekt/manifest.py;modell/eingangswerte.py |
 | B22 | Länderrechnungen nach Standard | B | geprueft | modell/laender/rechne.py |
 | B23 | Ländervergleich nach den Kriterien der Webseite | B | geprueft | modell/laendervergleich.py |
+| B24 | Übergangsrechnung Dividende je Land | B | geprueft | modell/uebergang.py (Selbstprüfung V3a gegen Gesamtrechnung) |
 
 ## Nahtstellen
 
@@ -50,6 +51,7 @@ Modellstand v3.28 · höchste Korrekturnummer 57 · 287 Dateien im Repository
 | N14 | B21 Datenzugang | extern: Dritte | ok |
 | N15 | B22 Länderrechnungen | B23 Ländervergleich | ok |
 | N16 | B23 Ländervergleich | B12 Seite zum Stand B | offen |
+| N17 | B20 Gesamtrechnung | B24 Übergangsrechnung | ok |
 
 ## Ergebnis dieses Laufs
 
