@@ -1,0 +1,25 @@
+# Niederlande: Eingaben für modell/laender/rechne.py (Standard, modell/laender/STANDARD.md)
+# Eingabedatei mit Quellen und Status: daten/aggregate/laender/nl_eingaben.md
+
+land = "NL"
+name = "Niederlande"
+
+schuld_2025 = 44.4
+schuld_2025_quelle = "Eurostat gov_10dd_edpt1, GD, S13, 2025 (WebFetch 10.10.2026, amtlich, maschinell). Gleich: CBS 26.03.2026, EU-Kommission Frühjahr 2026. CBS 01.09.2026 nennt 44,7 % (vorläufig, gleicher Schuldenstand 524 Mrd. €, BIP revidiert)."
+
+saldo_2025 = -1.6
+saldo_2025_quelle = "Eurostat/CBS 2025, −1,6 % (Repository-Wert, schulden_2010_2025.csv; CBS 26.03.2026 und 01.09.2026 gleich, Agentenabruf)."
+
+saldo_regierung = [-2.3, -2.9, -2.5]
+quote_regierung = [45.6, 46.9, 47.4]
+regierung_quelle = "Miljoenennota 2027 (Prinsjesdag 15.09.2026), Bijlage, Tabel 1.1 Budgettaire kerngegevens, „gebaseerd op de begrotingen en op de MEV van het CPB“; WebFetch der Originalseite rijksfinancien.nl, amtlich, maschinell. Widerspruch: CPB MEV 2027 (September 2026) nennt −2,7 / −2,2 % für 2026 / 2027 und Schuld 46,1 / 46,7 % (CPB-Dokument über Drittseite, Agentenabruf)."
+
+wachstum_nominal_regierung = { "2026" = 4.6, "2027" = 4.4, "2028" = 4.2 }
+preisniveau_2024 = 121.0   # Eurostat prc_ppp_ind, PLI_EU27_2020, A01 (wie daten/aggregate/preisniveau_2024.csv)
+
+eingaben = "daten/aggregate/laender/nl_eingaben.md"
+luecken = [
+  "Saldo 2026/2027: Miljoenennota (−2,3 / −2,9) widerspricht CPB MEV 2027 (−2,7 / −2,2); am Original des CPB zu prüfen",
+  "Nominales Wachstum je Jahr aus Miljoenennota Tabel 3.1.2, Zuordnung zu Jahren teils erschlossen (Agent); 2027 im Text bestätigt",
+  "Schuldenquote 2025: 44,4 % (Eurostat, April) gegen 44,7 % (CBS, September, BIP-Revision)",
+]

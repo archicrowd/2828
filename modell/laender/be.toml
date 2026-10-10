@@ -1,0 +1,25 @@
+# Belgien: Eingaben für modell/laender/rechne.py (Standard, modell/laender/STANDARD.md)
+# Eingabedatei mit Quellen und Status: daten/aggregate/laender/be_eingaben.md
+
+land = "BE"
+name = "Belgien"
+
+schuld_2025 = 107.9
+schuld_2025_quelle = "Eurostat gov_10dd_edpt1, GD, S13, 2025 (WebFetch 10.10.2026, amtlich, maschinell). Gleich: Eurostat-Mitteilung 22.04.2026, EU-Kommission Frühjahr 2026."
+
+saldo_2025 = -5.2
+saldo_2025_quelle = "Eurostat, Mitteilung 22.04.2026 (Agentenabruf) und Repository-Wert schulden_2010_2025.csv: −5,2 %. FPB und NBB nennen vorläufig −5,3 %."
+
+saldo_regierung = [-4.9, -5.0, -5.1]
+quote_regierung = []
+regierung_quelle = "Rechnungshof (Rekenhof), Kommentar zur Haushaltsanpassung 2026, Doc 56 1469/002, 22.05.2026, Tabelle „Vorderingensaldo van België“ (gezamenlijke overheid), S. 22: −4,9 / −5,0 / −5,1 % (2029: −5,5 %); Regierungspfad mit geplanten Maßnahmen. WebFetch des Originals (lachambre.be), amtlich, maschinell. Schuld 2026: 110,3 % (ebd., S. 21); für 2027 und 2028 keine amtliche Schuldenquote gefunden, daher kein Pfad C. Haushalt 2027 noch nicht vorgelegt (Frist 13.10.2026)."
+
+preisniveau_2024 = 118.7   # Eurostat prc_ppp_ind, PLI_EU27_2020, A01 (wie daten/aggregate/preisniveau_2024.csv)
+
+eingaben = "daten/aggregate/laender/be_eingaben.md"
+luecken = [
+  "Schuldenquote der Regierung 2027 und 2028 nicht veröffentlicht gefunden (nur 2026: 110,3 %); Pfad C entfällt",
+  "Planbureau (FPB) Juni 2026 im Original nicht erreichbar (plan.be); Werte 2027/2028 nur über Sekundärquellen (FPB Februar: 111,9 / 114,0 %)",
+  "Haushalt 2027 noch nicht vorgelegt; der Regierungspfad kann sich am 13.10.2026 ändern",
+  "Durchschnittlicher Gemeindezuschlag zur Einkommensteuer nicht gefunden",
+]

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.26**
+Stand: 10. Oktober 2026 · Modellstand **v3.27**
 
 ---
 
@@ -1216,9 +1216,47 @@ PAP Biznes und rp.pl (Überschriften, 28.08.2026).*
 
 ---
 
+### v3.27 — Niederlande und Belgien nach dem Standard; Klubwirkung berichtigt (Korrektur 57)
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026. Auftrag der Initiative: Niederlande und Belgien, je Land
+ein Rechercheagent. Die Agenten haben recherchiert; Rechnung, Eurostat-Prüfung und Gegenprüfung der tragenden Werte am Original habe
+ich selbst gemacht.
+
+**Niederlande (`modell/laender/nl.toml`).** Schuld 2025 44,4 %, Saldo −1,6 % (Eurostat, geprüft). Regierungspfad aus der Miljoenennota
+2027 (15.09.2026, Tabel 1.1, am Original geprüft): Saldo −2,3 / −2,9 / −2,5 %, Schuld 45,6 / 46,9 / 47,4 %; nominales Wachstum
+4,6 / 4,4 / 4,2 %. **Widerspruch:** Das CPB (MEV 2027) nennt −2,7 / −2,2 % für 2026 / 2027 (Agent, Drittseite); ungeklärt.
+Ergebnis 2028: A 45,3 %, B 48,1 %, C 47,4 %. Wohnort: Boden 593,67 €, V3a 655,25 €; Stufen ab 14.248 € (Euro 2028, nominal).
+
+**Belgien (`modell/laender/be.toml`).** Schuld 2025 107,9 %, Saldo −5,2 % (Eurostat, geprüft). Regierungspfad laut Rechnungshof
+(22.05.2026, am Original geprüft): −4,9 / −5,0 / −5,1 %; Schuld nur 2026 (110,3 %), daher **kein Pfad C**. Ergebnis 2028: A 113,9 %,
+B 113,3 % (FPB Februar 114,0 %, NBB 114,8 %, Sekundärquellen). Nominales Wachstum der Regierung 2,9 bis 3,3 %, nahe an 3,0 %.
+Wohnort: Boden 582,39 €, V3a 642,79 €; Stufen ab 13.977 €. Haushalt 2027 wird bis 13.10.2026 vorgelegt.
+
+**Korrektur 57 (Klubwirkung).** Bis v3.26 hielt die Klubwirkung den Klub-Gesamtsaldo bei −2,93 %: Wich ein Land vom Status quo ab,
+trugen die übrigen Länder rechnerisch die Gegenbewegung. Darum ergab „Regierungsdefizit“ für jedes Land 81,29 %, und die Aussage aus
+v3.23, das französische Defizit wirke neutral, war ein Artefakt. Jetzt behalten die übrigen Länder ihren eigenen Saldo 2025. Neue Werte
+(Klubquote 2028, Referenz 81,29 %): Frankreich C 81,72 % (bisher 81,96 %), Spanien C 80,93 % (81,15 %), Niederlande C 81,49 %;
+Frankreich, Spanien und Niederlande gemeinsam (46,4 % des Klub-BIP) **81,55 %**. Frankreich und Spanien allein, aus den Einzelwirkungen
+summiert: rund 81,36 % (bisher 81,82 %). Kontrollen: Status quo ergibt die Referenz; die Einzelwirkungen addieren sich zur gemeinsamen.
+**Folge für die offene Entscheidung (81,3 oder 82,0 %):** Der bisherige Hinweis „näher an 82,0 %“ trägt nicht mehr; die drei Länder
+zusammen bewegen die Klubquote um +0,26 Punkte.
+
+**Polen, Verfassung.** Freigabe der Initiative für sejm.gov.pl erteilt. Die Seite lehnte den Abruf ab („Request Rejected“); der Abruf
+über isap.sejm.gov.pl wartete auf eine neue Freigabe und wurde zurückgezogen. Offen.
+
+**Geprüft:** `python3 modell/alles.py`; Wohnort NL und BE gegen `laendervarianten.json` und `tarif_grundbedarf.json`; Frankreich-Pfade unverändert.
+
+**Wodurch aufgefallen:** Die Ausgabe zeigte für vier Länder denselben Klubwert beim Regierungsdefizit.
+
+*Skripte: `modell/laender/rechne.py` (Klubwirkung mit Status quo), `nl.toml`, `be.toml` (neu). Quellen: Eurostat `gov_10dd_edpt1` (WebFetch);
+Miljoenennota 2027 (rijksfinancien.nl); Rekenhof Doc 56 1469/002 (lachambre.be); Rechercheagenten (CPB, CBS, Belastingdienst, FPB, NBB,
+EU-Kommission, Sekundärquellen, je Zeile gekennzeichnet).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
-Neu ab v3.8: die Nummern 47 bis 56. **Nächste freie Nummer: 57.** Die Nummern 31 bis 41 sind
+Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
 besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 
 | Nr. | Was war falsch | Richtig | Wodurch auffiel |
@@ -1233,6 +1271,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 54 | v3.17, Lesart V3b (`laendervarianten.py`, Logbuch v3.17): halbes Existenzminimum 514,50 EUR je Erwachsenem „in Preisen 2028", Deckungsgrad 104,8 % | 514,50 EUR ist der Grundfreibetrag 2026 nominal; in Preisen 2028 (2 % je Jahr, Annahme) 535,29 EUR. Deckungsgrad 2028 bei Quote 30,9 % damit rund 101 %, nicht 105 % | Umsetzung der Entscheidung B17 (v3.20): Preisbasis des Ankers gegen die der Rechnung geprüft |
 | 55 | Rechner der Seite zum Stand B: Tarifstufen 12.348 / 25.000 / … EUR (Euro 2026) zusammen mit der Dividende in Preisen 2028 | Beide in Preisen 2028; seit v3.21 Stufen beim 1- bis 5-fachen Grundbedarf 2028 | Umstellung des Tarifs auf den Grundbedarf (v3.21) |
 | 56 | v3.24, `daten/aggregate/laender/pl_eingaben.md`, Zeile „Defizit, Regierungsprognose“: „7,1 % BIP (2026 und 2027); 282,6 Mrd. Zł (2027)“ | 7,1 % ist das Defizit des Gesamtstaats; 282,6 Mrd. Zł ist das Defizit des Staatshaushalts (zentraler Haushalt), eine andere Abgrenzung. Seit v3.25 nicht mehr in der Zeile; seit v3.26 als eigene Zeile gekennzeichnet. Keine Rechnung betroffen | Forsal/PAP 28.08.2026 nennt die 282,6 Mrd. Zł ausdrücklich als „deficyt państwa“ (Nachrecherche v3.26) |
+| 57 | v3.23 (Frankreich), v3.24 bis v3.26 (Standard 2.4): Klubwirkung mit einem Rest-Saldo der übrigen Länder, der den Klub-Gesamtsaldo bei −2,93 % festhielt. Daraus: „Ein französisches Regierungsdefizit wirkt also neutral; das Wachstum entscheidet“ (v3.23); Frankreich B 81,29 %, C 81,96 %; Spanien C 81,15 %; Frankreich und Spanien gemeinsam 81,82 % (v3.26) | Die übrigen Länder behalten ihren eigenen Saldo 2025 (Status quo). Frankreich B 81,05 %, C 81,72 %; Spanien B 81,07 %, C 80,93 %; Niederlande C 81,49 %; Frankreich, Spanien und Niederlande gemeinsam 81,55 %. Die Neutralität des Defizits war ein Artefakt der Methode. Gesamtrechnung und Konzept nicht betroffen (Sensitivität) | v3.27: Die Spalte „Regierungsdefizit“ ergab für jedes Land genau den Referenzwert 81,29 %; das ließ sich nur aus der Bauart erklären |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -1261,9 +1300,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.26
+## 7 | Offene Punkte, Stand v3.27
 
-Neu seit v3.23 (Stand v3.26): Klubquote 2028, gemeinsame Wirkung FR+ES 81,82 % (Entscheidung 81,3 / 82,0 %); Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.27): Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

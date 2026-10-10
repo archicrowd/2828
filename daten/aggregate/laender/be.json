@@ -1,0 +1,81 @@
+{
+ "standard": "modell/laender/STANDARD.md, Fassung 1.3 (v3.27)",
+ "land": "BE",
+ "name": "Belgien",
+ "bezugsjahr_ausgang": 2025,
+ "preisbasis": "Verhältniszahl (% des BIP), laufende Preise",
+ "wachstum_nominal_pct": 3.0,
+ "ausgang": {
+  "schuld_2025_pct_bip": 107.9,
+  "quelle": "Eurostat gov_10dd_edpt1, GD, S13, 2025 (WebFetch 10.10.2026, amtlich, maschinell). Gleich: Eurostat-Mitteilung 22.04.2026, EU-Kommission Frühjahr 2026.",
+  "saldo_2025_pct_bip": -5.2,
+  "saldo_quelle": "Eurostat, Mitteilung 22.04.2026 (Agentenabruf) und Repository-Wert schulden_2010_2025.csv: −5,2 %. FPB und NBB nennen vorläufig −5,3 %."
+ },
+ "regierung": {
+  "saldo_pct_bip": {
+   "2026": -4.9,
+   "2027": -5.0,
+   "2028": -5.1
+  },
+  "quote_pct_bip": null,
+  "quelle": "Rechnungshof (Rekenhof), Kommentar zur Haushaltsanpassung 2026, Doc 56 1469/002, 22.05.2026, Tabelle „Vorderingensaldo van België“ (gezamenlijke overheid), S. 22: −4,9 / −5,0 / −5,1 % (2029: −5,5 %); Regierungspfad mit geplanten Maßnahmen. WebFetch des Originals (lachambre.be), amtlich, maschinell. Schuld 2026: 110,3 % (ebd., S. 21); für 2027 und 2028 keine amtliche Schuldenquote gefunden, daher kein Pfad C. Haushalt 2027 noch nicht vorgelegt (Frist 13.10.2026)."
+ },
+ "pfade": {
+  "A_status_quo": {
+   "beschreibung": "Saldo 2025 bleibt 2026 bis 2028",
+   "werte": {
+    "2026": 109.96,
+    "2027": 111.95,
+    "2028": 113.89
+   }
+  },
+  "B_regierungsdefizit": {
+   "beschreibung": "Regierungssaldo, nominales Wachstum 3,0 %",
+   "werte": {
+    "2026": 109.66,
+    "2027": 111.46,
+    "2028": 113.32
+   }
+  },
+  "C_regierungsschuldenquote": {
+   "entfaellt": "keine Schuldenquoten-Prognose eingetragen"
+  }
+ },
+ "abweichung_2028": null,
+ "gewichtung": {
+  "anteil_klub_bip_pct": 5.1,
+  "klub_2028_referenz": 81.29,
+  "klub_2028_mit_land_status_quo": 81.29,
+  "klub_2028_mit_land_regierungsdefizit": 81.26,
+  "hinweis": "Sensitivität, kein Ersatz für die Gesamtrechnung (Standard 2.4)"
+ },
+ "wohnort": {
+  "preisniveau_2024": 118.7,
+  "faktor_gegen_de": 1.088,
+  "dividende_boden_2028_eur_monat": 582.39,
+  "dividende_boden_kind_2028_eur_monat": 291.19,
+  "tarifstufen_2028_eur_jahr": [
+   13977,
+   27955,
+   41932,
+   55909
+  ],
+  "tarifsaetze_pct": [
+   0,
+   9,
+   16,
+   21,
+   28
+  ],
+  "einheit": "Euro 2028, nominal. Dividende je Erwachsenem und Monat (Kinder zur Hälfte); Tarifstufen je Jahr",
+  "grundlage": "Boden: halbes Existenzminimum am Wohnort (V3b, v3.20); Stufen: 1- bis 4-facher Grundbedarf (v3.22)",
+  "dividende_ausgezahlt_v3a_2028_eur_monat": 642.79
+ },
+ "eingaben": "daten/aggregate/laender/be_eingaben.md",
+ "luecken": [
+  "Schuldenquote der Regierung 2027 und 2028 nicht veröffentlicht gefunden (nur 2026: 110,3 %); Pfad C entfällt",
+  "Planbureau (FPB) Juni 2026 im Original nicht erreichbar (plan.be); Werte 2027/2028 nur über Sekundärquellen (FPB Februar: 111,9 / 114,0 %)",
+  "Haushalt 2027 noch nicht vorgelegt; der Regierungspfad kann sich am 13.10.2026 ändern",
+  "Durchschnittlicher Gemeindezuschlag zur Einkommensteuer nicht gefunden"
+ ]
+}

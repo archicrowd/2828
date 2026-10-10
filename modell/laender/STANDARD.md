@@ -1,6 +1,6 @@
-# Standard für Länderrechnungen (Fassung 1.2, Modellstand v3.26)
+# Standard für Länderrechnungen (Fassung 1.3, Modellstand v3.27)
 
-Fassung 1 (v3.24): Eingaben, drei Pfade, Gewichtung. Fassung 1.1 (v3.25): Interpolation einzelner Prognosejahre, Bestandsanpassung, Abschnitt Wohnort (2.6). Fassung 1.2 (v3.26): gemeinsame Wirkung mehrerer Länder auf die Klubquote (2.4).
+Fassung 1 (v3.24): Eingaben, drei Pfade, Gewichtung. Fassung 1.1 (v3.25): Interpolation einzelner Prognosejahre, Bestandsanpassung, Abschnitt Wohnort (2.6). Fassung 1.2 (v3.26): gemeinsame Wirkung mehrerer Länder auf die Klubquote (2.4). Fassung 1.3 (v3.27): Die übrigen Länder behalten in der Klubwirkung ihren eigenen Saldo 2025 (Status quo); bis 1.2 trugen sie einen Rest-Saldo, der den Klub-Gesamtsaldo festhielt (Korrektur 57).
 
 **Zweck.** Jede länderspezifische Rechnung der Initiative 28:28 folgt diesem Standard. Dadurch sind die Rechnungen untereinander vergleichbar, und das Rechenmodell insgesamt wird an einzelnen Ländern geprüft. Der Standard legt fest, was eingegeben, wie gerechnet und wie ausgegeben wird. Er legt nicht fest, welche Länder betrachtet werden.
 
@@ -37,8 +37,8 @@ Fassung 1 (v3.24): Eingaben, drei Pfade, Gewichtung. Fassung 1.1 (v3.25): Interp
   Fehlt ein einzelnes Jahr zwischen zwei Prognosejahren, darf es linear interpoliert werden. Das ist eine Annahme und steht im Ergebnis (`quote_regierung_hinweis`).
   Das implizite Wachstum enthält alles, was die Quote außer dem Saldo bewegt, auch Bestandsanpassungen (z. B. Vorfinanzierung, Schulden außerhalb des Haushalts). Es ist deshalb nicht als Wachstumsprognose zu lesen. Liegt das nominale Wachstum der Regierung vor (`wachstum_nominal_regierung`), weist das Ergebnis die Bestandsanpassung aus: Regierungsquote minus Fortschreibung mit Regierungssaldo und Regierungswachstum.
 
-2.4 Gewichtung: Liegt das Land im Gewichtsbestand der Gesamtrechnung (`modell/rahmen/basis.py`), rechnet der Standard zusätzlich die Wirkung auf die Klubquote 2028 aus. Das ist eine Sensitivität und kein Ersatz für die Gesamtrechnung. Liegt das Land dort nicht, entfällt dieser Schritt, und der Grund steht im Ergebnis. Es ist ein Rechenschritt und keine Einteilung der Länder.
-   Gemeinsame Wirkung: Alle Länder im Gewichtsbestand, die einen Pfad C haben, stehen zugleich auf ihrem Regierungspfad. Die übrigen Länder tragen den Rest-Saldo, sodass der Klub-Gesamtsaldo gleich bleibt. Ausgabe: `daten/aggregate/laender_klub.json`.
+2.4 Gewichtung: Liegt das Land im Gewichtsbestand der Gesamtrechnung (`modell/rahmen/basis.py`), rechnet der Standard zusätzlich die Wirkung auf die Klubquote 2028 aus. Das Land folgt seinem Pfad B oder C, die übrigen Länder behalten ihren eigenen Saldo von 2025 und wachsen mit 3,0 %. Kontrolle: Steht das Land im Status quo, ergibt sich die Referenz aus `schuldenpfad.py`. Das ist eine Sensitivität und kein Ersatz für die Gesamtrechnung. Liegt das Land dort nicht, entfällt dieser Schritt, und der Grund steht im Ergebnis. Es ist ein Rechenschritt und keine Einteilung der Länder.
+   Gemeinsame Wirkung: Alle Länder im Gewichtsbestand, die einen Pfad C haben, stehen zugleich auf ihrem Regierungspfad. Die übrigen Länder behalten ihren eigenen Saldo von 2025. Ausgabe: `daten/aggregate/laender_klub.json`.
 
 2.5 Gültig ist ein Ergebnis nur dann, wenn Pfad C die Regierungsquote reproduziert. Diese Prüfung läuft in `rechne.py`.
 

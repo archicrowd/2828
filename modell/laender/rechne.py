@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Länderrechnungen nach dem Standard (modell/laender/STANDARD.md, Modellstand v3.26).
+"""Länderrechnungen nach dem Standard (modell/laender/STANDARD.md, Modellstand v3.27).
 
 Ein gemeinsames Skript für alle Länder. Eingaben je Land: modell/laender/<cc>.toml.
 Ausgabe: daten/aggregate/laender/<cc>.json und daten/aggregate/laender_vergleich.csv.
@@ -31,7 +31,9 @@ GDP = _basis.GDP
 TOT = sum(GDP.values())
 
 with open(AGG / "schulden_2010_2025.csv", encoding="utf-8") as _f:
-    KLUB = {r["land"]: float(r["2025"]) for r in csv.DictReader(_f)}
+    _rows = list(csv.DictReader(_f))
+KLUB = {r["land"]: float(r["2025"]) for r in _rows}
+SALDO25 = {r["land"]: float(r["defizit_2025"]) for r in _rows}   # Status quo je Land (Standard 2.4, seit v3.27)
 _sp = json.loads((AGG / "schuldenpfad.json").read_text(encoding="utf-8"))
 if abs(_sp["saldo_2025"] - KLUB_SALDO) > 0.01:
     sys.exit(f"Klub-Saldo {_sp['saldo_2025']:.3f} weicht von {KLUB_SALDO} ab; KLUB_SALDO anpassen und im Logbuch vermerken")
@@ -93,15 +95,18 @@ def wachstum_implizit(d25, quote, saldo):
     return res
 
 
-def s_rest(cc, s_land):
-    return (KLUB_SALDO * TOT - s_land * GDP[cc]) / (TOT - GDP[cc])
+def s_rest(laender):
+    """Saldo der übrigen Länder: ihr eigener Saldo 2025, BIP-gewichtet (Status quo). Bis v3.26 war es der Rest-Saldo,
+    der den Klub-Gesamtsaldo bei −2,93 % festhielt; dadurch wirkte jede Defizitabweichung neutral (Korrektur 57)."""
+    rest = [k for k in GDP if k not in laender]
+    return sum(GDP[k] * SALDO25[k] for k in rest) / sum(GDP[k] for k in rest)
 
 
 def klub_mit_land(cc, s_land, g_land):
     d_rest = sum(GDP[k] * KLUB[k] for k in GDP if k != cc) / (TOT - GDP[cc])
     dr, df = d_rest, KLUB[cc]
     for j in JAHRE:
-        dr = dr / (1 + G_NOM / 100) - s_rest(cc, s_land[j])
+        dr = dr / (1 + G_NOM / 100) - s_rest({cc})
         df = df / (1 + g_land[j] / 100) - s_land[j]
     return (dr * (TOT - GDP[cc]) + df * GDP[cc]) / TOT
 
@@ -159,7 +164,7 @@ def rechne(p):
     else:
         gew = dict(entfaellt="Land nicht im Gewichtsbestand der Gesamtrechnung (modell/rahmen/basis.py)")
     return dict(
-        standard="modell/laender/STANDARD.md, Fassung 1.2 (v3.26)", land=cc, name=p["name"],
+        standard="modell/laender/STANDARD.md, Fassung 1.3 (v3.27)", land=cc, name=p["name"],
         bezugsjahr_ausgang=2025, preisbasis="Verhältniszahl (% des BIP), laufende Preise",
         wachstum_nominal_pct=G_NOM,
         ausgang=dict(schuld_2025_pct_bip=d25, quelle=p["schuld_2025_quelle"],
@@ -187,7 +192,7 @@ def main():
         ergebnisse.append(rechne(p))
     OUT.mkdir(parents=True, exist_ok=True)
     # Standard 2.4, gemeinsame Wirkung: alle Länder mit Regierungspfad C im Gewichtsbestand zugleich auf ihrem Pfad,
-    # die übrigen Länder tragen den Rest-Saldo des Klubs (Klub-Gesamtsaldo bleibt −2,93 %), Wachstum 3,0 %.
+    # die übrigen Länder bleiben bei ihrem eigenen Saldo 2025 (Status quo), Wachstum 3,0 %.
     L = [r for r in ergebnisse if r["land"] in GDP and "werte" in r["pfade"]["C_regierungsschuldenquote"]]
     if L:
         w_l = sum(GDP[r["land"]] for r in L)
@@ -197,7 +202,7 @@ def main():
         for j in JAHRE:
             s = {r["land"]: r["regierung"]["saldo_pct_bip"][str(j)] for r in L}
             g = {r["land"]: r["pfade"]["C_regierungsschuldenquote"]["wachstum_implizit_pct"][str(j)] for r in L}
-            s_rest_j = (KLUB_SALDO * TOT - sum(s[c] * GDP[c] for c in s)) / rest
+            s_rest_j = s_rest(set(s))
             d_rest = d_rest / (1 + G_NOM / 100) - s_rest_j
             for c in d_l:
                 d_l[c] = d_l[c] / (1 + g[c] / 100) - s[c]

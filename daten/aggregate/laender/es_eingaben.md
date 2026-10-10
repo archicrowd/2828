@@ -1,6 +1,6 @@
 # Spanien: Eingangsdaten für die länderspezifische Fassung
 
-Stand: 10. Oktober 2026 · Modellstand v3.26 (Modellwerte unverändert); Rechnung nach Standard seit v3.26: `modell/laender/es.toml`, Ergebnis `daten/aggregate/laender/es.json` · Bausteine: B20 (Gesamtrechnung), dieser Datei. Keine Rechnung in diesem Schritt; die Modellwerte bleiben unverändert (Elastizität der Annahmen).
+Stand: 10. Oktober 2026 · Modellstand v3.27 (Modellwerte unverändert); Rechnung nach Standard seit v3.26: `modell/laender/es.toml`, Ergebnis `daten/aggregate/laender/es.json` · Bausteine: B20 (Gesamtrechnung), dieser Datei. Keine Rechnung in diesem Schritt; die Modellwerte bleiben unverändert (Elastizität der Annahmen).
 
 Abgerufen am 10.10.2026 durch Rechercheagenten (WebFetch/WebSearch). **Nicht von mir gegen die Originale geprüft.** Eurostat-Werte aus der Array-Position abgeleitet, an der Datenbank gegenzuprüfen. Status: amtlich, Sekundärquelle, Prognose, Annahme.
 
@@ -28,7 +28,7 @@ Abgerufen am 10.10.2026 durch Rechercheagenten (WebFetch/WebSearch). **Nicht von
 
 Der Widerspruch Defizit 2026 Regierung 2,1 % gegen BdE 2,4 % bleibt: Die EU-Kommission sieht ebenfalls 2,4 %. Die Lücke „Schuldenstand 2028“ ist geschlossen (96,4 %, amtliches Ziel).
 
-**Ergebnis nach Standard (v3.26):** Pfad A 2028 99,2 %, Pfad B 97,5 %, Pfad C (Regierung) 96,4 %. Bestandsanpassung 2026: 1,5 Punkte (mit abgeleitetem Wachstum, Annahme). Wohnort (Euro 2028, nominal): Dividendenboden 445,01 € je Erwachsenem und Monat, ausgezahlt (V3a) 491,17 €; Tarifstufen 10.680 / 21.360 / 32.041 / 42.721 €. Klubwirkung: mit Spanien auf dem Regierungspfad 81,15 % statt 81,29 %.
+**Ergebnis nach Standard (v3.26):** Pfad A 2028 99,2 %, Pfad B 97,5 %, Pfad C (Regierung) 96,4 %. Bestandsanpassung 2026: 1,5 Punkte (mit abgeleitetem Wachstum, Annahme). Wohnort (Euro 2028, nominal): Dividendenboden 445,01 € je Erwachsenem und Monat, ausgezahlt (V3a) 491,17 €; Tarifstufen 10.680 / 21.360 / 32.041 / 42.721 €. Klubwirkung (seit v3.27, Korrektur 57): mit Spanien auf dem Regierungsdefizit 81,07 %, auf dem Regierungspfad mit implizitem Wachstum 80,93 % statt 81,29 % (bis v3.26: 81,15 %).
 
 Haushalt 2026: Nach Presse (Forbes 26.04.2026) wurden die Presupuestos 2026 nicht vorgelegt; es gelten die verlängerten Haushalte von 2023 (prorrogados). **Sekundärquelle**, Congreso/BOE nicht geprüft.
 

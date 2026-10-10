@@ -1,6 +1,6 @@
 # Frankreich: Eingangsdaten für die länderspezifische Fassung
 
-Stand: 10. Oktober 2026 · Modellstand v3.24 · Bausteinen: `modell/laender/rechne.py` (Rechnung), `daten/aggregate/laender/fr.json` (Ergebnis)
+Stand: 10. Oktober 2026 · Modellstand v3.27 · Bausteinen: `modell/laender/rechne.py` (Rechnung), `daten/aggregate/laender/fr.json` (Ergebnis)
 
 Die Angaben stammen aus einer Recherche über Abrufe (WebFetch) am 10.10.2026. Die Einträge mit „Agent“ sind von einem
 Rechercheagenten abgerufen und **nicht von mir selbst gegen die Originale geprüft**. Die Einträge mit „geprüft“ habe ich
@@ -99,13 +99,15 @@ Schuldenquote Frankreich 2025: 115,6 %. Gewicht Frankreich am Klub-BIP: 24,1 % (
 
 Das implizite nominale Wachstum des Regierungspfads beträgt 1,49 % (2026), 2,23 % (2027), 2,70 % (2028). Das liegt unter der Klubannahme von 3,0 %. Der Unterschied zwischen B und C entsteht also durch das Wachstum, nicht durch das Defizit.
 
-Klubquote 2028 (BIP-gewichtet, Rest-Saldo so, dass der Klub-Gesamtsaldo −2,93 % bleibt):
+Klubquote 2028 (BIP-gewichtet; seit v3.27 behalten die übrigen Länder ihren eigenen Saldo 2025, Korrektur 57):
 - Klubmethode (Konzept, `schuldenpfad.py`): **81,29 %**
-- Frankreich wie Klub (A): 81,29 %
-- Frankreich mit Regierungsdefizit (B): 81,29 %
-- Frankreich mit Regierungsdefizit und Regierungswachstum (C): **81,96 %**
+- Frankreich im Status quo (A): 81,29 %
+- Frankreich mit Regierungsdefizit (B): 81,05 %
+- Frankreich mit Regierungsdefizit und Regierungswachstum (C): **81,72 %**
 
-Die Wirkung von C (+0,7 Punkte) liegt innerhalb des Risikofalls im Konzept („Schuldenquote 2028 +3,5 Punkte“, 84,8 %).
+Bis v3.26 stand hier B 81,29 % und C 81,96 %. Damals hielt ein Rest-Saldo der übrigen Länder den Klub-Gesamtsaldo bei −2,93 %; jede Abweichung des französischen Defizits wurde dadurch ausgeglichen. Die Aussage „das Defizit wirkt neutral“ war ein Artefakt dieser Methode (Korrektur 57).
+
+Die Wirkung von C (+0,4 Punkte) liegt innerhalb des Risikofalls im Konzept („Schuldenquote 2028 +3,5 Punkte“, 84,8 %).
 
 ## 10. Lücken
 

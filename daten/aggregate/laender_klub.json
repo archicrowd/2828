@@ -1,10 +1,11 @@
 {
  "laender": [
   "ES",
-  "FR"
+  "FR",
+  "NL"
  ],
- "anteil_klub_bip_pct": 37.3,
+ "anteil_klub_bip_pct": 46.4,
  "klub_2028_referenz": 81.29,
- "klub_2028_gemeinsam": 81.82,
+ "klub_2028_gemeinsam": 81.55,
  "hinweis": "Alle genannten Länder zugleich auf ihrem Regierungspfad (Saldo und implizites Wachstum); Sensitivität, kein Ersatz für die Gesamtrechnung (Standard 2.4)"
 }
