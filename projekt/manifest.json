@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.32",
+ "modellstand": "v3.33",
  "fassung_gesamtkonzept": "7. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -291,6 +291,15 @@
    "status": "geprueft",
    "pruefung": "modell/nachfrage.py",
    "anmerkung": "v3.31: Umverteilung und Konsumneigung (Bandbreite 0,2 bis 1,9 % BIP Niveau), Label nach Produktgruppen (kaum Umlenkung), effektiver Labelsatz 14,9 bis 16,9 % statt 20 % (Konsumaufkommen 1,2 bis 2,0 % BIP niedriger); v3.32 Salienz: regionale Umlenkung höchstens 0,3 % BIP"
+  },
+  {
+   "id": "B27",
+   "name": "Tragfähigkeitsprüfung",
+   "pfad": "modell/tragfaehigkeit.py;daten/aggregate/tragfaehigkeit.json",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/tragfaehigkeit.py",
+   "anmerkung": "v3.33: Deckung nach E1 C (Lücke 2,92); Dividende −10 % verletzt Mindestdividende im Klubschnitt 10 Jahre; Stufen 1/1,5/2/3 bei 28 % +1,14 Punkte; Wachstumsunabhängigkeit der Quote"
   }
  ],
  "nahtstellen": [

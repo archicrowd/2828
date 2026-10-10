@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.32**
+Stand: 10. Oktober 2026 · Modellstand **v3.33**
 
 ---
 
@@ -1484,6 +1484,43 @@ die Größe zu bestimmen.
 
 ---
 
+### v3.33 — Entscheidungen der Initiative zur nächsten Fassung; Tragfähigkeitsprüfung
+
+**Art der Änderung: MINOR, keine Zahl des Konzepts bewegt.** 10. Oktober 2026.
+
+**Entscheidungen der Initiative (10.10.2026): „Wir folgen allen Empfehlungen“** der Entscheidungsvorlage
+(`projekt/Entscheidungsvorlage-2026-10-10.md`): E1 Mehrwertsteuer-Label Option C (steuernde Zuordnung, verbindliche Produktliste nach
+Ressourcen- oder CO₂-Fußabdruck je Euro); zusätzliche Lücke über die Dividende (Lesart: Vorschlag „E1 C mit Dividende“ aus der Antwort vom
+10.10.2026); E2 Dividende V2 (gleicher Anteil am eigenen BIP je Kopf), Mindestdividende als Rechenkriterium im Klubschnitt; E3 Gemeindeformel
+je Land (Pro-Kopf-Variante, v3.17); E4 Schuldenquote 2028 81,3 % beibehalten. Umsetzung in der Gesamtrechnung erst mit dem Textentwurf.
+
+**Tragfähigkeitsprüfung (`modell/tragfaehigkeit.py`, neu).**
+- Deckung: Die modellierten Steuerbasen tragen bisher 30.17 % des BIP gegen eine Quote von 31.9 % (Lücke 1.73, seit v3.12 offen, B12).
+  Nach E1 C 28.98 % (Lücke **2.92**).
+- **Widerspruch in den Empfehlungen:** Die zusätzliche Lücke (1.19 Punkte) über die Dividende zu schließen (−10.0 %), unterschreitet die
+  Mindestdividende im Klubschnitt in 10 Jahren (2028 99.3 %, Tiefpunkt 96.9 % 2035). Das verletzt das Kriterium v3.20, das nach E2 im
+  Klubschnitt weiter gilt. Die ganze Lücke über die Dividende (−24.5 %) läge 23 Jahre darunter. Die Empfehlung war nicht mit dem Kriterium
+  abgestimmt (Fehler der Vorlage, offen geführt).
+- Tarif (grob, deutsche Basis): höhere Spitzensätze bringen wenig (32 % +0.39, 35 % +0.64 Punkte). Die Lage der Stufen wirkt stärker:
+  bei 28 % Obergrenze Stufen beim 1-, 1,5-, 2- und 3-fachen Grundbedarf +1.14; Sätze 0/12/20/24/28 +0.83; 0/10/20/26/35 +1.32.
+  Die Obergrenze 28 % ist nicht der Engpass; der Hebel liegt in der Progression der mittleren Einkommen.
+- Wachstum: Die Quote ist nach der strengen Lesart gesetzt (real 0 % = nominal 2 %, Korrektur 51). Ohne reales Wachstum liegt die Dividende
+  2060 bei 524 € statt 735 € (Deutschland, Preise 2028); die Mindestdividende hält. Das Konzept braucht kein Wachstum, um zu tragen.
+- Lenkung: CO₂ trägt 1.67 % des BIP zur Deckung bei; diese Grundlage schrumpft mit Zielerreichung. Steuernde Abgaben sind keine
+  dauerhafte Finanzierungsquelle.
+- Wachstum und Kreislaufwirtschaft: Haberl u. a. (2020, Environmental Research Letters, doi 10.1088/1748-9326/ab842a): relative Entkopplung
+  häufig, absolute langfristige Entkopplung selten; beobachtete Raten reichen für rasche absolute Minderungen nicht; Suffizienz und absolute
+  Reduktionsziele nötig (Kurzfassung selbst gelesen).
+
+**Offen (Entscheidung der Initiative):** wie die zusätzliche Lücke geschlossen wird, ohne die Mindestdividende zu verletzen: Stufen bei 28 %
+tiefer legen (z. B. 1/1,5/2/3-facher Grundbedarf) oder weitere Bausteine; die alte Lücke (1,73) bleibt Aufgabe B12.
+
+**Geprüft:** `python3 modell/alles.py` (21 Stufen, neu „Tragfähigkeit (Entscheidungen)“). **Wodurch aufgefallen:** Frage der Initiative.
+
+*Skript: `modell/tragfaehigkeit.py` (neu). Quellen: Gesamtrechnung, Nachfrageprüfung, Kernmodell (Tarif); Haberl u. a. (2020).*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 57. **Nächste freie Nummer: 58.** Die Nummern 31 bis 41 sind
@@ -1530,9 +1567,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.32
+## 7 | Offene Punkte, Stand v3.33
 
-Neu seit v3.23 (Stand v3.31): **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.33): **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

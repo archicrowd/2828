@@ -1,0 +1,114 @@
+{
+ "deckung": {
+  "quote": 31.9,
+  "deckung_bisher": 30.17,
+  "luecke_bisher": 1.73,
+  "zusatzluecke_label_c": 1.19,
+  "deckung_nach_e1c": 28.98,
+  "luecke_nach_e1c": 2.92
+ },
+ "mindestdividende": [
+  {
+   "kuerzung_pkt_bip": 0.0,
+   "dividende_minus_pct": 0.0,
+   "deckung_2028_pct": 110.4,
+   "tiefpunkt_pct": 108.7,
+   "tiefpunkt_jahr": 2032,
+   "jahre_unter_100": 0
+  },
+  {
+   "kuerzung_pkt_bip": 1.19,
+   "dividende_minus_pct": 10.0,
+   "deckung_2028_pct": 99.3,
+   "tiefpunkt_pct": 96.9,
+   "tiefpunkt_jahr": 2035,
+   "jahre_unter_100": 10
+  },
+  {
+   "kuerzung_pkt_bip": 2.92,
+   "dividende_minus_pct": 24.5,
+   "deckung_2028_pct": 83.3,
+   "tiefpunkt_pct": 79.8,
+   "tiefpunkt_jahr": 2035,
+   "jahre_unter_100": 23
+  }
+ ],
+ "tarif": [
+  {
+   "variante": "geltend 0/9/16/21/28, Stufen 1/2/3/4",
+   "einkommensteuer_pct_bip": 7.78,
+   "aenderung": 0.0
+  },
+  {
+   "variante": "Spitze 32 %",
+   "einkommensteuer_pct_bip": 8.16,
+   "aenderung": 0.39
+  },
+  {
+   "variante": "Spitze 35 %",
+   "einkommensteuer_pct_bip": 8.41,
+   "aenderung": 0.64
+  },
+  {
+   "variante": "0/10/18/24/32",
+   "einkommensteuer_pct_bip": 8.59,
+   "aenderung": 0.82
+  },
+  {
+   "variante": "0/10/20/26/35",
+   "einkommensteuer_pct_bip": 9.1,
+   "aenderung": 1.32
+  },
+  {
+   "variante": "28 % bleibt, Stufen 1/1,5/2/3",
+   "einkommensteuer_pct_bip": 8.92,
+   "aenderung": 1.14
+  },
+  {
+   "variante": "28 % bleibt, 0/12/20/24/28",
+   "einkommensteuer_pct_bip": 8.6,
+   "aenderung": 0.83
+  }
+ ],
+ "wachstum": {
+  "sensitivitaet": [
+   {
+    "fall": "0,0 %",
+    "e2035": 493.08280714898973,
+    "e2060": 524.5083753832204,
+    "gegen": -3.149085988430733
+   },
+   {
+    "fall": "0,5 %",
+    "e2035": 513.461203544645,
+    "e2060": 623.7597438437821,
+    "gegen": 15.177762930390104
+   },
+   {
+    "fall": "0,98 % (3,0 % nominal) — Zentralfall",
+    "e2035": 533.6218852704675,
+    "e2060": 734.6765123849365,
+    "gegen": 35.658637815508555
+   },
+   {
+    "fall": "1,5 %",
+    "e2035": 556.0859361042217,
+    "e2060": 874.5686633970541,
+    "gegen": 61.48984151872688
+   },
+   {
+    "fall": "2,0 %",
+    "e2035": 578.3636093749304,
+    "e2060": 1031.8493483795382,
+    "gegen": 90.53185268926308
+   }
+  ],
+  "mindestquote_strenge_lesart": 31.84694767991205,
+  "hinweis": "Quote nach strenger Lesart (real 0 % = nominal 2 %); die Mindestdividende hält auch ohne reales Wachstum"
+ },
+ "lenkung": {
+  "co2_pct_bip": 1.67,
+  "hinweis": "Bemessungsgrundlage schrumpft mit Zielerreichung (Klimaneutralität 2045/2050)"
+ },
+ "hinweis": "Tarifvarianten grob: deutsche Basis, sieben Einkommensgruppen, Elastizität 0,35 (Kernmodell)"
+}

@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.32 · höchste Korrekturnummer 57 · 299 Dateien im Repository
+Modellstand v3.33 · höchste Korrekturnummer 57 · 301 Dateien im Repository
 
 ## Bausteine
 
@@ -32,6 +32,7 @@ Modellstand v3.32 · höchste Korrekturnummer 57 · 299 Dateien im Repository
 | B24 | Übergangsrechnung Dividende je Land | B | geprueft | modell/uebergang.py (Selbstprüfung V3a gegen Gesamtrechnung) |
 | B25 | Anreizbewertung je Land (Abgabenkeil) | B | geprueft | modell/anreize.py |
 | B26 | Nachfrageprüfung | B | geprueft | modell/nachfrage.py |
+| B27 | Tragfähigkeitsprüfung | B | geprueft | modell/tragfaehigkeit.py |
 
 ## Nahtstellen
 
