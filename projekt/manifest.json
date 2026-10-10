@@ -205,7 +205,7 @@
   {
    "id": "B17",
    "name": "Projektverwaltung",
-   "pfad": "projekt/;modell/alles.py;modell/LIESMICH.md;modell/pruefe_konstanten.py;dokumente/LIESMICH.md;INDEX.md;README.md;CLAUDE.md;CITATION.cff;LIZENZ.md;LICENSE;LICENSE-DOKUMENTE.md",
+   "pfad": "projekt/;projekt/Entscheidungsvorlage-2026-10-10.md;modell/alles.py;modell/LIESMICH.md;modell/pruefe_konstanten.py;dokumente/LIESMICH.md;INDEX.md;README.md;CLAUDE.md;CITATION.cff;LIZENZ.md;LICENSE;LICENSE-DOKUMENTE.md",
    "stand": "A+B",
    "status": "geprueft",
    "pruefung": "modell/alles.py",
