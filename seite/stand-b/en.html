@@ -394,6 +394,70 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 <section id="konzept">
   <div class="wrap">
     <p class="kicker neu">The concept:</p>
+    <h2>Few rules, one principle</h2>
+    <p class="lede">Every building block has already been tried somewhere in the world. TAX 28:28 joins them into a system that fits on a single page.</p>
+    <div class="mass-grid">
+      <div class="mass"><div class="pos">Income</div><h3>Graduated rates with a firm ceiling</h3>
+        <div class="taxlbl" role="img" aria-label="Graduated rates with a firm ceiling"><div><b class="t1">0%</b><em>up to €12,847</em></div>
+<div><b class="t2">9%</b><em>up to €19,270</em></div>
+<div><b class="t3">16%</b><em>up to €25,694</em></div>
+<div><b class="t4">21%</b><em>up to €38,541</em></div>
+<div><b class="t5">28%</b><em>above — upper limit</em></div></div>
+        <p>Gross income is taxed – no deductions, no income splitting. The subsistence minimum stays tax-free; above it, work pays at every step. The brackets start at one, one and a half, two and three times the basic need where you live and rise with it.</p></div>
+      <div class="mass"><div class="pos">Work</div><h3>No more social contributions</h3><span class="regel">0% on wages</span><p>Work is no longer taxed twice. Countries that fund their welfare state from taxes do it this way – Denmark levies hardly any social contributions.</p></div>
+      <div class="mass"><div class="pos">Capital</div><h3>Capital and work treated alike</h3><span class="regel">28% on all returns</span><p>Capital gains count too. Turning wages into capital income no longer pays.</p></div>
+      <div class="mass"><div class="pos">Inheritance</div><h3>Inherited wealth is income too</h3><span class="regel">28% above €100,000 per heir</span><p>No exemptions. Whoever inherits a business or a house can defer the tax – nobody has to sell to pay it.</p></div>
+      <div class="mass"><div class="pos">Land · municipality</div><h3>The municipality taxes the land</h3><span class="regel">0.1–1% of land value</span><p>Only the value of the plot counts, not the building. Whoever builds or renovates no longer pays for it. It may not be passed on to tenants.</p></div>
+      <div class="mass"><div class="pos">Wealth</div><h3>Large fortunes contribute</h3><span class="regel">1.5% above €2 million</span><p>Wealth up to €2 million is untouched. Above it, a minimum tax applies that can be credited against income tax.</p></div>
+      <div class="mass"><div class="pos">Corporations and platforms</div><h3>Taxed where the customers are</h3><span class="regel">28% at the place of use</span><p>This explicitly includes digital platforms. Profits can be shifted, customers cannot.</p></div>
+      <div class="mass"><div class="pos">Consumption</div><h3>VAT becomes a label</h3>
+        <div class="vatlbl" role="img" aria-label="VAT becomes a label">
+          <div><b class="v1">A+ · 5&nbsp;%</b><em>basic needs, repairs</em></div>
+          <div><b class="v2">A · 11&nbsp;%</b><em>sustainable goods</em></div>
+          <div><b class="v3">B · 17&nbsp;%</b><em>standard goods</em></div>
+          <div><b class="v4">C · 22&nbsp;%</b><em>resource-intensive</em></div>
+          <div><b class="v5">D · 28&nbsp;%</b><em>climate-damaging luxury</em></div>
+        </div>
+        <p>Like an energy label, you see at a glance what a product costs and why. Products are rated by their resource and CO₂ footprint, not by their origin.</p></div>
+      <div class="mass"><div class="pos">Climate</div><h3>A carbon price returned to everyone</h3><span class="regel">European price path · returned via the dividend</span><p>Those who consume little gain. Switzerland has been returning its CO₂ levy to everyone in equal shares for years.</p></div>
+      <div class="mass"><div class="pos">Dividend</div><h3>Every month, for everyone</h3><svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Every month, for everyone"><polyline points="10.0,64.2 18.8,64.8 27.5,65.4 36.2,66.0 45.0,66.2 53.8,66.2 62.5,66.1 71.2,66.1 80.0,64.3 88.8,62.5 97.5,60.7 106.2,58.9 115.0,57.1 123.8,55.2 132.5,53.4 141.2,51.5 150.0,49.7 158.8,47.8 167.5,45.9 176.2,44.0 185.0,42.1 193.8,40.2 202.5,38.3 211.2,36.4 220.0,34.4 228.8,32.5 237.5,30.5 246.2,28.5 255.0,26.5 263.8,24.6 272.5,22.5 281.2,20.5 290.0,18.5" fill="none" stroke="#1D7A4F" stroke-width="2.5"/><text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · €634</text><text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · €860</text></svg><p>Adults in full, children half, no application. Every country pays out the same share of its economic output. It is what remains after the tasks are paid – and it grows with the economy.</p></div>
+      <div class="mass"><div class="pos">Protection</div><h3>Nobody falls behind</h3><span class="regel">guarantee of current benefits · hardship fund</span><p>Whoever receives basic income support or student aid today (in Germany: Bürgergeld, Grundsicherung, BAföG) keeps at least the current level. The fund also covers housing costs, care and special circumstances.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="wrap">
+    <h2>Do the maths yourself</h2>
+    <p class="lede">What your household receives as a dividend, and what you pay in income tax under the new rates.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="brutto">Gross annual income</label>
+        <div class="bigval" id="bruttoval"></div>
+        <input type="range" id="brutto" min="0" max="150000" step="1000" value="42000">
+        <label class="lbl">Adults in the household</label>
+        <div class="seg" id="erw"><button type="button" aria-pressed="true" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">Children</label>
+        <div class="seg" id="kin"><button type="button" aria-pressed="true" data-v="0">0</button><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">Year</label>
+        <div class="seg" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button><button type="button" aria-pressed="false" data-v="2045">2045</button><button type="button" aria-pressed="false" data-v="2060">2060</button></div>
+      </div>
+      <div>
+        <div class="res-row"><span class="k">Income tax under 28:28</span><span class="v" id="r-st"></span></div>
+        <div class="res-row"><span class="k">Your average rate</span><span class="v" id="r-satz"></span></div>
+        <div class="res-row"><span class="k">Social contributions</span><span class="v" id="r-soz"></span></div>
+        <div class="res-row"><span class="k">Household dividend per month</span><span class="v new" id="r-mon"></span></div>
+        <div class="bars"><div class="bar-lbl"><span>Income tax</span><span id="b-st"></span></div><div class="bar today"><i id="bi-st"></i></div>
+        <div class="bar-lbl"><span>Dividend per year</span><span id="b-dv"></span></div><div class="bar new"><i id="bi-dv"></i></div></div>
+        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub"></div></div>
+      </div>
+    </div>
+    <p class="fineprint">Rates applied to gross income without deductions. Dividend at 2028 prices.</p>
+  </div>
+</section>
+
+<section id="ebenen">
+  <div class="wrap">
     <h2>Strong municipalities, strong citizens, a strong European roof</h2>
     <p class="lede">Instead of five levels there are two. The municipality receives most of the money and decides for itself on its finances and on what it passes on to other administrations. A European roof takes on only what no municipality can do alone – and may not take more than the treaty allows.</p>
 <svg class="ebenen mob" viewBox="0 0 360 400" role="img" aria-label="Strong municipalities, strong citizens, a strong European roof">
@@ -455,70 +519,6 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
       <div class="flowleg"><span><b style="background:var(--ink)"></b>Roof</span><span><b style="background:#6497B8"></b>Municipal tasks</span><span><b style="background:var(--accent)"></b>Your dividend</span><span><b style="border-left:2px dashed var(--warn);width:0;height:12px"></b>Cap of the roof</span></div>
       <p class="fineprint" id="flusstext" style="margin-top:12px"></p>
     </div>
-  </div>
-</section>
-
-<section id="bausteine">
-  <div class="wrap">
-    <h2>Few rules, one principle</h2>
-    <p class="lede">Every building block has already been tried somewhere in the world. TAX 28:28 joins them into a system that fits on a single page.</p>
-    <div class="mass-grid">
-      <div class="mass"><div class="pos">Income</div><h3>Graduated rates with a firm ceiling</h3>
-        <div class="taxlbl" role="img" aria-label="Graduated rates with a firm ceiling"><div><b class="t1">0%</b><em>up to €12,847</em></div>
-<div><b class="t2">9%</b><em>up to €19,270</em></div>
-<div><b class="t3">16%</b><em>up to €25,694</em></div>
-<div><b class="t4">21%</b><em>up to €38,541</em></div>
-<div><b class="t5">28%</b><em>above — upper limit</em></div></div>
-        <p>Gross income is taxed – no deductions, no income splitting. The subsistence minimum stays tax-free; above it, work pays at every step. The brackets start at one, one and a half, two and three times the basic need where you live and rise with it.</p></div>
-      <div class="mass"><div class="pos">Work</div><h3>No more social contributions</h3><span class="regel">0% on wages</span><p>Work is no longer taxed twice. Countries that fund their welfare state from taxes do it this way – Denmark levies hardly any social contributions.</p></div>
-      <div class="mass"><div class="pos">Capital</div><h3>Capital and work treated alike</h3><span class="regel">28% on all returns</span><p>Capital gains count too. Turning wages into capital income no longer pays.</p></div>
-      <div class="mass"><div class="pos">Inheritance</div><h3>Inherited wealth is income too</h3><span class="regel">28% above €100,000 per heir</span><p>No exemptions. Whoever inherits a business or a house can defer the tax – nobody has to sell to pay it.</p></div>
-      <div class="mass"><div class="pos">Land · municipality</div><h3>The municipality taxes the land</h3><span class="regel">0.1–1% of land value</span><p>Only the value of the plot counts, not the building. Whoever builds or renovates no longer pays for it. It may not be passed on to tenants.</p></div>
-      <div class="mass"><div class="pos">Wealth</div><h3>Large fortunes contribute</h3><span class="regel">1.5% above €2 million</span><p>Wealth up to €2 million is untouched. Above it, a minimum tax applies that can be credited against income tax.</p></div>
-      <div class="mass"><div class="pos">Corporations and platforms</div><h3>Taxed where the customers are</h3><span class="regel">28% at the place of use</span><p>This explicitly includes digital platforms. Profits can be shifted, customers cannot.</p></div>
-      <div class="mass"><div class="pos">Consumption</div><h3>VAT becomes a label</h3>
-        <div class="vatlbl" role="img" aria-label="VAT becomes a label">
-          <div><b class="v1">A+ · 5&nbsp;%</b><em>basic needs, repairs</em></div>
-          <div><b class="v2">A · 11&nbsp;%</b><em>sustainable goods</em></div>
-          <div><b class="v3">B · 17&nbsp;%</b><em>standard goods</em></div>
-          <div><b class="v4">C · 22&nbsp;%</b><em>resource-intensive</em></div>
-          <div><b class="v5">D · 28&nbsp;%</b><em>climate-damaging luxury</em></div>
-        </div>
-        <p>Like an energy label, you see at a glance what a product costs and why. Products are rated by their resource and CO₂ footprint, not by their origin.</p></div>
-      <div class="mass"><div class="pos">Climate</div><h3>A carbon price returned to everyone</h3><span class="regel">European price path · returned via the dividend</span><p>Those who consume little gain. Switzerland has been returning its CO₂ levy to everyone in equal shares for years.</p></div>
-      <div class="mass"><div class="pos">Dividend</div><h3>Every month, for everyone</h3><svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Every month, for everyone"><polyline points="10.0,64.2 18.8,64.8 27.5,65.4 36.2,66.0 45.0,66.2 53.8,66.2 62.5,66.1 71.2,66.1 80.0,64.3 88.8,62.5 97.5,60.7 106.2,58.9 115.0,57.1 123.8,55.2 132.5,53.4 141.2,51.5 150.0,49.7 158.8,47.8 167.5,45.9 176.2,44.0 185.0,42.1 193.8,40.2 202.5,38.3 211.2,36.4 220.0,34.4 228.8,32.5 237.5,30.5 246.2,28.5 255.0,26.5 263.8,24.6 272.5,22.5 281.2,20.5 290.0,18.5" fill="none" stroke="#1D7A4F" stroke-width="2.5"/><text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · €634</text><text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · €860</text></svg><p>Adults in full, children half, no application. Every country pays out the same share of its economic output. It is what remains after the tasks are paid – and it grows with the economy.</p></div>
-      <div class="mass"><div class="pos">Protection</div><h3>Nobody falls behind</h3><span class="regel">guarantee of current benefits · hardship fund</span><p>Whoever receives basic income support or student aid today (in Germany: Bürgergeld, Grundsicherung, BAföG) keeps at least the current level. The fund also covers housing costs, care and special circumstances.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="rechner">
-  <div class="wrap">
-    <h2>Do the maths yourself</h2>
-    <p class="lede">What your household receives as a dividend, and what you pay in income tax under the new rates.</p>
-    <div class="calc">
-      <div>
-        <label class="lbl" for="brutto">Gross annual income</label>
-        <div class="bigval" id="bruttoval"></div>
-        <input type="range" id="brutto" min="0" max="150000" step="1000" value="42000">
-        <label class="lbl">Adults in the household</label>
-        <div class="seg" id="erw"><button type="button" aria-pressed="true" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
-        <label class="lbl">Children</label>
-        <div class="seg" id="kin"><button type="button" aria-pressed="true" data-v="0">0</button><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
-        <label class="lbl">Year</label>
-        <div class="seg" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button><button type="button" aria-pressed="false" data-v="2045">2045</button><button type="button" aria-pressed="false" data-v="2060">2060</button></div>
-      </div>
-      <div>
-        <div class="res-row"><span class="k">Income tax under 28:28</span><span class="v" id="r-st"></span></div>
-        <div class="res-row"><span class="k">Your average rate</span><span class="v" id="r-satz"></span></div>
-        <div class="res-row"><span class="k">Social contributions</span><span class="v" id="r-soz"></span></div>
-        <div class="res-row"><span class="k">Household dividend per month</span><span class="v new" id="r-mon"></span></div>
-        <div class="bars"><div class="bar-lbl"><span>Income tax</span><span id="b-st"></span></div><div class="bar today"><i id="bi-st"></i></div>
-        <div class="bar-lbl"><span>Dividend per year</span><span id="b-dv"></span></div><div class="bar new"><i id="bi-dv"></i></div></div>
-        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub"></div></div>
-      </div>
-    </div>
-    <p class="fineprint">Rates applied to gross income without deductions. Dividend at 2028 prices.</p>
   </div>
 </section>
 
@@ -634,7 +634,7 @@ table.beleg{table-layout:fixed;width:100%;min-width:720px}
 
 <footer>
   <div class="wrap">
-    <div><h4>Method</h4><p>All figures come from an open overall calculation based on official statistics (Eurostat, OECD). Developed using the method of architectural design, in working dialogue with an AI system. Scripts under MIT licence, texts under CC BY 4.0.</p><p class="verstamp">Model version <b>v3.39 · 10. Oktober 2026</b></p></div>
+    <div><h4>Method</h4><p>All figures come from an open overall calculation based on official statistics (Eurostat, OECD). Developed using the method of architectural design, in working dialogue with an AI system. Scripts under MIT licence, texts under CC BY 4.0.</p><p class="verstamp">Model version <b>v3.40 · 10. Oktober 2026</b></p></div>
     <div><h4>Contact</h4><p>Initiative 28 : 28<br><a href="mailto:2828@archicrowd.de?subject=28%3A28">Send criticism</a><br><a href="#top">Back to top</a></p></div>
     <div><h4>Legal notice and privacy</h4><p>Responsible for content: Initiative 28 : 28 – Arndt Hermann, 2828@archicrowd.de. This site uses no cookies, no trackers and loads no third-party content. No personal data is collected. The fonts Space Grotesk, Source Serif 4 and IBM Plex Mono are hosted locally under the SIL Open Font License 1.1. All model calculations are illustrations without warranty and do not replace tax or legal advice. The site is blocked for search engines.</p></div>
   </div>

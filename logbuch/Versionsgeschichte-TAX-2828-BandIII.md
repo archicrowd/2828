@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 10. Oktober 2026 · Modellstand **v3.39**
+Stand: 12. Oktober 2026 · Modellstand **v3.40**
 
 ---
 
@@ -1762,6 +1762,21 @@ Toi / Tu / Tú / Ty.
 **Geprüft:** `python3 modell/alles.py`; `pruefe_konzept.py` 59 Prüfungen ohne Fehler (die bewusst rote Stufe aus v3.37 ist damit grün);
 Grafik in allen sechs Sprachen bei 1.200 und 390 Pixel Breite angesehen. **Wodurch aufgefallen:** Durchsicht des Entwurfs durch die Initiative.
 
+### v3.40 — Webseite: Ansprache vom Kleinen zum Großen
+
+**Art der Änderung: PATCH (Aufbau der Webseite), keine Zahl bewegt.** 12. Oktober 2026.
+
+**Wunsch der Initiative (12.10.2026):** Nach „Das Konzept:“ folgen zuerst die Regeln für den Einzelnen („Wenige Regeln, ein Prinzip“), dann
+der Rechner; der Teil zu Gemeinde und Dach („Starke Gemeinden, starke Bürger, ein starkes europäisches Dach“ mit Dreiecksgrafik, Dividende,
+drei Ebenen und Verteilung von 100 €) steht danach, vor „Ihre Gemeinde rechnet selbst“.
+
+**Umsetzung:** `seite/werkzeuge/vorlage.html`, Abschnitte umgestellt: `#konzept` (Kicker und Bausteine), `#rechner`, `#ebenen` (neu benannt,
+vorher Teil von `#konzept`), `#gemeinde`. Texte und Zahlen unverändert; alle sechs Sprachfassungen neu gebaut. Navigation „Konstruktion“
+und Schaltfläche „Konzept ansehen“ führen weiter auf `#konzept`, jetzt auf die Bausteine.
+
+**Geprüft:** `python3 modell/alles.py`; `pruefe_konzept.py` 59 ohne Fehler; Seite ganz angesehen (1.200 Pixel), keine Skriptfehler.
+**Wodurch aufgefallen:** Wunsch der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -1812,9 +1827,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.39
+## 7 | Offene Punkte, Stand v3.40
 
-Neu seit v3.23 (Stand v3.39): **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.40): **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

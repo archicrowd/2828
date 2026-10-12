@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.39",
+ "modellstand": "v3.40",
  "fassung_gesamtkonzept": "10. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -164,7 +164,7 @@
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/pruefe_konzept.py",
-   "anmerkung": "Seite Stand B in sechs Sprachen (de, en, fr, it, es, pl; v3.18), Vorlage seite/werkzeuge/vorlage.html, Texte seite/werkzeuge/sprachen/*.json, Referenzland Deutschland; aus gesamtrechnung.json gebaut. Schriften (fonts/) nur auf dem Server v3.38: Formel und Dividende Referenzland DE nach V2/E3 (gemeinde_einw_de); Entwurf de in seite/entwurf/. v3.39: sechs Sprachen auf Stand 10.10.2026; Dreiecksgrafik neu; geänderte Texte maschinell übersetzt, Gegenlesen offen (B16)."
+   "anmerkung": "Seite Stand B in sechs Sprachen (de, en, fr, it, es, pl; v3.18), Vorlage seite/werkzeuge/vorlage.html, Texte seite/werkzeuge/sprachen/*.json, Referenzland Deutschland; aus gesamtrechnung.json gebaut. Schriften (fonts/) nur auf dem Server v3.38: Formel und Dividende Referenzland DE nach V2/E3 (gemeinde_einw_de); Entwurf de in seite/entwurf/. v3.39: sechs Sprachen auf Stand 10.10.2026; Dreiecksgrafik neu; geänderte Texte maschinell übersetzt, Gegenlesen offen (B16). v3.40: Reihenfolge vom Kleinen zum Großen (Bausteine, Rechner, Ebenen, Gemeinde)."
   },
   {
    "id": "B13",

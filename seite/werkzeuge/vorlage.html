@@ -64,6 +64,66 @@
 <section id="konzept">
   <div class="wrap">
     <p class="kicker neu">@@konz_kicker@@</p>
+    <h2>@@bau_h2@@</h2>
+    <p class="lede">@@bau_lede@@</p>
+    <div class="mass-grid">
+      <div class="mass"><div class="pos">@@b1_pos@@</div><h3>@@b1_h@@</h3>
+        <div class="taxlbl" role="img" aria-label="@@b1_h@@">@@TARIF@@</div>
+        <p>@@b1_p@@</p></div>
+      <div class="mass"><div class="pos">@@b2_pos@@</div><h3>@@b2_h@@</h3><span class="regel">@@b2_r@@</span><p>@@b2_p@@</p></div>
+      <div class="mass"><div class="pos">@@b3_pos@@</div><h3>@@b3_h@@</h3><span class="regel">@@b3_r@@</span><p>@@b3_p@@</p></div>
+      <div class="mass"><div class="pos">@@b4_pos@@</div><h3>@@b4_h@@</h3><span class="regel">@@b4_r@@</span><p>@@b4_p@@</p></div>
+      <div class="mass"><div class="pos">@@b5_pos@@</div><h3>@@b5_h@@</h3><span class="regel">@@b5_r@@</span><p>@@b5_p@@</p></div>
+      <div class="mass"><div class="pos">@@b6_pos@@</div><h3>@@b6_h@@</h3><span class="regel">@@b6_r@@</span><p>@@b6_p@@</p></div>
+      <div class="mass"><div class="pos">@@b7_pos@@</div><h3>@@b7_h@@</h3><span class="regel">@@b7_r@@</span><p>@@b7_p@@</p></div>
+      <div class="mass"><div class="pos">@@b8_pos@@</div><h3>@@b8_h@@</h3>
+        <div class="vatlbl" role="img" aria-label="@@b8_h@@">
+          <div><b class="v1">A+ · 5&nbsp;%</b><em>@@b8_v1@@</em></div>
+          <div><b class="v2">A · 11&nbsp;%</b><em>@@b8_v2@@</em></div>
+          <div><b class="v3">B · 17&nbsp;%</b><em>@@b8_v3@@</em></div>
+          <div><b class="v4">C · 22&nbsp;%</b><em>@@b8_v4@@</em></div>
+          <div><b class="v5">D · 28&nbsp;%</b><em>@@b8_v5@@</em></div>
+        </div>
+        <p>@@b8_p@@</p></div>
+      <div class="mass"><div class="pos">@@b9_pos@@</div><h3>@@b9_h@@</h3><span class="regel">@@b9_r@@</span><p>@@b9_p@@</p></div>
+      <div class="mass"><div class="pos">@@b10_pos@@</div><h3>@@baustein_div_titel@@</h3>@@SPARK@@<p>@@b10_p@@</p></div>
+      <div class="mass"><div class="pos">@@b11_pos@@</div><h3>@@b11_h@@</h3><span class="regel">@@b11_r@@</span><p>@@b11_p@@</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="wrap">
+    <h2>@@rech_h2@@</h2>
+    <p class="lede">@@rech_lede@@</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="brutto">@@rech_brutto@@</label>
+        <div class="bigval" id="bruttoval"></div>
+        <input type="range" id="brutto" min="0" max="150000" step="1000" value="42000">
+        <label class="lbl">@@rech_erw@@</label>
+        <div class="seg" id="erw"><button type="button" aria-pressed="true" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">@@rech_kinder@@</label>
+        <div class="seg" id="kin"><button type="button" aria-pressed="true" data-v="0">0</button><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">@@rech_jahr@@</label>
+        <div class="seg" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button><button type="button" aria-pressed="false" data-v="2045">2045</button><button type="button" aria-pressed="false" data-v="2060">2060</button></div>
+      </div>
+      <div>
+        <div class="res-row"><span class="k">@@rech_steuer@@</span><span class="v" id="r-st"></span></div>
+        <div class="res-row"><span class="k">@@rech_satz@@</span><span class="v" id="r-satz"></span></div>
+        <div class="res-row"><span class="k">@@rech_sozial@@</span><span class="v" id="r-soz"></span></div>
+        <div class="res-row"><span class="k">@@rech_mon@@</span><span class="v new" id="r-mon"></span></div>
+        <div class="bars"><div class="bar-lbl"><span>@@rech_bar1@@</span><span id="b-st"></span></div><div class="bar today"><i id="bi-st"></i></div>
+        <div class="bar-lbl"><span>@@rech_bar2@@</span><span id="b-dv"></span></div><div class="bar new"><i id="bi-dv"></i></div></div>
+        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub"></div></div>
+      </div>
+    </div>
+    <p class="fineprint">@@rech_fein@@</p>
+  </div>
+</section>
+
+<section id="ebenen">
+  <div class="wrap">
     <h2>@@konz_h2@@</h2>
     <p class="lede">@@konz_lede@@</p>
 <svg class="ebenen mob" viewBox="0 0 360 400" role="img" aria-label="@@konz_h2@@">
@@ -125,66 +185,6 @@
       <div class="flowleg"><span><b style="background:var(--ink)"></b>@@fluss_l1@@</span><span><b style="background:#6497B8"></b>@@fluss_l2@@</span><span><b style="background:var(--accent)"></b>@@fluss_l3@@</span><span><b style="border-left:2px dashed var(--warn);width:0;height:12px"></b>@@fluss_l4@@</span></div>
       <p class="fineprint" id="flusstext" style="margin-top:12px"></p>
     </div>
-  </div>
-</section>
-
-<section id="bausteine">
-  <div class="wrap">
-    <h2>@@bau_h2@@</h2>
-    <p class="lede">@@bau_lede@@</p>
-    <div class="mass-grid">
-      <div class="mass"><div class="pos">@@b1_pos@@</div><h3>@@b1_h@@</h3>
-        <div class="taxlbl" role="img" aria-label="@@b1_h@@">@@TARIF@@</div>
-        <p>@@b1_p@@</p></div>
-      <div class="mass"><div class="pos">@@b2_pos@@</div><h3>@@b2_h@@</h3><span class="regel">@@b2_r@@</span><p>@@b2_p@@</p></div>
-      <div class="mass"><div class="pos">@@b3_pos@@</div><h3>@@b3_h@@</h3><span class="regel">@@b3_r@@</span><p>@@b3_p@@</p></div>
-      <div class="mass"><div class="pos">@@b4_pos@@</div><h3>@@b4_h@@</h3><span class="regel">@@b4_r@@</span><p>@@b4_p@@</p></div>
-      <div class="mass"><div class="pos">@@b5_pos@@</div><h3>@@b5_h@@</h3><span class="regel">@@b5_r@@</span><p>@@b5_p@@</p></div>
-      <div class="mass"><div class="pos">@@b6_pos@@</div><h3>@@b6_h@@</h3><span class="regel">@@b6_r@@</span><p>@@b6_p@@</p></div>
-      <div class="mass"><div class="pos">@@b7_pos@@</div><h3>@@b7_h@@</h3><span class="regel">@@b7_r@@</span><p>@@b7_p@@</p></div>
-      <div class="mass"><div class="pos">@@b8_pos@@</div><h3>@@b8_h@@</h3>
-        <div class="vatlbl" role="img" aria-label="@@b8_h@@">
-          <div><b class="v1">A+ · 5&nbsp;%</b><em>@@b8_v1@@</em></div>
-          <div><b class="v2">A · 11&nbsp;%</b><em>@@b8_v2@@</em></div>
-          <div><b class="v3">B · 17&nbsp;%</b><em>@@b8_v3@@</em></div>
-          <div><b class="v4">C · 22&nbsp;%</b><em>@@b8_v4@@</em></div>
-          <div><b class="v5">D · 28&nbsp;%</b><em>@@b8_v5@@</em></div>
-        </div>
-        <p>@@b8_p@@</p></div>
-      <div class="mass"><div class="pos">@@b9_pos@@</div><h3>@@b9_h@@</h3><span class="regel">@@b9_r@@</span><p>@@b9_p@@</p></div>
-      <div class="mass"><div class="pos">@@b10_pos@@</div><h3>@@baustein_div_titel@@</h3>@@SPARK@@<p>@@b10_p@@</p></div>
-      <div class="mass"><div class="pos">@@b11_pos@@</div><h3>@@b11_h@@</h3><span class="regel">@@b11_r@@</span><p>@@b11_p@@</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="rechner">
-  <div class="wrap">
-    <h2>@@rech_h2@@</h2>
-    <p class="lede">@@rech_lede@@</p>
-    <div class="calc">
-      <div>
-        <label class="lbl" for="brutto">@@rech_brutto@@</label>
-        <div class="bigval" id="bruttoval"></div>
-        <input type="range" id="brutto" min="0" max="150000" step="1000" value="42000">
-        <label class="lbl">@@rech_erw@@</label>
-        <div class="seg" id="erw"><button type="button" aria-pressed="true" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
-        <label class="lbl">@@rech_kinder@@</label>
-        <div class="seg" id="kin"><button type="button" aria-pressed="true" data-v="0">0</button><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
-        <label class="lbl">@@rech_jahr@@</label>
-        <div class="seg" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button><button type="button" aria-pressed="false" data-v="2045">2045</button><button type="button" aria-pressed="false" data-v="2060">2060</button></div>
-      </div>
-      <div>
-        <div class="res-row"><span class="k">@@rech_steuer@@</span><span class="v" id="r-st"></span></div>
-        <div class="res-row"><span class="k">@@rech_satz@@</span><span class="v" id="r-satz"></span></div>
-        <div class="res-row"><span class="k">@@rech_sozial@@</span><span class="v" id="r-soz"></span></div>
-        <div class="res-row"><span class="k">@@rech_mon@@</span><span class="v new" id="r-mon"></span></div>
-        <div class="bars"><div class="bar-lbl"><span>@@rech_bar1@@</span><span id="b-st"></span></div><div class="bar today"><i id="bi-st"></i></div>
-        <div class="bar-lbl"><span>@@rech_bar2@@</span><span id="b-dv"></span></div><div class="bar new"><i id="bi-dv"></i></div></div>
-        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub"></div></div>
-      </div>
-    </div>
-    <p class="fineprint">@@rech_fein@@</p>
   </div>
 </section>
 
