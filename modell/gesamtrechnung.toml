@@ -5,8 +5,8 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.40"
-fassung = "10. Oktober 2026"
+version = "v3.41"
+fassung = "12. Oktober 2026"
 
 [[parameter]]
 name       = "auslauf_beginn_jahr"

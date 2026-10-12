@@ -1,0 +1,1542 @@
+[
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Gross domestic product (GDP) and main components (output, expenditure and income) – annual data (nama_10_gdp)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table",
+  "abruf": "04.10.2026",
+  "verwendet_fuer": "BIP 2024 der zehn Staaten, Klub-BIP, Gewichte, Kopfbeträge; BIP Polen",
+  "hinweis": "Bezugsjahr der Daten. Abruf 2.–4.10.2026 (Q01), nicht erneut geprüft (B15); Polen per WebFetch 10.10.2026. Eurostat meldet am 12.10.2026 für DE 2024 4.386.940 Mio EUR (vorläufig) statt 4.328.970 im Repository (bekannt, B15). Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Population change – Demographic balance and crude rates at national level (demo_gind)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table",
+  "abruf": "06.10.2026",
+  "verwendet_fuer": "Einwohner 2024 (Jahresdurchschnitt, AVG), Kopfbeträge, Möglichkeitsraum",
+  "hinweis": "Bezugsjahr der Daten. Zehn Staaten abgerufen 6.10.2026 (Korrektur 49); Polen und Ländervergleich 10.10.2026; 21 Staaten des Möglichkeitsraums nur aus Vorchat-Datei (Sekundärquelle). Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Government deficit/surplus, debt and associated data (gov_10dd_edpt1)",
+  "autor": "Eurostat",
+  "jahr": "2010–2025",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Schuldenquote 2024, Schuldenpfad 2010–2025, Defizite 2025, Länderstandard (Schuld und Saldo je Land)",
+  "hinweis": "Bezugsjahre der Daten. Abrufe 2.–4.10.2026 (Werte 2024), 7.10.2026 (Reihen je Land, maschinell gelesen), 10.10.2026 (FR, ES, NL, BE, PL per WebFetch). Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "EMU convergence criterion series – annual data (irt_lt_mcby_a)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_a/default/table",
+  "abruf": "04.10.2026",
+  "verwendet_fuer": "Rendite zehnjähriger Staatsanleihen; Risikofall Zielzins ohne Garantie",
+  "hinweis": "Bezugsjahr der Daten. Abruf 2.–4.10.2026, übernommen, nicht erneut geprüft (B15). Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Government revenue, expenditure and main aggregates (gov_10a_main)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table",
+  "abruf": "06.10.2026",
+  "verwendet_fuer": "Zinsausgaben 2024 (D41PAY), effektiver Zins 1,90 %",
+  "hinweis": "Bezugsjahr der Daten. Estland geschätzt (Abruf gescheitert), Belgien vorläufig. Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "General government expenditure by function (COFOG) (gov_10a_exp)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Ebenen A und B, Verteidigung GF02, Gesundheit GF07, Alterssicherung GF1002, Wirtschaft GF04 (Dach), Verwaltungskern GF0101, Gemeinden S1313",
+  "hinweis": "Bezugsjahr der Daten. Erstabruf 2.10.2026 (Q06); GF1002, GF04 und Länderwerte per WebFetch 10.10.2026. Zuordnung der Posten zu A und B ist Modellsetzung (B19). Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Main national accounts tax aggregates (gov_10a_taxag)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_taxag/default/table",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Gesamtlast heute 40,76 % (Steuern, Sozialbeiträge, D995), Sozialbeiträge D61 je Land, Mehrwertsteuer D211 Spanien",
+  "hinweis": "Bezugsjahr der Daten. Erstabruf 2.10.2026; D995 Dänemark 6.10.2026 (B14); FR, DE, ES per WebFetch 10.10.2026. Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Population on 1 January by age group and sex (demo_pjangroup)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/demo_pjangroup/default/table",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Kinderanteil 15,86 % (5 bis 19 Jahre), Formel je Kind",
+  "hinweis": "Bezugsjahr der Daten. Abruf im Repository nicht dokumentiert (B15); Abrufdatum = eigene Linkprüfung. Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Gross domestic product (GDP) at current market prices by NUTS 2 region (nama_10r_2gdp)",
+  "autor": "Eurostat",
+  "jahr": "2023 oder 2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/nama_10r_2gdp/default/table",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Regionalrechnung (Spreizung Hamburg/Chemnitz 1,66), verworfene BIP-Gewichtung",
+  "hinweis": "Rechnung aus dem Vorchat, nicht reproduziert (Q09); Bezugsjahr offen. Abrufdatum = eigene Linkprüfung. Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Purchasing power parities, price level indices, nominal and real expenditures by analytical categories – based on COICOP 1999 (prc_ppp_ind)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/prc_ppp_ind/default/table",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Preisniveau Individualverbrauch (PLI_EU27_2020, A01): Dividende und Tarifstufen am Wohnort",
+  "hinweis": "Bezugsjahr der Daten. Zehn Staaten 7.10.2026 (maschinell gelesen), Polen und Gegenprobe DE 10.10.2026. Fehlt in der Datensatzliste des Gesamtkonzepts (Abschnitt 9). Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Euro/ECU exchange rates – annual data (ert_bil_eur_a)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/ert_bil_eur_a/default/table",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Umrechnung der Durchschnittslöhne DK und PL in Euro (Abgabenkeil)",
+  "hinweis": "Bezugsjahr der Daten; Datum aus Logbuch v3.30 und abgabenkeil_2024.csv (Prüfung 10.10.2026). Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Expenditure on social protection as percentage of GDP (tps00098)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/tps00098/default/table",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Sozialschutzausgaben Deutschland 31,28 % des BIP (Ablösung der Sozialverwaltung)",
+  "hinweis": "Bezugsjahr der Daten, Wert vorläufig. Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Expenditure on social protection by type (tps00101)",
+  "autor": "Eurostat",
+  "jahr": "2024",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/tps00101/default/table",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Verwaltungsanteil der Sozialschutzausgaben Deutschland 3,59 % (1,12 % des BIP)",
+  "hinweis": "Bezugsjahr der Daten, Wert vorläufig. Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Structure of consumption expenditure by income quintile and COICOP consumption purpose (hbs_str_t223)",
+  "autor": "Eurostat",
+  "jahr": "2020",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/hbs_str_t223/default/table",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Budgetanteile der Produktgruppen (Q1, Q5) in der Nachfrageprüfung",
+  "hinweis": "Bezugsjahr der Daten. Kein Abrufdatum im Repository (Agentenrecherche v3.31); Abrufdatum = eigene Linkprüfung. Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Aggregate propensity to consume by income quintile – experimental statistics (icw_sr_10)",
+  "autor": "Eurostat",
+  "jahr": "",
+  "link": "https://ec.europa.eu/eurostat/databrowser/view/icw_sr_10/default/table",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Durchschnittliche Konsumneigung Q1 130 % / Q5 56 % (Vergleich, keine MPC)",
+  "hinweis": "Bezugsjahr im Repository nicht genannt. Kein Abrufdatum im Repository; Abrufdatum = eigene Linkprüfung. Titel am 12.10.2026 über die Eurostat-API gelesen; Link führt auf den Data Browser (Seite lädt per JavaScript)."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Taxing Wages 2025",
+  "autor": "OECD",
+  "jahr": "2025",
+  "link": "https://www.oecd-ilibrary.org/en/publications/taxing-wages-2025_b3a95829-en/full-report/component-3.html",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Abgabenkeil 2024 (DE 47,9 %, OECD 34,9 %) und Abgabenkeile der elf Länder, Anreizbewertung",
+  "hinweis": "Daten 2024. DE/OECD gelesen 6.10.2026 (maschinell zusammengefasst), Ländertabelle 10.10.2026 (Agent, Stichprobe selbst geprüft). Tabellenangabe uneinheitlich: Tab. 3.1 (quellen.csv, gesamtrechnung.toml) gegen Tab. 1.2, 1.4, 1.7 (abgabenkeil_2024.csv). DOI 10.1787/b3a95829-en nicht aufgelöst (Ratenbegrenzung); Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Taxing Wages 2026",
+  "autor": "OECD",
+  "jahr": "2026",
+  "link": "https://www.oecd.org/en/publications/taxing-wages-2026_3a5169ef-en/full-report.html",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Hinweis auf Revision des irischen Abgabenkeils 2024 (33,3 %)",
+  "hinweis": "Nur in abgabenkeil_2024.csv (Zeile IE) erwähnt; Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Country-by-Country Reporting – Länderberichte (Corporate Tax Statistics)",
+  "autor": "OECD",
+  "jahr": "2017–2021",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Einzelrechnungen Stand A (Gewinne am Ort der Nutzung); nur Panel _T, nicht das zweite Panel (Logbuch Abschnitt 4)",
+  "hinweis": "Bezugsjahre der Daten (Q18). Aggregate im Repository, Rohdaten nicht; genaue Fundstelle und Abrufdatum nicht dokumentiert."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "State Population Totals and Components of Change: 2020–2025 (NST-EST2025-POP)",
+  "autor": "U.S. Census Bureau",
+  "jahr": "2025",
+  "link": "https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html",
+  "abruf": "",
+  "verwendet_fuer": "Schwelle des Möglichkeitsraums: Bevölkerung der Vereinigten Staaten 341,8 Mio",
+  "hinweis": "Sekundärquelle: Wert laut Vorchat-Datei moeglichkeitsraum.html, nicht erneut geprüft. Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Canada's population estimates: Age and gender, July 1, 2025 (The Daily, 24.9.2025)",
+  "autor": "Statistics Canada",
+  "jahr": "2025",
+  "link": "https://www150.statcan.gc.ca/n1/daily-quotidien/250924/dq250924a-eng.htm",
+  "abruf": "07.10.2026",
+  "verwendet_fuer": "Bevölkerung Kanadas 41,7 Mio (41.651.653 am 1.7.2025)",
+  "hinweis": "Titel und Wert am 12.10.2026 an der Quelle bestätigt."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Treibhausgas-Emissionen in Deutschland",
+  "autor": "Umweltbundesamt",
+  "jahr": "2026",
+  "link": "https://www.umweltbundesamt.de/daten/klima/treibhausgas-emissionen-in-deutschland",
+  "abruf": "07.10.2026",
+  "verwendet_fuer": "Grafik CO2: 1990 1.253 Mio t, 2025 649 Mio t (vorläufig), Ziel 2030 438 Mio t",
+  "hinweis": "Jahr = Stand der vorläufigen Daten 2025 (Annahme). Werte 2010–2024 der Grafik stammen aus der früheren Webseite (Sekundärquelle). Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Erbschaft- und Schenkungsteuer 2024 (Statistischer Bericht L IV – j/24, L4093), Tabelle T 5",
+  "autor": "Statistisches Landesamt Rheinland-Pfalz",
+  "jahr": "2025",
+  "link": "https://www.statistischebibliothek.de/mir/servlets/MCRFileNodeServlet/RPHeft_derivate_00009010/L4093_202400_1j_L.pdf",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Konzentration der Erwerbe (Annahme zum Erbschaftsfreibetrag 100.000 EUR)",
+  "hinweis": "Abrufdatum = eigene Prüfung (Titel, Tabelle T 5 vorhanden); im Repository kein Abrufdatum."
+ },
+ {
+  "gruppe": "Amtliche Statistik",
+  "titel": "Le « made in France » : 81 % de la consommation totale des ménages, mais 36 % seulement de celle des biens manufacturés (Insee Première n° 1756)",
+  "autor": "Bourgeois, A.; Briand, A. (Insee)",
+  "jahr": "2019",
+  "link": "https://www.insee.fr/fr/statistiques/4166056",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Importanteil des Konsums Frankreich 18,7 %; Importanteile der Produktgruppen (Basispreise)",
+  "hinweis": "Daten 2015, Veröffentlichung Juni 2019; nachfrage.toml nennt „2015“, Logbuch v3.31 „2019“. Titel und Wert am 12.10.2026 geprüft. Zuordnung von „Insee 2019 (Basispreise)“ zu dieser Veröffentlichung: Annahme."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Convergence",
+  "autor": "Barro, R. J.; Sala-i-Martin, X.",
+  "jahr": "1992",
+  "link": "https://doi.org/10.1086/261816",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Beta-Konvergenz 2 % je Jahr in der Übergangsrechnung",
+  "hinweis": "Journal of Political Economy 100(2). Literaturwert, laut Logbuch nicht am Original geprüft; DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Budget-Neutral Labor Tax Wedge Reductions: A Simulation-Based Analysis for the Euro Area",
+  "autor": "Attinasi, M. G.; Prammer, D.; Stähler, N.; Tasso, M.; van Parys, S.",
+  "jahr": "2019",
+  "link": "https://www.ijcb.org/journal/ijcb19q4a1.htm",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Wirkung des Abbaus des Abgabenkeils auf das BIP-Niveau (0,28 % je Punkt)",
+  "hinweis": "International Journal of Central Banking 15(4); kein DOI. Vom Agenten im Original gelesen (Logbuch v3.30). Titel auf der Verlagsseite mit Tippfehler „Sumulation“."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Employment Patterns in OECD Countries: Reassessing the Role of Policies and Institutions (OECD Economics Department Working Papers No. 486)",
+  "autor": "Bassanini, A.; Duval, R.",
+  "jahr": "2006",
+  "link": "https://doi.org/10.1787/702031136412",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Halbierung der Wirkung durch Wechselwirkungen (untere Variante 0,14 %)",
+  "hinweis": "Annahme laut anreize.toml; DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Who bears labour taxes and social contributions? A meta-analysis approach",
+  "autor": "Melguizo, Á.; González-Páramo, J. M.",
+  "jahr": "2013",
+  "link": "https://doi.org/10.1007/s13209-012-0092-9",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Inzidenz der Arbeitgeberbeiträge (zwei Drittel bis 90 % bei den Beschäftigten)",
+  "hinweis": "SERIEs 4, S. 247–271 (online 2012). Repository nennt „González-Páramo und Melguizo (2013)“; auf dem Werk steht Melguizo an erster Stelle. DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Do corporate tax cuts boost economic growth?",
+  "autor": "Gechert, S.; Heimberger, P.",
+  "jahr": "2022",
+  "link": "https://doi.org/10.1016/j.euroecorev.2022.104157",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Investitionen und Unternehmenssteuer: kein Wachstumseffekt nach Korrektur des Publikationsbias (nicht quantifiziert)",
+  "hinweis": "European Economic Review 147. Logbuch v3.30 nennt 2021 (Arbeitspapierfassung). DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Salience and Taxation: Theory and Evidence",
+  "autor": "Chetty, R.; Looney, A.; Kroft, K.",
+  "jahr": "2009",
+  "link": "https://doi.org/10.1257/aer.99.4.1145",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Salienz des Mehrwertsteuer-Labels: Ausweis des Steueranteils senkt die Nachfrage um 8 %",
+  "hinweis": "American Economic Review 99(4). Im Logbuch v3.32 als selbst abgerufen geführt; nachfrage.toml schreibt „2009/2009“ (Tippfehler). DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "The Effects of Environmental Sustainability Labels on Selection, Purchase, and Consumption of Food and Drink Products: A Systematic Review",
+  "autor": "Potter, C.; Bastounis, A.; Hartmann-Boyce, J.; Stewart, C.; Frie, K.; Tudor, K.; Bianchi, F.; Cartwright, E.; Cook, B.; Rayner, M.; Jebb, S. A.",
+  "jahr": "2021",
+  "link": "https://doi.org/10.1177/0013916521995473",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Umweltlabels: Richtung der Verhaltenswirkung belegt, Größe nicht",
+  "hinweis": "Environment and Behavior 53(8), 891–925. DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "A systematic review of the evidence on decoupling of GDP, resource use and GHG emissions, part II: synthesizing the insights",
+  "autor": "Haberl, H.; Wiedenhofer, D.; Virág, D.; Kalt, G.; Plank, B.; Brockway, P.; Fishman, T.; Hausknost, D.; Krausmann, F.; Leon-Gruchalski, B.; Mayer, A.; Pichler, M.; Schaffartzik, A.; Sousa, T.; Streeck, J.; Creutzig, F.",
+  "jahr": "2020",
+  "link": "https://doi.org/10.1088/1748-9326/ab842a",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Tragfähigkeitsprüfung: relative Entkopplung häufig, absolute selten",
+  "hinweis": "Environmental Research Letters 15(6), 065003. Kurzfassung laut Logbuch v3.33 selbst gelesen. DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Fiscal Policy and MPC Heterogeneity",
+  "autor": "Jappelli, T.; Pistaferri, L.",
+  "jahr": "2014",
+  "link": "https://doi.org/10.1257/mac.6.4.107",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Abstand der Konsumneigung unten gegen oben (obere Variante 0,3, Italien)",
+  "hinweis": "American Economic Journal: Macroeconomics 6(4). Datum = Logbucheintrag v3.31 (Agentenrecherche). DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "The role of MPC Heterogeneity for fiscal and monetary policy in the Euro area (SUERF Policy Brief No 965)",
+  "autor": "Albacete, N.; Fessler, P.; Pekanov, A.",
+  "jahr": "2024",
+  "link": "https://suerf.org/wp-content/uploads/2024/08/SUERF-Policy-Brief-965_Pekanov-et-al.pdf",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Abstand der Konsumneigung (untere Variante 0,1, HFCS 22 Länder); Konsumneigung aus der Entlastung bis 0,5",
+  "hinweis": "Repository nennt kein Jahr; Zuordnung zu diesem Brief über Autoren und HFCS-Stichprobe (22 Länder), Wert 0,1 im Brief nicht wörtlich gefunden. Kein DOI. Datum = Logbucheintrag v3.31."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "nicht eindeutig: „Christelis u. a. (2020)“, Konsumneigung nicht-dauerhafte Güter 0,2",
+  "autor": "Christelis, D. u. a.",
+  "jahr": "2020",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Konsumneigung aus der Nettoentlastung (untere Variante 0,2)",
+  "hinweis": "Werk im Repository nicht näher bezeichnet; mehrere Arbeiten dieser Autorengruppe kommen in Frage. Link offen, an der Quelle zu klären."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Fiscal stimulus and exit strategies in the EU: a model-based analysis (European Economy – Economic Papers 426)",
+  "autor": "Roeger, W.; in 't Veld, J.",
+  "jahr": "2010",
+  "link": "https://ideas.repec.org/p/euf/ecopap/0426.html",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Multiplikatoren in der Nachfrageprüfung",
+  "hinweis": "Herausgeber Europäische Kommission, GD ECFIN. Kein DOI gefunden; Link auf RePEc-Eintrag (am 12.10.2026 geprüft). Datum = Logbucheintrag v3.31."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "A meta-analysis on the price elasticity of energy demand",
+  "autor": "Labandeira, X.; Labeaga, J. M.; López-Otero, X.",
+  "jahr": "2017",
+  "link": "https://doi.org/10.1016/j.enpol.2017.01.002",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Preiselastizität Energie (langfristig) im Mehrwertsteuer-Label",
+  "hinweis": "Energy Policy 102. DOI am 12.10.2026 aufgelöst. Datum = Logbucheintrag v3.31."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "The impact of food prices on consumption: a systematic review of research on the price elasticity of demand for food",
+  "autor": "Andreyeva, T.; Long, M. W.; Brownell, K. D.",
+  "jahr": "2010",
+  "link": "https://doi.org/10.2105/AJPH.2008.151415",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Preiselastizität Lebensmittel",
+  "hinweis": "American Journal of Public Health 100(2). DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Effects of Price Shocks to Consumer Demand. Estimating the QUAIDS Demand System on Czech Household Budget Survey Data (CNB Working Paper 8/2010)",
+  "autor": "Dybczak, K.; Tóth, P.; Voňka, D.",
+  "jahr": "2010",
+  "link": "https://www.cnb.cz/en/economic-research/research-publications/cnb-working-paper-series/Effects-of-Price-Shocks-to-Consumer-Demand-00001.-Estimating-the-QUAIDS-Demand-System-on-Czech-Household-Budget-Survey-Data",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Preiselastizitäten Kleidung, Möbel, Verkehr (Tschechien)",
+  "hinweis": "Česká národní banka; kein DOI (Zeitschriftenfassung 2014 in Finance a úvěr). Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "What Goes Up May Not Come Down: Asymmetric Incidence of Value-Added Taxes (NBER Working Paper 23849)",
+  "autor": "Benzarti, Y.; Carloni, D.; Harju, J.; Kosonen, T.",
+  "jahr": "2017",
+  "link": "https://doi.org/10.3386/w23849",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Weitergabe von Mehrwertsteuer-Änderungen an die Preise (Senkung gegen Erhöhung)",
+  "hinweis": "Zeitschriftenfassung: Journal of Political Economy 2020. DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "More and cheaper haircuts after VAT cut? On the efficiency and incidence of service sector consumption taxes",
+  "autor": "Kosonen, T.",
+  "jahr": "2015",
+  "link": "https://doi.org/10.1016/j.jpubeco.2015.09.006",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Weitergabe ermäßigter Sätze; Friseure fast unelastisch",
+  "hinweis": "Journal of Public Economics 131. DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Estimating VAT Pass Through (IMF Working Paper 15/214)",
+  "autor": "Benedek, D.; de Mooij, R. A.; Wingender, P.",
+  "jahr": "2015",
+  "link": "https://doi.org/10.5089/9781513586359.001",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Weitergabe: ermäßigte Sätze etwa 0,3, Normalsatz etwa 1",
+  "hinweis": "Repository: „Benedek u. a. 2015 (IWF)“. Spätere Fassung „Varieties of VAT pass through“ (mit M. Keen, International Tax and Public Finance 2020). DOI laut IMF-Katalog, nicht über doi.org aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Meta-analysis of alcohol price and income elasticities – with corrections for publication bias",
+  "autor": "Nelson, J. P.",
+  "jahr": "2013",
+  "link": "https://doi.org/10.1186/2191-1991-3-17",
+  "abruf": "12.10.2026",
+  "verwendet_fuer": "Preiselastizität Alkohol",
+  "hinweis": "Health Economics Review 3. Nur in nachfrage.toml genannt („Nelson 2013“); Zuordnung zu diesem Aufsatz: Annahme. DOI am 12.10.2026 aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Firm types, price-setting strategies, and consumption-tax incidence",
+  "autor": "Harju, J.; Kosonen, T.; Nordström Skans, O.",
+  "jahr": "2018",
+  "link": "https://doi.org/10.1016/j.jpubeco.2018.06.006",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Erfahrungen mit ermäßigten Sätzen (Restaurants Finnland/Schweden)",
+  "hinweis": "Journal of Public Economics 165, 48–72. DOI laut Forschungsportal der Universität Tampere, nicht über doi.org aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Technology, Taxation, and Corruption: Evidence from the Introduction of Electronic Tax Filing",
+  "autor": "Okunogbe, O.; Pouliquen, V.",
+  "jahr": "2022",
+  "link": "https://doi.org/10.1257/pol.20200123",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Elektronische Steuererklärung Tadschikistan (−40 % Aufwand), Beleg zur Digitalisierung",
+  "hinweis": "American Economic Journal: Economic Policy 14(1). DOI aus Verlagsadresse bestätigt. Kernzahl laut Logbuch nicht am Original geprüft."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "E-governance, Accountability, and Leakage in Public Programs: Experimental Evidence from a Financial Management Reform in India",
+  "autor": "Banerjee, A.; Duflo, E.; Imbert, C.; Mathew, S.; Pande, R.",
+  "jahr": "2020",
+  "link": "https://doi.org/10.1257/app.20180302",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Elektronische Zahlungen Indien (−19 bis −24 % Programmausgaben)",
+  "hinweis": "American Economic Journal: Applied Economics 12(4). DOI aus Verlagsadresse bestätigt. Kernzahl laut Logbuch nicht am Original geprüft."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Why Your IT Project May Be Riskier Than You Think",
+  "autor": "Flyvbjerg, B.; Budzier, A.",
+  "jahr": "2013",
+  "link": "https://doi.org/10.48550/arXiv.1304.0265",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Umsetzungsrisiko: IT-Projekte im Mittel +27 % Kosten",
+  "hinweis": "Zuordnung zur Angabe „Flyvbjerg/Budzier 2013“: arXiv-Fassung 2013 des Beitrags in Harvard Business Review 2011 (Annahme). arXiv-DOI nicht über doi.org aufgelöst."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Kosten der Bürokratie – Reformen dringend geboten (ifo Schnelldienst 77(11), S. 3–46; Beitrag Falck, Guo, Pfaffl)",
+  "autor": "Falck, O.; Guo, Y. M.; Pfaffl, C.",
+  "jahr": "2024",
+  "link": "https://www.ifo.de/pressemitteilung/2024-11-14/buerokratie-deutschland-kostet-jaehrlich-146-milliarden-euro",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "146 Mrd EUR entgangene Wirtschaftsleistung (als Werbung, nicht als Beleg zu Verwaltungskosten eingeordnet)",
+  "hinweis": "Titel des Einzelbeitrags nicht ermittelt; Sammeltitel des Heftschwerpunkts. Link auf ifo-Pressemitteilung (am 12.10.2026 geprüft); Studie im Auftrag der IHK München und Oberbayern."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "Fiscal Federalism",
+  "autor": "Oates, W. E.",
+  "jahr": "1972",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Grundlage der Aufgabenteilung zwischen Ebenen (Gesamtkonzept, Abschnitt 9)",
+  "hinweis": "Monografie (Harcourt Brace Jovanovich, New York); kein DOI, Link nicht ermittelt."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "nicht benannt: Arbeitsangebot bei der Alaska-Dividende",
+  "autor": "",
+  "jahr": "",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Dividende und Arbeitsangebot (Untergrenze: kein Effekt), nicht quantifiziert",
+  "hinweis": "Werk im Logbuch v3.30 nicht genannt (Quellenliste nur im Agentenbericht, nicht abgelegt)."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "nicht benannt: US-Experiment zum garantierten Einkommen (2024)",
+  "autor": "",
+  "jahr": "2024",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Dividende und Arbeitsangebot (bis −4,2 Punkte Erwerbsbeteiligung), nicht quantifiziert",
+  "hinweis": "Werk im Logbuch v3.30 nicht genannt; Zuordnung offen."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "nicht benannt: OECD-Arbeiten zu Steuerstruktur und Wachstum (Grundsteuer am wenigsten schädlich)",
+  "autor": "OECD",
+  "jahr": "",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Bodenwertabgabe, nicht quantifiziert",
+  "hinweis": "Werk im Logbuch v3.30 nicht genannt."
+ },
+ {
+  "gruppe": "Wissenschaftliche Arbeiten",
+  "titel": "nicht benannt: Importanteile zu Käuferpreisen (EZB 2022)",
+  "autor": "Europäische Zentralbank",
+  "jahr": "2022",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Importanteile zu Käuferpreisen etwa die Hälfte der Basispreise (Annahme)",
+  "hinweis": "Nur in nachfrage.toml; Werk nicht genannt."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Einkommensteuergesetz (EStG), insbesondere § 32a (Grundfreibetrag 2026: 12.348 EUR) und § 32d (Abgeltungsteuer 25 %)",
+  "autor": "Bundesrepublik Deutschland",
+  "jahr": "2026",
+  "link": "https://www.gesetze-im-internet.de/estg/",
+  "abruf": "",
+  "verwendet_fuer": "Anker der Mindestdividende (halbes Existenzminimum), Kapitalertragsteuer 26,375 %, Tarif im Kernmodell (Stand A, Kindergeld 259 EUR)",
+  "hinweis": "Rechtsstand 2026. Status „belegt (Gesetzestext)“, ohne Abrufdatum. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Solidaritätszuschlaggesetz 1995 (SolzG 1995)",
+  "autor": "Bundesrepublik Deutschland",
+  "jahr": "2026",
+  "link": "https://www.gesetze-im-internet.de/solzg_1995/",
+  "abruf": "",
+  "verwendet_fuer": "Zuschlag 5,5 % auf die Abgeltungsteuer; Freigrenze im Kernmodell",
+  "hinweis": "Rechtsstand 2026. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Sozialversicherungs-Rechengrößen 2026 (Beitragsbemessungsgrenzen)",
+  "autor": "Bundesregierung",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Abgaben „heute“ im Kernmodell (Stand A)",
+  "hinweis": "Nur im Kopf von modell/kern/modell-2828.py genannt; Fundstelle nicht im Repository."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Bundes-Klimaschutzgesetz (KSG)",
+  "autor": "Bundesrepublik Deutschland",
+  "jahr": "",
+  "link": "https://www.gesetze-im-internet.de/ksg/",
+  "abruf": "",
+  "verwendet_fuer": "Grafik CO2: Ziel 2040 (−88 % gegenüber 1990), Neutralität 2045",
+  "hinweis": "Fassung nicht angegeben. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Landesgrundsteuergesetz Baden-Württemberg (LGrStG)",
+  "autor": "Land Baden-Württemberg",
+  "jahr": "",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Länderbeispiel: Grundsteuer nur auf den Bodenwert seit 2025",
+  "hinweis": "Status „übernommen“; Fundstelle und Link nicht im Repository."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Vertrag über die Arbeitsweise der Europäischen Union (AEUV), konsolidierte Fassung: Art. 3, 45, 110, 113",
+  "autor": "Europäische Union",
+  "jahr": "",
+  "link": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:12016E/TXT",
+  "abruf": "",
+  "verwendet_fuer": "Rechtsrahmen: Einstimmigkeit bei Steuerharmonisierung, Diskriminierungsverbot, Handelspolitik, Freizügigkeit",
+  "hinweis": "Konsolidierte Fassung ohne Jahresangabe im Repository; keine Rechtsprüfung. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Verordnung (EG) Nr. 883/2004 zur Koordinierung der Systeme der sozialen Sicherheit",
+  "autor": "Europäisches Parlament und Rat",
+  "jahr": "2004",
+  "link": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32004R0883",
+  "abruf": "",
+  "verwendet_fuer": "Umzugsregel und Europarecht (offener Punkt)",
+  "hinweis": "Nur genannt, keine Rechtsprüfung. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Richtlinie 2006/112/EG über das gemeinsame Mehrwertsteuersystem (Mehrwertsteuer-Systemrichtlinie)",
+  "autor": "Rat der Europäischen Union",
+  "jahr": "2006",
+  "link": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32006L0112",
+  "abruf": "",
+  "verwendet_fuer": "Mehrwertsteuer nach Fußabdruck: Kollision mit geltendem Recht benannt",
+  "hinweis": "Nur genannt, keine Rechtsprüfung. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "The Hague Summit Declaration",
+  "autor": "NATO (Staats- und Regierungschefs)",
+  "jahr": "2025",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Verteidigungsziel 3,5 % Kernverteidigung, Risikofall, NATO-Konflikt",
+  "hinweis": "Vom 25.6.2025. Im Repository nicht abgelegt (Q13); amtliche Fundstelle auf nato.int nicht abrufbar, Link offen."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Frühjahrsprojektion 2026 der Bundesregierung",
+  "autor": "Bundesregierung (Bundesministerium für Wirtschaft und Energie)",
+  "jahr": "2026",
+  "link": "https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Artikel/Wirtschaft/Projektionen-der-Bundesregierung/projektionen-der-bundesregierung-fruehjahrsprojektion-2026.html",
+  "abruf": "",
+  "verwendet_fuer": "Fortschreibung des BIP 2024 auf 2028 (nominal +3,3 / +2,8 / +3,8 %, 2028 gesetzt +3,0 %)",
+  "hinweis": "Vom 22.4.2026. Fundstelle nicht im Repository (Q10, B15). Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "EU budget 2028–2034 for a stronger Europe (Vorschlag für den mehrjährigen Finanzrahmen)",
+  "autor": "Europäische Kommission",
+  "jahr": "2025",
+  "link": "https://commission.europa.eu/news-and-media/news/eu-budget-2028-2034-stronger-europe-2025-07-16_en",
+  "abruf": "",
+  "verwendet_fuer": "Vergleich mit dem EU-Haushalt (Gesamtkonzept, Abschnitt 9)",
+  "hinweis": "Vom 16.7.2025. Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Security and Defence: EU and Canada sign Security and Defence Partnership",
+  "autor": "Europäischer Auswärtiger Dienst / Europäische Kommission",
+  "jahr": "2025",
+  "link": "https://www.eeas.europa.eu/node/454062_en",
+  "abruf": "07.10.2026",
+  "verwendet_fuer": "Kanada: CETA und Sicherheits- und Verteidigungspartnerschaft (20. Gipfel EU–Kanada, 23./24.6.2025)",
+  "hinweis": "Link aus Suchindex abgeleitet (Sprachfassung), nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Euro indicators: Government deficit and debt 2025 (Pressemitteilung vom 22.4.2026)",
+  "autor": "Eurostat",
+  "jahr": "2026",
+  "link": "https://www.ksh.hu/en/first-releases/krm/eurostat_press_release_2026_04_22.pdf",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Saldo Belgien 2025 (−5,2 %)",
+  "hinweis": "Titel nicht wörtlich erfasst. Link ist eine Kopie beim ungarischen Statistikamt (KSH), nicht geöffnet; Agentenabruf."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Spring 2026 Economic Forecast",
+  "autor": "Europäische Kommission",
+  "jahr": "2026",
+  "link": "https://commission.europa.eu/news-and-media/news/eu-economy-forecast-slow-down-amid-rising-inflation-following-energy-shock-2026-05-21_en",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Vergleichsprognosen Saldo und Schuld 2026/2027 für BE, ES, NL, PL",
+  "hinweis": "Vom 21.5.2026. Link aus Suchindex abgeleitet (Sprachfassung), nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "E-Government in Deutschland: Vom Abstieg zum Aufstieg (Gutachten im Auftrag des Nationalen Normenkontrollrats)",
+  "autor": "Fromm, J.; Welzel, C.; Nentwig, L.; Weber, M. (Kompetenzzentrum Öffentliche IT, Fraunhofer FOKUS)",
+  "jahr": "2015",
+  "link": "https://oeffentliche-it.de/documents/10181/14412/E-Government+in+Deutschland",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Ex-ante-Einsparung der Verwaltung durch Digitalisierung (−0,7 Mrd EUR, Top-60-Leistungen)",
+  "hinweis": "Im Logbuch „NKR/Fraunhofer FOKUS 2015“ (= ÖFIT). Titel und Zahl am 12.10.2026 geprüft; „je Jahr“ im Dokument nicht ausdrücklich ausgewiesen."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Mehr Leistung für Bürger und Unternehmen: Verwaltung digitalisieren. Register modernisieren. (Gutachten im Auftrag des Nationalen Normenkontrollrats)",
+  "autor": "Nationaler Normenkontrollrat; McKinsey & Company",
+  "jahr": "2017",
+  "link": "https://www.uni-potsdam.de/fileadmin/projects/ls-kuhlmann/Starseite/Neuigkeiten/I_NKR_Gutachten_Register_modernisieren.pdf",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Ex-ante-Einsparung der Verwaltung (−3,9 Mrd EUR je Jahr, Investition 2,5 Mrd EUR)",
+  "hinweis": "Titel aus Suchindex; Link ist eine Kopie (Universität Potsdam), nicht geöffnet. Kernzahlen laut Logbuch nicht am Original geprüft."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Jahresbericht 2025 des Nationalen Normenkontrollrats (BT-Drs. 21/3050)",
+  "autor": "Nationaler Normenkontrollrat / Deutscher Bundestag",
+  "jahr": "2025",
+  "link": "https://dserver.bundestag.de/btd/21/030/2103050.pdf",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belege zur Verwaltungsdigitalisierung (v3.35)",
+  "hinweis": "Titel nicht wörtlich erfasst; Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Umsetzung des Onlinezugangsgesetzes (Bericht, 2023)",
+  "autor": "Bundesrechnungshof",
+  "jahr": "2023",
+  "link": "https://www.bundesrechnungshof.de/SharedDocs/Kurzmeldungen/DE/2023/onlinezugangsgesetz.html",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Umsetzungsrisiko: Ende 2022 19 % der OZG-Leistungen online",
+  "hinweis": "Titel nicht wörtlich erfasst. Link laut Sekundärbericht (Vergabeblog, 6.7.2023), nicht geöffnet."
+ },
+ {
+  "gruppe": "Amtliche Dokumente und Rechtstexte",
+  "titel": "Existenzminimumbericht der Bundesregierung",
+  "autor": "Bundesregierung",
+  "jahr": "",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Hinweis: Grundfreibetrag folgt dem Existenzminimumbericht (Fortschreibung als Annahme)",
+  "hinweis": "Nur im Text erwähnt; Ausgabe und Fundstelle nicht genannt."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "Local government reform (Strukturreform 2007, 98 Kommunen)",
+  "autor": "KL – Local Government Denmark",
+  "jahr": "",
+  "link": "https://www.kl.dk/om-kl/english/local-government-reform",
+  "abruf": "",
+  "verwendet_fuer": "Dänemark: 98 Kommunen seit 2007; Mindestgröße der Gemeinden",
+  "hinweis": "Status „übernommen“, ohne Abrufdatum. Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "Länderprofil Dänemark (World Observatory on Subnational Government Finance and Investment)",
+  "autor": "OECD; UCLG",
+  "jahr": "",
+  "link": "https://www.sng-wofi.org/",
+  "abruf": "",
+  "verwendet_fuer": "Gemeindeaufgaben und -finanzen Dänemarks (Gesamtkonzept, Abschnitt 9)",
+  "hinweis": "Ausgabe und Jahr nicht genannt. Link nur auf die Startseite, nicht geprüft."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "Verteidigungsausgaben der Mitgliedstaaten (EPRS-Veröffentlichung)",
+  "autor": "Europäisches Parlament, Wissenschaftlicher Dienst (EPRS)",
+  "jahr": "2024 oder 2025",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Abstand COFOG zu NATO-Systematik (Deutschland 2,12 % des BIP)",
+  "hinweis": "Sekundärquelle; Jahr und Fundstelle zu prüfen (Q14). Link offen."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "CO2-Abgabe: Rückverteilung an die Bevölkerung (Merkblatt 2025)",
+  "autor": "Bundesamt für Umwelt (BAFU), Schweiz",
+  "jahr": "2025",
+  "link": "https://www.bafu.admin.ch/dam/bafu/de/dokumente/klima/fachinfo-daten/merkblatt-rueckverteilung-umweltabgabe-2025.pdf.download.pdf/Merkblatt_Umweltabgabe_2025_D.pdf",
+  "abruf": "07.10.2026",
+  "verwendet_fuer": "Länderbeispiel Schweiz: CO2-Abgabe seit 2008, Rückverteilung 61,80 CHF je Person (2025)",
+  "hinweis": "Im Repository als Seitentitel ohne Adresse geführt; Link aus Suchindex (Merkblatt), nicht geöffnet."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "Goods and Services Tax (GST)",
+  "autor": "Inland Revenue (Te Tari Taake), Neuseeland",
+  "jahr": "",
+  "link": "https://www.ird.govt.nz/gst",
+  "abruf": "",
+  "verwendet_fuer": "Länderbeispiel: Mehrwertsteuer mit einem Satz (15 %) und breiter Basis",
+  "hinweis": "Laut QUELLEN.md nicht eigens geprüft. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "e-Estonia",
+  "autor": "e-Estonia (Programm der estnischen Regierung)",
+  "jahr": "",
+  "link": "https://e-estonia.com/",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Erwartung „2 % des BIP“ (2002), als Werbung, nicht als Beleg eingeordnet",
+  "hinweis": "Fundstelle im Repository nicht genannt. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "Why did the import intensity of GDP slow down in 2023? (Economic Bulletin 3/2024, Kasten 2)",
+  "autor": "Lebastard, L.; Olivero, L.; Pongetti, G. (Europäische Zentralbank)",
+  "jahr": "2024",
+  "link": "https://www.ecb.europa.eu/press/economic-bulletin/focus/2024/html/ecb.ebbox202403_02~650761c088.en.html",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Importanteil des Konsums im Euroraum: Güter 51 %, Dienste 13 % (2022)",
+  "hinweis": "Repository nennt nur „EZB Wirtschaftsbericht 3/2024“; Zuordnung zu diesem Kasten am 12.10.2026 geprüft (Werte stimmen)."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "Geldpolitische Strategie der EZB (Inflationsziel 2 %)",
+  "autor": "Europäische Zentralbank",
+  "jahr": "",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Preissteigerung 2 % als Konzeptannahme",
+  "hinweis": "Nur „Inflationsziel der EZB“ genannt; Fundstelle nicht im Repository."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "nicht benannt: Auswertung der Restaurant-Mehrwertsteuersenkung Schweden 2012",
+  "autor": "Tillväxtanalys (Schwedische Behörde für wachstumspolitische Evaluation)",
+  "jahr": "",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Erfahrungen mit ermäßigten Sätzen: Beschäftigungseffekt Restaurants Schweden",
+  "hinweis": "Bericht im Repository nicht näher bezeichnet."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "nicht benannt: Szenario Vertiefung des Binnenmarkts (+3 % in 10 Jahren)",
+  "autor": "Internationaler Währungsfonds (IWF)",
+  "jahr": "2025",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Binnenmarkt, nur klubweites Szenario, nicht quantifiziert",
+  "hinweis": "Veröffentlichung im Logbuch v3.30 nicht genannt."
+ },
+ {
+  "gruppe": "Institutionen und Programme",
+  "titel": "Taxplorer (Rohdatenbank)",
+  "autor": "Taxplorer-Projekt",
+  "jahr": "",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Einzelrechnungen Stand A",
+  "hinweis": "Q19; Lizenz CC BY-NC-ND 4.0, nur Aggregate mit Zitat. Herausgeber, Fundstelle und Abrufdatum nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Informations Rapides n° 78 (IR78): Compte des administrations publiques 2025, mit Compléments",
+  "autor": "INSEE",
+  "jahr": "2026",
+  "link": "https://www.insee.fr/fr/statistiques/8956575",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Schuldenquote 2025 115,6 %, Defizit 5,1 %, Sozialbeiträge, Prélèvements obligatoires",
+  "hinweis": "Vom 27.3.2026. Titel nicht wörtlich erfasst. Agent, nicht selbst gegen das Original geprüft."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Rapport sur la dette 2027 (Projet de loi de finances 2027)",
+  "autor": "Ministère de l'Économie et des Finances (Direction du Budget)",
+  "jahr": "2026",
+  "link": "https://www.budget.gouv.fr/documentation/file-download/34336",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Schuldenquote der Regierung 2026–2028 (Pfad C)",
+  "hinweis": "Agent, nicht selbst geprüft."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Rapport économique, social et financier (RESF) 2027",
+  "autor": "Direction générale du Trésor",
+  "jahr": "2026",
+  "link": "https://www.tresor.economie.gouv.fr/Articles/2026/10/06/le-rapport-economique-social-et-financier-resf-2027-est-publie",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Saldo 2026–2028, Wachstumsannahme",
+  "hinweis": "Vom 6.10.2026. Agent, nicht selbst geprüft."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Les comptes de la santé, édition 2025",
+  "autor": "DREES",
+  "jahr": "2025",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Gesundheitsausgaben 11,4 % des BIP (2024)",
+  "hinweis": "Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "La protection sociale en France et en Europe (CPS), édition 2025",
+  "autor": "DREES",
+  "jahr": "2025",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Leistungen Krankheit 9,5 % des BIP",
+  "hinweis": "Repository nennt nur „DREES, CPS 2025“; voller Titel Annahme. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Rapport annuel du Conseil d'orientation des retraites (Juni 2026)",
+  "autor": "Conseil d'orientation des retraites (COR)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Rentenausgaben 14,1 % des BIP und Projektion",
+  "hinweis": "Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Calcul de l'impôt sur le revenu (Barème 2026), Fiche F1419",
+  "autor": "service-public.gouv.fr (DILA)",
+  "jahr": "2026",
+  "link": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1419",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Einkommensteuertarif und Spitzensatz 45 %",
+  "hinweis": "Titel nicht wörtlich erfasst. Agent, nicht selbst geprüft. Link nicht geprüft."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Brochure pratique « Calcul de l'impôt » 2026",
+  "autor": "Direction générale des Finances publiques (DGFiP)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Quotient familial, Deckel 1.807 EUR je Halbanteil",
+  "hinweis": "Agent (Auszug S. 370–371); Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Prestations familiales: allocations familiales ab 1.4.2026",
+  "autor": "Ministère des Solidarités (solidarites.gouv.fr)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Kindergeld für zwei Kinder 153,01 EUR",
+  "hinweis": "Titel nicht erfasst. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Les revenus mobiliers (Prélèvement forfaitaire unique)",
+  "autor": "impots.gouv.fr (DGFiP)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: PFU 31,4 % ab 2026",
+  "hinweis": "Seite vom 8.4.2026. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Taux de TVA en France",
+  "autor": "economie.gouv.fr",
+  "jahr": "2025",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Mehrwertsteuersätze 20 / 10 / 5,5 / 2,1 %",
+  "hinweis": "Seite vom 11.12.2025; Titel nicht erfasst. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Bulletin d'information statistique (BIS) n° 206: Collectivités locales au 1er janvier 2026",
+  "autor": "Direction générale des collectivités locales (DGCL)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: 34.875 Gemeinden, 1.252 Intercommunalités",
+  "hinweis": "Titel nicht wörtlich erfasst. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Constitution du 4 octobre 1958, Art. 1 und 72 (JORFTEXT000000571356)",
+  "autor": "République française (Légifrance)",
+  "jahr": "1958",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Fundstelle Verfassung",
+  "hinweis": "Abruf fehlgeschlagen, Wortlaut nicht geprüft."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Deuda de las Administraciones Públicas (PDE), 4. Quartal 2025 und Vorabmeldung Dezember 2025",
+  "autor": "Banco de España",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Schuldenstand 100,7 % (Endwert) bzw. 100,8 % (vorläufig)",
+  "hinweis": "Mitteilungen vom 31.3.2026 und 17.2.2026; Titel nicht erfasst. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Pressemitteilung Ministerrat 7.7.2026: Objetivos de estabilidad 2027–2029 und Techo de gasto 2027",
+  "autor": "Ministerio de Hacienda",
+  "jahr": "2026",
+  "link": "https://www.hacienda.gob.es/es-ES/Prensa/Noticias/paginas/2026/20260707-np-cm-techo-gastos-2027.aspx",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Defizit- und Schuldenziele 2027–2029 (Pfad C)",
+  "hinweis": "Titel nicht wörtlich erfasst; Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Informe de Progreso Anual 2026",
+  "autor": "Gobierno de España",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Spanien: Saldo 2026 −2,1 %, Wachstum und Deflator",
+  "hinweis": "Vom 30.4.2026. Original für den Abruf gesperrt; Inhalt nur über El Debate (Sekundärquelle)."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Tributación Autonómica 2026",
+  "autor": "Ministerio de Hacienda",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Struktur der Einkommensteuer (IRPF), autonome Tramos",
+  "hinweis": "Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Manual práctico de Renta 2025",
+  "autor": "Agencia Tributaria (AEAT)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Mínimo del contribuyente und por descendientes",
+  "hinweis": "Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Fondo de Reserva de la Seguridad Social (Mitteilung 13.4.2026)",
+  "autor": "La Moncloa (Gobierno de España)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Fondo de Reserva 15.267 Mio EUR",
+  "hinweis": "Titel nicht erfasst. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Mitteilung zu befristeten Mehrwertsteuersenkungen (RDL 7/2026)",
+  "autor": "Ministerio de Hacienda",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Senkungen Kraftstoff, Strom, Gas 2026",
+  "hinweis": "Vom 20.3.2026; BOE-Wortlaut nicht geprüft. Agent."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Ley 7/2024 (base del ahorro); Ley 37/1992 (IVA); RDL 7/2026 und RDL 18/2026",
+  "autor": "Reino de España (BOE)",
+  "jahr": "",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Spanien: Kapitalertrag- und Mehrwertsteuersätze",
+  "hinweis": "Nur als Normangabe über Sekundärquellen; Wortlaut nicht geprüft."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Constitución Española (BOE-A-1978-31229), Art. 137, 143, 156",
+  "autor": "Reino de España (BOE)",
+  "jahr": "1978",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Spanien: Fundstelle Verfassung",
+  "hinweis": "Nur Fundstelle; Wortlaut nicht geprüft."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Stellungnahmen und Prognosen zu Saldo und Schuld 2026/2027",
+  "autor": "AIReF (Autoridad Independiente de Responsabilidad Fiscal)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Spanien: Schuld 2026 99,9 %, 2027 98,2 % (Vergleich)",
+  "hinweis": "Nur über Sekundärquellen (El Independiente, Bolsamania); Original für den Abruf gesperrt."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "The 2024 Ageing Report",
+  "autor": "Europäische Kommission; Ausschuss für Wirtschaftspolitik",
+  "jahr": "2024",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Spanien: Vergleich Spitze Alterssicherung 17,3 % (2050)",
+  "hinweis": "Nur über Diario de León (Sekundärquelle); nicht selbst abgerufen."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Miljoenennota 2027, Bijlage, Tabel 1.1 Budgettaire kerngegevens",
+  "autor": "Ministerie van Financiën",
+  "jahr": "2026",
+  "link": "https://www.rijksfinancien.nl/miljoenennota/2027/bijlage",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Niederlande: Regierungspfad Saldo, Schuld, BIP 2026–2029 (in der Rechnung verwendet)",
+  "hinweis": "Vom 15.9.2026, am Original geprüft (WebFetch). Link aus Suchindex."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Macro Economische Verkenning (MEV) 2027, Tabel 2.1",
+  "autor": "Centraal Planbureau (CPB)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Niederlande: Saldo und Schuld 2026/2027 (Widerspruch zur Miljoenennota)",
+  "hinweis": "CPB-Seite nicht erreichbar; PDF von einer Drittseite. Agent."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Mitteilungen zu Overheidsschuld und -saldo 2025 (26.3.2026, 1.9.2026)",
+  "autor": "Centraal Bureau voor de Statistiek (CBS)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Niederlande: Schuldenquote 2025 (44,4 / 44,7 %), Saldo −1,6 %",
+  "hinweis": "Titel nicht erfasst. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Gemeentelijke indeling op 1 januari 2026",
+  "autor": "Centraal Bureau voor de Statistiek (CBS)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Niederlande: 342 Gemeinden",
+  "hinweis": "Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Mittelfristiger finanzpolitischer Plan 2026–2030 (14.4.2026) und Ratsempfehlung (3.7.2026)",
+  "autor": "Regierung der Niederlande; Rat der EU",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Niederlande: älterer Plan Saldo/Schuld (überholt)",
+  "hinweis": "Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Voorlopige aanslag 2026: Box 1 und Box 3",
+  "autor": "Belastingdienst",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Niederlande: Einkommensteuer Box 1 (Spitzensatz 49,50 %), Box 3 (36 %)",
+  "hinweis": "Titel nicht erfasst. Agent, nicht selbst geprüft; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Wet werkelijk rendement box 3 (Kamerstuk 36.748), Stand der Behandlung",
+  "autor": "Eerste Kamer der Staten-Generaal",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Niederlande: geplante Box-3-Reform ab 1.1.2028",
+  "hinweis": "Stand 5.10.2026. Agent; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Commentaar en opmerkingen bij de ontwerpen van aanpassing van de staatsbegroting 2026 (Doc 56 1469/002)",
+  "autor": "Rekenhof / Cour des comptes",
+  "jahr": "2026",
+  "link": "https://www.lachambre.be/FLWB/Pdf/56/1469/56K1469002.pdf",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: Regierungspfad Saldo 2026–2029, Schuld 2026 110,3 %, nominales Wachstum",
+  "hinweis": "Vom 22.5.2026, am Original geprüft (WebFetch). Titel sinngemäß, nicht wörtlich erfasst."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Perspectives économiques / Begroting (Februar und Juni 2026)",
+  "autor": "Federaal Planbureau (FPB)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: Saldo und Schuld bei unveränderter Politik (Vergleich)",
+  "hinweis": "plan.be nicht erreichbar; Werte nur über Sekundärquellen (Blog, Belga). Agent."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Projections économiques (Juni 2026)",
+  "autor": "Nationale Bank van België (NBB)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: Saldo und Schuld 2026–2028 (Vergleich)",
+  "hinweis": "Nur über Sekundärquelle. Agent."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Angaben der Regionen zur Zahl der Gemeinden (Flandern, Wallonien, Brüssel) zum 1.1.2026",
+  "autor": "Regionalverwaltungen Belgiens",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: 565 Gemeinden (summiert)",
+  "hinweis": "Agent; amtliche Regionalseiten nicht einzeln benannt. belgium.be nennt veraltet 581."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Vorläufige Angaben zu Defizit und Schuld des Sektors Staat 2025 (1.4.2026)",
+  "autor": "Główny Urząd Statystyczny (GUS)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Schuld 59,7 %, vorläufiger Saldo −7,2 %",
+  "hinweis": "Titel nicht erfasst; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Fortschrittsbericht zum mittelfristigen finanzpolitisch-strukturellen Plan (28.4.2026)",
+  "autor": "Rada Ministrów (gov.pl)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Saldo 2023–2026, Schuld 2026 65,1 %, nominales Wachstum 6,2 %",
+  "hinweis": "PDF per WebFetch gelesen; Titel sinngemäß; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Mittelfristiger finanzpolitisch-struktureller Plan (8.10.2024)",
+  "autor": "Rada Ministrów (gov.pl)",
+  "jahr": "2024",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: älteres Ziel Defizit unter 3 % 2028 (überholt, nicht eingerechnet)",
+  "hinweis": "Titel sinngemäß; Link nicht im Repository."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Strategia zarządzania długiem 2027–2030 (Sejm-Drucksache 3150)",
+  "autor": "Ministerstwo Finansów / Rada Ministrów",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Polen: Schuldenquote 67,6 / 69,3 / 76,6 % (Pfad C)",
+  "hinweis": "Original nicht abrufbar (Zugangsprüfung); Werte nur aus vier Sekundärquellen."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Konstytucja Rzeczypospolitej Polskiej, Art. 15, 16, 163, 167, 216 Abs. 5",
+  "autor": "Sejm RP",
+  "jahr": "1997",
+  "link": "",
+  "abruf": "",
+  "verwendet_fuer": "Polen: Schuldengrenze drei Fünftel des BIP (Annahme)",
+  "hinweis": "Abruf zurückgezogen bzw. abgelehnt; Wortlaut nicht geprüft."
+ },
+ {
+  "gruppe": "Länderquellen",
+  "titel": "Übersicht der Verwaltungsgliederung zum 1.1.2026",
+  "autor": "Geoportal (GUGiK)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Zahl der Gemeinden (nicht belegt)",
+  "hinweis": "Nennt keine Zahl im Text."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Alaska's 2025 Permanent Fund dividend will be $1,000 and arrives starting Oct. 2",
+  "autor": "Alaska Beacon (Nachdruck Juneau Empire)",
+  "jahr": "2025",
+  "link": "https://alaskabeacon.com/2025/09/19/alaskas-2025-permanent-fund-dividend-will-be-1000-and-arrives-starting-oct-2/",
+  "abruf": "07.10.2026",
+  "verwendet_fuer": "Länderbeispiel Alaska: Dividende seit 1982, 2025 1.000 US-Dollar",
+  "hinweis": "Sekundärquelle. Vom 19.9.2025. Link aus Suchindex, nicht geöffnet."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Meldungen zur estnischen Einkommensteuer 2026 (Satz bleibt 22 %)",
+  "autor": "ERR News und Steuerberatungsquellen",
+  "jahr": "2025/2026",
+  "link": "",
+  "abruf": "07.10.2026",
+  "verwendet_fuer": "Länderbeispiel Estland: Einheitssatz 22 %; Korrektur 53",
+  "hinweis": "Sekundärquelle. Mehrere Quellen, im Repository nicht einzeln benannt; amtlich (emta.ee) zu prüfen."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Bericht über Cour des comptes zu den Zinsausgaben 2026",
+  "autor": "Public Sénat",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Zinsausgaben 2026 77 Mrd EUR",
+  "hinweis": "Sekundärquelle. Vom 25.6.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Bericht über die Stellungnahme des Haut Conseil des finances publiques (HCFP)",
+  "autor": "Public Sénat",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Einschätzung der Prognosen als optimistisch",
+  "hinweis": "Sekundärquelle. Vom 7.10.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Quotient familial: parts par enfant",
+  "autor": "toutsurmesfinances.com",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Frankreich: Anteile je Kind",
+  "hinweis": "Sekundärquelle. Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zu Schuldenprognosen Hacienda/AIReF",
+  "autor": "El Independiente",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Schuld 2026/2027 (Vergleich)",
+  "hinweis": "Sekundärquelle. Vom 8.7.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zu Schulden- und Defizitprognosen der Banco de España",
+  "autor": "Bolsamania",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Prognosen BdE und AIReF",
+  "hinweis": "Sekundärquelle. Vom 18.6.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zum Defizitpfad der Regierung",
+  "autor": "Forbes (España)",
+  "jahr": "2025",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Defizitziele Regierung (Nov. 2025)",
+  "hinweis": "Sekundärquelle. Vom 18.11.2025; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zu den nicht vorgelegten Presupuestos 2026",
+  "autor": "Forbes (España)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Haushaltsverlängerung (prorrogados)",
+  "hinweis": "Sekundärquelle. Vom 26.4.2026; Congreso/BOE nicht geprüft."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zum Informe de Progreso Anual 2026",
+  "autor": "El Debate",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Saldo 2026 −2,1 %, Wachstum real 2,2 %, Deflator 3,1 % (in der Rechnung verwendet)",
+  "hinweis": "Sekundärquelle. Vom 1.5.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zur Rentenprojektion (INTegraSS)",
+  "autor": "Diario de León",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Alterssicherung 14 % des BIP bis 2050",
+  "hinweis": "Sekundärquelle. Vom 10.4.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Guía Fiscal (Einkommensteuerskala, base del ahorro)",
+  "autor": "Guía Fiscal",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: staatliche IRPF-Skala, Kapitalertragssätze bis 30 %",
+  "hinweis": "Sekundärquelle. Herausgeber nicht näher bestimmt."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Tramos autonómicos IRPF 2026 (Madrid, Asturias), tributación conjunta",
+  "autor": "taxdown",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: autonome Tarife, gemeinsame Veranlagung",
+  "hinweis": "Sekundärquelle."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "IVA-Sätze Spanien",
+  "autor": "SparkReceipt",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Mehrwertsteuersätze 21 / 10 / 4 %",
+  "hinweis": "Sekundärquelle. Kommerzielle Seite; AEAT nicht abrufbar."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Tax-Newsletter Juli 2026 (RDL 18/2026)",
+  "autor": "PwC",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Spanien: Folgeregel Strom/Gas",
+  "hinweis": "Sekundärquelle."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Umsatzsteuer Niederlande 2026",
+  "autor": "Grant Thornton",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Niederlande: Sätze 21 / 9 %, Beherbergung 21 %",
+  "hinweis": "Sekundärquelle. Belastingdienst nicht erreichbar."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Einkommensteuertarif Belgien 2026",
+  "autor": "pv.be; Dexxter",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: Einkommensteuer 25–50 %",
+  "hinweis": "Sekundärquelle. FOD Financiën nicht erreichbar."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Steuerfreier Betrag Belgien 2026",
+  "autor": "Baker Tilly u. a.",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: steuerfreier Betrag (Angaben widersprüchlich)",
+  "hinweis": "Sekundärquelle."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Mehrwertsteuersätze Belgien 2026",
+  "autor": "vatcalc",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: 21 / 12 / 6 %, Hotels 12 % seit 1.3.2026",
+  "hinweis": "Sekundärquelle."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Planbureau-Prognose Februar 2026 (Blogbeitrag)",
+  "autor": "Blog (nicht benannt)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: Schuld 2026–2029 laut FPB",
+  "hinweis": "Sekundärquelle. Autor/Herausgeber im Repository nicht genannt."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Meldung zur FPB-Prognose Juni 2026",
+  "autor": "Belga",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Belgien: Saldo/Schuld 2026 laut FPB",
+  "hinweis": "Sekundärquelle."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zum Quartalswert der Schuldenquote Q1 2026",
+  "autor": "Notes from Poland",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Schuldenquote Q1 2026 61,6 % (Kontrollwert)",
+  "hinweis": "Sekundärquelle. Vom 12.6.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zum Haushaltsentwurf 2027",
+  "autor": "Notes from Poland",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Saldo Gesamtstaat −7,1 % (2026, 2027)",
+  "hinweis": "Sekundärquelle. Vom 28.8.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Meldung zum Haushaltsentwurf 2027 (Überschrift)",
+  "autor": "PAP Biznes",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Saldo 2027 −7,1 %",
+  "hinweis": "Sekundärquelle. Vom 28.8.2026; nur Überschrift (Bot-Schutz)."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zum Haushaltsentwurf 2027 („tyle ile rok wcześniej“)",
+  "autor": "Rzeczpospolita (rp.pl)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Saldo 2026 −7,1 %",
+  "hinweis": "Sekundärquelle. Vom 28.8.2026; nur Überschrift."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zur Schuldenstrategie 2027–2030",
+  "autor": "Rzeczpospolita (rp.pl)",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Schuldenquote 2026–2030",
+  "hinweis": "Sekundärquelle. Vom 29.9.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zum Defizit des Staatshaushalts 2027 (282,6 Mrd Zł)",
+  "autor": "Forsal / PAP",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Abgrenzung Staatshaushalt gegen Gesamtstaat (Korrektur 56)",
+  "hinweis": "Sekundärquelle. Vom 28.8.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zur Schuldenstrategie 2027–2030",
+  "autor": "Forsal / PAP",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Schuldenquote (vierte übereinstimmende Quelle)",
+  "hinweis": "Sekundärquelle. Vom 29.9.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zur Schuldenstrategie 2027–2030",
+  "autor": "Parkiet",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Schuldenquote EU- und nationale Definition",
+  "hinweis": "Sekundärquelle. Vom 29.9.2026; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zur Schuldenstrategie 2027–2030",
+  "autor": "Interia",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: Schuldenquote EU- und nationale Definition",
+  "hinweis": "Sekundärquelle. Datum nicht erfasst; Titel nicht erfasst."
+ },
+ {
+  "gruppe": "Sekundärquellen",
+  "titel": "Artikel zur nationalen Schuldenquote 2027",
+  "autor": "Strefa Biznesu",
+  "jahr": "2026",
+  "link": "",
+  "abruf": "10.10.2026",
+  "verwendet_fuer": "Polen: PDP 2027 55,09 % (Widerspruch, vermutlich Schreibfehler)",
+  "hinweis": "Sekundärquelle. Vom 5.10.2026; Titel nicht erfasst."
+ }
+]

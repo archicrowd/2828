@@ -1,7 +1,7 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.40",
- "fassung_gesamtkonzept": "10. Oktober 2026",
+ "modellstand": "v3.41",
+ "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
  "repository": "https://github.com/archicrowd/2828 (privat; Zugang auf Anfrage)",
@@ -115,11 +115,11 @@
   {
    "id": "B07",
    "name": "Gesamtkonzept",
-   "pfad": "dokumente/TAX-2828-Gesamtkonzept.pdf;dokumente/TAX-2828-Gesamtkonzept.docx;dokumente/TAX-2828-Kurzfassung.pdf;dokumente/TAX-2828-Kurzfassung.docx",
+   "pfad": "dokumente/TAX-2828-Gesamtkonzept.pdf;dokumente/TAX-2828-Gesamtkonzept.docx;dokumente/TAX-2828-Kurzfassung.pdf;dokumente/TAX-2828-Kurzfassung.docx;dokumente/TAX-2828-Gesamtkonzept.rtf;dokumente/werkzeuge/gesamtkonzept_rtf.py;daten/quellen_verzeichnis.json",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/pruefe_konzept.py",
-   "anmerkung": "Gesamtkonzept und Kurzfassung (2 Seiten), Fassung 6. Oktober 2026, beide aus gesamtrechnung.json gebaut; Fassung 4. Oktober in dokumente/archiv/ (Prüfsumme) v3.37: Rechnung neu (Quote 30,2 %), Texte bis zur Freigabe auf v3.36; Prüfstufe schlägt bewusst fehl. v3.39: Fassung 10. Oktober 2026 übernommen (freigegeben)."
+   "anmerkung": "Gesamtkonzept und Kurzfassung (2 Seiten), Fassung 6. Oktober 2026, beide aus gesamtrechnung.json gebaut; Fassung 4. Oktober in dokumente/archiv/ (Prüfsumme) v3.37: Rechnung neu (Quote 30,2 %), Texte bis zur Freigabe auf v3.36; Prüfstufe schlägt bewusst fehl. v3.39: Fassung 10. Oktober 2026 übernommen (freigegeben). v3.41: einführende Fassung als RTF (Aufbau vom Kleinen zum Großen, Quellenverzeichnis mit 154 Einträgen); Entwurf zur Durchsicht."
   },
   {
    "id": "B08",

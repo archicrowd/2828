@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 12. Oktober 2026 · Modellstand **v3.40**
+Stand: 12. Oktober 2026 · Modellstand **v3.41**
 
 ---
 
@@ -1777,6 +1777,40 @@ und Schaltfläche „Konzept ansehen“ führen weiter auf `#konzept`, jetzt auf
 **Geprüft:** `python3 modell/alles.py`; `pruefe_konzept.py` 59 ohne Fehler; Seite ganz angesehen (1.200 Pixel), keine Skriptfehler.
 **Wodurch aufgefallen:** Wunsch der Initiative.
 
+### v3.41 — Gesamtkonzept als Einführung (RTF), Quellenverzeichnis
+
+**Art der Änderung: MINOR (Text), keine Zahl der Rechnung bewegt.** 12. Oktober 2026.
+
+**Auftrag der Initiative (12.10.2026):** Gesamtkonzept wie die Webseite vom Kleinen zum Großen umbauen; die missverständlichen Begriffe
+„Boden“ und „Klub“ ersetzen; die Kooperation im Möglichkeitsraum als Möglichkeit, nicht als Bedingung, nach dem Menschen an seinem Ort
+beschreiben; RTF mit kurzem Inhaltsverzeichnis und vollständigem externem Quellenverzeichnis (Titel, Autor, Jahr, Link mit Abruftag);
+Begriffe und Rechnungen am Anfang des Gedankengangs herleiten; keine Bezüge auf frühere Fassungen; Einführung statt Differenzierung.
+
+**Umsetzung:** `dokumente/werkzeuge/gesamtkonzept_rtf.py` → `dokumente/TAX-2828-Gesamtkonzept.rtf` (17 Seiten, davon 5 Quellen).
+Alle Zahlen aus `gesamtrechnung.json`, `tragfaehigkeit.json`, `tarif_grundbedarf.json`, `nachfrage.json`, `moeglichkeitsraum.csv`.
+Aufbau: 1 Worum es geht; 2 Der einzelne Mensch an seinem Ort (Grundbedarf als Maß, Tarif, Kapital/Erbschaft/Vermögen, Label, CO₂,
+keine Sozialbeiträge und Bestandsgarantie, Dividende, Rechenbeispiel); 3 Die Gemeinde (Aufgaben, Herleitung der Formel, Grundstücksabgabe,
+Selbstentscheidung); 4 Das gemeinsame Dach (Einzug und Obergrenze, Aufgaben, Unternehmen am Ort der Kunden, Mehrheit); 5 Kooperation im
+Möglichkeitsraum (Nutzen, gleiche Regeln und nationaler Ausgangspunkt, Altschulden, Möglichkeitsraum); 6 Rechnung (Abgabenquote abgeleitet,
+Zeitpfad, Deckung und Stabilität, Gesamtlast); 7 Offen; 8 Zahlengrundlage; Quellenverzeichnis.
+Begriffe: „Staatengemeinschaft“/„teilnehmende Staaten“ statt „Klub“; „gemeinsames Dach“ statt „Ebene A“; „Mindestniveau der Dividende“
+statt „Boden“; „Grundstücksabgabe (Bodenwert)“ statt „Bodenwertabgabe“; „Abgabenquote“ und „BIP“ beim ersten Gebrauch erklärt.
+
+**Quellenverzeichnis:** `daten/quellen_verzeichnis.json`, 154 Einträge in sechs Gruppen, von einem Rechercheagenten aus den Dateien des
+Repositorys zusammengestellt (DOIs teils am 12.10.2026 aufgelöst). 80 Einträge ohne Link, 28 ohne Abruftag (vor allem Gesetze und
+Länderquellen, deren Fundstelle das Repository nicht verzeichnet); Vermerke „Sekundärquelle“, „Original nicht eingesehen“, „Link nicht
+geprüft“, „maschinell gelesen“ im Verzeichnis. Autorennamen der zitierten Werke sind auf ausdrücklichen Wunsch aufgenommen (die Regel
+„keine Personennamen aus Quellen“ betrifft Texte, nicht Literaturangaben).
+
+**Befunde des Agenten (offen):** Tabellenangabe OECD Taxing Wages uneinheitlich (Tabelle 3.1 gegen Tab. 1.2/1.4/1.7); QUELLEN.md nennt
+365,9 statt 365,8 Mio für „Sechs genügen“; Abrufdatum der deutschen Schuldenquote 2024 widersprüchlich (quellen.csv gegen eingangswerte.csv);
+Jahresangaben einzelner Literatur (Melguizo/González-Páramo, Gechert/Heimberger 2022, Benzarti u. a. 2020 als Zeitschriftenfassung);
+Frankreich nimmt die Schuldenquote 2025 von INSEE statt Eurostat (Standard 1.3, im toml vermerkt).
+**Widerspruch Rechner der Webseite:** Der Rechner besteuert nur den Bruttolohn; Deckungsrechnung und Gesamtkonzept behandeln die
+Dividende der Erwachsenen als steuerpflichtig. Zu entscheiden und anzugleichen.
+
+**Geprüft:** RTF in PDF gewandelt und vollständig gelesen; `python3 modell/alles.py`. **Wodurch aufgefallen:** Auftrag der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -1827,9 +1861,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.40
+## 7 | Offene Punkte, Stand v3.41
 
-Neu seit v3.23 (Stand v3.40): **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.41): **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|
