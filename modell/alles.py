@@ -35,6 +35,7 @@ STUFEN = [
     ("Tragfähigkeit (Entscheidungen)", ["modell/tragfaehigkeit.py"]),
     ("Justierung und Stabilität", ["modell/justierung.py"]),
     ("Sozialschutz und Übergang (Vorbereitung)", ["modell/sozialschutz.py"]),
+    ("Systemvarianten 25:25 und 33:33", ["modell/systemvarianten.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),
     ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),

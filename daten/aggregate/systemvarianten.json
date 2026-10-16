@@ -1,0 +1,266 @@
+{
+ "version": "v3.43",
+ "status": "Prüfrechnung, Gesamtrechnung unverändert bei 28:28",
+ "annahmen": {
+  "haertefall_pct_bip": 0.65,
+  "verhalten": "Kapital, Unternehmen, Erbschaft und Label statisch proportional (keine Ausweichreaktion); Einkommen mit der Elastizität des Kernmodells"
+ },
+ "gesundheit": 7.75,
+ "seil": 2.72,
+ "route": 4.1,
+ "last_heute": 40.76,
+ "varianten": [
+  {
+   "id": "28",
+   "name": "28:28 (geltend)",
+   "spitzensatz": 28,
+   "einkommen_saetze": [
+    0,
+    9,
+    16,
+    21,
+    28
+   ],
+   "label_saetze": [
+    5,
+    11,
+    17,
+    22,
+    28
+   ],
+   "label_effektiv": 16.88,
+   "mindestniveau_de_erw_monat": 535.0,
+   "bezugswert_de_monat": 1071.0,
+   "sozialabdeckung_de_monat": 0.0,
+   "mindestquote": 30.2,
+   "quote_kern": 30.2,
+   "dividende_pct_bip_2028": 11.86,
+   "dividende_de_erw_2028": 634.0,
+   "deckung_positionen": {
+    "Einkommen": 8.92,
+    "Kapitalerträge": 1.16,
+    "Konsum (Label)": 7.76,
+    "Unternehmen und Plattformen": 3.75,
+    "Erbschaften": 0.98,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 30.44,
+   "steuer_traegt": [
+    "haertefall"
+   ],
+   "z_2028": 8.86,
+   "z_ende": 2074,
+   "punkte": {
+    "2028": {
+     "z": 8.86,
+     "steuerbedarf": 30.85,
+     "deckung": 30.44,
+     "saldo": -0.41,
+     "ausserhalb_steuern": 19.33,
+     "gesamtlast_ohne_route": 50.18,
+     "gesamtlast_mit_route": 54.28
+    },
+    "2040": {
+     "z": 8.31,
+     "steuerbedarf": 30.85,
+     "deckung": 30.44,
+     "saldo": -0.41,
+     "ausserhalb_steuern": 18.78,
+     "gesamtlast_ohne_route": 49.63,
+     "gesamtlast_mit_route": 53.73
+    },
+    "2050": {
+     "z": 6.16,
+     "steuerbedarf": 30.85,
+     "deckung": 30.44,
+     "saldo": -0.41,
+     "ausserhalb_steuern": 16.63,
+     "gesamtlast_ohne_route": 47.48,
+     "gesamtlast_mit_route": 51.58
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 30.85,
+     "deckung": 30.44,
+     "saldo": -0.41,
+     "ausserhalb_steuern": 10.47,
+     "gesamtlast_ohne_route": 41.32,
+     "gesamtlast_mit_route": 45.42
+    }
+   }
+  },
+  {
+   "id": "25",
+   "name": "25:25 (Viertellösung)",
+   "spitzensatz": 25,
+   "einkommen_saetze": [
+    0,
+    8,
+    14,
+    19,
+    25
+   ],
+   "label_saetze": [
+    4,
+    10,
+    15,
+    20,
+    25
+   ],
+   "label_effektiv": 15.1,
+   "mindestniveau_de_erw_monat": 387.0,
+   "bezugswert_de_monat": 1547.0,
+   "sozialabdeckung_de_monat": 476.0,
+   "mindestquote": 27.2,
+   "quote_kern": 27.3,
+   "dividende_pct_bip_2028": 8.96,
+   "dividende_de_erw_2028": 479.0,
+   "deckung_positionen": {
+    "Einkommen": 8.12,
+    "Kapitalerträge": 1.04,
+    "Konsum (Label)": 7.04,
+    "Unternehmen und Plattformen": 3.35,
+    "Erbschaften": 0.88,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 28.3,
+   "steuer_traegt": [
+    "haertefall"
+   ],
+   "z_2028": 9.54,
+   "z_ende": 2077,
+   "punkte": {
+    "2028": {
+     "z": 9.54,
+     "steuerbedarf": 27.95,
+     "deckung": 28.3,
+     "saldo": 0.35,
+     "ausserhalb_steuern": 20.01,
+     "gesamtlast_ohne_route": 47.95,
+     "gesamtlast_mit_route": 52.05
+    },
+    "2040": {
+     "z": 9.02,
+     "steuerbedarf": 27.95,
+     "deckung": 28.3,
+     "saldo": 0.35,
+     "ausserhalb_steuern": 19.49,
+     "gesamtlast_ohne_route": 47.44,
+     "gesamtlast_mit_route": 51.54
+    },
+    "2050": {
+     "z": 6.88,
+     "steuerbedarf": 27.95,
+     "deckung": 28.3,
+     "saldo": 0.35,
+     "ausserhalb_steuern": 17.35,
+     "gesamtlast_ohne_route": 45.3,
+     "gesamtlast_mit_route": 49.4
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 27.95,
+     "deckung": 28.3,
+     "saldo": 0.35,
+     "ausserhalb_steuern": 10.47,
+     "gesamtlast_ohne_route": 38.42,
+     "gesamtlast_mit_route": 42.52
+    }
+   }
+  },
+  {
+   "id": "33",
+   "name": "33:33 (Drittellösung)",
+   "spitzensatz": 33,
+   "einkommen_saetze": [
+    0,
+    11,
+    19,
+    25,
+    33
+   ],
+   "label_saetze": [
+    6,
+    13,
+    20,
+    26,
+    33
+   ],
+   "label_effektiv": 19.96,
+   "mindestniveau_de_erw_monat": 535.0,
+   "bezugswert_de_monat": 1071.0,
+   "sozialabdeckung_de_monat": 0.0,
+   "mindestquote": 30.2,
+   "quote_kern": 30.2,
+   "dividende_pct_bip_2028": 11.86,
+   "dividende_de_erw_2028": 634.0,
+   "deckung_positionen": {
+    "Einkommen": 10.21,
+    "Kapitalerträge": 1.37,
+    "Konsum (Label)": 8.93,
+    "Unternehmen und Plattformen": 4.42,
+    "Erbschaften": 1.16,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 33.96,
+   "steuer_traegt": [
+    "haertefall",
+    "gesundheit",
+    "seil",
+    "z"
+   ],
+   "z_2028": 8.86,
+   "z_ende": 2074,
+   "punkte": {
+    "2028": {
+     "z": 8.86,
+     "steuerbedarf": 50.18,
+     "deckung": 33.96,
+     "saldo": -16.22,
+     "ausserhalb_steuern": 0,
+     "gesamtlast_ohne_route": 50.18,
+     "gesamtlast_mit_route": 54.28
+    },
+    "2040": {
+     "z": 8.31,
+     "steuerbedarf": 49.63,
+     "deckung": 33.96,
+     "saldo": -15.67,
+     "ausserhalb_steuern": 0,
+     "gesamtlast_ohne_route": 49.63,
+     "gesamtlast_mit_route": 53.73
+    },
+    "2050": {
+     "z": 6.16,
+     "steuerbedarf": 47.48,
+     "deckung": 33.96,
+     "saldo": -13.52,
+     "ausserhalb_steuern": 0,
+     "gesamtlast_ohne_route": 47.48,
+     "gesamtlast_mit_route": 51.58
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 41.32,
+     "deckung": 33.96,
+     "saldo": -7.36,
+     "ausserhalb_steuern": 0,
+     "gesamtlast_ohne_route": 41.32,
+     "gesamtlast_mit_route": 45.42
+    }
+   }
+  }
+ ]
+}

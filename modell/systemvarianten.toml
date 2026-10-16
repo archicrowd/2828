@@ -1,0 +1,46 @@
+# Systemvarianten 25:25 (Viertellösung) und 33:33 (Drittellösung) gegen 28:28 (modell/systemvarianten.py, Logbuch v3.43).
+# Auftrag der Initiative vom 17.10.2026. Status: Prüfrechnung, keine Entscheidung; die Gesamtrechnung bleibt bei 28:28.
+version = "v3.43"
+
+# Gemeinsame Regel aller Varianten: Spitzensatz s gilt für Einkommen (oberste Stufe), Kapitalerträge, Unternehmensgewinne, Erbschaften und
+# die oberste Stufe des Mehrwertsteuer-Labels. Die übrigen Sätze werden im Verhältnis s/28 skaliert (Setzung, „alle Steuerwerte auf die Zielmarke“),
+# gerundet auf ganze Prozent. Stufen am Grundbedarf (1 / 1,5 / 2 / 3) und alle übrigen Positionen (Vermögen 1,5 %, CO2, Grundstücksabgabe,
+# Subventionsabbau, übrige Steuern) bleiben unverändert.
+
+[[system]]
+id = "28"
+name = "28:28 (geltend)"
+spitzensatz = 28
+einkommen_saetze = [0, 9, 16, 21, 28]
+label_saetze = [5, 11, 17, 22, 28]
+# Dividende: Mindestniveau = Anteil am Bezugswert. Bezugswert „grundbedarf“ = steuerliches Existenzminimum (12.348 € 2026);
+# „grundbedarf_sozial“ = Grundbedarf zuzüglich Sozialabdeckung je Kopf (Gesundheit GF07 + Seil), Vorschlag vom 16.10.2026.
+mindestniveau_anteil = 0.50
+bezugswert = "grundbedarf"
+# Was aus Steuern finanziert wird (zusätzlich zu Dach, Gemeinden, Dividende)
+steuer_traegt = ["haertefall"]
+
+[[system]]
+id = "25"
+name = "25:25 (Viertellösung)"
+spitzensatz = 25
+einkommen_saetze = [0, 8, 14, 19, 25]
+label_saetze = [4, 10, 15, 20, 25]
+mindestniveau_anteil = 0.25
+bezugswert = "grundbedarf_sozial"
+steuer_traegt = ["haertefall"]
+
+[[system]]
+id = "33"
+name = "33:33 (Drittellösung)"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [6, 13, 20, 26, 33]
+mindestniveau_anteil = 0.50
+bezugswert = "grundbedarf"
+# Sozialabgaben inkludiert: Gesundheit, Seil (Invalidität, Hinterbliebene, Lohnersatz bei Arbeitslosigkeit) und Zugesagtes Z aus Steuern
+steuer_traegt = ["haertefall", "gesundheit", "seil", "z"]
+
+[annahmen]
+haertefall_pct_bip = 0.65        # Mitte der Spanne 0,3–1,0 (sozialschutz.toml, ANNAHME, ohne Quelle)
+verhalten = "Kapital, Unternehmen, Erbschaft und Label statisch proportional (keine Ausweichreaktion); Einkommen mit der Elastizität des Kernmodells"

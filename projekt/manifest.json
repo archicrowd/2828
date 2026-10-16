@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.42",
+ "modellstand": "v3.43",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -309,6 +309,15 @@
    "status": "geprueft",
    "pruefung": "modell/sozialschutz.py",
    "anmerkung": "v3.42: Zerlegung GF10, Pfad Z (Schätzung, Gegenprobe Tabelle 29), Varianten Quote/Gesamtlast; Entscheidung S1–S13 offen"
+  },
+  {
+   "id": "B29",
+   "name": "Systemvarianten 25:25 und 33:33",
+   "pfad": "modell/systemvarianten.py;modell/systemvarianten.toml;daten/aggregate/systemvarianten.json;daten/aggregate/systemvarianten.csv;projekt/Systemvarianten-25-33-2026-10-17.md",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/systemvarianten.py",
+   "anmerkung": "v3.43: Mindestquote, Deckung und Sozialposten je Marke; Gesamtrechnung unverändert"
   }
  ],
  "nahtstellen": [

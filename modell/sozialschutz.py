@@ -85,32 +85,33 @@ def z_pfad(c, rente_pct, anteil65, div_erw_pct_kopf, faktor_rentner):
     return out
 
 
-def main():
-    w = gewicht()
-    zl = zerlegung(w)
-    k = G["anteil_minderjaehrige"] / 100
-    div = G["div_2028"]                                  # Dividende in % des BIP (Klubschnitt 2028)
-    div_erw = div / (1 - k / 2)                          # je Erwachsenem in % des BIP je Kopf
+def faktor_rentner(c):
     ar = D.get("ageing_report", {})
+
+    def fak(j):
+        r = ar.get(c, {})
+        pts = sorted((int(y), float(v)) for y, v in r.get("pct_bip", {}).items()) if r else []
+        if not pts:
+            return 1.0
+        base = pts[0][1]
+        prev = pts[0]
+        for y, v in pts:
+            if j <= y:
+                y0, v0 = prev
+                vv = v0 + (v - v0) * (j - y0) / (y - y0) if y > y0 else v
+                return vv / base
+            prev = (y, v)
+        return prev[1] / base
+    return fak
+
+
+def z_laender(div_erw):
+    """Z je Land (Pfad 2028–2100) bei einer Dividende je Erwachsenem von div_erw (% des BIP je Kopf). Auch für Varianten (v3.43)."""
     pfade, roh, skal = {}, {}, {}
     for c in LAENDER:
         rente = wert(c, "GF1002") + wert(c, "GF1003")
         a65 = float(D["anteil_65plus"][c]["wert"])
-
-        def fak(j, c=c):
-            r = ar.get(c, {})
-            pts = sorted((int(y), float(v)) for y, v in r.get("pct_bip", {}).items()) if r else []
-            if not pts:
-                return 1.0
-            base = pts[0][1]
-            prev = pts[0]
-            for y, v in pts:
-                if j <= y:
-                    y0, v0 = prev
-                    vv = v0 + (v - v0) * (j - y0) / (y - y0) if y > y0 else v
-                    return vv / base
-                prev = (y, v)
-            return prev[1] / base
+        fak = faktor_rentner(c)
         # Variante „nach erworbenen Ansprüchen“: Skalierung auf die Tabelle 29 (nasa_10_pens1, S13PU, 2021), wo diese kleiner ist als
         # der Barwert der vor dem Stichtag erworbenen Rentenausgaben (Diskont 1 % real über dem Wachstum, Annahme). Wirkt vor allem für
         # Dänemark (Volksrente steuerfinanziert, keine Anwartschaft im Sinne der Tabelle 29).
@@ -119,6 +120,22 @@ def main():
         skal[c] = min(1.0, float(adl) / pv) if adl else 1.0
         pfade[c] = z_pfad(c, rente * skal[c], a65, div_erw, fak)
         roh[c] = z_pfad(c, rente, a65, div_erw, fak)
+    return pfade, roh, skal
+
+
+def z_klub(div_erw, w=None):
+    w = w or gewicht()
+    pfade, _, _ = z_laender(div_erw)
+    return [round(sum(w[c] * pfade[c][j - 2028]["z_pct_bip"] for c in LAENDER), 3) for j in range(2028, 2101)]
+
+
+def main():
+    w = gewicht()
+    zl = zerlegung(w)
+    k = G["anteil_minderjaehrige"] / 100
+    div = G["div_2028"]                                  # Dividende in % des BIP (Klubschnitt 2028)
+    div_erw = div / (1 - k / 2)                          # je Erwachsenem in % des BIP je Kopf
+    pfade, roh, skal = z_laender(div_erw)
     # Klub: BIP-gewichtet
     jahre = range(2028, 2101)
     klub = [dict(jahr=j, z_pct_bip=round(sum(w[c] * pfade[c][j - 2028]["z_pct_bip"] for c in LAENDER), 3),

@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.42 · höchste Korrekturnummer 60 · 316 Dateien im Repository
+Modellstand v3.43 · höchste Korrekturnummer 60 · 321 Dateien im Repository
 
 ## Bausteine
 
@@ -34,6 +34,7 @@ Modellstand v3.42 · höchste Korrekturnummer 60 · 316 Dateien im Repository
 | B26 | Nachfrageprüfung | B | geprueft | modell/nachfrage.py |
 | B27 | Tragfähigkeitsprüfung | B | geprueft | modell/tragfaehigkeit.py |
 | B28 | Sozialschutz und Übergang (Gemeinsames/Eigenes/Zugesagtes; Hütte/Route/Seil) | B | geprueft | modell/sozialschutz.py |
+| B29 | Systemvarianten 25:25 und 33:33 | B | geprueft | modell/systemvarianten.py |
 
 ## Nahtstellen
 
