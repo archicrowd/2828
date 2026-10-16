@@ -300,6 +300,15 @@
    "status": "geprueft",
    "pruefung": "modell/tragfaehigkeit.py",
    "anmerkung": "v3.33: Deckung nach E1 C (Lücke 2,92); Dividende −10 % verletzt Mindestdividende im Klubschnitt 10 Jahre; Stufen 1/1,5/2/3 bei 28 % +1,14 Punkte; Wachstumsunabhängigkeit der Quote v3.37: Entscheidungen in der Gesamtrechnung eingerechnet; tragfaehigkeit.py prüft Lücke −0,24, Reserve 1,08, stabil; justierung.py auf Eingängen v3.36 eingefroren, Korrektur 59."
+  },
+  {
+   "id": "B28",
+   "name": "Sozialschutz und Übergang (Gemeinsames/Eigenes/Zugesagtes; Hütte/Route/Seil)",
+   "pfad": "modell/sozialschutz.py;modell/sozialschutz.toml",
+   "stand": "B",
+   "status": "ungeprueft",
+   "pruefung": "modell/sozialschutz.py",
+   "anmerkung": "v3.42 in Vorbereitung: Zerlegung Sozialschutz COFOG GF10, Pfad der Zusagen (R-Z1), Wirkung auf Quote und Gesamtlast; Daten folgen"
   }
  ],
  "nahtstellen": [

@@ -33,6 +33,7 @@ Modellstand v3.41 · höchste Korrekturnummer 59 · 311 Dateien im Repository
 | B25 | Anreizbewertung je Land (Abgabenkeil) | B | geprueft | modell/anreize.py |
 | B26 | Nachfrageprüfung | B | geprueft | modell/nachfrage.py |
 | B27 | Tragfähigkeitsprüfung | B | geprueft | modell/tragfaehigkeit.py |
+| B28 | Sozialschutz und Übergang (Gemeinsames/Eigenes/Zugesagtes; Hütte/Route/Seil) | B | ungeprueft | modell/sozialschutz.py |
 
 ## Nahtstellen
 
@@ -61,7 +62,6 @@ Modellstand v3.41 · höchste Korrekturnummer 59 · 311 Dateien im Repository
 
 ## Ergebnis dieses Laufs
 
-- FEHLER: verwaist (kein Baustein): modell/sozialschutz.py
-- FEHLER: verwaist (kein Baustein): modell/sozialschutz.toml
+- keine Fehler
 - Hinweis: Naht N05 offen: B08 Kern (Stand A) -> B03 Rahmenmodell (Stand B): v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; v3.22: 1,73 Punkte, Tarif 0/9/16/21/28 am Grundbedarf); Klubebene fehlt (deckung_quote.csv)
 - Hinweis: Naht N07 fehlt: B03 Rahmenmodell -> B11 Seite Stand A: Seite hat Rahmenwechsel nie gesehen
