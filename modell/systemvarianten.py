@@ -58,7 +58,7 @@ def einkommen(saetze):
     return zeile("01") * auf(saetze) / auf([0, 9, 16, 21, 28])
 
 
-def label_effektiv(saetze):
+def label_effektiv(saetze, sonder=None):
     """Effektiver Satz unter der steuernden Zuordnung (nachfrage.toml), Stufen A+..D auf die Sätze der Variante abgebildet."""
     stufe = {5: 0, 11: 1, 17: 2, 22: 3, 28: 4}
     w = {g["id"]: (g["q1"] + g["q5"]) / 2 for g in NFT["gruppe"]}
@@ -68,6 +68,8 @@ def label_effektiv(saetze):
     for g in pfl:
         alt = st.get(g["id"], g["label"])
         satz[g["id"]] = saetze[stufe[alt]] if alt in stufe else alt * saetze[4] / 28   # Verkehrsdienste 13 % proportional
+        if sonder and g["id"] in sonder:                  # v3.45: Sonderstufe nur für einzelne Gruppen (z. B. 33 % für Tabak und Alkohol)
+            satz[g["id"]] = sonder[g["id"]]
     return sum(w[g["id"]] * satz[g["id"]] for g in pfl) / sum(w[g["id"]] for g in pfl)
 
 
@@ -78,7 +80,7 @@ def konsum(eff):
 
 def deckung(sy):
     r = sy["spitzensatz"] / 28
-    eff = label_effektiv(sy["label_saetze"])
+    eff = label_effektiv(sy["label_saetze"], sy.get("label_sonder"))
     pos = {
         "Einkommen": einkommen(sy["einkommen_saetze"]),
         "Kapitalerträge": zeile("02") * r,
@@ -110,6 +112,22 @@ def mindestquote(sy):
     return q, mq, anker, sozial, bezug
 
 
+def loese(sy, ziel):
+    """v3.45: Anteil des Mindestniveaus so wählen, dass der Saldo (Deckung − Steuerbedarf) dem Ziel entspricht (Halbierung)."""
+    hf = P["annahmen"]["haertefall_pct_bip"]
+    gs, seil = G["gesundheit"], S["ausserhalb_quote"]["seil"]
+    tr = sy["steuer_traegt"]
+    ga = sy.get("gesundheit_anteil", 1.0) if "gesundheit" in tr else 0.0
+    dk = sum(deckung(sy)[0].values())
+    lo, hi = 0.05, 0.6
+    for _ in range(40):
+        mid = (lo + hi) / 2
+        q = mindestquote(dict(sy, mindestniveau_anteil=mid))[0]
+        saldo = dk - (q + (hf if "haertefall" in tr else 0) + gs * ga + (seil if "seil" in tr else 0))
+        lo, hi = (mid, hi) if saldo > ziel else (lo, mid)
+    return round(lo, 4)
+
+
 def main():
     k = G["anteil_minderjaehrige"] / 100
     hf = P["annahmen"]["haertefall_pct_bip"]
@@ -117,6 +135,8 @@ def main():
     route = S["ausserhalb_quote"]["route"]
     erg = []
     for sy in P["system"]:
+        if "loese_saldo" in sy:
+            sy = dict(sy, mindestniveau_anteil=loese(sy, sy["loese_saldo"]))
         q, mq, anker, sozial, bezug = mindestquote(sy)
         kw = dict(i_alt=0.0, i_ziel=0.0) if sy.get("zins_ausserhalb") else {}
         pfad = GR.pfad(q, **kw)
@@ -153,7 +173,8 @@ def main():
         div_kopf = pfad[0]["kl_real"]                                   # Klubschnitt je Einwohner, € im Monat, Preise 2028
         praemie_kopf = gs * (1 - ga) / 100 * GR.KOPF_KLUB / 12             # verbleibende Gesundheitsprämie je Einwohner (Durchschnitt)
         seil_kopf = (0 if "seil" in traegt else seil) / 100 * GR.KOPF_KLUB / 12
-        erg.append(dict(id=sy["id"], name=sy["name"], dividende_kopf_klub=round(div_kopf), gesundheitspraemie_kopf_klub=round(praemie_kopf),
+        erg.append(dict(id=sy["id"], name=sy["name"], mindestniveau_anteil=round(sy["mindestniveau_anteil"], 4),
+                        label_sonder=sy.get("label_sonder"), dividende_kopf_klub=round(div_kopf), gesundheitspraemie_kopf_klub=round(praemie_kopf),
                         seilpraemie_kopf_klub=round(seil_kopf), dividende_nach_praemien=round(div_kopf - praemie_kopf - seil_kopf), spitzensatz=sy["spitzensatz"], einkommen_saetze=sy["einkommen_saetze"],
                         label_saetze=sy["label_saetze"], label_effektiv=round(eff, 2),
                         mindestniveau_de_erw_monat=round(anker, 0), bezugswert_de_monat=round(bezug, 0),

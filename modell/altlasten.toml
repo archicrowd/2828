@@ -1,0 +1,9 @@
+# Altlastenfonds (modell/altlasten.py, Logbuch v3.45). Setzungen und Varianten; Prüfrechnung.
+version = "v3.45"
+systeme = ["33P", "33N"]          # prämienfrei und mit Prämie (systemvarianten.toml)
+z_anteil = [1.0, 0.5]             # Anteil der Altrenten über der Dividende, der eingerechnet wird (Bilanzregel / Unterscheidung Anlagen–Versprechen)
+zins = [2.5, 3.0]                 # Zins des Fonds in %: Garantiezins der Gesamtrechnung; 3,0 = nominales Wachstum (Risikofall)
+# Zieljahr und Ziel-Schuldenquote: maximale Streckung bis 2100 oder 2125; Ziel 60 % (Maastricht-Referenz) oder 81,3 % (Stand 2028)
+ziele = [[2100, 60.0], [2100, 81.3], [2125, 60.0]]
+tilgungsregel = "Einnahmen über dem gleitenden Fünfjahresdurchschnitt des Aufkommens (% des BIP) fließen vollständig in die Tilgung des Fonds; in schwachen Jahren bleibt der Beitrag gleich, keine zusätzliche Tilgung. Setzung, nicht modelliert."
+deckel = [100.0, 120.0]          # Variante: gleichbleibender Beitrag, sodass die Schuldenquote des Fonds diesen Wert nie übersteigt (Zins = erster Wert in zins)

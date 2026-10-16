@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.44",
+ "modellstand": "v3.45",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -318,6 +318,15 @@
    "status": "geprueft",
    "pruefung": "modell/systemvarianten.py",
    "anmerkung": "v3.43: Mindestquote, Deckung und Sozialposten je Marke; Gesamtrechnung unverändert v3.44: Altlasten außerhalb, Dividende ⅓, Lösungskandidat 33L."
+  },
+  {
+   "id": "B30",
+   "name": "Altlastenfonds",
+   "pfad": "modell/altlasten.py;modell/altlasten.toml;daten/aggregate/altlasten.json;projekt/Drittel-Praemienfrei-Altlastenfonds-2026-10-17.md",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/altlasten.py",
+   "anmerkung": "v3.45: Beitrag, Zuschlag und Schuldenspitze je Streckung; Verteilung bei gemeinsamem Fonds"
   }
  ],
  "nahtstellen": [

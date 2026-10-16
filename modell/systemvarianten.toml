@@ -104,3 +104,48 @@ bezugswert = "grundbedarf_sozial"
 steuer_traegt = ["haertefall", "gesundheit", "seil"]
 gesundheit_anteil = 0.30
 zins_ausserhalb = true
+
+# ---- v3.45 (Initiative 17.10.2026): 33 % Mehrwertsteuer nur für die ganz schädlichen Produkte, kein Regelfall. Label bleibt 5/11/17/22/28;
+# eine Sonderstufe 33 % gilt nur für Alkohol und Tabak (Setzung; in den Produktgruppen von nachfrage.toml die einzige Gruppe dieser Art).
+# Fahrzeuge und Kraftstoffe bleiben bei 28 %. Prämienfreie Lösung: Gesundheit und Seil ganz aus Steuern, Mindestniveau so bemessen,
+# dass ein Überschuss von 0,2 Punkten bleibt.
+[[system]]
+id = "33M"
+name = "33:33 mit Prämie: Label 5–28, nur Alkohol/Tabak 33; Seil und 30 % Gesundheit aus Steuern; Dividende ⅓ von Grundbedarf + Sozialabdeckung"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [5, 11, 17, 22, 28]
+label_sonder = { alkohol_tabak = 33 }
+mindestniveau_anteil = 0.3333333
+bezugswert = "grundbedarf_sozial"
+steuer_traegt = ["haertefall", "gesundheit", "seil"]
+gesundheit_anteil = 0.30
+zins_ausserhalb = true
+
+[[system]]
+id = "33P"
+name = "33:33 prämienfrei: Label 5–28, nur Alkohol/Tabak 33; Gesundheit und Seil ganz aus Steuern; Dividende so bemessen, dass +0,2 bleibt"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [5, 11, 17, 22, 28]
+label_sonder = { alkohol_tabak = 33 }
+mindestniveau_anteil = 0.25
+loese_saldo = 0.2
+bezugswert = "grundbedarf"
+steuer_traegt = ["haertefall", "gesundheit", "seil"]
+gesundheit_anteil = 1.0
+zins_ausserhalb = true
+
+[[system]]
+id = "33N"
+name = "33:33 mit Prämie, ausgeglichen: wie 33M, Dividende so bemessen, dass +0,2 bleibt"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [5, 11, 17, 22, 28]
+label_sonder = { alkohol_tabak = 33 }
+mindestniveau_anteil = 0.3
+loese_saldo = 0.2
+bezugswert = "grundbedarf_sozial"
+steuer_traegt = ["haertefall", "gesundheit", "seil"]
+gesundheit_anteil = 0.30
+zins_ausserhalb = true
