@@ -1,0 +1,31 @@
+# Haushaltswirkung des Drittel-Systems 33F gegen heute (modell/haushalte33.py, Logbuch v3.47). Prüfrechnung, grob (Kernmodell, Recht 2026).
+version = "v3.47"
+system = "33F"
+preis_2026_zu_2028 = 1.0404       # 2 % je Jahr (Annahme der Gesamtrechnung); alle Beträge in Euro 2026
+mwst_heute_effektiv = 15.97       # deutsche Sätze auf die Konsumstruktur (nachfrage.json, labelsatz_steuernd.effektiv_heute_de_saetze_pct)
+# Weitergabe der wegfallenden Arbeitgeberbeiträge in den Bruttolohn: 1,0 = voll (Annahme wie modell/anreize.py; Literatur 2/3 bis 90 %),
+# 0,0 = keine Weitergabe (vorsichtige Untergrenze)
+weitergabe_ag = [1.0, 0.0]
+# Optionaler Altlastenzuschlag eines Staates auf Einkommensteuer und Mehrwertsteuer (Prozent der Steuerschuld). Die Altlasten sind Sache der
+# Staaten (Beschluss v3.47). 16,2 = Beispiel: gemeinsamer Fonds mit vollen Altrenten, getilgt bis 2098 (altlasten.json, Z 100 %, Zins 2,5 %).
+zuschlag_pct = [0.0, 16.2]
+# Eigene Altersvorsorge: heute erwerben die Rentenbeiträge (Beschäftigte + Arbeitgeber 18,6 % bis zur Beitragsbemessungsgrenze) Ansprüche.
+# Im Drittel-System gibt es im Alter die Dividende und Gesundheit ohne Prämie; wer mehr will, spart selbst. Variante „gleiche Vorsorge“:
+# derselbe Betrag fließt in eigenes Vermögen (Eigentum, vererbbar) und ist im verfügbaren Betrag abgezogen. 0 = nicht abgezogen.
+vorsorge_satz = [0.0, 0.186]
+bruttoeinkommen = [12000, 20000, 30000, 42000, 55000, 75000, 100000, 150000]
+jahre = [2028, 2035]
+# Rentnerfall (alleinstehend, gesetzliche Rente, Monatsbeträge brutto): heute Krankenversicherung der Rentner 7,3 % + halber Zusatzbeitrag 1,45 %,
+# Pflegeversicherung voll 3,6 % (kinderlos 4,2 %; hier mit Kindern), Besteuerungsanteil 83 % (Rentenbeginn 2025, § 22 EStG; für ältere Jahrgänge
+# niedriger, Annahme), Werbungskosten 102 €. Im Drittel-System: Dividende + Altrente über der Dividende (Z), wenn der Staat sie voll weiterzahlt;
+# keine Beiträge; Einkommensteuer 33F auf den ganzen Betrag; Mehrwertsteuer wie oben.
+renten_monat = [900, 1200, 1600, 2200]
+rentner_kv_pv = 0.1235
+besteuerungsanteil = 0.83
+# Heute im Jahr 2035: Beitragssätze nach IGES für DAK-Gesundheit (Juni 2024, Basisszenario; Sekundärquelle Deutsches Ärzteblatt 25.06.2024;
+# eine Studie, Auftraggeber eine Krankenkasse): Gesamtbeitrag 41,1 % (2024) → 48,6 % (2035); RV 18,6 → 22,3; KV 16,3 → 19,3; PV +0,7 bis 2030;
+# AV 2,6 → 3,0. Bis 2026 schon eingetreten: KV-Zusatzbeitrag +1,2, PV +0,2 (Annahme aus den Beitragssätzen 2025/2026). Rest bis 2035, je zur Hälfte
+# bei Beschäftigten und Arbeitgebern: RV +3,7, KV +1,8, PV +0,5, AV +0,4 Punkte.
+[plus_2035]
+rv_av = 4.1
+kv_pv = 2.3
