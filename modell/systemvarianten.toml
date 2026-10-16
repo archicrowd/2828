@@ -149,3 +149,21 @@ bezugswert = "grundbedarf_sozial"
 steuer_traegt = ["haertefall", "gesundheit", "seil"]
 gesundheit_anteil = 0.30
 zins_ausserhalb = true
+
+# ---- v3.46 (Beschlüsse der Initiative 17.10.2026): prämienfrei; Sonderstufe 33 % für umwelt- und gesundheitsschädliche Produkte.
+# Zuordnung in den Produktgruppen von nachfrage.toml (Setzung): Alkohol und Tabak 33 %; Kraftstoffe 33 %; Fahrzeuge 32 % als Mischsatz
+# (Annahme: 80 % der Fahrzeugausgaben entfallen auf Fahrzeuge mit Verbrennungsmotor einschließlich Hybride, 20 % auf andere; nicht geprüft).
+# Haushaltsenergie bleibt bei 22 % (Grundbedarf Wärme; fossile Anteile trägt der CO2-Preis). Nachfragerückgang durch den höheren Satz nicht eingerechnet.
+[[system]]
+id = "33F"
+name = "33:33 prämienfrei (Beschluss): Label 5–28, Sonderstufe 33 % für umwelt- und gesundheitsschädliche Produkte; Gesundheit und Seil aus Steuern"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [5, 11, 17, 22, 28]
+label_sonder = { alkohol_tabak = 33, kraftstoffe = 33, fahrzeuge = 32 }
+mindestniveau_anteil = 0.25
+loese_saldo = 0.2
+bezugswert = "grundbedarf"
+steuer_traegt = ["haertefall", "gesundheit", "seil"]
+gesundheit_anteil = 1.0
+zins_ausserhalb = true

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 17. Oktober 2026 · Modellstand **v3.45**
+Stand: 17. Oktober 2026 · Modellstand **v3.46**
 
 ---
 
@@ -1915,6 +1915,30 @@ Deckel 120 % mit Z halb: 2,08 (33N) bzw. 2,75 (33P). Gemeinsamer Fonds: Altlast 
 
 *Quellen wie v3.42–v3.44.*
 
+### v3.46 — Beschlüsse: prämienfreies Drittel, Sonderstufe für Schädliches, Altlastenfonds bis 2098
+
+**Art der Änderung: MINOR (Prüfrechnung der Beschlüsse), keine Zahl der Gesamtrechnung bewegt.** 17. Oktober 2026.
+
+**Beschlüsse der Initiative (17.10.2026):** prämienfrei; 33 % Mehrwertsteuer für umwelt- und gesundheitsschädliche Produkte; Altrenten: anlagegedeckte voll,
+der Rest zur Hälfte, die andere Hälfte der Verhandlung der Generationen unterworfen; Streckung höchstens 70 Jahre; gemeinsamer Fonds mit abschmelzender
+Verrechnung je Staat; Quelle des Beitrags nach Empfehlung.
+
+**Umsetzung:** System 33F in `systemvarianten.toml` (Sonderstufe 33 % für Alkohol/Tabak und Kraftstoffe, 32 % Mischsatz Fahrzeuge, Annahme 80 % Verbrenner;
+Mindestniveau gelöst auf Saldo +0,2). `altlasten.py`/`.toml`: Abschnitt „beschluss“ (Z 50 %, da staatliche Systeme laut Tabelle 29 praktisch ungedeckt;
+Zins 2,5 %; Tilgung bis 2098 auf 0 %); Verrechnung: Beitrag je Staat = c × (Anteil nach eigener Altlast 2028, linear in 30 Jahren auf 1).
+
+**Bewegte Zahlen (Prüfrechnung):** 33F: Label effektiv 17,55 %, Deckung 33,04, Steuerbedarf 32,92, Dividende DE 281 € (Erw., Monat, Preise 2028),
+Mindestniveau 201 €, Gesamtlast Dauerzustand 33,7 %. Fonds: Beitrag 3,15 % BIP (Zuschlag 9,6 % auf alle Steuern, 142 € je Einwohner), Schuldenspitze
+109,4 % (2052), 2098 0 %; Zins 3 %: 3,53 %; Z 75 %: 4,24 %; Z 100 %: 5,33 %. Zuschlag 2028 je Staat von 0,9 (DK) bis 13,2 % (AT), ab 2058 einheitlich 9,6 %.
+
+**Empfehlung:** Zuschlag auf alle Steuern statt Abzug von der Dividende (Tragfähigkeit, Leistungsfähigkeit, Breite, Sichtbarkeit).
+
+**Offen gekennzeichnet:** Halbe Einrechnung der Altrenten bedeutet ohne weitere Verhandlung eine starke Kürzung bestehender Renten über der Dividende
+(Beispiel 1.200 € → 741 €, Untergrenze Grundbedarf); Vertrauens- und Eigentumsschutz juristisch zu prüfen. Härtefall wird mit kleiner Dividende größer als
+die Annahme 0,65 % BIP. **Geprüft:** `python3 modell/alles.py`. **Wodurch aufgefallen:** Beschlüsse der Initiative.
+
+*Quellen wie v3.42–v3.45; Tabelle 29 (Eurostat nasa_10_pens1, 2021) für die Deckung der staatlichen Rentensysteme.*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -1966,9 +1990,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.45
+## 7 | Offene Punkte, Stand v3.46
 
-Neu seit v3.23 (Stand v3.45): **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.46): **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

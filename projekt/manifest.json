@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.45",
+ "modellstand": "v3.46",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -322,11 +322,11 @@
   {
    "id": "B30",
    "name": "Altlastenfonds",
-   "pfad": "modell/altlasten.py;modell/altlasten.toml;daten/aggregate/altlasten.json;projekt/Drittel-Praemienfrei-Altlastenfonds-2026-10-17.md",
+   "pfad": "modell/altlasten.py;modell/altlasten.toml;daten/aggregate/altlasten.json;projekt/Drittel-Praemienfrei-Altlastenfonds-2026-10-17.md;projekt/Beschluss-Drittel-Altlastenfonds-2026-10-17.md",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/altlasten.py",
-   "anmerkung": "v3.45: Beitrag, Zuschlag und Schuldenspitze je Streckung; Verteilung bei gemeinsamem Fonds"
+   "anmerkung": "v3.45: Beitrag, Zuschlag und Schuldenspitze je Streckung; Verteilung bei gemeinsamem Fonds v3.46: Beschluss gerechnet (33F, Z halb, Tilgung bis 2098, Verrechnung je Staat)."
   }
  ],
  "nahtstellen": [
@@ -500,6 +500,14 @@
    "was": "Z als territorialer Posten neben dem Aufschlag; Härtefall als Posten; Gesamtlast-Aussage",
    "status": "offen",
    "beleg_oder_offener_punkt": "nach Entscheidung S1–S13; Korrektur 60"
+  },
+  {
+   "id": "N22",
+   "von": "B30 Altlastenfonds",
+   "nach": "B20 Gesamtrechnung",
+   "was": "System 33F und Altlastenfonds als neue geltende Rechnung",
+   "status": "offen",
+   "beleg_oder_offener_punkt": "Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend"
   }
  ],
  "quellen": [

@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.45 · höchste Korrekturnummer 60 · 326 Dateien im Repository
+Modellstand v3.46 · höchste Korrekturnummer 60 · 327 Dateien im Repository
 
 ## Bausteine
 
@@ -62,6 +62,7 @@ Modellstand v3.45 · höchste Korrekturnummer 60 · 326 Dateien im Repository
 | N19 | B26 Nachfrageprüfung | B20 Gesamtrechnung | ok |
 | N20 | B20 Gesamtrechnung | B07 Gesamtkonzept | ok |
 | N21 | B28 Sozialschutz und Übergang | B20 Gesamtrechnung | offen |
+| N22 | B30 Altlastenfonds | B20 Gesamtrechnung | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -69,3 +70,4 @@ Modellstand v3.45 · höchste Korrekturnummer 60 · 326 Dateien im Repository
 - Hinweis: Naht N05 offen: B08 Kern (Stand A) -> B03 Rahmenmodell (Stand B): v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; v3.22: 1,73 Punkte, Tarif 0/9/16/21/28 am Grundbedarf); Klubebene fehlt (deckung_quote.csv)
 - Hinweis: Naht N07 fehlt: B03 Rahmenmodell -> B11 Seite Stand A: Seite hat Rahmenwechsel nie gesehen
 - Hinweis: Naht N21 offen: B28 Sozialschutz und Übergang -> B20 Gesamtrechnung: nach Entscheidung S1–S13; Korrektur 60
+- Hinweis: Naht N22 offen: B30 Altlastenfonds -> B20 Gesamtrechnung: Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend

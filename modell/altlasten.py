@@ -104,7 +104,38 @@ def main():
     alt = {c: pfade[c][0]["z_pct_bip"] + schuld[c] * s28 / 100 for c in SZ.LAENDER}
     schnitt = sum(w[c] * alt[c] for c in SZ.LAENDER)
     verteilung = {namen[c]: dict(altlast_2028_pct_bip=round(alt[c], 2), gegen_schnitt=round(alt[c] - schnitt, 2)) for c in SZ.LAENDER}
-    E = dict(version=P["version"], status="Prüfrechnung", wachstum_nominal=G_NOM * 100, schuldenquote_2028=d0, systeme=erg,
+    # v3.46: Beschluss – gemeinsamer Fonds, Verrechnung je Staat, linear abschmelzend
+    B = P["beschluss"]
+    vb = next(x for x in SV["varianten"] if x["id"] == B["system"])
+    pf_b, _, _ = SZ.z_laender(vb["dividende_pct_bip_2028"] / (1 - k / 2))
+    zb = [x * B["z_anteil"] for x in SZ.z_klub(vb["dividende_pct_bip_2028"] / (1 - k / 2), w)]
+    cb = loese_c(zb, B["zins"] / 100, d0, B["zieljahr"], B["zielquote"])
+    pfb = pfad(cb, zb, B["zins"] / 100, d0, B["zieljahr"] - 2028)
+    quote_b = vb["punkte"]["2028"]["steuerbedarf"]
+    zins_c = {c: schuld[c] * s28 / 100 for c in SZ.LAENDER}
+    zins_s = sum(w[c] * zins_c[c] for c in SZ.LAENDER)
+    # Verrechnung je Staat (Beschluss): Jeder Staat trägt den gemeinsamen Beitrag c im Verhältnis seiner eigenen Altlast 2028 (Z-Anteil + Zinsen,
+    # % des eigenen BIP) zum Durchschnitt; dieses Verhältnis schmilzt linear in `verrechnung_jahre` auf 1 ab (dann gleicher Satz für alle).
+    # Summe über die Staaten (BIP-gewichtet) = c; kein Staat zahlt weniger als null.
+    alt_b = {c: pf_b[c][0]["z_pct_bip"] * B["z_anteil"] + zins_c[c] for c in SZ.LAENDER}
+    alt_s = sum(w[c] * alt_b[c] for c in SZ.LAENDER)
+    laender_b = {}
+    for c in SZ.LAENDER:
+        reihe = {}
+        for j in (2028, 2035, 2040, 2050, 2058):
+            m = max(0.0, 1 - (j - 2028) / B["verrechnung_jahre"])
+            beitrag = cb * (m * alt_b[c] / alt_s + (1 - m))
+            reihe[str(j)] = dict(beitrag_pct_bip=round(beitrag, 2), zuschlag_pct=round(beitrag / quote_b * 100, 1))
+        laender_b[namen[c]] = dict(altlast_2028_pct_bip=round(alt_b[c], 2), reihe=reihe)
+    beschluss = dict(system=B["system"], z_anteil=B["z_anteil"], zins=B["zins"], zieljahr=B["zieljahr"], beitrag_pct_bip=round(cb, 2),
+                     zuschlag_auf_alle_steuern_pct=round(cb / quote_b * 100, 1), je_einwohner_monat_eur=round(cb / 100 * G["kopf_klub"] / 12),
+                     schuldenquote_spitze=round(max(pfb), 1), spitzenjahr=2029 + pfb.index(max(pfb)),
+                     schuldenquote={str(j): round(pfb[j - 2029], 1) for j in (2030, 2040, 2050, 2060, 2070, 2080, 2090, 2098)},
+                     verhandlungsmasse_z_2028_pct_bip=round(zb[0], 2), laender=laender_b,
+                     altlast_schnitt_2028=round(alt_s, 2),
+                     hinweis="Beitrag je Staat = gemeinsamer Beitrag × (Anteil nach eigener Altlast, linear in 30 Jahren abschmelzend auf gleichen Satz); "
+                             "Zuschlag bezogen auf die Steuerquote der Variante (vereinfachend für alle Staaten gleich)")
+    E = dict(version=P["version"], status="Prüfrechnung", wachstum_nominal=G_NOM * 100, schuldenquote_2028=d0, systeme=erg, beschluss=beschluss,
              verteilung_gemeinsamer_fonds=dict(system=sid, schnitt_pct_bip=round(schnitt, 2), laender=verteilung,
                                                hinweis="Altlast 2028 = Z + Zinsen auf die eigene Schuld (Zins 2028 der Gesamtrechnung); "
                                                        "positiv: das Land bringt mehr Altlast mit, als es nach BIP-Anteil beiträgt"),
@@ -116,6 +147,9 @@ def main():
             print(f"   Z {f['z_anteil']:.0%} Zins {f['zins']} % Ziel {f['zielquote']} % bis {f['zieljahr']}: Beitrag {f['beitrag_pct_bip']} % BIP "
                   f"= Zuschlag {f['zuschlag_auf_alle_steuern_pct']} % auf alle Steuern = {f['je_einwohner_monat_eur']} €/Einw./Monat; "
                   f"Spitze {f['schuldenquote_spitze']} % ({f['spitzenjahr']})")
+    print("Beschluss:", {k_: v_ for k_, v_ in beschluss.items() if k_ != "laender"})
+    for n, r in beschluss["laender"].items():
+        print(f"   {n:<12} Altlast {r['altlast_2028_pct_bip']:>5}", {j: x["zuschlag_pct"] for j, x in r["reihe"].items()})
     print("Verteilung (gemeinsamer Fonds):", {n: x["gegen_schnitt"] for n, x in verteilung.items()}, "Schnitt", round(schnitt, 2))
     return 0
 

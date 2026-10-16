@@ -20,3 +20,4 @@ N18,B25 Anreizbewertung,B24 Übergangsrechnung,Wachstumszuschlag je Land aus dem
 N19,B26 Nachfrageprüfung,B20 Gesamtrechnung,Konsumaufkommen 8,ok,"seit v3.37: label_effektiv_pct 16,88 in gesamtrechnung.toml (E1 C), Konsum 7,76 % BIP; tragfaehigkeit.py prüft Gleichlauf mit nachfrage.json","nachfrage.json: bei Zuordnung nach Datenblatt 14,9 %, steuernd 16,9 %; Entscheidung der Initiative über Zuordnung und Sätze"
 N20,B20 Gesamtrechnung,B07 Gesamtkonzept,Texte übernehmen die Zahlen der Rechnung v3.37,ok,v3.39: Entwurf freigegeben und übernommen; pruefe_konzept.py 59 Prüfungen ohne Fehler
 N21,B28 Sozialschutz und Übergang,B20 Gesamtrechnung,Z als territorialer Posten neben dem Aufschlag; Härtefall als Posten; Gesamtlast-Aussage,offen,nach Entscheidung S1–S13; Korrektur 60
+N22,B30 Altlastenfonds,B20 Gesamtrechnung,System 33F und Altlastenfonds als neue geltende Rechnung,offen,Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend

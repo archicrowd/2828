@@ -1108,6 +1108,110 @@
      "gesamtlast_mit_route": 43.01
     }
    }
+  },
+  {
+   "id": "33F",
+   "name": "33:33 prämienfrei (Beschluss): Label 5–28, Sonderstufe 33 % für umwelt- und gesundheitsschädliche Produkte; Gesundheit und Seil aus Steuern",
+   "mindestniveau_anteil": 0.1882,
+   "label_sonder": {
+    "alkohol_tabak": 33,
+    "kraftstoffe": 33,
+    "fahrzeuge": 32
+   },
+   "dividende_kopf_klub": 237,
+   "gesundheitspraemie_kopf_klub": 0,
+   "seilpraemie_kopf_klub": 0,
+   "dividende_nach_praemien": 237,
+   "spitzensatz": 33,
+   "einkommen_saetze": [
+    0,
+    11,
+    19,
+    25,
+    33
+   ],
+   "label_saetze": [
+    5,
+    11,
+    17,
+    22,
+    28
+   ],
+   "label_effektiv": 17.55,
+   "mindestniveau_de_erw_monat": 201.0,
+   "bezugswert_de_monat": 1071.0,
+   "sozialabdeckung_de_monat": 0.0,
+   "mindestquote": 21.7,
+   "quote_kern": 21.8,
+   "dividende_pct_bip_2028": 5.26,
+   "dividende_de_erw_2028": 281.0,
+   "deckung_positionen": {
+    "Einkommen": 10.21,
+    "Kapitalerträge": 1.37,
+    "Konsum (Label)": 8.02,
+    "Unternehmen und Plattformen": 4.42,
+    "Erbschaften": 1.16,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 33.04,
+   "steuer_traegt": [
+    "haertefall",
+    "gesundheit",
+    "seil"
+   ],
+   "zins_ausserhalb": true,
+   "z_2028": 10.39,
+   "z_ende": 2081,
+   "punkte": {
+    "2028": {
+     "z": 10.39,
+     "steuerbedarf": 32.92,
+     "deckung": 33.04,
+     "saldo": 0.12,
+     "ausserhalb_steuern": 12.2,
+     "altlastenbeitrag": 12.2,
+     "altlastenbeitrag_z_halb": 7.0,
+     "gesamtlast_ohne_route": 45.12,
+     "gesamtlast_mit_route": 49.22
+    },
+    "2040": {
+     "z": 9.93,
+     "steuerbedarf": 32.92,
+     "deckung": 33.04,
+     "saldo": 0.12,
+     "ausserhalb_steuern": 11.36,
+     "altlastenbeitrag": 11.36,
+     "altlastenbeitrag_z_halb": 6.39,
+     "gesamtlast_ohne_route": 44.28,
+     "gesamtlast_mit_route": 48.38
+    },
+    "2050": {
+     "z": 7.79,
+     "steuerbedarf": 32.92,
+     "deckung": 33.04,
+     "saldo": 0.12,
+     "ausserhalb_steuern": 8.85,
+     "altlastenbeitrag": 8.85,
+     "altlastenbeitrag_z_halb": 4.96,
+     "gesamtlast_ohne_route": 41.77,
+     "gesamtlast_mit_route": 45.87
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 32.92,
+     "deckung": 33.04,
+     "saldo": 0.12,
+     "ausserhalb_steuern": 0.79,
+     "altlastenbeitrag": 0.79,
+     "altlastenbeitrag_z_halb": 0.79,
+     "gesamtlast_ohne_route": 33.71,
+     "gesamtlast_mit_route": 37.81
+    }
+   }
   }
  ]
 }
