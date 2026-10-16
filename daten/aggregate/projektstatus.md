@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v3.41 · höchste Korrekturnummer 59 · 314 Dateien im Repository
+Modellstand v3.42 · höchste Korrekturnummer 60 · 316 Dateien im Repository
 
 ## Bausteine
 
@@ -33,7 +33,7 @@ Modellstand v3.41 · höchste Korrekturnummer 59 · 314 Dateien im Repository
 | B25 | Anreizbewertung je Land (Abgabenkeil) | B | geprueft | modell/anreize.py |
 | B26 | Nachfrageprüfung | B | geprueft | modell/nachfrage.py |
 | B27 | Tragfähigkeitsprüfung | B | geprueft | modell/tragfaehigkeit.py |
-| B28 | Sozialschutz und Übergang (Gemeinsames/Eigenes/Zugesagtes; Hütte/Route/Seil) | B | ungeprueft | modell/sozialschutz.py |
+| B28 | Sozialschutz und Übergang (Gemeinsames/Eigenes/Zugesagtes; Hütte/Route/Seil) | B | geprueft | modell/sozialschutz.py |
 
 ## Nahtstellen
 
@@ -59,9 +59,11 @@ Modellstand v3.41 · höchste Korrekturnummer 59 · 314 Dateien im Repository
 | N18 | B25 Anreizbewertung | B24 Übergangsrechnung | ok |
 | N19 | B26 Nachfrageprüfung | B20 Gesamtrechnung | ok |
 | N20 | B20 Gesamtrechnung | B07 Gesamtkonzept | ok |
+| N21 | B28 Sozialschutz und Übergang | B20 Gesamtrechnung | offen |
 
 ## Ergebnis dieses Laufs
 
 - keine Fehler
 - Hinweis: Naht N05 offen: B08 Kern (Stand A) -> B03 Rahmenmodell (Stand B): v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; v3.22: 1,73 Punkte, Tarif 0/9/16/21/28 am Grundbedarf); Klubebene fehlt (deckung_quote.csv)
 - Hinweis: Naht N07 fehlt: B03 Rahmenmodell -> B11 Seite Stand A: Seite hat Rahmenwechsel nie gesehen
+- Hinweis: Naht N21 offen: B28 Sozialschutz und Übergang -> B20 Gesamtrechnung: nach Entscheidung S1–S13; Korrektur 60

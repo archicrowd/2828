@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 12. Oktober 2026 · Modellstand **v3.41**
+Stand: 16. Oktober 2026 · Modellstand **v3.42**
 
 ---
 
@@ -1811,11 +1811,49 @@ Dividende der Erwachsenen als steuerpflichtig. Zu entscheiden und anzugleichen.
 
 **Geprüft:** RTF in PDF gewandelt und vollständig gelesen; `python3 modell/alles.py`. **Wodurch aufgefallen:** Auftrag der Initiative.
 
+### v3.42 — Sozialschutz und Übergang: zwei Vorschläge geprüft und zusammengeführt; Korrektur 60
+
+**Art der Änderung: MINOR (neue Prüfrechnung), keine Zahl der Gesamtrechnung bewegt.** 16. Oktober 2026.
+
+**Auftrag der Initiative (16.10.2026):** Die Vorschläge „Generationenbaustein“ und „Hütte · Route · Seil“ (Projektraum) auf Anwendbarkeit und Sinn
+prüfen, die drei Stränge zusammenführen, Recherchen ergänzen, eine Modellrechnung vorbereiten; Bedeutung für die Finanzierungsregel 28:28.
+
+**Daten (Rechercheagent, WebFetch 16.10.2026, maschinell aus dem Abruf gelesen, an der Quelle zu prüfen):** Eurostat `gov_10a_exp` 2024, COFOG GF07,
+GF10 und GF1001–GF1009 je Land (SDMX-TSV; Stichproben per JSON bestätigt); `nasa_10_pens1` (Tabelle 29, erworbene Rentenansprüche, 2021);
+`demo_pjanind` (Anteil 65+, 2024); Ageing Report 2024, amtliche Länderberichte (2022, 2030–2070; 2028 nicht veröffentlicht). Ablage
+`daten/aggregate/sozialschutz_2024.json`. Offen: Hauptbericht-Tabelle je Land nicht lesbar; Abweichung AT zwischen Länderbericht und Tabelle 5.
+**Faktencheck** der Sekundärangaben (zweiter Agent): `projekt/faktencheck_vorschlaege_2026-10-16.json`; 8 bestätigt, 4 abweichend (Frankreich,
+RAND-Quellen, Nichtinanspruchnahme, Kostenkonzentration nur bifg), Sozialbudget 2024 nur Sekundärquelle.
+
+**Rechnung `modell/sozialschutz.py` (Schätzung, Setzungen in `sozialschutz.toml`):** Sozialschutz 2024 20,07 % BIP (zehn Staaten); Zuordnung nach dem
+Hütte-Vorschlag: Hütte 13,26 · Route 4,10 · Seil 2,72 gegen Dividende 11,86. Zugesagtes Z (Ansprüche über der Dividende, vor dem Stichtag 2028
+erworben, Kohortenschema, skaliert auf Tabelle 29): **2028 8,86 %, 2040 8,31 %, 2050 6,16 %, 2060 3,46 %, unter 0,1 ab 2074**; je Land 2028
+von 0 (DK) bis 14,0 % (AT). Gegenprobe Barwert gegen Tabelle 29: DE 329/320, FR 413/397, AT 438/450 %. Dauerzustand nach Auslauf: 19,33 % gegen
+20,07 % heute. Z über Steuern: Quote 2028 39,7 %, Lücke 9,3; über Schuld: +223 Punkte Schuldenquote bis 2069. Mit Z, Pflicht-Route, Seil und
+Härtefall (Mitte 0,65) Gesamtlast 2028 rund 54 % gegen 40,76 % heute.
+
+**Befunde:** (1) Bestandsgarantie und Härtefallfonds sind in keinem Rechenskript finanziert. (2) Die Hütte-Zuordnung für Ältere (7,0 % BIP)
+übersteigt die Dividende der über 65-Jährigen (2,7 %) deutlich. (3) H2 (50 % Anrechnung) widerspricht der Aussage „mindestens 72 Cent je Euro“.
+(4) Gesundheit über Steuern (65 %) hebt die Quote um 5,0 Punkte und ist mit 28:28 nicht zu decken. (5) Projektsteuerung „Geltende Fassung“
+stand auf dem 7. Oktober (nachgeführt). (6) Der Hütte-Vorschlag nimmt Korrektur 59 als nächste Nummer an; richtig ist 60.
+
+**Korrektur 60** (Abschnitt 4): Gesamtlast-Aussage ohne die Altansprüche.
+
+**Ergebnis für 28:28:** Die Regel bleibt als Regel der Steuern haltbar, wenn Z über einen eigenen, sinkenden Übergangsbeitrag beim Ausgangsstaat
+und Gesundheit und Seil über Prämien laufen; „keine Sozialabgaben“ gilt erst im Dauerzustand. Zusammenführung und Antwortbogen S1–S13:
+`projekt/Zusammenfuehrung-Sozialschutz-2026-10-16.md`.
+
+**Geprüft:** `python3 modell/alles.py` (neue Stufe „Sozialschutz und Übergang (Vorbereitung)“). **Wodurch aufgefallen:** Vorschläge zweier Agenten.
+
+*Quellen: Eurostat gov_10a_exp, nasa_10_pens1, demo_pjanind (16.10.2026); European Commission/EPC, 2024 Ageing Report, Länderberichte und
+Institutional Paper 279; Faktencheck-Datei (BMAS, DRV/WD 6, Destatis PM 455/2025, Pensionsmyndigheten, Folketing, Légifrance-Sekundärquellen,
+bifg, Lohr u. a. 1986, Brook u. a. 1983, IZA DP 18420, JAMA Netw Open 2021, DIW, Diamond 2016, BVerfGE 53, 257).*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
 
-Neu ab v3.8: die Nummern 47 bis 59. **Nächste freie Nummer: 60.** Die Nummern 31 bis 41 sind
+Neu ab v3.8: die Nummern 47 bis 60. **Nächste freie Nummer: 61.** Die Nummern 31 bis 41 sind
 besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 
 | Nr. | Was war falsch | Richtig | Wodurch auffiel |
@@ -1833,6 +1871,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 57 | v3.23 (Frankreich), v3.24 bis v3.26 (Standard 2.4): Klubwirkung mit einem Rest-Saldo der übrigen Länder, der den Klub-Gesamtsaldo bei −2,93 % festhielt. Daraus: „Ein französisches Regierungsdefizit wirkt also neutral; das Wachstum entscheidet“ (v3.23); Frankreich B 81,29 %, C 81,96 %; Spanien C 81,15 %; Frankreich und Spanien gemeinsam 81,82 % (v3.26) | Die übrigen Länder behalten ihren eigenen Saldo 2025 (Status quo). Frankreich B 81,05 %, C 81,72 %; Spanien B 81,07 %, C 80,93 %; Niederlande C 81,49 %; Frankreich, Spanien und Niederlande gemeinsam 81,55 %. Die Neutralität des Defizits war ein Artefakt der Methode. Gesamtrechnung und Konzept nicht betroffen (Sensitivität) | v3.27: Die Spalte „Regierungsdefizit“ ergab für jedes Land genau den Referenzwert 81,29 %; das ließ sich nur aus der Bauart erklären |
 | 58 | Gesamtkonzept (seit v3.12), Abschnitt Gemeinden: „Estlands Gemeinden geben 5,8 % aus, Deutschlands 16,8 % … bei vergleichbarem Aufgabenvolumen. Der Weg auf estnisches Niveau setzt 1,02 Punkte des BIP frei.“ | Das vergleichbare Aufgabenvolumen ist nicht belegt; die Aufgaben der Gemeinden unterscheiden sich je Land. Belegt ist eine Einsparung der Verwaltung von netto etwa 0,1 bis 0,3 % des BIP nach 8 bis 12 Jahren (deutsche Ex-ante-Studien); der Verwaltungskern (COFOG GF0101) liegt in Estland mit 1,8 % auf EU-Niveau (1,9 %). Die 1,02 Punkte sind eine rechnerische Obergrenze, keine erreichbare Einsparung. Keine Rechnung betroffen (nicht in der Deckung); Text in der nächsten Fassung zu ändern | Recherche zur Wirkung der Verwaltungsdigitalisierung (v3.35) |
 | 59 | v3.36, `modell/justierung.py`, Pakete P6 bis P8: Die Ablösung der Verwaltung der Sozialschutzsysteme (0,45 bis 0,78 % des BIP) schließe die Lücke der Quote; P8 mit Lücke −0,65 bzw. −0,98 und Reserve 1,53 bzw. 1,86 | Diese Verwaltungskosten trägt heute der Beitragshaushalt; die Posten der Quote (Ebenen A und B) enthalten sie nicht. Ihr Wegfall gehört zur Entlastung gegen heute und ist Voraussetzung dafür, dass der Wegfall der Beiträge trägt; er schließt keine Lücke der Quote. P8 ohne Ablösung: +3,12, Lücke −0,20, Reserve 1,08, stabil; P6 und P7 nicht stabil | Durchsicht der Pakete vor dem Einrechnen in die Gesamtrechnung (v3.37) |
+| 60 | Gesamtkonzept, Kurzfassung und Webseite (seit v3.11, zuletzt Fassung 12. Oktober 2026): „Die Gesamtlast sinkt um 2,81 Punkte des BIP“ (40,76 gegen 37,95 %) | Der Vergleich enthält heute die Finanzierung des gesamten Sozialschutzes (20,07 % BIP), der Entwurf nur die Dividende (11,86 %) und die Gesundheit. Die Altansprüche über der Dividende (Z, 2028 rund 8,9 % BIP, Schätzung v3.42), eine Pflicht-Vorsorge und Pflichtversicherungen fehlen. Mit ihnen liegt die Last 2028 bei rund 54 %; im Dauerzustand nach dem Auslauf von Z ist der Sozialschutz etwa so groß wie heute. Aussage bis zur Entscheidung über den Übergang zurückzuziehen | Vorschläge Generationenbaustein und Hütte/Route/Seil (16.10.2026), Rechnung v3.42 |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -1861,9 +1900,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.41
+## 7 | Offene Punkte, Stand v3.42
 
-Neu seit v3.23 (Stand v3.41): **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.42): **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

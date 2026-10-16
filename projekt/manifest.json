@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.41",
+ "modellstand": "v3.42",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -304,11 +304,11 @@
   {
    "id": "B28",
    "name": "Sozialschutz und Übergang (Gemeinsames/Eigenes/Zugesagtes; Hütte/Route/Seil)",
-   "pfad": "modell/sozialschutz.py;modell/sozialschutz.toml;daten/aggregate/sozialschutz_2024.json;daten/aggregate/sozialschutz.json;daten/aggregate/z_pfad.csv",
+   "pfad": "modell/sozialschutz.py;modell/sozialschutz.toml;daten/aggregate/sozialschutz_2024.json;daten/aggregate/sozialschutz.json;daten/aggregate/z_pfad.csv;projekt/Zusammenfuehrung-Sozialschutz-2026-10-16.md;projekt/faktencheck_vorschlaege_2026-10-16.json",
    "stand": "B",
-   "status": "ungeprueft",
+   "status": "geprueft",
    "pruefung": "modell/sozialschutz.py",
-   "anmerkung": "v3.42 in Vorbereitung: Zerlegung Sozialschutz COFOG GF10, Pfad der Zusagen (R-Z1), Wirkung auf Quote und Gesamtlast; Daten folgen"
+   "anmerkung": "v3.42: Zerlegung GF10, Pfad Z (Schätzung, Gegenprobe Tabelle 29), Varianten Quote/Gesamtlast; Entscheidung S1–S13 offen"
   }
  ],
  "nahtstellen": [
@@ -474,6 +474,14 @@
    "was": "Texte übernehmen die Zahlen der Rechnung v3.37",
    "status": "ok",
    "beleg_oder_offener_punkt": "v3.39: Entwurf freigegeben und übernommen; pruefe_konzept.py 59 Prüfungen ohne Fehler"
+  },
+  {
+   "id": "N21",
+   "von": "B28 Sozialschutz und Übergang",
+   "nach": "B20 Gesamtrechnung",
+   "was": "Z als territorialer Posten neben dem Aufschlag; Härtefall als Posten; Gesamtlast-Aussage",
+   "status": "offen",
+   "beleg_oder_offener_punkt": "nach Entscheidung S1–S13; Korrektur 60"
   }
  ],
  "quellen": [

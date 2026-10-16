@@ -40,7 +40,7 @@
 
 [modell]
 # Modellstand, auf den sich die Ergebnisdatei bezieht (Logbuch-Version).
-version = "v3.41"
+version = "v3.42"
 
 # ---------------------------------------------------------------------------
 # Strukturgrößen aus dem Logbuch (Band I v3.1, Band II v3.5)
