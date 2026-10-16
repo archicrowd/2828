@@ -6,7 +6,7 @@ license: MIT
 authors:
   - name: "Initiative 28:28"
     email: "2828@archicrowd.de"
-version: "v3.43"
+version: "v3.44"
 date-released: "2026-10-06"
 abstract: >-
   Modell und Dokumentation eines Steuer- und Abgabenkonzepts mit einheitlichem Satz von 28 %

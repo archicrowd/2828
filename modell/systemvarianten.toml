@@ -44,3 +44,63 @@ steuer_traegt = ["haertefall", "gesundheit", "seil", "z"]
 [annahmen]
 haertefall_pct_bip = 0.65        # Mitte der Spanne 0,3–1,0 (sozialschutz.toml, ANNAHME, ohne Quelle)
 verhalten = "Kapital, Unternehmen, Erbschaft und Label statisch proportional (keine Ausweichreaktion); Einkommen mit der Elastizität des Kernmodells"
+
+# ---- v3.44 (Initiative 17.10.2026): Altlasten aus Staatsschulden (Zinsdienst) und Rentenansprüchen (Z) werden außerhalb finanziert;
+# Dividende als Bruchteil des Existenzminimums einschließlich Sozialabdeckung. Vergleich aller Marken unter derselben Regel.
+[[system]]
+id = "28A"
+name = "28:28, Altlasten außerhalb"
+spitzensatz = 28
+einkommen_saetze = [0, 9, 16, 21, 28]
+label_saetze = [5, 11, 17, 22, 28]
+mindestniveau_anteil = 0.50
+bezugswert = "grundbedarf"
+steuer_traegt = ["haertefall"]
+zins_ausserhalb = true
+
+[[system]]
+id = "25A"
+name = "25:25 (Viertel), Altlasten außerhalb"
+spitzensatz = 25
+einkommen_saetze = [0, 8, 14, 19, 25]
+label_saetze = [4, 10, 15, 20, 25]
+mindestniveau_anteil = 0.25
+bezugswert = "grundbedarf_sozial"
+steuer_traegt = ["haertefall"]
+zins_ausserhalb = true
+
+[[system]]
+id = "33A"
+name = "33:33 (Drittel), Dividende 1/3 von Grundbedarf + Sozialabdeckung, Gesundheit und Seil aus Steuern, Altlasten außerhalb"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [6, 13, 20, 26, 33]
+mindestniveau_anteil = 0.3333333
+bezugswert = "grundbedarf_sozial"
+steuer_traegt = ["haertefall", "gesundheit", "seil"]
+zins_ausserhalb = true
+
+[[system]]
+id = "33G"
+name = "33:33 (Drittel), Dividende 1/3 des Grundbedarfs, Gesundheit und Seil aus Steuern, Altlasten außerhalb"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [6, 13, 20, 26, 33]
+mindestniveau_anteil = 0.3333333
+bezugswert = "grundbedarf"
+steuer_traegt = ["haertefall", "gesundheit", "seil"]
+zins_ausserhalb = true
+
+# Lösungskandidat (v3.44): Drittel mit Seil und dem gemeinsamen Teil der Gesundheit (Kinder, Prävention, Hochkostenpool), so bemessen, dass ein
+# Überschuss von rund 0,2 Punkten bleibt (wie in der Gesamtrechnung 28:28); übrige Gesundheit als Prämie mit Belastungsgrenze.
+[[system]]
+id = "33L"
+name = "33:33 Lösung: Dividende 1/3 von Grundbedarf + Sozialabdeckung, Seil und 30 % der Gesundheit aus Steuern, Altlasten außerhalb"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [6, 13, 20, 26, 33]
+mindestniveau_anteil = 0.3333333
+bezugswert = "grundbedarf_sozial"
+steuer_traegt = ["haertefall", "gesundheit", "seil"]
+gesundheit_anteil = 0.30
+zins_ausserhalb = true

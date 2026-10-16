@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.43",
+ "modellstand": "v3.44",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -313,11 +313,11 @@
   {
    "id": "B29",
    "name": "Systemvarianten 25:25 und 33:33",
-   "pfad": "modell/systemvarianten.py;modell/systemvarianten.toml;daten/aggregate/systemvarianten.json;daten/aggregate/systemvarianten.csv;projekt/Systemvarianten-25-33-2026-10-17.md",
+   "pfad": "modell/systemvarianten.py;modell/systemvarianten.toml;daten/aggregate/systemvarianten.json;daten/aggregate/systemvarianten.csv;projekt/Systemvarianten-25-33-2026-10-17.md;projekt/Loesung-Drittel-2026-10-17.md",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/systemvarianten.py",
-   "anmerkung": "v3.43: Mindestquote, Deckung und Sozialposten je Marke; Gesamtrechnung unverändert"
+   "anmerkung": "v3.43: Mindestquote, Deckung und Sozialposten je Marke; Gesamtrechnung unverändert v3.44: Altlasten außerhalb, Dividende ⅓, Lösungskandidat 33L."
   }
  ],
  "nahtstellen": [

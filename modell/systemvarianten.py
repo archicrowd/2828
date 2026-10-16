@@ -104,7 +104,8 @@ def mindestquote(sy):
         sozial, bezug = 0.0, grund_monat
     anker = sy["mindestniveau_anteil"] * bezug
     schwelle = GR.SCHWELLE_KLUB * anker / anker_alt
-    mq = GR.mindestquote("kl_real", schwelle=schwelle, g_nom=GR.PREIS)
+    kw = dict(i_alt=0.0, i_ziel=0.0) if sy.get("zins_ausserhalb") else {}
+    mq = GR.mindestquote("kl_real", schwelle=schwelle, g_nom=GR.PREIS, **kw)
     q = round(GR.aufrunden(mq, 0.1), 2)
     return q, mq, anker, sozial, bezug
 
@@ -117,7 +118,9 @@ def main():
     erg = []
     for sy in P["system"]:
         q, mq, anker, sozial, bezug = mindestquote(sy)
-        pfad = GR.pfad(q)
+        kw = dict(i_alt=0.0, i_ziel=0.0) if sy.get("zins_ausserhalb") else {}
+        pfad = GR.pfad(q, **kw)
+        zins = {r["jahr"]: r["zd"] for r in GR.pfad(q)}              # Zinsdienst der Altschulden (Pfad der Gesamtrechnung)
         div28 = pfad[0]["div"]
         div_erw = div28 / (1 - k / 2)
         erw_de = pfad[0]["kl_real"] / (1 - k / 2) * GR.F_DE
@@ -126,27 +129,38 @@ def main():
         dk = sum(pos.values())
         traegt = sy["steuer_traegt"]
 
+        ga = sy.get("gesundheit_anteil", 1.0) if "gesundheit" in traegt else 0.0
+
         def zusatz(z_t):
-            return (hf if "haertefall" in traegt else 0) + (gs if "gesundheit" in traegt else 0) + \
+            return (hf if "haertefall" in traegt else 0) + gs * ga + \
                    (seil if "seil" in traegt else 0) + (z_t if "z" in traegt else 0)
 
-        def ausser(z_t):
-            return (0 if "gesundheit" in traegt else gs) + (0 if "seil" in traegt else seil) + (0 if "z" in traegt else z_t)
+        def ausser(z_t, j):
+            zd = zins.get(j or 2060, 0.0) if sy.get("zins_ausserhalb") else 0.0
+            return gs * (1 - ga) + (0 if "seil" in traegt else seil) + (0 if "z" in traegt else z_t) + zd
+
+        def altlast(z_t, j):
+            return (0 if "z" in traegt else z_t) + (zins.get(j or 2060, 0.0) if sy.get("zins_ausserhalb") else 0.0)
         punkte = {}
         for name, j in (("2028", 2028), ("2040", 2040), ("2050", 2050), ("dauer", None)):
             z_t = z[j - 2028] if j else 0.0
             bedarf = q + zusatz(z_t)
             punkte[name] = dict(z=round(z_t, 2), steuerbedarf=round(bedarf, 2), deckung=round(dk, 2),
-                                saldo=round(dk - bedarf, 2), ausserhalb_steuern=round(ausser(z_t), 2),
-                                gesamtlast_ohne_route=round(bedarf + ausser(z_t), 2),
-                                gesamtlast_mit_route=round(bedarf + ausser(z_t) + route, 2))
-        erg.append(dict(id=sy["id"], name=sy["name"], spitzensatz=sy["spitzensatz"], einkommen_saetze=sy["einkommen_saetze"],
+                                saldo=round(dk - bedarf, 2), ausserhalb_steuern=round(ausser(z_t, j), 2),
+                                altlastenbeitrag=round(altlast(z_t, j), 2), altlastenbeitrag_z_halb=round(altlast(z_t / 2, j), 2),
+                                gesamtlast_ohne_route=round(bedarf + ausser(z_t, j), 2),
+                                gesamtlast_mit_route=round(bedarf + ausser(z_t, j) + route, 2))
+        div_kopf = pfad[0]["kl_real"]                                   # Klubschnitt je Einwohner, € im Monat, Preise 2028
+        praemie_kopf = gs * (1 - ga) / 100 * GR.KOPF_KLUB / 12             # verbleibende Gesundheitsprämie je Einwohner (Durchschnitt)
+        seil_kopf = (0 if "seil" in traegt else seil) / 100 * GR.KOPF_KLUB / 12
+        erg.append(dict(id=sy["id"], name=sy["name"], dividende_kopf_klub=round(div_kopf), gesundheitspraemie_kopf_klub=round(praemie_kopf),
+                        seilpraemie_kopf_klub=round(seil_kopf), dividende_nach_praemien=round(div_kopf - praemie_kopf - seil_kopf), spitzensatz=sy["spitzensatz"], einkommen_saetze=sy["einkommen_saetze"],
                         label_saetze=sy["label_saetze"], label_effektiv=round(eff, 2),
                         mindestniveau_de_erw_monat=round(anker, 0), bezugswert_de_monat=round(bezug, 0),
                         sozialabdeckung_de_monat=round(sozial, 0),
                         mindestquote=round(mq, 2), quote_kern=q, dividende_pct_bip_2028=round(div28, 2),
                         dividende_de_erw_2028=round(erw_de, 0), deckung_positionen={n: round(v, 2) for n, v in pos.items()},
-                        deckung=round(dk, 2), steuer_traegt=traegt, z_2028=round(z[0], 2),
+                        deckung=round(dk, 2), steuer_traegt=traegt, zins_ausserhalb=bool(sy.get('zins_ausserhalb')), z_2028=round(z[0], 2),
                         z_ende=next((2028 + i for i, v in enumerate(z) if i > 5 and v < 0.1), None), punkte=punkte))
     E = dict(version=P["version"], status="Prüfrechnung, Gesamtrechnung unverändert bei 28:28", annahmen=P["annahmen"],
              gesundheit=gs, seil=seil, route=route, last_heute=G["last_heute"], varianten=erg)
@@ -165,7 +179,7 @@ def main():
               f"{v['dividende_de_erw_2028']:.0f} €/Erw.; Label effektiv {v['label_effektiv']} %; Deckung {v['deckung']}; Z 2028 {v['z_2028']}, Ende {v['z_ende']}")
         for n, p in v["punkte"].items():
             print(f"   {n:>5}: Steuerbedarf {p['steuerbedarf']:>6} Deckung {p['deckung']:>6} Saldo {p['saldo']:>6} | außerhalb {p['ausserhalb_steuern']:>5} "
-                  f"| Gesamtlast {p['gesamtlast_ohne_route']} (mit Route {p['gesamtlast_mit_route']})")
+                  f"| Altlasten {p['altlastenbeitrag']} (Z halb {p['altlastenbeitrag_z_halb']}) | Gesamtlast {p['gesamtlast_ohne_route']} (mit Route {p['gesamtlast_mit_route']})")
     return 0
 
 

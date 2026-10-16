@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 17. Oktober 2026 · Modellstand **v3.43**
+Stand: 17. Oktober 2026 · Modellstand **v3.44**
 
 ---
 
@@ -1872,6 +1872,27 @@ nur mit Seil +0,39; Gesundheit und Seil dauerhaft aus Steuern erst bei Spitzens�
 
 *Quellen wie v3.42 (Eurostat gov_10a_exp, nasa_10_pens1, demo_pjanind, Ageing Report 2024); Kernmodell für die Einkommensteuer.*
 
+### v3.44 — Drittellösung mit Dividende von einem Drittel; Altlasten außerhalb
+
+**Art der Änderung: MINOR (Prüfrechnung), keine Zahl der Gesamtrechnung bewegt.** 17. Oktober 2026.
+
+**Frage und Vorgabe der Initiative (17.10.2026):** Wurde 33:33 mit einer Dividende von einem Drittel des Existenzminimums gerechnet? (Nein: in v3.43
+„wie gehabt“, Mindestniveau ½ Grundbedarf.) Altlasten aus Staatsschulden und Rentenansprüchen werden außerhalb finanziert; die Unterscheidung zwischen
+echten Anlagen und Versprechen zulasten späterer Generationen ist diskutabel und muss nicht voll einkalkuliert sein. Lösung und Erzählung suchen.
+
+**Rechnung `modell/systemvarianten.py`, erweitert:** Zinsdienst wahlweise außerhalb der Quote (Mindestquote mit Zins null; Zinsen aus dem Pfad der
+Gesamtrechnung in den Altlastenbeitrag); Anteil der Gesundheit in den Steuern als Parameter; Prämien je Einwohner und Dividende nach Prämien;
+Altlastenbeitrag mit Z voll und halb. Neue Systeme 28A, 25A, 33A, 33G, 33L in `systemvarianten.toml`.
+
+**Bewegte Zahlen (Prüfrechnung, 2028):** 28:28 Altlasten außerhalb: Quote 28,5, Saldo +1,29, Dividende nach Prämien 67 € je Einwohner. 33:33 mit
+Dividende ⅓ von Grundbedarf + Sozialabdeckung, Gesundheit und Seil in den Steuern: Saldo −5,26; mit ⅓ des Grundbedarfs: −2,06. **Lösung 33L:** Seil und
+30 % der Gesundheit in den Steuern: Steuerbedarf 33,80, Deckung 33,96, Saldo +0,16; Dividende DE 618 € (Erw.); Gesundheitsprämie 245 € je Einwohner;
+Altlastenbeitrag 10,73 (Z halb 6,27); Gesamtlast Dauerzustand 40,01. Ohne Prämie gleich teuer bei Dividende ¼ des Grundbedarfs (DE 351 €, Saldo −0,26).
+
+**Grenzen:** wie v3.43; Hochkostenpool 30 % Setzung; Überschuss 0,16 klein. **Geprüft:** `python3 modell/alles.py`. **Wodurch aufgefallen:** Frage der Initiative.
+
+*Quellen wie v3.42/v3.43; Kostenkonzentration: Wende/Schmitt, bifg 2021 (Faktencheck 16.10.2026).*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -1923,9 +1944,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.43
+## 7 | Offene Punkte, Stand v3.44
 
-Neu seit v3.23 (Stand v3.43): **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.44): **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

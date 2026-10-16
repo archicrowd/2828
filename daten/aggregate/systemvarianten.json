@@ -13,6 +13,10 @@
   {
    "id": "28",
    "name": "28:28 (geltend)",
+   "dividende_kopf_klub": 535,
+   "gesundheitspraemie_kopf_klub": 349,
+   "seilpraemie_kopf_klub": 123,
+   "dividende_nach_praemien": 63,
    "spitzensatz": 28,
    "einkommen_saetze": [
     0,
@@ -52,6 +56,7 @@
    "steuer_traegt": [
     "haertefall"
    ],
+   "zins_ausserhalb": false,
    "z_2028": 8.86,
    "z_ende": 2074,
    "punkte": {
@@ -61,6 +66,8 @@
      "deckung": 30.44,
      "saldo": -0.41,
      "ausserhalb_steuern": 19.33,
+     "altlastenbeitrag": 8.86,
+     "altlastenbeitrag_z_halb": 4.43,
      "gesamtlast_ohne_route": 50.18,
      "gesamtlast_mit_route": 54.28
     },
@@ -70,6 +77,8 @@
      "deckung": 30.44,
      "saldo": -0.41,
      "ausserhalb_steuern": 18.78,
+     "altlastenbeitrag": 8.31,
+     "altlastenbeitrag_z_halb": 4.16,
      "gesamtlast_ohne_route": 49.63,
      "gesamtlast_mit_route": 53.73
     },
@@ -79,6 +88,8 @@
      "deckung": 30.44,
      "saldo": -0.41,
      "ausserhalb_steuern": 16.63,
+     "altlastenbeitrag": 6.16,
+     "altlastenbeitrag_z_halb": 3.08,
      "gesamtlast_ohne_route": 47.48,
      "gesamtlast_mit_route": 51.58
     },
@@ -88,6 +99,8 @@
      "deckung": 30.44,
      "saldo": -0.41,
      "ausserhalb_steuern": 10.47,
+     "altlastenbeitrag": 0.0,
+     "altlastenbeitrag_z_halb": 0.0,
      "gesamtlast_ohne_route": 41.32,
      "gesamtlast_mit_route": 45.42
     }
@@ -96,6 +109,10 @@
   {
    "id": "25",
    "name": "25:25 (Viertellösung)",
+   "dividende_kopf_klub": 404,
+   "gesundheitspraemie_kopf_klub": 349,
+   "seilpraemie_kopf_klub": 123,
+   "dividende_nach_praemien": -68,
    "spitzensatz": 25,
    "einkommen_saetze": [
     0,
@@ -135,6 +152,7 @@
    "steuer_traegt": [
     "haertefall"
    ],
+   "zins_ausserhalb": false,
    "z_2028": 9.54,
    "z_ende": 2077,
    "punkte": {
@@ -144,6 +162,8 @@
      "deckung": 28.3,
      "saldo": 0.35,
      "ausserhalb_steuern": 20.01,
+     "altlastenbeitrag": 9.54,
+     "altlastenbeitrag_z_halb": 4.77,
      "gesamtlast_ohne_route": 47.95,
      "gesamtlast_mit_route": 52.05
     },
@@ -153,6 +173,8 @@
      "deckung": 28.3,
      "saldo": 0.35,
      "ausserhalb_steuern": 19.49,
+     "altlastenbeitrag": 9.02,
+     "altlastenbeitrag_z_halb": 4.51,
      "gesamtlast_ohne_route": 47.44,
      "gesamtlast_mit_route": 51.54
     },
@@ -162,6 +184,8 @@
      "deckung": 28.3,
      "saldo": 0.35,
      "ausserhalb_steuern": 17.35,
+     "altlastenbeitrag": 6.88,
+     "altlastenbeitrag_z_halb": 3.44,
      "gesamtlast_ohne_route": 45.3,
      "gesamtlast_mit_route": 49.4
     },
@@ -171,6 +195,8 @@
      "deckung": 28.3,
      "saldo": 0.35,
      "ausserhalb_steuern": 10.47,
+     "altlastenbeitrag": 0.0,
+     "altlastenbeitrag_z_halb": 0.0,
      "gesamtlast_ohne_route": 38.42,
      "gesamtlast_mit_route": 42.52
     }
@@ -179,6 +205,10 @@
   {
    "id": "33",
    "name": "33:33 (Drittellösung)",
+   "dividende_kopf_klub": 535,
+   "gesundheitspraemie_kopf_klub": 0,
+   "seilpraemie_kopf_klub": 0,
+   "dividende_nach_praemien": 535,
    "spitzensatz": 33,
    "einkommen_saetze": [
     0,
@@ -221,6 +251,7 @@
     "seil",
     "z"
    ],
+   "zins_ausserhalb": false,
    "z_2028": 8.86,
    "z_ende": 2074,
    "punkte": {
@@ -229,7 +260,9 @@
      "steuerbedarf": 50.18,
      "deckung": 33.96,
      "saldo": -16.22,
-     "ausserhalb_steuern": 0,
+     "ausserhalb_steuern": 0.0,
+     "altlastenbeitrag": 0.0,
+     "altlastenbeitrag_z_halb": 0.0,
      "gesamtlast_ohne_route": 50.18,
      "gesamtlast_mit_route": 54.28
     },
@@ -238,7 +271,9 @@
      "steuerbedarf": 49.63,
      "deckung": 33.96,
      "saldo": -15.67,
-     "ausserhalb_steuern": 0,
+     "ausserhalb_steuern": 0.0,
+     "altlastenbeitrag": 0.0,
+     "altlastenbeitrag_z_halb": 0.0,
      "gesamtlast_ohne_route": 49.63,
      "gesamtlast_mit_route": 53.73
     },
@@ -247,7 +282,9 @@
      "steuerbedarf": 47.48,
      "deckung": 33.96,
      "saldo": -13.52,
-     "ausserhalb_steuern": 0,
+     "ausserhalb_steuern": 0.0,
+     "altlastenbeitrag": 0.0,
+     "altlastenbeitrag_z_halb": 0.0,
      "gesamtlast_ohne_route": 47.48,
      "gesamtlast_mit_route": 51.58
     },
@@ -256,9 +293,497 @@
      "steuerbedarf": 41.32,
      "deckung": 33.96,
      "saldo": -7.36,
-     "ausserhalb_steuern": 0,
+     "ausserhalb_steuern": 0.0,
+     "altlastenbeitrag": 0.0,
+     "altlastenbeitrag_z_halb": 0.0,
      "gesamtlast_ohne_route": 41.32,
      "gesamtlast_mit_route": 45.42
+    }
+   }
+  },
+  {
+   "id": "28A",
+   "name": "28:28, Altlasten außerhalb",
+   "dividende_kopf_klub": 539,
+   "gesundheitspraemie_kopf_klub": 349,
+   "seilpraemie_kopf_klub": 123,
+   "dividende_nach_praemien": 67,
+   "spitzensatz": 28,
+   "einkommen_saetze": [
+    0,
+    9,
+    16,
+    21,
+    28
+   ],
+   "label_saetze": [
+    5,
+    11,
+    17,
+    22,
+    28
+   ],
+   "label_effektiv": 16.88,
+   "mindestniveau_de_erw_monat": 535.0,
+   "bezugswert_de_monat": 1071.0,
+   "sozialabdeckung_de_monat": 0.0,
+   "mindestquote": 28.43,
+   "quote_kern": 28.5,
+   "dividende_pct_bip_2028": 11.96,
+   "dividende_de_erw_2028": 640.0,
+   "deckung_positionen": {
+    "Einkommen": 8.92,
+    "Kapitalerträge": 1.16,
+    "Konsum (Label)": 7.76,
+    "Unternehmen und Plattformen": 3.75,
+    "Erbschaften": 0.98,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 30.44,
+   "steuer_traegt": [
+    "haertefall"
+   ],
+   "zins_ausserhalb": true,
+   "z_2028": 8.84,
+   "z_ende": 2074,
+   "punkte": {
+    "2028": {
+     "z": 8.84,
+     "steuerbedarf": 29.15,
+     "deckung": 30.44,
+     "saldo": 1.29,
+     "ausserhalb_steuern": 21.11,
+     "altlastenbeitrag": 10.64,
+     "altlastenbeitrag_z_halb": 6.22,
+     "gesamtlast_ohne_route": 50.26,
+     "gesamtlast_mit_route": 54.36
+    },
+    "2040": {
+     "z": 8.28,
+     "steuerbedarf": 29.15,
+     "deckung": 30.44,
+     "saldo": 1.29,
+     "ausserhalb_steuern": 20.18,
+     "altlastenbeitrag": 9.71,
+     "altlastenbeitrag_z_halb": 5.57,
+     "gesamtlast_ohne_route": 49.33,
+     "gesamtlast_mit_route": 53.43
+    },
+    "2050": {
+     "z": 6.13,
+     "steuerbedarf": 29.15,
+     "deckung": 30.44,
+     "saldo": 1.29,
+     "ausserhalb_steuern": 17.66,
+     "altlastenbeitrag": 7.19,
+     "altlastenbeitrag_z_halb": 4.13,
+     "gesamtlast_ohne_route": 46.81,
+     "gesamtlast_mit_route": 50.91
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 29.15,
+     "deckung": 30.44,
+     "saldo": 1.29,
+     "ausserhalb_steuern": 11.26,
+     "altlastenbeitrag": 0.79,
+     "altlastenbeitrag_z_halb": 0.79,
+     "gesamtlast_ohne_route": 40.41,
+     "gesamtlast_mit_route": 44.51
+    }
+   }
+  },
+  {
+   "id": "25A",
+   "name": "25:25 (Viertel), Altlasten außerhalb",
+   "dividende_kopf_klub": 404,
+   "gesundheitspraemie_kopf_klub": 349,
+   "seilpraemie_kopf_klub": 123,
+   "dividende_nach_praemien": -68,
+   "spitzensatz": 25,
+   "einkommen_saetze": [
+    0,
+    8,
+    14,
+    19,
+    25
+   ],
+   "label_saetze": [
+    4,
+    10,
+    15,
+    20,
+    25
+   ],
+   "label_effektiv": 15.1,
+   "mindestniveau_de_erw_monat": 387.0,
+   "bezugswert_de_monat": 1547.0,
+   "sozialabdeckung_de_monat": 476.0,
+   "mindestquote": 25.43,
+   "quote_kern": 25.5,
+   "dividende_pct_bip_2028": 8.96,
+   "dividende_de_erw_2028": 479.0,
+   "deckung_positionen": {
+    "Einkommen": 8.12,
+    "Kapitalerträge": 1.04,
+    "Konsum (Label)": 7.04,
+    "Unternehmen und Plattformen": 3.35,
+    "Erbschaften": 0.88,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 28.3,
+   "steuer_traegt": [
+    "haertefall"
+   ],
+   "zins_ausserhalb": true,
+   "z_2028": 9.53,
+   "z_ende": 2077,
+   "punkte": {
+    "2028": {
+     "z": 9.53,
+     "steuerbedarf": 26.15,
+     "deckung": 28.3,
+     "saldo": 2.15,
+     "ausserhalb_steuern": 21.81,
+     "altlastenbeitrag": 11.34,
+     "altlastenbeitrag_z_halb": 6.57,
+     "gesamtlast_ohne_route": 47.96,
+     "gesamtlast_mit_route": 52.06
+    },
+    "2040": {
+     "z": 9.02,
+     "steuerbedarf": 26.15,
+     "deckung": 28.3,
+     "saldo": 2.15,
+     "ausserhalb_steuern": 20.92,
+     "altlastenbeitrag": 10.45,
+     "altlastenbeitrag_z_halb": 5.94,
+     "gesamtlast_ohne_route": 47.07,
+     "gesamtlast_mit_route": 51.17
+    },
+    "2050": {
+     "z": 6.88,
+     "steuerbedarf": 26.15,
+     "deckung": 28.3,
+     "saldo": 2.15,
+     "ausserhalb_steuern": 18.41,
+     "altlastenbeitrag": 7.94,
+     "altlastenbeitrag_z_halb": 4.5,
+     "gesamtlast_ohne_route": 44.56,
+     "gesamtlast_mit_route": 48.66
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 26.15,
+     "deckung": 28.3,
+     "saldo": 2.15,
+     "ausserhalb_steuern": 11.26,
+     "altlastenbeitrag": 0.79,
+     "altlastenbeitrag_z_halb": 0.79,
+     "gesamtlast_ohne_route": 37.41,
+     "gesamtlast_mit_route": 41.51
+    }
+   }
+  },
+  {
+   "id": "33A",
+   "name": "33:33 (Drittel), Dividende 1/3 von Grundbedarf + Sozialabdeckung, Gesundheit und Seil aus Steuern, Altlasten außerhalb",
+   "dividende_kopf_klub": 521,
+   "gesundheitspraemie_kopf_klub": 0,
+   "seilpraemie_kopf_klub": 0,
+   "dividende_nach_praemien": 521,
+   "spitzensatz": 33,
+   "einkommen_saetze": [
+    0,
+    11,
+    19,
+    25,
+    33
+   ],
+   "label_saetze": [
+    6,
+    13,
+    20,
+    26,
+    33
+   ],
+   "label_effektiv": 19.96,
+   "mindestniveau_de_erw_monat": 516.0,
+   "bezugswert_de_monat": 1547.0,
+   "sozialabdeckung_de_monat": 476.0,
+   "mindestquote": 28.03,
+   "quote_kern": 28.1,
+   "dividende_pct_bip_2028": 11.56,
+   "dividende_de_erw_2028": 618.0,
+   "deckung_positionen": {
+    "Einkommen": 10.21,
+    "Kapitalerträge": 1.37,
+    "Konsum (Label)": 8.93,
+    "Unternehmen und Plattformen": 4.42,
+    "Erbschaften": 1.16,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 33.96,
+   "steuer_traegt": [
+    "haertefall",
+    "gesundheit",
+    "seil"
+   ],
+   "zins_ausserhalb": true,
+   "z_2028": 8.93,
+   "z_ende": 2075,
+   "punkte": {
+    "2028": {
+     "z": 8.93,
+     "steuerbedarf": 39.22,
+     "deckung": 33.96,
+     "saldo": -5.26,
+     "ausserhalb_steuern": 10.73,
+     "altlastenbeitrag": 10.73,
+     "altlastenbeitrag_z_halb": 6.27,
+     "gesamtlast_ohne_route": 49.95,
+     "gesamtlast_mit_route": 54.05
+    },
+    "2040": {
+     "z": 8.38,
+     "steuerbedarf": 39.22,
+     "deckung": 33.96,
+     "saldo": -5.26,
+     "ausserhalb_steuern": 9.81,
+     "altlastenbeitrag": 9.81,
+     "altlastenbeitrag_z_halb": 5.62,
+     "gesamtlast_ohne_route": 49.03,
+     "gesamtlast_mit_route": 53.13
+    },
+    "2050": {
+     "z": 6.23,
+     "steuerbedarf": 39.22,
+     "deckung": 33.96,
+     "saldo": -5.26,
+     "ausserhalb_steuern": 7.29,
+     "altlastenbeitrag": 7.29,
+     "altlastenbeitrag_z_halb": 4.18,
+     "gesamtlast_ohne_route": 46.51,
+     "gesamtlast_mit_route": 50.61
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 39.22,
+     "deckung": 33.96,
+     "saldo": -5.26,
+     "ausserhalb_steuern": 0.79,
+     "altlastenbeitrag": 0.79,
+     "altlastenbeitrag_z_halb": 0.79,
+     "gesamtlast_ohne_route": 40.01,
+     "gesamtlast_mit_route": 44.11
+    }
+   }
+  },
+  {
+   "id": "33G",
+   "name": "33:33 (Drittel), Dividende 1/3 des Grundbedarfs, Gesundheit und Seil aus Steuern, Altlasten außerhalb",
+   "dividende_kopf_klub": 377,
+   "gesundheitspraemie_kopf_klub": 0,
+   "seilpraemie_kopf_klub": 0,
+   "dividende_nach_praemien": 377,
+   "spitzensatz": 33,
+   "einkommen_saetze": [
+    0,
+    11,
+    19,
+    25,
+    33
+   ],
+   "label_saetze": [
+    6,
+    13,
+    20,
+    26,
+    33
+   ],
+   "label_effektiv": 19.96,
+   "mindestniveau_de_erw_monat": 357.0,
+   "bezugswert_de_monat": 1071.0,
+   "sozialabdeckung_de_monat": 0.0,
+   "mindestquote": 24.83,
+   "quote_kern": 24.9,
+   "dividende_pct_bip_2028": 8.36,
+   "dividende_de_erw_2028": 447.0,
+   "deckung_positionen": {
+    "Einkommen": 10.21,
+    "Kapitalerträge": 1.37,
+    "Konsum (Label)": 8.93,
+    "Unternehmen und Plattformen": 4.42,
+    "Erbschaften": 1.16,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 33.96,
+   "steuer_traegt": [
+    "haertefall",
+    "gesundheit",
+    "seil"
+   ],
+   "zins_ausserhalb": true,
+   "z_2028": 9.67,
+   "z_ende": 2077,
+   "punkte": {
+    "2028": {
+     "z": 9.67,
+     "steuerbedarf": 36.02,
+     "deckung": 33.96,
+     "saldo": -2.06,
+     "ausserhalb_steuern": 11.48,
+     "altlastenbeitrag": 11.48,
+     "altlastenbeitrag_z_halb": 6.64,
+     "gesamtlast_ohne_route": 47.5,
+     "gesamtlast_mit_route": 51.6
+    },
+    "2040": {
+     "z": 9.17,
+     "steuerbedarf": 36.02,
+     "deckung": 33.96,
+     "saldo": -2.06,
+     "ausserhalb_steuern": 10.6,
+     "altlastenbeitrag": 10.6,
+     "altlastenbeitrag_z_halb": 6.01,
+     "gesamtlast_ohne_route": 46.62,
+     "gesamtlast_mit_route": 50.72
+    },
+    "2050": {
+     "z": 7.02,
+     "steuerbedarf": 36.02,
+     "deckung": 33.96,
+     "saldo": -2.06,
+     "ausserhalb_steuern": 8.08,
+     "altlastenbeitrag": 8.08,
+     "altlastenbeitrag_z_halb": 4.57,
+     "gesamtlast_ohne_route": 44.1,
+     "gesamtlast_mit_route": 48.2
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 36.02,
+     "deckung": 33.96,
+     "saldo": -2.06,
+     "ausserhalb_steuern": 0.79,
+     "altlastenbeitrag": 0.79,
+     "altlastenbeitrag_z_halb": 0.79,
+     "gesamtlast_ohne_route": 36.81,
+     "gesamtlast_mit_route": 40.91
+    }
+   }
+  },
+  {
+   "id": "33L",
+   "name": "33:33 Lösung: Dividende 1/3 von Grundbedarf + Sozialabdeckung, Seil und 30 % der Gesundheit aus Steuern, Altlasten außerhalb",
+   "dividende_kopf_klub": 521,
+   "gesundheitspraemie_kopf_klub": 245,
+   "seilpraemie_kopf_klub": 0,
+   "dividende_nach_praemien": 277,
+   "spitzensatz": 33,
+   "einkommen_saetze": [
+    0,
+    11,
+    19,
+    25,
+    33
+   ],
+   "label_saetze": [
+    6,
+    13,
+    20,
+    26,
+    33
+   ],
+   "label_effektiv": 19.96,
+   "mindestniveau_de_erw_monat": 516.0,
+   "bezugswert_de_monat": 1547.0,
+   "sozialabdeckung_de_monat": 476.0,
+   "mindestquote": 28.03,
+   "quote_kern": 28.1,
+   "dividende_pct_bip_2028": 11.56,
+   "dividende_de_erw_2028": 618.0,
+   "deckung_positionen": {
+    "Einkommen": 10.21,
+    "Kapitalerträge": 1.37,
+    "Konsum (Label)": 8.93,
+    "Unternehmen und Plattformen": 4.42,
+    "Erbschaften": 1.16,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 33.96,
+   "steuer_traegt": [
+    "haertefall",
+    "gesundheit",
+    "seil"
+   ],
+   "zins_ausserhalb": true,
+   "z_2028": 8.93,
+   "z_ende": 2075,
+   "punkte": {
+    "2028": {
+     "z": 8.93,
+     "steuerbedarf": 33.8,
+     "deckung": 33.96,
+     "saldo": 0.16,
+     "ausserhalb_steuern": 16.16,
+     "altlastenbeitrag": 10.73,
+     "altlastenbeitrag_z_halb": 6.27,
+     "gesamtlast_ohne_route": 49.95,
+     "gesamtlast_mit_route": 54.05
+    },
+    "2040": {
+     "z": 8.38,
+     "steuerbedarf": 33.8,
+     "deckung": 33.96,
+     "saldo": 0.16,
+     "ausserhalb_steuern": 15.23,
+     "altlastenbeitrag": 9.81,
+     "altlastenbeitrag_z_halb": 5.62,
+     "gesamtlast_ohne_route": 49.03,
+     "gesamtlast_mit_route": 53.13
+    },
+    "2050": {
+     "z": 6.23,
+     "steuerbedarf": 33.8,
+     "deckung": 33.96,
+     "saldo": 0.16,
+     "ausserhalb_steuern": 12.72,
+     "altlastenbeitrag": 7.29,
+     "altlastenbeitrag_z_halb": 4.18,
+     "gesamtlast_ohne_route": 46.51,
+     "gesamtlast_mit_route": 50.61
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 33.8,
+     "deckung": 33.96,
+     "saldo": 0.16,
+     "ausserhalb_steuern": 6.21,
+     "altlastenbeitrag": 0.79,
+     "altlastenbeitrag_z_halb": 0.79,
+     "gesamtlast_ohne_route": 40.01,
+     "gesamtlast_mit_route": 44.11
     }
    }
   }
