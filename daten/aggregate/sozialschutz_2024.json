@@ -1,0 +1,1566 @@
+{
+ "cofog": {
+  "BE": {
+   "GF07": {
+    "wert": 8.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 20.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 3.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 10.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 1.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 2.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 1.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 1.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 20.4,
+    "GF10": 20.4,
+    "differenz": 0.0
+   }
+  },
+  "DK": {
+   "GF07": {
+    "wert": 8.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 19.6,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 4.8,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 7.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 4.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 1.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.6,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 1.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 19.7,
+    "GF10": 19.6,
+    "differenz": 0.1
+   }
+  },
+  "DE": {
+   "GF07": {
+    "wert": 7.6,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 20.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 3.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 9.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 1.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 1.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 1.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 0.6,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.DE?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 20.4,
+    "GF10": 20.4,
+    "differenz": 0.0
+   }
+  },
+  "EE": {
+   "GF07": {
+    "wert": 6.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 13.8,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 1.8,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 8.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 0.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 2.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 0.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 0.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 13.7,
+    "GF10": 13.8,
+    "differenz": -0.1
+   }
+  },
+  "IE": {
+   "GF07": {
+    "wert": 5.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 8.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 1.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 3.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 0.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 1.5,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 0.6,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 1.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 0.5,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 8.1,
+    "GF10": 8.2,
+    "differenz": -0.1
+   }
+  },
+  "FR": {
+   "GF07": {
+    "wert": 8.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 23.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 2.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 13.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 1.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 2.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 1.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 1.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p (Flag in der Abfrage nicht ausgegeben, vermutlich p wie uebrige FR-Werte; an der Quelle zu pruefen)",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.BE+DK+EE+IE+FR?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 23.7,
+    "GF10": 23.7,
+    "differenz": 0.0
+   }
+  },
+  "NL": {
+   "GF07": {
+    "wert": 7.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 16.6,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 4.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 6.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 2.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 0.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 2.5,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 16.4,
+    "GF10": 16.6,
+    "differenz": -0.2
+   }
+  },
+  "AT": {
+   "GF07": {
+    "wert": 9.5,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 22.8,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 1.8,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 14.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 1.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 2.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 1.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 1.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 22.8,
+    "GF10": 22.8,
+    "differenz": 0.0
+   }
+  },
+  "SI": {
+   "GF07": {
+    "wert": 8.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 17.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 2.6,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 10.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 1.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 1.8,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 0.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 0.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 17.1,
+    "GF10": 17.1,
+    "differenz": 0.0
+   }
+  },
+  "ES": {
+   "GF07": {
+    "wert": 6.5,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 18.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 2.8,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 10.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 2.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 1.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 1.5,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 0.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.1,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "p",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 18.7,
+    "GF10": 18.7,
+    "differenz": 0.0
+   }
+  },
+  "EU27_2020": {
+   "GF07": {
+    "wert": 7.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF10": {
+    "wert": 19.6,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1001": {
+    "wert": 2.8,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1002": {
+    "wert": 10.7,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1003": {
+    "wert": 1.5,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1004": {
+    "wert": 2.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1005": {
+    "wert": 1.2,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1006": {
+    "wert": 0.4,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1007": {
+    "wert": 0.9,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1008": {
+    "wert": 0.0,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "GF1009": {
+    "wert": 0.3,
+    "einheit": "% BIP",
+    "jahr": 2024,
+    "status": "",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/gov_10a_exp/A.PC_GDP.S13.GF07+GF10+GF1001+GF1002+GF1003+GF1004+GF1005+GF1006+GF1007+GF1008+GF1009.TE.NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+   },
+   "_pruefsumme_GF1001_bis_GF1009": {
+    "summe": 19.8,
+    "GF10": 19.6,
+    "differenz": 0.2
+   }
+  }
+ },
+ "pension_entitlements": {
+  "BE": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 295829,
+   "S13PS_Sozialversicherung_mio_eur": 1308613,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": 0,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 1604442,
+   "S13PU_unfunded_pc_bip": 317,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": null,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 1740511,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 344,
+   "flags": "",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "DK": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 74400,
+   "S13PS_Sozialversicherung_mio_eur": 7628,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 82028,
+   "S13PU_unfunded_pc_bip": 24,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": 5881,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 321317,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 94,
+   "flags": "",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024",
+   "spaetere_jahre": {
+    "2022": {
+     "S13PBX": 73829,
+     "S13PS": 6657,
+     "S13PU_pc_bip": 21
+    },
+    "2023": {
+     "S13PBX": 72775,
+     "S13PS": 5930,
+     "S13PU_pc_bip": 21
+    }
+   }
+  },
+  "DE": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 1649278,
+   "S13PS_Sozialversicherung_mio_eur": 10133547,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 11782825,
+   "S13PU_unfunded_pc_bip": 320,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": 147930,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 12769025,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 347,
+   "flags": "PC_GDP-Werte 2021 Flag p",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "EE": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 2921,
+   "S13PS_Sozialversicherung_mio_eur": 95291,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 98212,
+   "S13PU_unfunded_pc_bip": 312,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": null,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 98211,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 312,
+   "flags": "",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "IE": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 175700,
+   "S13PS_Sozialversicherung_mio_eur": 470700,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 646400,
+   "S13PU_unfunded_pc_bip": 144,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": null,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 767311,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 171,
+   "flags": "",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.BE+DK+DE+EE+IE?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "FR": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 1317000,
+   "S13PS_Sozialversicherung_mio_eur": 8647000,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 9964000,
+   "S13PU_unfunded_pc_bip": 397,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": null,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 9964000,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 397,
+   "flags": "",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "NL": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 8939,
+   "S13PS_Sozialversicherung_mio_eur": 1864950,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 1873889,
+   "S13PU_unfunded_pc_bip": 210,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": 498807,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 3683525,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 413,
+   "flags": "S13PBX und S13PS Flag e (geschaetzt)",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "AT": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 276827,
+   "S13PS_Sozialversicherung_mio_eur": 1551195,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 1828022,
+   "S13PU_unfunded_pc_bip": 450,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": null,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 1878592,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 462,
+   "flags": "S1P Flag d",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "SI": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": null,
+   "S13PS_Sozialversicherung_mio_eur": 202546,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": 1917,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 202546,
+   "S13PU_unfunded_pc_bip": 389,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": null,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 207154,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 398,
+   "flags": "S13PBX nicht verfuegbar (m)",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "ES": {
+   "jahr": 2021,
+   "F63_LE_Schlussbestand": true,
+   "S13PBX_Beamte_staatlich_nicht_Kernkonto_mio_eur": 547399,
+   "S13PS_Sozialversicherung_mio_eur": 5581849,
+   "S13PBI_Beamte_staatlich_Kernkonto_mio_eur": null,
+   "S13PC_DC_Staat_mio_eur": null,
+   "Staat_umlagefinanziert_S13PBI_S13PBX_S13PS_mio_eur": 6129248,
+   "S13PU_unfunded_pc_bip": 496,
+   "nachrichtlich_S12PBI_Beamtensysteme_in_Finanzsektor_mio_eur": null,
+   "nachrichtlich_S1P_alle_Systeme_mio_eur": 6193940,
+   "nachrichtlich_S1P_alle_Systeme_pc_bip": 501,
+   "flags": "",
+   "preisbasis": "nominal, Mio. EUR, Bezugsjahr 2021",
+   "url_mio_eur": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.MIO_EUR.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2018&endPeriod=2024",
+   "url_pc_bip": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/nasa_10_pens1/A.PC_GDP.S13PC+S13PBI+S13PBX+S13PS+S13PU+S12PBI+S1P.F63_LE.FR+NL+AT+SI+ES?format=TSV&compressed=false&startPeriod=2015&endPeriod=2024"
+  },
+  "EU27_2020": {
+   "wert": null,
+   "hinweis": "Abfrage mit EU27_2020 lieferte Fehler; kein EU-Aggregat in nasa_10_pens1 gefunden"
+  }
+ },
+ "anteil_65plus": {
+  "AT": {
+   "wert": 19.8,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "BE": {
+   "wert": 19.9,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "DE": {
+   "wert": 22.4,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "DK": {
+   "wert": 20.7,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "EE": {
+   "wert": 20.5,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "ES": {
+   "wert": 20.4,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "EU27_2020": {
+   "wert": 21.6,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "ep",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "FR": {
+   "wert": 21.5,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "p",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "IE": {
+   "wert": 15.5,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "NL": {
+   "wert": 20.5,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  },
+  "SI": {
+   "wert": 21.8,
+   "einheit": "% der Bevoelkerung, 1. Januar 2024",
+   "jahr": 2024,
+   "status": "",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/demo_pjanind/A.PC_Y65_MAX.BE+DK+DE+EE+IE+FR+NL+AT+SI+ES+EU27_2020?format=TSV&compressed=false&startPeriod=2024&endPeriod=2024"
+  }
+ },
+ "ageing_report": {
+  "BE": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 12.7,
+    "delta_2022_2045": 1.9,
+    "delta_2022_2070": 3.5,
+    "2070_abgeleitet": 16.2,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 12.7,
+    "2030": 13.6,
+    "2040": 14.4,
+    "2050": 14.8,
+    "2060": 15.4,
+    "2070": 16.2,
+    "spitze": "16.2 (2070)",
+    "tabelle": "Table 8",
+    "stand": "12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/44c42889-3c34-4ce7-82b9-2636b38dacb2_en?filename=2024-ageing-report-country-fiche-Belgium.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 12.7,
+    "2030": 13.6,
+    "2040": 14.4,
+    "2050": 14.8,
+    "2060": 15.4,
+    "2070": 16.2
+   }
+  },
+  "DK": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 8.3,
+    "delta_2022_2045": 0.0,
+    "delta_2022_2070": -1.4,
+    "2070_abgeleitet": 6.9,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 8.3,
+    "2030": 9.3,
+    "2040": 8.8,
+    "2050": 7.8,
+    "2060": 6.9,
+    "2070": 6.8,
+    "spitze": "9.3 (2029)",
+    "tabelle": "Table 3.1",
+    "stand": "12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/93eeaeab-e2bf-4e62-9cc9-bbb42c2f091e_en?filename=2024-ageing-report-country-fiche-Denmark.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 8.3,
+    "2030": 9.3,
+    "2040": 8.8,
+    "2050": 7.8,
+    "2060": 6.9,
+    "2070": 6.8
+   }
+  },
+  "DE": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 10.2,
+    "delta_2022_2045": 0.8,
+    "delta_2022_2070": 1.2,
+    "2070_abgeleitet": 11.4,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 10.2,
+    "2030": 10.8,
+    "2040": 11.1,
+    "2050": 11.0,
+    "2060": 11.2,
+    "2070": 11.4,
+    "spitze": null,
+    "tabelle": "Table 6",
+    "stand": "12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/e8f41d38-6d27-45b4-8919-c9348720fcfc_en?filename=2024-ageing-report-country-fiche-Germany.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 10.2,
+    "2030": 10.8,
+    "2040": 11.1,
+    "2050": 11.0,
+    "2060": 11.2,
+    "2070": 11.4
+   }
+  },
+  "EE": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 7.4,
+    "delta_2022_2045": 0.1,
+    "delta_2022_2070": -0.7,
+    "2070_abgeleitet": 6.7,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": {
+    "wert": 7.9,
+    "hinweis": "nur als Spitzenwert (peak 2028) in Table 6 der Fiche ausgewiesen"
+   },
+   "laenderbericht": {
+    "2022": 7.4,
+    "2030": 7.8,
+    "2040": 7.6,
+    "2050": 7.5,
+    "2060": 7.5,
+    "2070": 6.7,
+    "spitze": "7.9 (2028)",
+    "tabelle": "Table 6",
+    "stand": "12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/67de7ae2-37bd-482a-a691-1cbc525b0733_en?filename=2024-ageing-report-country-fiche-Estonia.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 7.4,
+    "2030": 7.8,
+    "2040": 7.6,
+    "2050": 7.5,
+    "2060": 7.5,
+    "2070": 6.7
+   }
+  },
+  "IE": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 3.8,
+    "delta_2022_2045": 1.7,
+    "delta_2022_2070": 2.8,
+    "2070_abgeleitet": 6.6,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 3.8,
+    "2030": 4.2,
+    "2040": 5.0,
+    "2050": 6.0,
+    "2060": 6.5,
+    "2070": 6.6,
+    "spitze": null,
+    "tabelle": "Table 6 (Zeile 'Gross total public pension expenditure')",
+    "stand": "15.12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/22478534-44d6-402b-b44a-feff07fa0e6b_en?filename=2024-ageing-report-country-fiche-Ireland.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 3.8,
+    "2030": 4.2,
+    "2040": 5.0,
+    "2050": 6.0,
+    "2060": 6.5,
+    "2070": 6.6
+   }
+  },
+  "ES": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 13.1,
+    "delta_2022_2045": 3.8,
+    "delta_2022_2070": 3.6,
+    "2070_abgeleitet": 16.7,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 13.1,
+    "2030": 14.3,
+    "2040": 16.2,
+    "2050": 17.3,
+    "2060": 16.9,
+    "2070": 16.7,
+    "spitze": "17.3 (2051)",
+    "tabelle": "Table 10",
+    "stand": "12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/392994f2-c025-4066-bea8-f65cf4bcd411_en?filename=2024-ageing-report-country-fiche-Spain.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 13.1,
+    "2030": 14.3,
+    "2040": 16.2,
+    "2050": 17.3,
+    "2060": 16.9,
+    "2070": 16.7
+   }
+  },
+  "FR": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 14.4,
+    "delta_2022_2045": -0.5,
+    "delta_2022_2070": -0.9,
+    "2070_abgeleitet": 13.5,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 14.4,
+    "2030": 14.3,
+    "2040": 14.1,
+    "2050": 13.7,
+    "2060": 13.5,
+    "2070": 13.6,
+    "spitze": "14.4 (2022)",
+    "tabelle": "Table 7",
+    "stand": "15.12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/e412927a-ea31-406d-bb6c-c925914123e9_en?filename=2024-ageing-report-country-fiche-France.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 14.4,
+    "2030": 14.3,
+    "2040": 14.1,
+    "2050": 13.7,
+    "2060": 13.5,
+    "2070": 13.6
+   }
+  },
+  "NL": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 6.5,
+    "delta_2022_2045": 1.4,
+    "delta_2022_2070": 2.0,
+    "2070_abgeleitet": 8.5,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 6.5,
+    "2030": 7.3,
+    "2040": 8.0,
+    "2050": 7.9,
+    "2060": 8.0,
+    "2070": 8.5,
+    "spitze": "8.5 (2070)",
+    "tabelle": "Table 6",
+    "stand": "30.11.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/610eea99-d6a4-4f2b-8d00-6fe0467c3b37_en?filename=2024-ageing-report-country-fiche-Netherlands.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 6.5,
+    "2030": 7.3,
+    "2040": 8.0,
+    "2050": 7.9,
+    "2060": 8.0,
+    "2070": 8.5
+   }
+  },
+  "AT": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 13.7,
+    "delta_2022_2045": 0.5,
+    "delta_2022_2070": 0.4,
+    "2070_abgeleitet": 14.1,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 13.4,
+    "2030": 14.6,
+    "2040": 14.2,
+    "2050": 13.6,
+    "2060": 13.6,
+    "2070": 13.6,
+    "spitze": "14.7 (2032)",
+    "tabelle": "Table 7",
+    "stand": "01.12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/f2f1044a-26b3-41f3-b654-6ea82364f707_en?filename=2024-ageing-report-country-fiche-Austria.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 13.4,
+    "2030": 14.6,
+    "2040": 14.2,
+    "2050": 13.6,
+    "2060": 13.6,
+    "2070": 13.6
+   }
+  },
+  "SI": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 9.8,
+    "delta_2022_2045": 3.0,
+    "delta_2022_2070": 3.8,
+    "2070_abgeleitet": 13.6,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "laenderbericht": {
+    "2022": 9.8,
+    "2030": 10.8,
+    "2040": 12.1,
+    "2050": 13.5,
+    "2060": 13.8,
+    "2070": 13.7,
+    "spitze": "13.8 (2057)",
+    "tabelle": "Table 7",
+    "stand": "14.12.2023",
+    "url": "https://economy-finance.ec.europa.eu/document/download/588c1bf7-9f1b-4a2b-90d3-3275eec54dd4_en?filename=2024-ageing-report-country-fiche-Slovenia.pdf",
+    "art": "amtliche Laenderfiche (von nationalen Behoerden erstellt, von EC veroeffentlicht)"
+   },
+   "pct_bip": {
+    "2022": 9.8,
+    "2030": 10.8,
+    "2040": 12.1,
+    "2050": 13.5,
+    "2060": 13.8,
+    "2070": 13.7
+   }
+  },
+  "EU27": {
+   "einheit": "Brutto-Staatsausgaben fuer Renten, % BIP, Basisszenario",
+   "hauptbericht_table5": {
+    "2022": 11.4,
+    "delta_2022_2045": 0.7,
+    "delta_2022_2070": 0.4,
+    "2070_abgeleitet": 11.8,
+    "url": "https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf",
+    "quelle": "European Commission/EPC, 2024 Ageing Report, Institutional Paper 279, Table 5 'Baseline - expenditure projections' (Executive Summary)"
+   },
+   "2028": null,
+   "2070_sekundaer": {
+    "wert": 11.8,
+    "url": "https://www.etk.fi/en/international-affairs/international-comparisons/financing-and-investments/pension-expenditure-and-projections/",
+    "art": "Sekundaerquelle (Finnish Centre for Pensions), deckt sich mit 11.4+0.4"
+   }
+  }
+ },
+ "abruf": "16.10.2026",
+ "hinweise": [
+  "Alle Eurostat-Werte über WebFetch abgerufen (16.10.2026), maschinell aus dem Abruf gelesen, an der Quelle zu prüfen. Ageing Report: amtliche Länderberichte 2024 (2022, 2030–2070), 2028 nicht veröffentlicht.",
+  "Alle Eurostat-Werte per WebFetch (Sprachmodell-Auszug aus TSV/JSON) gelesen, nicht maschinell geparst; Stichproben NL GF1007 (2.5), IE GF07 (5.2), DE GF1002 (9.9) per Einzelabfrage JSON bestaetigt. An der Quelle zu pruefen.",
+  "gov_10a_exp Stand laut API 'updated' 2026-07-21. Flag p = vorlaeufig (BE, DE, FR, ES). Summenpruefung GF1001..GF1009 vs GF10: Abweichung max. 0.2 Pp (NL, EU27), Rundung.",
+  "Eine JSON-Abfrage ohne cofog-Filter wurde vom Auszugsmodell im Freitext falsch zugeordnet (Gesundheit 5.4 statt 7.6 fuer DE); deshalb TSV mit Zeilenschluessel verwendet.",
+  "nasa_10_pens1 = ergaenzende Tabelle 29 (ESA 2010 Tabelle 17.5). Verwendet: Zeile 'Pension entitlements closing balance sheet' (na_item F63_LE, Zeile 10), Spalten S13PBI (Spalte F, Beamtensysteme im Staat, Kernkonto), S13PBX (Spalte G, Beamtensysteme im Staat, nicht im Kernkonto), S13PS (Spalte H, Sozialversicherung). Spaltenbuchstaben aus Kenntnis von ESA-Tabelle 17.5, nicht aus der Eurostat-Metadatenseite (enthaelt keine Buchstaben): Annahme, an der Quelle zu pruefen.",
+  "S13PU ('Unfunded entitlements') in PC_GDP = S13PBI+S13PBX+S13PS; geprueft ueber Nachrechnung mit BIP 2021 fuer alle zehn Laender (Abweichung <=1 Pp). Prozent-Werte fuer Einzelspalten (S13PBX, S13PS) gibt es in PC_GDP nicht; nur Aggregate S13PU und S1P.",
+  "Turnus Tabelle 29: alle drei Jahre, Bezugsjahr 2021 aktuell; naechste regulaere Lieferung (2024) laut Metadaten Anfang 2027. DK liefert jaehrlich (2022, 2023 enthalten).",
+  "Beamtenversorgung in NL (ABP) und teilweise DE (S12PBI 147930 Mio EUR, vermutl. Zusatzversorgung) ist im Finanzsektor klassifiziert (S12PBI) und nicht in S13PU enthalten; nachrichtlich ausgewiesen.",
+  "SI: S13PBX nicht verfuegbar (m); S13PC 1917 Mio EUR (DC-System des Staates) nicht in S13PU.",
+  "EE: S1P (312 % BIP) = S13PU; private zweite Saeule offenbar nicht in S1P enthalten. Auffaellig, an der Quelle zu pruefen.",
+  "Ageing Report 2024: Hauptbericht-PDF ueber WebFetch nur bis S. 18 lesbar (Textauszug abgeschnitten); Tabelle II.1.1 nicht erreichbar, Statistikanhang XLSX nicht lesbar (Binaerdaten), Shell-Download geblockt (403). Daher Jahreswerte 2030-2070 aus den amtlichen Laenderfiches; 2022 und Delta bis 2070 aus Hauptbericht Table 5.",
+  "2028: in keiner erreichbaren Tabelle ausgewiesen (nur Dekaden). Luecke fuer alle Laender ausser EE (Spitzenwert 7.9 im Jahr 2028).",
+  "AT: Fiche 13.4 (2022) / 13.6 (2070) weicht vom Hauptbericht Table 5 ab (13.7 / 14.1 abgeleitet). Ursache unbekannt (moeglicherweise Abgrenzung oder Revision nach Peer Review). Offen.",
+  "DK, FR, SI: 2070 Fiche vs. Table 5 abgeleitet weicht um 0.1 ab (Rundung).",
+  "SI: es existiert eine aktualisierte Fiche (2026 update, SI_Pension_fiche_AWG.pdf) nicht ausgewertet; verwendet ist die Fiche zum Basisszenario 2024.",
+  "EU27: Jahreswerte 2030-2060 nicht gefunden; nur 2022=11.4 und 2070=11.8 (abgeleitet aus Table 5, sekundaer durch ETK bestaetigt)."
+ ]
+}

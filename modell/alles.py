@@ -34,6 +34,7 @@ STUFEN = [
     ("Nachfrageprüfung", ["modell/nachfrage.py"]),
     ("Tragfähigkeit (Entscheidungen)", ["modell/tragfaehigkeit.py"]),
     ("Justierung und Stabilität", ["modell/justierung.py"]),
+    ("Sozialschutz und Übergang (Vorbereitung)", ["modell/sozialschutz.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),
     ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),

@@ -1,0 +1,366 @@
+{
+ "version": "v3.42",
+ "status": "Vorbereitung, keine Zahl der Gesamtrechnung bewegt",
+ "zerlegung": {
+  "BE": {
+   "gf10": 20.4,
+   "huette": 13.65,
+   "route": 4.08,
+   "seil": 2.67,
+   "untergruppen": {
+    "GF1001": 3.9,
+    "GF1002": 10.2,
+    "GF1003": 1.4,
+    "GF1004": 2.2,
+    "GF1005": 1.1,
+    "GF1006": 0.2,
+    "GF1007": 1.2,
+    "GF1008": 0.0,
+    "GF1009": 0.2
+   }
+  },
+  "DK": {
+   "gf10": 19.7,
+   "huette": 14.12,
+   "route": 2.88,
+   "seil": 2.7,
+   "untergruppen": {
+    "GF1001": 4.8,
+    "GF1002": 7.2,
+    "GF1003": 0.0,
+    "GF1004": 4.1,
+    "GF1005": 1.4,
+    "GF1006": 0.6,
+    "GF1007": 1.2,
+    "GF1008": 0.0,
+    "GF1009": 0.4
+   }
+  },
+  "DE": {
+   "gf10": 20.4,
+   "huette": 13.32,
+   "route": 3.96,
+   "seil": 3.12,
+   "untergruppen": {
+    "GF1001": 3.3,
+    "GF1002": 9.9,
+    "GF1003": 1.9,
+    "GF1004": 1.9,
+    "GF1005": 1.7,
+    "GF1006": 0.4,
+    "GF1007": 0.6,
+    "GF1008": 0.0,
+    "GF1009": 0.7
+   }
+  },
+  "EE": {
+   "gf10": 13.7,
+   "huette": 9.08,
+   "route": 3.24,
+   "seil": 1.38,
+   "untergruppen": {
+    "GF1001": 1.8,
+    "GF1002": 8.1,
+    "GF1003": 0.1,
+    "GF1004": 2.4,
+    "GF1005": 0.9,
+    "GF1006": 0.0,
+    "GF1007": 0.2,
+    "GF1008": 0.0,
+    "GF1009": 0.2
+   }
+  },
+  "IE": {
+   "gf10": 8.1,
+   "huette": 5.93,
+   "route": 1.2,
+   "seil": 0.98,
+   "untergruppen": {
+    "GF1001": 1.1,
+    "GF1002": 3.0,
+    "GF1003": 0.3,
+    "GF1004": 1.5,
+    "GF1005": 0.6,
+    "GF1006": 1.0,
+    "GF1007": 0.5,
+    "GF1008": 0.0,
+    "GF1009": 0.1
+   }
+  },
+  "FR": {
+   "gf10": 23.7,
+   "huette": 15.52,
+   "route": 5.36,
+   "seil": 2.82,
+   "untergruppen": {
+    "GF1001": 2.9,
+    "GF1002": 13.4,
+    "GF1003": 1.4,
+    "GF1004": 2.3,
+    "GF1005": 1.7,
+    "GF1006": 0.7,
+    "GF1007": 1.2,
+    "GF1008": 0.0,
+    "GF1009": 0.1
+   }
+  },
+  "NL": {
+   "gf10": 16.4,
+   "huette": 12.03,
+   "route": 2.44,
+   "seil": 1.94,
+   "untergruppen": {
+    "GF1001": 4.3,
+    "GF1002": 6.1,
+    "GF1003": 0.0,
+    "GF1004": 2.4,
+    "GF1005": 0.7,
+    "GF1006": 0.4,
+    "GF1007": 2.5,
+    "GF1008": 0.0,
+    "GF1009": 0.0
+   }
+  },
+  "AT": {
+   "gf10": 22.8,
+   "huette": 14.97,
+   "route": 5.72,
+   "seil": 2.1,
+   "untergruppen": {
+    "GF1001": 1.8,
+    "GF1002": 14.3,
+    "GF1003": 1.4,
+    "GF1004": 2.1,
+    "GF1005": 1.2,
+    "GF1006": 0.1,
+    "GF1007": 1.7,
+    "GF1008": 0.0,
+    "GF1009": 0.2
+   }
+  },
+  "SI": {
+   "gf10": 17.1,
+   "huette": 11.45,
+   "route": 4.12,
+   "seil": 1.54,
+   "untergruppen": {
+    "GF1001": 2.6,
+    "GF1002": 10.3,
+    "GF1003": 1.1,
+    "GF1004": 1.8,
+    "GF1005": 0.3,
+    "GF1006": 0.0,
+    "GF1007": 0.9,
+    "GF1008": 0.0,
+    "GF1009": 0.1
+   }
+  },
+  "ES": {
+   "gf10": 18.7,
+   "huette": 11.64,
+   "route": 4.16,
+   "seil": 2.9,
+   "untergruppen": {
+    "GF1001": 2.8,
+    "GF1002": 10.4,
+    "GF1003": 2.2,
+    "GF1004": 1.0,
+    "GF1005": 1.5,
+    "GF1006": 0.0,
+    "GF1007": 0.7,
+    "GF1008": 0.0,
+    "GF1009": 0.1
+   }
+  },
+  "KLUB": {
+   "gf10": 20.07,
+   "huette": 13.26,
+   "route": 4.1,
+   "seil": 2.72,
+   "untergruppen": {
+    "GF1001": 3.1381157316430586,
+    "GF1002": 10.244612747086235,
+    "GF1003": 1.4516573586644752,
+    "GF1004": 2.002870468984349,
+    "GF1005": 1.4600110957210883,
+    "GF1006": 0.42837201397800606,
+    "GF1007": 1.0230575424437818,
+    "GF1008": 0.0,
+    "GF1009": 0.3238429348176521
+   }
+  }
+ },
+ "dividende_pct_bip": 11.86,
+ "huette_gegen_dividende": 1.4,
+ "ausserhalb_quote": {
+  "route": 4.1,
+  "seil": 2.72,
+  "gesundheit_heute": 7.75
+ },
+ "z": {
+  "z_2028": 8.861,
+  "z_max": {
+   "jahr": 2030,
+   "z_pct_bip": 8.928,
+   "z_ohne_skalierung": 9.361
+  },
+  "unter_0_1_ab": 2074,
+  "kumuliert_pct_bip_jahre": 254.3,
+  "z_2028_ohne_skalierung": 9.29,
+  "skalierung_tabelle29": {
+   "BE": 0.98,
+   "DK": 0.12,
+   "DE": 0.97,
+   "EE": 1.0,
+   "IE": 1.0,
+   "FR": 0.96,
+   "NL": 1.0,
+   "AT": 1.0,
+   "SI": 1.0,
+   "ES": 1.0
+  },
+  "je_land_2028": {
+   "BE": 9.264,
+   "DK": 0.0,
+   "DE": 8.959,
+   "EE": 5.773,
+   "IE": 1.397,
+   "FR": 11.399,
+   "NL": 3.767,
+   "AT": 14.021,
+   "SI": 9.237,
+   "ES": 10.646
+  },
+  "je_land_2050": {
+   "BE": 6.865,
+   "DK": 0.0,
+   "DE": 6.09,
+   "EE": 3.5,
+   "IE": 0.713,
+   "FR": 7.44,
+   "NL": 2.297,
+   "AT": 9.263,
+   "SI": 7.806,
+   "ES": 8.903
+  },
+  "pfad_klub": {
+   "2030": 8.928,
+   "2035": 8.778,
+   "2040": 8.31,
+   "2045": 7.389,
+   "2050": 6.157,
+   "2055": 4.801,
+   "2060": 3.462,
+   "2065": 2.155,
+   "2070": 0.896,
+   "2075": 0.019,
+   "2080": 0.0,
+   "2085": 0.0,
+   "2090": 0.0,
+   "2095": 0.0,
+   "2100": 0.0
+  }
+ },
+ "varianten": [
+  {
+   "gesundheit_huette_pct": 0,
+   "z_schuldanteil": 0.0,
+   "zusatz_quote_2028": 9.51,
+   "quote_2028": 39.71,
+   "luecke_2028": 9.27
+  },
+  {
+   "gesundheit_huette_pct": 0,
+   "z_schuldanteil": 0.5,
+   "zusatz_quote_2028": 5.08,
+   "quote_2028": 35.28,
+   "luecke_2028": 4.84
+  },
+  {
+   "gesundheit_huette_pct": 0,
+   "z_schuldanteil": 1.0,
+   "zusatz_quote_2028": 0.65,
+   "quote_2028": 30.85,
+   "luecke_2028": 0.41
+  },
+  {
+   "gesundheit_huette_pct": 50,
+   "z_schuldanteil": 0.0,
+   "zusatz_quote_2028": 13.39,
+   "quote_2028": 43.59,
+   "luecke_2028": 13.15
+  },
+  {
+   "gesundheit_huette_pct": 50,
+   "z_schuldanteil": 0.5,
+   "zusatz_quote_2028": 8.96,
+   "quote_2028": 39.16,
+   "luecke_2028": 8.72
+  },
+  {
+   "gesundheit_huette_pct": 50,
+   "z_schuldanteil": 1.0,
+   "zusatz_quote_2028": 4.53,
+   "quote_2028": 34.73,
+   "luecke_2028": 4.29
+  },
+  {
+   "gesundheit_huette_pct": 65,
+   "z_schuldanteil": 0.0,
+   "zusatz_quote_2028": 14.55,
+   "quote_2028": 44.75,
+   "luecke_2028": 14.31
+  },
+  {
+   "gesundheit_huette_pct": 65,
+   "z_schuldanteil": 0.5,
+   "zusatz_quote_2028": 10.12,
+   "quote_2028": 40.32,
+   "luecke_2028": 9.88
+  },
+  {
+   "gesundheit_huette_pct": 65,
+   "z_schuldanteil": 1.0,
+   "zusatz_quote_2028": 5.69,
+   "quote_2028": 35.89,
+   "luecke_2028": 5.45
+  },
+  {
+   "gesundheit_huette_pct": 90,
+   "z_schuldanteil": 0.0,
+   "zusatz_quote_2028": 16.49,
+   "quote_2028": 46.69,
+   "luecke_2028": 16.25
+  },
+  {
+   "gesundheit_huette_pct": 90,
+   "z_schuldanteil": 0.5,
+   "zusatz_quote_2028": 12.06,
+   "quote_2028": 42.26,
+   "luecke_2028": 11.82
+  },
+  {
+   "gesundheit_huette_pct": 90,
+   "z_schuldanteil": 1.0,
+   "zusatz_quote_2028": 7.62,
+   "quote_2028": 37.83,
+   "luecke_2028": 7.39
+  }
+ ],
+ "dauerzustand": {
+  "sozialschutz_heute_gf10": 20.07,
+  "konzept_nach_auslauf_z": 19.33,
+  "hinweis": "Dividende + Route + Seil + Härtefall (Mitte), nach dem Auslauf von Z"
+ },
+ "schuldvariante": {
+  "zusatzschuld_max_pct_bip": 222.9,
+  "jahr": 2069,
+  "hinweis": "Z vollständig über neue Schuld, Zins = Garantiezins, nominales Wachstum 3 %"
+ },
+ "z_gegen_sozialbeitraege_heute": 59.5,
+ "gesamtlast": {
+  "heute": 40.76,
+  "entwurf_bisher": 37.95,
+  "entwurf_mit_pflichtzahlungen_2028": 54.28
+ }
+}

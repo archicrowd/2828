@@ -304,7 +304,7 @@
   {
    "id": "B28",
    "name": "Sozialschutz und Übergang (Gemeinsames/Eigenes/Zugesagtes; Hütte/Route/Seil)",
-   "pfad": "modell/sozialschutz.py;modell/sozialschutz.toml",
+   "pfad": "modell/sozialschutz.py;modell/sozialschutz.toml;daten/aggregate/sozialschutz_2024.json;daten/aggregate/sozialschutz.json;daten/aggregate/z_pfad.csv",
    "stand": "B",
    "status": "ungeprueft",
    "pruefung": "modell/sozialschutz.py",

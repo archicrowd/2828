@@ -74,7 +74,7 @@ def z_anteil_vor_stichtag(jahr):
 
 def z_pfad(c, rente_pct, anteil65, div_erw_pct_kopf, faktor_rentner):
     """Z in % des BIP je Jahr. rente_pct: GF1002+GF1003 2024; div_erw_pct_kopf: Dividende je Erwachsenem in % des BIP je Kopf (Jahr)."""
-    je_rentner = rente_pct / anteil65            # Rentenausgabe je Rentner in % des BIP je Kopf (Annahme: Rentner = 65+)
+    je_rentner = rente_pct / anteil65 * 100      # Rentenausgabe je Rentner in % des BIP je Kopf (Annahme: Rentner = 65+)
     out = []
     for j in range(2028, 2101):
         f = z_anteil_vor_stichtag(j)
@@ -92,7 +92,7 @@ def main():
     div = G["div_2028"]                                  # Dividende in % des BIP (Klubschnitt 2028)
     div_erw = div / (1 - k / 2)                          # je Erwachsenem in % des BIP je Kopf
     ar = D.get("ageing_report", {})
-    pfade = {}
+    pfade, roh, skal = {}, {}, {}
     for c in LAENDER:
         rente = wert(c, "GF1002") + wert(c, "GF1003")
         a65 = float(D["anteil_65plus"][c]["wert"])
@@ -111,10 +111,18 @@ def main():
                     return vv / base
                 prev = (y, v)
             return prev[1] / base
-        pfade[c] = z_pfad(c, rente, a65, div_erw, fak)
+        # Variante „nach erworbenen Ansprüchen“: Skalierung auf die Tabelle 29 (nasa_10_pens1, S13PU, 2021), wo diese kleiner ist als
+        # der Barwert der vor dem Stichtag erworbenen Rentenausgaben (Diskont 1 % real über dem Wachstum, Annahme). Wirkt vor allem für
+        # Dänemark (Volksrente steuerfinanziert, keine Anwartschaft im Sinne der Tabelle 29).
+        pv = sum(rente * z_anteil_vor_stichtag(j) / 1.01 ** (j - 2028) for j in range(2028, 2101))
+        adl = (D.get("pension_entitlements", {}).get(c) or {}).get("S13PU_unfunded_pc_bip")
+        skal[c] = min(1.0, float(adl) / pv) if adl else 1.0
+        pfade[c] = z_pfad(c, rente * skal[c], a65, div_erw, fak)
+        roh[c] = z_pfad(c, rente, a65, div_erw, fak)
     # Klub: BIP-gewichtet
     jahre = range(2028, 2101)
-    klub = [dict(jahr=j, z_pct_bip=round(sum(w[c] * pfade[c][j - 2028]["z_pct_bip"] for c in LAENDER), 3)) for j in jahre]
+    klub = [dict(jahr=j, z_pct_bip=round(sum(w[c] * pfade[c][j - 2028]["z_pct_bip"] for c in LAENDER), 3),
+                 z_ohne_skalierung=round(sum(w[c] * roh[c][j - 2028]["z_pct_bip"] for c in LAENDER), 3)) for j in jahre]
     with open(AGG / "z_pfad.csv", "w", encoding="utf-8", newline="") as f:
         wr = csv.writer(f)
         wr.writerow(["land", "jahr", "anteil_vor_stichtag", "z_pct_bip"])
@@ -137,12 +145,31 @@ def main():
             var.append(dict(gesundheit_huette_pct=ga, z_schuldanteil=sa, zusatz_quote_2028=round(zusatz, 2),
                             quote_2028=round(G["quote"] + zusatz, 2), luecke_2028=round(G["deckung_luecke"] + zusatz, 2)))
     kl = zl["KLUB"]
+    # Dauerzustand nach dem Auslauf von Z: Dividende + Route + Seil + Härtefall gegen den Sozialschutz heute (GF10)
+    dauer = round(div + kl["route"] + kl["seil"] + sum(hf) / 2, 2)
+    # Schuldvariante: Z vollständig über neue Schuld (zusätzlich zum ausgeglichenen Haushalt der Gesamtrechnung), nominal 3 %,
+    # Zins wie der Garantiezins der Gesamtrechnung; Schuldenquote aus der Gesamtrechnung (Pfad ohne Z) plus Zusatzschuld
+    g, i = G["wachstum_nominal"] / 100 if "wachstum_nominal" in G else 0.03, G["garantiezins"] / 100
+    zus, zmax_s, jmax = 0.0, 0.0, 2028
+    for r in klub:
+        zus = zus * (1 + i) / (1 + g) + r["z_pct_bip"]
+        if zus > zmax_s:
+            zmax_s, jmax = zus, r["jahr"]
     E = dict(version=P["version"], status="Vorbereitung, keine Zahl der Gesamtrechnung bewegt",
              zerlegung=zl, dividende_pct_bip=round(div, 2),
              huette_gegen_dividende=round(kl["huette"] - div, 2),
              ausserhalb_quote=dict(route=kl["route"], seil=kl["seil"], gesundheit_heute=gs),
-             z=dict(z_2028=z28, z_max=zmax, unter_0_1_ab=ende, kumuliert_pct_bip_jahre=round(kum, 1)),
+             z=dict(z_2028=z28, z_max=zmax, unter_0_1_ab=ende, kumuliert_pct_bip_jahre=round(kum, 1),
+                    z_2028_ohne_skalierung=klub[0]["z_ohne_skalierung"], skalierung_tabelle29={c: round(v, 2) for c, v in skal.items()},
+                    je_land_2028={c: pfade[c][0]["z_pct_bip"] for c in LAENDER},
+                    je_land_2050={c: pfade[c][22]["z_pct_bip"] for c in LAENDER},
+                    pfad_klub={r["jahr"]: r["z_pct_bip"] for r in klub if r["jahr"] % 5 == 0}),
              varianten=var,
+             dauerzustand=dict(sozialschutz_heute_gf10=kl["gf10"], konzept_nach_auslauf_z=dauer,
+                               hinweis="Dividende + Route + Seil + Härtefall (Mitte), nach dem Auslauf von Z"),
+             schuldvariante=dict(zusatzschuld_max_pct_bip=round(zmax_s, 1), jahr=jmax,
+                                 hinweis="Z vollständig über neue Schuld, Zins = Garantiezins, nominales Wachstum 3 %"),
+             z_gegen_sozialbeitraege_heute=round(z28 / G["sb_heute"] * 100, 1),
              gesamtlast=dict(heute=G["last_heute"], entwurf_bisher=G["last_entwurf"],
                              entwurf_mit_pflichtzahlungen_2028=round(G["last_entwurf"] + kl["route"] + kl["seil"] + z28 + sum(hf) / 2, 2)))
     (AGG / "sozialschutz.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
