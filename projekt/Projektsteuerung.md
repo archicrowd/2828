@@ -5,8 +5,7 @@ Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
 Autorin des Konzepts: Initiative 28:28 (Name nur im Impressum der Webseite). Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.
 
 ## Geltende Fassung
-Gesamtkonzept vom 7. Oktober 2026 (dazu Kurzfassung, zwei Seiten): Quote 31,9 %, Obergrenze von A 35 % des Einzugs, Dividende nach Preisniveau des Wohnlandes (seit v3.20), Boden halbes
-Existenzminimum; Deutschland 591 € je Erwachsenem und Monat 2028, 801 € 2060; Klubschnitt 537 € je Einwohner 2028, Tiefpunkt 529 € 2032 (Preise 2028); Umzugsregel drei Jahre mit Steuernachweis (Kinder, Studierende ohne; Fälle ohne Einkommen vorerst ausgeklammert); Tarif 0/9/16/21/28 % mit Stufen beim 1- bis 4-fachen Grundbedarf (DE 2028: 12.847 / 25.694 / 38.541 / 51.387 €); Schuldenquote 2028 81,3 % (Fortschreibung des Status quo, seit v3.19). Rechnung `modell/gesamtrechnung.py`.
+Gesamtkonzept vom 12. Oktober 2026 (Einführung als RTF, dazu Kurzfassung und PDF-Fassung): Quote 30,2 %, Obergrenze des Daches 32 % des Einzugs, Dividende als gleicher Anteil am eigenen BIP je Kopf (Entscheidung E2), Mindestniveau halbes Existenzminimum als Kriterium im Durchschnitt der Staaten; Deutschland 634 € je Erwachsenem und Monat 2028, 860 € 2060; Durchschnitt 535 € je Einwohner 2028, Tiefpunkt 526 € 2032 (Preise 2028); Tarif 0/9/16/21/28 % mit Stufen beim 1-, 1,5-, 2- und 3-fachen Grundbedarf (DE 2028: 12.847 / 19.270 / 25.694 / 38.541 €); Erbschaftsfreibetrag 100.000 €, Vermögensteuer 1,5 %; Mehrwertsteuer-Label effektiv 16,9 %; Schuldenquote 2028 81,3 %. (Bis v3.40 stand hier noch die Fassung vom 7. Oktober; nachgeführt in v3.42.) Rechnung `modell/gesamtrechnung.py`.
 
 ## Einstieg für Dritte
 `DATENZUGANG.md` (Menschen), `AGENTS.md` (KI-Agenten), `projekt/manifest.json` (maschinenlesbar),

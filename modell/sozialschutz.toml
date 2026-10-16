@@ -1,0 +1,46 @@
+# Sozialschutz im Konzept: Zusammenführung „Generationenbaustein (Gemeinsames, Eigenes, Zugesagtes)“ und „Hütte · eigene Route · Seil“
+# (modell/sozialschutz.py, Logbuch v3.42). Status: VORBEREITUNG einer Modellrechnung. Alle Zuordnungen sind Setzungen der Vorschläge
+# vom 16.10.2026, nicht entschieden. Keine Zahl der Gesamtrechnung wird bewegt, bis die Initiative entscheidet.
+version = "v3.42"
+
+[stichtag]
+jahr = 2028                 # Setzung (Varianten 2028 / 2030, Antwortbogen G3)
+erwerbsbeginn_alter = 20    # Annahme: Erwerbsleben 20 bis 65
+rentenalter = 65            # Annahme (vereinfachend für alle Staaten gleich)
+bezugsdauer_jahre = 22      # Annahme: mittlere Rentenbezugsdauer; Gleichverteilung der Rentnerjahrgänge über diese Spanne
+zugaenge_ohne_neue_z = true # Setzung G3/G4: nach dem Stichtag entstehen keine neuen Ansprüche (auch keine Beamtenpensionen)
+
+# Zuordnung der Sozialschutzausgaben (COFOG GF10, Untergruppen) auf die Schichten. Anteile in Prozent, je Zeile Summe 100.
+# Hütte = gemeinsames Aufkommen (Steuern); Route = Eigenes (E, eigene Vorsorge); Seil = Pflichtversicherung (Prämie).
+# Quelle: Vorschlag „Hütte · Route · Seil“, Abschnitt 2 (Setzung), auf COFOG übertragen: Alter 60/40/0, Hinterbliebene 60/0/40,
+# Invalidität (GF1001, Krankheit und Invalidität ohne Gesundheitsleistungen) 70/0/30, Familie 95/0/5, Arbeitslosigkeit 25/0/75,
+# Wohnen und soziale Ausgrenzung 100/0/0, Übriges 100/0/0. Pflege liegt je Land teils in GF07, teils in GF10 (Annahme: hier nicht getrennt).
+[zuordnung]
+GF1001 = [70, 0, 30]
+GF1002 = [60, 40, 0]
+GF1003 = [60, 0, 40]
+GF1004 = [95, 0, 5]
+GF1005 = [25, 0, 75]
+GF1006 = [100, 0, 0]
+GF1007 = [100, 0, 0]
+GF1008 = [100, 0, 0]
+GF1009 = [100, 0, 0]
+
+# Gesundheit (COFOG GF07, 7,75 % BIP): Anteil der Behandlung in der Hütte (Vorschlag „mitteleng“, Spanne 60–70, Antwortbogen H-3).
+# Heute im Modell vollständig außerhalb der Steuern („gesondert finanziert“). Varianten: 0 (wie bisher), 50, 65, 90.
+[gesundheit]
+huette_anteil_varianten = [0, 50, 65, 90]
+huette_anteil_vorschlag = 65
+
+# Härtefall (H1–H4): Bestandsgarantie und Härtefallfonds sind im Modell bisher NICHT finanziert (Befund v3.42).
+# Größenordnung: Grundsicherungsleistungen über der Dividende. Bis eine Rechnung vorliegt: Spanne als Annahme in % BIP.
+[haertefall]
+spanne_pct_bip = [0.3, 1.0]   # ANNAHME, ohne Quelle; zu ersetzen durch GF1006+GF1007-Anteil über der Dividende je Land
+anrechnung_verdienst = 0.5    # Setzung H2 (50 %): wirkt als Grenzbelastung von 50 % im Leistungsbezug
+
+# Finanzierung des Zugesagten (Z): Varianten
+# territorial  = beim Ausgangsstaat über einen Übergangsaufschlag (Generationenbaustein, wie die Altschulden)
+# gemeinsam    = aus dem gemeinsamen Aufkommen (Vorschlag Hütte), Mischung mit Schuld offen
+[z_finanzierung]
+schuldanteil_varianten = [0.0, 0.5, 1.0]  # Anteil des Z-Aufwands, der über neue Schuld getragen wird (H-5)
+lastverhaeltnis_bilanzregel = [0.5, 0.5]  # Setzung G5: Leistungsbeziehende : Zahlende
