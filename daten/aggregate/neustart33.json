@@ -1,0 +1,366 @@
+{
+ "version": "v3.54",
+ "status": "Prüfrechnung",
+ "staaten": {
+  "EL": {
+   "name": "Griechenland",
+   "schuld_2024": 154.2,
+   "varianten": [
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 154.2,
+     "z_2028": 10.21,
+     "beitrag_pct_bip": 5.67,
+     "zuschlag_pct": 16.5,
+     "spitze": 212
+    },
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 154.2,
+     "z_2028": 8.96,
+     "beitrag_pct_bip": 5.14,
+     "zuschlag_pct": 14.9,
+     "spitze": 199
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 123.4,
+     "z_2028": 10.21,
+     "beitrag_pct_bip": 5.3,
+     "zuschlag_pct": 15.4,
+     "spitze": 193
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 123.4,
+     "z_2028": 8.96,
+     "beitrag_pct_bip": 4.77,
+     "zuschlag_pct": 13.9,
+     "spitze": 179
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 103.3,
+     "z_2028": 10.21,
+     "beitrag_pct_bip": 5.06,
+     "zuschlag_pct": 14.7,
+     "spitze": 181
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 103.3,
+     "z_2028": 8.96,
+     "beitrag_pct_bip": 4.53,
+     "zuschlag_pct": 13.2,
+     "spitze": 167
+    }
+   ]
+  },
+  "IT": {
+   "name": "Italien",
+   "schuld_2024": 134.7,
+   "varianten": [
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 134.7,
+     "z_2028": 11.34,
+     "beitrag_pct_bip": 5.96,
+     "zuschlag_pct": 18.0,
+     "spitze": 212
+    },
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 134.7,
+     "z_2028": 9.99,
+     "beitrag_pct_bip": 5.39,
+     "zuschlag_pct": 16.2,
+     "spitze": 197
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 107.8,
+     "z_2028": 11.34,
+     "beitrag_pct_bip": 5.64,
+     "zuschlag_pct": 17.0,
+     "spitze": 196
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 107.8,
+     "z_2028": 9.99,
+     "beitrag_pct_bip": 5.06,
+     "zuschlag_pct": 15.3,
+     "spitze": 181
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 90.2,
+     "z_2028": 11.34,
+     "beitrag_pct_bip": 5.43,
+     "zuschlag_pct": 16.4,
+     "spitze": 186
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 90.2,
+     "z_2028": 9.99,
+     "beitrag_pct_bip": 4.85,
+     "zuschlag_pct": 14.6,
+     "spitze": 171
+    }
+   ]
+  },
+  "FR": {
+   "name": "Frankreich",
+   "schuld_2024": 112.6,
+   "varianten": [
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 112.6,
+     "z_2028": 11.27,
+     "beitrag_pct_bip": 5.92,
+     "zuschlag_pct": 18.0,
+     "spitze": 195
+    },
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 112.6,
+     "z_2028": 10.03,
+     "beitrag_pct_bip": 5.37,
+     "zuschlag_pct": 16.4,
+     "spitze": 181
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 90.1,
+     "z_2028": 11.27,
+     "beitrag_pct_bip": 5.65,
+     "zuschlag_pct": 17.2,
+     "spitze": 182
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 90.1,
+     "z_2028": 10.03,
+     "beitrag_pct_bip": 5.1,
+     "zuschlag_pct": 15.6,
+     "spitze": 168
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 75.4,
+     "z_2028": 11.27,
+     "beitrag_pct_bip": 5.47,
+     "zuschlag_pct": 16.7,
+     "spitze": 174
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 75.4,
+     "z_2028": 10.03,
+     "beitrag_pct_bip": 4.93,
+     "zuschlag_pct": 15.0,
+     "spitze": 160
+    }
+   ]
+  },
+  "BE": {
+   "name": "Belgien",
+   "schuld_2024": 103.9,
+   "varianten": [
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 103.9,
+     "z_2028": 8.38,
+     "beitrag_pct_bip": 4.5,
+     "zuschlag_pct": 13.6,
+     "spitze": 159
+    },
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 103.9,
+     "z_2028": 7.4,
+     "beitrag_pct_bip": 4.07,
+     "zuschlag_pct": 12.4,
+     "spitze": 148
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 83.1,
+     "z_2028": 8.38,
+     "beitrag_pct_bip": 4.25,
+     "zuschlag_pct": 12.9,
+     "spitze": 146
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 83.1,
+     "z_2028": 7.4,
+     "beitrag_pct_bip": 3.83,
+     "zuschlag_pct": 11.6,
+     "spitze": 135
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 69.6,
+     "z_2028": 8.38,
+     "beitrag_pct_bip": 4.09,
+     "zuschlag_pct": 12.4,
+     "spitze": 139
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 69.6,
+     "z_2028": 7.4,
+     "beitrag_pct_bip": 3.66,
+     "zuschlag_pct": 11.1,
+     "spitze": 128
+    }
+   ]
+  },
+  "ES": {
+   "name": "Spanien",
+   "schuld_2024": 101.6,
+   "varianten": [
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 101.6,
+     "z_2028": 9.18,
+     "beitrag_pct_bip": 4.75,
+     "zuschlag_pct": 14.2,
+     "spitze": 167
+    },
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 101.6,
+     "z_2028": 8.09,
+     "beitrag_pct_bip": 4.28,
+     "zuschlag_pct": 12.8,
+     "spitze": 155
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 81.3,
+     "z_2028": 9.18,
+     "beitrag_pct_bip": 4.5,
+     "zuschlag_pct": 13.5,
+     "spitze": 155
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 81.3,
+     "z_2028": 8.09,
+     "beitrag_pct_bip": 4.04,
+     "zuschlag_pct": 12.1,
+     "spitze": 143
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 68.1,
+     "z_2028": 9.18,
+     "beitrag_pct_bip": 4.35,
+     "zuschlag_pct": 13.0,
+     "spitze": 148
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 68.1,
+     "z_2028": 8.09,
+     "beitrag_pct_bip": 3.88,
+     "zuschlag_pct": 11.6,
+     "spitze": 135
+    }
+   ]
+  },
+  "PT": {
+   "name": "Portugal",
+   "schuld_2024": 93.5,
+   "varianten": [
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 93.5,
+     "z_2028": 8.38,
+     "beitrag_pct_bip": 4.2,
+     "zuschlag_pct": 12.4,
+     "spitze": 155
+    },
+    {
+     "schnitt": 0.0,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 93.5,
+     "z_2028": 7.32,
+     "beitrag_pct_bip": 3.75,
+     "zuschlag_pct": 11.1,
+     "spitze": 143
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 74.8,
+     "z_2028": 8.38,
+     "beitrag_pct_bip": 3.97,
+     "zuschlag_pct": 11.7,
+     "spitze": 144
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 74.8,
+     "z_2028": 7.32,
+     "beitrag_pct_bip": 3.53,
+     "zuschlag_pct": 10.4,
+     "spitze": 132
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 62.6,
+     "z_2028": 8.38,
+     "beitrag_pct_bip": 3.83,
+     "zuschlag_pct": 11.3,
+     "spitze": 137
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 62.6,
+     "z_2028": 7.32,
+     "beitrag_pct_bip": 3.38,
+     "zuschlag_pct": 10.0,
+     "spitze": 124
+    }
+   ]
+  }
+ }
+}

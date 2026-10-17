@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v3.53",
+ "modellstand": "v3.54",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -331,11 +331,11 @@
   {
    "id": "B31",
    "name": "Drittel-System: Zeitpfad, Haushalte, Webseitenentwurf",
-   "pfad": "modell/projektion33.py;modell/projektion33.toml;daten/aggregate/projektion33.json;modell/haushalte33.py;modell/haushalte33.toml;daten/aggregate/haushalte33.json;daten/aggregate/haushalte33_raster.json;seite/werkzeuge/entwurf33_bau.py;seite/entwurf/konzept33/de.html;seite/entwurf/QUELLEN-33.md;projekt/Drittel-Erzaehlung-Trends-2026-10-17.md;modell/einwanderung33.py;modell/einwanderung33.toml;daten/aggregate/einwanderung33.json;modell/dynamik33.py;modell/dynamik33.toml;daten/aggregate/dynamik33.json;modell/netz33.py;modell/netz33.toml;daten/aggregate/netz33.json;dokumente/werkzeuge/konzept33-bau.js;dokumente/entwurf/TAX-Drittel-Konzept.docx;dokumente/entwurf/TAX-Drittel-Konzept.pdf;modell/moeglichkeitsraum33.py;modell/moeglichkeitsraum33.toml;daten/aggregate/moeglichkeitsraum_2024.json;daten/aggregate/moeglichkeitsraum33.json",
+   "pfad": "modell/projektion33.py;modell/projektion33.toml;daten/aggregate/projektion33.json;modell/haushalte33.py;modell/haushalte33.toml;daten/aggregate/haushalte33.json;daten/aggregate/haushalte33_raster.json;seite/werkzeuge/entwurf33_bau.py;seite/entwurf/konzept33/de.html;seite/entwurf/QUELLEN-33.md;projekt/Drittel-Erzaehlung-Trends-2026-10-17.md;modell/einwanderung33.py;modell/einwanderung33.toml;daten/aggregate/einwanderung33.json;modell/dynamik33.py;modell/dynamik33.toml;daten/aggregate/dynamik33.json;modell/netz33.py;modell/netz33.toml;daten/aggregate/netz33.json;dokumente/werkzeuge/konzept33-bau.js;dokumente/entwurf/TAX-Drittel-Konzept.docx;dokumente/entwurf/TAX-Drittel-Konzept.pdf;modell/moeglichkeitsraum33.py;modell/moeglichkeitsraum33.toml;daten/aggregate/moeglichkeitsraum_2024.json;daten/aggregate/moeglichkeitsraum33.json;modell/neustart33.py;modell/neustart33.toml;daten/aggregate/neustart33.json;projekt/Neustartverfahren-2026-10-17.md",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/projektion33.py;modell/haushalte33.py",
-   "anmerkung": "v3.47: Trends 2028–2060 (Verkehr, CO₂, Verbrauchsteuern, Gesundheit), Haushalte heute gegen 33F (2028/2035), deutscher Webseitenentwurf zur Prüfung v3.48: System 33R (Label 5/11/17/25), Weitergabe ≥ 80 %, Rentenkürzung um Beiträge, Einwanderung v3.49: Progression an den Stufen (Korrektur 61), Beschäftigung/KI/Kapitalverschiebung, Leistungspaket und Namen v3.50: Starkes Netz als Grundversorgung (Gesundheit, Pflege, Mindestrente/Volksrente, Invalidität, Arbeitslosigkeit) v3.51: Beschluss Mindestrente mit Pflichtvorsorge 10 %, Netz als Grundversorgung geltend für den Entwurf; Konzept als Word-Datei v3.52: Möglichkeitsraum (30 Staaten)"
+   "anmerkung": "v3.47: Trends 2028–2060 (Verkehr, CO₂, Verbrauchsteuern, Gesundheit), Haushalte heute gegen 33F (2028/2035), deutscher Webseitenentwurf zur Prüfung v3.48: System 33R (Label 5/11/17/25), Weitergabe ≥ 80 %, Rentenkürzung um Beiträge, Einwanderung v3.49: Progression an den Stufen (Korrektur 61), Beschäftigung/KI/Kapitalverschiebung, Leistungspaket und Namen v3.50: Starkes Netz als Grundversorgung (Gesundheit, Pflege, Mindestrente/Volksrente, Invalidität, Arbeitslosigkeit) v3.51: Beschluss Mindestrente mit Pflichtvorsorge 10 %, Netz als Grundversorgung geltend für den Entwurf; Konzept als Word-Datei v3.52: Möglichkeitsraum (30 Staaten) v3.54: Neustartverfahren"
   }
  ],
  "nahtstellen": [

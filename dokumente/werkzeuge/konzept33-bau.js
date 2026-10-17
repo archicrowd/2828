@@ -9,7 +9,7 @@ const fs=require('fs'); const path=require('path');
 const WURZEL=path.resolve(__dirname,'..','..');
 const lies=n=>JSON.parse(fs.readFileSync(path.join(WURZEL,'daten','aggregate',n),'utf8'));
 const SV=lies('systemvarianten.json'), PJ=lies('projektion33.json'), NZ=lies('netz33.json'), H=lies('haushalte33.json'), RA=lies('haushalte33_raster.json'),
-      AL=lies('altlasten.json'), EW=lies('einwanderung33.json'), DY=lies('dynamik33.json'), G=lies('gesamtrechnung.json'), MR=lies('moeglichkeitsraum33.json');
+      AL=lies('altlasten.json'), EW=lies('einwanderung33.json'), DY=lies('dynamik33.json'), G=lies('gesamtrechnung.json'), MR=lies('moeglichkeitsraum33.json'), NS=lies('neustart33.json');
 const de=(x,nk=0)=>Number(x).toLocaleString('de-DE',{minimumFractionDigits:nk,maximumFractionDigits:nk});
 const pr=(x,nk=1)=>de(x,nk)+' %';
 const eu=x=>de(x)+' €';
@@ -172,6 +172,19 @@ add(H1("3  Die Regeln"),
     ["vollständig getilgt",String(AB.zieljahr)]]),
   Q("Zins des Fonds 2,5 %, Wachstum nominal 3 % (Annahmen der Gesamtrechnung). Liegt der Zins beim Wachstum, steigt der Beitrag. Mehreinnahmen über dem Fünfjahresdurchschnitt tilgen zusätzlich."));
 
+// ---- 3.8 Neustartverfahren
+const nsv=(c,sn,k)=>NS.staaten[c].varianten.find(v=>v.schnitt===sn&&v.altrenten_kuerzung===k).zuschlag_pct;
+add(H2("3.8  Neustartverfahren für überschuldete Staaten"),
+  P("Griechenland wurde ungeordnet saniert: 288,7 Mrd. € Hilfskredite (2010–2018), 2012 ein Schnitt von 53,5 % auf rund 197 Mrd. € privater Anleihen (Schuld rund 107 Mrd. € niedriger), danach längere Laufzeiten und Zinsaufschub der öffentlichen Gläubiger; Bürger verloren in mehreren Runden Teile ihrer Renten, Gerichte erklärten Kürzungen später für verfassungswidrig. Der Bauplan bietet dafür ein geordnetes Verfahren an:"),
+  L([["Antrag und Prüfung: ",true],["Der Staat beantragt; eine unabhängige Prüfstelle des Dachs stellt fest, ob die Altlasten tragfähig sind."]]),
+  L([["Stillhalten: ",true],["höchstens zwölf Monate keine Zahlungen an Altgläubiger; Netz, Gemeinden und Dividende laufen weiter."]]),
+  L([["Beiträge in fester Reihenfolge: ",true],["private Gläubiger (Schnitt oder Laufzeit per Mehrheitsklausel), öffentliche Gläubiger (Laufzeit, Zins), Vermögende (befristete Abgabe nach dem Muster des Lastenausgleichs 1952), Altansprüche über der Grundversorgung (gestaffelt, kleine Renten geschützt, begründet und verhältnismäßig)."]]),
+  L([["Geschützt: ",true],["Grundbedarf, starkes Netz, eigene Vorsorgekonten, Gemeindeformel."]]),
+  L([["Neustart: ",true],["Der Rest geht in den Altlastenfonds mit gemeinsamem Zins; wer dauerhaft nicht mitwirkt, verliert die Zinsgarantie."]]),
+  tab([{t:"Altlasten-Zuschlag (eigener Fonds bis 2098)",w:3626},{t:"ohne",w:1350,al:RT},{t:"Schnitt 33 %",w:1350,al:RT},{t:"Altrenten −10 %",w:1350,al:RT},{t:"beides",w:1350,al:RT}],
+    Object.keys(NS.staaten).slice(0,4).map(c=>[NS.staaten[c].name,pr(nsv(c,0,0)),pr(nsv(c,0.33,0)),pr(nsv(c,0,0.1)),pr(nsv(c,0.33,0.1))])),
+  Q("Solange der gemeinsame Zins (2,5 %) unter dem Wachstum (3 %) liegt, schmilzt alte Schuld von selbst; der Schnitt bringt dann wenig, die Rentenzusagen wiegen schwerer. Das Verfahren sichert vor allem den Fall ab, dass der Zins über dem Wachstum liegt. Rechtlich offen: Eigentums- und Vertrauensschutz der Renten, Art. 125 AEUV. Quellen: ESM; Wissenschaftliche Dienste des Bundestags (WD 4-176/08); griechischer Staatsrat über Sekundärquellen."));
+
 // ---- 4 Finanzierung
 const jahre=[2028,2035,2045,2060];
 add(H1("4  Finanzierung auf einen Blick"),
@@ -268,7 +281,11 @@ add(H1("9  Quellen"),
    "IGES für DAK-Gesundheit (2024), berichtet im Deutschen Ärzteblatt (25.6.2024): Sozialbeiträge 2035.",
    "Acemoglu, D. (2024): The Simple Macroeconomics of AI, NBER Working Paper 32487.",
    "Filippucci, F.; Gal, P.; Schief, M. (2024): Miracle or Myth? OECD Artificial Intelligence Papers 29.",
-   "CaixaBank Research (2024): Levers to mitigate the impact of demographics on public finances (Sekundärquelle zum Ageing Report)."
+   "CaixaBank Research (2024): Levers to mitigate the impact of demographics on public finances (Sekundärquelle zum Ageing Report).",
+   "ESM: Greece exit factsheet (2018); What was private sector debt restructuring in March 2012.",
+   "Wissenschaftliche Dienste des Deutschen Bundestages: WD 4-176/08 (Lastenausgleich).",
+   "Sachverständigenrat (2015): Sondergutachten Maastricht 2.0, Pressemitteilung.",
+   "To Vima (11.6.2015); European Pensions (15.7.2020): Urteile des griechischen Staatsrats (Sekundärquellen)."
   ].map(t=>L(t)),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 

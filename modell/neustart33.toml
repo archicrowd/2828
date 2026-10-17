@@ -1,0 +1,8 @@
+# Neustartverfahren für überschuldete Staaten (modell/neustart33.py, Logbuch v3.54): Wirkung eines geordneten Verfahrens auf den eigenen Altlastenfonds.
+# Frage der Initiative (17.10.2026). Prüfrechnung mit Setzungen; keine Empfehlung zur Höhe.
+version = "v3.54"
+staaten = ["EL", "IT", "FR", "BE", "ES", "PT"]
+# Varianten: Schuldenschnitt (Anteil der Staatsschuld, der erlassen wird) und zusätzliche Kürzung der Altrenten über der Grundversorgung
+# (zusätzlich zu den 12,35 % eingesparten Beiträgen). Vergleich Griechenland 2012: privater Schnitt 53,5 % auf rund 197 Mrd € (≈ 50 % des BIP 2012).
+schnitt = [0.0, 0.2, 0.33]
+altrenten_kuerzung = [0.0, 0.10]
