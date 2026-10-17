@@ -83,10 +83,10 @@ RM = MR["raum"]
 
 # ---- Geänderte Texte (alle übrigen Schlüssel bleiben wie in de.json)
 TX = {
-    "meta_titel": "TAX 33:33 — Das Goldene Drittel",
+    "meta_titel": "Das Goldene Drittel",
     "meta_beschreibung": "Höchstens ein Drittel auf jedes Einkommen, ein starkes Netz ohne Prämie und jeden Monat eine Transformationsdividende. Gemeinden entscheiden selbst, ein gemeinsames Dach sichert die gemeinsamen Interessen.",
     "hero_btn1": "Eigene Rechnung prüfen",
-    "hero_sub": "Höchstens ein Drittel auf jedes Einkommen – das Goldene Drittel. Dafür ein starkes Netz ohne Prämie und jeden Monat eine Transformationsdividende für alle. Gemeinden entscheiden selbst, ein gemeinsames europäisches Dach sichert die gemeinsamen Interessen.",
+    "hero_sub": "Alle Steuern und Abgaben werden gerecht auf Arbeit, Kapital und Automation verteilt. Arbeiten lohnt sich. Ein starkes Netz und die Transformationsdividende sorgen für sozialen Frieden. Höchstens ein Drittel auf jedes Einkommen. Gemeinden entscheiden selbst, ein gemeinsames europäisches Dach sichert die gemeinsamen Interessen.",
     "stamp1_lbl": "Transformationsdividende im Monat je Erwachsenem — {kind_2028} je Kind",
     "stamp2_val": "höchstens 33 %",
     "stamp3_val": "+" + eur(plus42) + "*",
@@ -115,11 +115,15 @@ TX = {
     "b11_h": "Niemand fällt durch",
     "b11_r": "Grundversorgung ohne Prämie",
     "b11_p": "Geknüpft aus vielen Knoten – jeder hält mit, keiner fällt durch: Gesundheit, Pflege als Teilkasko, Mindestrente ab 67, Grundbedarf bei Invalidität und Arbeitslosigkeit. Keine Extras; was darüber geht, ist die eigene Route mit eigener Vorsorge (10 % des Lohns aufs eigene Konto).",
-    "rech_lede": "Was Ihr Haushalt an Transformationsdividende bekommt und was Sie nach dem Goldenen Drittel an Einkommensteuer zahlen.",
-    "rech_steuer": "Einkommensteuer nach dem Goldenen Drittel",
-    "rech_mon": "Transformationsdividende des Haushalts im Monat",
-    "rech_bar2": "Dividende im Jahr",
-    "rech_fein": "Tarif auf das Brutto ohne Abzüge, keine Sozialbeiträge, keine Prämien. Beträge in heutiger Kaufkraft. Pflichtvorsorge (10 % des Lohns aufs eigene Konto) nicht abgezogen.",
+    "rech_lede": "Was Ihrem Haushalt im Goldenen Drittel mehr im Geldbeutel bleibt als heute – nach Steuern und Sozialabgaben, mit dem Arbeitgeberanteil im Lohn.",
+    "rech_jahr": "Jahr",
+    "rech_steuer": "Heute verfügbar im Monat",
+    "rech_satz": "Im Goldenen Drittel verfügbar im Monat",
+    "rech_sozial": "darin Transformationsdividende des Haushalts",
+    "rech_mon": "Mehr im Geldbeutel im Jahr",
+    "rech_bar1": "Heute im Monat",
+    "rech_bar2": "Goldenes Drittel im Monat",
+    "rech_fein": "Heute: Lohnsteuer, Solidaritätszuschlag und Sozialbeiträge der Beschäftigten nach Recht 2026, Kindergeld; ab 2035 Beitragssätze nach IGES-Projektion (eine Studie, Sekundärquelle), danach gleich gehalten. Goldenes Drittel: 80 % der gesparten Arbeitgeberbeiträge im Lohn, Tarif auf Lohn und Dividende, keine Sozialbeiträge, Pflichtvorsorge 10 % des Lohns aufs eigene Konto abgezogen, höhere Mehrwertsteuer auf den Konsum und Altlastenzuschlag " + pct(ZU, 1) + " (Beispiel) eingerechnet. Weitere Erwachsene ohne eigenes Einkommen; Bürgergeld und Wohngeld nicht gerechnet. Heutige Kaufkraft. Schätzung des Projekts, keine Steuerberatung.",
     "zeit_h2": "Die Transformationsdividende im Wandel",
     "zeit_lede": "Die Dividende gibt vor allem zurück, was Schädliches zahlt. Wenn Verbrenner und Emissionen verschwinden, sinkt dieser Teil; Gesundheit und Pflege kosten mit der Alterung mehr. Dagegen wirkt das Wachstum. So sinkt die Dividende von {erw_2028} (2028) und hält sich um {erw_2060} (2060). Mehr Arbeit und Automatisierung heben sie wieder an.",
     "zeit_t1": "Grundpfad",
@@ -134,16 +138,55 @@ TX = {
     "klub_lede": "Das Dach ist kein fester Kreis, sondern ein Angebot. Gerechnet ist der Bauplan für " + str(RM["staaten"]) + " Staaten Europas (EU, Norwegen, Island, Schweiz) mit " + de(RM["einwohner_mio"], 1) + " Mio. Menschen – möglich sind auch Partner darüber hinaus. Wählen Sie selbst: Ab der Einwohnerzahl der Vereinigten Staaten spielt der Klub in derselben Liga.",
     "offen_lede": "Das Goldene Drittel wird unabhängig von Parteien und Interessengruppen entwickelt. Jede Zahl stammt aus amtlichen Statistiken, jede Rechnung lässt sich nachrechnen, jeder Fehler wird offen korrigiert. Gesucht sind Fachleute aus Finanzwissenschaft, Verwaltung, Kommunalpraxis, Recht und Statistik.",
     "js_fluss": "Im Jahr {j} behält das Dach {a} von {hundert} – erlaubt wären bis zu {cap}. Die Gemeinde verwendet {b} für ihre Aufgaben, das starke Netz {n}, {d} gehen als Transformationsdividende an die Bürger.",
-    "js_rechner_sub": "Transformationsdividende im Jahr {j} für {hh}",
+    "js_rechner_sub": "mehr im Geldbeutel im Monat – im Jahr {j}, für {hh}",
     "js_schuld_l3": "Altlastenfonds, Beispiel für alle zehn",
     "js_schuld_text": "Altlasten sind Sache der Staaten. Legen alle zehn Schulden und Rentenzusagen in einen gemeinsamen Fonds, steigt dessen Quote bis " + str(AB["spitzenjahr"]) + " auf " + pct(AB["schuldenquote_spitze"]) + " und ist 2098 getilgt – mit einem Zuschlag von " + pct(AB["zuschlag_auf_alle_steuern_pct"], 1) + " auf alle Steuern.",
     "js_co2_text": "Seit 1990 fast halbiert – die zweite Hälfte steht noch bevor. Das Goldene Drittel setzt dafür auf einen gemeinsamen europäischen CO₂-Preis und gibt die Einnahmen über die Transformationsdividende an alle zurück.",
 }
 
+RECHNER_ALT = """function rechner(){const br=+$('brutto').value,e=+val('erw'),k=+val('kin'),j=val('rj'),i=idx(j);
+  const erw=D.erw['1,0'][i],mon=e*erw+k*erw/2,jahr=mon*12,st=steuer(br);
+  $('bruttoval').textContent=eur(br);$('r-st').textContent=eur(st);$('r-soz').textContent=eur(0);
+  $('r-satz').textContent=br?pct(st/br*100,1):'–';$('r-mon').textContent=eur(mon);
+  const hh=fill(e>1?T.js_erw_n:T.js_erw_1,{n:e})+(k?T.js_und+fill(k>1?T.js_kind_n:T.js_kind_1,{n:k}):'');
+  $('r-jahr').textContent=eur(jahr);$('r-jahrsub').textContent=fill(T.js_rechner_sub,{j:j,hh:hh});
+  const m=Math.max(st,jahr,1);$('bi-st').style.width=st/m*100+'%';$('bi-dv').style.width=jahr/m*100+'%';
+  $('b-st').textContent=eur(st);$('b-dv').textContent=eur(jahr);}
+$('brutto').addEventListener('input',rechner);['erw','kin','rj'].forEach(x=>seg(x,rechner));rechner();"""
+# Gleiche Formeln wie modell/haushalte33.py, neu(); „heute" aus dem Raster (Kernmodell, Recht 2026 bzw. IGES-Sätze ab 2035)
+RECHNER_NEU = """const R=D.rr;
+function agR(b,reg){const c=R.beitrag[reg];return c[0]*Math.min(b,R.bbg_kv)+c[1]*Math.min(b,R.bbg_rv);}
+function estR(x){let s=0,u=0;const g=R.stufen.concat([Infinity]);for(let i=0;i<g.length;i++){if(x>u)s+=(Math.min(x,g[i])-u)*R.saetze[i]/100;u=g[i];}return s;}
+function kqR(n){const p=R.kq;if(n<=p[0][0])return p[0][1];for(let i=1;i<p.length;i++){if(n<=p[i][0]){const a=p[i-1][0],x=p[i-1][1],b=p[i][0],y=p[i][1];return x+(y-x)*(n-a)/(b-a);}}return p[p.length-1][1];}
+function neuR(b,e,k,j){const i=R.jahre.indexOf(j),DIV=R.div[i]*12,EFF=R.eff[i],reg=j>=2035?'2035':'2028';
+  const brutto=b+R.weitergabe*agR(b,reg),st=estR(brutto+DIV)+(e-1)*estR(DIV),div=DIV*e+k*DIV/2,netto=brutto-st+div;
+  const konsum=kqR(netto)*netto,mm=konsum*((1+EFF/100)/(1+R.eff_alt/100)-1),mb=konsum*EFF/(100+EFF);
+  return {netto:netto-mm-R.zuschlag/100*(st+mb)-R.vorsorge*b,div:div};}
+function rechner(){const br=+$('brutto').value,e=+val('erw'),k=+val('kin'),j=+$('rj').value;
+  const reg=j>=2035?'2035':'2028',h=R.heute[reg+'|'+e+'|'+k][Math.round((br-R.brutto[0])/1000)],n=neuR(br,e,k,j),d=n.netto-h;
+  const sg=x=>(x>=0?'+':'−')+eur(Math.abs(x));
+  $('bruttoval').textContent=eur(br);$('rjval').textContent=j;
+  $('r-st').textContent=eur(h/12);$('r-satz').textContent=eur(n.netto/12);$('r-soz').textContent=eur(n.div/12);$('r-mon').textContent=sg(d);
+  const hh=fill(e>1?T.js_erw_n:T.js_erw_1,{n:e})+(k?T.js_und+fill(k>1?T.js_kind_n:T.js_kind_1,{n:k}):'');
+  $('r-jahr').textContent=sg(d/12);$('r-jahrsub').textContent=fill(T.js_rechner_sub,{j:j,hh:hh});
+  const m=Math.max(h,n.netto,1);$('bi-st').style.width=h/m*100+'%';$('bi-dv').style.width=n.netto/m*100+'%';
+  $('b-st').textContent=eur(h/12);$('b-dv').textContent=eur(n.netto/12);}
+$('brutto').addEventListener('input',rechner);$('rj').addEventListener('input',rechner);['erw','kin'].forEach(x=>seg(x,rechner));rechner();"""
+
 ERSETZE = [  # (alt, neu) in der Vorlage; jede Stelle muss genau einmal vorkommen
-    ('textLength="440" lengthAdjust="spacing">28:28</text>', 'textLength="440" lengthAdjust="spacing">33:33</text>'),
-    ('aria-label="TAX 28:28"', 'aria-label="TAX 33:33"'),
-    ('<a class="tb-left" href="#top">TAX 28:28</a>', '<a class="tb-left" href="#top">TAX 33:33</a>'),
+    # v3.56: Wortmarke „Das Goldene Drittel" in drei Zeilen, alle Zeilen in derselben Schriftgröße
+    ('<svg class="hero-mark" viewBox="0 0 560 300" role="img" aria-label="TAX 28:28">', '<svg class="hero-mark" viewBox="0 0 560 390" role="img" aria-label="Das Goldene Drittel">'),
+    ('<text x="60" y="168" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="196" fill="#0F3B5C" textLength="440" lengthAdjust="spacing">TAX</text>',
+     '<text x="280" y="112" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C">Das</text>'
+     '<text x="280" y="242" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C">Goldene</text>'),
+    ('<text x="60" y="286" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C" letter-spacing="-2" textLength="440" lengthAdjust="spacing">28:28</text>',
+     '<text x="280" y="372" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C">Drittel</text>'),
+    ('<a class="tb-left" href="#top">TAX 28:28</a>', '<a class="tb-left" href="#top">Das Goldene Drittel</a>'),
+    # v3.56: Rechner mit Zeitstrahl und „mehr im Geldbeutel" statt Einkommensteuer
+    ('<input type="range" id="brutto" min="0" max="150000" step="1000" value="42000">', '<input type="range" id="brutto" min="10000" max="150000" step="1000" value="42000">'),
+    ('<div class="seg" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button><button type="button" aria-pressed="false" data-v="2045">2045</button><button type="button" aria-pressed="false" data-v="2060">2060</button></div>',
+     '<div class="bigval" id="rjval">2028</div><input type="range" id="rj" min="2028" max="2060" step="1" value="2028" style="width:100%;accent-color:var(--ink)" aria-label="@@rech_jahr@@">'),
+    (RECHNER_ALT, RECHNER_NEU),
     ('<div><b class="v4">C · 22&nbsp;%</b>', '<div><b class="v4">C · 25&nbsp;%</b>'),
     ('<div><b class="v5">D · 28&nbsp;%</b>', '<div><b class="v5" style="background:#5b1a14">S · 33&nbsp;%</b>'),
     ('<i class="sb" id="sb"></i>', '<i class="sb" id="sb"></i><i class="sn" id="sn" style="background:#8FB8A0"></i>'),
@@ -175,7 +218,7 @@ def main():
     W.update(erw_2028=eur(J["erw_de_2028"]), kind_2028=eur(J["kind_de_2028"]), erw_2060=eur(J["erw_de_2060"]), p28=pct(33))
     html = SB.baue("de", T, W)
     # zusätzliche Daten für den vierten Teil des Steuer-Euros
-    extra = dict(qj=[round(deck[j], 3) for j in JAHRE], bj=[round(gem[j], 3) for j in JAHRE], n=[NB[j]["netz_pct_bip"] for j in JAHRE])
+    extra = dict(rr=json.loads((WURZEL / "daten/aggregate/haushalte33_raster.json").read_text(encoding="utf-8"))["rechner"], qj=[round(deck[j], 3) for j in JAHRE], bj=[round(gem[j], 3) for j in JAHRE], n=[NB[j]["netz_pct_bip"] for j in JAHRE])
     html = html.replace("\nconst T=D.T;", "\nObject.assign(D," + json.dumps(extra) + ");\nconst T=D.T;", 1)
     html = re.sub(r"(<body[^>]*>)", r'\1<div style="background:#B03A2E;color:#fff;font-family:monospace;padding:8px 16px;text-align:center">'
                   r'ENTWURF ZUR PRÜFUNG – Drittel-System, nach dem Vorbild der veröffentlichten Seite – nicht veröffentlichen</div>', html, count=1)

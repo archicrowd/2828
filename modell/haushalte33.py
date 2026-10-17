@@ -142,6 +142,24 @@ def main():
     for wg in P["weitergabe_ag"]:
         raster["grenz_neu"][str(wg)] = [round(100 * (1 - (neu(b + 500, 0, False, wg, 0, 0, 2028) - neu(b, 0, False, wg, 0, 0, 2028))
                                                 / (500 + ag(b + 500) - ag(b))), 1) for b in gb]
+    # v3.56: Rechner der Webseite (Zeitstrahl 2028–2060, 1–3 Erwachsene, 0–3 Kinder). „Heute" hängt nur vom Beitragsregime ab (bis 2034
+    # Recht 2026, ab 2035 IGES-Sätze, danach gleich gehalten: Annahme); das Neue rechnet die Seite mit denselben Formeln wie neu() nach,
+    # mit Dividende und effektivem Labelsatz des Jahres. Dritter Erwachsener ohne Einkommen: heute wie Paar, neu eigene Dividende (Annahme).
+    rr = dict(brutto=raster["brutto"], heute={}, beitrag={}, jahre=[], div=[], eff=[], bbg_kv=K.BBG_KV, bbg_rv=K.BBG_RV,
+              stufen=STUFEN, saetze=SAETZE, eff_alt=EFF_ALT, weitergabe=min(P["weitergabe_ag"]), zuschlag=max(P["zuschlag_pct"]),
+              vorsorge=min(P["vorsorge_satz"]), kq=[[12500, .95], [37500, .85], [65000, .75], [100000, .60]])
+    for reg in (2028, 2035):
+        setze_jahr(reg)
+        rr["beitrag"][str(reg)] = [K.AN_KV_PV, K.AN_RV_AV]
+        for e in (1, 2, 3):
+            for ki in range(4):
+                rr["heute"][f"{reg}|{e}|{ki}"] = [round(heute(b, ki, e > 1)) for b in raster["brutto"]]
+    for j in sorted(JAHR):
+        rr["jahre"].append(j); rr["div"].append(JAHR[j]["dividende_erw_eur2026"]); rr["eff"].append(JAHR[j]["label_effektiv"])
+    # Selbstprüfung: die Formel der Seite muss neu() für den Einpersonenhaushalt treffen
+    setze_jahr(2028)
+    assert abs(neu(42000, 0, False, rr["weitergabe"], rr["zuschlag"], rr["vorsorge"], 2028) - neu(42000, 0, False, 0.8, 13.7, 0.10, 2028)) < 1e-6
+    raster["rechner"] = rr
     (AGG / "haushalte33_raster.json").write_text(json.dumps(raster, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     setze_jahr(2028)
     rente = [dict(rente_monat=r, zuschlag_pct=zu, netto_heute_monat=round(a / 12), netto_33_monat=round(b / 12), differenz_monat=round((b - a) / 12))
