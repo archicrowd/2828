@@ -42,6 +42,7 @@ STUFEN = [
     ("Drittel-System: Haushalte gegen heute", ["modell/haushalte33.py"]),
     ("Drittel-System: Einwanderung", ["modell/einwanderung33.py"]),
     ("Drittel-System: Beschäftigung und Automatisierung", ["modell/dynamik33.py"]),
+    ("Drittel-System: Möglichkeitsraum", ["modell/moeglichkeitsraum33.py"]),
     ("Drittel-System: Webseitenentwurf", ["seite/werkzeuge/entwurf33_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),

@@ -9,7 +9,7 @@ const fs=require('fs'); const path=require('path');
 const WURZEL=path.resolve(__dirname,'..','..');
 const lies=n=>JSON.parse(fs.readFileSync(path.join(WURZEL,'daten','aggregate',n),'utf8'));
 const SV=lies('systemvarianten.json'), PJ=lies('projektion33.json'), NZ=lies('netz33.json'), H=lies('haushalte33.json'), RA=lies('haushalte33_raster.json'),
-      AL=lies('altlasten.json'), EW=lies('einwanderung33.json'), DY=lies('dynamik33.json'), G=lies('gesamtrechnung.json');
+      AL=lies('altlasten.json'), EW=lies('einwanderung33.json'), DY=lies('dynamik33.json'), G=lies('gesamtrechnung.json'), MR=lies('moeglichkeitsraum33.json');
 const de=(x,nk=0)=>Number(x).toLocaleString('de-DE',{minimumFractionDigits:nk,maximumFractionDigits:nk});
 const pr=(x,nk=1)=>de(x,nk)+' %';
 const eu=x=>de(x)+' €';
@@ -218,6 +218,15 @@ add(H1("6  Bis 2060: Trends, Automatisierung, Einwanderung"),
     ["Beitrag Altlastenfonds (% BIP)",de(AB.beitrag_pct_bip,2),de(ew(0.2,'kontrolliert').fonds_beitrag_pct_bip,2),de(ew(0.4,'kontrolliert').fonds_beitrag_pct_bip,2)]]),
   Q("Einwanderung im Erwerbsalter mildert die Alterung und verdünnt die festen Altlasten; sie gleicht die Alterung nicht aus. Eingewanderte erwerben im neuen System keine Ansprüche über der Grundversorgung. Annahmen: Erwerbstätigkeit und Produktivität der Eingewanderten, Altenquotient interpoliert."));
 
+// ---- 6.4 Möglichkeitsraum
+const ml=Object.values(MR.laender).sort((a,b)=>b.einwohner_mio-a.einwohner_mio);
+add(H2("6.4  Der Möglichkeitsraum: 30 Staaten"),
+  P("Der Bauplan ist für jeden Staat gerechnet, für den Eurostat vergleichbare Daten führt (27 EU-Staaten, Norwegen, Island, Schweiz; "+de(MR.raum.einwohner_mio,1)+" Mio. Menschen). Vereinigtes Königreich und Kanada fehlen mangels harmonisierter Daten. Kernannahme: Das Goldene Drittel bringt in jedem Staat denselben Anteil am BIP wie auf deutscher Basis gerechnet. Das Netz folgt den Landesdaten, der Grundbedarf dem Preisniveau; die Dividende ist in deutscher Kaufkraft angegeben."),
+  tab([{t:"Staat",w:1826},{t:"Abgaben heute",w:1200,al:RT},{t:"Netz 2028",w:1100,al:RT},{t:"Dividende 2028",w:1300,al:RT},{t:"Dividende Dauer",w:1300,al:RT},{t:"Altlasten-Zuschlag",w:1300,al:RT},{t:"Last neu",w:1000,al:RT}],
+    ml.map(e=>[e.name,pr(e.abgabenquote_heute),pr(e.z2028.netz_pct_bip),eu(e.z2028.dividende_erw_kaufkraft_de),eu(e.dauer.dividende_erw_kaufkraft_de),pr(e.altlasten.zuschlag_pct),pr(e.gesamtlast_2028)])
+      .concat([["Möglichkeitsraum",pr(MR.raum.abgabenquote_heute),pr(MR.raum.netz_pct_bip_2028),eu(MR.raum.dividende_erw_kaufkraft_de_2028),eu(MR.raum.dividende_erw_kaufkraft_de_dauer),pr(MR.raum.zuschlag_pct),"–"]]),{hl:{[ml.length]:1}}),
+  Q("Abgaben heute: Steuern und Sozialbeiträge 2024 (Eurostat). Last neu: Goldenes Drittel plus eigener Altlastenfonds bis 2098, ohne Pflichtvorsorge (eigenes Konto). Staaten mit niedriger Abgabenquote heute (Irland, Schweiz, Rumänien, Bulgarien, Malta) hätten eine höhere Last als heute, Staaten mit hoher eine niedrigere. Irland: BIP durch Konzerngewinne überzeichnet. Schweiz: obligatorische Krankenversicherung als Annahme eingerechnet. Altrenten ohne Altersprofil; in den nordischen Staaten enthalten die Altersausgaben Pflegedienste (Altlast überzeichnet). Schulden Norwegen, Island, Schweiz: Annahme."));
+
 // ---- 7 Vorbilder
 add(H1("7  Vorbilder"),
   tab([{t:"Staat",w:1800},{t:"Was übernommen wird",w:7226}],[
@@ -270,7 +279,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Entwurf "+NZ.version+" · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Entwurf "+G.version+" · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf','TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

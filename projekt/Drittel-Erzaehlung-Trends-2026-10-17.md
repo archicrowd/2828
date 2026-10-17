@@ -180,3 +180,15 @@ Eigenverantwortung (das Konto gehört Dir, ist vererbbar) mit Sicherheit (nieman
 **Was „ohne Extras“ heißt (Vorschlag):** Gesundheit: Behandlung, Arznei, Vorsorge, Notfall; Komfort (Einzelzimmer, Chefarzt, Wahlleistungen) privat. Pflege: Teilkasko
 wie heute; Zuzahlung aus eigenem Einkommen, Grundbedarf gesichert. Arbeitslosigkeit: Grundbedarf, Hinzuverdienst zur Hälfte angerechnet; Lohnersatz privat oder
 tariflich (Vorbild dänische Arbeitslosenkassen). Invalidität: Grundbedarf; Berufsunfähigkeit privat.
+
+## 10 | Nachtrag v3.52: Der Möglichkeitsraum (30 Staaten)
+
+Rechnung `modell/moeglichkeitsraum33.py`, Daten Eurostat (abgerufen 17.10.2026). 27 EU-Staaten, Norwegen, Island, Schweiz: 465,6 Mio. Menschen. Vereinigtes Königreich
+und Kanada fehlen (keine harmonisierten Daten). Kernannahme: gleicher BIP-Anteil des Aufkommens wie auf deutscher Basis.
+
+- Dividende je Erwachsenem in deutscher Kaufkraft: 2028 im Mittel 357 €, Dauerzustand 205 €. Niedrig im Dauerzustand, wo Gesundheit, Arbeitslosigkeit und Alterung
+  das Netz verteuern (Frankreich 71 €, Tschechien 91 €, Kroatien 93 €); hoch, wo die Wirtschaftsleistung je Kopf hoch ist (Norwegen 442 €, Schweiz 411 €).
+- Altlasten (eigener Fonds bis 2098): Zuschlag auf alle Steuern 2,2 % (Irland) bis 18,3 % (Italien), im Mittel 12,1 %.
+- Last neu 2028 (Drittel + Altlastenfonds) 34,2 bis 39,7 % gegen heute 22,4 bis 45,5 %: Hochsteuerstaaten (Frankreich, Belgien, Dänemark, Österreich) entlastet,
+  Niedrigsteuerstaaten (Irland, Schweiz, Rumänien, Bulgarien, Malta) belastet. Die Pflichtvorsorge (eigenes Konto) kommt hinzu.
+- Grenzen: Aufkommen nicht nach eigener Steuerbasis; Irland (BIP), Schweiz (Gesundheit privat, Annahme), nordische Staaten (Altlast überzeichnet).
