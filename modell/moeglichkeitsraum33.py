@@ -42,8 +42,23 @@ def rahmen(z):
                 gp=r["gesundheit_plus"], alter=True, f=r["wachstum_je_kopf_faktor"])
 
 
+POS = V["deckung_positionen"]
+
+
+def deckung_land(c, deck_de):
+    """v3.53: Aufkommen nach eigener Steuerbasis: Einkommen nach Arbeitnehmerentgelt, Kapital und Unternehmen nach Betriebsüberschuss, Konsum nach
+    privatem Konsum (je relativ zu Deutschland); übrige Positionen wie auf deutscher Basis. Skaliert auf das Jahr (deck_de/Deckung 2028)."""
+    if P.get("aufkommen") == "gleich":
+        return deck_de
+    rel = lambda k: D[k][c] / D[k]["DE"]
+    eigen = (POS["Einkommen"] * rel("d1") + (POS["Kapitalerträge"] + POS["Unternehmen und Plattformen"]) * rel("b2a3g")
+             + POS["Konsum (Label)"] * rel("p31_s14") + sum(v for k, v in POS.items() if k not in ("Einkommen", "Kapitalerträge", "Unternehmen und Plattformen", "Konsum (Label)")))
+    return eigen * deck_de / V["deckung"]
+
+
 def land(c, z):
     ra = rahmen(z)
+    ra = dict(ra, deck=deckung_land(c, ra["deck"]))
     kp = kopf[c] * P["bip_2024_zu_kaufkraft_2026_2028"] * ra["f"]                             # € je Kopf (Rechengröße)
     gb = NT["grundbedarf_eur_2026"] * pli[c] / pli["DE"] * ra["f"] ** 0.3                        # Grundbedarf nach Preisniveau
     gs = P["schweiz_gesundheit_pct_bip"] if c == "CH" else D["gf07"][c]
@@ -61,13 +76,16 @@ def land(c, z):
             break
         div_pct = neu
     div_mon = div_pct / 100 * kp / 12 / (1 - K / 2)
-    return dict(netz_pct_bip=round(sum(netz.values()), 2), netz={k: round(v, 2) for k, v in netz.items()}, dividende_pct_bip=round(div_pct, 2),
+    return dict(deckung_pct_bip=round(ra["deck"], 2), netz_pct_bip=round(sum(netz.values()), 2), netz={k: round(v, 2) for k, v in netz.items()}, dividende_pct_bip=round(div_pct, 2),
                 dividende_erw_eur=round(div_mon), dividende_erw_kaufkraft_de=round(div_mon * pli["DE"] / pli[c]),
                 grundbedarf_monat_eur=round(gb / 12), div_erw_pct_kopf=div_pct / (1 - K / 2))
 
 
-def altlasten(c, div_erw):
+def altlasten(c, div_erw, deck):
     rente = D["gf1002"][c] + D["gf1003"][c]
+    # v3.53: Skalierung auf Tabelle 29 (ungedeckte staatliche Ansprüche 2021) wie sozialschutz.z_laender, wo der Barwert der Ausgaben größer ist
+    pv = sum(rente * SZ.z_anteil_vor_stichtag(j) / 1.01 ** (j - 2028) for j in range(2028, 2101))
+    rente = rente * min(1.0, D["s13pu_2021"][c] / pv)
     z = [x["z_pct_bip"] for x in SZ.z_pfad(c, rente, D["anteil65"][c], div_erw, lambda j: 1.0)]
     d0, i, g = D["schuld"][c], P["zins"] / 100, P["wachstum_nominal"] / 100
 
@@ -82,18 +100,18 @@ def altlasten(c, div_erw):
         m = (lo + hi) / 2
         lo, hi = (m, hi) if pf(m)[-1] > 0 else (lo, m)
     p = pf(hi)
-    return dict(z_2028=round(z[0], 2), beitrag_pct_bip=round(hi, 2), zuschlag_pct=round(hi / V["deckung"] * 100, 1), spitze=round(max(p)))
+    return dict(z_2028=round(z[0], 2), beitrag_pct_bip=round(hi, 2), zuschlag_pct=round(hi / deck * 100, 1), spitze=round(max(p)))
 
 
 def main():
     erg = {}
     for c in LAENDER:
         a, b = land(c, "2028"), land(c, "dauer")
-        al = altlasten(c, a["div_erw_pct_kopf"])
+        al = altlasten(c, a["div_erw_pct_kopf"], a["deckung_pct_bip"])
         erg[c] = dict(name=EW[c]["name"], einwohner_mio=float(EW[c]["einwohner_mio"]), bip_kopf_eur_2024=round(kopf[c]),
                       preisniveau_de_100=round(pli[c] / pli["DE"] * 100), abgabenquote_heute=D["abgabenquote"][c],
                       z2028={k: v for k, v in a.items() if k != "div_erw_pct_kopf"}, dauer={k: v for k, v in b.items() if k != "div_erw_pct_kopf"},
-                      altlasten=al, gesamtlast_2028=round(V["deckung"] + al["beitrag_pct_bip"], 1))
+                      altlasten=al, gesamtlast_2028=round(a["deckung_pct_bip"] + al["beitrag_pct_bip"], 1))
     ew = {c: erg[c]["einwohner_mio"] for c in erg}
     bip = {c: D["bip_mio_eur"][c] for c in erg}
     sw, sb = sum(ew.values()), sum(bip.values())
@@ -103,15 +121,16 @@ def main():
                 netz_pct_bip_2028=round(sum(bip[c] * erg[c]["z2028"]["netz_pct_bip"] for c in erg) / sb, 2),
                 altlasten_beitrag_pct_bip=round(sum(bip[c] * erg[c]["altlasten"]["beitrag_pct_bip"] for c in erg) / sb, 2),
                 abgabenquote_heute=round(sum(bip[c] * erg[c]["abgabenquote_heute"] for c in erg) / sb, 1))
-    raum["zuschlag_pct"] = round(raum["altlasten_beitrag_pct_bip"] / V["deckung"] * 100, 1)
+    raum["deckung_pct_bip_2028"] = round(sum(bip[c] * erg[c]["z2028"]["deckung_pct_bip"] for c in erg) / sb, 2)
+    raum["zuschlag_pct"] = round(raum["altlasten_beitrag_pct_bip"] / raum["deckung_pct_bip_2028"] * 100, 1)
     E = dict(version=P["version"], status="Prüfrechnung", system=PJ["system"], laender=erg, raum=raum, quellen=D["quellen"], hinweise=D["hinweise"],
              annahmen={k: v for k, v in P.items() if k != "version"},
-             hinweis="Aufkommen je Staat als gleicher BIP-Anteil wie auf deutscher Basis (Annahme). Dividende in Euro des Landes und in deutscher Kaufkraft. "
-                     "Altrenten ohne Altersprofil des Ageing Report und ohne Skalierung auf Tabelle 29 (Nordische Staaten: GF1002 enthält Pflegedienste -> Z überzeichnet)")
+             hinweis="Aufkommen je Staat nach eigener Steuerbasis (Lohn-, Gewinn-, Konsumanteil relativ zu Deutschland; übrige Positionen wie DE). Dividende in Euro des Landes und in deutscher Kaufkraft. "
+                     "Altrenten ohne Altersprofil des Ageing Report, auf Tabelle 29 skaliert (Nordische Staaten: GF1002 enthält Pflegedienste -> Z überzeichnet)")
     (AGG / "moeglichkeitsraum33.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"{'Staat':<16}{'Einw':>6}{'Quote heute':>12}{'Netz28':>8}{'Div28 €':>9}{'KK DE':>7}{'Div∞ KK':>9}{'Schuld':>8}{'Z28':>6}{'Fonds':>7}{'Zuschl':>8}{'Last28':>8}")
+    print(f"{'Staat':<16}{'Einw':>6}{'Quote heute':>12}{'Deck':>6}{'Netz28':>8}{'Div28 €':>9}{'KK DE':>7}{'Div∞ KK':>9}{'Schuld':>8}{'Z28':>6}{'Fonds':>7}{'Zuschl':>8}{'Last28':>8}")
     for c, e in sorted(erg.items(), key=lambda x: -x[1]["einwohner_mio"]):
-        print(f"{e['name'][:15]:<16}{e['einwohner_mio']:>6.1f}{e['abgabenquote_heute']:>12}{e['z2028']['netz_pct_bip']:>8}{e['z2028']['dividende_erw_eur']:>9}"
+        print(f"{e['name'][:15]:<16}{e['einwohner_mio']:>6.1f}{e['abgabenquote_heute']:>12}{e['z2028']['deckung_pct_bip']:>6}{e['z2028']['netz_pct_bip']:>8}{e['z2028']['dividende_erw_eur']:>9}"
               f"{e['z2028']['dividende_erw_kaufkraft_de']:>7}{e['dauer']['dividende_erw_kaufkraft_de']:>9}{D['schuld'][c]:>8}{e['altlasten']['z_2028']:>6}"
               f"{e['altlasten']['beitrag_pct_bip']:>7}{e['altlasten']['zuschlag_pct']:>8}{e['gesamtlast_2028']:>8}")
     print("Raum:", raum)

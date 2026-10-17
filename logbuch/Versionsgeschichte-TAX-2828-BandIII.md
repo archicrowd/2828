@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 17. Oktober 2026 · Modellstand **v3.52**
+Stand: 17. Oktober 2026 · Modellstand **v3.53**
 
 ---
 
@@ -2107,6 +2107,29 @@ nordische Staaten (Pflegedienste in GF1002, Altlast überzeichnet); Altrenten oh
 
 *Quellen: Eurostat (Datensätze wie oben), abgerufen 17.10.2026.*
 
+### v3.53 — Möglichkeitsraum: Aufkommen nach eigener Steuerbasis, Altrenten auf Tabelle 29 begrenzt
+
+**Art der Änderung: MINOR (Prüfrechnung, Dokument), keine Zahl der Gesamtrechnung bewegt.** 17. Oktober 2026.
+
+**Anlass:** Fortsetzung v3.52 (offene Punkte: Aufkommen je Staat, Altrenten je Staat).
+
+**Daten (neu abgerufen, Eurostat, 17.10.2026):** nama_10_gdp PC_GDP 2023: Arbeitnehmerentgelt (D1), Bruttobetriebsüberschuss und Selbständigeneinkommen
+(B2A3G), Konsum der privaten Haushalte (P31_S14); nasa_10_pens1 PC_GDP S13PU F63_LE 2021 (Tabelle 29) für alle 30 Staaten. Ergänzt in `moeglichkeitsraum_2024.json`.
+
+**Änderung:** `moeglichkeitsraum33.py`: Aufkommen je Staat = deutsche Positionen × (Lohn-, Gewinn-, Konsumanteil relativ zu Deutschland), übrige Positionen wie DE
+(Parameter `aufkommen = "eigen"`, Vergleich `"gleich"` = v3.52). Altrenten je Staat auf die ungedeckten Ansprüche der Tabelle 29 skaliert (wie sozialschutz.z_laender).
+Konzept (Word) Abschnitt 6.4 mit Spalte „Steuern neu“.
+
+**Bewegte Zahlen (Prüfrechnung, Dividende in deutscher Kaufkraft):** Steuern neu 2028 28,6 % (Irland) bis 34,4 % (Griechenland), Mittel 32,8 %. Dividende 2028 im Mittel
+326 € (v3.52: 357 €), Dauerzustand 161 € (v3.52: 205 €). Dauerzustand niedrig oder negativ: Schweden −42 €, Dänemark 2 €, Tschechien 15 €, Frankreich 22 €. Altlasten:
+Dänemark 1,2 % Zuschlag (Tabelle 29: kaum ungedeckte Ansprüche), Italien und Frankreich 18 %; Mittel 12,2 %.
+
+**Offen gekennzeichnet:** Wo die Dividende im Dauerzustand verschwindet, trägt das Drittel das Netz nur knapp; diese Staaten brauchen eigene Lösungen. Irland:
+Gewinne multinationaler Konzerne werden im Bauplan am Ort der Kunden besteuert, die irische Basis ist überzeichnet. Vereinigtes Königreich und Kanada weiter offen.
+**Geprüft:** `python3 modell/alles.py`. **Wodurch aufgefallen:** offene Punkte aus v3.52.
+
+*Quellen: Eurostat nama_10_gdp, nasa_10_pens1 (abgerufen 17.10.2026).*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -2159,9 +2182,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.52
+## 7 | Offene Punkte, Stand v3.53
 
-Neu seit v3.23 (Stand v3.52): **Möglichkeitsraum: Aufkommen je Staat nach eigener Steuerbasis; UK und Kanada (OECD-Daten); Altrenten mit Tabelle 29 und Ageing Report je Staat;** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.53): **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

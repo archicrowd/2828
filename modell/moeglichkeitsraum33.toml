@@ -1,8 +1,9 @@
 # Drittel-System im Möglichkeitsraum (modell/moeglichkeitsraum33.py, Logbuch v3.52). 27 EU-Staaten, Norwegen, Island, Schweiz.
 # Vereinigtes Königreich und Kanada fehlen (keine harmonisierten Eurostat-Daten). Prüfrechnung; Daten: daten/aggregate/moeglichkeitsraum_2024.json.
-version = "v3.52"
-# Kernannahme: Das Drittel-System bringt in jedem Staat denselben Anteil am BIP wie auf deutscher Basis gerechnet (33R: 33,53 % 2028; Dauerzustand wie
-# projektion33 2060). Tatsächlich hängt das Aufkommen von Lohn-, Gewinn- und Konsumstruktur ab (Annahme, größte Unsicherheit).
+version = "v3.53"
+# v3.53: Aufkommen nach eigener Steuerbasis ("eigen"): Einkommen ∝ Arbeitnehmerentgelt, Kapital/Unternehmen ∝ Betriebsüberschuss, Konsum ∝ privater Konsum,
+# je relativ zu Deutschland; "gleich" = gleicher BIP-Anteil wie auf deutscher Basis (v3.52). Progression, Grundbedarf und Ausweichen nicht je Land gerechnet.
+aufkommen = "eigen"
 # Dach und Gemeinden: gleiche Anteile für alle (Regel des Bauplans). Netz nach Landesdaten (Gesundheit, Invalidität, Arbeitslosigkeit, Alter).
 schweiz_gesundheit_pct_bip = 7.0  # Annahme: obligatorische Krankenversicherung (privat, nicht S13) zusätzlich zu 2,2 % S13
 bip_2024_zu_kaufkraft_2026_2028 = 1.0768   # Faktor BIP je Kopf 2024 -> Rechengröße 2028 in Kaufkraft 2026 (aus netz33: DE 56.563 / 52.527)

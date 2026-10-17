@@ -192,3 +192,7 @@ und Kanada fehlen (keine harmonisierten Daten). Kernannahme: gleicher BIP-Anteil
 - Last neu 2028 (Drittel + Altlastenfonds) 34,2 bis 39,7 % gegen heute 22,4 bis 45,5 %: Hochsteuerstaaten (Frankreich, Belgien, Dänemark, Österreich) entlastet,
   Niedrigsteuerstaaten (Irland, Schweiz, Rumänien, Bulgarien, Malta) belastet. Die Pflichtvorsorge (eigenes Konto) kommt hinzu.
 - Grenzen: Aufkommen nicht nach eigener Steuerbasis; Irland (BIP), Schweiz (Gesundheit privat, Annahme), nordische Staaten (Altlast überzeichnet).
+
+**Nachtrag v3.53 (eigene Steuerbasis, Tabelle 29):** Steuern neu 28,6 % (Irland) bis 34,4 % (Griechenland). Dividende in deutscher Kaufkraft 2028 im Mittel 326 €,
+Dauerzustand 161 €; Schweden −42 €, Dänemark 2 €, Tschechien 15 €, Frankreich 22 € im Dauerzustand – dort trägt das Drittel das Netz nur knapp und es braucht eigene
+Lösungen (Bodenwertabgabe bis 2 %, schlankere Grundversorgung, Zukunftsschatz). Altlasten-Zuschlag 1,2 % (Dänemark) bis 18 % (Italien, Frankreich), Mittel 12,2 %.
