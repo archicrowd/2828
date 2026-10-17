@@ -25,8 +25,8 @@ def lade(n):
     return json.loads((AGG / n).read_text(encoding="utf-8"))
 
 
-SV, H, RA, PJ, AL, J = (lade(n) for n in ("systemvarianten.json", "haushalte33.json", "haushalte33_raster.json", "projektion33.json",
-                                           "altlasten.json", "gesamtrechnung.json"))
+SV, H, RA, PJ, AL, J, DY = (lade(n) for n in ("systemvarianten.json", "haushalte33.json", "haushalte33_raster.json", "projektion33.json",
+                                               "altlasten.json", "gesamtrechnung.json", "dynamik33.json"))
 V = next(x for x in SV["varianten"] if x["id"] == PJ["system"])
 ZU = max(f["zuschlag_pct"] for f in H["faelle"])                 # Beispielzuschlag (Altlastenfonds, Beschluss)
 F26 = 1.0404                                   # Preise 2028 -> Kaufkraft 2026 (2 % je Jahr, Annahme der Gesamtrechnung)
@@ -72,7 +72,17 @@ def werte():
     a1 = altfall(1.0)
     fh = [x for x in PJ["buergerfonds"] if x["anteil"] == 0.5]
     an = H["anteil_erwachsene_mit_mehr"]
+    def dyn(b, ki, kv, j="2060"):
+        return next(x for x in DY["szenarien"] if x["beschaeftigung_pct"] == b and x["ki_pp"] == ki
+                    and x["kapital_verschiebung_pp"] == kv)["reihe"][j]["dividende_erw_eur2026"]
+    d45 = REIHE[2045]
     return dict(
+        netz28=eur(d28["netz_eur_kopf_monat"]), netz60=eur(d60["netz_eur_kopf_monat"]),
+        paket28=eur(d28["netz_eur_kopf_monat"] + d28["dividende_erw_eur2026"]), paket60=eur(d60["netz_eur_kopf_monat"] + d60["dividende_erw_eur2026"]),
+        prog60=zahl(d60["progression"], 1), div45=eur(d45["dividende_erw_eur2026"]),
+        dyn_ki_lo=eur(dyn(0.0, 0.07, 0.0)), dyn_ki_hi=eur(dyn(0.0, 0.6, 0.0)), dyn_b=eur(dyn(4.6, 0.0, 0.0)),
+        dyn_mittel=eur(dyn(4.6, 0.3, 3.0)), dyn_max=eur(dyn(4.6, 0.6, 3.0)),
+        heute_kap=zahl(abs(next(x for x in DY["szenarien"] if x["kapital_verschiebung_pp"] == 3.0)["heute_aufkommen_aenderung_2060_pct_bip"]), 2),
         div28=eur(d28["dividende_erw_eur2026"]), kind28=eur(d28["dividende_erw_eur2026"] / 2),
         div35=eur(d35["dividende_erw_eur2026"]), div60=eur(d60["dividende_erw_eur2026"]),
         div60_ohne=eur(d60["dividende_ohne_trends_eur2026"]),
@@ -89,7 +99,7 @@ def werte():
         a_c=zahl(a1["beitrag_pct_bip"], 2).replace(",00", ""), a_zu=pct(a1["zuschlag_auf_alle_steuern_pct"], 1), a_sp=pct(a1["schuldenquote_spitze"]),
         a_spj=str(a1["spitzenjahr"]), keil=pct(J["abgabenkeil_de_2024"], 1), keil_oecd=pct(J["abgabenkeil_oecd_2024"], 1),
         abgeltung=pct(J["abgeltungsteuer_de"], 1), og=pct(J["obergrenze"]), gesundheit=pct(SV["gesundheit"], 2), seil=pct(SV["seil"], 2),
-        version="v3.48 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
+        version="v3.49 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
         f60b=eur(fh[1]["dividende_erw_eur2026"]["2060"]), fv=pct(fh[0]["fondsvermoegen_2060_pct_bip"]),
     )
 
@@ -169,7 +179,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
 <div style="background:#B03A2E;color:#fff;font-family:monospace;padding:8px 16px;text-align:center">ENTWURF ZUR PRÜFUNG – nicht veröffentlichen · Stand {version}</div>
 <nav class="titleblock" id="top" aria-label="Seitennavigation"><div class="wrap">
   <a class="tb-left" href="#top">33 : 33</a>
-  <div class="tb-right"><a href="#konzept">Bauplan</a><a href="#rechner">Rechner</a><a class="opt" href="#zeitpfad">Bis 2060</a>
+  <div class="tb-right"><a href="#konzept">Bauplan</a><a class="opt" href="#paket">Paket</a><a href="#rechner">Rechner</a><a class="opt" href="#zeitpfad">Bis 2060</a>
   <a class="opt" href="#altlasten">Altlasten</a><a href="#vorbilder">Vorbilder</a><a class="opt" href="#offen">Mitmachen</a></div>
 </div></nav>
 
@@ -185,8 +195,8 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
   <div class="cta-row"><a class="btn primary" href="#rechner">Selbst nachrechnen</a><a class="btn ghost" href="#konzept">Bauplan ansehen</a></div>
   <p class="opensrc">Alle Rechenmodelle sind <a href="#offen">offen prüfbar</a>.</p>
   <div class="stamps">
-    <div class="stamp"><div class="val">33 %</div><div class="lbl">höchstens, auf jedes Einkommen</div></div>
-    <div class="stamp"><div class="val">0 €</div><div class="lbl">Sozialbeiträge und Prämien</div></div>
+    <div class="stamp"><div class="val">33 %</div><div class="lbl">das Goldene Drittel: höchstens, auf jedes Einkommen</div></div>
+    <div class="stamp"><div class="val">0 €</div><div class="lbl">Prämie für das Goldene Netz</div></div>
     <div class="stamp"><div class="val">+{plus42}*</div><div class="lbl">mehr im Monat bei 42.000 € brutto – nach eigener Vorsorge</div></div>
   </div>
   <p class="fineprint" style="text-align:center;margin:16px auto 0">* Schätzung des Projekts: alleinstehend, 2028, Kaufkraft 2026; mindestens 80 % der gesparten Arbeitgeberbeiträge gehen in den Lohn (Pflicht);
@@ -194,11 +204,13 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
 
   <div class="pruef"><h3>Zur Prüfung durch die Initiative (erscheint nicht auf der Seite)</h3><ol>
     <li><b>Name:</b> Der Bauplan heißt im Entwurf „33:33“. Absender bleibt die Initiative 28:28. Alternative: „TAX 28:28 – Drittel-Fassung“.</li>
-    <li><b>Die Dividende ist nicht dauerhaft.</b> Rund {lenkanteil} der Dividende 2028 stammen aus Lenkungseinnahmen (CO₂-Preis, Sonderstufe, Energie- und Tabaksteuer),
-      die mit dem Erfolg verschwinden. Mit steigenden Gesundheits- und Pflegekosten (+{ges_plus} Punkte bis 2060) und dem Verteidigungspfad sinkt sie von {div28} (2028)
-      auf {div35} (2035) und {div60} (2060), Kaufkraft 2026. Der Entwurf erzählt das offen („Klimabonus, der kleiner werden soll“). Zu entscheiden: hinnehmen,
-      dauerhafte Quellen stärken (z. B. Bodenwertabgabe bis 2 %, +0,8 Punkte) oder einen Teil der Lenkungseinnahmen in einen Bürgerfonds legen (Vorbild Norwegen;
-      gerechnet: Hälfte in den Fonds, Dividende 2028 {f28}, 2060 {f60a} bis {f60b} statt {div60}; Fondsvermögen 2060 rund {fv} der Wirtschaftsleistung).</li>
+    <li><b>Namen (Vorschlag, im Entwurf verwendet):</b> „Das Goldene Drittel“ (Steuerregel), „Das Goldene Netz“ (Absicherung ohne Prämie), „Transformationsdividende“
+      (Geldzuweisung), „Zukunftsschatz“ (Bürgerfonds, falls beschlossen). Nicht markenrechtlich geprüft. „TrafoDi“ nicht verwendet (siehe Bewertung im Bericht).</li>
+    <li><b>Korrektur 61:</b> Die Rechnung v3.47/v3.48 hielt den Anteil der Einkommensteuer fest, obwohl die Stufen am Grundbedarf hängen und dieser langsamer wächst als die
+      Einkommen. Mit dieser Wirkung (+{prog60} Punkte 2060) sinkt die Dividende von {div28} (2028) auf {div35} (2035) und {div45} (2045) und bleibt dann bei {div60} (2060) – statt 83 €.
+      Lenkung (Erosion), Gesundheit/Pflege und Verteidigungspfad drücken weiter. Bürgerfonds (Hälfte der Lenkungseinnahmen): 2028 {f28}, 2060 {f60a} bis {f60b}.</li>
+    <li><b>Automatisierung und Beschäftigung</b> (neu gerechnet, Szenarien): KI {dyn_ki_lo} bis {dyn_ki_hi}, mehr Arbeit {dyn_b}, zusammen mit Verschiebung zum Kapital
+      {dyn_mittel} bis {dyn_max} Dividende 2060. Wachstum wirkt vor allem auf die Löhne, nicht auf die Dividende: Sie ist nur ein kleiner Anteil des BIP.</li>
     <li><b>Umgesetzt (Beschluss v3.48):</b> Pflicht, mindestens 80 % der gesparten Arbeitgeberbeiträge in den Lohn zu geben; Renten um die eingesparten Kranken- und
       Pflegebeiträge gekürzt (Annahme 12,35 % wie in Deutschland); Mehrwertsteuer 22 und 28 % zu 25 % zusammengefasst (effektiv {label_eff} statt 17,6 %, Dividende 2028 {div28}).</li>
     <li><b>Rentner verlieren leicht:</b> Mit der Kürzung und der höheren Mehrwertsteuer liegt eine Rente von 1.200 € bei {r1200} im Monat (900 €: {r900}; 2.200 €: {r2200}),
@@ -225,7 +237,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
 
 <section id="konzept"><div class="wrap">
   <p class="kicker neu">Der Bauplan:</p>
-  <h2>Wenige Regeln. Eine Grenze: ein Drittel.</h2>
+  <h2>Wenige Regeln. Eine Grenze: das Goldene Drittel.</h2>
   <p class="lede">Jeder Euro wird gleich behandelt, egal woher er kommt. Was heute über Beiträge, Prämien und Sonderregeln läuft, kommt aus einer Kasse:
   den Steuern. Das macht das System einfach – und gerecht zwischen Arbeit und Kapital.</p>
   <div class="mass-grid">
@@ -236,7 +248,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
       <p>Besteuert wird das Brutto ohne Abzüge. Der Grundbedarf bleibt frei. Die Stufen hängen am Grundbedarf und wachsen mit ihm.</p></div>
     <div class="mass"><div class="pos">Arbeit</div><h3>Keine Sozialbeiträge</h3><span class="regel">0 % auf den Lohn</span>
       <p>Was Betriebe heute als Beitrag abführen, kann in den Lohn gehen. Dänemark finanziert seinen Sozialstaat fast ganz aus Steuern.</p></div>
-    <div class="mass"><div class="pos">Absicherung</div><h3>Versorgt ohne Prämie</h3><span class="regel">Gesundheit · Arbeitslosigkeit · Invalidität · Hinterbliebene</span>
+    <div class="mass"><div class="pos">Absicherung</div><h3>Das Goldene Netz: versorgt ohne Prämie</h3><span class="regel">Gesundheit · Arbeitslosigkeit · Invalidität · Hinterbliebene</span>
       <p>Jeder ist versorgt, ohne Beitrag, ohne Antrag auf Mitgliedschaft, ohne Sonderfälle. Bezahlt aus den Steuern ({gesundheit} und {seil} der Wirtschaftsleistung).</p></div>
     <div class="mass"><div class="pos">Kapital</div><h3>Kapital wie Arbeit</h3><span class="regel">höchstens 33 % auf alle Erträge</span>
       <p>Auch Veräußerungsgewinne zählen. Lohn in Kapitalertrag umzuwandeln lohnt sich nicht mehr.</p></div>
@@ -255,12 +267,25 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
       <p>Darunter bleibt Vermögen unberührt. Darüber greift eine Mindeststeuer, anrechenbar auf die Einkommensteuer.</p></div>
     <div class="mass"><div class="pos">Klima</div><h3>CO₂-Preis, an alle zurück</h3><span class="regel">europäischer Preispfad · Rückgabe über die Dividende</span>
       <p>Wer wenig verbraucht, gewinnt. Die Schweiz gibt ihre CO₂-Abgabe seit Jahren gleichmäßig an alle zurück.</p></div>
-    <div class="mass"><div class="pos">Dividende</div><h3>Jeden Monat, für alle</h3><span class="regel">2028: {div28} je Erwachsenem · {kind28} je Kind</span>
+    <div class="mass"><div class="pos">Dividende</div><h3>Transformationsdividende: jeden Monat, für alle</h3><span class="regel">2028: {div28} je Erwachsenem · {kind28} je Kind</span>
       <p>Ohne Antrag. Sie gibt vor allem zurück, was Schädliches zahlt – und wird kleiner, wenn das Schädliche verschwindet. Das ist gewollt.</p></div>
     <div class="mass"><div class="pos">Schutz</div><h3>Niemand fällt unter den Grundbedarf</h3><span class="regel">Grundbedarf {st1} im Jahr gesichert</span>
       <p>Wer kein Einkommen hat, wird auf den Grundbedarf aufgestockt; Wohnkosten, Pflege und besondere Lagen trägt ein Härtefallfonds.</p></div>
   </div>
   <p class="fineprint">Beträge in Kaufkraft 2026. Die Sätze und Grenzen sind ein Bauplan: Jeder Staat setzt den Grundbedarf nach seinen Preisen.</p>
+</div></section>
+
+<section id="paket"><div class="wrap">
+  <h2>Was Du vom System bekommst</h2>
+  <p class="lede">Zwei Teile, ein Paket: Das Goldene Netz sichert Dich ab, die Transformationsdividende kommt jeden Monat aufs Konto. Und Du zahlst höchstens das Goldene Drittel.</p>
+  <div class="effects">
+    <div><h3>Das Goldene Drittel</h3><p>Höchstens ein Drittel auf jeden Euro – aus Arbeit, Kapital, Gewinn oder Erbe. Keine Beiträge, keine Prämien.</p></div>
+    <div><h3>Das Goldene Netz · {netz28}</h3><p>Gesundheit und Pflege, Arbeitslosigkeit, Invalidität, Hinterbliebene, Grundbedarf: für jeden, ohne Prämie. Wert je Einwohner im Monat
+      (Durchschnitt, 2028); bis 2060 wächst er auf {netz60}.</p></div>
+    <div><h3>Die Transformationsdividende · {div28}</h3><p>Jeden Monat für jeden Erwachsenen, Kinder die Hälfte. Sie gibt zurück, was Klimaschutz und Lenkung einbringen,
+      und wird kleiner, wenn das Schädliche verschwindet.</p></div>
+  </div>
+  <p class="fineprint">Kaufkraft 2026, Deutschland. Der Wert des Netzes ist der Durchschnitt der öffentlichen Ausgaben je Einwohner, kein Anspruch in Euro.</p>
 </div></section>
 
 <section id="rechner"><div class="wrap">
@@ -308,7 +333,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
     <div class="legend"><span class="l-ohne"><i></i>heute</span><span class="l-mit"><i></i>neu, 80 % der Beiträge gehen in den Lohn</span><span class="l-prog"><i></i>neu, alles geht in den Lohn</span></div>
   </div>
   <p class="fineprint">Eigene Vorsorge zählt nicht als Belastung: Sie bleibt Dein Eigentum. Wie stark Menschen auf niedrigere Grenzbelastung reagieren, ist in der Forschung umstritten;
-  die Rechnung nimmt keine Mehrarbeit an. Jede Mehrarbeit wäre zusätzlicher Spielraum.</p>
+  der Grundpfad nimmt keine Mehrarbeit an; Szenarien mit Mehrarbeit stehen im Abschnitt „Bis 2060“.</p>
 </div></section>
 
 <section id="zeitpfad"><div class="wrap">
@@ -323,15 +348,26 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
   <div class="chart-card">
     <div class="unit">Dividende je Erwachsenem und Monat, Kaufkraft 2026</div>
     @@ZEIT@@
-    <div class="legend"><span class="l-mit"><i></i>mit den Trends</span><span class="l-prog"><i></i>ohne Trends</span><span><i style="background:#1D7A4F;opacity:.25;border:none;height:10px"></i>davon aus Lenkungseinnahmen</span></div>
+    <div class="legend"><span class="l-mit"><i></i>mit den Trends</span><span class="l-prog"><i></i>ohne Trends (alle Anteile fest)</span><span><i style="background:#1D7A4F;opacity:.25;border:none;height:10px"></i>davon aus Lenkungseinnahmen</span></div>
     <p class="fineprint" style="margin-top:12px">Die Dividende gibt vor allem zurück, was Schädliches zahlt ({lenk28} der Wirtschaftsleistung 2028). Wenn Verbrenner und Emissionen verschwinden,
-    sinkt dieser Teil – 2060 sind es noch {lenk60}. Dazu kommen die steigenden Kosten für Gesundheit und Pflege. So sinkt die Dividende von {div28} (2028) auf {div60} (2060);
-    ohne diese Trends wären es {div60_ohne}. Sätze, Absicherung und Grundbedarf bleiben gleich.</p>
+    sinkt dieser Teil – 2060 sind es noch {lenk60}. Dazu kommen die steigenden Kosten für Gesundheit und Pflege. Dagegen wirkt das Wachstum: Wer mehr verdient, rückt
+    in höhere Stufen (+{prog60} Punkte der Wirtschaftsleistung 2060). So sinkt die Dividende von {div28} (2028) auf {div35} (2035) und hält sich ab 2045 bei rund {div60}.</p>
   </div>
   <div class="box"><h3>Was das bedeutet</h3>
-    <p>Die Dividende ist ein Klimabonus, der kleiner werden soll – weil der Schaden kleiner wird. Was trägt, ist der Rest des Bauplans: höchstens ein Drittel, keine Beiträge,
-    versorgt ohne Prämie, der Grundbedarf gesichert. Jeder Staat kann entscheiden, einen Teil der Lenkungseinnahmen in einen Bürgerfonds zu legen, wie Norwegen
-    seine Öleinnahmen: Dann bleibt ein Teil der Dividende auf Dauer.</p></div>
+    <p>Die Transformationsdividende gibt zurück, was der Wandel einbringt – sie wird kleiner, wenn der Schaden kleiner wird. Das Goldene Netz wächst dagegen mit:
+    Gesundheit und Pflege für alle, ohne Prämie. Zusammen ist das Paket 2060 mehr wert als 2028 ({paket28} → {paket60} im Monat). Jeder Staat kann einen Teil der
+    Lenkungseinnahmen in einen Zukunftsschatz legen, wie Norwegen seine Öleinnahmen: Dann bleibt ein Teil der Dividende auf Dauer.</p></div>
+  <div class="trend" style="margin-top:22px">
+    <div class="land"><div class="n">Automatisierung</div><h3>Maschinen tragen mit</h3><span class="k">2060: {dyn_ki_lo} bis {dyn_ki_hi} Dividende</span>
+      <p>Heute hängt der Sozialstaat am Lohn: Ersetzen Maschinen Arbeit, fehlen Beiträge (−{heute_kap} Punkte, wenn 3 Punkte Einkommen von Arbeit zu Kapital wandern).
+      Im neuen System trägt jeder Euro gleich – Gewinne aus Automatisierung zahlen ihr Drittel. Wie stark KI die Produktivität hebt, ist offen: Die Schätzungen reichen
+      von 0,07 bis 0,9 Prozentpunkten im Jahr.</p></div>
+    <div class="land"><div class="n">Arbeit</div><h3>Billigere Arbeit, mehr Arbeit</h3><span class="k">2060: {dyn_b} Dividende</span>
+      <p>Ohne Beiträge sinken die Arbeitskosten, und von jedem zusätzlichen Euro bleibt mehr. Vorsichtig gerechnet steigt das Arbeitsvolumen um 3 bis 5 %.
+      Der größte Teil davon kommt als Lohn an, nicht als Dividende.</p></div>
+    <div class="land"><div class="n">Zusammen</div><h3>Alles zusammen</h3><span class="k">2060: {dyn_mittel} bis {dyn_max} Dividende</span>
+      <p>Mehr Arbeit, KI im mittleren bis hohen Bereich und eine Verschiebung zum Kapital: Die Transformationsdividende bleibt 2060 nahe am heutigen Wert in Kaufkraft.</p></div>
+  </div>
 </div></section>
 
 <section id="altlasten"><div class="wrap">

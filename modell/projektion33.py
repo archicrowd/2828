@@ -74,6 +74,32 @@ def label(j, ohne_sonder=False):
     return sum(w[k] * satz[k] for k in w) / sum(w.values())
 
 
+_PROG = {}
+
+
+def progression(f):
+    """Verhältnis Einkommensteuer/BIP bei realen Einkommen × f gegen f = 1 (Stufen fest in Kaufkraft), Kernmodell mit den Sätzen der Variante.
+    v3.49 (Korrektur 61): Die Stufen hängen am Grundbedarf; steigt dieser langsamer als die Einkommen, steigt der Anteil der Einkommensteuer."""
+    f = round(f, 3)
+    if f not in _PROG:
+        K, inf = SVM.KERN, float("inf")
+        K.TARIF_SAETZE[:] = [x / 100 for x in sy["einkommen_saetze"]]
+        K.TARIF_GRENZEN[:] = [12348.0 * x for x in (1, 1.5, 2, 3)] + [inf]
+        v0, d0 = list(K.VERT), dict(K.DD_EUR)
+
+        def rev(x):
+            K.VERT[:] = [(a, b * x) for a, b in v0]
+            for kk in d0:
+                K.DD_EUR[kk] = d0[kk] * x
+            return K.est_aufkommen(50, SVM.KERN.SZ["Robust"]["eti"])
+        try:
+            _PROG[f] = rev(f) / (f * rev(1.0))
+        finally:
+            K.VERT[:] = v0
+            K.DD_EUR.update(d0)
+    return _PROG[f]
+
+
 def konsum_ohne_sonder(j):
     """Konsumaufkommen des Jahres j, wenn die Sonderstufe nicht gälte (Kraftstoffe und Fahrzeuge 28 %, Alkohol und Tabak 28 %)."""
     alt = dict(sy["label_sonder"])
@@ -112,16 +138,23 @@ def main():
         gp = lin("gesundheit_pflege_plus", j)
         erosion = deck0 - deck
         b = basis[j]
-        div = b["div"] - erosion - gp
+        # v3.49 (Korrektur 61): reales Wachstum je Kopf gegen die Stufen; Stufen folgen zu einem Teil den Löhnen (Mischindex), Rest Preise
+        f_real = (b["kl_real"] / b["div"]) / (basis[2028]["kl_real"] / basis[2028]["div"])
+        prog = pos["Einkommen"] * (progression(f_real ** (1 - P["stufen_lohnanteil"])) - 1)
+        div = b["div"] - erosion - gp + prog
         eur_basis = b["kl_real"] * f_erw
         eur = eur_basis * div / b["div"]
-        mind_pct = mind / eur_basis * b["div"]                         # Mindestniveau in % des BIP im Jahr j
+        mind_j = mind * f_real ** P["stufen_lohnanteil"]                # Grundbedarf folgt zu 30 % den Löhnen (v3.49)
+        mind_pct = mind_j / eur_basis * b["div"]                       # Mindestniveau in % des BIP im Jahr j
         lenk = co2 + konsum - konsum_ohne_sonder(j) + P["energiesteuer_kraftstoffe_pct_bip"] * lin("kraftstoffe", j) \
             + P["tabak_alkohol_steuer_pct_bip"] * lin("alkohol_tabak", j)
-        reihe.append(dict(jahr=j, lenkung_pct_bip=round(lenk, 2), luecke_mindestniveau_pct_bip=round(max(0.0, mind_pct - div), 2), label_effektiv=round(eff, 2), konsum=round(konsum, 2), co2=round(co2, 2), verbrauchsteuern_minus=round(verbr, 2), deckung=round(deck, 2),
-                          gesundheit_plus=round(gp, 2), dach_ohne_zins=round(b['a'], 2), dividende_ohne_trends_pct_bip=round(b['div'], 2),
+        # Leistungspaket (v3.49): Netz = Gesundheit/Pflege + Seil + Härtefall, Wert je Einwohner und Monat (Durchschnitt), Kaufkraft 2026, Deutschland
+        netz_pct = SVM.G["gesundheit"] + SVM.S["ausserhalb_quote"]["seil"] + SVM.P["annahmen"]["haertefall_pct_bip"] + gp
+        netz_eur = netz_pct / 100 * SVM.GR.KOPF_DE * f_real / 12 / f
+        reihe.append(dict(jahr=j, netz_pct_bip=round(netz_pct, 2), netz_eur_kopf_monat=round(netz_eur), lenkung_pct_bip=round(lenk, 2), luecke_mindestniveau_pct_bip=round(max(0.0, mind_pct - div), 2), label_effektiv=round(eff, 2), konsum=round(konsum, 2), co2=round(co2, 2), verbrauchsteuern_minus=round(verbr, 2), deckung=round(deck, 2),
+                          gesundheit_plus=round(gp, 2), progression=round(prog, 2), wachstum_je_kopf_faktor=round(f_real, 3), dach_ohne_zins=round(b['a'], 2), dividende_ohne_trends_pct_bip=round(b['div'], 2),
                           dividende_ohne_trends_eur2026=round(eur_basis), erosion=round(erosion, 2), dividende_pct_bip=round(div, 2), dividende_erw_eur2026=round(eur),
-                          mindestniveau_eur2026=round(mind), ueber_mindestniveau=eur >= mind))
+                          mindestniveau_eur2026=round(mind_j), ueber_mindestniveau=eur >= mind_j))
     # Variante Bürgerfonds: ein Teil der Lenkungseinnahmen wird angelegt, 3 % des Vermögens fließen in die Dividende
     fonds = []
     for phi in P["fonds_anteil"]:
@@ -145,7 +178,7 @@ def main():
         print("Bürgerfonds", x)
     for r in reihe:
         if r["jahr"] in (2028, 2030, 2035, 2040, 2045, 2050, 2060):
-            print(r["jahr"], "Lenkung", r["lenkung_pct_bip"], "Erosion", r["erosion"], "Gesundheit+", r["gesundheit_plus"], "Div %", r["dividende_ohne_trends_pct_bip"],
+            print(r["jahr"], "Lenkung", r["lenkung_pct_bip"], "Progression", r["progression"], "Erosion", r["erosion"], "Gesundheit+", r["gesundheit_plus"], "Div %", r["dividende_ohne_trends_pct_bip"],
                   "->", r["dividende_pct_bip"], "| € ohne Trends", r["dividende_ohne_trends_eur2026"], "mit", r["dividende_erw_eur2026"],
                   "| Lücke zum Mindestniveau", r["luecke_mindestniveau_pct_bip"])
     return 0

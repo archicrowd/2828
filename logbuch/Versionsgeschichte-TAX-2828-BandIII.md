@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 17. Oktober 2026 · Modellstand **v3.48**
+Stand: 17. Oktober 2026 · Modellstand **v3.49**
 
 ---
 
@@ -1995,11 +1995,40 @@ im Erwerbsalter je Person über 65) interpoliert, keine Bevölkerungsprojektion 
 *Quellen: wie v3.47; Rat der EU ST 9160/24 (Altenquotient, Aussage); CaixaBank Research (Ageing Report 2024, Spanien: +33 % Zuwanderung senkt Rentenausgaben
 um 1,4 Punkte; Sekundärquelle); Eurostat Erwerbstätigenquote 2024 (75,8 %, nicht eigens abgerufen).*
 
+### v3.49 — Progression an den Stufen (Korrektur 61), Beschäftigung und Automatisierung, Leistungspaket und Namen
+
+**Art der Änderung: MINOR (Korrektur einer Prüfrechnung, Szenarien, Entwurf), keine Zahl der Gesamtrechnung bewegt.** 17. Oktober 2026.
+
+**Anlass:** Frage der Initiative, warum Automatisierung und billigere Arbeit keine stärkeren Gewinne bringen; Bitte, die Modellrechnung zu prüfen; Vorschlag,
+das Leistungspaket gesamthaft sichtbar zu machen und Namen zu prüfen (Goldenes Drittel, Goldenes Netz, Zukunftsschatz, Transformationsdividende/TrafoDi).
+
+**Prüfung:** (1) Beschäftigung, Automatisierung und Verschiebung zum Kapital waren in v3.47/v3.48 nicht enthalten (statische Anteile, Wachstum je Kopf 0,98 %).
+(2) **Fehler (Korrektur 61):** `projektion33.py` hielt den Anteil der Einkommensteuer am BIP fest, obwohl die Stufen am Grundbedarf hängen, der nur zu 30 % den Löhnen
+folgt (Mischindex § 28a SGB XII, an der Quelle zu prüfen). Mit realem Wachstum steigt der Anteil (Kernmodell: Einkommen × 1,366 bis 2060 → Anteil × 1,17 bei voller
+Preisbindung). (3) Der Rückgang der Konsumquote mit dem Einkommen (Kernmodell) wird nicht auf die Zeit übertragen (Sparquoten ohne Trend; Annahme).
+
+**Neu:** `projektion33.py`: Funktion `progression`, Parameter `stufen_lohnanteil = 0,3`, Mindestniveau mit 30 % Lohnbindung, Leistungspaket (Netz in € je Kopf).
+`modell/dynamik33.py` (+ `.toml`): Szenarien Beschäftigung +2,8/+4,6 % (Nachfrage −0,25 auf −3,5 % Arbeitskosten; Angebot Elastizität 0,05/0,10), KI +0,07/0,3/0,6 Pp
+Produktivität (Acemoglu 2024; OECD 2024), Verschiebung zum Kapital 3 Punkte (effektive Belastung 21 % Arbeit / 32 % Kapital im Drittel-System, Annahmen).
+Webseitenentwurf: Abschnitt „Was Du vom System bekommst“, Namen als Vorschlag, Automatisierung und Arbeit im Zeitpfad.
+
+**Bewegte Zahlen (Prüfrechnung, Kaufkraft 2026):** Progression 2060 +1,24 Punkte BIP. Dividende 296 € (2028), 217 € (2035), 170 € (2045), 170 € (2060) statt 83 €;
+Mindestniveau ab 2035 knapp unterschritten. Bürgerfonds (Hälfte): 2060 191–201 €. Szenarien 2060: KI 176–233 €, Beschäftigung +4,6 %: 183 €, alles zusammen
+(KI 0,3/0,6, Verschiebung 3 Punkte): 242–273 €. Heutiges System bei Verschiebung um 3 Punkte: −0,64 Punkte BIP. Leistungspaket: Netz 524 € je Einwohner und Monat
+(2028) → 770 € (2060); mit Dividende 820 → 940 €.
+
+**Offen gekennzeichnet:** Wachstum wirkt vor allem über Löhne; die Dividende ist ein kleiner Rest des BIP. Die Progression ist eine Wahl (Stufen an Löhnen gebunden: kein
+Zuwachs). Beschäftigungs- und KI-Wirkungen unsicher; KI-Annahmen können sich mit den Produktivitätsannahmen des Ageing Report überschneiden.
+**Geprüft:** `python3 modell/alles.py`; Seite im Browser. **Wodurch aufgefallen:** Nachfrage der Initiative zur Automatisierung.
+
+*Quellen: Acemoglu (2024), NBER WP 32487; Filippucci, Gal, Schief (OECD AI Papers 29, VoxEU 8.12.2024); Keane (2011); Chetty u. a. (2011); Lichter, Peichl, Siegloch
+(2015, Meta-Studie Arbeitsnachfrage, nicht am Abruftag geprüft); OECD Taxing Wages 2025.*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
 
-Neu ab v3.8: die Nummern 47 bis 60. **Nächste freie Nummer: 61.** Die Nummern 31 bis 41 sind
+Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
 besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 
 | Nr. | Was war falsch | Richtig | Wodurch auffiel |
@@ -2018,6 +2047,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 58 | Gesamtkonzept (seit v3.12), Abschnitt Gemeinden: „Estlands Gemeinden geben 5,8 % aus, Deutschlands 16,8 % … bei vergleichbarem Aufgabenvolumen. Der Weg auf estnisches Niveau setzt 1,02 Punkte des BIP frei.“ | Das vergleichbare Aufgabenvolumen ist nicht belegt; die Aufgaben der Gemeinden unterscheiden sich je Land. Belegt ist eine Einsparung der Verwaltung von netto etwa 0,1 bis 0,3 % des BIP nach 8 bis 12 Jahren (deutsche Ex-ante-Studien); der Verwaltungskern (COFOG GF0101) liegt in Estland mit 1,8 % auf EU-Niveau (1,9 %). Die 1,02 Punkte sind eine rechnerische Obergrenze, keine erreichbare Einsparung. Keine Rechnung betroffen (nicht in der Deckung); Text in der nächsten Fassung zu ändern | Recherche zur Wirkung der Verwaltungsdigitalisierung (v3.35) |
 | 59 | v3.36, `modell/justierung.py`, Pakete P6 bis P8: Die Ablösung der Verwaltung der Sozialschutzsysteme (0,45 bis 0,78 % des BIP) schließe die Lücke der Quote; P8 mit Lücke −0,65 bzw. −0,98 und Reserve 1,53 bzw. 1,86 | Diese Verwaltungskosten trägt heute der Beitragshaushalt; die Posten der Quote (Ebenen A und B) enthalten sie nicht. Ihr Wegfall gehört zur Entlastung gegen heute und ist Voraussetzung dafür, dass der Wegfall der Beiträge trägt; er schließt keine Lücke der Quote. P8 ohne Ablösung: +3,12, Lücke −0,20, Reserve 1,08, stabil; P6 und P7 nicht stabil | Durchsicht der Pakete vor dem Einrechnen in die Gesamtrechnung (v3.37) |
 | 60 | Gesamtkonzept, Kurzfassung und Webseite (seit v3.11, zuletzt Fassung 12. Oktober 2026): „Die Gesamtlast sinkt um 2,81 Punkte des BIP“ (40,76 gegen 37,95 %) | Der Vergleich enthält heute die Finanzierung des gesamten Sozialschutzes (20,07 % BIP), der Entwurf nur die Dividende (11,86 %) und die Gesundheit. Die Altansprüche über der Dividende (Z, 2028 rund 8,9 % BIP, Schätzung v3.42), eine Pflicht-Vorsorge und Pflichtversicherungen fehlen. Mit ihnen liegt die Last 2028 bei rund 54 %; im Dauerzustand nach dem Auslauf von Z ist der Sozialschutz etwa so groß wie heute. Aussage bis zur Entscheidung über den Übergang zurückzuziehen | Vorschläge Generationenbaustein und Hütte/Route/Seil (16.10.2026), Rechnung v3.42 |
+| 61 | v3.47 und v3.48, `modell/projektion33.py`: Anteil der Einkommensteuer am BIP bis 2060 fest; Dividende 2060 48 € (33F) bzw. 83 € (33R), Kaufkraft 2026 | Die Stufen hängen am Grundbedarf, der nur zu 30 % den Löhnen folgt; mit realem Wachstum steigt der Anteil (2060 +1,24 Punkte). Dividende 33R 2060 170 €. Haushalts- und Einwanderungsrechnung damit neu | Nachfrage der Initiative zu Automatisierungsgewinnen; Prüfung, welche Wirkungen des Wachstums fehlen (v3.49) |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -2046,9 +2076,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.48
+## 7 | Offene Punkte, Stand v3.49
 
-Neu seit v3.23 (Stand v3.48): **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.49): **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

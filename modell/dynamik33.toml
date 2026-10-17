@@ -1,0 +1,30 @@
+# Dynamische Wirkungen im Drittel-System (modell/dynamik33.py, Logbuch v3.49): Beschäftigung, Automatisierung/KI, Verschiebung zum Kapital.
+# Frage der Initiative (17.10.2026): Warum erzeugen Automatisierung und billigere Arbeit in der Rechnung keine stärkeren Gewinne?
+# Antwort der bisherigen Rechnung: beides war nicht enthalten (statische Deckung in % des BIP, Wachstum je Kopf 0,98 % aus der Gesamtrechnung).
+# Hier als Szenarien mit Annahmen; keine Prognose.
+version = "v3.49"
+einfuehrung_jahre = 7             # Wirkungen von Beschäftigung bauen sich bis 2035 auf (Annahme)
+
+# 1 Beschäftigung (Arbeitsvolumen, % gegen Grundpfad im vollen Ausbau)
+# Nachfrage: Arbeitskosten sinken um den nicht weitergegebenen Teil der Arbeitgeberbeiträge (20 % von rund 21 % des Bruttolohns ≈ 3,5 %);
+#   Elastizität der Arbeitsnachfrage −0,25 (Größenordnung der Meta-Studie Lichter, Peichl, Siegloch 2015; nicht am Abruftag geprüft) -> +0,9 %.
+# Angebot: Grenzbelastung 56 -> 36 % (haushalte33, 55.000 €), Nettolohnanteil 0,44 -> 0,64, ln-Verhältnis 0,37; Elastizität 0,05 (vorsichtig)
+#   bzw. 0,10 (unter den Mittelwerten von Keane 2011 und Chetty u. a. 2011, weil ein Teil der Beiträge heute als Gegenleistung gilt) -> +1,9 / +3,7 %.
+beschaeftigung_pct = [2.8, 4.6]   # vorsichtig (0,9 + 1,9), mittel (0,9 + 3,7)
+lohnanteil_bip = 0.66             # Elastizität des BIP bezüglich Arbeitsvolumen (Annahme, Produktionselastizität der Arbeit)
+
+# 2 Automatisierung/KI: zusätzliches Wachstum der Arbeitsproduktivität in Prozentpunkten je Jahr, 2028–2040 voll, 2041–2060 zur Hälfte (Annahme).
+# Spanne: Acemoglu (2024, NBER WP 32487): TFP +0,66 % in zehn Jahren ≈ 0,07 Pp/Jahr; Filippucci, Gal, Schief (OECD 2024, VoxEU 8.12.2024): USA
+# Arbeitsproduktivität +0,4 bis 0,9 Pp/Jahr, Europa „etwas niedriger“. Die Annahmen des Ageing Report (1,4 % je Stunde) enthalten bereits Technik;
+# was davon schon KI ist, ist unklar (Doppelzählung möglich).
+ki_pp = [0.07, 0.3, 0.6]
+
+# 3 Verschiebung vom Arbeits- zum Kapitaleinkommen durch Automatisierung (Punkte des BIP bis 2060, Annahme) und effektive Belastung je Euro.
+# Drittel-System: Einkommen 10,21 % BIP auf Arbeitnehmerentgelt rund 48 % BIP (Größenordnung Eurostat D1, nicht eigens abgerufen) ≈ 21 %;
+# Kapitalseite: Kapitalerträge, Unternehmen, Erbschaft, Vermögen (7,92 % BIP) auf Kapitaleinkommen rund 25 % BIP (Annahme) ≈ 32 %.
+# Heute (Vergleich): Arbeit mit Sozialbeiträgen und Lohnsteuer ≈ 47,9 % Abgabenkeil (OECD), Kapital ≈ 26,4 % Abgeltung -> Verschiebung kostet.
+kapital_verschiebung_pp = [0.0, 3.0]
+belastung_arbeit_33 = 0.21
+belastung_kapital_33 = 0.32
+belastung_arbeit_heute = 0.479
+belastung_kapital_heute = 0.264

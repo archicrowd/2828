@@ -98,3 +98,50 @@ Neu offen: Rentner leicht im Minus; Familien mit einem Einkommen mit Zuschlag ab
 Befund: Einwanderung im Erwerbsalter verdünnt die festen Altlasten und die Kosten der Alterung; im Drittel-System erwerben Eingewanderte keine Ansprüche über
 der Dividende, ihre Steuern tragen die Altlasten mit. Ob die Wirtschaftsleistung je Einwohner steigt, entscheidet die Erwerbstätigkeit. Die Alterung wird
 gemildert, nicht ausgeglichen: Auch mit 1 Mio. zusätzlich je Jahr steigt der Altenquotient von 0,36 auf 0,42.
+
+## 8 | Nachtrag v3.49: Prüfung der Rechnung, Automatisierung, Leistungspaket, Namen (17.10.2026)
+
+**Warum die Dividende schrumpft (33R, % des BIP, 2028 → 2060):** 5,76 → 2,42. Verteidigungspfad im Dach −1,10 (bis 2035); Lenkung erodiert −2,64 (Klimaziele
+erreicht: CO₂-Preis, Sonderstufe, Energie- und Tabaksteuer); Gesundheit und Pflege −0,84; dagegen Progression +1,24 (neu, Korrektur 61).
+
+**Korrektur 61:** Die Einkommensteuer blieb als Anteil am BIP fest. Die Stufen hängen aber am Grundbedarf, der nur zu 30 % den Löhnen folgt; reales Wachstum hebt den
+Anteil. Dividende 2060 jetzt 170 € (vorher 83 €), Kaufkraft 2026.
+
+**Automatisierung und billigere Arbeit (Szenarien, `modell/dynamik33.py`), Dividende 2060:**
+
+| Szenario | Dividende 2060 | BIP gegen Grundpfad |
+|---|---|---|
+| Grundpfad | 170 € | – |
+| KI +0,07 Pp/Jahr (Acemoglu 2024) | 176 € | +1,6 % |
+| KI +0,6 Pp/Jahr (obere OECD-Spanne für Europa) | 233 € | +14 % |
+| Arbeitsvolumen +4,6 % (billigere Arbeit, geringere Grenzbelastung) | 183 € | +3 % |
+| zusammen: Arbeit +4,6 %, KI 0,3, Verschiebung zum Kapital 3 Punkte | 242 € | +10 % |
+| zusammen mit KI 0,6 | 273 € | +17,5 % |
+
+Warum die Wirkung auf die Dividende klein ist: Wachstum kommt vor allem als Lohn und Gewinn bei den Menschen an; die Dividende ist der Rest nach den Aufgaben
+(2060 rund 2,4 % des BIP) und wächst nur im selben Verhältnis. Strukturell gilt: Im heutigen System kostet eine Verschiebung von 3 Punkten Einkommen von der Arbeit
+zum Kapital 0,64 Punkte Aufkommen (Arbeit 47,9 %, Kapital 26,4 % belastet); im Drittel-System bringt sie +0,33 Punkte (Kapital trägt sein Drittel, Arbeit ohne Beiträge
+weniger). Das System ist automatisierungsfest – es lebt nicht vom Lohn.
+
+**Leistungspaket je Person (Deutschland, Kaufkraft 2026):**
+
+| | 2028 | 2060 |
+|---|---|---|
+| Goldenes Netz (Gesundheit, Pflege, Arbeitslosigkeit, Invalidität, Hinterbliebene, Grundbedarf; Wert je Einwohner, Durchschnitt) | 524 € | 770 € |
+| Transformationsdividende (je Erwachsenem) | 296 € | 170 € |
+| zusammen | 820 € | 940 € |
+
+Das Paket wächst; seine Zusammensetzung verschiebt sich von der Geldzahlung zur Absicherung.
+
+**Bewertung der Namen (Vorschlag; nicht markenrechtlich geprüft):**
+
+| Name | für | Stärke | Schwäche | Empfehlung |
+|---|---|---|---|---|
+| Das Goldene Drittel | Steuerregel ≤ 33 % | eingängig, erinnert an goldene Regel/goldenen Schnitt, sagt die Zahl | „golden“ klingt nach Werbung; Kritiker: „golden für wen?“ | übernehmen |
+| Das Goldene Netz | Absicherung ohne Prämie | bildet mit dem Drittel eine Familie; „Netz“ ist das richtige Bild | „golden“ kann nach Luxus klingen („Hängematte“) | übernehmen, im Text sachlich erklären; Alternative „Das sichere Netz“ |
+| Transformationsdividende | Geldzuweisung | erklärt, warum sie schrumpft (Wandel), positiv | lang | übernehmen; kurz „die Dividende“ |
+| TrafoDi | Kurzform | witzig, merkbar | technisch (Trafo = Transformator), wirkt wie Behördenkürzel, schwer auszusprechen, übersetzt sich schlecht | nicht verwenden |
+| Zukunftsschatz | Bürgerfonds | warm, verständlich, Vorbild Norwegen | nur sinnvoll, wenn der Fonds beschlossen wird | übernehmen, falls Fonds beschlossen |
+
+Gesamtbild: **Du zahlst höchstens das Goldene Drittel. Das Goldene Netz trägt Dich. Die Transformationsdividende gibt zurück, was der Wandel einbringt. Der
+Zukunftsschatz bleibt.**
