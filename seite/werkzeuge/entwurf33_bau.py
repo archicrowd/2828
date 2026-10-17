@@ -32,6 +32,12 @@ ZU = max(f["zuschlag_pct"] for f in H["faelle"])                 # Beispielzusch
 F26 = 1.0404                                   # Preise 2028 -> Kaufkraft 2026 (2 % je Jahr, Annahme der Gesamtrechnung)
 G26 = 12348
 REIHE = {r["jahr"]: r for r in PJ["reihe"]}
+# v3.51: Dividende nach dem Beschluss zum starken Netz (Mindestrente mit Pflichtvorsorge, Katalog −5 %)
+_NZ = json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))
+for _r in _NZ["beschluss"]["reihe"]:
+    REIHE[_r["jahr"]] = dict(REIHE[_r["jahr"]], dividende_erw_eur2026=_r["dividende_erw_eur2026"], dividende_pct_bip=_r["dividende_pct_bip"])
+for _r in PJ["reihe"]:
+    _r.update({k: REIHE[_r["jahr"]][k] for k in ("dividende_erw_eur2026", "dividende_pct_bip")})
 
 
 def zahl(x, nk=0):
@@ -46,7 +52,7 @@ def pct(x, nk=0):
     return SB.pct(x, "de", nk)
 
 
-def fall(jahr, haushalt, wg=0.8, zu=0.0, vs=0.186):
+def fall(jahr, haushalt, wg=0.8, zu=0.0, vs=0.1):
     return next(f for f in H["faelle"] if f["jahr"] == jahr and f["haushalt"] == haushalt and f["weitergabe_ag"] == wg
                 and f["zuschlag_pct"] == zu and f["vorsorge_satz"] == vs)
 
@@ -66,8 +72,8 @@ def werte():
     m42k = zeile(fall(2028, "alleinstehend", wg=1.0), 42000)
     plus42_35 = zeile(fall(2035, "alleinstehend"), 42000)["differenz_monat"]
     plus150 = zeile(fall(2028, "alleinstehend"), 150000)["differenz_monat"]
-    m42o = zeile(fall(2028, "alleinstehend", vs=0.0), 42000)
-    gr = zeile(fall(2028, "alleinstehend", vs=0.0), 55000)
+    m42o = zeile(fall(2028, "alleinstehend", vs=0.1), 42000)
+    gr = zeile(fall(2028, "alleinstehend", vs=0.1), 55000)
     rent = {(r["rente_monat"], r["zuschlag_pct"]): r for r in H["rentner"]}
     a1 = altfall(1.0)
     fh = [x for x in PJ["buergerfonds"] if x["anteil"] == 0.5]
@@ -76,7 +82,7 @@ def werte():
         return next(x for x in DY["szenarien"] if x["beschaeftigung_pct"] == b and x["ki_pp"] == ki
                     and x["kapital_verschiebung_pp"] == kv)["reihe"][j]["dividende_erw_eur2026"]
     d45 = REIHE[2045]
-    nv = next(x for x in NZ["varianten"] if x["grundrente"] == "mindestrente")["reihe"]
+    nv = next(x for x in NZ["varianten"] if x["grundrente"] == f"mindestrente_{NZ['beschluss']['pflicht_satz']}")["reihe"]
     vr = next(x for x in NZ["varianten"] if x["grundrente"] == "volksrente" and x["gesundheit_kuerzung"] == 0.05)["reihe"]
     return dict(
         netz28=eur(nv["2028"]["netz_eur_kopf_monat"]), netz60=eur(nv["2060"]["netz_eur_kopf_monat"]),
@@ -99,12 +105,12 @@ def werte():
         plus42o=eur(m42o["differenz_monat"]),
         gh55=pct(gr["grenzbelastung_heute"]), gn55=pct(gr["grenzbelastung_33"]),
         r1200=eur(rent[(1200, 0.0)]["differenz_monat"]), r1200z=eur(rent[(1200, ZU)]["differenz_monat"]), r900=eur(rent[(900, 0.0)]["differenz_monat"]), r2200=eur(rent[(2200, 0.0)]["differenz_monat"]),
-        anteil_voll=pct(an[f"2028|weitergabe 0.8|zuschlag {ZU}|vorsorge 0.186"]), zu=pct(ZU, 1), zu_v=str(ZU),
+        anteil_voll=pct(an[f"2028|weitergabe 0.8|zuschlag {ZU}|vorsorge 0.1"]), zu=pct(ZU, 1), zu_v=str(ZU),
         st1=eur(G26), st15=eur(G26 * 1.5), st2=eur(G26 * 2), st3=eur(G26 * 3),
         a_c=zahl(a1["beitrag_pct_bip"], 2).replace(",00", ""), a_zu=pct(a1["zuschlag_auf_alle_steuern_pct"], 1), a_sp=pct(a1["schuldenquote_spitze"]),
         a_spj=str(a1["spitzenjahr"]), keil=pct(J["abgabenkeil_de_2024"], 1), keil_oecd=pct(J["abgabenkeil_oecd_2024"], 1),
         abgeltung=pct(J["abgeltungsteuer_de"], 1), og=pct(J["obergrenze"]), gesundheit=pct(SV["gesundheit"], 2), seil=pct(SV["seil"], 2),
-        version="v3.50 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
+        version="v3.51 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
         f60b=eur(fh[1]["dividende_erw_eur2026"]["2060"]), fv=pct(fh[0]["fondsvermoegen_2060_pct_bip"]),
     )
 
@@ -202,19 +208,19 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
   <div class="stamps">
     <div class="stamp"><div class="val">33 %</div><div class="lbl">das Goldene Drittel: höchstens, auf jedes Einkommen</div></div>
     <div class="stamp"><div class="val">0 €</div><div class="lbl">Prämie für das starke Netz</div></div>
-    <div class="stamp"><div class="val">+{plus42}*</div><div class="lbl">mehr im Monat bei 42.000 € brutto – nach eigener Vorsorge</div></div>
+    <div class="stamp"><div class="val">+{plus42}*</div><div class="lbl">mehr im Monat bei 42.000 € brutto – nach Pflichtvorsorge</div></div>
   </div>
   <p class="fineprint" style="text-align:center;margin:16px auto 0">* Schätzung des Projekts: alleinstehend, 2028, Kaufkraft 2026; mindestens 80 % der gesparten Arbeitgeberbeiträge gehen in den Lohn (Pflicht);
-  vom Mehr ist schon abgezogen, was heute in die Rentenversicherung fließt, als eigene Vorsorge. Ohne Altlastenzuschlag des Staates; mit Zuschlag +{plus42z}.</p>
+  vom Mehr sind schon 10 % des Lohns als Pflichtvorsorge auf Dein eigenes Konto abgezogen. Ohne Altlastenzuschlag des Staates; mit Zuschlag +{plus42z}.</p>
 
   <div class="pruef"><h3>Zur Prüfung durch die Initiative (erscheint nicht auf der Seite)</h3><ol>
     <li><b>Name:</b> Der Bauplan heißt im Entwurf „33:33“. Absender bleibt die Initiative 28:28. Alternative: „TAX 28:28 – Drittel-Fassung“.</li>
     <li><b>Namen (Vorschlag, im Entwurf verwendet):</b> „Das Goldene Drittel“ (Steuerregel), „Das starke Netz“ (Grundversorgung ohne Prämie), „Transformationsdividende“
       (Geldzuweisung), „Zukunftsschatz“ (Bürgerfonds, falls beschlossen). Nicht markenrechtlich geprüft. „TrafoDi“ nicht verwendet (siehe Bewertung im Bericht).</li>
-    <li><b>Starkes Netz als Grundversorgung (v3.50, Vorschlag):</b> Gesundheit ohne Extras (Katalog −5 %, Annahme), Pflege als Teilkasko, Grundbedarf bei
-      Invalidität und Arbeitslosigkeit statt Lohnersatz, Mindestrente mit Pflichtvorsorge auf eigenem Konto. Netz {nz28} → {nz60} des BIP; Dividende 2028 {nz_div28},
+    <li><b>Starkes Netz als Grundversorgung (beschlossen, v3.51):</b> Gesundheit ohne Extras (Katalog −5 %, Annahme), Pflege als Teilkasko, Grundbedarf bei
+      Invalidität und Arbeitslosigkeit statt Lohnersatz, Mindestrente mit Pflichtvorsorge 10 % auf eigenem Konto (eigene Rente zur Hälfte angerechnet). Netz {nz28} → {nz60} des BIP; Dividende 2028 {nz_div28},
       2060 {nz_div60}, Dauerzustand {nz_divd}. Mit einer Volksrente für alle (Vorbild Niederlande) wäre die Dividende im Dauerzustand {vr_divd}: nicht tragfähig.
-      Abschnitt „Paket“ zeigt die Vorschlagswerte; Rechner und Zeitpfad noch ohne diese Änderung.</li>
+      Rechner, Zeitpfad und Paket rechnen mit diesem Beschluss (Pflichtvorsorge 10 %).</li>
     <li><b>Korrektur 61:</b> Die Rechnung v3.47/v3.48 hielt den Anteil der Einkommensteuer fest, obwohl die Stufen am Grundbedarf hängen und dieser langsamer wächst als die
       Einkommen. Mit dieser Wirkung (+{prog60} Punkte 2060) sinkt die Dividende von {div28} (2028) auf {div35} (2035) und {div45} (2045) und bleibt dann bei {div60} (2060) – statt 83 €.
       Lenkung (Erosion), Gesundheit/Pflege und Verteidigungspfad drücken weiter. Bürgerfonds (Hälfte der Lenkungseinnahmen): 2028 {f28}, 2060 {f60a} bis {f60b}.</li>
@@ -297,7 +303,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
   <div class="effects" style="margin-top:14px"><div><h3>Deine eigene Route</h3><p>Alles über der Grundversorgung gehört Dir und liegt bei Dir: eigene Vorsorge auf
       Deinem Konto (vererbbar), Zusatzversicherungen für Komfort in Gesundheit und Pflege, Lohnersatz bei Arbeitslosigkeit oder Berufsunfähigkeit. Jeder zusätzlich
       verdiente und gesparte Euro bleibt Deiner.</p></div></div>
-  <p class="fineprint">Kaufkraft 2026, Deutschland. Vorschlag Grundversorgung (Mindestrente mit Pflichtvorsorge, Katalog −5 %), zu entscheiden. Der Wert des Netzes ist der
+  <p class="fineprint">Kaufkraft 2026, Deutschland. Grundversorgung nach Beschluss: Mindestrente mit Pflichtvorsorge 10 %, Katalog −5 %. Der Wert des Netzes ist der
   Durchschnitt der öffentlichen Ausgaben je Einwohner, kein Anspruch in Euro. Dividende nach diesem Vorschlag: 2028 {nz_div28}, 2060 {nz_div60}.</p>
 </div></section>
 
@@ -315,7 +321,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
       <label class="lbl">Gesparte Arbeitgeberbeiträge</label>
       <div class="seg klein" id="wg"><button type="button" aria-pressed="true" data-v="0.8">80 % in den Lohn (Pflicht)</button><button type="button" aria-pressed="false" data-v="1.0">alles in den Lohn</button></div>
       <label class="lbl">Eigene Altersvorsorge</label>
-      <div class="seg klein" id="vs"><button type="button" aria-pressed="true" data-v="0.186">so viel wie heute</button><button type="button" aria-pressed="false" data-v="0.0">keine</button></div>
+      <div class="seg klein" id="vs"><button type="button" aria-pressed="true" data-v="0.1">Pflicht: 10 %</button><button type="button" aria-pressed="false" data-v="0.186">18,6 % wie heute</button></div>
       <label class="lbl">Altlastenzuschlag Deines Staates</label>
       <div class="seg klein" id="zu"><button type="button" aria-pressed="true" data-v="0.0">keiner</button><button type="button" aria-pressed="false" data-v="{zu_v}">Beispiel {zu}</button></div>
     </div>
@@ -324,13 +330,13 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
       <div class="plus-box"><div class="plus" id="r-d"></div><div class="sub" id="r-dsub"></div></div>
       <p class="fineprint" style="margin-top:12px">Heute: nach Lohnsteuer, Soli, Sozialbeiträgen, mit Kindergeld; 2035 mit den Beitragssätzen der IGES-Projektion.
       Neu: Einkommensteuer auf Lohn und Dividende, Dividende für alle im Haushalt (Kinder die Hälfte), höhere Mehrwertsteuer im Mittel ({label_eff} statt 16,0 %).
-      „So viel wie heute“: der heutige Rentenbeitrag (18,6 %) geht als Sparen in Dein eigenes Vermögen und ist abgezogen. Bürgergeld und Wohngeld sind nicht gerechnet.</p>
+      Die Pflichtvorsorge (10 % des Lohns) geht auf Dein eigenes Konto und ist abgezogen; zum Vergleich 18,6 % wie der heutige Rentenbeitrag. Bürgergeld und Wohngeld sind nicht gerechnet.</p>
     </div>
   </div>
   <div class="effects">
     <div><h3>Rente heute 1.200 € brutto</h3><p>Die Rente sinkt um die Kranken- und Pflegebeiträge, die nicht mehr anfallen; die Versorgung bleibt ohne Prämie.
       Mit der höheren Mehrwertsteuer bleiben {r1200} im Monat (mit Altlastenzuschlag {r1200z}) – ein kleines Minus.</p></div>
-    <div><h3>Wer arbeitet, hat mehr</h3><p>Mit der Pflicht zur Weitergabe haben alle gerechneten Einkommensgruppen mehr – auch nach eigener Vorsorge und Altlastenzuschlag ({anteil_voll}).</p></div>
+    <div><h3>Wer arbeitet, hat mehr</h3><p>Mit der Pflicht zur Weitergabe haben alle gerechneten Einkommensgruppen mehr – auch nach Pflichtvorsorge und Altlastenzuschlag ({anteil_voll}).</p></div>
     <div><h3>Mehr, das bleibt</h3><p>Das Mehr kommt nicht aus einer Zahlung, die man streichen kann, sondern aus dem Wegfall der Beiträge. 2035 ist die Dividende kleiner,
       die Beiträge heute wären höher – das Mehr bleibt fast gleich ({plus42_35} bei 42.000 €).</p></div>
   </div>

@@ -1,12 +1,14 @@
 # Das starke Netz als Grundversorgung (modell/netz33.py, Logbuch v3.50). Vorgabe der Initiative (17.10.2026): Kranken-, Pflege- und Rentenversicherung
 # bieten nur eine brauchbare Grundversorgung ohne Extras; stets Raum und Anreiz für eigenes Engagement. Prüfrechnung, alle Mengen Annahmen.
-version = "v3.50"
+version = "v3.51"
 grundbedarf_eur_2026 = 12348      # steuerliches Existenzminimum 2026 je Jahr (Grundbedarf, Stufe 1 des Tarifs)
 
 # 1 Gesundheit: GF07 (7,75 % BIP Klub) ohne Extras. Kürzung des Leistungskatalogs auf eine Grundversorgung (Annahme, keine Quelle für die Höhe;
 # Vorbild Schweiz: obligatorische Grundversicherung mit Kostenbeteiligung, Zusatzversicherungen privat).
 gesundheit_kuerzung = [0.0, 0.05, 0.10]
-gesundheit_kuerzung_basis = 0.05   # für die Varianten der Grundrente
+gesundheit_kuerzung_basis = 0.05   # Beschluss: Grundversorgung ohne Extras, Katalog −5 % (Annahme zur Höhe). Größenordnungen GKV 2024 (BMG, Finanzentwicklung
+# 1.–4. Quartal 2024, Leistungsausgaben 311,7 Mrd €): Fahrkosten 9,6, Vorsorge und Reha 4,7, Zahnersatz 4,2 Mrd € (zusammen 6 %); Krankengeld 20,5 Mrd €
+# ist Geldleistung (COFOG GF10, nicht GF07) und im Netz durch den Grundbedarf ersetzt.
 # 2 Pflege: öffentliche Langzeitpflege 1,7 % BIP (EU27 2022, Ageing Report 2024, Tabelle 5); Teilkasko wie heute in Deutschland (Grundversorgung),
 # davon liegt ein Teil schon in GF07 (Annahme 50 %); der Rest liegt bisher in GF10 und ist im Drittel-System nicht finanziert.
 pflege_pct_bip = 1.7
@@ -21,13 +23,25 @@ grundrente_alter = 67
 #   mindestrente = Aufstockung nur, wer mit eigener Rente unter dem Grundbedarf liegt; eigene Rente zur Hälfte angerechnet (Anreiz bleibt).
 #                  Mit Pflichtvorsorge (eigenes Konto, z. B. 10 % des Lohns, Vorbild Australien 12 %) Annahme: 25 % der Rentner mit im Mittel halber Lücke -> 0,125
 grundrente_varianten = { volksrente = 1.0, zwei_drittel = 0.667, mindestrente = 0.125 }
+# v3.51 (Beschluss: Mindestrente mit Pflichtvorsorge): Faktor der Mindestrente aus der Einkommensverteilung des Kernmodells (VERT) berechnet statt 0,125.
+# Rente aus Pflichtvorsorge = Satz × Lohn × A; A = Ansparfaktor (Jahre, Realzins, Lohnwachstum) / Rentenbarwertfaktor (Bezugsdauer). Aufstockung je Person
+# = max(Grundbedarf − Dividende − Anrechnung × eigene Rente, 0). Zusätzlich ein Anteil mit langen Lücken (volle Aufstockung).
+pflicht_satz = 0.10               # Beschluss (Empfehlung v3.50); Vergleich Australien 12 % (Superannuation Guarantee seit 1.7.2025)
+pflicht_satz_vergleich = 0.12
+anrechnung_eigene_rente = 0.5     # Setzung: eigene Rente zur Hälfte angerechnet (Anreiz)
+spar_jahre = 40                   # Annahme: Erwerbsjahre mit Pflichtvorsorge
+realzins = 0.025                  # Annahme: reale Rendite eines breit gestreuten Kontos (Größenordnung; Norwegen erwartet 3 %)
+lohnwachstum_real = 0.01
+bezugsdauer_jahre = 20            # Annahme (wie Rentenbezugsdauer im Sozialschutzmodell, gerundet)
+anteil_lange_luecken = 0.10       # Annahme: Personen mit langen Erwerbslücken; Vergleich: Grundsicherung im Alter heute 739.000 Personen Ende 2024
+                                  # (Destatis über Deutsches Ärzteblatt 28.3.2025), rund 4 % der Bevölkerung ab Regelaltersgrenze (eigene Rechnung, grob)
 anteil_67_an_65plus = 0.86        # Annahme (Jahrgänge 65 und 66 rund 14 % der über 65-Jährigen)
 anteil_65plus = [[2028, 0.216], [2060, 0.281]]   # aus Altenquotient und Erwerbsalteranteil (einwanderung33.toml), Annahme
 # 4 Invalidität: Grundbedarf für Menschen mit voller Erwerbsminderung, Dividende angerechnet; eigene Berufsunfähigkeitsversicherung als Ergänzung.
-invaliditaet_anteil_bev = 0.022   # Annahme: rund 1,8 Mio. Erwerbsminderungsrenten in Deutschland (Größenordnung DRV, nicht geprüft) / 83,5 Mio.
+invaliditaet_anteil_bev = 0.0215  # 1,8 Mio. Renten wegen verminderter Erwerbsfähigkeit Ende 2024 (DRV, über sozialpolitik-aktuell.de, Abb. VIII.22) / 83,6 Mio.
 # 5 Arbeitslosigkeit: Grundbedarf statt Lohnersatz, Dividende angerechnet, Hinzuverdienst zur Hälfte angerechnet (Setzung H2). Lohnersatz darüber:
 # eigene Versicherung oder tariflich (Vorbild Dänemark: freiwillige Arbeitslosenkassen).
-arbeitslose_anteil_bev = 0.029    # Annahme: Arbeitslosenquote rund 6 % × Erwerbspersonen rund 49 % der Bevölkerung
+arbeitslose_anteil_bev = 0.030    # Arbeitslosenquote Euroraum 6,2 % (Eurostat, Dezember 2025) × Erwerbspersonen rund 49 % der Bevölkerung (Annahme)
 # 6 Hinterbliebene: jede erwachsene Person hat eigene Dividende/Grundrente; Waisen erhalten den Grundbedarf eines Kindes (Annahme: 0,05 % BIP).
 waisen_pct_bip = 0.05
 # 7 Härtefall (Wohnkosten über dem Grundbedarf, besondere Lagen, Eingliederung): wie bisher 0,65 % BIP (Annahme).

@@ -30,6 +30,12 @@ SAETZE = v["einkommen_saetze"]
 EFF_ALT = P["mwst_heute_effektiv"]
 BASIS = (K.AN_KV_PV, K.AN_RV_AV)
 JAHR = {r["jahr"]: r for r in PJ["reihe"]}
+# v3.51: Dividende nach dem Beschluss zum starken Netz (netz33.json), falls vorhanden
+_NZ = AGG / "netz33.json"
+if _NZ.exists():
+    for _r in json.loads(_NZ.read_text(encoding="utf-8"))["beschluss"]["reihe"]:
+        if _r["jahr"] in JAHR:
+            JAHR[_r["jahr"]] = dict(JAHR[_r["jahr"]], dividende_erw_eur2026=_r["dividende_erw_eur2026"])
 
 
 def setze_jahr(j):
@@ -81,7 +87,7 @@ def neu(b, kinder, partner, wg, zu, vs, j):
     konsum = kq(netto) * netto
     mwst_mehr = konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1)
     mwst_bezahlt = konsum * EFF / (100 + EFF)
-    return netto - mwst_mehr - zu / 100 * (st + mwst_bezahlt) - vs * K.AN_RV_AV / BASIS[1] * min(b, K.BBG_RV)
+    return netto - mwst_mehr - zu / 100 * (st + mwst_bezahlt) - (vs * K.AN_RV_AV / BASIS[1] * min(b, K.BBG_RV) if vs > 0.15 else vs * b)
 
 
 def heute(b, kinder, partner):
