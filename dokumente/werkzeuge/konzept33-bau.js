@@ -247,7 +247,6 @@ add(H1("7  Vorbilder"),
   tab([{t:"Staat",w:1800},{t:"Was übernommen wird",w:7226}],[
     ["Dänemark","Sozialstaat aus Steuern (Sozialbeiträge 0,7 % des BIP); freiwillige Arbeitslosenkassen für Lohnersatz; starke Kommunen"],
     ["Estland","einfache, digitale Einkommensteuer; Grundsteuer allein auf den Bodenwert seit 1993"],
-    ["Neuseeland","Mehrwertsteuer mit breiter Basis und wenigen Ausnahmen"],
     ["Schweiz","CO₂-Abgabe gleichmäßig an alle zurück; Grundversicherung mit Kostenbeteiligung, Komfort privat; Gemeinden setzen ihre Steuern selbst"],
     ["Niederlande","Volksrente (AOW) als Vergleich; als Dauerlösung zu teuer"],
     ["Australien","Pflichtvorsorge auf eigenem Konto (12 % seit 1.7.2025) und bedarfsgeprüfte Grundrente"],
