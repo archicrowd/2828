@@ -63,7 +63,7 @@
  "preisbasis": "Euro 2026; heute: Recht 2026 (2035: Beitragssätze IGES)",
  "dividende_erw_jahr": {
   "2028": 3240,
-  "2035": 2136
+  "2035": 2100
  },
  "faelle": [
   {
@@ -2020,35 +2020,35 @@
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 16387,
-     "differenz": 7381,
-     "differenz_monat": 615,
+     "netto_33": 16367,
+     "differenz": 7361,
+     "differenz_monat": 613,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 11.8
+     "grenzbelastung_33": 11.7
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 24357,
-     "differenz": 9560,
-     "differenz_monat": 797,
+     "netto_33": 24347,
+     "differenz": 9550,
+     "differenz_monat": 796,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 25.6
+     "grenzbelastung_33": 25.5
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 33422,
-     "differenz": 12789,
+     "netto_33": 33420,
+     "differenz": 12787,
      "differenz_monat": 1066,
      "grenzbelastung_heute": 54.9,
-     "grenzbelastung_33": 33.5
+     "grenzbelastung_33": 33.4
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 43350,
-     "differenz": 16118,
+     "netto_33": 43354,
+     "differenz": 16122,
      "differenz_monat": 1343,
      "grenzbelastung_heute": 56.8,
      "grenzbelastung_33": 33.4
@@ -2056,36 +2056,36 @@
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 54113,
-     "differenz": 20049,
-     "differenz_monat": 1671,
+     "netto_33": 54123,
+     "differenz": 20058,
+     "differenz_monat": 1672,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 33.4
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 70282,
-     "differenz": 25942,
-     "differenz_monat": 2162,
+     "netto_33": 70298,
+     "differenz": 25958,
+     "differenz_monat": 2163,
      "grenzbelastung_heute": 51.3,
      "grenzbelastung_33": 33.3
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 89087,
-     "differenz": 31859,
-     "differenz_monat": 2655,
+     "netto_33": 89108,
+     "differenz": 31880,
+     "differenz_monat": 2657,
      "grenzbelastung_heute": 58.9,
      "grenzbelastung_33": 33.2
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 122545,
-     "differenz": 38621,
-     "differenz_monat": 3218,
+     "netto_33": 122578,
+     "differenz": 38654,
+     "differenz_monat": 3221,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 33.4
     }
@@ -2101,44 +2101,44 @@
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 17446,
-     "differenz": 5260,
-     "differenz_monat": 438,
+     "netto_33": 17409,
+     "differenz": 5223,
+     "differenz_monat": 435,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 11.8
+     "grenzbelastung_33": 11.7
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 25416,
-     "differenz": 7411,
-     "differenz_monat": 618,
+     "netto_33": 25389,
+     "differenz": 7384,
+     "differenz_monat": 615,
      "grenzbelastung_heute": 49.8,
-     "grenzbelastung_33": 25.6
+     "grenzbelastung_33": 25.5
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 34482,
-     "differenz": 10606,
-     "differenz_monat": 884,
+     "netto_33": 34463,
+     "differenz": 10587,
+     "differenz_monat": 882,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 33.5
+     "grenzbelastung_33": 33.4
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 44411,
-     "differenz": 13890,
-     "differenz_monat": 1157,
+     "netto_33": 44398,
+     "differenz": 13877,
+     "differenz_monat": 1156,
      "grenzbelastung_heute": 56.5,
      "grenzbelastung_33": 33.4
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 55175,
-     "differenz": 17777,
+     "netto_33": 55167,
+     "differenz": 17768,
      "differenz_monat": 1481,
      "grenzbelastung_heute": 58.6,
      "grenzbelastung_33": 33.4
@@ -2146,17 +2146,17 @@
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 71345,
-     "differenz": 23635,
-     "differenz_monat": 1970,
+     "netto_33": 71344,
+     "differenz": 23633,
+     "differenz_monat": 1969,
      "grenzbelastung_heute": 51.5,
      "grenzbelastung_33": 33.3
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 90152,
-     "differenz": 29595,
+     "netto_33": 90155,
+     "differenz": 29598,
      "differenz_monat": 2466,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 33.2
@@ -2164,9 +2164,9 @@
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 123606,
-     "differenz": 36342,
-     "differenz_monat": 3028,
+     "netto_33": 123622,
+     "differenz": 36358,
+     "differenz_monat": 3030,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 33.4
     }
@@ -2182,72 +2182,72 @@
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 20623,
-     "differenz": 5329,
-     "differenz_monat": 444,
+     "netto_33": 20534,
+     "differenz": 5240,
+     "differenz_monat": 437,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 11.7
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 28595,
-     "differenz": 7249,
-     "differenz_monat": 604,
+     "netto_33": 28517,
+     "differenz": 7171,
+     "differenz_monat": 598,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 25.6
+     "grenzbelastung_33": 25.5
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 37663,
-     "differenz": 8752,
-     "differenz_monat": 729,
+     "netto_33": 37593,
+     "differenz": 8682,
+     "differenz_monat": 723,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 33.5
+     "grenzbelastung_33": 33.4
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 47594,
-     "differenz": 10565,
-     "differenz_monat": 880,
+     "netto_33": 47529,
+     "differenz": 10500,
+     "differenz_monat": 875,
      "grenzbelastung_heute": 51.1,
      "grenzbelastung_33": 33.4
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 58361,
-     "differenz": 13753,
-     "differenz_monat": 1146,
+     "netto_33": 58301,
+     "differenz": 13693,
+     "differenz_monat": 1141,
      "grenzbelastung_heute": 54.3,
-     "grenzbelastung_33": 33.4
+     "grenzbelastung_33": 33.3
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 74537,
-     "differenz": 18301,
-     "differenz_monat": 1525,
+     "netto_33": 74482,
+     "differenz": 18246,
+     "differenz_monat": 1521,
      "grenzbelastung_heute": 43.9,
-     "grenzbelastung_33": 33.3
+     "grenzbelastung_33": 33.2
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 93349,
-     "differenz": 21695,
-     "differenz_monat": 1808,
+     "netto_33": 93298,
+     "differenz": 21645,
+     "differenz_monat": 1804,
      "grenzbelastung_heute": 47.0,
      "grenzbelastung_33": 33.1
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 126791,
-     "differenz": 23055,
-     "differenz_monat": 1921,
+     "netto_33": 126755,
+     "differenz": 23019,
+     "differenz_monat": 1918,
      "grenzbelastung_heute": 40.0,
      "grenzbelastung_33": 33.4
     }
@@ -2263,72 +2263,72 @@
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 13723,
-     "differenz": 4717,
-     "differenz_monat": 393,
+     "netto_33": 13703,
+     "differenz": 4697,
+     "differenz_monat": 391,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 11.8
+     "grenzbelastung_33": 11.7
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 19917,
-     "differenz": 5120,
-     "differenz_monat": 427,
+     "netto_33": 19908,
+     "differenz": 5111,
+     "differenz_monat": 426,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 25.6
+     "grenzbelastung_33": 25.5
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 26762,
-     "differenz": 6129,
+     "netto_33": 26761,
+     "differenz": 6128,
      "differenz_monat": 511,
      "grenzbelastung_heute": 54.9,
-     "grenzbelastung_33": 33.5
+     "grenzbelastung_33": 33.4
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 34027,
-     "differenz": 6795,
-     "differenz_monat": 566,
+     "netto_33": 34031,
+     "differenz": 6799,
+     "differenz_monat": 567,
      "grenzbelastung_heute": 56.8,
      "grenzbelastung_33": 33.4
     },
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 41905,
-     "differenz": 7840,
-     "differenz_monat": 653,
+     "netto_33": 41914,
+     "differenz": 7850,
+     "differenz_monat": 654,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 33.4
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 53634,
-     "differenz": 9295,
-     "differenz_monat": 775,
+     "netto_33": 53650,
+     "differenz": 9310,
+     "differenz_monat": 776,
      "grenzbelastung_heute": 51.3,
      "grenzbelastung_33": 33.3
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 66890,
-     "differenz": 9662,
-     "differenz_monat": 805,
+     "netto_33": 66910,
+     "differenz": 9682,
+     "differenz_monat": 807,
      "grenzbelastung_heute": 58.9,
      "grenzbelastung_33": 33.2
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 100037,
-     "differenz": 16113,
-     "differenz_monat": 1343,
+     "netto_33": 100070,
+     "differenz": 16146,
+     "differenz_monat": 1346,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 33.4
     }
@@ -2344,53 +2344,53 @@
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 14782,
-     "differenz": 2596,
-     "differenz_monat": 216,
+     "netto_33": 14745,
+     "differenz": 2559,
+     "differenz_monat": 213,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 11.8
+     "grenzbelastung_33": 11.7
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 20977,
-     "differenz": 2972,
-     "differenz_monat": 248,
+     "netto_33": 20950,
+     "differenz": 2945,
+     "differenz_monat": 245,
      "grenzbelastung_heute": 49.8,
-     "grenzbelastung_33": 25.6
+     "grenzbelastung_33": 25.5
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 27823,
-     "differenz": 3947,
-     "differenz_monat": 329,
+     "netto_33": 27804,
+     "differenz": 3928,
+     "differenz_monat": 327,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 33.5
+     "grenzbelastung_33": 33.4
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 35088,
-     "differenz": 4567,
-     "differenz_monat": 381,
+     "netto_33": 35075,
+     "differenz": 4554,
+     "differenz_monat": 379,
      "grenzbelastung_heute": 56.5,
      "grenzbelastung_33": 33.4
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 42967,
-     "differenz": 5568,
-     "differenz_monat": 464,
+     "netto_33": 42959,
+     "differenz": 5560,
+     "differenz_monat": 463,
      "grenzbelastung_heute": 58.6,
      "grenzbelastung_33": 33.4
     },
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 54697,
-     "differenz": 6987,
+     "netto_33": 54696,
+     "differenz": 6985,
      "differenz_monat": 582,
      "grenzbelastung_heute": 51.5,
      "grenzbelastung_33": 33.3
@@ -2398,18 +2398,18 @@
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 67955,
-     "differenz": 7397,
-     "differenz_monat": 616,
+     "netto_33": 67958,
+     "differenz": 7400,
+     "differenz_monat": 617,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 33.2
     },
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 101099,
-     "differenz": 13834,
-     "differenz_monat": 1153,
+     "netto_33": 101115,
+     "differenz": 13850,
+     "differenz_monat": 1154,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 33.4
     }
@@ -2425,72 +2425,72 @@
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 17959,
-     "differenz": 2665,
-     "differenz_monat": 222,
+     "netto_33": 17871,
+     "differenz": 2577,
+     "differenz_monat": 215,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 11.7
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 24156,
-     "differenz": 2810,
-     "differenz_monat": 234,
+     "netto_33": 24077,
+     "differenz": 2731,
+     "differenz_monat": 228,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 25.6
+     "grenzbelastung_33": 25.5
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 31004,
-     "differenz": 2093,
-     "differenz_monat": 174,
+     "netto_33": 30934,
+     "differenz": 2023,
+     "differenz_monat": 169,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 33.5
+     "grenzbelastung_33": 33.4
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 38271,
-     "differenz": 1242,
-     "differenz_monat": 104,
+     "netto_33": 38206,
+     "differenz": 1177,
+     "differenz_monat": 98,
      "grenzbelastung_heute": 51.1,
      "grenzbelastung_33": 33.4
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 46152,
-     "differenz": 1545,
-     "differenz_monat": 129,
+     "netto_33": 46092,
+     "differenz": 1485,
+     "differenz_monat": 124,
      "grenzbelastung_heute": 54.3,
-     "grenzbelastung_33": 33.4
+     "grenzbelastung_33": 33.3
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 57889,
-     "differenz": 1653,
-     "differenz_monat": 138,
+     "netto_33": 57834,
+     "differenz": 1598,
+     "differenz_monat": 133,
      "grenzbelastung_heute": 43.9,
-     "grenzbelastung_33": 33.3
+     "grenzbelastung_33": 33.2
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 71151,
-     "differenz": -502,
-     "differenz_monat": -42,
+     "netto_33": 71101,
+     "differenz": -552,
+     "differenz_monat": -46,
      "grenzbelastung_heute": 47.0,
      "grenzbelastung_33": 33.1
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 104283,
-     "differenz": 547,
-     "differenz_monat": 46,
+     "netto_33": 104247,
+     "differenz": 511,
+     "differenz_monat": 43,
      "grenzbelastung_heute": 40.0,
      "grenzbelastung_33": 33.4
     }
@@ -2506,72 +2506,72 @@
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 15937,
-     "differenz": 6931,
-     "differenz_monat": 578,
+     "netto_33": 15920,
+     "differenz": 6914,
+     "differenz_monat": 576,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 15.4
+     "grenzbelastung_33": 15.3
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 23438,
-     "differenz": 8641,
+     "netto_33": 23433,
+     "differenz": 8636,
      "differenz_monat": 720,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 31.1
+     "grenzbelastung_33": 31.0
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 31803,
-     "differenz": 11170,
+     "netto_33": 31807,
+     "differenz": 11174,
      "differenz_monat": 931,
      "grenzbelastung_heute": 54.9,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.9
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 40767,
-     "differenz": 13535,
-     "differenz_monat": 1128,
+     "netto_33": 40778,
+     "differenz": 13546,
+     "differenz_monat": 1129,
      "grenzbelastung_heute": 56.8,
      "grenzbelastung_33": 39.8
     },
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 50505,
-     "differenz": 16441,
-     "differenz_monat": 1370,
+     "netto_33": 50521,
+     "differenz": 16457,
+     "differenz_monat": 1371,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 39.7
+     "grenzbelastung_33": 39.6
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 65179,
-     "differenz": 20840,
-     "differenz_monat": 1737,
+     "netto_33": 65203,
+     "differenz": 20863,
+     "differenz_monat": 1739,
      "grenzbelastung_heute": 51.3,
      "grenzbelastung_33": 39.3
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 82326,
-     "differenz": 25098,
-     "differenz_monat": 2092,
+     "netto_33": 82355,
+     "differenz": 25127,
+     "differenz_monat": 2094,
      "grenzbelastung_heute": 58.9,
      "grenzbelastung_33": 38.9
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 112718,
-     "differenz": 28794,
-     "differenz_monat": 2400,
+     "netto_33": 112762,
+     "differenz": 28838,
+     "differenz_monat": 2403,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 39.7
     }
@@ -2587,44 +2587,44 @@
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 16974,
-     "differenz": 4788,
-     "differenz_monat": 399,
+     "netto_33": 16941,
+     "differenz": 4755,
+     "differenz_monat": 396,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 15.3
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 24478,
-     "differenz": 6473,
-     "differenz_monat": 539,
+     "netto_33": 24455,
+     "differenz": 6450,
+     "differenz_monat": 538,
      "grenzbelastung_heute": 49.8,
      "grenzbelastung_33": 31.0
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 32845,
-     "differenz": 8969,
-     "differenz_monat": 747,
+     "netto_33": 32832,
+     "differenz": 8956,
+     "differenz_monat": 746,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.9
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 41812,
-     "differenz": 11291,
-     "differenz_monat": 941,
+     "netto_33": 41805,
+     "differenz": 11284,
+     "differenz_monat": 940,
      "grenzbelastung_heute": 56.5,
      "grenzbelastung_33": 39.8
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 51552,
-     "differenz": 14154,
+     "netto_33": 51551,
+     "differenz": 14153,
      "differenz_monat": 1179,
      "grenzbelastung_heute": 58.6,
      "grenzbelastung_33": 39.6
@@ -2632,27 +2632,27 @@
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 66232,
-     "differenz": 18521,
-     "differenz_monat": 1543,
+     "netto_33": 66238,
+     "differenz": 18527,
+     "differenz_monat": 1544,
      "grenzbelastung_heute": 51.5,
-     "grenzbelastung_33": 39.3
+     "grenzbelastung_33": 39.2
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 83385,
-     "differenz": 22828,
-     "differenz_monat": 1902,
+     "netto_33": 83396,
+     "differenz": 22839,
+     "differenz_monat": 1903,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 38.9
     },
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 113765,
-     "differenz": 26500,
-     "differenz_monat": 2208,
+     "netto_33": 113791,
+     "differenz": 26526,
+     "differenz_monat": 2211,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 39.7
     }
@@ -2668,72 +2668,72 @@
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 20087,
-     "differenz": 4793,
-     "differenz_monat": 399,
+     "netto_33": 20003,
+     "differenz": 4709,
+     "differenz_monat": 392,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 15.3
+     "grenzbelastung_33": 15.2
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 27597,
-     "differenz": 6251,
-     "differenz_monat": 521,
+     "netto_33": 27525,
+     "differenz": 6179,
+     "differenz_monat": 515,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 31.0
+     "grenzbelastung_33": 30.9
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 35972,
-     "differenz": 7061,
-     "differenz_monat": 588,
+     "netto_33": 35909,
+     "differenz": 6998,
+     "differenz_monat": 583,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 39.9
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 44946,
-     "differenz": 7917,
-     "differenz_monat": 660,
+     "netto_33": 44888,
+     "differenz": 7859,
+     "differenz_monat": 655,
      "grenzbelastung_heute": 51.1,
-     "grenzbelastung_33": 39.8
+     "grenzbelastung_33": 39.7
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 54695,
-     "differenz": 10087,
-     "differenz_monat": 841,
+     "netto_33": 54642,
+     "differenz": 10035,
+     "differenz_monat": 836,
      "grenzbelastung_heute": 54.3,
      "grenzbelastung_33": 39.6
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 69393,
-     "differenz": 13157,
-     "differenz_monat": 1096,
+     "netto_33": 69347,
+     "differenz": 13111,
+     "differenz_monat": 1093,
      "grenzbelastung_heute": 43.9,
      "grenzbelastung_33": 39.2
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 86564,
-     "differenz": 14910,
-     "differenz_monat": 1243,
+     "netto_33": 86522,
+     "differenz": 14869,
+     "differenz_monat": 1239,
      "grenzbelastung_heute": 47.0,
      "grenzbelastung_33": 38.8
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 116904,
-     "differenz": 13168,
-     "differenz_monat": 1097,
+     "netto_33": 116879,
+     "differenz": 13143,
+     "differenz_monat": 1095,
      "grenzbelastung_heute": 40.0,
      "grenzbelastung_33": 39.7
     }
@@ -2749,72 +2749,72 @@
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 13273,
-     "differenz": 4267,
-     "differenz_monat": 356,
+     "netto_33": 13257,
+     "differenz": 4251,
+     "differenz_monat": 354,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 15.4
+     "grenzbelastung_33": 15.3
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 18999,
-     "differenz": 4202,
+     "netto_33": 18993,
+     "differenz": 4196,
      "differenz_monat": 350,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 31.1
+     "grenzbelastung_33": 31.0
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 25143,
-     "differenz": 4510,
+     "netto_33": 25148,
+     "differenz": 4515,
      "differenz_monat": 376,
      "grenzbelastung_heute": 54.9,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.9
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 31445,
-     "differenz": 4213,
-     "differenz_monat": 351,
+     "netto_33": 31455,
+     "differenz": 4223,
+     "differenz_monat": 352,
      "grenzbelastung_heute": 56.8,
      "grenzbelastung_33": 39.8
     },
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 38297,
-     "differenz": 4232,
-     "differenz_monat": 353,
+     "netto_33": 38313,
+     "differenz": 4248,
+     "differenz_monat": 354,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 39.7
+     "grenzbelastung_33": 39.6
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 48531,
-     "differenz": 4192,
-     "differenz_monat": 349,
+     "netto_33": 48555,
+     "differenz": 4215,
+     "differenz_monat": 351,
      "grenzbelastung_heute": 51.3,
      "grenzbelastung_33": 39.3
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 60129,
-     "differenz": 2901,
-     "differenz_monat": 242,
+     "netto_33": 60158,
+     "differenz": 2930,
+     "differenz_monat": 244,
      "grenzbelastung_heute": 58.9,
      "grenzbelastung_33": 38.9
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 90210,
-     "differenz": 6286,
-     "differenz_monat": 524,
+     "netto_33": 90254,
+     "differenz": 6330,
+     "differenz_monat": 527,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 39.7
     }
@@ -2830,44 +2830,44 @@
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 14310,
-     "differenz": 2124,
-     "differenz_monat": 177,
+     "netto_33": 14277,
+     "differenz": 2091,
+     "differenz_monat": 174,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 15.3
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 20038,
-     "differenz": 2033,
-     "differenz_monat": 169,
+     "netto_33": 20016,
+     "differenz": 2011,
+     "differenz_monat": 168,
      "grenzbelastung_heute": 49.8,
      "grenzbelastung_33": 31.0
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 26185,
-     "differenz": 2309,
-     "differenz_monat": 192,
+     "netto_33": 26173,
+     "differenz": 2297,
+     "differenz_monat": 191,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.9
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 32489,
-     "differenz": 1968,
-     "differenz_monat": 164,
+     "netto_33": 32482,
+     "differenz": 1961,
+     "differenz_monat": 163,
      "grenzbelastung_heute": 56.5,
      "grenzbelastung_33": 39.8
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 39344,
-     "differenz": 1945,
+     "netto_33": 39343,
+     "differenz": 1944,
      "differenz_monat": 162,
      "grenzbelastung_heute": 58.6,
      "grenzbelastung_33": 39.6
@@ -2875,17 +2875,17 @@
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 49584,
-     "differenz": 1873,
-     "differenz_monat": 156,
+     "netto_33": 49590,
+     "differenz": 1880,
+     "differenz_monat": 157,
      "grenzbelastung_heute": 51.5,
-     "grenzbelastung_33": 39.3
+     "grenzbelastung_33": 39.2
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 61188,
-     "differenz": 630,
+     "netto_33": 61199,
+     "differenz": 642,
      "differenz_monat": 53,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 38.9
@@ -2893,9 +2893,9 @@
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 91257,
-     "differenz": 3992,
-     "differenz_monat": 333,
+     "netto_33": 91283,
+     "differenz": 4019,
+     "differenz_monat": 335,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 39.7
     }
@@ -2911,72 +2911,72 @@
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 17423,
-     "differenz": 2129,
-     "differenz_monat": 177,
+     "netto_33": 17340,
+     "differenz": 2046,
+     "differenz_monat": 170,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 15.3
+     "grenzbelastung_33": 15.2
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 23158,
-     "differenz": 1812,
-     "differenz_monat": 151,
+     "netto_33": 23085,
+     "differenz": 1739,
+     "differenz_monat": 145,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 31.0
+     "grenzbelastung_33": 30.9
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 29313,
-     "differenz": 402,
-     "differenz_monat": 33,
+     "netto_33": 29249,
+     "differenz": 338,
+     "differenz_monat": 28,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 39.9
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 35623,
-     "differenz": -1406,
-     "differenz_monat": -117,
+     "netto_33": 35565,
+     "differenz": -1464,
+     "differenz_monat": -122,
      "grenzbelastung_heute": 51.1,
-     "grenzbelastung_33": 39.8
+     "grenzbelastung_33": 39.7
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 42486,
-     "differenz": -2121,
-     "differenz_monat": -177,
+     "netto_33": 42434,
+     "differenz": -2173,
+     "differenz_monat": -181,
      "grenzbelastung_heute": 54.3,
      "grenzbelastung_33": 39.6
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 52745,
-     "differenz": -3490,
-     "differenz_monat": -291,
+     "netto_33": 52699,
+     "differenz": -3537,
+     "differenz_monat": -295,
      "grenzbelastung_heute": 43.9,
      "grenzbelastung_33": 39.2
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 64366,
-     "differenz": -7287,
-     "differenz_monat": -607,
+     "netto_33": 64325,
+     "differenz": -7328,
+     "differenz_monat": -611,
      "grenzbelastung_heute": 47.0,
      "grenzbelastung_33": 38.8
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 94396,
-     "differenz": -9340,
-     "differenz_monat": -778,
+     "netto_33": 94371,
+     "differenz": -9365,
+     "differenz_monat": -780,
      "grenzbelastung_heute": 40.0,
      "grenzbelastung_33": 39.7
     }
@@ -2992,26 +2992,26 @@
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 13809,
-     "differenz": 4803,
-     "differenz_monat": 400,
+     "netto_33": 13787,
+     "differenz": 4781,
+     "differenz_monat": 398,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 29.1
+     "grenzbelastung_33": 29.0
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 20581,
-     "differenz": 5784,
-     "differenz_monat": 482,
+     "netto_33": 20567,
+     "differenz": 5770,
+     "differenz_monat": 481,
      "grenzbelastung_heute": 50.0,
      "grenzbelastung_33": 35.4
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 28174,
-     "differenz": 7541,
+     "netto_33": 28167,
+     "differenz": 7534,
      "differenz_monat": 628,
      "grenzbelastung_heute": 54.9,
      "grenzbelastung_33": 40.1
@@ -3028,36 +3028,36 @@
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 45196,
-     "differenz": 11131,
+     "netto_33": 45201,
+     "differenz": 11136,
      "differenz_monat": 928,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 46.5
+     "grenzbelastung_33": 46.4
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 58515,
-     "differenz": 14176,
-     "differenz_monat": 1181,
+     "netto_33": 58526,
+     "differenz": 14187,
+     "differenz_monat": 1182,
      "grenzbelastung_heute": 51.3,
-     "grenzbelastung_33": 40.9
+     "grenzbelastung_33": 40.8
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 75188,
-     "differenz": 17960,
-     "differenz_monat": 1497,
+     "netto_33": 75205,
+     "differenz": 17977,
+     "differenz_monat": 1498,
      "grenzbelastung_heute": 58.9,
      "grenzbelastung_33": 40.7
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 108567,
-     "differenz": 24643,
-     "differenz_monat": 2054,
+     "netto_33": 108593,
+     "differenz": 24670,
+     "differenz_monat": 2056,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 33.4
     }
@@ -3073,54 +3073,54 @@
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 14867,
-     "differenz": 2681,
-     "differenz_monat": 223,
+     "netto_33": 14829,
+     "differenz": 2643,
+     "differenz_monat": 220,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 29.0
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 21641,
-     "differenz": 3636,
-     "differenz_monat": 303,
+     "netto_33": 21609,
+     "differenz": 3604,
+     "differenz_monat": 300,
      "grenzbelastung_heute": 49.8,
      "grenzbelastung_33": 35.4
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 29234,
-     "differenz": 5358,
-     "differenz_monat": 446,
+     "netto_33": 29209,
+     "differenz": 5333,
+     "differenz_monat": 444,
      "grenzbelastung_heute": 54.6,
      "grenzbelastung_33": 40.1
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 37605,
-     "differenz": 7084,
-     "differenz_monat": 590,
+     "netto_33": 37588,
+     "differenz": 7067,
+     "differenz_monat": 589,
      "grenzbelastung_heute": 56.5,
      "grenzbelastung_33": 46.5
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 46257,
-     "differenz": 8858,
-     "differenz_monat": 738,
+     "netto_33": 46244,
+     "differenz": 8846,
+     "differenz_monat": 737,
      "grenzbelastung_heute": 58.6,
-     "grenzbelastung_33": 46.5
+     "grenzbelastung_33": 46.4
     },
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 59577,
-     "differenz": 11866,
-     "differenz_monat": 989,
+     "netto_33": 59571,
+     "differenz": 11860,
+     "differenz_monat": 988,
      "grenzbelastung_heute": 51.5,
      "grenzbelastung_33": 40.8
     },
@@ -3136,8 +3136,8 @@
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 109628,
-     "differenz": 22364,
+     "netto_33": 109638,
+     "differenz": 22373,
      "differenz_monat": 1864,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 33.4
@@ -3154,72 +3154,72 @@
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 18044,
-     "differenz": 2750,
-     "differenz_monat": 229,
+     "netto_33": 17954,
+     "differenz": 2660,
+     "differenz_monat": 222,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 29.0
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 24819,
-     "differenz": 3473,
-     "differenz_monat": 289,
+     "netto_33": 24736,
+     "differenz": 3390,
+     "differenz_monat": 282,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 35.4
+     "grenzbelastung_33": 35.3
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 32414,
-     "differenz": 3503,
-     "differenz_monat": 292,
+     "netto_33": 32338,
+     "differenz": 3427,
+     "differenz_monat": 286,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 40.1
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 40787,
-     "differenz": 3758,
-     "differenz_monat": 313,
+     "netto_33": 40718,
+     "differenz": 3689,
+     "differenz_monat": 307,
      "grenzbelastung_heute": 51.1,
      "grenzbelastung_33": 46.5
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 49441,
-     "differenz": 4833,
-     "differenz_monat": 403,
+     "netto_33": 49376,
+     "differenz": 4769,
+     "differenz_monat": 397,
      "grenzbelastung_heute": 54.3,
-     "grenzbelastung_33": 46.5
+     "grenzbelastung_33": 46.4
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 62764,
-     "differenz": 6528,
-     "differenz_monat": 544,
+     "netto_33": 62706,
+     "differenz": 6470,
+     "differenz_monat": 539,
      "grenzbelastung_heute": 43.9,
      "grenzbelastung_33": 40.8
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 79444,
-     "differenz": 7791,
-     "differenz_monat": 649,
+     "netto_33": 79391,
+     "differenz": 7738,
+     "differenz_monat": 645,
      "grenzbelastung_heute": 47.0,
      "grenzbelastung_33": 40.7
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 112813,
-     "differenz": 9077,
-     "differenz_monat": 756,
+     "netto_33": 112770,
+     "differenz": 9034,
+     "differenz_monat": 753,
      "grenzbelastung_heute": 40.0,
      "grenzbelastung_33": 33.4
     }
@@ -3235,26 +3235,26 @@
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 11145,
-     "differenz": 2139,
-     "differenz_monat": 178,
+     "netto_33": 11124,
+     "differenz": 2118,
+     "differenz_monat": 176,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 29.1
+     "grenzbelastung_33": 29.0
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 16142,
-     "differenz": 1345,
-     "differenz_monat": 112,
+     "netto_33": 16128,
+     "differenz": 1331,
+     "differenz_monat": 111,
      "grenzbelastung_heute": 50.0,
      "grenzbelastung_33": 35.4
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 21515,
-     "differenz": 882,
+     "netto_33": 21508,
+     "differenz": 875,
      "differenz_monat": 73,
      "grenzbelastung_heute": 54.9,
      "grenzbelastung_33": 40.1
@@ -3271,36 +3271,36 @@
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 32987,
-     "differenz": -1077,
-     "differenz_monat": -90,
+     "netto_33": 32992,
+     "differenz": -1072,
+     "differenz_monat": -89,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 46.5
+     "grenzbelastung_33": 46.4
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 41867,
-     "differenz": -2472,
-     "differenz_monat": -206,
+     "netto_33": 41879,
+     "differenz": -2461,
+     "differenz_monat": -205,
      "grenzbelastung_heute": 51.3,
-     "grenzbelastung_33": 40.9
+     "grenzbelastung_33": 40.8
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 52991,
-     "differenz": -4237,
-     "differenz_monat": -353,
+     "netto_33": 53008,
+     "differenz": -4220,
+     "differenz_monat": -352,
      "grenzbelastung_heute": 58.9,
      "grenzbelastung_33": 40.7
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 86059,
-     "differenz": 2135,
-     "differenz_monat": 178,
+     "netto_33": 86086,
+     "differenz": 2162,
+     "differenz_monat": 180,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 33.4
     }
@@ -3316,61 +3316,61 @@
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 12204,
-     "differenz": 18,
-     "differenz_monat": 1,
+     "netto_33": 12165,
+     "differenz": -21,
+     "differenz_monat": -2,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 29.0
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 17201,
-     "differenz": -804,
-     "differenz_monat": -67,
+     "netto_33": 17170,
+     "differenz": -835,
+     "differenz_monat": -70,
      "grenzbelastung_heute": 49.8,
      "grenzbelastung_33": 35.4
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 22575,
-     "differenz": -1301,
-     "differenz_monat": -108,
+     "netto_33": 22550,
+     "differenz": -1326,
+     "differenz_monat": -110,
      "grenzbelastung_heute": 54.6,
      "grenzbelastung_33": 40.1
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 28283,
-     "differenz": -2238,
-     "differenz_monat": -187,
+     "netto_33": 28266,
+     "differenz": -2255,
+     "differenz_monat": -188,
      "grenzbelastung_heute": 56.5,
      "grenzbelastung_33": 46.5
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 34048,
-     "differenz": -3350,
-     "differenz_monat": -279,
+     "netto_33": 34036,
+     "differenz": -3363,
+     "differenz_monat": -280,
      "grenzbelastung_heute": 58.6,
-     "grenzbelastung_33": 46.5
+     "grenzbelastung_33": 46.4
     },
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 42929,
-     "differenz": -4781,
-     "differenz_monat": -398,
+     "netto_33": 42923,
+     "differenz": -4788,
+     "differenz_monat": -399,
      "grenzbelastung_heute": 51.5,
      "grenzbelastung_33": 40.8
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 54055,
+     "netto_33": 54054,
      "differenz": -6503,
      "differenz_monat": -542,
      "grenzbelastung_heute": 58.8,
@@ -3379,9 +3379,9 @@
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 87120,
-     "differenz": -144,
-     "differenz_monat": -12,
+     "netto_33": 87130,
+     "differenz": -135,
+     "differenz_monat": -11,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 33.4
     }
@@ -3397,72 +3397,72 @@
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 15380,
-     "differenz": 86,
-     "differenz_monat": 7,
+     "netto_33": 15290,
+     "differenz": -4,
+     "differenz_monat": 0,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 29.0
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 20379,
-     "differenz": -967,
-     "differenz_monat": -81,
+     "netto_33": 20296,
+     "differenz": -1050,
+     "differenz_monat": -87,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 35.4
+     "grenzbelastung_33": 35.3
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 25755,
-     "differenz": -3156,
-     "differenz_monat": -263,
+     "netto_33": 25679,
+     "differenz": -3232,
+     "differenz_monat": -269,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 40.1
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 31464,
-     "differenz": -5565,
-     "differenz_monat": -464,
+     "netto_33": 31396,
+     "differenz": -5633,
+     "differenz_monat": -469,
      "grenzbelastung_heute": 51.1,
      "grenzbelastung_33": 46.5
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 37232,
-     "differenz": -7375,
-     "differenz_monat": -615,
+     "netto_33": 37168,
+     "differenz": -7440,
+     "differenz_monat": -620,
      "grenzbelastung_heute": 54.3,
-     "grenzbelastung_33": 46.5
+     "grenzbelastung_33": 46.4
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 46116,
-     "differenz": -10120,
-     "differenz_monat": -843,
+     "netto_33": 46058,
+     "differenz": -10178,
+     "differenz_monat": -848,
      "grenzbelastung_heute": 43.9,
      "grenzbelastung_33": 40.8
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 57247,
-     "differenz": -14406,
-     "differenz_monat": -1200,
+     "netto_33": 57194,
+     "differenz": -14459,
+     "differenz_monat": -1205,
      "grenzbelastung_heute": 47.0,
      "grenzbelastung_33": 40.7
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 90305,
-     "differenz": -13431,
-     "differenz_monat": -1119,
+     "netto_33": 90263,
+     "differenz": -13474,
+     "differenz_monat": -1123,
      "grenzbelastung_heute": 40.0,
      "grenzbelastung_33": 33.4
     }
@@ -3478,35 +3478,35 @@
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 13465,
-     "differenz": 4459,
-     "differenz_monat": 372,
+     "netto_33": 13446,
+     "differenz": 4440,
+     "differenz_monat": 370,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 32.0
+     "grenzbelastung_33": 31.9
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 19909,
-     "differenz": 5112,
-     "differenz_monat": 426,
+     "netto_33": 19899,
+     "differenz": 5102,
+     "differenz_monat": 425,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 39.2
+     "grenzbelastung_33": 39.1
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 26976,
-     "differenz": 6343,
-     "differenz_monat": 529,
+     "netto_33": 26973,
+     "differenz": 6340,
+     "differenz_monat": 528,
      "grenzbelastung_heute": 54.9,
      "grenzbelastung_33": 44.5
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 34621,
-     "differenz": 7389,
+     "netto_33": 34628,
+     "differenz": 7396,
      "differenz_monat": 616,
      "grenzbelastung_heute": 56.8,
      "grenzbelastung_33": 51.7
@@ -3514,36 +3514,36 @@
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 42436,
-     "differenz": 8371,
-     "differenz_monat": 698,
+     "netto_33": 42447,
+     "differenz": 8383,
+     "differenz_monat": 699,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 51.6
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 54494,
-     "differenz": 10154,
-     "differenz_monat": 846,
+     "netto_33": 54512,
+     "differenz": 10173,
+     "differenz_monat": 848,
      "grenzbelastung_heute": 51.3,
-     "grenzbelastung_33": 46.4
+     "grenzbelastung_33": 46.3
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 69645,
-     "differenz": 12418,
-     "differenz_monat": 1035,
+     "netto_33": 69671,
+     "differenz": 12443,
+     "differenz_monat": 1037,
      "grenzbelastung_heute": 58.9,
      "grenzbelastung_33": 46.0
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 100062,
-     "differenz": 16138,
-     "differenz_monat": 1345,
+     "netto_33": 100098,
+     "differenz": 16174,
+     "differenz_monat": 1348,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 39.7
     }
@@ -3559,72 +3559,72 @@
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 14502,
-     "differenz": 2316,
-     "differenz_monat": 193,
+     "netto_33": 14466,
+     "differenz": 2280,
+     "differenz_monat": 190,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 32.0
+     "grenzbelastung_33": 31.9
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 20947,
-     "differenz": 2942,
-     "differenz_monat": 245,
+     "netto_33": 20920,
+     "differenz": 2915,
+     "differenz_monat": 243,
      "grenzbelastung_heute": 49.8,
      "grenzbelastung_33": 39.1
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 28016,
-     "differenz": 4140,
-     "differenz_monat": 345,
+     "netto_33": 27997,
+     "differenz": 4121,
+     "differenz_monat": 343,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 44.5
+     "grenzbelastung_33": 44.4
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 35664,
-     "differenz": 5143,
-     "differenz_monat": 429,
+     "netto_33": 35653,
+     "differenz": 5132,
+     "differenz_monat": 428,
      "grenzbelastung_heute": 56.5,
      "grenzbelastung_33": 51.7
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 43480,
-     "differenz": 6082,
-     "differenz_monat": 507,
+     "netto_33": 43475,
+     "differenz": 6076,
+     "differenz_monat": 506,
      "grenzbelastung_heute": 58.6,
      "grenzbelastung_33": 51.6
     },
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 55542,
-     "differenz": 7831,
+     "netto_33": 55543,
+     "differenz": 7832,
      "differenz_monat": 653,
      "grenzbelastung_heute": 51.5,
-     "grenzbelastung_33": 46.4
+     "grenzbelastung_33": 46.3
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 70700,
-     "differenz": 10143,
-     "differenz_monat": 845,
+     "netto_33": 70708,
+     "differenz": 10150,
+     "differenz_monat": 846,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 46.0
     },
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 101108,
-     "differenz": 13844,
-     "differenz_monat": 1154,
+     "netto_33": 101127,
+     "differenz": 13863,
+     "differenz_monat": 1155,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 39.7
     }
@@ -3640,72 +3640,72 @@
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 17612,
-     "differenz": 2318,
-     "differenz_monat": 193,
+     "netto_33": 17527,
+     "differenz": 2233,
+     "differenz_monat": 186,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 31.9
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 24064,
-     "differenz": 2718,
-     "differenz_monat": 226,
+     "netto_33": 23986,
+     "differenz": 2640,
+     "differenz_monat": 220,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 39.1
+     "grenzbelastung_33": 39.0
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 31140,
-     "differenz": 2229,
-     "differenz_monat": 186,
+     "netto_33": 31070,
+     "differenz": 2159,
+     "differenz_monat": 180,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 44.4
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 38793,
-     "differenz": 1764,
-     "differenz_monat": 147,
+     "netto_33": 38731,
+     "differenz": 1702,
+     "differenz_monat": 142,
      "grenzbelastung_heute": 51.1,
-     "grenzbelastung_33": 51.7
+     "grenzbelastung_33": 51.6
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 46616,
-     "differenz": 2009,
-     "differenz_monat": 167,
+     "netto_33": 46559,
+     "differenz": 1952,
+     "differenz_monat": 163,
      "grenzbelastung_heute": 54.3,
      "grenzbelastung_33": 51.5
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 58688,
-     "differenz": 2452,
-     "differenz_monat": 204,
+     "netto_33": 58638,
+     "differenz": 2402,
+     "differenz_monat": 200,
      "grenzbelastung_heute": 43.9,
      "grenzbelastung_33": 46.3
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 73866,
-     "differenz": 2212,
-     "differenz_monat": 184,
+     "netto_33": 73821,
+     "differenz": 2168,
+     "differenz_monat": 181,
      "grenzbelastung_heute": 47.0,
      "grenzbelastung_33": 45.9
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 104248,
-     "differenz": 512,
-     "differenz_monat": 43,
+     "netto_33": 104216,
+     "differenz": 479,
+     "differenz_monat": 40,
      "grenzbelastung_heute": 40.0,
      "grenzbelastung_33": 39.7
     }
@@ -3721,35 +3721,35 @@
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 10802,
-     "differenz": 1796,
-     "differenz_monat": 150,
+     "netto_33": 10783,
+     "differenz": 1777,
+     "differenz_monat": 148,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 32.0
+     "grenzbelastung_33": 31.9
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 15470,
-     "differenz": 673,
-     "differenz_monat": 56,
+     "netto_33": 15459,
+     "differenz": 662,
+     "differenz_monat": 55,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 39.2
+     "grenzbelastung_33": 39.1
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 20317,
-     "differenz": -316,
-     "differenz_monat": -26,
+     "netto_33": 20314,
+     "differenz": -319,
+     "differenz_monat": -27,
      "grenzbelastung_heute": 54.9,
      "grenzbelastung_33": 44.5
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 25299,
-     "differenz": -1933,
+     "netto_33": 25305,
+     "differenz": -1927,
      "differenz_monat": -161,
      "grenzbelastung_heute": 56.8,
      "grenzbelastung_33": 51.7
@@ -3757,36 +3757,36 @@
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 30227,
-     "differenz": -3837,
-     "differenz_monat": -320,
+     "netto_33": 30239,
+     "differenz": -3826,
+     "differenz_monat": -319,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 51.6
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 37846,
-     "differenz": -6493,
-     "differenz_monat": -541,
+     "netto_33": 37864,
+     "differenz": -6475,
+     "differenz_monat": -540,
      "grenzbelastung_heute": 51.3,
-     "grenzbelastung_33": 46.4
+     "grenzbelastung_33": 46.3
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 47448,
-     "differenz": -9780,
-     "differenz_monat": -815,
+     "netto_33": 47473,
+     "differenz": -9754,
+     "differenz_monat": -813,
      "grenzbelastung_heute": 58.9,
      "grenzbelastung_33": 46.0
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 77554,
-     "differenz": -6370,
-     "differenz_monat": -531,
+     "netto_33": 77590,
+     "differenz": -6334,
+     "differenz_monat": -528,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 39.7
     }
@@ -3802,44 +3802,44 @@
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 11838,
-     "differenz": -348,
-     "differenz_monat": -29,
+     "netto_33": 11802,
+     "differenz": -384,
+     "differenz_monat": -32,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 32.0
+     "grenzbelastung_33": 31.9
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 16508,
-     "differenz": -1497,
-     "differenz_monat": -125,
+     "netto_33": 16481,
+     "differenz": -1524,
+     "differenz_monat": -127,
      "grenzbelastung_heute": 49.8,
      "grenzbelastung_33": 39.1
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 21357,
-     "differenz": -2519,
-     "differenz_monat": -210,
+     "netto_33": 21338,
+     "differenz": -2538,
+     "differenz_monat": -212,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 44.5
+     "grenzbelastung_33": 44.4
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 26341,
-     "differenz": -4180,
-     "differenz_monat": -348,
+     "netto_33": 26330,
+     "differenz": -4191,
+     "differenz_monat": -349,
      "grenzbelastung_heute": 56.5,
      "grenzbelastung_33": 51.7
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 31272,
-     "differenz": -6126,
+     "netto_33": 31266,
+     "differenz": -6132,
      "differenz_monat": -511,
      "grenzbelastung_heute": 58.6,
      "grenzbelastung_33": 51.6
@@ -3847,27 +3847,27 @@
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 38894,
-     "differenz": -8817,
+     "netto_33": 38895,
+     "differenz": -8816,
      "differenz_monat": -735,
      "grenzbelastung_heute": 51.5,
-     "grenzbelastung_33": 46.4
+     "grenzbelastung_33": 46.3
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 48503,
-     "differenz": -12055,
-     "differenz_monat": -1005,
+     "netto_33": 48511,
+     "differenz": -12047,
+     "differenz_monat": -1004,
      "grenzbelastung_heute": 58.8,
      "grenzbelastung_33": 46.0
     },
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 78600,
-     "differenz": -8664,
-     "differenz_monat": -722,
+     "netto_33": 78619,
+     "differenz": -8645,
+     "differenz_monat": -720,
      "grenzbelastung_heute": 44.3,
      "grenzbelastung_33": 39.7
     }
@@ -3883,72 +3883,72 @@
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 14949,
-     "differenz": -345,
-     "differenz_monat": -29,
+     "netto_33": 14863,
+     "differenz": -431,
+     "differenz_monat": -36,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 31.9
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 19624,
-     "differenz": -1722,
-     "differenz_monat": -143,
+     "netto_33": 19547,
+     "differenz": -1799,
+     "differenz_monat": -150,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 39.1
+     "grenzbelastung_33": 39.0
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 24480,
-     "differenz": -4431,
-     "differenz_monat": -369,
+     "netto_33": 24410,
+     "differenz": -4501,
+     "differenz_monat": -375,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 44.4
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 29470,
-     "differenz": -7559,
-     "differenz_monat": -630,
+     "netto_33": 29408,
+     "differenz": -7621,
+     "differenz_monat": -635,
      "grenzbelastung_heute": 51.1,
-     "grenzbelastung_33": 51.7
+     "grenzbelastung_33": 51.6
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 34408,
-     "differenz": -10200,
-     "differenz_monat": -850,
+     "netto_33": 34351,
+     "differenz": -10257,
+     "differenz_monat": -855,
      "grenzbelastung_heute": 54.3,
      "grenzbelastung_33": 51.5
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 42040,
-     "differenz": -14196,
-     "differenz_monat": -1183,
+     "netto_33": 41990,
+     "differenz": -14246,
+     "differenz_monat": -1187,
      "grenzbelastung_heute": 43.9,
      "grenzbelastung_33": 46.3
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 51668,
-     "differenz": -19985,
-     "differenz_monat": -1665,
+     "netto_33": 51624,
+     "differenz": -20030,
+     "differenz_monat": -1669,
      "grenzbelastung_heute": 47.0,
      "grenzbelastung_33": 45.9
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 81740,
-     "differenz": -21996,
-     "differenz_monat": -1833,
+     "netto_33": 81708,
+     "differenz": -22029,
+     "differenz_monat": -1836,
      "grenzbelastung_heute": 40.0,
      "grenzbelastung_33": 39.7
     }

@@ -26,6 +26,15 @@ v = next(x for x in SV["varianten"] if x["id"] == P["system"])
 sy = next(x for x in SVM.P["system"] if x["id"] == P["system"])
 
 
+TEXTE = dict(
+    verkehr_k="Neuwagen 2025: 17,4 % elektrisch, 2026 schon über 21 %",
+    verkehr_p="Ab 2035 sollen neue Pkw kein CO₂ mehr ausstoßen (EU-Recht; eine Lockerung auf 90 % ist vorgeschlagen). Der Bestand folgt mit "
+              "Abstand: Die Emissionen des Verkehrs sinken laut Projektion bis 2040 auf ein Drittel. Kraftstoffe und Verbrenner zahlen im Label 33 % – "
+              "diese Einnahmen sinken mit dem Erfolg.",
+    alter_p="Mehr ältere Menschen brauchen mehr Versorgung, vor allem in der Pflege. Wir rechnen mit dem Referenzszenario der EU-Kommission "
+            "(Ageing Report 2024).")
+
+
 def lin(name, j):
     s = P["pfad"][name]["stuetz"]
     if j <= s[0][0]:
@@ -113,14 +122,27 @@ def main():
                           gesundheit_plus=round(gp, 2), dach_ohne_zins=round(b['a'], 2), dividende_ohne_trends_pct_bip=round(b['div'], 2),
                           dividende_ohne_trends_eur2026=round(eur_basis), erosion=round(erosion, 2), dividende_pct_bip=round(div, 2), dividende_erw_eur2026=round(eur),
                           mindestniveau_eur2026=round(mind), ueber_mindestniveau=eur >= mind))
-    # Gegenrechnung: ohne Trends (alles konstant) und ohne Wachstum
+    # Variante Bürgerfonds: ein Teil der Lenkungseinnahmen wird angelegt, 3 % des Vermögens fließen in die Dividende
+    fonds = []
+    for phi in P["fonds_anteil"]:
+        for rr in P["fonds_rendite"]:
+            F, werte = 0.0, {}
+            for r in reihe:
+                L = r["lenkung_pct_bip"]
+                dn = r["dividende_pct_bip"] - phi * L + P["fonds_entnahme"] * F
+                werte[str(r["jahr"])] = round(r["dividende_ohne_trends_eur2026"] / r["dividende_ohne_trends_pct_bip"] * dn)
+                F = F * (1 + rr) / (1 + P["fonds_wachstum"]) + phi * L - P["fonds_entnahme"] * F
+            fonds.append(dict(anteil=phi, rendite=rr, dividende_erw_eur2026={j: werte[j] for j in ("2028", "2035", "2045", "2060")},
+                              fondsvermoegen_2060_pct_bip=round(F, 1)))
     E = dict(version=P["version"], system=P["system"], preisbasis="Euro 2026; Dividende je Erwachsenem und Monat, Deutschland",
              ausgang=dict(deckung=round(deck0, 2), label_effektiv=round(eff0, 2), dividende_pct_bip=div0, dividende_erw_eur2026=round(eur0)),
-             reihe=reihe, annahmen={k_: P["pfad"][k_]["stuetz"] for k_ in P["pfad"]},
+             reihe=reihe, buergerfonds=fonds, texte=TEXTE, annahmen={k_: P["pfad"][k_]["stuetz"] for k_ in P["pfad"]},
              wachstum_real_kopf=round(SVM.GR.G_REAL * 100, 2) if hasattr(SVM.GR, 'G_REAL') else None, fahrstrom_anteil=P["fahrstrom_anteil"],
              hinweis="Prüfrechnung: Pfade aus Quellen gesetzt (siehe Logbuch v3.47), keine Rückwirkung auf Wachstum und Arbeitsangebot")
     (AGG / "projektion33.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"Ausgang: Deckung {deck0:.2f}, Label {eff0:.2f} (Prüfung {eff_check:.2f}), Dividende {div0} % = {eur0:.0f} € (2026), Mindest {mind:.0f} €")
+    for x in fonds:
+        print("Bürgerfonds", x)
     for r in reihe:
         if r["jahr"] in (2028, 2030, 2035, 2040, 2045, 2050, 2060):
             print(r["jahr"], "Lenkung", r["lenkung_pct_bip"], "Erosion", r["erosion"], "Gesundheit+", r["gesundheit_plus"], "Div %", r["dividende_ohne_trends_pct_bip"],

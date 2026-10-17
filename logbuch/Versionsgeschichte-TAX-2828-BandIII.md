@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 17. Oktober 2026 · Modellstand **v3.46**
+Stand: 17. Oktober 2026 · Modellstand **v3.47**
 
 ---
 
@@ -1939,6 +1939,34 @@ die Annahme 0,65 % BIP. **Geprüft:** `python3 modell/alles.py`. **Wodurch aufge
 
 *Quellen wie v3.42–v3.45; Tabelle 29 (Eurostat nasa_10_pens1, 2021) für die Deckung der staatlichen Rentensysteme.*
 
+### v3.47 — Drittel-System: Trends bis 2060, Haushalte gegen heute, Webseitenentwurf
+
+**Art der Änderung: MINOR (Prüfrechnungen und Entwurf), keine Zahl der Gesamtrechnung bewegt.** 17. Oktober 2026.
+
+**Auftrag der Initiative:** keine Halbierung der Altrenten, Altlasten Sache der Staaten; Allgemeingültigkeit des Bauplans; mit Prognosen belegbarer Trends rechnen;
+Erzählung finden; Webseite zuerst auf Deutsch entwerfen.
+
+**Neu:** `modell/projektion33.py` (+ `.toml`): Zeitpfad 33F 2028–2060 auf dem Grundpfad der Gesamtrechnung (Quote 21,8, Zinsen außerhalb), mit Trends für
+Verbrenneranteil, Kraftstoffe (Projektionsbericht 2026, Verkehrsemissionen als Näherung), CO₂, Energie- und Tabaksteuer, Gesundheit und Pflege (Ageing Report 2024);
+Variante Bürgerfonds. `modell/haushalte33.py` (+ `.toml`): Haushalte heute (Kernmodell, Recht 2026; 2035 mit IGES-Beitragssätzen) gegen 33F, Varianten Weitergabe
+der Arbeitgeberbeiträge, Altlastenzuschlag, eigene Vorsorge; Rentnerfall; Raster für den Rechner. `seite/werkzeuge/entwurf33_bau.py`: deutscher Entwurf
+`seite/entwurf/konzept33/de.html`, Quellen `seite/entwurf/QUELLEN-33.md`. Bericht `projekt/Drittel-Erzaehlung-Trends-2026-10-17.md`.
+
+**Bewegte Zahlen (Prüfrechnung, Kaufkraft 2026):** Lenkungsanteil der Dividende 2028 59 % (3,09 % BIP). Dividende je Erwachsenem 270 € (2028), 175 € (2035),
+98 € (2045), 48 € (2060); Mindestniveau 193 € ab 2034 unterschritten. Bürgerfonds (Hälfte angelegt): 191 € (2028), 69–79 € (2060). Haushalt alleinstehend
+42.000 €: +588 €/Monat (Weitergabe, Vorsorge wie heute), +369 € mit Zuschlag 16,2 %, +96 € ohne Weitergabe; 2035 +567 €. Rentner 1.200 €: +114 €.
+Grenzbelastung bei 55.000 €: 56 % → 34 %. Anteil mit mehr Geld: 100 % mit Weitergabe, 82 % ohne (67 % mit Zuschlag).
+
+**Offen gekennzeichnet:** Die Dividende des Drittel-Systems ist unter den Trends nicht dauerhaft (Entscheidung F2). Die Weitergabe der Arbeitgeberbeiträge
+entscheidet über das Ergebnis (Annahme). Kinderdividende (135 €) unter dem Kindergeld. Konsumquote des Kernmodells für die Haushaltsrechnung linear geglättet
+(Sprünge der Grenzbelastung an den Stufengrenzen). Energiesteueranteil Kraftstoffe 85 % und Tabak/Alkoholsteuer 17,8 Mrd € Annahmen.
+**Geprüft:** `python3 modell/alles.py` (32 Stufen); Seite im Browser (Desktop und 390 px, keine Skriptfehler). **Wodurch aufgefallen:** Auftrag der Initiative;
+der Rückgang der Dividende zeigte sich erst mit den Trendpfaden.
+
+*Quellen: Umweltbundesamt (Umweltbezogene Steuern 2024; Projektionsbericht 2026, Tabelle 2); Europäische Kommission, 2024 Ageing Report (IP 279, Tabellen 4 und 5,
+maschinell gelesen); VO (EU) 2019/631 i. d. F. 2023/851, Ratsdokument ST 10065/1/26; ACEA (27.1.2026); Rat der EU (9.10.2026, ETS2); IGES für DAK (über Deutsches
+Ärzteblatt 25.6.2024, eine Studie); Destatis (Zigaretten 2024). Abruf 16./17.10.2026.*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -1990,9 +2018,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.46
+## 7 | Offene Punkte, Stand v3.47
 
-Neu seit v3.23 (Stand v3.46): **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.47): **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

@@ -63,10 +63,13 @@ def werte():
     m42 = zeile(fall(2028, "alleinstehend"), 42000)
     m42z = zeile(fall(2028, "alleinstehend", zu=16.2), 42000)
     m42k = zeile(fall(2028, "alleinstehend", wg=0.0), 42000)
+    plus42_35 = zeile(fall(2035, "alleinstehend"), 42000)["differenz_monat"]
+    plus150 = zeile(fall(2028, "alleinstehend"), 150000)["differenz_monat"]
     m42o = zeile(fall(2028, "alleinstehend", vs=0.0), 42000)
     gr = zeile(fall(2028, "alleinstehend", vs=0.0), 55000)
     rent = {(r["rente_monat"], r["zuschlag_pct"]): r for r in H["rentner"]}
     a1 = altfall(1.0)
+    fh = [x for x in PJ["buergerfonds"] if x["anteil"] == 0.5]
     an = H["anteil_erwachsene_mit_mehr"]
     return dict(
         div28=eur(d28["dividende_erw_eur2026"]), kind28=eur(d28["dividende_erw_eur2026"] / 2),
@@ -87,7 +90,8 @@ def werte():
         a_c=zahl(a1["beitrag_pct_bip"], 2).replace(",00", ""), a_zu=pct(a1["zuschlag_auf_alle_steuern_pct"], 1), a_sp=pct(a1["schuldenquote_spitze"]),
         a_spj=str(a1["spitzenjahr"]), keil=pct(J["abgabenkeil_de_2024"], 1), keil_oecd=pct(J["abgabenkeil_oecd_2024"], 1),
         abgeltung=pct(J["abgeltungsteuer_de"], 1), og=pct(J["obergrenze"]), gesundheit=pct(SV["gesundheit"], 2), seil=pct(SV["seil"], 2),
-        version="v3.47 (Entwurf)",
+        version="v3.47 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
+        f60b=eur(fh[1]["dividende_erw_eur2026"]["2060"]), fv=pct(fh[0]["fondsvermoegen_2060_pct_bip"]),
     )
 
 
@@ -195,9 +199,11 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
       die mit dem Erfolg verschwinden. Mit steigenden Gesundheits- und Pflegekosten (+{ges_plus} Punkte bis 2060) und dem Verteidigungspfad sinkt sie von {div28} (2028)
       auf {div35} (2035) und {div60} (2060), Kaufkraft 2026. Der Entwurf erzählt das offen („Klimabonus, der kleiner werden soll“). Zu entscheiden: hinnehmen,
       dauerhafte Quellen stärken (z. B. Bodenwertabgabe bis 2 %, +0,8 Punkte) oder einen Teil der Lenkungseinnahmen in einen Bürgerfonds legen (Vorbild Norwegen;
-      gerechnet: Hälfte in den Fonds, Dividende 2060 rund 60 bis 70 € statt {div60}).</li>
+      gerechnet: Hälfte in den Fonds, Dividende 2028 {f28}, 2060 {f60a} bis {f60b} statt {div60}; Fondsvermögen 2060 rund {fv} der Wirtschaftsleistung).</li>
     <li><b>Mehr Netto hängt nicht an der Dividende</b>, sondern am Wegfall der Sozialbeiträge – und an der Annahme, dass die Betriebe die gesparten Arbeitgeberbeiträge
       in den Lohn geben. Ohne Weitergabe, mit gleicher Vorsorge haben {anteil_kein} der Beschäftigten mehr (mit Altlastenzuschlag {anteil_kein_z}); mit Weitergabe alle.</li>
+    <li><b>Verteilung:</b> In Euro gewinnen hohe Einkommen am meisten (150.000 €: {plus150} im Monat), weil der Spitzensatz sinkt und die Beitragsgrenzen wegfallen;
+      in Prozent des Nettos liegen die Gewinne näher beieinander. Familien mit einem Einkommen gewinnen weniger, weil die Kinderdividende ({kind28}) unter dem Kindergeld (259 €) liegt.</li>
     <li><b>Altlasten</b> sind Sache der Staaten (Beschluss); der Entwurf bietet den gemeinsamen Fonds als Werkzeug an und nennt ein Rechenbeispiel.</li>
   </ol></div>
 </div></header>
@@ -287,7 +293,8 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
     <div><h3>Rente heute 1.200 € brutto</h3><p>Im neuen System keine Kranken- und Pflegebeiträge mehr: +{r1200} im Monat, wenn der Staat die Altrente weiterzahlt (mit Altlastenzuschlag +{r1200z}).</p></div>
     <div><h3>Die große Mehrheit hat mehr</h3><p>Bei Weitergabe der Arbeitgeberbeiträge haben alle gerechneten Einkommensgruppen mehr – auch nach eigener Vorsorge und Altlastenzuschlag ({anteil_voll}).
       Ohne Weitergabe sind es {anteil_kein}.</p></div>
-    <div><h3>Mehr, das bleibt</h3><p>Das Mehr kommt nicht aus einer Zahlung, die man streichen kann, sondern aus dem Wegfall der Beiträge. Es wächst, je weiter die Beiträge heute steigen würden.</p></div>
+    <div><h3>Mehr, das bleibt</h3><p>Das Mehr kommt nicht aus einer Zahlung, die man streichen kann, sondern aus dem Wegfall der Beiträge. 2035 ist die Dividende kleiner,
+      die Beiträge heute wären höher – das Mehr bleibt fast gleich ({plus42_35} bei 42.000 €).</p></div>
   </div>
 </div></section>
 

@@ -1,6 +1,7 @@
 # Zeitpfad des Drittel-Systems 33F 2028–2060 mit belegten Trends (modell/projektion33.py, Logbuch v3.47). Prüfrechnung, keine Prognose.
 # Jeder Pfad: Stützjahre und Werte, dazwischen linear. Quellen in den Kommentaren; Quellenangaben gesammelt in daten/aggregate/projektion33.json.
 version = "v3.47"
+# Quellen der Pfade: Recherche 17.10.2026 (Logbuch v3.47, seite/entwurf/QUELLEN-33.md)
 system = "33F"
 jahre = [2028, 2060]
 # Anteil der weggefallenen Kraftstoffausgaben, der als Fahrstrom in die Haushaltsenergie (22 %) geht; der Rest wird anderweitig verbraucht
@@ -8,6 +9,12 @@ jahre = [2028, 2060]
 fahrstrom_anteil = 0.5
 # Wachstum je Einwohner und Dach-Pfad (Verteidigung 1,4 → 2,5 % bis 2035): aus der Gesamtrechnung (GR.pfad mit der Quote von 33F)
 preis_2026_zu_2028 = 1.0404
+# Variante Bürgerfonds (Vorbild Norwegen: Ausgaberegel 3 % der erwarteten Realrendite, seit 2017): Anteil der Lenkungseinnahmen, der angelegt wird;
+# reale Rendite des Fonds (Annahme 3 bzw. 4 %); Ausschüttung 3 % des Fondsvermögens über die Dividende; reales Wachstum der Wirtschaft 1 % (Annahme).
+fonds_anteil = [0.5, 1.0]
+fonds_rendite = [0.03, 0.04]
+fonds_entnahme = 0.03
+fonds_wachstum = 0.01
 # Verbrauchsteuern in „Übrige Steuern“, die mit dem Trend erodieren (% des BIP, Modellbasis 4.200 Mrd € der Gesamtrechnung):
 # Energiesteuer 2024 36,6 Mrd € (Umweltbundesamt, Indikator Umweltbezogene Steuern, vorläufig), davon Kraftstoffe 85 % (Annahme, nicht geprüft)
 # = 31,1 Mrd € = 0,74 %, folgt dem Kraftstoffindex. Tabak- und Alkoholsteuer rund 17,8 Mrd € (Annahme: Tabaksteuer rund 15,6 Mrd €,
@@ -16,17 +23,26 @@ energiesteuer_kraftstoffe_pct_bip = 0.74
 tabak_alkohol_steuer_pct_bip = 0.42
 
 # Anteil der Fahrzeugausgaben, der auf Fahrzeuge mit Verbrennungsmotor (einschließlich Hybride) entfällt (Sonderstufe 33 %; Rest 28 %).
+# Belege: Neuzulassungen EU 2025 BEV 17,4 %, PHEV 9,4 % (ACEA, 27.1.2026, Verbandsstatistik); Jan–Aug 2026 BEV 21,7 % (Sekundärquelle).
+# Geltendes Recht: VO (EU) 2019/631 i. d. F. 2023/851, 2035 −100 % CO₂ für neue Pkw; Vorschlag 2025/0420(COD): −90 %, nicht verabschiedet
+# (Ratsdokument ST 10065/1/26 REV 1, Stand Juni 2026). Setzung 10 % Verbrenner ab 2035 (Vorschlag), 2028 80 % wie System 33F.
 [pfad.verbrenner_fahrzeuge]
 stuetz = [[2028, 0.80], [2035, 0.10], [2040, 0.05], [2060, 0.03]]
-# Index der Ausgaben für Kraftstoffe im Straßenverkehr (2028 = 1). Bestand erneuert sich langsamer als die Neuzulassungen.
+# Index der Ausgaben für Kraftstoffe im Straßenverkehr (2028 = 1). Näherung: Treibhausgase des Verkehrs in Deutschland, Mit-Maßnahmen-Szenario
+# des Projektionsberichts 2026 (Umweltbundesamt u. a., Tabelle 2; Mio. t: 2024 144,2; 2030 115,2; 2035 78,4; 2040 44,2; 2045 23,6; 2050 14,6),
+# auf 2028 umbasiert (2028 linear 125,6). Emissionen als Näherung für Kraftstoffausgaben (Annahme); 2060 Setzung.
 [pfad.kraftstoffe]
-stuetz = [[2028, 1.0], [2035, 0.75], [2040, 0.55], [2045, 0.38], [2050, 0.25], [2060, 0.10]]
+stuetz = [[2028, 1.0], [2030, 0.92], [2035, 0.62], [2040, 0.35], [2045, 0.19], [2050, 0.12], [2060, 0.08]]
 # Index der Ausgaben für Alkohol und Tabak (2028 = 1)
 [pfad.alkohol_tabak]
 stuetz = [[2028, 1.0], [2060, 0.70]]
 # CO₂-Preis: Aufkommen in % des BIP (2028 = Wert der Gesamtrechnung); sinkt mit den Emissionen der erfassten Sektoren trotz steigendem Preis.
+# ETS2 (Gebäude, Verkehr) startet 2028 (Rat 9.10.2026, Preisbremse ab 45 €/t in Preisen 2020); Klimagesetz 2040 −90 %. Setzung, Gebäude sinken
+# langsamer als der Verkehr; kein amtlicher Preispfad gefunden.
 [pfad.co2_index]
 stuetz = [[2028, 1.0], [2035, 0.85], [2040, 0.65], [2045, 0.40], [2050, 0.25], [2060, 0.15]]
-# Gesundheit und Pflege: Anstieg der öffentlichen Ausgaben in Punkten des BIP gegen 2028 (Referenzszenario des Ageing Report 2024, EU).
+# Gesundheit und Pflege: Anstieg der öffentlichen Ausgaben in Punkten des BIP gegen 2028. Ageing Report 2024 (IP 279, Tabelle 5, EU27, Referenz):
+# Gesundheit +0,2 (2022–2045), +0,4 (2022–2070); Pflege +0,5 und +0,8; zusammen +0,7 bis 2045, +1,2 bis 2070 (maschinell gelesen, an der Quelle
+# zu prüfen). Gegen 2028 linear umgerechnet: 2045 +0,52, 2060 +0,84, 2070 +1,02.
 [pfad.gesundheit_pflege_plus]
-stuetz = [[2028, 0.0], [2040, 0.5], [2050, 0.8], [2060, 1.0]]
+stuetz = [[2028, 0.0], [2045, 0.52], [2060, 0.84]]
