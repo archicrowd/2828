@@ -1,5 +1,5 @@
 {
- "version": "v3.43",
+ "version": "v3.48",
  "status": "Prüfrechnung, Gesamtrechnung unverändert bei 28:28",
  "annahmen": {
   "haertefall_pct_bip": 0.65,
@@ -1210,6 +1210,110 @@
      "altlastenbeitrag_z_halb": 0.79,
      "gesamtlast_ohne_route": 33.71,
      "gesamtlast_mit_route": 37.81
+    }
+   }
+  },
+  {
+   "id": "33R",
+   "name": "33:33 prämienfrei, Label 5/11/17/25 + Sonderstufe 33 % (Beschluss v3.48)",
+   "mindestniveau_anteil": 0.2114,
+   "label_sonder": {
+    "alkohol_tabak": 33,
+    "kraftstoffe": 33,
+    "fahrzeuge": 31
+   },
+   "dividende_kopf_klub": 260,
+   "gesundheitspraemie_kopf_klub": 0,
+   "seilpraemie_kopf_klub": 0,
+   "dividende_nach_praemien": 260,
+   "spitzensatz": 33,
+   "einkommen_saetze": [
+    0,
+    11,
+    19,
+    25,
+    33
+   ],
+   "label_saetze": [
+    5,
+    11,
+    17,
+    25,
+    25
+   ],
+   "label_effektiv": 18.82,
+   "mindestniveau_de_erw_monat": 226.0,
+   "bezugswert_de_monat": 1071.0,
+   "sozialabdeckung_de_monat": 0.0,
+   "mindestquote": 22.2,
+   "quote_kern": 22.3,
+   "dividende_pct_bip_2028": 5.76,
+   "dividende_de_erw_2028": 308.0,
+   "deckung_positionen": {
+    "Einkommen": 10.21,
+    "Kapitalerträge": 1.37,
+    "Konsum (Label)": 8.51,
+    "Unternehmen und Plattformen": 4.42,
+    "Erbschaften": 1.16,
+    "Große Vermögen": 0.97,
+    "CO₂-Preis": 1.67,
+    "Subventionsabbau": 0.48,
+    "Übrige Steuern": 3.93,
+    "Grundstücksabgabe": 0.82
+   },
+   "deckung": 33.53,
+   "steuer_traegt": [
+    "haertefall",
+    "gesundheit",
+    "seil"
+   ],
+   "zins_ausserhalb": true,
+   "z_2028": 10.28,
+   "z_ende": 2080,
+   "punkte": {
+    "2028": {
+     "z": 10.28,
+     "steuerbedarf": 33.42,
+     "deckung": 33.53,
+     "saldo": 0.11,
+     "ausserhalb_steuern": 12.08,
+     "altlastenbeitrag": 12.08,
+     "altlastenbeitrag_z_halb": 6.94,
+     "gesamtlast_ohne_route": 45.5,
+     "gesamtlast_mit_route": 49.6
+    },
+    "2040": {
+     "z": 9.81,
+     "steuerbedarf": 33.42,
+     "deckung": 33.53,
+     "saldo": 0.11,
+     "ausserhalb_steuern": 11.23,
+     "altlastenbeitrag": 11.23,
+     "altlastenbeitrag_z_halb": 6.33,
+     "gesamtlast_ohne_route": 44.65,
+     "gesamtlast_mit_route": 48.75
+    },
+    "2050": {
+     "z": 7.67,
+     "steuerbedarf": 33.42,
+     "deckung": 33.53,
+     "saldo": 0.11,
+     "ausserhalb_steuern": 8.73,
+     "altlastenbeitrag": 8.73,
+     "altlastenbeitrag_z_halb": 4.9,
+     "gesamtlast_ohne_route": 42.15,
+     "gesamtlast_mit_route": 46.25
+    },
+    "dauer": {
+     "z": 0.0,
+     "steuerbedarf": 33.42,
+     "deckung": 33.53,
+     "saldo": 0.11,
+     "ausserhalb_steuern": 0.79,
+     "altlastenbeitrag": 0.79,
+     "altlastenbeitrag_z_halb": 0.79,
+     "gesamtlast_ohne_route": 34.21,
+     "gesamtlast_mit_route": 38.31
     }
    }
   }

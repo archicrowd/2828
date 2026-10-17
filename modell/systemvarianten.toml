@@ -1,6 +1,6 @@
 # Systemvarianten 25:25 (Viertellösung) und 33:33 (Drittellösung) gegen 28:28 (modell/systemvarianten.py, Logbuch v3.43).
 # Auftrag der Initiative vom 17.10.2026. Status: Prüfrechnung, keine Entscheidung; die Gesamtrechnung bleibt bei 28:28.
-version = "v3.43"
+version = "v3.48"
 
 # Gemeinsame Regel aller Varianten: Spitzensatz s gilt für Einkommen (oberste Stufe), Kapitalerträge, Unternehmensgewinne, Erbschaften und
 # die oberste Stufe des Mehrwertsteuer-Labels. Die übrigen Sätze werden im Verhältnis s/28 skaliert (Setzung, „alle Steuerwerte auf die Zielmarke“),
@@ -161,6 +161,23 @@ spitzensatz = 33
 einkommen_saetze = [0, 11, 19, 25, 33]
 label_saetze = [5, 11, 17, 22, 28]
 label_sonder = { alkohol_tabak = 33, kraftstoffe = 33, fahrzeuge = 32 }
+mindestniveau_anteil = 0.25
+loese_saldo = 0.2
+bezugswert = "grundbedarf"
+steuer_traegt = ["haertefall", "gesundheit", "seil"]
+gesundheit_anteil = 1.0
+zins_ausserhalb = true
+
+# ---- v3.48 (Beschlüsse der Initiative 17.10.2026, dritte Runde): Mehrwertsteuerstufen 22 % und 28 % zu einer Stufe 25 % zusammengefasst.
+# Label 5 / 11 / 17 / 25 (die Liste behält fünf Plätze: C und D beide 25 %), Sonderstufe 33 % für Schädliches wie 33F; Fahrzeug-Mischsatz
+# 0,8 × 33 + 0,2 × 25 = 31,4 → 31 % (Annahme 80 % Verbrenner wie 33F). Sonst wie 33F (prämienfrei, Dividende so bemessen, dass +0,2 bleibt).
+[[system]]
+id = "33R"
+name = "33:33 prämienfrei, Label 5/11/17/25 + Sonderstufe 33 % (Beschluss v3.48)"
+spitzensatz = 33
+einkommen_saetze = [0, 11, 19, 25, 33]
+label_saetze = [5, 11, 17, 25, 25]
+label_sonder = { alkohol_tabak = 33, kraftstoffe = 33, fahrzeuge = 31 }
 mindestniveau_anteil = 0.25
 loese_saldo = 0.2
 bezugswert = "grundbedarf"

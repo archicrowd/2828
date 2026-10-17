@@ -72,6 +72,11 @@ def z_anteil_vor_stichtag(jahr):
     return sum(anteile) / bd
 
 
+# v3.48 (Beschluss): Renten werden um die eingesparten Sozialbeiträge der Rentner gekürzt (Anteil der Bruttorente). 0 = keine Kürzung
+# (Standard dieses Skripts); altlasten.py setzt den Wert aus seinem Parameterfile.
+KUERZUNG = 0.0
+
+
 def z_pfad(c, rente_pct, anteil65, div_erw_pct_kopf, faktor_rentner):
     """Z in % des BIP je Jahr. rente_pct: GF1002+GF1003 2024; div_erw_pct_kopf: Dividende je Erwachsenem in % des BIP je Kopf (Jahr)."""
     je_rentner = rente_pct / anteil65 * 100      # Rentenausgabe je Rentner in % des BIP je Kopf (Annahme: Rentner = 65+)
@@ -79,7 +84,7 @@ def z_pfad(c, rente_pct, anteil65, div_erw_pct_kopf, faktor_rentner):
     for j in range(2028, 2101):
         f = z_anteil_vor_stichtag(j)
         zahl = anteil65 * faktor_rentner(j)      # Rentner in % der Bevölkerung
-        anspruch = je_rentner * f               # erworbener Anspruch je Rentner
+        anspruch = je_rentner * f * (1 - KUERZUNG)   # erworbener Anspruch je Rentner, ggf. um eingesparte Beiträge gekürzt
         ueber = max(anspruch - div_erw_pct_kopf, 0.0)   # Z = erworbener Anspruch über der Dividende (die jeder Rentner erhält)
         out.append(dict(land=c, jahr=j, anteil_vor_stichtag=round(f, 4), z_pct_bip=round(zahl / 100 * ueber, 3)))
     return out

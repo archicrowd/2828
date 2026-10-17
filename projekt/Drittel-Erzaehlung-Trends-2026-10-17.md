@@ -68,3 +68,33 @@ Fondsvermögen 2060 21 bis 26 % des BIP. Alles angelegt: 2028 111 €, 2060 91 b
 
 Deckung auf deutscher Basis ohne Ausweichreaktionen; Haushalte ohne Bürgergeld und Wohngeld; Konsumquote des Kernmodells geglättet; keine Mehrarbeit eingerechnet
 (Elastizitäten um 0,3 in der Literatur, nicht geprüft); Trendpfade Setzungen aus Quellen; Härtefall 0,65 % BIP als Annahme, wird mit kleinerer Dividende größer.
+
+## 7 | Nachtrag v3.48: Beschlüsse und Einwanderung (17.10.2026)
+
+**Beschlüsse:** Weitergabe von mindestens 80 % der gesparten Arbeitgeberbeiträge (Pflicht); Renten um die eingesparten Sozialbeiträge gekürzt (12,35 %, Annahme
+nach deutschem Satz); Mehrwertsteuer 5 / 11 / 17 / 25 % plus Sonderstufe 33 % (System 33R).
+
+| Größe (Kaufkraft 2026) | 33F (v3.47) | 33R (v3.48) |
+|---|---|---|
+| Mehrwertsteuer effektiv | 17,6 % | 18,8 % |
+| Dividende je Erwachsenem 2028 / 2035 / 2060 | 270 / 175 / 48 € | 296 / 202 / 83 € |
+| Alleinstehend 42.000 €, Vorsorge wie heute, ohne / mit Zuschlag | +588 / +369 € (volle Weitergabe) | +474 / +295 € (80 %) |
+| Rente 1.200 € | +114 € (ohne Kürzung) | −27 € (mit Zuschlag −49 €) |
+| Altlastenfonds (alle Altrenten, Tilgung bis 2098) | 5,33 % BIP, Zuschlag 16,2 % | 4,59 % BIP, Zuschlag 13,7 % |
+
+Neu offen: Rentner leicht im Minus; Familien mit einem Einkommen mit Zuschlag ab rund 55.000 € im Minus.
+
+**Einwanderung (Frage der Initiative), Prüfrechnung `modell/einwanderung33.py`:** zusätzlich zu den amtlichen Annahmen, Erwerbsalter 30, Erwerbstätigkeit
+55 → 75 % (kontrolliert) bzw. 40 → 62 % (schwierige Integration), Produktivität 0,85 bzw. 0,7.
+
+| 2060 | Grundpfad | +0,2 %/Jahr (0,5 Mio.) | +0,4 %/Jahr (1 Mio.) |
+|---|---|---|---|
+| Altenquotient (65+ je 20–64) | 0,52 | 0,46 | 0,42 |
+| Wirtschaftsleistung gegen Grundpfad | – | +10 % (schwierig +7 %) | +20 % (schwierig +14 %) |
+| je Einwohner | – | +2,2 % (schwierig −0,8 %) | +4,1 % (schwierig −1,6 %) |
+| Dividende je Erwachsenem | 83 € | 118 € (schwierig 97 €) | 148 € (schwierig 109 €) |
+| Beitrag Altlastenfonds | 4,59 % BIP | 4,25 % | 3,95 % |
+
+Befund: Einwanderung im Erwerbsalter verdünnt die festen Altlasten und die Kosten der Alterung; im Drittel-System erwerben Eingewanderte keine Ansprüche über
+der Dividende, ihre Steuern tragen die Altlasten mit. Ob die Wirtschaftsleistung je Einwohner steigt, entscheidet die Erwerbstätigkeit. Die Alterung wird
+gemildert, nicht ausgeglichen: Auch mit 1 Mio. zusätzlich je Jahr steigt der Altenquotient von 0,36 auf 0,42.

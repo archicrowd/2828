@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Entwurf der überarbeiteten Webseite (Drittel-System 33F), nur Deutsch, zur Prüfung durch die Initiative (Logbuch v3.47).
+"""Entwurf der überarbeiteten Webseite (Drittel-System, seit v3.48 System 33R), nur Deutsch, zur Prüfung durch die Initiative (Logbuch v3.47/v3.48).
 
 Die veröffentlichte Seite (seite/stand-b, Bau: seite_bau.py) bleibt unverändert. Dieser Entwurf übernimmt Stylesheet und Gestaltung
 (stylesheet(), ZUSATZ_CSS aus seite_bau.py) und füllt alle Zahlen aus den Ergebnissen der Prüfrechnungen:
@@ -27,7 +27,8 @@ def lade(n):
 
 SV, H, RA, PJ, AL, J = (lade(n) for n in ("systemvarianten.json", "haushalte33.json", "haushalte33_raster.json", "projektion33.json",
                                            "altlasten.json", "gesamtrechnung.json"))
-V = next(x for x in SV["varianten"] if x["id"] == "33F")
+V = next(x for x in SV["varianten"] if x["id"] == PJ["system"])
+ZU = max(f["zuschlag_pct"] for f in H["faelle"])                 # Beispielzuschlag (Altlastenfonds, Beschluss)
 F26 = 1.0404                                   # Preise 2028 -> Kaufkraft 2026 (2 % je Jahr, Annahme der Gesamtrechnung)
 G26 = 12348
 REIHE = {r["jahr"]: r for r in PJ["reihe"]}
@@ -45,7 +46,7 @@ def pct(x, nk=0):
     return SB.pct(x, "de", nk)
 
 
-def fall(jahr, haushalt, wg=1.0, zu=0.0, vs=0.186):
+def fall(jahr, haushalt, wg=0.8, zu=0.0, vs=0.186):
     return next(f for f in H["faelle"] if f["jahr"] == jahr and f["haushalt"] == haushalt and f["weitergabe_ag"] == wg
                 and f["zuschlag_pct"] == zu and f["vorsorge_satz"] == vs)
 
@@ -54,15 +55,15 @@ def zeile(f, b):
     return next(z for z in f["zeilen"] if z["brutto"] == b)
 
 
-def altfall(z, ziel=0.0, zins=2.5):
-    return next(f for f in AL["systeme"]["33F"]["faelle"] if f["z_anteil"] == z and f["zielquote"] == ziel and f["zins"] == zins)
+def altfall(z=None):
+    return AL["beschluss"]
 
 
 def werte():
     d28, d35, d60 = REIHE[2028], REIHE[2035], REIHE[2060]
     m42 = zeile(fall(2028, "alleinstehend"), 42000)
-    m42z = zeile(fall(2028, "alleinstehend", zu=16.2), 42000)
-    m42k = zeile(fall(2028, "alleinstehend", wg=0.0), 42000)
+    m42z = zeile(fall(2028, "alleinstehend", zu=ZU), 42000)
+    m42k = zeile(fall(2028, "alleinstehend", wg=1.0), 42000)
     plus42_35 = zeile(fall(2035, "alleinstehend"), 42000)["differenz_monat"]
     plus150 = zeile(fall(2028, "alleinstehend"), 150000)["differenz_monat"]
     m42o = zeile(fall(2028, "alleinstehend", vs=0.0), 42000)
@@ -82,15 +83,13 @@ def werte():
         plus42=eur(m42["differenz_monat"]), plus42z=eur(m42z["differenz_monat"]), plus42k=eur(m42k["differenz_monat"]),
         plus42o=eur(m42o["differenz_monat"]),
         gh55=pct(gr["grenzbelastung_heute"]), gn55=pct(gr["grenzbelastung_33"]),
-        r1200=eur(rent[(1200, 0.0)]["differenz_monat"]), r1200z=eur(rent[(1200, 16.2)]["differenz_monat"]),
-        anteil_voll=pct(an["2028|weitergabe 1.0|zuschlag 16.2|vorsorge 0.186"]),
-        anteil_kein=pct(an["2028|weitergabe 0.0|zuschlag 0.0|vorsorge 0.186"]),
-        anteil_kein_z=pct(an["2028|weitergabe 0.0|zuschlag 16.2|vorsorge 0.186"]),
+        r1200=eur(rent[(1200, 0.0)]["differenz_monat"]), r1200z=eur(rent[(1200, ZU)]["differenz_monat"]), r900=eur(rent[(900, 0.0)]["differenz_monat"]), r2200=eur(rent[(2200, 0.0)]["differenz_monat"]),
+        anteil_voll=pct(an[f"2028|weitergabe 0.8|zuschlag {ZU}|vorsorge 0.186"]), zu=pct(ZU, 1), zu_v=str(ZU),
         st1=eur(G26), st15=eur(G26 * 1.5), st2=eur(G26 * 2), st3=eur(G26 * 3),
         a_c=zahl(a1["beitrag_pct_bip"], 2).replace(",00", ""), a_zu=pct(a1["zuschlag_auf_alle_steuern_pct"], 1), a_sp=pct(a1["schuldenquote_spitze"]),
         a_spj=str(a1["spitzenjahr"]), keil=pct(J["abgabenkeil_de_2024"], 1), keil_oecd=pct(J["abgabenkeil_oecd_2024"], 1),
         abgeltung=pct(J["abgeltungsteuer_de"], 1), og=pct(J["obergrenze"]), gesundheit=pct(SV["gesundheit"], 2), seil=pct(SV["seil"], 2),
-        version="v3.47 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
+        version="v3.48 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
         f60b=eur(fh[1]["dividende_erw_eur2026"]["2060"]), fv=pct(fh[0]["fondsvermoegen_2060_pct_bip"]),
     )
 
@@ -118,8 +117,8 @@ def achsen(px, py, xt, yt, fmt, W=900, H=340, L=64, R=24, T=18, B=40):
 def grafik_grenz():
     xs = RA["grenz_brutto"]
     p_h, px, py = linie(xs, RA["grenz_heute"], 10000, 150000, 0, 70)
-    p_n, _, _ = linie(xs, RA["grenz_neu"]["1.0"], 10000, 150000, 0, 70)
-    p_k, _, _ = linie(xs, RA["grenz_neu"]["0.0"], 10000, 150000, 0, 70)
+    p_n, _, _ = linie(xs, RA["grenz_neu"]["0.8"], 10000, 150000, 0, 70)
+    p_k, _, _ = linie(xs, RA["grenz_neu"]["1.0"], 10000, 150000, 0, 70)
     ax = achsen(px, py, [10000, 40000, 70000, 100000, 130000], [0, 20, 40, 60], lambda y: f"{y} %")
     return (f'<svg id="chart" class="g33" viewBox="0 0 900 340" role="img" aria-label="Grenzbelastung heute und neu">{ax}'
             f'<polyline class="ohne" points="{p_h}"/><polyline class="prog" points="{p_k}"/><polyline class="mit" points="{p_n}"/></svg>')
@@ -190,7 +189,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
     <div class="stamp"><div class="val">0 €</div><div class="lbl">Sozialbeiträge und Prämien</div></div>
     <div class="stamp"><div class="val">+{plus42}*</div><div class="lbl">mehr im Monat bei 42.000 € brutto – nach eigener Vorsorge</div></div>
   </div>
-  <p class="fineprint" style="text-align:center;margin:16px auto 0">* Schätzung des Projekts: alleinstehend, 2028, Kaufkraft 2026; Arbeitgeberbeiträge gehen in den Lohn (Annahme);
+  <p class="fineprint" style="text-align:center;margin:16px auto 0">* Schätzung des Projekts: alleinstehend, 2028, Kaufkraft 2026; mindestens 80 % der gesparten Arbeitgeberbeiträge gehen in den Lohn (Pflicht);
   vom Mehr ist schon abgezogen, was heute in die Rentenversicherung fließt, als eigene Vorsorge. Ohne Altlastenzuschlag des Staates; mit Zuschlag +{plus42z}.</p>
 
   <div class="pruef"><h3>Zur Prüfung durch die Initiative (erscheint nicht auf der Seite)</h3><ol>
@@ -200,8 +199,10 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
       auf {div35} (2035) und {div60} (2060), Kaufkraft 2026. Der Entwurf erzählt das offen („Klimabonus, der kleiner werden soll“). Zu entscheiden: hinnehmen,
       dauerhafte Quellen stärken (z. B. Bodenwertabgabe bis 2 %, +0,8 Punkte) oder einen Teil der Lenkungseinnahmen in einen Bürgerfonds legen (Vorbild Norwegen;
       gerechnet: Hälfte in den Fonds, Dividende 2028 {f28}, 2060 {f60a} bis {f60b} statt {div60}; Fondsvermögen 2060 rund {fv} der Wirtschaftsleistung).</li>
-    <li><b>Mehr Netto hängt nicht an der Dividende</b>, sondern am Wegfall der Sozialbeiträge – und an der Annahme, dass die Betriebe die gesparten Arbeitgeberbeiträge
-      in den Lohn geben. Ohne Weitergabe, mit gleicher Vorsorge haben {anteil_kein} der Beschäftigten mehr (mit Altlastenzuschlag {anteil_kein_z}); mit Weitergabe alle.</li>
+    <li><b>Umgesetzt (Beschluss v3.48):</b> Pflicht, mindestens 80 % der gesparten Arbeitgeberbeiträge in den Lohn zu geben; Renten um die eingesparten Kranken- und
+      Pflegebeiträge gekürzt (Annahme 12,35 % wie in Deutschland); Mehrwertsteuer 22 und 28 % zu 25 % zusammengefasst (effektiv {label_eff} statt 17,6 %, Dividende 2028 {div28}).</li>
+    <li><b>Rentner verlieren leicht:</b> Mit der Kürzung und der höheren Mehrwertsteuer liegt eine Rente von 1.200 € bei {r1200} im Monat (900 €: {r900}; 2.200 €: {r2200}),
+      mit Altlastenzuschlag {r1200z}. Der Text auf der Seite sagt das offen. Prüfen: Ausgleich über einen höheren Grundfreibetrag für Renten oder Kürzung nur um den Krankenanteil.</li>
     <li><b>Verteilung:</b> In Euro gewinnen hohe Einkommen am meisten (150.000 €: {plus150} im Monat), weil der Spitzensatz sinkt und die Beitragsgrenzen wegfallen;
       in Prozent des Nettos liegen die Gewinne näher beieinander. Familien mit einem Einkommen gewinnen weniger, weil die Kinderdividende ({kind28}) unter dem Kindergeld (259 €) liegt.</li>
     <li><b>Altlasten</b> sind Sache der Staaten (Beschluss); der Entwurf bietet den gemeinsamen Fonds als Werkzeug an und nennt ein Rechenbeispiel.</li>
@@ -246,8 +247,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
     <div class="mass"><div class="pos">Konsum</div><h3>Die Mehrwertsteuer wird zum Label</h3>
       <div class="vatlbl" role="img" aria-label="Label">
         <div><b class="v1">A+ · 5&nbsp;%</b><em>Grundbedarf, Reparatur</em></div><div><b class="v2">A · 11&nbsp;%</b><em>nachhaltige Güter</em></div>
-        <div><b class="v3">B · 17&nbsp;%</b><em>Standardgüter</em></div><div><b class="v4">C · 22&nbsp;%</b><em>ressourcenintensiv</em></div>
-        <div><b class="v5">D · 28&nbsp;%</b><em>klimaschädlicher Luxus</em></div><div><b class="v5" style="background:#5b1a14">S · 33&nbsp;%</b><em>Schädliches (Sonderstufe)</em></div></div>
+        <div><b class="v3">B · 17&nbsp;%</b><em>Standardgüter</em></div><div><b class="v4">C · 25&nbsp;%</b><em>ressourcenintensiv, Luxus</em></div><div><b class="v5" style="background:#5b1a14">S · 33&nbsp;%</b><em>Schädliches (Sonderstufe)</em></div></div>
       <p>Man sieht auf einen Blick, was ein Produkt kostet und warum. Die Sonderstufe gilt nur für Tabak, Alkohol, Kraftstoffe und Fahrzeuge mit Verbrennungsmotor: 33 % sind die Ausnahme für Schädliches, nicht die Regel. Im Mittel {label_eff}.</p></div>
     <div class="mass"><div class="pos">Boden · Gemeinde</div><h3>Die Gemeinde besteuert den Boden</h3><span class="regel">0,1–1 % auf den Bodenwert</span>
       <p>Nur der Grundstückswert zählt, nicht das Haus. Wer baut oder saniert, zahlt dafür nicht mehr.</p></div>
@@ -275,11 +275,11 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
       <label class="lbl">Jahr</label>
       <div class="seg klein" id="rj"><button type="button" aria-pressed="true" data-v="2028">2028</button><button type="button" aria-pressed="false" data-v="2035">2035</button></div>
       <label class="lbl">Gesparte Arbeitgeberbeiträge</label>
-      <div class="seg klein" id="wg"><button type="button" aria-pressed="true" data-v="1.0">gehen in den Lohn</button><button type="button" aria-pressed="false" data-v="0.0">bleiben beim Betrieb</button></div>
+      <div class="seg klein" id="wg"><button type="button" aria-pressed="true" data-v="0.8">80 % in den Lohn (Pflicht)</button><button type="button" aria-pressed="false" data-v="1.0">alles in den Lohn</button></div>
       <label class="lbl">Eigene Altersvorsorge</label>
       <div class="seg klein" id="vs"><button type="button" aria-pressed="true" data-v="0.186">so viel wie heute</button><button type="button" aria-pressed="false" data-v="0.0">keine</button></div>
       <label class="lbl">Altlastenzuschlag Deines Staates</label>
-      <div class="seg klein" id="zu"><button type="button" aria-pressed="true" data-v="0.0">keiner</button><button type="button" aria-pressed="false" data-v="16.2">Beispiel {a_zu}</button></div>
+      <div class="seg klein" id="zu"><button type="button" aria-pressed="true" data-v="0.0">keiner</button><button type="button" aria-pressed="false" data-v="{zu_v}">Beispiel {zu}</button></div>
     </div>
     <div>
       <p class="vergl"><span class="c"><span class="k">heute netto im Monat</span><span class="v" id="r-h"></span></span><span class="c"><span class="k">neu netto im Monat</span><span class="v new" id="r-n"></span></span></p>
@@ -290,9 +290,9 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
     </div>
   </div>
   <div class="effects">
-    <div><h3>Rente heute 1.200 € brutto</h3><p>Im neuen System keine Kranken- und Pflegebeiträge mehr: +{r1200} im Monat, wenn der Staat die Altrente weiterzahlt (mit Altlastenzuschlag +{r1200z}).</p></div>
-    <div><h3>Die große Mehrheit hat mehr</h3><p>Bei Weitergabe der Arbeitgeberbeiträge haben alle gerechneten Einkommensgruppen mehr – auch nach eigener Vorsorge und Altlastenzuschlag ({anteil_voll}).
-      Ohne Weitergabe sind es {anteil_kein}.</p></div>
+    <div><h3>Rente heute 1.200 € brutto</h3><p>Die Rente sinkt um die Kranken- und Pflegebeiträge, die nicht mehr anfallen; die Versorgung bleibt ohne Prämie.
+      Mit der höheren Mehrwertsteuer bleiben {r1200} im Monat (mit Altlastenzuschlag {r1200z}) – ein kleines Minus.</p></div>
+    <div><h3>Wer arbeitet, hat mehr</h3><p>Mit der Pflicht zur Weitergabe haben alle gerechneten Einkommensgruppen mehr – auch nach eigener Vorsorge und Altlastenzuschlag ({anteil_voll}).</p></div>
     <div><h3>Mehr, das bleibt</h3><p>Das Mehr kommt nicht aus einer Zahlung, die man streichen kann, sondern aus dem Wegfall der Beiträge. 2035 ist die Dividende kleiner,
       die Beiträge heute wären höher – das Mehr bleibt fast gleich ({plus42_35} bei 42.000 €).</p></div>
   </div>
@@ -305,7 +305,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
   <div class="chart-card">
     <div class="unit">Grenzbelastung: Anteil eines zusätzlichen Euro Arbeitskosten, der nicht im Haushalt ankommt (alleinstehend, 2028)</div>
     @@GRENZ@@
-    <div class="legend"><span class="l-ohne"><i></i>heute</span><span class="l-mit"><i></i>neu, Beiträge gehen in den Lohn</span><span class="l-prog"><i></i>neu, Beiträge bleiben beim Betrieb</span></div>
+    <div class="legend"><span class="l-ohne"><i></i>heute</span><span class="l-mit"><i></i>neu, 80 % der Beiträge gehen in den Lohn</span><span class="l-prog"><i></i>neu, alles geht in den Lohn</span></div>
   </div>
   <p class="fineprint">Eigene Vorsorge zählt nicht als Belastung: Sie bleibt Dein Eigentum. Wie stark Menschen auf niedrigere Grenzbelastung reagieren, ist in der Forschung umstritten;
   die Rechnung nimmt keine Mehrarbeit an. Jede Mehrarbeit wäre zusätzlicher Spielraum.</p>
@@ -340,7 +340,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
   eigene, kreative Lösungen sind ausdrücklich erwünscht. Der Bauplan bietet Werkzeuge an.</p>
   <div class="effects">
     <div><h3>Ein gemeinsamer Fonds</h3><p>Staaten können ihre Altlasten in einen gemeinsamen Fonds geben: ein Zins für alle, ein gleichbleibender Beitrag, bis spätestens 2098 getilgt.
-      Rechenbeispiel für die zehn gerechneten Staaten mit allen Altrenten: {a_c} % der Wirtschaftsleistung im Jahr, als Zuschlag von {a_zu} auf alle Steuern;
+      Rechenbeispiel für die zehn gerechneten Staaten mit allen Altrenten (um die eingesparten Beiträge gekürzt): {a_c} % der Wirtschaftsleistung im Jahr, als Zuschlag von {a_zu} auf alle Steuern;
       die Schuld des Fonds steigt bis {a_spj} auf {a_sp} und sinkt dann auf null.</p></div>
     <div><h3>Gute Jahre tilgen</h3><p>Was in einem Jahr über dem Durchschnitt der letzten fünf Jahre hereinkommt, tilgt die Altlast. Schlechte Jahre bleiben ohne Zusatzlast.</p></div>
     <div><h3>Eigene Wege</h3><p>Rücklagen auflösen, Übergänge nach Jahrgängen, eigene Fonds wie in Norwegen, Pflichtvorsorge wie in Australien: Jeder Staat wählt, was zu seiner Lage passt.
@@ -377,7 +377,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
   <h2>Was wir noch nicht wissen</h2>
   <p class="lede">Ein Entwurf, dessen Annahmen offen liegen, lässt sich prüfen. Diese Punkte entscheiden mit über das Ergebnis:</p>
   <ul class="grenzen">
-    <li><b>Weitergabe der Arbeitgeberbeiträge:</b> Die Rechnung nimmt an, dass die Betriebe die gesparten Beiträge in den Lohn geben (Studien: zwei Drittel bis fast alles, über Jahre). Ohne Weitergabe ist das Mehr kleiner ({plus42k} statt {plus42} bei 42.000 €).</li>
+    <li><b>Weitergabe der Arbeitgeberbeiträge:</b> Mindestens 80 % der gesparten Beiträge müssen in den Lohn gehen. Wie sich die Pflicht durchsetzen lässt (Tarifverträge, Übergangsregel, Kontrolle), ist auszuarbeiten. Vorgeschrieben sind mindestens 80 %; bei voller Weitergabe wäre das Mehr größer ({plus42k} statt {plus42} bei 42.000 €).</li>
     <li><b>Deckung:</b> Das Aufkommen ist auf deutscher Basis gerechnet und auf die zehn Staaten übertragen; Ausweichreaktionen sind nicht eingerechnet.</li>
     <li><b>Trends:</b> Die Pfade für Verkehr, CO₂ und Gesundheit sind aus Quellen gesetzt, keine eigene Prognose.</li>
     <li><b>Grundbedarf:</b> Der Härtefallfonds ist mit 0,65 % der Wirtschaftsleistung angesetzt (Annahme); mit kleinerer Dividende wird er größer.</li>

@@ -1,8 +1,8 @@
 # Zeitpfad des Drittel-Systems 33F 2028–2060 mit belegten Trends (modell/projektion33.py, Logbuch v3.47). Prüfrechnung, keine Prognose.
 # Jeder Pfad: Stützjahre und Werte, dazwischen linear. Quellen in den Kommentaren; Quellenangaben gesammelt in daten/aggregate/projektion33.json.
-version = "v3.47"
+version = "v3.48"
 # Quellen der Pfade: Recherche 17.10.2026 (Logbuch v3.47, seite/entwurf/QUELLEN-33.md)
-system = "33F"
+system = "33R"                    # v3.48: Label 5/11/17/25 + Sonderstufe
 jahre = [2028, 2060]
 # Anteil der weggefallenen Kraftstoffausgaben, der als Fahrstrom in die Haushaltsenergie (22 %) geht; der Rest wird anderweitig verbraucht
 # (Durchschnittssatz der übrigen Gruppen). Annahme: Elektrofahrzeuge kosten je Kilometer an Energie rund die Hälfte.

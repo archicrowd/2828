@@ -94,6 +94,7 @@ def rentner(r_monat, zu, j):
     zve = max(0.0, P["besteuerungsanteil"] * r - kvpv - 102 - K.SA_PAUSCH)
     h = r - kvpv - K.est_2026(zve) - K.soli_2026(K.est_2026(zve))
     EFF = eff_jahr(j)
+    r = r * (1 - P.get("rente_kuerzung", 0.0))         # v3.48: Rente um die eingesparten Beiträge gekürzt
     st = est(r)                                        # Dividende + Altrente zusammen r, ganz steuerpflichtig
     konsum = kq(r - st) * (r - st)
     n = r - st - konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1) - zu / 100 * (st + konsum * EFF / (100 + EFF))
@@ -139,7 +140,7 @@ def main():
     setze_jahr(2028)
     rente = [dict(rente_monat=r, zuschlag_pct=zu, netto_heute_monat=round(a / 12), netto_33_monat=round(b / 12), differenz_monat=round((b - a) / 12))
              for r in P["renten_monat"] for zu in P["zuschlag_pct"] for a, b in [rentner(r, zu, 2028)]]
-    E = dict(rentner=rente, rentner_hinweis="Altrente voll weitergezahlt (Entscheidung des Staates); Besteuerungsanteil 83 % (Annahme)", version=P["version"], system=P["system"], preisbasis="Euro 2026; heute: Recht 2026 (2035: Beitragssätze IGES)",
+    E = dict(rentner=rente, rentner_hinweis="Rente um die eingesparten Kranken- und Pflegebeiträge gekürzt (Beschluss v3.48), sonst voll weitergezahlt; Besteuerungsanteil 83 % (Annahme)", version=P["version"], system=P["system"], preisbasis="Euro 2026; heute: Recht 2026 (2035: Beitragssätze IGES)",
              dividende_erw_jahr={str(j): div_jahr(j) for j in P["jahre"]}, faelle=erg, anteil_erwachsene_mit_mehr=anteil,
              verteilung="Kernmodell VERT (7 Gruppen Alleinstehender, Annahmen des nationalen Modells)",
              hinweis="grob: Fälle ohne Erwerbseinkommen nicht gerechnet (Härtefall sichert den Grundbedarf); keine Verhaltensänderung")

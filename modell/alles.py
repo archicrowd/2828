@@ -39,6 +39,7 @@ STUFEN = [
     ("Altlastenfonds (Streckung)", ["modell/altlasten.py"]),
     ("Drittel-System: Zeitpfad mit Trends", ["modell/projektion33.py"]),
     ("Drittel-System: Haushalte gegen heute", ["modell/haushalte33.py"]),
+    ("Drittel-System: Einwanderung", ["modell/einwanderung33.py"]),
     ("Drittel-System: Webseitenentwurf", ["seite/werkzeuge/entwurf33_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),

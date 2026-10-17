@@ -1,0 +1,22 @@
+# Einwanderung im Drittel-System (modell/einwanderung33.py, Logbuch v3.48). Frage der Initiative: Was bedeuten Einwanderungsziele, wenn die Staaten
+# des Möglichkeitsraums kontrollierte Einwanderung ermöglichen, um die Alterung auszugleichen? Prüfrechnung mit gekennzeichneten Annahmen.
+version = "v3.48"
+# Zusätzliche Nettoeinwanderung über die Annahmen der amtlichen Projektionen hinaus, in % der Bevölkerung 2028 je Jahr.
+# 0,2 % ≈ 0,5 Mio. Menschen je Jahr im Klub der zehn (255 Mio.); 0,4 % ≈ 1 Mio.
+zusatz_pct = [0.2, 0.4]
+alter_bei_ankunft = 30            # Annahme: Erwerbsalter; bis 2060 erreicht niemand aus den Zugängen ab 2028 das Rentenalter 65
+mitkommende_kinder = 0.3          # Kinder je eingewandertem Erwachsenen (Annahme); Geburten im Land nicht gerechnet
+# Erwerbstätigenquote der Eingewanderten nach Jahren seit Ankunft (kontrollierte Arbeitsmigration, Annahme); Einheimische 20–64: 75,8 %
+# (Eurostat lfsi_emp_a, EU27 2024; allgemein bekannt, nicht eigens abgerufen)
+erwerb = [[0, 0.55], [5, 0.75]]
+erwerb_einheimische = 0.758
+produktivitaet = 0.85             # Wertschöpfung je erwerbstätiger eingewanderter Person relativ zum Durchschnitt (Annahme)
+gesundheit_relativ = 0.6
+# Gegenprobe „schwierige Integration“: Erwerbstätigkeit nach fünf Jahren 62 % (Größenordnung der Erwerbstätigenquote von Drittstaatsangehörigen in der
+# EU, Annahme, an Eurostat lfsa_ergan zu prüfen), Produktivität 0,7
+schwer_erwerb = [[0, 0.40], [5, 0.62]]
+schwer_produktivitaet = 0.7          # Gesundheits- und Pflegekosten je eingewanderter Person relativ zum Durchschnitt (jung; Annahme)
+# Ausgangslage Klub (Annahme nach Ageing Report 2024 / Rat ST 9160/24: heute rund drei Personen im Erwerbsalter je Person über 65, 2070 weniger als zwei)
+erwerbsalter_anteil = [[2028, 0.60], [2060, 0.54]]
+altenquotient = [[2028, 0.36], [2060, 0.52]]
+gesundheit_pct_bip_2028 = 7.75    # GF07 Klub (Gesamtrechnung)

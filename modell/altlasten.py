@@ -34,6 +34,7 @@ def lade(name, pfad):
 
 
 SZ = lade("sz", W / "modell" / "sozialschutz.py")
+SZ.KUERZUNG = P.get("kuerzung", 0.0)                   # v3.48: Renten um eingesparte Beiträge gekürzt
 G = json.loads((AGG / "gesamtrechnung.json").read_text(encoding="utf-8"))
 SV = json.loads((AGG / "systemvarianten.json").read_text(encoding="utf-8"))
 G_NOM = G.get("wachstum_nominal", 3.0) / 100 if G.get("wachstum_nominal") else 0.03
@@ -135,7 +136,7 @@ def main():
                      altlast_schnitt_2028=round(alt_s, 2),
                      hinweis="Beitrag je Staat = gemeinsamer Beitrag × (Anteil nach eigener Altlast, linear in 30 Jahren abschmelzend auf gleichen Satz); "
                              "Zuschlag bezogen auf die Steuerquote der Variante (vereinfachend für alle Staaten gleich)")
-    E = dict(version=P["version"], status="Prüfrechnung", wachstum_nominal=G_NOM * 100, schuldenquote_2028=d0, systeme=erg, beschluss=beschluss,
+    E = dict(version=P["version"], status="Prüfrechnung", kuerzung_renten=SZ.KUERZUNG, wachstum_nominal=G_NOM * 100, schuldenquote_2028=d0, systeme=erg, beschluss=beschluss,
              verteilung_gemeinsamer_fonds=dict(system=sid, schnitt_pct_bip=round(schnitt, 2), laender=verteilung,
                                                hinweis="Altlast 2028 = Z + Zinsen auf die eigene Schuld (Zins 2028 der Gesamtrechnung); "
                                                        "positiv: das Land bringt mehr Altlast mit, als es nach BIP-Anteil beiträgt"),

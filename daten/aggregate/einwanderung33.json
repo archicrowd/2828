@@ -1,0 +1,237 @@
+{
+ "version": "v3.48",
+ "status": "Prüfrechnung",
+ "annahmen": {
+  "zusatz_pct": [
+   0.2,
+   0.4
+  ],
+  "alter_bei_ankunft": 30,
+  "mitkommende_kinder": 0.3,
+  "erwerb": [
+   [
+    0,
+    0.55
+   ],
+   [
+    5,
+    0.75
+   ]
+  ],
+  "erwerb_einheimische": 0.758,
+  "produktivitaet": 0.85,
+  "gesundheit_relativ": 0.6,
+  "schwer_erwerb": [
+   [
+    0,
+    0.4
+   ],
+   [
+    5,
+    0.62
+   ]
+  ],
+  "schwer_produktivitaet": 0.7,
+  "erwerbsalter_anteil": [
+   [
+    2028,
+    0.6
+   ],
+   [
+    2060,
+    0.54
+   ]
+  ],
+  "altenquotient": [
+   [
+    2028,
+    0.36
+   ],
+   [
+    2060,
+    0.52
+   ]
+  ],
+  "gesundheit_pct_bip_2028": 7.75
+ },
+ "szenarien": [
+  {
+   "zusatz_pct": 0.2,
+   "integration": "kontrolliert",
+   "zusatz_mio_je_jahr_klub": 0.51,
+   "reihe": {
+    "2035": {
+     "altenquotient_basis": 0.395,
+     "altenquotient": 0.385,
+     "bevoelkerung_plus_pct": 2.1,
+     "bip_plus_pct": 2.1,
+     "bip_je_kopf_pct": -0.0,
+     "gesundheit_pflege_pct_bip": 7.89,
+     "gesundheit_pflege_basis": 7.96,
+     "dividende_erw_eur2026": 206,
+     "dividende_basis_eur2026": 202
+    },
+    "2045": {
+     "altenquotient_basis": 0.445,
+     "altenquotient": 0.418,
+     "bevoelkerung_plus_pct": 4.7,
+     "bip_plus_pct": 5.1,
+     "bip_je_kopf_pct": 0.4,
+     "gesundheit_pflege_pct_bip": 8.08,
+     "gesundheit_pflege_basis": 8.27,
+     "dividende_erw_eur2026": 140,
+     "dividende_basis_eur2026": 128
+    },
+    "2060": {
+     "altenquotient_basis": 0.52,
+     "altenquotient": 0.463,
+     "bevoelkerung_plus_pct": 7.7,
+     "bip_plus_pct": 10.0,
+     "bip_je_kopf_pct": 2.2,
+     "gesundheit_pflege_pct_bip": 8.13,
+     "gesundheit_pflege_basis": 8.59,
+     "dividende_erw_eur2026": 118,
+     "dividende_basis_eur2026": 83
+    }
+   },
+   "fonds_beitrag_pct_bip": 4.25,
+   "fonds_spitze": 146.4,
+   "fonds_spitzenjahr": 2054
+  },
+  {
+   "zusatz_pct": 0.2,
+   "integration": "schwierig",
+   "zusatz_mio_je_jahr_klub": 0.51,
+   "reihe": {
+    "2035": {
+     "altenquotient_basis": 0.395,
+     "altenquotient": 0.385,
+     "bevoelkerung_plus_pct": 2.1,
+     "bip_plus_pct": 1.4,
+     "bip_je_kopf_pct": -0.7,
+     "gesundheit_pflege_pct_bip": 7.95,
+     "gesundheit_pflege_basis": 7.96,
+     "dividende_erw_eur2026": 201,
+     "dividende_basis_eur2026": 202
+    },
+    "2045": {
+     "altenquotient_basis": 0.445,
+     "altenquotient": 0.418,
+     "bevoelkerung_plus_pct": 4.7,
+     "bip_plus_pct": 3.4,
+     "bip_je_kopf_pct": -1.2,
+     "gesundheit_pflege_pct_bip": 8.21,
+     "gesundheit_pflege_basis": 8.27,
+     "dividende_erw_eur2026": 130,
+     "dividende_basis_eur2026": 128
+    },
+    "2060": {
+     "altenquotient_basis": 0.52,
+     "altenquotient": 0.463,
+     "bevoelkerung_plus_pct": 7.7,
+     "bip_plus_pct": 6.8,
+     "bip_je_kopf_pct": -0.8,
+     "gesundheit_pflege_pct_bip": 8.38,
+     "gesundheit_pflege_basis": 8.59,
+     "dividende_erw_eur2026": 97,
+     "dividende_basis_eur2026": 83
+    }
+   },
+   "fonds_beitrag_pct_bip": 4.36,
+   "fonds_spitze": 148.6,
+   "fonds_spitzenjahr": 2054
+  },
+  {
+   "zusatz_pct": 0.4,
+   "integration": "kontrolliert",
+   "zusatz_mio_je_jahr_klub": 1.02,
+   "reihe": {
+    "2035": {
+     "altenquotient_basis": 0.395,
+     "altenquotient": 0.375,
+     "bevoelkerung_plus_pct": 4.2,
+     "bip_plus_pct": 4.1,
+     "bip_je_kopf_pct": -0.0,
+     "gesundheit_pflege_pct_bip": 7.83,
+     "gesundheit_pflege_basis": 7.96,
+     "dividende_erw_eur2026": 209,
+     "dividende_basis_eur2026": 202
+    },
+    "2045": {
+     "altenquotient_basis": 0.445,
+     "altenquotient": 0.395,
+     "bevoelkerung_plus_pct": 9.4,
+     "bip_plus_pct": 10.2,
+     "bip_je_kopf_pct": 0.8,
+     "gesundheit_pflege_pct_bip": 7.9,
+     "gesundheit_pflege_basis": 8.27,
+     "dividende_erw_eur2026": 151,
+     "dividende_basis_eur2026": 128
+    },
+    "2060": {
+     "altenquotient_basis": 0.52,
+     "altenquotient": 0.418,
+     "bevoelkerung_plus_pct": 15.4,
+     "bip_plus_pct": 20.1,
+     "bip_je_kopf_pct": 4.1,
+     "gesundheit_pflege_pct_bip": 7.75,
+     "gesundheit_pflege_basis": 8.59,
+     "dividende_erw_eur2026": 148,
+     "dividende_basis_eur2026": 83
+    }
+   },
+   "fonds_beitrag_pct_bip": 3.95,
+   "fonds_spitze": 140.4,
+   "fonds_spitzenjahr": 2052
+  },
+  {
+   "zusatz_pct": 0.4,
+   "integration": "schwierig",
+   "zusatz_mio_je_jahr_klub": 1.02,
+   "reihe": {
+    "2035": {
+     "altenquotient_basis": 0.395,
+     "altenquotient": 0.375,
+     "bevoelkerung_plus_pct": 4.2,
+     "bip_plus_pct": 2.7,
+     "bip_je_kopf_pct": -1.4,
+     "gesundheit_pflege_pct_bip": 7.94,
+     "gesundheit_pflege_basis": 7.96,
+     "dividende_erw_eur2026": 200,
+     "dividende_basis_eur2026": 202
+    },
+    "2045": {
+     "altenquotient_basis": 0.445,
+     "altenquotient": 0.395,
+     "bevoelkerung_plus_pct": 9.4,
+     "bip_plus_pct": 6.8,
+     "bip_je_kopf_pct": -2.3,
+     "gesundheit_pflege_pct_bip": 8.15,
+     "gesundheit_pflege_basis": 8.27,
+     "dividende_erw_eur2026": 132,
+     "dividende_basis_eur2026": 128
+    },
+    "2060": {
+     "altenquotient_basis": 0.52,
+     "altenquotient": 0.418,
+     "bevoelkerung_plus_pct": 15.4,
+     "bip_plus_pct": 13.5,
+     "bip_je_kopf_pct": -1.6,
+     "gesundheit_pflege_pct_bip": 8.19,
+     "gesundheit_pflege_basis": 8.59,
+     "dividende_erw_eur2026": 109,
+     "dividende_basis_eur2026": 83
+    }
+   },
+   "fonds_beitrag_pct_bip": 4.14,
+   "fonds_spitze": 144.3,
+   "fonds_spitzenjahr": 2053
+  }
+ ],
+ "grundpfad_fonds": {
+  "beitrag_pct_bip": 4.59,
+  "spitze": 153.6,
+  "spitzenjahr": 2056
+ },
+ "hinweis": "Grundpfad: projektion33.json (33R) und altlasten.json (Beschluss); Einwanderung zusätzlich zu den amtlichen Annahmen"
+}
