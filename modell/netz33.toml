@@ -1,0 +1,34 @@
+# Das starke Netz als Grundversorgung (modell/netz33.py, Logbuch v3.50). Vorgabe der Initiative (17.10.2026): Kranken-, Pflege- und Rentenversicherung
+# bieten nur eine brauchbare Grundversorgung ohne Extras; stets Raum und Anreiz für eigenes Engagement. Prüfrechnung, alle Mengen Annahmen.
+version = "v3.50"
+grundbedarf_eur_2026 = 12348      # steuerliches Existenzminimum 2026 je Jahr (Grundbedarf, Stufe 1 des Tarifs)
+
+# 1 Gesundheit: GF07 (7,75 % BIP Klub) ohne Extras. Kürzung des Leistungskatalogs auf eine Grundversorgung (Annahme, keine Quelle für die Höhe;
+# Vorbild Schweiz: obligatorische Grundversicherung mit Kostenbeteiligung, Zusatzversicherungen privat).
+gesundheit_kuerzung = [0.0, 0.05, 0.10]
+gesundheit_kuerzung_basis = 0.05   # für die Varianten der Grundrente
+# 2 Pflege: öffentliche Langzeitpflege 1,7 % BIP (EU27 2022, Ageing Report 2024, Tabelle 5); Teilkasko wie heute in Deutschland (Grundversorgung),
+# davon liegt ein Teil schon in GF07 (Annahme 50 %); der Rest liegt bisher in GF10 und ist im Drittel-System nicht finanziert.
+pflege_pct_bip = 1.7
+pflege_in_gf07 = 0.5
+# 3 Alter: Grundrente = Grundbedarf für jede Person ab 67, ohne Bedürftigkeitsprüfung (Vorbild Niederlande, AOW: Volksrente nach Wohnjahren),
+# Dividende darauf angerechnet; eigene Vorsorge kommt voll hinzu (Anreiz). Altrentner mit Ansprüchen aus der Zeit vor 2028 liegen mit Dividende und
+# Altrente über dem Grundbedarf (Annahme); die Grundrente wächst daher mit dem Anteil der Rentenjahre ohne Altansprüche.
+grundrente_alter = 67
+# Varianten der Grundrente (Faktor auf die volle Aufstockung bis zum Grundbedarf für alle ab 67):
+#   volksrente   = 1,0: für alle, ohne Prüfung (Niederlande AOW); eigene Vorsorge voll obendrauf
+#   zwei_drittel = Volksrente in Höhe von 2/3 des Grundbedarfs für alle; Rest über den Härtefall nur bei Bedarf (in der Rechnung nicht zusätzlich)
+#   mindestrente = Aufstockung nur, wer mit eigener Rente unter dem Grundbedarf liegt; eigene Rente zur Hälfte angerechnet (Anreiz bleibt).
+#                  Mit Pflichtvorsorge (eigenes Konto, z. B. 10 % des Lohns, Vorbild Australien 12 %) Annahme: 25 % der Rentner mit im Mittel halber Lücke -> 0,125
+grundrente_varianten = { volksrente = 1.0, zwei_drittel = 0.667, mindestrente = 0.125 }
+anteil_67_an_65plus = 0.86        # Annahme (Jahrgänge 65 und 66 rund 14 % der über 65-Jährigen)
+anteil_65plus = [[2028, 0.216], [2060, 0.281]]   # aus Altenquotient und Erwerbsalteranteil (einwanderung33.toml), Annahme
+# 4 Invalidität: Grundbedarf für Menschen mit voller Erwerbsminderung, Dividende angerechnet; eigene Berufsunfähigkeitsversicherung als Ergänzung.
+invaliditaet_anteil_bev = 0.022   # Annahme: rund 1,8 Mio. Erwerbsminderungsrenten in Deutschland (Größenordnung DRV, nicht geprüft) / 83,5 Mio.
+# 5 Arbeitslosigkeit: Grundbedarf statt Lohnersatz, Dividende angerechnet, Hinzuverdienst zur Hälfte angerechnet (Setzung H2). Lohnersatz darüber:
+# eigene Versicherung oder tariflich (Vorbild Dänemark: freiwillige Arbeitslosenkassen).
+arbeitslose_anteil_bev = 0.029    # Annahme: Arbeitslosenquote rund 6 % × Erwerbspersonen rund 49 % der Bevölkerung
+# 6 Hinterbliebene: jede erwachsene Person hat eigene Dividende/Grundrente; Waisen erhalten den Grundbedarf eines Kindes (Annahme: 0,05 % BIP).
+waisen_pct_bip = 0.05
+# 7 Härtefall (Wohnkosten über dem Grundbedarf, besondere Lagen, Eingliederung): wie bisher 0,65 % BIP (Annahme).
+haertefall_pct_bip = 0.65

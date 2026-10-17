@@ -25,8 +25,8 @@ def lade(n):
     return json.loads((AGG / n).read_text(encoding="utf-8"))
 
 
-SV, H, RA, PJ, AL, J, DY = (lade(n) for n in ("systemvarianten.json", "haushalte33.json", "haushalte33_raster.json", "projektion33.json",
-                                               "altlasten.json", "gesamtrechnung.json", "dynamik33.json"))
+SV, H, RA, PJ, AL, J, DY, NZ = (lade(n) for n in ("systemvarianten.json", "haushalte33.json", "haushalte33_raster.json", "projektion33.json",
+                                                   "altlasten.json", "gesamtrechnung.json", "dynamik33.json", "netz33.json"))
 V = next(x for x in SV["varianten"] if x["id"] == PJ["system"])
 ZU = max(f["zuschlag_pct"] for f in H["faelle"])                 # Beispielzuschlag (Altlastenfonds, Beschluss)
 F26 = 1.0404                                   # Preise 2028 -> Kaufkraft 2026 (2 % je Jahr, Annahme der Gesamtrechnung)
@@ -76,9 +76,14 @@ def werte():
         return next(x for x in DY["szenarien"] if x["beschaeftigung_pct"] == b and x["ki_pp"] == ki
                     and x["kapital_verschiebung_pp"] == kv)["reihe"][j]["dividende_erw_eur2026"]
     d45 = REIHE[2045]
+    nv = next(x for x in NZ["varianten"] if x["grundrente"] == "mindestrente")["reihe"]
+    vr = next(x for x in NZ["varianten"] if x["grundrente"] == "volksrente" and x["gesundheit_kuerzung"] == 0.05)["reihe"]
     return dict(
-        netz28=eur(d28["netz_eur_kopf_monat"]), netz60=eur(d60["netz_eur_kopf_monat"]),
-        paket28=eur(d28["netz_eur_kopf_monat"] + d28["dividende_erw_eur2026"]), paket60=eur(d60["netz_eur_kopf_monat"] + d60["dividende_erw_eur2026"]),
+        netz28=eur(nv["2028"]["netz_eur_kopf_monat"]), netz60=eur(nv["2060"]["netz_eur_kopf_monat"]),
+        nz_div28=eur(nv["2028"]["dividende_erw_eur2026"]), nz_div60=eur(nv["2060"]["dividende_erw_eur2026"]), nz_divd=eur(nv["dauer"]["dividende_erw_eur2026"]),
+        vr_divd=eur(vr["dauer"]["dividende_erw_eur2026"]), nz28=pct(nv["2028"]["netz_pct_bip"], 1), nz60=pct(nv["2060"]["netz_pct_bip"], 1),
+        paket28=eur(nv["2028"]["netz_eur_kopf_monat"] + nv["2028"]["dividende_erw_eur2026"]),
+        paket60=eur(nv["2060"]["netz_eur_kopf_monat"] + nv["2060"]["dividende_erw_eur2026"]),
         prog60=zahl(d60["progression"], 1), div45=eur(d45["dividende_erw_eur2026"]),
         dyn_ki_lo=eur(dyn(0.0, 0.07, 0.0)), dyn_ki_hi=eur(dyn(0.0, 0.6, 0.0)), dyn_b=eur(dyn(4.6, 0.0, 0.0)),
         dyn_mittel=eur(dyn(4.6, 0.3, 3.0)), dyn_max=eur(dyn(4.6, 0.6, 3.0)),
@@ -99,7 +104,7 @@ def werte():
         a_c=zahl(a1["beitrag_pct_bip"], 2).replace(",00", ""), a_zu=pct(a1["zuschlag_auf_alle_steuern_pct"], 1), a_sp=pct(a1["schuldenquote_spitze"]),
         a_spj=str(a1["spitzenjahr"]), keil=pct(J["abgabenkeil_de_2024"], 1), keil_oecd=pct(J["abgabenkeil_oecd_2024"], 1),
         abgeltung=pct(J["abgeltungsteuer_de"], 1), og=pct(J["obergrenze"]), gesundheit=pct(SV["gesundheit"], 2), seil=pct(SV["seil"], 2),
-        version="v3.49 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
+        version="v3.50 (Entwurf)", plus42_35=eur(plus42_35), plus150=eur(plus150), f28=eur(fh[0]["dividende_erw_eur2026"]["2028"]), f60a=eur(fh[0]["dividende_erw_eur2026"]["2060"]),
         f60b=eur(fh[1]["dividende_erw_eur2026"]["2060"]), fv=pct(fh[0]["fondsvermoegen_2060_pct_bip"]),
     )
 
@@ -196,7 +201,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
   <p class="opensrc">Alle Rechenmodelle sind <a href="#offen">offen prüfbar</a>.</p>
   <div class="stamps">
     <div class="stamp"><div class="val">33 %</div><div class="lbl">das Goldene Drittel: höchstens, auf jedes Einkommen</div></div>
-    <div class="stamp"><div class="val">0 €</div><div class="lbl">Prämie für das Goldene Netz</div></div>
+    <div class="stamp"><div class="val">0 €</div><div class="lbl">Prämie für das starke Netz</div></div>
     <div class="stamp"><div class="val">+{plus42}*</div><div class="lbl">mehr im Monat bei 42.000 € brutto – nach eigener Vorsorge</div></div>
   </div>
   <p class="fineprint" style="text-align:center;margin:16px auto 0">* Schätzung des Projekts: alleinstehend, 2028, Kaufkraft 2026; mindestens 80 % der gesparten Arbeitgeberbeiträge gehen in den Lohn (Pflicht);
@@ -204,8 +209,12 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
 
   <div class="pruef"><h3>Zur Prüfung durch die Initiative (erscheint nicht auf der Seite)</h3><ol>
     <li><b>Name:</b> Der Bauplan heißt im Entwurf „33:33“. Absender bleibt die Initiative 28:28. Alternative: „TAX 28:28 – Drittel-Fassung“.</li>
-    <li><b>Namen (Vorschlag, im Entwurf verwendet):</b> „Das Goldene Drittel“ (Steuerregel), „Das Goldene Netz“ (Absicherung ohne Prämie), „Transformationsdividende“
+    <li><b>Namen (Vorschlag, im Entwurf verwendet):</b> „Das Goldene Drittel“ (Steuerregel), „Das starke Netz“ (Grundversorgung ohne Prämie), „Transformationsdividende“
       (Geldzuweisung), „Zukunftsschatz“ (Bürgerfonds, falls beschlossen). Nicht markenrechtlich geprüft. „TrafoDi“ nicht verwendet (siehe Bewertung im Bericht).</li>
+    <li><b>Starkes Netz als Grundversorgung (v3.50, Vorschlag):</b> Gesundheit ohne Extras (Katalog −5 %, Annahme), Pflege als Teilkasko, Grundbedarf bei
+      Invalidität und Arbeitslosigkeit statt Lohnersatz, Mindestrente mit Pflichtvorsorge auf eigenem Konto. Netz {nz28} → {nz60} des BIP; Dividende 2028 {nz_div28},
+      2060 {nz_div60}, Dauerzustand {nz_divd}. Mit einer Volksrente für alle (Vorbild Niederlande) wäre die Dividende im Dauerzustand {vr_divd}: nicht tragfähig.
+      Abschnitt „Paket“ zeigt die Vorschlagswerte; Rechner und Zeitpfad noch ohne diese Änderung.</li>
     <li><b>Korrektur 61:</b> Die Rechnung v3.47/v3.48 hielt den Anteil der Einkommensteuer fest, obwohl die Stufen am Grundbedarf hängen und dieser langsamer wächst als die
       Einkommen. Mit dieser Wirkung (+{prog60} Punkte 2060) sinkt die Dividende von {div28} (2028) auf {div35} (2035) und {div45} (2045) und bleibt dann bei {div60} (2060) – statt 83 €.
       Lenkung (Erosion), Gesundheit/Pflege und Verteidigungspfad drücken weiter. Bürgerfonds (Hälfte der Lenkungseinnahmen): 2028 {f28}, 2060 {f60a} bis {f60b}.</li>
@@ -248,7 +257,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
       <p>Besteuert wird das Brutto ohne Abzüge. Der Grundbedarf bleibt frei. Die Stufen hängen am Grundbedarf und wachsen mit ihm.</p></div>
     <div class="mass"><div class="pos">Arbeit</div><h3>Keine Sozialbeiträge</h3><span class="regel">0 % auf den Lohn</span>
       <p>Was Betriebe heute als Beitrag abführen, kann in den Lohn gehen. Dänemark finanziert seinen Sozialstaat fast ganz aus Steuern.</p></div>
-    <div class="mass"><div class="pos">Absicherung</div><h3>Das Goldene Netz: versorgt ohne Prämie</h3><span class="regel">Gesundheit · Arbeitslosigkeit · Invalidität · Hinterbliebene</span>
+    <div class="mass"><div class="pos">Absicherung</div><h3>Das starke Netz: Grundversorgung ohne Prämie</h3><span class="regel">Gesundheit · Pflege · Alter · Invalidität · Arbeitslosigkeit</span>
       <p>Jeder ist versorgt, ohne Beitrag, ohne Antrag auf Mitgliedschaft, ohne Sonderfälle. Bezahlt aus den Steuern ({gesundheit} und {seil} der Wirtschaftsleistung).</p></div>
     <div class="mass"><div class="pos">Kapital</div><h3>Kapital wie Arbeit</h3><span class="regel">höchstens 33 % auf alle Erträge</span>
       <p>Auch Veräußerungsgewinne zählen. Lohn in Kapitalertrag umzuwandeln lohnt sich nicht mehr.</p></div>
@@ -277,15 +286,19 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
 
 <section id="paket"><div class="wrap">
   <h2>Was Du vom System bekommst</h2>
-  <p class="lede">Zwei Teile, ein Paket: Das Goldene Netz sichert Dich ab, die Transformationsdividende kommt jeden Monat aufs Konto. Und Du zahlst höchstens das Goldene Drittel.</p>
+  <p class="lede">Du zahlst höchstens das Goldene Drittel. Dafür trägt Dich das starke Netz, und die Transformationsdividende kommt jeden Monat aufs Konto. Was darüber hinausgeht, ist Deine eigene Route.</p>
   <div class="effects">
     <div><h3>Das Goldene Drittel</h3><p>Höchstens ein Drittel auf jeden Euro – aus Arbeit, Kapital, Gewinn oder Erbe. Keine Beiträge, keine Prämien.</p></div>
-    <div><h3>Das Goldene Netz · {netz28}</h3><p>Gesundheit und Pflege, Arbeitslosigkeit, Invalidität, Hinterbliebene, Grundbedarf: für jeden, ohne Prämie. Wert je Einwohner im Monat
-      (Durchschnitt, 2028); bis 2060 wächst er auf {netz60}.</p></div>
+    <div><h3>Das starke Netz · {netz28}</h3><p>Geknüpft aus vielen Knoten – jeder hält mit, keiner fällt durch. Eine brauchbare Grundversorgung, ohne Extras:
+      Gesundheit, Pflege als Teilkasko, im Alter und bei Invalidität oder Arbeitslosigkeit der Grundbedarf. Wert je Einwohner im Monat (Durchschnitt, 2028); 2060 {netz60}.</p></div>
     <div><h3>Die Transformationsdividende · {div28}</h3><p>Jeden Monat für jeden Erwachsenen, Kinder die Hälfte. Sie gibt zurück, was Klimaschutz und Lenkung einbringen,
       und wird kleiner, wenn das Schädliche verschwindet.</p></div>
   </div>
-  <p class="fineprint">Kaufkraft 2026, Deutschland. Der Wert des Netzes ist der Durchschnitt der öffentlichen Ausgaben je Einwohner, kein Anspruch in Euro.</p>
+  <div class="effects" style="margin-top:14px"><div><h3>Deine eigene Route</h3><p>Alles über der Grundversorgung gehört Dir und liegt bei Dir: eigene Vorsorge auf
+      Deinem Konto (vererbbar), Zusatzversicherungen für Komfort in Gesundheit und Pflege, Lohnersatz bei Arbeitslosigkeit oder Berufsunfähigkeit. Jeder zusätzlich
+      verdiente und gesparte Euro bleibt Deiner.</p></div></div>
+  <p class="fineprint">Kaufkraft 2026, Deutschland. Vorschlag Grundversorgung (Mindestrente mit Pflichtvorsorge, Katalog −5 %), zu entscheiden. Der Wert des Netzes ist der
+  Durchschnitt der öffentlichen Ausgaben je Einwohner, kein Anspruch in Euro. Dividende nach diesem Vorschlag: 2028 {nz_div28}, 2060 {nz_div60}.</p>
 </div></section>
 
 <section id="rechner"><div class="wrap">
@@ -354,7 +367,7 @@ SEITE = r"""<!DOCTYPE html><html lang="de"><head>
     in höhere Stufen (+{prog60} Punkte der Wirtschaftsleistung 2060). So sinkt die Dividende von {div28} (2028) auf {div35} (2035) und hält sich ab 2045 bei rund {div60}.</p>
   </div>
   <div class="box"><h3>Was das bedeutet</h3>
-    <p>Die Transformationsdividende gibt zurück, was der Wandel einbringt – sie wird kleiner, wenn der Schaden kleiner wird. Das Goldene Netz wächst dagegen mit:
+    <p>Die Transformationsdividende gibt zurück, was der Wandel einbringt – sie wird kleiner, wenn der Schaden kleiner wird. Das starke Netz wächst dagegen mit:
     Gesundheit und Pflege für alle, ohne Prämie. Zusammen ist das Paket 2060 mehr wert als 2028 ({paket28} → {paket60} im Monat). Jeder Staat kann einen Teil der
     Lenkungseinnahmen in einen Zukunftsschatz legen, wie Norwegen seine Öleinnahmen: Dann bleibt ein Teil der Dividende auf Dauer.</p></div>
   <div class="trend" style="margin-top:22px">

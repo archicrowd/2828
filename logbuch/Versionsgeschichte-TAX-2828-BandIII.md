@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 17. Oktober 2026 · Modellstand **v3.49**
+Stand: 17. Oktober 2026 · Modellstand **v3.50**
 
 ---
 
@@ -2024,6 +2024,33 @@ Zuwachs). Beschäftigungs- und KI-Wirkungen unsicher; KI-Annahmen können sich m
 *Quellen: Acemoglu (2024), NBER WP 32487; Filippucci, Gal, Schief (OECD AI Papers 29, VoxEU 8.12.2024); Keane (2011); Chetty u. a. (2011); Lichter, Peichl, Siegloch
 (2015, Meta-Studie Arbeitsnachfrage, nicht am Abruftag geprüft); OECD Taxing Wages 2025.*
 
+### v3.50 — Das starke Netz als Grundversorgung; Finanzierung und Begriffe
+
+**Art der Änderung: MINOR (Prüfrechnung, Entwurf), keine Zahl der Gesamtrechnung bewegt.** 17. Oktober 2026.
+
+**Vorgabe der Initiative:** Kranken-, Pflege- und Rentenversicherung bieten nur eine brauchbare Grundversorgung ohne Extras, stets Raum und Anreiz für eigenes
+Engagement; Name „Das starke Netz“; Finanzierung darstellen und Begriffe zuordnen.
+
+**Befund vorab:** In v3.46–v3.49 waren Teile des Netzes nicht finanziert: Absicherung im Alter über der Dividende für Menschen ohne Altansprüche (Härtefall 0,65 %
+als Annahme reicht nicht), Pflege außerhalb von GF07, Invalidität über dem Seil-Anteil. Das „Seil“ (2,72 %) finanzierte dagegen Lohnersatz (Extras im Sinne der Vorgabe).
+
+**Neu:** `modell/netz33.py` (+ `.toml`): Netz als Grundversorgung: Gesundheit GF07 mit Kürzung des Katalogs 0/5/10 % (Annahme), Pflege Teilkasko 1,7 % BIP (Ageing Report
+2024), davon 50 % schon in GF07 (Annahme), Grundbedarf bei Invalidität (2,2 % der Bevölkerung) und Arbeitslosigkeit (2,9 %), Waisen 0,05, Härtefall 0,65; Grundrente
+ab 67 in drei Varianten: Volksrente für alle (Niederlande), Volksrente 2/3, Mindestrente mit Pflichtvorsorge (Faktor 0,125, Annahme). Dividende als Rest.
+Webseitenentwurf: „Das starke Netz“, „Deine eigene Route“, Paket mit Vorschlagswerten.
+
+**Bewegte Zahlen (Prüfrechnung, Kaufkraft 2026, Katalog −5 %):** Netz 2028 9,62 % BIP (bisher finanziert 11,12). Dividende 2028 373 € (bisher 296 €). Volksrente:
+2060 148 €, Dauerzustand −51 € (nicht tragfähig; Netz 15,1 %). Zwei Drittel: Dauerzustand 95 €. Mindestrente mit Pflichtvorsorge: 2060 264 €, Dauerzustand 248 €
+(Netz 10,9 %). Netz je Einwohner 454 € (2028) → 684 € (2060).
+
+**Offen gekennzeichnet:** Kürzung des Leistungskatalogs, Mengen (Erwerbsminderung, Arbeitslose) und Faktor der Mindestrente sind Annahmen ohne Mikrodaten.
+Mindestrente mit Anrechnung der eigenen Rente zur Hälfte wirkt als Grenzbelastung von 50 % auf kleine eigene Renten. Pflichtvorsorge ist eine Pflicht auf den Lohn
+(Eigentum, kein Beitrag) und mit „0 € Sozialbeiträge“ zu erklären. Lohnersatz bei Arbeitslosigkeit entfällt als Pflichtleistung. Rechner und Zeitpfad des Entwurfs
+noch ohne die Grundversorgung. **Geprüft:** `python3 modell/alles.py`. **Wodurch aufgefallen:** Vorgabe der Initiative; Prüfung, welche Leistungen das Netz trägt.
+
+*Quellen: Ageing Report 2024 (Langzeitpflege EU27 1,7 % BIP, maschinell gelesen); Sozialschutz COFOG GF10 (sozialschutz_2024.json); Vorbilder AOW Niederlande,
+Superannuation Australien, Arbeitslosenkassen Dänemark (allgemein bekannt, nicht eigens geprüft).*
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -2076,9 +2103,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v3.49
+## 7 | Offene Punkte, Stand v3.50
 
-Neu seit v3.23 (Stand v3.49): **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v3.50): **Grundrente: Volksrente, zwei Drittel oder Mindestrente mit Pflichtvorsorge (Satz?); Umfang der Grundversorgung Gesundheit; Rechner und Zeitpfad auf das Netz umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

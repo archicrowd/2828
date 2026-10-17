@@ -145,3 +145,38 @@ Das Paket wächst; seine Zusammensetzung verschiebt sich von der Geldzahlung zur
 
 Gesamtbild: **Du zahlst höchstens das Goldene Drittel. Das Goldene Netz trägt Dich. Die Transformationsdividende gibt zurück, was der Wandel einbringt. Der
 Zukunftsschatz bleibt.**
+
+## 9 | Nachtrag v3.50: Das starke Netz als Grundversorgung – Finanzierung und Begriffe (17.10.2026)
+
+**Vorgabe:** Grundversorgung ohne Extras in Gesundheit, Pflege und Alter; Raum und Anreiz für eigenes Engagement. Rechnung `modell/netz33.py`.
+
+**Finanzierung auf einen Blick (Klub der zehn, % des BIP; Vorschlag: Katalog −5 %, Mindestrente mit Pflichtvorsorge)**
+
+| Begriff | Was | 2028 | 2060 |
+|---|---|---|---|
+| **Das Goldene Drittel** (Einnahmen) | Einkommen 0–33 %, Kapital, Unternehmen, Erbschaft 33 %, Label 5–25 % + 33 % für Schädliches, Vermögen, Boden, CO₂, übrige | 33,5 | 32,1* |
+| Das gemeinsame Dach | Verteidigung, Außengrenzen, Binnenmarkt, digitale Souveränität | 6,2 | 7,3 |
+| Starke Gemeinden | Schulen, Kitas, Verwaltung, Infrastruktur vor Ort | 10,4 | 10,4 |
+| **Das starke Netz** | Grundversorgung ohne Prämie: Gesundheit 7,4 · Pflege 0,9 · Mindestrente 0,0 · Invalidität 0,3 · Arbeitslosigkeit 0,4 · Waisen 0,05 · Härtefall 0,65 | 9,6 | 10,6 |
+| **Transformationsdividende** | Rest: Rückgabe der Lenkung und Überschuss; Erwachsene voll, Kinder die Hälfte | 7,3 (373 €) | 3,8 (264 €) |
+| **Zukunftsschatz** (wahlweise) | Bürgerfonds aus Lenkungseinnahmen | – | – |
+| **Deine eigene Route** (privat) | Pflichtvorsorge auf eigenem Konto, Zusatzversicherungen, Lohnersatz | außerhalb | außerhalb |
+| Altlasten (Sache der Staaten) | Staatsschulden und Altrenten; Werkzeug gemeinsamer Fonds: Zuschlag 13,7 % auf alle Steuern bis 2098 | 4,6 | 4,6 |
+
+\* Deckung 2060 nach Erosion der Lenkung und Progression (projektion33.json). Euro je Erwachsenem und Monat, Kaufkraft 2026, Deutschland.
+
+**Grundrente – drei Wege (Dividende je Erwachsenem; Dauerzustand nach Auslauf der Altrenten):**
+
+| Variante | Netz Dauerzustand | Dividende 2060 | Dividende Dauerzustand | Anreiz |
+|---|---|---|---|---|
+| Volksrente = Grundbedarf für alle ab 67 (Niederlande) | 15,1 % | 148 € | −51 € (nicht tragfähig) | voll: eigene Vorsorge kommt obendrauf |
+| Volksrente 2/3 des Grundbedarfs | 13,0 % | 206 € | 95 € | voll; Rest über Härtefall |
+| Mindestrente mit Pflichtvorsorge (eigenes Konto, z. B. 10 % des Lohns; Australien, Schweiz) | 10,9 % | 264 € | 248 € | eigene Rente zur Hälfte angerechnet |
+
+**Empfehlung:** Mindestrente mit Pflichtvorsorge auf eigenem Konto. Sie ist die einzige Variante, die dauerhaft mit einer spürbaren Dividende trägt, und verbindet
+Eigenverantwortung (das Konto gehört Dir, ist vererbbar) mit Sicherheit (niemand unter dem Grundbedarf). Kehrseite: Die Pflichtvorsorge ist eine Pflicht auf den Lohn
+(kein Beitrag an den Staat, aber Pflicht) – ehrlich so zu erzählen.
+
+**Was „ohne Extras“ heißt (Vorschlag):** Gesundheit: Behandlung, Arznei, Vorsorge, Notfall; Komfort (Einzelzimmer, Chefarzt, Wahlleistungen) privat. Pflege: Teilkasko
+wie heute; Zuzahlung aus eigenem Einkommen, Grundbedarf gesichert. Arbeitslosigkeit: Grundbedarf, Hinzuverdienst zur Hälfte angerechnet; Lohnersatz privat oder
+tariflich (Vorbild dänische Arbeitslosenkassen). Invalidität: Grundbedarf; Berufsunfähigkeit privat.

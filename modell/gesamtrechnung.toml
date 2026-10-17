@@ -5,7 +5,7 @@
 # modell/gesamtrechnung.py aus modell/rahmen/basis.py (Eurostat 2024) und daten/aggregate/.
 
 [modell]
-version = "v3.49"
+version = "v3.50"
 fassung = "12. Oktober 2026"
 
 [[parameter]]

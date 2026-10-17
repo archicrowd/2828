@@ -1,0 +1,489 @@
+{
+ "version": "v3.50",
+ "status": "Prüfrechnung",
+ "system": "33R",
+ "bisher_finanziert_2028": 11.12,
+ "varianten": [
+  {
+   "gesundheit_kuerzung": 0.0,
+   "grundrente": "volksrente",
+   "reihe": {
+    "2028": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.75,
+      "Pflege (Teilkasko)": 0.85,
+      "Grundrente (ab 67)": 0.0,
+      "Invalidität (Grundbedarf)": 0.32,
+      "Arbeitslosigkeit (Grundbedarf)": 0.42,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 10.03,
+     "bisher_finanziert_pct_bip": 11.12,
+     "dividende_pct_bip": 6.85,
+     "dividende_erw_eur2026": 352,
+     "dividende_bisher_eur2026": 296,
+     "grundbedarf_monat_eur2026": 1029,
+     "netz_eur_kopf_monat": 473
+    },
+    "2035": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.82,
+      "Pflege (Teilkasko)": 0.99,
+      "Grundrente (ab 67)": 0.09,
+      "Invalidität (Grundbedarf)": 0.34,
+      "Arbeitslosigkeit (Grundbedarf)": 0.45,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 10.39,
+     "bisher_finanziert_pct_bip": 11.33,
+     "dividende_pct_bip": 4.89,
+     "dividende_erw_eur2026": 269,
+     "dividende_bisher_eur2026": 217,
+     "grundbedarf_monat_eur2026": 1050,
+     "netz_eur_kopf_monat": 524
+    },
+    "2045": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.92,
+      "Pflege (Teilkasko)": 1.2,
+      "Grundrente (ab 67)": 0.53,
+      "Invalidität (Grundbedarf)": 0.35,
+      "Arbeitslosigkeit (Grundbedarf)": 0.46,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 11.16,
+     "bisher_finanziert_pct_bip": 11.64,
+     "dividende_pct_bip": 3.27,
+     "dividende_erw_eur2026": 199,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1081,
+     "netz_eur_kopf_monat": 621
+    },
+    "2060": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 8.03,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 1.82,
+      "Invalidität (Grundbedarf)": 0.35,
+      "Arbeitslosigkeit (Grundbedarf)": 0.46,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 12.77,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": 1.61,
+     "dividende_erw_eur2026": 113,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 822
+    },
+    "dauer": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 8.03,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 4.59,
+      "Invalidität (Grundbedarf)": 0.42,
+      "Arbeitslosigkeit (Grundbedarf)": 0.55,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 15.7,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": -1.32,
+     "dividende_erw_eur2026": -92,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 1011
+    }
+   }
+  },
+  {
+   "gesundheit_kuerzung": 0.05,
+   "grundrente": "volksrente",
+   "reihe": {
+    "2028": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.36,
+      "Pflege (Teilkasko)": 0.85,
+      "Grundrente (ab 67)": 0.0,
+      "Invalidität (Grundbedarf)": 0.31,
+      "Arbeitslosigkeit (Grundbedarf)": 0.4,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 9.62,
+     "bisher_finanziert_pct_bip": 11.12,
+     "dividende_pct_bip": 7.26,
+     "dividende_erw_eur2026": 373,
+     "dividende_bisher_eur2026": 296,
+     "grundbedarf_monat_eur2026": 1029,
+     "netz_eur_kopf_monat": 454
+    },
+    "2035": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.43,
+      "Pflege (Teilkasko)": 0.99,
+      "Grundrente (ab 67)": 0.08,
+      "Invalidität (Grundbedarf)": 0.33,
+      "Arbeitslosigkeit (Grundbedarf)": 0.44,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 9.97,
+     "bisher_finanziert_pct_bip": 11.33,
+     "dividende_pct_bip": 5.31,
+     "dividende_erw_eur2026": 292,
+     "dividende_bisher_eur2026": 217,
+     "grundbedarf_monat_eur2026": 1050,
+     "netz_eur_kopf_monat": 503
+    },
+    "2045": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.53,
+      "Pflege (Teilkasko)": 1.2,
+      "Grundrente (ab 67)": 0.51,
+      "Invalidität (Grundbedarf)": 0.34,
+      "Arbeitslosigkeit (Grundbedarf)": 0.45,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 10.72,
+     "bisher_finanziert_pct_bip": 11.64,
+     "dividende_pct_bip": 3.71,
+     "dividende_erw_eur2026": 226,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1081,
+     "netz_eur_kopf_monat": 596
+    },
+    "2060": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.63,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 1.76,
+      "Invalidität (Grundbedarf)": 0.34,
+      "Arbeitslosigkeit (Grundbedarf)": 0.44,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 12.28,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": 2.1,
+     "dividende_erw_eur2026": 148,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 791
+    },
+    "dauer": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.63,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 4.43,
+      "Invalidität (Grundbedarf)": 0.4,
+      "Arbeitslosigkeit (Grundbedarf)": 0.53,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 15.11,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": -0.73,
+     "dividende_erw_eur2026": -51,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 973
+    }
+   }
+  },
+  {
+   "gesundheit_kuerzung": 0.1,
+   "grundrente": "volksrente",
+   "reihe": {
+    "2028": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 6.98,
+      "Pflege (Teilkasko)": 0.85,
+      "Grundrente (ab 67)": 0.0,
+      "Invalidität (Grundbedarf)": 0.3,
+      "Arbeitslosigkeit (Grundbedarf)": 0.39,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 9.21,
+     "bisher_finanziert_pct_bip": 11.12,
+     "dividende_pct_bip": 7.67,
+     "dividende_erw_eur2026": 394,
+     "dividende_bisher_eur2026": 296,
+     "grundbedarf_monat_eur2026": 1029,
+     "netz_eur_kopf_monat": 434
+    },
+    "2035": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.04,
+      "Pflege (Teilkasko)": 0.99,
+      "Grundrente (ab 67)": 0.08,
+      "Invalidität (Grundbedarf)": 0.32,
+      "Arbeitslosigkeit (Grundbedarf)": 0.42,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 9.55,
+     "bisher_finanziert_pct_bip": 11.33,
+     "dividende_pct_bip": 5.73,
+     "dividende_erw_eur2026": 315,
+     "dividende_bisher_eur2026": 217,
+     "grundbedarf_monat_eur2026": 1050,
+     "netz_eur_kopf_monat": 482
+    },
+    "2045": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.13,
+      "Pflege (Teilkasko)": 1.2,
+      "Grundrente (ab 67)": 0.5,
+      "Invalidität (Grundbedarf)": 0.33,
+      "Arbeitslosigkeit (Grundbedarf)": 0.43,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 10.28,
+     "bisher_finanziert_pct_bip": 11.64,
+     "dividende_pct_bip": 4.15,
+     "dividende_erw_eur2026": 253,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1081,
+     "netz_eur_kopf_monat": 572
+    },
+    "2060": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.23,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 1.7,
+      "Invalidität (Grundbedarf)": 0.32,
+      "Arbeitslosigkeit (Grundbedarf)": 0.43,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 11.79,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": 2.59,
+     "dividende_erw_eur2026": 182,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 759
+    },
+    "dauer": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.23,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 4.28,
+      "Invalidität (Grundbedarf)": 0.39,
+      "Arbeitslosigkeit (Grundbedarf)": 0.51,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 14.52,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": -0.14,
+     "dividende_erw_eur2026": -10,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 935
+    }
+   }
+  },
+  {
+   "gesundheit_kuerzung": 0.05,
+   "grundrente": "zwei_drittel",
+   "reihe": {
+    "2028": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.36,
+      "Pflege (Teilkasko)": 0.85,
+      "Grundrente (ab 67)": 0.0,
+      "Invalidität (Grundbedarf)": 0.31,
+      "Arbeitslosigkeit (Grundbedarf)": 0.4,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 9.62,
+     "bisher_finanziert_pct_bip": 11.12,
+     "dividende_pct_bip": 7.26,
+     "dividende_erw_eur2026": 373,
+     "dividende_bisher_eur2026": 296,
+     "grundbedarf_monat_eur2026": 1029,
+     "netz_eur_kopf_monat": 454
+    },
+    "2035": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.43,
+      "Pflege (Teilkasko)": 0.99,
+      "Grundrente (ab 67)": 0.05,
+      "Invalidität (Grundbedarf)": 0.33,
+      "Arbeitslosigkeit (Grundbedarf)": 0.43,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 9.93,
+     "bisher_finanziert_pct_bip": 11.33,
+     "dividende_pct_bip": 5.35,
+     "dividende_erw_eur2026": 294,
+     "dividende_bisher_eur2026": 217,
+     "grundbedarf_monat_eur2026": 1050,
+     "netz_eur_kopf_monat": 501
+    },
+    "2045": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.53,
+      "Pflege (Teilkasko)": 1.2,
+      "Grundrente (ab 67)": 0.29,
+      "Invalidität (Grundbedarf)": 0.33,
+      "Arbeitslosigkeit (Grundbedarf)": 0.44,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 10.48,
+     "bisher_finanziert_pct_bip": 11.64,
+     "dividende_pct_bip": 3.95,
+     "dividende_erw_eur2026": 241,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1081,
+     "netz_eur_kopf_monat": 583
+    },
+    "2060": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.63,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 0.98,
+      "Invalidität (Grundbedarf)": 0.32,
+      "Arbeitslosigkeit (Grundbedarf)": 0.42,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 11.45,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": 2.93,
+     "dividende_erw_eur2026": 206,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 737
+    },
+    "dauer": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.63,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 2.47,
+      "Invalidität (Grundbedarf)": 0.35,
+      "Arbeitslosigkeit (Grundbedarf)": 0.47,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 13.03,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": 1.35,
+     "dividende_erw_eur2026": 95,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 839
+    }
+   }
+  },
+  {
+   "gesundheit_kuerzung": 0.05,
+   "grundrente": "mindestrente",
+   "reihe": {
+    "2028": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.36,
+      "Pflege (Teilkasko)": 0.85,
+      "Grundrente (ab 67)": 0.0,
+      "Invalidität (Grundbedarf)": 0.31,
+      "Arbeitslosigkeit (Grundbedarf)": 0.4,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 9.62,
+     "bisher_finanziert_pct_bip": 11.12,
+     "dividende_pct_bip": 7.26,
+     "dividende_erw_eur2026": 373,
+     "dividende_bisher_eur2026": 296,
+     "grundbedarf_monat_eur2026": 1029,
+     "netz_eur_kopf_monat": 454
+    },
+    "2035": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.43,
+      "Pflege (Teilkasko)": 0.99,
+      "Grundrente (ab 67)": 0.01,
+      "Invalidität (Grundbedarf)": 0.33,
+      "Arbeitslosigkeit (Grundbedarf)": 0.43,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 9.89,
+     "bisher_finanziert_pct_bip": 11.33,
+     "dividende_pct_bip": 5.39,
+     "dividende_erw_eur2026": 296,
+     "dividende_bisher_eur2026": 217,
+     "grundbedarf_monat_eur2026": 1050,
+     "netz_eur_kopf_monat": 499
+    },
+    "2045": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.53,
+      "Pflege (Teilkasko)": 1.2,
+      "Grundrente (ab 67)": 0.06,
+      "Invalidität (Grundbedarf)": 0.33,
+      "Arbeitslosigkeit (Grundbedarf)": 0.43,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 10.24,
+     "bisher_finanziert_pct_bip": 11.64,
+     "dividende_pct_bip": 4.19,
+     "dividende_erw_eur2026": 255,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1081,
+     "netz_eur_kopf_monat": 570
+    },
+    "2060": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.63,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 0.19,
+      "Invalidität (Grundbedarf)": 0.3,
+      "Arbeitslosigkeit (Grundbedarf)": 0.39,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 10.62,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": 3.76,
+     "dividende_erw_eur2026": 264,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 684
+    },
+    "dauer": {
+     "positionen": {
+      "Gesundheit (Grundversorgung)": 7.63,
+      "Pflege (Teilkasko)": 1.41,
+      "Grundrente (ab 67)": 0.41,
+      "Invalidität (Grundbedarf)": 0.3,
+      "Arbeitslosigkeit (Grundbedarf)": 0.4,
+      "Waisen": 0.05,
+      "Härtefall": 0.65
+     },
+     "netz_pct_bip": 10.85,
+     "bisher_finanziert_pct_bip": 11.96,
+     "dividende_pct_bip": 3.53,
+     "dividende_erw_eur2026": 248,
+     "dividende_bisher_eur2026": 170,
+     "grundbedarf_monat_eur2026": 1130,
+     "netz_eur_kopf_monat": 699
+    }
+   }
+  }
+ ],
+ "hinweis": "Mengen (Rentner, Invalidität, Arbeitslose) und Kürzung des Leistungskatalogs sind Annahmen; Euro je Erwachsenem, Kaufkraft 2026, Deutschland"
+}
