@@ -51,6 +51,7 @@ STUFEN = [
     ("Länderseiten: Bedarfsleistungen, Kinderanteil, Mindestlohn", ["modell/sozial_laender.py"]),
     ("Regeln R1–R4 in der Modellrechnung", ["modell/regeln_r1_r4.py"]),
     ("Regel Boden: Grundbedarf, Halbanrechnung, Vorsorge ab dem ersten Euro", ["modell/regel_boden.py"]),
+    ("Regel Boden: Kosten aus der Dezilverteilung (EU-SILC)", ["modell/boden_kosten.py"]),
     ("Webseite Fassung 4.x (sechs Sprachen, Länderbezug)", ["seite/werkzeuge/drittel_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),

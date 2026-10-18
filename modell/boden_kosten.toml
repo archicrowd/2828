@@ -1,0 +1,10 @@
+# Kosten der Regel „Grundbedarf als Boden, eigenes Einkommen zur Hälfte“ aus veröffentlichten Verteilungstabellen (modell/boden_kosten.py, Logbuch v4.6).
+version = "v4.6"
+quelle = "Eurostat ilc_di01 (EU-SILC 2025, Einkommen 2024), Obergrenzen der Dezile D1–D9 des äquivalenzgewichteten verfügbaren Einkommens (OECD-modifizierte Skala), EUR bzw. Zł; Abruf 18.10.2026 über die SDMX-Schnittstelle (amtlich)"
+dezile = { DE = [14556, 18789, 22240, 25499, 28891, 32676, 37343, 43525, 54971], FR = [13477, 17304, 20471, 23445, 26459, 29571, 33542, 38723, 49381], IT = [10201, 13676, 16426, 19321, 22062, 25112, 28540, 33057, 41656], ES = [9091, 12374, 15130, 17742, 20367, 23372, 26791, 31569, 39385], PL = [33811, 42860, 49698, 55856, 61976, 68609, 76221, 86228, 103211] }
+fortschreibung_2024_2026 = { DE = 1.06, FR = 1.06, IT = 1.06, ES = 1.06, PL = 1.13 }   # Annahme wie sozial_laender.toml (Lohnwachstum)
+untergrenze_d1 = 0.4          # Annahme: unterstes Dezil gleichverteilt zwischen 0,4 × D1 und D1
+anteil_erwerbsalter = 0.75    # Annahme: Anteil der Bevölkerung in Haushalten im Erwerbsalter (mit Kindern); Rentnerhaushalte über Altrenten/Mindestrente
+personen_je_aequivalent = 1.4 # Annahme: Personen je Äquivalenzerwachsenem im Mittel
+eigenanteil_unten = [0.5, 1.0]  # Band: Anteil des heutigen verfügbaren Einkommens, der in D1–D2 eigenes Einkommen ist (Rest heutige Transfers), untere/obere Annahme
+bip_fortschreibung = 1.06     # BIP 2024 → 2026 (Annahme)

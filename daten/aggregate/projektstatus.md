@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.5 · höchste Korrekturnummer 63 · 386 Dateien im Repository
+Modellstand v4.6 · höchste Korrekturnummer 63 · 389 Dateien im Repository
 
 ## Bausteine
 
@@ -67,8 +67,8 @@ Modellstand v4.5 · höchste Korrekturnummer 63 · 386 Dateien im Repository
 | N22 | B30 Altlastenfonds | B20 Gesamtrechnung | offen |
 | N23 | B31 Drittel-System | B20 Gesamtrechnung | offen |
 | N24 | B32 Länderseiten | B31 Drittel-System | offen |
-| N25 | B31/B32 Haushaltsrechnungen | B31 Drittel-System | teilweise |
-| N26 | B32 Länderseiten | B31 Drittel-System | offen |
+| N25 | B31/B32 Haushaltsrechnungen | B31 Drittel-System | geschlossen |
+| N26 | B32 Länderseiten | B31 Drittel-System | geschlossen |
 
 ## Ergebnis dieses Laufs
 
@@ -79,4 +79,3 @@ Modellstand v4.5 · höchste Korrekturnummer 63 · 386 Dateien im Repository
 - Hinweis: Naht N22 offen: B30 Altlastenfonds -> B20 Gesamtrechnung: Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend
 - Hinweis: Naht N23 offen: B31 Drittel-System -> B20 Gesamtrechnung: v3.47: Entscheidung über Dauerhaftigkeit der Dividende (hinnehmen, Bodenwertabgabe, Bürgerfonds)
 - Hinweis: Naht N24 offen: B32 Länderseiten -> B31 Drittel-System: v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land
-- Hinweis: Naht N26 offen: B32 Länderseiten -> B31 Drittel-System: v4.3: Entscheidung der Initiative zu R1–R4 | v4.4: R2–R4 beschlossen, R1 0,8 geprüft; Rückwirkung R2 auf Mindestrente (Dividende Dauer −26 €); Boden ohne Erwerbsanreiz | v4.5: R1 0,8 beschlossen; R2/R3 ersetzt durch Regel Boden (Halbanrechnung); Kosten nur mit Haushaltsdaten belastbar
