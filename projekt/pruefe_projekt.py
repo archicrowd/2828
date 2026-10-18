@@ -23,6 +23,7 @@ from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
 PROJEKT_MAIL = "2828@archicrowd.de"
+PROJEKT_MAILS = {PROJEKT_MAIL, "tax.better@archicrowd.de"}  # v3.57: Kontaktadresse der Webseite (Beschluss der Initiative 18.10.2026)
 ERLAUBT_PANELAI = {"modell/rechnungen/oecd-cbcr/wirkung_28.py", "modell/rechnungen/oecd-cbcr/t1-panelAI.csv",
                    "CLAUDE.md", "projekt/pruefe_projekt.py", "logbuch/Versionsgeschichte-TAX-2828.md",
                    "modell/rechnungen/LIESMICH.md", "seite/stand-a-national/quelltext/oecd/wirkung_28.py",
@@ -139,7 +140,7 @@ def pruefe_inhalt() -> int:
             except UnicodeDecodeError:
                 continue
             for mail in set(re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}", text)):
-                if mail != PROJEKT_MAIL and not mail.endswith("@anthropic.com"):
+                if mail not in PROJEKT_MAILS and not mail.endswith("@anthropic.com"):
                     FEHLER.append(f"E-Mail-Adresse in {rel}: {mail}")
             if "PANELAI" in text and rel not in ERLAUBT_PANELAI:
                 FEHLER.append(f"'PANELAI' außerhalb der vorgesehenen Dateien: {rel}")

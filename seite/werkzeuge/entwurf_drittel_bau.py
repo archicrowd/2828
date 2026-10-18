@@ -89,9 +89,9 @@ TX = {
     "hero_sub": "Alle Steuern und Abgaben werden gerecht auf Arbeit, Kapital und Automation verteilt. Arbeiten lohnt sich. Ein starkes Netz und die Transformationsdividende sorgen für sozialen Frieden. Höchstens ein Drittel auf jedes Einkommen. Gemeinden entscheiden selbst, ein gemeinsames europäisches Dach sichert die gemeinsamen Interessen.",
     "stamp1_lbl": "Transformationsdividende im Monat je Erwachsenem — {kind_2028} je Kind",
     "stamp2_val": "höchstens 33 %",
-    "stamp3_val": "+" + eur(plus42) + "*",
-    "stamp3_lbl": "mehr im Monat bei 42.000 € brutto",
-    "hero_fein": "* Schätzung des Projekts: alleinstehend, 2028, heutige Kaufkraft, nach Pflichtvorsorge (10 %) und Altlastenzuschlag; 80 % der gesparten Arbeitgeberbeiträge gehen in den Lohn.",
+    "stamp3_val": "+" + eur(plus42),
+    "stamp3_lbl": "mehr im Monat bei 42.000 € Jahreseinkommen*",
+    "hero_fein": "* Prognose nach den Regeln des Projekts: alleinstehend, 2028, heutige Kaufkraft, nach Pflichtvorsorge (10 %) und Altlastenzuschlag.",
     "svg_monat": "jeden Monat: die Transformationsdividende",
     "svg_monat2": "die Transformationsdividende",
     "div_h3": "Warum eine Transformationsdividende?",
@@ -123,7 +123,7 @@ TX = {
     "rech_mon": "Mehr im Geldbeutel im Jahr",
     "rech_bar1": "Heute im Monat",
     "rech_bar2": "Goldenes Drittel im Monat",
-    "rech_fein": "Heute: Lohnsteuer, Solidaritätszuschlag und Sozialbeiträge der Beschäftigten nach Recht 2026, Kindergeld; ab 2035 Beitragssätze nach IGES-Projektion (eine Studie, Sekundärquelle), danach gleich gehalten. Goldenes Drittel: 80 % der gesparten Arbeitgeberbeiträge im Lohn, Tarif auf Lohn und Dividende, keine Sozialbeiträge, Pflichtvorsorge 10 % des Lohns aufs eigene Konto abgezogen, höhere Mehrwertsteuer auf den Konsum und Altlastenzuschlag " + pct(ZU, 1) + " (Beispiel) eingerechnet. Weitere Erwachsene ohne eigenes Einkommen; Bürgergeld und Wohngeld nicht gerechnet. Heutige Kaufkraft. Schätzung des Projekts, keine Steuerberatung.",
+    "rech_fein": "Heute: Lohnsteuer, Solidaritätszuschlag und Sozialbeiträge der Beschäftigten nach Recht 2026, Kindergeld; ab 2035 Beitragssätze nach IGES-Projektion (eine Studie, Sekundärquelle), danach gleich gehalten. Goldenes Drittel: 80 % der gesparten Arbeitgeberbeiträge im Lohn, Tarif auf Lohn und Dividende, keine Sozialbeiträge, Pflichtvorsorge 10 % des Lohns aufs eigene Konto abgezogen, höhere Mehrwertsteuer auf den Konsum und Altlastenzuschlag " + pct(ZU, 1) + " (Beispiel) eingerechnet. Weitere Erwachsene ohne eigenes Einkommen; Bürgergeld und Wohngeld nicht gerechnet. Heutige Kaufkraft. Schätzung des Projekts.",
     "zeit_h2": "Die Transformationsdividende im Wandel",
     "zeit_lede": "Die Dividende gibt vor allem zurück, was Schädliches zahlt. Wenn Verbrenner und Emissionen verschwinden, sinkt dieser Teil; Gesundheit und Pflege kosten mit der Alterung mehr. Dagegen wirkt das Wachstum. So sinkt die Dividende von {erw_2028} (2028) und hält sich um {erw_2060} (2060). Mehr Arbeit und Automatisierung heben sie wieder an.",
     "zeit_t1": "Grundpfad",
@@ -143,6 +143,51 @@ TX = {
     "js_schuld_text": "Altlasten sind Sache der Staaten. Legen alle zehn Schulden und Rentenzusagen in einen gemeinsamen Fonds, steigt dessen Quote bis " + str(AB["spitzenjahr"]) + " auf " + pct(AB["schuldenquote_spitze"]) + " und ist 2098 getilgt – mit einem Zuschlag von " + pct(AB["zuschlag_auf_alle_steuern_pct"], 1) + " auf alle Steuern.",
     "js_co2_text": "Seit 1990 fast halbiert – die zweite Hälfte steht noch bevor. Das Goldene Drittel setzt dafür auf einen gemeinsamen europäischen CO₂-Preis und gibt die Einnahmen über die Transformationsdividende an alle zurück.",
 }
+
+# v3.57: Textänderungen der Initiative vom 18.10.2026 (Anlage), wörtlich übernommen; Rechtschreibung angeglichen (ihren, europäische, Einzelne)
+TX.update({
+    "prob_lede": "Das heutige System ist Schicht um Schicht gewachsen. Es belastet Arbeit stärker als alles andere und lässt Bürger und Gemeinden frustriert zurück.",
+    "prob2_p": "Ein Euro aus Kapital trägt deutlich weniger als ein Euro aus Arbeit bei.",
+    "prob4_num": "0 €",
+    "prob4_h": "Sozialbeiträge auf Maschinenarbeit",
+    "b2_p": "Arbeit wird nicht länger doppelt belastet. Betriebe geben mindestens 80 % der gesparten Arbeitgeberbeiträge in den Lohn. Dänemark erhebt schon heute kaum Sozialbeiträge.",
+    "b4_h": "Auch Geerbtes ist Einkommen",
+    "b4_r": "33 % Einkommensteuer auf Erbschaften über 100.000 €",
+    "b4_p": "Keine Verschonungsausnahmen. Wer Betrieb oder Haus erbt, kann die Steuer stunden – niemand muss verkaufen, um die Steuer zu zahlen.",
+    "b10_p": "Erwachsene voll, Kinder zur Hälfte, ohne Antrag. Sie gibt vor allem zurück, was der Wandel einbringt.",
+    "b11_p": "Geknüpft aus vielen Knoten – jeder hält mit, keiner fällt durch: Gesundheit, Pflege, Mindestrente, Grundbedarf bei Invalidität und Arbeitslosigkeit. Keine Extras; was darüber geht, ist die eigene Route mit eigener Vorsorge (10 % des Lohns aufs eigene Rentenkonto).",
+    "konz_h2": "Starke Gemeinden, starke Bürger, ein starkes europäisches Dach",
+    "konz_lede": "Die Anzahl der Verwaltungsebenen wird reduziert. Die Gemeinde erhält ihren Anteil direkt vom Dach, entscheidet selbst über Finanzen und delegiert Aufgaben an übergeordnete Verwaltungszusammenschlüsse (z. B. Infrastrukturverbünde). Das europäische Dach übernimmt nur, was keine Gemeinde allein kann – und darf sich nicht mehr nehmen, als im Vertrag steht.",
+    "eff3_p": "was nur gemeinsam geht: Verteidigung und digitale Souveränität, ein Binnenmarkt ohne Grenzen, gemeinsame Standards. Mehr nicht. Das Dach entscheidet mit der Mehrheit der Abgesandten der Zusammenschlüsse von Gemeinden.",
+    "js_fluss": "Im Jahr {j} behält das Dach {a} von {hundert} – erlaubt wären bis zu {cap}. Die Gemeinde verwendet {b} für die regionalen Aufgaben, das starke Netz {n}, {d} gehen als Transformationsdividende an die Bürger.",
+    "gem_lede": "Die Verteilung durch das Dach mündet in zwei Zahlen: {formel_einw} je Einwohner und {formel_kind} je Kind im Jahr (Beispiel Deutschland; jedes Land wendet dieselbe Regel auf seine Wirtschaftsleistung an, im Schnitt der Länder {klub_einw} und {klub_kind}). Mehr Kinder heißt daher mehr Geld für Schulen. Was die Gemeinde aktiv in der Verwaltung spart, landet bei ihren Bürgern.",
+    "gem_fein": "Im Schnitt entfallen {verw_klub} des Gemeindehaushalts auf die Verwaltung. Die Aufgaben der Gemeinden unterscheiden sich je Land; ein direkter Vergleich der Anteile trägt deshalb nicht weit.",
+    "zeit_lede": "Die Dividende gibt vor allem zurück, was an Steuern auf schädliche Produkte und Verhaltensweisen eingezahlt wurde. Wenn schädliche Emissionen verschwinden, sinkt dieser Teil; Gesundheit und Pflege kosten mit der Alterung mehr. Dagegen wirkt das Wachstum. So sinkt die Dividende von " + eur(J["erw_de_2028"]) + " (2028) und hält sich um " + eur(J["erw_de_2060"]) + " (2060). Mehr Arbeit und Automatisierung heben sie wieder an.",
+    "zeit_l2": "Start 2028 (Rechenbeispiel)",
+    "sich_h2": "Warum das Dach Stabilität gibt",
+    "sich1_h": "Die Obergrenze",
+    "sich1_p": "Das Dach behält höchstens {og} dessen, was es für die Gemeinden einzieht – aber nur, was die Aufgaben wirklich kosten.",
+    "sich2_p": "Jeder Euro über dem Bedarf geht an die Gemeinden, in das starke Netz und die Transformationsdividende.",
+    "sich4_p": "Alte Schulden und Rentenzusagen regelt jeder Staat selbst. Das Dach bietet Werkzeuge an: einen gemeinsamen Fonds mit gemeinsamem Zins, Tilgung bis spätestens 2098 – und für überschuldete Staaten ein geordnetes Neustartverfahren.",
+    "sich5_p": "Ein Bündnis, in dem Einzelne mit Veto Entscheidungen blockieren, kann in der Stunde der Entscheidung nicht für alle entscheiden.",
+    "erf_lede": "Viele Bausteine gibt es heute schon irgendwo – oft seit Jahrzehnten.",
+    "erf1_k": "Steuererklärung digital in Minuten · Bodensteuer seit 1993",
+    "klub_lede": "Das Dach ist kein fester Kreis, sondern ein Angebot. Gerechnet ist der Bauplan für " + str(RM["staaten"]) + " Staaten Europas (EU, Norwegen, Island, Schweiz) mit " + de(RM["einwohner_mio"], 1) + " Mio. Menschen – möglich sind auch Partner darüber hinaus. Wählen Sie selbst: Ab der Einwohnerzahl der Vereinigten Staaten spielt das neue Bündnis in derselben Liga und ist dabei zukunftsfähiger aufgestellt.",
+    "klub_uk_p": "Nicht an die Einstimmigkeit der EU-Verträge gebunden: Für das Vereinigte Königreich wäre der Klub ein Beitritt, kein Vertragsbruch – und ein Weg zurück in einen gemeinsamen Wirtschaftsraum. Mit {uk} Mio. Menschen der zweitgrößte Partner.",
+    "klub_ca_p": "Durch das Handelsabkommen CETA wirtschaftlich eng mit Europa verbunden, seit 2025 auch durch eine Sicherheits- und Verteidigungspartnerschaft mit der EU. {ca} Mio. Menschen, gleiche Werte, gemeinsame Aufgaben.",
+    "klub_6_p": "Deutschland, Großbritannien, Frankreich, Italien, Spanien und Polen erreichen gemeinsam die Größe der Vereinigten Staaten. Jedes weitere Land macht den Klub stärker.",
+    "js_mio": "{x} Mio. €",
+    "js_mio_menschen": "{x} Mio.",
+    "js_raum_ueber": "Der Klub ist größer als die Vereinigten Staaten ({us} Mio.) – um {x} Mio. Menschen.",
+    "js_raum_unter": "Noch {x} Mio. Menschen bis zur Größe der Vereinigten Staaten.",
+    "js_schuld_text": "Altlasten sind Sache der Staaten. Legen alle zehn Schulden und Rentenzusagen in einen gemeinsamen Fonds, kann viel günstiger finanziert werden und alles ist 2098 getilgt – mit einem moderaten Zuschlag auf alle Steuern.",
+    "tl3_y": "Ab 2028 · In kleinen Verbünden beginnen",
+    "tl4_y": "ab 2029 · Stetig erweitern",
+    "offen_h2": "Offen entwickelt – mach mit",
+    "offen_lede": "Das Goldene Drittel wird unabhängig von Parteien und Interessengruppen entwickelt. Unsere Zahlen stammen aus amtlichen Statistiken, jede Rechnung lässt sich nachrechnen, jeder Fehler wird offen korrigiert. Fachleute aus Finanzwissenschaft, Verwaltung, Kommunalpraxis, Recht und Statistik sind eingeladen, ihr Wissen einzubringen.",
+    "fuss_meth_p": "Alle Zahlen stammen aus einer offenen Gesamtrechnung auf Grundlage amtlicher Statistiken (Eurostat, OECD). Entwickelt nach der Methodik des architektonischen Entwurfs, unter Nutzung von KI-Werkzeugen und KI-gestützten Rechenmodellen. Skripte unter MIT-Lizenz, Texte unter CC BY 4.0.",
+})
+KONTAKT_ALT, KONTAKT_NEU = "2828@archicrowd.de", "tax.better@archicrowd.de"   # v3.57: neue Kontaktadresse, Links und Impressum
 
 RECHNER_ALT = """function rechner(){const br=+$('brutto').value,e=+val('erw'),k=+val('kin'),j=val('rj'),i=idx(j);
   const erw=D.erw['1,0'][i],mon=e*erw+k*erw/2,jahr=mon*12,st=steuer(br);
@@ -222,6 +267,11 @@ def main():
     html = html.replace("\nconst T=D.T;", "\nObject.assign(D," + json.dumps(extra) + ");\nconst T=D.T;", 1)
     html = re.sub(r"(<body[^>]*>)", r'\1<div style="background:#B03A2E;color:#fff;font-family:monospace;padding:8px 16px;text-align:center">'
                   r'ENTWURF ZUR PRÜFUNG – Drittel-System, nach dem Vorbild der veröffentlichten Seite – nicht veröffentlichen</div>', html, count=1)
+    html = html.replace(KONTAKT_ALT, KONTAKT_NEU).replace("?subject=28%3A28", "?subject=Das%20Goldene%20Drittel")
+    # v3.57: Einwohnerzahlen der Klub-Kacheln mit Einheit
+    html, k = re.subn(r'(<span class="nm">[^<]*</span><span>)([\d.,]+)(</span></button>)', r'\1\2 Mio.\3', html)
+    assert k >= 30, k
+    html = html.replace('</style>', '#raum button{display:block;text-align:left}#raum button span{display:block}#raum button span:last-child{text-align:right;white-space:nowrap}</style>', 1)
     ZIEL.mkdir(parents=True, exist_ok=True)
     (ZIEL / "de.html").write_text(html, encoding="utf-8")
     print(f"geschrieben: {(ZIEL / 'de.html').relative_to(WURZEL)} ({len(html)} Zeichen)")
