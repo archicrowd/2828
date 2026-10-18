@@ -11,6 +11,10 @@ const WURZEL=path.resolve(__dirname,'..','..');
 const lies=n=>JSON.parse(fs.readFileSync(path.join(WURZEL,'daten','aggregate',n),'utf8'));
 const SV=lies('systemvarianten.json'), PJ=lies('projektion33.json'), NZ=lies('netz33.json'), H=lies('haushalte33.json'), RA=lies('haushalte33_raster.json'),
       AL=lies('altlasten.json'), EW=lies('einwanderung33.json'), DY=lies('dynamik33.json'), G=lies('gesamtrechnung.json'), MR=lies('moeglichkeitsraum33.json'), NS=lies('neustart33.json');
+// v4.8: Regel Boden, Kinderanteil 0,8, Kindergewicht, Härtefall, Gini
+const RBJ=lies('regel_boden.json'), HF=lies('haertefall.json'), GI=lies('gini.json'), KG=lies('kindergewicht.json');
+const TOPF=RBJ.topf, SK=RBJ.regel.kinderanteil, KW=RBJ.regel.skala.kind;
+const dv=x=>x*TOPF;   // Dividende je Erwachsenem bei Kinderanteil 0,8 (gleicher Topf)
 const de=(x,nk=0)=>Number(x).toLocaleString('de-DE',{minimumFractionDigits:nk,maximumFractionDigits:nk});
 const pr=(x,nk=1)=>de(x,nk)+' %';
 const eu=x=>de(x)+' €';
@@ -34,7 +38,8 @@ const dyn=(b,ki,kv)=>DY.szenarien.find(x=>x.beschaeftigung_pct===b&&x.ki_pp===ki
 const dyn0=dyn(0,0,0);
 const ew=(m,a)=>EW.szenarien.find(s=>s.zusatz_pct===m&&s.integration===a);
 const G26=12348, f26=1.0404;
-const kind28=NB['2028'].dividende_erw_eur2026/2;
+const kind28=dv(NB['2028'].dividende_erw_eur2026)*SK;
+const dRent=(TOPF-1)*NB['2028'].dividende_erw_eur2026;   // Rentner: kleinere Erwachsenendividende durch R1
 
 // ---- Bausteine des Dokuments
 const W=9026,grau="F2F2F2",akz="E8EEF7",gold="FFF4D6";
@@ -63,7 +68,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.0 · 18. Oktober 2026",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.8 · 18. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -83,10 +88,13 @@ add(H1("1  Kurzfassung"),
     ["Mehrwertsteuer (Label) im Mittel",pr(V.label_effektiv,1)],
     ["Steuern insgesamt (Goldenes Drittel), 2028",pr(V.deckung,1)+" des BIP"],
     ["Starkes Netz, 2028",pr(NB['2028'].netz_pct_bip,1)+" des BIP"],
-    ["Transformationsdividende je Erwachsenem, 2028 / 2060",eu(NB['2028'].dividende_erw_eur2026)+" / "+eu(NB['2060'].dividende_erw_eur2026)],
-    ["Alleinstehend, 42.000 € brutto, mit Altlastenzuschlag: mehr im Monat",vz(zl(fall('alleinstehend',ZU),42000).differenz_monat)],
-    ["Beschäftigte mit mehr verfügbarem Einkommen (Modell, Haushaltstypen)",pr(Math.min(...Object.entries(H.anteil_erwachsene_mit_mehr).filter(([k])=>k.startsWith("beschluss|")).map(([,v])=>v)),1)+" bis 100 %"],
-    ["Rentnerinnen und Rentner (Renten 900–2.200 €), mit Altlastenzuschlag",vz(Math.max(...H.rentner.filter(r=>r.zuschlag_pct===ZU).map(r=>r.differenz_monat)))+" bis "+vz(Math.min(...H.rentner.filter(r=>r.zuschlag_pct===ZU).map(r=>r.differenz_monat)))],
+    ["Transformationsdividende je Erwachsenem, 2028 / 2060",eu(dv(NB['2028'].dividende_erw_eur2026))+" / "+eu(dv(NB['2060'].dividende_erw_eur2026))],
+    ["Transformationsdividende je Kind, 2028",eu(kind28)+" ("+pr(SK*100,0)+" der Erwachsenen)"],
+    ["Boden: Grundbedarf, weitere Erwachsene / Kinder","× 0,5 / × "+de(KW,2)+"; eigenes Einkommen zur Hälfte angerechnet"],
+    ["Alleinstehend, 42.000 € brutto, mit Altlastenzuschlag: mehr im Monat",vz(RBJ.beispiele_de['alleinstehend']['42000'].mehr)],
+    ["Beschäftigte mit mehr verfügbarem Einkommen (heute mit Bürgergeld, Haushaltstypen)",pr(Math.min(...Object.values(RBJ.staaten.DE.anteil)),0)+" bis "+pr(Math.max(...Object.values(RBJ.staaten.DE.anteil)),0)],
+    ["Rentnerinnen und Rentner (Renten 900–2.200 €), mit Altlastenzuschlag",vz(Math.max(...H.rentner.filter(r=>r.zuschlag_pct===ZU).map(r=>r.differenz_monat))+dRent)+" bis "+vz(Math.min(...H.rentner.filter(r=>r.zuschlag_pct===ZU).map(r=>r.differenz_monat))+dRent)],
+    ["Ungleichheit (Gini, 0–100): heute 2025 / 2028",de(GI.staaten.DE.gini_amtlich_2025,1)+" / "+de(GI.staaten.DE.reihe.find(z=>z.jahr===2028).mitte,1)],
     ["Grenzbelastung bei 55.000 € brutto: heute / neu",pr(RA.grenz_heute[gi],0)+" / "+pr(RA.grenz_neu['0.8'][gi],0)]]),
   P("",{sp:120}),
   P("Was das System leistet, liegt nicht in einer großen Geldzahlung, sondern in drei Dingen: Arbeit wird nicht mehr doppelt belastet, jeder ist ohne Prämie grundversorgt, und was jemand darüber hinaus verdient und spart, gehört ihm. Der Bauplan nimmt aus vielen erprobten Vorbildern die besten Teile; jeder Staat kann ihn übernehmen."));
@@ -97,13 +105,15 @@ add(H1("2  Begriffe"),
   tab([{t:"Begriff",w:2300},{t:"Bedeutung",w:6726}],[
     ["Das Goldene Drittel","Die Einnahmeregel: Kein Euro wird mit mehr als einem Drittel besteuert – Einkommen, Kapitalerträge, Unternehmensgewinne, Erbschaften. Umfasst alle Steuern des Systems."],
     ["Das starke Netz","Die Grundversorgung ohne Prämie: Gesundheit, Pflege als Teilkasko, Mindestrente, Grundbedarf bei Invalidität und Arbeitslosigkeit, Waisen, Härtefall. Keine Extras."],
-    ["Transformationsdividende","Monatliche Zahlung an jeden Erwachsenen (Kinder die Hälfte), ohne Antrag. Sie ist der Rest nach allen Aufgaben und gibt vor allem zurück, was Lenkungssteuern einbringen."],
+    ["Transformationsdividende","Monatliche Zahlung an jeden Erwachsenen (Kinder 80 %), ohne Antrag. Sie ist der Rest nach allen Aufgaben und gibt vor allem zurück, was Lenkungssteuern einbringen."],
     ["Ihre eigene Route","Alles über der Grundversorgung: Pflichtvorsorge auf eigenem, vererbbarem Konto, freiwillige Vorsorge, Zusatzversicherungen (Komfort, Lohnersatz, Berufsunfähigkeit)."],
     ["Pflichtvorsorge","10 % des Bruttolohns auf ein eigenes Konto. Kein Beitrag an den Staat: Das Geld gehört dem Sparer."],
     ["Mindestrente","Aufstockung ab 67 bis zum Grundbedarf, die eigene Rente wird nur zur Hälfte angerechnet."],
+    ["Boden","Enges Existenzminimum im Erwerbsalter: Grundbedarf des Landes, je weitere/n Erwachsene/n × 0,5, je Kind × "+de(KW,2)+". Wer darunter liegt, wird aufgestockt; Dividenden zählen voll, eigenes Einkommen nach Steuern zur Hälfte. Pflichtvorsorge ab dem ersten Euro."],
+    ["Härtefall","Zuschlag zum Boden für Wohnkosten über dem Wohnanteil, Mehrbedarf und einmalige Notlagen; ausgezahlt von der Gemeinde."],
     ["Grundbedarf","Das steuerliche Existenzminimum ("+eu(G26)+" im Jahr 2026). Erste Stufe des Tarifs und Maß des Netzes; folgt zu 70 % den Preisen und zu 30 % den Löhnen."],
     ["Zukunftsschatz","Wahlweise: Bürgerfonds, in den ein Teil der Lenkungseinnahmen fließt; nur der Ertrag wird ausgeschüttet (Vorbild Norwegen)."],
-    ["Starke Gemeinden","Die Gemeinde erhält feste Beträge je Einwohner und je Kind und entscheidet selbst über ihre Aufgaben und die Weitergabe an andere Verwaltungen."],
+    ["Starke Gemeinden","Die Gemeinde erhält feste Beträge je Einwohner und je Kind und entscheidet selbst über ihre Aufgaben und die Weitergabe an andere Verwaltungen. Sie zahlt Aufstockung und Härtefall vor Ort aus; Höhe und Anrechnung legt das Land fest."],
     ["Das gemeinsame Dach","Die europäische Ebene für das, was nur gemeinsam geht (Verteidigung, Binnenmarkt, digitale Souveränität); mit Obergrenze."],
     ["Altlasten","Staatsschulden und Rentenzusagen aus dem alten System. Sache der einzelnen Staaten; der Bauplan bietet Werkzeuge an."],
     ["Lenkung","Steuern, die Schädliches verteuern (CO₂-Preis, Sonderstufe 33 %, Energie- und Tabaksteuer). Ihr Aufkommen soll mit dem Erfolg sinken."]]));
@@ -138,7 +148,15 @@ add(H1("3  Die Regeln"),
     ["Invalidität","Grundbedarf bei voller Erwerbsminderung","Berufsunfähigkeitsversicherung"],
     ["Arbeitslosigkeit","Grundbedarf; Hinzuverdienst zur Hälfte angerechnet","Lohnersatz privat oder tariflich (Vorbild dänische Arbeitslosenkassen)"],
     ["Hinterbliebene","Jeder Erwachsene hat eigene Dividende und Mindestrente; Waisen den Grundbedarf eines Kindes","Risikolebensversicherung"],
-    ["Härtefall","Wohnkosten über dem Grundbedarf, besondere Lagen, Eingliederung","–"]]),
+    ["Härtefall","H1 Wohnkosten über dem Wohnanteil bis zur örtlichen Grenze; H2 Mehrbedarf (landeseinheitlich); H3 einmalige Notlagen (Ermessen der Gemeinde)","–"]]),
+  P("",{sp:80}),
+  P("Eine Regel für Boden, Erwerb und Härtefall: Aufstockung = Boden + Härtefall − Dividenden − ½ × eigenes Einkommen, mindestens null. Damit lohnt jeder verdiente Euro, und der Härtefall läuft mit steigendem Einkommen von selbst aus. Die Gemeinde zahlt Aufstockung und Härtefall aus (eine Stelle vor Ort); Boden, Anrechnung und Mehrbedarfe legt das Land fest, die Gemeinde darf sie nicht unterschreiten, aber aus eigenen Mitteln ergänzen. Ermessen hat sie bei der Mietgrenze im Korridor des Landes, bei Einmalbedarfen und bei Angeboten zu Arbeit und Bildung. Das Land erstattet den Rechtsanspruch vollständig; eine mit der Bezugsdauer sinkende Erstattung wie in Dänemark wird nicht übernommen, weil sie dort nach einer Auswertung (VIVE 2020, erstes Reformjahr) schwer vermittelbare Menschen benachteiligte. Vorbilder: Dänemark und Schweden (Kommunen zahlen nach nationalen Sätzen; Wohnkosten im Einzelfall)."),
+  tab([{t:"Kosten im Erwerbsalter 2028 (% des BIP)",w:2626},...["DE","FR","IT","ES","PL"].map(c=>({t:c,w:1280,al:RT}))],[
+    ["Aufstockung bis zum Boden",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].band.untere.boden,2)+"–"+de(HF.staaten[c].band.obere.boden,2))],
+    ["Härtefall H1–H3",...["DE","FR","IT","ES","PL"].map(c=>{const u=HF.staaten[c].band.untere,o=HF.staaten[c].band.obere;return de(u.h1+u.h2+u.h3,2)+"–"+de(o.h1+o.h2+o.h3,2);})],
+    ["Budget im Netz (Härtefall, Arbeitslosigkeit, Invalidität)",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].budget_pct_bip,2))],
+    ["Reserve (untere / obere Schätzung)",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].band.untere.reserve,2)+" / "+de(HF.staaten[c].band.obere.reserve,2))]]),
+  Q("Schätzung aus EU-SILC-Dezilen (Eurostat ilc_di01) mit Annahmen zu Haushaltsmischung, Transfers und Mietüberhang (modell/boden_kosten.toml, haertefall.toml); ohne Mietdaten nach Haushaltstyp. In der oberen Schätzung reicht das Budget in Frankreich und Italien knapp nicht, in Polen nicht (Erwachsenendividende dort rund −63 zł im Monat)."),
   P("",{sp:80}),
   tab([{t:"Kosten des Netzes (% des BIP)",w:4226},{t:"2028",w:1200,al:RT},{t:"2060",w:1200,al:RT},{t:"Dauerzustand",w:1400,al:RT}],
     Object.keys(NB['2028'].positionen).map(k=>[k,de(NB['2028'].positionen[k],2),de(NB['2060'].positionen[k],2),de(NB.dauer.positionen[k],2)])
@@ -148,25 +166,34 @@ add(H1("3  Die Regeln"),
 
   H2("3.3  Warum die Mindestrente mit Pflichtvorsorge"),
   tab([{t:"Variante der Grundrente",w:4626},{t:"Dividende 2060",w:2200,al:RT},{t:"Dividende Dauerzustand",w:2200,al:RT}],[
-    ["Volksrente = Grundbedarf für alle ab 67 (Vorbild Niederlande)",eu(vr['2060'].dividende_erw_eur2026),eu(vr.dauer.dividende_erw_eur2026)+" (nicht tragfähig)"],
-    ["Volksrente 2/3 des Grundbedarfs",eu(z3['2060'].dividende_erw_eur2026),eu(z3.dauer.dividende_erw_eur2026)],
-    ["Mindestrente mit Pflichtvorsorge 10 % (Beschluss)",eu(NB['2060'].dividende_erw_eur2026),eu(NB.dauer.dividende_erw_eur2026)]],{hl:{2:1}}),
+    ["Volksrente = Grundbedarf für alle ab 67 (Vorbild Niederlande)",eu(dv(vr['2060'].dividende_erw_eur2026)),eu(dv(vr.dauer.dividende_erw_eur2026))+" (nicht tragfähig)"],
+    ["Volksrente 2/3 des Grundbedarfs",eu(dv(z3['2060'].dividende_erw_eur2026)),eu(dv(z3.dauer.dividende_erw_eur2026))],
+    ["Mindestrente mit Pflichtvorsorge 10 % (Beschluss)",eu(dv(NB['2060'].dividende_erw_eur2026)),eu(dv(NB.dauer.dividende_erw_eur2026))]],{hl:{2:1}}),
   P("",{sp:80}),
   P("Die Mindestrente ist die einzige gerechnete Variante, die dauerhaft eine spürbare Dividende lässt. Sie verbindet Sicherheit (niemand liegt im Alter unter dem Grundbedarf) mit Eigenverantwortung (das Konto gehört dem Sparer und ist vererbbar). Die halbe Anrechnung der eigenen Rente sorgt dafür, dass sich Sparen auch bei kleinen Einkommen lohnt; sie wirkt dort aber wie eine Belastung von 50 % auf die eigene Rente."),
 
   H2("3.4  Die Transformationsdividende"),
-  P("Jeder Erwachsene erhält jeden Monat denselben Betrag, Kinder die Hälfte, ohne Antrag; die Dividende ist steuerpflichtig wie jedes Einkommen. Sie ist der Rest nach Dach, Gemeinden und Netz. Rund "+pr(PR[2028].lenkung_pct_bip/V.dividende_pct_bip_2028*100,0)+" ihres Ausgangswerts stammen aus Lenkungseinnahmen; sie wird kleiner, wenn Verbrenner und Emissionen verschwinden – das ist gewollt."),
+  P("Jeder Erwachsene erhält jeden Monat denselben Betrag, Kinder "+pr(SK*100,0)+" davon, ohne Antrag; die Dividende ist steuerpflichtig wie jedes Einkommen. Sie ist der Rest nach Dach, Gemeinden und Netz. Rund "+pr(PR[2028].lenkung_pct_bip/V.dividende_pct_bip_2028*100,0)+" ihres Ausgangswerts stammen aus Lenkungseinnahmen; sie wird kleiner, wenn Verbrenner und Emissionen verschwinden – das ist gewollt."),
   tab([{t:"Jahr",w:2000},{t:"je Erwachsenem",w:2400,al:RT},{t:"je Kind",w:2200,al:RT},{t:"% des BIP",w:2426,al:RT}],
-    ['2028','2035','2045','2060','dauer'].map(j=>[j==='dauer'?'Dauerzustand':j,eu(NB[j].dividende_erw_eur2026),eu(NB[j].dividende_erw_eur2026/2),de(NB[j].dividende_pct_bip,2)])),
-  Q("Kaufkraft 2026, Deutschland. Die Kinderdividende ("+eu(kind28)+" im Jahr 2028) liegt unter dem heutigen Kindergeld (259 €)."),
+    ['2028','2035','2045','2060','dauer'].map(j=>[j==='dauer'?'Dauerzustand':j,eu(dv(NB[j].dividende_erw_eur2026)),eu(dv(NB[j].dividende_erw_eur2026)*SK),de(NB[j].dividende_pct_bip,2)])),
+  Q("Kaufkraft 2026, Deutschland. Die Kinderdividende ("+eu(kind28)+" im Jahr 2028) liegt über dem heutigen Kindergeld (259 €). Kinderanteil 80 % (Beschluss R1, 18.10.2026): Existenzminimum eines Kindes einschließlich Betreuung, Erziehung, Ausbildung im Verhältnis zu dem eines Erwachsenen (0,79); aus demselben Topf, die Erwachsenendividende sinkt dadurch um "+pr((1-TOPF)*100,1)+"."),
 
   H2("3.5  Ihre eigene Route"),
   P("Alles über der Grundversorgung liegt beim Einzelnen: die Pflichtvorsorge von 10 % des Lohns auf eigenem Konto, freiwillige Vorsorge, Zusatzversicherungen für Komfort in Gesundheit und Pflege, für Lohnersatz bei Arbeitslosigkeit und für Berufsunfähigkeit. Jeder zusätzlich verdiente und gesparte Euro bleibt dem, der ihn verdient: von jedem weiteren Euro höchstens ein Drittel Steuer."),
 
   H2("3.6  Starke Gemeinden und das gemeinsame Dach"),
   P("Statt fünf Ebenen gibt es zwei. Die Gemeinde erhält den größten Teil des Geldes nach einer festen Formel je Einwohner und je Kind und entscheidet selbst. Das Dach behält höchstens "+pr(G.obergrenze,0)+" dessen, was es einzieht, und nur, was seine Aufgaben kosten; der Rest fließt an Gemeinden und Dividende."),
+  P("Bildung, Forschung und Kultur: Für jedes Kind von 5 bis 19 Jahren erhält die Gemeinde einen festen Betrag (Deutschland "+eu(G.gemeinde_kind_de)+" im Jahr; heute rund 10.500 € je Schülerin und Schüler, Destatis 2024 über Sekundärquelle); Schulen, Betreuung und Förderung trägt sie vor Ort (in der Gesamtrechnung Schulen "+de(G.tabelle_b[0][1],2)+" % und Kultur, Sport, Gemeinschaft "+de(G.tabelle_b[3][1],2)+" % des BIP). Betreuung, Erziehung und Ausbildung erhalten die Kinder als Sachleistung der Gemeinde; deshalb zählt im Boden nur der sachliche Bedarf eines Kindes ("+de(KW,2)+" des Grundbedarfs). Grundlagenforschung und Hochschulen gehören zu den Aufgaben des Dachs ("+de(G.tabelle_a[2][1],2)+" und "+de(G.tabelle_a[3][1],2)+" % des BIP)."),
 
-  H2("3.7  Altlasten: Sache der Staaten"),
+  H2("3.7  Verteilung: der Gini-Koeffizient"),
+  tab([{t:"Gini (0–100)",w:2626},...["DE","FR","IT","ES","PL"].map(c=>({t:c,w:1280,al:RT}))],[
+    ["heute (2025, amtlich)",...["DE","FR","IT","ES","PL"].map(c=>de(GI.staaten[c].gini_amtlich_2025,1))],
+    ["Goldenes Drittel 2028",...["DE","FR","IT","ES","PL"].map(c=>de(GI.staaten[c].reihe.find(z=>z.jahr===2028).mitte,1))],
+    ["Goldenes Drittel 2060",...["DE","FR","IT","ES","PL"].map(c=>de(GI.staaten[c].reihe.find(z=>z.jahr===2060).mitte,1))],
+    ["2028, Rentnerhaushalte unverändert",...["DE","FR","IT","ES","PL"].map(c=>{const z=GI.staaten[c].reihe.find(z=>z.jahr===2028);return de((z.untere.gini_rentner_unveraendert+z.obere.gini_rentner_unveraendert)/2,1);})]]),
+  Q("Statische Rechnung (modell/gini.py): heutige Verteilung aus EU-SILC 2025 (Dezilgrenzen, Anteile D1 und D10), Abbildung heute → neu je Äquivalenzerwachsenem mit der Regel Boden; ausgewiesen amtlicher Wert plus Modelländerung. Ohne Verhaltensänderung, Kapitaleinkommen und Vermögen. Zum Vergleich heute: Dänemark "+de(GI.vergleich_amtlich_2025.DK,1)+", Schweden "+de(GI.vergleich_amtlich_2025.SE,1)+". In Frankreich steigt der Gini, weil Lohnzuschüsse (prime d'activité) wegfallen und hohe Einkommen weniger zahlen als heute; eine eigene Lösung ist offen."),
+
+  H2("3.8  Altlasten: Sache der Staaten"),
   P("Staatsschulden und Rentenzusagen stammen aus dem alten System. Jeder Staat regelt sie selbst; eigene Lösungen sind erwünscht. Beschlossen ist: Bestehende Renten werden um die Sozialbeiträge gekürzt, die im neuen System entfallen (Annahme für die Rechnung: 12,35 % wie in Deutschland; je Staat verschieden). Als Werkzeug bietet der Bauplan einen gemeinsamen Fonds an:"),
   tab([{t:"Altlastenfonds (zehn Staaten, alle Altrenten nach Kürzung)",w:6026},{t:"Wert",w:3000,al:RT}],[
     ["Gleichbleibender Beitrag bis 2098",pr(AB.beitrag_pct_bip,2)+" des BIP"],
@@ -204,11 +231,12 @@ add(H1("4  Finanzierung auf einen Blick"),
 // ---- 5 Haushalte
 const hhs=['alleinstehend','alleinerziehend, 1 Kind','Paar, ein Einkommen, 2 Kinder'];
 add(H1("5  Was bei den Menschen ankommt"),
-  P("Netto im Monat heute (Recht 2026) gegen das Drittel-System im Jahr 2028, Kaufkraft 2026. Neu: nach Einkommensteuer, Dividende des Haushalts, höherer Mehrwertsteuer, Pflichtvorsorge 10 % und Weitergabe von 80 % der Arbeitgeberbeiträge. Hauptfall mit dem Altlastenzuschlag von "+pr(ZU,1)+"."),
+  P("Netto im Monat heute (Recht 2026, mit Bürgergeld) gegen das Drittel-System im Jahr 2028, Kaufkraft 2026. Neu: nach Einkommensteuer, Dividende des Haushalts (Kinder 80 %), höherer Mehrwertsteuer, Pflichtvorsorge 10 %, Weitergabe von 80 % der Arbeitgeberbeiträge, Altlastenzuschlag und Aufstockung bis zum Boden (Regel Boden)."),
   tab([{t:"Haushalt",w:2826},{t:"Brutto im Jahr",w:1500,al:RT},{t:"heute",w:1500,al:RT},{t:"neu",w:1500,al:RT},{t:"mehr im Monat",w:1700,al:RT}],
-    hhs.flatMap(h=>[20000,42000,75000].map(b=>{const z=zl(fall(h,ZU),b);return [h,de(b)+" €",eu(z.netto_heute/12),eu(z.netto_33/12),vz(z.differenz_monat)];}))),
-  Q("Ohne Altlastenzuschlag (der Staat finanziert die Altlasten anders) sind es zum Beispiel "+vz(zl(fall('alleinstehend',0),42000).differenz_monat)+" bei 42.000 € (alleinstehend). Gerechnet mit dem Kernmodell; Bürgergeld und Wohngeld nicht berücksichtigt."),
-  L([["Rentner: ",true],["Eine Rente von 1.200 € wird um die entfallenden Kranken- und Pflegebeiträge gekürzt; mit der höheren Mehrwertsteuer bleiben "+vz(rent(1200,0).differenz_monat)+" im Monat (mit Zuschlag "+vz(rent(1200,ZU).differenz_monat)+"). Das ist ein kleines Minus; Gesundheit und Pflege bleiben ohne Prämie."]]),
+    hhs.flatMap(h=>[20000,42000,75000].map(b=>{const z=RBJ.beispiele_de[h][String(b)];return [h,de(b)+" €",eu(z.heute),eu(z.neu),vz(z.mehr)];}))),
+  Q("Gerechnet mit modell/regel_boden.py (heute mit Bürgergeld; Wohngeld und Kinderzuschlag nicht berücksichtigt). Weitere Erwachsene ohne eigenes Einkommen."),
+  L([["Kleine Löhne: ",true],["Bei halbem Vollzeit-Mindestlohn bleiben von einem zusätzlich verdienten Euro heute "+pr(100-RBJ.staaten.DE.lohnabstand.alleinstehend.belastung_zusatzeuro_bei_halbem_mindestlohn.heute,0)+", neu "+pr(100-RBJ.staaten.DE.lohnabstand.alleinstehend.belastung_zusatzeuro_bei_halbem_mindestlohn.neu,0)+" (alleinstehend)."]]),
+  L([["Rentner: ",true],["Eine Rente von 1.200 € wird um die entfallenden Kranken- und Pflegebeiträge gekürzt; mit der höheren Mehrwertsteuer bleiben "+vz(rent(1200,0).differenz_monat+dRent)+" im Monat (mit Zuschlag "+vz(rent(1200,ZU).differenz_monat+dRent)+"; Kinderanteil 0,8 eingerechnet). Das ist ein kleines Minus; Gesundheit und Pflege bleiben ohne Prämie."]]),
   L([["Anreiz: ",true],["Von einem zusätzlichen Euro Arbeitskosten kommen bei 55.000 € brutto heute "+pr(100-RA.grenz_heute[gi],0)+" beim Haushalt an, neu "+pr(100-RA.grenz_neu['0.8'][gi],0)+"."]]),
   L([["Woher das Mehr kommt: ",true],["aus dem Wegfall der Sozialbeiträge, der breiteren Belastung von Kapital, Gewinnen und Erbschaften und der schlanken Grundversorgung – und zu einem Teil aus der Streckung der Altlasten über den Fonds bis 2098."]]));
 
@@ -222,10 +250,10 @@ add(H1("6  Bis 2060: Trends, Automatisierung, Einwanderung"),
   H2("6.2  Automatisierung und Arbeit"),
   P("Im heutigen System kostet eine Verschiebung von Einkommen von der Arbeit zum Kapital Aufkommen, weil Arbeit stärker belastet ist. Im Drittel-System trägt jeder Euro sein Drittel; Automatisierung schwächt die Finanzierung nicht. Szenarien (Änderung der Dividende 2060 gegen den Grundpfad):"),
   tab([{t:"Szenario",w:6026},{t:"Dividende 2060",w:3000,al:RT}],[
-    ["KI, untere Schätzung (+0,07 Pp Produktivität je Jahr; Acemoglu 2024)",vz(dyn(0,0.07,0).dividende_erw_eur2026-d0)],
-    ["KI, obere Schätzung (+0,6 Pp; OECD 2024)",vz(dyn(0,0.6,0).dividende_erw_eur2026-d0)],
-    ["Mehr Arbeit durch billigere Arbeit (+4,6 % Arbeitsvolumen)",vz(dyn(4.6,0,0).dividende_erw_eur2026-d0)],
-    ["Alles zusammen mit Verschiebung zum Kapital (KI 0,3 bis 0,6)",vz(dyn(4.6,0.3,3).dividende_erw_eur2026-d0)+" bis "+vz(dyn(4.6,0.6,3).dividende_erw_eur2026-d0)]]),
+    ["KI, untere Schätzung (+0,07 Pp Produktivität je Jahr; Acemoglu 2024)",vz(dv(dyn(0,0.07,0).dividende_erw_eur2026-d0))],
+    ["KI, obere Schätzung (+0,6 Pp; OECD 2024)",vz(dv(dyn(0,0.6,0).dividende_erw_eur2026-d0))],
+    ["Mehr Arbeit durch billigere Arbeit (+4,6 % Arbeitsvolumen)",vz(dv(dyn(4.6,0,0).dividende_erw_eur2026-d0))],
+    ["Alles zusammen mit Verschiebung zum Kapital (KI 0,3 bis 0,6)",vz(dv(dyn(4.6,0.3,3).dividende_erw_eur2026-d0))+" bis "+vz(dv(dyn(4.6,0.6,3).dividende_erw_eur2026-d0))]]),
   Q("Wachstum kommt vor allem als Lohn und Gewinn bei den Menschen an; die Dividende ist ein kleiner Rest des BIP und wächst nur im selben Verhältnis."),
   H2("6.3  Kontrollierte Einwanderung"),
   tab([{t:"2060",w:3626},{t:"ohne",w:1500,al:RT},{t:"+0,5 Mio./Jahr",w:1950,al:RT},{t:"+1 Mio./Jahr",w:1950,al:RT}],[
@@ -239,16 +267,18 @@ const ml=Object.values(MR.laender).sort((a,b)=>b.einwohner_mio-a.einwohner_mio);
 add(H2("6.4  Der Möglichkeitsraum: 30 Staaten"),
   P("Der Bauplan ist für jeden Staat gerechnet, für den Eurostat vergleichbare Daten führt (27 EU-Staaten, Norwegen, Island, Schweiz; "+de(MR.raum.einwohner_mio,1)+" Mio. Menschen). Vereinigtes Königreich und Kanada fehlen mangels harmonisierter Daten. Das Aufkommen des Goldenen Drittels folgt der eigenen Steuerbasis jedes Staates: Einkommen dem Arbeitnehmerentgelt, Kapital und Unternehmen dem Betriebsüberschuss, Konsum dem privaten Verbrauch (je im Verhältnis zu Deutschland). Das Netz folgt den Landesdaten, der Grundbedarf dem Preisniveau; die Dividende ist in deutscher Kaufkraft angegeben."),
   tab([{t:"Staat",w:1626},{t:"Abgaben heute",w:1050,al:RT},{t:"Steuern neu",w:1050,al:RT},{t:"Netz 2028",w:950,al:RT},{t:"Dividende 2028",w:1150,al:RT},{t:"Dividende Dauer",w:1150,al:RT},{t:"Altlasten-Zuschlag",w:1100,al:RT},{t:"Last neu",w:950,al:RT}],
-    ml.map(e=>[e.name,pr(e.abgabenquote_heute),pr(e.z2028.deckung_pct_bip),pr(e.z2028.netz_pct_bip),eu(e.z2028.dividende_erw_kaufkraft_de),e.dauer.dividende_erw_kaufkraft_de<0?"Lücke "+eu(-e.dauer.dividende_erw_kaufkraft_de):eu(e.dauer.dividende_erw_kaufkraft_de),pr(e.altlasten.zuschlag_pct),pr(e.gesamtlast_2028)])
-      .concat([["Alle 30",pr(MR.raum.abgabenquote_heute),pr(MR.raum.deckung_pct_bip_2028),pr(MR.raum.netz_pct_bip_2028),eu(MR.raum.dividende_erw_kaufkraft_de_2028),eu(MR.raum.dividende_erw_kaufkraft_de_dauer),pr(MR.raum.zuschlag_pct),"–"]]),{hl:{[ml.length]:1}}),
+    ml.map(e=>[e.name,pr(e.abgabenquote_heute),pr(e.z2028.deckung_pct_bip),pr(e.z2028.netz_pct_bip),eu(dv(e.z2028.dividende_erw_kaufkraft_de)),e.dauer.dividende_erw_kaufkraft_de<0?"Lücke "+eu(-e.dauer.dividende_erw_kaufkraft_de):eu(e.dauer.dividende_erw_kaufkraft_de),pr(e.altlasten.zuschlag_pct),pr(e.gesamtlast_2028)])
+      .concat([["Alle 30",pr(MR.raum.abgabenquote_heute),pr(MR.raum.deckung_pct_bip_2028),pr(MR.raum.netz_pct_bip_2028),eu(dv(MR.raum.dividende_erw_kaufkraft_de_2028)),eu(dv(MR.raum.dividende_erw_kaufkraft_de_dauer)),pr(MR.raum.zuschlag_pct),"–"]]),{hl:{[ml.length]:1}}),
   P("",{sp:80}),
+  P("Über Europa hinaus: Die Regeln sind nicht an Europa gebunden; sie passen überall dort, wo die Wertebasis übereinstimmt – Rechtsstaat, Demokratie, soziale Marktwirtschaft, Selbstverwaltung der Gemeinden. Wegen des vorliegenden Datenbestands und Modellstands ist das noch nicht weiter bearbeitet."),
   P("Wo die Dividende im Dauerzustand gegen null geht oder eine Lücke bleibt (Schweden, Dänemark, Tschechien, Frankreich), tragen die eigenen Steuern das Netz nur knapp: hohe Ausgaben für Gesundheit, Invalidität oder Arbeitslosigkeit treffen auf eine schmalere Steuerbasis. Diese Staaten brauchen eine eigene Lösung – etwa die Bodenwertabgabe bis 2 %, eine schlankere Grundversorgung oder einen Zukunftsschatz aus den Lenkungseinnahmen der Übergangszeit."),
   Q("Abgaben heute: Steuern und Sozialbeiträge 2024 (Eurostat). Last neu: Goldenes Drittel plus eigener Altlastenfonds bis 2098, ohne Pflichtvorsorge (eigenes Konto). Staaten mit niedriger Abgabenquote heute (Irland, Schweiz, Rumänien, Bulgarien, Malta) hätten eine höhere Last als heute, Staaten mit hoher eine niedrigere. Irland: BIP durch Konzerngewinne überzeichnet. Schweiz: obligatorische Krankenversicherung als Annahme eingerechnet. Altrenten auf die ungedeckten staatlichen Ansprüche der Eurostat-Tabelle 29 (2021) begrenzt, ohne Altersprofil je Staat. Schulden Norwegen, Island, Schweiz: Annahme."));
 
 // ---- 7 Vorbilder
 add(H1("7  Vorbilder"),
   tab([{t:"Staat",w:1800},{t:"Was übernommen wird",w:7226}],[
-    ["Dänemark","Sozialstaat aus Steuern (Sozialbeiträge 0,7 % des BIP); freiwillige Arbeitslosenkassen für Lohnersatz; starke Kommunen"],
+    ["Dänemark","Sozialstaat aus Steuern (Sozialbeiträge 0,7 % des BIP); freiwillige Arbeitslosenkassen für Lohnersatz; starke Kommunen, die die Mindestsicherung nach gesetzlichen Sätzen auszahlen"],
+    ["Schweden","Kommunen zahlen die Sozialhilfe nach einer landesweiten Norm; Wohnkosten nach dem Einzelfall (Vorbild Härtefall H1)"],
     ["Estland","einfache, digitale Einkommensteuer; Grundsteuer allein auf den Bodenwert seit 1993"],
     ["Schweiz","CO₂-Abgabe gleichmäßig an alle zurück; Grundversicherung mit Kostenbeteiligung, Komfort privat; Gemeinden setzen ihre Steuern selbst"],
     ["Niederlande","Volksrente (AOW) als Vergleich; als Dauerlösung zu teuer"],
@@ -259,7 +289,9 @@ add(H1("7  Vorbilder"),
 add(H1("8  Was noch offen ist"),
   L("Weitergabe: Wie sich die Pflicht, 80 % der Arbeitgeberbeiträge in den Lohn zu geben, durchsetzen lässt."),
   L("Rentner: kleines Minus durch Kürzung und Mehrwertsteuer; Ausgleich (höherer Freibetrag für Renten) zu prüfen."),
-  L("Familien: Die Kinderdividende liegt unter dem heutigen Kindergeld."),
+  L("Familien: Kindergewicht im Boden "+de(KW,2)+" (Vorschlag zur Freigabe; geprüft 0,3 bis 0,8, modell/kindergewicht.py). Bei 0,7–0,8 reicht das Netzbudget in Frankreich, Italien und Polen in der oberen Schätzung nicht."),
+  L("Härtefall: Kosten mit Mietdaten nach Haushaltstyp nachrechnen; Pflichten und Zugangsbedingungen (Aktivität, Aufenthaltsdauer) sind nicht geregelt."),
+  L("Frankreich: Ungleichheit steigt nach dem Modell (Gini +2 Punkte); eigene Lösung offen."),
   L("Grundversorgung: Kürzung des Gesundheitskatalogs (5 %), Mengen bei Invalidität und Arbeitslosigkeit und die Verteilung der eigenen Renten sind Annahmen ohne Mikrodaten."),
   L("Dividende: Sie sinkt bis 2060; ein Zukunftsschatz könnte einen Teil auf Dauer sichern."),
   L("Altlasten: Der Fonds verschiebt Lasten in die Zukunft (Schuldenspitze "+pr(AB.schuldenquote_spitze,0)+"); jeder Staat entscheidet."),
@@ -287,12 +319,16 @@ add(H1("9  Quellen"),
    "ESM: Greece exit factsheet (2018); What was private sector debt restructuring in March 2012.",
    "Wissenschaftliche Dienste des Deutschen Bundestages: WD 4-176/08 (Lastenausgleich).",
    "Sachverständigenrat (2015): Sondergutachten Maastricht 2.0, Pressemitteilung.",
-   "To Vima (11.6.2015); European Pensions (15.7.2020): Urteile des griechischen Staatsrats (Sekundärquellen)."
+   "To Vima (11.6.2015); European Pensions (15.7.2020): Urteile des griechischen Staatsrats (Sekundärquellen).",
+   "Eurostat (2026): ilc_di01, ilc_di12 (EU-SILC 2025: Einkommensverteilung, Gini).",
+   "borger.dk: Kontanthjælp, Sätze 2026; STAR: Reform L 13 (2024); VIVE (2020): Refusionstrappen.",
+   "Socialstyrelsen: Riksnormen för försörjningsstöd 2026; Meddelandeblad 4/2026; Prop. 2025/26:201.",
+   "Statistisches Bundesamt (2026), berichtet von Münster Aktuell (12.3.2026): Ausgaben je Schülerin und Schüler 2024 (Sekundärquelle)."
   ].map(t=>L(t)),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.0)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.8)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -300,7 +336,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.0 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.8 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

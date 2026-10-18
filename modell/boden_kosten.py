@@ -31,9 +31,16 @@ def punkte(c):
     return [(0.0, P["untergrenze_d1"] * d[0])] + [(0.1 * (i + 1), x) for i, x in enumerate(d)]
 
 
-def kosten(c, eigen_unten):
+def boden_faktor(w):
+    """Boden je OECD-Äquivalenzerwachsenem relativ zum Grundbedarf, wenn Kinder mit w statt 0,3 zählen (Haushaltsmischung aus der .toml, Annahme)."""
+    kj = P["kinder_je_aequivalent"]
+    return 1 + kj * (w - 0.3)
+
+
+def kosten(c, eigen_unten, w=None):
     fx = RB.SL.HL.faktor(c)
-    g = LS["staaten"][c]["grundbedarf_jahr_eur"] * fx
+    w = RB.P["skala"]["kind"] if w is None else w
+    g = LS["staaten"][c]["grundbedarf_jahr_eur"] * fx * boden_faktor(w)
     d = LS["staaten"][c]["dividende_erw_eur"][0] * 12 * fx * RB.topf(RB.S)
     d_ae = d * P["personen_je_aequivalent"] * (1 - RB.SL.K + RB.S * RB.SL.K)
     pk = punkte(c)
@@ -51,7 +58,7 @@ def kosten(c, eigen_unten):
     aequiv = ew * 1e6 * P["anteil_erwerbsalter"] / P["personen_je_aequivalent"]
     mrd = summe * aequiv / 1e9 / fx                  # in Mrd. € (PL umgerechnet)
     bip = MR24["bip_mio_eur"][c] / 1000 * P["bip_fortschreibung"]
-    return dict(mrd_eur=round(mrd, 1), pct_bip=round(100 * mrd / bip, 2), anteil_mit_aufstockung=round(100 * betroffen), grundbedarf=round(g),
+    return dict(mrd_eur=round(mrd, 1), pct_bip=round(100 * mrd / bip, 2), anteil_mit_aufstockung=round(100 * betroffen), grundbedarf=round(g / boden_faktor(w)), boden_je_aequivalent=round(g),
                 dividenden_je_aequivalent=round(d_ae))
 
 

@@ -4,4 +4,6 @@ kinderanteil = 0.8     # R1, Beschluss 18.10.2026: Kinderdividende = 0,8 × Erwa
 anrechnung = 0.5       # eigenes Einkommen zur Hälfte angerechnet – wie die eigene Rente bei der Mindestrente (netz33.toml)
 # Enges Existenzminimum: Grundbedarf des Landes (steuerliches Existenzminimum, DE 12.348 € 2026; andere Länder nach Preisniveau) mit der
 # OECD-modifizierten Äquivalenzskala (Eurostat/OECD-Standard für Armutsmessung): weitere Erwachsene 0,5, Kinder 0,3.
-skala = { erwachsen = 0.5, kind = 0.3 }
+# v4.8 (Vorschlag zur Freigabe, Auftrag 18.10.2026 „Kindergewicht fair anpassen“): Kind 0,55 = sächliches Existenzminimum Kind / Grundbedarf
+# (6.828 / 12.348); Betreuung, Erziehung, Ausbildung (BEA) als Sachleistung der Gemeinden (Kita, Schulessen, Lernmittel). Varianten: kindergewicht.py.
+skala = { erwachsen = 0.5, kind = 0.55 }

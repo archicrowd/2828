@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.7 · höchste Korrekturnummer 63 · 393 Dateien im Repository
+Modellstand v4.8 · höchste Korrekturnummer 63 · 404 Dateien im Repository
 
 ## Bausteine
 
@@ -80,4 +80,4 @@ Modellstand v4.7 · höchste Korrekturnummer 63 · 393 Dateien im Repository
 - Hinweis: Naht N22 offen: B30 Altlastenfonds -> B20 Gesamtrechnung: Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend
 - Hinweis: Naht N23 offen: B31 Drittel-System -> B20 Gesamtrechnung: v3.47: Entscheidung über Dauerhaftigkeit der Dividende (hinnehmen, Bodenwertabgabe, Bürgerfonds)
 - Hinweis: Naht N24 offen: B32 Länderseiten -> B31 Drittel-System: v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land
-- Hinweis: Naht N27 offen: B32 Länderseiten -> B31 Drittel-System: v4.7: Vergleich DK/SE; Vorschlag H1–H3, K1, G1–G5 zur Entscheidung; Kosten von H1–H3 und K1 nicht gerechnet (Mietdaten nach Haushaltstyp fehlen)
+- Hinweis: Naht N27 offen: B32 Länderseiten -> B31 Drittel-System: v4.7: Vergleich DK/SE; Vorschlag H1–H3, K1, G1–G5 zur Entscheidung; Kosten von H1–H3 und K1 nicht gerechnet (Mietdaten nach Haushaltstyp fehlen) | v4.8: H1–H3 und G1–G5 nach Empfehlung angenommen und grob gerechnet; Kindergewicht 0,55 vorgeschlagen; Freigabe der Initiative offen; Mietdaten weiter offen

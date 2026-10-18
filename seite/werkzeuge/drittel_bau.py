@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.1"
+VERSION = "v4.8"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -54,15 +54,23 @@ def dyn_reihe(b, ki, kv):
     s = next(x for x in DY["szenarien"] if x["beschaeftigung_pct"] == b and x["ki_pp"] == ki and x["kapital_verschiebung_pp"] == kv)["reihe"]
     s0 = next(x for x in DY["szenarien"] if x["beschaeftigung_pct"] == 0 and x["ki_pp"] == 0 and x["kapital_verschiebung_pp"] == 0)["reihe"]
     diff = {int(j): s[j]["dividende_erw_eur2026"] - s0[j]["dividende_erw_eur2026"] for j in s}
-    return [NB[j]["dividende_erw_eur2026"] + interp(diff, j) for j in JAHRE]
+    return [(NB[j]["dividende_erw_eur2026"] + interp(diff, j)) * VB.TOPF for j in JAHRE]
 
+
+# v4.8: Regelwerte (Kinderanteil 0,8, Boden, Gini) aus dem Modell
+spec_v = importlib.util.spec_from_file_location("v48_bau", Path(__file__).resolve().parent / "v48_bau.py")
+VB = importlib.util.module_from_spec(spec_v)
+spec_v.loader.exec_module(VB)
+spec_vt = importlib.util.spec_from_file_location("v48_texte", Path(__file__).resolve().parent / "v48_texte.py")
+VT = importlib.util.module_from_spec(spec_vt)
+spec_vt.loader.exec_module(VT)
 
 # ---- Zahlen der Gesamtrechnung durch die Drittel-Rechnung ersetzen
 J = dict(SB.J)
-basis = [NB[j]["dividende_erw_eur2026"] for j in JAHRE]
+basis = [NB[j]["dividende_erw_eur2026"] * VB.TOPF for j in JAHRE]   # v4.8: Topf bei Kinderanteil 0,8 (R1)
 J["reihe_jahre"] = JAHRE
 J["reihe_erw"] = {"1,0": basis, "0,5": dyn_reihe(2.8, 0.3, 0.0), "1,5": dyn_reihe(4.6, 0.6, 3.0)}   # Schlüssel der Vorlage: 1,0 = Grundpfad (Rechner, Spark)
-J["erw_de_2028"], J["erw_de_2060"], J["kind_de_2028"] = basis[0], basis[-1], basis[0] / 2
+J["erw_de_2028"], J["erw_de_2060"], J["kind_de_2028"] = basis[0], basis[-1], basis[0] * VB.S_KIND
 deck = {j: PR[j]["deckung"] + PR[j]["progression"] for j in JAHRE}
 gem = {j: V["quote_kern"] - PR[j]["dach_ohne_zins"] - PR[j]["dividende_ohne_trends_pct_bip"] for j in JAHRE}
 J["reihe_a"] = [PR[j]["dach_ohne_zins"] for j in JAHRE]
@@ -78,7 +86,7 @@ SB.TARIF = [(G26 * x, s) for x, s in zip((1, 1.5, 2, 3), V["einkommen_saetze"][:
 fall = lambda zu: next(f for f in H["faelle"] if f["jahr"] == 2028 and f["haushalt"] == "alleinstehend" and f["weitergabe_ag"] == 0.8
                        and f["vorsorge_satz"] == 0.1 and f["zuschlag_pct"] == zu)
 ZU = max(f["zuschlag_pct"] for f in H["faelle"])
-plus42 = next(z for z in fall(ZU)["zeilen"] if z["brutto"] == 42000)["differenz_monat"]
+plus42 = VB.plus_monat("DE", 42000)   # v4.8: Regel Boden, Kinderanteil 0,8 (vorher haushalte33)
 AB = AL["beschluss"]
 RM = MR["raum"]
 
@@ -95,6 +103,7 @@ assert _ANT >= 90, f"Aussage 9 von 10 nicht gedeckt: {_ANT} %"
 spec_l = importlib.util.spec_from_file_location("laender_texte", Path(__file__).resolve().parent / "laender_texte.py")
 LT = importlib.util.module_from_spec(spec_l)
 spec_l.loader.exec_module(LT)
+LT.FEIN_B["fr"], LT.FEIN_A["en"] = VT.FEIN_B_FR, VT.FEIN_A_EN   # v4.8
 LS, HL, ZR = lade("laenderseiten.json"), lade("heute_laender.json"), lade("laender_zeitreihen.json")
 HT = __import__("tomllib").loads((WURZEL / "modell" / "heute_laender.toml").read_text(encoding="utf-8"))
 FX = {"PL": HT["waehrung"]["PL"]}
@@ -111,7 +120,7 @@ def land_j(c):
     j = dict(J_DE)
     j["reihe_erw"] = {k: [round(v * f, 1) for v, f in zip(J_DE["reihe_erw"][k], r)] for k in J_DE["reihe_erw"]}
     j["erw_de_2028"], j["erw_de_2060"] = j["reihe_erw"]["1,0"][0], j["reihe_erw"]["1,0"][-1]
-    j["kind_de_2028"] = j["erw_de_2028"] / 2
+    j["kind_de_2028"] = j["erw_de_2028"] * VB.S_KIND
     j["reihe_div"] = L["dividende_pct_bip"]
     j["gemeinde_einw_de"], j["gemeinde_kind_de"] = L["gemeinde_einw"] * fx, L["gemeinde_kind"] * fx
     j["formel_einw"], j["formel_kind"] = J_DE["formel_einw"] * fx, J_DE["formel_kind"] * fx
@@ -143,12 +152,14 @@ def werte_neu(sp, c):
     elif c in HL["staaten"]:
         h = HL["staaten"][c]
         f = LS["staaten"][c]["fonds"]
-        w.update(plus="+" + E(h["beispiel"]["plus_monat"]), bsp=E(h["beispiel"]["brutto"]), zu=P(f["zuschlag_pct"], 1), spitze=P(f["spitze"]),
-                 sjahr=str(f["spitzenjahr"]), plus_aw="+" + E(h["beispiel_aw"]["plus_monat"]).replace("+-", "−"), aw=E(h["beispiel_aw"]["brutto"]),
-                 keil=P(HT["oecd"]["keil"][c], 1), anteil=LT.ANTEIL_TXT.get(sp, "{a}–{b}").format(a=round(h["anteil_min"] / 10), b=round(h["anteil_max"] / 10)))
+        amin, amax = VB.anteil(c)
+        pa = VB.plus_monat(c, h["beispiel_aw"]["brutto"])
+        w.update(plus="+" + E(VB.plus_monat(c, h["beispiel"]["brutto"])), bsp=E(h["beispiel"]["brutto"]), zu=P(f["zuschlag_pct"], 1), spitze=P(f["spitze"]),
+                 sjahr=str(f["spitzenjahr"]), plus_aw=("+" if pa >= 0 else "−") + E(abs(pa)), aw=E(h["beispiel_aw"]["brutto"]),
+                 keil=P(HT["oecd"]["keil"][c], 1), anteil=LT.ANTEIL_TXT.get(sp, "{a}–{b}").format(a=round(amin / 10), b=round(amax / 10)))
     else:
-        fr = HL["staaten"]["FR"]
-        w.update(fr_anteil=LT.ANTEIL_TXT.get(sp, "{a}–{b}").format(a=round(fr["anteil_min"] / 10), b=round(fr["anteil_max"] / 10)), zu=P(ZU, 1))
+        amin, amax = VB.anteil("FR")
+        w.update(fr_anteil=LT.ANTEIL_TXT.get(sp, "{a}–{b}").format(a=round(amin / 10), b=round(amax / 10)), zu=P(ZU, 1))
     k = "EU27" if c == "EU30" else c
     if k in ZR["thg_1990"]:
         w["thg_minus"] = LT.THG[sp].format(p=P(round(100 * (1 - ZR["thg"][k][-1] / ZR["thg_1990"][k]))))
@@ -163,7 +174,14 @@ def texte(sp, c):
     assert alt in quelle["div_p1"], (sp, "div_p1")
     quelle["div_p1"] = quelle["div_p1"].replace(alt, neu)
     quelle.update(LT.LAND.get(sp, {}))
-    anteil = HL["staaten"][c]["anteil_min"] if c in HL["staaten"] else _ANT
+    nt = VT.NEU[sp]
+    for k, v in nt.items():
+        if not k.startswith(("rech_fein_", "chan1_zusatz")):
+            quelle[k] = v
+    if nt["rech_fein_alt"] and nt["rech_fein_alt"] in quelle["rech_fein"]:
+        quelle["rech_fein"] = quelle["rech_fein"].replace(nt["rech_fein_alt"], nt["rech_fein_neu"])
+    quelle["rech_fein"] += nt["rech_fein_zusatz"]
+    anteil = VB.anteil(c)[0] if c in VB.LAENDER else _ANT
     if c == "EU30" or anteil >= 90:
         quelle["stamp3_val"], quelle["stamp3_lbl"] = LT.STAMP_A[sp]
         quelle["hero_fein"] = LT.FEIN_A[sp]
@@ -185,9 +203,10 @@ def rr_de():
     """Rechner-Raster Deutschland im einheitlichen Format (heute und Arbeitgeberbeiträge je Beitragsregime)."""
     r = json.loads((AGG / "haushalte33_raster.json").read_text(encoding="utf-8"))["rechner"]
     ag = {reg: [round(c[0] * min(b, r["bbg_kv"]) + c[1] * min(b, r["bbg_rv"]), 1) for b in r["brutto"]] for reg, c in r["beitrag"].items()}
-    return dict(brutto=r["brutto"], schritt=1000, start=42000, heute=r["heute"], ag=ag, jahre=r["jahre"], div=r["div"], eff=r["eff"],
+    heute = {key: VB.heute_mit_bedarf("DE", r["brutto"], v, int(key.split("|")[1]), int(key.split("|")[2])) for key, v in r["heute"].items()}
+    return dict(brutto=r["brutto"], schritt=1000, start=42000, heute=heute, ag=ag, jahre=r["jahre"], div=r["div"], eff=r["eff"],
                 stufen=r["stufen"], saetze=r["saetze"], eff_alt=r["eff_alt"], weitergabe=r["weitergabe"], zuschlag=r["zuschlag"],
-                vorsorge=r["vorsorge"], kq=r["kq"])
+                vorsorge=r["vorsorge"], kq=r["kq"], **VB.rechner_felder("DE"))
 
 
 def rr_land(c, in_eur=False):
@@ -196,13 +215,15 @@ def rr_land(c, in_eur=False):
     f = 1 / FX.get(c, 1.0) if in_eur else 1.0
     m = lambda xs: [round(x * f, 2) for x in xs]
     heute = {}
-    for reg in ("2028", "2035"):
-        for k, v in r["heute"].items():
-            heute[f"{reg}|{k}"] = m(v)
+    for k, v in r["heute"].items():
+        e_, k_ = (int(x) for x in k.split("|"))
+        hv = m(VB.heute_mit_bedarf(c, r["brutto"], v, e_, k_))      # Bedarfsleistungen in Landeswährung, dann umrechnen
+        for reg in ("2028", "2035"):
+            heute[f"{reg}|{k}"] = hv
     return dict(brutto=m(r["brutto"]), schritt=r["schritt"] * f, start=round(h["beispiel"]["brutto"] * f, 2), heute=heute,
                 ag={"2028": m(r["ag"]), "2035": m(r["ag"])}, jahre=r["jahre"], div=m(r["div"]), eff=r["eff"], stufen=m(r["stufen"]),
                 saetze=r["saetze"], eff_alt=r["eff_alt"], weitergabe=r["weitergabe"], zuschlag=r["zuschlag"], vorsorge=r["vorsorge"],
-                kq=[[x * f, y] for x, y in r["kq"]])
+                kq=[[x * f, y] for x, y in r["kq"]], **VB.rechner_felder(c, f))
 
 
 KONTAKT_ALT, KONTAKT_NEU = "2828@archicrowd.de", "tax.better@archicrowd.de"   # v3.57: neue Kontaktadresse, Links und Impressum
@@ -220,10 +241,11 @@ $('brutto').addEventListener('input',rechner);['erw','kin','rj'].forEach(x=>seg(
 RECHNER_NEU = """let R=D.rr;
 function estR(x){let s=0,u=0;const g=R.stufen.concat([Infinity]);for(let i=0;i<g.length;i++){if(x>u)s+=(Math.min(x,g[i])-u)*R.saetze[i]/100;u=g[i];}return s;}
 function kqR(n){const p=R.kq;if(n<=p[0][0])return p[0][1];for(let i=1;i<p.length;i++){if(n<=p[i][0]){const a=p[i-1][0],x=p[i-1][1],b=p[i][0],y=p[i][1];return x+(y-x)*(n-a)/(b-a);}}return p[p.length-1][1];}
-function neuR(i,b,e,k,j){const t=R.jahre.indexOf(j),DIV=R.div[t]*12,EFF=R.eff[t],reg=j>=2035?'2035':'2028';
-  const brutto=b+R.weitergabe*R.ag[reg][i],st=estR(brutto+DIV)+(e-1)*estR(DIV),div=DIV*e+k*DIV/2,netto=brutto-st+div;
+function neuR(i,b,e,k,j){const t=R.jahre.indexOf(j),DIV=R.div[t]*12*R.topf,EFF=R.eff[t],reg=j>=2035?'2035':'2028';
+  const brutto=b+R.weitergabe*R.ag[reg][i],st=estR(brutto+DIV)+(e-1)*estR(DIV),div=DIV*e+k*DIV*R.s,netto=brutto-st+div;
   const konsum=kqR(netto)*netto,mm=konsum*((1+EFF/100)/(1+R.eff_alt/100)-1),mb=konsum*EFF/(100+EFF);
-  return {netto:netto-mm-R.zuschlag/100*(st+mb)-R.vorsorge*b,div:div};}
+  const x=netto-mm-R.zuschlag/100*(st+mb),F=R.gb*(1+0.5*(e-1)+R.kw*k),auf=Math.max(0,F-div-R.anr*Math.max(0,x-div));
+  return {netto:x+auf-R.vorsorge*b,div:div};}
 function rset(){const s=$('brutto');s.min=R.brutto[0];s.max=R.brutto[R.brutto.length-1];s.step=R.schritt;s.value=R.start;}
 function rechner(){const i=Math.max(0,Math.min(R.brutto.length-1,Math.round((+$('brutto').value-R.brutto[0])/R.schritt))),br=R.brutto[i],e=+val('erw'),k=+val('kin'),j=+$('rj').value;
   const reg=j>=2035?'2035':'2028',h=R.heute[reg+'|'+e+'|'+k][i],n=neuR(i,br,e,k,j),d=n.netto-h;
@@ -266,6 +288,15 @@ ERSETZE = [  # (alt, neu) in der Vorlage; jede Stelle muss genau einmal vorkomme
     # v4.0: Dokumente des Drittel-Systems statt Gesamtkonzept und Kurzfassung 28:28
     ('dokumente/TAX-2828-Gesamtkonzept.pdf', 'dokumente/TAX-Drittel-Konzept.pdf'),
     ('dokumente/TAX-2828-Kurzfassung.pdf', 'dokumente/TAX-Drittel-Kurzfassung.pdf'),
+    # v4.8: Abschnitt „Chancen“ mit Tabelle und Gini-Grafik; Dividendengrafik aufklappbar; CO₂ vor Staatsschulden; über Europa hinaus
+    ('<a class="opt" href="#zeitpfad">@@nav_zeitpfad@@</a>', '<a class="opt" href="#chancen">@@nav_zeitpfad@@</a>'),
+    ('<section id="zeitpfad">', '<section id="chancen">\n  <div class="wrap">\n    <h2>@@chan_h2@@</h2>\n    <p class="lede">@@chan_lede@@</p>\n    <div class="mass-grid">\n      <div class="mass"><div class="pos">@@chan1_pos@@</div><h3>@@chan1_h@@</h3><p>@@chan1_p@@</p></div>\n      <div class="mass"><div class="pos">@@chan2_pos@@</div><h3>@@chan2_h@@</h3><p>@@chan2_p@@</p></div>\n      <div class="mass"><div class="pos">@@chan3_pos@@</div><h3>@@chan3_h@@</h3><p>@@chan3_p@@</p></div>\n      <div class="mass"><div class="pos">@@chan4_pos@@</div><h3>@@chan4_h@@</h3><p>@@chan4_p@@</p></div>\n    </div>\n    <h3 class="sub-h">@@bess_h3@@</h3>\n    <p class="lede">@@bess_p@@</p>\n    @@bess_tab@@\n    <p class="fineprint">@@bess_fein@@</p>\n    <h3 class="sub-h">@@gini_h3@@</h3>\n    <p class="lede">@@gini_p@@</p>\n    <div class="chart-card">\n      <div class="unit">@@gini_unit@@</div>\n      @@gini_svg@@\n      @@gini_leg@@\n      <p class="fineprint" style="margin-top:12px">@@gini_fein@@</p>\n    </div>\n  </div>\n</section>\n\n<section id="zeitpfad">'),
+    ('<div class="chart-card">\n      <div class="tabs" id="gtabs">', '<details class="mehr"><summary>@@zeit_mehr@@</summary><div class="chart-card">\n      <div class="tabs" id="gtabs">'),
+    ('<span class="l-hist"><i></i>@@zeit_l2@@</span></div>\n    </div>', '<span class="l-hist"><i></i>@@zeit_l2@@</span></div>\n    </div></details>'),
+    ('<button type="button" aria-pressed="true" data-v="schuld">@@reise_t1@@</button><button type="button" aria-pressed="false" data-v="co2">@@reise_t2@@</button>',
+     '<button type="button" aria-pressed="true" data-v="co2">@@reise_t2@@</button><button type="button" aria-pressed="false" data-v="schuld">@@reise_t1@@</button>'),
+    ("seg('ztabs',chart2);chart2('schuld');", "seg('ztabs',chart2);chart2('co2');"),
+    ('<div><h3>@@klub_6_h@@</h3><p>@@klub_6_p@@</p></div>', '<div><h3>@@klub_6_h@@</h3><p>@@klub_6_p@@</p></div>\n      <div><h3>@@welt_h@@</h3><p>@@welt_p@@</p></div>'),
 ]
 
 
@@ -303,12 +334,19 @@ def main():
         SB.VORLAGE = v
         T = json.loads((SB.SPRACHEN_DIR / f"{sp}.json").read_text(encoding="utf-8"))
         TX = texte(sp, c)
-        fehlt = set(TX) - set(T)
+        fehlt = set(TX) - set(T) - set(VT.NEU[sp])
         if fehlt:
             raise SystemExit(f"{sp}: unbekannte Schlüssel: {sorted(fehlt)}")
         T.update(TX)
         W = SB.werte(sp)
         W.update(version=VERSION, fassung=TT.FASSUNG[sp])
+        nm = VT.LAENDER_NAME[sp]
+        bc = c if c in VB.LAENDER else "DE"
+        W.update(chan1_zusatz=VT.NEU[sp]["chan1_zusatz_de"] if c == "DE" else "", bess_land=nm[bc] if c in VB.LAENDER else VT.BEISPIEL_EN)
+        dez = "." if sp == "en" else ","
+        svg, leg = VB.gini_svg(nm, c, T["gini_l1"], T["gini_l2"], T["gini_l3"], T["gini_ref"], T["gini_unit"])
+        T.update(gini_svg=svg.replace("@@DEZ@@", dez), gini_leg=leg,
+                 bess_tab=VB.bess_tab(sp, bc, T, lambda x: SB.eur(x, sp), lambda x: SB.pct(x, sp)))
         html = SB.baue(sp, T, W)
         # Geldfluss je Land: Dach und Gemeinde nach Regel gleich, Netz und Dividende des Landes; Summe angepasst
         n_c = [NB[j]["netz_pct_bip"] for j in JAHRE] if c == "DE" else L["netz_pct_bip"]
@@ -330,7 +368,7 @@ def main():
         html = html.replace(KONTAKT_ALT, KONTAKT_NEU).replace("?subject=28%3A28", "?subject=" + TT.NAME[sp].replace(" ", "%20").replace("'", "%27"))
         html, k = re.subn(r'(<span class="nm">[^<]*</span><span>)([\d.,\s\u00a0]+)(</span></button>)', r"\1\2 " + TT.MIO[sp] + r"\3", html)
         assert k >= 30, (sp, k)
-        html = html.replace("</style>", "#raum button{display:block;text-align:left}#raum button span{display:block}"
+        html = html.replace("</style>", VB.CSS + "#raum button{display:block;text-align:left}#raum button span{display:block}"
                                         "#raum button span:last-child{text-align:right;white-space:nowrap}</style>", 1)
         for alt in ("TAX 28:28", "28%3A28"):
             if alt in html:

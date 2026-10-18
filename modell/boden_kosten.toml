@@ -8,3 +8,4 @@ anteil_erwerbsalter = 0.75    # Annahme: Anteil der Bevölkerung in Haushalten i
 personen_je_aequivalent = 1.4 # Annahme: Personen je Äquivalenzerwachsenem im Mittel
 eigenanteil_unten = [0.5, 1.0]  # Band: Anteil des heutigen verfügbaren Einkommens, der in D1–D2 eigenes Einkommen ist (Rest heutige Transfers), untere/obere Annahme
 bip_fortschreibung = 1.06     # BIP 2024 → 2026 (Annahme)
+kinder_je_aequivalent = 0.31  # Annahme: 1,4 Personen je Äquivalenzerwachsenem, davon Kinder 22 % (Minderjährige 16,7 % ÷ 75 % in Haushalten im Erwerbsalter); v4.8

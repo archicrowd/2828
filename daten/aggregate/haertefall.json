@@ -1,0 +1,134 @@
+{
+ "version": "v4.8",
+ "status": "Prüfrechnung, grob",
+ "kindergewicht": 0.55,
+ "regeln": [
+  "H1 Wohnkosten: tatsächliche Warmmiete über dem Wohnanteil im Boden bis zur örtlichen Angemessenheitsgrenze; Gemeinde setzt die Grenze im Korridor des Landes; sechs Monate Übergang",
+  "H2 Mehrbedarf: feste Zuschläge in % des Grundbedarfs (Behinderung, chronische Krankheit, Schwangerschaft, Pflege Angehöriger), landeseinheitlich",
+  "H3 Einmalbedarfe und Notlagen: Ermessen der Gemeinde aus einem Pauschalbudget je Einwohner (Erstausstattung, Zahnersatz, Mietschulden gegen Räumung)",
+  "Rechnung: Aufstockung = max(0, Boden + H1 + H2 − Dividenden − ½ × eigenes Einkommen); H3 außerhalb",
+  "G1 Ausgabestelle: Gemeinde zahlt Aufstockung und Härtefall; Dividende und Mindestrente zahlt das Land zentral ohne Antrag",
+  "G2 Höhe: Boden, Anrechnung, H2 setzt das Land; Gemeinde darf nicht unterschreiten, aus eigenen Mitteln sichtbar ergänzen",
+  "G3 Ermessen der Gemeinde: Mietgrenze im Korridor, H3, Angebote zu Arbeit, Bildung und Qualifizierung, Fristen und Nachweise",
+  "G4 Finanzierung: Land erstattet Aufstockung, H1, H2 voll aus dem Netzbudget; H3 aus der Formelzuweisung der Gemeinde; keine sinkende Erstattung",
+  "G5 Rechtsschutz: Widerspruch bei der Gemeinde, danach unabhängige Landesstelle oder Gericht"
+ ],
+ "staaten": {
+  "DE": {
+   "budget_pct_bip": 1.17,
+   "band": {
+    "untere": {
+     "boden": 0.21,
+     "h1": 0.09,
+     "h2": 0.03,
+     "h3": 0.027,
+     "summe": 0.35,
+     "reserve": 0.82,
+     "dividende_minus_monat": 0.0
+    },
+    "obere": {
+     "boden": 0.77,
+     "h1": 0.17,
+     "h2": 0.03,
+     "h3": 0.027,
+     "summe": 1.0,
+     "reserve": 0.17,
+     "dividende_minus_monat": 0.0
+    }
+   }
+  },
+  "FR": {
+   "budget_pct_bip": 1.74,
+   "band": {
+    "untere": {
+     "boden": 0.69,
+     "h1": 0.22,
+     "h2": 0.03,
+     "h3": 0.031,
+     "summe": 0.97,
+     "reserve": 0.77,
+     "dividende_minus_monat": 0.0
+    },
+    "obere": {
+     "boden": 1.47,
+     "h1": 0.22,
+     "h2": 0.03,
+     "h3": 0.031,
+     "summe": 1.75,
+     "reserve": -0.01,
+     "dividende_minus_monat": 0.5
+    }
+   }
+  },
+  "IT": {
+   "budget_pct_bip": 1.37,
+   "band": {
+    "untere": {
+     "boden": 0.5,
+     "h1": 0.18,
+     "h2": 0.03,
+     "h3": 0.032,
+     "summe": 0.74,
+     "reserve": 0.63,
+     "dividende_minus_monat": 0.0
+    },
+    "obere": {
+     "boden": 1.18,
+     "h1": 0.2,
+     "h2": 0.03,
+     "h3": 0.032,
+     "summe": 1.44,
+     "reserve": -0.07,
+     "dividende_minus_monat": 2.7
+    }
+   }
+  },
+  "ES": {
+   "budget_pct_bip": 2.05,
+   "band": {
+    "untere": {
+     "boden": 0.73,
+     "h1": 0.24,
+     "h2": 0.03,
+     "h3": 0.034,
+     "summe": 1.03,
+     "reserve": 1.02,
+     "dividende_minus_monat": 0.0
+    },
+    "obere": {
+     "boden": 1.43,
+     "h1": 0.24,
+     "h2": 0.03,
+     "h3": 0.034,
+     "summe": 1.73,
+     "reserve": 0.32,
+     "dividende_minus_monat": 0.0
+    }
+   }
+  },
+  "PL": {
+   "budget_pct_bip": 1.23,
+   "band": {
+    "untere": {
+     "boden": 0.66,
+     "h1": 0.25,
+     "h2": 0.03,
+     "h3": 0.039,
+     "summe": 0.98,
+     "reserve": 0.25,
+     "dividende_minus_monat": 0.0
+    },
+    "obere": {
+     "boden": 1.56,
+     "h1": 0.25,
+     "h2": 0.03,
+     "h3": 0.039,
+     "summe": 1.88,
+     "reserve": -0.65,
+     "dividende_minus_monat": 62.6
+    }
+   }
+  }
+ },
+ "hinweis": "% BIP 2028. H1 und H3 aus Annahmen (haertefall.toml), ohne Mietdaten nach Haushaltstyp; Reserve = Budget − Summe; bei negativer Reserve Kürzung der Erwachsenendividende je Monat (Landeswährung)."
+}

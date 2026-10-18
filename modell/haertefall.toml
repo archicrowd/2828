@@ -1,0 +1,20 @@
+# Härtefall H1–H3 und Rolle der Gemeinden G1–G5 (modell/haertefall.py, Logbuch v4.8). Vorschlag v4.7, auf Auftrag 18.10.2026 eingerechnet. Prüfrechnung.
+version = "v4.8"
+# H1 Wohnkosten über dem Wohnanteil im Boden (bis zur örtlichen Angemessenheitsgrenze, Korridor des Landes, Übergang sechs Monate)
+wohnanteil_grundbedarf = 0.441          # (Bruttokaltmiete + Heizung) / sächliches Existenzminimum 2026 (15. Existenzminimumbericht), vergleich_dk_se.json
+h1_anteil_mit_ueberhang = 0.5           # Annahme: Hälfte der Haushalte mit Aufstockung wohnt teurer als der Wohnanteil
+h1_ueberhang_monat_de = 150             # Annahme: mittlerer Überhang je betroffenem Äquivalenzerwachsenem, € (DE); andere Länder nach Grundbedarf skaliert
+# H2 Mehrbedarf (landeseinheitliche Zuschläge in % des Grundbedarfs) und H3 Einmalbedarfe (Pauschalbudget der Gemeinde je Einwohner)
+h2_pct_bip = 0.03                       # Annahme, Größenordnung der Mehrbedarfe im deutschen Recht
+h3_eur_je_einwohner = 15                # Annahme: Pauschalbudget je Einwohner und Jahr (DE), andere Länder nach Grundbedarf skaliert
+regeln = [
+  "H1 Wohnkosten: tatsächliche Warmmiete über dem Wohnanteil im Boden bis zur örtlichen Angemessenheitsgrenze; Gemeinde setzt die Grenze im Korridor des Landes; sechs Monate Übergang",
+  "H2 Mehrbedarf: feste Zuschläge in % des Grundbedarfs (Behinderung, chronische Krankheit, Schwangerschaft, Pflege Angehöriger), landeseinheitlich",
+  "H3 Einmalbedarfe und Notlagen: Ermessen der Gemeinde aus einem Pauschalbudget je Einwohner (Erstausstattung, Zahnersatz, Mietschulden gegen Räumung)",
+  "Rechnung: Aufstockung = max(0, Boden + H1 + H2 − Dividenden − ½ × eigenes Einkommen); H3 außerhalb",
+  "G1 Ausgabestelle: Gemeinde zahlt Aufstockung und Härtefall; Dividende und Mindestrente zahlt das Land zentral ohne Antrag",
+  "G2 Höhe: Boden, Anrechnung, H2 setzt das Land; Gemeinde darf nicht unterschreiten, aus eigenen Mitteln sichtbar ergänzen",
+  "G3 Ermessen der Gemeinde: Mietgrenze im Korridor, H3, Angebote zu Arbeit, Bildung und Qualifizierung, Fristen und Nachweise",
+  "G4 Finanzierung: Land erstattet Aufstockung, H1, H2 voll aus dem Netzbudget; H3 aus der Formelzuweisung der Gemeinde; keine sinkende Erstattung",
+  "G5 Rechtsschutz: Widerspruch bei der Gemeinde, danach unabhängige Landesstelle oder Gericht",
+]

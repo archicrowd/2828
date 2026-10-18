@@ -12,7 +12,7 @@
   "_dk_netto_monat_kr": 10614
  },
  "kindergewicht": {
-  "Boden (OECD-modifiziert)": 0.3,
+  "Boden (OECD-modifiziert, bis v4.7)": 0.3,
   "DE Regelbedarf 0–5 / 6–13 / 14–17": [
    0.63,
    0.69,
@@ -42,7 +42,7 @@
     "0.5": 2572
    },
    "buergergeld_heute": 2634,
-   "boden_modell": 2161
+   "boden_modell": 2675
   },
   "hohe_miete_alleinstehend": {
    "wohnanteil_im_boden": 454,

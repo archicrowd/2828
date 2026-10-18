@@ -59,7 +59,7 @@ def kindergewicht():
     single = se["personlig_ensam"] + se["gemensam"][0]
     g = se["gemensam"]
     return {
-        "Boden (OECD-modifiziert)": 0.3,
+        "Boden (OECD-modifiziert, bis v4.7)": 0.3,
         "DE Regelbedarf 0–5 / 6–13 / 14–17": [round(rb[k] / rb["erwachsen"], 2) for k in ("kind_0_5", "kind_6_13", "kind_14_17")],
         "DE Existenzminimum Kind (mit Wohnen) / Erwachsene": round((em["kind_regelbedarf"] + em["kind_wohnen"]) /
                                                                  (em["regelbedarf"] + em["bruttokaltmiete"] + em["heizung"]), 2),

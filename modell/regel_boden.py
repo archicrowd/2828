@@ -95,6 +95,10 @@ def main():
         erg["staaten"][c] = dict(boden_monat={n: round(boden(c, e, k) / 12) for n, e, k in SL.HAUSHALTE},
                                  anteil=anteile(c), faelle=faelle(c), lohnabstand=lohnabstand(c))
     erg["kosten_aufstockung_beschaeftigte_de_mrd"] = kosten_de()
+    # v4.8: Kennwerte für Konzept und Seite (Topf bei Kinderanteil S, Beispiele DE heute mit Bürgergeld gegen Regel Boden)
+    erg["topf"] = round(topf(S), 5)
+    erg["beispiele_de"] = {n: {str(b): dict(heute=round(SL.heute("DE", b, e, k) / 12), neu=round(neu("DE", b, e, k) / 12), mehr=round((neu("DE", b, e, k) - SL.heute("DE", b, e, k)) / 12)) for b in (20000, 42000, 75000)}
+                           for n, e, k in SL.HAUSHALTE}
     erg["haertefallfonds_de_mrd"] = 31.9
     E = dict(version=P["version"], status="Prüfrechnung", **erg,
              hinweis="Monatsbeträge in Landeswährung (PL: Zł), 2028, Kaufkraft 2026. Heute mit Bedarfsleistungen (sozial_laender.py). Grobe Lohnverteilung.")
