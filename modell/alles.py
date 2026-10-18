@@ -48,6 +48,7 @@ STUFEN = [
     ("Länderseiten: Pfade, Fluss, Gemeinde, Fonds je Staat", ["modell/laenderseiten.py"]),
     ("Länderseiten: Haushalte heute gegen neu (FR, IT, ES, PL)", ["modell/heute_laender.py"]),
     ("Länderseiten: Zerlegung neu gegen heute (FR, IT)", ["modell/zerlegung_laender.py"]),
+    ("Länderseiten: Bedarfsleistungen, Kinderanteil, Mindestlohn", ["modell/sozial_laender.py"]),
     ("Webseite Fassung 4.x (sechs Sprachen, Länderbezug)", ["seite/werkzeuge/drittel_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),

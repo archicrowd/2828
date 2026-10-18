@@ -1,0 +1,40 @@
+# Bedarfsgeprüfte Leistungen heute, Härtefall-Boden neu, Kinderanteil der Dividende, Mindestlohn (modell/sozial_laender.py, Logbuch v4.3). Prüfrechnung.
+version = "v4.3"
+kinder_anteile = [0.5, 0.6, 0.7, 1.0]   # Anteil der Kinderdividende an der Erwachsenendividende; 0,5 = geltend (v3.47)
+anteil_minderjaehrige = 0.1667          # gesamtrechnung.json (DE), für alle Länder übernommen (Annahme)
+zuschlag_de = 13.7                      # DE: gemeinsamer Fonds (altlasten.json, Beschluss), wie Webseite
+
+[bedarf_kind]   # Bedarf eines Kindes relativ zu einem Erwachsenen (Prüfung der Kinderdividende)
+quelle = "Kindergeld 259 €, Kinderzuschlag 297 €, Kinderfreibetrag 9.756 € (2026, biallo.de nach BMF/BMFSFJ, Sekundärquelle); steuerliches Existenzminimum Erwachsene 12.348 €, Kind sächlich 6.828 € (16. Existenzminimumbericht, Werte 2026, Annahme ohne Einzelabruf); Regelbedarfe 2026 unverändert 563/506/471/390/357 € (Nullrunde, biallo.de); OECD-modifizierte Skala 1/0,5/0,3"
+existenzminimum_kind_saechlich = 6828
+existenzminimum_kind_gesamt = 9756
+existenzminimum_erwachsen = 12348
+regelbedarf = { erwachsen = 563, partner = 506, kind_14_17 = 471, kind_6_13 = 390, kind_0_5 = 357 }
+kindergeld_de = 259
+
+[boden]  # Härtefall-Boden im neuen System: verfügbares Einkommen des Haushalts mindestens Grundbedarf × (1 + 0,5 × weitere Erwachsene + 0,45 × Kinder)
+# Skala aus dem deutschen Bürgergeld-Bedarf mit Unterkunft (Regelbedarf + KdU dieser Datei): 1 Person 1.083 €, Paar 1.632 € (1,51), Paar + 2 Kinder 2.634 € (2,43);
+# entspricht der OECD-modifizierten Skala für Erwachsene (0,5) und liegt für Kinder (0,45) zwischen OECD (0,3) und Regelbedarf (0,71), weil Wohnkosten geteilt werden.
+skala_erwachsen = 0.5
+skala_kind = 0.45
+
+[de]  # Bürgergeld-Aufstockung als Näherung auch für Wohngeld und Kinderzuschlag (vorrangige Leistungen; Annahme)
+regelbedarf_erw = [563, 1012, 1463]   # 1, 2, 3 Erwachsene (Stufen 1, 2+2, 2+2+3 mit 451)
+regelbedarf_kind = 401                # altersgewichteter Mittelwert 357/390/471 (Annahme)
+kdu = [520, 620, 720, 820, 920, 1020, 1120]   # Kosten der Unterkunft warm nach Haushaltsgröße (Annahme, Größenordnung BA-Statistik)
+freibetrag = [100, 520, 1000, 1200, 1500]     # § 11b SGB II: 100 € + 20 % bis 520 + 30 % bis 1.000 + 10 % bis 1.200 (mit Kind 1.500)
+
+[fr]  # APL, grob (Annahme): Höchstbetrag nach Haushaltsgröße, Abschmelzung 30 % des Nettoeinkommens über dem RSA-Niveau
+apl_max = [270, 330, 390, 440, 490, 540]
+apl_satz = 0.30
+rsa_niveau = 646.52   # RSA Montant forfaitaire Person allein (2025), Skala +50 % / +30 % (Annahme)
+
+[es]  # Complemento de ayuda para la infancia (CAPI), Annahme: 80 € je Kind und Monat (Mittel aus 115/80,50/57,50 nach Alter, Werte 2023), bis 300 % der renta garantizada des IMV
+capi_kind = 80.0
+imv_renta = 7250.60   # renta garantizada 2025 je Jahr, Skala +0,3 je weitere Person (Annahme)
+
+[mindestlohn]   # Eurostat earn_mw_cur, Monatswerte (amtlich, Abruf 18.10.2026); IT ohne gesetzlichen Mindestlohn
+monat_2024 = { DE = 2054, FR = 1767, ES = 1323, PL = 4271 }
+monat_2026 = { DE = 2343, FR = 1823, ES = 1425, PL = 4806 }
+lohnwachstum_2024_2026 = { DE = 1.06, FR = 1.06, ES = 1.06, IT = 1.06, PL = 1.13 }   # Annahme für den Durchschnittslohn 2026
+ziel_anteil_durchschnitt = 0.50   # Richtlinie (EU) 2022/2041, Erwägungsgrund 28: Referenzwerte 60 % des Medians, 50 % des Durchschnitts (brutto)
