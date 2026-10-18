@@ -187,6 +187,20 @@ TX.update({
     "offen_lede": "Das Goldene Drittel wird unabhängig von Parteien und Interessengruppen entwickelt. Unsere Zahlen stammen aus amtlichen Statistiken, jede Rechnung lässt sich nachrechnen, jeder Fehler wird offen korrigiert. Fachleute aus Finanzwissenschaft, Verwaltung, Kommunalpraxis, Recht und Statistik sind eingeladen, ihr Wissen einzubringen.",
     "fuss_meth_p": "Alle Zahlen stammen aus einer offenen Gesamtrechnung auf Grundlage amtlicher Statistiken (Eurostat, OECD). Entwickelt nach der Methodik des architektonischen Entwurfs, unter Nutzung von KI-Werkzeugen und KI-gestützten Rechenmodellen. Skripte unter MIT-Lizenz, Texte unter CC BY 4.0.",
 })
+
+# v3.58: durchgängig Sie; Einleitung in drei Sätzen; „9 von 10 Beschäftigten" statt „+642 €" (Mehrheitsaussage, mit Gegenprobe aus haushalte33)
+_ANT = min(v for k, v in H["anteil_erwachsene_mit_mehr"].items() if k.startswith("beschluss|"))
+assert _ANT >= 90, f"Aussage 9 von 10 nicht gedeckt: {_ANT} %"
+_RENT = [r["differenz_monat"] for r in H["rentner"] if r["zuschlag_pct"] == ZU]
+TX.update({
+    "hero_sub": "Alle Steuern und Abgaben werden gerecht auf Arbeit, Kapital und Automation verteilt – höchstens ein Drittel auf jedes Einkommen. Arbeit lohnt sich, und das starke Netz und die Transformationsdividende sorgen für sozialen Frieden. Die Gemeinden entscheiden selbst, ein gemeinsames europäisches Dach sichert die gemeinsamen Interessen.",
+    "stamp3_val": "9 von 10",
+    "stamp3_lbl": "Beschäftigten haben mehr im Geldbeutel*",
+    "hero_fein": "* Rechnung nach den Regeln des Projekts für Beschäftigte, 2028, heutige Kaufkraft, nach Pflichtvorsorge (10 %) und Altlastenzuschlag; zum Beispiel +" + eur(plus42) + " im Monat bei 42.000 € Jahreseinkommen, alleinstehend. Rentnerinnen und Rentner haben nach diesen Regeln " + str(-max(_RENT)) + " bis " + eur(-min(_RENT)) + " im Monat weniger (Renten von 900 bis 2.200 €).",
+    "svg_sie": "Sie",
+    "svg_gemeinde": "Ihre Gemeinde",
+    "offen_h2": "Offen entwickelt – machen Sie mit",
+})
 KONTAKT_ALT, KONTAKT_NEU = "2828@archicrowd.de", "tax.better@archicrowd.de"   # v3.57: neue Kontaktadresse, Links und Impressum
 
 RECHNER_ALT = """function rechner(){const br=+$('brutto').value,e=+val('erw'),k=+val('kin'),j=val('rj'),i=idx(j);

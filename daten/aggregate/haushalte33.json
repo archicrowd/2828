@@ -3971,7 +3971,13 @@
   "2035|weitergabe 1.0|zuschlag 0.0|vorsorge 0.1": 100,
   "2035|weitergabe 1.0|zuschlag 0.0|vorsorge 0.186": 100,
   "2035|weitergabe 1.0|zuschlag 13.7|vorsorge 0.1": 100,
-  "2035|weitergabe 1.0|zuschlag 13.7|vorsorge 0.186": 100
+  "2035|weitergabe 1.0|zuschlag 13.7|vorsorge 0.186": 100,
+  "beschluss|2028|alleinstehend": 100.0,
+  "beschluss|2028|alleinerziehend, 1 Kind": 100.0,
+  "beschluss|2028|Paar, ein Einkommen, 2 Kinder": 97.8,
+  "beschluss|2035|alleinstehend": 100.0,
+  "beschluss|2035|alleinerziehend, 1 Kind": 100.0,
+  "beschluss|2035|Paar, ein Einkommen, 2 Kinder": 97.8
  },
  "verteilung": "Kernmodell VERT (7 Gruppen Alleinstehender, Annahmen des nationalen Modells)",
  "hinweis": "grob: Fälle ohne Erwerbseinkommen nicht gerechnet (Härtefall sichert den Grundbedarf); keine Verhaltensänderung"

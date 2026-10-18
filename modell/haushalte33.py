@@ -160,6 +160,14 @@ def main():
     setze_jahr(2028)
     assert abs(neu(42000, 0, False, rr["weitergabe"], rr["zuschlag"], rr["vorsorge"], 2028) - neu(42000, 0, False, 0.8, 13.7, 0.10, 2028)) < 1e-6
     raster["rechner"] = rr
+    # v3.58: Anteil der Beschäftigten mit mehr verfügbarem Einkommen je Haushaltstyp (Lohnverteilung K.VERT, 7 Stützstellen, grob; geltende
+    # Regeln: Weitergabe 80 %, Zuschlag 13,7 %, Pflichtvorsorge 10 %). Für die Aussage „9 von 10 Beschäftigten" auf der Webseite.
+    tot = sum(w for w, _ in K.VERT)
+    for j in P["jahre"]:
+        setze_jahr(j)
+        for name, ki, pa in faelle:
+            anteil[f"beschluss|{j}|{name}"] = round(sum(w for w, b in K.VERT if neu(b, ki, pa, 0.8, max(P["zuschlag_pct"]), 0.10, j)
+                                                        > heute(b, ki, pa)) / tot * 100, 1)
     (AGG / "haushalte33_raster.json").write_text(json.dumps(raster, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     setze_jahr(2028)
     rente = [dict(rente_monat=r, zuschlag_pct=zu, netto_heute_monat=round(a / 12), netto_33_monat=round(b / 12), differenz_monat=round((b - a) / 12))
