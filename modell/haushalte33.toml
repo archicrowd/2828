@@ -23,9 +23,10 @@ jahre = [2028, 2035]
 # keine Beiträge; Einkommensteuer 33F auf den ganzen Betrag; Mehrwertsteuer wie oben.
 renten_monat = [900, 1200, 1600, 2200]
 # v3.48 (Beschluss): Renten werden um die eingesparten Sozialbeiträge gekürzt (Bruttorente × (1 − Satz der Rentner)); Satz wie oben 12,35 %.
-rente_kuerzung = 0.1235
+rente_kuerzung = 0.075       # v4.11: Rentnerausgleich A (vorher 0,1235)
 rentner_kv_pv = 0.1235
 besteuerungsanteil = 0.83
+grundauskommen_rentner = { heute_monat = 1083, neu_monat = 1029 }   # v4.11 B1: heute Grundsicherung im Alter (563 € + KdU 520 €, Annahme wie sozial_laender.toml); neu Grundbedarf 12.348 € / 12
 # Heute im Jahr 2035: Beitragssätze nach IGES für DAK-Gesundheit (Juni 2024, Basisszenario; Sekundärquelle Deutsches Ärzteblatt 25.06.2024;
 # eine Studie, Auftraggeber eine Krankenkasse): Gesamtbeitrag 41,1 % (2024) → 48,6 % (2035); RV 18,6 → 22,3; KV 16,3 → 19,3; PV +0,7 bis 2030;
 # AV 2,6 → 3,0. Bis 2026 schon eingetreten: KV-Zusatzbeitrag +1,2, PV +0,2 (Annahme aus den Beitragssätzen 2025/2026). Rest bis 2035, je zur Hälfte

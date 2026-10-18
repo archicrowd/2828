@@ -19,32 +19,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 1029,
-      "ohne_erwerb": 1013,
-      "halber_mindestlohn": 1510,
-      "voller_mindestlohn": 2280,
+      "ohne_erwerb": 1012,
+      "halber_mindestlohn": 1507,
+      "voller_mindestlohn": 2264,
       "heute_voller_mindestlohn": 1687,
-      "abstand_arbeit_pct": 125
+      "abstand_arbeit_pct": 124
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1338,
-      "ohne_erwerb": 1310,
-      "halber_mindestlohn": 1813,
-      "voller_mindestlohn": 2553,
+      "ohne_erwerb": 1308,
+      "halber_mindestlohn": 1810,
+      "voller_mindestlohn": 2536,
       "heute_voller_mindestlohn": 1962,
-      "abstand_arbeit_pct": 95
+      "abstand_arbeit_pct": 94
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2161,
-      "ohne_erwerb": 2105,
-      "halber_mindestlohn": 2625,
-      "voller_mindestlohn": 3169,
+      "ohne_erwerb": 2101,
+      "halber_mindestlohn": 2620,
+      "voller_mindestlohn": 3151,
       "heute_voller_mindestlohn": 3012,
-      "abstand_arbeit_pct": 51
+      "abstand_arbeit_pct": 50
      }
     },
     "anteil_mit_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 87,
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 84,
      "Paar, ein Einkommen, 2 Kinder": 60
     },
     "kosten_pct_bip": [
@@ -57,27 +57,27 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 971,
-      "ohne_erwerb": 962,
-      "halber_mindestlohn": 1301,
-      "voller_mindestlohn": 1561,
+      "ohne_erwerb": 961,
+      "halber_mindestlohn": 1299,
+      "voller_mindestlohn": 1557,
       "heute_voller_mindestlohn": 1702,
       "abstand_arbeit_pct": 62
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1262,
-      "ohne_erwerb": 1246,
-      "halber_mindestlohn": 1589,
-      "voller_mindestlohn": 1849,
+      "ohne_erwerb": 1245,
+      "halber_mindestlohn": 1587,
+      "voller_mindestlohn": 1845,
       "heute_voller_mindestlohn": 2036,
       "abstand_arbeit_pct": 48
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2039,
-      "ohne_erwerb": 2006,
-      "halber_mindestlohn": 2358,
-      "voller_mindestlohn": 2619,
+      "ohne_erwerb": 2004,
+      "halber_mindestlohn": 2356,
+      "voller_mindestlohn": 2615,
       "heute_voller_mindestlohn": 2530,
-      "abstand_arbeit_pct": 31
+      "abstand_arbeit_pct": 30
      }
     },
     "anteil_mit_mehr": {
@@ -95,25 +95,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 862,
-      "ohne_erwerb": 855,
-      "halber_mindestlohn": 1110,
-      "voller_mindestlohn": 1313,
+      "ohne_erwerb": 854,
+      "halber_mindestlohn": 1108,
+      "voller_mindestlohn": 1310,
       "heute_voller_mindestlohn": 989,
-      "abstand_arbeit_pct": 54
+      "abstand_arbeit_pct": 53
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1121,
-      "ohne_erwerb": 1108,
-      "halber_mindestlohn": 1366,
-      "voller_mindestlohn": 1570,
+      "ohne_erwerb": 1106,
+      "halber_mindestlohn": 1363,
+      "voller_mindestlohn": 1566,
       "heute_voller_mindestlohn": 1190,
       "abstand_arbeit_pct": 42
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 1810,
-      "ohne_erwerb": 1786,
-      "halber_mindestlohn": 2050,
-      "voller_mindestlohn": 2254,
+      "ohne_erwerb": 1782,
+      "halber_mindestlohn": 2047,
+      "voller_mindestlohn": 2249,
       "heute_voller_mindestlohn": 1435,
       "abstand_arbeit_pct": 26
      }
@@ -134,24 +134,24 @@
      "alleinstehend": {
       "boden": 801,
       "ohne_erwerb": 795,
-      "halber_mindestlohn": 1144,
-      "voller_mindestlohn": 1568,
+      "halber_mindestlohn": 1142,
+      "voller_mindestlohn": 1556,
       "heute_voller_mindestlohn": 1314,
-      "abstand_arbeit_pct": 97
+      "abstand_arbeit_pct": 96
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1041,
-      "ohne_erwerb": 1031,
-      "halber_mindestlohn": 1383,
-      "voller_mindestlohn": 1736,
+      "ohne_erwerb": 1030,
+      "halber_mindestlohn": 1380,
+      "voller_mindestlohn": 1723,
       "heute_voller_mindestlohn": 1412,
-      "abstand_arbeit_pct": 68
+      "abstand_arbeit_pct": 67
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 1682,
-      "ohne_erwerb": 1662,
-      "halber_mindestlohn": 2019,
-      "voller_mindestlohn": 2282,
+      "ohne_erwerb": 1659,
+      "halber_mindestlohn": 2016,
+      "voller_mindestlohn": 2275,
       "heute_voller_mindestlohn": 1492,
       "abstand_arbeit_pct": 37
      }
@@ -171,32 +171,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 2819,
-      "ohne_erwerb": 2810,
-      "halber_mindestlohn": 3910,
-      "voller_mindestlohn": 5143,
+      "ohne_erwerb": 2807,
+      "halber_mindestlohn": 3904,
+      "voller_mindestlohn": 5112,
       "heute_voller_mindestlohn": 3606,
-      "abstand_arbeit_pct": 83
+      "abstand_arbeit_pct": 82
      },
      "alleinerziehend, 1 Kind": {
       "boden": 3665,
-      "ohne_erwerb": 3647,
-      "halber_mindestlohn": 4752,
-      "voller_mindestlohn": 5750,
+      "ohne_erwerb": 3643,
+      "halber_mindestlohn": 4745,
+      "voller_mindestlohn": 5717,
       "heute_voller_mindestlohn": 4667,
-      "abstand_arbeit_pct": 58
+      "abstand_arbeit_pct": 57
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 5921,
-      "ohne_erwerb": 5885,
-      "halber_mindestlohn": 7000,
-      "voller_mindestlohn": 7858,
+      "ohne_erwerb": 5876,
+      "halber_mindestlohn": 6991,
+      "voller_mindestlohn": 7840,
       "heute_voller_mindestlohn": 5559,
-      "abstand_arbeit_pct": 34
+      "abstand_arbeit_pct": 33
      }
     },
     "anteil_mit_mehr": {
      "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
     "kosten_pct_bip": [
@@ -211,32 +211,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 1029,
-      "ohne_erwerb": 1013,
-      "halber_mindestlohn": 1510,
-      "voller_mindestlohn": 2280,
+      "ohne_erwerb": 1012,
+      "halber_mindestlohn": 1507,
+      "voller_mindestlohn": 2264,
       "heute_voller_mindestlohn": 1687,
-      "abstand_arbeit_pct": 125
+      "abstand_arbeit_pct": 124
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1492,
-      "ohne_erwerb": 1464,
-      "halber_mindestlohn": 1968,
-      "voller_mindestlohn": 2553,
+      "ohne_erwerb": 1462,
+      "halber_mindestlohn": 1964,
+      "voller_mindestlohn": 2536,
       "heute_voller_mindestlohn": 1962,
-      "abstand_arbeit_pct": 74
+      "abstand_arbeit_pct": 73
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2470,
-      "ohne_erwerb": 2414,
-      "halber_mindestlohn": 2934,
-      "voller_mindestlohn": 3301,
+      "ohne_erwerb": 2410,
+      "halber_mindestlohn": 2929,
+      "voller_mindestlohn": 3291,
       "heute_voller_mindestlohn": 3012,
       "abstand_arbeit_pct": 37
      }
     },
     "anteil_mit_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 87,
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 84,
      "Paar, ein Einkommen, 2 Kinder": 84
     },
     "kosten_pct_bip": [
@@ -249,25 +249,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 971,
-      "ohne_erwerb": 962,
-      "halber_mindestlohn": 1301,
-      "voller_mindestlohn": 1561,
+      "ohne_erwerb": 961,
+      "halber_mindestlohn": 1299,
+      "voller_mindestlohn": 1557,
       "heute_voller_mindestlohn": 1702,
       "abstand_arbeit_pct": 62
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1408,
-      "ohne_erwerb": 1392,
-      "halber_mindestlohn": 1735,
-      "voller_mindestlohn": 1995,
+      "ohne_erwerb": 1391,
+      "halber_mindestlohn": 1733,
+      "voller_mindestlohn": 1991,
       "heute_voller_mindestlohn": 2036,
       "abstand_arbeit_pct": 43
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2330,
-      "ohne_erwerb": 2298,
-      "halber_mindestlohn": 2650,
-      "voller_mindestlohn": 2911,
+      "ohne_erwerb": 2296,
+      "halber_mindestlohn": 2647,
+      "voller_mindestlohn": 2906,
       "heute_voller_mindestlohn": 2530,
       "abstand_arbeit_pct": 27
      }
@@ -287,25 +287,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 862,
-      "ohne_erwerb": 855,
-      "halber_mindestlohn": 1110,
-      "voller_mindestlohn": 1313,
+      "ohne_erwerb": 854,
+      "halber_mindestlohn": 1108,
+      "voller_mindestlohn": 1310,
       "heute_voller_mindestlohn": 989,
-      "abstand_arbeit_pct": 54
+      "abstand_arbeit_pct": 53
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1250,
-      "ohne_erwerb": 1238,
-      "halber_mindestlohn": 1495,
-      "voller_mindestlohn": 1699,
+      "ohne_erwerb": 1236,
+      "halber_mindestlohn": 1493,
+      "voller_mindestlohn": 1695,
       "heute_voller_mindestlohn": 1190,
       "abstand_arbeit_pct": 37
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2069,
-      "ohne_erwerb": 2044,
-      "halber_mindestlohn": 2308,
-      "voller_mindestlohn": 2513,
+      "ohne_erwerb": 2040,
+      "halber_mindestlohn": 2305,
+      "voller_mindestlohn": 2508,
       "heute_voller_mindestlohn": 1435,
       "abstand_arbeit_pct": 23
      }
@@ -326,26 +326,26 @@
      "alleinstehend": {
       "boden": 801,
       "ohne_erwerb": 795,
-      "halber_mindestlohn": 1144,
-      "voller_mindestlohn": 1568,
+      "halber_mindestlohn": 1142,
+      "voller_mindestlohn": 1556,
       "heute_voller_mindestlohn": 1314,
-      "abstand_arbeit_pct": 97
+      "abstand_arbeit_pct": 96
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1161,
-      "ohne_erwerb": 1151,
-      "halber_mindestlohn": 1503,
-      "voller_mindestlohn": 1765,
+      "ohne_erwerb": 1150,
+      "halber_mindestlohn": 1500,
+      "voller_mindestlohn": 1759,
       "heute_voller_mindestlohn": 1412,
       "abstand_arbeit_pct": 53
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 1922,
-      "ohne_erwerb": 1902,
-      "halber_mindestlohn": 2260,
-      "voller_mindestlohn": 2522,
+      "ohne_erwerb": 1899,
+      "halber_mindestlohn": 2256,
+      "voller_mindestlohn": 2515,
       "heute_voller_mindestlohn": 1492,
-      "abstand_arbeit_pct": 33
+      "abstand_arbeit_pct": 32
      }
     },
     "anteil_mit_mehr": {
@@ -363,32 +363,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 2819,
-      "ohne_erwerb": 2810,
-      "halber_mindestlohn": 3910,
-      "voller_mindestlohn": 5143,
+      "ohne_erwerb": 2807,
+      "halber_mindestlohn": 3904,
+      "voller_mindestlohn": 5112,
       "heute_voller_mindestlohn": 3606,
-      "abstand_arbeit_pct": 83
+      "abstand_arbeit_pct": 82
      },
      "alleinerziehend, 1 Kind": {
       "boden": 4088,
-      "ohne_erwerb": 4070,
-      "halber_mindestlohn": 5175,
-      "voller_mindestlohn": 6033,
+      "ohne_erwerb": 4066,
+      "halber_mindestlohn": 5168,
+      "voller_mindestlohn": 6016,
       "heute_voller_mindestlohn": 4667,
       "abstand_arbeit_pct": 48
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 6767,
-      "ohne_erwerb": 6731,
-      "halber_mindestlohn": 7846,
-      "voller_mindestlohn": 8704,
+      "ohne_erwerb": 6722,
+      "halber_mindestlohn": 7836,
+      "voller_mindestlohn": 8686,
       "heute_voller_mindestlohn": 5559,
       "abstand_arbeit_pct": 29
      }
     },
     "anteil_mit_mehr": {
      "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
     "kosten_pct_bip": [
@@ -403,32 +403,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 1029,
-      "ohne_erwerb": 1013,
-      "halber_mindestlohn": 1510,
-      "voller_mindestlohn": 2280,
+      "ohne_erwerb": 1012,
+      "halber_mindestlohn": 1507,
+      "voller_mindestlohn": 2264,
       "heute_voller_mindestlohn": 1687,
-      "abstand_arbeit_pct": 125
+      "abstand_arbeit_pct": 124
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1544,
-      "ohne_erwerb": 1515,
-      "halber_mindestlohn": 2019,
-      "voller_mindestlohn": 2553,
+      "ohne_erwerb": 1513,
+      "halber_mindestlohn": 2015,
+      "voller_mindestlohn": 2536,
       "heute_voller_mindestlohn": 1962,
-      "abstand_arbeit_pct": 69
+      "abstand_arbeit_pct": 68
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2572,
-      "ohne_erwerb": 2517,
-      "halber_mindestlohn": 3037,
-      "voller_mindestlohn": 3403,
+      "ohne_erwerb": 2513,
+      "halber_mindestlohn": 3032,
+      "voller_mindestlohn": 3394,
       "heute_voller_mindestlohn": 3012,
       "abstand_arbeit_pct": 35
      }
     },
     "anteil_mit_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 84
     },
     "kosten_pct_bip": [
@@ -441,27 +441,27 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 971,
-      "ohne_erwerb": 962,
-      "halber_mindestlohn": 1301,
-      "voller_mindestlohn": 1561,
+      "ohne_erwerb": 961,
+      "halber_mindestlohn": 1299,
+      "voller_mindestlohn": 1557,
       "heute_voller_mindestlohn": 1702,
       "abstand_arbeit_pct": 62
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1456,
-      "ohne_erwerb": 1440,
-      "halber_mindestlohn": 1783,
-      "voller_mindestlohn": 2043,
+      "ohne_erwerb": 1439,
+      "halber_mindestlohn": 1781,
+      "voller_mindestlohn": 2039,
       "heute_voller_mindestlohn": 2036,
       "abstand_arbeit_pct": 42
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2428,
-      "ohne_erwerb": 2395,
-      "halber_mindestlohn": 2747,
-      "voller_mindestlohn": 3008,
+      "ohne_erwerb": 2393,
+      "halber_mindestlohn": 2744,
+      "voller_mindestlohn": 3003,
       "heute_voller_mindestlohn": 2530,
-      "abstand_arbeit_pct": 26
+      "abstand_arbeit_pct": 25
      }
     },
     "anteil_mit_mehr": {
@@ -479,25 +479,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 862,
-      "ohne_erwerb": 855,
-      "halber_mindestlohn": 1110,
-      "voller_mindestlohn": 1313,
+      "ohne_erwerb": 854,
+      "halber_mindestlohn": 1108,
+      "voller_mindestlohn": 1310,
       "heute_voller_mindestlohn": 989,
-      "abstand_arbeit_pct": 54
+      "abstand_arbeit_pct": 53
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1293,
-      "ohne_erwerb": 1281,
-      "halber_mindestlohn": 1538,
-      "voller_mindestlohn": 1742,
+      "ohne_erwerb": 1279,
+      "halber_mindestlohn": 1536,
+      "voller_mindestlohn": 1738,
       "heute_voller_mindestlohn": 1190,
       "abstand_arbeit_pct": 36
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2155,
-      "ohne_erwerb": 2130,
-      "halber_mindestlohn": 2394,
-      "voller_mindestlohn": 2599,
+      "ohne_erwerb": 2127,
+      "halber_mindestlohn": 2392,
+      "voller_mindestlohn": 2594,
       "heute_voller_mindestlohn": 1435,
       "abstand_arbeit_pct": 22
      }
@@ -518,24 +518,24 @@
      "alleinstehend": {
       "boden": 801,
       "ohne_erwerb": 795,
-      "halber_mindestlohn": 1144,
-      "voller_mindestlohn": 1568,
+      "halber_mindestlohn": 1142,
+      "voller_mindestlohn": 1556,
       "heute_voller_mindestlohn": 1314,
-      "abstand_arbeit_pct": 97
+      "abstand_arbeit_pct": 96
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1202,
-      "ohne_erwerb": 1191,
-      "halber_mindestlohn": 1543,
-      "voller_mindestlohn": 1805,
+      "ohne_erwerb": 1190,
+      "halber_mindestlohn": 1540,
+      "voller_mindestlohn": 1799,
       "heute_voller_mindestlohn": 1412,
-      "abstand_arbeit_pct": 52
+      "abstand_arbeit_pct": 51
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2002,
-      "ohne_erwerb": 1982,
-      "halber_mindestlohn": 2340,
-      "voller_mindestlohn": 2602,
+      "ohne_erwerb": 1979,
+      "halber_mindestlohn": 2336,
+      "voller_mindestlohn": 2596,
       "heute_voller_mindestlohn": 1492,
       "abstand_arbeit_pct": 31
      }
@@ -555,32 +555,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 2819,
-      "ohne_erwerb": 2810,
-      "halber_mindestlohn": 3910,
-      "voller_mindestlohn": 5143,
+      "ohne_erwerb": 2807,
+      "halber_mindestlohn": 3904,
+      "voller_mindestlohn": 5112,
       "heute_voller_mindestlohn": 3606,
-      "abstand_arbeit_pct": 83
+      "abstand_arbeit_pct": 82
      },
      "alleinerziehend, 1 Kind": {
       "boden": 4229,
-      "ohne_erwerb": 4211,
-      "halber_mindestlohn": 5316,
-      "voller_mindestlohn": 6174,
+      "ohne_erwerb": 4207,
+      "halber_mindestlohn": 5309,
+      "voller_mindestlohn": 6157,
       "heute_voller_mindestlohn": 4667,
-      "abstand_arbeit_pct": 47
+      "abstand_arbeit_pct": 46
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 7049,
-      "ohne_erwerb": 7013,
-      "halber_mindestlohn": 8128,
-      "voller_mindestlohn": 8986,
+      "ohne_erwerb": 7004,
+      "halber_mindestlohn": 8118,
+      "voller_mindestlohn": 8968,
       "heute_voller_mindestlohn": 5559,
       "abstand_arbeit_pct": 28
      }
     },
     "anteil_mit_mehr": {
      "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
     "kosten_pct_bip": [
@@ -595,32 +595,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 1029,
-      "ohne_erwerb": 1013,
-      "halber_mindestlohn": 1510,
-      "voller_mindestlohn": 2280,
+      "ohne_erwerb": 1012,
+      "halber_mindestlohn": 1507,
+      "voller_mindestlohn": 2264,
       "heute_voller_mindestlohn": 1687,
-      "abstand_arbeit_pct": 125
+      "abstand_arbeit_pct": 124
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1595,
-      "ohne_erwerb": 1567,
-      "halber_mindestlohn": 2071,
-      "voller_mindestlohn": 2553,
+      "ohne_erwerb": 1565,
+      "halber_mindestlohn": 2067,
+      "voller_mindestlohn": 2536,
       "heute_voller_mindestlohn": 1962,
-      "abstand_arbeit_pct": 63
+      "abstand_arbeit_pct": 62
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2675,
-      "ohne_erwerb": 2620,
-      "halber_mindestlohn": 3139,
-      "voller_mindestlohn": 3506,
+      "ohne_erwerb": 2616,
+      "halber_mindestlohn": 3135,
+      "voller_mindestlohn": 3497,
       "heute_voller_mindestlohn": 3012,
       "abstand_arbeit_pct": 34
      }
     },
     "anteil_mit_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
@@ -633,32 +633,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 971,
-      "ohne_erwerb": 962,
-      "halber_mindestlohn": 1301,
-      "voller_mindestlohn": 1561,
+      "ohne_erwerb": 961,
+      "halber_mindestlohn": 1299,
+      "voller_mindestlohn": 1557,
       "heute_voller_mindestlohn": 1702,
       "abstand_arbeit_pct": 62
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1505,
-      "ohne_erwerb": 1489,
-      "halber_mindestlohn": 1832,
-      "voller_mindestlohn": 2092,
+      "ohne_erwerb": 1488,
+      "halber_mindestlohn": 1830,
+      "voller_mindestlohn": 2088,
       "heute_voller_mindestlohn": 2036,
       "abstand_arbeit_pct": 40
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2525,
-      "ohne_erwerb": 2492,
-      "halber_mindestlohn": 2844,
-      "voller_mindestlohn": 3105,
+      "ohne_erwerb": 2490,
+      "halber_mindestlohn": 2842,
+      "voller_mindestlohn": 3100,
       "heute_voller_mindestlohn": 2530,
-      "abstand_arbeit_pct": 25
+      "abstand_arbeit_pct": 24
      }
     },
     "anteil_mit_mehr": {
      "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 73,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
     "kosten_pct_bip": [
@@ -671,25 +671,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 862,
-      "ohne_erwerb": 855,
-      "halber_mindestlohn": 1110,
-      "voller_mindestlohn": 1313,
+      "ohne_erwerb": 854,
+      "halber_mindestlohn": 1108,
+      "voller_mindestlohn": 1310,
       "heute_voller_mindestlohn": 989,
-      "abstand_arbeit_pct": 54
+      "abstand_arbeit_pct": 53
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1336,
-      "ohne_erwerb": 1324,
-      "halber_mindestlohn": 1581,
-      "voller_mindestlohn": 1785,
+      "ohne_erwerb": 1322,
+      "halber_mindestlohn": 1579,
+      "voller_mindestlohn": 1781,
       "heute_voller_mindestlohn": 1190,
       "abstand_arbeit_pct": 35
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2241,
-      "ohne_erwerb": 2217,
-      "halber_mindestlohn": 2481,
-      "voller_mindestlohn": 2685,
+      "ohne_erwerb": 2213,
+      "halber_mindestlohn": 2478,
+      "voller_mindestlohn": 2680,
       "heute_voller_mindestlohn": 1435,
       "abstand_arbeit_pct": 21
      }
@@ -710,24 +710,24 @@
      "alleinstehend": {
       "boden": 801,
       "ohne_erwerb": 795,
-      "halber_mindestlohn": 1144,
-      "voller_mindestlohn": 1568,
+      "halber_mindestlohn": 1142,
+      "voller_mindestlohn": 1556,
       "heute_voller_mindestlohn": 1314,
-      "abstand_arbeit_pct": 97
+      "abstand_arbeit_pct": 96
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1242,
-      "ohne_erwerb": 1232,
-      "halber_mindestlohn": 1583,
-      "voller_mindestlohn": 1845,
+      "ohne_erwerb": 1230,
+      "halber_mindestlohn": 1580,
+      "voller_mindestlohn": 1839,
       "heute_voller_mindestlohn": 1412,
       "abstand_arbeit_pct": 50
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2083,
-      "ohne_erwerb": 2063,
-      "halber_mindestlohn": 2420,
-      "voller_mindestlohn": 2682,
+      "ohne_erwerb": 2060,
+      "halber_mindestlohn": 2416,
+      "voller_mindestlohn": 2676,
       "heute_voller_mindestlohn": 1492,
       "abstand_arbeit_pct": 30
      }
@@ -747,32 +747,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 2819,
-      "ohne_erwerb": 2810,
-      "halber_mindestlohn": 3910,
-      "voller_mindestlohn": 5143,
+      "ohne_erwerb": 2807,
+      "halber_mindestlohn": 3904,
+      "voller_mindestlohn": 5112,
       "heute_voller_mindestlohn": 3606,
-      "abstand_arbeit_pct": 83
+      "abstand_arbeit_pct": 82
      },
      "alleinerziehend, 1 Kind": {
       "boden": 4370,
-      "ohne_erwerb": 4352,
-      "halber_mindestlohn": 5457,
-      "voller_mindestlohn": 6315,
+      "ohne_erwerb": 4348,
+      "halber_mindestlohn": 5450,
+      "voller_mindestlohn": 6298,
       "heute_voller_mindestlohn": 4667,
       "abstand_arbeit_pct": 45
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 7330,
-      "ohne_erwerb": 7295,
-      "halber_mindestlohn": 8410,
-      "voller_mindestlohn": 9268,
+      "ohne_erwerb": 7286,
+      "halber_mindestlohn": 8400,
+      "voller_mindestlohn": 9250,
       "heute_voller_mindestlohn": 5559,
       "abstand_arbeit_pct": 27
      }
     },
     "anteil_mit_mehr": {
      "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
     "kosten_pct_bip": [
@@ -787,32 +787,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 1029,
-      "ohne_erwerb": 1013,
-      "halber_mindestlohn": 1510,
-      "voller_mindestlohn": 2280,
+      "ohne_erwerb": 1012,
+      "halber_mindestlohn": 1507,
+      "voller_mindestlohn": 2264,
       "heute_voller_mindestlohn": 1687,
-      "abstand_arbeit_pct": 125
+      "abstand_arbeit_pct": 124
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1749,
-      "ohne_erwerb": 1721,
-      "halber_mindestlohn": 2225,
-      "voller_mindestlohn": 2591,
+      "ohne_erwerb": 1719,
+      "halber_mindestlohn": 2221,
+      "voller_mindestlohn": 2582,
       "heute_voller_mindestlohn": 1962,
-      "abstand_arbeit_pct": 51
+      "abstand_arbeit_pct": 50
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2984,
-      "ohne_erwerb": 2929,
-      "halber_mindestlohn": 3448,
-      "voller_mindestlohn": 3815,
+      "ohne_erwerb": 2925,
+      "halber_mindestlohn": 3443,
+      "voller_mindestlohn": 3806,
       "heute_voller_mindestlohn": 3012,
       "abstand_arbeit_pct": 30
      }
     },
     "anteil_mit_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
@@ -825,25 +825,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 971,
-      "ohne_erwerb": 962,
-      "halber_mindestlohn": 1301,
-      "voller_mindestlohn": 1561,
+      "ohne_erwerb": 961,
+      "halber_mindestlohn": 1299,
+      "voller_mindestlohn": 1557,
       "heute_voller_mindestlohn": 1702,
       "abstand_arbeit_pct": 62
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1651,
-      "ohne_erwerb": 1634,
-      "halber_mindestlohn": 1977,
-      "voller_mindestlohn": 2238,
+      "ohne_erwerb": 1633,
+      "halber_mindestlohn": 1976,
+      "voller_mindestlohn": 2233,
       "heute_voller_mindestlohn": 2036,
       "abstand_arbeit_pct": 37
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2816,
-      "ohne_erwerb": 2783,
-      "halber_mindestlohn": 3135,
-      "voller_mindestlohn": 3396,
+      "ohne_erwerb": 2781,
+      "halber_mindestlohn": 3133,
+      "voller_mindestlohn": 3391,
       "heute_voller_mindestlohn": 2530,
       "abstand_arbeit_pct": 22
      }
@@ -863,25 +863,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 862,
-      "ohne_erwerb": 855,
-      "halber_mindestlohn": 1110,
-      "voller_mindestlohn": 1313,
+      "ohne_erwerb": 854,
+      "halber_mindestlohn": 1108,
+      "voller_mindestlohn": 1310,
       "heute_voller_mindestlohn": 989,
-      "abstand_arbeit_pct": 54
+      "abstand_arbeit_pct": 53
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1465,
-      "ohne_erwerb": 1453,
-      "halber_mindestlohn": 1710,
-      "voller_mindestlohn": 1914,
+      "ohne_erwerb": 1451,
+      "halber_mindestlohn": 1708,
+      "voller_mindestlohn": 1910,
       "heute_voller_mindestlohn": 1190,
       "abstand_arbeit_pct": 32
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2500,
-      "ohne_erwerb": 2475,
-      "halber_mindestlohn": 2739,
-      "voller_mindestlohn": 2944,
+      "ohne_erwerb": 2471,
+      "halber_mindestlohn": 2736,
+      "voller_mindestlohn": 2939,
       "heute_voller_mindestlohn": 1435,
       "abstand_arbeit_pct": 19
      }
@@ -902,24 +902,24 @@
      "alleinstehend": {
       "boden": 801,
       "ohne_erwerb": 795,
-      "halber_mindestlohn": 1144,
-      "voller_mindestlohn": 1568,
+      "halber_mindestlohn": 1142,
+      "voller_mindestlohn": 1556,
       "heute_voller_mindestlohn": 1314,
-      "abstand_arbeit_pct": 97
+      "abstand_arbeit_pct": 96
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1362,
-      "ohne_erwerb": 1352,
-      "halber_mindestlohn": 1703,
-      "voller_mindestlohn": 1965,
+      "ohne_erwerb": 1350,
+      "halber_mindestlohn": 1700,
+      "voller_mindestlohn": 1959,
       "heute_voller_mindestlohn": 1412,
       "abstand_arbeit_pct": 45
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2323,
-      "ohne_erwerb": 2303,
-      "halber_mindestlohn": 2660,
-      "voller_mindestlohn": 2923,
+      "ohne_erwerb": 2300,
+      "halber_mindestlohn": 2657,
+      "voller_mindestlohn": 2916,
       "heute_voller_mindestlohn": 1492,
       "abstand_arbeit_pct": 27
      }
@@ -939,32 +939,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 2819,
-      "ohne_erwerb": 2810,
-      "halber_mindestlohn": 3910,
-      "voller_mindestlohn": 5143,
+      "ohne_erwerb": 2807,
+      "halber_mindestlohn": 3904,
+      "voller_mindestlohn": 5112,
       "heute_voller_mindestlohn": 3606,
-      "abstand_arbeit_pct": 83
+      "abstand_arbeit_pct": 82
      },
      "alleinerziehend, 1 Kind": {
       "boden": 4793,
-      "ohne_erwerb": 4775,
-      "halber_mindestlohn": 5880,
-      "voller_mindestlohn": 6738,
+      "ohne_erwerb": 4771,
+      "halber_mindestlohn": 5873,
+      "voller_mindestlohn": 6721,
       "heute_voller_mindestlohn": 4667,
       "abstand_arbeit_pct": 41
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 8176,
-      "ohne_erwerb": 8141,
-      "halber_mindestlohn": 9256,
-      "voller_mindestlohn": 10114,
+      "ohne_erwerb": 8132,
+      "halber_mindestlohn": 9246,
+      "voller_mindestlohn": 10095,
       "heute_voller_mindestlohn": 5559,
       "abstand_arbeit_pct": 24
      }
     },
     "anteil_mit_mehr": {
      "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
     "kosten_pct_bip": [
@@ -979,32 +979,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 1029,
-      "ohne_erwerb": 1013,
-      "halber_mindestlohn": 1510,
-      "voller_mindestlohn": 2280,
+      "ohne_erwerb": 1012,
+      "halber_mindestlohn": 1507,
+      "voller_mindestlohn": 2264,
       "heute_voller_mindestlohn": 1687,
-      "abstand_arbeit_pct": 125
+      "abstand_arbeit_pct": 124
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1852,
-      "ohne_erwerb": 1824,
-      "halber_mindestlohn": 2328,
-      "voller_mindestlohn": 2693,
+      "ohne_erwerb": 1822,
+      "halber_mindestlohn": 2324,
+      "voller_mindestlohn": 2685,
       "heute_voller_mindestlohn": 1962,
-      "abstand_arbeit_pct": 48
+      "abstand_arbeit_pct": 47
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 3190,
-      "ohne_erwerb": 3134,
-      "halber_mindestlohn": 3654,
-      "voller_mindestlohn": 4021,
+      "ohne_erwerb": 3130,
+      "halber_mindestlohn": 3649,
+      "voller_mindestlohn": 4012,
       "heute_voller_mindestlohn": 3012,
       "abstand_arbeit_pct": 28
      }
     },
     "anteil_mit_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
@@ -1017,25 +1017,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 971,
-      "ohne_erwerb": 962,
-      "halber_mindestlohn": 1301,
-      "voller_mindestlohn": 1561,
+      "ohne_erwerb": 961,
+      "halber_mindestlohn": 1299,
+      "voller_mindestlohn": 1557,
       "heute_voller_mindestlohn": 1702,
       "abstand_arbeit_pct": 62
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1748,
-      "ohne_erwerb": 1731,
-      "halber_mindestlohn": 2075,
-      "voller_mindestlohn": 2335,
+      "ohne_erwerb": 1730,
+      "halber_mindestlohn": 2073,
+      "voller_mindestlohn": 2331,
       "heute_voller_mindestlohn": 2036,
       "abstand_arbeit_pct": 35
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 3010,
-      "ohne_erwerb": 2977,
-      "halber_mindestlohn": 3329,
-      "voller_mindestlohn": 3590,
+      "ohne_erwerb": 2975,
+      "halber_mindestlohn": 3327,
+      "voller_mindestlohn": 3586,
       "heute_voller_mindestlohn": 2530,
       "abstand_arbeit_pct": 21
      }
@@ -1055,25 +1055,25 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 862,
-      "ohne_erwerb": 855,
-      "halber_mindestlohn": 1110,
-      "voller_mindestlohn": 1313,
+      "ohne_erwerb": 854,
+      "halber_mindestlohn": 1108,
+      "voller_mindestlohn": 1310,
       "heute_voller_mindestlohn": 989,
-      "abstand_arbeit_pct": 54
+      "abstand_arbeit_pct": 53
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1552,
-      "ohne_erwerb": 1539,
-      "halber_mindestlohn": 1797,
-      "voller_mindestlohn": 2001,
+      "ohne_erwerb": 1537,
+      "halber_mindestlohn": 1794,
+      "voller_mindestlohn": 1997,
       "heute_voller_mindestlohn": 1190,
       "abstand_arbeit_pct": 30
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2672,
-      "ohne_erwerb": 2648,
-      "halber_mindestlohn": 2912,
-      "voller_mindestlohn": 3116,
+      "ohne_erwerb": 2644,
+      "halber_mindestlohn": 2909,
+      "voller_mindestlohn": 3111,
       "heute_voller_mindestlohn": 1435,
       "abstand_arbeit_pct": 18
      }
@@ -1094,24 +1094,24 @@
      "alleinstehend": {
       "boden": 801,
       "ohne_erwerb": 795,
-      "halber_mindestlohn": 1144,
-      "voller_mindestlohn": 1568,
+      "halber_mindestlohn": 1142,
+      "voller_mindestlohn": 1556,
       "heute_voller_mindestlohn": 1314,
-      "abstand_arbeit_pct": 97
+      "abstand_arbeit_pct": 96
      },
      "alleinerziehend, 1 Kind": {
       "boden": 1442,
-      "ohne_erwerb": 1432,
-      "halber_mindestlohn": 1783,
-      "voller_mindestlohn": 2045,
+      "ohne_erwerb": 1430,
+      "halber_mindestlohn": 1781,
+      "voller_mindestlohn": 2039,
       "heute_voller_mindestlohn": 1412,
       "abstand_arbeit_pct": 43
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 2483,
-      "ohne_erwerb": 2463,
-      "halber_mindestlohn": 2820,
-      "voller_mindestlohn": 3083,
+      "ohne_erwerb": 2460,
+      "halber_mindestlohn": 2817,
+      "voller_mindestlohn": 3076,
       "heute_voller_mindestlohn": 1492,
       "abstand_arbeit_pct": 25
      }
@@ -1131,32 +1131,32 @@
     "haushalte": {
      "alleinstehend": {
       "boden": 2819,
-      "ohne_erwerb": 2810,
-      "halber_mindestlohn": 3910,
-      "voller_mindestlohn": 5143,
+      "ohne_erwerb": 2807,
+      "halber_mindestlohn": 3904,
+      "voller_mindestlohn": 5112,
       "heute_voller_mindestlohn": 3606,
-      "abstand_arbeit_pct": 83
+      "abstand_arbeit_pct": 82
      },
      "alleinerziehend, 1 Kind": {
       "boden": 5075,
-      "ohne_erwerb": 5057,
-      "halber_mindestlohn": 6162,
-      "voller_mindestlohn": 7019,
+      "ohne_erwerb": 5053,
+      "halber_mindestlohn": 6155,
+      "voller_mindestlohn": 7003,
       "heute_voller_mindestlohn": 4667,
       "abstand_arbeit_pct": 39
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "boden": 8740,
-      "ohne_erwerb": 8705,
-      "halber_mindestlohn": 9820,
-      "voller_mindestlohn": 10678,
+      "ohne_erwerb": 8696,
+      "halber_mindestlohn": 9810,
+      "voller_mindestlohn": 10659,
       "heute_voller_mindestlohn": 5559,
       "abstand_arbeit_pct": 23
      }
     },
     "anteil_mit_mehr": {
      "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
     "kosten_pct_bip": [

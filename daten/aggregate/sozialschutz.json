@@ -198,66 +198,66 @@
   "gesundheit_heute": 7.75
  },
  "z": {
-  "z_2028": 8.861,
+  "z_2028": 8.816,
   "z_max": {
    "jahr": 2030,
-   "z_pct_bip": 8.928,
-   "z_ohne_skalierung": 9.361
+   "z_pct_bip": 8.894,
+   "z_ohne_skalierung": 9.523
   },
-  "unter_0_1_ab": 2074,
-  "kumuliert_pct_bip_jahre": 254.3,
-  "z_2028_ohne_skalierung": 9.29,
+  "unter_0_1_ab": 2092,
+  "kumuliert_pct_bip_jahre": 304.9,
+  "z_2028_ohne_skalierung": 9.44,
   "skalierung_tabelle29": {
-   "BE": 0.98,
+   "BE": 0.96,
    "DK": 0.12,
-   "DE": 0.97,
+   "DE": 0.95,
    "EE": 1.0,
    "IE": 1.0,
-   "FR": 0.96,
+   "FR": 0.94,
    "NL": 1.0,
    "AT": 1.0,
    "SI": 1.0,
    "ES": 1.0
   },
   "je_land_2028": {
-   "BE": 9.264,
-   "DK": 0.0,
-   "DE": 8.959,
-   "EE": 5.773,
-   "IE": 1.397,
-   "FR": 11.399,
-   "NL": 3.767,
-   "AT": 14.021,
-   "SI": 9.237,
-   "ES": 10.646
+   "BE": 9.134,
+   "DK": 0.156,
+   "DE": 8.828,
+   "EE": 5.922,
+   "IE": 1.552,
+   "FR": 11.21,
+   "NL": 3.923,
+   "AT": 14.174,
+   "SI": 9.391,
+   "ES": 10.799
   },
   "je_land_2050": {
-   "BE": 6.865,
-   "DK": 0.0,
-   "DE": 6.09,
-   "EE": 3.5,
-   "IE": 0.713,
-   "FR": 7.44,
-   "NL": 2.297,
-   "AT": 9.263,
-   "SI": 7.806,
-   "ES": 8.903
+   "BE": 7.315,
+   "DK": 0.102,
+   "DE": 6.599,
+   "EE": 4.177,
+   "IE": 1.65,
+   "FR": 7.758,
+   "NL": 3.163,
+   "AT": 9.754,
+   "SI": 8.698,
+   "ES": 9.657
   },
   "pfad_klub": {
-   "2030": 8.928,
-   "2035": 8.778,
-   "2040": 8.31,
-   "2045": 7.389,
-   "2050": 6.157,
-   "2055": 4.801,
-   "2060": 3.462,
-   "2065": 2.155,
-   "2070": 0.896,
-   "2075": 0.019,
-   "2080": 0.0,
-   "2085": 0.0,
-   "2090": 0.0,
-   "2095": 0.0,
+   "2030": 8.894,
+   "2035": 8.736,
+   "2040": 8.355,
+   "2045": 7.623,
+   "2050": 6.69,
+   "2055": 5.691,
+   "2060": 4.71,
+   "2065": 3.766,
+   "2070": 2.833,
+   "2075": 1.897,
+   "2080": 1.104,
+   "2085": 0.53,
+   "2090": 0.167,
+   "2095": 0.008,
    "2100": 0.0
   }
  },
@@ -265,16 +265,16 @@
   {
    "gesundheit_huette_pct": 0,
    "z_schuldanteil": 0.0,
-   "zusatz_quote_2028": 9.51,
-   "quote_2028": 39.71,
-   "luecke_2028": 9.27
+   "zusatz_quote_2028": 9.47,
+   "quote_2028": 39.67,
+   "luecke_2028": 9.23
   },
   {
    "gesundheit_huette_pct": 0,
    "z_schuldanteil": 0.5,
-   "zusatz_quote_2028": 5.08,
-   "quote_2028": 35.28,
-   "luecke_2028": 4.84
+   "zusatz_quote_2028": 5.06,
+   "quote_2028": 35.26,
+   "luecke_2028": 4.82
   },
   {
    "gesundheit_huette_pct": 0,
@@ -286,16 +286,16 @@
   {
    "gesundheit_huette_pct": 50,
    "z_schuldanteil": 0.0,
-   "zusatz_quote_2028": 13.39,
-   "quote_2028": 43.59,
-   "luecke_2028": 13.15
+   "zusatz_quote_2028": 13.34,
+   "quote_2028": 43.54,
+   "luecke_2028": 13.1
   },
   {
    "gesundheit_huette_pct": 50,
    "z_schuldanteil": 0.5,
-   "zusatz_quote_2028": 8.96,
-   "quote_2028": 39.16,
-   "luecke_2028": 8.72
+   "zusatz_quote_2028": 8.93,
+   "quote_2028": 39.13,
+   "luecke_2028": 8.69
   },
   {
    "gesundheit_huette_pct": 50,
@@ -307,16 +307,16 @@
   {
    "gesundheit_huette_pct": 65,
    "z_schuldanteil": 0.0,
-   "zusatz_quote_2028": 14.55,
-   "quote_2028": 44.75,
-   "luecke_2028": 14.31
+   "zusatz_quote_2028": 14.5,
+   "quote_2028": 44.7,
+   "luecke_2028": 14.26
   },
   {
    "gesundheit_huette_pct": 65,
    "z_schuldanteil": 0.5,
-   "zusatz_quote_2028": 10.12,
-   "quote_2028": 40.32,
-   "luecke_2028": 9.88
+   "zusatz_quote_2028": 10.1,
+   "quote_2028": 40.3,
+   "luecke_2028": 9.86
   },
   {
    "gesundheit_huette_pct": 65,
@@ -328,16 +328,16 @@
   {
    "gesundheit_huette_pct": 90,
    "z_schuldanteil": 0.0,
-   "zusatz_quote_2028": 16.49,
-   "quote_2028": 46.69,
-   "luecke_2028": 16.25
+   "zusatz_quote_2028": 16.44,
+   "quote_2028": 46.64,
+   "luecke_2028": 16.2
   },
   {
    "gesundheit_huette_pct": 90,
    "z_schuldanteil": 0.5,
-   "zusatz_quote_2028": 12.06,
-   "quote_2028": 42.26,
-   "luecke_2028": 11.82
+   "zusatz_quote_2028": 12.03,
+   "quote_2028": 42.23,
+   "luecke_2028": 11.79
   },
   {
    "gesundheit_huette_pct": 90,
@@ -353,14 +353,14 @@
   "hinweis": "Dividende + Route + Seil + Härtefall (Mitte), nach dem Auslauf von Z"
  },
  "schuldvariante": {
-  "zusatzschuld_max_pct_bip": 222.9,
-  "jahr": 2069,
+  "zusatzschuld_max_pct_bip": 255.8,
+  "jahr": 2079,
   "hinweis": "Z vollständig über neue Schuld, Zins = Garantiezins, nominales Wachstum 3 %"
  },
- "z_gegen_sozialbeitraege_heute": 59.5,
+ "z_gegen_sozialbeitraege_heute": 59.2,
  "gesamtlast": {
   "heute": 40.76,
   "entwurf_bisher": 37.95,
-  "entwurf_mit_pflichtzahlungen_2028": 54.28
+  "entwurf_mit_pflichtzahlungen_2028": 54.24
  }
 }

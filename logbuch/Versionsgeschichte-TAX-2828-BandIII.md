@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 18. Oktober 2026 · Modellstand **v4.10**
+Stand: 18. Oktober 2026 · Modellstand **v4.11**
 
 ---
 
@@ -2714,6 +2714,70 @@ Rentenalter im Kohortenschema vereinheitlichen; juristische Prüfung.
 
 ---
 
+### v4.11 — Rentnerpaket beschlossen und gerechnet (A, T1, B1, L1); „Boden“ heißt Grundauskommen
+
+**Art der Änderung: MINOR (Beschluss, Rechnung), Zahlen der Seiten und des Konzepts bewegt.** 18. Oktober 2026.
+
+**Beschluss der Initiative (18.10.2026):** „Folge deinen Empfehlungen und rechne ohne komplexe Sonderregeln. Vermeide den Begriff Boden, finde
+einen besseren.“
+
+**Umgesetzt:**
+- **A:** Bestandsrenten werden um 7,5 % statt um 12,35 % gekürzt (`altlasten.toml`, `haushalte33.toml`).
+- **T1:** Der Altanspruch verrechnet die Dividende nur im Verhältnis der Altjahre (`sozialschutz.toml [rentner]`).
+- **B1:** Das Grundauskommen gilt auch für kleine Bestandsrenten, mit voller Anrechnung der Rente. Angesetzt sind 0,143 % BIP × Altanteil, so
+  viel wie die heutige Grundsicherung im Alter (Sekundärquelle). Die Kosten trägt der Fonds.
+- **L1:** Rentenbeginn 67 + ⅔ des Zuwachses der Lebenserwartung mit 65 ab 2030. Er wirkt auf den Fonds und auf die Mindestrente. Im
+  Kohortenschema gilt jetzt einheitlich das Rentenalter 67 (vorher 65).
+- **Nicht übernommen:** die Lebensarbeitsjahre als zweiter Weg zum Rentenbeginn (Sonderregel).
+- **Weitere Anpassungen:**
+  - Der Altlastenzuschlag wird jetzt in haushalte33, sozial_laender und rentnerausgleich aus `altlasten.json` gelesen; vorher stand der Wert
+    13,7 % fest im Parameterfile.
+  - Rentnerfälle: Heute wird mit Grundsicherung im Alter gerechnet (1.083 €), neu mit dem Grundauskommen (1.029 €).
+- **Begriff:** „Boden“ heißt in allen Texten jetzt **Grundauskommen**:
+  - Webseite in sechs Sprachen: Grundauskommen / basic livelihood / minimum vital / minimo vitale und die übrigen Entsprechungen;
+  - Konzept, Freigabevorlage.
+
+  Dateinamen der Skripte (`regel_boden.py`, `boden_kosten.py`) bleiben unverändert, damit die Versionsgeschichte lesbar bleibt.
+
+Datenquellen: wie v4.10 (Destatis Sterbetafel 2023/2025; Grundsicherung im Alter 2025, Sekundärquelle); eigene Rechnungen.
+
+**Bewegte Zahlen:**
+
+| Größe | vorher (v4.10) | v4.11 |
+|---|---|---|
+| Beitrag gemeinsamer Altlastenfonds (% BIP) | 4,59 | 5,28 |
+| Altlastenzuschlag auf alle Steuern | 13,7 % | 15,8 % |
+| Schuldenquote des Fonds, Spitze | 153,6 % | 149,6 % (2056) |
+| Zuschlag je Land DE / FR / IT / ES / PL | 11,7 / 18,4 / 18,1 / 14,0 / 10,5 % | 14,2 / 20,3 / 20,7 / 16,5 / 12,7 % |
+| Dividende DE 2060 (Kaufkraft 2026) | 234 € | 239 € |
+| Rentner 900 / 1.200 / 1.600 / 2.200 € (heute mit Grundsicherung) | −35 / −49 / −92 / −123 € | −54 / −35 / −33 / −52 € |
+| Alleinstehend 42.000 €: mehr im Monat | +630 € | +602 € |
+| DE Beschäftigte mit mehr (Haushaltstypen) | 100 / 100 / 98 % | 98 / 98 / 98 % |
+| Gini 2028 DE / FR / IT / ES / PL | 26,5 / 32,4 / 28,8 / 25,3 / 19,3 | 26,4 / 32,2 / 28,5 / 25,1 / 19,1 |
+
+**Zerlegung des Fondsbeitrags (% BIP):**
+- Basis mit einheitlichem Rentenalter 67: 4,64;
+- A: +0,26;
+- **T1: +0,50**;
+- B1: +0,07;
+- L1: −0,18;
+- Ergebnis 5,28.
+
+T1 ist teurer als der Überschlag in v4.10 (0,3). Die Rentner 900 € verlieren gegenüber heute mit Grundsicherung 54 €, weil das Grundauskommen
+(Grundbedarf 12.348 € im Jahr) unter dem heutigen Bedarf aus Regelbedarf und Unterkunft liegt (Annahme 1.083 €).
+
+**Offen:**
+- Entscheidung, ob T1 seinen Preis wert ist (ohne T1: Fonds ≈ 4,78 % BIP, Zuschlag ≈ 14,3 %, Überschlag);
+- Rentenverteilung DRV statt Beispielrenten;
+- Eigentumsschutz;
+- Übersetzungen des neuen Begriffs gegenlesen.
+
+**Wodurch aufgefallen:** Beschluss der Initiative.
+
+*Quellen: `projekt/Vorschlag-Rentnerausgleich-2026-10-18.md`; eigene Rechnungen altlasten, sozialschutz, netz33, haushalte33, rentnerausgleich.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -2768,9 +2832,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.10
+## 7 | Offene Punkte, Stand v4.11
 
-Neu seit v3.23 (Stand v4.10): **Rentnerausgleich A, Boden für Bestandsrentner B1, Übergangsregel T1, Lebensarbeitszeit L1 entscheiden; Rentenverteilung DRV; Deckel der Weitergabe (Frankreich, Korrektur 64); Haushaltsmischung im Gini; Freigabe Fassung 4.8 (Kindergewicht 0,55, H1–H3/G1–G5, Upload); Übersetzungen der neuen Texte gegenlesen; Mietdaten für H1; Bedarfsleistungen IT/ES/PL heute; Rentnerausgleich; Härtefall H1–H3, Kindergewicht K1, Rolle der Gemeinden G1–G5 entscheiden und Kosten mit Mietdaten rechnen (N27); Regel Boden und Kinderanteil 0,8 in Seiten einbauen; Gewinneraussage je Land neu fassen; Kosten mit Haushaltsdaten verfeinern; Grundbedarf gegen Armutsschwellen je Land; Entscheidung R1–R4 (Kinderanteil, Pflichtvorsorge über dem Grundbedarf, Härtefall-Boden, Mindestlohnregel); Kosten des Bodens; Aussage „9 von 10“ in DE nach Korrektur 63 neu fassen;** **Bedarfsgeprüfte Leistungen heute (Wohngeld, Kinderzuschlag, APL, RSA, ADI, IMV) in allen Haushaltsrechnungen nachtragen und Härtefallfonds zuordnen; Erwerbstätigenleistung im Netz entscheiden; Zins des Fonds je Land;** **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen belegen oder abschwächen (zukunftsfähiger, viel günstiger, moderat); Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v4.11): **Rentnerpaket gerechnet (A, T1, B1, L1); T1 kostet 0,50 % BIP – prüfen; Rentenverteilung DRV; Deckel der Weitergabe (Frankreich, Korrektur 64); Haushaltsmischung im Gini; Freigabe Fassung 4.8 (Kindergewicht 0,55, H1–H3/G1–G5, Upload); Übersetzungen der neuen Texte gegenlesen; Mietdaten für H1; Bedarfsleistungen IT/ES/PL heute; Rentnerausgleich; Härtefall H1–H3, Kindergewicht K1, Rolle der Gemeinden G1–G5 entscheiden und Kosten mit Mietdaten rechnen (N27); Regel Boden und Kinderanteil 0,8 in Seiten einbauen; Gewinneraussage je Land neu fassen; Kosten mit Haushaltsdaten verfeinern; Grundbedarf gegen Armutsschwellen je Land; Entscheidung R1–R4 (Kinderanteil, Pflichtvorsorge über dem Grundbedarf, Härtefall-Boden, Mindestlohnregel); Kosten des Bodens; Aussage „9 von 10“ in DE nach Korrektur 63 neu fassen;** **Bedarfsgeprüfte Leistungen heute (Wohngeld, Kinderzuschlag, APL, RSA, ADI, IMV) in allen Haushaltsrechnungen nachtragen und Härtefallfonds zuordnen; Erwerbstätigenleistung im Netz entscheiden; Zins des Fonds je Land;** **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen belegen oder abschwächen (zukunftsfähiger, viel günstiger, moderat); Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

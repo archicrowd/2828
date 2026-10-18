@@ -77,16 +77,28 @@ def z_anteil_vor_stichtag(jahr):
 KUERZUNG = 0.0
 
 
+def kopplung_faktor(jahr):
+    """L1: Anteil der Rentnerjahrgänge, die bei an die Lebenserwartung gekoppeltem Rentenbeginn noch in Rente sind (Gleichverteilung)."""
+    r = P.get("rentner", {})
+    d = r.get("kopplung", 0.0) * r.get("le65_zuwachs_jahr", 0.0) * max(0, jahr - r.get("kopplung_start", 9999))
+    return 1.0 - min(d / P["stichtag"]["bezugsdauer_jahre"], 1.0)
+
+
 def z_pfad(c, rente_pct, anteil65, div_erw_pct_kopf, faktor_rentner):
     """Z in % des BIP je Jahr. rente_pct: GF1002+GF1003 2024; div_erw_pct_kopf: Dividende je Erwachsenem in % des BIP je Kopf (Jahr)."""
     je_rentner = rente_pct / anteil65 * 100      # Rentenausgabe je Rentner in % des BIP je Kopf (Annahme: Rentner = 65+)
     out = []
     for j in range(2028, 2101):
         f = z_anteil_vor_stichtag(j)
-        zahl = anteil65 * faktor_rentner(j)      # Rentner in % der Bevölkerung
-        anspruch = je_rentner * f * (1 - KUERZUNG)   # erworbener Anspruch je Rentner, ggf. um eingesparte Beiträge gekürzt
-        ueber = max(anspruch - div_erw_pct_kopf, 0.0)   # Z = erworbener Anspruch über der Dividende (die jeder Rentner erhält)
-        out.append(dict(land=c, jahr=j, anteil_vor_stichtag=round(f, 4), z_pct_bip=round(zahl / 100 * ueber, 3)))
+        zahl = anteil65 * faktor_rentner(j) * kopplung_faktor(j)   # Rentner in % der Bevölkerung (v4.11: L1 späterer Rentenbeginn)
+        r = P.get("rentner", {})
+        if r.get("anteilige_verrechnung"):       # v4.11 T1: Altanteil f verrechnet die Dividende nur zu f
+            ueber = f * max(je_rentner * (1 - KUERZUNG) - div_erw_pct_kopf, 0.0)
+        else:
+            anspruch = je_rentner * f * (1 - KUERZUNG)   # erworbener Anspruch je Rentner, ggf. um eingesparte Beiträge gekürzt
+            ueber = max(anspruch - div_erw_pct_kopf, 0.0)   # Z = erworbener Anspruch über der Dividende (die jeder Rentner erhält)
+        b1 = r.get("grundauskommen_bestand_pct_bip", 0.0) * f * faktor_rentner(j)   # v4.11 B1: Grundauskommen kleiner Bestandsrenten
+        out.append(dict(land=c, jahr=j, anteil_vor_stichtag=round(f, 4), z_pct_bip=round(zahl / 100 * ueber + b1, 3)))
     return out
 
 

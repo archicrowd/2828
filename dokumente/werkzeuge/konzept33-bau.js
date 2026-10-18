@@ -11,7 +11,7 @@ const WURZEL=path.resolve(__dirname,'..','..');
 const lies=n=>JSON.parse(fs.readFileSync(path.join(WURZEL,'daten','aggregate',n),'utf8'));
 const SV=lies('systemvarianten.json'), PJ=lies('projektion33.json'), NZ=lies('netz33.json'), H=lies('haushalte33.json'), RA=lies('haushalte33_raster.json'),
       AL=lies('altlasten.json'), EW=lies('einwanderung33.json'), DY=lies('dynamik33.json'), G=lies('gesamtrechnung.json'), MR=lies('moeglichkeitsraum33.json'), NS=lies('neustart33.json');
-// v4.8: Regel Boden, Kinderanteil 0,8, Kindergewicht, Härtefall, Gini
+// v4.8/v4.11: Grundauskommen (vorher „Boden“), Kinderanteil 0,8, Kindergewicht, Härtefall, Gini
 const RBJ=lies('regel_boden.json'), HF=lies('haertefall.json'), GI=lies('gini.json'), KG=lies('kindergewicht.json'), GF=lies('gini_frankreich.json');
 const TOPF=RBJ.topf, SK=RBJ.regel.kinderanteil, KW=RBJ.regel.skala.kind;
 const dv=x=>x*TOPF;   // Dividende je Erwachsenem bei Kinderanteil 0,8 (gleicher Topf)
@@ -68,7 +68,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.10 · 18. Oktober 2026 (zur Freigabe)",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.11 · 18. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -90,7 +90,7 @@ add(H1("1  Kurzfassung"),
     ["Starkes Netz, 2028",pr(NB['2028'].netz_pct_bip,1)+" des BIP"],
     ["Transformationsdividende je Erwachsenem, 2028 / 2060",eu(dv(NB['2028'].dividende_erw_eur2026))+" / "+eu(dv(NB['2060'].dividende_erw_eur2026))],
     ["Transformationsdividende je Kind, 2028",eu(kind28)+" ("+pr(SK*100,0)+" der Erwachsenen)"],
-    ["Boden: Grundbedarf, weitere Erwachsene / Kinder","× 0,5 / × "+de(KW,2)+"; eigenes Einkommen zur Hälfte angerechnet"],
+    ["Grundauskommen: Grundbedarf, weitere Erwachsene / Kinder","× 0,5 / × "+de(KW,2)+"; eigenes Einkommen zur Hälfte angerechnet"],
     ["Alleinstehend, 42.000 € brutto, mit Altlastenzuschlag: mehr im Monat",vz(RBJ.beispiele_de['alleinstehend']['42000'].mehr)],
     ["Beschäftigte mit mehr verfügbarem Einkommen (heute mit Bürgergeld, Haushaltstypen)",pr(Math.min(...Object.values(RBJ.staaten.DE.anteil)),0)+" bis "+pr(Math.max(...Object.values(RBJ.staaten.DE.anteil)),0)],
     ["Rentnerinnen und Rentner (Renten 900–2.200 €), mit Altlastenzuschlag",vz(Math.max(...H.rentner.filter(r=>r.zuschlag_pct===ZU).map(r=>r.differenz_monat))+dRent)+" bis "+vz(Math.min(...H.rentner.filter(r=>r.zuschlag_pct===ZU).map(r=>r.differenz_monat))+dRent)],
@@ -109,8 +109,9 @@ add(H1("2  Begriffe"),
     ["Ihre eigene Route","Alles über der Grundversorgung: Pflichtvorsorge auf eigenem, vererbbarem Konto, freiwillige Vorsorge, Zusatzversicherungen (Komfort, Lohnersatz, Berufsunfähigkeit)."],
     ["Pflichtvorsorge","10 % des Bruttolohns auf ein eigenes Konto. Kein Beitrag an den Staat: Das Geld gehört dem Sparer."],
     ["Mindestrente","Aufstockung ab 67 bis zum Grundbedarf, die eigene Rente wird nur zur Hälfte angerechnet."],
-    ["Boden","Enges Existenzminimum im Erwerbsalter: Grundbedarf des Landes, je weitere/n Erwachsene/n × 0,5, je Kind × "+de(KW,2)+". Wer darunter liegt, wird aufgestockt; Dividenden zählen voll, eigenes Einkommen nach Steuern zur Hälfte. Pflichtvorsorge ab dem ersten Euro."],
-    ["Härtefall","Zuschlag zum Boden für Wohnkosten über dem Wohnanteil, Mehrbedarf und einmalige Notlagen; ausgezahlt von der Gemeinde."],
+    ["Grundauskommen","Was jedem Haushalt sicher bleibt: Grundbedarf des Landes, je weitere/n Erwachsene/n × 0,5, je Kind × "+de(KW,2)+". Wer darunter liegt, wird aufgestockt – im Erwerbsalter wie im Alter (dort Mindestrente genannt). Dividenden und Renten aus dem alten System zählen voll, selbst verdientes Einkommen und eigene Vorsorge zur Hälfte. Pflichtvorsorge ab dem ersten Euro."],
+    ["Härtefall","Zuschlag zum Grundauskommen für Wohnkosten über dem Wohnanteil, Mehrbedarf und einmalige Notlagen; ausgezahlt von der Gemeinde."],
+    ["Rentenbeginn","67 Jahre; steigt um zwei Drittel des Zuwachses der Lebenserwartung mit 65 (ab 2030, 15 Jahre im Voraus festgestellt). Gilt für Mindestrente und Altansprüche."],
     ["Grundbedarf","Das steuerliche Existenzminimum ("+eu(G26)+" im Jahr 2026). Erste Stufe des Tarifs und Maß des Netzes; folgt zu 70 % den Preisen und zu 30 % den Löhnen."],
     ["Zukunftsschatz","Wahlweise: Bürgerfonds, in den ein Teil der Lenkungseinnahmen fließt; nur der Ertrag wird ausgeschüttet (Vorbild Norwegen)."],
     ["Starke Gemeinden","Die Gemeinde erhält feste Beträge je Einwohner und je Kind und entscheidet selbst über ihre Aufgaben und die Weitergabe an andere Verwaltungen. Sie zahlt Aufstockung und Härtefall vor Ort aus; Höhe und Anrechnung legt das Land fest."],
@@ -150,9 +151,9 @@ add(H1("3  Die Regeln"),
     ["Hinterbliebene","Jeder Erwachsene hat eigene Dividende und Mindestrente; Waisen den Grundbedarf eines Kindes","Risikolebensversicherung"],
     ["Härtefall","H1 Wohnkosten über dem Wohnanteil bis zur örtlichen Grenze; H2 Mehrbedarf (landeseinheitlich); H3 einmalige Notlagen (Ermessen der Gemeinde)","–"]]),
   P("",{sp:80}),
-  P("Eine Regel für Boden, Erwerb und Härtefall: Aufstockung = Boden + Härtefall − Dividenden − ½ × eigenes Einkommen, mindestens null. Damit lohnt jeder verdiente Euro, und der Härtefall läuft mit steigendem Einkommen von selbst aus. Die Gemeinde zahlt Aufstockung und Härtefall aus (eine Stelle vor Ort); Boden, Anrechnung und Mehrbedarfe legt das Land fest, die Gemeinde darf sie nicht unterschreiten, aber aus eigenen Mitteln ergänzen. Ermessen hat sie bei der Mietgrenze im Korridor des Landes, bei Einmalbedarfen und bei Angeboten zu Arbeit und Bildung. Das Land erstattet den Rechtsanspruch vollständig; eine mit der Bezugsdauer sinkende Erstattung wie in Dänemark wird nicht übernommen, weil sie dort nach einer Auswertung (VIVE 2020, erstes Reformjahr) schwer vermittelbare Menschen benachteiligte. Vorbilder: Dänemark und Schweden (Kommunen zahlen nach nationalen Sätzen; Wohnkosten im Einzelfall)."),
+  P("Eine Regel für Grundauskommen, Erwerb und Härtefall: Aufstockung = Grundauskommen + Härtefall − Dividenden − ½ × eigenes Einkommen, mindestens null. Damit lohnt jeder verdiente Euro, und der Härtefall läuft mit steigendem Einkommen von selbst aus. Die Gemeinde zahlt Aufstockung und Härtefall aus (eine Stelle vor Ort); Grundauskommen, Anrechnung und Mehrbedarfe legt das Land fest, die Gemeinde darf sie nicht unterschreiten, aber aus eigenen Mitteln ergänzen. Ermessen hat sie bei der Mietgrenze im Korridor des Landes, bei Einmalbedarfen und bei Angeboten zu Arbeit und Bildung. Das Land erstattet den Rechtsanspruch vollständig; eine mit der Bezugsdauer sinkende Erstattung wie in Dänemark wird nicht übernommen, weil sie dort nach einer Auswertung (VIVE 2020, erstes Reformjahr) schwer vermittelbare Menschen benachteiligte. Vorbilder: Dänemark und Schweden (Kommunen zahlen nach nationalen Sätzen; Wohnkosten im Einzelfall)."),
   tab([{t:"Kosten im Erwerbsalter 2028 (% des BIP)",w:2626},...["DE","FR","IT","ES","PL"].map(c=>({t:c,w:1280,al:RT}))],[
-    ["Aufstockung bis zum Boden",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].band.untere.boden,2)+"–"+de(HF.staaten[c].band.obere.boden,2))],
+    ["Aufstockung bis zum Grundauskommen",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].band.untere.boden,2)+"–"+de(HF.staaten[c].band.obere.boden,2))],
     ["Härtefall H1–H3",...["DE","FR","IT","ES","PL"].map(c=>{const u=HF.staaten[c].band.untere,o=HF.staaten[c].band.obere;return de(u.h1+u.h2+u.h3,2)+"–"+de(o.h1+o.h2+o.h3,2);})],
     ["Budget im Netz (Härtefall, Arbeitslosigkeit, Invalidität)",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].budget_pct_bip,2))],
     ["Reserve (untere / obere Schätzung)",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].band.untere.reserve,2)+" / "+de(HF.staaten[c].band.obere.reserve,2))]]),
@@ -183,7 +184,7 @@ add(H1("3  Die Regeln"),
 
   H2("3.6  Starke Gemeinden und das gemeinsame Dach"),
   P("Statt fünf Ebenen gibt es zwei. Die Gemeinde erhält den größten Teil des Geldes nach einer festen Formel je Einwohner und je Kind und entscheidet selbst. Das Dach behält höchstens "+pr(G.obergrenze,0)+" dessen, was es einzieht, und nur, was seine Aufgaben kosten; der Rest fließt an Gemeinden und Dividende."),
-  P("Bildung, Forschung und Kultur: Für jedes Kind von 5 bis 19 Jahren erhält die Gemeinde einen festen Betrag (Deutschland "+eu(G.gemeinde_kind_de)+" im Jahr; heute rund 10.500 € je Schülerin und Schüler, Destatis 2024 über Sekundärquelle); Schulen, Betreuung und Förderung trägt sie vor Ort (in der Gesamtrechnung Schulen "+de(G.tabelle_b[0][1],2)+" % und Kultur, Sport, Gemeinschaft "+de(G.tabelle_b[3][1],2)+" % des BIP). Betreuung, Erziehung und Ausbildung erhalten die Kinder als Sachleistung der Gemeinde; deshalb zählt im Boden nur der sachliche Bedarf eines Kindes ("+de(KW,2)+" des Grundbedarfs). Grundlagenforschung und Hochschulen gehören zu den Aufgaben des Dachs ("+de(G.tabelle_a[2][1],2)+" und "+de(G.tabelle_a[3][1],2)+" % des BIP)."),
+  P("Bildung, Forschung und Kultur: Für jedes Kind von 5 bis 19 Jahren erhält die Gemeinde einen festen Betrag (Deutschland "+eu(G.gemeinde_kind_de)+" im Jahr; heute rund 10.500 € je Schülerin und Schüler, Destatis 2024 über Sekundärquelle); Schulen, Betreuung und Förderung trägt sie vor Ort (in der Gesamtrechnung Schulen "+de(G.tabelle_b[0][1],2)+" % und Kultur, Sport, Gemeinschaft "+de(G.tabelle_b[3][1],2)+" % des BIP). Betreuung, Erziehung und Ausbildung erhalten die Kinder als Sachleistung der Gemeinde; deshalb zählt im Grundauskommen nur der sachliche Bedarf eines Kindes ("+de(KW,2)+" des Grundbedarfs). Grundlagenforschung und Hochschulen gehören zu den Aufgaben des Dachs ("+de(G.tabelle_a[2][1],2)+" und "+de(G.tabelle_a[3][1],2)+" % des BIP)."),
 
   H2("3.7  Verteilung: der Gini-Koeffizient"),
   tab([{t:"Gini (0–100)",w:2626},...["DE","FR","IT","ES","PL"].map(c=>({t:c,w:1280,al:RT}))],[
@@ -191,10 +192,15 @@ add(H1("3  Die Regeln"),
     ["Goldenes Drittel 2028",...["DE","FR","IT","ES","PL"].map(c=>de(GI.staaten[c].reihe.find(z=>z.jahr===2028).mitte,1))],
     ["Goldenes Drittel 2060",...["DE","FR","IT","ES","PL"].map(c=>de(GI.staaten[c].reihe.find(z=>z.jahr===2060).mitte,1))],
     ["2028, Rentnerhaushalte unverändert",...["DE","FR","IT","ES","PL"].map(c=>{const z=GI.staaten[c].reihe.find(z=>z.jahr===2028);return de((z.untere.gini_rentner_unveraendert+z.obere.gini_rentner_unveraendert)/2,1);})]]),
-  Q("Statische Rechnung (modell/gini.py): heutige Verteilung aus EU-SILC 2025 (Dezilgrenzen, Anteile D1 und D10), Abbildung heute → neu je Äquivalenzerwachsenem mit der Regel Boden; ausgewiesen amtlicher Wert plus Modelländerung. Ohne Verhaltensänderung, Kapitaleinkommen und Vermögen. Zum Vergleich heute: Dänemark "+de(GI.vergleich_amtlich_2025.DK,1)+", Schweden "+de(GI.vergleich_amtlich_2025.SE,1)+". In Frankreich steigt der Gini nach dieser Rechnung (Korrektur 64, modell/gini_frankreich.py): Hauptgrund ist die Weitergabe von 80 % der Arbeitgeberbeiträge, die in Frankreich für Kranken- und Familienversicherung keine Bemessungsgrenze haben – hohe Löhne steigen um 24–41 %, beim Mindestlohn fallen wegen der Beitragsentlastung (RGDU) kaum Beiträge an, und die prime d'activité entfällt. Mit Deckel der Weitergabe beim Beitrag zum 1- bzw. 1,5-fachen Durchschnittslohn: "+de(GF.staaten.FR.gini_weitergabe_gedeckelt_1x,1)+" bzw. "+de(GF.staaten.FR.gini_weitergabe_gedeckelt_1_5x,1)+"; bei Abbildung über Familienhaushalte "+de(GF.staaten.FR.gini_abbildung_familie,1)+". Die Rechnung zählt weitergegebene Beiträge als Einkommen, obwohl damit heute Rentenansprüche nach Lohnhöhe (AGIRC-ARRCO) und Arbeitslosengeld finanziert werden; der Vorteil hoher Löhne ist deshalb als verfügbares Einkommen richtig, als Wohlfahrtsgewinn überzeichnet."),
+  Q("Statische Rechnung (modell/gini.py): heutige Verteilung aus EU-SILC 2025 (Dezilgrenzen, Anteile D1 und D10), Abbildung heute → neu je Äquivalenzerwachsenem mit dem Grundauskommen; ausgewiesen amtlicher Wert plus Modelländerung. Ohne Verhaltensänderung, Kapitaleinkommen und Vermögen. Zum Vergleich heute: Dänemark "+de(GI.vergleich_amtlich_2025.DK,1)+", Schweden "+de(GI.vergleich_amtlich_2025.SE,1)+". In Frankreich steigt der Gini nach dieser Rechnung (Korrektur 64, modell/gini_frankreich.py): Hauptgrund ist die Weitergabe von 80 % der Arbeitgeberbeiträge, die in Frankreich für Kranken- und Familienversicherung keine Bemessungsgrenze haben – hohe Löhne steigen um 24–41 %, beim Mindestlohn fallen wegen der Beitragsentlastung (RGDU) kaum Beiträge an, und die prime d'activité entfällt. Mit Deckel der Weitergabe beim Beitrag zum 1- bzw. 1,5-fachen Durchschnittslohn: "+de(GF.staaten.FR.gini_weitergabe_gedeckelt_1x,1)+" bzw. "+de(GF.staaten.FR.gini_weitergabe_gedeckelt_1_5x,1)+"; bei Abbildung über Familienhaushalte "+de(GF.staaten.FR.gini_abbildung_familie,1)+". Die Rechnung zählt weitergegebene Beiträge als Einkommen, obwohl damit heute Rentenansprüche nach Lohnhöhe (AGIRC-ARRCO) und Arbeitslosengeld finanziert werden; der Vorteil hoher Löhne ist deshalb als verfügbares Einkommen richtig, als Wohlfahrtsgewinn überzeichnet."),
 
   H2("3.8  Altlasten: Sache der Staaten"),
-  P("Staatsschulden und Rentenzusagen stammen aus dem alten System. Jeder Staat regelt sie selbst; eigene Lösungen sind erwünscht. Beschlossen ist: Bestehende Renten werden um die Sozialbeiträge gekürzt, die im neuen System entfallen (Annahme für die Rechnung: 12,35 % wie in Deutschland; je Staat verschieden). Als Werkzeug bietet der Bauplan einen gemeinsamen Fonds an:"),
+  P("Staatsschulden und Rentenzusagen stammen aus dem alten System. Jeder Staat regelt sie selbst; eigene Lösungen sind erwünscht. Für die Altansprüche gelten vier einfache Regeln (Beschluss 18.10.2026):"),
+  L([["Kürzung 7,5 %: ",true],["Bestehende Renten werden um 7,5 % gekürzt – weniger als die entfallenden Kranken- und Pflegebeiträge (12,35 % in Deutschland). Renten bis rund 1.200 € stehen damit etwa wie heute da."]]),
+  L([["Anteilig: ",true],["Wer nach 2028 in Rente geht, erhält seinen Altanspruch im Verhältnis der Erwerbsjahre vor 2028; nur dieser Anteil wird mit der Dividende verrechnet. Der Übergang ist gleitend."]]),
+  L([["Grundauskommen auch im Bestand: ",true],["Kleine Bestandsrenten werden bis zum Grundbedarf aufgestockt; die Bestandsrente zählt voll (wie heute bei der Grundsicherung im Alter)."]]),
+  L([["Ein Rentenbeginn: ",true],["67, gekoppelt an zwei Drittel des Zuwachses der Lebenserwartung, für alte und neue Ansprüche gleich (Vorbilder Niederlande, Dänemark)."]]),
+  P("Als Werkzeug bietet der Bauplan einen gemeinsamen Fonds an:"),
   tab([{t:"Altlastenfonds (zehn Staaten, alle Altrenten nach Kürzung)",w:6026},{t:"Wert",w:3000,al:RT}],[
     ["Gleichbleibender Beitrag bis 2098",pr(AB.beitrag_pct_bip,2)+" des BIP"],
     ["als Zuschlag auf alle Steuern",pr(AB.zuschlag_auf_alle_steuern_pct,1)],
@@ -231,7 +237,7 @@ add(H1("4  Finanzierung auf einen Blick"),
 // ---- 5 Haushalte
 const hhs=['alleinstehend','alleinerziehend, 1 Kind','Paar, ein Einkommen, 2 Kinder'];
 add(H1("5  Was bei den Menschen ankommt"),
-  P("Netto im Monat heute (Recht 2026, mit Bürgergeld) gegen das Drittel-System im Jahr 2028, Kaufkraft 2026. Neu: nach Einkommensteuer, Dividende des Haushalts (Kinder 80 %), höherer Mehrwertsteuer, Pflichtvorsorge 10 %, Weitergabe von 80 % der Arbeitgeberbeiträge, Altlastenzuschlag und Aufstockung bis zum Boden (Regel Boden)."),
+  P("Netto im Monat heute (Recht 2026, mit Bürgergeld) gegen das Drittel-System im Jahr 2028, Kaufkraft 2026. Neu: nach Einkommensteuer, Dividende des Haushalts (Kinder 80 %), höherer Mehrwertsteuer, Pflichtvorsorge 10 %, Weitergabe von 80 % der Arbeitgeberbeiträge, Altlastenzuschlag und Aufstockung bis zum Grundauskommen."),
   tab([{t:"Haushalt",w:2826},{t:"Brutto im Jahr",w:1500,al:RT},{t:"heute",w:1500,al:RT},{t:"neu",w:1500,al:RT},{t:"mehr im Monat",w:1700,al:RT}],
     hhs.flatMap(h=>[20000,42000,75000].map(b=>{const z=RBJ.beispiele_de[h][String(b)];return [h,de(b)+" €",eu(z.heute),eu(z.neu),vz(z.mehr)];}))),
   Q("Gerechnet mit modell/regel_boden.py (heute mit Bürgergeld; Wohngeld und Kinderzuschlag nicht berücksichtigt). Weitere Erwachsene ohne eigenes Einkommen."),
@@ -288,8 +294,8 @@ add(H1("7  Vorbilder"),
 // ---- 8 Grenzen
 add(H1("8  Was noch offen ist"),
   L("Weitergabe: Wie sich die Pflicht, 80 % der Arbeitgeberbeiträge in den Lohn zu geben, durchsetzen lässt."),
-  L("Rentner: Minus von 35 bis 123 € im Monat durch Kürzung, volle Besteuerung, Mehrwertsteuer und Zuschlag; Ausgleich und Kopplung des Rentenbeginns an die Lebenserwartung vorgeschlagen (projekt/Vorschlag-Rentnerausgleich-2026-10-18.md). Kleine Bestandsrenten brauchen einen Boden (heute Grundsicherung im Alter)."),
-  L("Familien: Kindergewicht im Boden "+de(KW,2)+" (Vorschlag zur Freigabe; geprüft 0,3 bis 0,8, modell/kindergewicht.py). Bei 0,7–0,8 reicht das Netzbudget in Frankreich, Italien und Polen in der oberen Schätzung nicht."),
+  L("Rentner: Ausgleich beschlossen (Kürzung 7,5 %, Grundauskommen im Bestand, anteilige Verrechnung, gekoppelter Rentenbeginn); er hebt den Altlastenzuschlag. Rentenverteilung (DRV) statt Beispielrenten nachrechnen; Eigentumsschutz der Anwartschaften juristisch prüfen."),
+  L("Familien: Kindergewicht im Grundauskommen "+de(KW,2)+" (Vorschlag zur Freigabe; geprüft 0,3 bis 0,8, modell/kindergewicht.py). Bei 0,7–0,8 reicht das Netzbudget in Frankreich, Italien und Polen in der oberen Schätzung nicht."),
   L("Härtefall: Kosten mit Mietdaten nach Haushaltstyp nachrechnen; Pflichten und Zugangsbedingungen (Aktivität, Aufenthaltsdauer) sind nicht geregelt."),
   L("Frankreich: Ungleichheit steigt nach dem Modell (Gini +2 Punkte), vor allem durch die Weitergabe ungedeckelter Arbeitgeberbeiträge; Entscheidung über einen Deckel der Weitergabe offen (Korrektur 64)."),
   L("Grundversorgung: Kürzung des Gesundheitskatalogs (5 %), Mengen bei Invalidität und Arbeitslosigkeit und die Verteilung der eigenen Renten sind Annahmen ohne Mikrodaten."),
@@ -328,7 +334,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.10)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.11)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -336,7 +342,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.10 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.11 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

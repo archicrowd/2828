@@ -69,7 +69,8 @@ def netz(j, kuerzung, dauer=False, gr="volksrente"):
     pos = {
         "Gesundheit (Grundversorgung)": (SV["gesundheit"] + gp / 3) * (1 - kuerzung),   # Anteil Gesundheit am Anstieg: 0,4 von 1,2 (AR 2024, EU 2022–2070)
         "Pflege (Teilkasko)": P["pflege_pct_bip"] * (1 - P["pflege_in_gf07"]) + gp * 2 / 3,
-        "Grundrente (ab 67)": lin(P["anteil_65plus"], j) * P["anteil_67_an_65plus"] * (1 - (0.0 if dauer else SZ.z_anteil_vor_stichtag(j))) * gr_luecke,
+        "Grundrente (ab 67)": lin(P["anteil_65plus"], j) * P["anteil_67_an_65plus"] * (1 - (0.0 if dauer else SZ.z_anteil_vor_stichtag(j))) * gr_luecke
+                              * (1.0 if dauer else SZ.kopplung_faktor(j)),   # v4.11 L1 (Dauerzustand ohne Kopplung, vorsichtig)
         "Invalidität (Grundbedarf)": P["invaliditaet_anteil_bev"] * luecke,
         "Arbeitslosigkeit (Grundbedarf)": P["arbeitslose_anteil_bev"] * luecke,
         "Waisen": P["waisen_pct_bip"],

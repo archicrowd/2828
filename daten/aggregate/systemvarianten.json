@@ -59,41 +59,41 @@
     "haertefall"
    ],
    "zins_ausserhalb": false,
-   "z_2028": 8.86,
-   "z_ende": 2074,
+   "z_2028": 8.82,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 8.86,
+     "z": 8.82,
      "steuerbedarf": 30.85,
      "deckung": 30.44,
      "saldo": -0.41,
-     "ausserhalb_steuern": 19.33,
-     "altlastenbeitrag": 8.86,
-     "altlastenbeitrag_z_halb": 4.43,
-     "gesamtlast_ohne_route": 50.18,
-     "gesamtlast_mit_route": 54.28
+     "ausserhalb_steuern": 19.29,
+     "altlastenbeitrag": 8.82,
+     "altlastenbeitrag_z_halb": 4.41,
+     "gesamtlast_ohne_route": 50.14,
+     "gesamtlast_mit_route": 54.24
     },
     "2040": {
-     "z": 8.31,
+     "z": 8.36,
      "steuerbedarf": 30.85,
      "deckung": 30.44,
      "saldo": -0.41,
-     "ausserhalb_steuern": 18.78,
-     "altlastenbeitrag": 8.31,
-     "altlastenbeitrag_z_halb": 4.16,
-     "gesamtlast_ohne_route": 49.63,
-     "gesamtlast_mit_route": 53.73
+     "ausserhalb_steuern": 18.83,
+     "altlastenbeitrag": 8.36,
+     "altlastenbeitrag_z_halb": 4.18,
+     "gesamtlast_ohne_route": 49.67,
+     "gesamtlast_mit_route": 53.77
     },
     "2050": {
-     "z": 6.16,
+     "z": 6.69,
      "steuerbedarf": 30.85,
      "deckung": 30.44,
      "saldo": -0.41,
-     "ausserhalb_steuern": 16.63,
-     "altlastenbeitrag": 6.16,
-     "altlastenbeitrag_z_halb": 3.08,
-     "gesamtlast_ohne_route": 47.48,
-     "gesamtlast_mit_route": 51.58
+     "ausserhalb_steuern": 17.16,
+     "altlastenbeitrag": 6.69,
+     "altlastenbeitrag_z_halb": 3.35,
+     "gesamtlast_ohne_route": 48.01,
+     "gesamtlast_mit_route": 52.11
     },
     "dauer": {
      "z": 0.0,
@@ -157,41 +157,41 @@
     "haertefall"
    ],
    "zins_ausserhalb": false,
-   "z_2028": 9.54,
-   "z_ende": 2077,
+   "z_2028": 9.49,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 9.54,
+     "z": 9.49,
      "steuerbedarf": 27.95,
      "deckung": 28.3,
      "saldo": 0.35,
-     "ausserhalb_steuern": 20.01,
-     "altlastenbeitrag": 9.54,
-     "altlastenbeitrag_z_halb": 4.77,
-     "gesamtlast_ohne_route": 47.95,
-     "gesamtlast_mit_route": 52.05
+     "ausserhalb_steuern": 19.96,
+     "altlastenbeitrag": 9.49,
+     "altlastenbeitrag_z_halb": 4.75,
+     "gesamtlast_ohne_route": 47.91,
+     "gesamtlast_mit_route": 52.01
     },
     "2040": {
-     "z": 9.02,
+     "z": 9.0,
      "steuerbedarf": 27.95,
      "deckung": 28.3,
      "saldo": 0.35,
-     "ausserhalb_steuern": 19.49,
-     "altlastenbeitrag": 9.02,
-     "altlastenbeitrag_z_halb": 4.51,
-     "gesamtlast_ohne_route": 47.44,
-     "gesamtlast_mit_route": 51.54
+     "ausserhalb_steuern": 19.47,
+     "altlastenbeitrag": 9.0,
+     "altlastenbeitrag_z_halb": 4.5,
+     "gesamtlast_ohne_route": 47.42,
+     "gesamtlast_mit_route": 51.52
     },
     "2050": {
-     "z": 6.88,
+     "z": 7.21,
      "steuerbedarf": 27.95,
      "deckung": 28.3,
      "saldo": 0.35,
-     "ausserhalb_steuern": 17.35,
-     "altlastenbeitrag": 6.88,
-     "altlastenbeitrag_z_halb": 3.44,
-     "gesamtlast_ohne_route": 45.3,
-     "gesamtlast_mit_route": 49.4
+     "ausserhalb_steuern": 17.68,
+     "altlastenbeitrag": 7.21,
+     "altlastenbeitrag_z_halb": 3.61,
+     "gesamtlast_ohne_route": 45.63,
+     "gesamtlast_mit_route": 49.73
     },
     "dauer": {
      "z": 0.0,
@@ -258,41 +258,41 @@
     "z"
    ],
    "zins_ausserhalb": false,
-   "z_2028": 8.86,
-   "z_ende": 2074,
+   "z_2028": 8.82,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 8.86,
-     "steuerbedarf": 50.18,
+     "z": 8.82,
+     "steuerbedarf": 50.14,
      "deckung": 33.96,
-     "saldo": -16.22,
+     "saldo": -16.18,
      "ausserhalb_steuern": 0.0,
      "altlastenbeitrag": 0.0,
      "altlastenbeitrag_z_halb": 0.0,
-     "gesamtlast_ohne_route": 50.18,
-     "gesamtlast_mit_route": 54.28
+     "gesamtlast_ohne_route": 50.14,
+     "gesamtlast_mit_route": 54.24
     },
     "2040": {
-     "z": 8.31,
-     "steuerbedarf": 49.63,
+     "z": 8.36,
+     "steuerbedarf": 49.67,
      "deckung": 33.96,
-     "saldo": -15.67,
+     "saldo": -15.72,
      "ausserhalb_steuern": 0.0,
      "altlastenbeitrag": 0.0,
      "altlastenbeitrag_z_halb": 0.0,
-     "gesamtlast_ohne_route": 49.63,
-     "gesamtlast_mit_route": 53.73
+     "gesamtlast_ohne_route": 49.67,
+     "gesamtlast_mit_route": 53.77
     },
     "2050": {
-     "z": 6.16,
-     "steuerbedarf": 47.48,
+     "z": 6.69,
+     "steuerbedarf": 48.01,
      "deckung": 33.96,
-     "saldo": -13.52,
+     "saldo": -14.05,
      "ausserhalb_steuern": 0.0,
      "altlastenbeitrag": 0.0,
      "altlastenbeitrag_z_halb": 0.0,
-     "gesamtlast_ohne_route": 47.48,
-     "gesamtlast_mit_route": 51.58
+     "gesamtlast_ohne_route": 48.01,
+     "gesamtlast_mit_route": 52.11
     },
     "dauer": {
      "z": 0.0,
@@ -356,41 +356,41 @@
     "haertefall"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 8.84,
-   "z_ende": 2074,
+   "z_2028": 8.79,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 8.84,
+     "z": 8.79,
      "steuerbedarf": 29.15,
      "deckung": 30.44,
      "saldo": 1.29,
-     "ausserhalb_steuern": 21.11,
-     "altlastenbeitrag": 10.64,
-     "altlastenbeitrag_z_halb": 6.22,
-     "gesamtlast_ohne_route": 50.26,
-     "gesamtlast_mit_route": 54.36
+     "ausserhalb_steuern": 21.07,
+     "altlastenbeitrag": 10.6,
+     "altlastenbeitrag_z_halb": 6.2,
+     "gesamtlast_ohne_route": 50.22,
+     "gesamtlast_mit_route": 54.32
     },
     "2040": {
-     "z": 8.28,
+     "z": 8.33,
      "steuerbedarf": 29.15,
      "deckung": 30.44,
      "saldo": 1.29,
-     "ausserhalb_steuern": 20.18,
-     "altlastenbeitrag": 9.71,
-     "altlastenbeitrag_z_halb": 5.57,
-     "gesamtlast_ohne_route": 49.33,
-     "gesamtlast_mit_route": 53.43
+     "ausserhalb_steuern": 20.23,
+     "altlastenbeitrag": 9.76,
+     "altlastenbeitrag_z_halb": 5.59,
+     "gesamtlast_ohne_route": 49.38,
+     "gesamtlast_mit_route": 53.48
     },
     "2050": {
-     "z": 6.13,
+     "z": 6.67,
      "steuerbedarf": 29.15,
      "deckung": 30.44,
      "saldo": 1.29,
-     "ausserhalb_steuern": 17.66,
-     "altlastenbeitrag": 7.19,
-     "altlastenbeitrag_z_halb": 4.13,
-     "gesamtlast_ohne_route": 46.81,
-     "gesamtlast_mit_route": 50.91
+     "ausserhalb_steuern": 18.2,
+     "altlastenbeitrag": 7.73,
+     "altlastenbeitrag_z_halb": 4.4,
+     "gesamtlast_ohne_route": 47.35,
+     "gesamtlast_mit_route": 51.45
     },
     "dauer": {
      "z": 0.0,
@@ -454,41 +454,41 @@
     "haertefall"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 9.53,
-   "z_ende": 2077,
+   "z_2028": 9.49,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 9.53,
+     "z": 9.49,
      "steuerbedarf": 26.15,
      "deckung": 28.3,
      "saldo": 2.15,
-     "ausserhalb_steuern": 21.81,
-     "altlastenbeitrag": 11.34,
-     "altlastenbeitrag_z_halb": 6.57,
-     "gesamtlast_ohne_route": 47.96,
-     "gesamtlast_mit_route": 52.06
+     "ausserhalb_steuern": 21.76,
+     "altlastenbeitrag": 11.29,
+     "altlastenbeitrag_z_halb": 6.55,
+     "gesamtlast_ohne_route": 47.91,
+     "gesamtlast_mit_route": 52.01
     },
     "2040": {
-     "z": 9.02,
+     "z": 9.0,
      "steuerbedarf": 26.15,
      "deckung": 28.3,
      "saldo": 2.15,
-     "ausserhalb_steuern": 20.92,
-     "altlastenbeitrag": 10.45,
-     "altlastenbeitrag_z_halb": 5.94,
-     "gesamtlast_ohne_route": 47.07,
-     "gesamtlast_mit_route": 51.17
+     "ausserhalb_steuern": 20.9,
+     "altlastenbeitrag": 10.43,
+     "altlastenbeitrag_z_halb": 5.93,
+     "gesamtlast_ohne_route": 47.05,
+     "gesamtlast_mit_route": 51.15
     },
     "2050": {
-     "z": 6.88,
+     "z": 7.21,
      "steuerbedarf": 26.15,
      "deckung": 28.3,
      "saldo": 2.15,
-     "ausserhalb_steuern": 18.41,
-     "altlastenbeitrag": 7.94,
-     "altlastenbeitrag_z_halb": 4.5,
-     "gesamtlast_ohne_route": 44.56,
-     "gesamtlast_mit_route": 48.66
+     "ausserhalb_steuern": 18.74,
+     "altlastenbeitrag": 8.27,
+     "altlastenbeitrag_z_halb": 4.67,
+     "gesamtlast_ohne_route": 44.89,
+     "gesamtlast_mit_route": 48.99
     },
     "dauer": {
      "z": 0.0,
@@ -554,41 +554,41 @@
     "seil"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 8.93,
-   "z_ende": 2075,
+   "z_2028": 8.88,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 8.93,
+     "z": 8.88,
      "steuerbedarf": 39.22,
      "deckung": 33.96,
      "saldo": -5.26,
-     "ausserhalb_steuern": 10.73,
-     "altlastenbeitrag": 10.73,
-     "altlastenbeitrag_z_halb": 6.27,
-     "gesamtlast_ohne_route": 49.95,
-     "gesamtlast_mit_route": 54.05
+     "ausserhalb_steuern": 10.69,
+     "altlastenbeitrag": 10.69,
+     "altlastenbeitrag_z_halb": 6.25,
+     "gesamtlast_ohne_route": 49.91,
+     "gesamtlast_mit_route": 54.01
     },
     "2040": {
-     "z": 8.38,
+     "z": 8.42,
      "steuerbedarf": 39.22,
      "deckung": 33.96,
      "saldo": -5.26,
-     "ausserhalb_steuern": 9.81,
-     "altlastenbeitrag": 9.81,
-     "altlastenbeitrag_z_halb": 5.62,
-     "gesamtlast_ohne_route": 49.03,
-     "gesamtlast_mit_route": 53.13
+     "ausserhalb_steuern": 9.85,
+     "altlastenbeitrag": 9.85,
+     "altlastenbeitrag_z_halb": 5.64,
+     "gesamtlast_ohne_route": 49.07,
+     "gesamtlast_mit_route": 53.17
     },
     "2050": {
-     "z": 6.23,
+     "z": 6.74,
      "steuerbedarf": 39.22,
      "deckung": 33.96,
      "saldo": -5.26,
-     "ausserhalb_steuern": 7.29,
-     "altlastenbeitrag": 7.29,
-     "altlastenbeitrag_z_halb": 4.18,
-     "gesamtlast_ohne_route": 46.51,
-     "gesamtlast_mit_route": 50.61
+     "ausserhalb_steuern": 7.8,
+     "altlastenbeitrag": 7.8,
+     "altlastenbeitrag_z_halb": 4.43,
+     "gesamtlast_ohne_route": 47.02,
+     "gesamtlast_mit_route": 51.12
     },
     "dauer": {
      "z": 0.0,
@@ -654,41 +654,41 @@
     "seil"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 9.67,
-   "z_ende": 2077,
+   "z_2028": 9.63,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 9.67,
+     "z": 9.63,
      "steuerbedarf": 36.02,
      "deckung": 33.96,
      "saldo": -2.06,
-     "ausserhalb_steuern": 11.48,
-     "altlastenbeitrag": 11.48,
-     "altlastenbeitrag_z_halb": 6.64,
-     "gesamtlast_ohne_route": 47.5,
-     "gesamtlast_mit_route": 51.6
+     "ausserhalb_steuern": 11.43,
+     "altlastenbeitrag": 11.43,
+     "altlastenbeitrag_z_halb": 6.62,
+     "gesamtlast_ohne_route": 47.45,
+     "gesamtlast_mit_route": 51.55
     },
     "2040": {
-     "z": 9.17,
+     "z": 9.13,
      "steuerbedarf": 36.02,
      "deckung": 33.96,
      "saldo": -2.06,
-     "ausserhalb_steuern": 10.6,
-     "altlastenbeitrag": 10.6,
-     "altlastenbeitrag_z_halb": 6.01,
-     "gesamtlast_ohne_route": 46.62,
-     "gesamtlast_mit_route": 50.72
+     "ausserhalb_steuern": 10.56,
+     "altlastenbeitrag": 10.56,
+     "altlastenbeitrag_z_halb": 5.99,
+     "gesamtlast_ohne_route": 46.58,
+     "gesamtlast_mit_route": 50.68
     },
     "2050": {
-     "z": 7.02,
+     "z": 7.32,
      "steuerbedarf": 36.02,
      "deckung": 33.96,
      "saldo": -2.06,
-     "ausserhalb_steuern": 8.08,
-     "altlastenbeitrag": 8.08,
-     "altlastenbeitrag_z_halb": 4.57,
-     "gesamtlast_ohne_route": 44.1,
-     "gesamtlast_mit_route": 48.2
+     "ausserhalb_steuern": 8.38,
+     "altlastenbeitrag": 8.38,
+     "altlastenbeitrag_z_halb": 4.72,
+     "gesamtlast_ohne_route": 44.4,
+     "gesamtlast_mit_route": 48.5
     },
     "dauer": {
      "z": 0.0,
@@ -754,41 +754,41 @@
     "seil"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 8.93,
-   "z_ende": 2075,
+   "z_2028": 8.88,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 8.93,
+     "z": 8.88,
      "steuerbedarf": 33.8,
      "deckung": 33.96,
      "saldo": 0.16,
-     "ausserhalb_steuern": 16.16,
-     "altlastenbeitrag": 10.73,
-     "altlastenbeitrag_z_halb": 6.27,
-     "gesamtlast_ohne_route": 49.95,
-     "gesamtlast_mit_route": 54.05
+     "ausserhalb_steuern": 16.11,
+     "altlastenbeitrag": 10.69,
+     "altlastenbeitrag_z_halb": 6.25,
+     "gesamtlast_ohne_route": 49.91,
+     "gesamtlast_mit_route": 54.01
     },
     "2040": {
-     "z": 8.38,
+     "z": 8.42,
      "steuerbedarf": 33.8,
      "deckung": 33.96,
      "saldo": 0.16,
-     "ausserhalb_steuern": 15.23,
-     "altlastenbeitrag": 9.81,
-     "altlastenbeitrag_z_halb": 5.62,
-     "gesamtlast_ohne_route": 49.03,
-     "gesamtlast_mit_route": 53.13
+     "ausserhalb_steuern": 15.27,
+     "altlastenbeitrag": 9.85,
+     "altlastenbeitrag_z_halb": 5.64,
+     "gesamtlast_ohne_route": 49.07,
+     "gesamtlast_mit_route": 53.17
     },
     "2050": {
-     "z": 6.23,
+     "z": 6.74,
      "steuerbedarf": 33.8,
      "deckung": 33.96,
      "saldo": 0.16,
-     "ausserhalb_steuern": 12.72,
-     "altlastenbeitrag": 7.29,
-     "altlastenbeitrag_z_halb": 4.18,
-     "gesamtlast_ohne_route": 46.51,
-     "gesamtlast_mit_route": 50.61
+     "ausserhalb_steuern": 13.23,
+     "altlastenbeitrag": 7.8,
+     "altlastenbeitrag_z_halb": 4.43,
+     "gesamtlast_ohne_route": 47.02,
+     "gesamtlast_mit_route": 51.12
     },
     "dauer": {
      "z": 0.0,
@@ -856,41 +856,41 @@
     "seil"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 8.93,
-   "z_ende": 2075,
+   "z_2028": 8.88,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 8.93,
+     "z": 8.88,
      "steuerbedarf": 33.8,
      "deckung": 32.85,
      "saldo": -0.95,
-     "ausserhalb_steuern": 16.16,
-     "altlastenbeitrag": 10.73,
-     "altlastenbeitrag_z_halb": 6.27,
-     "gesamtlast_ohne_route": 49.95,
-     "gesamtlast_mit_route": 54.05
+     "ausserhalb_steuern": 16.11,
+     "altlastenbeitrag": 10.69,
+     "altlastenbeitrag_z_halb": 6.25,
+     "gesamtlast_ohne_route": 49.91,
+     "gesamtlast_mit_route": 54.01
     },
     "2040": {
-     "z": 8.38,
+     "z": 8.42,
      "steuerbedarf": 33.8,
      "deckung": 32.85,
      "saldo": -0.95,
-     "ausserhalb_steuern": 15.23,
-     "altlastenbeitrag": 9.81,
-     "altlastenbeitrag_z_halb": 5.62,
-     "gesamtlast_ohne_route": 49.03,
-     "gesamtlast_mit_route": 53.13
+     "ausserhalb_steuern": 15.27,
+     "altlastenbeitrag": 9.85,
+     "altlastenbeitrag_z_halb": 5.64,
+     "gesamtlast_ohne_route": 49.07,
+     "gesamtlast_mit_route": 53.17
     },
     "2050": {
-     "z": 6.23,
+     "z": 6.74,
      "steuerbedarf": 33.8,
      "deckung": 32.85,
      "saldo": -0.95,
-     "ausserhalb_steuern": 12.72,
-     "altlastenbeitrag": 7.29,
-     "altlastenbeitrag_z_halb": 4.18,
-     "gesamtlast_ohne_route": 46.51,
-     "gesamtlast_mit_route": 50.61
+     "ausserhalb_steuern": 13.23,
+     "altlastenbeitrag": 7.8,
+     "altlastenbeitrag_z_halb": 4.43,
+     "gesamtlast_ohne_route": 47.02,
+     "gesamtlast_mit_route": 51.12
     },
     "dauer": {
      "z": 0.0,
@@ -958,41 +958,41 @@
     "seil"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 10.46,
-   "z_ende": 2081,
+   "z_2028": 10.42,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 10.46,
+     "z": 10.42,
      "steuerbedarf": 32.62,
      "deckung": 32.85,
      "saldo": 0.23,
-     "ausserhalb_steuern": 12.27,
-     "altlastenbeitrag": 12.27,
-     "altlastenbeitrag_z_halb": 7.04,
-     "gesamtlast_ohne_route": 44.89,
-     "gesamtlast_mit_route": 48.99
+     "ausserhalb_steuern": 12.22,
+     "altlastenbeitrag": 12.22,
+     "altlastenbeitrag_z_halb": 7.01,
+     "gesamtlast_ohne_route": 44.84,
+     "gesamtlast_mit_route": 48.94
     },
     "2040": {
-     "z": 10.01,
+     "z": 9.89,
      "steuerbedarf": 32.62,
      "deckung": 32.85,
      "saldo": 0.23,
-     "ausserhalb_steuern": 11.43,
-     "altlastenbeitrag": 11.43,
-     "altlastenbeitrag_z_halb": 6.43,
-     "gesamtlast_ohne_route": 44.05,
-     "gesamtlast_mit_route": 48.15
+     "ausserhalb_steuern": 11.32,
+     "altlastenbeitrag": 11.32,
+     "altlastenbeitrag_z_halb": 6.37,
+     "gesamtlast_ohne_route": 43.94,
+     "gesamtlast_mit_route": 48.04
     },
     "2050": {
-     "z": 7.87,
+     "z": 7.93,
      "steuerbedarf": 32.62,
      "deckung": 32.85,
      "saldo": 0.23,
-     "ausserhalb_steuern": 8.93,
-     "altlastenbeitrag": 8.93,
-     "altlastenbeitrag_z_halb": 4.99,
-     "gesamtlast_ohne_route": 41.55,
-     "gesamtlast_mit_route": 45.65
+     "ausserhalb_steuern": 8.99,
+     "altlastenbeitrag": 8.99,
+     "altlastenbeitrag_z_halb": 5.02,
+     "gesamtlast_ohne_route": 41.61,
+     "gesamtlast_mit_route": 45.71
     },
     "dauer": {
      "z": 0.0,
@@ -1060,41 +1060,41 @@
     "seil"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 9.19,
-   "z_ende": 2076,
+   "z_2028": 9.14,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 9.19,
+     "z": 9.14,
      "steuerbedarf": 32.7,
      "deckung": 32.85,
      "saldo": 0.15,
-     "ausserhalb_steuern": 16.41,
-     "altlastenbeitrag": 10.99,
-     "altlastenbeitrag_z_halb": 6.4,
-     "gesamtlast_ohne_route": 49.11,
-     "gesamtlast_mit_route": 53.21
+     "ausserhalb_steuern": 16.37,
+     "altlastenbeitrag": 10.94,
+     "altlastenbeitrag_z_halb": 6.37,
+     "gesamtlast_ohne_route": 49.06,
+     "gesamtlast_mit_route": 53.16
     },
     "2040": {
-     "z": 8.65,
+     "z": 8.67,
      "steuerbedarf": 32.7,
      "deckung": 32.85,
      "saldo": 0.15,
-     "ausserhalb_steuern": 15.5,
-     "altlastenbeitrag": 10.08,
-     "altlastenbeitrag_z_halb": 5.75,
-     "gesamtlast_ohne_route": 48.2,
-     "gesamtlast_mit_route": 52.3
+     "ausserhalb_steuern": 15.52,
+     "altlastenbeitrag": 10.09,
+     "altlastenbeitrag_z_halb": 5.76,
+     "gesamtlast_ohne_route": 48.21,
+     "gesamtlast_mit_route": 52.31
     },
     "2050": {
-     "z": 6.5,
+     "z": 6.94,
      "steuerbedarf": 32.7,
      "deckung": 32.85,
      "saldo": 0.15,
-     "ausserhalb_steuern": 12.99,
-     "altlastenbeitrag": 7.56,
-     "altlastenbeitrag_z_halb": 4.31,
-     "gesamtlast_ohne_route": 45.68,
-     "gesamtlast_mit_route": 49.78
+     "ausserhalb_steuern": 13.43,
+     "altlastenbeitrag": 8.0,
+     "altlastenbeitrag_z_halb": 4.53,
+     "gesamtlast_ohne_route": 46.12,
+     "gesamtlast_mit_route": 50.22
     },
     "dauer": {
      "z": 0.0,
@@ -1164,41 +1164,41 @@
     "seil"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 10.39,
-   "z_ende": 2081,
+   "z_2028": 10.35,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 10.39,
+     "z": 10.35,
      "steuerbedarf": 32.92,
      "deckung": 33.04,
      "saldo": 0.12,
-     "ausserhalb_steuern": 12.2,
-     "altlastenbeitrag": 12.2,
-     "altlastenbeitrag_z_halb": 7.0,
-     "gesamtlast_ohne_route": 45.12,
-     "gesamtlast_mit_route": 49.22
+     "ausserhalb_steuern": 12.15,
+     "altlastenbeitrag": 12.15,
+     "altlastenbeitrag_z_halb": 6.98,
+     "gesamtlast_ohne_route": 45.07,
+     "gesamtlast_mit_route": 49.17
     },
     "2040": {
-     "z": 9.93,
+     "z": 9.82,
      "steuerbedarf": 32.92,
      "deckung": 33.04,
      "saldo": 0.12,
-     "ausserhalb_steuern": 11.36,
-     "altlastenbeitrag": 11.36,
-     "altlastenbeitrag_z_halb": 6.39,
-     "gesamtlast_ohne_route": 44.28,
-     "gesamtlast_mit_route": 48.38
+     "ausserhalb_steuern": 11.25,
+     "altlastenbeitrag": 11.25,
+     "altlastenbeitrag_z_halb": 6.34,
+     "gesamtlast_ohne_route": 44.17,
+     "gesamtlast_mit_route": 48.27
     },
     "2050": {
-     "z": 7.79,
+     "z": 7.87,
      "steuerbedarf": 32.92,
      "deckung": 33.04,
      "saldo": 0.12,
-     "ausserhalb_steuern": 8.85,
-     "altlastenbeitrag": 8.85,
-     "altlastenbeitrag_z_halb": 4.96,
-     "gesamtlast_ohne_route": 41.77,
-     "gesamtlast_mit_route": 45.87
+     "ausserhalb_steuern": 8.93,
+     "altlastenbeitrag": 8.93,
+     "altlastenbeitrag_z_halb": 5.0,
+     "gesamtlast_ohne_route": 41.85,
+     "gesamtlast_mit_route": 45.95
     },
     "dauer": {
      "z": 0.0,
@@ -1268,41 +1268,41 @@
     "seil"
    ],
    "zins_ausserhalb": true,
-   "z_2028": 10.28,
-   "z_ende": 2080,
+   "z_2028": 10.23,
+   "z_ende": 2092,
    "punkte": {
     "2028": {
-     "z": 10.28,
+     "z": 10.23,
      "steuerbedarf": 33.42,
      "deckung": 33.53,
      "saldo": 0.11,
-     "ausserhalb_steuern": 12.08,
-     "altlastenbeitrag": 12.08,
-     "altlastenbeitrag_z_halb": 6.94,
-     "gesamtlast_ohne_route": 45.5,
-     "gesamtlast_mit_route": 49.6
+     "ausserhalb_steuern": 12.04,
+     "altlastenbeitrag": 12.04,
+     "altlastenbeitrag_z_halb": 6.92,
+     "gesamtlast_ohne_route": 45.46,
+     "gesamtlast_mit_route": 49.56
     },
     "2040": {
-     "z": 9.81,
+     "z": 9.71,
      "steuerbedarf": 33.42,
      "deckung": 33.53,
      "saldo": 0.11,
-     "ausserhalb_steuern": 11.23,
-     "altlastenbeitrag": 11.23,
-     "altlastenbeitrag_z_halb": 6.33,
-     "gesamtlast_ohne_route": 44.65,
-     "gesamtlast_mit_route": 48.75
+     "ausserhalb_steuern": 11.14,
+     "altlastenbeitrag": 11.14,
+     "altlastenbeitrag_z_halb": 6.28,
+     "gesamtlast_ohne_route": 44.56,
+     "gesamtlast_mit_route": 48.66
     },
     "2050": {
-     "z": 7.67,
+     "z": 7.78,
      "steuerbedarf": 33.42,
      "deckung": 33.53,
      "saldo": 0.11,
-     "ausserhalb_steuern": 8.73,
-     "altlastenbeitrag": 8.73,
-     "altlastenbeitrag_z_halb": 4.9,
-     "gesamtlast_ohne_route": 42.15,
-     "gesamtlast_mit_route": 46.25
+     "ausserhalb_steuern": 8.84,
+     "altlastenbeitrag": 8.84,
+     "altlastenbeitrag_z_halb": 4.95,
+     "gesamtlast_ohne_route": 42.26,
+     "gesamtlast_mit_route": 46.36
     },
     "dauer": {
      "z": 0.0,

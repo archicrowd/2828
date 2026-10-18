@@ -1,4 +1,25 @@
-# Rentnerausgleich, Altansprüche und Lebensarbeitszeit (Vorschlag, Logbuch v4.10)
+# Rentnerausgleich, Altansprüche und Lebensarbeitszeit (Logbuch v4.10, beschlossen und gerechnet in v4.11)
+
+> **v4.11 – Beschluss der Initiative (18.10.2026):** „Folge deinen Empfehlungen und rechne ohne komplexe Sonderregeln.“ A, T1, B1 und L1 sind eingerechnet.
+> Die Lebensarbeitsjahre als zweiter Weg zum Rentenbeginn sind als Sonderregel nicht übernommen. Den Begriff „Boden“ ersetzt **Grundauskommen**.
+>
+> | Ergebnis (DE 2028, Monat) | 900 € | 1.200 € | 1.600 € | 2.200 € |
+> |---|---|---|---|---|
+> | Differenz zu heute (heute mit Grundsicherung im Alter) | −54 € | −35 € | −33 € | −52 € |
+>
+> Gemeinsamer Altlastenfonds, Beitrag in % BIP:
+>
+> | Schritt | Beitrag | Änderung |
+> |---|---|---|
+> | vorher (v4.10: Kürzung 12,35 %, volle Verrechnung, ohne B1, ohne Kopplung) | 4,64 |  |
+> | + A: Kürzung 7,5 % | 4,89 | +0,26 |
+> | + T1: anteilige Verrechnung | 5,39 | +0,5 |
+> | + B1: Grundauskommen im Bestand | 5,46 | +0,07 |
+> | + L1: Rentenbeginn ⅔ gekoppelt (= Beschluss) | 5,28 | −0,18 |
+>
+> T1 ist mit +0,50 % BIP der größte Posten, mehr als der Überschlag in v4.10 (0,3). Altlastenzuschlag 13,7 → 15,8 %. Die Basis 4,64 enthält den
+> einheitlichen Rentenbeginn 67 im Kohortenschema (vorher 65: 4,59).
+
 
 Initiative 28:28 · 18. Oktober 2026 · Prüfrechnung `modell/rentnerausgleich.py` → `daten/aggregate/rentnerausgleich.json` (Deutschland, 2028,
 Kaufkraft 2026)

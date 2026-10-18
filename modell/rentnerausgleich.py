@@ -21,6 +21,7 @@ from pathlib import Path
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "rentnerausgleich.toml").read_text(encoding="utf-8"))
+P["zuschlag_pct"] = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]["zuschlag_auf_alle_steuern_pct"]   # v4.11
 spec = importlib.util.spec_from_file_location("rb", W / "modell" / "regel_boden.py")
 RB = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -46,22 +47,22 @@ def neu(r_monat, kuerzung=None, steueranteil=1.0, pauschale=0.0, zuschlag=None, 
     eff = H.eff_jahr(2028)
     konsum = H.kq(y) * y
     n = y - konsum * ((1 + eff / 100) / (1 + H.EFF_ALT / 100) - 1) - zu / 100 * (st + konsum * eff / (100 + eff))
-    if boden:
-        n = max(n, GB)
+    g = H.P.get("grundauskommen_rentner")
+    if boden or g:                                   # v4.11 B1: Grundauskommen auch für Bestandsrenten (volle Anrechnung)
+        n = max(n, 12 * g["neu_monat"] if g else GB)
     return n
 
 
 def varianten():
-    v = {"Beschluss (Kürzung 12,35 %, voll steuerpflichtig, Zuschlag)": {}}
+    v = {"Beschluss v4.11 (Kürzung 7,5 %, voll steuerpflichtig, Zuschlag)": {}}
     for r in P["renten_monat"]:
-        v["Beschluss (Kürzung 12,35 %, voll steuerpflichtig, Zuschlag)"][r] = neu(r)
+        v["Beschluss v4.11 (Kürzung 7,5 %, voll steuerpflichtig, Zuschlag)"][r] = neu(r)
     for k in P["varianten_kuerzung"][1:]:
         v[f"Kürzung {k * 100:.1f} %".replace(".", ",")] = {r: neu(r, kuerzung=k) for r in P["renten_monat"]}
     v["Besteuerungsanteil 83 % wie heute"] = {r: neu(r, steueranteil=0.83) for r in P["renten_monat"]}
     v["Befreiung vom Altlastenzuschlag"] = {r: neu(r, zuschlag=0.0) for r in P["renten_monat"]}
     for p in P["pauschale_monat"]:
         v[f"Pauschale {p} € steuerfrei"] = {r: neu(r, pauschale=p) for r in P["renten_monat"]}
-    v["Kürzung 7,5 % + Besteuerungsanteil 83 %"] = {r: neu(r, kuerzung=0.075, steueranteil=0.83) for r in P["renten_monat"]}
     out = {}
     for name, w in v.items():
         diff = {str(r): round((w[r] - heute(r)) / 12) for r in P["renten_monat"]}
@@ -71,12 +72,24 @@ def varianten():
     return out
 
 
+def heute_ohne_gs(r_monat):
+    g = H.P.pop("grundauskommen_rentner", None)
+    try:
+        return H.rentner(r_monat, P["zuschlag_pct"], 2028)[0]
+    finally:
+        if g:
+            H.P["grundauskommen_rentner"] = g
+
+
 def kleine_renten():
     out = {}
     for r in (600, 900, 1200):
-        n = neu(r)
-        out[str(r)] = dict(neu_ohne_boden=round(n / 12), neu_mit_boden=round(max(n, GB) / 12), grundbedarf=round(GB / 12),
-                           heute_ohne_grundsicherung=round(heute(r) / 12), heute_mit_grundsicherung=round(max(heute(r) / 12, P["bedarf_heute_monat"])))
+        g = H.P.pop("grundauskommen_rentner", None)
+        n0 = neu(r)
+        if g:
+            H.P["grundauskommen_rentner"] = g
+        out[str(r)] = dict(neu_ohne_grundauskommen=round(n0 / 12), neu_mit_grundauskommen=round(neu(r) / 12), grundbedarf=round(GB / 12),
+                           heute_ohne_grundsicherung=round(heute_ohne_gs(r) / 12), heute_mit_grundsicherung=round(heute(r) / 12))
     return out
 
 
@@ -106,9 +119,39 @@ def lebensarbeitszeit():
     return out
 
 
+def zerlegung():
+    """v4.11: Beitrag des gemeinsamen Altlastenfonds (% BIP) je Schritt des Rentnerpakets (A Kürzung 7,5 %, T1 anteilig, B1, L1)."""
+    spec_a = importlib.util.spec_from_file_location("al", W / "modell" / "altlasten.py")
+    AL = importlib.util.module_from_spec(spec_a)
+    with contextlib.redirect_stdout(io.StringIO()):
+        spec_a.loader.exec_module(AL)
+    SZ, B = AL.SZ, AL.P["beschluss"]
+    k = AL.G["anteil_minderjaehrige"] / 100
+    vb = next(x for x in AL.SV["varianten"] if x["id"] == B["system"])
+    r0 = dict(SZ.P.get("rentner", {}))
+
+    def beitrag(kuerzung, anteilig, b1, kopplung):
+        SZ.KUERZUNG = kuerzung
+        SZ.P["rentner"] = dict(r0, anteilige_verrechnung=anteilig, grundauskommen_bestand_pct_bip=b1, kopplung=kopplung)
+        zb = [x * B["z_anteil"] for x in SZ.z_klub(vb["dividende_pct_bip_2028"] / (1 - k / 2), SZ.gewicht())]
+        return AL.loese_c(zb, B["zins"] / 100, AL.G["schuldenquote_2028"], B["zieljahr"], B["zielquote"])
+    schritte = [("vorher (v4.10: Kürzung 12,35 %, volle Verrechnung, ohne B1, ohne Kopplung)", (0.1235, False, 0.0, 0.0)),
+                ("+ A: Kürzung 7,5 %", (0.075, False, 0.0, 0.0)),
+                ("+ T1: anteilige Verrechnung", (0.075, True, 0.0, 0.0)),
+                ("+ B1: Grundauskommen im Bestand", (0.075, True, r0.get("grundauskommen_bestand_pct_bip", 0.0), 0.0)),
+                ("+ L1: Rentenbeginn ⅔ gekoppelt (= Beschluss)", (0.075, True, r0.get("grundauskommen_bestand_pct_bip", 0.0), r0.get("kopplung", 0.0)))]
+    out, vor = [], None
+    for name, a in schritte:
+        c = beitrag(*a)
+        out.append(dict(schritt=name, beitrag_pct_bip=round(c, 2), aenderung=round(c - vor, 2) if vor is not None else None))
+        vor = c
+    SZ.P["rentner"] = r0
+    return out
+
+
 def main():
     E = dict(version=P["version"], status="Prüfrechnung, grob", varianten=varianten(), kleine_bestandsrenten=kleine_renten(),
-             lebensarbeitszeit=lebensarbeitszeit(),
+             lebensarbeitszeit=lebensarbeitszeit(), fonds_zerlegung=zerlegung(),
              grundsicherung_heute=dict(empfaenger_ab_altersgrenze=P["grundsicherung_alter_empfaenger"], ausgaben_mrd_alter_und_em=P["grundsicherung_ausgaben_mrd"]),
              hinweis="DE 2028, Kaufkraft 2026, Monatsbeträge. Mehrkosten = Mittel über die vier Beispielrenten × 18 Mio. Rentner (grob, ohne "
                      "Rentenverteilung). Lebensarbeitszeit: Entlastung von Altlastenfonds (Z, z_pfad.csv) und Mindestrente (netz33) durch späteren "
@@ -117,6 +160,8 @@ def main():
     for k, v in E["varianten"].items():
         print(f"{k:<50}", v["differenz_monat_je_rente"], "| Mehrkosten", v["mehrkosten_mrd"], "Mrd. €,", v["mehrkosten_pct_bip"], "% BIP")
     print("kleine Bestandsrenten", E["kleine_bestandsrenten"])
+    for z in E["fonds_zerlegung"]:
+        print("Fonds", z)
     for k, v in E["lebensarbeitszeit"].items():
         print("Kopplung", k, v)
     return 0

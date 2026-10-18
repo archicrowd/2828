@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.10 · höchste Korrekturnummer 65 · 410 Dateien im Repository
+Modellstand v4.11 · höchste Korrekturnummer 65 · 410 Dateien im Repository
 
 ## Bausteine
 
@@ -84,4 +84,4 @@ Modellstand v4.10 · höchste Korrekturnummer 65 · 410 Dateien im Repository
 - Hinweis: Naht N24 offen: B32 Länderseiten -> B31 Drittel-System: v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land
 - Hinweis: Naht N27 offen: B32 Länderseiten -> B31 Drittel-System: v4.7: Vergleich DK/SE; Vorschlag H1–H3, K1, G1–G5 zur Entscheidung; Kosten von H1–H3 und K1 nicht gerechnet (Mietdaten nach Haushaltstyp fehlen) | v4.8: H1–H3 und G1–G5 nach Empfehlung angenommen und grob gerechnet; Kindergewicht 0,55 vorgeschlagen; Freigabe der Initiative offen; Mietdaten weiter offen
 - Hinweis: Naht N28 offen: B32 Länderseiten -> B31 Drittel-System: v4.9: Gini FR steigt durch ungedeckelte Weitergabe; Deckel 1× / 1,5× Durchschnittslohn senkt FR auf 27,6 / 29,8 (Korrektur 64)
-- Hinweis: Naht N29 offen: B30 Altlastenfonds -> B31 Drittel-System: v4.10: Vorschlag A (Kürzung 7,5 %), B1, T1, L1 (⅔-Kopplung); Rentenalter 65/67 vereinheitlichen; Korrektur 65
+- Hinweis: Naht N29 offen: B30 Altlastenfonds -> B31 Drittel-System: v4.10: Vorschlag A (Kürzung 7,5 %), B1, T1, L1 (⅔-Kopplung); Rentenalter 65/67 vereinheitlichen; Korrektur 65 | v4.11: beschlossen und gerechnet; Fonds +0,69 % BIP (T1 +0,50); Rentenalter 67 einheitlich; offen: DRV-Rentenverteilung, Eigentumsschutz

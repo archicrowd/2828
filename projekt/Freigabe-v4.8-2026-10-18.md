@@ -1,4 +1,8 @@
-# Freigabevorlage Fassung 4.8 – Kindergewicht, Härtefall, Gemeinden, Gini, Webseite
+# Freigabevorlage Fassung 4.8 (fortgeschrieben bis v4.11)
+
+> v4.11: Der Begriff „Boden“ heißt jetzt **Grundauskommen** (Auftrag der Initiative). Rentnerpaket eingerechnet (Abschnitt 4); Altlastenzuschlag 13,7 → 15,8 %, Beispiel 42.000 € +630 → +602 €.
+
+# – Kindergewicht, Härtefall, Gemeinden, Gini, Webseite
 
 Initiative 28:28 · 18. Oktober 2026 · Logbuch Band III, v4.8 · Status: **zur Freigabe**
 
@@ -9,20 +13,20 @@ Anwendbarkeit auf anderen Kontinenten mit Vorbehalt nennen.
 
 ---
 
-## 1 | Kindergewicht im Boden – Vorschlag 0,55
+## 1 | Kindergewicht im Grundauskommen – Vorschlag 0,55
 
 | Maßstab | Gewicht eines Kindes (Erwachsene = 1) | Quelle |
 |---|---|---|
 | bisher (OECD-modifiziert) | 0,30 | Eurostat/OECD |
 | Bürgergeld mit Unterkunft je Kind | ≈ 0,46 | sozial_laender.toml (Annahme KdU) |
-| weitere Erwachsene im Boden | 0,50 | Regel Boden |
+| weitere Erwachsene im Grundauskommen | 0,50 | Regel Grundauskommen |
 | **sächliches Existenzminimum Kind / Grundbedarf** | **0,55** (6.828 / 12.348 €) | Kinderfreibetrag 2026 (Sekundärquelle) |
 | Existenzminimum mit Betreuung, Erziehung, Ausbildung | 0,79 | Grundlage von R1 (Dividende 0,8) |
 | Riksnorm Schweden, ohne Wohnen | 0,57–1,0 | Socialstyrelsen 2026 |
 
-**Begründung für 0,55:** Der Boden deckt den sachlichen Bedarf des Kindes. Betreuung, Erziehung und Ausbildung (der Unterschied zu 0,79)
+**Begründung für 0,55:** Das Grundauskommen deckt den sachlichen Bedarf des Kindes. Betreuung, Erziehung und Ausbildung (der Unterschied zu 0,79)
 erhalten die Kinder als Sachleistung der Gemeinde. Dafür bekommt die Gemeinde je Kind einen festen Betrag, in Deutschland 13.729 € im Jahr.
-Damit passen Boden, Kinderdividende (0,8) und Gemeindeauftrag zusammen.
+Damit passen Grundauskommen, Kinderdividende (0,8) und Gemeindeauftrag zusammen.
 
 **Varianten, 2028, Monatsbeträge (Deutschland) und Kosten der Aufstockung (% BIP, Band) gegen das Netzbudget:**
 
@@ -36,7 +40,7 @@ Damit passen Boden, Kinderdividende (0,8) und Gemeindeauftrag zusammen.
 | 0,8 | 3.134 € | 4.021 € | 1.824 € | 0,31–0,96 | 0,95–1,73 | 0,72–1,40 | 1,02–1,72 | 0,97–1,87 |
 | Netzbudget | | | | 1,17 | 1,74 | 1,37 | 2,05 | 1,23 |
 
-Bürgergeld heute für Paar + 2 Kinder ohne Erwerb: 2.634 €. Bei 0,55 liegt der Boden praktisch gleichauf (−14 €). Bei allen Gewichten bleibt der
+Bürgergeld heute für Paar + 2 Kinder ohne Erwerb: 2.634 €. Bei 0,55 liegt das Grundauskommen praktisch gleichauf (−14 €). Bei allen Gewichten bleibt der
 Abstand zur Arbeit erhalten: Vollzeit-Mindestlohn bringt 28–51 % mehr als kein Erwerb (Halbanrechnung). Bei 0,7–0,8 reicht das Budget in der
 oberen Schätzung in Italien und Polen nicht, Frankreich liegt an der Grenze, und für den Härtefall bleibt kaum Raum.
 
@@ -47,7 +51,7 @@ IT, ES, PL 100 %. Dort fehlen heutige Bedarfsleistungen im Modell (ADI, IMV, Soz
 ## 2 | Härtefall und Gemeinden (nach Empfehlung angenommen, gerechnet)
 
 Regeln: H1 Wohnkosten über dem Wohnanteil bis zur örtlichen Grenze, H2 Mehrbedarf landeseinheitlich, H3 Einmalbedarfe nach Ermessen der Gemeinde.
-Die Rechnung bleibt eine einzige: Aufstockung = Boden + H1 + H2 − Dividenden − ½ × eigenes Einkommen. Für die Gemeinden gelten G1–G5:
+Die Rechnung bleibt eine einzige: Aufstockung = Grundauskommen + H1 + H2 − Dividenden − ½ × eigenes Einkommen. Für die Gemeinden gelten G1–G5:
 - Die Gemeinde zahlt aus.
 - Das Land setzt Höhe und Anrechnung; die Gemeinde darf ergänzen, aber nicht unterschreiten.
 - Ermessen hat die Gemeinde bei der Mietgrenze, den Einmalbedarfen und den Angeboten.
@@ -56,7 +60,7 @@ Die Rechnung bleibt eine einzige: Aufstockung = Boden + H1 + H2 − Dividenden �
 
 | % BIP 2028 | DE | FR | IT | ES | PL |
 |---|---|---|---|---|---|
-| Boden + H1–H3, untere / obere Schätzung | 0,35 / 1,00 | 0,97 / 1,75 | 0,74 / 1,44 | 1,03 / 1,73 | 0,98 / 1,88 |
+| Grundauskommen + H1–H3, untere / obere Schätzung | 0,35 / 1,00 | 0,97 / 1,75 | 0,74 / 1,44 | 1,03 / 1,73 | 0,98 / 1,88 |
 | Netzbudget (Härtefall, Arbeitslosigkeit, Invalidität) | 1,17 | 1,74 | 1,37 | 2,05 | 1,23 |
 | Reserve, obere Schätzung | 0,17 | −0,01 | −0,07 | 0,32 | −0,65 |
 
@@ -83,16 +87,22 @@ Die Rechnung ist statisch und läuft je Äquivalenzerwachsenem. Die Rekonstrukti
 
 Entscheidung über den Deckel offen (N28).
 
-## 4 | Rentner (berichtigt, Korrektur 65)
+## 4 | Rentner (v4.11 eingerechnet)
 
-Die Aussage, R1 vergrößere das Minus der Rentner auf −54 bis −142 €, war falsch. Die Dividende ist Teil der Bestandsrente, und R1 verschiebt nur Kosten
-in den Altlastenfonds. Es gilt −35 bis −123 € im Monat. Vorschläge zum Ausgleich: `Vorschlag-Rentnerausgleich-2026-10-18.md`.
+Beschlossen sind vier einfache Regeln:
+- **A:** Bestandsrenten werden um 7,5 % gekürzt, nicht um 12,35 %.
+- **T1:** Der Altanspruch wird anteilig verrechnet.
+- **B1:** Auch kleine Bestandsrenten erhalten das Grundauskommen; die Rente wird dabei voll angerechnet.
+- **L1:** Der Rentenbeginn liegt bei 67 Jahren und folgt zu ⅔ der Lebenserwartung.
+
+Rentner haben damit im Monat 33 bis 54 € weniger als heute, vorher 35 bis 123 €. Der Vergleich rechnet heute einschließlich der Grundsicherung
+im Alter. Der Fondsbeitrag steigt von 4,64 auf 5,28 % BIP, der Altlastenzuschlag von 13,7 auf 15,8 %. Einzelheiten: `Vorschlag-Rentnerausgleich-2026-10-18.md`.
 
 ## 5 | Webseite Fassung 4.8 (sechs Sprachen) und Konzept
 
-- **Kennzahlen oben:** Dividende 354 € je Erwachsenem und 283 € je Kind. „9 von 10“ ist neu belegt (Regel Boden, heute mit Bürgergeld). Das
+- **Kennzahlen oben:** Dividende 354 € je Erwachsenem und 283 € je Kind. „9 von 10“ ist neu belegt (Regel Grundauskommen, heute mit Bürgergeld). Das
   Beispiel zeigt +630 € statt +642 €.
-- **Rechner:** Kinder 80 %, Aufstockung bis zum Boden mit Halbanrechnung, heute mit Bürgergeld (DE), APL (FR) und CAPI (ES). Das Ergebnis
+- **Rechner:** Kinder 80 %, Aufstockung bis zum Grundauskommen mit Halbanrechnung, heute mit Bürgergeld (DE), APL (FR) und CAPI (ES). Das Ergebnis
   stimmt mit dem Modell überein (20 Stichproben, Abweichung höchstens 1 €).
 - **Neuer Abschnitt „Ein Netz, das trägt – und Wege öffnet“** mit vier Karten:
   - Bildung und Betreuung: die Gemeinde, je Kind;
@@ -105,13 +115,13 @@ in den Altlastenfonds. Es gilt −35 bis −123 € im Monat. Vorschläge zum Au
   - Gini;
   - Antrag gegen ohne Antrag.
 
-  Verschlechterungen erscheinen rot: In IT, ES und PL bleibt von einem Zusatzeuro weniger als heute, weil der Boden dort neu ist. In FR gilt
+  Verschlechterungen erscheinen rot: In IT, ES und PL bleibt von einem Zusatzeuro weniger als heute, weil das Grundauskommen dort neu ist. In FR gilt
   das ebenso, und der Gini steigt.
 - **Gini-Grafik:** fünf Länder mit den Werten heute, 2028 und 2060, dazu Dänemark und Schweden zum Vergleich.
 - **Grafiken zurückgenommen:** Die Dividendengrafik ist aufklappbar. In „Wohin die Reise geht“ steht CO₂ zuerst, die Staatsschulden als zweiter Reiter.
 - **Über Europa hinaus:** neue Karte mit dem Vorbehalt „wegen des vorliegenden Datenbestands und Modellstands noch nicht weiter bearbeitet“.
 - **Konzept und Kurzfassung (Fassung 4.8, PDF):**
-  - Kinder 80 %, Begriffe Boden und Härtefall, Gemeinderolle;
+  - Kinder 80 %, Begriffe Grundauskommen und Härtefall, Gemeinderolle;
   - Kostentabelle, neuer Abschnitt 3.7 Gini, Haushaltstabelle mit Bürgergeld;
   - Absatz über Europa hinaus, Vorbilder Dänemark und Schweden.
 

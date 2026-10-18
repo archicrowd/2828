@@ -15,7 +15,7 @@ tilgungsregel = "Einnahmen über dem gleitenden Fünfjahresdurchschnitt des Aufk
 # v3.48 (Beschluss): Renten um die eingesparten Sozialbeiträge der Rentner gekürzt. Satz: Kranken- und Pflegeversicherung der Rentner in
 # Deutschland 2026: 7,3 % + halber durchschnittlicher Zusatzbeitrag 1,45 % + Pflege 3,6 % = 12,35 % der Bruttorente (Annahme: für alle zehn Staaten
 # gleich; tatsächlich unterschiedlich, z. B. Frankreich CSG/CRDS, Dänemark keine Beiträge – je Staat zu setzen).
-kuerzung = 0.1235
+kuerzung = 0.075            # v4.11 (Beschluss 18.10.2026, Rentnerausgleich A): 7,5 % statt 12,35 %
 
 [beschluss]
 system = "33R"

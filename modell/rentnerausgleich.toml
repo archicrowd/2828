@@ -1,9 +1,9 @@
 # Rentnerausgleich und Lebensarbeitszeit (modell/rentnerausgleich.py, Logbuch v4.10). Prüfrechnung, Deutschland, 2028, Kaufkraft 2026.
-version = "v4.10"
+version = "v4.11"
 renten_monat = [900, 1200, 1600, 2200]     # Bruttorenten heute, wie haushalte33.toml
-zuschlag_pct = 13.7                         # Altlastenzuschlag (gemeinsamer Fonds, Beschluss)
-kuerzung = 0.1235                           # Beschluss v3.48: KV- und PV-Beitrag der Rentner 2026
-varianten_kuerzung = [0.1235, 0.10, 0.075]
+zuschlag_pct = 13.7                         # wird aus altlasten.json überschrieben (v4.11)
+kuerzung = 0.075                            # v4.11 Beschluss (Rentnerausgleich A); vorher 0,1235 (v3.48)
+varianten_kuerzung = [0.075, 0.1235, 0.10]
 pauschale_monat = [25, 50]                  # Rentnerpauschale, steuerfrei, je Bestandsrente
 rentner_mio = 18.0                          # Annahme: Personen ab 65 in DE (Anteil 21,6 % × 83,5 Mio., einwanderung33/netz33); Renten tatsächlich mehr Fälle (Hinterbliebene)
 rentenausgaben_pct_bip = 11.8               # DE 2024 GF1002 + GF1003 (sozialschutz.json, Eurostat COFOG) – Alter und Hinterbliebene

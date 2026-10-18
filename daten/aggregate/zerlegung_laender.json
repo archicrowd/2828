@@ -5,58 +5,58 @@
   "FR": {
    "zerlegung_monat": {
     "20000|1|0": {
-     "gesamt": -131,
-     "altlastenzuschlag": -70,
+     "gesamt": -138,
+     "altlastenzuschlag": -78,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -107,
      "prime_activite": -276,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 489
+     "rest": 490
     },
     "20000|1|1": {
-     "gesamt": -354,
-     "altlastenzuschlag": -73,
+     "gesamt": -362,
+     "altlastenzuschlag": -80,
      "pflichtvorsorge": -167,
-     "dividende_unter_de_niveau": -180,
+     "dividende_unter_de_niveau": -179,
      "prime_activite": -595,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 661
+     "rest": 659
     },
     "30000|2|2": {
-     "gesamt": -192,
-     "altlastenzuschlag": -159,
+     "gesamt": -209,
+     "altlastenzuschlag": -175,
      "pflichtvorsorge": -250,
-     "dividende_unter_de_niveau": -382,
+     "dividende_unter_de_niveau": -381,
      "prime_activite": -657,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 1256
+     "rest": 1254
     },
     "45000|1|0": {
-     "gesamt": 441,
-     "altlastenzuschlag": -286,
+     "gesamt": 412,
+     "altlastenzuschlag": -315,
      "pflichtvorsorge": -375,
-     "dividende_unter_de_niveau": -89,
+     "dividende_unter_de_niveau": -88,
      "prime_activite": 0,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 1191
+     "rest": 1190
     },
     "45000|2|2": {
-     "gesamt": 152,
-     "altlastenzuschlag": -293,
+     "gesamt": 121,
+     "altlastenzuschlag": -323,
      "pflichtvorsorge": -375,
-     "dividende_unter_de_niveau": -385,
+     "dividende_unter_de_niveau": -383,
      "prime_activite": -271,
      "allocations_familiales": 0,
      "quotient_familial": -10,
-     "rest": 1486
+     "rest": 1483
     }
    },
-   "zuschlag": 18.4,
-   "zuschlag_neustart": 15.3,
+   "zuschlag": 20.3,
+   "zuschlag_neustart": 17.1,
    "anteil_basis": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
@@ -65,7 +65,7 @@
    "anteil_neustart": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 36
+    "Paar, ein Einkommen, 2 Kinder": 20
    },
    "anteil_ohne_zuschlag": {
     "alleinstehend": 62,
@@ -73,7 +73,7 @@
     "Paar, ein Einkommen, 2 Kinder": 36
    },
    "anteil_vorsorge_als_vermoegen": {
-    "alleinstehend": 87,
+    "alleinstehend": 62,
     "alleinerziehend, 1 Kind": 36,
     "Paar, ein Einkommen, 2 Kinder": 36
    },
@@ -85,9 +85,9 @@
    "dividende_2028": 200.0,
    "dividende_de_kaufkraftgleich": 352,
    "zuschlag_nach_zins": {
-    "2.5": 18.4,
-    "3.5": 22.7,
-    "4.5": 27.4
+    "2.5": 20.3,
+    "3.5": 24.6,
+    "4.5": 29.2
    },
    "netz_pct_bip_2028": {
     "Gesundheit": 8.36,
@@ -103,32 +103,32 @@
   "IT": {
    "zerlegung_monat": {
     "20000|1|0": {
-     "gesamt": 356,
-     "altlastenzuschlag": -105,
+     "gesamt": 341,
+     "altlastenzuschlag": -120,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -25,
      "assegno_unico": 0,
      "rest": 653
     },
     "24000|2|2": {
-     "gesamt": 472,
-     "altlastenzuschlag": -144,
+     "gesamt": 451,
+     "altlastenzuschlag": -165,
      "pflichtvorsorge": -200,
-     "dividende_unter_de_niveau": -93,
+     "dividende_unter_de_niveau": -92,
      "assegno_unico": -402,
-     "rest": 1311
+     "rest": 1310
     },
     "36000|1|0": {
-     "gesamt": 479,
-     "altlastenzuschlag": -224,
+     "gesamt": 447,
+     "altlastenzuschlag": -257,
      "pflichtvorsorge": -300,
-     "dividende_unter_de_niveau": -22,
+     "dividende_unter_de_niveau": -21,
      "assegno_unico": 0,
      "rest": 1025
     }
    },
-   "zuschlag": 18.1,
-   "zuschlag_neustart": 14.7,
+   "zuschlag": 20.7,
+   "zuschlag_neustart": 17.3,
    "anteil_basis": {
     "alleinstehend": 100,
     "alleinerziehend, 1 Kind": 100,
@@ -157,9 +157,9 @@
    "dividende_2028": 276.3,
    "dividende_de_kaufkraftgleich": 312,
    "zuschlag_nach_zins": {
-    "2.5": 18.1,
-    "3.5": 22.6,
-    "4.5": 27.6
+    "2.5": 20.7,
+    "3.5": 25.2,
+    "4.5": 30.1
    },
    "netz_pct_bip_2028": {
     "Gesundheit": 6.17,

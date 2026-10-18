@@ -17,6 +17,9 @@ from pathlib import Path
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "haushalte33.toml").read_text(encoding="utf-8"))
+_AL = W / "daten" / "aggregate" / "altlasten.json"
+if _AL.exists():   # v4.11: Altlastenzuschlag aus dem Fonds (Beschluss), nicht mehr von Hand
+    P["zuschlag_pct"] = [0.0, json.loads(_AL.read_text(encoding="utf-8"))["beschluss"]["zuschlag_auf_alle_steuern_pct"]]
 spec = importlib.util.spec_from_file_location("kern", W / "modell" / "kern" / "modell-2828.py")
 K = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -104,6 +107,10 @@ def rentner(r_monat, zu, j):
     st = est(r)                                        # Dividende + Altrente zusammen r, ganz steuerpflichtig
     konsum = kq(r - st) * (r - st)
     n = r - st - konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1) - zu / 100 * (st + konsum * EFF / (100 + EFF))
+    # v4.11 B1: Grundauskommen auch für Bestandsrenten (volle Anrechnung); heute zum Vergleich Grundsicherung im Alter (Regelbedarf + KdU)
+    g = P.get("grundauskommen_rentner")
+    if g:
+        h, n = max(h, 12 * g["heute_monat"]), max(n, 12 * g["neu_monat"])
     return round(h), round(n)
 
 
@@ -158,7 +165,7 @@ def main():
         rr["jahre"].append(j); rr["div"].append(JAHR[j]["dividende_erw_eur2026"]); rr["eff"].append(JAHR[j]["label_effektiv"])
     # Selbstprüfung: die Formel der Seite muss neu() für den Einpersonenhaushalt treffen
     setze_jahr(2028)
-    assert abs(neu(42000, 0, False, rr["weitergabe"], rr["zuschlag"], rr["vorsorge"], 2028) - neu(42000, 0, False, 0.8, 13.7, 0.10, 2028)) < 1e-6
+    assert abs(neu(42000, 0, False, rr["weitergabe"], rr["zuschlag"], rr["vorsorge"], 2028) - neu(42000, 0, False, 0.8, max(P["zuschlag_pct"]), 0.10, 2028)) < 1e-6
     raster["rechner"] = rr
     # v3.58: Anteil der Beschäftigten mit mehr verfügbarem Einkommen je Haushaltstyp (Lohnverteilung K.VERT, 7 Stützstellen, grob; geltende
     # Regeln: Weitergabe 80 %, Zuschlag 13,7 %, Pflichtvorsorge 10 %). Für die Aussage „9 von 10 Beschäftigten" auf der Webseite.
