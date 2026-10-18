@@ -20,6 +20,7 @@ W = Path(__file__).resolve().parents[2]
 QUELLE = W / "seite" / "stand-c"
 PDFS = [W / "dokumente" / "entwurf" / "TAX-Drittel-Konzept.pdf", W / "dokumente" / "entwurf" / "TAX-Drittel-Kurzfassung.pdf"]
 TITEL = "Das Goldene Drittel"
+VERSION = re.search(r'^version = "(v[\d.]+)"', (W / "modell" / "parameter.toml").read_text(encoding="utf-8"), re.M).group(1)
 ZIEL = Path(sys.argv[1]) if len(sys.argv) > 1 else W / "seite" / "paket"
 SPRACHEN = ["de", "en", "fr", "it", "es", "pl"]
 ENTFALLEN = {"da": "Dansk", "nl": "Nederlands", "sl": "Slovenščina", "et": "Eesti"}
@@ -71,7 +72,7 @@ def main() -> int:
     for sp in ENTFALLEN:
         (ZIEL / f"{sp}.html").write_text(weiterleitung(sp), encoding="utf-8")
     dateien = sorted(p for p in ZIEL.rglob("*") if p.is_file())
-    zipname = ZIEL.parent / "Webseite-v4.0.zip"
+    zipname = ZIEL.parent / f"Webseite-{VERSION}.zip"
     with zipfile.ZipFile(zipname, "w", zipfile.ZIP_DEFLATED) as z:
         for p in dateien:
             z.write(p, p.relative_to(ZIEL))
