@@ -22,3 +22,4 @@ N20,B20 Gesamtrechnung,B07 Gesamtkonzept,Texte übernehmen die Zahlen der Rechnu
 N21,B28 Sozialschutz und Übergang,B20 Gesamtrechnung,Z als territorialer Posten neben dem Aufschlag; Härtefall als Posten; Gesamtlast-Aussage,offen,nach Entscheidung S1–S13; Korrektur 60
 N22,B30 Altlastenfonds,B20 Gesamtrechnung,System 33F und Altlastenfonds als neue geltende Rechnung,offen,Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend
 N23,B31 Drittel-System,B20 Gesamtrechnung,Dividende als Rest unter Trends; Mindestniveau ab etwa 2033 unterschritten,offen,"v3.47: Entscheidung über Dauerhaftigkeit der Dividende (hinnehmen, Bodenwertabgabe, Bürgerfonds)"
+N24,B32 Länderseiten,B31 Drittel-System,"Gleiche Regeln je Land; Frankreich verliert bei Geringverdienern und Familien (prime d'activité, allocations familiales)",offen,v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land

@@ -1,0 +1,19 @@
+# Länderseiten der Fassung 4.x (modell/laenderseiten.py, Logbuch v4.1). Prüfrechnung.
+version = "v4.1"
+staaten = ["DE", "FR", "IT", "ES", "PL", "EU30"]
+
+[namen]
+DE = "Deutschland"
+FR = "Frankreich"
+IT = "Italien"
+ES = "Spanien"
+PL = "Polen"
+EU30 = "30 Staaten des Möglichkeitsraums"
+
+# Startschuld des eigenen Altlastenfonds 2028, % des BIP (Fortschreibung bis zum Systemwechsel)
+[schuld_2028]
+DE = 81.3    # Gesamtrechnung (schuldenpfad.py), Status quo fortgeschrieben
+FR = 122.4   # PLF/RESF 2027 (06.10.2026), modell/laender/fr.toml; amtliche Prognose, über Rechercheagenten abgerufen
+IT = 137.9   # Documento programmatico di finanza pubblica 2026 (Ministerrat Anfang Oktober 2026), quadro programmatico; Sekundärquelle redigo.info 05.10.2026, Original (MEF) nicht abrufbar
+ES = 96.4    # Hacienda, Stabilitätsziele 2027–2029 (07.07.2026), modell/laender/es.toml; amtlich, Ziel
+PL = 71.7    # Schuldenstrategie 2027–2030 (09/2026), Interpolation 2027–2030, modell/laender/pl.toml; Annahme auf Sekundärquellen

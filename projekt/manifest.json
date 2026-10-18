@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v4.0",
+ "modellstand": "v4.1",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -336,6 +336,15 @@
    "status": "geprueft",
    "pruefung": "modell/projektion33.py;modell/haushalte33.py",
    "anmerkung": "v3.47: Trends 2028–2060 (Verkehr, CO₂, Verbrauchsteuern, Gesundheit), Haushalte heute gegen 33F (2028/2035), deutscher Webseitenentwurf zur Prüfung v3.48: System 33R (Label 5/11/17/25), Weitergabe ≥ 80 %, Rentenkürzung um Beiträge, Einwanderung v3.49: Progression an den Stufen (Korrektur 61), Beschäftigung/KI/Kapitalverschiebung, Leistungspaket und Namen v3.50: Starkes Netz als Grundversorgung (Gesundheit, Pflege, Mindestrente/Volksrente, Invalidität, Arbeitslosigkeit) v3.51: Beschluss Mindestrente mit Pflichtvorsorge 10 %, Netz als Grundversorgung geltend für den Entwurf; Konzept als Word-Datei v3.52: Möglichkeitsraum (30 Staaten) v3.54: Neustartverfahren v3.55: Webseitenentwurf nach Vorbild der veröffentlichten Seite (seite/entwurf/drittel), Neuseeland gestrichen v3.56: Wortmarke Das Goldene Drittel, Rechner mehr im Geldbeutel mit Zeitstrahl v3.57: Textänderungen der Initiative, Kontakt tax.better@archicrowd.de v3.58: Sie-Form, Einleitung, 9 von 10 Beschäftigten (Gegenprobe haushalte33) v4.0: Fassung 4.0 in sechs Sprachen (seite/stand-c), Kurzfassung, Upload-Paket"
+  },
+  {
+   "id": "B32",
+   "name": "Länderseiten: Referenzland je Sprachversion",
+   "pfad": "modell/laenderseiten.py;modell/laenderseiten.toml;daten/aggregate/laenderseiten.json;modell/heute_laender.py;modell/heute_laender.toml;daten/aggregate/heute_laender.json;daten/aggregate/laender_zeitreihen.json;seite/werkzeuge/laender_texte.py",
+   "stand": "B",
+   "status": "geprueft",
+   "pruefung": "modell/heute_laender.py (OECD-Abgleich, Selbstprüfung Raster)",
+   "anmerkung": "v4.1: FR, IT, ES, PL als Referenzländer, EN als Durchschnitt der 30 Staaten; Steuer- und Abgabenmodelle heute (Recht 2026, vereinfacht); Ergebnis: IT/ES/PL 9 von 10 Beschäftigte mit mehr, FR 2–4 von 10"
   }
  ],
  "nahtstellen": [
@@ -525,6 +534,14 @@
    "was": "Dividende als Rest unter Trends; Mindestniveau ab etwa 2033 unterschritten",
    "status": "offen",
    "beleg_oder_offener_punkt": "v3.47: Entscheidung über Dauerhaftigkeit der Dividende (hinnehmen, Bodenwertabgabe, Bürgerfonds)"
+  },
+  {
+   "id": "N24",
+   "von": "B32 Länderseiten",
+   "nach": "B31 Drittel-System",
+   "was": "Gleiche Regeln je Land; Frankreich verliert bei Geringverdienern und Familien (prime d'activité, allocations familiales)",
+   "status": "offen",
+   "beleg_oder_offener_punkt": "v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land"
   }
  ],
  "quellen": [

@@ -1,0 +1,95 @@
+# Steuer- und Abgabenmodelle „heute" (Recht 2026) für die Länderseiten (modell/heute_laender.py, Logbuch v4.2). Prüfrechnung, vereinfacht.
+# Beträge in Landeswährung je Jahr. Quellenstatus je Block: amtlich / Sekundärquelle / Annahme.
+version = "v4.2"
+weitergabe = 0.8          # Beschluss v3.48: mindestens 80 % der gesparten Arbeitgeberbeiträge in den Lohn
+vorsorge = 0.10           # Beschluss v3.51: Pflichtvorsorge 10 % des Bruttolohns (aus dem Netto)
+anteil_ermaessigt = 0.2525  # Anteil des Konsums zum ermäßigten Satz, abgeleitet aus DE: 19 % / 7 % ergeben effektiv 15,97 % (haushalte33.toml); für alle Länder übernommen (Annahme)
+median_zu_durchschnitt = 0.66  # Beispielhaushalt: 42.000 / 63.288 (DE); je Land 0,66 × Durchschnittslohn (OECD Taxing Wages 2025, Tab. 1.7, 2024), auf 1.000 gerundet
+
+[oecd]  # OECD Taxing Wages 2025 (Daten 2024), Alleinstehende, 100 % Durchschnittslohn; Tab. 1.1/1.2/1.7 (amtlich, über die OECD-Seite abgerufen 18.10.2026)
+quelle = "OECD (2025), Taxing Wages 2025, Tab. 1.1, 1.2, 1.7"
+durchschnittslohn = { DE = 63288, FR = 44968, IT = 35616, ES = 31698, PL = 96421 }
+keil = { DE = 47.9, FR = 47.2, IT = 47.1, ES = 40.6, PL = 34.7, OECD = 34.9 }
+einkommensteuer = { DE = 13.9, FR = 12.3, IT = 15.9, ES = 12.3, PL = 5.4 }
+sv_an = { DE = 17.3, FR = 8.3, IT = 7.2, ES = 5.0, PL = 15.3 }
+sv_ag = { DE = 16.8, FR = 26.7, IT = 24.0, ES = 23.4, PL = 14.1 }
+rang = { DE = 2, FR = 3, IT = 4, ES = 13, PL = 24 }   # Rang unter 38 OECD-Staaten (Tab. 1.1)
+
+[waehrung]
+PL = 4.2397   # Zł je Euro, Jahresdurchschnitt 2025, Eurostat ert_bil_eur_a (amtlich)
+
+[mwst]  # Regelsatz / maßgeblicher ermäßigter Satz (Lebensmittel); effektiv mit anteil_ermaessigt (Annahme)
+DE = [19.0, 7.0]
+FR = [20.0, 5.5]
+IT = [22.0, 10.0]
+ES = [21.0, 10.0]
+PL = [23.0, 8.0]
+
+[fr]   # Frankreich, Recht 2026
+quelle_ir = "Barème 2026 (revenus 2025), LF 2026 art. 4 (+0,9 %); Plafond QF 1.807 €, parent isolé 4.262 €, décote 897/1.483 € (Schwellen 1.982/3.277 €): legifiscal.fr nach BOFiP BOI-IR-LIQ-20-10 (Sekundärquelle)"
+ir_grenzen = [11600, 29579, 84577, 181917]
+ir_saetze = [0.0, 11.0, 30.0, 41.0, 45.0]
+qf_plafond = 1807
+qf_parent_isole = 4262
+decote = { seul = [1982, 897], couple = [3277, 1483], taux = 0.4525 }
+abattement = [0.10, 499, 14298]   # 10 %, Mindest-/Höchstbetrag: Werte 2024 (495/14.171) × 1,009 (Annahme)
+quelle_sv = "CCI Paris Île-de-France, Les charges sociales au 1er janvier 2026 (Sekundärquelle, Sätze amtlich)"
+pss = 48060
+smic = 21876          # 12,02 € × 151,67 h × 12 (1.1.2026); RGDU rechnet mit diesem Wert
+an_vieillesse_plaf = 6.90
+an_vieillesse_deplaf = 0.40
+an_agirc_t1 = 4.01    # 3,15 + CEG 0,86
+an_agirc_t2 = 9.86    # 8,64 + CEG 1,08 + CET 0,14
+csg_crds = 9.70       # CSG 9,2 + CRDS 0,5 auf 98,25 % des Bruttos
+csg_deduct = 6.80
+ag_satz = { maladie = 13.0, maladie_red = 7.0, vieillesse_plaf = 8.55, vieillesse_deplaf = 2.11, af = 5.25, af_red = 3.45, at = 2.2, chomage_ags = 4.25, fnal = 0.10, csa = 0.30, agirc_t1 = 6.01, agirc_t2 = 14.78, formation = 1.0, apprentissage = 0.68, mobilite = 1.75, peec = 0.45 }
+ag_schwellen_smic = { maladie_red = 2.25, af_red = 3.3 }   # Annahme: Schwellen der ermäßigten Sätze wie 2025
+rgdu = { tmin = 0.02, tdelta = 0.3781, p = 1.75, bis_smic = 3.0 }   # FNTP nach Décret RGDU 2026 (Sekundärquelle); AT 2,2 %, Versement mobilité 1,75 % Annahme
+quelle_pa = "Prime d'activité: Montant forfaitaire 638,28 € (1.4.2026), Bonifikation bis 239 € ab 1,15 SMIC (Reform 2026): previssima.fr (Sekundärquelle); 61 % der Erwerbseinkommen (Annahme nach Code de la sécurité sociale)"
+pa = { mf = 638.28, taux = 0.61, bonif_max = 239.0, bonif_ab_smic = 0.5, bonif_voll_smic = 1.15, seuil = 15.0 }
+quelle_af = "Allocations familiales: Monatsbeträge 151,05 € (2 Kinder), 344,58 € (3), +193,53 € je weiteres Kind; Einkommensgrenze 78.446 € (Halbierung), 104.560 € (Viertel) – Werte 2025 (Annahme für 2026)"
+af = { zwei = 151.05, drei = 344.58, weitere = 193.53, grenze1 = 78446, grenze2 = 104560 }
+
+[it]   # Italien, Recht 2026
+quelle = "IRPEF 23/33/43 % (Legge di bilancio 2026; CGIL Lazio, Sekundärquelle); Detrazioni art. 13 TUIR und Cuneo-Maßnahmen L. 207/2024 art. 1 c. 4–9 (aus Fachliteratur, Annahme ohne Abruf des Gesetzestexts); INPS 9,19 % Beschäftigte (Annahme); Arbeitgeber 31,6 % des Bruttos = OECD 24,0 % der Arbeitskosten (kalibriert); Addizionali 2,0 % (Annahme, Mittel regional 1,73 + kommunal ~0,3–0,8)"
+irpef_grenzen = [28000, 50000]
+irpef_saetze = [23.0, 33.0, 43.0]
+inps_an = 9.19
+inps_an_zusatz = [56224, 1.0]   # +1 % über der ersten Rentenstufe (Annahme Wert 2026)
+ag_satz = 31.6
+addizionali = 2.0
+cuneo_esente = [[8500, 7.1], [15000, 5.3], [20000, 4.8]]
+cuneo_detrazione = [20000, 32000, 40000, 1000]
+trattamento_integrativo = [8500, 15000, 1200]
+assegno_unico = { max = 201.0, min = 57.0, isee_max = 17227, isee_min = 45940 }   # Werte 2025 (Annahme), ISEE ≈ Nettoeinkommen / Äquivalenzskala
+scala_isee = [1.0, 1.57, 2.04, 2.46, 2.85, 3.20, 3.55]
+
+[es]   # Spanien, Recht 2026
+quelle = "IRPF: Escala general estatal + autonómica (Standard) 19/24/30/37/45/47 % (taxdown.es, Sekundärquelle); Reducción por rendimientos del trabajo, mínimos und tributación conjunta nach Ley 35/2006 (Stand 2025, Annahme für 2026); Seguridad Social 2026: Base máxima 5.101,20 €/Monat, MEI 0,90 (0,75/0,15), Solidarität 1,15/1,25/1,46 % (Cuatrecasas nach RDL 3/2026, Sekundärquelle)"
+irpf_grenzen = [12450, 20200, 35200, 60000, 300000]
+irpf_saetze = [19.0, 24.0, 30.0, 37.0, 45.0, 47.0]
+minimo_personal = 5550
+minimo_hijos = [2400, 2700, 4000, 4500]
+gastos = 2000
+reduccion = [14852, 7302, 17673.52, 2364.34, 19747.5]
+conjunta = { biparental = 3400, monoparental = 2150 }
+ss_an = 6.50       # Contingencias comunes 4,70 + Desempleo 1,55 + FP 0,10 + MEI 0,15
+ss_ag = 32.15      # 23,60 + 5,50 + FOGASA 0,20 + FP 0,60 + MEI 0,75 + AT 1,50 (AT Annahme)
+base_max = 61214.4  # 5.101,20 × 12
+solidaridad = 1.25  # Mittelwert der Stufen auf den Teil über der Höchstbemessungsgrenze, 5/6 Arbeitgeber, 1/6 Beschäftigte (Annahme)
+
+[pl]   # Polen, Recht 2026, Zł
+quelle = "PIT 12/32 %, Grenze 120.000 zł, Kwota zmniejszająca 3.600 zł, Koszty 3.000 zł; Ulga na dzieci 1.112,04/2.000,04/2.700 zł; 800+ (800 zł je Kind und Monat); ZUS 9,76+1,5+2,45 % (Beschäftigte), 9,76+6,5+1,67+2,45+0,10 % (Arbeitgeber); Gesundheit 9 % nicht abziehbar (Gesetzesstand 2025, Annahme ohne Einzelabruf); Grenze 282.600 zł (M.P. 2025 poz. 1206, über podatki.biz)"
+pit_grenze = 120000
+pit_saetze = [12.0, 32.0]
+kwota_zmniejszajaca = 3600
+koszty = 3000
+ulga_dzieci = [1112.04, 1112.04, 2000.04, 2700.0]
+ulga_jedno_dziecko_limit = { para = 112000, samotny = 56000 }
+swiadczenie_800 = 9600
+zus_an_limit = 11.26   # emerytalne 9,76 + rentowe 1,5 (bis zur Grenze)
+zus_an_chorobowe = 2.45
+zdrowotna = 9.0
+zus_ag_limit = 16.26   # 9,76 + 6,5
+zus_ag_rest = 4.22     # wypadkowe 1,67 + FP 2,45 + FGŚP 0,10
+limit_30 = 282600

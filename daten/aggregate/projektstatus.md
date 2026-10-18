@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.0 · höchste Korrekturnummer 61 · 368 Dateien im Repository
+Modellstand v4.1 · höchste Korrekturnummer 62 · 376 Dateien im Repository
 
 ## Bausteine
 
@@ -37,6 +37,7 @@ Modellstand v4.0 · höchste Korrekturnummer 61 · 368 Dateien im Repository
 | B29 | Systemvarianten 25:25 und 33:33 | B | geprueft | modell/systemvarianten.py |
 | B30 | Altlastenfonds | B | geprueft | modell/altlasten.py |
 | B31 | Drittel-System: Zeitpfad, Haushalte, Webseitenentwurf | B | geprueft | modell/projektion33.py;modell/haushalte33.py |
+| B32 | Länderseiten: Referenzland je Sprachversion | B | geprueft | modell/heute_laender.py (OECD-Abgleich, Selbstprüfung Raster) |
 
 ## Nahtstellen
 
@@ -65,6 +66,7 @@ Modellstand v4.0 · höchste Korrekturnummer 61 · 368 Dateien im Repository
 | N21 | B28 Sozialschutz und Übergang | B20 Gesamtrechnung | offen |
 | N22 | B30 Altlastenfonds | B20 Gesamtrechnung | offen |
 | N23 | B31 Drittel-System | B20 Gesamtrechnung | offen |
+| N24 | B32 Länderseiten | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -74,3 +76,4 @@ Modellstand v4.0 · höchste Korrekturnummer 61 · 368 Dateien im Repository
 - Hinweis: Naht N21 offen: B28 Sozialschutz und Übergang -> B20 Gesamtrechnung: nach Entscheidung S1–S13; Korrektur 60
 - Hinweis: Naht N22 offen: B30 Altlastenfonds -> B20 Gesamtrechnung: Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend
 - Hinweis: Naht N23 offen: B31 Drittel-System -> B20 Gesamtrechnung: v3.47: Entscheidung über Dauerhaftigkeit der Dividende (hinnehmen, Bodenwertabgabe, Bürgerfonds)
+- Hinweis: Naht N24 offen: B32 Länderseiten -> B31 Drittel-System: v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land
