@@ -39,7 +39,7 @@ const dyn0=dyn(0,0,0);
 const ew=(m,a)=>EW.szenarien.find(s=>s.zusatz_pct===m&&s.integration===a);
 const G26=12348, f26=1.0404;
 const kind28=dv(NB['2028'].dividende_erw_eur2026)*SK;
-const dRent=(TOPF-1)*NB['2028'].dividende_erw_eur2026;   // Rentner: kleinere Erwachsenendividende durch R1
+const dRent=0;   // v4.10, Korrektur 65: Die Dividende ist in der Bestandsrente enthalten (Fonds zahlt nur den Anspruch darüber); R1 ändert das Rentnernetto nicht
 
 // ---- Bausteine des Dokuments
 const W=9026,grau="F2F2F2",akz="E8EEF7",gold="FFF4D6";
@@ -68,7 +68,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.9 · 18. Oktober 2026 (zur Freigabe)",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.10 · 18. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -236,7 +236,7 @@ add(H1("5  Was bei den Menschen ankommt"),
     hhs.flatMap(h=>[20000,42000,75000].map(b=>{const z=RBJ.beispiele_de[h][String(b)];return [h,de(b)+" €",eu(z.heute),eu(z.neu),vz(z.mehr)];}))),
   Q("Gerechnet mit modell/regel_boden.py (heute mit Bürgergeld; Wohngeld und Kinderzuschlag nicht berücksichtigt). Weitere Erwachsene ohne eigenes Einkommen."),
   L([["Kleine Löhne: ",true],["Bei halbem Vollzeit-Mindestlohn bleiben von einem zusätzlich verdienten Euro heute "+pr(100-RBJ.staaten.DE.lohnabstand.alleinstehend.belastung_zusatzeuro_bei_halbem_mindestlohn.heute,0)+", neu "+pr(100-RBJ.staaten.DE.lohnabstand.alleinstehend.belastung_zusatzeuro_bei_halbem_mindestlohn.neu,0)+" (alleinstehend)."]]),
-  L([["Rentner: ",true],["Eine Rente von 1.200 € wird um die entfallenden Kranken- und Pflegebeiträge gekürzt; mit der höheren Mehrwertsteuer bleiben "+vz(rent(1200,0).differenz_monat+dRent)+" im Monat (mit Zuschlag "+vz(rent(1200,ZU).differenz_monat+dRent)+"; Kinderanteil 0,8 eingerechnet). Das ist ein kleines Minus; Gesundheit und Pflege bleiben ohne Prämie."]]),
+  L([["Rentner: ",true],["Eine Rente von 1.200 € wird um die entfallenden Kranken- und Pflegebeiträge gekürzt; mit der höheren Mehrwertsteuer bleiben "+vz(rent(1200,0).differenz_monat+dRent)+" im Monat (mit Zuschlag "+vz(rent(1200,ZU).differenz_monat+dRent)+"). Das ist ein kleines Minus; Gesundheit und Pflege bleiben ohne Prämie."]]),
   L([["Anreiz: ",true],["Von einem zusätzlichen Euro Arbeitskosten kommen bei 55.000 € brutto heute "+pr(100-RA.grenz_heute[gi],0)+" beim Haushalt an, neu "+pr(100-RA.grenz_neu['0.8'][gi],0)+"."]]),
   L([["Woher das Mehr kommt: ",true],["aus dem Wegfall der Sozialbeiträge, der breiteren Belastung von Kapital, Gewinnen und Erbschaften und der schlanken Grundversorgung – und zu einem Teil aus der Streckung der Altlasten über den Fonds bis 2098."]]));
 
@@ -288,7 +288,7 @@ add(H1("7  Vorbilder"),
 // ---- 8 Grenzen
 add(H1("8  Was noch offen ist"),
   L("Weitergabe: Wie sich die Pflicht, 80 % der Arbeitgeberbeiträge in den Lohn zu geben, durchsetzen lässt."),
-  L("Rentner: kleines Minus durch Kürzung und Mehrwertsteuer; Ausgleich (höherer Freibetrag für Renten) zu prüfen."),
+  L("Rentner: Minus von 35 bis 123 € im Monat durch Kürzung, volle Besteuerung, Mehrwertsteuer und Zuschlag; Ausgleich und Kopplung des Rentenbeginns an die Lebenserwartung vorgeschlagen (projekt/Vorschlag-Rentnerausgleich-2026-10-18.md). Kleine Bestandsrenten brauchen einen Boden (heute Grundsicherung im Alter)."),
   L("Familien: Kindergewicht im Boden "+de(KW,2)+" (Vorschlag zur Freigabe; geprüft 0,3 bis 0,8, modell/kindergewicht.py). Bei 0,7–0,8 reicht das Netzbudget in Frankreich, Italien und Polen in der oberen Schätzung nicht."),
   L("Härtefall: Kosten mit Mietdaten nach Haushaltstyp nachrechnen; Pflichten und Zugangsbedingungen (Aktivität, Aufenthaltsdauer) sind nicht geregelt."),
   L("Frankreich: Ungleichheit steigt nach dem Modell (Gini +2 Punkte), vor allem durch die Weitergabe ungedeckelter Arbeitgeberbeiträge; Entscheidung über einen Deckel der Weitergabe offen (Korrektur 64)."),
@@ -328,7 +328,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.9)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.10)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -336,7 +336,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.9 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.10 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

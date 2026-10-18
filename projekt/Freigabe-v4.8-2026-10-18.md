@@ -83,10 +83,10 @@ Die Rechnung ist statisch und läuft je Äquivalenzerwachsenem. Die Rekonstrukti
 
 Entscheidung über den Deckel offen (N28).
 
-## 4 | Folge aus R1, die neu sichtbar wird
+## 4 | Rentner (berichtigt, Korrektur 65)
 
-Der Kinderanteil 0,8 kommt aus demselben Topf und senkt die Erwachsenendividende um 5,2 %: in DE 2028 von 373 auf 354 €. Das trifft auch Rentner.
-Ihr Minus wächst von −35 bis −123 € auf **−54 bis −142 € im Monat** (mit Altlastenzuschlag). Der Rentnerausgleich bleibt offen und wird dringlicher.
+Die Aussage, R1 vergrößere das Minus der Rentner auf −54 bis −142 €, war falsch. Die Dividende ist Teil der Bestandsrente, und R1 verschiebt nur Kosten
+in den Altlastenfonds. Es gilt −35 bis −123 € im Monat. Vorschläge zum Ausgleich: `Vorschlag-Rentnerausgleich-2026-10-18.md`.
 
 ## 5 | Webseite Fassung 4.8 (sechs Sprachen) und Konzept
 

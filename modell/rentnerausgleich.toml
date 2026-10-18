@@ -1,0 +1,22 @@
+# Rentnerausgleich und Lebensarbeitszeit (modell/rentnerausgleich.py, Logbuch v4.10). Prüfrechnung, Deutschland, 2028, Kaufkraft 2026.
+version = "v4.10"
+renten_monat = [900, 1200, 1600, 2200]     # Bruttorenten heute, wie haushalte33.toml
+zuschlag_pct = 13.7                         # Altlastenzuschlag (gemeinsamer Fonds, Beschluss)
+kuerzung = 0.1235                           # Beschluss v3.48: KV- und PV-Beitrag der Rentner 2026
+varianten_kuerzung = [0.1235, 0.10, 0.075]
+pauschale_monat = [25, 50]                  # Rentnerpauschale, steuerfrei, je Bestandsrente
+rentner_mio = 18.0                          # Annahme: Personen ab 65 in DE (Anteil 21,6 % × 83,5 Mio., einwanderung33/netz33); Renten tatsächlich mehr Fälle (Hinterbliebene)
+rentenausgaben_pct_bip = 11.8               # DE 2024 GF1002 + GF1003 (sozialschutz.json, Eurostat COFOG) – Alter und Hinterbliebene
+bip_mrd_2028 = 4915                         # BIP DE 2028 (Gesamtrechnung B3, nominal)
+
+# Grundsicherung im Alter heute (Vergleich für kleine Bestandsrenten)
+grundsicherung_alter_empfaenger = 764065    # Dezember 2025, Altersgrenze erreicht (Destatis über Münster Aktuell 21.08.2026, Sekundärquelle)
+grundsicherung_ausgaben_mrd = 11.8          # 2025, Alter und Erwerbsminderung zusammen (BMAS über Münster Aktuell, Sekundärquelle)
+bedarf_heute_monat = 1083                   # Regelbedarf 563 € + KdU 520 € (sozial_laender.toml, Annahme)
+
+# Lebensarbeitszeit: Kopplung des Rentenbeginns (Altansprüche, Mindestrente) an die fernere Lebenserwartung mit 65
+le65_2024 = 19.55                           # Mittel Männer 18,0 / Frauen 21,1, Sterbetafel 2023/2025 (Destatis, amtlich)
+le65_zuwachs_jahr = 0.07                    # Annahme: Größenordnung Ageing Report 2024 (rund +3,5 Jahre bis 2070, maschinell nicht geprüft)
+kopplungen = { "1zu1_DK" = 1.0, "2zu3_NL" = 0.667, "keine" = 0.0 }   # Anteil des Lebenserwartungsgewinns, der als Arbeitszeit gilt
+start_kopplung = 2030
+bezugsdauer_jahre = 22                      # wie sozialschutz.toml

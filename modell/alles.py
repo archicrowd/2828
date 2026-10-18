@@ -56,6 +56,7 @@ STUFEN = [
     ("Härtefall H1–H3 gegen das Netzbudget", ["modell/haertefall.py"]),
     ("Gini heute und neu (EU-SILC)", ["modell/gini.py"]),
     ("Gini Frankreich und Polen: Zerlegung, Gegenproben", ["modell/gini_frankreich.py"]),
+    ("Rentnerausgleich und Lebensarbeitszeit", ["modell/rentnerausgleich.py"]),
     ("Vergleich Dänemark/Schweden, Härtefall", ["modell/vergleich_dk_se.py"]),
     ("Webseite Fassung 4.x (sechs Sprachen, Länderbezug)", ["seite/werkzeuge/drittel_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
