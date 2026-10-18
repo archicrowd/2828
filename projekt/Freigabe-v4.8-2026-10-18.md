@@ -76,8 +76,12 @@ fehlen Mietdaten nach Haushaltstyp.
 Zum Vergleich heute: Dänemark 28,2, Schweden 28,6.
 
 Die Rechnung ist statisch und läuft je Äquivalenzerwachsenem. Die Rekonstruktion der heutigen Verteilung trifft den amtlichen Gini auf
-0,1–0,3 Punkte. **In Frankreich steigt der Gini** um 2 Punkte. Zwei Gründe: Die prime d'activité fällt weg, und hohe Einkommen zahlen weniger
-als heute (Obergrenze 33 %). Das bestätigt N24 (französische Variante offen).
+0,1–0,3 Punkte. **In Frankreich steigt der Gini** um 2 Punkte. Die Erklärung wurde in v4.9 berichtigt (Korrektur 64):
+- **Hauptursache:** Die 80-%-Weitergabe der in Frankreich ungedeckelten Arbeitgeberbeiträge hebt hohe Löhne um 24–41 %.
+- **Dazu kommen:** die Delle beim SMIC (keine Beiträge wegen RGDU, Wegfall der prime d'activité) und die kleinste Dividende (8 % des Medians).
+- **Spannweite:** Mit einem Deckel der Weitergabe sinkt der Gini auf 27,6–29,8; mit Familienabbildung liegt er bei 29,5 (`modell/gini_frankreich.py`).
+
+Entscheidung über den Deckel offen (N28).
 
 ## 4 | Folge aus R1, die neu sichtbar wird
 

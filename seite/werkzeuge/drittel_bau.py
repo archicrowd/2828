@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.8"
+VERSION = "v4.9"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -342,6 +342,10 @@ def main():
         W.update(version=VERSION, fassung=TT.FASSUNG[sp])
         nm = VT.LAENDER_NAME[sp]
         bc = c if c in VB.LAENDER else "DE"
+        GF = json.loads((AGG / "gini_frankreich.json").read_text(encoding="utf-8"))["staaten"]["FR"]   # v4.9, Korrektur 64
+        gz = lambda v: SB.zahl(v, 1, sp)
+        W.update(fr_deckel_1=gz(GF["gini_weitergabe_gedeckelt_1x"]), fr_deckel_15=gz(GF["gini_weitergabe_gedeckelt_1_5x"]),
+                 fr_familie=gz(GF["gini_abbildung_familie"]), fr_2028=gz(VB.GINI["staaten"]["FR"]["reihe"][0]["mitte"]))
         W.update(chan1_zusatz=VT.NEU[sp]["chan1_zusatz_de"] if c == "DE" else "", bess_land=nm[bc] if c in VB.LAENDER else VT.BEISPIEL_EN)
         dez = "." if sp == "en" else ","
         svg, leg = VB.gini_svg(nm, c, T["gini_l1"], T["gini_l2"], T["gini_l3"], T["gini_ref"], T["gini_unit"])
