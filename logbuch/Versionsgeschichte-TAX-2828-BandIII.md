@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 18. Oktober 2026 · Modellstand **v4.6**
+Stand: 18. Oktober 2026 · Modellstand **v4.7**
 
 ---
 
@@ -2532,6 +2532,43 @@ Haushaltsstruktur und Transfers durch Haushaltsdaten ersetzen, sobald verfügbar
 
 ---
 
+### v4.7 — Vergleich mit Dänemark und Schweden; Vorschlag Härtefall (H1–H3) und Rolle der Gemeinden (G1–G5)
+
+**Art der Änderung: MINOR (Prüfrechnung, Vorschlag), keine Zahl der Gesamtrechnung und der Seiten bewegt.** 18. Oktober 2026.
+
+**Auftrag der Initiative (18.10.2026):** Konzept mit den Regeln in Dänemark und Schweden vergleichen; benachteiligte Gruppen; Reaktion der
+Härtefallregel; Ausgabe durch die Gemeinden und deren Gestaltungsrecht.
+
+**Neu:** `modell/vergleich_dk_se.py` (+ `.toml`) → `daten/aggregate/vergleich_dk_se.json`; `projekt/Vorschlag-Haertefall-Gemeinden-2026-10-18.md`.
+Datenquellen: borger.dk (kontanthjælp 2026, amtlich), STAR (Reform L 13, amtlich), Socialstyrelsen (Riksnorm 2026, Meddelandeblad 4/2026,
+amtlich), Prop. 2025/26:201 (amtlich), SCB (Kommunalsteuer 2026, amtlich), Eurostat ilc_di01 D5 DK 269.953 kr., SE 326.669 kr. (EU-SILC 2025,
+amtlich); themis.dk (Steuersätze DK, Sekundärquelle); kommunale Richtlinie Falköping (jobbstimulans, an der Quelle zu prüfen).
+
+| Kennzahl | DE Boden | DE heute | DK | SE |
+|---|---|---|---|---|
+| Niveau mit Wohnen, % des Medians | 40,3 | 42,4 | 44,5 (netto, Wohngeld zusätzlich) | Norm + tatsächliche Miete |
+| Niveau ohne Wohnen, % des Medians | 22,5 | – | – | 18,1 / 26,4 (Paar + 2 Kinder) |
+| Gewicht eines Kindes | 0,30 | 0,63–0,84 | Zuschlag je Versorger | 0,57–1,0 |
+| Belastung eines Zusatzeuros im Bezug | 66 % | 98 % | 42 % / 80 % | 100 % / 80 % |
+
+**Befund:** Das Niveau des Bodens entspricht DK und dem Bürgergeld. Unterschiede: Wohnkosten werden in DK/SE getrennt behandelt (Boden pauschal,
+Wohnanteil DE ≈ 454 €), Kinder deutlich höher gewichtet. Benachteiligt im Konzept: Familien mit geringem Erwerb (DE Paar + 2 Kinder ohne Erwerb
+−473 € gegen Bürgergeld), Haushalte mit hohen Mieten (700 € → Lücke 246 €), Mehrbedarfe, einmalige Notlagen; Rentner und französische
+Geringverdiener aus anderen Gründen (Rentnerausgleich, N24).
+
+**Vorschlag (nicht beschlossen):** Härtefall als Zuschlag zum Boden mit derselben Halbanrechnung – H1 Wohnkosten über dem Wohnanteil bis zur
+örtlichen Angemessenheitsgrenze (Gemeinde im Korridor des Landes), H2 Mehrbedarfe landeseinheitlich, H3 Einmalbedarfe nach Ermessen der Gemeinde
+aus einem Pauschalbudget. Kindergewicht als Parameter K1 (0,3 / 0,45 / 0,5 → DE Paar + 2 Kinder 2.161 / 2.470 / 2.572 €). Gemeinde zahlt
+Aufstockung und Härtefall aus, Land setzt Höhe und erstattet den Rechtsanspruch voll (G1–G5); dänische Erstattungstreppe nicht empfohlen
+(VIVE 2020: Bevorzugung arbeitsmarktnaher Fälle; eine Studie, erstes Reformjahr).
+
+**Offen:** Entscheidung H1–H3, K1, G1–G5 (N27); Kosten von H1–H3 und K1 mit Mietdaten nach Haushaltstyp. **Wodurch aufgefallen:** Auftrag der
+Initiative.
+
+*Quellen: siehe `projekt/Vorschlag-Haertefall-Gemeinden-2026-10-18.md`, Abschnitt Quellen; eigene Rechnungen regel_boden, vergleich_dk_se.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -2584,9 +2621,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.6
+## 7 | Offene Punkte, Stand v4.7
 
-Neu seit v3.23 (Stand v4.6): **Regel Boden und Kinderanteil 0,8 in Seiten einbauen; Gewinneraussage je Land neu fassen; Kosten mit Haushaltsdaten verfeinern; Grundbedarf gegen Armutsschwellen je Land; Entscheidung R1–R4 (Kinderanteil, Pflichtvorsorge über dem Grundbedarf, Härtefall-Boden, Mindestlohnregel); Kosten des Bodens; Aussage „9 von 10“ in DE nach Korrektur 63 neu fassen;** **Bedarfsgeprüfte Leistungen heute (Wohngeld, Kinderzuschlag, APL, RSA, ADI, IMV) in allen Haushaltsrechnungen nachtragen und Härtefallfonds zuordnen; Erwerbstätigenleistung im Netz entscheiden; Zins des Fonds je Land;** **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen belegen oder abschwächen (zukunftsfähiger, viel günstiger, moderat); Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v4.7): **Härtefall H1–H3, Kindergewicht K1, Rolle der Gemeinden G1–G5 entscheiden und Kosten mit Mietdaten rechnen (N27); Regel Boden und Kinderanteil 0,8 in Seiten einbauen; Gewinneraussage je Land neu fassen; Kosten mit Haushaltsdaten verfeinern; Grundbedarf gegen Armutsschwellen je Land; Entscheidung R1–R4 (Kinderanteil, Pflichtvorsorge über dem Grundbedarf, Härtefall-Boden, Mindestlohnregel); Kosten des Bodens; Aussage „9 von 10“ in DE nach Korrektur 63 neu fassen;** **Bedarfsgeprüfte Leistungen heute (Wohngeld, Kinderzuschlag, APL, RSA, ADI, IMV) in allen Haushaltsrechnungen nachtragen und Härtefallfonds zuordnen; Erwerbstätigenleistung im Netz entscheiden; Zins des Fonds je Land;** **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen belegen oder abschwächen (zukunftsfähiger, viel günstiger, moderat); Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

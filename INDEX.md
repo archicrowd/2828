@@ -1,6 +1,6 @@
 # TAX 28:28 — Wegweiser durch das Repository
 
-Stand: 10. Oktober 2026 · Modellstand v4.6 · Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`
+Stand: 10. Oktober 2026 · Modellstand v4.7 · Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`
 
 Dieses Repository enthält **zwei Entwicklungsstände**, die einander in Teilen widersprechen.
 Wer eine Zahl zitiert, nennt den Stand dazu.

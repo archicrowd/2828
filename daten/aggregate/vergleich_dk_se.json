@@ -1,0 +1,54 @@
+{
+ "version": "v4.7",
+ "status": "Prüfrechnung",
+ "niveau_pct_median": {
+  "DE Boden, Wohnen enthalten (je Äquivalenzerwachsenem)": 40.3,
+  "DE Boden, ohne Wohnanteil": 22.5,
+  "DE Bürgergeld heute, alleinstehend, mit KdU": 42.4,
+  "DK kontanthjælp ab 30, alleinstehend, netto (Wohnen daraus; Wohngeld und særlig støtte zusätzlich)": 44.5,
+  "SE Riksnorm alleinstehend, ohne Wohnkosten": 18.1,
+  "SE Riksnorm Paar + 2 Kinder (4–6, 7–10), ohne Wohnkosten, je Äquivalenzerwachsenem": 26.4,
+  "_wohnanteil_de_existenzminimum": 0.441,
+  "_dk_netto_monat_kr": 10614
+ },
+ "kindergewicht": {
+  "Boden (OECD-modifiziert)": 0.3,
+  "DE Regelbedarf 0–5 / 6–13 / 14–17": [
+   0.63,
+   0.69,
+   0.84
+  ],
+  "DE Existenzminimum Kind (mit Wohnen) / Erwachsene": 0.5,
+  "SE Riksnorm 0 / 4–6 / 7–10 / 15–18 (drittes und viertes Haushaltsmitglied)": [
+   0.57,
+   0.63,
+   0.78,
+   1.0
+  ]
+ },
+ "belastung_zusatzeuro_pct": {
+  "DE heute (Bürgergeld, alleinstehend, halber Mindestlohn)": 98,
+  "DE Boden-Regel (dieselbe Lage)": 66,
+  "DK im Freibetrag (2.700 kr./Monat)": 42,
+  "DK über dem Freibetrag": 80,
+  "SE erste 6 Monate": 100,
+  "SE mit Jobbstimulans (24 Monate)": 80
+ },
+ "haertefall_de_monat": {
+  "paar_2_kinder_ohne_erwerb": {
+   "boden_nach_kindergewicht": {
+    "0.3": 2161,
+    "0.45": 2470,
+    "0.5": 2572
+   },
+   "buergergeld_heute": 2634,
+   "boden_modell": 2161
+  },
+  "hohe_miete_alleinstehend": {
+   "wohnanteil_im_boden": 454,
+   "miete": 700,
+   "luecke_ohne_einkommen": 246
+  }
+ },
+ "hinweis": "Sätze 2026, Median EU-SILC 2025 × 1,06 (Annahme). DK netto mit Personfradrag, Bundskat und Kommunalsteuer (Sekundärquelle). Belastung DK/SE mit Annahmen zur Steuer; DE aus regel_boden.json. Lücke bei hoher Miete: Miete minus Wohnanteil im Boden."
+}

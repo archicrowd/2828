@@ -1,0 +1,36 @@
+# Vergleich der Boden-Regel mit Dänemark und Schweden (modell/vergleich_dk_se.py, Logbuch v4.7). Prüfrechnung.
+version = "v4.7"
+fortschreibung_median = 1.06   # Annahme: Median EU-SILC 2025 (Einkommen 2024) auf 2026 fortgeschrieben, wie boden_kosten.toml
+
+[median]   # Obergrenze D5 des äquivalenzgewichteten verfügbaren Einkommens, EU-SILC 2025, Landeswährung/Jahr (Eurostat ilc_di01, Abruf 18.10.2026, amtlich)
+DE = 28891
+DK = 269953
+SE = 326669
+
+[de]
+grundbedarf = 12348                  # Grundfreibetrag 2026 = Grundbedarf des Konzepts (netz33.toml)
+existenzminimum_2026 = { regelbedarf = 6756, bruttokaltmiete = 4212, heizung = 1128, kind_regelbedarf = 4764, kind_wohnen = 1272 }
+# 15. Existenzminimumbericht (BT-Drs. 20/13550), Werte 2026, € je Jahr (amtlich; abgerufen über eine Spiegelung des Berichts, an der Quelle zu prüfen)
+regelbedarf_monat = { erwachsen = 563, kind_0_5 = 357, kind_6_13 = 390, kind_14_17 = 471 }   # wie sozial_laender.toml (Sekundärquelle)
+buergergeld_paar_2_kinder_monat = 2634    # sozial_laender.toml (Regelbedarf + KdU-Annahme)
+kdu_alleinstehend_monat = 520             # sozial_laender.toml (Annahme, Größenordnung BA-Statistik)
+miete_beispiel_monat = 700                # Annahme: warme Miete Alleinstehende in einer Stadt mit hohen Mieten (Beispiel, nicht gemessen)
+
+[dk]   # borger.dk, Kontanthjælp, Sätze 2026, kr./Monat vor Steuern (amtlich, Abruf 18.10.2026)
+forhoejet_sats = 13060
+tillaeg_enlig_uden_boern = 1141
+boernetillaeg = 2909                 # je Versorger, unabhängig von der Kinderzahl
+fradrag_forhoejet_sats = 2700        # Freibetrag Arbeitseinkommen je Monat
+anrechnung_ueber_fradrag = 0.65      # 65 % des Lohns über dem Freibetrag werden abgezogen
+personfradrag = 54100                # 2026 (themis.dk, Sekundärquelle)
+bundskat = 0.1201                    # 2026 (themis.dk, Sekundärquelle)
+kommuneskat = 0.250                  # „ca.“ (themis.dk, Sekundärquelle; Danmarks Statistik 2022: 24,98 %)
+am_bidrag = 0.08                     # Arbeitsmarktbeitrag auf Lohn (Annahme, geltendes Recht ohne Einzelabruf); Kontanthjælp ohne AM-Bidrag (Annahme)
+
+[se]   # Socialstyrelsen, Riksnormen för försörjningsstöd 2026, kr./Monat (amtlich); Wohnen, Haushaltsstrom, Arbeitsweg, Versicherung, Gewerkschaft außerhalb der Norm
+personlig_ensam = 3940
+personlig_sammanboende = 7100
+barn = { "0" = 2740, "1-2" = 3060, "3" = 2720, "4-6" = 3060, "7-10" = 3820, "11-14" = 4390, "15-18" = 4960 }
+gemensam = [1280, 1410, 1790, 2030, 2330, 2640, 2830]   # 1–7 Personen
+jobbstimulans = 0.25                 # 25 % des Nettolohns bleiben unberücksichtigt, nach 6 Monaten Bezug, für 24 Monate (12 kap. 8 § SoL 2025:400; kommunale Richtlinie Falköping, an der Quelle zu prüfen)
+steuer_niedriglohn = 0.22            # Annahme: Grenzsteuer auf niedrige Löhne nach Jobbskatteavdrag (Kommunalsteuer 32,38 % im Mittel 2026, SCB)
