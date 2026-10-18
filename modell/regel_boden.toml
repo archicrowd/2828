@@ -1,0 +1,7 @@
+# Regel „Grundbedarf als Boden, eigenes Einkommen zur Hälfte“ (modell/regel_boden.py, Logbuch v4.5). Prüfrechnung.
+version = "v4.5"
+kinderanteil = 0.8     # R1, Beschluss 18.10.2026: Kinderdividende = 0,8 × Erwachsenendividende (≈ Existenzminimum Kind mit BEA / Erwachsene = 0,79)
+anrechnung = 0.5       # eigenes Einkommen zur Hälfte angerechnet – wie die eigene Rente bei der Mindestrente (netz33.toml)
+# Enges Existenzminimum: Grundbedarf des Landes (steuerliches Existenzminimum, DE 12.348 € 2026; andere Länder nach Preisniveau) mit der
+# OECD-modifizierten Äquivalenzskala (Eurostat/OECD-Standard für Armutsmessung): weitere Erwachsene 0,5, Kinder 0,3.
+skala = { erwachsen = 0.5, kind = 0.3 }
