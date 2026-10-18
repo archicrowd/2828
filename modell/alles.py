@@ -45,7 +45,7 @@ STUFEN = [
     ("Drittel-System: Möglichkeitsraum", ["modell/moeglichkeitsraum33.py"]),
     ("Drittel-System: Neustartverfahren", ["modell/neustart33.py"]),
     ("Drittel-System: Webseitenentwurf (alt, eigene Gliederung)", ["seite/werkzeuge/entwurf33_bau.py"]),
-    ("Drittel-System: Webseitenentwurf nach Vorbild", ["seite/werkzeuge/entwurf_drittel_bau.py"]),
+    ("Webseite Fassung 4.0 (sechs Sprachen)", ["seite/werkzeuge/drittel_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),
     ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),

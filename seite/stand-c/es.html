@@ -1,0 +1,746 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Tercio de Oro</title>
+<meta name="description" content="Como máximo un tercio sobre cualquier renta, una red fuerte sin primas y cada mes un dividendo de transformación. Los municipios deciden por sí mismos, un techo común protege los intereses comunes.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SpaceGrotesk-400.woff2') format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/SpaceGrotesk-500.woff2') format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/SpaceGrotesk-700.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SourceSerif4-400.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/SourceSerif4-600.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/IBMPlexMono-400.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/IBMPlexMono-500.woff2') format('woff2')}
+
+:root{
+  --paper:#F6F7F4; --ink:#0F3B5C; --line:#B9C9D6; --line-soft:#D8E1E8;
+  --accent:#1D7A4F; --accent-bg:#E7F2EC; --warn:#B4452F; --dim:#5A7186;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px;min-width:0}
+a{color:var(--ink)}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* Navigationsleiste */
+.titleblock{border-bottom:1.5px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:50}
+.titleblock .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.tb-left{font-family:var(--disp);font-size:20px;font-weight:700;letter-spacing:-.5px;text-decoration:none;white-space:nowrap}
+.tb-right{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;flex-wrap:wrap;justify-content:flex-end}
+.tb-right a{text-decoration:none;color:var(--dim);text-transform:uppercase}
+.tb-right a:hover,.tb-right a:focus-visible{color:var(--ink)}
+.langsel{display:flex;gap:0;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.langsel a{padding:5px 7px;font-size:11px;border-right:1px solid var(--line);color:var(--dim)}
+.langsel a:last-child{border-right:none}
+.langsel a.active{background:var(--ink);color:var(--paper)}
+@media(max-width:860px){.tb-right .opt{display:none}}
+@media(max-width:640px){.tb-right{gap:10px}.tb-right a{font-size:11px}.tb-left{font-size:17px}}
+
+/* Kopf */
+.hero{padding:64px 0 52px;border-bottom:1px solid var(--line)}
+.hero-mark{display:block;margin:0 auto 6px;max-width:520px;width:100%;height:auto}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(25px,3.7vw,38px);line-height:1.15;text-align:center;max-width:820px;margin:16px auto 6px;text-wrap:balance}
+.hero .claim2{font-family:var(--disp);font-weight:500;font-size:clamp(17px,2.1vw,21px);text-align:center;color:var(--accent);margin:0 auto 16px}
+.hero p.sub{text-align:center;max-width:660px;margin:0 auto 26px;color:var(--dim);font-size:18px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.btn{font-family:var(--disp);font-weight:500;font-size:16px;text-decoration:none;padding:13px 26px;border:1.5px solid var(--ink);border-radius:3px;transition:background .15s,color .15s}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:#0a2c46}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.opensrc{text-align:center;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-bottom:34px}
+.stamps{display:flex;gap:0;justify-content:center;flex-wrap:wrap;border:1px solid var(--line);max-width:880px;margin:0 auto}
+.stamp{flex:1 1 240px;padding:18px 20px;border-right:1px solid var(--line);text-align:center}
+.stamp:last-child{border-right:none}
+.stamp .val{font-family:var(--mono);font-size:26px;font-weight:500;color:var(--accent)}
+.stamp .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--dim);text-transform:uppercase;margin-top:5px;line-height:1.45}
+@media(max-width:720px){.stamp{border-right:none;border-bottom:1px solid var(--line)}.stamp:last-child{border-bottom:none}}
+
+/* Sektionen */
+section{padding:60px 0;border-bottom:1px solid var(--line);overflow-x:clip;scroll-margin-top:72px}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(23px,3vw,31px);margin-bottom:14px;text-wrap:balance}
+.lede{max-width:700px;color:#2c4a63;margin-bottom:34px}
+.fineprint{font-size:13.5px;color:var(--dim);margin-top:20px;line-height:1.6;max-width:820px}
+
+/* Befund */
+.befund-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.befund{background:var(--paper);padding:22px}
+.befund .num{font-family:var(--mono);font-size:24px;color:var(--warn);font-weight:500}
+.befund h3{font-family:var(--disp);font-size:16.5px;font-weight:500;margin:8px 0 6px}
+.befund p{font-size:15px;color:var(--dim);line-height:1.55}
+
+/* Bauteile */
+.mass-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.mass{border:1px solid var(--line);border-radius:3px;padding:20px 22px;background:#fff}
+.mass .pos{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.mass h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 4px}
+.mass .regel{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--paper);border:1px solid var(--line-soft);border-radius:2px;padding:3px 8px;display:inline-block;margin:4px 0 8px}
+.mass p{font-size:15px;color:var(--dim);line-height:1.55}
+.vatlbl,.taxlbl{display:block;margin:10px 0}
+.vatlbl>div,.taxlbl>div{display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.vatlbl b,.taxlbl b{font-weight:400;height:19px;line-height:19px;font-family:var(--mono);font-size:10.5px;
+ letter-spacing:.02em;padding:0 11px 0 8px;white-space:nowrap;flex:0 0 auto;
+ clip-path:polygon(0 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,0 100%)}
+.vatlbl em,.taxlbl em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--dim);
+ white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.vatlbl b{color:#fff}
+/* Leiter um 8px verbreitert: "A+ · 5 %" brauchte 60px bei 52px Kasten.
+   Abstand von 12px je Stufe bleibt, die Proportion also auch. */
+.vatlbl .v1{width:60px;background:#1D7A4F}
+.vatlbl .v2{width:72px;background:#5A9E3C}
+.vatlbl .v3{width:84px;background:#B79A1E}
+.vatlbl .v4{width:96px;background:#C9702A}
+.vatlbl .v5{width:108px;background:#B4452F}
+.taxlbl .t1{width:46px;background:#DCE7EF;color:var(--ink)}
+.taxlbl .t2{width:58px;background:#B9CFE0;color:var(--ink)}
+.taxlbl .t3{width:70px;background:#8FB3CD;color:var(--ink)}
+.taxlbl .t4{width:82px;background:#6497B8;color:#fff}
+.taxlbl .t5{width:94px;background:#3D7196;color:#fff}
+.taxlbl .t6{width:106px;background:#0F3B5C;color:#fff}
+.spark{width:100%;height:auto;display:block;margin:10px 0 8px}
+
+/* Tabellen */
+.tscroll{overflow-x:auto;max-width:100%;min-width:0;border:1px solid var(--line);background:#fff}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:150px}
+thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);border-bottom:1.5px solid var(--ink);vertical-align:bottom;font-weight:400;white-space:normal;max-width:110px;line-height:1.35}
+tbody td{font-family:var(--mono);font-size:14px}
+tbody td:first-child{font-family:var(--body);font-size:15px}
+tbody tr:last-child td{border-bottom:none}
+td.pos{color:var(--accent);font-weight:500}
+td.neg{color:var(--warn);font-weight:500}
+tr.tot td{border-top:1.5px solid var(--ink);font-weight:500}
+
+/* Rechner */
+.calibrate{font-size:13px;color:var(--dim);border-left:2px solid var(--line);padding:6px 12px;margin-bottom:22px;background:#fff}
+.calc{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:30px}
+@media(max-width:860px){.calc{grid-template-columns:1fr;padding:22px}}
+.calc label.lbl{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin:18px 0 8px}
+.calc label.lbl:first-child{margin-top:0}
+.calc input[type=range]{width:100%;accent-color:var(--ink)}
+.calc .bigval{font-family:var(--mono);font-size:30px;font-weight:500}
+.seg{display:flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;width:100%}
+.seg button{flex:1;font-family:var(--mono);font-size:12.5px;padding:9px 4px;background:#fff;border:none;border-right:1px solid var(--line);cursor:pointer;color:var(--dim)}
+.seg button:last-child{border-right:none}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.chk{display:flex;align-items:center;gap:10px;font-size:15.5px;color:var(--ink);margin-top:6px}
+.chk input{width:17px;height:17px;accent-color:var(--ink)}
+.res-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-soft);gap:12px}
+.res-row .k{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+.res-row .v{font-family:var(--mono);font-size:18px;white-space:nowrap}
+.res-row .v.today{color:var(--warn)}
+.res-row .v.new{color:var(--ink);font-weight:500}
+.plus-box{margin-top:18px;background:var(--accent-bg);border:1.5px solid var(--accent);border-radius:3px;padding:16px 20px;text-align:center}
+.plus-box .plus{font-family:var(--mono);font-size:32px;font-weight:500;color:var(--accent)}
+.plus-box .plus.neg{color:var(--warn)}
+.plus-box .sub{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-top:4px;line-height:1.45}
+.bars{margin-top:18px}
+.bar-lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:4px}
+.bar{height:14px;background:var(--line-soft);border-radius:2px;overflow:hidden;margin-bottom:12px}
+.bar>i{display:block;height:100%;transition:width .35s}
+.bar.today>i{background:var(--warn)}
+.bar.new>i{background:var(--accent)}
+h3.sub-h{font-family:var(--disp);font-size:21px;font-weight:700;margin:40px 0 10px}
+
+/* Diagramm */
+.chart-card{border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:26px}
+@media(max-width:640px){.chart-card{padding:16px}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tabs button{font-family:var(--mono);font-size:12.5px;padding:8px 12px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:var(--dim)}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.unit{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:6px}
+.legend{display:flex;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-top:12px}
+.legend i{display:inline-block;width:22px;height:0;border-top:3px solid;vertical-align:middle;margin-right:8px}
+.legend .l-hist i{border-color:var(--ink)}
+.legend .l-ohne i{border-color:var(--warn);border-top-style:dashed}
+.legend .l-mit i{border-color:var(--accent)}
+#chart{width:100%;height:auto;display:block}
+#chart .grid{stroke:var(--line-soft)}
+#chart .axis{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+#chart .hist{stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+#chart .ohne{stroke:var(--warn);fill:none;stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
+#chart .mit{stroke:var(--accent);fill:none;stroke-width:3.5;stroke-linecap:round}
+#chart .marker{stroke:var(--line);stroke-dasharray:3 4}
+.split{display:grid;grid-template-columns:1fr 1.35fr;gap:34px;margin-top:38px;align-items:start}
+.split>div{min-width:0}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:22px}}
+.split h3{font-family:var(--disp);font-size:21px;font-weight:700;margin-bottom:8px}
+.split p{margin-bottom:10px}
+
+/* Sicherungen */
+.sich{max-width:800px;border-top:1.5px solid var(--ink);counter-reset:s}
+.sich>div{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.sich>div::before{counter-increment:s;content:counter(s);font-family:var(--disp);font-weight:700;font-size:34px;color:var(--accent);line-height:1;min-width:38px}
+.sich b{font-family:var(--disp);font-weight:500;font-size:19px;display:block;margin-bottom:2px}
+.sich p{font-size:15.5px;color:var(--dim)}
+
+/* Klub der Sieben */
+.reg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-bottom:34px}
+.reg{border:1px solid var(--line);border-radius:3px;background:#fff;padding:20px 22px}
+.reg .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.reg h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 6px}
+.reg p{font-size:15px;color:var(--dim);line-height:1.55}
+.flagrow{display:grid;grid-template-columns:repeat(10,1fr);border:1px solid var(--line);border-bottom:none;margin-bottom:26px;background:#fff}
+.flagrow div{text-align:center;padding:14px 4px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.flagrow div:nth-child(10n){border-right:none}
+.flagrow .c{font-family:var(--mono);font-size:17px;font-weight:500;color:var(--accent);white-space:nowrap}
+.flagrow .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-top:4px;line-height:1.35}
+@media(max-width:980px){.flagrow{grid-template-columns:repeat(5,1fr)}.flagrow div:nth-child(10n){border-right:1px solid var(--line)}.flagrow div:nth-child(5n){border-right:none}}
+@media(max-width:560px){.flagrow{grid-template-columns:repeat(3,1fr)}.flagrow div:nth-child(5n){border-right:1px solid var(--line)}.flagrow div:nth-child(3n){border-right:none}}
+.effects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.effects>div{background:var(--paper);padding:20px 22px}
+.effects h3{font-family:var(--disp);font-size:16.5px;font-weight:500;margin-bottom:6px}
+.effects p{font-size:15px;color:var(--dim);line-height:1.55}
+.box{border:1.5px solid var(--accent);background:var(--accent-bg);border-radius:3px;padding:22px 24px;margin-top:34px}
+.box h3{font-family:var(--disp);font-size:19px;font-weight:700;margin-bottom:8px}
+.box.warn{border-color:var(--warn);background:#FBF0ED}
+.box.warn h3{color:var(--warn)}
+.box p{font-size:15.5px;margin-bottom:8px}
+.box ul{margin:8px 0 0 20px;font-size:15.5px}
+.box li{margin:5px 0}
+.timeline{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);margin:0 0 34px;background:#fff}
+.timeline div{flex:1 1 200px;padding:16px 18px;border-right:1px solid var(--line)}
+.timeline div:last-child{border-right:none}
+.timeline .y{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--accent)}
+.timeline .t{font-size:14.5px;color:var(--dim);margin-top:4px;line-height:1.5}
+@media(max-width:700px){.timeline div{border-right:none;border-bottom:1px solid var(--line)}.timeline div:last-child{border-bottom:none}}
+
+/* Anlagen */
+.anl{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:16px}
+.anl button{all:unset;cursor:pointer;border:1.5px solid var(--ink);border-radius:3px;padding:20px;background:#fff;display:block}
+.anl button:hover{border-color:var(--accent)}
+.anl button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.anl .t{font-family:var(--disp);font-weight:700;font-size:18px;display:block}
+.anl .d{font-size:14.5px;color:var(--dim);display:block;margin-top:4px;line-height:1.5}
+.anl .f{font-family:var(--mono);font-size:11.5px;color:var(--accent);display:block;margin-top:10px}
+
+footer{padding:44px 0 60px;font-size:14.5px;color:var(--dim)}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:34px}
+@media(max-width:720px){footer .wrap{grid-template-columns:1fr}}
+footer h4{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+footer a{color:var(--dim)}
+.translation-note{max-width:1060px;margin:18px auto 0;padding:0 24px;font-family:var(--mono);font-size:11.5px;color:var(--dim);text-align:center;letter-spacing:.04em;line-height:1.6}
+
+/* Anlagen-Leser */
+.docmodal{display:none;position:fixed;inset:0;background:rgba(15,59,92,.45);z-index:100;align-items:flex-start;justify-content:center;padding:4vh 16px}
+.docpanel{background:var(--paper);border:1.5px solid var(--ink);border-radius:3px;max-width:900px;width:100%;max-height:92vh;display:flex;flex-direction:column}
+.dochead{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 20px;border-bottom:1.5px solid var(--ink)}
+.dochead b{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em}
+.dochead button{font-family:var(--mono);font-size:13px;background:none;border:1px solid var(--ink);border-radius:2px;padding:6px 12px;cursor:pointer;color:var(--ink)}
+.dochead button:hover{background:var(--ink);color:var(--paper)}
+.docbody{overflow-y:auto;padding:22px 26px}
+.docbody pre{font-family:var(--mono);font-size:12.5px;line-height:1.65;white-space:pre-wrap;word-wrap:break-word;color:#1c3a52}
+.docitem{display:none}
+
+/* ---- Belegstand: Stufe doppelt kodiert, als Blockanzeige und als Wort ---- */
+table.beleg{table-layout:fixed;width:100%;min-width:720px}
+.beleg th,.beleg td{text-align:left;white-space:normal;vertical-align:top;
+  font-family:var(--body);font-size:14px;line-height:1.5}
+.beleg col.c1{width:15%}.beleg col.c2{width:21%}.beleg col.c3{width:16%}.beleg col.c4{width:48%}
+.beleg tbody td:first-child{font-family:var(--mono);font-size:12px;color:var(--dim);
+  text-transform:uppercase;letter-spacing:.03em;line-height:1.4}
+.beleg tbody td.claim{font-weight:500;color:var(--ink);font-size:14.5px}
+.beleg td.st{font-family:var(--mono);font-size:12px;letter-spacing:.02em}
+.beleg td.st .w{display:block;margin-top:5px}
+.meter{display:flex;gap:3px}
+.meter i{width:10px;height:10px;border:1.4px solid var(--line);display:block;border-radius:1px}
+.st.s3 .meter i{background:var(--accent);border-color:var(--accent)}
+.st.s2 .meter i:nth-child(-n+2){background:var(--accent);border-color:var(--accent)}
+.st.s1 .meter i:nth-child(1){background:#9A6B18;border-color:#9A6B18}
+.st.s0 .meter i{border-color:var(--warn)}
+.st.s3,.st.s2{color:var(--accent)}
+.st.s1{color:#7A5413}
+.st.s0{color:var(--warn)}
+.verstamp{font-family:var(--mono);font-size:12px;margin-top:12px!important;color:var(--dim)}
+.verstamp b{color:var(--accent);font-weight:500}
+@media(max-width:720px){
+  /* Unter 720px keine Tabelle mehr: je Position ein Block. Sonst scrollt die
+     Begruendungsspalte aus dem Bild und laesst leere hohe Zeilen zurueck. */
+  .belegwrap{overflow:visible;border:none;background:transparent}
+  table.beleg,.beleg tbody,.beleg tr,.beleg td{display:block;width:auto;min-width:0}
+  .beleg thead,.beleg colgroup{display:none}
+  .beleg tr{border:1px solid var(--line);background:#fff;padding:15px 16px;margin-bottom:10px}
+  .beleg td{border:none;padding:0}
+  .beleg tbody td:first-child{margin-bottom:5px}
+  .beleg tbody td.claim{font-size:16.5px;line-height:1.35;margin-bottom:9px}
+  .beleg td.st{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .beleg td.st .w{display:inline;margin-top:0}
+  .beleg tbody td:last-child{font-size:14px;color:var(--dim)}
+}
+
+/* ---- Regeltext zur Stundung unter den Positionen ---- */
+.erbbox{margin-top:36px;max-width:760px}
+.erbbox .sub-h{margin-top:0}
+.erbbox p{font-size:16px;line-height:1.65;color:var(--ink);margin-bottom:14px}
+.erbbox p:last-child{margin-bottom:0;color:var(--dim)}
+
+/* ---- Ergänzungen Stand B (gleiche Farben, Schriften, Linien) ---- */
+.flow{border:1.5px solid var(--ink);border-radius:3px;background:#fff;padding:26px;margin-top:30px}
+@media(max-width:640px){.flow{padding:16px}}
+.flow .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.flow .year{font-family:var(--mono);font-size:30px;font-weight:500}
+.stack{display:flex;height:46px;border:1px solid var(--ink);border-radius:2px;overflow:hidden;margin:16px 0 8px;position:relative}
+.stack i{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12.5px;font-style:normal;color:#fff;transition:flex-basis .35s;white-space:nowrap;overflow:hidden}
+.stack .sa{background:var(--ink)}.stack .sb{background:#6497B8}.stack .sd{background:var(--accent)}
+.stack .cap{position:absolute;top:-4px;bottom:-4px;border-left:2px dashed var(--warn)}
+.flowleg{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.flowleg b{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+.ebenen{width:100%;height:auto;display:block;margin:6px 0 4px}
+.ebenen .bx{fill:#fff;stroke:var(--ink);stroke-width:1.25}
+.ebenen .tri{fill:#EDF2F6;stroke:var(--line-soft);stroke-width:1;stroke-linejoin:round}
+.ebenen .s.lab{font-size:10px;letter-spacing:.02em}
+.ebenen text{font-family:var(--disp);fill:var(--ink)}
+.ebenen .s{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+.ebenen .ar{stroke:var(--ink);stroke-width:1.25;fill:none;marker-end:url(#pf)}
+.ebenen .ag{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#pg)}
+.ebenen.mob{display:none;max-width:420px;margin:6px auto 4px}
+@media(max-width:640px){.ebenen.wide{display:none}.ebenen.mob{display:block}}
+#chart2{width:100%;height:auto;display:block}
+#chart2 .grid{stroke:var(--line-soft)}
+#chart2 .axis{font-family:var(--mono);font-size:12px;fill:var(--dim)}
+#chart2 .hist{stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+#chart2 .ohne{stroke:var(--warn);fill:none;stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
+#chart2 .mit{stroke:var(--accent);fill:none;stroke-width:3.5;stroke-linecap:round}
+#chart2 .prog{stroke:var(--accent);fill:none;stroke-width:2.5;stroke-dasharray:6 6;stroke-linecap:round}
+#chart2 .marker{stroke:var(--line);stroke-dasharray:3 4}
+.legend .l-prog i{border-color:var(--accent);border-top-style:dashed}
+.kicker{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:10px}
+.kicker.alt,.kicker.neu{color:var(--ink)}
+.raum{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:14px 0 18px}
+.raum button{font-family:var(--mono);font-size:12px;text-align:left;padding:7px 9px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:var(--dim);display:flex;justify-content:space-between;gap:6px}
+.raum button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.raum button.neu{border-color:var(--accent)}
+.raum button.neu[aria-pressed=true]{background:var(--accent);border-color:var(--accent)}
+.raum button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.schwelle{position:relative;height:30px;background:var(--line-soft);border-radius:2px;overflow:visible;margin:8px 0 26px}
+.schwelle>i{display:block;height:100%;background:var(--accent);border-radius:2px;transition:width .35s}
+.schwelle>i.unter{background:var(--warn)}
+.schwelle .us{position:absolute;top:-6px;bottom:-6px;border-left:2px dashed var(--ink)}
+.schwelle .us span{position:absolute;top:38px;left:-40px;width:80px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink)}
+.land{border:1px solid var(--line);border-radius:3px;background:#fff;padding:20px 22px}
+.land .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.land h3{font-family:var(--disp);font-size:17px;font-weight:500;margin:6px 0 6px}
+.land p{font-size:15px;color:var(--dim);line-height:1.55}
+.land .k{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--paper);border:1px solid var(--line-soft);border-radius:2px;padding:3px 8px;display:inline-block;margin:2px 0 8px}
+.anl a{all:unset;cursor:pointer;border:1.5px solid var(--ink);border-radius:3px;padding:20px;background:#fff;display:block}
+.anl a:hover{border-color:var(--accent)}
+.anl a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+#raum button{display:block;text-align:left}#raum button span{display:block}#raum button span:last-child{text-align:right;white-space:nowrap}</style>
+</head>
+<body>
+
+<nav class="titleblock" id="top" aria-label="Navegación">
+  <div class="wrap">
+    <a class="tb-left" href="#top">El Tercio de Oro</a>
+    <div class="tb-right">
+      <a href="#konzept">Construcción</a>
+      <a href="#rechner">Calculadora</a>
+      <a class="opt" href="#gemeinde">Municipio</a>
+      <a class="opt" href="#zeitpfad">Trayectoria</a>
+      <a href="#erfahrung">Internacional</a>
+      <a class="opt" href="#offen">Participa</a>
+      <span class="langsel"><a href="de.html" lang="de">DE</a><a href="en.html" lang="en">EN</a><a href="fr.html" lang="fr">FR</a><a href="it.html" lang="it">IT</a><a href="es.html" class="active" lang="es">ES</a><a href="pl.html" lang="pl">PL</a></span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="hero-mark" viewBox="0 0 560 390" role="img" aria-label="El Tercio de Oro">
+      <text x="280" y="112" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C">El</text><text x="280" y="242" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C">Tercio</text><text x="280" y="372" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="116" fill="#0F3B5C">de Oro</text>
+      
+    </svg>
+    <h1>El sistema fiscal sencillo para el siglo XXI.</h1>
+    <p class="claim2">Justo, social e innovador.</p>
+    <p class="sub">Todos los impuestos y cotizaciones se reparten de forma justa entre trabajo, capital y automatización – como máximo un tercio sobre cualquier renta. Trabajar compensa, y la red social fuerte y el dividendo de transformación aseguran la paz social. Los municipios deciden con más autonomía, un techo europeo protege los intereses comunes por mayoría.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#rechner">Comprueba tu propio cálculo</a>
+      <a class="btn ghost" href="#konzept">Ver el concepto</a>
+    </div>
+    <p class="opensrc">Todos los modelos de cálculo son <a href="#offen">verificables en abierto</a>.</p>
+    <div class="stamps">
+      <div class="stamp"><div class="val">373 €</div><div class="lbl">dividendo de transformación al mes por adulto — 186 € por hijo</div></div>
+      <div class="stamp"><div class="val">como máximo 33 %</div><div class="lbl">sobre cualquier renta</div></div>
+      <div class="stamp"><div class="val">9 de cada 10</div><div class="lbl">asalariados tienen más en el bolsillo*</div></div>
+    </div>
+    <p class="fineprint" style="text-align:center;margin:16px auto 0">* Cálculo según las reglas del proyecto para asalariados, 2028, poder adquisitivo actual, tras el ahorro obligatorio (10 %) y el recargo por cargas heredadas; por ejemplo +642 € al mes con una renta anual de 42.000 €.</p>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <p class="kicker alt">El sistema actual:</p>
+    <h2>Demasiado complejo para entenderlo. Demasiado lleno de agujeros para ser justo.</h2>
+    <p class="lede">El sistema actual ha crecido capa a capa. Grava el trabajo más que cualquier otra cosa y deja frustrados a ciudadanos y municipios.</p>
+    <div class="befund-grid">
+      <div class="befund"><div class="num">47,9 %</div><h3>de impuestos y cotizaciones sobre un salario medio</h3><p>La media en Alemania – la segunda más alta de la OCDE. La media de la OCDE es del 34,9 %.</p></div>
+      <div class="befund"><div class="num">26,4 %</div><h3>sobre intereses y plusvalías</h3><p>Un euro del capital aporta mucho menos que un euro del trabajo.</p></div>
+      <div class="befund"><div class="num">5 niveles</div><h3>negocian cada euro</h3><p>Municipio, distrito, Land, Estado federal y UE. Fondos y tareas van de un lado a otro, los objetivos no se cumplen.</p></div>
+      <div class="befund"><div class="num">0 €</div><h3>de cotizaciones sociales sobre el trabajo de las máquinas</h3><p>Las cotizaciones sociales solo gravan el trabajo humano. Quien sustituye trabajo por máquinas se ahorra cotizaciones.</p></div>
+    </div>
+    <p class="fineprint">Fuentes: OCDE, Taxing Wages 2025 (persona sola, salario medio, 2024); Ley alemana del impuesto sobre la renta, art. 32d, más recargo de solidaridad.</p>
+  </div>
+</section>
+
+<section id="konzept">
+  <div class="wrap">
+    <p class="kicker neu">El concepto:</p>
+    <h2>Pocas reglas, un principio</h2>
+    <p class="lede">Cada pieza ya se ha probado en algún lugar del mundo. El Tercio de Oro las une en un sistema que se explica en una página.</p>
+    <div class="mass-grid">
+      <div class="mass"><div class="pos">Renta</div><h3>Tarifa por tramos con techo firme: el Tercio de Oro</h3>
+        <div class="taxlbl" role="img" aria-label="Tarifa por tramos con techo firme: el Tercio de Oro"><div><b class="t1">0 %</b><em>hasta 12.348 €</em></div>
+<div><b class="t2">11 %</b><em>hasta 18.522 €</em></div>
+<div><b class="t3">19 %</b><em>hasta 24.696 €</em></div>
+<div><b class="t4">25 %</b><em>hasta 37.044 €</em></div>
+<div><b class="t5">33 %</b><em>por encima — límite</em></div></div>
+        <p>Tributa la renta bruta – sin deducciones, sin tributación conjunta. La necesidad básica queda exenta; por encima, trabajar compensa en cada tramo. Los tramos están en una, una y media, dos y tres veces la necesidad básica y crecen con ella.</p></div>
+      <div class="mass"><div class="pos">Trabajo</div><h3>Sin cotizaciones sociales</h3><span class="regel">0 % sobre el salario</span><p>El trabajo deja de pagar dos veces. Las empresas trasladan al salario al menos el 80 % de las cotizaciones empresariales que ahorran. Dinamarca ya hoy apenas cobra cotizaciones sociales.</p></div>
+      <div class="mass"><div class="pos">Capital</div><h3>Capital y trabajo, el mismo trato</h3><span class="regel">33 % sobre todos los rendimientos</span><p>También cuentan las plusvalías. Convertir salario en rendimiento del capital deja de compensar.</p></div>
+      <div class="mass"><div class="pos">Herencia</div><h3>Lo heredado también es renta</h3><span class="regel">33 % de impuesto sobre la renta en herencias de más de 100.000 €</span><p>Sin exenciones. Quien hereda una empresa o una casa puede aplazar el impuesto – nadie tiene que vender para pagarlo.</p></div>
+      <div class="mass"><div class="pos">Suelo · municipio</div><h3>El municipio grava el suelo</h3><span class="regel">0,1–1 % del valor del suelo</span><p>Solo cuenta el valor del terreno, no el edificio. Quien construye o rehabilita deja de pagar por ello. No repercutible en el alquiler.</p></div>
+      <div class="mass"><div class="pos">Patrimonio</div><h3>Las grandes fortunas contribuyen</h3><span class="regel">1,5 % por encima de 2 M€</span><p>El patrimonio de hasta 2 millones de euros no se toca. Por encima se aplica un impuesto mínimo, deducible del impuesto sobre la renta.</p></div>
+      <div class="mass"><div class="pos">Grupos y plataformas</div><h3>Se tributa donde están los clientes</h3><span class="regel">33 % donde están los clientes</span><p>Vale expresamente para las plataformas digitales. Los beneficios se desplazan, los clientes no.</p></div>
+      <div class="mass"><div class="pos">Consumo</div><h3>El IVA se convierte en etiqueta</h3>
+        <div class="vatlbl" role="img" aria-label="El IVA se convierte en etiqueta">
+          <div><b class="v1">A+ · 5&nbsp;%</b><em>necesidades básicas, reparación</em></div>
+          <div><b class="v2">A · 11&nbsp;%</b><em>bienes sostenibles</em></div>
+          <div><b class="v3">B · 17&nbsp;%</b><em>bienes estándar</em></div>
+          <div><b class="v4">C · 25&nbsp;%</b><em>intensivo en recursos, lujo</em></div>
+          <div><b class="v5" style="background:#5b1a14">S · 33&nbsp;%</b><em>dañino: tabaco, alcohol, combustibles, coches de combustión</em></div>
+        </div>
+        <p>Como con la etiqueta energética, se ve de un vistazo cuánto cuesta un producto y por qué. Se clasifica por la huella de recursos y de CO₂, no por el origen. El 33 % solo se aplica a lo dañino.</p></div>
+      <div class="mass"><div class="pos">Clima</div><h3>Un precio del CO₂ devuelto a todos</h3><span class="regel">senda europea de precios · devolución a través del dividendo de transformación</span><p>Quien consume poco sale ganando. Suiza devuelve desde hace años su tasa de CO₂ a todos a partes iguales.</p></div>
+      <div class="mass"><div class="pos">Dividendo</div><h3>Dividendo de transformación: cada mes, para todos</h3><svg class="spark" viewBox="0 0 300 84" role="img" aria-label="Dividendo de transformación: cada mes, para todos"><polyline points="10.0,17.6 18.8,21.2 27.5,24.0 36.2,28.6 45.0,32.1 53.8,36.4 62.5,40.6 71.2,45.6 80.0,46.7 88.8,48.4 97.5,49.8 106.2,51.6 115.0,53.4 123.8,54.8 132.5,56.6 141.2,58.7 150.0,60.8 158.8,62.6 167.5,63.6 176.2,64.7 185.0,65.8 193.8,66.1 202.5,67.2 211.2,67.2 220.0,67.5 228.8,67.5 237.5,67.2 246.2,67.2 255.0,66.8 263.8,66.8 272.5,66.5 281.2,66.8 290.0,66.8" fill="none" stroke="#1D7A4F" stroke-width="2.5"/><text x="10" y="82" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5A7186">2028 · 373 €</text><text x="290" y="12" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="#1D7A4F">2060 · 234 €</text></svg><p>Adultos completo, niños la mitad, sin solicitud. Devuelve sobre todo lo que aporta la transformación.</p></div>
+      <div class="mass"><div class="pos">La Red fuerte</div><h3>Nadie se cae</h3><span class="regel">cobertura básica sin primas</span><p>Tejida con muchos nudos – cada uno sostiene, nadie se cae: salud, cuidados, pensión mínima, necesidad básica en caso de invalidez y desempleo. Sin extras; lo que va más allá es tu propio camino con tu propia previsión (10 % del salario en tu propia cuenta de jubilación).</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="wrap">
+    <h2>Haz tú mismo la cuenta</h2>
+    <p class="lede">Cuánto más le queda en el bolsillo a tu hogar con el Tercio de Oro que hoy – tras impuestos y cotizaciones sociales, con la parte empresarial en el salario.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="brutto">Renta bruta anual</label>
+        <div class="bigval" id="bruttoval"></div>
+        <input type="range" id="brutto" min="10000" max="150000" step="1000" value="42000">
+        <label class="lbl">Adultos en el hogar</label>
+        <div class="seg" id="erw"><button type="button" aria-pressed="true" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">Hijos</label>
+        <div class="seg" id="kin"><button type="button" aria-pressed="true" data-v="0">0</button><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="false" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button></div>
+        <label class="lbl">Año</label>
+        <div class="bigval" id="rjval">2028</div><input type="range" id="rj" min="2028" max="2060" step="1" value="2028" style="width:100%;accent-color:var(--ink)" aria-label="Año">
+      </div>
+      <div>
+        <div class="res-row"><span class="k">Disponible hoy al mes</span><span class="v" id="r-st"></span></div>
+        <div class="res-row"><span class="k">Disponible con el Tercio de Oro al mes</span><span class="v" id="r-satz"></span></div>
+        <div class="res-row"><span class="k">de ello, dividendo de transformación del hogar</span><span class="v" id="r-soz"></span></div>
+        <div class="res-row"><span class="k">Más en el bolsillo al año</span><span class="v new" id="r-mon"></span></div>
+        <div class="bars"><div class="bar-lbl"><span>Hoy al mes</span><span id="b-st"></span></div><div class="bar today"><i id="bi-st"></i></div>
+        <div class="bar-lbl"><span>Tercio de Oro al mes</span><span id="b-dv"></span></div><div class="bar new"><i id="bi-dv"></i></div></div>
+        <div class="plus-box"><div class="plus" id="r-jahr"></div><div class="sub" id="r-jahrsub"></div></div>
+      </div>
+    </div>
+    <p class="fineprint">Hoy: impuesto sobre el salario, recargo de solidaridad y cotizaciones sociales del trabajador según el derecho alemán de 2026, prestación por hijo; desde 2035 tipos de cotización según la proyección IGES (un estudio, fuente secundaria), constantes después. Tercio de Oro: 80 % de las cotizaciones empresariales ahorradas en el salario, tarifa sobre salario y dividendo, sin cotizaciones sociales, ahorro obligatorio del 10 % del salario en cuenta propia descontado, IVA más alto sobre el consumo y recargo por cargas heredadas del 13,7 % (ejemplo) incluidos. Otros adultos sin renta propia; ayudas básicas y de vivienda no calculadas. Poder adquisitivo actual. Estimación del proyecto.</p>
+  </div>
+</section>
+
+<section id="ebenen">
+  <div class="wrap">
+    <h2>Municipios fuertes, ciudadanos fuertes, un techo europeo fuerte</h2>
+    <p class="lede">Se reduce el número de niveles administrativos. El municipio recibe su parte directamente del techo, decide por sí mismo sobre sus finanzas y delega tareas en agrupaciones administrativas de nivel superior (por ejemplo, consorcios de infraestructuras). El techo europeo solo asume lo que ningún municipio puede hacer solo – y no puede quedarse con más de lo que dice el tratado.</p>
+<svg class="ebenen mob" viewBox="0 0 360 400" role="img" aria-label="Municipios fuertes, ciudadanos fuertes, un techo europeo fuerte">
+  <defs><marker id="pf2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0F3B5C"/></marker>
+  <marker id="pg2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1D7A4F"/></marker></defs>
+  <polygon class="tri" points="180,60 90,262 270,262"/>
+  <rect class="bx" x="20" y="14" width="320" height="70" rx="10"/>
+  <text x="180" y="44" text-anchor="middle" font-size="19" font-weight="700">El techo común</text>
+  <text class="s" x="180" y="66" text-anchor="middle" style="font-size:10px">al menos el 68 % pasa al municipio</text>
+  <path class="ar" style="marker-end:url(#pf2)" d="M78,222 L132,90"/>
+  <text class="s lab" transform="translate(92,152) rotate(-67.7)" text-anchor="middle">aportación fiscal</text>
+  <path class="ar" style="marker-end:url(#pf2)" d="M228,90 L282,222"/>
+  <text class="s lab" transform="translate(268,152) rotate(67.7)" text-anchor="middle">fórmula</text>
+  <rect class="bx" x="10" y="226" width="160" height="72" rx="10"/>
+  <text x="90" y="257" text-anchor="middle" font-size="19" font-weight="700">Tú</text>
+  <text class="s" x="90" y="280" text-anchor="middle" style="font-size:10px">tributos claros</text>
+  <rect class="bx" x="190" y="226" width="160" height="72" rx="10"/>
+  <text x="270" y="257" text-anchor="middle" font-size="19" font-weight="700">Municipio</text>
+  <text class="s" x="270" y="280" text-anchor="middle" style="font-size:10px">decide por sí mismo</text>
+  <path class="ag" style="marker-end:url(#pg2)" d="M270,302 C270,350 90,350 90,306"/>
+  <text class="s" x="180" y="372" text-anchor="middle" fill="#1D7A4F">cada mes:</text>
+  <text class="s" x="180" y="390" text-anchor="middle" fill="#1D7A4F">el dividendo de transformación</text>
+</svg>
+<svg class="ebenen wide" viewBox="0 0 900 320" role="img" aria-label="Municipios fuertes, ciudadanos fuertes, un techo europeo fuerte">
+  <defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0F3B5C"/></marker>
+  <marker id="pg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1D7A4F"/></marker></defs>
+  <polygon class="tri" points="450,70 160,250 740,250"/>
+  <rect class="bx" x="280" y="16" width="340" height="74" rx="10"/>
+  <text x="450" y="48" text-anchor="middle" font-size="20" font-weight="700">El techo común</text>
+  <text class="s" x="450" y="72" text-anchor="middle">al menos el 68 % pasa al municipio</text>
+  <path class="ar" d="M215,208 L338,98"/>
+  <text class="s lab" transform="translate(271,147) rotate(-41.8)" text-anchor="middle">aportación fiscal</text>
+  <path class="ar" d="M562,98 L685,208"/>
+  <text class="s lab" transform="translate(629,147) rotate(41.8)" text-anchor="middle">por habitante, por hijo</text>
+  <rect class="bx" x="40" y="212" width="240" height="80" rx="10"/>
+  <text x="160" y="246" text-anchor="middle" font-size="20" font-weight="700">Tú</text>
+  <text class="s" x="160" y="270" text-anchor="middle">tributos claramente regulados</text>
+  <rect class="bx" x="620" y="212" width="240" height="80" rx="10"/>
+  <text x="740" y="246" text-anchor="middle" font-size="20" font-weight="700">Tu municipio</text>
+  <text class="s" x="740" y="270" text-anchor="middle">decide por sí mismo</text>
+  <path class="ag" d="M616,252 L286,252"/>
+  <text class="s" x="450" y="240" text-anchor="middle" fill="#1D7A4F">cada mes: el dividendo de transformación</text>
+</svg>
+    <div class="box">
+      <h3>¿Por qué un dividendo de transformación?</h3>
+      <p>Lo que producimos hoy descansa en lo que construyeron las generaciones anteriores: conocimiento, técnica, infraestructuras. Cada vez más lo hacen máquinas y software. El dividendo devuelve a todos la misma parte – sobre todo lo que aporta la transformación: el precio del CO₂ y el tipo especial sobre lo dañino. Cada país reparte la misma parte de su producción. Se reduce a medida que desaparecen los motores de combustión y las emisiones – es lo que se busca. Lo que sostiene es la red fuerte.</p>
+      <p>Y compensa lo que la transformación del trabajo, la energía y la economía exige a cada uno: quien tiene que reorientarse no se queda con las manos vacías.</p>
+    </div>
+    <div class="effects">
+      <div><h3>Se confía en la persona</h3><p>a manejar su dinero: como máximo un tercio de impuestos, ninguna cotización, su propia previsión en su propia cuenta. Un dividendo cada mes, sin solicitud.</p></div>
+      <div><h3>Se confía en el municipio</h3><p>que gestione sus asuntos: recibe importes fijos por habitante y por niño, con la misma regla en cada país. Decide sobre su pertenencia a mancomunidades y asociaciones y sobre los programas de apoyo locales.</p></div>
+      <div><h3>Se confía al techo</h3><p>lo que solo se puede hacer juntos: defensa y soberanía digital, un mercado interior sin fronteras, normas comunes. Nada más. El techo decide por mayoría de los delegados de las agrupaciones de municipios.</p></div>
+    </div>
+
+    <div class="flow" id="fluss">
+      <div class="row"><div><label class="lbl" for="jahr" style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)">Adónde van 100 € de impuestos al año</label></div><div class="year" id="jahrval">2033</div></div>
+      <input type="range" id="jahr" min="2028" max="2060" step="1" value="2033" style="width:100%;accent-color:var(--ink)" aria-label="Año">
+      <div class="stack" aria-live="polite"><i class="sa" id="sa"></i><i class="sb" id="sb"></i><i class="sn" id="sn" style="background:#8FB8A0"></i><i class="sd" id="sd"></i><span class="cap" id="cap"></span></div>
+      <div class="flowleg"><span><b style="background:var(--ink)"></b>Techo</span><span><b style="background:#6497B8"></b>Tareas del municipio</span><span><b style="background:#8FB8A0"></b>La Red fuerte</span><span><b style="background:var(--accent)"></b>Dividendo de transformación</span><span><b style="border-left:2px dashed var(--warn);width:0;height:12px"></b>Límite del techo</span></div>
+      <p class="fineprint" id="flusstext" style="margin-top:12px"></p>
+    </div>
+  </div>
+</section>
+
+<section id="gemeinde">
+  <div class="wrap">
+    <h2>Tu municipio hace sus propias cuentas</h2>
+    <p class="lede">El reparto por el techo se resume en dos cifras: 3.913 € por habitante y 13.729 € por hijo al año (ejemplo de Alemania; cada país aplica la misma regla a su producción, en la media de los países 3.599 € y 12.625 €). Más niños significa por tanto más dinero para las escuelas. Lo que el municipio ahorra activamente en administración llega a sus ciudadanos.</p>
+    <div class="calc">
+      <div>
+        <label class="lbl" for="g-ein">Habitantes</label><div class="bigval" id="g-einval"></div>
+        <input type="range" id="g-ein" min="2000" max="200000" step="1000" value="30000">
+        <label class="lbl" for="g-kin">Proporción de niños y jóvenes de 5 a 19 años</label><div class="bigval" id="g-kinval" style="font-size:22px"></div>
+        <input type="range" id="g-kin" min="10" max="24" step="0.5" value="15.9">
+        <label class="lbl" for="g-verw">Peso de la administración en el presupuesto municipal</label><div class="bigval" id="g-verwval" style="font-size:22px"></div>
+        <input type="range" id="g-verw" min="5.5" max="25" step="0.1" value="15.7">
+        <p class="fineprint" style="margin-top:8px">De media, el 15,7 % del presupuesto municipal se destina a la administración. Las tareas de los municipios difieren entre países; una comparación directa de los porcentajes tiene por ello límites.</p>
+      </div>
+      <div>
+        <div class="res-row"><span class="k">Presupuesto municipal anual</span><span class="v new" id="g-bud"></span></div>
+        <div class="res-row"><span class="k">de ello para colegios</span><span class="v" id="g-sch"></span></div>
+        <div class="res-row"><span class="k">por habitante</span><span class="v" id="g-kopf"></span></div>
+        <div class="plus-box"><div class="plus" id="g-plus"></div><div class="sub">más o menos dividendo por habitante y mes, según lo austera que sea la administración</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zeitpfad">
+  <div class="wrap">
+    <h2>El dividendo de transformación a lo largo del tiempo</h2>
+    <p class="lede">El dividendo devuelve sobre todo lo que se pagó en impuestos sobre productos y conductas dañinos. Cuando desaparecen las emisiones dañinas, esta parte se reduce; la salud y los cuidados cuestan más con el envejecimiento. El crecimiento actúa en sentido contrario. Así el dividendo baja de 373 € (2028) y se mantiene en torno a 234 € (2060). Más trabajo y automatización lo vuelven a subir.</p>
+    <div class="chart-card">
+      <div class="tabs" id="gtabs"><button type="button" aria-pressed="true" data-v="1,0">Senda base</button><button type="button" aria-pressed="false" data-v="0,5">Más trabajo, IA media</button><button type="button" aria-pressed="false" data-v="1,5">Fuerte</button></div>
+      <div class="unit">Dividendo de transformación por adulto y mes, euros a poder adquisitivo actual</div>
+      <svg id="chart" viewBox="0 0 900 360" role="img" aria-label="El dividendo de transformación a lo largo del tiempo"></svg>
+      <div class="legend"><span class="l-mit"><i></i>Dividendo de transformación</span><span class="l-hist"><i></i>Inicio 2028 (ejemplo de cálculo)</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sicherungen">
+  <div class="wrap">
+    <h2>Por qué el techo da estabilidad</h2>
+    <p class="lede">Un techo común vale lo que valen sus límites. Cinco reglas figuran en el tratado.</p>
+    <div class="sich">
+      <div><span><b>El límite</b><p>El techo retiene como máximo el 32 % de lo que recauda para los municipios – y solo lo que sus tareas cuestan de verdad.</p></span></div>
+      <div><span><b>Lo que no se necesita, sigue su camino</b><p>Cada euro por encima de la necesidad va a los municipios, a la red fuerte y al dividendo de transformación.</p></span></div>
+      <div><span><b>Fórmula en vez de negociación</b><p>Los municipios reciben importes fijos por habitante y por hijo. Nadie tiene que pedir, nadie puede recortar.</p></span></div>
+      <div><span><b>Cargas heredadas: asunto de cada Estado</b><p>Cada Estado regula por sí mismo sus deudas antiguas y sus promesas de pensiones. El techo ofrece herramientas: un fondo común con un tipo de interés común, amortización como muy tarde en 2098 – y, para los Estados sobreendeudados, un procedimiento ordenado de reinicio.</p></span></div>
+      <div><span><b>Decidir por mayoría</b><p>Una alianza en la que algunos pueden bloquear las decisiones con un veto no puede decidir por todos en la hora de la decisión.</p></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="erfahrung">
+  <div class="wrap">
+    <h2>Lo que ya funciona en otros lugares</h2>
+    <p class="lede">Muchas piezas ya existen en algún lugar – a menudo desde hace décadas.</p>
+    <div class="reg-grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+      <div class="land"><div class="n">Estonia</div><h3>Un tipo, declaración en minutos</h3><span class="k">declaración en línea en minutos · impuesto sobre el suelo desde 1993</span><p>La declaración se hace en línea en pocos minutos. El impuesto sobre bienes inmuebles se basa solo en el valor del suelo; los edificios no tributan.</p></div>
+      <div class="land"><div class="n">Dinamarca</div><h3>Municipios fuertes, Estado del bienestar financiado con impuestos</h3><span class="k">98 municipios desde 2007</span><p>Los municipios gestionan colegios, cuidados y servicios sociales. Las cotizaciones sociales apenas cuentan – el Estado del bienestar se paga con impuestos.</p></div>
+      <div class="land"><div class="n">Suiza</div><h3>Una tasa de CO₂ devuelta a todos</h3><span class="k">desde 2008 · el mismo importe para todos</span><p>La recaudación de la tasa de CO₂ vuelve a todos los habitantes a partes iguales, descontada de la prima del seguro médico. Los municipios fijan sus propios impuestos.</p></div>
+      <div class="land"><div class="n">Alaska</div><h3>Un dividendo para todos</h3><span class="k">desde 1982 · anual</span><p>Cada habitante recibe una vez al año una parte del fondo común, sin prueba de recursos. Desde hace más de cuarenta años.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="klub">
+  <div class="wrap">
+    <h2>Un club con espacio para crecer</h2>
+    <p class="lede">El techo no es un círculo cerrado, sino una oferta. El plan está calculado para 30 Estados europeos (UE, Noruega, Islandia, Suiza) con 465,6 millones de personas – también son posibles socios más allá. Elige tú: a partir de la población de Estados Unidos, la nueva alianza juega en la misma liga y está mejor preparada para el futuro.</p>
+    <div class="flow">
+      <div class="tabs" id="raumvor"><button type="button" aria-pressed="false" data-v="zehn">Los diez calculados</button><button type="button" aria-pressed="false" data-v="sechs">Los seis mayores</button><button type="button" aria-pressed="true" data-v="europa">Toda Europa</button><button type="button" aria-pressed="false" data-v="plus">Europa y Canadá</button></div>
+      <div class="raum" id="raum"><button type="button" aria-pressed="false" data-k="DE" data-iso="DE" data-de="Deutschland"><span class="nm">Deutschland</span><span>83,5 M</span></button><button type="button" aria-pressed="false" data-k="UK" data-iso="GB" data-de="Vereinigtes Königreich"><span class="nm">Vereinigtes Königreich</span><span>69,1 M</span></button><button type="button" aria-pressed="false" data-k="FR" data-iso="FR" data-de="Frankreich"><span class="nm">Frankreich</span><span>68,8 M</span></button><button type="button" aria-pressed="false" data-k="IT" data-iso="IT" data-de="Italien"><span class="nm">Italien</span><span>59,0 M</span></button><button type="button" aria-pressed="false" data-k="ES" data-iso="ES" data-de="Spanien"><span class="nm">Spanien</span><span>48,9 M</span></button><button type="button" aria-pressed="false" data-k="PL" data-iso="PL" data-de="Polen"><span class="nm">Polen</span><span>36,6 M</span></button><button type="button" aria-pressed="false" data-k="RO" data-iso="RO" data-de="Rumänien"><span class="nm">Rumänien</span><span>19,1 M</span></button><button type="button" aria-pressed="false" data-k="NL" data-iso="NL" data-de="Niederlande"><span class="nm">Niederlande</span><span>18,0 M</span></button><button type="button" aria-pressed="false" data-k="BE" data-iso="BE" data-de="Belgien"><span class="nm">Belgien</span><span>11,9 M</span></button><button type="button" aria-pressed="false" data-k="PT" data-iso="PT" data-de="Portugal"><span class="nm">Portugal</span><span>11,3 M</span></button><button type="button" aria-pressed="false" data-k="CZ" data-iso="CZ" data-de="Tschechien"><span class="nm">Tschechien</span><span>10,9 M</span></button><button type="button" aria-pressed="false" data-k="SE" data-iso="SE" data-de="Schweden"><span class="nm">Schweden</span><span>10,6 M</span></button><button type="button" aria-pressed="false" data-k="EL" data-iso="GR" data-de="Griechenland"><span class="nm">Griechenland</span><span>10,4 M</span></button><button type="button" aria-pressed="false" data-k="HU" data-iso="HU" data-de="Ungarn"><span class="nm">Ungarn</span><span>9,6 M</span></button><button type="button" aria-pressed="false" data-k="AT" data-iso="AT" data-de="Österreich"><span class="nm">Österreich</span><span>9,2 M</span></button><button type="button" aria-pressed="false" data-k="CH" data-iso="CH" data-de="Schweiz"><span class="nm">Schweiz</span><span>9,0 M</span></button><button type="button" aria-pressed="false" data-k="BG" data-iso="BG" data-de="Bulgarien"><span class="nm">Bulgarien</span><span>6,4 M</span></button><button type="button" aria-pressed="false" data-k="DK" data-iso="DK" data-de="Dänemark"><span class="nm">Dänemark</span><span>6,0 M</span></button><button type="button" aria-pressed="false" data-k="FI" data-iso="FI" data-de="Finnland"><span class="nm">Finnland</span><span>5,6 M</span></button><button type="button" aria-pressed="false" data-k="NO" data-iso="NO" data-de="Norwegen"><span class="nm">Norwegen</span><span>5,6 M</span></button><button type="button" aria-pressed="false" data-k="SK" data-iso="SK" data-de="Slowakei"><span class="nm">Slowakei</span><span>5,4 M</span></button><button type="button" aria-pressed="false" data-k="IE" data-iso="IE" data-de="Irland"><span class="nm">Irland</span><span>5,4 M</span></button><button type="button" aria-pressed="false" data-k="HR" data-iso="HR" data-de="Kroatien"><span class="nm">Kroatien</span><span>3,9 M</span></button><button type="button" aria-pressed="false" data-k="LT" data-iso="LT" data-de="Litauen"><span class="nm">Litauen</span><span>2,9 M</span></button><button type="button" aria-pressed="false" data-k="SI" data-iso="SI" data-de="Slowenien"><span class="nm">Slowenien</span><span>2,1 M</span></button><button type="button" aria-pressed="false" data-k="LV" data-iso="LV" data-de="Lettland"><span class="nm">Lettland</span><span>1,9 M</span></button><button type="button" aria-pressed="false" data-k="EE" data-iso="EE" data-de="Estland"><span class="nm">Estland</span><span>1,4 M</span></button><button type="button" aria-pressed="false" data-k="CY" data-iso="CY" data-de="Zypern"><span class="nm">Zypern</span><span>1,0 M</span></button><button type="button" aria-pressed="false" data-k="LU" data-iso="LU" data-de="Luxemburg"><span class="nm">Luxemburg</span><span>0,7 M</span></button><button type="button" aria-pressed="false" data-k="MT" data-iso="MT" data-de="Malta"><span class="nm">Malta</span><span>0,6 M</span></button><button type="button" aria-pressed="false" data-k="IS" data-iso="IS" data-de="Island"><span class="nm">Island</span><span>0,4 M</span></button><button type="button" aria-pressed="false" data-k="CA" data-iso="CA" data-de="Kanada" class="neu"><span class="nm">Kanada</span><span>41,7 M</span></button></div>
+      <div class="row"><div class="res-row" style="flex:1;border:none"><span class="k">Personas en el club</span><span class="v new" id="raumsum"></span></div><div class="res-row" style="flex:1;border:none"><span class="k">Estados</span><span class="v" id="raumn"></span></div></div>
+      <div class="schwelle"><i id="raumbar"></i><span class="us" id="raumus"><span>EE. UU.</span></span></div>
+      <p class="fineprint" id="raumtext" style="margin-top:0"></p>
+    </div>
+    <div class="effects">
+      <div><h3>Reino Unido</h3><p>Sin la atadura de la unanimidad de los tratados de la UE: para el Reino Unido el club sería una adhesión, no una ruptura de tratados – y un camino de vuelta a un espacio económico común. Con 69,1 millones de personas, el segundo socio por tamaño.</p></div>
+      <div><h3>Canadá</h3><p>Estrechamente unido a Europa por el acuerdo comercial CETA y, desde 2025, por una asociación de seguridad y defensa con la UE. 41,7 millones de personas, valores compartidos, tareas comunes.</p></div>
+      <div><h3>Seis bastan</h3><p>Alemania, el Reino Unido, Francia, Italia, España y Polonia alcanzan juntos el tamaño de Estados Unidos. Cada país más hace al club más fuerte.</p></div>
+    </div>
+    <h3 class="sub-h">Hacia dónde vamos</h3>
+    <div class="chart-card">
+      <div class="tabs" id="ztabs"><button type="button" aria-pressed="true" data-v="schuld">Deuda pública</button><button type="button" aria-pressed="false" data-v="co2">Emisiones de CO₂</button></div>
+      <div class="unit" id="zunit"></div>
+      <svg id="chart2" viewBox="0 0 900 360" role="img" aria-label="Hacia dónde vamos"></svg>
+      <div class="legend" id="zleg"></div>
+      <p class="fineprint" id="ztext" style="margin-top:12px"></p>
+    </div>
+    <div class="timeline" style="margin-top:34px">
+      <div><div class="y">2026 · Revisión abierta</div><div class="t">Concepto y cálculos están abiertos. Se invita a expertos, administraciones y críticos.</div></div>
+      <div><div class="y">2027 · Formar comunidades</div><div class="t">Municipios y regiones encuentran socios, los estados estudian la adhesión.</div></div>
+      <div><div class="y">Desde 2028 · Empezar en pequeñas agrupaciones</div><div class="t">Como pronto, tras la legislación y la puesta en marcha de la administración.</div></div>
+      <div><div class="y">a partir de 2029 · Crecer paso a paso</div><div class="t">Cada nuevo país fortalece el club – sobre todo al gravar donde están los clientes.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="offen">
+  <div class="wrap">
+    <h2>Desarrollado en abierto – participa</h2>
+    <p class="lede">El Tercio de Oro se desarrolla con independencia de partidos y grupos de interés. Nuestras cifras proceden de estadísticas oficiales, cada cálculo se puede comprobar, cada error se corrige abiertamente. Se invita a especialistas en hacienda pública, administración, práctica municipal, derecho y estadística a aportar sus conocimientos.</p>
+    <div class="anl">
+      <a href="dokumente/TAX-Drittel-Kurzfassung.pdf"><span class="t">Resumen</span><span class="d">El concepto en dos páginas (en alemán).</span><span class="f">PDF</span></a>
+      <a href="dokumente/TAX-Drittel-Konzept.pdf"><span class="t">Concepto completo</span><span class="d">Todas las piezas, cifras y cálculos (en alemán).</span><span class="f">PDF</span></a>
+      <a href="mailto:tax.better@archicrowd.de?subject=El%20Tercio%20de%20Oro"><span class="t">Colabora</span><span class="d">Cálculos, datos y bitácora para especialistas.</span><span class="f">tax.better@archicrowd.de</span></a>
+      <a href="mailto:tax.better@archicrowd.de?subject=El%20Tercio%20de%20Oro"><span class="t">Enviar una crítica</span><span class="d">Cada objeción se examina y se responde.</span><span class="f">Correo</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><h4>Método</h4><p>Todas las cifras proceden de un cálculo global abierto basado en estadísticas oficiales (Eurostat, OCDE). Desarrollado con el método del proyecto arquitectónico, con herramientas de IA y modelos de cálculo asistidos por IA. Scripts con licencia MIT, textos con CC BY 4.0.</p><p class="verstamp">Versión del modelo <b>v4.0 · 18 de octubre de 2026</b></p></div>
+    <div><h4>Contacto</h4><p>Initiative 28 : 28<br><a href="mailto:tax.better@archicrowd.de?subject=El%20Tercio%20de%20Oro">Enviar una crítica</a><br><a href="#top">Volver arriba</a></p></div>
+    <div><h4>Aviso legal y privacidad</h4><p>Responsable del contenido: Initiative 28 : 28 – Arndt Hermann, tax.better@archicrowd.de. Este sitio no usa cookies ni rastreadores y no carga contenidos de terceros. No se recogen datos personales. Las fuentes Space Grotesk, Source Serif 4 e IBM Plex Mono se alojan localmente bajo la licencia SIL Open Font License 1.1. Todos los cálculos son ilustraciones sin garantía y no sustituyen el asesoramiento fiscal o jurídico. El sitio está bloqueado para los buscadores.</p></div>
+  </div>
+  <p class="translation-note">El alemán es la versión original de este proyecto; esta es una traducción. País de referencia para todos los datos nacionales: Alemania.</p>
+</footer>
+
+<script>
+const D={"lang": "es", "fmt": [".", ",", "nach", " "], "jahre": [2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060], "erw": {"1,0": [373, 363, 355, 342, 332, 320, 308, 294, 291, 286, 282, 277, 272, 268, 263, 257, 251, 246, 243, 240, 237, 236, 233, 233, 232, 232, 233, 233, 234, 234, 235, 234, 234], "0,5": [373, 365.57142857142856, 360.14285714285717, 349.7142857142857, 342.2857142857143, 332.85714285714283, 323.42857142857144, 312.0, 309.8, 305.6, 302.4, 298.2, 294.0, 290.8, 286.6, 281.4, 276.2, 272.0, 270.0, 268.0, 266.0, 266.0, 264.0, 265.0, 265.0, 266.0, 268.0, 269.0, 271.0, 272.0, 274.0, 274.0, 275.0], "1,5": [373, 368.2857142857143, 365.57142857142856, 357.85714285714283, 353.14285714285717, 346.42857142857144, 339.7142857142857, 331.0, 330.7, 328.4, 327.1, 324.8, 322.5, 321.2, 318.9, 315.6, 312.3, 310.0, 309.8, 309.6, 309.4, 311.2, 311.0, 313.8, 315.6, 318.4, 322.2, 325.0, 328.8, 331.6, 335.4, 337.2, 340.0]}, "a": [6.19, 6.35, 6.5, 6.66, 6.82, 6.98, 7.13, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29, 7.29], "div": [7.25, 7.0, 6.75, 6.47, 6.2, 5.92, 5.64, 5.36, 5.23, 5.1, 4.98, 4.84, 4.71, 4.58, 4.44, 4.31, 4.18, 4.04, 3.96, 3.89, 3.81, 3.73, 3.65, 3.61, 3.58, 3.55, 3.51, 3.47, 3.47, 3.43, 3.4, 3.36, 3.33], "b": 10.35, "q": 33.53, "og": 32.0, "einzugAnteil": 0.9755442886966895, "einw": 3913.465112500161, "kind": 13728.98284448568, "fachKopf": 6090.881791635588, "verwAnt": 15.65217391304348, "tarif": [[12348, 0], [18522.0, 11], [24696, 19], [37044, 25], [1000000000000.0, 33]], "raum": {"DE": 83.516593, "UK": 69.144015, "FR": 68.775952, "IT": 58.957347, "ES": 48.873996, "PL": 36.559233, "RO": 19.055364, "NL": 17.993485, "BE": 11.850296, "PT": 11.295785, "CZ": 10.905028, "SE": 10.569709, "EL": 10.37405, "HU": 9.562065, "AT": 9.177982, "CH": 9.006644, "BG": 6.441421, "DK": 5.976992, "FI": 5.619911, "NO": 5.572272, "SK": 5.422069, "IE": 5.39598, "HR": 3.868159, "LT": 2.888278, "SI": 2.1274, "LV": 1.86957, "EE": 1.372341, "CY": 0.974666, "LU": 0.677012, "MT": 0.568847, "IS": 0.386506, "CA": 41.651653, "US": 341.784857}, "us": 341.784857, "d": [81.3, 85.15, 89.0, 92.68, 96.36, 100.04, 103.72, 107.4, 111.08, 114.76, 118.44, 122.12, 125.8, 128.2, 130.6, 133.0, 135.4, 137.8, 140.2, 142.6, 145.0, 147.4, 149.8, 150.43, 151.07, 151.7, 152.33, 152.97, 153.6, 153.03, 152.45, 151.88, 151.3], "zeit": {"schuld_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "schuld_hist": [77.25, 79.72, 84.46, 85.87, 85.29, 82.32, 80.96, 78.28, 75.92, 73.9, 86.19, 84.31, 80.59, 78.47, 78.45, 79.5], "schuld_prog_jahre": [2025, 2026, 2027, 2028], "schuld_prog": [79.5, 80.11, 80.71, 81.29], "co2_hist_jahre": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "co2_hist": [942, 922, 926, 944, 904, 907, 911, 894, 858, 800, 730, 762, 750, 674, 650, 649], "co2_ziel_jahre": [2025, 2030, 2040, 2045], "co2_ziel": [649, 438, 150, 0]}, "T": {"js_fluss": "En {j} el techo retiene {a} de cada {hundert} – se permitirían hasta {cap}. El municipio destina {b} a las tareas regionales, la red fuerte {n}, y {d} van a los ciudadanos como dividendo de transformación.", "js_rechner_sub": "más en el bolsillo al mes – en {j}, para {hh}", "js_erw_1": "{n} adulto", "js_erw_n": "{n} adultos", "js_kind_1": "{n} hijo", "js_kind_n": "{n} hijos", "js_und": " y ", "js_mio": "{x} M€", "js_monat": "{x} al mes", "js_mio_menschen": "{x} M", "js_raum_ueber": "El club es mayor que Estados Unidos ({us} M) – en {x} millones de personas.", "js_raum_unter": "Faltan {x} millones de personas para alcanzar el tamaño de Estados Unidos.", "js_schuld_unit": "Deuda pública en % de la producción", "js_schuld_l1": "Club de los diez hasta hoy", "js_schuld_l2": "tendencia actual hasta el cambio", "js_schuld_l3": "Fondo de cargas heredadas, ejemplo para los diez", "js_schuld_text": "Las cargas heredadas son asunto de cada Estado. Si los diez aportan deudas y promesas de pensiones a un fondo común, la financiación resulta mucho más barata y todo queda amortizado en 2098 – con un recargo moderado sobre todos los impuestos.", "js_co2_unit": "Gases de efecto invernadero de Alemania, millones de toneladas de CO₂ equivalente", "js_co2_l1": "hasta hoy", "js_co2_l2": "objetivo climático hasta 2045", "js_co2_text": "Casi reducidas a la mitad desde 1990 – la segunda mitad está por llegar. El Tercio de Oro apuesta por un precio europeo común del CO₂ y devuelve los ingresos a todos a través del dividendo de transformación."}};
+Object.assign(D,{"rr": {"brutto": [10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000, 31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000, 40000, 41000, 42000, 43000, 44000, 45000, 46000, 47000, 48000, 49000, 50000, 51000, 52000, 53000, 54000, 55000, 56000, 57000, 58000, 59000, 60000, 61000, 62000, 63000, 64000, 65000, 66000, 67000, 68000, 69000, 70000, 71000, 72000, 73000, 74000, 75000, 76000, 77000, 78000, 79000, 80000, 81000, 82000, 83000, 84000, 85000, 86000, 87000, 88000, 89000, 90000, 91000, 92000, 93000, 94000, 95000, 96000, 97000, 98000, 99000, 100000, 101000, 102000, 103000, 104000, 105000, 106000, 107000, 108000, 109000, 110000, 111000, 112000, 113000, 114000, 115000, 116000, 117000, 118000, 119000, 120000, 121000, 122000, 123000, 124000, 125000, 126000, 127000, 128000, 129000, 130000, 131000, 132000, 133000, 134000, 135000, 136000, 137000, 138000, 139000, 140000, 141000, 142000, 143000, 144000, 145000, 146000, 147000, 148000, 149000, 150000], "heute": {"2028|1|0": [7825, 8608, 9390, 10172, 10955, 11738, 12520, 13302, 14018, 14678, 15328, 15966, 16593, 17208, 17813, 18408, 19001, 19592, 20180, 20766, 21350, 21932, 22512, 23090, 23665, 24238, 24810, 25380, 25946, 26512, 27074, 27634, 28193, 28750, 29304, 29856, 30406, 30954, 31500, 32044, 32586, 33126, 33663, 34198, 34731, 35262, 35791, 36318, 36843, 37366, 37886, 38404, 38920, 39434, 39946, 40456, 40964, 41470, 41973, 42474, 42992, 43559, 44124, 44687, 45246, 45803, 46357, 46908, 47456, 48002, 48544, 49084, 49622, 50156, 50688, 51217, 51743, 52267, 52787, 53306, 53824, 54343, 54861, 55380, 55897, 56371, 56845, 57319, 57793, 58266, 58741, 59214, 59722, 60252, 60782, 61312, 61842, 62372, 62902, 63432, 63962, 64492, 65022, 65552, 66082, 66612, 67142, 67672, 68202, 68732, 69262, 69792, 70322, 70852, 71382, 71912, 72442, 72972, 73502, 74032, 74562, 75092, 75622, 76152, 76682, 77212, 77742, 78288, 78845, 79402, 79959, 80516, 81073, 81630, 82187, 82744, 83301, 83857, 84414, 84971, 85528], "2028|1|1": [10993, 11782, 12570, 13358, 14147, 14936, 15724, 16512, 17217, 17882, 18534, 19176, 19805, 20424, 21031, 21630, 22227, 22822, 23414, 24004, 24592, 25178, 25762, 26344, 26923, 27500, 28075, 28648, 29219, 29788, 30354, 30918, 31481, 32040, 32599, 33154, 33708, 34260, 34809, 35356, 35901, 36444, 36984, 37524, 38059, 38594, 39126, 39656, 40183, 40710, 41232, 41754, 42273, 42790, 43305, 43818, 44328, 44836, 45343, 45846, 46365, 46932, 47495, 48056, 48614, 49170, 49722, 50272, 50819, 51363, 51905, 52444, 52980, 53513, 54043, 54571, 55096, 55618, 56137, 56656, 57174, 57693, 58211, 58730, 59227, 59700, 60175, 60648, 61123, 61596, 62070, 62543, 63051, 63581, 64111, 64641, 65171, 65701, 66231, 66761, 67291, 67821, 68351, 68881, 69411, 69941, 70471, 71001, 71531, 72061, 72592, 73122, 73652, 74182, 74712, 75242, 75772, 76302, 76832, 77362, 77892, 78422, 78952, 79482, 80012, 80542, 81072, 81629, 82186, 82743, 83300, 83857, 84414, 84971, 85528, 86084, 86641, 87198, 87755, 88312, 88869], "2028|1|2": [14101, 14890, 15678, 16466, 17255, 18044, 18832, 19620, 20325, 20990, 21642, 22284, 22913, 23532, 24139, 24738, 25335, 25930, 26522, 27112, 27700, 28286, 28870, 29452, 30031, 30608, 31183, 31756, 32327, 32896, 33462, 34026, 34589, 35148, 35707, 36262, 36816, 37368, 37917, 38464, 39009, 39552, 40092, 40632, 41167, 41702, 42234, 42764, 43291, 43818, 44340, 44862, 45381, 45898, 46413, 46926, 47436, 47944, 48451, 48954, 49473, 50040, 50603, 51164, 51722, 52278, 52830, 53380, 53927, 54471, 55013, 55552, 56088, 56621, 57151, 57679, 58204, 58726, 59245, 59764, 60282, 60801, 61319, 61838, 62335, 62808, 63283, 63756, 64231, 64704, 65178, 65651, 66159, 66689, 67219, 67749, 68279, 68809, 69339, 69869, 70399, 70929, 71459, 71989, 72519, 73049, 73579, 74109, 74639, 75169, 75700, 76230, 76760, 77290, 77820, 78350, 78880, 79410, 79940, 80470, 81000, 81530, 82060, 82590, 83120, 83650, 84180, 84737, 85294, 85851, 86408, 86965, 87522, 88079, 88636, 89192, 89749, 90306, 90863, 91420, 91977], "2028|1|3": [17209, 17998, 18786, 19574, 20363, 21152, 21940, 22728, 23433, 24098, 24750, 25392, 26021, 26640, 27247, 27846, 28443, 29038, 29630, 30220, 30808, 31394, 31978, 32560, 33139, 33716, 34291, 34864, 35435, 36004, 36570, 37134, 37697, 38256, 38815, 39370, 39924, 40476, 41025, 41572, 42117, 42660, 43200, 43740, 44275, 44810, 45342, 45872, 46399, 46926, 47448, 47970, 48489, 49006, 49521, 50034, 50544, 51052, 51559, 52062, 52581, 53148, 53711, 54272, 54830, 55386, 55938, 56488, 57035, 57579, 58121, 58660, 59196, 59729, 60259, 60787, 61312, 61834, 62353, 62872, 63390, 63909, 64427, 64946, 65443, 65916, 66391, 66864, 67339, 67812, 68286, 68759, 69267, 69797, 70327, 70857, 71387, 71917, 72447, 72977, 73507, 74037, 74567, 75097, 75627, 76157, 76687, 77217, 77747, 78277, 78808, 79338, 79868, 80398, 80928, 81458, 81988, 82518, 83048, 83578, 84108, 84638, 85168, 85698, 86228, 86758, 87288, 87845, 88402, 88959, 89516, 90073, 90630, 91187, 91744, 92300, 92857, 93414, 93971, 94528, 95085], "2028|2|0": [7825, 8608, 9390, 10172, 10955, 11738, 12520, 13302, 14085, 14868, 15650, 16432, 17215, 17998, 18780, 19562, 20345, 21128, 21910, 22692, 23475, 24258, 25040, 25822, 26519, 27186, 27846, 28500, 29149, 29794, 30430, 31062, 31689, 32310, 32926, 33534, 34139, 34738, 35332, 35926, 36519, 37110, 37700, 38290, 38879, 39466, 40052, 40636, 41221, 41804, 42384, 42966, 43545, 44124, 44702, 45278, 45853, 46430, 47002, 47574, 48165, 48817, 49467, 50115, 50763, 51409, 52053, 52695, 53337, 53977, 54617, 55255, 55891, 56525, 57159, 57791, 58421, 59049, 59677, 60305, 60929, 61553, 62175, 62795, 63415, 64033, 64651, 65265, 65879, 66493, 67103, 67713, 68364, 69042, 69720, 70396, 71068, 71740, 72412, 73080, 73746, 74412, 75074, 75736, 76396, 77054, 77710, 78364, 79018, 79668, 80318, 80966, 81612, 82256, 82898, 83538, 84178, 84816, 85450, 86084, 86716, 87346, 87976, 88602, 89228, 89852, 90472, 91092, 91710, 92328, 92942, 93556, 94166, 94776, 95384, 95990, 96594, 97198, 97798, 98398, 98994], "2028|2|1": [10993, 11782, 12570, 13358, 14147, 14936, 15724, 16512, 17301, 18090, 18878, 19666, 20455, 21244, 22032, 22820, 23609, 24398, 25186, 25974, 26763, 27552, 28340, 29126, 29801, 30472, 31134, 31792, 32445, 33092, 33732, 34368, 34997, 35622, 36240, 36852, 37459, 38062, 38660, 39256, 39853, 40450, 41044, 41636, 42229, 42822, 43410, 44000, 44587, 45176, 45760, 46344, 46929, 47512, 48092, 48672, 49253, 49832, 50408, 50984, 51579, 52229, 52879, 53527, 54173, 54817, 55461, 56105, 56745, 57385, 58023, 58659, 59295, 59929, 60561, 61193, 61823, 62451, 63079, 63705, 64329, 64951, 65573, 66193, 66813, 67431, 68047, 68661, 69275, 69887, 70497, 71105, 71757, 72435, 73111, 73787, 74459, 75131, 75799, 76467, 77133, 77797, 78461, 79121, 79779, 80437, 81093, 81747, 82399, 83049, 83697, 84345, 84989, 85633, 86275, 86915, 87553, 88191, 88825, 89457, 90089, 90719, 91347, 91973, 92597, 93221, 93841, 94461, 95077, 95693, 96307, 96919, 97531, 98139, 98747, 99351, 99955, 100557, 101157, 101757, 102353], "2028|2|2": [14101, 14890, 15678, 16466, 17255, 18044, 18832, 19620, 20409, 21198, 21986, 22774, 23563, 24352, 25140, 25928, 26717, 27506, 28294, 29082, 29871, 30660, 31448, 32234, 32909, 33580, 34242, 34900, 35553, 36200, 36840, 37476, 38105, 38730, 39348, 39960, 40567, 41170, 41768, 42364, 42961, 43558, 44152, 44744, 45337, 45930, 46518, 47108, 47695, 48284, 48868, 49452, 50037, 50620, 51200, 51780, 52361, 52940, 53516, 54092, 54687, 55337, 55987, 56635, 57281, 57925, 58569, 59213, 59853, 60493, 61131, 61767, 62403, 63037, 63669, 64301, 64931, 65559, 66187, 66813, 67437, 68059, 68681, 69301, 69921, 70539, 71155, 71769, 72383, 72995, 73605, 74213, 74865, 75543, 76219, 76895, 77567, 78239, 78907, 79575, 80241, 80905, 81569, 82229, 82887, 83545, 84201, 84855, 85507, 86157, 86805, 87453, 88097, 88741, 89383, 90023, 90661, 91299, 91933, 92565, 93197, 93827, 94455, 95081, 95705, 96329, 96949, 97569, 98185, 98801, 99415, 100027, 100639, 101247, 101855, 102459, 103063, 103665, 104265, 104865, 105461], "2028|2|3": [17209, 17998, 18786, 19574, 20363, 21152, 21940, 22728, 23517, 24306, 25094, 25882, 26671, 27460, 28248, 29036, 29825, 30614, 31402, 32190, 32979, 33768, 34556, 35342, 36017, 36688, 37350, 38008, 38661, 39308, 39948, 40584, 41213, 41838, 42456, 43068, 43675, 44278, 44876, 45472, 46069, 46666, 47260, 47852, 48445, 49038, 49626, 50216, 50803, 51392, 51976, 52560, 53145, 53728, 54308, 54888, 55469, 56048, 56624, 57200, 57795, 58445, 59095, 59743, 60389, 61033, 61677, 62321, 62961, 63601, 64239, 64875, 65511, 66145, 66777, 67409, 68039, 68667, 69295, 69921, 70545, 71167, 71789, 72409, 73029, 73647, 74263, 74877, 75491, 76103, 76713, 77321, 77973, 78651, 79327, 80003, 80675, 81347, 82015, 82683, 83349, 84013, 84677, 85337, 85995, 86653, 87309, 87963, 88615, 89265, 89913, 90561, 91205, 91849, 92491, 93131, 93769, 94407, 95041, 95673, 96305, 96935, 97563, 98189, 98813, 99437, 100057, 100677, 101293, 101909, 102523, 103135, 103747, 104355, 104963, 105567, 106171, 106773, 107373, 107973, 108569], "2028|3|0": [7825, 8608, 9390, 10172, 10955, 11738, 12520, 13302, 14085, 14868, 15650, 16432, 17215, 17998, 18780, 19562, 20345, 21128, 21910, 22692, 23475, 24258, 25040, 25822, 26519, 27186, 27846, 28500, 29149, 29794, 30430, 31062, 31689, 32310, 32926, 33534, 34139, 34738, 35332, 35926, 36519, 37110, 37700, 38290, 38879, 39466, 40052, 40636, 41221, 41804, 42384, 42966, 43545, 44124, 44702, 45278, 45853, 46430, 47002, 47574, 48165, 48817, 49467, 50115, 50763, 51409, 52053, 52695, 53337, 53977, 54617, 55255, 55891, 56525, 57159, 57791, 58421, 59049, 59677, 60305, 60929, 61553, 62175, 62795, 63415, 64033, 64651, 65265, 65879, 66493, 67103, 67713, 68364, 69042, 69720, 70396, 71068, 71740, 72412, 73080, 73746, 74412, 75074, 75736, 76396, 77054, 77710, 78364, 79018, 79668, 80318, 80966, 81612, 82256, 82898, 83538, 84178, 84816, 85450, 86084, 86716, 87346, 87976, 88602, 89228, 89852, 90472, 91092, 91710, 92328, 92942, 93556, 94166, 94776, 95384, 95990, 96594, 97198, 97798, 98398, 98994], "2028|3|1": [10993, 11782, 12570, 13358, 14147, 14936, 15724, 16512, 17301, 18090, 18878, 19666, 20455, 21244, 22032, 22820, 23609, 24398, 25186, 25974, 26763, 27552, 28340, 29126, 29801, 30472, 31134, 31792, 32445, 33092, 33732, 34368, 34997, 35622, 36240, 36852, 37459, 38062, 38660, 39256, 39853, 40450, 41044, 41636, 42229, 42822, 43410, 44000, 44587, 45176, 45760, 46344, 46929, 47512, 48092, 48672, 49253, 49832, 50408, 50984, 51579, 52229, 52879, 53527, 54173, 54817, 55461, 56105, 56745, 57385, 58023, 58659, 59295, 59929, 60561, 61193, 61823, 62451, 63079, 63705, 64329, 64951, 65573, 66193, 66813, 67431, 68047, 68661, 69275, 69887, 70497, 71105, 71757, 72435, 73111, 73787, 74459, 75131, 75799, 76467, 77133, 77797, 78461, 79121, 79779, 80437, 81093, 81747, 82399, 83049, 83697, 84345, 84989, 85633, 86275, 86915, 87553, 88191, 88825, 89457, 90089, 90719, 91347, 91973, 92597, 93221, 93841, 94461, 95077, 95693, 96307, 96919, 97531, 98139, 98747, 99351, 99955, 100557, 101157, 101757, 102353], "2028|3|2": [14101, 14890, 15678, 16466, 17255, 18044, 18832, 19620, 20409, 21198, 21986, 22774, 23563, 24352, 25140, 25928, 26717, 27506, 28294, 29082, 29871, 30660, 31448, 32234, 32909, 33580, 34242, 34900, 35553, 36200, 36840, 37476, 38105, 38730, 39348, 39960, 40567, 41170, 41768, 42364, 42961, 43558, 44152, 44744, 45337, 45930, 46518, 47108, 47695, 48284, 48868, 49452, 50037, 50620, 51200, 51780, 52361, 52940, 53516, 54092, 54687, 55337, 55987, 56635, 57281, 57925, 58569, 59213, 59853, 60493, 61131, 61767, 62403, 63037, 63669, 64301, 64931, 65559, 66187, 66813, 67437, 68059, 68681, 69301, 69921, 70539, 71155, 71769, 72383, 72995, 73605, 74213, 74865, 75543, 76219, 76895, 77567, 78239, 78907, 79575, 80241, 80905, 81569, 82229, 82887, 83545, 84201, 84855, 85507, 86157, 86805, 87453, 88097, 88741, 89383, 90023, 90661, 91299, 91933, 92565, 93197, 93827, 94455, 95081, 95705, 96329, 96949, 97569, 98185, 98801, 99415, 100027, 100639, 101247, 101855, 102459, 103063, 103665, 104265, 104865, 105461], "2028|3|3": [17209, 17998, 18786, 19574, 20363, 21152, 21940, 22728, 23517, 24306, 25094, 25882, 26671, 27460, 28248, 29036, 29825, 30614, 31402, 32190, 32979, 33768, 34556, 35342, 36017, 36688, 37350, 38008, 38661, 39308, 39948, 40584, 41213, 41838, 42456, 43068, 43675, 44278, 44876, 45472, 46069, 46666, 47260, 47852, 48445, 49038, 49626, 50216, 50803, 51392, 51976, 52560, 53145, 53728, 54308, 54888, 55469, 56048, 56624, 57200, 57795, 58445, 59095, 59743, 60389, 61033, 61677, 62321, 62961, 63601, 64239, 64875, 65511, 66145, 66777, 67409, 68039, 68667, 69295, 69921, 70545, 71167, 71789, 72409, 73029, 73647, 74263, 74877, 75491, 76103, 76713, 77321, 77973, 78651, 79327, 80003, 80675, 81347, 82015, 82683, 83349, 84013, 84677, 85337, 85995, 86653, 87309, 87963, 88615, 89265, 89913, 90561, 91205, 91849, 92491, 93131, 93769, 94407, 95041, 95673, 96305, 96935, 97563, 98189, 98813, 99437, 100057, 100677, 101293, 101909, 102523, 103135, 103747, 104355, 104963, 105567, 106171, 106773, 107373, 107973, 108569], "2035|1|0": [7505, 8256, 9006, 9756, 10507, 11258, 12008, 12758, 13509, 14166, 14797, 15418, 16029, 16630, 17220, 17800, 18371, 18940, 19506, 20070, 20633, 21194, 21752, 22310, 22864, 23418, 23968, 24516, 25064, 25608, 26152, 26694, 27232, 27770, 28305, 28838, 29370, 29900, 30427, 30952, 31476, 31998, 32517, 33036, 33551, 34064, 34577, 35086, 35595, 36100, 36605, 37108, 37607, 38106, 38602, 39096, 39589, 40080, 40568, 41054, 41559, 42120, 42679, 43235, 43789, 44339, 44888, 45433, 45977, 46517, 47055, 47590, 48123, 48652, 49180, 49703, 50226, 50745, 51262, 51775, 52287, 52795, 53302, 53808, 54316, 54822, 55329, 55835, 56302, 56765, 57228, 57691, 58195, 58725, 59255, 59785, 60315, 60845, 61375, 61905, 62435, 62965, 63495, 64025, 64555, 65085, 65615, 66145, 66675, 67205, 67735, 68265, 68795, 69325, 69855, 70385, 70915, 71445, 71975, 72505, 73035, 73565, 74095, 74625, 75155, 75685, 76215, 76745, 77275, 77806, 78355, 78912, 79469, 80026, 80582, 81139, 81696, 82253, 82810, 83367, 83924], "2035|1|1": [10673, 11430, 12186, 12942, 13699, 14456, 15212, 15968, 16725, 17370, 18005, 18630, 19244, 19848, 20440, 21022, 21597, 22170, 22740, 23310, 23876, 24440, 25003, 25564, 26122, 26680, 27234, 27786, 28338, 28886, 29433, 29978, 30521, 31062, 31601, 32138, 32673, 33206, 33737, 34266, 34793, 35318, 35841, 36362, 36881, 37398, 37913, 38426, 38938, 39446, 39954, 40460, 40962, 41464, 41963, 42460, 42956, 43450, 43940, 44430, 44936, 45497, 46054, 46609, 47161, 47711, 48257, 48803, 49344, 49883, 50419, 50954, 51484, 52013, 52539, 53062, 53582, 54101, 54616, 55129, 55638, 56147, 56652, 57160, 57666, 58173, 58679, 59169, 59632, 60096, 60557, 61021, 61524, 62054, 62584, 63114, 63644, 64174, 64704, 65234, 65764, 66294, 66825, 67355, 67885, 68415, 68945, 69475, 70005, 70535, 71065, 71595, 72125, 72655, 73185, 73715, 74245, 74775, 75305, 75835, 76365, 76895, 77425, 77955, 78485, 79015, 79545, 80075, 80605, 81139, 81696, 82253, 82810, 83366, 83923, 84480, 85037, 85594, 86151, 86708, 87265], "2035|1|2": [13781, 14538, 15294, 16050, 16807, 17564, 18320, 19076, 19833, 20478, 21113, 21738, 22352, 22956, 23548, 24130, 24705, 25278, 25848, 26418, 26984, 27548, 28111, 28672, 29230, 29788, 30342, 30894, 31446, 31994, 32541, 33086, 33629, 34170, 34709, 35246, 35781, 36314, 36845, 37374, 37901, 38426, 38949, 39470, 39989, 40506, 41021, 41534, 42046, 42554, 43062, 43568, 44070, 44572, 45071, 45568, 46064, 46558, 47048, 47538, 48044, 48605, 49162, 49717, 50269, 50819, 51365, 51911, 52452, 52991, 53527, 54062, 54592, 55121, 55647, 56170, 56690, 57209, 57724, 58237, 58746, 59255, 59760, 60268, 60774, 61281, 61787, 62277, 62740, 63204, 63665, 64129, 64632, 65162, 65692, 66222, 66752, 67282, 67812, 68342, 68872, 69402, 69933, 70463, 70993, 71523, 72053, 72583, 73113, 73643, 74173, 74703, 75233, 75763, 76293, 76823, 77353, 77883, 78413, 78943, 79473, 80003, 80533, 81063, 81593, 82123, 82653, 83183, 83713, 84247, 84804, 85361, 85918, 86474, 87031, 87588, 88145, 88702, 89259, 89816, 90373], "2035|1|3": [16889, 17646, 18402, 19158, 19915, 20672, 21428, 22184, 22941, 23586, 24221, 24846, 25460, 26064, 26656, 27238, 27813, 28386, 28956, 29526, 30092, 30656, 31219, 31780, 32338, 32896, 33450, 34002, 34554, 35102, 35649, 36194, 36737, 37278, 37817, 38354, 38889, 39422, 39953, 40482, 41009, 41534, 42057, 42578, 43097, 43614, 44129, 44642, 45154, 45662, 46170, 46676, 47178, 47680, 48179, 48676, 49172, 49666, 50156, 50646, 51152, 51713, 52270, 52825, 53377, 53927, 54473, 55019, 55560, 56099, 56635, 57170, 57700, 58229, 58755, 59278, 59798, 60317, 60832, 61345, 61854, 62363, 62868, 63376, 63882, 64389, 64895, 65385, 65848, 66312, 66773, 67237, 67740, 68270, 68800, 69330, 69860, 70390, 70920, 71450, 71980, 72510, 73041, 73571, 74101, 74631, 75161, 75691, 76221, 76751, 77281, 77811, 78341, 78871, 79401, 79931, 80461, 80991, 81521, 82051, 82581, 83111, 83641, 84171, 84701, 85231, 85761, 86291, 86821, 87355, 87912, 88469, 89026, 89582, 90139, 90696, 91253, 91810, 92367, 92924, 93481], "2035|2|0": [7505, 8256, 9006, 9756, 10507, 11258, 12008, 12758, 13509, 14260, 15010, 15760, 16511, 17262, 18012, 18762, 19513, 20264, 21014, 21764, 22515, 23266, 24016, 24766, 25517, 26232, 26872, 27506, 28139, 28764, 29384, 29998, 30609, 31216, 31814, 32408, 32999, 33584, 34162, 34736, 35307, 35876, 36444, 37010, 37577, 38144, 38708, 39270, 39833, 40396, 40956, 41514, 42073, 42632, 43188, 43742, 44299, 44852, 45404, 45956, 46530, 47169, 47809, 48444, 49082, 49715, 50349, 50980, 51612, 52241, 52869, 53494, 54120, 54743, 55367, 55988, 56608, 57227, 57843, 58460, 59074, 59687, 60299, 60910, 61520, 62127, 62735, 63340, 63944, 64547, 65149, 65748, 66400, 67084, 67766, 68446, 69124, 69802, 70476, 71150, 71822, 72492, 73160, 73826, 74492, 75154, 75816, 76476, 77134, 77790, 78444, 79096, 79748, 80396, 81044, 81690, 82334, 82976, 83616, 84256, 84892, 85528, 86162, 86794, 87424, 88052, 88678, 89304, 89926, 90548, 91168, 91786, 92402, 93016, 93630, 94240, 94850, 95458, 96064, 96668, 97270], "2035|2|1": [10673, 11430, 12186, 12942, 13699, 14456, 15212, 15968, 16725, 17482, 18238, 18994, 19751, 20508, 21264, 22020, 22777, 23534, 24290, 25046, 25803, 26560, 27316, 28072, 28829, 29520, 30162, 30802, 31437, 32066, 32690, 33308, 33921, 34530, 35132, 35728, 36321, 36910, 37490, 38066, 38643, 39216, 39788, 40358, 40929, 41500, 42068, 42634, 43201, 43768, 44332, 44896, 45459, 46020, 46580, 47140, 47699, 48256, 48812, 49368, 49944, 50584, 51221, 51859, 52492, 53128, 53759, 54391, 55020, 55650, 56277, 56903, 57526, 58150, 58773, 59393, 60012, 60630, 61247, 61863, 62476, 63090, 63701, 64311, 64918, 65528, 66133, 66737, 67340, 67944, 68545, 69143, 69794, 70476, 71158, 71838, 72516, 73192, 73866, 74538, 75210, 75878, 76546, 77212, 77876, 78538, 79200, 79858, 80514, 81170, 81824, 82476, 83126, 83774, 84422, 85066, 85710, 86352, 86990, 87628, 88266, 88900, 89532, 90164, 90794, 91422, 92046, 92672, 93294, 93914, 94534, 95150, 95766, 96380, 96992, 97602, 98212, 98818, 99424, 100026, 100628], "2035|2|2": [13781, 14538, 15294, 16050, 16807, 17564, 18320, 19076, 19833, 20590, 21346, 22102, 22859, 23616, 24372, 25128, 25885, 26642, 27398, 28154, 28911, 29668, 30424, 31180, 31937, 32628, 33270, 33910, 34545, 35174, 35798, 36416, 37029, 37638, 38240, 38836, 39429, 40018, 40598, 41174, 41751, 42324, 42896, 43466, 44037, 44608, 45176, 45742, 46309, 46876, 47440, 48004, 48567, 49128, 49688, 50248, 50807, 51364, 51920, 52476, 53052, 53692, 54329, 54967, 55600, 56236, 56867, 57499, 58128, 58758, 59385, 60011, 60634, 61258, 61881, 62501, 63120, 63738, 64355, 64971, 65584, 66198, 66809, 67419, 68026, 68636, 69241, 69845, 70448, 71052, 71653, 72251, 72902, 73584, 74266, 74946, 75624, 76300, 76974, 77646, 78318, 78986, 79654, 80320, 80984, 81646, 82308, 82966, 83622, 84278, 84932, 85584, 86234, 86882, 87530, 88174, 88818, 89460, 90098, 90736, 91374, 92008, 92640, 93272, 93902, 94530, 95154, 95780, 96402, 97022, 97642, 98258, 98874, 99488, 100100, 100710, 101320, 101926, 102532, 103134, 103736], "2035|2|3": [16889, 17646, 18402, 19158, 19915, 20672, 21428, 22184, 22941, 23698, 24454, 25210, 25967, 26724, 27480, 28236, 28993, 29750, 30506, 31262, 32019, 32776, 33532, 34288, 35045, 35736, 36378, 37018, 37653, 38282, 38906, 39524, 40137, 40746, 41348, 41944, 42537, 43126, 43706, 44282, 44859, 45432, 46004, 46574, 47145, 47716, 48284, 48850, 49417, 49984, 50548, 51112, 51675, 52236, 52796, 53356, 53915, 54472, 55028, 55584, 56160, 56800, 57437, 58075, 58708, 59344, 59975, 60607, 61236, 61866, 62493, 63119, 63742, 64366, 64989, 65609, 66228, 66846, 67463, 68079, 68692, 69306, 69917, 70527, 71134, 71744, 72349, 72953, 73556, 74160, 74761, 75359, 76010, 76692, 77374, 78054, 78732, 79408, 80082, 80754, 81426, 82094, 82762, 83428, 84092, 84754, 85416, 86074, 86730, 87386, 88040, 88692, 89342, 89990, 90638, 91282, 91926, 92568, 93206, 93844, 94482, 95116, 95748, 96380, 97010, 97638, 98262, 98888, 99510, 100130, 100750, 101366, 101982, 102596, 103208, 103818, 104428, 105034, 105640, 106242, 106844], "2035|3|0": [7505, 8256, 9006, 9756, 10507, 11258, 12008, 12758, 13509, 14260, 15010, 15760, 16511, 17262, 18012, 18762, 19513, 20264, 21014, 21764, 22515, 23266, 24016, 24766, 25517, 26232, 26872, 27506, 28139, 28764, 29384, 29998, 30609, 31216, 31814, 32408, 32999, 33584, 34162, 34736, 35307, 35876, 36444, 37010, 37577, 38144, 38708, 39270, 39833, 40396, 40956, 41514, 42073, 42632, 43188, 43742, 44299, 44852, 45404, 45956, 46530, 47169, 47809, 48444, 49082, 49715, 50349, 50980, 51612, 52241, 52869, 53494, 54120, 54743, 55367, 55988, 56608, 57227, 57843, 58460, 59074, 59687, 60299, 60910, 61520, 62127, 62735, 63340, 63944, 64547, 65149, 65748, 66400, 67084, 67766, 68446, 69124, 69802, 70476, 71150, 71822, 72492, 73160, 73826, 74492, 75154, 75816, 76476, 77134, 77790, 78444, 79096, 79748, 80396, 81044, 81690, 82334, 82976, 83616, 84256, 84892, 85528, 86162, 86794, 87424, 88052, 88678, 89304, 89926, 90548, 91168, 91786, 92402, 93016, 93630, 94240, 94850, 95458, 96064, 96668, 97270], "2035|3|1": [10673, 11430, 12186, 12942, 13699, 14456, 15212, 15968, 16725, 17482, 18238, 18994, 19751, 20508, 21264, 22020, 22777, 23534, 24290, 25046, 25803, 26560, 27316, 28072, 28829, 29520, 30162, 30802, 31437, 32066, 32690, 33308, 33921, 34530, 35132, 35728, 36321, 36910, 37490, 38066, 38643, 39216, 39788, 40358, 40929, 41500, 42068, 42634, 43201, 43768, 44332, 44896, 45459, 46020, 46580, 47140, 47699, 48256, 48812, 49368, 49944, 50584, 51221, 51859, 52492, 53128, 53759, 54391, 55020, 55650, 56277, 56903, 57526, 58150, 58773, 59393, 60012, 60630, 61247, 61863, 62476, 63090, 63701, 64311, 64918, 65528, 66133, 66737, 67340, 67944, 68545, 69143, 69794, 70476, 71158, 71838, 72516, 73192, 73866, 74538, 75210, 75878, 76546, 77212, 77876, 78538, 79200, 79858, 80514, 81170, 81824, 82476, 83126, 83774, 84422, 85066, 85710, 86352, 86990, 87628, 88266, 88900, 89532, 90164, 90794, 91422, 92046, 92672, 93294, 93914, 94534, 95150, 95766, 96380, 96992, 97602, 98212, 98818, 99424, 100026, 100628], "2035|3|2": [13781, 14538, 15294, 16050, 16807, 17564, 18320, 19076, 19833, 20590, 21346, 22102, 22859, 23616, 24372, 25128, 25885, 26642, 27398, 28154, 28911, 29668, 30424, 31180, 31937, 32628, 33270, 33910, 34545, 35174, 35798, 36416, 37029, 37638, 38240, 38836, 39429, 40018, 40598, 41174, 41751, 42324, 42896, 43466, 44037, 44608, 45176, 45742, 46309, 46876, 47440, 48004, 48567, 49128, 49688, 50248, 50807, 51364, 51920, 52476, 53052, 53692, 54329, 54967, 55600, 56236, 56867, 57499, 58128, 58758, 59385, 60011, 60634, 61258, 61881, 62501, 63120, 63738, 64355, 64971, 65584, 66198, 66809, 67419, 68026, 68636, 69241, 69845, 70448, 71052, 71653, 72251, 72902, 73584, 74266, 74946, 75624, 76300, 76974, 77646, 78318, 78986, 79654, 80320, 80984, 81646, 82308, 82966, 83622, 84278, 84932, 85584, 86234, 86882, 87530, 88174, 88818, 89460, 90098, 90736, 91374, 92008, 92640, 93272, 93902, 94530, 95154, 95780, 96402, 97022, 97642, 98258, 98874, 99488, 100100, 100710, 101320, 101926, 102532, 103134, 103736], "2035|3|3": [16889, 17646, 18402, 19158, 19915, 20672, 21428, 22184, 22941, 23698, 24454, 25210, 25967, 26724, 27480, 28236, 28993, 29750, 30506, 31262, 32019, 32776, 33532, 34288, 35045, 35736, 36378, 37018, 37653, 38282, 38906, 39524, 40137, 40746, 41348, 41944, 42537, 43126, 43706, 44282, 44859, 45432, 46004, 46574, 47145, 47716, 48284, 48850, 49417, 49984, 50548, 51112, 51675, 52236, 52796, 53356, 53915, 54472, 55028, 55584, 56160, 56800, 57437, 58075, 58708, 59344, 59975, 60607, 61236, 61866, 62493, 63119, 63742, 64366, 64989, 65609, 66228, 66846, 67463, 68079, 68692, 69306, 69917, 70527, 71134, 71744, 72349, 72953, 73556, 74160, 74761, 75359, 76010, 76692, 77374, 78054, 78732, 79408, 80082, 80754, 81426, 82094, 82762, 83428, 84092, 84754, 85416, 86074, 86730, 87386, 88040, 88692, 89342, 89990, 90638, 91282, 91926, 92568, 93206, 93844, 94482, 95116, 95748, 96380, 97010, 97638, 98262, 98888, 99510, 100130, 100750, 101366, 101982, 102596, 103208, 103818, 104428, 105034, 105640, 106242, 106844]}, "beitrag": {"2028": [0.1055, 0.106], "2035": [0.11699999999999999, 0.1265]}, "jahre": [2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060], "div": [373, 363, 355, 342, 332, 320, 308, 294, 291, 286, 282, 277, 272, 268, 263, 257, 251, 246, 243, 240, 237, 236, 233, 233, 232, 232, 233, 233, 234, 234, 235, 234, 234], "eff": [18.84, 18.77, 18.69, 18.6, 18.51, 18.43, 18.34, 18.25, 18.21, 18.16, 18.12, 18.08, 18.04, 18.01, 17.99, 17.96, 17.94, 17.91, 17.9, 17.88, 17.87, 17.85, 17.84, 17.83, 17.82, 17.82, 17.81, 17.8, 17.79, 17.78, 17.77, 17.77, 17.76], "bbg_kv": 69750, "bbg_rv": 101400, "stufen": [12348.0, 18522.0, 24696.0, 37044.0], "saetze": [0, 11, 19, 25, 33], "eff_alt": 15.97, "weitergabe": 0.8, "zuschlag": 13.7, "vorsorge": 0.1, "kq": [[12500, 0.95], [37500, 0.85], [65000, 0.75], [100000, 0.6]]}, "qj": [33.53, 33.47, 33.42, 33.34, 33.27, 33.19, 33.11, 33.03, 32.95, 32.86, 32.77, 32.68, 32.59, 32.52, 32.43, 32.35, 32.27, 32.18, 32.16, 32.12, 32.09, 32.06, 32.02, 32.03, 32.03, 32.05, 32.05, 32.06, 32.1, 32.11, 32.11, 32.13, 32.13], "bj": [10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35, 10.35], "n": [9.63, 9.67, 9.7, 9.75, 9.79, 9.83, 9.88, 9.92, 9.96, 10.01, 10.05, 10.1, 10.14, 10.19, 10.24, 10.29, 10.34, 10.39, 10.44, 10.48, 10.52, 10.58, 10.62, 10.67, 10.71, 10.75, 10.79, 10.84, 10.88, 10.93, 10.97, 11.01, 11.05]});
+const T=D.T;
+const [TAU,DEZ,EURPOS,PSP]=D.fmt;
+function zahl(x,nk=0){const s=Math.abs(x).toFixed(nk).split('.');s[0]=s[0].replace(/\B(?=(\d{3})+(?!\d))/g,TAU);return (x<0?'−':'')+s.join(DEZ);}
+const eur=(x,nk=0)=>EURPOS==='vor'?'€'+zahl(x,nk):zahl(x,nk)+' €';
+const pct=(x,nk=0)=>zahl(x,nk)+(PSP?' ':'')+'%';
+const fill=(s,o)=>s.replace(/\{(\w+)\}/g,(m,k)=>o[k]);
+const $=id=>document.getElementById(id);
+function seg(id,cb){const el=$(id);el.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  el.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));cb(b.dataset.v);});}
+const val=id=>$(id).querySelector('[aria-pressed=true]').dataset.v;
+const idx=j=>D.jahre.indexOf(+j);
+
+// Ländernamen in der Sprache der Seite
+if(D.lang!=='de'&&window.Intl&&Intl.DisplayNames){try{const dn=new Intl.DisplayNames([D.lang],{type:'region'});
+  document.querySelectorAll('#raum button').forEach(b=>{const n=dn.of(b.dataset.iso);if(n)b.querySelector('.nm').textContent=n;});}catch(e){}}
+
+// Fluss des Steuer-Euros
+function fluss(){const j=+$('jahr').value,i=idx(j);const q=D.qj[i],a=D.a[i]/q*100,b=D.bj[i]/q*100,n=D.n[i]/q*100,d=D.div[i]/q*100,c=D.og*D.einzugAnteil;
+  $('jahrval').textContent=j;
+  [['sa',a],['sb',b],['sn',n],['sd',d]].forEach(([k,v])=>{$(k).style.flexBasis=v+'%';$(k).textContent=eur(v);});
+  $('cap').style.left=c+'%';
+  $('flusstext').textContent=fill(T.js_fluss,{j:j,a:eur(a),cap:eur(c),b:eur(b),n:eur(n),d:eur(d),hundert:eur(100)});}
+$('jahr').addEventListener('input',fluss);fluss();
+
+// Haushaltsrechner
+function steuer(x){let s=0,u=0;for(const [g,p] of D.tarif){if(x>u)s+=(Math.min(x,g)-u)*p/100;u=g;}return s;}
+const R=D.rr;
+function agR(b,reg){const c=R.beitrag[reg];return c[0]*Math.min(b,R.bbg_kv)+c[1]*Math.min(b,R.bbg_rv);}
+function estR(x){let s=0,u=0;const g=R.stufen.concat([Infinity]);for(let i=0;i<g.length;i++){if(x>u)s+=(Math.min(x,g[i])-u)*R.saetze[i]/100;u=g[i];}return s;}
+function kqR(n){const p=R.kq;if(n<=p[0][0])return p[0][1];for(let i=1;i<p.length;i++){if(n<=p[i][0]){const a=p[i-1][0],x=p[i-1][1],b=p[i][0],y=p[i][1];return x+(y-x)*(n-a)/(b-a);}}return p[p.length-1][1];}
+function neuR(b,e,k,j){const i=R.jahre.indexOf(j),DIV=R.div[i]*12,EFF=R.eff[i],reg=j>=2035?'2035':'2028';
+  const brutto=b+R.weitergabe*agR(b,reg),st=estR(brutto+DIV)+(e-1)*estR(DIV),div=DIV*e+k*DIV/2,netto=brutto-st+div;
+  const konsum=kqR(netto)*netto,mm=konsum*((1+EFF/100)/(1+R.eff_alt/100)-1),mb=konsum*EFF/(100+EFF);
+  return {netto:netto-mm-R.zuschlag/100*(st+mb)-R.vorsorge*b,div:div};}
+function rechner(){const br=+$('brutto').value,e=+val('erw'),k=+val('kin'),j=+$('rj').value;
+  const reg=j>=2035?'2035':'2028',h=R.heute[reg+'|'+e+'|'+k][Math.round((br-R.brutto[0])/1000)],n=neuR(br,e,k,j),d=n.netto-h;
+  const sg=x=>(x>=0?'+':'−')+eur(Math.abs(x));
+  $('bruttoval').textContent=eur(br);$('rjval').textContent=j;
+  $('r-st').textContent=eur(h/12);$('r-satz').textContent=eur(n.netto/12);$('r-soz').textContent=eur(n.div/12);$('r-mon').textContent=sg(d);
+  const hh=fill(e>1?T.js_erw_n:T.js_erw_1,{n:e})+(k?T.js_und+fill(k>1?T.js_kind_n:T.js_kind_1,{n:k}):'');
+  $('r-jahr').textContent=sg(d/12);$('r-jahrsub').textContent=fill(T.js_rechner_sub,{j:j,hh:hh});
+  const m=Math.max(h,n.netto,1);$('bi-st').style.width=h/m*100+'%';$('bi-dv').style.width=n.netto/m*100+'%';
+  $('b-st').textContent=eur(h/12);$('b-dv').textContent=eur(n.netto/12);}
+$('brutto').addEventListener('input',rechner);$('rj').addEventListener('input',rechner);['erw','kin'].forEach(x=>seg(x,rechner));rechner();
+
+// Gemeinderechner
+function gemeinde(){const n=+$('g-ein').value,k=+$('g-kin').value/100,v=+$('g-verw').value;
+  const bud=n*D.einw+n*k*D.kind,sch=n*k*D.kind,plus=(D.verwAnt-v)/100*D.fachKopf/12;
+  $('g-einval').textContent=zahl(n);$('g-kinval').textContent=pct(k*100,1);$('g-verwval').textContent=pct(v,1);
+  $('g-bud').textContent=fill(T.js_mio,{x:zahl(bud/1e6,1)});$('g-sch').textContent=fill(T.js_mio,{x:zahl(sch/1e6,1)});$('g-kopf').textContent=eur(bud/n);
+  const pb=$('g-plus');pb.textContent=Math.abs(plus)<0.5?fill(T.js_monat,{x:'± '+eur(0)}):fill(T.js_monat,{x:(plus>0?'+':'−')+eur(Math.abs(plus))});pb.classList.toggle('neg',plus<=-0.5);}
+['g-ein','g-kin','g-verw'].forEach(x=>$(x).addEventListener('input',gemeinde));gemeinde();
+
+// Möglichkeitsraum
+const VOR={zehn:['DE','FR','ES','NL','IE','BE','AT','DK','SI','EE'],sechs:['DE','UK','FR','IT','ES','PL'],
+  europa:Object.keys(D.raum).filter(k=>k!=='US'&&k!=='CA'),plus:Object.keys(D.raum).filter(k=>k!=='US')};
+const SK=600;
+function raum(){const on=[...document.querySelectorAll('#raum button[aria-pressed=true]')].map(b=>b.dataset.k);
+  const sum=on.reduce((a,k)=>a+D.raum[k],0);$('raumsum').textContent=fill(T.js_mio_menschen,{x:zahl(sum,1)});$('raumn').textContent=on.length;
+  const bar=$('raumbar');bar.style.width=Math.min(sum/SK*100,100)+'%';bar.classList.toggle('unter',sum<D.us);
+  $('raumus').style.left=(D.us/SK*100)+'%';
+  $('raumtext').textContent=sum>=D.us?fill(T.js_raum_ueber,{us:zahl(D.us,1),x:zahl(sum-D.us,1)}):fill(T.js_raum_unter,{x:zahl(D.us-sum,1)});}
+function vorwahl(v){const s=new Set(VOR[v]);document.querySelectorAll('#raum button').forEach(b=>b.setAttribute('aria-pressed',s.has(b.dataset.k)?'true':'false'));raum();}
+$('raum').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
+  document.querySelectorAll('#raumvor button').forEach(x=>x.setAttribute('aria-pressed','false'));raum();});
+seg('raumvor',vorwahl);vorwahl('europa');
+
+// Wohin die Reise geht
+function chart2(t){const Z=D.zeit,W=900,H=360,L=60,R=30,TP=20,B=40;let ser,lo,hi,x0=2010,x1=2060,step;
+  if(t==='schuld'){ser=[['hist',Z.schuld_hist_jahre,Z.schuld_hist],['prog',Z.schuld_prog_jahre,Z.schuld_prog],['mit',D.jahre,D.d]];lo=0;hi=180;step=30;
+    $('zunit').textContent=T.js_schuld_unit;
+    $('zleg').innerHTML='<span class="l-hist"><i></i>'+T.js_schuld_l1+'</span><span class="l-prog"><i></i>'+T.js_schuld_l2+'</span><span class="l-mit"><i></i>'+T.js_schuld_l3+'</span>';
+    $('ztext').textContent=fill(T.js_schuld_text,{a:pct(D.d[0]),b:pct(D.d[D.d.length-1])});}
+  else{ser=[['hist',Z.co2_hist_jahre,Z.co2_hist],['ohne',Z.co2_ziel_jahre,Z.co2_ziel]];lo=0;hi=1000;step=200;x1=2045;
+    $('zunit').textContent=T.js_co2_unit;
+    $('zleg').innerHTML='<span class="l-hist"><i></i>'+T.js_co2_l1+'</span><span class="l-ohne"><i></i>'+T.js_co2_l2+'</span>';
+    $('ztext').textContent=T.js_co2_text;}
+  const X=x=>L+(x-x0)/(x1-x0)*(W-L-R),Y=y=>TP+(hi-y)/(hi-lo)*(H-TP-B);let g='';
+  for(let y=lo;y<=hi;y+=step)g+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${zahl(y)}</text>`;
+  for(let x=x0;x<=x1;x+=(x1-x0>40?10:5))g+=`<text class="axis" x="${X(x)}" y="${H-12}" text-anchor="middle">${x}</text>`;
+  g+=`<line class="marker" x1="${X(2026)}" x2="${X(2026)}" y1="${TP}" y2="${H-B}"/>`;
+  for(const [c,xs,ys] of ser){g+=`<polyline class="${c}" points="${ys.map((v,i)=>X(xs[i])+','+Y(v)).join(' ')}"/>`;
+    if(c!=='prog'){const e=ys[ys.length-1];g+=`<text class="axis" x="${X(xs[xs.length-1])-4}" y="${Y(e)-10}" text-anchor="end">${zahl(e)}</text>`;}}
+  $('chart2').innerHTML=g;}
+seg('ztabs',chart2);chart2('schuld');
+
+// Zeitpfad
+function chart(f){const s=D.erw[f],xs=D.jahre,W=900,H=360,L=60,R=30,TP=20,B=40;
+  const all=[].concat(D.erw['0,5'],D.erw['1,5']);const lo=Math.floor(Math.min(...all)/100)*100,hi=Math.ceil(Math.max(...all)/100)*100;
+  const X=x=>L+(x-xs[0])/(xs[xs.length-1]-xs[0])*(W-L-R),Y=y=>TP+(hi-y)/(hi-lo)*(H-TP-B);let g='';
+  for(let y=lo;y<=hi;y+=100)g+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${zahl(y)}</text>`;
+  for(const x of [2028,2035,2040,2050,2060])g+=`<text class="axis" x="${X(x)}" y="${H-12}" text-anchor="middle">${x}</text>`;
+  g+=`<line class="hist" x1="${L}" x2="${W-R}" y1="${Y(s[0])}" y2="${Y(s[0])}" stroke-dasharray="2 5" stroke-width="1.5"/>`;
+  g+=`<polyline class="mit" points="${s.map((v,i)=>X(xs[i])+','+Y(v)).join(' ')}"/>`;
+  const e=s[s.length-1];g+=`<text class="axis" x="${W-R}" y="${Y(e)-10}" text-anchor="end" style="fill:#1D7A4F;font-size:14px">${eur(e)}</text>`;
+  g+=`<text class="axis" x="${L+6}" y="${Y(s[0])-8}">${eur(s[0])}</text>`;
+  $('chart').innerHTML=g;}
+seg('gtabs',chart);chart('1,0');
+</script>
+</body></html>

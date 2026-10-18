@@ -2,6 +2,7 @@
 // (Goldenes Drittel, starkes Netz, Transformationsdividende, eigene Route, Zukunftsschatz). Entwurf zur Prüfung; die Gesamtrechnung (28:28) und das
 // veröffentlichte Gesamtkonzept bleiben unberührt. Jede Zahl kommt aus daten/aggregate/*.json (Prüfrechnungen modell/*33.py, altlasten.py).
 // Aufruf aus dem Repository-Wurzelordner: NODE_PATH=/opt/npm-tools/node_modules node dokumente/werkzeuge/konzept33-bau.js
+const KURZ=process.argv.includes('--kurz');   // v4.0: Kurzfassung = Titel, Abschnitte 1 und 2
 const d=require('docx');
 const {Document,Packer,Paragraph,TextRun,HeadingLevel,Table,TableRow,TableCell,WidthType,ShadingType,AlignmentType,BorderStyle,PageBreak,
        Footer,PageNumber,LevelFormat,TableOfContents}=d;
@@ -62,19 +63,18 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · Entwurf zur Prüfung · Modellstand "+NZ.version+" · 17. Oktober 2026",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.0 · 18. Oktober 2026",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
-  BR(),
-  new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR());
+  ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
 
 // ---- 1 Kurzfassung
 add(H1("1  Kurzfassung"),
   kasten("Der Bauplan in vier Sätzen",[
-    "Du zahlst höchstens das Goldene Drittel: 33 % auf jeden Euro, ob aus Arbeit, Kapital, Gewinn oder Erbe – keine Sozialbeiträge, keine Prämien.",
-    "Das starke Netz trägt Dich: eine brauchbare Grundversorgung ohne Extras – geknüpft aus vielen Knoten, jeder hält mit, keiner fällt durch.",
+    "Sie zahlen höchstens das Goldene Drittel: 33 % auf jeden Euro, ob aus Arbeit, Kapital, Gewinn oder Erbe – keine Sozialbeiträge, keine Prämien.",
+    "Das starke Netz trägt Sie: eine brauchbare Grundversorgung ohne Extras – geknüpft aus vielen Knoten, jeder hält mit, keiner fällt durch.",
     "Die Transformationsdividende kommt jeden Monat aufs Konto: Sie gibt zurück, was der Wandel einbringt, und wird kleiner, wenn das Schädliche verschwindet.",
-    "Alles darüber ist Deine eigene Route: eigene Vorsorge auf Deinem Konto, Zusatzversicherungen, eigener Einsatz."]),
+    "Alles darüber ist Ihre eigene Route: eigene Vorsorge auf Ihrem Konto, Zusatzversicherungen, eigener Einsatz."]),
   P("",{sp:120}),
   tab([{t:"Kennzahl",w:5426},{t:"Wert",w:3600,al:RT}],[
     ["Höchstsatz auf jedes Einkommen","33 %"],
@@ -85,6 +85,8 @@ add(H1("1  Kurzfassung"),
     ["Starkes Netz, 2028",pr(NB['2028'].netz_pct_bip,1)+" des BIP"],
     ["Transformationsdividende je Erwachsenem, 2028 / 2060",eu(NB['2028'].dividende_erw_eur2026)+" / "+eu(NB['2060'].dividende_erw_eur2026)],
     ["Alleinstehend, 42.000 € brutto, mit Altlastenzuschlag: mehr im Monat",vz(zl(fall('alleinstehend',ZU),42000).differenz_monat)],
+    ["Beschäftigte mit mehr verfügbarem Einkommen (Modell, Haushaltstypen)",pr(Math.min(...Object.entries(H.anteil_erwachsene_mit_mehr).filter(([k])=>k.startsWith("beschluss|")).map(([,v])=>v)),1)+" bis 100 %"],
+    ["Rentnerinnen und Rentner (Renten 900–2.200 €), mit Altlastenzuschlag",vz(Math.max(...H.rentner.filter(r=>r.zuschlag_pct===ZU).map(r=>r.differenz_monat)))+" bis "+vz(Math.min(...H.rentner.filter(r=>r.zuschlag_pct===ZU).map(r=>r.differenz_monat)))],
     ["Grenzbelastung bei 55.000 € brutto: heute / neu",pr(RA.grenz_heute[gi],0)+" / "+pr(RA.grenz_neu['0.8'][gi],0)]]),
   P("",{sp:120}),
   P("Was das System leistet, liegt nicht in einer großen Geldzahlung, sondern in drei Dingen: Arbeit wird nicht mehr doppelt belastet, jeder ist ohne Prämie grundversorgt, und was jemand darüber hinaus verdient und spart, gehört ihm. Der Bauplan nimmt aus vielen erprobten Vorbildern die besten Teile; jeder Staat kann ihn übernehmen."));
@@ -96,7 +98,7 @@ add(H1("2  Begriffe"),
     ["Das Goldene Drittel","Die Einnahmeregel: Kein Euro wird mit mehr als einem Drittel besteuert – Einkommen, Kapitalerträge, Unternehmensgewinne, Erbschaften. Umfasst alle Steuern des Systems."],
     ["Das starke Netz","Die Grundversorgung ohne Prämie: Gesundheit, Pflege als Teilkasko, Mindestrente, Grundbedarf bei Invalidität und Arbeitslosigkeit, Waisen, Härtefall. Keine Extras."],
     ["Transformationsdividende","Monatliche Zahlung an jeden Erwachsenen (Kinder die Hälfte), ohne Antrag. Sie ist der Rest nach allen Aufgaben und gibt vor allem zurück, was Lenkungssteuern einbringen."],
-    ["Deine eigene Route","Alles über der Grundversorgung: Pflichtvorsorge auf eigenem, vererbbarem Konto, freiwillige Vorsorge, Zusatzversicherungen (Komfort, Lohnersatz, Berufsunfähigkeit)."],
+    ["Ihre eigene Route","Alles über der Grundversorgung: Pflichtvorsorge auf eigenem, vererbbarem Konto, freiwillige Vorsorge, Zusatzversicherungen (Komfort, Lohnersatz, Berufsunfähigkeit)."],
     ["Pflichtvorsorge","10 % des Bruttolohns auf ein eigenes Konto. Kein Beitrag an den Staat: Das Geld gehört dem Sparer."],
     ["Mindestrente","Aufstockung ab 67 bis zum Grundbedarf, die eigene Rente wird nur zur Hälfte angerechnet."],
     ["Grundbedarf","Das steuerliche Existenzminimum ("+eu(G26)+" im Jahr 2026). Erste Stufe des Tarifs und Maß des Netzes; folgt zu 70 % den Preisen und zu 30 % den Löhnen."],
@@ -106,6 +108,7 @@ add(H1("2  Begriffe"),
     ["Altlasten","Staatsschulden und Rentenzusagen aus dem alten System. Sache der einzelnen Staaten; der Bauplan bietet Werkzeuge an."],
     ["Lenkung","Steuern, die Schädliches verteuern (CO₂-Preis, Sonderstufe 33 %, Energie- und Tabaksteuer). Ihr Aufkommen soll mit dem Erfolg sinken."]]));
 
+const N_KURZ=inhalt.length;
 // ---- 3 Regeln
 const st=[1,1.5,2,3].map(x=>eu(G26*x));
 add(H1("3  Die Regeln"),
@@ -157,7 +160,7 @@ add(H1("3  Die Regeln"),
     ['2028','2035','2045','2060','dauer'].map(j=>[j==='dauer'?'Dauerzustand':j,eu(NB[j].dividende_erw_eur2026),eu(NB[j].dividende_erw_eur2026/2),de(NB[j].dividende_pct_bip,2)])),
   Q("Kaufkraft 2026, Deutschland. Die Kinderdividende ("+eu(kind28)+" im Jahr 2028) liegt unter dem heutigen Kindergeld (259 €)."),
 
-  H2("3.5  Deine eigene Route"),
+  H2("3.5  Ihre eigene Route"),
   P("Alles über der Grundversorgung liegt beim Einzelnen: die Pflichtvorsorge von 10 % des Lohns auf eigenem Konto, freiwillige Vorsorge, Zusatzversicherungen für Komfort in Gesundheit und Pflege, für Lohnersatz bei Arbeitslosigkeit und für Berufsunfähigkeit. Jeder zusätzlich verdiente und gesparte Euro bleibt dem, der ihn verdient: von jedem weiteren Euro höchstens ein Drittel Steuer."),
 
   H2("3.6  Starke Gemeinden und das gemeinsame Dach"),
@@ -289,7 +292,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – Konzept (Entwurf)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.0)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -297,8 +300,8 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Entwurf "+G.version+" · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
-    children:inhalt}]});
-const ziel=path.join(WURZEL,'dokumente','entwurf','TAX-Drittel-Konzept.docx');
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.0 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
+const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});
 Packer.toBuffer(doc).then(b=>{fs.writeFileSync(ziel,b);console.log('geschrieben:',path.relative(WURZEL,ziel),b.length,'Bytes');});
