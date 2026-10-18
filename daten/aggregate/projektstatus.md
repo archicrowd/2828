@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.1 · höchste Korrekturnummer 62 · 376 Dateien im Repository
+Modellstand v4.2 · höchste Korrekturnummer 62 · 378 Dateien im Repository
 
 ## Bausteine
 
@@ -67,6 +67,7 @@ Modellstand v4.1 · höchste Korrekturnummer 62 · 376 Dateien im Repository
 | N22 | B30 Altlastenfonds | B20 Gesamtrechnung | offen |
 | N23 | B31 Drittel-System | B20 Gesamtrechnung | offen |
 | N24 | B32 Länderseiten | B31 Drittel-System | offen |
+| N25 | B31/B32 Haushaltsrechnungen | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -77,3 +78,4 @@ Modellstand v4.1 · höchste Korrekturnummer 62 · 376 Dateien im Repository
 - Hinweis: Naht N22 offen: B30 Altlastenfonds -> B20 Gesamtrechnung: Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend
 - Hinweis: Naht N23 offen: B31 Drittel-System -> B20 Gesamtrechnung: v3.47: Entscheidung über Dauerhaftigkeit der Dividende (hinnehmen, Bodenwertabgabe, Bürgerfonds)
 - Hinweis: Naht N24 offen: B32 Länderseiten -> B31 Drittel-System: v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land
+- Hinweis: Naht N25 offen: B31/B32 Haushaltsrechnungen -> B31 Drittel-System: v4.2: Vorteil bei Geringverdienern mit Kindern überzeichnet; nachrechnen (DE Wohngeld, Kinderzuschlag; FR APL, RSA; IT ADI; ES IMV; PL dodatek mieszkaniowy)

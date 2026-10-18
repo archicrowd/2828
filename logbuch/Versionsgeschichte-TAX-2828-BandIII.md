@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 18. Oktober 2026 · Modellstand **v4.1**
+Stand: 18. Oktober 2026 · Modellstand **v4.2**
 
 ---
 
@@ -2335,6 +2335,46 @@ modell/laenderseiten.toml (amtlich, Sekundärquellen und Annahmen gekennzeichnet
 
 ---
 
+### v4.2 — Frankreich: Zerlegung „neu gegen heute“, Zinsempfindlichkeit, Neustartverfahren; Lücke Mindestsicherung und Wohnhilfen
+
+**Art der Änderung: PATCH (Prüfrechnung), keine Zahl der Gesamtrechnung und der Seiten bewegt.** 18. Oktober 2026.
+
+**Fragen der Initiative:** Fehlende Mindestsicherung und Wohnhilfen als Problem des Modells? Was ist aus dem Härtefallfonds geworden? Neustartverfahren
+für Frankreich? Liegt das Ergebnis an Schulden und Rentenzusagen oder an allocations familiales und quotient familial?
+
+**Neu:** `modell/zerlegung_laender.py` → `daten/aggregate/zerlegung_laender.json`. Monatsunterschied je Haushalt (Euro 2026), Einzeleffekte gegen den Gesamtfall:
+
+| Frankreich | gesamt | Zuschlag (Altlasten) | Pflichtvorsorge | Dividende unter DE-Niveau | prime d'activité | Rest (Beiträge, Tarif, Weitergabe, MwSt.) |
+|---|---|---|---|---|---|---|
+| 20.000 €, allein | −131 | −70 | −167 | −107 | −276 | +489 |
+| 20.000 €, allein + 1 Kind | −354 | −73 | −167 | −180 | −595 | +661 |
+| 30.000 €, Paar + 2 Kinder | −192 | −159 | −250 | −382 | −657 | +1.256 |
+| 45.000 €, allein | +441 | −286 | −375 | −89 | 0 | +1.191 |
+
+allocations familiales und quotient familial wirken in diesen Fällen kaum einzeln (die prime d'activité gleicht den Wegfall der allocations
+familiales aus; der quotient familial wirkt erst bei steuerpflichtigem Einkommen). Dividende Frankreich 200 € gegen 352 € bei deutschem Niveau
+(kaufkraftgleich): Gesundheit 8,4 % BIP (DE 7,0 %), schwächere Steuerbasis. Italien zum Vergleich: alle Fälle positiv.
+
+**Zins:** Zuschlag des eigenen Fonds bei 2,5 / 3,5 / 4,5 % Zins: FR 18,4 / 22,7 / 27,4 %, IT 18,1 / 22,6 / 27,6 %, DE 11,7 / 14,6 / 17,8 %.
+Marktzins Frankreich 10 Jahre am 16.10.2026: 4,79 %, Abstand zu Deutschland 137 Basispunkte (ideal-investisseur.fr, Sekundärquelle); Fitch A+
+stabil (28.08.2026, refrance.fr, Sekundärquelle). Das Modell rechnet mit 2,5 %, also unter dem heutigen Marktzins (r < g); für Frankreich
+ist das optimistisch.
+
+**Neustartverfahren (neustart33, Schnitt 33 %, Altrenten −10 %):** Zuschlag 18,4 → 15,3 %. Anteil mit mehr Geld unverändert (36 / 36 / 36 %,
+grobe Verteilung); ohne Zuschlag 62 / 36 / 36 %; Pflichtvorsorge als Vermögen 87 / 36 / 36 %.
+
+**Methodische Lücke (offen, gilt für alle Länder einschließlich Deutschland):** „Heute“ enthält keine bedarfsgeprüften Leistungen außer der
+prime d'activité (FR): in Deutschland fehlen Wohngeld, Kinderzuschlag und aufstockendes Bürgergeld, in Frankreich APL und RSA, in Italien
+assegno di inclusione, in Spanien ingreso mínimo vital, in Polen dodatek mieszkaniowy. Das überzeichnet den Vorteil des neuen Systems bei
+Geringverdienern mit Kindern. Umgekehrt ist der Härtefallfonds (0,65 % BIP je Staat, Wohnkosten über dem Grundbedarf, besondere Lagen;
+netz33.toml, Annahme) im neuen System finanziert, aber im Rechner keinem Haushalt zugeordnet. Eine Leistung für Erwerbstätige mit niedrigem
+Lohn (wie prime d'activité, Kinderzuschlag) hat das Drittel-System nicht; die Dividende ersetzt sie nur teilweise. Die Aussage „9 von 10“
+(DE, IT, ES, PL) ist bis zur Nachrechnung unter diesem Vorbehalt zu lesen. **Wodurch aufgefallen:** Frage der Initiative.
+
+*Quellen: eigene Rechnungen heute_laender, laenderseiten, neustart33; Marktdaten Sekundärquellen wie oben.*
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -2386,9 +2426,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.1
+## 7 | Offene Punkte, Stand v4.2
 
-Neu seit v3.23 (Stand v4.1): **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen belegen oder abschwächen (zukunftsfähiger, viel günstiger, moderat); Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v4.2): **Bedarfsgeprüfte Leistungen heute (Wohngeld, Kinderzuschlag, APL, RSA, ADI, IMV) in allen Haushaltsrechnungen nachtragen und Härtefallfonds zuordnen; Erwerbstätigenleistung im Netz entscheiden; Zins des Fonds je Land;** **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen belegen oder abschwächen (zukunftsfähiger, viel günstiger, moderat); Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

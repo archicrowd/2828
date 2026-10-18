@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v4.1",
+ "modellstand": "v4.2",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -340,11 +340,11 @@
   {
    "id": "B32",
    "name": "Länderseiten: Referenzland je Sprachversion",
-   "pfad": "modell/laenderseiten.py;modell/laenderseiten.toml;daten/aggregate/laenderseiten.json;modell/heute_laender.py;modell/heute_laender.toml;daten/aggregate/heute_laender.json;daten/aggregate/laender_zeitreihen.json;seite/werkzeuge/laender_texte.py",
+   "pfad": "modell/laenderseiten.py;modell/laenderseiten.toml;daten/aggregate/laenderseiten.json;modell/heute_laender.py;modell/heute_laender.toml;daten/aggregate/heute_laender.json;daten/aggregate/laender_zeitreihen.json;seite/werkzeuge/laender_texte.py;modell/zerlegung_laender.py;daten/aggregate/zerlegung_laender.json",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/heute_laender.py (OECD-Abgleich, Selbstprüfung Raster)",
-   "anmerkung": "v4.1: FR, IT, ES, PL als Referenzländer, EN als Durchschnitt der 30 Staaten; Steuer- und Abgabenmodelle heute (Recht 2026, vereinfacht); Ergebnis: IT/ES/PL 9 von 10 Beschäftigte mit mehr, FR 2–4 von 10"
+   "anmerkung": "v4.1: FR, IT, ES, PL als Referenzländer, EN als Durchschnitt der 30 Staaten; Steuer- und Abgabenmodelle heute (Recht 2026, vereinfacht); Ergebnis: IT/ES/PL 9 von 10 Beschäftigte mit mehr, FR 2–4 von 10 v4.2: Zerlegung FR/IT, Zinsempfindlichkeit, Lücke bedarfsgeprüfter Leistungen"
   }
  ],
  "nahtstellen": [
@@ -542,6 +542,14 @@
    "was": "Gleiche Regeln je Land; Frankreich verliert bei Geringverdienern und Familien (prime d'activité, allocations familiales)",
    "status": "offen",
    "beleg_oder_offener_punkt": "v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land"
+  },
+  {
+   "id": "N25",
+   "von": "B31/B32 Haushaltsrechnungen",
+   "nach": "B31 Drittel-System",
+   "was": "Bedarfsgeprüfte Leistungen heute fehlen; Härtefallfonds im neuen System nicht zugeordnet",
+   "status": "offen",
+   "beleg_oder_offener_punkt": "v4.2: Vorteil bei Geringverdienern mit Kindern überzeichnet; nachrechnen (DE Wohngeld, Kinderzuschlag; FR APL, RSA; IT ADI; ES IMV; PL dodatek mieszkaniowy)"
   }
  ],
  "quellen": [
