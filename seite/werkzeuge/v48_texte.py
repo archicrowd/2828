@@ -233,3 +233,21 @@ FEIN_B_FR = ("* Calcul selon les règles du projet : personne seule, salaire moy
 FEIN_A_EN = ("* In Germany, Italy, Spain and Poland, calculated under the project's rules (2028, today's purchasing power, after mandatory savings of 10% "
              "and the legacy surcharge, today including minimum income support). In France, according to the model, «fr_anteil» in 10, because the prime "
              "d'activité is lost for single low earners.")
+
+# v4.13: Weitergabe gesetzlich bis zum Stichtag (Beschluss 20.10.2026) und Niveau des starken Netzes je Land
+WEITERGABE_SATZ = {
+    "de": "Ein Gesetz verpflichtet, alle Arbeitsverträge bis zum Stichtag der Einführung entsprechend anzupassen.",
+    "en": "A law requires all employment contracts to be adjusted accordingly by the date of introduction.",
+    "fr": "Une loi impose d'adapter tous les contrats de travail en conséquence avant la date d'entrée en vigueur.",
+    "it": "Una legge obbliga ad adeguare di conseguenza tutti i contratti di lavoro entro la data di introduzione.",
+    "es": "Una ley obliga a adaptar en consecuencia todos los contratos de trabajo antes de la fecha de entrada en vigor.",
+    "pl": "Ustawa zobowiązuje do odpowiedniego dostosowania wszystkich umów o pracę do dnia wprowadzenia systemu.",
+}
+NETZ_NIVEAU = {
+    "de": " Grundauskommen ({gk_land}): {gk1} im Monat für Alleinstehende, {gk4} für ein Paar mit zwei Kindern; das Netz kostet insgesamt {netz_pct} der Wirtschaftsleistung (2028, Kaufkraft 2026).",
+    "en": " Basic livelihood ({gk_land}): {gk1} a month for a single person, {gk4} for a couple with two children; the net as a whole costs {netz_pct} of GDP (2028, today's purchasing power).",
+    "fr": " Minimum vital ({gk_land}) : {gk1} par mois pour une personne seule, {gk4} pour un couple avec deux enfants ; le filet coûte au total {netz_pct} du PIB (2028, pouvoir d'achat actuel).",
+    "it": " Minimo vitale ({gk_land}): {gk1} al mese per una persona sola, {gk4} per una coppia con due figli; la rete costa in tutto il {netz_pct} del PIL (2028, potere d'acquisto attuale).",
+    "es": " Mínimo vital ({gk_land}): {gk1} al mes para una persona sola, {gk4} para una pareja con dos hijos; la red cuesta en total el {netz_pct} del PIB (2028, poder adquisitivo actual).",
+    "pl": " Minimum życiowe ({gk_land}): {gk1} miesięcznie dla osoby samotnej, {gk4} dla pary z dwojgiem dzieci; sieć kosztuje łącznie {netz_pct} PKB (2028, dzisiejsza siła nabywcza).",
+}

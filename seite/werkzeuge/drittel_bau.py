@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.12"
+VERSION = "v4.13"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -181,6 +181,11 @@ def texte(sp, c):
     if nt["rech_fein_alt"] and nt["rech_fein_alt"] in quelle["rech_fein"]:
         quelle["rech_fein"] = quelle["rech_fein"].replace(nt["rech_fein_alt"], nt["rech_fein_neu"])
     quelle["rech_fein"] += nt["rech_fein_zusatz"]
+    # v4.13: Weitergabe per Gesetz bis zum Stichtag (nach dem Satz mit „80“) und Niveau des Netzes (an b11_p)
+    saetze = re.split(r"(?<=[.!?])\s+", quelle["b2_p"])
+    i80 = next(i for i, x in enumerate(saetze) if "80" in x)
+    quelle["b2_p"] = " ".join(saetze[:i80 + 1] + [VT.WEITERGABE_SATZ[sp]] + saetze[i80 + 1:])
+    quelle["b11_p"] += VT.NETZ_NIVEAU[sp]
     anteil = VB.anteil(c)[0] if c in VB.LAENDER else _ANT
     if c == "EU30" or anteil >= 90:
         quelle["stamp3_val"], quelle["stamp3_lbl"] = LT.STAMP_A[sp]
@@ -346,6 +351,11 @@ def main():
         gz = lambda v: SB.zahl(v, 1, sp)
         W.update(fr_deckel_1=gz(GF["gini_weitergabe_gedeckelt_1x"]), fr_deckel_15=gz(GF["gini_weitergabe_gedeckelt_1_5x"]),
                  fr_familie=gz(GF["gini_abbildung_familie"]), fr_2028=gz(VB.GINI["staaten"]["FR"]["reihe"][0]["mitte"]))
+        nc = c if c in VB.LAENDER else "DE"
+        fxn = FX.get(nc, 1.0) if nc == c else 1.0
+        netz_pct = NB[2028]["netz_pct_bip"] if nc == "DE" else LS["staaten"][nc]["netz_pct_bip"][0]
+        W.update(gk_land=VT.LAENDER_NAME[sp][nc], gk1=SB.eur(VB.RB.boden(nc, 1, 0) / 12, sp), gk4=SB.eur(VB.RB.boden(nc, 2, 2) / 12, sp),
+                 netz_pct=SB.pct(netz_pct, sp, 1))
         W.update(chan1_zusatz=VT.NEU[sp]["chan1_zusatz_de"] if c == "DE" else "", bess_land=nm[bc] if c in VB.LAENDER else VT.BEISPIEL_EN)
         dez = "." if sp == "en" else ","
         svg, leg = VB.gini_svg(nm, c, T["gini_l1"], T["gini_l2"], T["gini_l3"], T["gini_ref"], T["gini_unit"])

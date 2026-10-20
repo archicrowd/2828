@@ -8,7 +8,7 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v4.12** (Logbuch Band III, 20. Oktober 2026). Geltend ist Stand C „Das Goldene Drittel“ (siehe unten); die frühere Fassung des Gesamtkonzepts vom 10. Oktober 2026 (Stand B, Quote 30,2 %, `modell/gesamtrechnung.py`) ist Vorläufer. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`). **Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`.** Das Release `v3.5`
+**Modellstand: v4.13** (Logbuch Band III, 20. Oktober 2026). Geltend ist Stand C „Das Goldene Drittel“ (siehe unten); die frühere Fassung des Gesamtkonzepts vom 10. Oktober 2026 (Stand B, Quote 30,2 %, `modell/gesamtrechnung.py`) ist Vorläufer. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`). **Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`.** Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
 
 Einstieg: `INDEX.md` (Wegweiser, Stand A und Stand B, Naht zwischen beiden).
