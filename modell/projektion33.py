@@ -167,7 +167,8 @@ def main():
                 F = F * (1 + rr) / (1 + P["fonds_wachstum"]) + phi * L - P["fonds_entnahme"] * F
             fonds.append(dict(anteil=phi, rendite=rr, dividende_erw_eur2026={j: werte[j] for j in ("2028", "2035", "2045", "2060")},
                               fondsvermoegen_2060_pct_bip=round(F, 1)))
-    E = dict(version=P["version"], system=P["system"], preisbasis="Euro 2026; Dividende je Erwachsenem und Monat, Deutschland",
+    E = dict(status_dividende="Vorstufe (v3.47/v3.48) vor dem Netz-Beschluss; geltender Dividendenpfad: netz33.json beschluss.reihe (KENNZAHLEN.md). Das Mindestniveau ist in Stand C keine Zusage.",
+             version=P["version"], system=P["system"], preisbasis="Euro 2026; Dividende je Erwachsenem und Monat, Deutschland",
              ausgang=dict(deckung=round(deck0, 2), label_effektiv=round(eff0, 2), dividende_pct_bip=div0, dividende_erw_eur2026=round(eur0)),
              reihe=reihe, buergerfonds=fonds, texte=TEXTE, annahmen={k_: P["pfad"][k_]["stuetz"] for k_ in P["pfad"]},
              wachstum_real_kopf=round(SVM.GR.G_REAL * 100, 2) if hasattr(SVM.GR, 'G_REAL') else None, fahrstrom_anteil=P["fahrstrom_anteil"],

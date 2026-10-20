@@ -251,3 +251,13 @@ NETZ_NIVEAU = {
     "es": " Mínimo vital ({gk_land}): {gk1} al mes para una persona sola, {gk4} para una pareja con dos hijos; la red cuesta en total el {netz_pct} del PIB (2028, poder adquisitivo actual).",
     "pl": " Minimum życiowe ({gk_land}): {gk1} miesięcznie dla osoby samotnej, {gk4} dla pary z dwojgiem dzieci; sieć kosztuje łącznie {netz_pct} PKB (2028, dzisiejsza siła nabywcza).",
 }
+
+# v4.14 (Prüfbericht B13): Rentenkürzung auf der Seite benennen (an sich4_p)
+RENTEN_SATZ = {
+    "de": " Bestehende Renten laufen weiter, gekürzt um 7,5 % – weniger als die Kranken- und Pflegebeiträge, die Rentner heute zahlen und die entfallen (in Deutschland 12,35 %). Kleine Renten werden bis zum Grundauskommen aufgestockt.",
+    "en": " Existing pensions continue, reduced by 7.5% – less than the health and long-term care contributions pensioners pay today, which disappear (12.35% in Germany). Small pensions are topped up to the basic livelihood.",
+    "fr": " Les pensions existantes continuent, réduites de 7,5 % – moins que les cotisations maladie et dépendance que les retraités paient aujourd'hui et qui disparaissent (12,35 % en Allemagne). Les petites pensions sont complétées jusqu'au minimum vital.",
+    "it": " Le pensioni in essere continuano, ridotte del 7,5% – meno dei contributi sanitari e per l'assistenza che i pensionati pagano oggi e che scompaiono (12,35% in Germania). Le pensioni basse vengono integrate fino al minimo vitale.",
+    "es": " Las pensiones existentes continúan, reducidas un 7,5 % – menos que las cotizaciones de salud y dependencia que los pensionistas pagan hoy y que desaparecen (12,35 % en Alemania). Las pensiones bajas se complementan hasta el mínimo vital.",
+    "pl": " Istniejące emerytury są wypłacane dalej, obniżone o 7,5% – mniej niż składki zdrowotne i pielęgnacyjne, które emeryci płacą dziś i które znikają (12,35% w Niemczech). Niskie emerytury są uzupełniane do minimum życiowego.",
+}

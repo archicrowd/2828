@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.13"
+VERSION = "v4.14"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -186,6 +186,7 @@ def texte(sp, c):
     i80 = next(i for i, x in enumerate(saetze) if "80" in x)
     quelle["b2_p"] = " ".join(saetze[:i80 + 1] + [VT.WEITERGABE_SATZ[sp]] + saetze[i80 + 1:])
     quelle["b11_p"] += VT.NETZ_NIVEAU[sp]
+    quelle["sich4_p"] += VT.RENTEN_SATZ[sp]   # v4.14
     anteil = VB.anteil(c)[0] if c in VB.LAENDER else _ANT
     if c == "EU30" or anteil >= 90:
         quelle["stamp3_val"], quelle["stamp3_lbl"] = LT.STAMP_A[sp]

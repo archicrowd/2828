@@ -58,6 +58,7 @@ STUFEN = [
     ("Gini Frankreich und Polen: Zerlegung, Gegenproben", ["modell/gini_frankreich.py"]),
     ("Rentnerausgleich und Lebensarbeitszeit", ["modell/rentnerausgleich.py"]),
     ("Weitergabe der Arbeitgeberbeiträge: Empfindlichkeit", ["modell/weitergabe_sensitivitaet.py"]),
+    ("Gesamtlast Stand C mit Fonds und Pflichtvorsorge", ["modell/gesamtlast33.py"]),
     ("Vergleich Dänemark/Schweden, Härtefall", ["modell/vergleich_dk_se.py"]),
     ("Webseite Fassung 4.x (sechs Sprachen, Länderbezug)", ["seite/werkzeuge/drittel_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),

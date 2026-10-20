@@ -23,7 +23,7 @@ aller Skripte. Ihre Befunde zu Stand B (Deckungslücke 0,24 Punkte, Klub-BIP, Ve
 - **Altlastenfonds:** Er enthält die Rentenansprüche ausdrücklich (Ansprüche über der Dividende, Eurostat-Tabelle 29). Der Fondsbeitrag
   beträgt 5,28 % des BIP, der Zuschlag 15,8 %.
 - **Spitzenverdiener in Deutschland:** Sie gewinnen nach unserer Rechnung wenig oder verlieren (3-facher Durchschnittslohn +6 %, 8-facher
-  −2 %). In Frankreich trifft Ihr Befund zu.
+  −2 %; Durchschnittslohn nach OECD 63.288 €, Pflichtvorsorge 10 %). In Frankreich trifft Ihr Befund zu.
 - **Polen:** Wegen der heutigen Beitragslast gewinnen im Modell alle Lohnstufen.
 
 Wir würden uns sehr über eine zweite Prüfung des geltenden Stands C freuen; der Einstieg steht im README unter „Aktueller Stand“. Offen und

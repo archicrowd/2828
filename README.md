@@ -8,7 +8,7 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v4.13** (Logbuch Band III, 20. Oktober 2026). Geltend ist Stand C „Das Goldene Drittel“ (siehe unten); die frühere Fassung des Gesamtkonzepts vom 10. Oktober 2026 (Stand B, Quote 30,2 %, `modell/gesamtrechnung.py`) ist Vorläufer. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`). **Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`.** Das Release `v3.5`
+**Modellstand: v4.14** (Logbuch Band III, 20. Oktober 2026). Geltend ist Stand C „Das Goldene Drittel“ (siehe unten); die frühere Fassung des Gesamtkonzepts vom 10. Oktober 2026 (Stand B, Quote 30,2 %, `modell/gesamtrechnung.py`) ist Vorläufer. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`). **Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`.** Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
 
 Einstieg: `INDEX.md` (Wegweiser, Stand A und Stand B, Naht zwischen beiden).
@@ -28,11 +28,11 @@ Referenz und Regressionsprüfung erhalten. Bis v4.11 wiesen README, INDEX, AGENT
 | 30 Staaten (Möglichkeitsraum), Länderseiten | `modell/moeglichkeitsraum33.py`, `modell/laenderseiten.py` |
 | Haushalte heute gegen neu | `modell/haushalte33.py` (DE), `modell/heute_laender.py`, `modell/sozial_laender.py` (FR, IT, ES, PL) |
 | Grundauskommen (Aufstockung mit Halbanrechnung), Härtefall | `modell/regel_boden.py`, `modell/boden_kosten.py`, `modell/kindergewicht.py`, `modell/haertefall.py` (Dateinamen historisch) |
-| Verteilung (Gini), Empfindlichkeiten | `modell/gini.py`, `modell/gini_frankreich.py`, `modell/weitergabe_sensitivitaet.py` |
+| Verteilung (Gini), Empfindlichkeiten, Gesamtlast | `modell/gini.py`, `modell/gini_frankreich.py`, `modell/weitergabe_sensitivitaet.py`, `modell/gesamtlast33.py` |
 | Webseite (sechs Sprachen) | `seite/werkzeuge/drittel_bau.py` → `seite/stand-c/` |
 | Konzept und Kurzfassung | `dokumente/werkzeuge/konzept33-bau.js` → `dokumente/entwurf/TAX-Drittel-Konzept.pdf` |
 
-Alle Stufen: `python3 modell/alles.py`. Beschlüsse und offene Punkte: Logbuch Band III ab v3.43, Abschnitt 7.
+Welche Zahl gilt und wie sie abgegrenzt ist (Dividendenpfade, Altlasten, Gesamtlast, Lohnbasis): **`KENNZAHLEN.md`**. Alle Stufen: `python3 modell/alles.py`. Beschlüsse und offene Punkte: Logbuch Band III ab v3.43, Abschnitt 7.
 
 ## Aufbau
 
