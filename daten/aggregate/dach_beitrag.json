@@ -1,0 +1,212 @@
+{
+ "version": "v4.15",
+ "status": "Prüfrechnung",
+ "einheit": "% des BIP, Klub der zehn; Euro nominal 2028",
+ "ziel_pflichtquote": 7.29,
+ "reihe": [
+  {
+   "jahr": 2028,
+   "pflichtquote": 6.19,
+   "verteidigung": 1.4,
+   "kasse": 2.65,
+   "angerechnet": 3.54,
+   "kasse_anteil_pct": 42.8,
+   "steuern": 33.53,
+   "obergrenze": 10.73,
+   "unter_obergrenze": true,
+   "kasse_zu_eu_obergrenze": 1.89
+  },
+  {
+   "jahr": 2030,
+   "pflichtquote": 6.5,
+   "verteidigung": 1.71,
+   "kasse": 2.77,
+   "angerechnet": 3.73,
+   "kasse_anteil_pct": 42.7,
+   "steuern": 33.42,
+   "obergrenze": 10.69,
+   "unter_obergrenze": true,
+   "kasse_zu_eu_obergrenze": 1.98
+  },
+  {
+   "jahr": 2035,
+   "pflichtquote": 7.29,
+   "verteidigung": 2.5,
+   "kasse": 3.09,
+   "angerechnet": 4.2,
+   "kasse_anteil_pct": 42.4,
+   "steuern": 33.03,
+   "obergrenze": 10.57,
+   "unter_obergrenze": true,
+   "kasse_zu_eu_obergrenze": 2.21
+  },
+  {
+   "jahr": 2060,
+   "pflichtquote": 7.29,
+   "verteidigung": 2.5,
+   "kasse": 3.09,
+   "angerechnet": 4.2,
+   "kasse_anteil_pct": 42.4,
+   "steuern": 32.13,
+   "obergrenze": 10.28,
+   "unter_obergrenze": true,
+   "kasse_zu_eu_obergrenze": 2.21
+  }
+ ],
+ "aufgaben": [
+  {
+   "aufgabe": "Wirtschaftsraum, Agrar, Energie, Netze",
+   "pct_bip_ziel": 2.1,
+   "kassenanteil": 0.25,
+   "kasse": 0.525,
+   "angerechnet": 1.575
+  },
+  {
+   "aufgabe": "Verteidigung und digitale Souveränität",
+   "pct_bip_ziel": 2.5,
+   "kassenanteil": 0.4,
+   "kasse": 1.0,
+   "angerechnet": 1.5
+  },
+  {
+   "aufgabe": "Grundlagenforschung",
+   "pct_bip_ziel": 0.77,
+   "kassenanteil": 0.5,
+   "kasse": 0.385,
+   "angerechnet": 0.385
+  },
+  {
+   "aufgabe": "Hochschulen",
+   "pct_bip_ziel": 0.74,
+   "kassenanteil": 0.0,
+   "kasse": 0.0,
+   "angerechnet": 0.74
+  },
+  {
+   "aufgabe": "Außenbeziehungen",
+   "pct_bip_ziel": 0.3,
+   "kassenanteil": 1.0,
+   "kasse": 0.3,
+   "angerechnet": 0.0
+  },
+  {
+   "aufgabe": "Bildungs-, Markt- und Produktstandards",
+   "pct_bip_ziel": 0.3,
+   "kassenanteil": 1.0,
+   "kasse": 0.3,
+   "angerechnet": 0.0
+  },
+  {
+   "aufgabe": "Übergeordnete Polizei",
+   "pct_bip_ziel": 0.29,
+   "kassenanteil": 1.0,
+   "kasse": 0.29,
+   "angerechnet": 0.0
+  },
+  {
+   "aufgabe": "Umwelt, grenzüberschreitend",
+   "pct_bip_ziel": 0.29,
+   "kassenanteil": 1.0,
+   "kasse": 0.29,
+   "angerechnet": 0.0
+  }
+ ],
+ "staaten": [
+  {
+   "land": "DE",
+   "bip28_mrd": 4914.9,
+   "kasse_2028_mrd": 130.2,
+   "kasse_2028_eur_kopf_monat": 130.0,
+   "verteidigung_2024_cofog": 1.4,
+   "rueckfall_2035_bei_stand_2024": 1.1,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "FR",
+   "bip28_mrd": 3332.5,
+   "kasse_2028_mrd": 88.3,
+   "kasse_2028_eur_kopf_monat": 107.0,
+   "verteidigung_2024_cofog": 1.9,
+   "rueckfall_2035_bei_stand_2024": 0.6,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "ES",
+   "bip28_mrd": 1810.1,
+   "kasse_2028_mrd": 48.0,
+   "kasse_2028_eur_kopf_monat": 81.8,
+   "verteidigung_2024_cofog": 0.9,
+   "rueckfall_2035_bei_stand_2024": 1.6,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "NL",
+   "bip28_mrd": 1266.2,
+   "kasse_2028_mrd": 33.6,
+   "kasse_2028_eur_kopf_monat": 155.4,
+   "verteidigung_2024_cofog": 1.6,
+   "rueckfall_2035_bei_stand_2024": 0.9,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "IE",
+   "bip28_mrd": 638.0,
+   "kasse_2028_mrd": 16.9,
+   "kasse_2028_eur_kopf_monat": 261.1,
+   "verteidigung_2024_cofog": 0.1,
+   "rueckfall_2035_bei_stand_2024": 2.4,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "BE",
+   "bip28_mrd": 703.8,
+   "kasse_2028_mrd": 18.7,
+   "kasse_2028_eur_kopf_monat": 131.2,
+   "verteidigung_2024_cofog": 1.3,
+   "rueckfall_2035_bei_stand_2024": 1.2,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "AT",
+   "bip28_mrd": 561.0,
+   "kasse_2028_mrd": 14.9,
+   "kasse_2028_eur_kopf_monat": 135.0,
+   "verteidigung_2024_cofog": 0.7,
+   "rueckfall_2035_bei_stand_2024": 1.8,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "DK",
+   "bip28_mrd": 454.4,
+   "kasse_2028_mrd": 12.0,
+   "kasse_2028_eur_kopf_monat": 167.9,
+   "verteidigung_2024_cofog": 1.8,
+   "rueckfall_2035_bei_stand_2024": 0.7,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "SI",
+   "bip28_mrd": 76.5,
+   "kasse_2028_mrd": 2.0,
+   "kasse_2028_eur_kopf_monat": 79.5,
+   "verteidigung_2024_cofog": 1.4,
+   "rueckfall_2035_bei_stand_2024": 1.1,
+   "mehr_als_quote_2035": 0.0
+  },
+  {
+   "land": "EE",
+   "bip28_mrd": 45.3,
+   "kasse_2028_mrd": 1.2,
+   "kasse_2028_eur_kopf_monat": 72.9,
+   "verteidigung_2024_cofog": 3.7,
+   "rueckfall_2035_bei_stand_2024": 0.0,
+   "mehr_als_quote_2035": 1.2
+  }
+ ],
+ "regel": {
+  "rueckfall_faktor": 1.0,
+  "mehrausgabe_gutschrift": false,
+  "obergrenze_anteil_steuern": 0.32
+ },
+ "hinweis": "Kassenanteile sind Annahmen (dach_beitrag.toml). Verteidigung heute: COFOG GF02 2024 (Eurostat gov_10a_exp), nicht NATO-Abgrenzung. Rückfall 2035 = Betrag, den ein Staat in die Kasse zahlen müsste, wenn er seine Verteidigungsausgaben auf dem Stand 2024 ließe und die übrigen Aufgaben voll erfüllte. Die Rechnung ändert weder Dividende noch Netz."
+}
