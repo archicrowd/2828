@@ -1,6 +1,6 @@
 # Kennzahlen Stand C – welche Zahl gilt, und was sie bedeutet
 
-Stand v4.18 (20. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
+Stand v4.19 (21. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
 mit verschiedenen Werten, weil die Abgrenzungen verschieden sind. Hier steht je Größe, **welcher Wert gilt** und wie die anderen zu lesen sind.
 Wer eine Zahl zitiert, nennt die Zeile dieser Tabelle.
 
@@ -54,3 +54,11 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | netto mit halber Weitergabe der Arbeitskostensenkung | +0,3 bis +1,3 % | `preisniveau33.json` | Prüfrechnung |
 | Ausweichen ungünstig (Erbschaft 50 %, Vermögen 75 %) | −1,06 % BIP; Dividende −55 € (2028), −75 € (2060) | `ausweichen33.json` | Empfindlichkeit |
 | Rückfluss an den Fonds bei 50 % tatsächlicher Weitergabe | 2,4 bis 2,8 % BIP | `weitergabe_rueckfall.json` | Prüfrechnung |
+
+## Fondszins und Abgrenzung des Fonds (v4.19)
+
+| Größe | Wert | Datei | Status |
+|---|---|---|---|
+| Zuschlag bei Fondszins 2,5 / 3,0 / 3,5 / 4,0 % | 15,8 / 17,4 / 19,0 / 20,7 % (Beitrag 5,28 / 5,80 / 6,34 / 6,90 % BIP) | `fondszins.json` | Empfindlichkeit; Marktzins Oktober 2026: Bund 3,46 %, EU 3,95 % (Sekundärquellen) |
+| Vorteil alleinstehend, 42.000 € brutto, DE 2028 | 602 / 581 / 560 / 537 € im Monat | `fondszins.json` | Kaufkraft 2026 |
+| Gemeinsamer Satz mit Italien und Polen / alle 30 Staaten | 16,6 % / 15,5 % | `fonds_klub.json` | skaliert auf den Beschluss (Annahme) |

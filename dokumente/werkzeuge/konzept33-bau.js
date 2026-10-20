@@ -13,7 +13,7 @@ const SV=lies('systemvarianten.json'), PJ=lies('projektion33.json'), NZ=lies('ne
       AL=lies('altlasten.json'), EW=lies('einwanderung33.json'), DY=lies('dynamik33.json'), G=lies('gesamtrechnung.json'), MR=lies('moeglichkeitsraum33.json'), NS=lies('neustart33.json');
 // v4.8/v4.11: Grundauskommen (vorher „Boden“), Kinderanteil 0,8, Kindergewicht, Härtefall, Gini
 const GL=lies('gesamtlast33.json'), RBJ=lies('regel_boden.json'), HF=lies('haertefall.json'), GI=lies('gini.json'), KG=lies('kindergewicht.json'), GF=lies('gini_frankreich.json');
-const PN=lies('preisniveau33.json'), AW=lies('ausweichen33.json'), WR=lies('weitergabe_rueckfall.json');   // v4.18
+const FZ=lies('fondszins.json'), FK=lies('fonds_klub.json'), PN=lies('preisniveau33.json'), AW=lies('ausweichen33.json'), WR=lies('weitergabe_rueckfall.json');   // v4.18
 const TOPF=RBJ.topf, SK=RBJ.regel.kinderanteil, KW=RBJ.regel.skala.kind;
 const dv=x=>x*TOPF;   // Dividende je Erwachsenem bei Kinderanteil 0,8 (gleicher Topf)
 const de=(x,nk=0)=>Number(x).toLocaleString('de-DE',{minimumFractionDigits:nk,maximumFractionDigits:nk});
@@ -69,7 +69,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.18 · 20. Oktober 2026 (zur Freigabe)",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.19 · 20. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -304,7 +304,7 @@ add(H1("8  Was noch offen ist"),
   L("Frankreich: Ungleichheit steigt nach dem Modell (Gini +2 Punkte), vor allem durch die Weitergabe ungedeckelter Arbeitgeberbeiträge; Entscheidung über einen Deckel der Weitergabe offen (Korrektur 64)."),
   L("Grundversorgung: Kürzung des Gesundheitskatalogs (5 %), Mengen bei Invalidität und Arbeitslosigkeit und die Verteilung der eigenen Renten sind Annahmen ohne Mikrodaten."),
   L("Dividende: Sie sinkt bis 2060; ein Zukunftsschatz könnte einen Teil auf Dauer sichern."),
-  L("Altlasten: Der Fonds verschiebt Lasten in die Zukunft (Schuldenspitze "+pr(AB.schuldenquote_spitze,0)+"); jeder Staat entscheidet."),
+  L("Altlasten: Der Fonds verschiebt Lasten in die Zukunft (Schuldenspitze "+pr(AB.schuldenquote_spitze,0)+"); jeder Staat entscheidet. Gerechnet ist mit 2,5 % Zins; die Marktzinsen lagen im Oktober 2026 darüber (Bundesanleihen rund "+pr(FZ.markt_oktober_2026.bund_10j,1)+", EU-Anleihen rund "+pr(FZ.markt_oktober_2026.eu_10j,1)+", Sekundärquellen). Mit 3,5 bzw. 4 % stiege der Zuschlag auf "+pr(FZ.varianten[2].zuschlag_pct,1)+" bzw. "+pr(FZ.varianten[3].zuschlag_pct,1)+", der Vorteil bei 42.000 € brutto sänke von "+eu(FZ.varianten[0].haushalt_de.mehr_monat_42000.alleinstehend)+" auf "+eu(FZ.varianten[3].haushalt_de.mehr_monat_42000.alleinstehend)+" im Monat (modell/fondszins.py). Mit Italien und Polen läge der gemeinsame Satz bei "+pr(FK.klubs[3].zuschlag_skaliert_pct,1)+", mit allen 30 Staaten bei "+pr(FK.klubs[4].zuschlag_skaliert_pct,1)+" (modell/fonds_klub.py)."),
   L("Deckung auf deutscher Basis; Trends als Setzungen aus Quellen, keine eigene Prognose. Ausweichreaktionen: Gehen bei der Erbschaft die Hälfte und bei großen Vermögen drei Viertel verloren (statt der Hälfte), fehlen "+de(-AW.faelle[AW.faelle.length-1].delta_pct_bip,2).replace('.',',')+" % des BIP; die Dividende sinkt 2028 um "+de(-AW.faelle[AW.faelle.length-1].dividende_2028_eur)+" € und 2060 um "+de(-AW.faelle[AW.faelle.length-1].dividende_2060_eur)+" € je Erwachsenem (modell/ausweichen33.py)."),
   L("Korrektur 61: Frühere Fassungen (v3.47, v3.48) hielten den Anteil der Einkommensteuer fest und unterschätzten die Dividende 2060."));
 
@@ -338,7 +338,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.18)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.19)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -346,7 +346,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.18 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.19 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

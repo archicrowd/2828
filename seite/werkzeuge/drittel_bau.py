@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.18"
+VERSION = "v4.19"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -89,6 +89,7 @@ ZU = max(f["zuschlag_pct"] for f in H["faelle"])
 plus42 = VB.plus_monat("DE", 42000)   # v4.8: Regel Boden, Kinderanteil 0,8 (vorher haushalte33)
 AB = AL["beschluss"]
 RM = MR["raum"]
+FZ = json.loads((Path(__file__).resolve().parent.parent.parent / "daten" / "aggregate" / "fondszins.json").read_text(encoding="utf-8"))   # v4.19
 
 # ---- Geänderte Texte: seite/werkzeuge/drittel_texte.py (sechs Sprachen, «…»-Platzhalter hier sprachgerecht gefüllt)
 spec_t = importlib.util.spec_from_file_location("drittel_texte", Path(__file__).resolve().parent / "drittel_texte.py")
@@ -146,7 +147,8 @@ def werte_neu(sp, c):
     fx = FX.get(c, 1.0)
     E = lambda x, nk=0: SB.eur(x, sp, nk)
     P = lambda x, nk=0: SB.pct(x, sp, nk)
-    w = {"p33": P(33), "e0": E(0), "e100k": E(100000 * fx), "e2m": E(2e6 * fx), "staaten": str(RM["staaten"]), "einw": SB.zahl(RM["einwohner_mio"], 1, sp)}
+    fzm = [v["zuschlag_pct"] for v in FZ["varianten"] if v["fall"] in ("fest 3.5 %", "fest 4.0 %")]   # v4.19: Marktzins Oktober 2026
+    w = {"zu_markt": P(min(fzm), 1) + "–" + P(max(fzm), 1), "p33": P(33), "e0": E(0), "e100k": E(100000 * fx), "e2m": E(2e6 * fx), "staaten": str(RM["staaten"]), "einw": SB.zahl(RM["einwohner_mio"], 1, sp)}
     if c == "DE":
         w.update(plus="+" + E(plus42), bsp=E(42000), zu=P(ZU, 1))
     elif c in HL["staaten"]:

@@ -61,6 +61,8 @@ STUFEN = [
     ("Weitergabe: Rückfallregel (Differenz an den Fonds)", ["modell/weitergabe_rueckfall.py"]),
     ("Preisniveauschub bei Einführung (statisch)", ["modell/preisniveau33.py"]),
     ("Ausweichreaktionen Erbschaft und Vermögen: Empfindlichkeit", ["modell/ausweichen33.py"]),
+    ("Fondszins gegen Marktrenditen", ["modell/fondszins.py"]),
+    ("Gemeinsamer Fonds mit Italien, Polen, 30 Staaten", ["modell/fonds_klub.py"]),
     ("Gesamtlast Stand C mit Fonds und Pflichtvorsorge", ["modell/gesamtlast33.py"]),
     ("Gemeinsame Aufgaben: Pflichtquote, Kasse und Anrechnung", ["modell/dach_beitrag.py"]),
     ("Gemeindeformel je Kreis (Deutschland), Strukturzuschlag", ["modell/regionen_de.py"]),

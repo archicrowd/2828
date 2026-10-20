@@ -1,0 +1,51 @@
+{
+ "version": "v4.19",
+ "status": "Prüfrechnung",
+ "beschluss": {
+  "beitrag_pct_bip": 5.28,
+  "zuschlag_pct": 15.8
+ },
+ "klubs": [
+  {
+   "klub": "zehn (Beschluss)",
+   "staaten": 10,
+   "beitrag_mr_pct_bip": 4.79,
+   "zuschlag_mr_pct": 14.6,
+   "beitrag_skaliert_pct_bip": 5.28,
+   "zuschlag_skaliert_pct": 15.8
+  },
+  {
+   "klub": "zehn + Italien",
+   "staaten": 11,
+   "beitrag_mr_pct_bip": 5.1,
+   "zuschlag_mr_pct": 15.5,
+   "beitrag_skaliert_pct_bip": 5.63,
+   "zuschlag_skaliert_pct": 16.8
+  },
+  {
+   "klub": "zehn + Polen",
+   "staaten": 11,
+   "beitrag_mr_pct_bip": 4.74,
+   "zuschlag_mr_pct": 14.4,
+   "beitrag_skaliert_pct_bip": 5.22,
+   "zuschlag_skaliert_pct": 15.6
+  },
+  {
+   "klub": "zwölf (zehn + Italien + Polen)",
+   "staaten": 12,
+   "beitrag_mr_pct_bip": 5.04,
+   "zuschlag_mr_pct": 15.3,
+   "beitrag_skaliert_pct_bip": 5.56,
+   "zuschlag_skaliert_pct": 16.6
+  },
+  {
+   "klub": "alle 30",
+   "staaten": 30,
+   "beitrag_mr_pct_bip": 4.7,
+   "zuschlag_mr_pct": 14.3,
+   "beitrag_skaliert_pct_bip": 5.19,
+   "zuschlag_skaliert_pct": 15.5
+  }
+ ],
+ "hinweis": "BIP 2024 (bip_kopf × Einwohner, moeglichkeitsraum33). Skaliert = Beschluss × Verhältnis zur Zehnergruppe in der Abgrenzung des Möglichkeitsraums (Annahme). Zins 2,5 %, Wachstum 3 %, Tilgung bis 2098 wie im Beschluss."
+}

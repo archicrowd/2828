@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.18 · höchste Korrekturnummer 68 · 437 Dateien im Repository
+Modellstand v4.19 · höchste Korrekturnummer 68 · 442 Dateien im Repository
 
 ## Bausteine
 
@@ -77,6 +77,7 @@ Modellstand v4.18 · höchste Korrekturnummer 68 · 437 Dateien im Repository
 | N32 | B32 Länderseiten | B31 Drittel-System | offen |
 | N33 | B31 Drittel-System | B32 Länderseiten | offen |
 | N34 | B32 Länderseiten | B31 Drittel-System | offen |
+| N35 | B30 Altlastenfonds | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -94,3 +95,4 @@ Modellstand v4.18 · höchste Korrekturnummer 68 · 437 Dateien im Repository
 - Hinweis: Naht N32 offen: B32 Länderseiten -> B31 Drittel-System: v4.15: Pflichtquote 6,19 → 7,29 % BIP, Kasse 2,65 → 3,09 % (Annahmen), Irland 261 € je Einwohner und Monat bei BIP-Bemessung
 - Hinweis: Naht N33 offen: B31 Drittel-System -> B32 Länderseiten: v4.15: nicht gerechnet | v4.16: 400 Kreise (Eurostat): Formel P90/P10 1,05, Strukturzuschlag 10 % hebt dünn besiedelte Kreise auf Index 111; heutige Gemeindeeinnahmen je Kreis fehlen (robots.txt)
 - Hinweis: Naht N34 offen: B32 Länderseiten -> B31 Drittel-System: v4.16: 50 % der Verteidigung gemeinsam = 15,1 % der Mehrwertsteuer 2035; Gesamtlast unverändert
+- Hinweis: Naht N35 offen: B30 Altlastenfonds -> B31 Drittel-System: v4.19: bei 3,5 / 4,0 % Zuschlag 19,0 / 20,7 %, Vorteil 42.000 € 602 → 560 / 537 €; Zins über Wachstum (3 %); Entscheidung Zinsannahme offen
