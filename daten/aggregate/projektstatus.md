@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.20 · höchste Korrekturnummer 68 · 443 Dateien im Repository
+Modellstand v4.21 · höchste Korrekturnummer 69 · 445 Dateien im Repository
 
 ## Bausteine
 
@@ -20,7 +20,7 @@ Modellstand v4.20 · höchste Korrekturnummer 68 · 443 Dateien im Repository
 | B12 | Seite zum Stand B | B | geprueft | modell/pruefe_konzept.py |
 | B13 | Ergebnisdateien | A+B | geprueft | modell/alles.py |
 | B14 | Herkunft Drittdateien | A | ungeprueft | keine |
-| B15 | Schnittstelle für Dritte | B | entwurf | schnittstelle/pruefe_beitrag.py;projekt/pruefe_projekt.py |
+| B15 | Schnittstelle für Dritte | C | geprueft | schnittstelle/pruefe_beitrag.py;projekt/pruefe_projekt.py |
 | B16 | Archiv eigener Dateien | A | veraltet | keine |
 | B17 | Projektverwaltung | A+B | geprueft | modell/alles.py |
 | B18 | Werkzeuge | B | geprueft | modell/pruefe_konzept.py |

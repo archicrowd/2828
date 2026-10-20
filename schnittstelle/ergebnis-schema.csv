@@ -1,6 +1,6 @@
 spalte,pflicht,beschreibung
 gruppe,ja,Kennung der Haushalts- oder Personengruppe (Text ohne Umlaute; Definition in LIESMICH.md des Beitrags)
-land,ja,Ländercode ISO 3166-1 alpha-2 (DE FR ES NL IE BE AT DK SI EE)
+land,ja,"Ländercode (Eurostat; die 30 Staaten des Möglichkeitsraums, Griechenland EL)"
 jahr,ja,Bezugsjahr der Zahl (Ganzzahl)
 preisbasis,ja,nominal oder real
 preisjahr,bei real,Preisjahr bei preisbasis real (Ganzzahl)
@@ -8,5 +8,5 @@ groesse,ja,Name der Größe (z. B. netto_alt_je_monat netto_neu_je_monat dividen
 wert,ja,Zahl mit Punkt als Dezimaltrenner
 einheit,ja,z. B. EUR je Monat oder % des Haushaltseinkommens
 fallzahl,ja,Anzahl der Beobachtungen hinter dem Wert (für Aggregate aus Mikrodaten; 0 bei reiner Modellrechnung)
-stand,ja,Stand A oder Stand B (siehe INDEX.md)
+stand,ja,"Stand A, Stand B oder Stand C (geltend; siehe README „Aktueller Stand“)"
 modellstand,ja,Version des Modells oder Parameterfiles, gegen das gerechnet wurde (z. B. v3.10)

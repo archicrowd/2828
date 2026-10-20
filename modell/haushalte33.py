@@ -4,7 +4,7 @@
 Heute: Nettoeinkommen nach Lohnsteuer, Soli, Sozialbeiträgen der Beschäftigten und Kindergeld (Kernmodell, Recht 2026); für 2035 mit den
 Beitragssätzen der IGES-Projektion (Parameterfile).
 33F: Bruttolohn zuzüglich weitergegebener Arbeitgeberbeiträge, Einkommensteuer 0/11/19/25/33 % auf Brutto + Dividende der Erwachsenen,
-keine Sozialbeiträge, keine Prämien, Dividende des Jahres (Kinder die Hälfte, steuerfrei; 2035 aus dem Zeitpfad modell/projektion33.py),
+keine Sozialbeiträge, keine Prämien, Dividende des Jahres (v4.21: Kinderanteil 0,8 bei gleichem Topf nach R1, steuerfrei; vorher Kinder die Hälfte; 2035 aus dem Zeitpfad),
 Mehrbelastung durch den höheren effektiven Mehrwertsteuersatz auf den Konsum (Konsumquote des Kernmodells), optional ein Altlastenzuschlag
 des Staates auf Einkommen- und Mehrwertsteuer, optional eigene Altersvorsorge in Höhe des heutigen Rentenbeitrags.
 Grenzbelastung: Anteil eines zusätzlichen Euro Arbeitskosten, der nicht beim Haushalt ankommt (eigene Vorsorge zählt nicht als Belastung).
@@ -32,6 +32,11 @@ STUFEN = [G26 * x for x in (1, 1.5, 2, 3)]
 SAETZE = v["einkommen_saetze"]
 EFF_ALT = P["mwst_heute_effektiv"]
 BASIS = (K.AN_KV_PV, K.AN_RV_AV)
+# v4.21 (Korrektur 69, Hinweis der Prüfung 21.10.2026): Kinderanteil 0,8 bei gleichem Topf (R1, Beschluss v4.5) wie regel_boden.py;
+# vorher rechnete neu() mit 373 € je Erwachsenem und Kindern zur Hälfte. Topf-Faktor = (1 − K/2) / (1 − K + S·K), K = Anteil Minderjährige.
+S_KIND = tomllib.loads((W / "modell" / "regel_boden.toml").read_text(encoding="utf-8"))["kinderanteil"]
+_KM = json.loads((AGG / "gesamtrechnung.json").read_text(encoding="utf-8"))["anteil_minderjaehrige"] / 100
+TOPF = (1 - _KM / 2) / (1 - _KM + S_KIND * _KM)
 JAHR = {r["jahr"]: r for r in PJ["reihe"]}
 # v3.51: Dividende nach dem Beschluss zum starken Netz (netz33.json), falls vorhanden
 _NZ = AGG / "netz33.json"
@@ -82,10 +87,10 @@ def est(x):
 
 
 def neu(b, kinder, partner, wg, zu, vs, j):
-    DIV, EFF = div_jahr(j), eff_jahr(j)
+    DIV, EFF = div_jahr(j) * TOPF, eff_jahr(j)                  # v4.21: Erwachsenendividende nach R1 (354 € statt 373 € 2028)
     brutto = b + wg * ag(b)
     st = est(brutto + DIV) + (est(DIV) if partner else 0.0)
-    div = DIV * (2 if partner else 1) + kinder * DIV / 2
+    div = DIV * (2 if partner else 1) + kinder * DIV * S_KIND
     netto = brutto - st + div
     konsum = kq(netto) * netto
     mwst_mehr = konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1)

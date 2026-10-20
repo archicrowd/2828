@@ -1,0 +1,246 @@
+gruppe,land,jahr,preisbasis,preisjahr,groesse,wert,einheit,fallzahl,stand,modellstand
+alle_beschaeftigte,DE,2028,real,2026,netto_alt_je_monat,4327.66,EUR je Monat,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_beschluss,98.99,%,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_beschluss_mc_p5,98.91,%,12,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_beschluss_mc_p95,98.99,%,12,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,median_aenderung_beschluss,22.51,%,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,netto_neu_je_monat_beschluss,5315.68,EUR je Monat,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_vergleich,97.69,%,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_vergleich_mc_p5,97.49,%,12,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_vergleich_mc_p95,97.72,%,12,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,median_aenderung_vergleich,9.78,%,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,netto_neu_je_monat_vergleich,4759.90,EUR je Monat,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_weitergabe_50,98.41,%,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_weitergabe_50_mc_p5,98.33,%,12,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_weitergabe_50_mc_p95,98.46,%,12,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,median_aenderung_weitergabe_50,16.90,%,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,5079.22,EUR je Monat,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_weitergabe_0,92.01,%,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_weitergabe_0_mc_p5,91.43,%,12,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,anteil_gewinner_weitergabe_0_mc_p95,92.01,%,12,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,median_aenderung_weitergabe_0,7.52,%,60000,Stand C,v4.18
+alle_beschaeftigte,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,4682.28,EUR je Monat,60000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,netto_alt_je_monat,2348.25,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,netto_neu_je_monat_beschluss,3019.96,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,differenz_je_monat_beschluss,749.48,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,median_aenderung_beschluss,30.86,%,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,anteil_gewinner_beschluss,100.00,%,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,netto_neu_je_monat_vergleich,2794.77,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,differenz_je_monat_vergleich,523.16,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,median_aenderung_vergleich,19.05,%,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,2920.90,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,differenz_je_monat_weitergabe_50,653.87,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,median_aenderung_weitergabe_50,25.63,%,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.98,%,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,2746.00,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,differenz_je_monat_weitergabe_0,462.79,EUR je Monat,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,median_aenderung_weitergabe_0,16.48,%,6000,Stand C,v4.18
+dezil_01,DE,2028,real,2026,anteil_gewinner_weitergabe_0,99.57,%,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,netto_alt_je_monat,2572.85,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,netto_neu_je_monat_beschluss,3221.74,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,differenz_je_monat_beschluss,695.05,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,median_aenderung_beschluss,28.19,%,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,anteil_gewinner_beschluss,100.00,%,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,netto_neu_je_monat_vergleich,2964.87,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,differenz_je_monat_vergleich,442.33,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,median_aenderung_vergleich,16.13,%,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,3108.40,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,differenz_je_monat_weitergabe_50,586.04,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,median_aenderung_weitergabe_50,22.81,%,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.98,%,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,2920.91,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,differenz_je_monat_weitergabe_0,393.84,EUR je Monat,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,median_aenderung_weitergabe_0,14.10,%,6000,Stand C,v4.18
+dezil_02,DE,2028,real,2026,anteil_gewinner_weitergabe_0,98.95,%,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,netto_alt_je_monat,2760.93,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,netto_neu_je_monat_beschluss,3404.13,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,differenz_je_monat_beschluss,668.62,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,median_aenderung_beschluss,26.09,%,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,anteil_gewinner_beschluss,100.00,%,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,netto_neu_je_monat_vergleich,3121.65,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,differenz_je_monat_vergleich,383.11,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,median_aenderung_vergleich,13.71,%,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,3280.02,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,differenz_je_monat_weitergabe_50,544.47,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,median_aenderung_weitergabe_50,20.59,%,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.98,%,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,3073.73,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,differenz_je_monat_weitergabe_0,329.41,EUR je Monat,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,median_aenderung_weitergabe_0,11.60,%,6000,Stand C,v4.18
+dezil_03,DE,2028,real,2026,anteil_gewinner_weitergabe_0,98.80,%,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,netto_alt_je_monat,3030.45,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,netto_neu_je_monat_beschluss,3675.85,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,differenz_je_monat_beschluss,662.85,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,median_aenderung_beschluss,24.48,%,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,anteil_gewinner_beschluss,100.00,%,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,netto_neu_je_monat_vergleich,3357.73,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,differenz_je_monat_vergleich,341.70,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,median_aenderung_vergleich,11.72,%,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,3535.02,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,differenz_je_monat_weitergabe_50,518.43,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,median_aenderung_weitergabe_50,18.82,%,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.98,%,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,3301.93,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,differenz_je_monat_weitergabe_0,280.74,EUR je Monat,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,median_aenderung_weitergabe_0,9.51,%,6000,Stand C,v4.18
+dezil_04,DE,2028,real,2026,anteil_gewinner_weitergabe_0,98.40,%,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,netto_alt_je_monat,3314.67,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,netto_neu_je_monat_beschluss,3965.50,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,differenz_je_monat_beschluss,662.90,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,median_aenderung_beschluss,23.29,%,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,anteil_gewinner_beschluss,99.97,%,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,netto_neu_je_monat_vergleich,3603.25,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,differenz_je_monat_vergleich,306.95,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,median_aenderung_vergleich,10.24,%,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,3805.64,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,differenz_je_monat_weitergabe_50,500.82,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,median_aenderung_weitergabe_50,17.52,%,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.93,%,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,3539.38,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,differenz_je_monat_weitergabe_0,238.31,EUR je Monat,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,median_aenderung_weitergabe_0,7.94,%,6000,Stand C,v4.18
+dezil_05,DE,2028,real,2026,anteil_gewinner_weitergabe_0,98.25,%,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,netto_alt_je_monat,3684.32,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,netto_neu_je_monat_beschluss,4337.30,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,differenz_je_monat_beschluss,681.03,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,median_aenderung_beschluss,22.33,%,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,anteil_gewinner_beschluss,99.93,%,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,netto_neu_je_monat_vergleich,3926.10,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,differenz_je_monat_vergleich,278.59,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,median_aenderung_vergleich,8.99,%,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,4155.31,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,differenz_je_monat_weitergabe_50,497.44,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,median_aenderung_weitergabe_50,16.46,%,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.85,%,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,3852.40,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,differenz_je_monat_weitergabe_0,205.68,EUR je Monat,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,median_aenderung_weitergabe_0,6.67,%,6000,Stand C,v4.18
+dezil_06,DE,2028,real,2026,anteil_gewinner_weitergabe_0,98.43,%,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,netto_alt_je_monat,3934.48,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,netto_neu_je_monat_beschluss,4629.19,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,differenz_je_monat_beschluss,729.75,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,median_aenderung_beschluss,21.68,%,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,anteil_gewinner_beschluss,99.97,%,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,netto_neu_je_monat_vergleich,4170.46,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,differenz_je_monat_vergleich,262.74,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,median_aenderung_vergleich,8.00,%,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,4426.70,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,differenz_je_monat_weitergabe_50,523.17,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,median_aenderung_weitergabe_50,15.64,%,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.93,%,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,4087.29,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,differenz_je_monat_weitergabe_0,186.73,EUR je Monat,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,median_aenderung_weitergabe_0,5.60,%,6000,Stand C,v4.18
+dezil_07,DE,2028,real,2026,anteil_gewinner_weitergabe_0,98.73,%,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,netto_alt_je_monat,4424.47,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,netto_neu_je_monat_beschluss,5101.33,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,differenz_je_monat_beschluss,765.68,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,median_aenderung_beschluss,20.26,%,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,anteil_gewinner_beschluss,99.93,%,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,netto_neu_je_monat_vergleich,4559.70,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,differenz_je_monat_vergleich,265.42,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,median_aenderung_vergleich,6.73,%,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,4872.25,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,differenz_je_monat_weitergabe_50,542.97,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,median_aenderung_weitergabe_50,14.36,%,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.85,%,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,4489.46,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,differenz_je_monat_weitergabe_0,177.14,EUR je Monat,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,median_aenderung_weitergabe_0,4.51,%,6000,Stand C,v4.18
+dezil_08,DE,2028,real,2026,anteil_gewinner_weitergabe_0,96.32,%,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,netto_alt_je_monat,5316.49,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,netto_neu_je_monat_beschluss,5928.18,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,differenz_je_monat_beschluss,816.48,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,median_aenderung_beschluss,17.77,%,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,anteil_gewinner_beschluss,99.97,%,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,netto_neu_je_monat_vergleich,5266.04,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,differenz_je_monat_vergleich,185.21,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,median_aenderung_vergleich,4.03,%,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,anteil_gewinner_vergleich,88.98,%,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,5665.03,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,differenz_je_monat_weitergabe_50,550.57,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,median_aenderung_weitergabe_50,12.16,%,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.93,%,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,5231.55,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,differenz_je_monat_weitergabe_0,122.30,EUR je Monat,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,median_aenderung_weitergabe_0,2.75,%,6000,Stand C,v4.18
+dezil_09,DE,2028,real,2026,anteil_gewinner_weitergabe_0,85.50,%,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,netto_alt_je_monat,9321.89,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,netto_neu_je_monat_beschluss,10056.12,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,differenz_je_monat_beschluss,832.51,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,median_aenderung_beschluss,9.87,%,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,anteil_gewinner_beschluss,90.12,%,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,netto_neu_je_monat_vergleich,9674.69,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,differenz_je_monat_vergleich,441.72,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,median_aenderung_vergleich,5.17,%,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,anteil_gewinner_vergleich,87.95,%,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,netto_neu_je_monat_weitergabe_50,9719.21,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,differenz_je_monat_weitergabe_50,546.01,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,median_aenderung_weitergabe_50,6.10,%,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,anteil_gewinner_weitergabe_50,84.72,%,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,netto_neu_je_monat_weitergabe_0,9163.00,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,differenz_je_monat_weitergabe_0,-23.08,EUR je Monat,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,median_aenderung_weitergabe_0,-0.22,%,6000,Stand C,v4.18
+dezil_10,DE,2028,real,2026,anteil_gewinner_weitergabe_0,47.10,%,6000,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,faelle,19355,Haushalte,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,dividende_je_monat,354.00,EUR je Monat,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,anteil_gewinner_beschluss,99.62,%,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,median_aenderung_beschluss,22.95,%,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,median_aenderung_vergleich,9.67,%,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.23,%,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,median_aenderung_weitergabe_50,17.10,%,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,anteil_gewinner_weitergabe_0,94.99,%,19355,Stand C,v4.18
+haushalt_alleinstehend,DE,2028,real,2026,median_aenderung_weitergabe_0,7.36,%,19355,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,faelle,13135,Haushalte,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,dividende_je_monat,708.00,EUR je Monat,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,anteil_gewinner_beschluss,98.54,%,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,median_aenderung_beschluss,23.37,%,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,anteil_gewinner_vergleich,95.64,%,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,median_aenderung_vergleich,10.20,%,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,anteil_gewinner_weitergabe_50,97.74,%,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,median_aenderung_weitergabe_50,17.54,%,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,anteil_gewinner_weitergabe_0,89.17,%,13135,Stand C,v4.18
+haushalt_paar_ohne_kinder,DE,2028,real,2026,median_aenderung_weitergabe_0,7.78,%,13135,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,faelle,16616,Haushalte,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,dividende_je_monat,1184.41,EUR je Monat,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,anteil_gewinner_beschluss,98.16,%,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,median_aenderung_beschluss,21.14,%,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,anteil_gewinner_vergleich,95.12,%,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,median_aenderung_vergleich,9.16,%,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,anteil_gewinner_weitergabe_50,97.38,%,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,median_aenderung_weitergabe_50,15.88,%,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,anteil_gewinner_weitergabe_0,88.61,%,16616,Stand C,v4.18
+haushalt_paar_mit_kindern,DE,2028,real,2026,median_aenderung_weitergabe_0,7.06,%,16616,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,faelle,4860,Haushalte,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,dividende_je_monat,722.54,EUR je Monat,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,anteil_gewinner_beschluss,99.40,%,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,median_aenderung_beschluss,20.42,%,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,median_aenderung_vergleich,8.69,%,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.09,%,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,median_aenderung_weitergabe_50,15.21,%,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,anteil_gewinner_weitergabe_0,94.20,%,4860,Stand C,v4.18
+haushalt_alleinerziehend,DE,2028,real,2026,median_aenderung_weitergabe_0,6.60,%,4860,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,faelle,6034,Haushalte,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,dividende_je_monat,708.00,EUR je Monat,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,anteil_gewinner_beschluss,99.88,%,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,median_aenderung_beschluss,25.36,%,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,anteil_gewinner_vergleich,100.00,%,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,median_aenderung_vergleich,12.04,%,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,anteil_gewinner_weitergabe_50,99.60,%,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,median_aenderung_weitergabe_50,19.46,%,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,anteil_gewinner_weitergabe_0,96.19,%,6034,Stand C,v4.18
+haushalt_sonstige,DE,2028,real,2026,median_aenderung_weitergabe_0,9.64,%,6034,Stand C,v4.18
+haushalte_mit_kindern,DE,2028,real,2026,faelle,21476,Haushalte,21476,Stand C,v4.18
+haushalte_mit_kindern,DE,2028,real,2026,anteil_gewinner_beschluss,98.44,%,21476,Stand C,v4.18
+haushalte_mit_kindern,DE,2028,real,2026,median_aenderung_beschluss,20.92,%,21476,Stand C,v4.18
+haushalte_mit_kindern,DE,2028,real,2026,dividende_je_monat,1079.89,EUR je Monat,21476,Stand C,v4.18

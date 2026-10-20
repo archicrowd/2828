@@ -1,6 +1,6 @@
 # Kennzahlen Stand C – welche Zahl gilt, und was sie bedeutet
 
-Stand v4.20 (21. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
+Stand v4.21 (21. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
 mit verschiedenen Werten, weil die Abgrenzungen verschieden sind. Hier steht je Größe, **welcher Wert gilt** und wie die anderen zu lesen sind.
 Wer eine Zahl zitiert, nennt die Zeile dieser Tabelle.
 
@@ -62,3 +62,10 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Zuschlag bei Fondszins 2,45 / 3,0 / 3,5 / 4,0 % (Fonds der 30, v4.20) | 15,4 / 17,1 / 18,6 / 20,3 % (Beitrag 5,14 / 5,70 / 6,23 / 6,78 % BIP) | `fondszins.json` | Empfindlichkeit; Marktzins Oktober 2026: Bund 3,46 %, EU 3,95 % (Sekundärquellen) |
 | Vorteil alleinstehend, 42.000 € brutto, DE 2028 | 608 / 585 / 565 / 542 € im Monat (v4.20) | `fondszins.json` | Kaufkraft 2026 |
 | Gemeinsamer Satz mit Italien und Polen / alle 30 Staaten | 16,6 % / 15,5 % | `fonds_klub.json` | skaliert auf den Beschluss (Annahme) |
+
+## Mikrosimulation (extern, v4.21)
+
+| Größe | Wert | Datei | Status |
+|---|---|---|---|
+| Vollzeitbeschäftigte mit mehr verfügbarem Einkommen, Beschluss / halbe / keine Weitergabe | 99,0 / 98,4 / 92,0 % | `beitraege/kvribbeck-2028/ergebnis.csv` | externe Rechnung (Kulturverein Ribbeck e.V.), eine Quelle; Formprüfung bestanden; Grenzen in der LIESMICH.md |
+| Beispielhaushalte des Repositorys, Beschluss | 97,8 bis 100 % je Haushaltstyp (`haushalte33`), 98 % (`regel_boden`, mit Grundauskommen und Bedarfsleistungen) | `haushalte33.json`, `regel_boden.json` | Prüfrechnung |

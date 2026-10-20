@@ -10,7 +10,10 @@ import sys
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-LAENDER = {"DE", "FR", "ES", "NL", "IE", "BE", "AT", "DK", "SI", "EE"}
+# v4.21: Stand C rechnet für 30 Staaten (Möglichkeitsraum: EU 27, Norwegen, Island, Schweiz; Eurostat-Codes, Griechenland = EL)
+LAENDER = {"AT", "BE", "BG", "CH", "CY", "CZ", "DE", "DK", "EE", "EL", "ES", "FI", "FR", "HR", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MT",
+           "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK"}
+STAENDE = ("Stand A", "Stand B", "Stand C")
 
 
 def main(pfad: str) -> int:
@@ -34,8 +37,8 @@ def main(pfad: str) -> int:
                 f_("preisbasis muss nominal oder real sein")
             if z.get("preisbasis") == "real" and not (z.get("preisjahr") or "").strip().isdigit():
                 f_("preisjahr fehlt bei preisbasis real")
-            if z.get("stand") not in ("Stand A", "Stand B"):
-                f_("stand muss 'Stand A' oder 'Stand B' sein")
+            if z.get("stand") not in STAENDE:
+                f_("stand muss 'Stand A', 'Stand B' oder 'Stand C' sein")
             for feld in ("jahr", "fallzahl"):
                 if not (z.get(feld) or "").strip().isdigit():
                     f_(f"{feld} muss eine Ganzzahl sein")
