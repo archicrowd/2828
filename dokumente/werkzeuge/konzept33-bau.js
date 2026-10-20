@@ -13,7 +13,7 @@ const SV=lies('systemvarianten.json'), PJ=lies('projektion33.json'), NZ=lies('ne
       AL=lies('altlasten.json'), EW=lies('einwanderung33.json'), DY=lies('dynamik33.json'), G=lies('gesamtrechnung.json'), MR=lies('moeglichkeitsraum33.json'), NS=lies('neustart33.json');
 // v4.8/v4.11: Grundauskommen (vorher „Boden“), Kinderanteil 0,8, Kindergewicht, Härtefall, Gini
 const GL=lies('gesamtlast33.json'), RBJ=lies('regel_boden.json'), HF=lies('haertefall.json'), GI=lies('gini.json'), KG=lies('kindergewicht.json'), GF=lies('gini_frankreich.json');
-const FZ=lies('fondszins.json'), FK=lies('fonds_klub.json'), PN=lies('preisniveau33.json'), AW=lies('ausweichen33.json'), WR=lies('weitergabe_rueckfall.json');   // v4.18
+const WS=lies('weitergabe_sensitivitaet.json'), FZ=lies('fondszins.json'), FK=lies('fonds_klub.json'), PN=lies('preisniveau33.json'), AW=lies('ausweichen33.json'), WR=lies('weitergabe_rueckfall.json');   // v4.18
 const TOPF=RBJ.topf, SK=RBJ.regel.kinderanteil, KW=RBJ.regel.skala.kind;
 const dv=x=>x*TOPF;   // Dividende je Erwachsenem bei Kinderanteil 0,8 (gleicher Topf)
 const de=(x,nk=0)=>Number(x).toLocaleString('de-DE',{minimumFractionDigits:nk,maximumFractionDigits:nk});
@@ -29,7 +29,7 @@ const vr=NZ.varianten.find(v=>v.grundrente==='volksrente'&&v.gesundheit_kuerzung
 const z3=NZ.varianten.find(v=>v.grundrente==='zwei_drittel').reihe;
 const gem=j=>V.quote_kern-PR[j].dach_ohne_zins-PR[j].dividende_ohne_trends_pct_bip;
 const deck=j=>PR[j].deckung+PR[j].progression;
-const AB=AL.beschluss;
+const FG=lies('fonds_geltend.json'), AB=FG;   // v4.20: geltender Fonds der 30 Staaten
 const fall=(hh,zu,j=2028)=>H.faelle.find(f=>f.jahr===j&&f.haushalt===hh&&f.weitergabe_ag===0.8&&f.vorsorge_satz===0.1&&f.zuschlag_pct===zu);
 const ZU=Math.max(...H.faelle.map(f=>f.zuschlag_pct));
 const zl=(f,b)=>f.zeilen.find(z=>z.brutto===b);
@@ -69,7 +69,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.19 · 20. Oktober 2026 (zur Freigabe)",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.20 · 20. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -137,7 +137,7 @@ add(H1("3  Die Regeln"),
   L([["Boden: ",true],["Die Gemeinde erhebt 0,1 bis 1 % auf den Bodenwert, nicht auf das Gebäude."]]),
   L([["Klima: ",true],["europäischer CO₂-Preis; das Aufkommen geht über die Transformationsdividende zurück."]]),
   L([["Konsum: ",true],["Die Mehrwertsteuer wird zum Label: A+ 5 % (Grundbedarf, Reparatur), A 11 % (nachhaltige Güter), B 17 % (Standardgüter), C 25 % (ressourcenintensiv, Luxus); Sonderstufe S 33 % nur für Schädliches: Tabak, Alkohol, Kraftstoffe, Fahrzeuge mit Verbrennungsmotor. Im Mittel "+pr(V.label_effektiv,1)+" (heute in Deutschland rund 16,0 %)."]]),
-  L([["Weitergabe: ",true],["Betriebe müssen mindestens 80 % der wegfallenden Arbeitgeberbeiträge in den Lohn geben. Durchsetzung (Beschluss 20.10.2026): Ein Gesetz verpflichtet, alle Arbeitsverträge bis zum Stichtag der Einführung entsprechend anzupassen – neuer Bruttolohn = bisheriger Bruttolohn + mindestens 80 % des bisherigen Arbeitgeberbeitrags. Ein unabhängiges Monitoring der Bruttolöhne je Branche begleitet die ersten Jahre. Wer die Anpassung unterlässt, führt die Differenz an den Altlastenfonds ab; das Einbehalten bringt dem Betrieb damit nichts (bei 50 % tatsächlicher Weitergabe flössen 2,4 bis 2,8 % des BIP an den Fonds, modell/weitergabe_rueckfall.py). Ohne jede Weitergabe bliebe der Vorteil in Deutschland positiv (42.000 €: +250 statt +602 € im Monat), in Frankreich und Spanien nicht (modell/weitergabe_sensitivitaet.py). Über die Lohnentwicklung nach dem Stichtag entscheidet wieder der Arbeitsmarkt; die Inzidenzforschung ist dazu uneinheitlich."]]),
+  L([["Weitergabe: ",true],["Betriebe müssen mindestens 80 % der wegfallenden Arbeitgeberbeiträge in den Lohn geben. Durchsetzung (Beschluss 20.10.2026): Ein Gesetz verpflichtet, alle Arbeitsverträge bis zum Stichtag der Einführung entsprechend anzupassen – neuer Bruttolohn = bisheriger Bruttolohn + mindestens 80 % des bisherigen Arbeitgeberbeitrags. Ein unabhängiges Monitoring der Bruttolöhne je Branche begleitet die ersten Jahre. Wer die Anpassung unterlässt, führt die Differenz an den Altlastenfonds ab; das Einbehalten bringt dem Betrieb damit nichts (bei 50 % tatsächlicher Weitergabe flössen 2,4 bis 2,8 % des BIP an den Fonds, modell/weitergabe_rueckfall.py). Ohne jede Weitergabe bliebe der Vorteil in Deutschland positiv (42.000 €: "+vz(WS.varianten["0.0"].de_mehr_monat.alleinstehend["42000"])+" statt "+vz(WS.varianten["0.8"].de_mehr_monat.alleinstehend["42000"])+" im Monat), in Frankreich und Spanien nicht (modell/weitergabe_sensitivitaet.py). Über die Lohnentwicklung nach dem Stichtag entscheidet wieder der Arbeitsmarkt; die Inzidenzforschung ist dazu uneinheitlich."]]),
   tab([{t:"Aufkommen 2028 (% des BIP)",w:5426},{t:"Wert",w:3600,al:RT}],
     Object.entries(V.deckung_positionen).map(([k,v])=>[k,de(v,2)]).concat([["Summe",de(V.deckung,2)]]),{hl:{[Object.keys(V.deckung_positionen).length]:1}}),
   Q("Aufkommen auf deutscher Basis gerechnet und auf die zehn Staaten übertragen; Ausweichreaktionen nicht eingerechnet (Annahme)."),
@@ -203,12 +203,12 @@ add(H1("3  Die Regeln"),
   L([["Grundauskommen auch im Bestand: ",true],["Kleine Bestandsrenten werden bis zum Grundbedarf aufgestockt; die Bestandsrente zählt voll (wie heute bei der Grundsicherung im Alter)."]]),
   L([["Ein Rentenbeginn: ",true],["67, gekoppelt an zwei Drittel des Zuwachses der Lebenserwartung, für alte und neue Ansprüche gleich (Vorbilder Niederlande, Dänemark)."]]),
   P("Als Werkzeug bietet der Bauplan einen gemeinsamen Fonds an:"),
-  tab([{t:"Altlastenfonds (zehn Staaten, alle Altrenten nach Kürzung)",w:6026},{t:"Wert",w:3000,al:RT}],[
+  tab([{t:"Altlastenfonds (30 Staaten, alle Altrenten nach Kürzung)",w:6026},{t:"Wert",w:3000,al:RT}],[
     ["Gleichbleibender Beitrag bis 2098",pr(AB.beitrag_pct_bip,2)+" des BIP"],
     ["als Zuschlag auf alle Steuern",pr(AB.zuschlag_auf_alle_steuern_pct,1)],
     ["Schuldenquote des Fonds: Spitze",pr(AB.schuldenquote_spitze,0)+" ("+AB.spitzenjahr+")"],
     ["vollständig getilgt",String(AB.zieljahr)]]),
-  Q("Zins des Fonds 2,5 %, Wachstum nominal 3 % (Annahmen der Gesamtrechnung). Liegt der Zins beim Wachstum, steigt der Beitrag. Mehreinnahmen über dem Fünfjahresdurchschnitt tilgen zusätzlich."));
+  Q("Zins des Fonds "+pr(FG.zins,2)+": Mittel der Renditen zehnjähriger Staatsanleihen im Euroraum 2006–2025 (Eurostat, Konvergenzkriterium); Wachstum nominal 3 % (Annahme der Gesamtrechnung). Gerechnet für die zehn Staaten des Beschlusses und auf alle 30 übertragen (modell/fonds_klub.py). Liegt der Zins beim Wachstum, steigt der Beitrag. Mehreinnahmen über dem Fünfjahresdurchschnitt tilgen zusätzlich."));
 
 // ---- 3.8 Neustartverfahren
 const nsv=(c,sn,k)=>NS.staaten[c].varianten.find(v=>v.schnitt===sn&&v.altrenten_kuerzung===k).zuschlag_pct;
@@ -221,7 +221,7 @@ add(H2("3.8  Neustartverfahren für überschuldete Staaten"),
   L([["Neustart: ",true],["Der Rest geht in den Altlastenfonds mit gemeinsamem Zins; wer dauerhaft nicht mitwirkt, verliert die Zinsgarantie."]]),
   tab([{t:"Altlasten-Zuschlag (eigener Fonds bis 2098)",w:3626},{t:"ohne",w:1350,al:RT},{t:"Schnitt 33 %",w:1350,al:RT},{t:"Altrenten −10 %",w:1350,al:RT},{t:"beides",w:1350,al:RT}],
     Object.keys(NS.staaten).slice(0,4).map(c=>[NS.staaten[c].name,pr(nsv(c,0,0)),pr(nsv(c,0.33,0)),pr(nsv(c,0,0.1)),pr(nsv(c,0.33,0.1))])),
-  Q("Solange der gemeinsame Zins (2,5 %) unter dem Wachstum (3 %) liegt, schmilzt alte Schuld von selbst; der Schnitt bringt dann wenig, die Rentenzusagen wiegen schwerer. Das Verfahren sichert vor allem den Fall ab, dass der Zins über dem Wachstum liegt. Rechtlich offen: Eigentums- und Vertrauensschutz der Renten, Art. 125 AEUV. Quellen: ESM; Wissenschaftliche Dienste des Bundestags (WD 4-176/08); griechischer Staatsrat über Sekundärquellen."));
+  Q("Solange der gemeinsame Zins ("+pr(FG.zins,2)+") unter dem Wachstum (3 %) liegt, schmilzt alte Schuld von selbst; der Schnitt bringt dann wenig, die Rentenzusagen wiegen schwerer. Das Verfahren sichert vor allem den Fall ab, dass der Zins über dem Wachstum liegt. Rechtlich offen: Eigentums- und Vertrauensschutz der Renten, Art. 125 AEUV. Quellen: ESM; Wissenschaftliche Dienste des Bundestags (WD 4-176/08); griechischer Staatsrat über Sekundärquellen."));
 
 // ---- 4 Finanzierung
 const jahre=[2028,2035,2045,2060];
@@ -267,7 +267,7 @@ add(H1("6  Bis 2060: Trends, Automatisierung, Einwanderung"),
   tab([{t:"2060",w:3626},{t:"ohne",w:1500,al:RT},{t:"+0,5 Mio./Jahr",w:1950,al:RT},{t:"+1 Mio./Jahr",w:1950,al:RT}],[
     ["Menschen über 65 je Person im Erwerbsalter",de(ew(0.2,'kontrolliert').reihe['2060'].altenquotient_basis,2),de(ew(0.2,'kontrolliert').reihe['2060'].altenquotient,2),de(ew(0.4,'kontrolliert').reihe['2060'].altenquotient,2)],
     ["BIP je Einwohner (gut / schwierig integriert)","–",pr(ew(0.2,'kontrolliert').reihe['2060'].bip_je_kopf_pct)+" / "+pr(ew(0.2,'schwierig').reihe['2060'].bip_je_kopf_pct),pr(ew(0.4,'kontrolliert').reihe['2060'].bip_je_kopf_pct)+" / "+pr(ew(0.4,'schwierig').reihe['2060'].bip_je_kopf_pct)],
-    ["Beitrag Altlastenfonds (% BIP)",de(AB.beitrag_pct_bip,2),de(ew(0.2,'kontrolliert').fonds_beitrag_pct_bip,2),de(ew(0.4,'kontrolliert').fonds_beitrag_pct_bip,2)]]),
+    ["Beitrag Altlastenfonds, zehn Staaten (% BIP)",de(AL.beschluss.beitrag_pct_bip,2),de(ew(0.2,'kontrolliert').fonds_beitrag_pct_bip,2),de(ew(0.4,'kontrolliert').fonds_beitrag_pct_bip,2)]]),
   Q("Einwanderung im Erwerbsalter mildert die Alterung und verdünnt die festen Altlasten; sie gleicht die Alterung nicht aus. Eingewanderte erwerben im neuen System keine Ansprüche über der Grundversorgung. Annahmen: Erwerbstätigkeit und Produktivität der Eingewanderten, Altenquotient interpoliert."));
 
 // ---- 6.4 Möglichkeitsraum
@@ -304,7 +304,7 @@ add(H1("8  Was noch offen ist"),
   L("Frankreich: Ungleichheit steigt nach dem Modell (Gini +2 Punkte), vor allem durch die Weitergabe ungedeckelter Arbeitgeberbeiträge; Entscheidung über einen Deckel der Weitergabe offen (Korrektur 64)."),
   L("Grundversorgung: Kürzung des Gesundheitskatalogs (5 %), Mengen bei Invalidität und Arbeitslosigkeit und die Verteilung der eigenen Renten sind Annahmen ohne Mikrodaten."),
   L("Dividende: Sie sinkt bis 2060; ein Zukunftsschatz könnte einen Teil auf Dauer sichern."),
-  L("Altlasten: Der Fonds verschiebt Lasten in die Zukunft (Schuldenspitze "+pr(AB.schuldenquote_spitze,0)+"); jeder Staat entscheidet. Gerechnet ist mit 2,5 % Zins; die Marktzinsen lagen im Oktober 2026 darüber (Bundesanleihen rund "+pr(FZ.markt_oktober_2026.bund_10j,1)+", EU-Anleihen rund "+pr(FZ.markt_oktober_2026.eu_10j,1)+", Sekundärquellen). Mit 3,5 bzw. 4 % stiege der Zuschlag auf "+pr(FZ.varianten[2].zuschlag_pct,1)+" bzw. "+pr(FZ.varianten[3].zuschlag_pct,1)+", der Vorteil bei 42.000 € brutto sänke von "+eu(FZ.varianten[0].haushalt_de.mehr_monat_42000.alleinstehend)+" auf "+eu(FZ.varianten[3].haushalt_de.mehr_monat_42000.alleinstehend)+" im Monat (modell/fondszins.py). Mit Italien und Polen läge der gemeinsame Satz bei "+pr(FK.klubs[3].zuschlag_skaliert_pct,1)+", mit allen 30 Staaten bei "+pr(FK.klubs[4].zuschlag_skaliert_pct,1)+" (modell/fonds_klub.py)."),
+  L("Altlasten: Der Fonds verschiebt Lasten in die Zukunft (Schuldenspitze "+pr(AB.schuldenquote_spitze,0)+"); jeder Staat entscheidet. Gerechnet ist mit "+pr(FG.zins,2)+" Zins (Mittel 2006–2025); die Marktzinsen lagen im Oktober 2026 darüber (Bundesanleihen rund "+pr(FZ.markt_oktober_2026.bund_10j,1)+", EU-Anleihen rund "+pr(FZ.markt_oktober_2026.eu_10j,1)+", Sekundärquellen). Mit 3,5 bzw. 4 % stiege der Zuschlag auf "+pr(FZ.varianten[2].zuschlag_pct,1)+" bzw. "+pr(FZ.varianten[3].zuschlag_pct,1)+", der Vorteil bei 42.000 € brutto sänke von "+eu(FZ.varianten[0].haushalt_de.mehr_monat_42000.alleinstehend)+" auf "+eu(FZ.varianten[3].haushalt_de.mehr_monat_42000.alleinstehend)+" im Monat (modell/fondszins.py). Der Fonds umfasst alle 30 Staaten; mit nur den zehn des ersten Beschlusses läge der Satz bei "+pr(FK.klubs[0].zuschlag_skaliert_pct,1)+", mit den zehn und Italien bei "+pr(FK.klubs[1].zuschlag_skaliert_pct,1)+" (modell/fonds_klub.py)."),
   L("Deckung auf deutscher Basis; Trends als Setzungen aus Quellen, keine eigene Prognose. Ausweichreaktionen: Gehen bei der Erbschaft die Hälfte und bei großen Vermögen drei Viertel verloren (statt der Hälfte), fehlen "+de(-AW.faelle[AW.faelle.length-1].delta_pct_bip,2).replace('.',',')+" % des BIP; die Dividende sinkt 2028 um "+de(-AW.faelle[AW.faelle.length-1].dividende_2028_eur)+" € und 2060 um "+de(-AW.faelle[AW.faelle.length-1].dividende_2060_eur)+" € je Erwachsenem (modell/ausweichen33.py)."),
   L("Korrektur 61: Frühere Fassungen (v3.47, v3.48) hielten den Anteil der Einkommensteuer fest und unterschätzten die Dividende 2060."));
 
@@ -338,7 +338,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.19)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.20)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -346,7 +346,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.19 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.20 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

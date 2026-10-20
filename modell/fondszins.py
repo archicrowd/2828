@@ -23,6 +23,7 @@ with contextlib.redirect_stdout(io.StringIO()):
 G, SV = AL.G, AL.SV
 B = AL.P["beschluss"]
 BJ = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]
+FGV = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))["grundlage"]   # v4.20
 spec_rb = importlib.util.spec_from_file_location("rb", W / "modell" / "regel_boden.py")
 RB = importlib.util.module_from_spec(spec_rb)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -73,9 +74,10 @@ def main():
         zi = [x / 100 for x in zinsen_pct]
         c = loese(z, zi, d0, n)
         p = pfad(c, z, zi, d0, n)
-        varianten.append(dict(fall=name, beitrag_pct_bip=round(c, 2), zuschlag_pct=round(c / quote * 100, 1), spitze=round(max(p), 1),
-                              spitzenjahr=2029 + p.index(max(p)), zins_2028=round(zinsen_pct[0], 2), zins_ab_2036=round(zinsen_pct[min(8, n - 1)], 2),
-                              haushalt_de=haushalt_de(round(c / quote * 100, 1))))
+        zu = round(c / quote * 100 * FGV["verhaeltnis_zuschlag_30_zu_10"], 1)            # v4.20: auf den Fonds der 30 übertragen
+        varianten.append(dict(fall=name, beitrag_pct_bip=round(c * FGV["verhaeltnis_beitrag_30_zu_10"], 2), zuschlag_pct=zu, spitze_zehn=round(max(p), 1),
+                              spitzenjahr_zehn=2029 + p.index(max(p)), zins_2028=round(zinsen_pct[0], 2), zins_ab_2036=round(zinsen_pct[min(8, n - 1)], 2),
+                              beitrag_zehn_pct_bip=round(c, 2), haushalt_de=haushalt_de(zu)))
 
     for i in P["zinsen"]:
         fall(f"fest {i} %", [i] * n)
@@ -85,7 +87,7 @@ def main():
     E = dict(version=P["version"], status="Prüfrechnung, Empfindlichkeit", wachstum_nominal=AL.G_NOM * 100, startschuld_2028=d0,
              durchschnittszins_2028=round(start, 2), markt_oktober_2026=dict(bund_10j=P["markt_bund_10j"], eu_10j=P["markt_eu_10j"],
              frankreich_10j=P["markt_frankreich_10j"], status="Sekundärquellen"), varianten=varianten,
-             abgleich_beschluss=dict(altlasten_json=BJ["beitrag_pct_bip"], hier=basis["beitrag_pct_bip"]),
+             abgleich_beschluss=dict(altlasten_json_zehn=BJ["beitrag_pct_bip"], hier_zehn=basis["beitrag_zehn_pct_bip"]),
              hinweis="Zins über dem nominalen Wachstum (3 %): Die Schuld schmilzt nicht mehr von selbst, der Beitrag muss auch Zinsen tilgen. "
                      "Gemeinsame Anleihen (EU) rentieren derzeit über Bundesanleihen; günstiger als heute ist der Fonds für FR und IT, nicht für DE.")
     (AGG / "fondszins.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")

@@ -23,6 +23,9 @@ from pathlib import Path
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8"))
+_mz = round(sum(P["zins_reihe_ea"]) / len(P["zins_reihe_ea"]), 2)     # v4.20: Fondszins = Mittel 2006–2025 (Euroraum)
+if abs(_mz - P["beschluss"]["zins"]) > 0.005:
+    raise SystemExit(f"altlasten.toml: Fondszins {P['beschluss']['zins']} weicht vom Mittel der Reihe {_mz} ab")
 
 
 def lade(name, pfad):

@@ -18,7 +18,7 @@ W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "gesamtlast33.toml").read_text(encoding="utf-8"))
 SV = json.loads((AGG / "systemvarianten.json").read_text(encoding="utf-8"))
-AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]
+AL = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))   # v4.20: geltender Fonds der 30 Staaten
 SZ = json.loads((AGG / "sozialschutz.json").read_text(encoding="utf-8"))
 PJ = json.loads((AGG / "projektion33.json").read_text(encoding="utf-8"))
 

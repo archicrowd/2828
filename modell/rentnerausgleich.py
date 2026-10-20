@@ -21,7 +21,7 @@ from pathlib import Path
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "rentnerausgleich.toml").read_text(encoding="utf-8"))
-P["zuschlag_pct"] = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]["zuschlag_auf_alle_steuern_pct"]   # v4.11
+P["zuschlag_pct"] = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))["zuschlag_auf_alle_steuern_pct"]   # v4.11; v4.20 Fonds der 30
 spec = importlib.util.spec_from_file_location("rb", W / "modell" / "regel_boden.py")
 RB = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):

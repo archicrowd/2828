@@ -17,9 +17,9 @@ from pathlib import Path
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "haushalte33.toml").read_text(encoding="utf-8"))
-_AL = W / "daten" / "aggregate" / "altlasten.json"
-if _AL.exists():   # v4.11: Altlastenzuschlag aus dem Fonds (Beschluss), nicht mehr von Hand
-    P["zuschlag_pct"] = [0.0, json.loads(_AL.read_text(encoding="utf-8"))["beschluss"]["zuschlag_auf_alle_steuern_pct"]]
+_AL = W / "daten" / "aggregate" / "fonds_geltend.json"
+if _AL.exists():   # v4.11: Altlastenzuschlag aus dem Fonds; v4.20: geltender gemeinsamer Fonds der 30 Staaten (fonds_klub.py)
+    P["zuschlag_pct"] = [0.0, json.loads(_AL.read_text(encoding="utf-8"))["zuschlag_auf_alle_steuern_pct"]]
 spec = importlib.util.spec_from_file_location("kern", W / "modell" / "kern" / "modell-2828.py")
 K = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):

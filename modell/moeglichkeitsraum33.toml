@@ -10,5 +10,5 @@ bip_2024_zu_kaufkraft_2026_2028 = 1.0768   # Faktor BIP je Kopf 2024 -> Rechengr
 erwerbsquote_bev = 0.49           # Erwerbspersonen je Einwohner (Annahme, für alle gleich)
 pflege_basis = 0.85               # Pflege außerhalb GF07 (wie netz33)
 faktor_mindestrente = 0.40        # aus netz33 (Pflichtvorsorge 10 %, Verteilung des deutschen Kernmodells; für alle Staaten übernommen, Annahme)
-zins = 2.5
+zins = 2.45                       # v4.20: wie altlasten.toml (Mittel der Renditen im Euroraum 2006–2025)
 wachstum_nominal = 3.0

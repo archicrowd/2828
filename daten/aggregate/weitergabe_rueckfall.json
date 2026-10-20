@@ -5,7 +5,7 @@
   "unten": 7.9,
   "oben": 9.36
  },
- "fondsbeitrag_pct_bip": 5.28,
+ "fondsbeitrag_pct_bip": 5.14,
  "reihe": [
   {
    "weitergabe": 0.0,
@@ -18,10 +18,10 @@
     367
    ],
    "anteil_am_fondsbeitrag_pct": [
-    120,
-    142
+    123,
+    146
    ],
-   "mehr_monat_alleinstehend_42000": 250
+   "mehr_monat_alleinstehend_42000": 254
   },
   {
    "weitergabe": 0.5,
@@ -34,10 +34,10 @@
     138
    ],
    "anteil_am_fondsbeitrag_pct": [
-    45,
-    53
+    46,
+    55
    ],
-   "mehr_monat_alleinstehend_42000": 470
+   "mehr_monat_alleinstehend_42000": 475
   },
   {
    "weitergabe": 0.6,
@@ -50,8 +50,8 @@
     92
    ],
    "anteil_am_fondsbeitrag_pct": [
-    30,
-    35
+    31,
+    36
    ]
   },
   {
@@ -68,7 +68,7 @@
     0,
     0
    ],
-   "mehr_monat_alleinstehend_42000": 602
+   "mehr_monat_alleinstehend_42000": 608
   }
  ],
  "hinweis": "Spanne: untere Schätzung 21 % × 85 % der Bruttolöhne (Annahme), obere D12 (Eurostat, mit unterstellten Beiträgen). Euro je Einwohner und Monat 2028 nominal (punkt_bip_eur_de). Der Rückfluss schützt nicht den einzelnen Beschäftigten, sondern nimmt dem Betrieb den Vorteil des Einbehaltens; der Anspruch des Beschäftigten folgt aus dem Gesetz zur Vertragsanpassung."

@@ -7,30 +7,30 @@
   {
    "jahr": 2028,
    "steuern": 33.53,
-   "fonds": 5.28,
-   "a_steuern_und_fonds": 38.81,
-   "b_mit_pflichtvorsorge": 42.91
+   "fonds": 5.14,
+   "a_steuern_und_fonds": 38.67,
+   "b_mit_pflichtvorsorge": 42.77
   },
   {
    "jahr": 2035,
    "steuern": 33.03,
-   "fonds": 5.28,
-   "a_steuern_und_fonds": 38.31,
-   "b_mit_pflichtvorsorge": 42.41
+   "fonds": 5.14,
+   "a_steuern_und_fonds": 38.17,
+   "b_mit_pflichtvorsorge": 42.27
   },
   {
    "jahr": 2045,
    "steuern": 32.18,
-   "fonds": 5.28,
-   "a_steuern_und_fonds": 37.46,
-   "b_mit_pflichtvorsorge": 41.56
+   "fonds": 5.14,
+   "a_steuern_und_fonds": 37.32,
+   "b_mit_pflichtvorsorge": 41.42
   },
   {
    "jahr": 2060,
    "steuern": 32.13,
-   "fonds": 5.28,
-   "a_steuern_und_fonds": 37.41,
-   "b_mit_pflichtvorsorge": 41.51
+   "fonds": 5.14,
+   "a_steuern_und_fonds": 37.27,
+   "b_mit_pflichtvorsorge": 41.37
   }
  ],
  "c_ohne_fonds_2028": {
@@ -40,10 +40,10 @@
   "mit_route": 49.56
  },
  "fonds": {
-  "beitrag_pct_bip": 5.28,
-  "zuschlag_pct": 15.8,
-  "schuldenquote_spitze": 149.6,
-  "spitzenjahr": 2056,
+  "beitrag_pct_bip": 5.14,
+  "zuschlag_pct": 15.4,
+  "schuldenquote_spitze": 147.3,
+  "spitzenjahr": 2055,
   "zieljahr": 2098
  },
  "hinweis": "% des BIP, Klub der zehn (gemeinsamer Fonds, Beschluss). Steuern: Deckung 33R einschließlich Progression (projektion33). Heute ohne private Vorsorge; die Pflichtvorsorge ist eigenes, vererbbares Vermögen und deshalb getrennt ausgewiesen."

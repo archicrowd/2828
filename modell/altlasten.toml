@@ -6,7 +6,12 @@ systeme = ["33R", "33F"]          # v3.48: 33R (Label 5/11/17/25 + Sonderstufe) 
 # (S13PU = Summe der staatlichen Systeme, Abweichung höchstens 1 Punkt), anlagegedeckt also ≈ 0; Rücklagen der Rentenversicherung und
 # Versorgungsrücklagen sind klein und hier nicht beziffert (Annahme). Varianten 0,75 und 1,0: wenn die Verhandlung mehr zuspricht.
 z_anteil = [1.0, 0.5]            # v3.47: keine Halbierung (1,0 geltend); 0,5 nur zum Vergleich
-zins = [2.5, 3.0]                 # Zins des Fonds in %: Garantiezins der Gesamtrechnung; 3,0 = nominales Wachstum (Risikofall)
+zins = [2.45, 3.0]                # Zins des Fonds in %: v4.20 Mittel 2006–2025 (zins_reihe_ea); 3,0 = nominales Wachstum (Risikofall)
+# v4.20 (Beschluss 21.10.2026): Fondszins = Durchschnitt der vergangenen 20 Jahre. Reihe: Eurostat irt_lt_mcby_a (Renditen nach dem
+# Konvergenzkriterium, 10 Jahre), Euroraum (EA), 2006–2025, abgerufen 21.10.2026 über das Web-Abrufwerkzeug (maschinell gelesen).
+# Zum Vergleich Deutschland 2006–2025: Mittel 1,87 %. Der gemeinsame Fonds ist ein Schuldner des Klubs, deshalb der Euroraum.
+zins_reihe_ea = [3.84, 4.32, 4.31, 3.82, 3.60, 4.34, 3.86, 2.99, 2.04, 1.21, 0.86, 1.09, 1.12, 0.44, 0.04, 0.06, 1.87, 3.15, 2.92, 3.09076]
+zins_reihe_de = [3.76, 4.22, 3.98, 3.22, 2.74, 2.61, 1.50, 1.57, 1.16, 0.50, 0.09, 0.32, 0.40, -0.25, -0.51, -0.37, 1.14, 2.43, 2.32, 2.59206]
 # Zieljahr und Ziel-Schuldenquote. Beschluss: Streckung höchstens 70 Jahre, also bis 2098 vollständig getilgt (0 %); zum Vergleich 60 % bis 2098.
 ziele = [[2098, 0.0], [2098, 60.0]]
 deckel = [100.0, 120.0]           # Variante: gleichbleibender Beitrag, sodass die Schuldenquote des Fonds diesen Wert nie übersteigt
@@ -20,7 +25,7 @@ kuerzung = 0.075            # v4.11 (Beschluss 18.10.2026, Rentnerausgleich A): 
 [beschluss]
 system = "33R"
 z_anteil = 1.0
-zins = 2.5
+zins = 2.45                       # v4.20: = Mittel zins_reihe_ea (wird im Skript nachgerechnet); vorher 2,5 (Setzung)
 zieljahr = 2098
 zielquote = 0.0
 verrechnung_jahre = 30            # Verrechnung je Staat schmilzt linear in 30 Jahren ab, wie der Aufschlag für die Altschulden im Konzept

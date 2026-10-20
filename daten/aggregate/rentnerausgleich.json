@@ -6,8 +6,8 @@
    "differenz_monat_je_rente": {
     "900": -54,
     "1200": -35,
-    "1600": -33,
-    "2200": -52
+    "1600": -32,
+    "2200": -50
    },
    "mehrkosten_mrd": 0.0,
    "mehrkosten_pct_bip": 0.0
@@ -16,30 +16,30 @@
    "differenz_monat_je_rente": {
     "900": -54,
     "1200": -54,
-    "1600": -98,
-    "2200": -132
+    "1600": -97,
+    "2200": -130
    },
-   "mehrkosten_mrd": -8.8,
+   "mehrkosten_mrd": -8.9,
    "mehrkosten_pct_bip": -0.18
   },
   "Kürzung 10,0 %": {
    "differenz_monat_je_rente": {
     "900": -54,
     "1200": -54,
-    "1600": -66,
-    "2200": -93
+    "1600": -65,
+    "2200": -91
    },
-   "mehrkosten_mrd": -5.0,
+   "mehrkosten_mrd": -5.1,
    "mehrkosten_pct_bip": -0.1
   },
   "Besteuerungsanteil 83 % wie heute": {
    "differenz_monat_je_rente": {
     "900": -54,
     "1200": -25,
-    "1600": -2,
-    "2200": 22
+    "1600": -1,
+    "2200": 23
    },
-   "mehrkosten_mrd": 6.2,
+   "mehrkosten_mrd": 6.1,
    "mehrkosten_pct_bip": 0.13
   },
   "Befreiung vom Altlastenzuschlag": {
@@ -49,15 +49,15 @@
     "1600": 8,
     "2200": 15
    },
-   "mehrkosten_mrd": 7.3,
-   "mehrkosten_pct_bip": 0.15
+   "mehrkosten_mrd": 7.1,
+   "mehrkosten_pct_bip": 0.14
   },
   "Pauschale 25 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": -54,
     "1200": -11,
-    "1600": -9,
-    "2200": -28
+    "1600": -8,
+    "2200": -26
    },
    "mehrkosten_mrd": 3.9,
    "mehrkosten_pct_bip": 0.08
@@ -66,8 +66,8 @@
    "differenz_monat_je_rente": {
     "900": -54,
     "1200": 13,
-    "1600": 15,
-    "2200": -4
+    "1600": 16,
+    "2200": -2
    },
    "mehrkosten_mrd": 7.8,
    "mehrkosten_pct_bip": 0.16
@@ -82,7 +82,7 @@
    "heute_mit_grundsicherung": 1083
   },
   "900": {
-   "neu_ohne_grundauskommen": 793,
+   "neu_ohne_grundauskommen": 794,
    "neu_mit_grundauskommen": 1029,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 789,
@@ -197,27 +197,27 @@
  "fonds_zerlegung": [
   {
    "schritt": "vorher (v4.10: Kürzung 12,35 %, volle Verrechnung, ohne B1, ohne Kopplung)",
-   "beitrag_pct_bip": 4.64,
+   "beitrag_pct_bip": 4.59,
    "aenderung": null
   },
   {
    "schritt": "+ A: Kürzung 7,5 %",
-   "beitrag_pct_bip": 4.89,
+   "beitrag_pct_bip": 4.84,
    "aenderung": 0.26
   },
   {
    "schritt": "+ T1: anteilige Verrechnung",
-   "beitrag_pct_bip": 5.39,
+   "beitrag_pct_bip": 5.34,
    "aenderung": 0.5
   },
   {
    "schritt": "+ B1: Grundauskommen im Bestand",
-   "beitrag_pct_bip": 5.46,
+   "beitrag_pct_bip": 5.41,
    "aenderung": 0.07
   },
   {
    "schritt": "+ L1: Rentenbeginn ⅔ gekoppelt (= Beschluss)",
-   "beitrag_pct_bip": 5.28,
+   "beitrag_pct_bip": 5.23,
    "aenderung": -0.18
   }
  ],

@@ -1,5 +1,5 @@
 {
- "version": "v4.19",
+ "version": "v4.20",
  "status": "Prüfrechnung, Empfindlichkeit",
  "wachstum_nominal": 3.0,
  "startschuld_2028": 81.3,
@@ -12,39 +12,41 @@
  },
  "varianten": [
   {
-   "fall": "fest 2.5 %",
-   "beitrag_pct_bip": 5.28,
-   "zuschlag_pct": 15.8,
-   "spitze": 149.6,
-   "spitzenjahr": 2056,
-   "zins_2028": 2.5,
-   "zins_ab_2036": 2.5,
+   "fall": "fest 2.45 %",
+   "beitrag_pct_bip": 5.14,
+   "zuschlag_pct": 15.4,
+   "spitze_zehn": 149.4,
+   "spitzenjahr_zehn": 2056,
+   "zins_2028": 2.45,
+   "zins_ab_2036": 2.45,
+   "beitrag_zehn_pct_bip": 5.23,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 602,
-     "alleinerziehend, 1 Kind": 602,
-     "Paar, ein Einkommen, 2 Kinder": 667
+     "alleinstehend": 608,
+     "alleinerziehend, 1 Kind": 607,
+     "Paar, ein Einkommen, 2 Kinder": 673
     },
     "anteil_mit_mehr": {
-     "alleinstehend": 98,
-     "alleinerziehend, 1 Kind": 98,
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 98
     }
    }
   },
   {
    "fall": "fest 3.0 %",
-   "beitrag_pct_bip": 5.8,
-   "zuschlag_pct": 17.4,
-   "spitze": 151.9,
-   "spitzenjahr": 2057,
+   "beitrag_pct_bip": 5.7,
+   "zuschlag_pct": 17.1,
+   "spitze_zehn": 151.9,
+   "spitzenjahr_zehn": 2057,
    "zins_2028": 3.0,
    "zins_ab_2036": 3.0,
+   "beitrag_zehn_pct_bip": 5.8,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 581,
-     "alleinerziehend, 1 Kind": 580,
-     "Paar, ein Einkommen, 2 Kinder": 644
+     "alleinstehend": 585,
+     "alleinerziehend, 1 Kind": 584,
+     "Paar, ein Einkommen, 2 Kinder": 648
     },
     "anteil_mit_mehr": {
      "alleinstehend": 98,
@@ -55,17 +57,18 @@
   },
   {
    "fall": "fest 3.5 %",
-   "beitrag_pct_bip": 6.34,
-   "zuschlag_pct": 19.0,
-   "spitze": 153.8,
-   "spitzenjahr": 2058,
+   "beitrag_pct_bip": 6.23,
+   "zuschlag_pct": 18.6,
+   "spitze_zehn": 153.8,
+   "spitzenjahr_zehn": 2058,
    "zins_2028": 3.5,
    "zins_ab_2036": 3.5,
+   "beitrag_zehn_pct_bip": 6.34,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 560,
-     "alleinerziehend, 1 Kind": 558,
-     "Paar, ein Einkommen, 2 Kinder": 621
+     "alleinstehend": 565,
+     "alleinerziehend, 1 Kind": 564,
+     "Paar, ein Einkommen, 2 Kinder": 627
     },
     "anteil_mit_mehr": {
      "alleinstehend": 98,
@@ -76,54 +79,13 @@
   },
   {
    "fall": "fest 4.0 %",
-   "beitrag_pct_bip": 6.9,
-   "zuschlag_pct": 20.7,
-   "spitze": 155.3,
-   "spitzenjahr": 2059,
-   "zins_2028": 4.0,
-   "zins_ab_2036": 4.0,
-   "haushalt_de": {
-    "mehr_monat_42000": {
-     "alleinstehend": 537,
-     "alleinerziehend, 1 Kind": 535,
-     "Paar, ein Einkommen, 2 Kinder": 597
-    },
-    "anteil_mit_mehr": {
-     "alleinstehend": 98,
-     "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
-    }
-   }
-  },
-  {
-   "fall": "Übergang 2.22 → 3.5 %",
-   "beitrag_pct_bip": 6.27,
-   "zuschlag_pct": 18.8,
-   "spitze": 151.0,
-   "spitzenjahr": 2058,
-   "zins_2028": 2.22,
-   "zins_ab_2036": 3.5,
-   "haushalt_de": {
-    "mehr_monat_42000": {
-     "alleinstehend": 562,
-     "alleinerziehend, 1 Kind": 561,
-     "Paar, ein Einkommen, 2 Kinder": 624
-    },
-    "anteil_mit_mehr": {
-     "alleinstehend": 98,
-     "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
-    }
-   }
-  },
-  {
-   "fall": "Übergang 2.22 → 4.0 %",
    "beitrag_pct_bip": 6.78,
    "zuschlag_pct": 20.3,
-   "spitze": 151.3,
-   "spitzenjahr": 2059,
-   "zins_2028": 2.22,
+   "spitze_zehn": 155.3,
+   "spitzenjahr_zehn": 2059,
+   "zins_2028": 4.0,
    "zins_ab_2036": 4.0,
+   "beitrag_zehn_pct_bip": 6.9,
    "haushalt_de": {
     "mehr_monat_42000": {
      "alleinstehend": 542,
@@ -136,11 +98,55 @@
      "Paar, ein Einkommen, 2 Kinder": 98
     }
    }
+  },
+  {
+   "fall": "Übergang 2.22 → 3.5 %",
+   "beitrag_pct_bip": 6.16,
+   "zuschlag_pct": 18.4,
+   "spitze_zehn": 151.0,
+   "spitzenjahr_zehn": 2058,
+   "zins_2028": 2.22,
+   "zins_ab_2036": 3.5,
+   "beitrag_zehn_pct_bip": 6.27,
+   "haushalt_de": {
+    "mehr_monat_42000": {
+     "alleinstehend": 568,
+     "alleinerziehend, 1 Kind": 567,
+     "Paar, ein Einkommen, 2 Kinder": 630
+    },
+    "anteil_mit_mehr": {
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 98
+    }
+   }
+  },
+  {
+   "fall": "Übergang 2.22 → 4.0 %",
+   "beitrag_pct_bip": 6.66,
+   "zuschlag_pct": 19.9,
+   "spitze_zehn": 151.3,
+   "spitzenjahr_zehn": 2059,
+   "zins_2028": 2.22,
+   "zins_ab_2036": 4.0,
+   "beitrag_zehn_pct_bip": 6.78,
+   "haushalt_de": {
+    "mehr_monat_42000": {
+     "alleinstehend": 548,
+     "alleinerziehend, 1 Kind": 546,
+     "Paar, ein Einkommen, 2 Kinder": 609
+    },
+    "anteil_mit_mehr": {
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 98
+    }
+   }
   }
  ],
  "abgleich_beschluss": {
-  "altlasten_json": 5.28,
-  "hier": 5.28
+  "altlasten_json_zehn": 5.23,
+  "hier_zehn": 5.23
  },
  "hinweis": "Zins über dem nominalen Wachstum (3 %): Die Schuld schmilzt nicht mehr von selbst, der Beitrag muss auch Zinsen tilgen. Gemeinsame Anleihen (EU) rentieren derzeit über Bundesanleihen; günstiger als heute ist der Fonds für FR und IT, nicht für DE."
 }

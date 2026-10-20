@@ -114,8 +114,8 @@ TEXTE["de"] = {
     "js_mio_menschen": "{x} Mio.",
     "js_raum_ueber": "Der Klub ist größer als die Vereinigten Staaten ({us} Mio.) – um {x} Mio. Menschen.",
     "js_raum_unter": "Noch {x} Mio. Menschen bis zur Größe der Vereinigten Staaten.",
-    "js_schuld_l3": "Altlastenfonds, Beispiel für alle zehn",
-    "js_schuld_text": "Altlasten sind Sache der Staaten. Legen alle zehn Schulden und Rentenzusagen in einen gemeinsamen Fonds, ist alles 2098 getilgt – mit einem Zuschlag von «zu» auf alle Steuern, gerechnet mit 2,5 % Zins. Bei den Marktzinsen vom Oktober 2026 (3,5 bis 4 %) wären es «zu_markt».",
+    "js_schuld_l3": "Gemeinsamer Altlastenfonds der 30 Staaten",
+    "js_schuld_text": "Altlasten sind Sache der Staaten. Legen alle 30 Staaten Schulden und Rentenzusagen in einen gemeinsamen Fonds, ist alles 2098 getilgt – mit einem Zuschlag von «zu» auf alle Steuern, gerechnet mit «zins_fonds» Zins (Mittel der vergangenen 20 Jahre). Bei den Marktzinsen vom Oktober 2026 (3,5 bis 4 %) wären es «zu_markt».",
     "js_co2_text": "Seit 1990 fast halbiert – die zweite Hälfte steht noch bevor. Das Goldene Drittel setzt dafür auf einen gemeinsamen europäischen CO₂-Preis und gibt die Einnahmen über die Transformationsdividende an alle zurück.",
 }
 
@@ -205,8 +205,8 @@ TEXTE["en"] = {
     "js_mio_menschen": "{x} m",
     "js_raum_ueber": "The club is larger than the United States ({us} m) – by {x} m people.",
     "js_raum_unter": "Still {x} m people short of the size of the United States.",
-    "js_schuld_l3": "Legacy fund, example for all ten",
-    "js_schuld_text": "Legacy burdens are a matter for each state. If all ten put their debts and pension promises into a common fund, everything is repaid by 2098 – with a surcharge of «zu» on all taxes, calculated at 2.5% interest. At the market rates of October 2026 (3.5 to 4%) it would be «zu_markt».",
+    "js_schuld_l3": "Common legacy fund of the 30 states",
+    "js_schuld_text": "Legacy burdens are a matter for each state. If all 30 states put their debts and pension promises into a common fund, everything is repaid by 2098 – with a surcharge of «zu» on all taxes, calculated at «zins_fonds» interest (average of the past 20 years). At the market rates of October 2026 (3.5 to 4%) it would be «zu_markt».",
     "js_co2_text": "Almost halved since 1990 – the second half is still to come. The Golden Third relies on a common European carbon price and returns the revenue to everyone through the transformation dividend.",
 }
 
@@ -292,8 +292,8 @@ TEXTE["fr"] = {
     "fuss_meth_p": "Tous les chiffres proviennent d'un calcul d'ensemble ouvert fondé sur des statistiques officielles (Eurostat, OCDE). Développé selon la méthode du projet architectural, à l'aide d'outils d'IA et de modèles de calcul assistés par IA. Scripts sous licence MIT, textes sous CC BY 4.0.",
     "js_fluss": "En {j}, le toit garde {a} sur {hundert} – jusqu'à {cap} seraient autorisés. La commune consacre {b} aux missions régionales, le filet solide {n}, et {d} reviennent aux habitants sous forme de dividende de transformation.",
     "js_rechner_sub": "en plus dans le porte-monnaie par mois – en {j}, pour {hh}",
-    "js_schuld_l3": "Fonds des charges héritées, exemple pour les dix",
-    "js_schuld_text": "Les charges héritées sont l'affaire de chaque État. Si les dix placent leurs dettes et leurs promesses de retraite dans un fonds commun, tout est remboursé en 2098 – avec une surtaxe de «zu» sur tous les impôts, calculée à 2,5 % d'intérêt. Aux taux de marché d'octobre 2026 (3,5 à 4 %), elle serait de «zu_markt».",
+    "js_schuld_l3": "Fonds commun des charges héritées des 30 États",
+    "js_schuld_text": "Les charges héritées sont l'affaire de chaque État. Si les 30 États placent leurs dettes et leurs promesses de retraite dans un fonds commun, tout est remboursé en 2098 – avec une surtaxe de «zu» sur tous les impôts, calculée à «zins_fonds» d'intérêt (moyenne des 20 dernières années). Aux taux de marché d'octobre 2026 (3,5 à 4 %), elle serait de «zu_markt».",
     "js_co2_text": "Presque divisées par deux depuis 1990 – la seconde moitié reste à faire. Le Tiers d'or mise sur un prix européen commun du CO₂ et en reverse les recettes à tous par le dividende de transformation.",
 }
 
@@ -379,8 +379,8 @@ TEXTE["it"] = {
     "fuss_meth_p": "Tutti i dati provengono da un calcolo complessivo aperto basato su statistiche ufficiali (Eurostat, OCSE). Sviluppato con il metodo del progetto architettonico, con l'uso di strumenti di IA e modelli di calcolo assistiti dall'IA. Script con licenza MIT, testi con CC BY 4.0.",
     "js_fluss": "Nel {j} il tetto trattiene {a} su {hundert} – sarebbero consentiti fino a {cap}. Il comune spende {b} per i compiti regionali, la rete forte {n}, e {d} vanno ai cittadini come dividendo di trasformazione.",
     "js_rechner_sub": "in più in tasca al mese – nel {j}, per {hh}",
-    "js_schuld_l3": "Fondo degli oneri ereditati, esempio per tutti e dieci",
-    "js_schuld_text": "Gli oneri ereditati sono competenza di ogni Stato. Se tutti e dieci conferiscono debiti e promesse pensionistiche in un fondo comune, tutto è rimborsato entro il 2098 – con una sovrattassa del «zu» su tutte le imposte, calcolata al 2,5% di interesse. Ai tassi di mercato di ottobre 2026 (dal 3,5 al 4%) sarebbe del «zu_markt».",
+    "js_schuld_l3": "Fondo comune degli oneri ereditati dei 30 Stati",
+    "js_schuld_text": "Gli oneri ereditati sono competenza di ogni Stato. Se tutti i 30 Stati conferiscono debiti e promesse pensionistiche in un fondo comune, tutto è rimborsato entro il 2098 – con una sovrattassa del «zu» su tutte le imposte, calcolata al «zins_fonds» di interesse (media degli ultimi 20 anni). Ai tassi di mercato di ottobre 2026 (dal 3,5 al 4%) sarebbe del «zu_markt».",
     "js_co2_text": "Quasi dimezzate dal 1990 – la seconda metà deve ancora venire. Il Terzo d'oro punta su un prezzo europeo comune della CO₂ e ne restituisce i proventi a tutti tramite il dividendo di trasformazione.",
 }
 
@@ -466,8 +466,8 @@ TEXTE["es"] = {
     "fuss_meth_p": "Todas las cifras proceden de un cálculo global abierto basado en estadísticas oficiales (Eurostat, OCDE). Desarrollado con el método del proyecto arquitectónico, con herramientas de IA y modelos de cálculo asistidos por IA. Scripts con licencia MIT, textos con CC BY 4.0.",
     "js_fluss": "En {j} el techo retiene {a} de cada {hundert} – se permitirían hasta {cap}. El municipio destina {b} a las tareas regionales, la red fuerte {n}, y {d} van a los ciudadanos como dividendo de transformación.",
     "js_rechner_sub": "más en el bolsillo al mes – en {j}, para {hh}",
-    "js_schuld_l3": "Fondo de cargas heredadas, ejemplo para los diez",
-    "js_schuld_text": "Las cargas heredadas son asunto de cada Estado. Si los diez aportan deudas y promesas de pensiones a un fondo común, todo queda amortizado en 2098 – con un recargo del «zu» sobre todos los impuestos, calculado al 2,5 % de interés. Con los tipos de mercado de octubre de 2026 (del 3,5 al 4 %) sería del «zu_markt».",
+    "js_schuld_l3": "Fondo común de cargas heredadas de los 30 Estados",
+    "js_schuld_text": "Las cargas heredadas son asunto de cada Estado. Si los 30 Estados aportan deudas y promesas de pensiones a un fondo común, todo queda amortizado en 2098 – con un recargo del «zu» sobre todos los impuestos, calculado al «zins_fonds» de interés (media de los últimos 20 años). Con los tipos de mercado de octubre de 2026 (del 3,5 al 4 %) sería del «zu_markt».",
     "js_co2_text": "Casi reducidas a la mitad desde 1990 – la segunda mitad está por llegar. El Tercio de Oro apuesta por un precio europeo común del CO₂ y devuelve los ingresos a todos a través del dividendo de transformación.",
 }
 
@@ -553,7 +553,7 @@ TEXTE["pl"] = {
     "fuss_meth_p": "Wszystkie liczby pochodzą z otwartego rachunku całościowego opartego na oficjalnych statystykach (Eurostat, OECD). Opracowane metodą projektu architektonicznego, z użyciem narzędzi AI i modeli obliczeniowych wspieranych przez AI. Skrypty na licencji MIT, teksty na CC BY 4.0.",
     "js_fluss": "W roku {j} dach zatrzymuje {a} ze {hundert} – dozwolone byłoby do {cap}. Gmina przeznacza {b} na zadania regionalne, mocna sieć {n}, a {d} trafia do mieszkańców jako dywidenda transformacyjna.",
     "js_rechner_sub": "więcej w portfelu miesięcznie – w roku {j}, dla: {hh}",
-    "js_schuld_l3": "Fundusz obciążeń z przeszłości, przykład dla wszystkich dziesięciu",
-    "js_schuld_text": "Obciążenia z przeszłości to sprawa każdego państwa. Jeśli wszystkie dziesięć wniesie długi i zobowiązania emerytalne do wspólnego funduszu, całość zostanie spłacona do 2098 – przy dopłacie «zu» do wszystkich podatków, liczonej przy oprocentowaniu 2,5%. Przy stopach rynkowych z października 2026 (3,5–4%) byłoby to «zu_markt».",
+    "js_schuld_l3": "Wspólny fundusz obciążeń z przeszłości 30 państw",
+    "js_schuld_text": "Obciążenia z przeszłości to sprawa każdego państwa. Jeśli wszystkie 30 państw wniesie długi i zobowiązania emerytalne do wspólnego funduszu, całość zostanie spłacona do 2098 – przy dopłacie «zu» do wszystkich podatków, liczonej przy oprocentowaniu «zins_fonds» (średnia z ostatnich 20 lat). Przy stopach rynkowych z października 2026 (3,5–4%) byłoby to «zu_markt».",
     "js_co2_text": "Prawie o połowę mniej niż w 1990 – druga połowa jeszcze przed nami. Złota Trzecia stawia na wspólną europejską cenę CO₂ i oddaje wpływy wszystkim przez dywidendę transformacyjną.",
 }

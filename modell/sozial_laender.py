@@ -17,7 +17,7 @@ from pathlib import Path
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "sozial_laender.toml").read_text(encoding="utf-8"))
-P["zuschlag_de"] = json.loads((W / "daten" / "aggregate" / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]["zuschlag_auf_alle_steuern_pct"]   # v4.11
+P["zuschlag_de"] = json.loads((W / "daten" / "aggregate" / "fonds_geltend.json").read_text(encoding="utf-8"))["zuschlag_auf_alle_steuern_pct"]   # v4.11; v4.20 geltender Fonds der 30
 
 
 def lade_modul(name, pfad):

@@ -1,6 +1,6 @@
 # Kennzahlen Stand C – welche Zahl gilt, und was sie bedeutet
 
-Stand v4.19 (21. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
+Stand v4.20 (21. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
 mit verschiedenen Werten, weil die Abgrenzungen verschieden sind. Hier steht je Größe, **welcher Wert gilt** und wie die anderen zu lesen sind.
 Wer eine Zahl zitiert, nennt die Zeile dieser Tabelle.
 
@@ -20,7 +20,7 @@ Zehntelpunkt BIP mehr oder weniger Netz ändert sich die Dividende 2060 um rund 
 
 | Wert | Datei | Bedeutung | Status |
 |---|---|---|---|
-| **Fondsbeitrag 5,28 % BIP, Zuschlag 15,8 % auf alle Steuern, Spitze 149,6 % (2056), getilgt 2098** | `altlasten.json`, `beschluss` | gemeinsamer Fonds der zehn gerechneten Staaten (Klub, Stand B-Abgrenzung), Rentenkürzung 7,5 %, anteilige Verrechnung, Grundauskommen im Bestand, gekoppelter Rentenbeginn | **geltend auf allen Seiten und im Konzept** (Beschluss 20.10.2026 zu B11, v4.17); Länderrechnungen FR, IT, ES, PL mit demselben Zuschlag 15,8 % |
+| **Fondsbeitrag 5,14 % BIP, Zuschlag 15,4 % auf alle Steuern, Spitze 147,3 % (2055), getilgt 2098; Zins 2,45 % (Mittel Euroraum 2006–2025)** | `fonds_geltend.json` | gemeinsamer Fonds der 30 Staaten (Beschluss 21.10.2026): Beschluss der zehn × Verhältnis 30/10 aus dem Möglichkeitsraum (Annahme). Bis v4.19: zehn Staaten, 2,5 %, 5,28 / 15,8 / 149,6 % (`altlasten.json`, `beschluss`; jetzt bei 2,45 %: 5,23 / 15,7 / 149,4 %), Rentenkürzung 7,5 %, anteilige Verrechnung, Grundauskommen im Bestand, gekoppelter Rentenbeginn | **geltend auf allen Seiten und im Konzept** (Beschluss 20.10.2026 zu B11, v4.17); Länderrechnungen FR, IT, ES, PL mit demselben Zuschlag 15,8 % |
 | DE 4,76 % / 14,2 % / 138 % (2055); FR 6,65 / 20,3 / 196 (2054); IT 6,88 / 20,7 / 206; ES 5,52 / 16,5 / 161; PL 4,20 / 12,7 / 122 | `laenderseiten.json`, `staaten.*.fonds_eigen` | **eigener Fonds je Staat** zum gemeinsamen Zins 2,5 % (Altlasten Sache der Staaten) | **Vergleich** („allein trüge …“), `staaten.*.fonds_eigen`; bis v4.16 auf den Länderseiten FR, IT, ES, PL geltend |
 | Z 2028 = 9,38 % BIP | `altlasten.json`, `beschluss.verhandlungsmasse_z_2028_pct_bip` | Altrentenansprüche über der Dividende im Klubschnitt, nach Kürzung 7,5 % | geltend |
 | Z 2028 = 10,23 % BIP | `systemvarianten.json` | dieselbe Größe im Variantenvergleich v3.43, **ohne** Rentenkürzung | Variantenvergleich |
@@ -31,11 +31,11 @@ Zehntelpunkt BIP mehr oder weniger Netz ändert sich die Dividende 2060 um rund 
 | Wert (2028, % BIP) | Datei | Bedeutung | Status |
 |---|---|---|---|
 | heute 40,76 | `gesamtrechnung.json` | Steuern und Sozialbeiträge 2024 (Eurostat, ohne D995) | Vergleichswert |
-| **38,81** (2060: 37,41) | `gesamtlast33.json`, A | Steuern 33,53 + Fondsbeitrag 5,28 | **geltend** |
-| **42,91** (2060: 41,51) | `gesamtlast33.json`, B | A + Pflichtvorsorge 4,10 (eigenes Konto, vererbbar) | **geltend**, alle Pflichtzahlungen |
+| **38,67** | `gesamtlast33.json`, A | Steuern 33,53 + Fondsbeitrag 5,14 (v4.20; vorher 38,81) | **geltend** |
+| **42,77** | `gesamtlast33.json`, B | A + Pflichtvorsorge 4,10 (eigenes Konto, vererbbar) | **geltend**, alle Pflichtzahlungen |
 | 45,46 / 49,56 | `systemvarianten.json`, `gesamtlast_ohne_route` / `_mit_route` | Altlasten im selben Jahr bezahlt (12,04 % ohne Streckung) | Vergleich „ohne Fonds“ |
 
-Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondsschuld bis 149,6 % BIP (2056).
+Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondsschuld bis 147,3 % BIP (2055).
 
 ## Haushalte
 
@@ -59,6 +59,6 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 
 | Größe | Wert | Datei | Status |
 |---|---|---|---|
-| Zuschlag bei Fondszins 2,5 / 3,0 / 3,5 / 4,0 % | 15,8 / 17,4 / 19,0 / 20,7 % (Beitrag 5,28 / 5,80 / 6,34 / 6,90 % BIP) | `fondszins.json` | Empfindlichkeit; Marktzins Oktober 2026: Bund 3,46 %, EU 3,95 % (Sekundärquellen) |
-| Vorteil alleinstehend, 42.000 € brutto, DE 2028 | 602 / 581 / 560 / 537 € im Monat | `fondszins.json` | Kaufkraft 2026 |
+| Zuschlag bei Fondszins 2,45 / 3,0 / 3,5 / 4,0 % (Fonds der 30, v4.20) | 15,4 / 17,1 / 18,6 / 20,3 % (Beitrag 5,14 / 5,70 / 6,23 / 6,78 % BIP) | `fondszins.json` | Empfindlichkeit; Marktzins Oktober 2026: Bund 3,46 %, EU 3,95 % (Sekundärquellen) |
+| Vorteil alleinstehend, 42.000 € brutto, DE 2028 | 608 / 585 / 565 / 542 € im Monat (v4.20) | `fondszins.json` | Kaufkraft 2026 |
 | Gemeinsamer Satz mit Italien und Polen / alle 30 Staaten | 16,6 % / 15,5 % | `fonds_klub.json` | skaliert auf den Beschluss (Annahme) |

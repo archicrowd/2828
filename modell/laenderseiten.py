@@ -26,7 +26,8 @@ G = json.loads((AGG / "gesamtrechnung.json").read_text(encoding="utf-8"))
 NB = {r["jahr"]: r for r in NZ["beschluss"]["reihe"]}
 # v4.17 (Beschluss 20.10.2026, Prüfbericht B11): auf allen Seiten gilt der gemeinsame Fonds (Beschluss altlasten.json); der eigene Fonds
 # je Staat bleibt als Vergleich („fonds_eigen“).
-AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]
+AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]   # Verrechnung je Staat (zehn)
+FG = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))   # v4.20: geltender Fonds der 30
 DNAME = {"DE": "Deutschland", "FR": "Frankreich", "ES": "Spanien", "IT": "Italien", "PL": "Polen"}
 JAHRE = list(range(2028, 2061))
 GR = "Grundrente (ab 67)"
@@ -118,11 +119,10 @@ def main():
             e["fonds_eigen"] = fonds(c, d0)
             e["fonds_eigen"]["start_2028"] = d0
             vr = AL["laender"].get(DNAME.get(c, ""), {}).get("reihe", {}).get("2028")
-            e["fonds"] = dict(abgrenzung="gemeinsamer Fonds (Beschluss, zehn gerechnete Staaten)", beitrag_pct_bip=AL["beitrag_pct_bip"],
-                              zuschlag_pct=AL["zuschlag_auf_alle_steuern_pct"], spitze=AL["schuldenquote_spitze"], spitzenjahr=AL["spitzenjahr"],
-                              zieljahr=AL["zieljahr"], verrechnung_2028=vr,
-                              hinweis="gleicher Satz für alle (vereinfachend wie im Beschluss); Italien und Polen sind nicht unter den zehn gerechneten "
-                                      "Staaten: ihr Beitritt würde den gemeinsamen Satz verändern (nicht gerechnet)")
+            e["fonds"] = dict(abgrenzung="gemeinsamer Fonds der 30 Staaten (Beschluss 21.10.2026)", beitrag_pct_bip=FG["beitrag_pct_bip"],
+                              zuschlag_pct=FG["zuschlag_auf_alle_steuern_pct"], spitze=FG["schuldenquote_spitze"], spitzenjahr=FG["spitzenjahr"],
+                              zieljahr=FG["zieljahr"], zins=FG["zins"], verrechnung_2028_zehn=vr,
+                              hinweis="gleicher Satz für alle (vereinfachend wie im Beschluss); Verrechnung je Staat nur für die zehn gerechnet")
         erg[c] = e
     erg["DE"]["abgleich"] = "DE-Pfad identisch mit netz33 (Verhältnis 1)"
     E = dict(version=P["version"], status="Prüfrechnung", jahre=JAHRE, staaten=erg,

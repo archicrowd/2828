@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.19"
+VERSION = "v4.20"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -77,8 +77,9 @@ J["reihe_a"] = [PR[j]["dach_ohne_zins"] for j in JAHRE]
 J["reihe_div"] = [NB[j]["dividende_pct_bip"] for j in JAHRE]
 J["b_fach"] = gem[2028]
 J["quote"] = V["deckung"]
-sq = {2028: SB.J["schuldenquote_2028"], **{int(k): v for k, v in AL["beschluss"]["schuldenquote"].items()},
-      AL["beschluss"]["spitzenjahr"]: AL["beschluss"]["schuldenquote_spitze"]}  # Spitze mitführen, sonst glättet die Interpolation sie weg
+FGJ = json.loads((Path(__file__).resolve().parent.parent.parent / "daten" / "aggregate" / "fonds_geltend.json").read_text(encoding="utf-8"))   # v4.20
+sq = {2028: SB.J["schuldenquote_2028"], **{int(k): v for k, v in FGJ["schuldenquote"].items()},
+      FGJ["spitzenjahr"]: FGJ["schuldenquote_spitze"]}  # Spitze mitführen, sonst glättet die Interpolation sie weg
 J["reihe_d"] = [round(interp(sq, j), 2) for j in JAHRE]
 SB.J = J
 SB.TARIF = [(G26 * x, s) for x, s in zip((1, 1.5, 2, 3), V["einkommen_saetze"][:4])] + [(None, V["einkommen_saetze"][-1])]
@@ -87,7 +88,7 @@ fall = lambda zu: next(f for f in H["faelle"] if f["jahr"] == 2028 and f["hausha
                        and f["vorsorge_satz"] == 0.1 and f["zuschlag_pct"] == zu)
 ZU = max(f["zuschlag_pct"] for f in H["faelle"])
 plus42 = VB.plus_monat("DE", 42000)   # v4.8: Regel Boden, Kinderanteil 0,8 (vorher haushalte33)
-AB = AL["beschluss"]
+AB = FGJ   # v4.20: geltender Fonds der 30 Staaten
 RM = MR["raum"]
 FZ = json.loads((Path(__file__).resolve().parent.parent.parent / "daten" / "aggregate" / "fondszins.json").read_text(encoding="utf-8"))   # v4.19
 
@@ -148,7 +149,7 @@ def werte_neu(sp, c):
     E = lambda x, nk=0: SB.eur(x, sp, nk)
     P = lambda x, nk=0: SB.pct(x, sp, nk)
     fzm = [v["zuschlag_pct"] for v in FZ["varianten"] if v["fall"] in ("fest 3.5 %", "fest 4.0 %")]   # v4.19: Marktzins Oktober 2026
-    w = {"zu_markt": P(min(fzm), 1) + "–" + P(max(fzm), 1), "p33": P(33), "e0": E(0), "e100k": E(100000 * fx), "e2m": E(2e6 * fx), "staaten": str(RM["staaten"]), "einw": SB.zahl(RM["einwohner_mio"], 1, sp)}
+    w = {"zins_fonds": P(FGJ["zins"], 2), "zu_markt": P(min(fzm), 1) + "–" + P(max(fzm), 1), "p33": P(33), "e0": E(0), "e100k": E(100000 * fx), "e2m": E(2e6 * fx), "staaten": str(RM["staaten"]), "einw": SB.zahl(RM["einwohner_mio"], 1, sp)}
     if c == "DE":
         w.update(plus="+" + E(plus42), bsp=E(42000), zu=P(ZU, 1))
     elif c in HL["staaten"]:

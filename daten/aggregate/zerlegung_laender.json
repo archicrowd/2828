@@ -5,8 +5,8 @@
   "FR": {
    "zerlegung_monat": {
     "20000|1|0": {
-     "gesamt": -121,
-     "altlastenzuschlag": -60,
+     "gesamt": -120,
+     "altlastenzuschlag": -59,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -109,
      "prime_activite": -276,
@@ -15,18 +15,18 @@
      "rest": 491
     },
     "20000|1|1": {
-     "gesamt": -344,
-     "altlastenzuschlag": -62,
+     "gesamt": -342,
+     "altlastenzuschlag": -61,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -182,
      "prime_activite": -595,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 662
+     "rest": 663
     },
     "30000|2|2": {
-     "gesamt": -170,
-     "altlastenzuschlag": -137,
+     "gesamt": -166,
+     "altlastenzuschlag": -133,
      "pflichtvorsorge": -250,
      "dividende_unter_de_niveau": -385,
      "prime_activite": -657,
@@ -35,8 +35,8 @@
      "rest": 1259
     },
     "45000|1|0": {
-     "gesamt": 482,
-     "altlastenzuschlag": -245,
+     "gesamt": 488,
+     "altlastenzuschlag": -239,
      "pflichtvorsorge": -375,
      "dividende_unter_de_niveau": -91,
      "prime_activite": 0,
@@ -45,18 +45,18 @@
      "rest": 1193
     },
     "45000|2|2": {
-     "gesamt": 193,
-     "altlastenzuschlag": -252,
+     "gesamt": 199,
+     "altlastenzuschlag": -245,
      "pflichtvorsorge": -375,
      "dividende_unter_de_niveau": -387,
      "prime_activite": -271,
      "allocations_familiales": 0,
      "quotient_familial": -10,
-     "rest": 1488
+     "rest": 1487
     }
    },
-   "zuschlag": 15.8,
-   "zuschlag_neustart": 13.3,
+   "zuschlag": 15.4,
+   "zuschlag_neustart": 13.1,
    "anteil_basis": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
@@ -103,32 +103,32 @@
   "IT": {
    "zerlegung_monat": {
     "20000|1|0": {
-     "gesamt": 369,
-     "altlastenzuschlag": -92,
+     "gesamt": 372,
+     "altlastenzuschlag": -89,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -25,
      "assegno_unico": 0,
      "rest": 653
     },
     "24000|2|2": {
-     "gesamt": 490,
-     "altlastenzuschlag": -126,
+     "gesamt": 494,
+     "altlastenzuschlag": -123,
      "pflichtvorsorge": -200,
      "dividende_unter_de_niveau": -93,
      "assegno_unico": -402,
-     "rest": 1311
+     "rest": 1312
     },
     "36000|1|0": {
-     "gesamt": 508,
-     "altlastenzuschlag": -196,
+     "gesamt": 513,
+     "altlastenzuschlag": -191,
      "pflichtvorsorge": -300,
      "dividende_unter_de_niveau": -22,
      "assegno_unico": 0,
      "rest": 1026
     }
    },
-   "zuschlag": 15.8,
-   "zuschlag_neustart": 13.2,
+   "zuschlag": 15.4,
+   "zuschlag_neustart": 12.8,
    "anteil_basis": {
     "alleinstehend": 100,
     "alleinerziehend, 1 Kind": 100,

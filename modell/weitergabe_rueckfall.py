@@ -16,7 +16,7 @@ AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "weitergabe_rueckfall.toml").read_text(encoding="utf-8"))
 GR = json.loads((AGG / "gesamtrechnung.json").read_text(encoding="utf-8"))
 WS = json.loads((AGG / "weitergabe_sensitivitaet.json").read_text(encoding="utf-8"))
-AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]
+AL = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))   # v4.20
 
 
 def main():
