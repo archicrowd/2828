@@ -1,8 +1,10 @@
 # TAX 28:28 — Wegweiser durch das Repository
 
-Stand: 10. Oktober 2026 · Modellstand v4.11 · Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`
+Stand: 20. Oktober 2026 · Modellstand v4.12 · Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`
 
-Dieses Repository enthält **zwei Entwicklungsstände**, die einander in Teilen widersprechen.
+**Geltend ist Stand C „Das Goldene Drittel“ – Wegweiser im README, Abschnitt „Aktueller Stand“ (Korrektur 66).** Die Tabelle unten beschreibt die beiden Vorläufer.
+
+Dieses Repository enthält außerdem **zwei ältere Entwicklungsstände**, die einander in Teilen widersprechen.
 Wer eine Zahl zitiert, nennt den Stand dazu.
 
 | | Stand A — national | Stand B — europäisch |
@@ -12,7 +14,7 @@ Wer eine Zahl zitiert, nennt den Stand dazu.
 | Sozialabgaben | Position 10, 42 → 28 → 18 % | gestrichen |
 | Dividende | 515 € (50 % des Existenzminimums) | Restgröße bei B, 506 € im Klubschnitt (Preise 2028) |
 | Logbuchstand | v2.0 | v3.5 und später |
-| Wo | `modell/kern/`, `seite/stand-a-*` | `modell/rahmen/` (Original), `modell/gesamtrechnung.py` (geltend), `dokumente/TAX-2828-Gesamtkonzept.*` |
+| Wo | `modell/kern/`, `seite/stand-a-*` | `modell/rahmen/` (Original), `modell/gesamtrechnung.py` (Vorläufer von Stand C), `dokumente/TAX-2828-Gesamtkonzept.*` |
 
 Quelle dieser Angabe: Begleitdatei des Vorchats (`LIESMICH-EXPORT.md`), von mir an Logbuch,
 Gesamtkonzept und Skripten stichprobenhaft bestätigt, nicht Zeile für Zeile geprüft.
@@ -22,7 +24,7 @@ Gesamtkonzept und Skripten stichprobenhaft bestätigt, nicht Zeile für Zeile ge
 | Frage | Ort |
 |---|---|
 | Woher kommt eine Zahl, wann änderte sie sich, was war falsch? | `logbuch/` (Band I bis III), Korrekturen 1 bis 48 |
-| Was gilt als Gesamtkonzept? | `dokumente/TAX-2828-Gesamtkonzept.pdf` (Stand B, 6. Oktober 2026, aus `modell/gesamtrechnung.py`; Fassung 4. Oktober in `dokumente/archiv/`) |
+| Was gilt als Konzept? | `dokumente/entwurf/TAX-Drittel-Konzept.pdf` (Stand C, Fassung 4.x, aus `dokumente/werkzeuge/konzept33-bau.js`); Vorläufer `dokumente/TAX-2828-Gesamtkonzept.pdf` (Stand B, 6. Oktober 2026, aus `modell/gesamtrechnung.py`; Fassung 4. Oktober in `dokumente/archiv/`) |
 | Wie rechnet das Rahmenmodell (Stand B)? | `modell/rahmen/` (Originale), `modell/pfad.py` und `modell/aufschlag.py` (Zweitrechnung), `modell/parameter.toml` |
 | Wie rechnet das nationale Gesamtmodell (Stand A)? | `modell/kern/modell-2828.py` |
 | Einzelrechnungen (Erbschaft, Immobilien, Vermögen, Klima, OECD, Haushalt) | `modell/rechnungen/`, Stand A |

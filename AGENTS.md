@@ -8,13 +8,14 @@ Projektkarte: `projekt/manifest.json`.
 1. `projekt/manifest.json`: Modellstand, Befehle, Bausteine, Quellen, Invarianten.
 2. `CLAUDE.md`: Regeln zu Logbuch, Daten, Rechnung, Commits.
 3. `logbuch/Versionsgeschichte-TAX-2828-BandIII.md`: letzte Versionen und Abschnitt 7 (offene Punkte).
-4. `modell/gesamtrechnung.toml` und `modell/gesamtrechnung.py`: die geltende Rechnung.
+4. `README.md`, Abschnitt „Aktueller Stand“: die geltende Rechnung ist **Stand C „Das Goldene Drittel“** (Skripte dort aufgelistet). `modell/gesamtrechnung.py` ist der Vorläufer Stand B (28:28) und dient als Regressionsprüfung (Korrektur 66).
 
 ## Befehle
 | Zweck | Befehl | Erwartung |
 |---|---|---|
 | alles prüfen | `python3 modell/alles.py` | jede Stufe ohne Fehler, Rückgabe 0 |
-| Rechnung | `python3 modell/gesamtrechnung.py` | „Selbstprüfung … 33 Jahre exakt" |
+| Rechnung Stand C | `python3 modell/alles.py` (Stufen ab „Drittel“) | Rückgabe 0 |
+| Vorläufer Stand B | `python3 modell/gesamtrechnung.py` | „Selbstprüfung … 33 Jahre exakt" |
 | Eingangswerte | `python3 modell/eingangswerte.py [--abrufen]` | `daten/aggregate/eingangswerte.csv` |
 | Projektkarte | `python3 projekt/manifest.py` | `projekt/manifest.json`, Fehler: 0 |
 | Dokumente bauen | `cd dokumente/werkzeuge && npm install && cd ../.. && node dokumente/werkzeuge/gesamtkonzept-bau.js` | docx; danach PDF mit `soffice --headless --convert-to pdf` |

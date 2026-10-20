@@ -1,0 +1,5 @@
+# Empfindlichkeit gegenüber der Weitergabe der Arbeitgeberbeiträge (modell/weitergabe_sensitivitaet.py, Logbuch v4.12). Prüfrechnung.
+version = "v4.12"
+weitergabe = [0.0, 0.5, 0.8, 1.0]   # Anteil der wegfallenden Arbeitgeberbeiträge, der im Lohn ankommt (Beschluss: mindestens 0,8)
+brutto_de = [20000, 42000, 75000]   # Bruttolöhne heute, € im Jahr
+quelle_inzidenz = "Saez, Schoefer, Seim (2019), AER 109(5): Arbeitgeber trugen in Schweden die Beitragssenkung für junge Beschäftigte weitgehend selbst (eine Studie, über die Prüfung vom 19.10.2026 zitiert, an der Quelle zu prüfen)"

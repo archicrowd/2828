@@ -1,0 +1,192 @@
+{
+ "version": "v4.12",
+ "status": "Prüfrechnung",
+ "quelle_inzidenz": "Saez, Schoefer, Seim (2019), AER 109(5): Arbeitgeber trugen in Schweden die Beitragssenkung für junge Beschäftigte weitgehend selbst (eine Studie, über die Prüfung vom 19.10.2026 zitiert, an der Quelle zu prüfen)",
+ "varianten": {
+  "0.0": {
+   "de_mehr_monat": {
+    "alleinstehend": {
+     "20000": 167,
+     "42000": 250,
+     "75000": 149
+    },
+    "alleinerziehend, 1 Kind": {
+     "20000": 166,
+     "42000": 249,
+     "75000": 144
+    },
+    "Paar, ein Einkommen, 2 Kinder": {
+     "20000": 185,
+     "42000": 433,
+     "75000": 37
+    }
+   },
+   "anteil_mit_mehr": {
+    "DE": {
+     "alleinstehend": 84,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 91
+    },
+    "FR": {
+     "alleinstehend": 38,
+     "alleinerziehend, 1 Kind": 38,
+     "Paar, ein Einkommen, 2 Kinder": 91
+    },
+    "IT": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "ES": {
+     "alleinstehend": 53,
+     "alleinerziehend, 1 Kind": 80,
+     "Paar, ein Einkommen, 2 Kinder": 91
+    },
+    "PL": {
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 91,
+     "Paar, ein Einkommen, 2 Kinder": 91
+    }
+   }
+  },
+  "0.5": {
+   "de_mehr_monat": {
+    "alleinstehend": {
+     "20000": 290,
+     "42000": 470,
+     "75000": 532
+    },
+    "alleinerziehend, 1 Kind": {
+     "20000": 228,
+     "42000": 470,
+     "75000": 528
+    },
+    "Paar, ein Einkommen, 2 Kinder": {
+     "20000": 246,
+     "42000": 543,
+     "75000": 422
+    }
+   },
+   "anteil_mit_mehr": {
+    "DE": {
+     "alleinstehend": 84,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 98
+    },
+    "FR": {
+     "alleinstehend": 73,
+     "alleinerziehend, 1 Kind": 58,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "IT": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "ES": {
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "PL": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 98
+    }
+   }
+  },
+  "0.8": {
+   "de_mehr_monat": {
+    "alleinstehend": {
+     "20000": 362,
+     "42000": 602,
+     "75000": 763
+    },
+    "alleinerziehend, 1 Kind": {
+     "20000": 264,
+     "42000": 602,
+     "75000": 759
+    },
+    "Paar, ein Einkommen, 2 Kinder": {
+     "20000": 282,
+     "42000": 667,
+     "75000": 654
+    }
+   },
+   "anteil_mit_mehr": {
+    "DE": {
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 98
+    },
+    "FR": {
+     "alleinstehend": 73,
+     "alleinerziehend, 1 Kind": 73,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "IT": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "ES": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "PL": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    }
+   }
+  },
+  "1.0": {
+   "de_mehr_monat": {
+    "alleinstehend": {
+     "20000": 410,
+     "42000": 691,
+     "75000": 917
+    },
+    "alleinerziehend, 1 Kind": {
+     "20000": 288,
+     "42000": 690,
+     "75000": 913
+    },
+    "Paar, ein Einkommen, 2 Kinder": {
+     "20000": 306,
+     "42000": 756,
+     "75000": 809
+    }
+   },
+   "anteil_mit_mehr": {
+    "DE": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 98
+    },
+    "FR": {
+     "alleinstehend": 73,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "IT": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "ES": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    },
+    "PL": {
+     "alleinstehend": 100,
+     "alleinerziehend, 1 Kind": 100,
+     "Paar, ein Einkommen, 2 Kinder": 100
+    }
+   }
+  }
+ },
+ "hinweis": "Weitergabe = Anteil der wegfallenden Arbeitgeberbeiträge im Bruttolohn; der Rest bleibt beim Arbeitgeber (höherer Gewinn, dann mit 33 % besteuert – im Aufkommen hier nicht gegengerechnet). Heute mit Bedarfsleistungen (sozial_laender)."
+}

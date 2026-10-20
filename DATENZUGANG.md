@@ -97,4 +97,5 @@ als Tabelle mit Abrufadresse dokumentiert (B19).
 | Ebene B | Gemeinden; erhalten die Formel je Einwohner und je Kind |
 | Einzug | Quote abzüglich der Bodenwertabgabe, die B selbst erhebt |
 | Dividende | Rest bei B nach den Fachaufgaben, monatlich je Einwohner (Kinder zur Hälfte) |
-| Fassung 4. / 6. Oktober | abgelöstes Gesamtkonzept (`dokumente/archiv/`) / geltendes |
+| Fassung 4. / 6. Oktober | abgelöste Gesamtkonzepte Stand B (`dokumente/archiv/`, `dokumente/`) |
+| Stand C, Fassung 4.x | geltend: „Das Goldene Drittel“, Konzept `dokumente/entwurf/TAX-Drittel-Konzept.pdf`, Skripte siehe README (Korrektur 66) |

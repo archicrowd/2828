@@ -14,8 +14,8 @@
   einer Sitzung. Die Arbeitsumgebung ist flüchtig, das Repository nicht.
 - Versionsschema und Pflichtangaben je Version: siehe `logbuch/` (Abschnitt 2).
   Jede Version nennt Datum, Änderung, Datenquelle, bewegte Zahl und wodurch es auffiel.
-- Korrekturen werden fortlaufend nummeriert. **Nächste freie Nummer: 66.**
-  Alle Nummern bis 65 sind besetzt (31 bis 41 in Band I; die frühere Aussage, sie seien
+- Korrekturen werden fortlaufend nummeriert. **Nächste freie Nummer: 67.**
+  Alle Nummern bis 66 sind besetzt (31 bis 41 in Band I; die frühere Aussage, sie seien
   unbesetzt, war falsch, Korrektur 47). Nummern werden nie neu vergeben.
 - Fehler offen führen, auch eigene. Ein Entwurf, dessen Irrtümer offen liegen, ist
   überprüfbar.
@@ -48,7 +48,8 @@
 - Autorschaft durchgängig: Initiative 28:28 (`CITATION.cff`). Der Name des Verantwortlichen erscheint nur im
   Impressum der Webseite. Keine weiteren Personennamen oder E-Mail-Adressen aus Quellen übernehmen.
 
-- Geltende Rechnung: `modell/gesamtrechnung.py` (+ `gesamtrechnung.toml`). Das Gesamtkonzept wird nur über
+- Geltende Rechnung: Stand C „Das Goldene Drittel“ (Skripte im README, Abschnitt „Aktueller Stand“; Konzept nur über
+  `dokumente/werkzeuge/konzept33-bau.js`). Vorläufer Stand B: `modell/gesamtrechnung.py` (+ `gesamtrechnung.toml`). Das Gesamtkonzept Stand B wird nur über
   `dokumente/werkzeuge/gesamtkonzept-bau.js` gebaut, nie von Hand; danach `modell/pruefe_konzept.py`.
 - Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`).
 
