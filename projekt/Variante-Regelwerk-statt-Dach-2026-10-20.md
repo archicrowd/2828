@@ -111,3 +111,96 @@ Auftrag vom 20.10.2026: Aufteilung rechnen; der Verteidigungspfad bleibt 1,4 →
 
 **Kernsatz:** „Jedes Land gibt denselben Anteil seiner Wirtschaftskraft für die gemeinsamen Aufgaben. Einen Teil zahlt es in die gemeinsame
 Kasse, den Rest gibt es nach gemeinsamen Regeln selbst aus. Wer weniger tut, zahlt die Differenz.“
+
+## 7 | Sicherheit als echte Gemeinschaftsaufgabe (Vorschlag v4.16, zur Entscheidung)
+
+Einwand der Initiative (20.10.2026): Ohne gemeinsame Verteidigung und Souveränität bliebe Europa im Wettbewerb der Großmächte strukturell
+im Nachteil. Ein Beitragsmodell überzeugt dafür nicht voll.
+
+Der Einwand trifft. Für die Sicherheit hat die Variante drei Schwächen:
+- **Geld:** Beiträge werden verhandelt; das macht die Finanzierung unsicher (Abschnitt 3).
+- **Zersplitterung:** Gemeinsame Beschaffung gibt es nur, wenn Staaten sie wollen.
+- **Entscheidung:** In der Außen- und Sicherheitspolitik gilt Einstimmigkeit (Art. 31 EUV).
+
+**Vorschlag: Regelwerk für Steuern, Sozialstaat und Gemeinden – Sicherheitsunion mit eigener Einnahme für das, was nur gemeinsam geht.**
+1. **Eigene Einnahme nach Vertrag statt Beitrag.**
+   - Ein fester Anteil der Mehrwertsteuer fließt per Quellenabzug in die Sicherheitskasse.
+   - Der Anteil wird einmal im Vertrag festgelegt, ratifiziert und gedeckelt. Es gibt keine jährliche Verhandlung, und die Steuerhoheit
+     bleibt bei den Staaten.
+   - Das Muster ist der Eigenmittelbeschluss der EU. Er ist auch mit den Anforderungen des Bundesverfassungsgerichts vereinbar:
+     begrenzt, vom Parlament gebilligt, kein Automatismus über die Grenze hinaus.
+
+   | gemeinsamer Teil der Verteidigung (2035) | % BIP | Anteil der Mehrwertsteuer |
+   |---|---|---|
+   | 40 % (Rechnung v4.15) | 1,00 | 12,1 % |
+   | 50 % | 1,25 | 15,1 % |
+   | 60 % | 1,50 | 18,1 % |
+   | 100 % (alles gemeinsam) | 2,50 | 30,2 % |
+
+   Rechnung `modell/dach_beitrag.py`, Mehrwertsteuer nach projektion33 (8,28 % BIP 2035). Die Gesamtlast ändert sich nicht: Der Anteil
+   ersetzt den Kassenbeitrag.
+2. **Gemeinsame Fähigkeiten im gemeinsamen Eigentum:**
+   - Luft- und Raketenabwehr;
+   - Satelliten und Raumfahrt;
+   - Cyberabwehr;
+   - strategischer Lufttransport;
+   - Munitions- und Materialreserven;
+   - eine gemeinsame Beschaffungsagentur mit Vorrang europäischer Fertigung.
+
+   Anknüpfungspunkt ist SAFE (bis 150 Mrd. € Darlehen für gemeinsame Beschaffung, in Kraft seit 29.05.2025, Rat der EU).
+3. **Entscheiden:**
+   - Für Betrieb und Beschaffung der gemeinsamen Fähigkeiten gilt die qualifizierte Mehrheit.
+   - Über den Einsatz nationaler Streitkräfte entscheiden weiter die nationalen Parlamente (in Deutschland Parlamentsvorbehalt).
+   - Ob die gemeinsamen Fähigkeiten ein eigenes Einsatzmandat brauchen, ist eine offene Rechtsfrage (Art. 24 Abs. 2 GG, Art. 42 EUV).
+4. **Teilnahme:**
+   - Die Sicherheitsunion ist offen für alle Staaten des Regelwerks, aber nicht Pflicht.
+   - Neutrale Staaten tragen über Zivilschutz und Cyberabwehr bei und zahlen denselben Anteil der Mehrwertsteuer.
+
+**Kernsatz:** „Steuern, Sozialstaat und Gemeinden nach gemeinsamen Regeln in jedem Staat. Sicherheit gemeinsam: mit eigener Einnahme,
+gemeinsamen Fähigkeiten und gemeinsamer Beschaffung.“
+
+**Offen:**
+- Anteil (Vorschlag: 50 %, rund 15 % der Mehrwertsteuer);
+- Rechtsprüfung (Art. 23, 24, 79 Abs. 3 GG; Art. 42 EUV);
+- nukleare Abschreckung, im Modell nicht behandelt.
+
+## 8 | Geld innerhalb der Staaten und Stärkung der Regionen (Rechnung v4.16)
+
+Rechnung `modell/regionen_de.py` mit Daten für alle 400 Kreise (Eurostat 2024). Die Daten wurden maschinell aus den Abfragen gelesen und sind an der Quelle zu prüfen; die Summen je Bundesland stimmen überein.
+
+**Befund 1: Die Gemeindeformel verteilt fast gleich je Kopf, unabhängig von der Wirtschaftskraft.**
+- Je Einwohner gibt es im Mittel 5.853 € im Jahr (Kaufkraft 2026).
+- Die Spanne zwischen den Kreisen (90. zu 10. Perzentil) beträgt 1,05. Beim BIP je Einwohner beträgt sie 2,43.
+- Das wirtschaftsstärkste Fünftel der Kreise erhält 99,3 % des Durchschnitts, das schwächste 99,8 %.
+
+Gegenüber heute ist das ein starker Ausgleich, weil die Gewerbesteuer heute der Wirtschaftskraft folgt. Beziffert ist das nicht: Die
+heutigen Gemeindeeinnahmen je Kreis (Regionalstatistik 71231, INKAR) waren über das Abrufwerkzeug nicht erreichbar.
+
+**Befund 2: Ohne Zuschlag bekommen dünn besiedelte und alternde Kreise etwas weniger je Kopf**, weil sie weniger Kinder haben:
+- Kreise unter 100 Einwohnern je km²: 99,0 % des Durchschnitts;
+- ostdeutsche Flächenländer: 99,0 %.
+
+Ihre Kosten je Kopf sind aber höher (Wege, Netze, Pflege).
+
+**Strukturzuschlag** (Anteil des Topfs je zur Hälfte nach Fläche und nach Menschen ab 65; aufkommensneutral):
+
+| Index (Deutschland = 100) | ohne | 5 % | 10 % | 15 % |
+|---|---|---|---|---|
+| dünn besiedelt (unter 100 Einw./km²) | 99,0 | 105,0 | 111,0 | 117,0 |
+| ostdeutsche Flächenländer | 99,0 | 102,2 | 105,3 | 108,4 |
+| Landkreise | 100,4 | 101,6 | 102,7 | 103,8 |
+| kreisfreie Städte | 99,1 | 96,7 | 94,3 | 92,0 |
+| wirtschaftsstärkstes Fünftel | 99,3 | 97,2 | 95,1 | 93,0 |
+| Spanne P90/P10 | 1,05 | 1,09 | 1,15 | 1,22 |
+
+Mit 10 % liegen die Kreise mit dem meisten Geld je Kopf bei 7.257 bis 7.504 € (Prignitz, Altmarkkreis Salzwedel), die mit dem wenigsten
+bei 5.197 bis 5.357 € (Universitätsstädte, München).
+
+**Vorschlag:**
+- Strukturzuschlag 10 %;
+- eigener Hebesatz auf den Bodenwert;
+- kleiner Gemeindeanteil an der Gewinnsteuer am Betriebsort mit Hebesatz im engen Korridor (Art. 28 Abs. 2 GG, Rechtsprüfung offen);
+- die Aufteilung zwischen Bund und Ländern regelt jeder Staat selbst.
+
+**Nächster Schritt:** heutige Gemeindeeinnahmen je Kreis als Datei, um Gewinner und Verlierer gegenüber heute zu zeigen. Am einfachsten lädt
+die Initiative die Tabelle 71231-01-03-4 (Realsteuervergleich) als CSV von regionalstatistik.de herunter und hängt sie an.

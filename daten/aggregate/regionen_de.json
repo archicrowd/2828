@@ -1,0 +1,316 @@
+{
+ "version": "v4.16",
+ "status": "Prüfrechnung",
+ "preisbasis": "Euro je Einwohner und Jahr, Kaufkraft 2026 (Gemeindeformel laenderseiten.json)",
+ "formel": {
+  "je_einwohner": 3913,
+  "je_kind_5_19": 13729,
+  "topf_mrd": 488.5,
+  "eur_kopf_de": 5853
+ },
+ "strukturzuschlag": {
+  "varianten": [
+   0.0,
+   0.05,
+   0.1,
+   0.15
+  ],
+  "anteil_flaeche": 0.5,
+  "anteil_ab65": 0.5
+ },
+ "gruppen": [
+  {
+   "gruppe": "Deutschland",
+   "kreise": 400,
+   "einwohner_mio": 83.46,
+   "bip_kopf_index": 100.0,
+   "kinderanteil_pct": 14.1,
+   "ab65_pct": 22.4,
+   "eur_kopf_jahr_0.0": 5853,
+   "index_0.0": 100.0,
+   "eur_kopf_jahr_0.05": 5853,
+   "index_0.05": 100.0,
+   "eur_kopf_jahr_0.1": 5853,
+   "index_0.1": 100.0,
+   "eur_kopf_jahr_0.15": 5853,
+   "index_0.15": 100.0
+  },
+  {
+   "gruppe": "kreisfreie Städte (mit Berlin, Hamburg)",
+   "kreise": 106,
+   "einwohner_mio": 26.93,
+   "bip_kopf_index": 134.3,
+   "kinderanteil_pct": 13.7,
+   "ab65_pct": 20.1,
+   "eur_kopf_jahr_0.0": 5800,
+   "index_0.0": 99.1,
+   "eur_kopf_jahr_0.05": 5661,
+   "index_0.05": 96.7,
+   "eur_kopf_jahr_0.1": 5522,
+   "index_0.1": 94.3,
+   "eur_kopf_jahr_0.15": 5383,
+   "index_0.15": 92.0
+  },
+  {
+   "gruppe": "Landkreise",
+   "kreise": 294,
+   "einwohner_mio": 56.53,
+   "bip_kopf_index": 83.7,
+   "kinderanteil_pct": 14.3,
+   "ab65_pct": 23.5,
+   "eur_kopf_jahr_0.0": 5878,
+   "index_0.0": 100.4,
+   "eur_kopf_jahr_0.05": 5944,
+   "index_0.05": 101.6,
+   "eur_kopf_jahr_0.1": 6011,
+   "index_0.1": 102.7,
+   "eur_kopf_jahr_0.15": 6077,
+   "index_0.15": 103.8
+  },
+  {
+   "gruppe": "Dichte unter 100 Einw./km²",
+   "kreise": 70,
+   "einwohner_mio": 8.73,
+   "bip_kopf_index": 73.7,
+   "kinderanteil_pct": 13.7,
+   "ab65_pct": 26.1,
+   "eur_kopf_jahr_0.0": 5795,
+   "index_0.0": 99.0,
+   "eur_kopf_jahr_0.05": 6146,
+   "index_0.05": 105.0,
+   "eur_kopf_jahr_0.1": 6497,
+   "index_0.1": 111.0,
+   "eur_kopf_jahr_0.15": 6848,
+   "index_0.15": 117.0
+  },
+  {
+   "gruppe": "Dichte 100–150",
+   "kreise": 82,
+   "einwohner_mio": 12.01,
+   "bip_kopf_index": 79.7,
+   "kinderanteil_pct": 14.2,
+   "ab65_pct": 24.2,
+   "eur_kopf_jahr_0.0": 5868,
+   "index_0.0": 100.3,
+   "eur_kopf_jahr_0.05": 6011,
+   "index_0.05": 102.7,
+   "eur_kopf_jahr_0.1": 6154,
+   "index_0.1": 105.1,
+   "eur_kopf_jahr_0.15": 6297,
+   "index_0.15": 107.6
+  },
+  {
+   "gruppe": "Dichte 150–300",
+   "kreise": 93,
+   "einwohner_mio": 18.64,
+   "bip_kopf_index": 80.4,
+   "kinderanteil_pct": 14.6,
+   "ab65_pct": 22.9,
+   "eur_kopf_jahr_0.0": 5911,
+   "index_0.0": 101.0,
+   "eur_kopf_jahr_0.05": 5929,
+   "index_0.05": 101.3,
+   "eur_kopf_jahr_0.1": 5948,
+   "index_0.1": 101.6,
+   "eur_kopf_jahr_0.15": 5966,
+   "index_0.15": 101.9
+  },
+  {
+   "gruppe": "Dichte 300 und mehr",
+   "kreise": 155,
+   "einwohner_mio": 44.08,
+   "bip_kopf_index": 119.0,
+   "kinderanteil_pct": 14.0,
+   "ab65_pct": 21.0,
+   "eur_kopf_jahr_0.0": 5836,
+   "index_0.0": 99.7,
+   "eur_kopf_jahr_0.05": 5719,
+   "index_0.05": 97.7,
+   "eur_kopf_jahr_0.1": 5603,
+   "index_0.1": 95.7,
+   "eur_kopf_jahr_0.15": 5487,
+   "index_0.15": 93.7
+  },
+  {
+   "gruppe": "ostdeutsche Flächenländer",
+   "kreise": 75,
+   "einwohner_mio": 12.45,
+   "bip_kopf_index": 74.2,
+   "kinderanteil_pct": 13.7,
+   "ab65_pct": 27.0,
+   "eur_kopf_jahr_0.0": 5796,
+   "index_0.0": 99.0,
+   "eur_kopf_jahr_0.05": 5980,
+   "index_0.05": 102.2,
+   "eur_kopf_jahr_0.1": 6163,
+   "index_0.1": 105.3,
+   "eur_kopf_jahr_0.15": 6346,
+   "index_0.15": 108.4
+  },
+  {
+   "gruppe": "übrige Länder ohne Berlin",
+   "kreise": 324,
+   "einwohner_mio": 67.35,
+   "bip_kopf_index": 104.4,
+   "kinderanteil_pct": 14.2,
+   "ab65_pct": 21.7,
+   "eur_kopf_jahr_0.0": 5867,
+   "index_0.0": 100.2,
+   "eur_kopf_jahr_0.05": 5842,
+   "index_0.05": 99.8,
+   "eur_kopf_jahr_0.1": 5816,
+   "index_0.1": 99.4,
+   "eur_kopf_jahr_0.15": 5791,
+   "index_0.15": 98.9
+  },
+  {
+   "gruppe": "Wirtschaftskraft Fünftel 1 (BIP je Einw. 0–33 T€)",
+   "kreise": 101,
+   "einwohner_mio": 16.45,
+   "bip_kopf_index": 63.0,
+   "kinderanteil_pct": 14.0,
+   "ab65_pct": 25.4,
+   "eur_kopf_jahr_0.0": 5840,
+   "index_0.0": 99.8,
+   "eur_kopf_jahr_0.05": 5961,
+   "index_0.05": 101.9,
+   "eur_kopf_jahr_0.1": 6083,
+   "index_0.1": 103.9,
+   "eur_kopf_jahr_0.15": 6204,
+   "index_0.15": 106.0
+  },
+  {
+   "gruppe": "Wirtschaftskraft Fünftel 2 (BIP je Einw. 33–39 T€)",
+   "kreise": 93,
+   "einwohner_mio": 16.93,
+   "bip_kopf_index": 75.7,
+   "kinderanteil_pct": 14.3,
+   "ab65_pct": 23.7,
+   "eur_kopf_jahr_0.0": 5877,
+   "index_0.0": 100.4,
+   "eur_kopf_jahr_0.05": 5940,
+   "index_0.05": 101.5,
+   "eur_kopf_jahr_0.1": 6004,
+   "index_0.1": 102.6,
+   "eur_kopf_jahr_0.15": 6067,
+   "index_0.15": 103.7
+  },
+  {
+   "gruppe": "Wirtschaftskraft Fünftel 3 (BIP je Einw. 39–45 T€)",
+   "kreise": 82,
+   "einwohner_mio": 16.37,
+   "bip_kopf_index": 87.6,
+   "kinderanteil_pct": 14.3,
+   "ab65_pct": 22.5,
+   "eur_kopf_jahr_0.0": 5873,
+   "index_0.0": 100.4,
+   "eur_kopf_jahr_0.05": 5885,
+   "index_0.05": 100.5,
+   "eur_kopf_jahr_0.1": 5896,
+   "index_0.1": 100.7,
+   "eur_kopf_jahr_0.15": 5907,
+   "index_0.15": 100.9
+  },
+  {
+   "gruppe": "Wirtschaftskraft Fünftel 4 (BIP je Einw. 45–54 T€)",
+   "kreise": 59,
+   "einwohner_mio": 16.88,
+   "bip_kopf_index": 103.9,
+   "kinderanteil_pct": 14.2,
+   "ab65_pct": 21.3,
+   "eur_kopf_jahr_0.0": 5863,
+   "index_0.0": 100.2,
+   "eur_kopf_jahr_0.05": 5792,
+   "index_0.05": 99.0,
+   "eur_kopf_jahr_0.1": 5721,
+   "index_0.1": 97.8,
+   "eur_kopf_jahr_0.15": 5651,
+   "index_0.15": 96.5
+  },
+  {
+   "gruppe": "Wirtschaftskraft Fünftel 5 (BIP je Einw. ab 54 T€)",
+   "kreise": 65,
+   "einwohner_mio": 16.82,
+   "bip_kopf_index": 168.7,
+   "kinderanteil_pct": 13.8,
+   "ab65_pct": 19.3,
+   "eur_kopf_jahr_0.0": 5811,
+   "index_0.0": 99.3,
+   "eur_kopf_jahr_0.05": 5689,
+   "index_0.05": 97.2,
+   "eur_kopf_jahr_0.1": 5567,
+   "index_0.1": 95.1,
+   "eur_kopf_jahr_0.15": 5445,
+   "index_0.15": 93.0
+  }
+ ],
+ "streuung_p90_p10": {
+  "bip_kopf": 2.43,
+  "formel_0.0": 1.05,
+  "formel_0.05": 1.09,
+  "formel_0.1": 1.15,
+  "formel_0.15": 1.22
+ },
+ "randfaelle_s010": {
+  "niedrigste": [
+   [
+    "Würzburg, Kreisfreie Stadt",
+    5197
+   ],
+   [
+    "Regensburg, Kreisfreie Stadt",
+    5303
+   ],
+   [
+    "Mainz, Kreisfreie Stadt",
+    5329
+   ],
+   [
+    "München, Kreisfreie Stadt",
+    5344
+   ],
+   [
+    "Bayreuth, Kreisfreie Stadt",
+    5357
+   ]
+  ],
+  "hoechste": [
+   [
+    "Ostprignitz-Ruppin",
+    7257
+   ],
+   [
+    "Uckermark",
+    7295
+   ],
+   [
+    "Lüchow-Dannenberg",
+    7342
+   ],
+   [
+    "Prignitz",
+    7371
+   ],
+   [
+    "Altmarkkreis Salzwedel",
+    7504
+   ]
+  ]
+ },
+ "daten": {
+  "kreise": 400,
+  "einwohner": 83456045,
+  "flaeche_km2": 357569,
+  "quellen": {
+   "bev_2024": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjanaggr3?sex=T&age=TOTAL&unit=NR&time=2024&geoLevel=nuts3",
+   "ab65_2024": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjanaggr3?sex=T&age=Y_GE65&unit=NR&time=2024&geoLevel=nuts3",
+   "k5_9_2024": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?sex=T&age=Y5-9&unit=NR&time=2024&geoLevel=nuts3",
+   "k10_14_2024": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?sex=T&age=Y10-14&unit=NR&time=2024&geoLevel=nuts3",
+   "k15_19_2024": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?sex=T&age=Y15-19&unit=NR&time=2024&geoLevel=nuts3",
+   "flaeche": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/reg_area3?landuse=TOTAL&unit=KM2&time=2023&geoLevel=nuts3 (Thüringen: neueste Jahr, Kreiscodes NUTS 2024)",
+   "bip_2022": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_3gdp?unit=MIO_EUR&time=2022&geoLevel=nuts3"
+  },
+  "pruefung": "Summen je Bundesland gegen NUTS-1-Abruf: übereinstimmend (BIP auf ±0,6 Mio. € gerundet)"
+ },
+ "hinweis": "Heutige Gemeindefinanzen je Kreis nicht gerechnet (Daten nicht abrufbar). BIP je Einwohner 2022 bezogen auf Einwohner 1.1.2024. Pendlerstädte haben hohes BIP je Einwohner. Werte maschinell aus Eurostat-Abfragen gelesen, an der Quelle zu prüfen."
+}

@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.14 · höchste Korrekturnummer 67 · 424 Dateien im Repository
+Modellstand v4.14 · höchste Korrekturnummer 67 · 427 Dateien im Repository
 
 ## Bausteine
 
@@ -76,6 +76,7 @@ Modellstand v4.14 · höchste Korrekturnummer 67 · 424 Dateien im Repository
 | N31 | B30 Altlastenfonds | B32 Länderseiten | offen |
 | N32 | B32 Länderseiten | B31 Drittel-System | offen |
 | N33 | B31 Drittel-System | B32 Länderseiten | offen |
+| N34 | B32 Länderseiten | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -92,4 +93,5 @@ Modellstand v4.14 · höchste Korrekturnummer 67 · 424 Dateien im Repository
 - Hinweis: Naht N30 offen: B31 Drittel-System -> B32 Länderseiten: v4.12: DE trägt auch ohne Weitergabe (+149…+433 €), FR/ES nicht; Durchsetzungsregel fehlt | v4.13: Gesetz zur Vertragsanpassung bis zum Stichtag beschlossen; offen Nachweis, Sanktion, neue Verträge
 - Hinweis: Naht N31 offen: B30 Altlastenfonds -> B32 Länderseiten: v4.14: uneinheitlich, in KENNZAHLEN.md erklärt; Entscheidung: alle eigener oder alle gemeinsamer Fonds
 - Hinweis: Naht N32 offen: B32 Länderseiten -> B31 Drittel-System: v4.15: Pflichtquote 6,19 → 7,29 % BIP, Kasse 2,65 → 3,09 % (Annahmen), Irland 261 € je Einwohner und Monat bei BIP-Bemessung
-- Hinweis: Naht N33 offen: B31 Drittel-System -> B32 Länderseiten: v4.15: nicht gerechnet; Vorschlag in der Antwort vom 20.10.2026; Daten je Kreis fehlen
+- Hinweis: Naht N33 offen: B31 Drittel-System -> B32 Länderseiten: v4.15: nicht gerechnet | v4.16: 400 Kreise (Eurostat): Formel P90/P10 1,05, Strukturzuschlag 10 % hebt dünn besiedelte Kreise auf Index 111; heutige Gemeindeeinnahmen je Kreis fehlen (robots.txt)
+- Hinweis: Naht N34 offen: B32 Länderseiten -> B31 Drittel-System: v4.16: 50 % der Verteidigung gemeinsam = 15,1 % der Mehrwertsteuer 2035; Gesamtlast unverändert

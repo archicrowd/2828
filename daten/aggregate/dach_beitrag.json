@@ -1,5 +1,5 @@
 {
- "version": "v4.15",
+ "version": "v4.16",
  "status": "Prüfrechnung",
  "einheit": "% des BIP, Klub der zehn; Euro nominal 2028",
  "ziel_pflichtquote": 7.29,
@@ -208,5 +208,91 @@
   "mehrausgabe_gutschrift": false,
   "obergrenze_anteil_steuern": 0.32
  },
+ "sicherheitskasse_mwst": [
+  {
+   "jahr": 2028,
+   "anteil_verteidigung": 0.4,
+   "kasse_pct_bip": 0.56,
+   "mwst_pct_bip": 8.51,
+   "anteil_der_mwst_pct": 6.6
+  },
+  {
+   "jahr": 2028,
+   "anteil_verteidigung": 0.5,
+   "kasse_pct_bip": 0.7,
+   "mwst_pct_bip": 8.51,
+   "anteil_der_mwst_pct": 8.2
+  },
+  {
+   "jahr": 2028,
+   "anteil_verteidigung": 0.6,
+   "kasse_pct_bip": 0.84,
+   "mwst_pct_bip": 8.51,
+   "anteil_der_mwst_pct": 9.9
+  },
+  {
+   "jahr": 2028,
+   "anteil_verteidigung": 1.0,
+   "kasse_pct_bip": 1.4,
+   "mwst_pct_bip": 8.51,
+   "anteil_der_mwst_pct": 16.5
+  },
+  {
+   "jahr": 2035,
+   "anteil_verteidigung": 0.4,
+   "kasse_pct_bip": 1.0,
+   "mwst_pct_bip": 8.28,
+   "anteil_der_mwst_pct": 12.1
+  },
+  {
+   "jahr": 2035,
+   "anteil_verteidigung": 0.5,
+   "kasse_pct_bip": 1.25,
+   "mwst_pct_bip": 8.28,
+   "anteil_der_mwst_pct": 15.1
+  },
+  {
+   "jahr": 2035,
+   "anteil_verteidigung": 0.6,
+   "kasse_pct_bip": 1.5,
+   "mwst_pct_bip": 8.28,
+   "anteil_der_mwst_pct": 18.1
+  },
+  {
+   "jahr": 2035,
+   "anteil_verteidigung": 1.0,
+   "kasse_pct_bip": 2.5,
+   "mwst_pct_bip": 8.28,
+   "anteil_der_mwst_pct": 30.2
+  },
+  {
+   "jahr": 2060,
+   "anteil_verteidigung": 0.4,
+   "kasse_pct_bip": 1.0,
+   "mwst_pct_bip": 8.09,
+   "anteil_der_mwst_pct": 12.4
+  },
+  {
+   "jahr": 2060,
+   "anteil_verteidigung": 0.5,
+   "kasse_pct_bip": 1.25,
+   "mwst_pct_bip": 8.09,
+   "anteil_der_mwst_pct": 15.5
+  },
+  {
+   "jahr": 2060,
+   "anteil_verteidigung": 0.6,
+   "kasse_pct_bip": 1.5,
+   "mwst_pct_bip": 8.09,
+   "anteil_der_mwst_pct": 18.5
+  },
+  {
+   "jahr": 2060,
+   "anteil_verteidigung": 1.0,
+   "kasse_pct_bip": 2.5,
+   "mwst_pct_bip": 8.09,
+   "anteil_der_mwst_pct": 30.9
+  }
+ ],
  "hinweis": "Kassenanteile sind Annahmen (dach_beitrag.toml). Verteidigung heute: COFOG GF02 2024 (Eurostat gov_10a_exp), nicht NATO-Abgrenzung. Rückfall 2035 = Betrag, den ein Staat in die Kasse zahlen müsste, wenn er seine Verteidigungsausgaben auf dem Stand 2024 ließe und die übrigen Aufgaben voll erfüllte. Die Rechnung ändert weder Dividende noch Netz."
 }

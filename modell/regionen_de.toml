@@ -1,0 +1,24 @@
+# Gemeindeformel je Kreis in Deutschland (modell/regionen_de.py, Logbuch v4.16). Prüfrechnung.
+# Auftrag 20.10.2026: Daten je Kreis einsammeln, Finanzverteilung im Staat und Stärkung der Regionen prüfen.
+version = "v4.16"
+# Ostdeutsche Flächenländer (NUTS 1): Brandenburg, Mecklenburg-Vorpommern, Sachsen, Sachsen-Anhalt, Thüringen
+ost = ["DE4", "DE8", "DED", "DEE", "DEG"]
+
+# Eingänge (Rohdaten nicht im Repository, .gitignore daten/roh/). Abruf am 20.10.2026 über das Web-Abrufwerkzeug (JSON-stat, Eurostat);
+# maschinell aus der Abfrage gelesen. Prüfung: Summen je Bundesland (NUTS 1) stimmen bei allen Dateien mit dem NUTS-1-Abruf überein.
+[quellen]
+bev_2024    = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjanaggr3?sex=T&age=TOTAL&unit=NR&time=2024&geoLevel=nuts3"
+ab65_2024   = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjanaggr3?sex=T&age=Y_GE65&unit=NR&time=2024&geoLevel=nuts3"
+k5_9_2024   = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?sex=T&age=Y5-9&unit=NR&time=2024&geoLevel=nuts3"
+k10_14_2024 = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?sex=T&age=Y10-14&unit=NR&time=2024&geoLevel=nuts3"
+k15_19_2024 = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?sex=T&age=Y15-19&unit=NR&time=2024&geoLevel=nuts3"
+flaeche     = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/reg_area3?landuse=TOTAL&unit=KM2&time=2023&geoLevel=nuts3 (Thüringen: neueste Jahr, Kreiscodes NUTS 2024)"
+bip_2022    = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_3gdp?unit=MIO_EUR&time=2022&geoLevel=nuts3"
+
+# Strukturzuschlag (Vorschlag 20.10.2026, Anteile sind ANNAHMEN): Anteil des Gemeindetopfs, der nicht je Einwohner und Kind, sondern nach
+# Fläche und nach Zahl der Menschen ab 65 verteilt wird. Der Topf bleibt gleich (aufkommensneutral innerhalb des Staates).
+[strukturzuschlag]
+varianten = [0.0, 0.05, 0.10, 0.15]
+anteil_flaeche = 0.5
+anteil_ab65 = 0.5
+

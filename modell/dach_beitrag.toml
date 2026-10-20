@@ -1,11 +1,14 @@
 # Gemeinsame Aufgaben ohne eigene Steuer: Pflichtquote mit zwei Wegen (modell/dach_beitrag.py, Logbuch v4.15). Prüfrechnung.
 # Auftrag 20.10.2026: Aufteilung gemeinsame Kasse / angerechnete eigene Ausgaben mit Pflichtquote, Obergrenze und Rückfallregel rechnen;
 # Verteidigungspfad bleibt 1,4 → 2,5 % BIP bis 2035 (Gesamtrechnung).
-version = "v4.15"
+version = "v4.16"
 jahre = [2028, 2030, 2035, 2060]
 # Vergleichsgröße: Eigenmittelobergrenze der EU 2021–2027 für Zahlungen, % des BNE (Europäische Kommission, Seite „Eigenmittelobergrenzen“,
 # abgerufen 20.10.2026). BNE und BIP weichen in IE und LU deutlich ab; der Vergleich ist eine Größenordnung.
 eu_obergrenze_zahlungen_pct_bne = 1.40
+# v4.16: Sicherheitskasse mit eigener Einnahme statt Beitrag. Gerechnet wird, welcher Anteil der Mehrwertsteuer (Label-Aufkommen,
+# projektion33 „konsum“) den gemeinsamen Teil der Verteidigung trägt, je Anteil der Verteidigung in der gemeinsamen Kasse (Annahmen).
+verteidigung_kassenanteile = [0.4, 0.5, 0.6, 1.0]
 
 # Anteil je Aufgabe, der in die gemeinsame Kasse geht (Rest: eigene Ausgabe des Staates nach gemeinsamem Mindeststandard, angerechnet).
 # ALLE WERTE SIND ANNAHMEN der Initiative zur Größenordnung, keine abgeleiteten Größen. Die Liste der Aufgaben selbst stammt aus der

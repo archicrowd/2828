@@ -72,8 +72,16 @@ def main():
             verteidigung_2024_cofog=heute_v,
             rueckfall_2035_bei_stand_2024=round(max(0.0, r35["verteidigung"] - heute_v) * P["regel"]["rueckfall_faktor"], 2),
             mehr_als_quote_2035=round(max(0.0, heute_v - r35["verteidigung"]), 2)))
+    # v4.16: Sicherheitskasse über einen festen Anteil der Mehrwertsteuer (Quellenabzug nach Vertrag, keine Verhandlung je Jahr)
+    sicherheit = []
+    for j in (2028, 2035, 2060):
+        mwst = reihe_pj[j]["konsum"]
+        v_j = round(v_ziel - (ziel - reihe_pj[j]["dach_ohne_zins"]), 2)
+        for a in P["verteidigung_kassenanteile"]:
+            sicherheit.append(dict(jahr=j, anteil_verteidigung=a, kasse_pct_bip=round(a * v_j, 2), mwst_pct_bip=mwst,
+                                   anteil_der_mwst_pct=round(a * v_j / mwst * 100, 1)))
     E = dict(version=P["version"], status="Prüfrechnung", einheit="% des BIP, Klub der zehn; Euro nominal 2028",
-             ziel_pflichtquote=ziel, reihe=reihe, aufgaben=tab, staaten=staaten, regel=P["regel"],
+             ziel_pflichtquote=ziel, reihe=reihe, aufgaben=tab, staaten=staaten, regel=P["regel"], sicherheitskasse_mwst=sicherheit,
              hinweis="Kassenanteile sind Annahmen (dach_beitrag.toml). Verteidigung heute: COFOG GF02 2024 (Eurostat gov_10a_exp), nicht "
                      "NATO-Abgrenzung. Rückfall 2035 = Betrag, den ein Staat in die Kasse zahlen müsste, wenn er seine Verteidigungsausgaben "
                      "auf dem Stand 2024 ließe und die übrigen Aufgaben voll erfüllte. Die Rechnung ändert weder Dividende noch Netz.")
