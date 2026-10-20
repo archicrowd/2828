@@ -1,0 +1,80 @@
+{
+ "version": "v4.18",
+ "status": "Prüfrechnung, statisch",
+ "anteil_konsum_mit_mwst": [
+  0.67,
+  0.84
+ ],
+ "ueberwaelzung_mwst": [
+  0.73,
+  1.0
+ ],
+ "reihe": [
+  {
+   "jahr": 2028,
+   "label_effektiv": 18.84,
+   "mechanisch_pct": 2.47,
+   "mwst_spanne_pct": [
+    1.22,
+    2.08
+   ]
+  },
+  {
+   "jahr": 2035,
+   "label_effektiv": 18.25,
+   "mechanisch_pct": 1.97,
+   "mwst_spanne_pct": [
+    0.97,
+    1.66
+   ]
+  },
+  {
+   "jahr": 2045,
+   "label_effektiv": 17.91,
+   "mechanisch_pct": 1.67,
+   "mwst_spanne_pct": [
+    0.82,
+    1.41
+   ]
+  },
+  {
+   "jahr": 2060,
+   "label_effektiv": 17.76,
+   "mechanisch_pct": 1.54,
+   "mwst_spanne_pct": [
+    0.76,
+    1.3
+   ]
+  }
+ ],
+ "arbeitskosten_2028_pct": {
+  "0.0": [
+   -0.0,
+   -0.0
+  ],
+  "0.5": [
+   -0.79,
+   -0.94
+  ],
+  "1.0": [
+   -1.58,
+   -1.87
+  ]
+ },
+ "netto_2028_pct": {
+  "0.0": [
+   1.22,
+   2.08
+  ],
+  "0.5": [
+   0.28,
+   1.29
+  ],
+  "1.0": [
+   -0.65,
+   0.5
+  ]
+ },
+ "haushaltsrechnung": "haushalte33: volle Differenz auf den gesamten Konsum (α = 1, s = 1, ohne Kostensenkung) – obere Grenze",
+ "hinweis": "Einmalige Niveauverschiebung im Einführungsjahr, keine dauerhafte Inflation, solange keine Zweitrundeneffekte entstehen (nicht modelliert). Mit sinkendem effektivem Satz (weniger schädliche Produkte) geht ein Teil bis 2060 zurück. CO₂-Preispfad nicht enthalten."
+}

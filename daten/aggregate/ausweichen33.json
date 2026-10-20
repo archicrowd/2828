@@ -1,0 +1,89 @@
+{
+ "version": "v4.18",
+ "status": "Prüfrechnung, Empfindlichkeit",
+ "positionen_pct_bip": {
+  "erbschaften": 1.16,
+  "grosse_vermoegen": 0.97,
+  "grosse_vermoegen_statisch": 1.94
+ },
+ "eur_je_bip_punkt": {
+  "j2028": 51.4,
+  "j2060": 70.3
+ },
+ "dividende_de_2028": 373.0,
+ "faelle": [
+  {
+   "erbschaft_ausweichen": 0.0,
+   "vermoegen_ausweichen": 0.25,
+   "delta_pct_bip": 0.49,
+   "dividende_2028_eur": 25,
+   "dividende_2060_eur": 34,
+   "dividende_2028_neu": 398
+  },
+  {
+   "erbschaft_ausweichen": 0.0,
+   "vermoegen_ausweichen": 0.5,
+   "delta_pct_bip": 0.0,
+   "dividende_2028_eur": 0,
+   "dividende_2060_eur": 0,
+   "dividende_2028_neu": 373
+  },
+  {
+   "erbschaft_ausweichen": 0.0,
+   "vermoegen_ausweichen": 0.75,
+   "delta_pct_bip": -0.48,
+   "dividende_2028_eur": -25,
+   "dividende_2060_eur": -34,
+   "dividende_2028_neu": 348
+  },
+  {
+   "erbschaft_ausweichen": 0.25,
+   "vermoegen_ausweichen": 0.25,
+   "delta_pct_bip": 0.2,
+   "dividende_2028_eur": 10,
+   "dividende_2060_eur": 14,
+   "dividende_2028_neu": 383
+  },
+  {
+   "erbschaft_ausweichen": 0.25,
+   "vermoegen_ausweichen": 0.5,
+   "delta_pct_bip": -0.29,
+   "dividende_2028_eur": -15,
+   "dividende_2060_eur": -20,
+   "dividende_2028_neu": 358
+  },
+  {
+   "erbschaft_ausweichen": 0.25,
+   "vermoegen_ausweichen": 0.75,
+   "delta_pct_bip": -0.77,
+   "dividende_2028_eur": -40,
+   "dividende_2060_eur": -54,
+   "dividende_2028_neu": 333
+  },
+  {
+   "erbschaft_ausweichen": 0.5,
+   "vermoegen_ausweichen": 0.25,
+   "delta_pct_bip": -0.09,
+   "dividende_2028_eur": -5,
+   "dividende_2060_eur": -7,
+   "dividende_2028_neu": 368
+  },
+  {
+   "erbschaft_ausweichen": 0.5,
+   "vermoegen_ausweichen": 0.5,
+   "delta_pct_bip": -0.58,
+   "dividende_2028_eur": -30,
+   "dividende_2060_eur": -41,
+   "dividende_2028_neu": 343
+  },
+  {
+   "erbschaft_ausweichen": 0.5,
+   "vermoegen_ausweichen": 0.75,
+   "delta_pct_bip": -1.06,
+   "dividende_2028_eur": -55,
+   "dividende_2060_eur": -75,
+   "dividende_2028_neu": 318
+  }
+ ],
+ "hinweis": "Euro je Erwachsenem und Monat, Kaufkraft 2026, ohne Kinderanteil 0,8 (netz33). Ungünstigster Fall: beide Positionen zusammen; Erbschaft-Position hängt zusätzlich an der Annahme von 150.000 Erwerben über 200.000 € je Jahr (gesamtrechnung.toml)."
+}

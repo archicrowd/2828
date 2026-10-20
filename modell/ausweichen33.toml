@@ -1,0 +1,16 @@
+# Ausweichreaktionen bei Erbschaft und großen Vermögen (modell/ausweichen33.py, Logbuch v4.18). Prüfrechnung, Empfindlichkeit.
+# Anlass: Prüfbericht vom 20.10.2026 – „die empfindlichsten Einzelpositionen der Deckung“.
+version = "v4.18"
+
+# Erbschaften: in der Deckung 33R statisch proportional, ohne Ausweichreaktion (systemvarianten.toml, „verhalten“).
+# Varianten: Anteil des statischen Aufkommens, der durch Ausweichen verloren geht (ANNAHMEN).
+# Literatur: Goupille-Lebret und Infante (2018), Journal of Public Economics 168, 21–34 – kleine Reaktionen auf die Erbschaftsteuer in
+# Frankreich (Bunching, Differenz-von-Differenzen); Werte nur aus dem Abstract, Elastizität nicht übernommen.
+erbschaft_ausweichen = [0.0, 0.25, 0.5]
+
+# Große Vermögen: in der Deckung mit 50 % Ausweichen (gesamtrechnung.toml, vermoegensteuer_ausweichen, ANNAHME).
+# Varianten insgesamt 25 / 50 / 75 %. Literatur: Brülhart, Gruber, Krapf, Schmidheiny (2022), AEJ: Economic Policy 14(4) – 1 Prozentpunkt
+# niedrigerer Satz erhöht das deklarierte Vermögen nach sechs Jahren um mindestens 43 % (etwa ein Viertel Umzüge, ein Fünftel Hauspreise,
+# Rest überwiegend Hinterziehung); Jakobsen, Jakobsen, Kleven, Zucman (2020), QJE 135(1) – deutliche Reaktion an der Spitze.
+vermoegen_ausweichen = [0.25, 0.5, 0.75]
+vermoegen_ausweichen_geltend = 0.5

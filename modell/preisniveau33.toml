@@ -1,0 +1,24 @@
+# Preisniveauschub bei Einführung (modell/preisniveau33.py, Logbuch v4.18). Prüfrechnung, Deutschland, statisch.
+# Anlass: Prüfbericht vom 20.10.2026 (dringendster offener Punkt): „Der effektive MwSt-Satz springt von 15,97 auf 18,82 % – einmalig oder
+# dauerhaft? Wer trägt die Überwälzung?“
+version = "v4.18"
+mwst_heute_effektiv = 15.97      # haushalte33.toml (deutsche Sätze auf die Konsumstruktur)
+
+# Überwälzung von Mehrwertsteuererhöhungen in die Preise (Anteil):
+#  0,73: Carare und Danninger (2008), IMF Working Paper 08/175, Erhöhung 2007 in Deutschland (Abstract, IMF-Seite)
+#  1,00: Benzarti, Carloni, Harju und Kosonen (2020), Journal of Political Economy 128(12): Erhöhungen wirken etwa doppelt so stark wie
+#        Senkungen; Supermärkte gaben die Senkung 2020 fast vollständig weiter (Fuest, Neumeier, Stöhlker, ifo 2020) – volle Überwälzung
+#        einer Erhöhung als obere Annahme
+ueberwaelzung_mwst = [0.73, 1.0]
+
+# Anteil des privaten Konsums, der der Mehrwertsteuer unterliegt (ANNAHME, Spanne):
+#  obere Grenze 0,84 = Aufkommen 2024 (Eurostat gov_10a_taxag D211: 298.764 Mio. €) / 15,97 % / Konsum der privaten Haushalte
+#  (nama_10_gdp P31_S14: 2.221.467 Mio. €) – überschätzt, weil Mehrwertsteuer auch aus Staatskäufen, Wohnungsbau und steuerfreien
+#  Unternehmen stammt; untere Grenze 0,67 (davon 80 % aus dem Konsum der Haushalte, Annahme)
+d211_mio = 298764
+p31_s14_mio = 2221467
+anteil_haushalte_am_aufkommen = 0.80
+
+# Gegenrichtung: Die Betriebe behalten 20 % der wegfallenden Arbeitgeberbeiträge (Weitergabe 80 %); die Arbeitskosten sinken.
+# Überwälzung von Kostensenkungen in die Preise (Anteil): 0 (keine), 0,5 (Asymmetrie nach Benzarti u. a.), 1 (voll)
+ueberwaelzung_kosten = [0.0, 0.5, 1.0]

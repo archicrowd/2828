@@ -1,0 +1,15 @@
+# Rückfallregel der Weitergabe (modell/weitergabe_rueckfall.py, Logbuch v4.18). Prüfrechnung, Deutschland.
+# Vorschlag der Prüfung (B14) und Stellungnahme vom 20.10.2026: Wer die Vertragsanpassung unterlässt, zahlt die Differenz zur Pflicht
+# (80 % der bisherigen Arbeitgeberbeiträge) in den Altlastenfonds; dazu unabhängiges Monitoring der Bruttolöhne je Branche.
+version = "v4.18"
+pflicht = 0.8
+tatsaechlich = [0.0, 0.5, 0.6, 0.8]
+
+# Eurostat nama_10_gdp, DE 2024, Mio. € (abgerufen 20.10.2026 über das Web-Abrufwerkzeug, vorläufige Werte)
+d12_mio = 410588      # Sozialbeiträge der Arbeitgeber (enthält unterstellte Beiträge, z. B. für Beamte) – obere Schätzung
+d11_mio = 1941537     # Bruttolöhne und -gehälter
+bip_mio = 4386940
+# untere Schätzung: Beitragssatz der Arbeitgeber rund 21 % (dynamik33.toml) auf den beitragspflichtigen Teil der Löhne;
+# Anteil unter der Beitragsbemessungsgrenze und ohne Beamte 0,85 (ANNAHME)
+ag_satz = 0.21
+beitragspflichtig = 0.85

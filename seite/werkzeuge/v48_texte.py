@@ -234,14 +234,14 @@ FEIN_A_EN = ("* In Germany, Italy, Spain and Poland, calculated under the projec
              "and the legacy surcharge, today including minimum income support). In France, according to the model, «fr_anteil» in 10, because the prime "
              "d'activité is lost for single low earners.")
 
-# v4.13: Weitergabe gesetzlich bis zum Stichtag (Beschluss 20.10.2026) und Niveau des starken Netzes je Land
+# v4.13: Weitergabe gesetzlich bis zum Stichtag (Beschluss 20.10.2026); v4.18: Monitoring und Rückfallregel (Prüfbericht B14) und Niveau des starken Netzes je Land
 WEITERGABE_SATZ = {
-    "de": "Ein Gesetz verpflichtet, alle Arbeitsverträge bis zum Stichtag der Einführung entsprechend anzupassen.",
-    "en": "A law requires all employment contracts to be adjusted accordingly by the date of introduction.",
-    "fr": "Une loi impose d'adapter tous les contrats de travail en conséquence avant la date d'entrée en vigueur.",
-    "it": "Una legge obbliga ad adeguare di conseguenza tutti i contratti di lavoro entro la data di introduzione.",
-    "es": "Una ley obliga a adaptar en consecuencia todos los contratos de trabajo antes de la fecha de entrada en vigor.",
-    "pl": "Ustawa zobowiązuje do odpowiedniego dostosowania wszystkich umów o pracę do dnia wprowadzenia systemu.",
+    "de": "Ein Gesetz verpflichtet, alle Arbeitsverträge bis zum Stichtag der Einführung entsprechend anzupassen. Ein unabhängiges Monitoring der Bruttolöhne je Branche begleitet die ersten Jahre; wer die Anpassung unterlässt, zahlt die Differenz in den Altlastenfonds.",
+    "en": "A law requires all employment contracts to be adjusted accordingly by the date of introduction. Independent monitoring of gross wages by sector accompanies the first years; any employer who fails to adjust pays the difference into the legacy fund.",
+    "fr": "Une loi impose d'adapter tous les contrats de travail en conséquence avant la date d'entrée en vigueur. Un suivi indépendant des salaires bruts par branche accompagne les premières années ; l'employeur qui n'adapte pas verse la différence au fonds des charges héritées.",
+    "it": "Una legge obbliga ad adeguare di conseguenza tutti i contratti di lavoro entro la data di introduzione. Un monitoraggio indipendente dei salari lordi per settore accompagna i primi anni; il datore di lavoro che non adegua versa la differenza al fondo degli oneri ereditati.",
+    "es": "Una ley obliga a adaptar en consecuencia todos los contratos de trabajo antes de la fecha de entrada en vigor. Un seguimiento independiente de los salarios brutos por sector acompaña los primeros años; el empleador que no adapte paga la diferencia al fondo de cargas heredadas.",
+    "pl": "Ustawa zobowiązuje do odpowiedniego dostosowania wszystkich umów o pracę do dnia wprowadzenia systemu. Niezależny monitoring wynagrodzeń brutto według branż towarzyszy pierwszym latom; pracodawca, który nie dostosuje umów, wpłaca różnicę do funduszu obciążeń z przeszłości.",
 }
 NETZ_NIVEAU = {
     "de": " Grundauskommen ({gk_land}): {gk1} im Monat für Alleinstehende, {gk4} für ein Paar mit zwei Kindern; das Netz kostet insgesamt {netz_pct} der Wirtschaftsleistung (2028, Kaufkraft 2026).",

@@ -1,6 +1,6 @@
 # Kennzahlen Stand C – welche Zahl gilt, und was sie bedeutet
 
-Stand v4.17 (20. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
+Stand v4.18 (20. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
 mit verschiedenen Werten, weil die Abgrenzungen verschieden sind. Hier steht je Größe, **welcher Wert gilt** und wie die anderen zu lesen sind.
 Wer eine Zahl zitiert, nennt die Zeile dieser Tabelle.
 
@@ -45,3 +45,12 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Vorsorge in Vergleichen | geltend: Pflichtvorsorge 10 % ab dem ersten Euro. Variante „Vorsorge wie heute“ (18,6 % bis zur Beitragsbemessungsgrenze) nur in `haushalte33.json` zum Vergleich |
 | Grundauskommen | Grundbedarf × 1 / 0,5 je weitere/n Erwachsene/n / 0,55 je Kind; DE 1.029 € (allein), 2.675 € (Paar + 2) im Monat, 2028, Kaufkraft 2026 |
 | Bestandsrenten | gekürzt um 7,5 % (statt der entfallenden KV- und PV-Beiträge von 12,35 %); Grundauskommen auch im Bestand |
+
+## Preise und Ausweichreaktionen (v4.18)
+
+| Größe | Wert | Datei | Status |
+|---|---|---|---|
+| Preisniveauschub 2028 durch die Mehrwertsteuer | +1,2 bis +2,1 % (mechanisch +2,47 %) | `preisniveau33.json` | Prüfrechnung, Annahmen zu Überwälzung und Anteil |
+| netto mit halber Weitergabe der Arbeitskostensenkung | +0,3 bis +1,3 % | `preisniveau33.json` | Prüfrechnung |
+| Ausweichen ungünstig (Erbschaft 50 %, Vermögen 75 %) | −1,06 % BIP; Dividende −55 € (2028), −75 € (2060) | `ausweichen33.json` | Empfindlichkeit |
+| Rückfluss an den Fonds bei 50 % tatsächlicher Weitergabe | 2,4 bis 2,8 % BIP | `weitergabe_rueckfall.json` | Prüfrechnung |
