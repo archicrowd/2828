@@ -126,100 +126,100 @@
    },
    "anteil": {
     "alleinstehend": 73,
-    "alleinerziehend, 1 Kind": 73,
+    "alleinerziehend, 1 Kind": 100,
     "Paar, ein Einkommen, 2 Kinder": 100
    },
    "faelle": {
     "0.15": {
-     "alleinstehend": 76,
-     "alleinerziehend, 1 Kind": 226,
-     "Paar, ein Einkommen, 2 Kinder": 742
+     "alleinstehend": 78,
+     "alleinerziehend, 1 Kind": 229,
+     "Paar, ein Einkommen, 2 Kinder": 747
     },
     "0.33": {
-     "alleinstehend": 27,
-     "alleinerziehend, 1 Kind": 177,
-     "Paar, ein Einkommen, 2 Kinder": 695
+     "alleinstehend": 33,
+     "alleinerziehend, 1 Kind": 183,
+     "Paar, ein Einkommen, 2 Kinder": 702
     },
     "0.5": {
-     "alleinstehend": -157,
-     "alleinerziehend, 1 Kind": 43,
-     "Paar, ein Einkommen, 2 Kinder": 561
+     "alleinstehend": -137,
+     "alleinerziehend, 1 Kind": 53,
+     "Paar, ein Einkommen, 2 Kinder": 572
     },
     "0.66": {
-     "alleinstehend": 157,
-     "alleinerziehend, 1 Kind": -24,
-     "Paar, ein Einkommen, 2 Kinder": 591
+     "alleinstehend": 193,
+     "alleinerziehend, 1 Kind": -6,
+     "Paar, ein Einkommen, 2 Kinder": 610
     },
     "1.0": {
-     "alleinstehend": 406,
-     "alleinerziehend, 1 Kind": 317,
-     "Paar, ein Einkommen, 2 Kinder": 403
+     "alleinstehend": 475,
+     "alleinerziehend, 1 Kind": 387,
+     "Paar, ein Einkommen, 2 Kinder": 439
     }
    },
    "lohnabstand": {
     "alleinstehend": {
      "0.0": {
-      "neu": 961,
+      "neu": 963,
       "heute": null
      },
      "0.25": {
-      "neu": 1137,
+      "neu": 1139,
       "heute": 1065
      },
      "0.5": {
-      "neu": 1299,
+      "neu": 1303,
       "heute": 1219
      },
      "1.0": {
-      "neu": 1557,
+      "neu": 1567,
       "heute": 1702
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
-      "neu": 69,
+      "neu": 68,
       "heute": 52
      }
     },
     "alleinerziehend, 1 Kind": {
      "0.0": {
-      "neu": 1488,
+      "neu": 1490,
       "heute": null
      },
      "0.25": {
-      "neu": 1667,
+      "neu": 1670,
       "heute": 1445
      },
      "0.5": {
-      "neu": 1830,
+      "neu": 1834,
       "heute": 1599
      },
      "1.0": {
-      "neu": 2088,
+      "neu": 2098,
       "heute": 2036
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
-      "neu": 69,
+      "neu": 68,
       "heute": 52
      }
     },
     "Paar, ein Einkommen, 2 Kinder": {
      "0.0": {
-      "neu": 2490,
+      "neu": 2494,
       "heute": null
      },
      "0.25": {
-      "neu": 2678,
+      "neu": 2682,
       "heute": 1940
      },
      "0.5": {
-      "neu": 2842,
+      "neu": 2847,
       "heute": 2094
      },
      "1.0": {
-      "neu": 3100,
+      "neu": 3111,
       "heute": 2530
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
-      "neu": 69,
+      "neu": 68,
       "heute": 52
      }
     }
@@ -238,47 +238,47 @@
    },
    "faelle": {
     "0.15": {
-     "alleinstehend": 658,
-     "alleinerziehend, 1 Kind": 928,
-     "Paar, ein Einkommen, 2 Kinder": 1626
+     "alleinstehend": 661,
+     "alleinerziehend, 1 Kind": 932,
+     "Paar, ein Einkommen, 2 Kinder": 1631
     },
     "0.33": {
-     "alleinstehend": 323,
-     "alleinerziehend, 1 Kind": 593,
-     "Paar, ein Einkommen, 2 Kinder": 1249
+     "alleinstehend": 330,
+     "alleinerziehend, 1 Kind": 601,
+     "Paar, ein Einkommen, 2 Kinder": 1258
     },
     "0.5": {
-     "alleinstehend": 312,
-     "alleinerziehend, 1 Kind": 418,
-     "Paar, ein Einkommen, 2 Kinder": 1059
+     "alleinstehend": 336,
+     "alleinerziehend, 1 Kind": 431,
+     "Paar, ein Einkommen, 2 Kinder": 1073
     },
     "0.66": {
-     "alleinstehend": 361,
-     "alleinerziehend, 1 Kind": 365,
-     "Paar, ein Einkommen, 2 Kinder": 912
+     "alleinstehend": 395,
+     "alleinerziehend, 1 Kind": 400,
+     "Paar, ein Einkommen, 2 Kinder": 931
     },
     "1.0": {
-     "alleinstehend": 431,
-     "alleinerziehend, 1 Kind": 435,
-     "Paar, ein Einkommen, 2 Kinder": 639
+     "alleinstehend": 490,
+     "alleinerziehend, 1 Kind": 496,
+     "Paar, ein Einkommen, 2 Kinder": 702
     }
    },
    "lohnabstand": {
     "alleinstehend": {
      "0.0": {
-      "neu": 854,
+      "neu": 856,
       "heute": null
      },
      "0.25": {
-      "neu": 984,
+      "neu": 986,
       "heute": 238
      },
      "0.5": {
-      "neu": 1108,
+      "neu": 1111,
       "heute": 475
      },
      "1.0": {
-      "neu": 1310,
+      "neu": 1317,
       "heute": 989
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
@@ -288,19 +288,19 @@
     },
     "alleinerziehend, 1 Kind": {
      "0.0": {
-      "neu": 1322,
+      "neu": 1325,
       "heute": null
      },
      "0.25": {
-      "neu": 1455,
+      "neu": 1457,
       "heute": 439
      },
      "0.5": {
-      "neu": 1579,
+      "neu": 1583,
       "heute": 676
      },
      "1.0": {
-      "neu": 1781,
+      "neu": 1789,
       "heute": 1190
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
@@ -310,23 +310,23 @@
     },
     "Paar, ein Einkommen, 2 Kinder": {
      "0.0": {
-      "neu": 2213,
+      "neu": 2220,
       "heute": null
      },
      "0.25": {
-      "neu": 2353,
+      "neu": 2357,
       "heute": 640
      },
      "0.5": {
-      "neu": 2478,
+      "neu": 2483,
       "heute": 877
      },
      "1.0": {
-      "neu": 2680,
+      "neu": 2690,
       "heute": 1435
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
-      "neu": 57,
+      "neu": 56,
       "heute": 4
      }
     }
@@ -350,24 +350,24 @@
      "Paar, ein Einkommen, 2 Kinder": 1742
     },
     "0.33": {
-     "alleinstehend": 389,
-     "alleinerziehend, 1 Kind": 747,
-     "Paar, ein Einkommen, 2 Kinder": 1504
+     "alleinstehend": 390,
+     "alleinerziehend, 1 Kind": 748,
+     "Paar, ein Einkommen, 2 Kinder": 1505
     },
     "0.5": {
-     "alleinstehend": 242,
-     "alleinerziehend, 1 Kind": 492,
-     "Paar, ein Einkommen, 2 Kinder": 1248
+     "alleinstehend": 245,
+     "alleinerziehend, 1 Kind": 493,
+     "Paar, ein Einkommen, 2 Kinder": 1250
     },
     "0.66": {
-     "alleinstehend": 330,
-     "alleinerziehend, 1 Kind": 336,
-     "Paar, ein Einkommen, 2 Kinder": 1007
+     "alleinstehend": 334,
+     "alleinerziehend, 1 Kind": 341,
+     "Paar, ein Einkommen, 2 Kinder": 1010
     },
     "1.0": {
-     "alleinstehend": 369,
-     "alleinerziehend, 1 Kind": 365,
-     "Paar, ein Einkommen, 2 Kinder": 687
+     "alleinstehend": 377,
+     "alleinerziehend, 1 Kind": 373,
+     "Paar, ein Einkommen, 2 Kinder": 691
     }
    },
    "lohnabstand": {
@@ -377,15 +377,15 @@
       "heute": null
      },
      "0.25": {
-      "neu": 979,
+      "neu": 980,
       "heute": 333
      },
      "0.5": {
-      "neu": 1142,
+      "neu": 1143,
       "heute": 666
      },
      "1.0": {
-      "neu": 1556,
+      "neu": 1559,
       "heute": 1314
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
@@ -399,15 +399,15 @@
       "heute": null
      },
      "0.25": {
-      "neu": 1417,
+      "neu": 1418,
       "heute": 413
      },
      "0.5": {
-      "neu": 1580,
+      "neu": 1581,
       "heute": 746
      },
      "1.0": {
-      "neu": 1839,
+      "neu": 1841,
       "heute": 1412
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
@@ -421,19 +421,19 @@
       "heute": null
      },
      "0.25": {
-      "neu": 2253,
+      "neu": 2254,
       "heute": 493
      },
      "0.5": {
-      "neu": 2416,
+      "neu": 2417,
       "heute": 826
      },
      "1.0": {
-      "neu": 2676,
+      "neu": 2678,
       "heute": 1492
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
-      "neu": 57,
+      "neu": 56,
       "heute": 7
      }
     }
@@ -448,51 +448,51 @@
    "anteil": {
     "alleinstehend": 100,
     "alleinerziehend, 1 Kind": 98,
-    "Paar, ein Einkommen, 2 Kinder": 100
+    "Paar, ein Einkommen, 2 Kinder": 98
    },
    "faelle": {
     "0.15": {
-     "alleinstehend": 2435,
-     "alleinerziehend, 1 Kind": 3088,
-     "Paar, ein Einkommen, 2 Kinder": 5146
+     "alleinstehend": 2430,
+     "alleinerziehend, 1 Kind": 3082,
+     "Paar, ein Einkommen, 2 Kinder": 5136
     },
     "0.33": {
-     "alleinstehend": 1922,
-     "alleinerziehend, 1 Kind": 2575,
-     "Paar, ein Einkommen, 2 Kinder": 4634
+     "alleinstehend": 1912,
+     "alleinerziehend, 1 Kind": 2564,
+     "Paar, ein Einkommen, 2 Kinder": 4619
     },
     "0.5": {
-     "alleinstehend": 1459,
-     "alleinerziehend, 1 Kind": 1998,
-     "Paar, ein Einkommen, 2 Kinder": 4057
+     "alleinstehend": 1424,
+     "alleinerziehend, 1 Kind": 1980,
+     "Paar, ein Einkommen, 2 Kinder": 4036
     },
     "0.66": {
-     "alleinstehend": 1526,
-     "alleinerziehend, 1 Kind": 1398,
-     "Paar, ein Einkommen, 2 Kinder": 3457
+     "alleinstehend": 1476,
+     "alleinerziehend, 1 Kind": 1372,
+     "Paar, ein Einkommen, 2 Kinder": 3428
     },
     "1.0": {
-     "alleinstehend": 1497,
-     "alleinerziehend, 1 Kind": 1003,
-     "Paar, ein Einkommen, 2 Kinder": 2294
+     "alleinstehend": 1409,
+     "alleinerziehend, 1 Kind": 913,
+     "Paar, ein Einkommen, 2 Kinder": 2247
     }
    },
    "lohnabstand": {
     "alleinstehend": {
      "0.0": {
-      "neu": 2807,
+      "neu": 2803,
       "heute": null
      },
      "0.25": {
-      "neu": 3381,
+      "neu": 3376,
       "heute": 943
      },
      "0.5": {
-      "neu": 3904,
+      "neu": 3894,
       "heute": 1887
      },
      "1.0": {
-      "neu": 5112,
+      "neu": 5067,
       "heute": 3606
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
@@ -502,19 +502,19 @@
     },
     "alleinerziehend, 1 Kind": {
      "0.0": {
-      "neu": 4348,
+      "neu": 4341,
       "heute": null
      },
      "0.25": {
-      "neu": 4927,
+      "neu": 4920,
       "heute": 1836
      },
      "0.5": {
-      "neu": 5450,
+      "neu": 5439,
       "heute": 2780
      },
      "1.0": {
-      "neu": 6298,
+      "neu": 6275,
       "heute": 4667
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
@@ -524,19 +524,19 @@
     },
     "Paar, ein Einkommen, 2 Kinder": {
      "0.0": {
-      "neu": 7286,
+      "neu": 7273,
       "heute": null
      },
      "0.25": {
-      "neu": 7877,
+      "neu": 7867,
       "heute": 2729
      },
      "0.5": {
-      "neu": 8400,
+      "neu": 8387,
       "heute": 3672
      },
      "1.0": {
-      "neu": 9250,
+      "neu": 9224,
       "heute": 5559
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {

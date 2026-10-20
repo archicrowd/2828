@@ -43,8 +43,8 @@
      "Paar, ein Einkommen, 2 Kinder": 91
     },
     "PL": {
-     "alleinstehend": 98,
-     "alleinerziehend, 1 Kind": 91,
+     "alleinstehend": 91,
+     "alleinerziehend, 1 Kind": 80,
      "Paar, ein Einkommen, 2 Kinder": 91
     }
    }
@@ -121,7 +121,7 @@
     },
     "FR": {
      "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 73,
+     "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
     "IT": {
@@ -137,7 +137,7 @@
     "PL": {
      "alleinstehend": 100,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "Paar, ein Einkommen, 2 Kinder": 98
     }
    }
   },
@@ -166,7 +166,7 @@
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "FR": {
-     "alleinstehend": 73,
+     "alleinstehend": 100,
      "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
@@ -182,7 +182,7 @@
     },
     "PL": {
      "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 100
     }
    }

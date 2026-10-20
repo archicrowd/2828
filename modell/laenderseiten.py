@@ -24,6 +24,10 @@ with contextlib.redirect_stdout(io.StringIO()):
 NZ = json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))
 G = json.loads((AGG / "gesamtrechnung.json").read_text(encoding="utf-8"))
 NB = {r["jahr"]: r for r in NZ["beschluss"]["reihe"]}
+# v4.17 (Beschluss 20.10.2026, Prüfbericht B11): auf allen Seiten gilt der gemeinsame Fonds (Beschluss altlasten.json); der eigene Fonds
+# je Staat bleibt als Vergleich („fonds_eigen“).
+AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]
+DNAME = {"DE": "Deutschland", "FR": "Frankreich", "ES": "Spanien", "IT": "Italien", "PL": "Polen"}
 JAHRE = list(range(2028, 2061))
 GR = "Grundrente (ab 67)"
 
@@ -111,17 +115,23 @@ def main():
         e["tarif_stufen"] = [round(e["grundbedarf_jahr_eur"] * m) for m in (1, 1.5, 2, 3)]
         if c != "EU30":
             d0 = P["schuld_2028"][c]
-            e["fonds"] = fonds(c, d0)
-            e["fonds"]["start_2028"] = d0
+            e["fonds_eigen"] = fonds(c, d0)
+            e["fonds_eigen"]["start_2028"] = d0
+            vr = AL["laender"].get(DNAME.get(c, ""), {}).get("reihe", {}).get("2028")
+            e["fonds"] = dict(abgrenzung="gemeinsamer Fonds (Beschluss, zehn gerechnete Staaten)", beitrag_pct_bip=AL["beitrag_pct_bip"],
+                              zuschlag_pct=AL["zuschlag_auf_alle_steuern_pct"], spitze=AL["schuldenquote_spitze"], spitzenjahr=AL["spitzenjahr"],
+                              zieljahr=AL["zieljahr"], verrechnung_2028=vr,
+                              hinweis="gleicher Satz für alle (vereinfachend wie im Beschluss); Italien und Polen sind nicht unter den zehn gerechneten "
+                                      "Staaten: ihr Beitritt würde den gemeinsamen Satz verändern (nicht gerechnet)")
         erg[c] = e
     erg["DE"]["abgleich"] = "DE-Pfad identisch mit netz33 (Verhältnis 1)"
     E = dict(version=P["version"], status="Prüfrechnung", jahre=JAHRE, staaten=erg,
              hinweis="Dividende: deutscher Beschlusspfad × Verhältnis Land/DE aus dem Möglichkeitsraum-Modell (jahrweise). Anteile: DE-Pfad + Differenz Land−DE. "
-                     "Gemeindeformel nach BIP je Kopf 2024 relativ zum Klub der zehn. Fonds mit Startschuld 2028 aus laenderseiten.toml. Euro des Landes, Kaufkraft 2026.")
+                     "Gemeindeformel nach BIP je Kopf 2024 relativ zum Klub der zehn. Fonds: gemeinsamer Fonds (Beschluss) geltend, eigener Fonds mit Startschuld 2028 aus laenderseiten.toml als Vergleich (fonds_eigen). Euro des Landes, Kaufkraft 2026.")
     (AGG / "laenderseiten.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{'Staat':<8}{'Div28':>7}{'Div35':>7}{'Div60':>7}{'Netz28':>8}{'Div%28':>8}{'Gem/Einw':>9}{'Kind':>7}{'GB/Jahr':>9}{'Zuschl':>8}{'Spitze':>8}")
     for c, e in erg.items():
-        fz = e.get("fonds", {})
+        fz = e.get("fonds_eigen", {})
         print(f"{c:<8}{e['dividende_erw_eur'][0]:>7.0f}{e['dividende_erw_eur'][7]:>7.0f}{e['dividende_erw_eur'][-1]:>7.0f}{e['netz_pct_bip'][0]:>8.2f}"
               f"{e['dividende_pct_bip'][0]:>8.2f}{e['gemeinde_einw']:>9}{e['gemeinde_kind']:>7}{e['grundbedarf_jahr_eur']:>9}"
               f"{fz.get('zuschlag_pct', '–'):>8}{fz.get('spitze', '–'):>8}")

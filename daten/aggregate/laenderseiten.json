@@ -190,7 +190,7 @@
     24696,
     37044
    ],
-   "fonds": {
+   "fonds_eigen": {
     "beitrag_pct_bip": 4.76,
     "zuschlag_pct": 14.2,
     "spitze": 138,
@@ -269,6 +269,19 @@
     },
     "z_2028": 8.6,
     "start_2028": 81.3
+   },
+   "fonds": {
+    "abgrenzung": "gemeinsamer Fonds (Beschluss, zehn gerechnete Staaten)",
+    "beitrag_pct_bip": 5.28,
+    "zuschlag_pct": 15.8,
+    "spitze": 149.6,
+    "spitzenjahr": 2056,
+    "zieljahr": 2098,
+    "verrechnung_2028": {
+     "beitrag_pct_bip": 5.17,
+     "zuschlag_pct": 15.5
+    },
+    "hinweis": "gleicher Satz für alle (vereinfachend wie im Beschluss); Italien und Polen sind nicht unter den zehn gerechneten Staaten: ihr Beitritt würde den gemeinsamen Satz verändern (nicht gerechnet)"
    },
    "abgleich": "DE-Pfad identisch mit netz33 (Verhältnis 1)"
   },
@@ -425,7 +438,7 @@
     23304,
     34956
    ],
-   "fonds": {
+   "fonds_eigen": {
     "beitrag_pct_bip": 6.65,
     "zuschlag_pct": 20.3,
     "spitze": 196,
@@ -504,6 +517,19 @@
     },
     "z_2028": 11.8,
     "start_2028": 122.4
+   },
+   "fonds": {
+    "abgrenzung": "gemeinsamer Fonds (Beschluss, zehn gerechnete Staaten)",
+    "beitrag_pct_bip": 5.28,
+    "zuschlag_pct": 15.8,
+    "spitze": 149.6,
+    "spitzenjahr": 2056,
+    "zieljahr": 2098,
+    "verrechnung_2028": {
+     "beitrag_pct_bip": 6.7,
+     "zuschlag_pct": 20.0
+    },
+    "hinweis": "gleicher Satz für alle (vereinfachend wie im Beschluss); Italien und Polen sind nicht unter den zehn gerechneten Staaten: ihr Beitritt würde den gemeinsamen Satz verändern (nicht gerechnet)"
    }
   },
   "IT": {
@@ -659,7 +685,7 @@
     20688,
     31032
    ],
-   "fonds": {
+   "fonds_eigen": {
     "beitrag_pct_bip": 6.88,
     "zuschlag_pct": 20.7,
     "spitze": 206,
@@ -738,6 +764,16 @@
     },
     "z_2028": 11.9,
     "start_2028": 137.9
+   },
+   "fonds": {
+    "abgrenzung": "gemeinsamer Fonds (Beschluss, zehn gerechnete Staaten)",
+    "beitrag_pct_bip": 5.28,
+    "zuschlag_pct": 15.8,
+    "spitze": 149.6,
+    "spitzenjahr": 2056,
+    "zieljahr": 2098,
+    "verrechnung_2028": null,
+    "hinweis": "gleicher Satz für alle (vereinfachend wie im Beschluss); Italien und Polen sind nicht unter den zehn gerechneten Staaten: ihr Beitritt würde den gemeinsamen Satz verändern (nicht gerechnet)"
    }
   },
   "ES": {
@@ -893,7 +929,7 @@
     19224,
     28836
    ],
-   "fonds": {
+   "fonds_eigen": {
     "beitrag_pct_bip": 5.52,
     "zuschlag_pct": 16.5,
     "spitze": 161,
@@ -972,6 +1008,19 @@
     },
     "z_2028": 9.92,
     "start_2028": 96.4
+   },
+   "fonds": {
+    "abgrenzung": "gemeinsamer Fonds (Beschluss, zehn gerechnete Staaten)",
+    "beitrag_pct_bip": 5.28,
+    "zuschlag_pct": 15.8,
+    "spitze": 149.6,
+    "spitzenjahr": 2056,
+    "zieljahr": 2098,
+    "verrechnung_2028": {
+     "beitrag_pct_bip": 6.41,
+     "zuschlag_pct": 19.2
+    },
+    "hinweis": "gleicher Satz für alle (vereinfachend wie im Beschluss); Italien und Polen sind nicht unter den zehn gerechneten Staaten: ihr Beitritt würde den gemeinsamen Satz verändern (nicht gerechnet)"
    }
   },
   "PL": {
@@ -1127,7 +1176,7 @@
     15960,
     23940
    ],
-   "fonds": {
+   "fonds_eigen": {
     "beitrag_pct_bip": 4.2,
     "zuschlag_pct": 12.7,
     "spitze": 122,
@@ -1206,6 +1255,16 @@
     },
     "z_2028": 7.6,
     "start_2028": 71.7
+   },
+   "fonds": {
+    "abgrenzung": "gemeinsamer Fonds (Beschluss, zehn gerechnete Staaten)",
+    "beitrag_pct_bip": 5.28,
+    "zuschlag_pct": 15.8,
+    "spitze": 149.6,
+    "spitzenjahr": 2056,
+    "zieljahr": 2098,
+    "verrechnung_2028": null,
+    "hinweis": "gleicher Satz für alle (vereinfachend wie im Beschluss); Italien und Polen sind nicht unter den zehn gerechneten Staaten: ihr Beitritt würde den gemeinsamen Satz verändern (nicht gerechnet)"
    }
   },
   "EU30": {
@@ -1363,5 +1422,5 @@
    ]
   }
  },
- "hinweis": "Dividende: deutscher Beschlusspfad × Verhältnis Land/DE aus dem Möglichkeitsraum-Modell (jahrweise). Anteile: DE-Pfad + Differenz Land−DE. Gemeindeformel nach BIP je Kopf 2024 relativ zum Klub der zehn. Fonds mit Startschuld 2028 aus laenderseiten.toml. Euro des Landes, Kaufkraft 2026."
+ "hinweis": "Dividende: deutscher Beschlusspfad × Verhältnis Land/DE aus dem Möglichkeitsraum-Modell (jahrweise). Anteile: DE-Pfad + Differenz Land−DE. Gemeindeformel nach BIP je Kopf 2024 relativ zum Klub der zehn. Fonds: gemeinsamer Fonds (Beschluss) geltend, eigener Fonds mit Startschuld 2028 aus laenderseiten.toml als Vergleich (fonds_eigen). Euro des Landes, Kaufkraft 2026."
 }

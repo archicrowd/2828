@@ -101,7 +101,7 @@ def zuschlag_bei_zins(c, i):
     """Zuschlag des eigenen Fonds bei anderem Zins (Marktzins Frankreich 10 Jahre am 16.10.2026: 4,79 %, Sekundärquelle ideal-investisseur.fr)."""
     alt = LSM.MR.P["zins"]
     LSM.MR.P["zins"] = i
-    z = LSM.fonds(c, HL.LS["staaten"][c]["fonds"]["start_2028"])["zuschlag_pct"]
+    z = LSM.fonds(c, HL.LS["staaten"][c]["fonds_eigen"]["start_2028"])["zuschlag_pct"]   # eigener Fonds (Vergleich)
     LSM.MR.P["zins"] = alt
     return z
 

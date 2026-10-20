@@ -1,6 +1,6 @@
 # Kennzahlen Stand C – welche Zahl gilt, und was sie bedeutet
 
-Stand v4.14 (20. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
+Stand v4.17 (20. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
 mit verschiedenen Werten, weil die Abgrenzungen verschieden sind. Hier steht je Größe, **welcher Wert gilt** und wie die anderen zu lesen sind.
 Wer eine Zahl zitiert, nennt die Zeile dieser Tabelle.
 
@@ -20,8 +20,8 @@ Zehntelpunkt BIP mehr oder weniger Netz ändert sich die Dividende 2060 um rund 
 
 | Wert | Datei | Bedeutung | Status |
 |---|---|---|---|
-| **Fondsbeitrag 5,28 % BIP, Zuschlag 15,8 % auf alle Steuern, Spitze 149,6 % (2056), getilgt 2098** | `altlasten.json`, `beschluss` | gemeinsamer Fonds der zehn gerechneten Staaten (Klub, Stand B-Abgrenzung), Rentenkürzung 7,5 %, anteilige Verrechnung, Grundauskommen im Bestand, gekoppelter Rentenbeginn | **geltend für Deutschland auf Seite und im Konzept** |
-| DE 4,76 % / 14,2 % / 138 % (2055); FR 6,65 / 20,3 / 196 (2054); IT 6,88 / 20,7 / 206; ES 5,52 / 16,5 / 161; PL 4,20 / 12,7 / 122 | `laenderseiten.json`, `staaten.*.fonds` | **eigener Fonds je Staat** (Altlasten Sache der Staaten) | geltend auf den Länderseiten FR, IT, ES, PL (dort als „eigener Fonds“ benannt) |
+| **Fondsbeitrag 5,28 % BIP, Zuschlag 15,8 % auf alle Steuern, Spitze 149,6 % (2056), getilgt 2098** | `altlasten.json`, `beschluss` | gemeinsamer Fonds der zehn gerechneten Staaten (Klub, Stand B-Abgrenzung), Rentenkürzung 7,5 %, anteilige Verrechnung, Grundauskommen im Bestand, gekoppelter Rentenbeginn | **geltend auf allen Seiten und im Konzept** (Beschluss 20.10.2026 zu B11, v4.17); Länderrechnungen FR, IT, ES, PL mit demselben Zuschlag 15,8 % |
+| DE 4,76 % / 14,2 % / 138 % (2055); FR 6,65 / 20,3 / 196 (2054); IT 6,88 / 20,7 / 206; ES 5,52 / 16,5 / 161; PL 4,20 / 12,7 / 122 | `laenderseiten.json`, `staaten.*.fonds_eigen` | **eigener Fonds je Staat** zum gemeinsamen Zins 2,5 % (Altlasten Sache der Staaten) | **Vergleich** („allein trüge …“), `staaten.*.fonds_eigen`; bis v4.16 auf den Länderseiten FR, IT, ES, PL geltend |
 | Z 2028 = 9,38 % BIP | `altlasten.json`, `beschluss.verhandlungsmasse_z_2028_pct_bip` | Altrentenansprüche über der Dividende im Klubschnitt, nach Kürzung 7,5 % | geltend |
 | Z 2028 = 10,23 % BIP | `systemvarianten.json` | dieselbe Größe im Variantenvergleich v3.43, **ohne** Rentenkürzung | Variantenvergleich |
 | Z 2028 = 8,6 % BIP | `laenderseiten.json`, `DE.fonds.z_2028` | Deutschland allein, eigenes BIP | Länderwert |

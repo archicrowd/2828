@@ -125,7 +125,7 @@ def land_j(c):
     j["gemeinde_einw_de"], j["gemeinde_kind_de"] = L["gemeinde_einw"] * fx, L["gemeinde_kind"] * fx
     j["formel_einw"], j["formel_kind"] = J_DE["formel_einw"] * fx, J_DE["formel_kind"] * fx
     j["f_de"] = L["f_kopf"] * fx
-    if "fonds" in L:
+    if "pfad" in L.get("fonds", {}):
         pf = {2028: L["fonds"]["start_2028"], **{int(k): v for k, v in L["fonds"]["pfad"].items()}}
         j["reihe_d"] = [pf[x] for x in JAHRE]
     return j
@@ -152,10 +152,11 @@ def werte_neu(sp, c):
     elif c in HL["staaten"]:
         h = HL["staaten"][c]
         f = LS["staaten"][c]["fonds"]
+        fe = LS["staaten"][c]["fonds_eigen"]
         amin, amax = VB.anteil(c)
         pa = VB.plus_monat(c, h["beispiel_aw"]["brutto"])
         w.update(plus="+" + E(VB.plus_monat(c, h["beispiel"]["brutto"])), bsp=E(h["beispiel"]["brutto"]), zu=P(f["zuschlag_pct"], 1), spitze=P(f["spitze"]),
-                 sjahr=str(f["spitzenjahr"]), plus_aw=("+" if pa >= 0 else "−") + E(abs(pa)), aw=E(h["beispiel_aw"]["brutto"]),
+                 sjahr=str(f["spitzenjahr"]), zu_eigen=P(fe["zuschlag_pct"], 1), plus_aw=("+" if pa >= 0 else "−") + E(abs(pa)), aw=E(h["beispiel_aw"]["brutto"]),
                  keil=P(HT["oecd"]["keil"][c], 1), anteil=LT.ANTEIL_TXT.get(sp, "{a}–{b}").format(a=round(amin / 10), b=round(amax / 10)))
     else:
         amin, amax = VB.anteil("FR")
