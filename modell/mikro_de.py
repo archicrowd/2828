@@ -9,7 +9,8 @@ Aufbau
   1. Haushalte erwerbsfähigen Alters (allein, alleinerziehend, Paar ohne / mit minderjährigen Kindern, ggf. ein volljähriges Kind),
      Erwerbsstatus je Erwachsenem (Vollzeit, Teilzeit, Minijob, ohne Erwerb), Löhne aus den amtlichen Verteilungen (mikro_de.toml).
      Partnerlöhne über eine Gauß-Copula mit Rangkorrelation rho.
-  2. Rentnerhaushalte (allein, Paar), Renten lognormal auf Mittel und Anteil unter 1.000 € geeicht.
+  2. Rentnerhaushalte (allein, Paar): seit v4.23 Haushaltseinkommen aus EU-SILC mit Einkommensarten nach ASID (modell/mikro_rentner_de.py);
+     v4.22 zog Renten je Rente (Grundsicherung im Alter weit überschätzt, Validierung nicht bestanden).
   3. Eichung auf: Haushalte je Typ, Bedarfsgemeinschaften ohne Erwerb, Vollzeit-, Teilzeit-, Minijob-Personen, Kinder unter 18 und volljährig.
   4. Validierung an NICHT geeichten Aggregaten 2025: Bruttolohnsumme (D11), Lohnsteuer + Kindergeld (kassenmäßig), Soli.
   5. heute (Recht 2026, sozial_laender / Kernmodell, Paare mit Splitting beider Einkommen, Midijob-Übergangsbereich genähert)
@@ -44,7 +45,7 @@ def lade(name, pfad):
 
 
 RB = lade("rb", "modell/regel_boden.py")
-RA = lade("ra", "modell/rentnerausgleich.py")
+MR = lade("mr", "modell/mikro_rentner_de.py")      # v4.23
 SL, HL = RB.SL, RB.SL.HL
 H33, K = SL.H33, SL.H33.K
 DE = HL.LS["staaten"]["DE"]
@@ -113,20 +114,6 @@ def neu(hh, w):
     dv = DIV * (e + RB.S * k)
     auf = max(0.0, RB.boden("DE", e, k) - dv - RB.P["anrechnung"] * max(0.0, netto - dv))
     return netto + auf - HL.P["vorsorge"] * sum(loehne), auf
-
-
-def rentner_heute_neu(r_monate):
-    """Je Person (Paare: zwei Renten, Boden je Person – Annahme). Rückgabe: heute, neu, Aufstockung neu, Grundsicherung heute, Fälle heute."""
-    h = sum(RA.heute(r) for r in r_monate)
-    gs = [RA.heute(r) - RA.heute_ohne_gs(r) for r in r_monate]
-    n = sum(RA.neu(r) for r in r_monate)
-    g = RA.H.P["grundauskommen_rentner"]
-    RA.H.P["grundauskommen_rentner"] = None
-    try:
-        ohne = sum(RA.neu(r) for r in r_monate)
-    finally:
-        RA.H.P["grundauskommen_rentner"] = g
-    return h, n, n - ohne, sum(gs), sum(x > 0 for x in gs)
 
 
 def gegenprobe():
@@ -198,14 +185,6 @@ def mini_quantil(u):
     return (a + (b - a) * u) * 12 / P["lohn_2024_2025"]
 
 
-def rente_parameter():
-    r = P["rentner"]
-    z = norm.ppf(r["anteil_unter_1000"])
-    m = math.log(r["zahlbetrag_mittel_2024"])
-    s = -z + math.sqrt(z * z + 2 * (m - math.log(1000)))          # s²/2 − z·s − (m − ln 1000) = 0
-    return m - s * s / 2, s
-
-
 # ------------------------------------------------------------------ Population
 TYPEN = ("allein", "alleinerziehend", "paar_ohne", "paar_mit")
 # Ausgangswahrscheinlichkeiten Erwerbsstatus (vz, tz, mini, ohne) für Haushalte mit Erwerb – Annahme, wird geeicht
@@ -263,16 +242,11 @@ def ziehe(seed, rho, struktur=1.0):
             lohn = {"vz": AZUBI, "tz": float(tz_quantil(rng.random(1))[0]) * 0.6, "mini": float(mini_quantil(rng.random(1))[0]), "ohne": 0.0}[art]
             vk = (lohn, art)
         haushalte.append(dict(typ=t, erw=erw, kind=int(kinder[i]), vkind=vk, paar=t.startswith("paar"), bg=bool(bg[i])))
-    # Rentner
+    # Rentner (v4.23: Haushaltseinkommen, mikro_rentner_de)
     R = P["rentner"]
-    mu, s = rente_parameter()
-    nr = P["rentner_stichprobe"]
-    allein_r = rng.random(nr) < R["allein_lebend_mio"] / (R["allein_lebend_mio"] + (R["personen_mio"] - R["allein_lebend_mio"]) / 2)
-    zr1 = rng.standard_normal(nr)
-    zr2 = 0.3 * zr1 + math.sqrt(1 - 0.09) * rng.standard_normal(nr)
-    brutto = lambda z: np.exp(mu + s * z) / (1 - RA.H.P["rentner_kv_pv"])          # Zahlbetrag → Brutto
-    rentner = [dict(typ="rentner_allein" if allein_r[i] else "rentner_paar",
-                    renten=[float(brutto(zr1[i]))] + ([] if allein_r[i] else [float(brutto(zr2[i]))])) for i in range(nr)]
+    rentner, wr = MR.ziehe(rng, P["rentner_stichprobe"], R["personen_mio"], R["allein_lebend_mio"])
+    for r, x in zip(rentner, wr):
+        r["w"] = float(x)
     return haushalte, rentner, soll_typ, soll_bg
 
 
@@ -300,12 +274,7 @@ def eiche(haushalte, rentner, soll_typ, soll_bg):
             break
         lam += np.linalg.solve((X * w[:, None]).T @ X, r)
     w = d * np.exp(X @ lam)
-    # Rentner: Haushaltsgewichte so, dass Personen und Alleinlebende getroffen werden
-    R = P["rentner"]
-    na = sum(r["typ"] == "rentner_allein" for r in rentner)
-    npa = len(rentner) - na
-    wr = np.array([R["allein_lebend_mio"] * 1e6 / na if r["typ"] == "rentner_allein" else (R["personen_mio"] - R["allein_lebend_mio"]) * 1e6 / 2 / npa
-                   for r in rentner])
+    wr = np.array([r["w"] for r in rentner])                 # Rentner: Personen und Alleinlebende (mikro_rentner_de.ziehe)
     spanne = dict(gewicht_min_max=[round(float((w / d).min()), 3), round(float((w / d).max()), 3)], restfehler_max=float(np.max(np.abs(soll - X.T @ w) / soll)))
     return w, wr, spanne
 
@@ -369,7 +338,7 @@ def gruppe_status(h):
     return {"vz": "Hauptperson Vollzeit", "tz": "Hauptperson Teilzeit", "mini": "Hauptperson Minijob", "ohne": "Hauptperson ohne Erwerb"}[a]
 
 
-def rechne(haushalte, rentner, w, wr, weitergaben):
+def rechne(haushalte, rentner, w, wr, weitergaben, rentner_variante="asid", inanspruchnahme="voll"):
     f = P["lohn_2024_2026"]
     zeilen = []
     for h, wi in zip(haushalte, w):
@@ -382,11 +351,13 @@ def rechne(haushalte, rentner, w, wr, weitergaben):
         zeilen.append(dict(w=wi, p=personen(h), typ=h["typ"], status=gruppe_status(h), tz=any(a == "tz" for _, a in h["erw"]),
                            kinder=h["kind"] > 0, heute=y0, aeq=aequiv(h, y0), neu=res, bg_heute=d0["buergergeld"]))
     for r, wi in zip(rentner, wr):
-        rm = [x * f for x in r["renten"]]
-        y0, y1, auf, gs, ngs = rentner_heute_neu(rm)
-        n = len(rm)
+        res = {}
+        for wg in weitergaben:
+            y0, y1, auf, gs, _ = MR.rechne(r, f, wg, rentner_variante, inanspruchnahme)
+            res[wg] = (y1, auf)
+        n = r["n"]
         zeilen.append(dict(w=wi, p=n, typ=r["typ"], status="Rentner", tz=False, kinder=False, heute=y0, aeq=y0 / (1 + 0.5 * (n - 1)),
-                           neu={wg: (y1, auf) for wg in weitergaben}, bg_heute=0.0, gs_heute=gs, gs_faelle=ngs))
+                           neu=res, bg_heute=0.0, gs_heute=gs, gs_faelle=n * (gs > 0)))
     return zeilen
 
 
@@ -444,8 +415,8 @@ def main():
     abw = gegenprobe()
     S = P["szenarien"]
     rho0, wg0 = P["partner"]["basis_korrelation"], S["basis_weitergabe"]
-    E = dict(version=P["version"], status="Prüfrechnung (synthetische Population, Stufe 1)", jahr=J, kaufkraft=2026, gegenprobe_max_abweichung_eur=abw,
-             vollzeit_pareto_alpha=round(vz_alpha(), 3), rente_lognormal=dict(zip(("mu", "sigma"), [round(x, 4) for x in rente_parameter()])))
+    E = dict(version=P["version"], status="Prüfrechnung (synthetische Population, Stufe 1; Rentner Stufe 2)", jahr=J, kaufkraft=2026, gegenprobe_max_abweichung_eur=abw,
+             vollzeit_pareto_alpha=round(vz_alpha(), 3))
     basis, ziehungen = None, []
     for seed in P["seeds"]:
         hh, rr, st, sb = ziehe(seed, rho0)
@@ -454,7 +425,14 @@ def main():
         erg = {str(wg): auswerten(z, wg) for wg in S["weitergabe"]}
         ziehungen.append(erg)
         if basis is None:
-            basis = dict(eichung=sp, validierung_2025=validierung(hh, w), ergebnis=erg)
+            basis = dict(eichung=sp, validierung_2025=validierung(hh, w), pruefung_rentner=MR.pruefwerte(rr, wr, P["rente_2023_2024"]), ergebnis=erg)
+            # v4.23: Varianten der Rentnerhaushalte (Ziehung 1, Basis-Weitergabe)
+            E["rentner_varianten"] = {}
+            for var, inan in (("asid", "voll"), ("asid", "beobachtet"), ("nur_grv", "voll")):
+                a = auswerten(rechne(hh, rr, w, wr, [wg0], var, inan), wg0)
+                E["rentner_varianten"][f"{var}/{inan}"] = dict(rentner=a["status"]["Rentner"], rentner_allein=a["haushaltstyp"]["rentner_allein"],
+                                                              rentner_paar=a["haushaltstyp"]["rentner_paar"], gesamt=a["gesamt"],
+                                                              dezil_1=a["dezile"][0], kosten_mrd=a["kosten_mrd"])
     E["basis"] = basis
 
     def spanne(pfad):
@@ -484,9 +462,9 @@ def main():
         a = auswerten(rechne(hh, rr, w, wr, [wg0]), wg0)
         E["struktur"][name] = dict(faktor_allein=fak, gesamt=a["gesamt"], kosten_mrd=a["kosten_mrd"])
     E["hinweis"] = ("Synthetische Population aus veröffentlichten Eckwerten; Spanne der Ziehungen misst nur das Rauschen der Ziehung, nicht die "
-                    "Unsicherheit der Annahmen (Haushaltszahlen, Teilzeitstreuung, Partnerstatus, Rentenverteilung). Nicht abgebildet: Selbständige "
-                    "und Beamte (Haushalte herausgenommen), Hinterbliebenen- und Betriebsrenten, Vermögenseinkommen, Rentner mit Minijob, "
-                    "Nicht-Inanspruchnahme von Bürgergeld. Validierung nur an Aggregaten, auf die nicht geeicht wurde.")
+                    "Unsicherheit der Annahmen (Haushaltszahlen, Teilzeitstreuung, Partnerstatus, Zusammensetzung der Alterseinkommen). Nicht abgebildet: "
+                    "Selbständige und Beamte im Erwerbsalter (Haushalte herausgenommen), Vermögenseinkommen der Erwerbstätigen, Rentner unter 65, "
+                    "Nicht-Inanspruchnahme von Bürgergeld (Rentner: Variante beobachtet). Validierung nur an Aggregaten, auf die nicht geeicht wurde.")
     (AGG / "mikro_de.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     b = basis["ergebnis"]
     print("Gegenprobe", abw, "€ | Eichung", basis["eichung"])

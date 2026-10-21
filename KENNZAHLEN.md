@@ -68,8 +68,9 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Größe | Wert | Datei | Status |
 |---|---|---|---|
 | Eigene Population: Haushalte mit mehr, Hauptperson Vollzeit / Teilzeit / Minijob, Weitergabe 80 % | 99,3 / 99,8 / 47,6 % | `mikro_de.json` | Prüfrechnung, synthetisch geeicht (v4.22) |
-| Eigene Population: Bürgergeld ohne Erwerb / Rentnerhaushalte mit mehr | 14,7 % (−45 €) / 0 % (−96 € im Monat) | `mikro_de.json` | Prüfrechnung; Rentnerverteilung je Rente (Grenze) |
-| Eigene Population: erwerbsfähige Haushalte / alle Haushalte / alle Personen mit mehr | 89,2 / 59,9 / 70,7 % | `mikro_de.json` | Prüfrechnung; Spanne der Ziehungen < 0,5 Punkte |
-| Validierung 2025: Bruttolohnsumme / Lohnsteuer ohne Eichung | −3,2 / −4,8 % gegen amtlich | `mikro_de.json` | Grundsicherung im Alter nicht bestanden |
+| Eigene Population: Bürgergeld ohne Erwerb / Rentnerhaushalte mit mehr | 14,7 % (−45 €) / 5,4 % (−145 € im Monat; allein −114, Paar −179) | `mikro_de.json` | Prüfrechnung; Rentner seit v4.23 mit Haushaltseinkommen (EU-SILC, ASID) |
+| Eigene Population: erwerbsfähige Haushalte / alle Haushalte / alle Personen mit mehr | 89,2 / 61,7 / 72,3 % (v4.23) | `mikro_de.json` | Prüfrechnung; Spanne der Ziehungen < 0,5 Punkte |
+| Validierung 2025: Bruttolohnsumme / Lohnsteuer ohne Eichung | −3,2 / −4,8 % gegen amtlich | `mikro_de.json` | Prüfrechnung |
+| Validierung Rentner (v4.23, ohne Eichung): Netto je Haushalt / GRV je Person / unter Grundsicherungsbedarf | +4 % gegen ASID 2023 / 1.311 € gegen DRV ≈ 1.317 € / 1,13 Mio. gegen 0,76 Mio. Empfänger | `mikro_de.json` | Rückrechnung und DRV-Bruttowert als Annahme |
 | Vollzeitbeschäftigte mit mehr verfügbarem Einkommen, Beschluss / halbe / keine Weitergabe | 99,0 / 98,4 / 92,0 % | `beitraege/kvribbeck-2028/ergebnis.csv` | externe Rechnung (Kulturverein Ribbeck e.V.), eine Quelle; Formprüfung bestanden; Grenzen in der LIESMICH.md |
 | Beispielhaushalte des Repositorys, Beschluss | 97,8 bis 100 % je Haushaltstyp (`haushalte33`), 98 % (`regel_boden`, mit Grundauskommen und Bedarfsleistungen) | `haushalte33.json`, `regel_boden.json` | Prüfrechnung |

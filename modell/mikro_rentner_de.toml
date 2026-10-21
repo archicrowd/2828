@@ -1,0 +1,44 @@
+# Rentnerhaushalte für die Mikrosimulation Deutschland, Stufe 2 (modell/mikro_rentner_de.py, Logbuch v4.23). Prüfrechnung.
+# Ersetzt in mikro_de.py die Verteilung je Rente (v4.22, Grundsicherung im Alter nicht bestanden) durch Haushaltseinkommen.
+version = "v4.23"
+
+[silc]  # Eurostat EU-SILC 2025 (Einkommen 2024), Deutschland, äquivalenzgewichtetes Nettoeinkommen, € im Jahr (Abruf 21.10.2026, amtlich)
+median_gesamt = 28891             # ilc_di03, TOTAL
+median_65 = 24940                 # ilc_di03, Y_GE65
+mittel_65 = 28780                 # ilc_di03, Y_GE65
+# ilc_li02, Y_GE65: Anteil unter 40 / 50 / 60 / 70 % des Gesamtmedians
+unter_schwelle = { 40 = 0.044, 50 = 0.109, 60 = 0.195, 70 = 0.311 }
+# ilc_li03: Armutsgefährdungsquote (60 %) allein lebend ab 65 / Paar, mindestens eine Person ab 65 – zur Verschiebung je Typ
+quote60_allein = 0.300
+quote60_paar = 0.143
+# ilc_di04, A2_GE1_GE65 (Prüfwert, nicht geeicht): Mittel 31.053, Median 26.606
+paar_mittel = 31053
+paar_median = 26606
+
+[asid]  # BMAS, Alterssicherungsbericht 2024, ASID 2023, S. 92 (über sozialpolitik-aktuell abbVIII69, Sekundärquelle): Anteile am Bruttoeinkommen ab 65
+grv = 0.53
+andere = 0.17                     # vor allem Beamtenversorgung, Versorgungswerke
+bav = 0.07
+privat = 0.09                     # private Vorsorge 6 % + restliche Einkommen 3 %
+erwerb = 0.13
+# Transferleistungen 1 % über die Grundsicherung abgebildet
+netto_haushalt_monat_2023 = 2769  # Prüfwert (nicht geeicht): durchschnittliches Nettoeinkommen 2023
+
+[abgaben_heute]  # Annahmen zur Abgabenstruktur je Einkommensart (Recht 2026, vereinfacht)
+kv_andere = 0.08                  # private Krankenversicherung der Versorgungsempfänger (Annahme), nicht abziehbar gerechnet
+kv_bav = 0.15                     # voller KV/PV-Satz auf Betriebsrenten, Freibetrag vernachlässigt (Annahme)
+ertragsanteil_privat = 0.18       # Besteuerung privater Renten (Annahme, Größenordnung Ertragsanteil mit 65–67)
+kv_erwerb = 0.09                  # AN-Anteil KV/PV bei Rentnern mit Beschäftigung (Annahme)
+bedarf_allein_monat = 1083        # Grundsicherung im Alter: Regelbedarf 563 € + KdU 520 € (sozial_laender.toml, Annahme)
+bedarf_paar_monat = 1632          # 1.012 € + KdU 620 € (sozial_laender.toml, Annahme)
+
+[neu]
+kuerzung_systeme = 0.075          # Rentnerausgleich A: Bestandsrenten aus GRV und anderen Alterssicherungssystemen (Annahme: Beamtenversorgung gleich)
+skala_partner = 0.5               # Grundauskommen je Haushalt (regel_boden), volle Anrechnung (B1)
+
+[varianten]
+nur_grv = true                    # Vergleich: alle Einkommen als GRV-Rente (obere Schranke der Kürzung)
+inanspruchnahme_heute = ["voll", "beobachtet"]   # heute: Grundsicherung für alle Berechtigten / Einkommen wie in EU-SILC gemessen
+
+[pruefung]
+grundsicherung_alter_empfaenger_mio = 0.764       # Dezember 2025 (Destatis über Münster Aktuell, Sekundärquelle; rentnerausgleich.toml)

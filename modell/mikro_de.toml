@@ -2,13 +2,14 @@
 # Grundsatz: nur veröffentlichte Aggregate, keine Mikrodaten. Jede Zahl mit Quelle; „Annahme“ wo keine amtliche Zahl abgerufen wurde.
 # Euro: Verteilungen 2024 nominal (Quelle), für den Vergleich 2028 in Kaufkraft 2026 mit lohn_2024_2026 hochgerechnet;
 # Validierung gegen 2025 mit lohn_2024_2025.
-version = "v4.22"
+version = "v4.23"
 seeds = [1, 2, 3, 4, 5]          # fünf Ziehungen; Spanne = Kalibrierungsrauschen, nicht strukturelle Unsicherheit
 haushalte_stichprobe = 40000     # Datensätze je Ziehung (erwerbsfähige Haushalte); Rentnerhaushalte zusätzlich 8.000
 rentner_stichprobe = 8000
 
 lohn_2024_2025 = 1.0438          # Eurostat nama_10_gdp D11 DE: 2.026.500 / 1.941.537 Mio. € (vorläufig, Abruf 21.10.2026); enthält Beschäftigungszuwachs (Annahme: vernachlässigt)
-lohn_2024_2026 = 1.06            # wie sozial_laender.toml (Annahme)
+lohn_2024_2026 = 1.06            # wie sozial_laender.toml (Annahme); auch für Alterseinkommen verwendet
+rente_2023_2024 = 1.0457          # Rentenanpassung 1.7.2024 (4,57 %, Annahme ohne Abruf) – Rückrechnung für den ASID-Vergleich
 
 [vollzeit]  # Destatis PM 134 vom 08.04.2025: Bruttojahresverdienst 2024 einschl. Sonderzahlungen, Vollzeit (mind. 7 Monate, hochgerechnet)
 perzentile = { 10 = 32526, 20 = 37944, 30 = 42700, 40 = 47244, 50 = 52159, 60 = 58214, 70 = 65843, 80 = 77105, 90 = 97680, 99 = 213286 }
@@ -55,13 +56,9 @@ personen_mio = 5.6
 anteile = { allein = 0.570, alleinerziehend = 0.181, paar_ohne = 0.081, paar_mit = 0.144 }   # sonstige 2,4 % den Paaren ohne Kinder zugeschlagen
 anteil_ohne_erwerb = 0.78        # Annahme: Anteil der Bedarfsgemeinschaften ohne Erwerbseinkommen (Größenordnung; Aufstocker werden im Modell berechnet, nicht vorgegeben)
 
-[rentner]  # DRV: durchschnittlicher Zahlbetrag Altersrenten Bestand 2024 1.154 € (Jahresbericht 2025); Anteil Zahlbetrag unter 1.000 € „gut 42 %“
-# (31.12.2024, renten.net nach BT-Drucksache 21/5095, Sekundärquelle, an der Quelle zu prüfen)
-zahlbetrag_mittel_2024 = 1154
-anteil_unter_1000 = 0.42
+[rentner]  # v4.23: Haushaltseinkommen nach modell/mikro_rentner_de.toml (EU-SILC, ASID); hier nur Zahl der Haushalte
 personen_mio = 18.0              # wie rentnerausgleich.toml (Annahme: Personen ab 65)
 allein_lebend_mio = 6.3          # Annahme
-# Zahlbetrag = Brutto × (1 − rentner_kv_pv aus haushalte33.toml). Je Person eine Rente; Hinterbliebenen- und Betriebsrenten fehlen (unterschätzt die Einkommen).
 
 [partner]  # Erwerbsstatus des zweiten Erwachsenen in Paaren (Ausgangswahrscheinlichkeiten vor der Eichung; Annahme)
 korrelation = [0.0, 0.3, 0.5]    # Rangkorrelation der Partnerlöhne (Gauß-Copula); 0,3 = Basis (Annahme, Größenordnung Literatur zur Homogamie)
