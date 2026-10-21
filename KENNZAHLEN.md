@@ -63,9 +63,13 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Vorteil alleinstehend, 42.000 € brutto, DE 2028 | 608 / 585 / 565 / 542 € im Monat (v4.20) | `fondszins.json` | Kaufkraft 2026 |
 | Gemeinsamer Satz mit Italien und Polen / alle 30 Staaten | 16,6 % / 15,5 % | `fonds_klub.json` | skaliert auf den Beschluss (Annahme) |
 
-## Mikrosimulation (extern, v4.21)
+## Mikrosimulation (extern, v4.21; eigene, v4.22)
 
 | Größe | Wert | Datei | Status |
 |---|---|---|---|
+| Eigene Population: Haushalte mit mehr, Hauptperson Vollzeit / Teilzeit / Minijob, Weitergabe 80 % | 99,3 / 99,8 / 47,6 % | `mikro_de.json` | Prüfrechnung, synthetisch geeicht (v4.22) |
+| Eigene Population: Bürgergeld ohne Erwerb / Rentnerhaushalte mit mehr | 14,7 % (−45 €) / 0 % (−96 € im Monat) | `mikro_de.json` | Prüfrechnung; Rentnerverteilung je Rente (Grenze) |
+| Eigene Population: erwerbsfähige Haushalte / alle Haushalte / alle Personen mit mehr | 89,2 / 59,9 / 70,7 % | `mikro_de.json` | Prüfrechnung; Spanne der Ziehungen < 0,5 Punkte |
+| Validierung 2025: Bruttolohnsumme / Lohnsteuer ohne Eichung | −3,2 / −4,8 % gegen amtlich | `mikro_de.json` | Grundsicherung im Alter nicht bestanden |
 | Vollzeitbeschäftigte mit mehr verfügbarem Einkommen, Beschluss / halbe / keine Weitergabe | 99,0 / 98,4 / 92,0 % | `beitraege/kvribbeck-2028/ergebnis.csv` | externe Rechnung (Kulturverein Ribbeck e.V.), eine Quelle; Formprüfung bestanden; Grenzen in der LIESMICH.md |
 | Beispielhaushalte des Repositorys, Beschluss | 97,8 bis 100 % je Haushaltstyp (`haushalte33`), 98 % (`regel_boden`, mit Grundauskommen und Bedarfsleistungen) | `haushalte33.json`, `regel_boden.json` | Prüfrechnung |

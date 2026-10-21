@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.21**
+Stand: 21. Oktober 2026 · Modellstand **v4.22**
 
 ---
 
@@ -3209,6 +3209,76 @@ Bewegte Zahlen (DE, 2028, Weitergabe 80 %, Pflichtvorsorge, Zuschlag 15,4 %, im 
 - Schreibrechte für den Prüfer (Entscheidung der Initiative);
 - Mikrosimulation mit Teilzeit, Bedarfsleistungen und Grundauskommen.
 
+### v4.22 — Eigene synthetische Mikrosimulation Deutschland, Stufe 1 (modell/mikro_de.py)
+
+**Art der Änderung: MINOR (neue Prüfrechnung), keine geltende Zahl bewegt.** 21. Oktober 2026.
+
+**Anlass:** Beschluss der Initiative vom 21.10.2026, dem Vorgehen des Prüfers zu folgen und eine eigene, auf veröffentlichte Eckwerte
+geeichte Population zu rechnen, die über die Vollzeitbeschäftigten hinaus Teilzeit, Minijobs, Bürgergeld, Familien und Rentner umfasst.
+
+**Methode:**
+- 40.000 Haushalte erwerbsfähigen Alters und 8.000 Rentnerhaushalte je Ziehung, fünf Ziehungen mit festen Startwerten.
+- Eichung (exponentielles Raking) auf: Haushalte je Typ, Bedarfsgemeinschaften ohne Erwerb, 24,02 Mio. Vollzeit- und 10,97 Mio.
+  Teilzeitbeschäftigte (Destatis, 31.12.2025), 2,71 Mio. ausschließlich geringfügig Beschäftigte unter 65 (BA, 31.12.2025),
+  14,02 Mio. minderjährige und 3,55 Mio. volljährige Kindergeldkinder (BA Familienkasse, Dez. 2025). Restfehler < 10⁻⁹.
+- Löhne: Vollzeit nach den Perzentilen der PM 134 (Destatis, 2024), P90–P99 Pareto-Interpolation, Spitze über P99 auf das Mittel 62.235 €
+  geeicht (Alpha 2,83); Teilzeit lognormal um 2.517 €/Monat (Verdiensterhebung April 2025; Streuung 0,55 Annahme); Minijob gleichverteilt (Annahme).
+- Partnerlöhne mit Rangkorrelation 0 / 0,3 / 0,5 (Gauß-Copula); Renten lognormal auf Zahlbetrag 1.154 € und Anteil unter 1.000 € von 42 %
+  (Sekundärquelle) geeicht.
+- heute: Recht 2026 mit Splitting beider Partnereinkommen, Midijob-Bereich genähert, Bürgergeld nach `sozial_laender` (volle
+  Inanspruchnahme); neu: `regel_boden` (33R, Dividende 354/283 €, Grundauskommen mit Halbanrechnung, Pflichtvorsorge), Rentner nach
+  `rentnerausgleich`. Gegenprobe gegen `regel_boden.neu` und `sozial_laender.heute` für Einverdienerhaushalte: Abweichung 0,0 €.
+
+**Validierung an nicht geeichten Aggregaten 2025:**
+
+| Größe | Modell | amtlich | Abweichung |
+|---|---|---|---|
+| Bruttolöhne und -gehälter (mit Beamten und Nebenjob-Minijobs als Annahme) | 1.961 Mrd. € | 2.026,5 Mrd. € (Eurostat D11, vorläufig) | −3,2 % |
+| Lohnsteuer (mit Beamten als Annahme) gegen kassenmäßige Lohnsteuer + Kindergeld | 302,6 Mrd. € | 262,7 + 55,3 = 318,0 Mrd. € | −4,8 % |
+| Grundsicherung im Alter, Fälle | 10,5 Mio. | 0,76 Mio. (Sekundärquelle) | **nicht bestanden** |
+| Bürgergeld-Anspruch, Haushalte (Näherung einschließlich Wohngeld/Kinderzuschlag) | 4,65 Mio. | rund 3,1 Mio. Bedarfsgemeinschaften (abgeleitet, Annahme) | zu hoch (volle Inanspruchnahme) |
+
+- Die Lohnsteuer liegt unter dem Ziel, obwohl Pensionen und Betriebsrenten fehlen; Tarif 2026 statt 2025 erklärt einen Teil.
+- Die Buchung des Kindergeldes als Abzug von der kassenmäßigen Lohnsteuer ist eine Annahme, an der Quelle zu prüfen.
+- Rentner: Die Verteilung gilt je Rente, nicht je Haushalt; Partnereinkommen, Hinterbliebenen- und Betriebsrenten fehlen. Die Kosten der
+  Böden für Rentner (heute 59,8 Mrd. €, neu 52,7 Mrd. €) sind deshalb nicht belastbar. Das Vorzeichen für Rentner hängt daran nicht:
+  Über dem Boden wirkt die Kürzung um 7,5 %, unter dem Boden liegt das Grundauskommen (1.029 €) unter der Grundsicherung (1.083 €).
+
+**Ergebnis (DE, 2028, Kaufkraft 2026, Weitergabe 80 %, Ziehung 1; Spanne der fünf Ziehungen in Klammern):**
+
+| Gruppe | Haushalte mit mehr | Mittel im Monat |
+|---|---|---|
+| Hauptperson Vollzeit (16,5 Mio. Haushalte) | 99,3 % (99,3–99,4) | +1.018 € |
+| Hauptperson Teilzeit (5,0 Mio.) | 99,8 % (99,8) | +744 € |
+| Hauptperson Minijob (1,0 Mio.) | 47,6 % | +225 € (Median −5 €) |
+| Bürgergeld ohne Erwerb (2,4 Mio.) | 14,7 % | −45 € |
+| Rentnerhaushalte (12,2 Mio.) | 0 % | −96 € (allein −64 €, Paar −130 €) |
+| alle Haushalte erwerbsfähigen Alters | 89,2 % | |
+| alle Haushalte (37,1 Mio.) / Personen | 59,9 % / 70,7 % | +530 € |
+
+- Weitergabe 0 / 50 / 100 %: Vollzeit 93,8 / 98,8 / 99,7 %; erwerbsfähige Haushalte 83,8 / 88,4 / 89,8 %.
+- Vergleich mit dem Beitrag kvribbeck-2028 (nur Vollzeit, Personen): 92,0 / 98,4 / 99,0 % – die Rechnungen stützen sich gegenseitig, sind aber
+  nicht unabhängig (gleiche Formeln des Repositorys, ähnliche Eichquellen).
+- Dezile (Personen, heutiges Äquivalenzeinkommen): D1 0 %, D2 57 %, D3 48 %, D4 68 %, D5 79 %, D6–D10 86–94 %.
+- Partnerkorrelation 0 / 0,3 / 0,5 und Haushaltsanteile ±15 %: Gesamtanteil 59,6–60,0 %, praktisch ohne Wirkung.
+- Grundauskommen erwerbsfähige Haushalte: 32,3 Mrd. € (ohne Erwerb 24,2, mit Erwerb 8,1); liegt im oberen Bereich der Schätzung aus
+  `boden_kosten` (9,7–35,8 Mrd. €). Rentner siehe oben.
+
+**Bewertung:** Die Aussage „9 von 10 Beschäftigten haben mehr“ hält auch mit Teilzeit, Paaren mit zwei Einkommen und Bedarfsleistungen.
+Für die Gesamtbevölkerung gilt sie nicht: Rentnerhaushalte und Bürgergeldhaushalte ohne Erwerb verlieren im Mittel 45 bis 130 € im Monat.
+Die Seite spricht von Beschäftigten; eine Aussage über „die Haushalte“ wäre nicht gedeckt. Die Spanne der Ziehungen (unter 0,5 Punkten)
+misst nur das Rauschen der Ziehung, nicht die Unsicherheit der Annahmen.
+
+**Datenquellen:** Destatis PM 134 (08.04.2025), Verdiensterhebung April 2025, Strukturdaten Beschäftigte 31.12.2025, Haushalte und Familien
+(Mikrozensus); BA Familienkasse Jahreszahlen 2025 (PDF, maschinell gelesen, an der Quelle zu prüfen) und Pressemitteilung 21.01.2026; BA
+Geringfügige Beschäftigung 31.12.2025; BA Strukturen der Grundsicherung 2025 über sozialpolitik-aktuell.de (Sekundärquelle); DRV
+Jahresbericht 2025; Eurostat nama_10_gdp (D11 2024/2025); BMF-Monatsbericht Dezember 2025 (Werte aus `modell/audit/a1_kalibrierung.py`).
+
+**Wodurch aufgefallen:** Vorschlag des Prüfers (synthetische Population mit kleiner Fehlervarianz), Beschluss der Initiative.
+
+**Offen (Stufe 2):** Haushaltseinkommen der Rentner (Alterssicherungsbericht/ASID oder EU-SILC-Aggregate) statt Rentenverteilung; Teilzeit-
+Dezile; Selbständige und Beamte; Nicht-Inanspruchnahme; Rentner mit Minijob; amtliche Haushaltszahlen nach Erwerbsstatus (Mikrozensus).
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3269,9 +3339,9 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.21
+## 7 | Offene Punkte, Stand v4.22
 
-Neu seit v3.23 (Stand v4.21): **Mikrosimulation: Rechenweg des Prüfers, Teilzeit und Bedarfsleistungen; Fonds der 30: Verrechnung je Staat, direkte Rechnung statt Verhältnis, Einwanderung/Dynamik umstellen; Preisniveau: Zweitrundeneffekte und CO₂-Pfad; Ausweichen mit Verteilungsdaten; Gemeindeeinnahmen je Kreis heute (Datei der Initiative); Strukturzuschlag (Vorschlag 10 %); Sicherheitsunion mit Anteil der Mehrwertsteuer (Vorschlag 50 % = 15 %), Rechtsprüfung (N34); Gemeinsame Aufgaben: Kassenanteile, Bemessung am BNE, Anrechnung für neutrale Staaten (N32); Finanzverteilung im Staat und Stärkung der Regionen (N33); Fonds auf den Länderseiten vereinheitlichen (B11); dritte Prüfung; Weitergabe: Nachweis, Sanktion, neue Verträge; Architekturvariante „Regelwerk statt Dach“ entscheiden; Punkte der externen Prüfung ( Ausweichreaktionen, Preisniveau, WTO, Labels, Recht, Gegenentwurf); Rentnerpaket gerechnet (A, T1, B1, L1); T1 kostet 0,50 % BIP – prüfen; Rentenverteilung DRV; Deckel der Weitergabe (Frankreich, Korrektur 64); Haushaltsmischung im Gini; Freigabe Fassung 4.8 (Kindergewicht 0,55, H1–H3/G1–G5, Upload); Übersetzungen der neuen Texte gegenlesen; Mietdaten für H1; Bedarfsleistungen IT/ES/PL heute; Rentnerausgleich; Härtefall H1–H3, Kindergewicht K1, Rolle der Gemeinden G1–G5 entscheiden und Kosten mit Mietdaten rechnen (N27); Regel Boden und Kinderanteil 0,8 in Seiten einbauen; Gewinneraussage je Land neu fassen; Kosten mit Haushaltsdaten verfeinern; Grundbedarf gegen Armutsschwellen je Land; Entscheidung R1–R4 (Kinderanteil, Pflichtvorsorge über dem Grundbedarf, Härtefall-Boden, Mindestlohnregel); Kosten des Bodens; Aussage „9 von 10“ in DE nach Korrektur 63 neu fassen;** **Bedarfsgeprüfte Leistungen heute (Wohngeld, Kinderzuschlag, APL, RSA, ADI, IMV) in allen Haushaltsrechnungen nachtragen und Härtefallfonds zuordnen; Erwerbstätigenleistung im Netz entscheiden; Zins des Fonds je Land;** **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen umgesetzt in v4.19; Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Neu seit v3.23 (Stand v4.22): **Mikrosimulation Stufe 2: Haushaltseinkommen der Rentner, Teilzeit-Dezile, Selbständige und Beamte, Nicht-Inanspruchnahme; Aussage zu Rentnern und Bürgergeldhaushalten ohne Erwerb auf der Seite prüfen;** **Mikrosimulation: Rechenweg des Prüfers, Teilzeit und Bedarfsleistungen; Fonds der 30: Verrechnung je Staat, direkte Rechnung statt Verhältnis, Einwanderung/Dynamik umstellen; Preisniveau: Zweitrundeneffekte und CO₂-Pfad; Ausweichen mit Verteilungsdaten; Gemeindeeinnahmen je Kreis heute (Datei der Initiative); Strukturzuschlag (Vorschlag 10 %); Sicherheitsunion mit Anteil der Mehrwertsteuer (Vorschlag 50 % = 15 %), Rechtsprüfung (N34); Gemeinsame Aufgaben: Kassenanteile, Bemessung am BNE, Anrechnung für neutrale Staaten (N32); Finanzverteilung im Staat und Stärkung der Regionen (N33); Fonds auf den Länderseiten vereinheitlichen (B11); dritte Prüfung; Weitergabe: Nachweis, Sanktion, neue Verträge; Architekturvariante „Regelwerk statt Dach“ entscheiden; Punkte der externen Prüfung ( Ausweichreaktionen, Preisniveau, WTO, Labels, Recht, Gegenentwurf); Rentnerpaket gerechnet (A, T1, B1, L1); T1 kostet 0,50 % BIP – prüfen; Rentenverteilung DRV; Deckel der Weitergabe (Frankreich, Korrektur 64); Haushaltsmischung im Gini; Freigabe Fassung 4.8 (Kindergewicht 0,55, H1–H3/G1–G5, Upload); Übersetzungen der neuen Texte gegenlesen; Mietdaten für H1; Bedarfsleistungen IT/ES/PL heute; Rentnerausgleich; Härtefall H1–H3, Kindergewicht K1, Rolle der Gemeinden G1–G5 entscheiden und Kosten mit Mietdaten rechnen (N27); Regel Boden und Kinderanteil 0,8 in Seiten einbauen; Gewinneraussage je Land neu fassen; Kosten mit Haushaltsdaten verfeinern; Grundbedarf gegen Armutsschwellen je Land; Entscheidung R1–R4 (Kinderanteil, Pflichtvorsorge über dem Grundbedarf, Härtefall-Boden, Mindestlohnregel); Kosten des Bodens; Aussage „9 von 10“ in DE nach Korrektur 63 neu fassen;** **Bedarfsgeprüfte Leistungen heute (Wohngeld, Kinderzuschlag, APL, RSA, ADI, IMV) in allen Haushaltsrechnungen nachtragen und Härtefallfonds zuordnen; Erwerbstätigenleistung im Netz entscheiden; Zins des Fonds je Land;** **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen umgesetzt in v4.19; Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
 
 | Punkt | Status |
 |---|---|

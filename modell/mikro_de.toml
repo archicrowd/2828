@@ -1,0 +1,82 @@
+# Synthetische Mikrosimulation Deutschland, Stufe 1 (modell/mikro_de.py, Logbuch v4.22). Prüfrechnung.
+# Grundsatz: nur veröffentlichte Aggregate, keine Mikrodaten. Jede Zahl mit Quelle; „Annahme“ wo keine amtliche Zahl abgerufen wurde.
+# Euro: Verteilungen 2024 nominal (Quelle), für den Vergleich 2028 in Kaufkraft 2026 mit lohn_2024_2026 hochgerechnet;
+# Validierung gegen 2025 mit lohn_2024_2025.
+version = "v4.22"
+seeds = [1, 2, 3, 4, 5]          # fünf Ziehungen; Spanne = Kalibrierungsrauschen, nicht strukturelle Unsicherheit
+haushalte_stichprobe = 40000     # Datensätze je Ziehung (erwerbsfähige Haushalte); Rentnerhaushalte zusätzlich 8.000
+rentner_stichprobe = 8000
+
+lohn_2024_2025 = 1.0438          # Eurostat nama_10_gdp D11 DE: 2.026.500 / 1.941.537 Mio. € (vorläufig, Abruf 21.10.2026); enthält Beschäftigungszuwachs (Annahme: vernachlässigt)
+lohn_2024_2026 = 1.06            # wie sozial_laender.toml (Annahme)
+
+[vollzeit]  # Destatis PM 134 vom 08.04.2025: Bruttojahresverdienst 2024 einschl. Sonderzahlungen, Vollzeit (mind. 7 Monate, hochgerechnet)
+perzentile = { 10 = 32526, 20 = 37944, 30 = 42700, 40 = 47244, 50 = 52159, 60 = 58214, 70 = 65843, 80 = 77105, 90 = 97680, 99 = 213286 }
+mittel = 62235
+untergrenze = 26000              # Annahme: unterhalb P10 linear bis zum Vollzeit-Mindestlohn 2024 (12,41 € × 40 h × 52 ≈ 25.800 €)
+obergrenze = 600000              # Annahme: Abschneidegrenze der Pareto-Spitze über P99; Spitze so geeicht, dass das Mittel getroffen wird
+
+[teilzeit]  # Destatis, Verdiensterhebung April 2025: Teilzeit 2.517 €/Monat ohne Sonderzahlungen, 24,6 bezahlte Wochenstunden
+monat_april_2025 = 2517
+sonderzahlung = 0.06             # Annahme: Aufschlag für Sonderzahlungen
+streuung_log = 0.55              # Annahme: Lognormal-Streuung (keine veröffentlichten Teilzeit-Dezile abgerufen)
+untergrenze_monat = 604          # über der Minijob-Grenze 2026 (603 €)
+
+[minijob]   # BA, Geringfügige Beschäftigung in Deutschland (Stichtag 31.12.2025): ausschließlich geringfügig entlohnt 4,07 Mio.; ein Drittel 65+, ein Viertel unter 25
+grenze_monat_2026 = 603
+verdienst_monat = [150, 556]     # Annahme: gleichverteilt (kein Durchschnittsverdienst veröffentlicht)
+anteil_65plus = 0.333
+
+[beschaeftigte]  # Destatis Strukturdaten, sozialversicherungspflichtig Beschäftigte am Arbeitsort, 31.12.2025
+vollzeit_mio = 24.019638
+teilzeit_mio = 10.965916
+minijob_ausschliesslich_mio = 4.07
+# Hinweis: enthält Auszubildende (Annahme: als Vollzeit mit Ausbildungsvergütung bei volljährigen Kindern) und Beschäftigte ab 65 (nicht getrennt).
+
+[haushalte]  # Destatis, Haushalte und Familien (Mikrozensus 2024/2025) und BA Familienkasse (Dezember 2025)
+haushalte_mio = 41.1
+alleinerziehende_minderj_mio = 1.62
+kinder_minderj_mio = 14.015779          # BA Familienkasse, Kindergeldkinder unter 18, Dez. 2025 (Summe Tabelle 1.3, maschinell aus dem PDF gelesen)
+kinder_volljaehrig_mio = 3.550031       # dto. 18 Jahre und älter (lebt im Haushalt der Eltern: Annahme)
+# Kinderzahl je Familie aus der Ordnungszahl der Kindergeldkinder (1. 10,39 / 2. 5,27 / 3. 1,41 / 4.+ 0,50 Mio.): Anteile 1/2/3/4 Kinder
+kinderzahl_anteile = [0.492, 0.370, 0.087, 0.051]
+# Erwerbsfähige Haushalte (ohne Rentnerhaushalte, ohne Selbständige und Beamte), Mio. – ANNAHMEN, aus den Eckwerten abgeleitet:
+# Einpersonenhaushalte 17 Mio. minus 6,3 Mio. allein lebende Rentner; Familien mit Minderjährigen 8,4 Mio. (Annahme) minus Alleinerziehende;
+# der Rest der 41,1 Mio. Haushalte nach Abzug von 5,75 Mio. Rentnerpaaren als Paare ohne minderjährige Kinder; davon 15 % mit Selbständigen/Beamten
+# als Haupteinkommen herausgenommen (Annahme, Größenordnung 3,9 Mio. Selbständige und 1,9 Mio. Beamte).
+allein_mio = 9.1
+alleinerziehend_mio = 1.62
+paar_ohne_minderj_mio = 8.4
+paar_mit_minderj_mio = 5.8
+anteil_volljaehrige_kinder_bei_paaren = 0.8   # Annahme
+
+[buergergeld]  # BA, Strukturen der Grundsicherung SGB II 2025 (über sozialpolitik-aktuell abbIII60, Sekundärquelle): 5,6 Mio. Personen in Bedarfsgemeinschaften
+personen_mio = 5.6
+anteile = { allein = 0.570, alleinerziehend = 0.181, paar_ohne = 0.081, paar_mit = 0.144 }   # sonstige 2,4 % den Paaren ohne Kinder zugeschlagen
+anteil_ohne_erwerb = 0.78        # Annahme: Anteil der Bedarfsgemeinschaften ohne Erwerbseinkommen (Größenordnung; Aufstocker werden im Modell berechnet, nicht vorgegeben)
+
+[rentner]  # DRV: durchschnittlicher Zahlbetrag Altersrenten Bestand 2024 1.154 € (Jahresbericht 2025); Anteil Zahlbetrag unter 1.000 € „gut 42 %“
+# (31.12.2024, renten.net nach BT-Drucksache 21/5095, Sekundärquelle, an der Quelle zu prüfen)
+zahlbetrag_mittel_2024 = 1154
+anteil_unter_1000 = 0.42
+personen_mio = 18.0              # wie rentnerausgleich.toml (Annahme: Personen ab 65)
+allein_lebend_mio = 6.3          # Annahme
+# Zahlbetrag = Brutto × (1 − rentner_kv_pv aus haushalte33.toml). Je Person eine Rente; Hinterbliebenen- und Betriebsrenten fehlen (unterschätzt die Einkommen).
+
+[partner]  # Erwerbsstatus des zweiten Erwachsenen in Paaren (Ausgangswahrscheinlichkeiten vor der Eichung; Annahme)
+korrelation = [0.0, 0.3, 0.5]    # Rangkorrelation der Partnerlöhne (Gauß-Copula); 0,3 = Basis (Annahme, Größenordnung Literatur zur Homogamie)
+basis_korrelation = 0.3
+
+[szenarien]
+weitergabe = [0.0, 0.5, 0.8, 1.0]
+basis_weitergabe = 0.8
+# Haushaltsanteile: Gewichte der Alleinlebenden ±15 % (Paare gegenläufig), dann neu geeicht
+struktur = { basis = 1.0, mehr_allein = 1.15, weniger_allein = 0.85 }
+
+[validierung]  # amtliche Aggregate 2025, an denen nicht geeicht wird
+bruttoloehne_d11_mrd = 2026.5            # Eurostat nama_10_gdp, vorläufig; enthält Beamte, Selbständige nicht, Nebenjobs und Sonderzahlungen
+lohnsteuer_kasse_mrd = 262.7             # BMF-Monatsbericht Dezember 2025 / Destatis (wie modell/audit/a1_kalibrierung.py); nach Abzug des Kindergeldes (Annahme zur Buchung, an der Quelle zu prüfen)
+kindergeld_mrd = 55.32                   # BA Familienkasse, Pressemitteilung 21.01.2026
+soli_mrd = 12.9                          # BMF 2025, enthält Soli auf Körperschaft- und Kapitalertragsteuer
+beamte_mio = 1.9                         # Annahme (Personalstandstatistik, Größenordnung) – für die Lohnsumme ergänzt
+beamte_brutto = 58000                    # Annahme, 2025

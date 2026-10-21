@@ -4,7 +4,8 @@ Stand: 21. Oktober 2026 (Modellstand v4.21) · bezieht sich auf **Stand C „Das
 6. Oktober 2026 beschrieb Stand B (Quote 30,6 %, Dividende 550 €, Tarif bis 28 %); sie ist überholt (Hinweis der Prüfung vom 21.10.2026).
 
 Ohne Mikrosimulation bleibt das Konzept auf der Ebene von Beispielhaushalten und Verteilungsannahmen. Diese Seite beschreibt, was Dritte
-erhalten, was sie zurückgeben und wie ein Beitrag geprüft wird. Ein erster Beitrag liegt vor: `beitraege/kvribbeck-2028/`.
+erhalten, was sie zurückgeben und wie ein Beitrag geprüft wird. Ein erster Beitrag liegt vor: `beitraege/kvribbeck-2028/`. Eine eigene synthetische Population des Projekts (Stufe 1, v4.22) steht in
+`modell/mikro_de.py` (+ `.toml`, Ergebnis `daten/aggregate/mikro_de.json`); Eichung, Validierung und Grenzen sind dort und im Logbuch v4.22 genannt.
 
 ## Was das Projekt bereitstellt
 

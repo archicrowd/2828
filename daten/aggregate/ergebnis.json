@@ -1,7 +1,7 @@
 {
-  "modellstand": "v4.21",
-  "erzeugt": "2026-10-20",
-  "parameterfile_sha256": "c2e347e3fa3854fef4cb9357f61d6168179ce4769291545e8d09a13b77c319ad",
+  "modellstand": "v4.22",
+  "erzeugt": "2026-10-21",
+  "parameterfile_sha256": "6c95ed3acc2c70a81c72e36cf3685c99abd88c43cf1297e76240c7ef2d97ffbc",
   "parameter": [
     {
       "name": "klub_bip_2024",
