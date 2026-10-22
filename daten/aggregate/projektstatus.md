@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.23 · höchste Korrekturnummer 69 · 450 Dateien im Repository
+Modellstand v4.24 · höchste Korrekturnummer 69 · 453 Dateien im Repository
 
 ## Bausteine
 
@@ -96,4 +96,4 @@ Modellstand v4.23 · höchste Korrekturnummer 69 · 450 Dateien im Repository
 - Hinweis: Naht N32 offen: B32 Länderseiten -> B31 Drittel-System: v4.15: Pflichtquote 6,19 → 7,29 % BIP, Kasse 2,65 → 3,09 % (Annahmen), Irland 261 € je Einwohner und Monat bei BIP-Bemessung
 - Hinweis: Naht N33 offen: B31 Drittel-System -> B32 Länderseiten: v4.15: nicht gerechnet | v4.16: 400 Kreise (Eurostat): Formel P90/P10 1,05, Strukturzuschlag 10 % hebt dünn besiedelte Kreise auf Index 111; heutige Gemeindeeinnahmen je Kreis fehlen (robots.txt)
 - Hinweis: Naht N34 offen: B32 Länderseiten -> B31 Drittel-System: v4.16: 50 % der Verteidigung gemeinsam = 15,1 % der Mehrwertsteuer 2035; Gesamtlast unverändert
-- Hinweis: Naht N36 offen: B32 Länderseiten -> B31 Drittel-System: v4.22: Vollzeit 99,3 %, Teilzeit 99,8 %, Minijob 47,6 %, Bürgergeld ohne Erwerb 14,7 %, Rentner 0 %; Validierung Lohnsumme −3,2 %, Lohnsteuer −4,8 %; Grundsicherung im Alter nicht bestanden (Rentenverteilung je Rente) | v4.23: Rentner mit Haushaltseinkommen: 5,4 % mit mehr, −145 € im Mittel; Prüfwerte bestanden; Ausgleich offen
+- Hinweis: Naht N36 offen: B32 Länderseiten -> B31 Drittel-System: v4.22: Vollzeit 99,3 %, Teilzeit 99,8 %, Minijob 47,6 %, Bürgergeld ohne Erwerb 14,7 %, Rentner 0 %; Validierung Lohnsumme −3,2 %, Lohnsteuer −4,8 %; Grundsicherung im Alter nicht bestanden (Rentenverteilung je Rente) | v4.23: Rentner mit Haushaltseinkommen: 5,4 % mit mehr, −145 € im Mittel; Prüfwerte bestanden; Ausgleich offen | v4.24: Vorschlag E (Boden 1.083/1.632 €, 15 % auf Zusagen über dem Grundbedarf): unteres Fünftel +21 €, oberes −477 €, gegen Beschluss −0,05 % BIP; Entscheidung offen

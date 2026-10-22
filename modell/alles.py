@@ -64,6 +64,7 @@ STUFEN = [
     ("Ausweichreaktionen Erbschaft und Vermögen: Empfindlichkeit", ["modell/ausweichen33.py"]),
     ("Fondszins gegen Marktrenditen", ["modell/fondszins.py"]),
     ("Mikrosimulation DE, synthetische Population (Stufe 1)", ["modell/mikro_de.py"]),
+    ("Rentner: Grundbedarf garantiert, Zusagen darüber gekürzt (Vorschlag)", ["modell/rentner_kombi.py"]),
     ("Gesamtlast Stand C mit Fonds und Pflichtvorsorge", ["modell/gesamtlast33.py"]),
     ("Gemeinsame Aufgaben: Pflichtquote, Kasse und Anrechnung", ["modell/dach_beitrag.py"]),
     ("Gemeindeformel je Kreis (Deutschland), Strukturzuschlag", ["modell/regionen_de.py"]),

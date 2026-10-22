@@ -1,0 +1,34 @@
+# Rentner: Kombination „Grundbedarf garantiert, Zusagen darüber gekürzt“ (modell/rentner_kombi.py, Logbuch v4.24). Vorschlag, Prüfrechnung.
+# Logik der Initiative (22.10.2026): Die finanzielle Last aller neuen Ansätze kommt aus ungedeckten Rentenzusagen; Einbußen treffen die Zusage,
+# nicht die eigene Vorsorge. Boden auf dem Niveau der heutigen Grundsicherung.
+version = "v4.24"
+weitergabe = 0.8
+bip_2028_mrd = 4915            # wie rentnerausgleich.toml
+stichprobe = 8000
+seed = 1
+# Varianten: Kürzungssatz, Boden je Monat (allein, Paar), Kürzung nur auf den Teil der Zusage über dem Grundbedarf (12.348 €/Jahr je Person)
+[[variante]]
+name = "A beschlossen: 7,5 % auf die ganze Zusage, Boden 1.029 / 1.543 €"
+satz = 0.075
+boden = [1029, 1543.5]
+ueber_grundbedarf = false
+[[variante]]
+name = "B wie A, Boden = Grundsicherung 1.083 / 1.632 €"
+satz = 0.075
+boden = [1083, 1632]
+ueber_grundbedarf = false
+[[variante]]
+name = "C Boden 1.083 / 1.632 €, 7,5 % über dem Grundbedarf"
+satz = 0.075
+boden = [1083, 1632]
+ueber_grundbedarf = true
+[[variante]]
+name = "D Boden 1.083 / 1.632 €, 10 % über dem Grundbedarf"
+satz = 0.10
+boden = [1083, 1632]
+ueber_grundbedarf = true
+[[variante]]
+name = "E Boden 1.083 / 1.632 €, 15 % über dem Grundbedarf (Vorschlag)"
+satz = 0.15
+boden = [1083, 1632]
+ueber_grundbedarf = true
