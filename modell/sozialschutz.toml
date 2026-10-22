@@ -6,7 +6,7 @@ version = "v3.42"
 # v4.11 (Beschluss 18.10.2026, „Empfehlungen folgen, ohne komplexe Sonderregeln“): Altansprüche
 [rentner]
 anteilige_verrechnung = true        # T1: Altanteil f verrechnet die Dividende nur zu f: Z je Rentner = f × max(Anspruch − Dividende, 0)
-grundauskommen_bestand_pct_bip = 0.143   # B1: Grundauskommen für kleine Bestandsrenten, volle Anrechnung; ≈ heutige Grundsicherung im Alter DE
+grundauskommen_bestand_pct_bip = 0.1514  # v4.26: × 1,0586 (Boden = heutige Grundsicherung 1.083 / 1.632 €, Regel E; rentner_kombi.json boden E / A); vorher 0,143. B1: Grundauskommen für kleine Bestandsrenten, volle Anrechnung; ≈ heutige Grundsicherung im Alter DE
                                     # (11,8 Mrd. € 2025 × 764.065 / 1.283.860 Empfänger ÷ BIP 2028; Sekundärquelle), für alle Staaten gleich (Annahme), × Altanteil f
 kopplung = 0.667                    # L1: Rentenbeginn steigt um ⅔ des Zuwachses der Lebenserwartung mit 65 (Vorbild Niederlande)
 le65_zuwachs_jahr = 0.07            # Annahme: Größenordnung Ageing Report 2024

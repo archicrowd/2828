@@ -102,13 +102,23 @@ def heute(b, kinder, partner):
     return K.netto_heute(b, kinder, partner)["netto"]
 
 
+def kuerze(r, satz=None):
+    """Bestandsrente nach der Kürzung (Jahresbetrag). v4.26 (Regel E): satz auf den Teil über dem Grundbedarf; mit satz: flach (Vergleich)."""
+    if satz is not None:
+        return r * (1 - satz)
+    g = P.get("rente_regel")
+    if not g:
+        return r * (1 - P.get("rente_kuerzung", 0.0))
+    return r - g["satz"] * max(0.0, r - 12 * g["freibetrag_monat"])
+
+
 def rentner(r_monat, zu, j):
     r = 12 * r_monat
     kvpv = P["rentner_kv_pv"] * r
     zve = max(0.0, P["besteuerungsanteil"] * r - kvpv - 102 - K.SA_PAUSCH)
     h = r - kvpv - K.est_2026(zve) - K.soli_2026(K.est_2026(zve))
     EFF = eff_jahr(j)
-    r = r * (1 - P.get("rente_kuerzung", 0.0))         # v3.48: Rente um die eingesparten Beiträge gekürzt
+    r = kuerze(r)                                      # v4.26 Regel E (vorher v3.48/v4.11: r × (1 − rente_kuerzung))
     st = est(r)                                        # Dividende + Altrente zusammen r, ganz steuerpflichtig
     konsum = kq(r - st) * (r - st)
     n = r - st - konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1) - zu / 100 * (st + konsum * EFF / (100 + EFF))

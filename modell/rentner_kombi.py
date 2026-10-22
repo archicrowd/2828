@@ -45,6 +45,7 @@ def main():
     erg, basis = [], None
     for v in P["variante"]:
         d, auf, kb = (np.array(x) for x in zip(*[((y - h) / 12, a, c) for (g, h, n) in pre for y, a, c in [neu(g, n, v["satz"], v["boden"], v["ueber_grundbedarf"])]]))
+        zus = float(sum(w * g * (A["grv"] + A["andere"]) * n for w, (g, h, n) in zip(gw, pre)))
         netto = float((gw * (kb - auf)).sum())
         basis = netto if basis is None else basis
         erg.append(dict(name=v["name"], anteil_mehr_pct=round(float(gw[d > 0].sum() / gw.sum() * 100), 1),
@@ -53,8 +54,18 @@ def main():
                         fuenftel_monat=[round(float(np.average(d[grp == i], weights=gw[grp == i]))) for i in range(5)],
                         fuenftel_pct_netto=[round(float(np.average(d[grp == i] * 12 / hs[grp == i], weights=gw[grp == i]) * 100), 1) for i in range(5)],
                         kuerzung_mrd=round(float((gw * kb).sum() / 1e9), 1), boden_mrd=round(float((gw * auf).sum() / 1e9), 1),
-                        gegen_beschluss_mrd=round((netto - basis) / 1e9, 1), gegen_beschluss_pct_bip=round((netto - basis) / 1e9 / P["bip_2028_mrd"] * 100, 2)))
-    E = dict(version=P["version"], status="Vorschlag, Prüfrechnung (2028, Kaufkraft 2026)", varianten=erg,
+                        zusagen_mrd=round(zus / 1e9, 1), effektiver_satz=round(float((gw * kb).sum()) / zus, 4), boden_mrd_genau=round(float((gw * auf).sum() / 1e9), 3),
+                        gegen_bisher_mrd=round((netto - basis) / 1e9, 1), gegen_bisher_pct_bip=round((netto - basis) / 1e9 / P["bip_2028_mrd"] * 100, 2)))
+    # v4.26: Übertrag in den Fonds prüfen (altlasten.toml: effektiver Kürzungssatz; sozialschutz.toml: B1 × Boden E / A)
+    e, a = erg[-1], erg[0]
+    k_al = tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8"))["kuerzung"]
+    b1 = tomllib.loads((W / "modell" / "sozialschutz.toml").read_text(encoding="utf-8"))["rentner"]["grundauskommen_bestand_pct_bip"]
+    b1_alt = tomllib.loads((W / "modell" / "rentnerausgleich.toml").read_text(encoding="utf-8"))["b1_v411"]
+    uebertrag = dict(effektiver_satz_e=e["effektiver_satz"], altlasten_toml=k_al, boden_faktor_e_zu_a=round(e["boden_mrd_genau"] / a["boden_mrd_genau"], 4),
+                     b1_soll=round(b1_alt * e["boden_mrd_genau"] / a["boden_mrd_genau"], 4), b1_toml=b1)
+    if abs(k_al - e["effektiver_satz"]) > 0.0005 or abs(b1 - uebertrag["b1_soll"]) > 0.0005:
+        raise SystemExit(f"Übertrag Regel E in den Fonds veraltet: {uebertrag}")
+    E = dict(version=P["version"], status="Beschluss E (22.10.2026), Prüfrechnung (2028, Kaufkraft 2026)", varianten=erg, uebertrag_fonds=uebertrag,
              hinweis="Fünftel nach heutigem Haushaltsnetto der Rentnerhaushalte. Zusammensetzung der Alterseinkommen gleich über alle Einkommen "
                      "(ASID, Annahme); Beamtenversorgung als Zusage behandelt (Annahme). Kosten nur für 2028; der Bestand sinkt mit der Zeit.")
     (W / "daten" / "aggregate" / "rentner_kombi.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")

@@ -136,6 +136,7 @@ def main():
                      schuldenquote_spitze=round(max(pfb), 1), spitzenjahr=2029 + pfb.index(max(pfb)),
                      schuldenquote={str(j): round(pfb[j - 2029], 1) for j in (2030, 2040, 2050, 2060, 2070, 2080, 2090, 2098)},
                      verhandlungsmasse_z_2028_pct_bip=round(zb[0], 2), laender=laender_b,
+                     ungerundet=dict(beitrag_pct_bip=cb, zuschlag_auf_alle_steuern_pct=cb / quote_b * 100),   # v4.26, Korrektur 70: für den Übertrag (fonds_klub)
                      altlast_schnitt_2028=round(alt_s, 2),
                      hinweis="Beitrag je Staat = gemeinsamer Beitrag × (Anteil nach eigener Altlast, linear in 30 Jahren abschmelzend auf gleichen Satz); "
                              "Zuschlag bezogen auf die Steuerquote der Variante (vereinfachend für alle Staaten gleich)")

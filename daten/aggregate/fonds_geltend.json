@@ -1,32 +1,32 @@
 {
- "version": "v4.20",
+ "version": "v4.26",
  "status": "geltend (Beschluss 21.10.2026: 30 Staaten, Zins = Mittel 2006–2025)",
  "staaten": 30,
  "zins": 2.45,
- "beitrag_pct_bip": 5.14,
- "zuschlag_auf_alle_steuern_pct": 15.4,
- "schuldenquote_spitze": 147.3,
+ "beitrag_pct_bip": 5.17,
+ "zuschlag_auf_alle_steuern_pct": 15.5,
+ "schuldenquote_spitze": 148.1,
  "spitzenjahr": 2055,
  "zieljahr": 2098,
  "schuldenquote": {
-  "2030": 92.8,
-  "2040": 125.7,
-  "2050": 144.9,
-  "2060": 144.7,
-  "2070": 125.3,
-  "2080": 88.9,
-  "2090": 41.0,
+  "2030": 92.9,
+  "2040": 126.2,
+  "2050": 145.7,
+  "2060": 145.5,
+  "2070": 126.1,
+  "2080": 89.5,
+  "2090": 41.2,
   "2098": 0.1
  },
  "grundlage": {
   "beschluss_zehn": {
-   "beitrag_pct_bip": 5.23,
+   "beitrag_pct_bip": 5.26,
    "zuschlag_pct": 15.7,
-   "spitze": 149.4,
+   "spitze": 150.2,
    "spitzenjahr": 2056
   },
-  "verhaeltnis_beitrag_30_zu_10": 0.9823,
-  "verhaeltnis_zuschlag_30_zu_10": 0.9823
+  "verhaeltnis_beitrag_30_zu_10": 0.9822,
+  "verhaeltnis_zuschlag_30_zu_10": 0.9816
  },
  "hinweis": "Beschluss der zehn (altlasten.py, Rentnerpaket) × Verhältnis 30/10 aus dem Möglichkeitsraum; Schuldenpfad der 30, Niveau skaliert (Annahme). Gleicher Satz für alle Staaten; die Verrechnung je Staat (30 Jahre) ist nur für die zehn gerechnet."
 }

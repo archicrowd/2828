@@ -19,6 +19,7 @@ W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 MRJ = json.loads((AGG / "moeglichkeitsraum33.json").read_text(encoding="utf-8"))["laender"]
 BJ = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]
+BU = BJ.get("ungerundet", dict(beitrag_pct_bip=BJ["beitrag_pct_bip"], zuschlag_auf_alle_steuern_pct=BJ["zuschlag_auf_alle_steuern_pct"]))   # v4.26, Korrektur 70
 spec = importlib.util.spec_from_file_location("mr", W / "modell" / "moeglichkeitsraum33.py")
 MR = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -60,7 +61,7 @@ def main():
     for name, l in KLUBS.items():
         b, z, _ = klub(l)
         erg.append(dict(klub=name, staaten=len(l), beitrag_mr_pct_bip=round(b, 2), zuschlag_mr_pct=round(z, 1),
-                        beitrag_skaliert_pct_bip=round(BJ["beitrag_pct_bip"] * b / b10, 2), zuschlag_skaliert_pct=round(BJ["zuschlag_auf_alle_steuern_pct"] * z / z10, 1)))
+                        beitrag_skaliert_pct_bip=round(BU["beitrag_pct_bip"] * b / b10, 2), zuschlag_skaliert_pct=round(BU["zuschlag_auf_alle_steuern_pct"] * z / z10, 1)))
     E = dict(version="v4.20", status="Prüfrechnung", zins=MR.P["zins"], beschluss_zehn=dict(beitrag_pct_bip=BJ["beitrag_pct_bip"], zuschlag_pct=BJ["zuschlag_auf_alle_steuern_pct"]),
              klubs=erg, hinweis="BIP 2024 (bip_kopf × Einwohner, moeglichkeitsraum33). Skaliert = Beschluss × Verhältnis zur Zehnergruppe in der Abgrenzung "
                                  "des Möglichkeitsraums (Annahme). Tilgung bis 2098 wie im Beschluss.")
@@ -70,8 +71,8 @@ def main():
     f_niveau = BJ["schuldenquote_spitze"] / max(p10)
     pf = [x * f_niveau for x in p30]
     sp = max(pf)
-    G = dict(version="v4.20", status="geltend (Beschluss 21.10.2026: 30 Staaten, Zins = Mittel 2006–2025)", staaten=len(MRJ), zins=MR.P["zins"],
-             beitrag_pct_bip=round(BJ["beitrag_pct_bip"] * b30 / b10, 2), zuschlag_auf_alle_steuern_pct=round(BJ["zuschlag_auf_alle_steuern_pct"] * z30 / z10, 1),
+    G = dict(version="v4.26", status="geltend (Beschluss 21.10.2026: 30 Staaten, Zins = Mittel 2006–2025)", staaten=len(MRJ), zins=MR.P["zins"],
+             beitrag_pct_bip=round(BU["beitrag_pct_bip"] * b30 / b10, 2), zuschlag_auf_alle_steuern_pct=round(BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10, 1),
              schuldenquote_spitze=round(sp, 1), spitzenjahr=JAHRE[pf.index(sp)], zieljahr=BJ["zieljahr"],
              schuldenquote={str(j): round(pf[j - 2029], 1) for j in (2030, 2040, 2050, 2060, 2070, 2080, 2090, 2098)},
              grundlage=dict(beschluss_zehn=dict(beitrag_pct_bip=BJ["beitrag_pct_bip"], zuschlag_pct=BJ["zuschlag_auf_alle_steuern_pct"],

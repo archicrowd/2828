@@ -94,9 +94,9 @@
      "dividende_basis_eur2026": 170
     }
    },
-   "fonds_beitrag_pct_bip": 4.84,
-   "fonds_spitze": 143.1,
-   "fonds_spitzenjahr": 2053
+   "fonds_beitrag_pct_bip": 4.87,
+   "fonds_spitze": 143.8,
+   "fonds_spitzenjahr": 2054
   },
   {
    "zusatz_pct": 0.2,
@@ -137,8 +137,8 @@
      "dividende_basis_eur2026": 170
     }
    },
-   "fonds_beitrag_pct_bip": 4.96,
-   "fonds_spitze": 145.0,
+   "fonds_beitrag_pct_bip": 4.99,
+   "fonds_spitze": 145.8,
    "fonds_spitzenjahr": 2054
   },
   {
@@ -180,8 +180,8 @@
      "dividende_basis_eur2026": 170
     }
    },
-   "fonds_beitrag_pct_bip": 4.5,
-   "fonds_spitze": 137.8,
+   "fonds_beitrag_pct_bip": 4.53,
+   "fonds_spitze": 138.5,
    "fonds_spitzenjahr": 2052
   },
   {
@@ -223,14 +223,14 @@
      "dividende_basis_eur2026": 170
     }
    },
-   "fonds_beitrag_pct_bip": 4.71,
-   "fonds_spitze": 141.2,
+   "fonds_beitrag_pct_bip": 4.74,
+   "fonds_spitze": 142.0,
    "fonds_spitzenjahr": 2053
   }
  ],
  "grundpfad_fonds": {
-  "beitrag_pct_bip": 5.23,
-  "spitze": 149.4,
+  "beitrag_pct_bip": 5.26,
+  "spitze": 150.2,
   "spitzenjahr": 2056
  },
  "hinweis": "Grundpfad: projektion33.json (33R) und altlasten.json (Beschluss); Einwanderung zusätzlich zu den amtlichen Annahmen"

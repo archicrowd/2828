@@ -39,9 +39,8 @@ def heute(r_monat):
 
 
 def neu(r_monat, kuerzung=None, steueranteil=1.0, pauschale=0.0, zuschlag=None, boden=False):
-    k = P["kuerzung"] if kuerzung is None else kuerzung
     zu = P["zuschlag_pct"] if zuschlag is None else zuschlag
-    r = 12 * r_monat * (1 - k)
+    r = H.kuerze(12 * r_monat, kuerzung)                 # v4.26: ohne Angabe Regel E (haushalte33.rente_regel), sonst flacher Vergleichssatz
     st = H.est(r * steueranteil)
     y = r - st + 12 * pauschale
     eff = H.eff_jahr(2028)
@@ -54,10 +53,8 @@ def neu(r_monat, kuerzung=None, steueranteil=1.0, pauschale=0.0, zuschlag=None, 
 
 
 def varianten():
-    v = {"Beschluss v4.11 (Kürzung 7,5 %, voll steuerpflichtig, Zuschlag)": {}}
-    for r in P["renten_monat"]:
-        v["Beschluss v4.11 (Kürzung 7,5 %, voll steuerpflichtig, Zuschlag)"][r] = neu(r)
-    for k in P["varianten_kuerzung"][1:]:
+    v = {"Beschluss v4.26 (Regel E: 15 % über dem Grundbedarf, Boden 1.083 €)": {r: neu(r) for r in P["renten_monat"]}}
+    for k in P["varianten_kuerzung"]:
         v[f"Kürzung {k * 100:.1f} %".replace(".", ",")] = {r: neu(r, kuerzung=k) for r in P["renten_monat"]}
     v["Besteuerungsanteil 83 % wie heute"] = {r: neu(r, steueranteil=0.83) for r in P["renten_monat"]}
     v["Befreiung vom Altlastenzuschlag"] = {r: neu(r, zuschlag=0.0) for r in P["renten_monat"]}
@@ -138,8 +135,10 @@ def zerlegung():
     schritte = [("vorher (v4.10: Kürzung 12,35 %, volle Verrechnung, ohne B1, ohne Kopplung)", (0.1235, False, 0.0, 0.0)),
                 ("+ A: Kürzung 7,5 %", (0.075, False, 0.0, 0.0)),
                 ("+ T1: anteilige Verrechnung", (0.075, True, 0.0, 0.0)),
-                ("+ B1: Grundauskommen im Bestand", (0.075, True, r0.get("grundauskommen_bestand_pct_bip", 0.0), 0.0)),
-                ("+ L1: Rentenbeginn ⅔ gekoppelt (= Beschluss)", (0.075, True, r0.get("grundauskommen_bestand_pct_bip", 0.0), r0.get("kopplung", 0.0)))]
+                ("+ B1: Grundauskommen im Bestand", (0.075, True, P["b1_v411"], 0.0)),
+                ("+ L1: Rentenbeginn ⅔ gekoppelt (= Beschluss v4.11)", (0.075, True, P["b1_v411"], r0.get("kopplung", 0.0))),
+                ("+ E: 15 % über dem Grundbedarf, Boden 1.083 € (= Beschluss v4.26)", (AL.P["kuerzung"], True,
+                                                                                       r0.get("grundauskommen_bestand_pct_bip", 0.0), r0.get("kopplung", 0.0)))]
     out, vor = [], None
     for name, a in schritte:
         c = beitrag(*a)

@@ -2,72 +2,82 @@
  "version": "v4.11",
  "status": "Prüfrechnung, grob",
  "varianten": {
-  "Beschluss v4.11 (Kürzung 7,5 %, voll steuerpflichtig, Zuschlag)": {
+  "Beschluss v4.26 (Regel E: 15 % über dem Grundbedarf, Boden 1.083 €)": {
    "differenz_monat_je_rente": {
-    "900": -54,
-    "1200": -35,
-    "1600": -32,
-    "2200": -50
+    "900": 0,
+    "1200": 19,
+    "1600": -3,
+    "2200": -59
    },
    "mehrkosten_mrd": 0.0,
    "mehrkosten_pct_bip": 0.0
   },
+  "Kürzung 7,5 %": {
+   "differenz_monat_je_rente": {
+    "900": 0,
+    "1200": 0,
+    "1600": -32,
+    "2200": -51
+   },
+   "mehrkosten_mrd": -2.1,
+   "mehrkosten_pct_bip": -0.04
+  },
   "Kürzung 12,3 %": {
    "differenz_monat_je_rente": {
-    "900": -54,
-    "1200": -54,
+    "900": 0,
+    "1200": 0,
     "1600": -97,
     "2200": -130
    },
-   "mehrkosten_mrd": -8.9,
-   "mehrkosten_pct_bip": -0.18
+   "mehrkosten_mrd": -9.9,
+   "mehrkosten_pct_bip": -0.2
   },
   "Kürzung 10,0 %": {
    "differenz_monat_je_rente": {
-    "900": -54,
-    "1200": -54,
+    "900": 0,
+    "1200": 0,
     "1600": -65,
-    "2200": -91
+    "2200": -92
    },
-   "mehrkosten_mrd": -5.1,
-   "mehrkosten_pct_bip": -0.1
+   "mehrkosten_mrd": -6.2,
+   "mehrkosten_pct_bip": -0.13
   },
   "Besteuerungsanteil 83 % wie heute": {
    "differenz_monat_je_rente": {
-    "900": -54,
-    "1200": -25,
-    "1600": -1,
-    "2200": 23
+    "900": 0,
+    "1200": 37,
+    "1600": 28,
+    "2200": 14
    },
-   "mehrkosten_mrd": 6.1,
+   "mehrkosten_mrd": 6.6,
    "mehrkosten_pct_bip": 0.13
   },
   "Befreiung vom Altlastenzuschlag": {
    "differenz_monat_je_rente": {
-    "900": -54,
-    "1200": -8,
-    "1600": 8,
-    "2200": 15
+    "900": 0,
+    "1200": 48,
+    "1600": 38,
+    "2200": 6
    },
-   "mehrkosten_mrd": 7.1,
-   "mehrkosten_pct_bip": 0.14
+   "mehrkosten_mrd": 7.3,
+   "mehrkosten_pct_bip": 0.15
   },
   "Pauschale 25 € steuerfrei": {
    "differenz_monat_je_rente": {
-    "900": -54,
-    "1200": -11,
-    "1600": -8,
-    "2200": -26
+    "900": 0,
+    "1200": 43,
+    "1600": 21,
+    "2200": -35
    },
    "mehrkosten_mrd": 3.9,
    "mehrkosten_pct_bip": 0.08
   },
   "Pauschale 50 € steuerfrei": {
    "differenz_monat_je_rente": {
-    "900": -54,
-    "1200": 13,
-    "1600": 16,
-    "2200": -2
+    "900": 0,
+    "1200": 67,
+    "1600": 45,
+    "2200": -11
    },
    "mehrkosten_mrd": 7.8,
    "mehrkosten_pct_bip": 0.16
@@ -75,22 +85,22 @@
  },
  "kleine_bestandsrenten": {
   "600": {
-   "neu_ohne_grundauskommen": 529,
-   "neu_mit_grundauskommen": 1029,
+   "neu_ohne_grundauskommen": 572,
+   "neu_mit_grundauskommen": 1083,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 526,
    "heute_mit_grundsicherung": 1083
   },
   "900": {
-   "neu_ohne_grundauskommen": 794,
-   "neu_mit_grundauskommen": 1029,
+   "neu_ohne_grundauskommen": 858,
+   "neu_mit_grundauskommen": 1083,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 789,
    "heute_mit_grundsicherung": 1083
   },
   "1200": {
-   "neu_ohne_grundauskommen": 1048,
-   "neu_mit_grundauskommen": 1048,
+   "neu_ohne_grundauskommen": 1102,
+   "neu_mit_grundauskommen": 1102,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 1052,
    "heute_mit_grundsicherung": 1083
@@ -126,7 +136,7 @@
    "2070": {
     "rentenbeginn_plus_jahre": 2.8,
     "entlastung_pct_bip": 0.43,
-    "dividende_plus_eur_monat": 28.7
+    "dividende_plus_eur_monat": 28.8
    }
   },
   "2zu3_NL": {
@@ -143,12 +153,12 @@
    "2045": {
     "rentenbeginn_plus_jahre": 0.7,
     "entlastung_pct_bip": 0.25,
-    "dividende_plus_eur_monat": 14.2
+    "dividende_plus_eur_monat": 14.3
    },
    "2050": {
     "rentenbeginn_plus_jahre": 0.93,
     "entlastung_pct_bip": 0.29,
-    "dividende_plus_eur_monat": 17.7
+    "dividende_plus_eur_monat": 17.8
    },
    "2060": {
     "rentenbeginn_plus_jahre": 1.4,
@@ -216,9 +226,14 @@
    "aenderung": 0.07
   },
   {
-   "schritt": "+ L1: Rentenbeginn ⅔ gekoppelt (= Beschluss)",
+   "schritt": "+ L1: Rentenbeginn ⅔ gekoppelt (= Beschluss v4.11)",
    "beitrag_pct_bip": 5.23,
    "aenderung": -0.18
+  },
+  {
+   "schritt": "+ E: 15 % über dem Grundbedarf, Boden 1.083 € (= Beschluss v4.26)",
+   "beitrag_pct_bip": 5.26,
+   "aenderung": 0.03
   }
  ],
  "grundsicherung_heute": {

@@ -113,14 +113,13 @@ def brutto_aus_netto(n_person, a):
 
 # ------------------------------------------------------------------ neu je Haushalt
 def neu_haushalt(g_person, n_pers, a, w):
-    k = P["neu"]["kuerzung_systeme"]
     p, an, b, v, e = (g_person * a[x] for x in ("grv", "andere", "bav", "privat", "erwerb"))
-    eink = (p + an) * (1 - k) + b + v + e + w * H.ag(e)
+    eink = H.kuerze(p + an) + b + v + e + w * H.ag(e)          # v4.26 Regel E (haushalte33.rente_regel) auf die Zusagen; eigene Vorsorge ungekürzt
     st = HL.stufen(eink, DE["tarif_stufen"], [0.0, 11.0, 19.0, 25.0, 33.0]) * n_pers
     y = eink * n_pers - st
     konsum = HL.kq(y, "DE") * y
     y = y - konsum * ((1 + EFF / 100) / (1 + HL.eff_alt("DE") / 100) - 1) - ZU / 100 * (st + konsum * EFF / (100 + EFF))
-    boden = GB * (1 + P["neu"]["skala_partner"] * (n_pers - 1))
+    boden = 12 * P["neu"]["boden_monat"][n_pers - 1]                 # v4.26: heutige Grundsicherung (vorher Grundbedarf × 1 / 1,5)
     return max(y, boden), max(0.0, boden - y)
 
 

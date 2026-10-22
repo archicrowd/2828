@@ -2,7 +2,8 @@
 version = "v4.11"
 renten_monat = [900, 1200, 1600, 2200]     # Bruttorenten heute, wie haushalte33.toml
 zuschlag_pct = 13.7                         # wird aus altlasten.json überschrieben (v4.11)
-kuerzung = 0.075                            # v4.11 Beschluss (Rentnerausgleich A); vorher 0,1235 (v3.48)
+kuerzung = 0.075                            # v4.11 Beschluss (Rentnerausgleich A); seit v4.26 Regel E (haushalte33.rente_regel), Wert nur Vergleich
+b1_v411 = 0.143                             # B1 vor v4.26 (Boden 1.029 €), für die Zerlegung des Fonds
 varianten_kuerzung = [0.075, 0.1235, 0.10]
 pauschale_monat = [25, 50]                  # Rentnerpauschale, steuerfrei, je Bestandsrente
 rentner_mio = 18.0                          # Annahme: Personen ab 65 in DE (Anteil 21,6 % × 83,5 Mio., einwanderung33/netz33); Renten tatsächlich mehr Fälle (Hinterbliebene)

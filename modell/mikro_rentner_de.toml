@@ -1,6 +1,6 @@
 # Rentnerhaushalte für die Mikrosimulation Deutschland, Stufe 2 (modell/mikro_rentner_de.py, Logbuch v4.23). Prüfrechnung.
 # Ersetzt in mikro_de.py die Verteilung je Rente (v4.22, Grundsicherung im Alter nicht bestanden) durch Haushaltseinkommen.
-version = "v4.23"
+version = "v4.26"
 
 [silc]  # Eurostat EU-SILC 2025 (Einkommen 2024), Deutschland, äquivalenzgewichtetes Nettoeinkommen, € im Jahr (Abruf 21.10.2026, amtlich)
 median_gesamt = 28891             # ilc_di03, TOTAL
@@ -32,9 +32,9 @@ kv_erwerb = 0.09                  # AN-Anteil KV/PV bei Rentnern mit Beschäftig
 bedarf_allein_monat = 1083        # Grundsicherung im Alter: Regelbedarf 563 € + KdU 520 € (sozial_laender.toml, Annahme)
 bedarf_paar_monat = 1632          # 1.012 € + KdU 620 € (sozial_laender.toml, Annahme)
 
-[neu]
-kuerzung_systeme = 0.075          # Rentnerausgleich A: Bestandsrenten aus GRV und anderen Alterssicherungssystemen (Annahme: Beamtenversorgung gleich)
-skala_partner = 0.5               # Grundauskommen je Haushalt (regel_boden), volle Anrechnung (B1)
+[neu]  # v4.26 Beschluss 22.10.2026 (Regel E): Kürzung über haushalte33.rente_regel (15 % auf den Teil der Zusagen über 1.029 € je Person)
+boden_monat = [1083, 1632]        # Grundauskommen der Rentnerhaushalte = heutige Grundsicherung (allein, Paar); vorher Grundbedarf × 1 / 1,5
+kuerzung_systeme = 0.075          # bis v4.25 (flach auf GRV und andere Systeme), nur noch Vergleich
 
 [varianten]
 nur_grv = true                    # Vergleich: alle Einkommen als GRV-Rente (obere Schranke der Kürzung)

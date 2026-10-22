@@ -1,6 +1,6 @@
 # TAX 28:28 — Wegweiser durch das Repository
 
-Stand: 22. Oktober 2026 · Modellstand v4.25 · Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`
+Stand: 22. Oktober 2026 · Modellstand v4.26 · Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`
 
 **Geltend ist Stand C „Das Goldene Drittel“ – Wegweiser im README, Abschnitt „Aktueller Stand“ (Korrektur 66).** Die Tabelle unten beschreibt die beiden Vorläufer.
 

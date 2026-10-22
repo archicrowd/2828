@@ -1,19 +1,19 @@
 {
- "version": "v4.24",
- "status": "Vorschlag, Prüfrechnung (2028, Kaufkraft 2026)",
+ "version": "v4.26",
+ "status": "Beschluss E (22.10.2026), Prüfrechnung (2028, Kaufkraft 2026)",
  "varianten": [
   {
-   "name": "A beschlossen: 7,5 % auf die ganze Zusage, Boden 1.029 / 1.543 €",
-   "anteil_mehr_pct": 5.8,
+   "name": "A bisher (v4.11): 7,5 % auf die ganze Zusage, Boden 1.029 / 1.543 €",
+   "anteil_mehr_pct": 5.6,
    "mittel_monat": -143,
    "allein": -112,
-   "paar": -176,
+   "paar": -177,
    "fuenftel_monat": [
     -37,
-    -44,
+    -45,
     -87,
-    -159,
-    -390
+    -160,
+    -392
    ],
    "fuenftel_pct_netto": [
     -2.8,
@@ -24,21 +24,24 @@
    ],
    "kuerzung_mrd": 29.5,
    "boden_mrd": 2.2,
-   "gegen_beschluss_mrd": 0.0,
-   "gegen_beschluss_pct_bip": 0.0
+   "zusagen_mrd": 393.6,
+   "effektiver_satz": 0.075,
+   "boden_mrd_genau": 2.185,
+   "gegen_bisher_mrd": 0.0,
+   "gegen_bisher_pct_bip": 0.0
   },
   {
    "name": "B wie A, Boden = Grundsicherung 1.083 / 1.632 €",
-   "anteil_mehr_pct": 5.8,
-   "mittel_monat": -138,
+   "anteil_mehr_pct": 5.6,
+   "mittel_monat": -139,
    "allein": -107,
-   "paar": -172,
+   "paar": -174,
    "fuenftel_monat": [
-    -16,
-    -44,
+    -17,
+    -45,
     -87,
-    -159,
-    -390
+    -160,
+    -392
    ],
    "fuenftel_pct_netto": [
     -1.1,
@@ -49,21 +52,24 @@
    ],
    "kuerzung_mrd": 29.5,
    "boden_mrd": 2.8,
-   "gegen_beschluss_mrd": -0.6,
-   "gegen_beschluss_pct_bip": -0.01
+   "zusagen_mrd": 393.6,
+   "effektiver_satz": 0.075,
+   "boden_mrd_genau": 2.801,
+   "gegen_bisher_mrd": -0.6,
+   "gegen_bisher_pct_bip": -0.01
   },
   {
    "name": "C Boden 1.083 / 1.632 €, 7,5 % über dem Grundbedarf",
-   "anteil_mehr_pct": 43.0,
-   "mittel_monat": -64,
-   "allein": -58,
-   "paar": -69,
+   "anteil_mehr_pct": 42.8,
+   "mittel_monat": -65,
+   "allein": -59,
+   "paar": -70,
    "fuenftel_monat": [
     24,
     21,
-    0,
-    -68,
-    -299
+    -1,
+    -69,
+    -302
    ],
    "fuenftel_pct_netto": [
     1.8,
@@ -74,59 +80,75 @@
    ],
    "kuerzung_mrd": 13.7,
    "boden_mrd": 2.3,
-   "gegen_beschluss_mrd": -16.0,
-   "gegen_beschluss_pct_bip": -0.32
+   "zusagen_mrd": 393.6,
+   "effektiver_satz": 0.0348,
+   "boden_mrd_genau": 2.313,
+   "gegen_bisher_mrd": -16.0,
+   "gegen_bisher_pct_bip": -0.32
   },
   {
    "name": "D Boden 1.083 / 1.632 €, 10 % über dem Grundbedarf",
-   "anteil_mehr_pct": 38.3,
-   "mittel_monat": -83,
-   "allein": -72,
-   "paar": -95,
+   "anteil_mehr_pct": 38.0,
+   "mittel_monat": -84,
+   "allein": -73,
+   "paar": -96,
    "fuenftel_monat": [
     23,
     14,
-    -11,
-    -89,
-    -359
+    -12,
+    -90,
+    -361
    ],
    "fuenftel_pct_netto": [
     1.8,
-    0.8,
+    0.7,
     -0.4,
     -2.4,
-    -5.2
+    -5.3
    ],
    "kuerzung_mrd": 18.2,
    "boden_mrd": 2.3,
-   "gegen_beschluss_mrd": -11.4,
-   "gegen_beschluss_pct_bip": -0.23
+   "zusagen_mrd": 393.6,
+   "effektiver_satz": 0.0463,
+   "boden_mrd_genau": 2.313,
+   "gegen_bisher_mrd": -11.4,
+   "gegen_bisher_pct_bip": -0.23
   },
   {
-   "name": "E Boden 1.083 / 1.632 €, 15 % über dem Grundbedarf (Vorschlag)",
-   "anteil_mehr_pct": 30.9,
-   "mittel_monat": -123,
-   "allein": -100,
-   "paar": -147,
+   "name": "E Beschluss v4.26: Boden 1.083 / 1.632 €, 15 % über dem Grundbedarf",
+   "anteil_mehr_pct": 30.7,
+   "mittel_monat": -124,
+   "allein": -101,
+   "paar": -149,
    "fuenftel_monat": [
     21,
-    0,
-    -32,
-    -133,
-    -477
+    -1,
+    -33,
+    -134,
+    -479
    ],
    "fuenftel_pct_netto": [
-    1.7,
+    1.6,
     0.0,
     -1.2,
-    -3.5,
-    -7.0
+    -3.6,
+    -7.1
    ],
    "kuerzung_mrd": 27.4,
    "boden_mrd": 2.3,
-   "gegen_beschluss_mrd": -2.3,
-   "gegen_beschluss_pct_bip": -0.05
+   "zusagen_mrd": 393.6,
+   "effektiver_satz": 0.0695,
+   "boden_mrd_genau": 2.313,
+   "gegen_bisher_mrd": -2.3,
+   "gegen_bisher_pct_bip": -0.05
   }
  ],
+ "uebertrag_fonds": {
+  "effektiver_satz_e": 0.0695,
+  "altlasten_toml": 0.0695,
+  "boden_faktor_e_zu_a": 1.0586,
+  "b1_soll": 0.1514,
+  "b1_toml": 0.1514
+ },
  "hinweis": "Fünftel nach heutigem Haushaltsnetto der Rentnerhaushalte. Zusammensetzung der Alterseinkommen gleich über alle Einkommen (ASID, Annahme); Beamtenversorgung als Zusage behandelt (Annahme). Kosten nur für 2028; der Bestand sinkt mit der Zeit."
 }

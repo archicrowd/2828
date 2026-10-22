@@ -153,10 +153,10 @@
       "gini_rentner_unveraendert": 32.4
      },
      "obere": {
-      "gini": 32.9,
-      "gini_rentner_unveraendert": 32.7
+      "gini": 32.8,
+      "gini_rentner_unveraendert": 32.6
      },
-     "mitte": 32.7
+     "mitte": 32.6
     },
     {
      "jahr": 2040,
@@ -337,14 +337,14 @@
     {
      "jahr": 2028,
      "untere": {
-      "gini": 25.2,
+      "gini": 25.1,
       "gini_rentner_unveraendert": 26.8
      },
      "obere": {
-      "gini": 25.2,
+      "gini": 25.1,
       "gini_rentner_unveraendert": 26.8
      },
-     "mitte": 25.2
+     "mitte": 25.1
     },
     {
      "jahr": 2030,
@@ -479,14 +479,14 @@
     {
      "jahr": 2040,
      "untere": {
-      "gini": 19.1,
+      "gini": 19.0,
       "gini_rentner_unveraendert": 21.0
      },
      "obere": {
-      "gini": 19.1,
+      "gini": 19.0,
       "gini_rentner_unveraendert": 21.0
      },
-     "mitte": 19.1
+     "mitte": 19.0
     },
     {
      "jahr": 2045,
