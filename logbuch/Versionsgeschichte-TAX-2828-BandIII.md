@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.24**
+Stand: 21. Oktober 2026 · Modellstand **v4.25**
 
 ---
 
@@ -3375,6 +3375,25 @@ Die gesetzliche Rente beruht auf gezahlten Beiträgen; „ungedeckt“ heißt hi
 Bestand sinkt mit der Zeit.
 
 **Datenquelle:** wie v4.23. **Wodurch aufgefallen:** Vorgabe der Initiative. **Offen:** Entscheidung A/E; Einbau in Fonds und Seite nach Beschluss.
+
+### v4.25 — Textentwurf der deutschen Seite zum Vorschlag Rentner E (seite/entwurf/rentner-e/)
+
+**Art der Änderung: PATCH (Textentwurf), keine Zahl bewegt.** 22. Oktober 2026.
+
+**Anlass:** Auftrag der Initiative (22.10.2026): deutsche Variante der Seite zum Vorschlag E, eng an der Vorlage, nur inhaltliche Abweichungen.
+
+**Neu:** `seite/werkzeuge/rentner_e_entwurf.py` baut aus `seite/stand-c/de.html` den Entwurf `seite/entwurf/rentner-e/de.html` (Änderungen gelb
+markiert, Hinweisleiste „Entwurf, nicht veröffentlichen“) und die Gegenüberstellung `AENDERUNGEN.md`. Fünf Stellen:
+1. Hero-Fußnote zu „9 von 10“: Satz zu den Rentnerhaushalten (+21 / −32 / −477 € je Fünftel).
+2. Chancen: neue Kachel „Im Alter – Der Grundbedarf ist sicher“.
+3. Vergleichstabelle: Zeilen „Mindesteinkommen im Alter“ und „Rentnerhaushalte: Veränderung im Monat“.
+4. Fußnote der Tabelle: Datengrundlage der Rentnerzahlen (EU-SILC 2025, ASID 2023; Grundsicherung als Annahme).
+5. Kachel „Altlasten“: Regel für Bestandsrenten (Grundbedarf garantiert, 15 % auf Zusagen über 1.029 €, Beispiele 71 / 221 €).
+
+Zahlen aus `rentner_kombi.json` (Variante E); alle übrigen Zahlen der Seite nach Beschluss. Nach einem Beschluss für E: Fonds, Zuschlag und
+Beispiele neu rechnen, Übersetzungen nachziehen.
+
+**Datenquelle:** wie v4.24. **Wodurch aufgefallen:** Auftrag der Initiative. **Offen:** Beschluss A/E; Formulierung „nicht angespart“ abstimmen.
 
 ---
 
