@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.29 · höchste Korrekturnummer 70 · 461 Dateien im Repository
+Modellstand v4.30 · höchste Korrekturnummer 70 · 461 Dateien im Repository
 
 ## Bausteine
 

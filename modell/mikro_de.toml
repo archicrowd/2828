@@ -2,7 +2,7 @@
 # Grundsatz: nur veröffentlichte Aggregate, keine Mikrodaten. Jede Zahl mit Quelle; „Annahme“ wo keine amtliche Zahl abgerufen wurde.
 # Euro: Verteilungen 2024 nominal (Quelle), für den Vergleich 2028 in Kaufkraft 2026 mit lohn_2024_2026 hochgerechnet;
 # Validierung gegen 2025 mit lohn_2024_2025.
-version = "v4.28"
+version = "v4.30"
 seeds = [1, 2, 3, 4, 5]          # fünf Ziehungen; Spanne = Kalibrierungsrauschen, nicht strukturelle Unsicherheit
 haushalte_stichprobe = 40000     # Datensätze je Ziehung (erwerbsfähige Haushalte); Rentnerhaushalte zusätzlich 8.000
 rentner_stichprobe = 8000
@@ -79,3 +79,20 @@ kindergeld_mrd = 55.32                   # BA Familienkasse, Pressemitteilung 21
 soli_mrd = 12.9                          # BMF 2025, enthält Soli auf Körperschaft- und Kapitalertragsteuer
 beamte_mio = 1.9                         # Annahme (Personalstandstatistik, Größenordnung) – für die Lohnsumme ergänzt
 beamte_brutto = 58000                    # Annahme, 2025
+
+[kapital]   # v4.28/v4.29 R3: Kapital- und Mieteinkünfte der erwerbsfähigen Haushalte (EU-SILC 2025, Einkommen 2024; Destatis, Tabelle
+# „Einkommen nach Einkommensarten“, amtlich): Kapitaleinkünfte bei 10,70 Mio. Haushalten, Mittel 195 €, Quartile 18 / 58 / 166 € im Monat;
+# Vermietung bei 3,74 Mio. Haushalten, Mittel 895 €, Quartile 277 / 518 / 1.002 €. Lognormal: Median und Mittel treffen das dritte Quartil (Prüfung im Skript).
+kap_haushalte_mio = 10.70
+kap_median_monat = 58
+kap_mittel_monat = 195
+miete_haushalte_mio = 3.74
+miete_median_monat = 518
+miete_mittel_monat = 895
+anteil_erwerbsfaehig = 0.72     # Annahme: Anteil der Bezieherhaushalte im Erwerbsalter (Haushaltsanteil 30,8 / 42,9); Rentner über EU-SILC/ASID enthalten
+rang_korrelation = 0.5          # Annahme: Höhe hängt am Erwerbseinkommen (Gauß-Copula)
+besitz_steigung = 1.2           # Annahme: Besitzwahrscheinlichkeit = Grundwert × (0,4 + 1,2 × Rang)
+sparerpauschbetrag = 1000       # je Erwachsenem, Abgeltungsteuer 25 % + Soli 5,5 % (ohne Kirchensteuer)
+abgeltung_satz = 0.26375
+skalierung_varianten = [1.0, 2.0, 4.0]   # Umfragen untererfassen Kapitaleinkünfte: Abgeltungsaufkommen 2025 24,8 Mrd. € entspricht rund 94 Mrd. €
+                                         # Erträgen über dem Freibetrag (Haushalte und andere), EU-SILC rund 25 Mrd. € → Empfindlichkeit

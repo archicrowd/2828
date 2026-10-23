@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.29**
+Stand: 21. Oktober 2026 · Modellstand **v4.30**
 
 ---
 
@@ -3554,6 +3554,30 @@ Einkommen (Entsparen, Transfers), dort wirkt aber das Grundauskommen. `kq` bleib
 
 **Datenquelle:** Destatis, EVS 2023, Konsumausgaben nach Haushaltsnettoeinkommen und nach Dezilen (Stand 09.12.2025). **Wodurch aufgefallen:** Punkt R2.
 
+### v4.30 — R3: Kapital- und Mieteinkünfte in der Mikrosimulation
+
+**Art der Änderung: MINOR (Prüfrechnung erweitert), keine geltende Zahl des Konzepts bewegt.** 23. Oktober 2026.
+
+**Anlass:** Punkt R3 (Abschnitt 7.1): Die oberen Dezile hatten keine Kapital- und Mieteinkünfte.
+
+**Methode:** EU-SILC 2025 (Einkommen 2024; Destatis, „Einkommen nach Einkommensarten“, amtlich): Kapitaleinkünfte bei 10,70 Mio. Haushalten,
+Mittel 195 €, Median 58 € im Monat; Vermietung bei 3,74 Mio. Haushalten, Mittel 895 €, Median 518 €. Lognormal aus Median und Mittel; das
+dritte Quartil wird getroffen (166 € gegen 166 €; 1.049 € gegen 1.002 €). 72 % der Bezieherhaushalte im Erwerbsalter (Annahme), Besitz und
+Höhe steigen mit dem Rang des Erwerbseinkommens (Annahmen). heute: Abgeltungsteuer 26,375 % über 1.000 € je Erwachsenem, Vermietung nach Tarif;
+neu: beides nach 33R, bei Paaren je zur Hälfte (Annahme).
+
+**Ergebnis (2028, Kaufkraft 2026, Weitergabe 80 %):** Summe im Erwerbsalter 20,7 Mrd. € Kapital und 34,1 Mrd. € Miete (2024). Wirkung klein:
+alle Haushalte 69,9 → 70,2 % mit mehr; Dezil 10 im Mittel +410 → +414 € (höherer Satz auf Kapital, niedrigerer auf hohe Mieteinkünfte), Dezil 8
++709 → +666 €; Vollzeit unverändert 99,3 %; Beamte (Zulage) 81,4 % (+381 €), Selbständige 77,0 %.
+
+**Untererfassung:** Umfragen erfassen rund 25 Mrd. € Kapitaleinkünfte, die Abgeltungsteuer 2025 (24,8 Mrd. €) entspricht rund 94 Mrd. € Erträgen
+(einschließlich Nicht-Haushalte). Bei doppelter / vierfacher Höhe: oberstes Dezil 65,0 / 63,6 % mit mehr, im Mittel +391 / +323 € im Monat.
+Die Mindeststeuer auf Vermögen über 2 Mio. € ist in der Mikrosimulation nicht abgebildet (zu wenige Fälle in Umfragen; Gesamtrechnung enthält sie).
+
+**Validierung:** Lohnsteuer −5,4 % (Mieteinkünfte gehen in die Tarifsteuer ein), Bruttolohnsumme −2,8 %.
+
+**Datenquelle:** Destatis, EU-SILC 2025, Einkommen nach Einkommensarten (Endergebnisse). **Wodurch aufgefallen:** Punkt R3.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3615,7 +3639,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.29
+## 7 | Offene Punkte, Stand v4.30
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3627,7 +3651,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 |---|---|---|---|
 | R1 | **erledigt v4.28** (Zulage als Vorschlag, Entscheidung E9; Kosten der Zulage gegen Beihilfe und Versorgung gegenrechnen) – **Beamte und Selbständige in der Mikrosimulation** (rund 1,9 Mio. Beamte mit Pensionären, 3,9 Mio. Selbständige): heute ohne Sozialbeiträge bzw. mit eigener Vorsorge; neu ohne Gewinn aus wegfallenden Beiträgen, aber mit voller Besteuerung | Vorzeichen offen; kann die Aussage „9 von 10 Beschäftigten“ berühren (Beamte sind Beschäftigte) | Mehrheitsaussage, v4.22 |
 | R2 | **erledigt v4.29** (offen: Einstufung je Produkt statt je Gruppe, Vorsteueranteil steuerfreier Bereiche belegen) – **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
-| R3 | **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
+| R3 | **erledigt v4.30 für Kapital und Miete** (offen: Spitze der Vermögen, Erbschaften, Untererfassung) – **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
 | R4 | **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
 | R5 | **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
 | R6 | **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |

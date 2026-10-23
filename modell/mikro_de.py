@@ -88,6 +88,8 @@ def heute(hh, midijob=True):
         i = next(j for j, (_, a) in enumerate(hh["erw"]) if a == "beamt")
         sv[i] = pk
         zve[i] = max(0.0, zve[i] - MB.P["beamte"]["pkv_abziehbar"] * pk)
+    kap, miete = hh.get("kap", 0.0), hh.get("miete", 0.0)          # v4.29 R3: Kapital- und Mieteinkünfte
+    zve[0] += miete                                                 # Vermietung nach Tarif (Paare: Splitting über die Summe)
     if hh["paar"]:
         z = max(0.0, sum(zve) - 2 * K.SA_PAUSCH)
         est = 2 * K.est_2026(z / 2)
@@ -97,7 +99,8 @@ def heute(hh, midijob=True):
         est = K.est_2026(z)
         st = est + K.soli_2026(est)
     brutto = sum(b for b, _ in hh["erw"])
-    netto = brutto - sum(sv) - st
+    abgeltung = max(0.0, kap - KP["sparerpauschbetrag"] * len(hh["erw"])) * KP["abgeltung_satz"]
+    netto = brutto - sum(sv) - st + kap + miete - abgeltung
     n_kg = hh["kind"]
     if hh["vkind"]:
         b, a = hh["vkind"]
@@ -110,7 +113,7 @@ def heute(hh, midijob=True):
     netto += n_kg * K.KINDERGELD * 12
     e = len(hh["erw"]) + (1 if hh["vkind"] else 0)
     bg = SL.de_buergergeld(brutto, min(e, 3), hh["kind"], netto)
-    return netto + bg, dict(lohnsteuer=est, soli=st - est, sv=sum(sv), kindergeld=n_kg * K.KINDERGELD * 12, buergergeld=bg)
+    return netto + bg, dict(lohnsteuer=est, soli=st - est, sv=sum(sv), kindergeld=n_kg * K.KINDERGELD * 12, buergergeld=bg, abgeltung=abgeltung)
 
 
 # ------------------------------------------------------------------ neu (Stand C, regel_boden)
@@ -129,6 +132,9 @@ def neu(hh, w, zulage=None):
     loehne = [b for b, _ in arten]
     e, k = len(loehne), hh["kind"]
     brutto = [brutto_neu(b, a, w, zulage) for b, a in arten]
+    extra = hh.get("kap", 0.0) + hh.get("miete", 0.0)               # v4.29 R3: Kapital und Miete nach 33R, je Hälfte bei Paaren (Annahme)
+    for i in range(len(hh["erw"])):
+        brutto[i] += extra / len(hh["erw"])
     st = sum(est_neu(x + DIV) for x in brutto)
     netto = sum(brutto) - st + DIV * e + k * DIV * RB.S
     konsum = HL.kq(netto, "DE") * netto
@@ -283,6 +289,7 @@ def ziehe(seed, rho, struktur=1.0):
         if h["erw"][0][1] == "selbst_netto":
             h["erw"][0] = (gewinn_aus_netto(h["erw"][0][0]), "selbst")
     haushalte += bs
+    kapital_zuweisen(haushalte, rng)                                # v4.29 R3
     # Rentner (v4.23: Haushaltseinkommen, mikro_rentner_de)
     R = P["rentner"]
     rentner, wr = MR.ziehe(rng, P["rentner_stichprobe"], R["personen_mio"], R["allein_lebend_mio"])
@@ -365,7 +372,35 @@ def validierung(haushalte, w):
 
 
 def skaliere(h, f):
-    return dict(h, erw=[(b * f, a) for b, a in h["erw"]], vkind=(h["vkind"][0] * f, h["vkind"][1]) if h["vkind"] else None)
+    return dict(h, erw=[(b * f, a) for b, a in h["erw"]], vkind=(h["vkind"][0] * f, h["vkind"][1]) if h["vkind"] else None,
+                kap=h.get("kap", 0.0) * f * KAP_SKAL[0], miete=h.get("miete", 0.0) * f)
+
+
+KP = P["kapital"]
+KAP_SKAL = [1.0]                                                    # Empfindlichkeit Untererfassung (main setzt Varianten)
+
+
+def lognorm_parameter(median, mittel):
+    return math.log(median), math.sqrt(2 * math.log(mittel / median))
+
+
+def kapital_zuweisen(haushalte, rng):
+    """v4.29 R3: Kapital- und Mieteinkünfte (Jahr, 2024) nach Rang des Erwerbseinkommens; Besitz und Höhe steigen mit dem Rang (Annahmen)."""
+    n = len(haushalte)
+    lohn = np.array([sum(b for b, _ in h["erw"]) for h in haushalte])
+    rang = (np.argsort(np.argsort(lohn + rng.random(n) * 1e-6)) + 0.5) / n
+    z = norm.ppf(rang)
+    gesamt = sum(P["haushalte"][k] for k in ("allein_mio", "alleinerziehend_mio", "paar_ohne_minderj_mio", "paar_mit_minderj_mio"))
+    for art, hh_mio, med, mit in (("kap", KP["kap_haushalte_mio"], KP["kap_median_monat"], KP["kap_mittel_monat"]),
+                                   ("miete", KP["miete_haushalte_mio"], KP["miete_median_monat"], KP["miete_mittel_monat"])):
+        grund = hh_mio * KP["anteil_erwerbsfaehig"] / gesamt
+        p_besitz = np.clip(grund * (0.4 + KP["besitz_steigung"] * rang), 0, 0.95)
+        mu, sig = lognorm_parameter(med, mit)
+        r = KP["rang_korrelation"]
+        betrag = 12 * np.exp(mu + sig * (r * z + math.sqrt(1 - r * r) * rng.standard_normal(n)))
+        hat = rng.random(n) < p_besitz
+        for h, x, j in zip(haushalte, betrag, hat):
+            h[art] = float(x) if j else 0.0
 
 
 # ------------------------------------------------------------------ Auswertung
@@ -480,6 +515,18 @@ def main():
             for var in MB.P["beamte"]["zulage"]["varianten"]:
                 a = auswerten(rechne(hh, rr, w, wr, [wg0], zulage=var), wg0)
                 E["beamte_zulage"]["varianten"][var] = dict(beamte=a["status"]["Hauptperson Beamte"], gesamt=a["gesamt"])
+            # v4.29 R3: Kapitaleinkünfte, Summen und Untererfassung (Ziehung 1, Basis-Weitergabe)
+            f26 = P["lohn_2024_2026"]
+            E["kapital"] = dict(summe_kapital_mrd_2024=round(float(sum(wi * h.get("kap", 0.0) for h, wi in zip(hh, w)) / 1e9), 1),
+                                summe_miete_mrd_2024=round(float(sum(wi * h.get("miete", 0.0) for h, wi in zip(hh, w)) / 1e9), 1),
+                                abgeltung_heute_mrd=round(float(sum(wi * heute(skaliere(h, 1.0))[1]["abgeltung"] for h, wi in zip(hh, w))) / 1e9, 1),
+                                vergleich="EU-SILC (Umfrage) erfasst rund 25 Mrd. € Kapitaleinkünfte aller Haushalte; Abgeltungsteuer 2025 24,8 Mrd. € "
+                                          "(alle Steuerpflichtigen) entspricht rund 94 Mrd. € Erträgen über den Freibeträgen", skalierung={})
+            for sk in KP["skalierung_varianten"]:
+                KAP_SKAL[0] = sk
+                a = auswerten(rechne(hh, rr, w, wr, [wg0]), wg0)
+                E["kapital"]["skalierung"][str(sk)] = dict(gesamt=a["gesamt"], dezil_10=a["dezile"][9], dezil_9=a["dezile"][8])
+            KAP_SKAL[0] = 1.0
             # v4.23: Varianten der Rentnerhaushalte (Ziehung 1, Basis-Weitergabe)
             E["rentner_varianten"] = {}
             for var, inan in (("asid", "voll"), ("asid", "beobachtet"), ("nur_grv", "voll")):
