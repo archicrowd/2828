@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.30**
+Stand: 21. Oktober 2026 · Modellstand **v4.31**
 
 ---
 
@@ -3578,6 +3578,33 @@ Die Mindeststeuer auf Vermögen über 2 Mio. € ist in der Mikrosimulation nich
 
 **Datenquelle:** Destatis, EU-SILC 2025, Einkommen nach Einkommensarten (Endergebnisse). **Wodurch aufgefallen:** Punkt R3.
 
+### v4.31 — Beschluss Beamte: 20 % der Beihilfe-Ersparnis weitergegeben; B15: BIP 2024 neu abgerufen (Empfindlichkeit)
+
+**Art der Änderung: MINOR (Beschluss, Empfindlichkeit), keine geltende Zahl des Konzepts bewegt; Mikrosimulation bewegt.** 23. Oktober 2026.
+
+**Beschluss der Initiative (23.10.2026):** Der Dienstherr gibt 20 % der Beihilfe-Ersparnis an die Beamten weiter (rund 950 € im Jahr je aktivem
+Beamten, abgeleitet aus 23,2 Mrd. € Beihilfe 2024, Anteil der Aktiven 40 % als Annahme). Keine Versicherungszulage; der Vorschlag aus v4.28 bleibt
+als Variante. Begründung der Initiative: Beamte sind heute gut gestellt; mehr als die Hälfte erhält damit einen Fortschritt.
+
+| Beamte als Hauptperson (2028, Kaufkraft 2026) | mit mehr | Mittel im Monat |
+|---|---|---|
+| **20 % weitergegeben (geltend)** | **56,0 %** | **+106 €** |
+| ohne Weitergabe | 52,8 % | +59 € |
+| Versicherungszulage (Vorschlag v4.28) | 81,4 % | +381 € |
+
+Folgen in der Mikrosimulation: alle Haushalte 70,2 → 69,0 %, Personen 77,5 → 76,5 %; Haushalte mit Beschäftigten als Hauptverdiener
+(Vollzeit, Teilzeit, Minijob, Beamte) 93,7 % mit mehr. Die Aussage „9 von 10 Beschäftigten“ hält.
+
+**B15, Neuabruf BIP 2024 (Eurostat nama_10_gdp, B1GQ, Stand 09.10.2026, amtlich):** zehn Staaten zusammen 12.225,4 statt 12.157,3 Mrd. €
+(+0,56 %); DE 4.386.940 statt 4.328.970 Mio. € (+1,34 %), ES +0,27 %, AT +1,19 %, SI +0,09 %, übrige gleich. Abgelegt als Spalte in
+`laender_2024.csv`, Schalter `bip_2024_quelle` in `gesamtrechnung.toml`. Probelauf der ganzen Kette mit den neuen Werten: Dividende DE 2028
+unverändert 373 € (vor dem Kinderanteil), Zuschlag 15,5 → 15,6 %, Fondsbeitrag 5,17 → 5,18 % BIP, 42.000 € allein +604 → +603 €, Paar mit zwei
+Kindern +667 → +665 €; Dividende FR 200,0 → 199,2 €, ES 226,0 → 226,6 €. Die Rechnung von Stand B und sein Gesamtkonzept vom 12.10.2026
+würden sich dagegen ändern (Klubdividende 2028); damit Stand B reproduzierbar bleibt, gilt weiter `basis`. Entscheidung: Übernahme mit der
+nächsten Gesamtumstellung (Annahme der Initiative vorbehalten).
+
+**Datenquelle:** Eurostat nama_10_gdp (Abruf 23.10.2026). **Wodurch aufgefallen:** Punkt R4 / B15; Beschluss der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3639,7 +3666,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.30
+## 7 | Offene Punkte, Stand v4.31
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3673,7 +3700,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E6 | Stufenbindung (Preise oder Löhne); Erwerbstätigenleistung im Netz |
 | E7 | Dauer der Dividende unter Trends, Mindestniveau (N23) |
 | E8 | Weitergabe nach dem Stichtag: neue Arbeitsverträge (N30) |
-| E9 | Versicherungszulage der Beamten (Vorschlag v4.28: Pflichtvorsorge 10 % + 50 € Zusatzversicherung) |
+| E9 | **entschieden v4.31:** 20 % der Beihilfe-Ersparnis an Beamte, keine Versicherungszulage |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 
@@ -3715,7 +3742,7 @@ ruhen mit Stand B; einzelne Inhalte sind in R2, R4 und R10 übernommen.
 | Punkt | Status |
 |---|---|
 | B1–B10, B12–B14 | geschlossen (v3.7 bis v3.12); Einzelheiten im Git-Verlauf und in Band II |
-| B15: Neu abrufen | offen → R4 |
+| B15: Neu abrufen | BIP 2024 neu abgerufen v4.31 (Schalter, Wirkung auf Stand C gering); Übernahme mit der nächsten Gesamtumstellung; Renditen, COFOG, Schuldenstände offen → R4 |
 | B16: Seite gegenlesen | offen → P3 |
 | B17: Dividende nach Preisniveau | entschieden v3.20; Europarecht offen → P1 |
 | B18: 95 % für Stand B | ersetzt durch die Mikrosimulation (v4.22) |

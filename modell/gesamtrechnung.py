@@ -70,7 +70,13 @@ for p in T["parameter"]:
 GDP, SCHULD, RENDITE = basis.GDP, basis.SCHULD, basis.RENDITE          # Eurostat 2024, Mio EUR / %
 F2428 = basis.F2428
 with open(AGG / "laender_2024.csv", encoding="utf-8") as f:
-    POP = {r["land"]: float(r["einwohner_mio_2024"]) * 1e6 for r in csv.DictReader(f)}
+    _L24 = list(csv.DictReader(f))
+POP = {r["land"]: float(r["einwohner_mio_2024"]) * 1e6 for r in _L24}
+# v4.31 (B15): BIP 2024 neu abgerufen (Eurostat nama_10_gdp, Stand 09.10.2026) als Spalte bip_mio_eur_2024_eurostat_2026_10; Schalter
+# bip_2024_quelle in gesamtrechnung.toml. Geltend bleibt "basis" (Werte der Originale), damit Stand B und seine Dokumente reproduzierbar
+# bleiben; die Wirkung des Neuabrufs auf Stand C ist im Logbuch v4.31 beziffert (gering).
+_SP = "bip_mio_eur_2024_eurostat_2026_10" if T.get("bip_2024_quelle", "basis") == "eurostat_2026_10" else "bip_mio_eur_2024_nominal"
+GDP = {r["land"]: float(r[_SP]) for r in _L24}
 with open(AGG / "preisniveau_2024.csv", encoding="utf-8") as f:
     PLI = {r["land"]: float(r["preisniveau_eu27_100"]) for r in csv.DictReader(f)}
 with open(AGG / "zinsausgaben_2024.csv", encoding="utf-8") as f:

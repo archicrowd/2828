@@ -8,6 +8,8 @@
 version = "v4.14"
 fassung = "12. Oktober 2026"
 
+bip_2024_quelle = "basis"   # v4.31 (B15): "basis" = Originale (geltend), "eurostat_2026_10" = Neuabruf 09.10.2026 (Empfindlichkeit, Logbuch v4.31)
+
 [[parameter]]
 name       = "auslauf_beginn_jahr"
 wert       = 2024

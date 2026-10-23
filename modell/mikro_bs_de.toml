@@ -1,7 +1,7 @@
 # Beamte und Selbständige in der Mikrosimulation Deutschland (modell/mikro_bs_de.py, Logbuch v4.28). Prüfrechnung.
 # Beschluss der Initiative vom 23.10.2026: Ersparnisse des Dienstherrn (Beihilfe, keine Arbeitgeberbeiträge) werden an Beamte nicht nach der
 # 80-%-Regel weitergegeben, weil Beamte heute keine Abzüge haben. Eine Zulage stellt die bisherige Absicherung wieder her (Vorschlag unten).
-version = "v4.28"
+version = "v4.31"
 stichprobe = 12000
 
 [beamte]
@@ -18,11 +18,11 @@ pkv_abziehbar = 0.8          # Anteil Basisabsicherung, als Vorsorgeaufwand abzi
 beihilfe_mrd_2024 = 23.2
 anteil_aktive = 0.40
 
-[beamte.zulage]   # Vorschlag „Versicherungszulage“: gleiche Absicherung wie heute
+[beamte.zulage]   # Varianten; geltend seit v4.31: weitergabe_20. Vorschlag „Versicherungszulage“ (v4.28) nicht beschlossen
 vorsorge_satz = 0.10         # Dienstherr zahlt die Pflichtvorsorge (10 % der Bezüge) als steuerpflichtige Zulage (Ersatz für die Versorgung künftiger Dienstjahre)
 gesundheit_monat = 50        # Zuschuss für eine Zusatzversicherung, die das Leistungsniveau der Beihilfe über der Grundversorgung hält (Annahme zur Höhe)
 varianten = ["ohne", "vorsorge", "vorsorge_gesundheit", "weitergabe_20"]
-basis = "vorsorge_gesundheit"
+basis = "weitergabe_20"         # v4.31 Beschluss 23.10.2026: 20 % der Beihilfe-Ersparnis weitergegeben, keine Versicherungszulage (Vorschlag bleibt Variante)
 
 [selbst]
 anzahl_mio = 3.9             # Selbständige 2024, Größenordnung Mikrozensus (Annahme ohne Abruf)
