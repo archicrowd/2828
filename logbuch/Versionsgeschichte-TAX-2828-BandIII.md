@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.28**
+Stand: 21. Oktober 2026 · Modellstand **v4.29**
 
 ---
 
@@ -3513,6 +3513,47 @@ einem Online-Panel; Kosten der Zulage nicht in der Gesamtrechnung (offen: Gegenr
 
 **Datenquelle:** wie oben; Beihilfe 23,2 Mrd. € 2024 (AOK G+G 02/2026, Sekundärquelle). **Wodurch aufgefallen:** Punkt R1, Beschluss der Initiative.
 
+### v4.29 — R2: Mehrwertsteuer nach Einkommen (EVS 2023); Konsumquoten geprüft (modell/mwst_verteilung.py)
+
+**Art der Änderung: MINOR (Methode der Haushaltsrechnung), Haushaltszahlen DE bewegt.** 23. Oktober 2026.
+
+**Anlass:** Punkt R2 (Abschnitt 7.1).
+
+**Befund:** Die Haushaltsrechnungen setzten den effektiven Satz (18,84 % neu, 15,97 % heute) auf den ganzen Konsum und für alle Einkommen gleich.
+Beide Sätze sind aber auf den steuerpflichtigen Konsum bezogen (`systemvarianten.label_effektiv`); Miete, Gesundheit, Bildung und Versicherungen
+sind steuerfrei (EVS 2023: 31 bis 38 % des Konsums je nach Einkommen). Nach der Güterstruktur der EVS 2023 beträgt die sichtbare Mehrbelastung im
+Mittel 1,54 % des Konsums (bisher 2,48 %), die sichtbar gezahlte Steuer 10,76 % (bisher 15,85 %). Keine Korrektur im engeren Sinn: Auf der
+Ebene des Aufkommens ist der Durchschnitt richtig, weil Vorsteuer in steuerfreien Bereichen (Wohnungsbau, Instandhaltung, Gesundheitswesen) über
+die Preise ebenfalls bei den Haushalten ankommt; falsch war die gleiche Verteilung über alle Einkommen.
+
+**Methode:** Konsum je Gütergruppe nach acht Einkommensklassen (EVS 2023, Destatis, amtlich), aufgeteilt auf die Gruppen der Nachfrageprüfung
+(Aufteilung als Annahme wie in `nachfrage.toml`); Sätze heute aus `nachfrage.toml`, neu nach der steuernden Zuordnung auf 33R (Lebensmittel 5 %,
+Gastronomie 11 %, Kommunikation 17 %, Kleidung/Energie/Freizeit/Sonstiges 25 %, Fahrzeuge 31 %, Kraftstoffe, Alkohol und Tabak 33 %).
+Geltend („mit_vorsteuer“): sichtbare Belastung je Klasse plus Rest bis zum bisherigen Durchschnitt, gleichmäßig je Euro Konsum (Annahme).
+Faktor auf Mehrbelastung / gezahlte Steuer: 0,87 / 0,92 unter 1.000 € Haushaltsnetto bis 1,07 / 1,05 über 5.000 €. Anwendung in allen
+Haushaltsrechnungen für Deutschland; andere Staaten unverändert (R5).
+
+**Konsumquoten:** EVS 2023 (Konsum / Klassenmitte, offene Klassen Annahme) 1,40 / 1,11 / 1,04 / 0,98 / 0,91 / 0,84 / 0,76 / 0,64 gegen
+`kq` des Modells rund 0,95 / 0,95 / 0,93 / 0,92 / 0,89 / 0,85 / 0,80 / 0,64: in der Mitte und oben gestützt; unten liegt der Konsum über dem
+Einkommen (Entsparen, Transfers), dort wirkt aber das Grundauskommen. `kq` bleibt.
+
+**Bewegte Zahlen (DE, 2028, Kaufkraft 2026, im Monat):**
+
+| Größe | vorher | jetzt |
+|---|---|---|
+| allein 20.000 / 42.000 / 75.000 € | +363 / +606 / +771 € | +365 / +604 / +762 € |
+| alleinerziehend 42.000 € / Paar mit 2 Kindern 42.000 € | +606 / +671 € | +603 / +667 € |
+| Anteil mit mehr, alleinstehend (regel_boden) | 100 % | 98 % |
+| Beispielrenten 900 / 1.200 / 1.600 / 2.200 € | 0 / +19 / −3 / −59 € | 0 / +23 / +1 / −56 € |
+| Mikrosimulation: Dezil 1 / 5 / 10 (Mittel) | +14 / +562 / +431 € | +16 / +556 / +410 € |
+| Beamte (Zulage) / Selbständige mit mehr | 83,1 / 77,7 % | 82,1 / 77,3 % |
+| Gini DE 2028 | 26,4 | 26,3 |
+
+**Band:** Wird nur die sichtbare Steuer den Haushalten zugerechnet (untere Schranke), steigt das Mehr bei 42.000 € auf +656 €, bei 120.000 € von
++822 auf +909 €. Wie viel der Vorsteuer steuerfreier Bereiche bei den Haushalten ankommt, ist damit eine Unsicherheit von rund 50 € im Monat.
+
+**Datenquelle:** Destatis, EVS 2023, Konsumausgaben nach Haushaltsnettoeinkommen und nach Dezilen (Stand 09.12.2025). **Wodurch aufgefallen:** Punkt R2.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3574,7 +3615,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.28
+## 7 | Offene Punkte, Stand v4.29
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3585,7 +3626,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | Nr. | Punkt | Wirkung auf die Einkommen | Herkunft |
 |---|---|---|---|
 | R1 | **erledigt v4.28** (Zulage als Vorschlag, Entscheidung E9; Kosten der Zulage gegen Beihilfe und Versorgung gegenrechnen) – **Beamte und Selbständige in der Mikrosimulation** (rund 1,9 Mio. Beamte mit Pensionären, 3,9 Mio. Selbständige): heute ohne Sozialbeiträge bzw. mit eigener Vorsorge; neu ohne Gewinn aus wegfallenden Beiträgen, aber mit voller Besteuerung | Vorzeichen offen; kann die Aussage „9 von 10 Beschäftigten“ berühren (Beamte sind Beschäftigte) | Mehrheitsaussage, v4.22 |
-| R2 | **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
+| R2 | **erledigt v4.29** (offen: Einstufung je Produkt statt je Gruppe, Vorsteueranteil steuerfreier Bereiche belegen) – **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
 | R3 | **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
 | R4 | **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
 | R5 | **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |

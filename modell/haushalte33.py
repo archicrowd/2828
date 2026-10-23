@@ -20,6 +20,9 @@ P = tomllib.loads((W / "modell" / "haushalte33.toml").read_text(encoding="utf-8"
 _AL = W / "daten" / "aggregate" / "fonds_geltend.json"
 if _AL.exists():   # v4.11: Altlastenzuschlag aus dem Fonds; v4.20: geltender gemeinsamer Fonds der 30 Staaten (fonds_klub.py)
     P["zuschlag_pct"] = [0.0, json.loads(_AL.read_text(encoding="utf-8"))["zuschlag_auf_alle_steuern_pct"]]
+_spec_mv = importlib.util.spec_from_file_location("mwst_verteilung", W / "modell" / "mwst_verteilung.py")   # v4.29: Mehrwertsteuer nach Einkommen
+MV = importlib.util.module_from_spec(_spec_mv)
+_spec_mv.loader.exec_module(MV)
 spec = importlib.util.spec_from_file_location("kern", W / "modell" / "kern" / "modell-2828.py")
 K = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -93,8 +96,9 @@ def neu(b, kinder, partner, wg, zu, vs, j):
     div = DIV * (2 if partner else 1) + kinder * DIV * S_KIND
     netto = brutto - st + div
     konsum = kq(netto) * netto
-    mwst_mehr = konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1)
-    mwst_bezahlt = konsum * EFF / (100 + EFF)
+    fm, fb = MV.faktoren(netto)                                  # v4.29: Güterstruktur je Einkommen (EVS 2023)
+    mwst_mehr = fm * konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1)
+    mwst_bezahlt = fb * konsum * EFF / (100 + EFF)
     return netto - mwst_mehr - zu / 100 * (st + mwst_bezahlt) - (vs * K.AN_RV_AV / BASIS[1] * min(b, K.BBG_RV) if vs > 0.15 else vs * b)
 
 
@@ -121,7 +125,8 @@ def rentner(r_monat, zu, j):
     r = kuerze(r)                                      # v4.26 Regel E (vorher v3.48/v4.11: r × (1 − rente_kuerzung))
     st = est(r)                                        # Dividende + Altrente zusammen r, ganz steuerpflichtig
     konsum = kq(r - st) * (r - st)
-    n = r - st - konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1) - zu / 100 * (st + konsum * EFF / (100 + EFF))
+    fm, fb = MV.faktoren(r - st)                       # v4.29
+    n = r - st - fm * konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1) - zu / 100 * (st + fb * konsum * EFF / (100 + EFF))
     # v4.11 B1: Grundauskommen auch für Bestandsrenten (volle Anrechnung); heute zum Vergleich Grundsicherung im Alter (Regelbedarf + KdU)
     g = P.get("grundauskommen_rentner")
     if g:

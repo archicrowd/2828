@@ -38,6 +38,7 @@ STUFEN = [
     ("Systemvarianten 25:25 und 33:33", ["modell/systemvarianten.py"]),
     ("Altlastenfonds (Streckung)", ["modell/altlasten.py"]),
     ("Drittel-System: Zeitpfad mit Trends", ["modell/projektion33.py"]),
+    ("Mehrwertsteuer nach Einkommen (EVS 2023)", ["modell/mwst_verteilung.py"]),
     ("Drittel-System: Starkes Netz (Grundversorgung)", ["modell/netz33.py"]),
     ("Drittel-System: Einwanderung", ["modell/einwanderung33.py"]),
     ("Drittel-System: Beschäftigung und Automatisierung", ["modell/dynamik33.py"]),

@@ -28,7 +28,8 @@ def neu(g, n, satz, boden, ueber):
     st = HL.stufen(eink, DE["tarif_stufen"], [0.0, 11.0, 19.0, 25.0, 33.0]) * n
     y = eink * n - st
     kon = HL.kq(y, "DE") * y
-    y = y - kon * ((1 + M.EFF / 100) / (1 + HL.eff_alt("DE") / 100) - 1) - M.ZU / 100 * (st + kon * M.EFF / (100 + M.EFF))
+    fm, fb = HL.mwst_phi("DE", y)                                                       # v4.29
+    y = y - fm * kon * ((1 + M.EFF / 100) / (1 + HL.eff_alt("DE") / 100) - 1) - M.ZU / 100 * (st + fb * kon * M.EFF / (100 + M.EFF))
     bod = 12 * boden[n - 1]
     return max(y, bod), max(0.0, bod - y), kb * n
 

@@ -132,7 +132,8 @@ def neu(hh, w, zulage=None):
     st = sum(est_neu(x + DIV) for x in brutto)
     netto = sum(brutto) - st + DIV * e + k * DIV * RB.S
     konsum = HL.kq(netto, "DE") * netto
-    netto = netto - konsum * ((1 + EFF / 100) / (1 + HL.eff_alt("DE") / 100) - 1) - ZU / 100 * (st + konsum * EFF / (100 + EFF))
+    fm, fb = HL.mwst_phi("DE", netto)                                                   # v4.29
+    netto = netto - fm * konsum * ((1 + EFF / 100) / (1 + HL.eff_alt("DE") / 100) - 1) - ZU / 100 * (st + fb * konsum * EFF / (100 + EFF))
     dv = DIV * (e + RB.S * k)
     auf = max(0.0, RB.boden("DE", e, k) - dv - RB.P["anrechnung"] * max(0.0, netto - dv))
     return netto + auf - HL.P["vorsorge"] * sum(loehne), auf

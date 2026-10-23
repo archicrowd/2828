@@ -60,7 +60,7 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Größe | Wert | Datei | Status |
 |---|---|---|---|
 | Zuschlag bei Fondszins 2,45 / 3,0 / 3,5 / 4,0 % (Fonds der 30, v4.20) | 15,5 / 17,1 / 18,7 / 20,4 % (Beitrag 5,17 / 5,73 / 6,27 / 6,82 % BIP; v4.26) | `fondszins.json` | Empfindlichkeit; Marktzins Oktober 2026: Bund 3,46 %, EU 3,95 % (Sekundärquellen) |
-| Vorteil alleinstehend, 42.000 € brutto, DE 2028 | 606 / 585 / 564 / 541 € im Monat (v4.26; vorher 608 / 585 / 565 / 542) | `fondszins.json` | Kaufkraft 2026 |
+| Vorteil alleinstehend, 42.000 € brutto, DE 2028 | 604 / 583 / 562 / 539 € im Monat (v4.29 Mehrwertsteuer nach Einkommen; v4.26: 606 / 585 / 564 / 541) | `fondszins.json` | Kaufkraft 2026 |
 | Gemeinsamer Satz mit Italien und Polen / alle 30 Staaten | 16,6 % / 15,5 % | `fonds_klub.json` | skaliert auf den Beschluss (Annahme) |
 
 ## Mikrosimulation (extern, v4.21; eigene, v4.22)
@@ -72,7 +72,8 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Eigene Population: erwerbsfähige Haushalte / alle Haushalte / alle Personen mit mehr | 86,6 / 69,8 / 77,4 % (v4.28 mit Beamten und Selbständigen; v4.26: 89,2 / 69,6 / 78,3) | `mikro_de.json` | Prüfrechnung; Spanne der Ziehungen < 0,5 Punkte |
 | Validierung 2025: Bruttolohnsumme / Lohnsteuer ohne Eichung | −3,2 / −4,8 % gegen amtlich | `mikro_de.json` | Prüfrechnung |
 | Rentnerregel E (Beschluss 22.10.2026, v4.26): Boden 1.083 / 1.632 €, 15 % auf Zusagen über dem Grundbedarf | Rentnerhaushalte mit mehr 30,7 %, Mittel −124 €; Fünftel +21 / −1 / −33 / −134 / −479 € (Zuschlag 15,5 %); gegen bisherige Regel −0,05 % BIP | `rentner_kombi.json` | **geltend** (Beschluss 22.10.2026) |
-| Eigene Population (v4.28): Beamte mit Versicherungszulage (Vorschlag) / ohne / Selbständige mit mehr | 83,1 % (+406 €) / 54,1 % (+82 €) / 77,7 % (+332 €) | `mikro_de.json` | Prüfrechnung; Bezüge, PKV und Haushaltsform Annahmen |
+| Eigene Population (v4.28): Beamte mit Versicherungszulage (Vorschlag) / ohne / Selbständige mit mehr | 82,1 % (+395 €) / 53,7 % (+73 €) / 77,3 % (+320 €) (v4.29) | `mikro_de.json` | Prüfrechnung; Bezüge, PKV und Haushaltsform Annahmen |
+| Mehrwertsteuer nach Einkommen (v4.29): sichtbare Mehrbelastung / gezahlte Steuer im Mittel | 1,54 % / 10,76 % des Konsums gegen bisher einheitlich 2,48 % / 15,85 %; Faktor je Einkommen 0,87 (unter 1.000 €) bis 1,07 (über 5.000 €) | `mwst_verteilung.json` | geltend: Rest gleichmäßig je Euro Konsum (Annahme); Band: nur sichtbare Steuer hebt 42.000 € um rund +50 € |
 | Validierung Rentner (v4.23, ohne Eichung): Netto je Haushalt / GRV je Person / unter Grundsicherungsbedarf | +4 % gegen ASID 2023 / 1.311 € gegen DRV ≈ 1.317 € / 1,13 Mio. gegen 0,76 Mio. Empfänger | `mikro_de.json` | Rückrechnung und DRV-Bruttowert als Annahme |
 | Vollzeitbeschäftigte mit mehr verfügbarem Einkommen, Beschluss / halbe / keine Weitergabe | 99,0 / 98,4 / 92,0 % | `beitraege/kvribbeck-2028/ergebnis.csv` | externe Rechnung (Kulturverein Ribbeck e.V.), eine Quelle; Formprüfung bestanden; Grenzen in der LIESMICH.md |
 | Beispielhaushalte des Repositorys, Beschluss | 97,8 bis 100 % je Haushaltstyp (`haushalte33`), 98 % (`regel_boden`, mit Grundauskommen und Bedarfsleistungen) | `haushalte33.json`, `regel_boden.json` | Prüfrechnung |

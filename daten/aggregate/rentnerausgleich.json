@@ -5,9 +5,9 @@
   "Beschluss v4.26 (Regel E: 15 % über dem Grundbedarf, Boden 1.083 €)": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 19,
-    "1600": -3,
-    "2200": -59
+    "1200": 23,
+    "1600": 1,
+    "2200": -56
    },
    "mehrkosten_mrd": 0.0,
    "mehrkosten_pct_bip": 0.0
@@ -16,38 +16,38 @@
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -32,
-    "2200": -51
+    "1600": -28,
+    "2200": -48
    },
-   "mehrkosten_mrd": -2.1,
-   "mehrkosten_pct_bip": -0.04
+   "mehrkosten_mrd": -2.4,
+   "mehrkosten_pct_bip": -0.05
   },
   "Kürzung 12,3 %": {
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -97,
-    "2200": -130
+    "1600": -93,
+    "2200": -128
    },
-   "mehrkosten_mrd": -9.9,
-   "mehrkosten_pct_bip": -0.2
+   "mehrkosten_mrd": -10.1,
+   "mehrkosten_pct_bip": -0.21
   },
   "Kürzung 10,0 %": {
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -65,
-    "2200": -92
+    "1600": -61,
+    "2200": -89
    },
-   "mehrkosten_mrd": -6.2,
+   "mehrkosten_mrd": -6.4,
    "mehrkosten_pct_bip": -0.13
   },
   "Besteuerungsanteil 83 % wie heute": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 37,
-    "1600": 28,
-    "2200": 14
+    "1200": 41,
+    "1600": 32,
+    "2200": 16
    },
    "mehrkosten_mrd": 6.6,
    "mehrkosten_pct_bip": 0.13
@@ -55,19 +55,19 @@
   "Befreiung vom Altlastenzuschlag": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 48,
-    "1600": 38,
-    "2200": 6
+    "1200": 51,
+    "1600": 41,
+    "2200": 8
    },
-   "mehrkosten_mrd": 7.3,
-   "mehrkosten_pct_bip": 0.15
+   "mehrkosten_mrd": 7.1,
+   "mehrkosten_pct_bip": 0.14
   },
   "Pauschale 25 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 43,
-    "1600": 21,
-    "2200": -35
+    "1200": 47,
+    "1600": 24,
+    "2200": -32
    },
    "mehrkosten_mrd": 3.9,
    "mehrkosten_pct_bip": 0.08
@@ -75,32 +75,32 @@
   "Pauschale 50 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 67,
-    "1600": 45,
-    "2200": -11
+    "1200": 71,
+    "1600": 48,
+    "2200": -8
    },
-   "mehrkosten_mrd": 7.8,
+   "mehrkosten_mrd": 7.7,
    "mehrkosten_pct_bip": 0.16
   }
  },
  "kleine_bestandsrenten": {
   "600": {
-   "neu_ohne_grundauskommen": 572,
+   "neu_ohne_grundauskommen": 575,
    "neu_mit_grundauskommen": 1083,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 526,
    "heute_mit_grundsicherung": 1083
   },
   "900": {
-   "neu_ohne_grundauskommen": 858,
+   "neu_ohne_grundauskommen": 862,
    "neu_mit_grundauskommen": 1083,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 789,
    "heute_mit_grundsicherung": 1083
   },
   "1200": {
-   "neu_ohne_grundauskommen": 1102,
-   "neu_mit_grundauskommen": 1102,
+   "neu_ohne_grundauskommen": 1106,
+   "neu_mit_grundauskommen": 1106,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 1052,
    "heute_mit_grundsicherung": 1083

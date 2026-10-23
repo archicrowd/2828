@@ -45,7 +45,8 @@ def neu(r_monat, kuerzung=None, steueranteil=1.0, pauschale=0.0, zuschlag=None, 
     y = r - st + 12 * pauschale
     eff = H.eff_jahr(2028)
     konsum = H.kq(y) * y
-    n = y - konsum * ((1 + eff / 100) / (1 + H.EFF_ALT / 100) - 1) - zu / 100 * (st + konsum * eff / (100 + eff))
+    fm, fb = H.MV.faktoren(y)                                                            # v4.29
+    n = y - fm * konsum * ((1 + eff / 100) / (1 + H.EFF_ALT / 100) - 1) - zu / 100 * (st + fb * konsum * eff / (100 + eff))
     g = H.P.get("grundauskommen_rentner")
     if boden or g:                                   # v4.11 B1: Grundauskommen auch für Bestandsrenten (volle Anrechnung)
         n = max(n, 12 * g["neu_monat"] if g else GB)

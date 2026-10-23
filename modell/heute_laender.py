@@ -16,6 +16,15 @@ import json, tomllib
 from pathlib import Path
 
 W = Path(__file__).resolve().parent.parent
+import importlib.util as _ilu
+_spec_mv = _ilu.spec_from_file_location("mwst_verteilung", W / "modell" / "mwst_verteilung.py")   # v4.29: Mehrwertsteuer nach Einkommen (DE)
+MV = _ilu.module_from_spec(_spec_mv)
+_spec_mv.loader.exec_module(MV)
+
+
+def mwst_phi(c, netto):
+    """v4.29: Faktoren (Mehrbelastung, gezahlte Steuer) je Haushaltsnetto; nur DE mit EVS-Struktur, sonst 1 (offen, R5)."""
+    return MV.faktoren(netto) if c == "DE" else (1.0, 1.0)
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "heute_laender.toml").read_text(encoding="utf-8"))
 LS = json.loads((AGG / "laenderseiten.json").read_text(encoding="utf-8"))
@@ -235,8 +244,9 @@ def neu(c, b, e, k, j):
     div = DIV * e + k * DIV / 2
     netto = brutto - st + div
     konsum = kq(netto, c) * netto
-    mm = konsum * ((1 + EFF / 100) / (1 + eff_alt(c) / 100) - 1)
-    mb = konsum * EFF / (100 + EFF)
+    fm, fb = mwst_phi(c, netto)
+    mm = fm * konsum * ((1 + EFF / 100) / (1 + eff_alt(c) / 100) - 1)
+    mb = fb * konsum * EFF / (100 + EFF)
     zu = st_c["fonds"]["zuschlag_pct"]
     return dict(netto=netto - mm - zu / 100 * (st + mb) - P["vorsorge"] * b, div=div)
 

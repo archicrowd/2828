@@ -94,7 +94,8 @@ def neu(c, b, e, k, j=2028, s=0.5, boden=True, lohn_faktor=1.0, vorsorge_frei=Fa
     netto = brutto - st + DIV * e + k * DIV * s
     konsum = HL.kq(netto, c) * netto
     zu = P["zuschlag_de"] if c == "DE" else st_c["fonds"]["zuschlag_pct"]
-    netto = netto - konsum * ((1 + EFF / 100) / (1 + HL.eff_alt(c) / 100) - 1) - zu / 100 * (st + konsum * EFF / (100 + EFF))
+    fm, fb = HL.mwst_phi(c, netto)                                                      # v4.29
+    netto = netto - fm * konsum * ((1 + EFF / 100) / (1 + HL.eff_alt(c) / 100) - 1) - zu / 100 * (st + fb * konsum * EFF / (100 + EFF))
     gbj = st_c["grundbedarf_jahr_eur"] * fx
     netto -= HL.P["vorsorge"] * (max(0.0, lohn - gbj) if vorsorge_frei else lohn)   # Variante: Pflichtvorsorge erst über dem Grundbedarf
     if boden:

@@ -18,49 +18,49 @@
     "Paar, ein Einkommen, 2 Kinder": 2675
    },
    "anteil": {
-    "alleinstehend": 100,
-    "alleinerziehend, 1 Kind": 100,
+    "alleinstehend": 98,
+    "alleinerziehend, 1 Kind": 98,
     "Paar, ein Einkommen, 2 Kinder": 98
    },
    "faelle": {
     "0.15": {
-     "alleinstehend": 19,
-     "alleinerziehend, 1 Kind": 78,
+     "alleinstehend": 21,
+     "alleinerziehend, 1 Kind": 80,
      "Paar, ein Einkommen, 2 Kinder": 96
     },
     "0.33": {
-     "alleinstehend": 416,
+     "alleinstehend": 417,
      "alleinerziehend, 1 Kind": 287,
-     "Paar, ein Einkommen, 2 Kinder": 306
+     "Paar, ein Einkommen, 2 Kinder": 305
     },
     "0.5": {
      "alleinstehend": 582,
-     "alleinerziehend, 1 Kind": 584,
-     "Paar, ein Einkommen, 2 Kinder": 559
+     "alleinerziehend, 1 Kind": 583,
+     "Paar, ein Einkommen, 2 Kinder": 557
     },
     "0.66": {
-     "alleinstehend": 606,
-     "alleinerziehend, 1 Kind": 606,
-     "Paar, ein Einkommen, 2 Kinder": 672
+     "alleinstehend": 604,
+     "alleinerziehend, 1 Kind": 603,
+     "Paar, ein Einkommen, 2 Kinder": 667
     },
     "1.0": {
-     "alleinstehend": 722,
-     "alleinerziehend, 1 Kind": 717,
-     "Paar, ein Einkommen, 2 Kinder": 685
+     "alleinstehend": 716,
+     "alleinerziehend, 1 Kind": 711,
+     "Paar, ein Einkommen, 2 Kinder": 677
     }
    },
    "lohnabstand": {
     "alleinstehend": {
      "0.0": {
-      "neu": 1012,
+      "neu": 1014,
       "heute": null
      },
      "0.25": {
-      "neu": 1288,
+      "neu": 1290,
       "heute": 1287
      },
      "0.5": {
-      "neu": 1507,
+      "neu": 1509,
       "heute": 1428
      },
      "1.0": {
@@ -68,25 +68,25 @@
       "heute": 1687
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
-      "neu": 66,
+      "neu": 67,
       "heute": 98
      }
     },
     "alleinerziehend, 1 Kind": {
      "0.0": {
-      "neu": 1565,
+      "neu": 1568,
       "heute": null
      },
      "0.25": {
-      "neu": 1848,
+      "neu": 1850,
       "heute": 1788
      },
      "0.5": {
-      "neu": 2067,
+      "neu": 2068,
       "heute": 1929
      },
      "1.0": {
-      "neu": 2539,
+      "neu": 2538,
       "heute": 1962
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
@@ -96,19 +96,19 @@
     },
     "Paar, ein Einkommen, 2 Kinder": {
      "0.0": {
-      "neu": 2616,
+      "neu": 2621,
       "heute": null
      },
      "0.25": {
-      "neu": 2915,
+      "neu": 2916,
       "heute": 2838
      },
      "0.5": {
-      "neu": 3135,
+      "neu": 3136,
       "heute": 2979
      },
      "1.0": {
-      "neu": 3498,
+      "neu": 3497,
       "heute": 3012
      },
      "belastung_zusatzeuro_bei_halbem_mindestlohn": {
@@ -548,44 +548,44 @@
   }
  },
  "kosten_aufstockung_beschaeftigte_de_mrd": {
-  "alleinstehend": 22.9,
-  "alleinerziehend, 1 Kind": 64.9,
-  "Paar, ein Einkommen, 2 Kinder": 174.5
+  "alleinstehend": 22.8,
+  "alleinerziehend, 1 Kind": 64.7,
+  "Paar, ein Einkommen, 2 Kinder": 174.7
  },
  "topf": 0.94827,
  "beispiele_de": {
   "alleinstehend": {
    "20000": {
     "heute": 1431,
-    "neu": 1794,
-    "mehr": 363
+    "neu": 1796,
+    "mehr": 365
    },
    "42000": {
     "heute": 2349,
-    "neu": 2956,
-    "mehr": 606
+    "neu": 2954,
+    "mehr": 604
    },
    "75000": {
     "heute": 3817,
-    "neu": 4587,
-    "mehr": 771
+    "neu": 4579,
+    "mehr": 762
    }
   },
   "alleinerziehend, 1 Kind": {
    "20000": {
     "heute": 1962,
-    "neu": 2226,
-    "mehr": 264
+    "neu": 2227,
+    "mehr": 265
    },
    "42000": {
     "heute": 2623,
-    "neu": 3230,
-    "mehr": 606
+    "neu": 3227,
+    "mehr": 603
    },
    "75000": {
     "heute": 4098,
-    "neu": 4864,
-    "mehr": 767
+    "neu": 4855,
+    "mehr": 758
    }
   },
   "Paar, ein Einkommen, 2 Kinder": {
@@ -596,13 +596,13 @@
    },
    "42000": {
     "heute": 3175,
-    "neu": 3847,
-    "mehr": 671
+    "neu": 3842,
+    "mehr": 667
    },
    "75000": {
     "heute": 4827,
-    "neu": 5489,
-    "mehr": 662
+    "neu": 5478,
+    "mehr": 651
    }
   }
  },

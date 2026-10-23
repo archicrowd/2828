@@ -109,27 +109,27 @@
  "staaten": {
   "DE": {
    "anteil_v41": {
-    "alleinstehend": 100,
+    "alleinstehend": 98,
     "alleinerziehend, 1 Kind": 98,
     "Paar, ein Einkommen, 2 Kinder": 98
    },
    "anteil_mit_bedarf_ohne_boden": {
-    "alleinstehend": 87,
+    "alleinstehend": 84,
     "alleinerziehend, 1 Kind": 84,
     "Paar, ein Einkommen, 2 Kinder": 60
    },
    "anteil_mit_bedarf_und_boden": {
-    "alleinstehend": 87,
+    "alleinstehend": 84,
     "alleinerziehend, 1 Kind": 84,
     "Paar, ein Einkommen, 2 Kinder": 60
    },
    "anteil_kind_0_7": {
-    "alleinstehend": 87,
+    "alleinstehend": 84,
     "alleinerziehend, 1 Kind": 84,
     "Paar, ein Einkommen, 2 Kinder": 60
    },
    "anteil_kind_1_0": {
-    "alleinstehend": 87,
+    "alleinstehend": 84,
     "alleinerziehend, 1 Kind": 87,
     "Paar, ein Einkommen, 2 Kinder": 60
    },
@@ -140,24 +140,24 @@
    },
    "faelle_paket": {
     "0.33": {
-     "alleinstehend": 523,
+     "alleinstehend": 524,
      "alleinerziehend, 1 Kind": 234,
      "Paar, ein Einkommen, 2 Kinder": -227
     },
     "0.5": {
-     "alleinstehend": 689,
-     "alleinerziehend, 1 Kind": 661,
-     "Paar, ein Einkommen, 2 Kinder": 368
+     "alleinstehend": 688,
+     "alleinerziehend, 1 Kind": 660,
+     "Paar, ein Einkommen, 2 Kinder": 365
     },
     "0.66": {
-     "alleinstehend": 712,
-     "alleinerziehend, 1 Kind": 682,
-     "Paar, ein Einkommen, 2 Kinder": 724
+     "alleinstehend": 710,
+     "alleinerziehend, 1 Kind": 679,
+     "Paar, ein Einkommen, 2 Kinder": 720
     },
     "1.0": {
-     "alleinstehend": 828,
-     "alleinerziehend, 1 Kind": 794,
-     "Paar, ein Einkommen, 2 Kinder": 737
+     "alleinstehend": 822,
+     "alleinerziehend, 1 Kind": 787,
+     "Paar, ein Einkommen, 2 Kinder": 729
     }
    },
    "anteil_paket_vorsorge_als_vermoegen": {
@@ -167,46 +167,46 @@
    },
    "faelle_kind_0_5": {
     "0.33": {
-     "alleinstehend": 429,
+     "alleinstehend": 430,
      "alleinerziehend, 1 Kind": 77,
-     "Paar, ein Einkommen, 2 Kinder": -434
+     "Paar, ein Einkommen, 2 Kinder": -435
     },
     "0.5": {
-     "alleinstehend": 594,
-     "alleinerziehend, 1 Kind": 503,
-     "Paar, ein Einkommen, 2 Kinder": 159
+     "alleinstehend": 593,
+     "alleinerziehend, 1 Kind": 502,
+     "Paar, ein Einkommen, 2 Kinder": 156
     },
     "0.66": {
-     "alleinstehend": 617,
-     "alleinerziehend, 1 Kind": 524,
-     "Paar, ein Einkommen, 2 Kinder": 515
+     "alleinstehend": 615,
+     "alleinerziehend, 1 Kind": 521,
+     "Paar, ein Einkommen, 2 Kinder": 511
     },
     "1.0": {
-     "alleinstehend": 733,
-     "alleinerziehend, 1 Kind": 635,
-     "Paar, ein Einkommen, 2 Kinder": 527
+     "alleinstehend": 727,
+     "alleinerziehend, 1 Kind": 629,
+     "Paar, ein Einkommen, 2 Kinder": 519
     }
    },
    "faelle_kind_0_7": {
     "0.33": {
-     "alleinstehend": 420,
+     "alleinstehend": 421,
      "alleinerziehend, 1 Kind": 131,
-     "Paar, ein Einkommen, 2 Kinder": -329
+     "Paar, ein Einkommen, 2 Kinder": -330
     },
     "0.5": {
-     "alleinstehend": 586,
-     "alleinerziehend, 1 Kind": 558,
-     "Paar, ein Einkommen, 2 Kinder": 265
+     "alleinstehend": 585,
+     "alleinerziehend, 1 Kind": 557,
+     "Paar, ein Einkommen, 2 Kinder": 262
     },
     "0.66": {
-     "alleinstehend": 609,
-     "alleinerziehend, 1 Kind": 579,
-     "Paar, ein Einkommen, 2 Kinder": 621
+     "alleinstehend": 607,
+     "alleinerziehend, 1 Kind": 577,
+     "Paar, ein Einkommen, 2 Kinder": 617
     },
     "1.0": {
-     "alleinstehend": 725,
-     "alleinerziehend, 1 Kind": 691,
-     "Paar, ein Einkommen, 2 Kinder": 634
+     "alleinstehend": 719,
+     "alleinerziehend, 1 Kind": 684,
+     "Paar, ein Einkommen, 2 Kinder": 626
     }
    },
    "mindestlohn": {
@@ -224,13 +224,13 @@
     "alleinerziehend, 1 Kind": {
      "heute_monat": 1962,
      "neu_monat": 2512,
-     "neu_regel50_monat": 2737,
+     "neu_regel50_monat": 2735,
      "lohnkosten_regel50_pct": -1.5
     },
     "Paar, ein Einkommen, 2 Kinder": {
      "heute_monat": 3012,
-     "neu_monat": 3103,
-     "neu_regel50_monat": 3328,
+     "neu_monat": 3101,
+     "neu_regel50_monat": 3325,
      "lohnkosten_regel50_pct": -1.5
     }
    }
