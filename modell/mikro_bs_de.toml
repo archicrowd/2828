@@ -1,0 +1,40 @@
+# Beamte und Selbständige in der Mikrosimulation Deutschland (modell/mikro_bs_de.py, Logbuch v4.28). Prüfrechnung.
+# Beschluss der Initiative vom 23.10.2026: Ersparnisse des Dienstherrn (Beihilfe, keine Arbeitgeberbeiträge) werden an Beamte nicht nach der
+# 80-%-Regel weitergegeben, weil Beamte heute keine Abzüge haben. Eine Zulage stellt die bisherige Absicherung wieder her (Vorschlag unten).
+version = "v4.28"
+stichprobe = 12000
+
+[beamte]
+anzahl_mio = 1.96            # Beamte, Richter, Soldaten, 30.06.2024 (Destatis, über Sekundärquelle kettner-edelmetalle.de 04.05.2026 – an der Quelle zu prüfen)
+brutto_mittel_2025 = 58000   # Annahme: Jahresbezüge im Mittel (Besoldung A9 bis A13 als Schwerpunkt, Lehrkräfte rund 35 %)
+streuung_log = 0.30          # Annahme: Besoldung gestaucht (A6 bis B)
+# Private Krankenversicherung zur Beihilfe (Restkosten), Jahresbeiträge 2025 – Annahmen (keine amtliche Statistik abgerufen):
+pkv_person = 3000
+pkv_partner_ohne_einkommen = 1800
+pkv_kind = 600
+pkv_abziehbar = 0.8          # Anteil Basisabsicherung, als Vorsorgeaufwand abziehbar (Annahme)
+# Beihilfe 2024: 23,2 Mrd. € für über 4,5 Mio. Personen (Beamte, Pensionäre, Angehörige; AOK G+G 02/2026, Sekundärquelle); Anteil der
+# aktiven Beamten an den Ausgaben 40 % (Annahme) → je aktivem Beamten rund 4.700 € im Jahr
+beihilfe_mrd_2024 = 23.2
+anteil_aktive = 0.40
+
+[beamte.zulage]   # Vorschlag „Versicherungszulage“: gleiche Absicherung wie heute
+vorsorge_satz = 0.10         # Dienstherr zahlt die Pflichtvorsorge (10 % der Bezüge) als steuerpflichtige Zulage (Ersatz für die Versorgung künftiger Dienstjahre)
+gesundheit_monat = 50        # Zuschuss für eine Zusatzversicherung, die das Leistungsniveau der Beihilfe über der Grundversorgung hält (Annahme zur Höhe)
+varianten = ["ohne", "vorsorge", "vorsorge_gesundheit", "weitergabe_20"]
+basis = "vorsorge_gesundheit"
+
+[selbst]
+anzahl_mio = 3.9             # Selbständige 2024, Größenordnung Mikrozensus (Annahme ohne Abruf)
+# Nettoeinkommen je Monat (WSI-Erwerbspersonenpanel, Welle 13, Nov./Dez. 2024, gewichtet; Online-Panel, Sekundärquelle):
+# solo 23 / 29 / 33 / 15 %, mit Beschäftigten 8 / 14 / 31 / 47 % in den Klassen bis 1.500 / 2.600 / 4.500 / darüber; solo 61 %
+grenzen_monat = [1500, 2600, 4500]
+anteile_solo = [0.23, 0.29, 0.33, 0.15]
+anteile_arbeitgeber = [0.08, 0.14, 0.31, 0.47]
+anteil_solo = 0.61
+kv_satz = 0.195              # GKV freiwillig: 14,6 % + Zusatzbeitrag 2,9 % + Pflege 3,6 % rund 19,5 % (2026, Annahme); PKV gleich behandelt
+kv_mindest_jahr = 15000      # Mindestbemessung rund 1.250 €/Monat (Annahme)
+
+[haushalt]   # Haushaltsform der Beamten und Selbständigen (Annahmen; Mikrozensus nach Stellung im Beruf nicht abgerufen)
+typ_anteile = { allein = 0.30, paar_ohne = 0.32, paar_mit = 0.38 }
+partner_status = [0.45, 0.30, 0.08, 0.17]   # Vollzeit, Teilzeit, Minijob, ohne Erwerb

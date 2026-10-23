@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.27**
+Stand: 21. Oktober 2026 · Modellstand **v4.28**
 
 ---
 
@@ -3466,6 +3466,53 @@ Nahtstellen: N21 und N22 geschlossen (Stand-C-Kette, Gesamtlast v4.14), N29 auf 
 
 **Datenquelle:** Logbuch, Register, `fondszins.json`, `regel_boden.json`. **Wodurch aufgefallen:** Auftrag der Initiative.
 
+### v4.28 — R1: Beamte und Selbständige in der Mikrosimulation; Vorschlag Versicherungszulage (modell/mikro_bs_de.py)
+
+**Art der Änderung: MINOR (Prüfrechnung erweitert), keine geltende Zahl des Konzepts bewegt; Mikrosimulation bewegt.** 23. Oktober 2026.
+
+**Anlass:** Punkt R1 (Abschnitt 7.1). Beschluss der Initiative vom 23.10.2026: Ersparnisse des Dienstherrn werden an Beamte nicht nach der
+80-%-Regel weitergegeben, weil Beamte heute keine Abzüge haben; eine Zulage soll die bisherige Absicherung wiederherstellen (Vorschlag erbeten).
+Lesart: keine Weitergabe; die 20-%-Weitergabe der Beihilfe ist als Variante mitgerechnet.
+
+**Vorschlag Versicherungszulage (gerechnet als Basis):** Der Dienstherr zahlt (1) die Pflichtvorsorge von 10 % der Bezüge als steuerpflichtige
+Zulage, Ersatz für die Versorgung künftiger Dienstjahre, und (2) 50 € im Monat für eine Zusatzversicherung über der Grundversorgung (Annahme zur
+Höhe). Kosten rund 12,7 Mrd. € im Jahr (Mikrosimulation, 2028, Kaufkraft 2026); dem stehen die Beihilfe der aktiven Beamten (rund 9,3 Mrd. €
+2024, abgeleitet, Annahme 40 %) und die entfallenden Versorgungsanwartschaften künftiger Dienstjahre gegenüber (nicht beziffert).
+
+**Methode:**
+- Beamte, Richter, Soldaten 1,96 Mio. (30.06.2024, Destatis über Sekundärquelle); Bezüge lognormal, Mittel 58.000 € 2025 (Annahme);
+  private Krankenversicherung zur Beihilfe 3.000 € je Person, 1.800 € für Partner ohne Einkommen, 600 € je Kind (Annahmen), zu 80 % abziehbar.
+- Selbständige 3,9 Mio. (Größenordnung Mikrozensus, Annahme); Nettoeinkommen aus dem WSI-Erwerbspersonenpanel 2024 (Online-Panel,
+  Sekundärquelle; lognormal über drei Klassengrenzen), Gewinn zurückgerechnet; Kranken- und Pflegeversicherung 19,5 %, Mindestbemessung 15.000 €.
+- neu: Selbständige ohne Beiträge, 33R, Pflichtvorsorge 10 % des Gewinns (Annahme: gilt für alle Erwerbseinkommen).
+- Eichung jetzt gemeinsam für alle erwerbsfähigen Haushalte: 28,95 Mio. (41,1 Mio. minus 12,15 Mio. Rentnerhaushalte; Typen 10,7 / 1,62 /
+  9,83 / 6,8 Mio.), dazu Beamte und Selbständige als eigene Eckwerte. Restfehler < 10⁻¹¹.
+
+**Ergebnis (2028, Kaufkraft 2026, Weitergabe 80 %):**
+
+| Gruppe | mit mehr | Mittel im Monat |
+|---|---|---|
+| Hauptperson Beamte, Zulage Vorsorge + Gesundheit (Basis) | 83,1 % | +406 € |
+| … nur Vorsorge 10 % | 77,9 % | +376 € |
+| … ohne Zulage | 54,1 % | +82 € |
+| … 20 % der Beihilfe weitergegeben, ohne Zulage | 57,1 % | +130 € |
+| Hauptperson selbständig | 77,7 % | +332 € |
+| Hauptperson Vollzeit / Teilzeit (unverändert) | 99,3 / 99,9 % | |
+| erwerbsfähige Haushalte / alle Haushalte / Personen | 86,6 / 69,8 / 77,4 % | |
+
+- Beispiel Beamter allein, 58.000 €: ohne Zulage −310 €, mit Zulage +10 € im Monat; Familie mit zwei Kindern, Partner ohne Einkommen: −176 / +144 €.
+  Ohne Zulage verlieren vor allem allein lebende Beamte mit mittleren und hohen Bezügen (Pflichtvorsorge, voller Tarif, keine Weitergabe).
+- Die Aussage „9 von 10 Beschäftigten“ gilt für Arbeitnehmer; Beamte erreichen sie nur mit Zulage annähernd (83 %).
+
+**Validierung 2025 (ohne Eichung):** Bruttolohnsumme −2,8 % (v4.22: −3,2 %, Beamte bisher als Annahme addiert); Lohnsteuer −8,6 % (v4.22:
+−4,8 %): Beamte jetzt mit abziehbarer Krankenversicherung, Lohnsteuer in Selbständigenhaushalten nicht gezählt; Pensionen und Betriebsrenten
+fehlen weiter. Kindergeld 54,6 gegen 55,3 Mrd. €.
+
+**Grenzen:** Bezüge, Krankenversicherungsbeiträge und Haushaltsform der Beamten und Selbständigen sind Annahmen; Selbständigeneinkommen aus
+einem Online-Panel; Kosten der Zulage nicht in der Gesamtrechnung (offen: Gegenrechnung mit Beihilfe und Versorgung).
+
+**Datenquelle:** wie oben; Beihilfe 23,2 Mrd. € 2024 (AOK G+G 02/2026, Sekundärquelle). **Wodurch aufgefallen:** Punkt R1, Beschluss der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3527,7 +3574,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.27
+## 7 | Offene Punkte, Stand v4.28
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3537,7 +3584,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 
 | Nr. | Punkt | Wirkung auf die Einkommen | Herkunft |
 |---|---|---|---|
-| R1 | **Beamte und Selbständige in der Mikrosimulation** (rund 1,9 Mio. Beamte mit Pensionären, 3,9 Mio. Selbständige): heute ohne Sozialbeiträge bzw. mit eigener Vorsorge; neu ohne Gewinn aus wegfallenden Beiträgen, aber mit voller Besteuerung | Vorzeichen offen; kann die Aussage „9 von 10 Beschäftigten“ berühren (Beamte sind Beschäftigte) | Mehrheitsaussage, v4.22 |
+| R1 | **erledigt v4.28** (Zulage als Vorschlag, Entscheidung E9; Kosten der Zulage gegen Beihilfe und Versorgung gegenrechnen) – **Beamte und Selbständige in der Mikrosimulation** (rund 1,9 Mio. Beamte mit Pensionären, 3,9 Mio. Selbständige): heute ohne Sozialbeiträge bzw. mit eigener Vorsorge; neu ohne Gewinn aus wegfallenden Beiträgen, aber mit voller Besteuerung | Vorzeichen offen; kann die Aussage „9 von 10 Beschäftigten“ berühren (Beamte sind Beschäftigte) | Mehrheitsaussage, v4.22 |
 | R2 | **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
 | R3 | **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
 | R4 | **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
@@ -3561,6 +3608,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E6 | Stufenbindung (Preise oder Löhne); Erwerbstätigenleistung im Netz |
 | E7 | Dauer der Dividende unter Trends, Mindestniveau (N23) |
 | E8 | Weitergabe nach dem Stichtag: neue Arbeitsverträge (N30) |
+| E9 | Versicherungszulage der Beamten (Vorschlag v4.28: Pflichtvorsorge 10 % + 50 € Zusatzversicherung) |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

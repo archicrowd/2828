@@ -46,6 +46,8 @@ def lade(name, pfad):
 
 RB = lade("rb", "modell/regel_boden.py")
 MR = lade("mr", "modell/mikro_rentner_de.py")      # v4.23
+MB = lade("mb", "modell/mikro_bs_de.py")           # v4.28: Beamte und Selbständige
+ZULAGE = MB.P["beamte"]["zulage"]["basis"]
 SL, HL = RB.SL, RB.SL.HL
 H33, K = SL.H33, SL.H33.K
 DE = HL.LS["staaten"]["DE"]
@@ -64,8 +66,11 @@ def est_neu(x):
 
 # ------------------------------------------------------------------ heute (Recht 2026)
 def sv_an(b, art, kinderlos, midijob=True):
-    if art == "mini" or b <= 0:
+    if art in ("mini", "beamt") or b <= 0:                 # Beamte: private KV je Haushalt (heute())
         return 0.0
+    if art == "selbst":                                    # v4.28: freiwillige KV/PV der Selbständigen
+        S = MB.P["selbst"]
+        return S["kv_satz"] * min(max(b, S["kv_mindest_jahr"]), K.BBG_KV)
     v = K.sv_heute(b, kinderlos)
     if midijob and b < MIDI_OBEN:
         v *= max(0.0, (b - MINI) / (MIDI_OBEN - MINI))
@@ -76,7 +81,13 @@ def heute(hh, midijob=True):
     """hh: dict(erw=[(lohn, art)], kind=minderjährige, vkind=(lohn, art) oder None, paar=bool)."""
     kinderlos = hh["kind"] == 0 and hh["vkind"] is None
     sv = [sv_an(b, a, kinderlos, midijob) for b, a in hh["erw"]]
-    zve = [max(0.0, b - s - K.WK_PAUSCH * (b > 0)) if a != "mini" else 0.0 for (b, a), s in zip(hh["erw"], sv)]
+    zve = [max(0.0, b - s - K.WK_PAUSCH * (b > 0 and a != "selbst")) if a != "mini" else 0.0 for (b, a), s in zip(hh["erw"], sv)]
+    if any(a == "beamt" for _, a in hh["erw"]):            # v4.28: private KV zur Beihilfe für den Haushalt, zu 80 % abziehbar
+        ohne = sum(1 for b, a in hh["erw"][1:] if a in ("ohne", "mini"))
+        pk = MB.pkv(ohne, hh["kind"])
+        i = next(j for j, (_, a) in enumerate(hh["erw"]) if a == "beamt")
+        sv[i] = pk
+        zve[i] = max(0.0, zve[i] - MB.P["beamte"]["pkv_abziehbar"] * pk)
     if hh["paar"]:
         z = max(0.0, sum(zve) - 2 * K.SA_PAUSCH)
         est = 2 * K.est_2026(z / 2)
@@ -103,10 +114,21 @@ def heute(hh, midijob=True):
 
 
 # ------------------------------------------------------------------ neu (Stand C, regel_boden)
-def neu(hh, w):
-    loehne = [b for b, _ in hh["erw"]] + ([hh["vkind"][0]] if hh["vkind"] else [])
+def brutto_neu(b, art, w, zulage):
+    """v4.28: Weitergabe nur für Arbeitnehmer; Beamte erhalten die Versicherungszulage (Vorschlag), Selbständige den Gewinn."""
+    if art == "beamt":
+        return b + MB.zulage(b, zulage)
+    if art in ("selbst", "ohne"):
+        return b
+    return b + w * H33.ag(b)
+
+
+def neu(hh, w, zulage=None):
+    zulage = ZULAGE if zulage is None else zulage
+    arten = hh["erw"] + ([hh["vkind"]] if hh["vkind"] else [])
+    loehne = [b for b, _ in arten]
     e, k = len(loehne), hh["kind"]
-    brutto = [b + w * H33.ag(b) for b in loehne]
+    brutto = [brutto_neu(b, a, w, zulage) for b, a in arten]
     st = sum(est_neu(x + DIV) for x in brutto)
     netto = sum(brutto) - st + DIV * e + k * DIV * RB.S
     konsum = HL.kq(netto, "DE") * netto
@@ -195,6 +217,17 @@ AZUBI = 13000                               # Ausbildungsvergütung 2024 (Annahm
 ARTEN = ("vz", "tz", "mini", "ohne")
 
 
+def gewinn_aus_netto(netto):
+    """Gewinn (2024) zu einem persönlichen Nettoeinkommen nach Recht 2026 (allein veranlagt, Annahme)."""
+    lo, hi = 0.0, max(20000.0, 4 * netto)
+    for _ in range(60):
+        m = (lo + hi) / 2
+        kv = sv_an(m, "selbst", True)
+        est = K.est_2026(max(0.0, m - kv - K.SA_PAUSCH))
+        lo, hi = (m, hi) if m - kv - est - K.soli_2026(est) < netto else (lo, m)
+    return (lo + hi) / 2
+
+
 def ziehe(seed, rho, struktur=1.0):
     rng = np.random.default_rng(seed)
     H = P["haushalte"]
@@ -242,6 +275,13 @@ def ziehe(seed, rho, struktur=1.0):
             lohn = {"vz": AZUBI, "tz": float(tz_quantil(rng.random(1))[0]) * 0.6, "mini": float(mini_quantil(rng.random(1))[0]), "ohne": 0.0}[art]
             vk = (lohn, art)
         haushalte.append(dict(typ=t, erw=erw, kind=int(kinder[i]), vkind=vk, paar=t.startswith("paar"), bg=bool(bg[i])))
+    # v4.28: Beamte und Selbständige als Hauptperson (eigene Gewichte, nicht geeicht)
+    bs, wbs = MB.ziehe(rng, MB.P["stichprobe"], {"vz": vz_quantil, "tz": tz_quantil, "mini": mini_quantil}, H["kinderzahl_anteile"], P["lohn_2024_2025"])
+    for h, x in zip(bs, wbs):
+        h["w"] = float(x)
+        if h["erw"][0][1] == "selbst_netto":
+            h["erw"][0] = (gewinn_aus_netto(h["erw"][0][0]), "selbst")
+    haushalte += bs
     # Rentner (v4.23: Haushaltseinkommen, mikro_rentner_de)
     R = P["rentner"]
     rentner, wr = MR.ziehe(rng, P["rentner_stichprobe"], R["personen_mio"], R["allein_lebend_mio"])
@@ -255,9 +295,10 @@ def eiche(haushalte, rentner, soll_typ, soll_bg):
     Bz = P["beschaeftigte"]
     H = P["haushalte"]
     mini_unter65 = Bz["minijob_ausschliesslich_mio"] * (1 - P["minijob"]["anteil_65plus"])
-    spalten = [f"typ_{t}" for t in TYPEN] + ["bg", "vz", "tz", "mini", "kind", "vkind"]
+    spalten = [f"typ_{t}" for t in TYPEN] + ["bg", "vz", "tz", "mini", "kind", "vkind", "beamt", "selbst"]
     soll = np.array([soll_typ[t] for t in TYPEN] + [sum(soll_bg.values()), Bz["vollzeit_mio"], Bz["teilzeit_mio"], mini_unter65,
-                     H["kinder_minderj_mio"], H["kinder_volljaehrig_mio"]]) * 1e6
+                     H["kinder_minderj_mio"], H["kinder_volljaehrig_mio"], MB.P["beamte"]["anzahl_mio"], MB.P["selbst"]["anzahl_mio"]]) * 1e6
+    # v4.28: Beamte und Selbständige gemeinsam geeicht (Haushaltstypen, Kinder und Partnerbeschäftigung gelten für alle Haushalte)
     X = np.zeros((len(haushalte), len(spalten)))
     for i, h in enumerate(haushalte):
         X[i, TYPEN.index(h["typ"])] = 1
@@ -265,7 +306,10 @@ def eiche(haushalte, rentner, soll_typ, soll_bg):
         arten = [a for _, a in h["erw"]] + ([h["vkind"][1]] if h["vkind"] else [])
         X[i, 5], X[i, 6], X[i, 7] = arten.count("vz"), arten.count("tz"), arten.count("mini")
         X[i, 8], X[i, 9] = h["kind"], h["vkind"] is not None
-    d = np.full(len(haushalte), sum(soll_typ.values()) * 1e6 / len(haushalte))
+        X[i, 10], X[i, 11] = h.get("bs") == "beamt", h.get("bs") == "selbst"
+    n_bs = sum(1 for h in haushalte if h.get("bs"))
+    w_bs = sum(h["w"] for h in haushalte if h.get("bs"))
+    d = np.array([h["w"] if h.get("bs") else (sum(soll_typ.values()) * 1e6 - w_bs) / (len(haushalte) - n_bs) for h in haushalte])
     lam = np.zeros(len(spalten))
     for _ in range(100):
         w = d * np.exp(X @ lam)
@@ -275,7 +319,8 @@ def eiche(haushalte, rentner, soll_typ, soll_bg):
         lam += np.linalg.solve((X * w[:, None]).T @ X, r)
     w = d * np.exp(X @ lam)
     wr = np.array([r["w"] for r in rentner])                 # Rentner: Personen und Alleinlebende (mikro_rentner_de.ziehe)
-    spanne = dict(gewicht_min_max=[round(float((w / d).min()), 3), round(float((w / d).max()), 3)], restfehler_max=float(np.max(np.abs(soll - X.T @ w) / soll)))
+    spanne = dict(gewicht_min_max=[round(float((w / d).min()), 3), round(float((w / d).max()), 3)],
+                  restfehler_max=float(np.max(np.abs(soll - X.T @ w) / soll)))
     return w, wr, spanne
 
 
@@ -287,26 +332,26 @@ def validierung(haushalte, w):
     for h, wi in zip(haushalte, w):
         hh = skaliere(h, f)
         _, d = heute(hh)
-        lohnsumme += wi * sum(b for b, _ in hh["erw"]) + wi * (hh["vkind"][0] if hh["vkind"] else 0)
-        lst += wi * d["lohnsteuer"]
+        lohnsumme += wi * sum(b for b, a in hh["erw"] if a != "selbst") + wi * (hh["vkind"][0] if hh["vkind"] else 0)   # v4.28: Gewinne nicht in D11
+        if h.get("bs") != "selbst":                                  # Selbständige: veranlagte Einkommensteuer, nicht Lohnsteuer
+            lst += wi * d["lohnsteuer"]
         soli += wi * d["soli"]
         kg += wi * d["kindergeld"]
         if d["buergergeld"] > 0:
             n_bg_pos += wi
             if not h["bg"]:
                 n_aufstocker += wi
-    # Ergänzungen außerhalb der Population (Annahmen): Minijobs im Nebenjob, Beamte
+    # Ergänzung außerhalb der Population (Annahme): Minijobs im Nebenjob; Beamte seit v4.28 in der Population
     neben = 3.52e6 * float(np.mean(mini_quantil(np.linspace(0, 1, 101)))) * f
-    beamte = V["beamte_mio"] * 1e6 * V["beamte_brutto"]
-    lst_beamte = V["beamte_mio"] * 1e6 * K.est_2026(0.85 * V["beamte_brutto"] - K.WK_PAUSCH)
+    beamte = lst_beamte = 0.0
     mrd = lambda x: round(x / 1e9, 1)
     lst_modell = lst + lst_beamte
     soll_lst = V["lohnsteuer_kasse_mrd"] + V["kindergeld_mrd"]
     return dict(
         bruttolohnsumme=dict(modell_mrd=mrd(lohnsumme + neben + beamte), davon_population=mrd(lohnsumme), nebenjob_minijobs=mrd(neben),
-                             beamte_annahme=mrd(beamte), amtlich_d11_mrd=V["bruttoloehne_d11_mrd"],
+                             amtlich_d11_mrd=V["bruttoloehne_d11_mrd"],
                              abweichung_pct=round(((lohnsumme + neben + beamte) / 1e9 / V["bruttoloehne_d11_mrd"] - 1) * 100, 1)),
-        lohnsteuer=dict(modell_mrd=mrd(lst_modell), davon_beamte_annahme=mrd(lst_beamte), amtlich_lohnsteuer_plus_kindergeld_mrd=round(soll_lst, 1),
+        lohnsteuer=dict(modell_mrd=mrd(lst_modell), amtlich_lohnsteuer_plus_kindergeld_mrd=round(soll_lst, 1),
                         abweichung_pct=round((lst_modell / 1e9 / soll_lst - 1) * 100, 1),
                         nicht_abgebildet="Lohnsteuer auf Beamtenpensionen und Betriebsrenten, Steuerklasse VI (Nebenjobs), Selbständigenhaushalte mit "
                                          "Beschäftigten, Erstattungen aus der Veranlagung; Tarif 2026 statt 2025 (Grundfreibetrag 12.348 statt 12.096 €)"),
@@ -332,13 +377,15 @@ def aequiv(h, y):
 
 
 def gruppe_status(h):
+    if h.get("bs"):
+        return {"beamt": "Hauptperson Beamte", "selbst": "Hauptperson selbständig"}[h["bs"]]
     if h["bg"]:
         return "ohne Erwerb (Bürgergeld)"
     a = h["erw"][0][1]
     return {"vz": "Hauptperson Vollzeit", "tz": "Hauptperson Teilzeit", "mini": "Hauptperson Minijob", "ohne": "Hauptperson ohne Erwerb"}[a]
 
 
-def rechne(haushalte, rentner, w, wr, weitergaben, rentner_variante="asid", inanspruchnahme="voll"):
+def rechne(haushalte, rentner, w, wr, weitergaben, rentner_variante="asid", inanspruchnahme="voll", zulage=None):
     f = P["lohn_2024_2026"]
     zeilen = []
     for h, wi in zip(haushalte, w):
@@ -346,7 +393,7 @@ def rechne(haushalte, rentner, w, wr, weitergaben, rentner_variante="asid", inan
         y0, d0 = heute(hh)
         res = {}
         for wg in weitergaben:
-            y1, auf = neu(hh, wg)
+            y1, auf = neu(hh, wg, zulage)
             res[wg] = (y1, auf)
         zeilen.append(dict(w=wi, p=personen(h), typ=h["typ"], status=gruppe_status(h), tz=any(a == "tz" for _, a in h["erw"]),
                            kinder=h["kind"] > 0, heute=y0, aeq=aequiv(h, y0), neu=res, bg_heute=d0["buergergeld"]))
@@ -415,7 +462,7 @@ def main():
     abw = gegenprobe()
     S = P["szenarien"]
     rho0, wg0 = P["partner"]["basis_korrelation"], S["basis_weitergabe"]
-    E = dict(version=P["version"], status="Prüfrechnung (synthetische Population, Stufe 1; Rentner Stufe 2)", jahr=J, kaufkraft=2026, gegenprobe_max_abweichung_eur=abw,
+    E = dict(version=P["version"], status="Prüfrechnung (synthetische Population; Rentner Stufe 2; Beamte und Selbständige v4.28)", jahr=J, kaufkraft=2026, gegenprobe_max_abweichung_eur=abw,
              vollzeit_pareto_alpha=round(vz_alpha(), 3))
     basis, ziehungen = None, []
     for seed in P["seeds"]:
@@ -426,6 +473,12 @@ def main():
         ziehungen.append(erg)
         if basis is None:
             basis = dict(eichung=sp, validierung_2025=validierung(hh, w), pruefung_rentner=MR.pruefwerte(rr, wr, P["rente_2023_2024"]), ergebnis=erg)
+            # v4.28: Versicherungszulage der Beamten (Ziehung 1, Basis-Weitergabe)
+            E["beamte_zulage"] = dict(basis=ZULAGE, beihilfe_je_beamter=round(MB.beihilfe_je_beamter()),
+                                      selbst_netto_lognormal=dict(zip(("mu", "sigma", "kum_anteile"), MB.selbst_lognormal())), varianten={})
+            for var in MB.P["beamte"]["zulage"]["varianten"]:
+                a = auswerten(rechne(hh, rr, w, wr, [wg0], zulage=var), wg0)
+                E["beamte_zulage"]["varianten"][var] = dict(beamte=a["status"]["Hauptperson Beamte"], gesamt=a["gesamt"])
             # v4.23: Varianten der Rentnerhaushalte (Ziehung 1, Basis-Weitergabe)
             E["rentner_varianten"] = {}
             for var, inan in (("asid", "voll"), ("asid", "beobachtet"), ("nur_grv", "voll")):
@@ -463,7 +516,7 @@ def main():
         E["struktur"][name] = dict(faktor_allein=fak, gesamt=a["gesamt"], kosten_mrd=a["kosten_mrd"])
     E["hinweis"] = ("Synthetische Population aus veröffentlichten Eckwerten; Spanne der Ziehungen misst nur das Rauschen der Ziehung, nicht die "
                     "Unsicherheit der Annahmen (Haushaltszahlen, Teilzeitstreuung, Partnerstatus, Zusammensetzung der Alterseinkommen). Nicht abgebildet: "
-                    "Selbständige und Beamte im Erwerbsalter (Haushalte herausgenommen), Vermögenseinkommen der Erwerbstätigen, Rentner unter 65, "
+                    "Vermögenseinkommen der Erwerbstätigen, Rentner unter 65, Partner der Beamten und Selbständigen nicht in der Eichung (Doppelzählung möglich), "
                     "Nicht-Inanspruchnahme von Bürgergeld (Rentner: Variante beobachtet). Validierung nur an Aggregaten, auf die nicht geeicht wurde.")
     (AGG / "mikro_de.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     b = basis["ergebnis"]
