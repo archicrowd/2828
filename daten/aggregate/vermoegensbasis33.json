@@ -1,0 +1,37 @@
+{
+ "version": "v4.32",
+ "status": "Prüfrechnung",
+ "grosse_vermoegen": {
+  "phf_2021": {
+   "alpha": 1.694,
+   "p90": 725900,
+   "haushalte_ueber_schwelle_mio": 0.73,
+   "vermoegen_ueber_schwelle_bio": 2.11,
+   "statisch_mrd_2028": 38.9,
+   "statisch_pct_bip_de": 0.79,
+   "position_nach_ausweichen_50_pct_bip": 0.4,
+   "dividende_2028_eur_gegen_deckung": -30
+  },
+  "diw_spitze": {
+   "alpha": 1.393,
+   "p90": 770894,
+   "haushalte_ueber_schwelle_mio": 1.08,
+   "vermoegen_ueber_schwelle_bio": 5.49,
+   "statisch_mrd_2028": 101.3,
+   "statisch_pct_bip_de": 2.06,
+   "position_nach_ausweichen_50_pct_bip": 1.03,
+   "dividende_2028_eur_gegen_deckung": 3
+  }
+ },
+ "deckung_statisch_pct_bip": 1.94,
+ "eur_je_bip_punkt_2028": 51.4,
+ "erbschaften": {
+  "position_pct_bip": 1.16,
+  "noetige_basis_ueber_100k_mrd_2028": 173,
+  "steuerpflichtiger_erwerb_2025_mrd": 150.5,
+  "fortgeschrieben_2028_mrd": 164,
+  "hinweis": "Der steuerpflichtige Erwerb 2025 gilt nach heutigem Recht (Freibeträge bis 500.000 €, Verschonung des Betriebsvermögens, Erlass nach § 28a); die Basis über 100.000 € ohne Verschonung ist größer. Die nötige Basis liegt damit im Bereich der Daten, eher vorsichtig. 2025 war ein Rekordjahr (+32,9 %), getrieben von Erwerben über 20 Mio. €: schwankend und ausweichanfällig."
+ },
+ "bewertung": "Die statische Position der Deckung (1,94 % BIP) entspricht der Verteilung mit korrigierter Spitze (DIW); nach der Befragung allein läge sie bei rund 40 % davon (0,79 % BIP). Bei 50 % Ausweichen kostet das die Dividende bis zu rund 30 € im Monat (2028).",
+ "hinweis": "Haushalt statt Person als Einheit der Schwelle, Pareto über P90, Fortschreibung 3 % je Jahr: Annahmen. Anrechnung auf die Einkommensteuer (Mindeststeuer) nicht abgezogen."
+}

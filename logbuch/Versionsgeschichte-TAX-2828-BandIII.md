@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.31**
+Stand: 21. Oktober 2026 · Modellstand **v4.32**
 
 ---
 
@@ -3605,6 +3605,36 @@ nächsten Gesamtumstellung (Annahme der Initiative vorbehalten).
 
 **Datenquelle:** Eurostat nama_10_gdp (Abruf 23.10.2026). **Wodurch aufgefallen:** Punkt R4 / B15; Beschluss der Initiative.
 
+### v4.32 — R4: Basis der Positionen „Große Vermögen“ und „Erbschaften“ gegen Verteilungsdaten (modell/vermoegensbasis33.py)
+
+**Art der Änderung: MINOR (Prüfrechnung), keine Zahl bewegt.** 23. Oktober 2026.
+
+**Anlass:** Punkt R4 (Abschnitt 7.1): Die beiden Positionen der Deckung, die am stärksten an Annahmen hängen, waren nicht gegen Verteilungsdaten
+geprüft (statisch 1,94 % BIP für die Mindeststeuer auf Vermögen über 2 Mio. €, 1,16 % BIP für Erbschaften).
+
+**Große Vermögen:** Pareto-Verteilung über dem 90. Perzentil, Satz 1,5 % über 2 Mio. € je Haushalt (Annahme), fortgeschrieben 2021 → 2028 mit 3 %.
+
+| Verteilung | Haushalte über 2 Mio. € | Vermögen darüber | statisch 2028 | % BIP DE |
+|---|---|---|---|---|
+| Bundesbank-Befragung 2021 (P90 725.900 €, obere 10 % halten 56 %) | 0,73 Mio. | 2,1 Bio. € | 39 Mrd. € | 0,79 |
+| DIW 2020 mit Millionärsstichprobe (oberes 1 % 35 %, obere 10 % 67 %), VGR-Vermögen | 1,08 Mio. | 5,5 Bio. € | 101 Mrd. € | 2,06 |
+| Deckung 33R (statisch, Klub-% BIP) | | | | 1,94 |
+
+Die Deckung entspricht der Verteilung mit korrigierter Spitze. Die Befragung allein erfasst die Spitze nicht; mit ihr läge die Position bei rund 40 %.
+Bei 50 % Ausweichen kostet das die Dividende 2028 bis zu rund 30 € je Erwachsenem und Monat (Kaufkraft 2026). Beide Quellen sind je eine Studie;
+die DIW-Werte beziehen sich auf frühere Jahre (Wochenbericht 29/2020). Anrechnung auf die Einkommensteuer nicht abgezogen.
+
+**Erbschaften:** Die Position setzt eine Basis über 100.000 € je Erwerb von rund 173 Mrd. € (2028) voraus. Steuerpflichtiger Erwerb 2025 nach
+heutigem Recht 150,5 Mrd. € (Destatis, Rekordjahr, +32,9 %), fortgeschrieben rund 164 Mrd. €; ohne die heutigen Freibeträge bis 500.000 € und
+ohne Verschonung ist die Basis größer. Die Position ist damit gedeckt, eher vorsichtig; sie schwankt stark und hängt an wenigen sehr großen
+Erwerben (2025: Steuer auf Erwerbe ab 20 Mio. € +146,8 %).
+
+**Bewertung:** Keine Änderung der Deckung. Die Unsicherheit der Dividende aus diesen Positionen bleibt die größte auf der Einnahmeseite:
+Befragungsbasis −30 €, ungünstiges Ausweichen −55 € (v4.18); beide zusammen nicht addieren (überlappend).
+
+**Datenquelle:** Bundesbank, Vermögensbefragung 2021 (Präsentation April 2023); DIW Wochenbericht 29/2020 (Pressemitteilung 15.07.2020);
+Destatis PM 306/2026 (Erbschaft- und Schenkungsteuer 2025). **Wodurch aufgefallen:** Punkt R4.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3666,7 +3696,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.31
+## 7 | Offene Punkte, Stand v4.32
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3679,7 +3709,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R1 | **erledigt v4.28** (Zulage als Vorschlag, Entscheidung E9; Kosten der Zulage gegen Beihilfe und Versorgung gegenrechnen) – **Beamte und Selbständige in der Mikrosimulation** (rund 1,9 Mio. Beamte mit Pensionären, 3,9 Mio. Selbständige): heute ohne Sozialbeiträge bzw. mit eigener Vorsorge; neu ohne Gewinn aus wegfallenden Beiträgen, aber mit voller Besteuerung | Vorzeichen offen; kann die Aussage „9 von 10 Beschäftigten“ berühren (Beamte sind Beschäftigte) | Mehrheitsaussage, v4.22 |
 | R2 | **erledigt v4.29** (offen: Einstufung je Produkt statt je Gruppe, Vorsteueranteil steuerfreier Bereiche belegen) – **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
 | R3 | **erledigt v4.30 für Kapital und Miete** (offen: Spitze der Vermögen, Erbschaften, Untererfassung) – **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
-| R4 | **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
+| R4 | **teilweise erledigt v4.31/v4.32** (BIP-Neuabruf als Schalter; Vermögens- und Erbschaftsbasis geprüft; offen: Renditen, COFOG, B19) – **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
 | R5 | **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
 | R6 | **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
 | R7 | **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |

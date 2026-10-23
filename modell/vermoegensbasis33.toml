@@ -1,0 +1,23 @@
+# Basis der Positionen „Große Vermögen“ und „Erbschaften“ der Deckung 33R gegen Verteilungsdaten (modell/vermoegensbasis33.py, Logbuch v4.32).
+# Prüfrechnung zu Punkt R4 (Abschnitt 7.1): Die Positionen waren statisch gesetzt (gesamtrechnung.toml, Annahmen); hier nachgerechnet.
+version = "v4.32"
+satz = 1.5                      # % des Nettovermögens über der Schwelle (Entscheidung P8)
+schwelle = 2000000              # € je Haushalt (Annahme: Haushalt statt Person; je Person läge die Basis höher)
+haushalte_mio_2021 = 40.7       # Annahme (Mikrozensus, Größenordnung 2021)
+fortschreibung_2021_2028 = 1.23 # 3,0 % nominal je Jahr wie die Gesamtrechnung (Annahme)
+bip_de_2028_mrd = 4915          # wie rentnerausgleich.toml
+
+[phf]   # Bundesbank, Vermögensbefragung 2021 (PHF, 4. Welle), Pressepräsentation April 2023 (amtlich, Umfrage)
+mittel = 316500
+p90 = 725900
+anteil_top10 = 0.56
+
+[diw]   # DIW Wochenbericht 29/2020 (SOEP mit Millionärsstichprobe und Reichenliste; Pressemitteilung 15.07.2020, eine Studie)
+anteil_top1 = 0.35
+anteil_top10 = 0.67
+mittel_vgr = 408000             # Reinvermögen der privaten Haushalte 2021 laut VGR 16,605 Bio. € (Bundesbank-Präsentation) / 40,7 Mio. Haushalte
+
+[erbschaft]   # Destatis, PM 306 vom August 2026: Erbschaft- und Schenkungsteuerstatistik 2025 (amtlich)
+steuerpflichtiger_erwerb_2025_mrd = 150.5
+festgesetzt_2025_mrd = 21.4
+satz_neu = 0.33
