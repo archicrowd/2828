@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.26 · höchste Korrekturnummer 70 · 456 Dateien im Repository
+Modellstand v4.27 · höchste Korrekturnummer 70 · 456 Dateien im Repository
 
 ## Bausteine
 
@@ -63,8 +63,8 @@ Modellstand v4.26 · höchste Korrekturnummer 70 · 456 Dateien im Repository
 | N18 | B25 Anreizbewertung | B24 Übergangsrechnung | ok |
 | N19 | B26 Nachfrageprüfung | B20 Gesamtrechnung | ok |
 | N20 | B20 Gesamtrechnung | B07 Gesamtkonzept | ok |
-| N21 | B28 Sozialschutz und Übergang | B20 Gesamtrechnung | offen |
-| N22 | B30 Altlastenfonds | B20 Gesamtrechnung | offen |
+| N21 | B28 Sozialschutz und Übergang | B20 Gesamtrechnung | geschlossen |
+| N22 | B30 Altlastenfonds | B20 Gesamtrechnung | geschlossen |
 | N23 | B31 Drittel-System | B20 Gesamtrechnung | offen |
 | N24 | B32 Länderseiten | B31 Drittel-System | offen |
 | N25 | B31/B32 Haushaltsrechnungen | B31 Drittel-System | geschlossen |
@@ -85,14 +85,12 @@ Modellstand v4.26 · höchste Korrekturnummer 70 · 456 Dateien im Repository
 - keine Fehler
 - Hinweis: Naht N05 offen: B08 Kern (Stand A) -> B03 Rahmenmodell (Stand B): v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; v3.22: 1,73 Punkte, Tarif 0/9/16/21/28 am Grundbedarf); Klubebene fehlt (deckung_quote.csv)
 - Hinweis: Naht N07 fehlt: B03 Rahmenmodell -> B11 Seite Stand A: Seite hat Rahmenwechsel nie gesehen
-- Hinweis: Naht N21 offen: B28 Sozialschutz und Übergang -> B20 Gesamtrechnung: nach Entscheidung S1–S13; Korrektur 60
-- Hinweis: Naht N22 offen: B30 Altlastenfonds -> B20 Gesamtrechnung: Beschlüsse 17.10.2026 gerechnet (v3.46); Umstellung der Gesamtrechnung und Texte ausstehend
 - Hinweis: Naht N23 offen: B31 Drittel-System -> B20 Gesamtrechnung: v3.47: Entscheidung über Dauerhaftigkeit der Dividende (hinnehmen, Bodenwertabgabe, Bürgerfonds)
 - Hinweis: Naht N24 offen: B32 Länderseiten -> B31 Drittel-System: v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land
 - Hinweis: Naht N27 offen: B32 Länderseiten -> B31 Drittel-System: v4.7: Vergleich DK/SE; Vorschlag H1–H3, K1, G1–G5 zur Entscheidung; Kosten von H1–H3 und K1 nicht gerechnet (Mietdaten nach Haushaltstyp fehlen) | v4.8: H1–H3 und G1–G5 nach Empfehlung angenommen und grob gerechnet; Kindergewicht 0,55 vorgeschlagen; Freigabe der Initiative offen; Mietdaten weiter offen
 - Hinweis: Naht N28 offen: B32 Länderseiten -> B31 Drittel-System: v4.9: Gini FR steigt durch ungedeckelte Weitergabe; Deckel 1× / 1,5× Durchschnittslohn senkt FR auf 27,6 / 29,8 (Korrektur 64)
-- Hinweis: Naht N29 offen: B30 Altlastenfonds -> B31 Drittel-System: v4.10: Vorschlag A (Kürzung 7,5 %), B1, T1, L1 (⅔-Kopplung); Rentenalter 65/67 vereinheitlichen; Korrektur 65 | v4.11: beschlossen und gerechnet; Fonds +0,69 % BIP (T1 +0,50); Rentenalter 67 einheitlich; offen: DRV-Rentenverteilung, Eigentumsschutz
-- Hinweis: Naht N30 offen: B31 Drittel-System -> B32 Länderseiten: v4.12: DE trägt auch ohne Weitergabe (+149…+433 €), FR/ES nicht; Durchsetzungsregel fehlt | v4.13: Gesetz zur Vertragsanpassung bis zum Stichtag beschlossen; offen Nachweis, Sanktion, neue Verträge | v4.18: Monitoring und Rückfallregel (Differenz an den Fonds, 2,4–2,8 % BIP bei 50 %); offen: neue Verträge nach dem Stichtag
+- Hinweis: Naht N29 offen: B30 Altlastenfonds -> B31 Drittel-System: v4.10: Vorschlag A (Kürzung 7,5 %), B1, T1, L1 (⅔-Kopplung); Rentenalter 65/67 vereinheitlichen; Korrektur 65 | v4.11: beschlossen und gerechnet; Fonds +0,69 % BIP (T1 +0,50); Rentenalter 67 einheitlich; offen: DRV-Rentenverteilung, Eigentumsschutz | v4.26: Regel E beschlossen und gerechnet; offen nur Rechtsprüfung (Art. 14 GG)
+- Hinweis: Naht N30 offen: B31 Drittel-System -> B32 Länderseiten: v4.12: DE trägt auch ohne Weitergabe (+149…+433 €), FR/ES nicht; Durchsetzungsregel fehlt | v4.13: Gesetz zur Vertragsanpassung bis zum Stichtag beschlossen; offen Nachweis, Sanktion, neue Verträge | v4.18: Monitoring und Rückfallregel (Differenz an den Fonds, 2,4–2,8 % BIP bei 50 %); offen: neue Verträge nach dem Stichtag | v4.27: offen nur neue Verträge nach dem Stichtag (E8)
 - Hinweis: Naht N32 offen: B32 Länderseiten -> B31 Drittel-System: v4.15: Pflichtquote 6,19 → 7,29 % BIP, Kasse 2,65 → 3,09 % (Annahmen), Irland 261 € je Einwohner und Monat bei BIP-Bemessung
 - Hinweis: Naht N33 offen: B31 Drittel-System -> B32 Länderseiten: v4.15: nicht gerechnet | v4.16: 400 Kreise (Eurostat): Formel P90/P10 1,05, Strukturzuschlag 10 % hebt dünn besiedelte Kreise auf Index 111; heutige Gemeindeeinnahmen je Kreis fehlen (robots.txt)
 - Hinweis: Naht N34 offen: B32 Länderseiten -> B31 Drittel-System: v4.16: 50 % der Verteidigung gemeinsam = 15,1 % der Mehrwertsteuer 2035; Gesamtlast unverändert

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.26**
+Stand: 21. Oktober 2026 · Modellstand **v4.27**
 
 ---
 
@@ -3444,6 +3444,28 @@ Unverändert: Anteile mit mehr in den Beispielhaushalten, Gini (DE 26,4), Vollze
 **Datenquelle:** `rentner_kombi.json` (EU-SILC 2025, ASID 2023). **Wodurch aufgefallen:** Korrektur 70 beim Abgleich `fondszins.json` gegen
 `fonds_geltend.json` nach dem Einrechnen.
 
+### v4.27 — Offene Punkte bereinigt und nach Wirkung auf die Einkommen geordnet (Abschnitt 7)
+
+**Art der Änderung: PATCH (Logbuch), keine Zahl bewegt.** 23. Oktober 2026.
+
+**Anlass:** Auftrag der Initiative (23.10.2026): Liste bereinigen, danach Vorschläge nach Priorität; Priorität hat, was die Rechnung der
+unterschiedlichen Einkommen am stärksten bewegen kann.
+
+**Änderung:** Abschnitt 7 neu gegliedert: 7.1 Rechnung (R1–R11, geordnet), 7.2 Entscheidungen (E1–E8), 7.3 Prüfungen, Texte, Verwaltung
+(P1–P8), 7.4 Erledigt mit Version, 7.5 Überholt, 7.6 frühere Prüfpunkte B1–B19. Doppelter Eintrag („Zusammensetzung der Alterseinkommen“) entfernt.
+Nahtstellen: N21 und N22 geschlossen (Stand-C-Kette, Gesamtlast v4.14), N29 auf die Rechtsprüfung beschränkt.
+
+**Begründung der Reihenfolge (Größenordnung, eigene Abschätzung):**
+- R1 zuerst, weil eine ganze Beschäftigtengruppe fehlt, deren Vorzeichen offen ist: Beamte zahlen heute keine Renten- und Arbeitslosenbeiträge;
+  sie gewinnen neu nicht aus wegfallenden Arbeitgeberbeiträgen, tragen aber den vollen Tarif und die höhere Mehrwertsteuer.
+- R2: ein Punkt effektiver Mehrwertsteuersatz bewegt bei 42.000 € rund 20 € im Monat (Konsum rund 30.500 € im Jahr, Konsumquote 0,86);
+  die Konsumquoten sind Annahmen.
+- R3: Kapitaleinkommen fehlen in der Mikrosimulation; sie bestimmen die oberen Dezile.
+- R4: die Dividende (354 € je Erwachsenem) ist für untere Einkommen und Familien der größte Posten; ungünstiges Ausweichen allein −55 €.
+- R6: ein Punkt Zuschlag bewegt bei 42.000 € rund 13 € im Monat (fondszins.json: 15,5 → 17,1 % = −21 €).
+
+**Datenquelle:** Logbuch, Register, `fondszins.json`, `regel_boden.json`. **Wodurch aufgefallen:** Auftrag der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3505,35 +3527,87 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.26
+## 7 | Offene Punkte, Stand v4.27
 
-Neu seit v3.23 (Stand v4.26): **Rentnerregel E beschlossen und gerechnet (v4.26); Webseitentexte „7,5 %“ in sechs Sprachen ersetzen (Initiative); effektiver Kürzungssatz je Staat; Art. 14 GG prüfen; Rentner: Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Zusammensetzung der Alterseinkommen nach Einkommenshöhe;** **Mikrosimulation Stufe 2 (weiter): Teilzeit-Dezile, Selbständige und Beamte, Nicht-Inanspruchnahme; Aussage zu Rentnern und Bürgergeldhaushalten ohne Erwerb auf der Seite prüfen;** **Mikrosimulation: Rechenweg des Prüfers, Teilzeit und Bedarfsleistungen; Fonds der 30: Verrechnung je Staat, direkte Rechnung statt Verhältnis, Einwanderung/Dynamik umstellen; Preisniveau: Zweitrundeneffekte und CO₂-Pfad; Ausweichen mit Verteilungsdaten; Gemeindeeinnahmen je Kreis heute (Datei der Initiative); Strukturzuschlag (Vorschlag 10 %); Sicherheitsunion mit Anteil der Mehrwertsteuer (Vorschlag 50 % = 15 %), Rechtsprüfung (N34); Gemeinsame Aufgaben: Kassenanteile, Bemessung am BNE, Anrechnung für neutrale Staaten (N32); Finanzverteilung im Staat und Stärkung der Regionen (N33); Fonds auf den Länderseiten vereinheitlichen (B11); dritte Prüfung; Weitergabe: Nachweis, Sanktion, neue Verträge; Architekturvariante „Regelwerk statt Dach“ entscheiden; Punkte der externen Prüfung ( Ausweichreaktionen, Preisniveau, WTO, Labels, Recht, Gegenentwurf); Rentnerpaket gerechnet (A, T1, B1, L1); T1 kostet 0,50 % BIP – prüfen; Rentenverteilung DRV; Deckel der Weitergabe (Frankreich, Korrektur 64); Haushaltsmischung im Gini; Freigabe Fassung 4.8 (Kindergewicht 0,55, H1–H3/G1–G5, Upload); Übersetzungen der neuen Texte gegenlesen; Mietdaten für H1; Bedarfsleistungen IT/ES/PL heute; Rentnerausgleich; Härtefall H1–H3, Kindergewicht K1, Rolle der Gemeinden G1–G5 entscheiden und Kosten mit Mietdaten rechnen (N27); Regel Boden und Kinderanteil 0,8 in Seiten einbauen; Gewinneraussage je Land neu fassen; Kosten mit Haushaltsdaten verfeinern; Grundbedarf gegen Armutsschwellen je Land; Entscheidung R1–R4 (Kinderanteil, Pflichtvorsorge über dem Grundbedarf, Härtefall-Boden, Mindestlohnregel); Kosten des Bodens; Aussage „9 von 10“ in DE nach Korrektur 63 neu fassen;** **Bedarfsgeprüfte Leistungen heute (Wohngeld, Kinderzuschlag, APL, RSA, ADI, IMV) in allen Haushaltsrechnungen nachtragen und Härtefallfonds zuordnen; Erwerbstätigenleistung im Netz entscheiden; Zins des Fonds je Land;** **Länderseiten: Entscheidung Frankreich (N24), feinere Lohnverteilungen, Mindestsicherung je Land, Übersetzungen und Begriffe prüfen;** **Fassung 4.0: Übersetzungen und Wortmarken muttersprachlich prüfen; Konzept in weiteren Sprachen; Server aktualisieren (ZIP);** **Mehrheitsaussage: feinere Lohnverteilung, Beamte, Selbständige, Fälle ohne Einkommen; Ausgleich für Rentner;** **Webseite: Wertungen umgesetzt in v4.19; Zinsvorteil des gemeinsamen Fonds beziffern;** **Rechner: Verteilungswirkung bei hohen Einkommen, Fälle ohne Einkommen;** **Webseitenentwurf Drittel: Obergrenze des Dachs neu rechnen, Estland-Satz prüfen, Freigabe;** **Neustartverfahren: Entscheidung, Rechtsprüfung (Eigentumsschutz, Art. 125 AEUV), Ratifizierungsstand der ESM-Reform;** **Möglichkeitsraum: UK und Kanada (OECD-Daten); Altersprofil je Staat (Ageing Report); eigene Lösungen für Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR);** **Konzept (Word) prüfen; Rentnerausgleich; Durchsetzung der Weitergabepflicht; Einwanderung und Automatisierung auf den Netz-Beschluss umrechnen; Gesamtrechnung auf das Drittel-System umstellen;** **Namen (Goldenes Drittel, Goldenes Netz, Transformationsdividende, Zukunftsschatz) beschließen und markenrechtlich prüfen; Stufenbindung (Preise/Löhne) als Wahl festlegen;** **Rentner im Drittel-System leicht im Minus (Ausgleich prüfen); Kürzungssatz je Staat; Durchsetzung der 80-%-Pflicht; Tag v3.47 lokal, Push abgelehnt (nachholen);** **Drittel-System F1–F4 (Name, Dauer der Dividende unter Trends, Verteilung, Webseitenentwurf);** **Beschlüsse 17.10.2026 in die Gesamtrechnung übernehmen; Härtefall rechnen; Verhandlung der zweiten Hälfte der Altrenten; juristische Prüfung;** **E1–E6 (Prämie oder prämienfrei, Sonderstufe, Anteil der Altrenten, Streckung und Deckel, Quelle des Beitrags, Verrechnung je Staat);** **Drittellösung D1–D5 (Marke, Altlastenbeitrag, Anteil der Zusagen, Gesundheitsanteil, Übernahme);** **Wahl der Marke (V1–V4: 28:28 / 25:25 / 33:33 / 33:33 nur mit Seil);** **Sozialschutz und Übergang: Antwortbogen S1–S13 (Zusammenführung 16.10.2026); Gesamtlast-Aussage zurückziehen (Korrektur 60); Härtefall finanzieren;** **Steuerpflicht der Dividende im Rechner der Webseite angleichen; Durchsicht der RTF-Einführung;** **Fassung 10. Oktober 2026 freigegeben und veröffentlicht (v3.39); muttersprachliches Gegenlesen der geänderten Texte (B16); Aufgabenliste des Dachs im Einzelnen; Ausgleichsrücklage; Deckung auf Klubebene (B12) für den Überschuss von 0,24 Punkten**; Text Verwaltung (Korrektur 58) umgesetzt in v3.39; Paket P8 entschieden und eingerechnet (v3.37); EU-Rechtsrahmen nach Entscheidung nicht bindend; **Entscheidungen E1 C, E2 V2, E3 je Land, E4 81,3 % gefallen (v3.33); offen: zusätzliche Lücke ohne Verletzung der Mindestdividende schließen (Stufen oder Bausteine)**; **Konsumaufkommen: Zuordnung der Produkte zu den Labelstufen und Sätze (effektiv 14,9 bis 16,9 % statt 20 %, Deckungslücke +1,2 bis +2,0 Punkte)**; Verteilungsmodell für den Klub (Umfang der Umverteilung); Leitlinie v3.29/v3.30: Regel der Dividende (V3a geltend, V2 nach Leitlinie); Mindestdividende im Klubschnitt oder je Land (Konflikt mit v3.20); Anreize für Investition, Binnenmarkt, Dividende und Arbeitsangebot nicht quantifiziert; Ländervergleich: Abgabenkeil je Land fehlt (OECD Taxing Wages); Gemeindeformel auf der Seite (Klub) gegen Entscheidung v3.17 (je Land); Klubquote 2028, gemeinsame Wirkung FR+ES+NL 81,55 % nach Korrektur 57 (Entscheidung 81,3 / 82,0 %); Niederlande: Widerspruch Miljoenennota/CPB; Belgien: Haushalt 2027 ab 13.10.2026; Polen, Schuld und Saldo 2028 nicht gefunden (Annahmen); Schuldenstrategie und Verfassung nicht im Original; Wachstum je Land (Entscheidung); Spanien nach dem Standard rechnen; Umsetzung des Standards in Webseite und Konzepttexten (Standard, Abschnitt 6). Die übrigen Punkte von v3.23 gelten weiter.
+Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
+abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
+Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkommen (heute gegen neu), größte zuerst (Begründung im Logbuch v4.27).
+
+### 7.1 Offen – Rechnung (nach Wirkung auf die Einkommen)
+
+| Nr. | Punkt | Wirkung auf die Einkommen | Herkunft |
+|---|---|---|---|
+| R1 | **Beamte und Selbständige in der Mikrosimulation** (rund 1,9 Mio. Beamte mit Pensionären, 3,9 Mio. Selbständige): heute ohne Sozialbeiträge bzw. mit eigener Vorsorge; neu ohne Gewinn aus wegfallenden Beiträgen, aber mit voller Besteuerung | Vorzeichen offen; kann die Aussage „9 von 10 Beschäftigten“ berühren (Beamte sind Beschäftigte) | Mehrheitsaussage, v4.22 |
+| R2 | **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
+| R3 | **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
+| R4 | **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
+| R5 | **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
+| R6 | **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
+| R7 | **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
+| R8 | **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |
+| R9 | **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
+| R10 | **Möglichkeitsraum:** UK und Kanada; Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR); Wachstum je Land | Länder außerhalb der Referenzländer | v3.52/v3.53 |
+| R11 | **Regionen und gemeinsame Aufgaben:** heutige Gemeindeeinnahmen je Kreis (Daten der Initiative, `2828-Daten`), Strukturzuschlag 10 %, Kassenanteile und Bemessung am BNE, Anrechnung neutraler Staaten (N32, N33) | Gemeindehaushalte, nicht Haushaltseinkommen | v4.15/v4.16 |
+
+### 7.2 Offen – Entscheidungen der Initiative
+
+| Nr. | Punkt |
+|---|---|
+| E1 | Architekturvariante „Regelwerk statt Dach“ (Vorlage v4.13) |
+| E2 | Frankreich: Deckel der Weitergabe, Familienleistungen (N24, N28) |
+| E3 | Härtefall H1–H3 und Rolle der Gemeinden G1–G5 (N27; Kindergewicht 0,55 gilt seit v4.8) |
+| E4 | Sicherheitsunion (50 % der Verteidigung über rund 15 % der Mehrwertsteuer, N34) |
+| E5 | Neustartverfahren |
+| E6 | Stufenbindung (Preise oder Löhne); Erwerbstätigenleistung im Netz |
+| E7 | Dauer der Dividende unter Trends, Mindestniveau (N23) |
+| E8 | Weitergabe nach dem Stichtag: neue Arbeitsverträge (N30) |
+
+### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
+
+| Nr. | Punkt |
+|---|---|
+| P1 | Rechtsprüfung: Eigentumsschutz der Anwartschaften (Art. 14 GG, Regel E), Art. 125 AEUV (Neustart), Sicherheitsunion, Europarecht der Dividende nach Preisniveau (B17), WTO (Labels) |
+| P2 | Webseite: Texte zur Rentnerregel in sechs Sprachen (Initiative, angekündigt); Entwurf `seite/entwurf/rentner-e/` danach neu bauen |
+| P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
+| P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
+| P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative) |
+| P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
+| P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`) |
+| P8 | Obergrenze des Dachs (32 %) für Stand C neu herleiten; Estland-Satz prüfen |
+
+### 7.4 Erledigt (mit Version)
+
+Rentnerpaket A, T1, B1, L1 (v4.11) · Rentnerausgleich, Rentner im Minus (Regel E, v4.26) · Rentenverteilung statt Beispielrenten (v4.22/v4.23,
+Haushaltseinkommen statt DRV-Verteilung) · Fonds auf den Länderseiten vereinheitlichen, B11 (v4.17) · Zins des Fonds je Land (überholt durch den
+gemeinsamen Fonds, v4.17/v4.20) · Zinsvorteil des gemeinsamen Fonds beziffern (v4.19) · dritte Prüfung (v4.18) · Weitergabe: Gesetz, Nachweis,
+Rückfallregel, Monitoring (v4.13, v4.18) · Ausweichreaktionen und Preisniveau, statisch (v4.18) · Wertungen der Seite (v4.19) · Regel Boden und
+Kinderanteil 0,8 in den Seiten (v4.8) · Entscheidung R1–R4 (v4.4/v4.5) · Kosten des Bodens (v4.6; Mikrosimulation v4.22) · Grundbedarf gegen
+Armutsschwellen (v4.6) · Aussage „9 von 10“ nach Korrektur 63 (v4.8, gestützt v4.21/v4.22) · Bedarfsleistungen heute DE, FR, ES (v4.3) ·
+Mikrosimulation mit Teilzeit, Minijob und Bedarfsleistungen (v4.22) · Fälle ohne Einkommen (v4.22) · Härtefall gerechnet und im Netzbudget (v4.7/v4.8) ·
+Freigabe Fassung 4.0/4.8 (v4.0, v4.8; seither Fassungen 4.x) · Gesamtlast-Aussage (Korrektur 60) neu gefasst (v4.14) · Durchsetzung der
+80-%-Pflicht (v4.13) · Ländervergleich Abgabenkeil (OECD Taxing Wages, v4.1) · Steuerpflicht der Dividende im Rechner (Tarif auf Lohn und Dividende, Fußnote der Seite) · B18 Gruppenschätzung
+(ersetzt durch die Mikrosimulation, v4.22) · Rentner-Grundauskommen B1 (v4.11, Höhe v4.26).
+
+### 7.5 Überholt
+
+Entscheidungen des Weges zum Drittel-System, gefallen und umgesetzt: F1–F4 (v3.48–v3.51), E1–E6 (v3.46), D1–D5 (v3.44–v3.46), V1–V4 (Drittel
+gewählt), S1–S13 (v3.42–v3.47), Beschlüsse 17.10.2026 (Stand-C-Kette statt Umstellung der Gesamtrechnung Stand B) · Verhandlung der zweiten Hälfte
+der Altrenten (v3.47: keine Halbierung) · Gesamtrechnung Stand B umstellen (Stand C rechnet in eigener Kette; `gesamtrechnung.py` bleibt Vorläufer) ·
+Punkte des Stands B (Quote 30,x %, Deckung auf Klubebene B12, Aufgabenliste und Ausgleichsrücklage des Dachs, Leitlinie und Mindestdividende V3a/V2,
+Klubquote, Gemeindeformel je Land gegen Klub, Niederlande/Belgien/Polen-Daten, Schuldenstrategie, Spanien nach dem Standard, RTF-Einführung):
+ruhen mit Stand B; einzelne Inhalte sind in R2, R4 und R10 übernommen.
+
+### 7.6 Frühere Prüfpunkte (B1–B19) und Registerhinweise
 
 | Punkt | Status |
 |---|---|
-| **B1: Dokumentationslücke Dividendenreihe** | **geschlossen in v3.12 (Korrektur 52)** |
-| **B2: 707 gegen 712 EUR** | **geschlossen in v3.12.** Ein Zentralfall (3,0 % nominal = 0,98 % real), dieselbe Rechnung in Zeitpfad und Tabelle |
-| **B3: BIP Deutschland 2028** | **überholt, geschlossen in v3.7.** Beide Werte meinen 2028. 4.914,9 hat eine dokumentierte Herleitung und ist seit v3.3 Basis. Quelle von 4.884 unbekannt (Differenz 0,63 %) |
-| **B4: Irland, BIP oder GNI\*** | **entschieden in v3.12: BIP**, Begründung im Konzept (Abschnitt 5, 9); Größenordnung GNI\* genannt, nicht gerechnet |
-| **B5: Ebene A 8,94 % gegen 9,04 %** | **geschlossen in v3.7, war kein Widerspruch** (8,94 enthält Verteidigung 2,50, die Tabelle 2028 rechnet mit 1,40) |
-| **B6: Ausgangslage 2024 als 2028** | **entschieden in v3.12, geändert in v3.19:** Schuldenquote 2028 = 81,3 % als Fortschreibung des Status quo (`modell/schuldenpfad.py`, gleich bleibende Defizite 2025, 3,0 % nominales Wachstum); Risikofall +3,5 Punkte (84,8 %). Vorher Annahme 78,4 % (= Stand 2024) |
-| **Rechenskripte** | Originale in `modell/rahmen/` (unverändert, Prüfsummen); geltende Rechnung `modell/gesamtrechnung.py` (v3.12); Zweitrechnung als Regression. Das Bauskript `gesamtkonzept-bau.js` ist seit v3.12 gelesen und neu geschrieben. Skripte bis v3.4 liegen in `modell/kern/`, `rechnungen/`, `audit/` (Stand A, nicht erneut ausgeführt) |
-| **B7: Einwohnerzahl** | **geschlossen in v3.12.** Gesamtkonzept rechnet mit 255,061 Mio; `basis.py` bleibt als Original |
-| **B8: Bemessung des Aufschlags** | **geklärt in v3.11.** BIP-Bemessung folgt aus der Finanzierung nach BIP-Anteil; `altschuld.py` überholt (Sekundärquelle) |
-| **B9: Obergrenze** | **entschieden in v3.12:** abgeleitete Regel (36 % bis v3.19). **Seit v3.20: 35 %** (größerer Einzug bei Quote 31,9 %); nicht gedeckt: Häufung der Risiken (35,6 %) und 3,5 % Verteidigung (37,3 %) |
-| **B10: Basis des Gesamtkonzepts** | **geschlossen in v3.9.** Das Gesamtkonzept steht auf der korrigierten Basis |
-| **B12: Deckung der Quote** | **gerechnet in v3.12 (deutsche Basis):** 29,85 % nachgewiesen, Lücke 0,95 Punkte zu 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; **seit v3.22: 1,73 Punkte, 239 Mrd EUR Klub**, Tarif 0/9/16/21/28 am Grundbedarf). Klubebene offen: Steuerbasen der zehn Staaten nach Position. **Nächste Rechnung** |
-| **B13: Bezugsgröße der Obergrenze im Text** | **geschlossen in v3.12** (überall „dessen, was A einzieht") |
-| **B14: Gesamtlast heute 40,76 gegen Summe 40,83** | **geschlossen in v3.11, keine Korrektur.** 40,76 ist das Eurostat-Aggregat abzüglich D995; Fußnote im Gesamtkonzept fehlt |
-| **B15: Neu abrufen** | **offen, präzisiert in v3.14.** Deutsches BIP 2024 bei Eurostat revidiert (4.386.940 statt 4.328.970 Mio EUR, +1,34 %, vorläufig). Alle zehn BIP-Werte (Schuldenstände 2010–2025 und Defizite 2025 seit v3.19 neu abgerufen), Renditen, COFOG-Posten und Zinsausgaben (Estland) in einem Durchgang neu abrufen, dann neu rechnen. Ratenbegrenzung: Pausen einplanen |
-| **B16: Seite zum Stand B** | **sechs Sprachen in v3.18.** Offen: muttersprachliches Gegenlesen, Länderanpassung (eigene Zahlen je Land statt Referenzland Deutschland), Veröffentlichung mit `fonts/` |
-| **B17: Dividende gleich oder je Land?** | **entschieden in v3.20:** Dividende nach Preisniveau (V3a), Boden halbes Existenzminimum am Wohnort (Quotenkriterium, streng), Umzugsregel drei Jahre mit Steuernachweis. Umzugsregel v3.21: Kinder und Studierende ohne Steuernachweis; Fälle ohne Einkommen vorerst ausgeklammert (v3.22). Offen: Europarecht; jährliche Fortschreibung der Preisniveaus; Fortschreibung des Existenzminimums |
-| **B18: 95 % für Stand B** | **neu, v3.13.** Die Gruppenschätzung stammt aus Stand A; für Stand B neu schätzen, spätestens mit der Mikrosimulation |
-| **B19: Posten der Ebenen A und B** | **neu, v3.14.** Zuordnung COFOG-Gruppen und Sektoren (S13, S1313) zu den 15 Posten sowie die Bodenwertabgabe 0,82 sind nicht als Tabelle mit Abrufadresse dokumentiert. Nachholen: `daten/zuordnung_posten.csv` (Posten, GF-Codes, Sektor, Anteil, URL) |
-| **Registerpflege** | **neu, v3.10.** Nach jeder Version `python3 modell/alles.py`, `projekt/bausteine.csv` und `nahtstellen.csv` anpassen, Projektraum nachführen. Der Abgleich mit dem Projektraum geschieht von Hand |
-| **Stand A und Stand B** | **neu, v3.8.** Modell (`1-modell`) und achtsprachige Webseite im Export stehen auf dem nationalen Stand (Quote 27,91 % bzw. 33 %, Position 10 Sozialabgaben, Logbuch v2.0); das Gesamtkonzept auf dem europäischen (Quote 30,6 %, v3.5). Die Seite hat den Rahmenwechsel nie gesehen. Zwei Builds der Seite (Tarifstufen 0/9/16/21/26/28 gegen 0/9/19/24/27/28); der Quelltext passt nur zum älteren, die Patch-Skripte sind nicht ausgeführt. Nach Angabe des Exports; von mir nicht geprüft |
-| **Herleitung von 6,44 und 10,35** | Summen der COFOG-abgeleiteten Posten (Band II, v3.2). Siehe B19. Eurostat ist über das Web-Abrufwerkzeug erreichbar (nicht über die Shell); die Posten lassen sich damit nachholen |
-| **Nicht eingetragene Größen** | Mindestquote, Obergrenze von A, Höchstbedarf, territorialer Aufschlag: Bezugsjahr oder Bezugsgröße fehlt. Siehe `daten/aggregate/nicht-eingetragen.md`, Abschnitt A |
-| **Rohdaten und Abrufe nicht reproduzierbar** | **teilweise behoben in v3.14:** jede amtliche Eingangsgröße hat eine Abrufadresse (`daten/aggregate/eingangswerte.csv`); Abrufergebnisse selbst liegen nicht als Rohdaten vor (Regel: keine Rohdaten im Repository) |
-| **Prüfstand der Logbuch-Abschrift** | **geschlossen in v3.8**: Band I ist die Originaldatei, Band II zeilengleich, siehe `HERKUNFT.md` |
-| Alle offenen Punkte aus Band I (Abschnitt 7) und Band II (Zusatz zu v3.5) | unverändert, soweit hier nicht genannt |
+| B1–B10, B12–B14 | geschlossen (v3.7 bis v3.12); Einzelheiten im Git-Verlauf und in Band II |
+| B15: Neu abrufen | offen → R4 |
+| B16: Seite gegenlesen | offen → P3 |
+| B17: Dividende nach Preisniveau | entschieden v3.20; Europarecht offen → P1 |
+| B18: 95 % für Stand B | ersetzt durch die Mikrosimulation (v4.22) |
+| B19: Posten der Ebenen A und B | offen → R4 |
+| Registerpflege | dauerhaft: nach jeder Version `alles.py`, `bausteine.csv`, `nahtstellen.csv`, Projektraum |
+| Stand A und Stand B | ruhen; Stand C gilt |
+| Rohdaten | Abrufadressen in `eingangswerte.csv`; keine Rohdaten im Repository |
+| Alle offenen Punkte aus Band I und Band II | soweit nicht in 7.1–7.3 übernommen: ruhen mit Stand A/B |
