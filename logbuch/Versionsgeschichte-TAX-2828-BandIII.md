@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.32**
+Stand: 21. Oktober 2026 · Modellstand **v4.33**
 
 ---
 
@@ -3635,6 +3635,34 @@ Befragungsbasis −30 €, ungünstiges Ausweichen −55 € (v4.18); beide zusa
 **Datenquelle:** Bundesbank, Vermögensbefragung 2021 (Präsentation April 2023); DIW Wochenbericht 29/2020 (Pressemitteilung 15.07.2020);
 Destatis PM 306/2026 (Erbschaft- und Schenkungsteuer 2025). **Wodurch aufgefallen:** Punkt R4.
 
+### v4.33 — Beschluss E2: Deckel der Weitergabe in Frankreich (erste Ausnahme von den gleichen Regeln je Land)
+
+**Art der Änderung: MINOR (Beschluss), Länderrechnung Frankreich bewegt.** 23. Oktober 2026.
+
+**Beschluss der Initiative (23.10.2026):** Deckel der Weitergabe in Frankreich. Die Initiative hält fest, dass dies die erste Ausnahme von gleichen
+Regeln je Land ist, die sie vermeiden wollte.
+
+**Regel:** Arbeitgeberbeiträge zählen in Frankreich für die 80-%-Weitergabe nur bis zum Betrag beim 1,602-fachen Durchschnittslohn (OECD,
+44.968 € → Deckel bei 72.039 €). Der Faktor ist das Verhältnis der deutschen Bemessungsgrenze der Rentenversicherung 2026 (101.400 €) zum
+deutschen Durchschnittslohn (63.288 €): Frankreich erhält die Grenze, die in Deutschland durch die Bemessungsgrenzen schon besteht.
+Umsetzung: `heute_laender.ag_weitergabe` (Parameter `[weitergabe_deckel]`), genutzt von `sozial_laender` und `heute_laender`.
+
+**Geprüft und verworfen: dieselbe Regel für alle Staaten.** In Deutschland bindet sie nicht (dort endet der Beitrag ohnehin bei der Grenze), aber
+in Italien, Spanien und Polen schon (Modelle ohne Grenzen): bei doppeltem Durchschnittslohn IT +1.060 → +877 €, ES +501 → +364 €,
+PL +1.564 → +1.244 zł im Monat. Eine allgemeine Regel wäre also keine reine Formfrage; sie bleibt als Option für E2 offen.
+
+**Bewegte Zahlen (FR, 2028, Kaufkraft 2026, allein, im Monat):** doppelter Durchschnittslohn +1.274 → +887 €, dreifacher +1.958 → +755 €;
+bis zum Durchschnittslohn unverändert (+480 €; bei halbem Durchschnittslohn weiter −135 €). Gini Frankreich 2028 32,7 → 30,5 (amtlich 2025: 30,4).
+Anteil mit mehr: Paar mit zwei Kindern 100 → 98 %, allein unverändert 73 %. Andere Staaten und Deutschland unverändert.
+
+**Rest:** Rund 18,5 % der französischen Arbeitgeberbeiträge liegen über dem Deckel (Lohnverteilung wie DE skaliert, Annahme). Ihre Verwendung ist
+nicht geregelt (N28): Vorschlag, wie die Rückfallregel in den Altlastenfonds; Entscheidung E10.
+
+**Offen:** Der Deckel ändert nichts an den Verlusten kleiner Löhne in Frankreich (prime d'activité, R5). Der Text der Seite („In Frankreich steigt
+er“) ist überholt; Korrektur über die Texte der Initiative. Das Konzept ist angepasst.
+
+**Datenquelle:** OECD Durchschnittslöhne (heute_laender.toml), Kernmodell (Bemessungsgrenzen 2026). **Wodurch aufgefallen:** Beschluss der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3696,7 +3724,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.32
+## 7 | Offene Punkte, Stand v4.33
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3723,7 +3751,8 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | Nr. | Punkt |
 |---|---|
 | E1 | Architekturvariante „Regelwerk statt Dach“ (Vorlage v4.13) |
-| E2 | Frankreich: Deckel der Weitergabe, Familienleistungen (N24, N28) |
+| E2 | **entschieden v4.33:** Deckel in Frankreich beim 1,6-fachen Durchschnittslohn (erste Ausnahme); offen: Familienleistungen FR, allgemeine Regel für alle Staaten |
+| E10 | Verwendung des Rests über dem Deckel in Frankreich (Vorschlag: Altlastenfonds wie die Rückfallregel, N28) |
 | E3 | Härtefall H1–H3 und Rolle der Gemeinden G1–G5 (N27; Kindergewicht 0,55 gilt seit v4.8) |
 | E4 | Sicherheitsunion (50 % der Verteidigung über rund 15 % der Mehrwertsteuer, N34) |
 | E5 | Neustartverfahren |

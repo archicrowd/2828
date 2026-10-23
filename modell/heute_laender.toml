@@ -93,3 +93,10 @@ zdrowotna = 9.0
 zus_ag_limit = 16.26   # 9,76 + 6,5
 zus_ag_rest = 4.22     # wypadkowe 1,67 + FP 2,45 + FGŚP 0,10
 limit_30 = 282600
+
+[weitergabe_deckel]   # v4.33 Beschluss 23.10.2026 (E2): Deckel der Weitergabe in Frankreich – erste Ausnahme von den gleichen Regeln je Land.
+# Arbeitgeberbeiträge zählen für die 80-%-Weitergabe nur bis zum Betrag beim faktor-fachen Durchschnittslohn des Landes (OECD, wie oben).
+# Faktor = deutsche Beitragsbemessungsgrenze der Rentenversicherung 2026 (101.400 €) / deutscher Durchschnittslohn (63.288 €) = 1,602: Frankreich
+# erhält damit die Grenze, die Deutschland durch seine Bemessungsgrenzen schon hat (Kranken- und Familienbeiträge in FR ohne Grenze).
+faktor = 1.602
+laender = ["FR"]

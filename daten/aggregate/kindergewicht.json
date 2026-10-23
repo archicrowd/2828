@@ -83,7 +83,7 @@
     "anteil_mit_mehr": {
      "alleinstehend": 73,
      "alleinerziehend, 1 Kind": 36,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
      0.48,
@@ -275,7 +275,7 @@
     "anteil_mit_mehr": {
      "alleinstehend": 73,
      "alleinerziehend, 1 Kind": 73,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
      0.6,
@@ -467,7 +467,7 @@
     "anteil_mit_mehr": {
      "alleinstehend": 73,
      "alleinerziehend, 1 Kind": 73,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
      0.64,
@@ -659,7 +659,7 @@
     "anteil_mit_mehr": {
      "alleinstehend": 73,
      "alleinerziehend, 1 Kind": 100,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
      0.69,
@@ -851,7 +851,7 @@
     "anteil_mit_mehr": {
      "alleinstehend": 73,
      "alleinerziehend, 1 Kind": 100,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
      0.84,
@@ -1043,7 +1043,7 @@
     "anteil_mit_mehr": {
      "alleinstehend": 73,
      "alleinerziehend, 1 Kind": 100,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "kosten_pct_bip": [
      0.95,

@@ -239,32 +239,32 @@
    "anteil_v41": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 36
+    "Paar, ein Einkommen, 2 Kinder": 33
    },
    "anteil_mit_bedarf_ohne_boden": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 36
+    "Paar, ein Einkommen, 2 Kinder": 33
    },
    "anteil_mit_bedarf_und_boden": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 73
+    "Paar, ein Einkommen, 2 Kinder": 71
    },
    "anteil_kind_0_7": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 73
+    "Paar, ein Einkommen, 2 Kinder": 71
    },
    "anteil_kind_1_0": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 73
+    "Paar, ein Einkommen, 2 Kinder": 71
    },
    "anteil_paket": {
     "alleinstehend": 62,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 73
+    "Paar, ein Einkommen, 2 Kinder": 71
    },
    "faelle_paket": {
     "0.33": {

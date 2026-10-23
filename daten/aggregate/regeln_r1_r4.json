@@ -140,12 +140,12 @@
    "anteil_s05_ohne_regeln": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 73
+    "Paar, ein Einkommen, 2 Kinder": 71
    },
    "anteil_paket_s0.7": {
     "alleinstehend": 62,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 73
+    "Paar, ein Einkommen, 2 Kinder": 71
    },
    "faelle_paket_s0.7": {
     "0.33": {
@@ -172,7 +172,7 @@
    "anteil_paket_s0.8": {
     "alleinstehend": 62,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 73
+    "Paar, ein Einkommen, 2 Kinder": 71
    },
    "faelle_paket_s0.8": {
     "0.33": {

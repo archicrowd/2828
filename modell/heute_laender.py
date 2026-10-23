@@ -210,6 +210,15 @@ def pl_heute(b, e, k):
 MODELLE = {"FR": (fr_heute, fr_ag), "IT": (it_heute, it_ag), "ES": (es_heute, es_ag), "PL": (pl_heute, pl_ag)}
 
 
+def ag_weitergabe(c, b):
+    """v4.33 (E2): Arbeitgeberbeiträge für die Weitergabe, in den Ländern mit Deckel höchstens der Betrag beim faktor-fachen Durchschnittslohn."""
+    a = MODELLE[c][1](b)
+    D = P.get("weitergabe_deckel", {})
+    if c in D.get("laender", []):
+        a = min(a, MODELLE[c][1](D["faktor"] * P["oecd"]["durchschnittslohn"][c]))
+    return a
+
+
 def faktor(c):
     return P["waehrung"].get(c, 1.0)
 
@@ -239,7 +248,7 @@ def neu(c, b, e, k, j):
     grenzen = [g * fx for g in st_c["tarif_stufen"]]
     saetze = [0.0, 11.0, 19.0, 25.0, 33.0]
     est = lambda x: stufen(x, grenzen, saetze)
-    brutto = b + P["weitergabe"] * MODELLE[c][1](b)
+    brutto = b + P["weitergabe"] * ag_weitergabe(c, b)
     st = est(brutto + DIV) + (e - 1) * est(DIV)
     div = DIV * e + k * DIV / 2
     netto = brutto - st + div

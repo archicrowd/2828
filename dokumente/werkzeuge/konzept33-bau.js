@@ -69,7 +69,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.32 · 23. Oktober 2026 (zur Freigabe)",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.33 · 23. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -194,7 +194,7 @@ add(H1("3  Die Regeln"),
     ["Goldenes Drittel 2028",...["DE","FR","IT","ES","PL"].map(c=>de(GI.staaten[c].reihe.find(z=>z.jahr===2028).mitte,1))],
     ["Goldenes Drittel 2060",...["DE","FR","IT","ES","PL"].map(c=>de(GI.staaten[c].reihe.find(z=>z.jahr===2060).mitte,1))],
     ["2028, Rentnerhaushalte unverändert",...["DE","FR","IT","ES","PL"].map(c=>{const z=GI.staaten[c].reihe.find(z=>z.jahr===2028);return de((z.untere.gini_rentner_unveraendert+z.obere.gini_rentner_unveraendert)/2,1);})]]),
-  Q("Statische Rechnung (modell/gini.py): heutige Verteilung aus EU-SILC 2025 (Dezilgrenzen, Anteile D1 und D10), Abbildung heute → neu je Äquivalenzerwachsenem mit dem Grundauskommen; ausgewiesen amtlicher Wert plus Modelländerung. Ohne Verhaltensänderung, Kapitaleinkommen und Vermögen. Zum Vergleich heute: Dänemark "+de(GI.vergleich_amtlich_2025.DK,1)+", Schweden "+de(GI.vergleich_amtlich_2025.SE,1)+". In Frankreich steigt der Gini nach dieser Rechnung (Korrektur 64, modell/gini_frankreich.py): Hauptgrund ist die Weitergabe von 80 % der Arbeitgeberbeiträge, die in Frankreich für Kranken- und Familienversicherung keine Bemessungsgrenze haben – hohe Löhne steigen um 24–41 %, beim Mindestlohn fallen wegen der Beitragsentlastung (RGDU) kaum Beiträge an, und die prime d'activité entfällt. Mit Deckel der Weitergabe beim Beitrag zum 1- bzw. 1,5-fachen Durchschnittslohn: "+de(GF.staaten.FR.gini_weitergabe_gedeckelt_1x,1)+" bzw. "+de(GF.staaten.FR.gini_weitergabe_gedeckelt_1_5x,1)+"; bei Abbildung über Familienhaushalte "+de(GF.staaten.FR.gini_abbildung_familie,1)+". Die Rechnung zählt weitergegebene Beiträge als Einkommen, obwohl damit heute Rentenansprüche nach Lohnhöhe (AGIRC-ARRCO) und Arbeitslosengeld finanziert werden; der Vorteil hoher Löhne ist deshalb als verfügbares Einkommen richtig, als Wohlfahrtsgewinn überzeichnet."),
+  Q("Statische Rechnung (modell/gini.py): heutige Verteilung aus EU-SILC 2025 (Dezilgrenzen, Anteile D1 und D10), Abbildung heute → neu je Äquivalenzerwachsenem mit dem Grundauskommen; ausgewiesen amtlicher Wert plus Modelländerung. Ohne Verhaltensänderung, Kapitaleinkommen und Vermögen. Zum Vergleich heute: Dänemark "+de(GI.vergleich_amtlich_2025.DK,1)+", Schweden "+de(GI.vergleich_amtlich_2025.SE,1)+". In Frankreich stieg der Gini ohne Deckel auf 32,7 (Korrektur 64, modell/gini_frankreich.py): Die Arbeitgeberbeiträge haben dort für Kranken- und Familienversicherung keine Bemessungsgrenze, hohe Löhne stiegen um 24–41 %, beim Mindestlohn fallen wegen der Beitragsentlastung (RGDU) kaum Beiträge an, und die prime d'activité entfällt. Beschluss vom 23.10.2026 (erste Ausnahme von den gleichen Regeln je Land): Die Weitergabe zählt in Frankreich nur bis zum Beitrag beim 1,6-fachen Durchschnittslohn – das Verhältnis der deutschen Bemessungsgrenze der Rentenversicherung zum deutschen Durchschnittslohn. Damit Gini 2028 "+de(GI.staaten.FR.reihe.find(z=>z.jahr===2028).mitte,1)+" gegen amtlich "+de(GI.staaten.FR.gini_amtlich_2025,1)+"; bei Abbildung über Familienhaushalte "+de(GF.staaten.FR.gini_abbildung_familie,1)+". Der Deckel ändert nichts an den Verlusten bei kleinen Löhnen (prime d'activité). Die Rechnung zählt weitergegebene Beiträge als Einkommen, obwohl damit heute Rentenansprüche nach Lohnhöhe (AGIRC-ARRCO) und Arbeitslosengeld finanziert werden; der Vorteil hoher Löhne ist deshalb als verfügbares Einkommen richtig, als Wohlfahrtsgewinn überzeichnet."),
 
   H2("3.8  Altlasten: Sache der Staaten"),
   P("Staatsschulden und Rentenzusagen stammen aus dem alten System. Jeder Staat regelt sie selbst; eigene Lösungen sind erwünscht. Für die Altansprüche gelten vier einfache Regeln (Beschlüsse 18. und 22.10.2026):"),
@@ -340,7 +340,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.32)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.33)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -348,7 +348,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.32 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.33 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

@@ -60,12 +60,12 @@
    "anteil_basis": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 36
+    "Paar, ein Einkommen, 2 Kinder": 33
    },
    "anteil_neustart": {
     "alleinstehend": 62,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 36
+    "Paar, ein Einkommen, 2 Kinder": 33
    },
    "anteil_ohne_zuschlag": {
     "alleinstehend": 62,

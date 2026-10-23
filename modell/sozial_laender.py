@@ -77,7 +77,7 @@ def heute(c, b, e, k, mit_bedarf=True):
 
 
 def ag(c, b):
-    return H33.ag(b) if c == "DE" else HL.MODELLE[c][1](b)
+    return H33.ag(b) if c == "DE" else HL.ag_weitergabe(c, b)   # v4.33: Deckel FR
 
 
 # ---------------- neu: Kinderanteil, Boden
