@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.47**
+Stand: 24. Oktober 2026 · Modellstand **v4.48**
 
 ---
 
@@ -4096,6 +4096,37 @@ heißen „Prüfungen im Auftrag der Initiative“, nicht „extern“: Methodik
 
 ---
 
+### v4.48 — Verhaltenswirkungen: qualitative Voruntersuchung
+
+**Art der Änderung: PATCH (Dokumentation), keine Zahl bewegt.** 24. Oktober 2026.
+
+**Anlass:** Auftrag der Initiative (24.10.2026): „Abschätzung der Verhaltenseinflüsse – zunächst als qualitative Voruntersuchung. Was gelingt
+durch die neuen Anreize – psychologische Einschätzungen, Studien usw.“; Übertragbarkeit in die Länder.
+
+**Neu `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md`:** je Baustein erwartete Richtung, Belegstufe (A/B/C) und Übertragbarkeit
+auf DE, FR, IT, ES, PL; 27 Quellen, Zahlen am Abstract oder Volltext abgelesen (24.10.2026). Vorläufiges Urteil: gut belegt sind Leistung ohne
+Antrag (Nicht-Inanspruchnahme Grundsicherung im Alter ~60 %, DIW 2019; RSA 34 %, DREES 2022), Pflichtvorsorge (85 % passive Sparer, Chetty u. a.
+2014) und kein nennenswerter Rückzug aus der Arbeit durch die Dividende (Alaska: Beschäftigung unverändert, Teilzeit +1,8 Pp.; OpenResearch:
+Erwerbsbeteiligung −4,2 Pp. bei 1.000 $ im Monat). Risiken, die die Konstruktion begrenzen muss: Weitergabe ohne Pflicht (Schweden: Nettolöhne
+der Begünstigten unverändert, Saez u. a. 2019), asymmetrische Überwälzung der Mehrwertsteuer (Erhöhungen drei- bis viermal stärker als
+Senkungen, Benzarti u. a. 2020), Unterschätzung der CO₂-Rückgabe (Mildenberger u. a. 2022; FR: Douenne/Fabre 2022), Ausweichen an der
+Vermögensspitze (Dänemark ~30 % nach acht Jahren, Jakobsen u. a. 2020), Verlustaversion der Rentner. Länderbefund: PL mit geringem Vertrauen in
+kapitalgedeckte Pflichtvorsorge (OFE 2014, 51,5 % des Vermögens an ZUS; Sekundärquelle), FR mit belegtem Akzeptanzrisiko beim CO₂-Preis.
+
+**Für die Rechnung:** Arbeitsangebot, Sparen, Wanderung und Steuerehrlichkeit reagieren in der Kette nicht. Stufe 2 als neuer offener Punkt R12
+(V1 Grenzbelastung 0–30.000 € mit Aufstockung, V2 Arbeitsangebot als Band, V3 asymmetrische Überwälzung, V4 Ausweichband Vermögen gegen
+Dänemark, V5 Länderwerte zu Nicht-Inanspruchnahme, nicht erklärter Arbeit und Vertrauen, V6 Akzeptanzbefragung). V5 ergänzt R5.
+
+**Gestaltungsfragen, die das Konzept offen lässt (aus der Untersuchung):** Aufstockung von Amts wegen oder auf Antrag; Eigentumsschutz der
+Pflichtvorsorge; Behandlung von Rentenbeginnen vor dem Stichtag (Vorzieheffekt); Sichtbarkeit der Dividende als Rückgabe des CO₂-Preises.
+
+**Grenzen:** Literaturauswahl nicht systematisch; Befunde meist aus Einzelreformen; mehrere Zahlen nur aus Abstracts; Rechtsstand § 11b SGB II
+2025, an der Quelle zu prüfen.
+
+**Datenquelle:** Studien wie im Dokument, Abschnitt 7. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4161,7 +4192,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.47
+## 7 | Offene Punkte, Stand v4.48
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4182,6 +4213,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R9 | **teilweise erledigt v4.41** (Einwanderung und Automatisierung umgerechnet; offen: Altersprofil je Staat, Preisniveau mit Zweitrundeneffekten und CO₂-Pfad) – **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
 | R10 | **Möglichkeitsraum:** UK und Kanada; Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR); Wachstum je Land | Länder außerhalb der Referenzländer | v3.52/v3.53 |
 | R11 | **Regionen und gemeinsame Aufgaben:** heutige Gemeindeeinnahmen je Kreis (Daten der Initiative, `2828-Daten`), Strukturzuschlag 10 %, Kassenanteile und Bemessung am BNE, Anrechnung neutraler Staaten (N32, N33) | Gemeindehaushalte, nicht Haushaltseinkommen | v4.15/v4.16 |
+| R12 | **Verhaltenswirkungen, Stufe 2 (v4.48):** V1 Grenzbelastung 0–30.000 € mit Aufstockung je Haushaltstyp; V2 Arbeitsangebot als Band (Elastizitäten mit Quelle) in der Mikrosimulation; V3 asymmetrische Überwälzung der Mehrwertsteuer im Preisniveau; V4 Ausweichband Vermögen gegen Jakobsen u. a. 2020; V5 Länderwerte (Nicht-Inanspruchnahme, nicht erklärte Arbeit, Vertrauen; zu R5); V6 Akzeptanzbefragung | Aufkommen und Dividende (V2–V4), Darstellung (V6) | v4.48, `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md` |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 
