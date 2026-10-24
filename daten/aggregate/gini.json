@@ -125,29 +125,41 @@
     {
      "jahr": 2028,
      "untere": {
-      "gini": 28.9,
-      "gini_rentner_unveraendert": 29.4
+      "gini": 28.8,
+      "gini_rentner_unveraendert": 29.3
      },
      "obere": {
-      "gini": 29.2,
-      "gini_rentner_unveraendert": 29.7
+      "gini": 29.1,
+      "gini_rentner_unveraendert": 29.6
      },
      "mitte": 29.0
     },
     {
      "jahr": 2030,
      "untere": {
-      "gini": 28.9,
+      "gini": 28.8,
       "gini_rentner_unveraendert": 29.4
      },
      "obere": {
       "gini": 29.2,
-      "gini_rentner_unveraendert": 29.7
+      "gini_rentner_unveraendert": 29.6
      },
      "mitte": 29.0
     },
     {
      "jahr": 2035,
+     "untere": {
+      "gini": 28.9,
+      "gini_rentner_unveraendert": 29.4
+     },
+     "obere": {
+      "gini": 29.2,
+      "gini_rentner_unveraendert": 29.6
+     },
+     "mitte": 29.0
+    },
+    {
+     "jahr": 2040,
      "untere": {
       "gini": 29.0,
       "gini_rentner_unveraendert": 29.5
@@ -159,7 +171,7 @@
      "mitte": 29.1
     },
     {
-     "jahr": 2040,
+     "jahr": 2045,
      "untere": {
       "gini": 29.0,
       "gini_rentner_unveraendert": 29.5
@@ -171,7 +183,7 @@
      "mitte": 29.2
     },
     {
-     "jahr": 2045,
+     "jahr": 2050,
      "untere": {
       "gini": 29.1,
       "gini_rentner_unveraendert": 29.6
@@ -183,28 +195,16 @@
      "mitte": 29.2
     },
     {
-     "jahr": 2050,
+     "jahr": 2055,
      "untere": {
       "gini": 29.2,
-      "gini_rentner_unveraendert": 29.6
+      "gini_rentner_unveraendert": 29.7
      },
      "obere": {
       "gini": 29.5,
       "gini_rentner_unveraendert": 29.9
      },
      "mitte": 29.4
-    },
-    {
-     "jahr": 2055,
-     "untere": {
-      "gini": 29.3,
-      "gini_rentner_unveraendert": 29.7
-     },
-     "obere": {
-      "gini": 29.6,
-      "gini_rentner_unveraendert": 29.9
-     },
-     "mitte": 29.5
     },
     {
      "jahr": 2060,
@@ -214,7 +214,7 @@
      },
      "obere": {
       "gini": 29.6,
-      "gini_rentner_unveraendert": 30.0
+      "gini_rentner_unveraendert": 29.9
      },
      "mitte": 29.5
     }

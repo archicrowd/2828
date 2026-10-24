@@ -35,9 +35,9 @@
    "zuschlag_verrechnung_2028": 21.3,
    "gleich": {
     "mehr_monat": {
-     "0.5": -126,
-     "1": 371,
-     "2": 668
+     "0.5": -123,
+     "1": 363,
+     "2": 650
     },
     "anteil_mehr": {
      "alleinstehend": 73,
@@ -47,9 +47,9 @@
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": -152,
-     "1": 286,
-     "2": 480
+     "0.5": -148,
+     "1": 276,
+     "2": 459
     },
     "anteil_mehr": {
      "alleinstehend": 73,

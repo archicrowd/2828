@@ -39,6 +39,7 @@ STUFEN = [
     ("Altlastenfonds (Streckung)", ["modell/altlasten.py"]),
     ("Drittel-System: Zeitpfad mit Trends", ["modell/projektion33.py"]),
     ("Mehrwertsteuer nach Einkommen (EVS 2023)", ["modell/mwst_verteilung.py"]),
+    ("Mehrwertsteuer nach Einkommen je Staat (HBS 2020)", ["modell/mwst_laender.py"]),
     ("Drittel-System: Starkes Netz (Grundversorgung)", ["modell/netz33.py"]),
     ("Drittel-System: Möglichkeitsraum", ["modell/moeglichkeitsraum33.py"]),
     ("Gemeinsamer Fonds der 30 Staaten (geltend), Klubvergleich", ["modell/fonds_klub.py"]),

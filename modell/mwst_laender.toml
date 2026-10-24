@@ -1,0 +1,64 @@
+# Mehrwertsteuer nach Einkommen je Staat aus der Konsumstruktur (modell/mwst_laender.py, Logbuch v4.54). Prüfrechnung. Offener Punkt R5.
+version = "v4.54"
+quelle = "Eurostat hbs_str_t223 (Household Budget Survey 2020: Struktur der Konsumausgaben nach Einkommensfünfteln und COICOP, ‰), amtlich; Abruf 24.10.2026 über die API; Werte von Eurostat als geschätzt gekennzeichnet (Status e)"
+# Lage der Fünftel auf der Skala des äquivalenzgewichteten verfügbaren Einkommens (boden_kosten.toml: Dezilgrenzen EU-SILC 2025):
+# Q1 = D1, Q2 = D3, Q3 = D5, Q4 = D7, Q5 = 1,25 × D9 (Annahme: Mitte der Fünftel)
+fuenftel_dezil = [1, 3, 5, 7, 9]
+q5_faktor = 1.25
+# Gewicht der Fünftel im Mittel: gleich (Annahme; Ausgabenhöhe je Fünftel nicht abgerufen)
+
+# Struktur je Fünftel Q1..Q5 in ‰ der Konsumausgaben (nur die hier verwendeten Positionen). Weitere Staaten folgen, sobald abgerufen.
+[hbs.FR]
+CP011 = [134, 138, 143, 138, 119]
+CP012 = [13, 11, 11, 11, 10]
+CP02 = [35, 30, 28, 24, 20]
+CP03 = [43, 37, 38, 39, 41]
+CP041 = [175, 112, 71, 41, 25]
+CP042 = [69, 125, 154, 167, 169]
+CP043 = [3, 4, 5, 8, 6]
+CP044 = [45, 37, 29, 22, 19]
+CP045 = [55, 52, 46, 41, 36]
+CP05 = [34, 40, 43, 47, 58]
+CP06 = [15, 16, 18, 16, 15]
+CP071 = [32, 41, 49, 68, 78]
+CP072 = [48, 52, 58, 56, 50]
+CP073 = [22, 19, 14, 15, 21]
+CP08 = [35, 28, 25, 23, 18]
+CP09 = [66, 66, 72, 76, 89]
+CP10 = [8, 4, 3, 4, 9]
+CP11 = [40, 41, 44, 52, 71]
+CP121 = [32, 39, 37, 38, 37]
+CP123 = [3, 3, 3, 4, 5]
+CP124 = [4, 5, 6, 10, 15]
+CP125 = [72, 82, 82, 75, 62]
+CP126 = [6, 5, 5, 5, 4]
+CP127 = [11, 12, 18, 18, 24]
+
+# COICOP-Position → Gruppe der Nachfrageprüfung (nachfrage.toml; bestimmt den Satz neu) und Satz heute je Staat (%).
+# FR-Sätze: Regelsatz 20, Lebensmittel 5,5, Gastronomie und Verkehrsdienste 10, Wasser 5,5, Arbeiten an Wohnungen 10 (Recht 2026, Annahme
+# der Zuordnung je Position; Arzneimittel und Bildung wie in DE als steuerfrei, Annahme).
+[zuordnung]
+CP011 = { gruppe = "lebensmittel", heute = { FR = 5.5 } }
+CP012 = { gruppe = "lebensmittel", heute = { FR = 5.5 } }
+CP02 = { gruppe = "alkohol_tabak", heute = { FR = 20.0 } }
+CP03 = { gruppe = "kleidung", heute = { FR = 20.0 } }
+CP041 = { gruppe = "wohnen_miete", heute = { FR = 0.0 } }
+CP042 = { gruppe = "wohnen_miete", heute = { FR = 0.0 } }
+CP043 = { gruppe = "reparatur_persoenliche_dienste", heute = { FR = 10.0 } }
+CP044 = { gruppe = "lebensmittel", heute = { FR = 5.5 } }
+CP045 = { gruppe = "haushaltsenergie", heute = { FR = 20.0 } }
+CP05 = { gruppe = "einrichtung", heute = { FR = 20.0 } }
+CP06 = { gruppe = "gesundheit_bildung", heute = { FR = 0.0 } }
+CP071 = { gruppe = "fahrzeuge", heute = { FR = 20.0 } }
+CP072 = { gruppe = "kraftstoffe", heute = { FR = 20.0 } }
+CP073 = { gruppe = "verkehrsdienste", heute = { FR = 10.0 } }
+CP08 = { gruppe = "kommunikation", heute = { FR = 20.0 } }
+CP09 = { gruppe = "freizeit", heute = { FR = 20.0 } }
+CP10 = { gruppe = "gesundheit_bildung", heute = { FR = 0.0 } }
+CP11 = { gruppe = "gaststaetten_hotels", heute = { FR = 10.0 } }
+CP121 = { gruppe = "reparatur_persoenliche_dienste", heute = { FR = 20.0 } }
+CP123 = { gruppe = "sonstiges", heute = { FR = 20.0 } }
+CP124 = { gruppe = "gesundheit_bildung", heute = { FR = 0.0 } }
+CP125 = { gruppe = "gesundheit_bildung", heute = { FR = 0.0 } }
+CP126 = { gruppe = "gesundheit_bildung", heute = { FR = 0.0 } }
+CP127 = { gruppe = "sonstiges", heute = { FR = 20.0 } }

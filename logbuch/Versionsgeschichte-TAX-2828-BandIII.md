@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.53**
+Stand: 24. Oktober 2026 · Modellstand **v4.54**
 
 ---
 
@@ -4296,6 +4296,40 @@ waren nicht betroffen. Nach der Berichtigung: 40 von 40.
 
 ---
 
+### v4.54 — R5: Mehrwertsteuer nach Einkommen für Frankreich (Eurostat HBS 2020)
+
+**Art der Änderung: MINOR (Annahme durch amtliche Quelle ersetzt), bewegt Zahlen für Frankreich.** 24. Oktober 2026.
+
+**Anlass:** R5. Die Länderrechnungen setzten die Mehrbelastung aus der Mehrwertsteuer für alle Einkommen gleich (Faktor 1); Deutschland rechnet
+seit v4.29 mit der Güterstruktur nach Einkommen (EVS 2023).
+
+**Daten:** Eurostat `hbs_str_t223` (Household Budget Survey 2020, Struktur der Konsumausgaben nach Einkommensfünfteln und COICOP, ‰; von
+Eurostat als geschätzt gekennzeichnet), über die API abgerufen am 24.10.2026 (Link von der Initiative freigegeben). Die Abfrage für fünf Staaten
+lieferte nur Frankreich; Folgeabfragen für IT und PL lieferten ebenfalls die Werte Frankreichs (Ursache offen: Zwischenspeicher des Abrufwerkzeugs
+oder fehlende Daten). **Verwendet nur FR**; IT, ES, PL bleiben bei Faktor 1, bis die Daten sicher vorliegen.
+
+**Rechnung (`modell/mwst_laender.py`, `.toml`, Ausgabe `mwst_laender.json`):** wie `mwst_verteilung.py` (DE): Sätze heute je COICOP-Position
+(FR: 20 / 10 / 5,5 %, Miete und Versicherungen steuerfrei, Gesundheit und Bildung wie DE als steuerfrei, Annahme), neu nach 33R; Rest bis zur
+bisherigen Durchschnittsrechnung gleichmäßig je Euro Konsum (Annahme wie DE). Lage der Fünftel auf dem äquivalenzgewichteten Einkommen
+(EU-SILC-Dezile: Q1 = D1 … Q5 = 1,25 × D9, Annahme); Haushalte über die OECD-modifizierte Skala zugeordnet (`heute_laender.skala`).
+
+| FR, Fünftel | Q1 | Q2 | Q3 | Q4 | Q5 |
+|---|---|---|---|---|---|
+| steuerpflichtiger Anteil des Konsums | 65,1 % | 65,1 % | 66,2 % | 68,1 % | 70,1 % |
+| sichtbare Mehrbelastung neu (% des Konsums) | 1,42 | 1,43 | 1,64 | 1,76 | 1,89 |
+| Faktor Mehrbelastung / gezahlte Steuer | 0,90 / 0,96 | 0,91 / 0,96 | 1,00 / 0,99 | 1,06 / 1,02 | 1,12 / 1,06 |
+
+Prüfwert: sichtbar gezahlte Mehrwertsteuer heute im Mittel 8,6 % des Konsums (einschließlich unterstellter Mieten). Die Rechnung „heute“ setzt
+16,34 % auf den steuerpflichtigen Konsum; der Abstand entspricht dem steuerfreien Anteil (rund ein Drittel) und ist kein Widerspruch.
+
+**Bewegte Zahlen (FR 2028, allein, Verrechnung je Staat, im Monat):** ½ Durchschnittslohn −152 → −148 €, 1× +286 → +276 €, 2× +480 → +459 €,
+3× +269 → +243 €; Anteile mit mehr und Gini FR (29,0) unverändert. Die neue Kennzahlenprüfung (v4.53) zeigte die veraltete Zeile in
+`KENNZAHLEN.md` sofort an; nachgezogen.
+
+**Datenquelle:** Eurostat hbs_str_t223 (2020). **Wodurch aufgefallen:** R5.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4366,7 +4400,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.53
+## 7 | Offene Punkte, Stand v4.54
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4380,7 +4414,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R2 | **erledigt v4.29** (offen: Einstufung je Produkt statt je Gruppe, Vorsteueranteil steuerfreier Bereiche belegen) – **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
 | R3 | **erledigt v4.30 für Kapital und Miete** (offen: Spitze der Vermögen, Erbschaften, Untererfassung) – **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
 | R4 | **v4.46 ergänzt aus der dritten Prüfung:** Basis und Definition der Position Unternehmen belegen (B23), Erbschaft: Schenkungs-Parität und reale Übertragungen als Obergrenze (B22), Einkommensposition gegen Lohn- und Einkommensteuerstatistik eichen, oberes Ausweichband Vermögen (M3); **teilweise erledigt v4.31/v4.32** (BIP-Neuabruf als Schalter; Vermögens- und Erbschaftsbasis geprüft; offen: Renditen, COFOG, B19) – **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
-| R5 | **v4.51: Ländermodelle gegen OECD Taxing Wages 2026 validiert (7 von 10 Typen ±2 Pp), prime d'activité berichtigt (Korrekturen 77/78); offen: Mehrwertsteuer nach Einkommen FR/IT/ES/PL, Lohnverteilungen je Land, Verhaltensgrößen V5;** **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
+| R5 | **v4.54: Mehrwertsteuer nach Einkommen FR (HBS 2020); IT, ES, PL offen (Abruf lieferte nur FR);** **v4.51: Ländermodelle gegen OECD Taxing Wages 2026 validiert (7 von 10 Typen ±2 Pp), prime d'activité berichtigt (Korrekturen 77/78); offen: Mehrwertsteuer nach Einkommen FR/IT/ES/PL, Lohnverteilungen je Land, Verhaltensgrößen V5;** **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
 | R6 | **erledigt v4.37** (offen: Boden B1 je Staat, Verteilungsform je Staat; Entscheidung E11) – **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
 | R7 | **teilweise erledigt v4.39** (H1 DE aus Mietdaten; offen: Mietdaten FR/IT/ES/PL, H2/H3 belegen, H1 auch über der Aufstockung) – **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
 | R8 | **teilweise erledigt v4.40** (Nicht-Inanspruchnahme als Variante; offen: Teilzeit-Dezile, Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini) – **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |

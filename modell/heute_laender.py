@@ -22,9 +22,20 @@ MV = _ilu.module_from_spec(_spec_mv)
 _spec_mv.loader.exec_module(MV)
 
 
-def mwst_phi(c, netto):
-    """v4.29: Faktoren (Mehrbelastung, gezahlte Steuer) je Haushaltsnetto; nur DE mit EVS-Struktur, sonst 1 (offen, R5)."""
-    return MV.faktoren(netto) if c == "DE" else (1.0, 1.0)
+_spec_ml = _ilu.spec_from_file_location("mwst_laender", W / "modell" / "mwst_laender.py")   # v4.54: Mehrwertsteuer nach Einkommen je Staat (HBS)
+ML = _ilu.module_from_spec(_spec_ml)
+_spec_ml.loader.exec_module(ML)
+
+
+def mwst_phi(c, netto, skala=1.0):
+    """v4.29: Faktoren (Mehrbelastung, gezahlte Steuer) je Haushaltsnetto; DE mit EVS-Struktur (Haushaltsnetto).
+    v4.54: übrige Staaten aus der HBS-Struktur nach Fünfteln des äquivalenzgewichteten Einkommens (netto / skala); ohne Daten φ = 1."""
+    return MV.faktoren(netto) if c == "DE" else ML.faktoren(c, netto / skala)
+
+
+def skala(e, k):
+    """OECD-modifizierte Äquivalenzskala (wie EU-SILC)."""
+    return 1 + 0.5 * (e - 1) + 0.3 * k
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "heute_laender.toml").read_text(encoding="utf-8"))
 LS = json.loads((AGG / "laenderseiten.json").read_text(encoding="utf-8"))
@@ -291,7 +302,7 @@ def neu(c, b, e, k, j):
     div = DIV * e + k * DIV / 2
     netto = brutto - st + div
     konsum = kq(netto, c) * netto
-    fm, fb = mwst_phi(c, netto)
+    fm, fb = mwst_phi(c, netto, skala(e, k))                     # v4.54
     mm = fm * konsum * ((1 + EFF / 100) / (1 + eff_alt(c) / 100) - 1)
     mb = fb * konsum * EFF / (100 + EFF)
     zu = st_c["fonds"]["zuschlag_pct"] * zu_faktor(c, j)          # v4.38 (E11): Verrechnung je Staat

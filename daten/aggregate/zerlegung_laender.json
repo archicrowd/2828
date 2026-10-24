@@ -5,61 +5,61 @@
   "FR": {
    "zerlegung_monat": {
     "20000|1|0": {
-     "gesamt": -127,
-     "altlastenzuschlag": -81,
+     "gesamt": -122,
+     "altlastenzuschlag": -80,
      "pflichtvorsorge": -167,
-     "dividende_unter_de_niveau": -106,
+     "dividende_unter_de_niveau": -105,
      "prime_activite": -261,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 488
+     "rest": 491
     },
     "20000|1|1": {
-     "gesamt": -351,
-     "altlastenzuschlag": -84,
+     "gesamt": -345,
+     "altlastenzuschlag": -82,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -179,
      "prime_activite": -580,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 659
+     "rest": 663
     },
     "30000|2|2": {
-     "gesamt": -253,
-     "altlastenzuschlag": -175,
+     "gesamt": -245,
+     "altlastenzuschlag": -172,
      "pflichtvorsorge": -250,
      "dividende_unter_de_niveau": -380,
      "prime_activite": -634,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 1186
+     "rest": 1191
     },
     "45000|1|0": {
-     "gesamt": 292,
-     "altlastenzuschlag": -316,
+     "gesamt": 282,
+     "altlastenzuschlag": -320,
      "pflichtvorsorge": -375,
-     "dividende_unter_de_niveau": -88,
+     "dividende_unter_de_niveau": -87,
      "prime_activite": 0,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 1071
+     "rest": 1064
     },
     "45000|2|2": {
-     "gesamt": 35,
-     "altlastenzuschlag": -324,
+     "gesamt": 40,
+     "altlastenzuschlag": -322,
      "pflichtvorsorge": -375,
-     "dividende_unter_de_niveau": -382,
+     "dividende_unter_de_niveau": -378,
      "prime_activite": -236,
      "allocations_familiales": 0,
      "quotient_familial": -10,
-     "rest": 1362
+     "rest": 1361
     }
    },
    "zuschlag": 21.3,
    "zuschlag_neustart": 17.9,
    "anteil_basis": {
     "alleinstehend": 36,
-    "alleinerziehend, 1 Kind": 20,
+    "alleinerziehend, 1 Kind": 18,
     "Paar, ein Einkommen, 2 Kinder": 18
    },
    "anteil_neustart": {

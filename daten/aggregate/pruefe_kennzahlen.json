@@ -232,7 +232,7 @@
    "zeile": "| Deckel der Weitergabe, einheitlich",
    "datei": "deckel_einheitlich.json",
    "pfad": "geltend/FR/mehr_monat/2",
-   "wert": 480,
+   "wert": 459,
    "status": "ok"
   },
   {
@@ -267,7 +267,7 @@
    "zeile": "| Verrechnung je Staat im Fonds der 30",
    "datei": "verrechnung_haushalte.json",
    "pfad": "laender/FR/verrechnung_2028/mehr_monat/1",
-   "wert": 286,
+   "wert": 276,
    "status": "ok"
   },
   {

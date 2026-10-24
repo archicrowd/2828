@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.53 · höchste Korrekturnummer 81 · 487 Dateien im Repository
+Modellstand v4.54 · höchste Korrekturnummer 81 · 490 Dateien im Repository
 
 ## Bausteine
 
@@ -83,6 +83,7 @@ Modellstand v4.53 · höchste Korrekturnummer 81 · 487 Dateien im Repository
 | N38 | B31 Drittel-System | B32 Länderseiten | offen |
 | N39 | B32 Länderseiten | B31 Drittel-System | offen |
 | N40 | B31 Drittel-System | B01 Logbuch | geschlossen |
+| N41 | B32 Länderseiten | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -100,3 +101,4 @@ Modellstand v4.53 · höchste Korrekturnummer 81 · 487 Dateien im Repository
 - Hinweis: Naht N36 offen: B32 Länderseiten -> B31 Drittel-System: v4.22: Vollzeit 99,3 %, Teilzeit 99,8 %, Minijob 47,6 %, Bürgergeld ohne Erwerb 14,7 %, Rentner 0 %; Validierung Lohnsumme −3,2 %, Lohnsteuer −4,8 %; Grundsicherung im Alter nicht bestanden (Rentenverteilung je Rente) | v4.23: Rentner mit Haushaltseinkommen: 5,4 % mit mehr, −145 € im Mittel; Prüfwerte bestanden; Ausgleich offen | v4.24: Vorschlag E (Boden 1.083/1.632 €, 15 % auf Zusagen über dem Grundbedarf): unteres Fünftel +21 €, oberes −477 €, gegen Beschluss −0,05 % BIP; Entscheidung offen | v4.26: E beschlossen und eingerechnet (Fonds 5,17 %, Zuschlag 15,5 %); Webseitentexte offen | v4.28: Beamte 83 % (Zulage), Selbständige 78 % | v4.40: Nicht-Inanspruchnahme als Variante (Quote 69 %): alle 69,3 → 69,6 %, Minijob 49 → 64 %; Korrektur 72 (Vergleichsgröße)
 - Hinweis: Naht N38 offen: B31 Drittel-System -> B32 Länderseiten: v4.48: qualitative Voruntersuchung (projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md), Belegstufen A/B/C je Baustein, Übertragbarkeit DE/FR/IT/ES/PL; Stufe 2 als R12 (V1–V6) | v4.49: Gestaltungsfragen E12–E15 beantwortet bzw. Vorschlag; V3 mit Zertifizierungsfall | v4.50: E12 Antrag mit Hinweis; Restquote Nicht-Inanspruchnahme als Variante
 - Hinweis: Naht N39 offen: B32 Länderseiten -> B31 Drittel-System: v4.51: 7 von 10 Haushaltstypen ±2 Pp; Korrekturen 77/78 (prime d'activité); offen R13 (Abgrenzung AG-Abgaben, Gesundheitsbeitrag PL, Paar mit zwei Einkommen, Alleinerziehende FR) | v4.52: Abgrenzung beschlossen und umgesetzt (E16)
+- Hinweis: Naht N41 offen: B32 Länderseiten -> B31 Drittel-System: v4.54: FR aus Eurostat hbs_str_t223 (2020); IT, ES, PL Faktor 1 bis zum gesicherten Abruf
