@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.38**
+Stand: 24. Oktober 2026 · Modellstand **v4.39**
 
 ---
 
@@ -3850,6 +3850,36 @@ bis 2098); ab etwa 2033 liegt er darunter (2035: 19,9 %, 2040: 19,0 %). Der Verg
 
 ---
 
+### v4.39 — R7: Härtefall H1 aus Mietdaten (Wohnkosten im Bürgergeld nach Haushaltstyp)
+
+**Art der Änderung: PATCH (Annahme durch Daten ersetzt), Prüfrechnung.** 24. Oktober 2026.
+
+**Bisher:** H1 (Wohnkosten über dem Wohnanteil des Bodens bis zur örtlichen Grenze) = Hälfte der Aufstocker × 150 € je Äquivalenzerwachsenem
+(beides Annahmen), also 75 € je aufstockendem Äquivalenzerwachsenem und Monat.
+
+**Neu (`haertefall.py → h1_de`, `haertefall.toml [h1]`):** anerkannte laufende Kosten der Unterkunft und Heizung je Bedarfsgemeinschaft im
+SGB II, März 2025 (BT-Drs. 21/1069, Anhang Tabelle 5, BA-Statistik; maschinell aus dem PDF gelesen, an der Quelle zu prüfen): Single 448,
+Alleinerziehende 723, Partner ohne Kinder 630, Partner mit Kindern 925 €. „Anerkannt“ heißt bis zur örtlichen Angemessenheitsgrenze – genau
+die Grenze von H1. Fortgeschrieben auf 2026 (+3 %, Annahme), lognormal je Typ (Streuung 0,30, Band 0,2–0,4, Annahme), gegen den Wohnanteil
+des Bodens (44,1 % × Grundauskommen × Skala: allein 454, alleinerziehend mit 1,6 Kindern 853, Paar 681, Paar mit 2,1 Kindern 1.205 €).
+
+Ergebnis: Überhang im Mittel 59 € (allein, 46 % betroffen), 51 € (alleinerziehend, 27 %), 64 € (Paar, 38 %), 40 € (Paar mit Kindern, 18 %);
+**je Äquivalenzerwachsenem 38 € im Monat (Band 23–54 €) statt 75 €.** Familien liegen seltener über dem Wohnanteil, weil die Skala des
+Bodens (Kind 0,55) schneller wächst als die Miete.
+
+**Bewegte Zahlen (% BIP 2028, untere / obere Schätzung):** H1 DE 0,09 / 0,17 → **0,04 / 0,09**; FR 0,22 → 0,11; IT 0,18–0,20 → 0,09–0,10;
+ES 0,24 → 0,12; PL 0,25 → 0,13. Reserve im Netzbudget, obere Schätzung: DE 0,17 → 0,26; FR −0,01 → +0,10; IT −0,07 → +0,03; ES 0,32 → 0,44;
+PL −0,65 → −0,53 (Erwachsenendividende −63 → −51 zł im Monat). Haushaltszahlen unverändert (H1 läuft über das Netzbudget).
+
+**Einschränkungen:** H1 nur für Haushalte mit Aufstockung (Näherung; wer knapp über dem Boden liegt und teuer wohnt, fehlt). Andere Länder
+nach Grundbedarf übertragen, ohne eigene Mietdaten. Zum Vergleich, nicht verwendet: 2024 trugen 12,6 % der BG Wohnkosten über der Grenze
+selbst, im Mittel 116 € (BT-Drs. 21/1005 über Sekundärquellen); diese Lücke deckt auch H1 nicht. H2 (0,03 % BIP) und H3 (15 € je Einwohner)
+bleiben Annahmen; Gesamtausgaben für Mehrbedarfe im SGB II nicht gefunden.
+
+**Datenquelle:** BT-Drs. 21/1069 (Antwort der Bundesregierung, 28.07.2025). **Wodurch aufgefallen:** Liste 7.1, R7.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -3910,7 +3940,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.38
+## 7 | Offene Punkte, Stand v4.39
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3926,7 +3956,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R4 | **teilweise erledigt v4.31/v4.32** (BIP-Neuabruf als Schalter; Vermögens- und Erbschaftsbasis geprüft; offen: Renditen, COFOG, B19) – **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
 | R5 | **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
 | R6 | **erledigt v4.37** (offen: Boden B1 je Staat, Verteilungsform je Staat; Entscheidung E11) – **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
-| R7 | **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
+| R7 | **teilweise erledigt v4.39** (H1 DE aus Mietdaten; offen: Mietdaten FR/IT/ES/PL, H2/H3 belegen, H1 auch über der Aufstockung) – **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
 | R8 | **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |
 | R9 | **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
 | R10 | **Möglichkeitsraum:** UK und Kanada; Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR); Wachstum je Land | Länder außerhalb der Referenzländer | v3.52/v3.53 |

@@ -1,5 +1,5 @@
 {
- "version": "v4.8",
+ "version": "v4.39",
  "status": "Prüfrechnung, grob",
  "kindergewicht": 0.55,
  "regeln": [
@@ -13,26 +13,61 @@
   "G4 Finanzierung: Land erstattet Aufstockung, H1, H2 voll aus dem Netzbudget; H3 aus der Formelzuweisung der Gemeinde; keine sinkende Erstattung",
   "G5 Rechtsschutz: Widerspruch bei der Gemeinde, danach unabhängige Landesstelle oder Gericht"
  ],
+ "h1_mietdaten_de": {
+  "je_aequivalent_monat": 37.76,
+  "anteil_bg_ueber": 0.369,
+  "typen": {
+   "allein": {
+    "kdu": 461,
+    "wohnanteil": 454,
+    "ueberhang_mittel": 58.5,
+    "anteil_ueber": 0.462
+   },
+   "alleinerziehend": {
+    "kdu": 745,
+    "wohnanteil": 853,
+    "ueberhang_mittel": 50.6,
+    "anteil_ueber": 0.273
+   },
+   "paar_ohne": {
+    "kdu": 649,
+    "wohnanteil": 681,
+    "ueberhang_mittel": 64.4,
+    "anteil_ueber": 0.379
+   },
+   "paar_mit": {
+    "kdu": 953,
+    "wohnanteil": 1205,
+    "ueberhang_mittel": 39.6,
+    "anteil_ueber": 0.176
+   }
+  },
+  "band": {
+   "0.2": 22.79,
+   "0.4": 53.6
+  },
+  "bis_v438_je_aequivalent_monat": 75.0
+ },
  "staaten": {
   "DE": {
    "budget_pct_bip": 1.17,
    "band": {
     "untere": {
      "boden": 0.21,
-     "h1": 0.09,
+     "h1": 0.04,
      "h2": 0.03,
      "h3": 0.027,
-     "summe": 0.35,
-     "reserve": 0.82,
+     "summe": 0.31,
+     "reserve": 0.86,
      "dividende_minus_monat": 0.0
     },
     "obere": {
      "boden": 0.77,
-     "h1": 0.17,
+     "h1": 0.09,
      "h2": 0.03,
      "h3": 0.027,
-     "summe": 1.0,
-     "reserve": 0.17,
+     "summe": 0.91,
+     "reserve": 0.26,
      "dividende_minus_monat": 0.0
     }
    }
@@ -42,21 +77,21 @@
    "band": {
     "untere": {
      "boden": 0.69,
-     "h1": 0.22,
+     "h1": 0.11,
      "h2": 0.03,
      "h3": 0.031,
-     "summe": 0.97,
-     "reserve": 0.77,
+     "summe": 0.86,
+     "reserve": 0.88,
      "dividende_minus_monat": 0.0
     },
     "obere": {
      "boden": 1.47,
-     "h1": 0.22,
+     "h1": 0.11,
      "h2": 0.03,
      "h3": 0.031,
-     "summe": 1.75,
-     "reserve": -0.01,
-     "dividende_minus_monat": 0.5
+     "summe": 1.64,
+     "reserve": 0.1,
+     "dividende_minus_monat": 0.0
     }
    }
   },
@@ -65,21 +100,21 @@
    "band": {
     "untere": {
      "boden": 0.5,
-     "h1": 0.18,
+     "h1": 0.09,
      "h2": 0.03,
      "h3": 0.032,
-     "summe": 0.74,
-     "reserve": 0.63,
+     "summe": 0.65,
+     "reserve": 0.72,
      "dividende_minus_monat": 0.0
     },
     "obere": {
      "boden": 1.18,
-     "h1": 0.2,
+     "h1": 0.1,
      "h2": 0.03,
      "h3": 0.032,
-     "summe": 1.44,
-     "reserve": -0.07,
-     "dividende_minus_monat": 2.7
+     "summe": 1.34,
+     "reserve": 0.03,
+     "dividende_minus_monat": 0.0
     }
    }
   },
@@ -88,20 +123,20 @@
    "band": {
     "untere": {
      "boden": 0.73,
-     "h1": 0.24,
+     "h1": 0.12,
      "h2": 0.03,
      "h3": 0.034,
-     "summe": 1.03,
-     "reserve": 1.02,
+     "summe": 0.91,
+     "reserve": 1.14,
      "dividende_minus_monat": 0.0
     },
     "obere": {
      "boden": 1.43,
-     "h1": 0.24,
+     "h1": 0.12,
      "h2": 0.03,
      "h3": 0.034,
-     "summe": 1.73,
-     "reserve": 0.32,
+     "summe": 1.61,
+     "reserve": 0.44,
      "dividende_minus_monat": 0.0
     }
    }
@@ -111,24 +146,24 @@
    "band": {
     "untere": {
      "boden": 0.66,
-     "h1": 0.25,
+     "h1": 0.13,
      "h2": 0.03,
      "h3": 0.039,
-     "summe": 0.98,
-     "reserve": 0.25,
+     "summe": 0.86,
+     "reserve": 0.37,
      "dividende_minus_monat": 0.0
     },
     "obere": {
      "boden": 1.56,
-     "h1": 0.25,
+     "h1": 0.13,
      "h2": 0.03,
      "h3": 0.039,
-     "summe": 1.88,
-     "reserve": -0.65,
-     "dividende_minus_monat": 62.6
+     "summe": 1.76,
+     "reserve": -0.53,
+     "dividende_minus_monat": 50.5
     }
    }
   }
  },
- "hinweis": "% BIP 2028. H1 und H3 aus Annahmen (haertefall.toml), ohne Mietdaten nach Haushaltstyp; Reserve = Budget − Summe; bei negativer Reserve Kürzung der Erwachsenendividende je Monat (Landeswährung)."
+ "hinweis": "% BIP 2028. H1 aus den anerkannten Wohnkosten im SGB II (DE, März 2025) gegen den Wohnanteil des Bodens; andere Länder nach Grundbedarf skaliert (Annahme, keine Mietdaten). H2 und H3 Annahmen (haertefall.toml). H1 nur für Haushalte mit Aufstockung (Näherung). Reserve = Budget − Summe; bei negativer Reserve Kürzung der Erwachsenendividende je Monat (Landeswährung)."
 }

@@ -69,7 +69,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.38 · 24. Oktober 2026 (zur Freigabe)",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.39 · 24. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -159,7 +159,7 @@ add(H1("3  Die Regeln"),
     ["Härtefall H1–H3",...["DE","FR","IT","ES","PL"].map(c=>{const u=HF.staaten[c].band.untere,o=HF.staaten[c].band.obere;return de(u.h1+u.h2+u.h3,2)+"–"+de(o.h1+o.h2+o.h3,2);})],
     ["Budget im Netz (Härtefall, Arbeitslosigkeit, Invalidität)",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].budget_pct_bip,2))],
     ["Reserve (untere / obere Schätzung)",...["DE","FR","IT","ES","PL"].map(c=>de(HF.staaten[c].band.untere.reserve,2)+" / "+de(HF.staaten[c].band.obere.reserve,2))]]),
-  Q("Schätzung aus EU-SILC-Dezilen (Eurostat ilc_di01) mit Annahmen zu Haushaltsmischung, Transfers und Mietüberhang (modell/boden_kosten.toml, haertefall.toml); ohne Mietdaten nach Haushaltstyp. In der oberen Schätzung reicht das Budget in Frankreich und Italien knapp nicht, in Polen nicht (Erwachsenendividende dort rund −63 zł im Monat)."),
+  Q("Schätzung aus EU-SILC-Dezilen (Eurostat ilc_di01) mit Annahmen zu Haushaltsmischung und Transfers (modell/boden_kosten.toml). H1 aus den anerkannten Wohnkosten im Bürgergeld nach Haushaltstyp (März 2025, BT-Drs. 21/1069) gegen den Wohnanteil des Grundauskommens: im Mittel "+de(HF.h1_mietdaten_de.je_aequivalent_monat,0)+" € je Äquivalenzerwachsenem und Monat (Band "+de(HF.h1_mietdaten_de.band['0.2'],0)+"–"+de(HF.h1_mietdaten_de.band['0.4'],0)+" €); andere Länder nach Grundbedarf übertragen (ohne eigene Mietdaten); H2 und H3 Annahmen (haertefall.toml). "+(()=>{const k=["DE","FR","IT","ES","PL"].filter(c=>HF.staaten[c].band.obere.reserve<0);return k.length?"In der oberen Schätzung reicht das Budget nicht in "+k.map(c=>({DE:"Deutschland",FR:"Frankreich",IT:"Italien",ES:"Spanien",PL:"Polen"})[c]+" (Erwachsenendividende rund −"+de(HF.staaten[c].band.obere.dividende_minus_monat,0)+(c==="PL"?" zł":" €")+" im Monat)").join(", ")+".":"Das Budget reicht in allen fünf Ländern.";})()),
   P("",{sp:80}),
   tab([{t:"Kosten des Netzes (% des BIP)",w:4226},{t:"2028",w:1200,al:RT},{t:"2060",w:1200,al:RT},{t:"Dauerzustand",w:1400,al:RT}],
     Object.keys(NB['2028'].positionen).map(k=>[k,de(NB['2028'].positionen[k],2),de(NB['2060'].positionen[k],2),de(NB.dauer.positionen[k],2)])
@@ -341,7 +341,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.38)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.39)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -349,7 +349,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.38 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.39 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

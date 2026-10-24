@@ -1,9 +1,12 @@
 # Härtefall H1–H3 und Rolle der Gemeinden G1–G5 (modell/haertefall.py, Logbuch v4.8). Vorschlag v4.7, auf Auftrag 18.10.2026 eingerechnet. Prüfrechnung.
-version = "v4.8"
+version = "v4.39"
 # H1 Wohnkosten über dem Wohnanteil im Boden (bis zur örtlichen Angemessenheitsgrenze, Korridor des Landes, Übergang sechs Monate)
 wohnanteil_grundbedarf = 0.441          # (Bruttokaltmiete + Heizung) / sächliches Existenzminimum 2026 (15. Existenzminimumbericht), vergleich_dk_se.json
-h1_anteil_mit_ueberhang = 0.5           # Annahme: Hälfte der Haushalte mit Aufstockung wohnt teurer als der Wohnanteil
-h1_ueberhang_monat_de = 150             # Annahme: mittlerer Überhang je betroffenem Äquivalenzerwachsenem, € (DE); andere Länder nach Grundbedarf skaliert
+# bis v4.38: h1_anteil_mit_ueberhang = 0,5 und h1_ueberhang_monat_de = 150 € (Annahmen) → 75 € je aufstockendem Äquivalenzerwachsenem
+# v4.39 (R7): aus Mietdaten. Anerkannte laufende Kosten der Unterkunft und Heizung je Bedarfsgemeinschaft im SGB II, März 2025 (BT-Drs. 21/1069,
+# Anhang Tabelle 5, BA-Statistik; maschinell aus dem PDF gelesen, an der Quelle zu prüfen; die Teilbeträge der Tabelle ergeben nicht die Summe):
+# Single 448, Alleinerziehende 723, Partner ohne Kinder 630, Partner mit Kindern 925 €. Anerkannt = bis zur örtlichen Angemessenheitsgrenze,
+# entspricht der Regel H1. Überhang je Typ = E[max(0, KdU − Wohnanteil × Boden des Typs)], KdU lognormal um das Mittel.
 # H2 Mehrbedarf (landeseinheitliche Zuschläge in % des Grundbedarfs) und H3 Einmalbedarfe (Pauschalbudget der Gemeinde je Einwohner)
 h2_pct_bip = 0.03                       # Annahme, Größenordnung der Mehrbedarfe im deutschen Recht
 h3_eur_je_einwohner = 15                # Annahme: Pauschalbudget je Einwohner und Jahr (DE), andere Länder nach Grundbedarf skaliert
@@ -18,3 +21,13 @@ regeln = [
   "G4 Finanzierung: Land erstattet Aufstockung, H1, H2 voll aus dem Netzbudget; H3 aus der Formelzuweisung der Gemeinde; keine sinkende Erstattung",
   "G5 Rechtsschutz: Widerspruch bei der Gemeinde, danach unabhängige Landesstelle oder Gericht",
 ]
+
+[h1]
+kdu_monat_2025 = { allein = 448, alleinerziehend = 723, paar_ohne = 630, paar_mit = 925 }
+bg_anteile = { allein = 0.570, alleinerziehend = 0.181, paar_ohne = 0.081, paar_mit = 0.144 }   # wie mikro_de.toml [buergergeld] (Sekundärquelle), als Anteile der BG (Annahme)
+kinder = { alleinerziehend = 1.6, paar_mit = 2.1 }   # Annahme: mittlere Kinderzahl je BG-Typ
+fortschreibung_2025_2026 = 1.03          # Annahme: Mieten und Heizkosten 2025 → Kaufkraft 2026
+streuung_log = 0.30                      # Annahme: Streuung der KdU innerhalb eines Typs (Region, Größe); Band 0,2 / 0,4
+streuung_band = [0.2, 0.4]
+# Vergleich (nicht verwendet): 2024 trugen 12,6 % der BG Wohnkosten über der Angemessenheitsgrenze selbst, im Mittel 116 € im Monat (BT-Drs. 21/1005,
+# über gegen-hartz.de und Deutscher Mieterbund, Sekundärquellen) – diese Lücke deckt H1 nicht (Grenze bleibt).
