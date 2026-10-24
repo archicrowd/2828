@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.34 · höchste Korrekturnummer 70 · 466 Dateien im Repository
+Modellstand v4.35 · höchste Korrekturnummer 70 · 466 Dateien im Repository
 
 ## Bausteine
 
@@ -86,7 +86,7 @@ Modellstand v4.34 · höchste Korrekturnummer 70 · 466 Dateien im Repository
 - Hinweis: Naht N05 offen: B08 Kern (Stand A) -> B03 Rahmenmodell (Stand B): v3.12: auf deutscher Basis 29,85 % nachgewiesen (Kern + Bausteine + Bodenwert), Lücke 0,95 Punkte zur Quote 30,8 % (v3.19: 1,05 Punkte zu 30,9 %; v3.20: 2,05 Punkte zu 31,9 %; v3.21: 1,79 Punkte; v3.22: 1,73 Punkte, Tarif 0/9/16/21/28 am Grundbedarf); Klubebene fehlt (deckung_quote.csv)
 - Hinweis: Naht N07 fehlt: B03 Rahmenmodell -> B11 Seite Stand A: Seite hat Rahmenwechsel nie gesehen
 - Hinweis: Naht N23 offen: B31 Drittel-System -> B20 Gesamtrechnung: v3.47: Entscheidung über Dauerhaftigkeit der Dividende (hinnehmen, Bodenwertabgabe, Bürgerfonds)
-- Hinweis: Naht N24 offen: B32 Länderseiten -> B31 Drittel-System: v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land | v4.33: Deckel senkt Gini FR 32,7 → 30,5; kleine Löhne weiter im Minus (R5)
+- Hinweis: Naht N24 offen: B32 Länderseiten -> B31 Drittel-System: v4.1: Entscheidung der Initiative zur französischen Variante; feinere Lohnverteilungen je Land | v4.33: Deckel senkt Gini FR 32,7 → 30,5; kleine Löhne weiter im Minus (R5) | v4.35: Mindestsicherung heute IT (ADI), ES (IMV), PL (zasiłek) eingerechnet; Anteile unverändert, Vorteil bei 15 % Durchschnittslohn kleiner (IT alleinerziehend +932 → +180 €)
 - Hinweis: Naht N27 offen: B32 Länderseiten -> B31 Drittel-System: v4.7: Vergleich DK/SE; Vorschlag H1–H3, K1, G1–G5 zur Entscheidung; Kosten von H1–H3 und K1 nicht gerechnet (Mietdaten nach Haushaltstyp fehlen) | v4.8: H1–H3 und G1–G5 nach Empfehlung angenommen und grob gerechnet; Kindergewicht 0,55 vorgeschlagen; Freigabe der Initiative offen; Mietdaten weiter offen
 - Hinweis: Naht N28 offen: B32 Länderseiten -> B31 Drittel-System: v4.9: Gini FR steigt durch ungedeckelte Weitergabe; Deckel 1× / 1,5× Durchschnittslohn senkt FR auf 27,6 / 29,8 (Korrektur 64) | v4.33: Deckel FR beschlossen (1,602 × Durchschnittslohn); Rest 18,5 % der AG-Beiträge, Verwendung offen (E10)
 - Hinweis: Naht N29 offen: B30 Altlastenfonds -> B31 Drittel-System: v4.10: Vorschlag A (Kürzung 7,5 %), B1, T1, L1 (⅔-Kopplung); Rentenalter 65/67 vereinheitlichen; Korrektur 65 | v4.11: beschlossen und gerechnet; Fonds +0,69 % BIP (T1 +0,50); Rentenalter 67 einheitlich; offen: DRV-Rentenverteilung, Eigentumsschutz | v4.26: Regel E beschlossen und gerechnet; offen nur Rechtsprüfung (Art. 14 GG)

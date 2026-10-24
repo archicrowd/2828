@@ -33,6 +33,27 @@ rsa_niveau = 646.52   # RSA Montant forfaitaire Person allein (2025), Skala +50 
 capi_kind = 80.0
 imv_renta = 7250.60   # renta garantizada 2025 je Jahr, Skala +0,3 je weitere Person (Annahme)
 
+[it]  # v4.35: Assegno di Inclusione (ADI), Werte 2026 (altroconsumo.it 2026, Sekundärquelle; Gesetz 85/2023): nur Haushalte mit Minderjährigen,
+# Behinderten oder Personen ab 60; Schwelle 6.500 € × Skala, Mietzuschuss bis 3.640 € (Annahme: Mietwohnung, voll), ISEE höchstens 10.140 €;
+# neues Erwerbseinkommen bis 3.000 € nicht angerechnet (Annahme: für alle Erwerbseinkommen); Assegno unico nicht angerechnet (Annahme)
+adi_basis = 6500.0
+adi_miete = 3640.0
+adi_isee_max = 10140.0
+adi_skala_kind = [0.15, 0.15, 0.10]   # bis zu zwei Minderjährige 0,15, jedes weitere 0,1; zweiter Erwachsener 0 (Annahme: keine Betreuungsaufgabe)
+adi_freibetrag_erwerb = 3000.0
+
+[es_imv]  # v4.35: Ingreso Mínimo Vital (renta garantizada 7.250,60 € je Jahr, +0,3 je weitere Person, Annahme wie [es]); Zahlung = Garantie − Einkommen
+# (Einkommen ohne CAPI; Freibetrag für Erwerbseinkommen nicht abgebildet, Annahme); Höchstskala 2,2 (Annahme)
+skala_weitere = 0.3
+skala_max = 2.2
+
+[pl]  # v4.35: Zasiłek okresowy (Ustawa o pomocy społecznej Art. 38; Kriterien ab 1.1.2025: 1.010 zł allein, 823 zł je Person; Dz.U. 2024 poz. 1044,
+# über infor.pl, Sekundärquelle): mindestens 50 % der Differenz zwischen Kriterium und Einkommen (Annahme: genau 50 %, ohne Höchstbetrag);
+# 800+ nicht angerechnet
+kryterium_samotna = 1010.0
+kryterium_rodzina = 823.0
+anteil = 0.5
+
 [mindestlohn]   # Eurostat earn_mw_cur, Monatswerte (amtlich, Abruf 18.10.2026); IT ohne gesetzlichen Mindestlohn
 monat_2024 = { DE = 2054, FR = 1767, ES = 1323, PL = 4271 }
 monat_2026 = { DE = 2343, FR = 1823, ES = 1425, PL = 4806 }

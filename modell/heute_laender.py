@@ -7,7 +7,7 @@ Heute: vereinfachtes Steuer- und Abgabenmodell nach Recht 2026 (Parameter und Qu
               addizionali, assegno unico
   Spanien     cotizaciones a la Seguridad Social, IRPF mit reducción por rendimientos del trabajo, mínimos, tributación conjunta
   Polen       składki ZUS, składka zdrowotna, PIT mit kwota wolna, wspólne rozliczenie, ulga na dzieci, 800+
-Nicht enthalten: Wohnbeihilfen, Mindestsicherung (RSA, ADI, IMV, zasiłek), regionale Sonderregeln, Verhaltensänderungen. Weitere Erwachsene ohne Einkommen.
+Nicht enthalten (hier): Wohnbeihilfen, Mindestsicherung (RSA, ADI, IMV, zasiłek; APL, CAPI, IMV, ADI, zasiłek seit v4.35 in sozial_laender.heute), regionale Sonderregeln, Verhaltensänderungen. Weitere Erwachsene ohne Einkommen.
 Neu: wie modell/haushalte33.py neu(), mit den Größen des Landes (laenderseiten.json: Grundbedarf, Dividende, Zuschlag des eigenen Fonds).
 Prüfung: Einkommensteuer und Sozialbeiträge bei 100 % des Durchschnittslohns (Alleinstehend) gegen OECD Taxing Wages 2025 (Daten 2024).
 Ausgabe: daten/aggregate/heute_laender.json (Raster für die Webseite, Prüftabelle, Anteile mit mehr Geld)

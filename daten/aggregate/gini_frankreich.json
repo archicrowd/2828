@@ -213,7 +213,7 @@
    "gini_2028": 28.99,
    "gini_weitergabe_gedeckelt_1x": 26.03,
    "gini_weitergabe_gedeckelt_1_5x": 27.06,
-   "gini_abbildung_familie": 29.78,
+   "gini_abbildung_familie": 29.69,
    "aenderung_je_dezil_pct": [
     109.8,
     40.4,
@@ -313,12 +313,12 @@
   },
   "ES": {
    "gini_amtlich": 30.8,
-   "gini_2028": 25.15,
-   "gini_weitergabe_gedeckelt_1x": 23.39,
-   "gini_weitergabe_gedeckelt_1_5x": 24.5,
-   "gini_abbildung_familie": 24.06,
+   "gini_2028": 25.26,
+   "gini_weitergabe_gedeckelt_1x": 23.5,
+   "gini_weitergabe_gedeckelt_1_5x": 24.61,
+   "gini_abbildung_familie": 23.92,
    "aenderung_je_dezil_pct": [
-    127.4,
+    122.9,
     44.9,
     27.0,
     26.9,
@@ -419,7 +419,7 @@
    "gini_2028": 18.93,
    "gini_weitergabe_gedeckelt_1x": 17.45,
    "gini_weitergabe_gedeckelt_1_5x": 18.21,
-   "gini_abbildung_familie": 18.54,
+   "gini_abbildung_familie": 18.68,
    "aenderung_je_dezil_pct": [
     91.6,
     48.3,

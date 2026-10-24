@@ -5,7 +5,8 @@ Auftrag der Initiative (18.10.2026): (1) die Lücke aus v4.2 schließen – heut
 (2) die halbe Kinderdividende am Bedarf prüfen und Vorschläge machen (keine neuen Programme, sondern Parameter und Regeln, die sich selbst
 justieren); (3) Wirkung eines Mindestlohns je Land.
 Heute (zusätzlich zu heute_laender.py): DE Bürgergeld-Aufstockung (Näherung auch für Wohngeld und Kinderzuschlag), FR APL (grob), ES CAPI;
-IT (assegno di inclusione) und PL (dodatek mieszkaniowy, zasiłek okresowy) greifen bei Vollzeitlöhnen nicht (Einkommensgrenzen) und fehlen.
+seit v4.35 auch ES IMV, IT Assegno di Inclusione (nur mit Minderjährigen) und PL zasiłek okresowy (50 % der Lücke, Annahme). Weiter nicht enthalten:
+FR RSA (Annahme: von der prime d'activité im Arbeitsbereich weitgehend abgedeckt), PL dodatek mieszkaniowy, regionale Leistungen.
 Neu: Kinderdividende s × Erwachsenendividende, finanziert aus demselben Topf (Erwachsenendividende × (1−K/2)/(1−K+sK)); Härtefall-Boden:
 verfügbares Einkommen mindestens Grundbedarf × (1 + 0,5 × weitere Erwachsene + 0,45 × Kinder). Mindestlohn: Vollzeit-Mindestlohnhaushalte heute und neu,
 dazu eine Regel „Mindestlohn mindestens 50 % des Durchschnittslohns" (Referenzwert der EU-Richtlinie 2022/2041).
@@ -67,7 +68,40 @@ def es_capi(b, e, k, netto):
     return 12 * d["capi_kind"] * k if netto <= 3 * renta else 0.0
 
 
-ZUSATZ = {"DE": de_buergergeld, "FR": fr_apl, "ES": es_capi}
+def it_adi(b, e, k, netto):
+    """v4.35: Assegno di Inclusione (Mindestsicherung Italien), nur mit Minderjährigen (Haushalte dieser Rechnung ohne Personen ab 60)."""
+    d = P["it"]
+    if k == 0:
+        return 0.0
+    au = netto - HL.MODELLE["IT"][0](b, e, 0)["netto"]                       # Assegno unico (nicht angerechnet)
+    eigen = max(0.0, netto - au - min(b, d["adi_freibetrag_erwerb"]))
+    isee = (netto - au) / HL.P["it"]["scala_isee"][min(e + k - 1, len(HL.P["it"]["scala_isee"]) - 1)]
+    if isee > d["adi_isee_max"]:
+        return 0.0
+    skala = 1 + sum(d["adi_skala_kind"][min(i, 2)] for i in range(k))
+    schwelle = d["adi_basis"] * skala
+    if eigen >= schwelle:                                                  # Einkommen über der Schwelle: kein Anspruch, auch kein Mietzuschuss
+        return 0.0
+    return schwelle - eigen + d["adi_miete"]
+
+
+def es_imv_capi(b, e, k, netto):
+    """v4.35: Ingreso Mínimo Vital (Garantie minus Einkommen) und Kinderzuschlag CAPI."""
+    d, m = P["es"], P["es_imv"]
+    garantie = d["imv_renta"] * min(m["skala_max"], 1 + m["skala_weitere"] * (e + k - 1))
+    return max(0.0, garantie - netto) + es_capi(b, e, k, netto)
+
+
+def pl_zasilek(b, e, k, netto):
+    """v4.35: Zasiłek okresowy (50 % der Lücke zum Einkommenskriterium), 800+ nicht angerechnet, Beträge in zł."""
+    d = P["pl"]
+    pers = e + k
+    kriterium = 12 * (d["kryterium_samotna"] if pers == 1 else d["kryterium_rodzina"] * pers)
+    einkommen = netto - k * HL.P["pl"]["swiadczenie_800"]
+    return d["anteil"] * max(0.0, kriterium - einkommen)
+
+
+ZUSATZ = {"DE": de_buergergeld, "FR": fr_apl, "ES": es_imv_capi, "IT": it_adi, "PL": pl_zasilek}   # v4.35: IT, PL, ES-IMV ergänzt
 
 
 def heute(c, b, e, k, mit_bedarf=True):

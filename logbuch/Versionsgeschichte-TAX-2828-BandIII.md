@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.34**
+Stand: 24. Oktober 2026 · Modellstand **v4.35**
 
 ---
 
@@ -3689,6 +3689,56 @@ Entscheidung der Initiative offen (E2).
 
 ---
 
+### v4.35 — R5: Mindestsicherung heute in Italien, Spanien und Polen (modell/sozial_laender.py)
+
+**Art der Änderung: MINOR (Vergleichsbasis heute), Prüfrechnung.** 24. Oktober 2026.
+
+**Anlass:** Punkt R5 der Liste 7.1. Bisher enthielt „heute“ in den Länderrechnungen nur DE Bürgergeld, FR APL und ES CAPI; die Mindestsicherung
+in IT, ES und PL fehlte (Annahme v4.3: greift bei Vollzeitlöhnen nicht). Für niedrige Löhne (15 % des Durchschnittslohns) war der Vorteil damit
+überzeichnet.
+
+**Neu in `sozial_laender.heute` (Parameter und Quellen in `sozial_laender.toml`, Abschnitte `[it]`, `[es_imv]`, `[pl]`):**
+
+- **IT Assegno di Inclusione (ADI):** Schwelle 6.500 € × Skala (erster Erwachsener 1, je Minderjähriger 0,15, ab dem dritten 0,1), Zahlung =
+  Schwelle − Einkommen, dazu Mietzuschuss bis 3.640 €; ISEE höchstens 10.140 €; Erwerbseinkommen bis 3.000 € frei. Nur Haushalte mit
+  Minderjährigen (Personen ab 60 und Behinderte kommen in den drei Modellhaushalten nicht vor). Quelle: altroconsumo.it 2026 (Sekundärquelle);
+  Annahmen: Mietwohnung mit vollem Mietzuschuss, Freibetrag für alle Erwerbseinkommen, Assegno unico nicht angerechnet, ISEE aus dem Netto
+  geschätzt (ohne Vermögen). Kein Anspruch, wenn das anrechenbare Einkommen die Schwelle erreicht (erster Lauf zahlte den Mietzuschuss auch
+  darüber; vor dem Commit behoben).
+- **ES Ingreso Mínimo Vital (IMV):** renta garantizada 7.250,60 € je Jahr, +0,3 je weitere Person (höchstens 2,2), Zahlung = Garantie − Einkommen;
+  CAPI wie bisher. Annahme: kein Freibetrag für Erwerbseinkommen.
+- **PL zasiłek okresowy:** 50 % der Lücke zum Einkommenskriterium (1.010 zł allein, 823 zł je Person; ab 1.1.2025, Dz.U. 2024 poz. 1044, über
+  infor.pl, Sekundärquelle); Art. 38 nennt „mindestens 50 %“, Annahme genau 50 % und ohne Höchstbetrag; 800+ nicht angerechnet.
+- Nicht aufgenommen: FR RSA (Annahme: im Arbeitsbereich weitgehend durch die prime d'activité abgedeckt; bleibt zu prüfen), PL dodatek
+  mieszkaniowy, regionale Leistungen.
+
+**Bewegte Zahlen (2028, mehr im Monat; PL in zł):**
+
+| Land, Haushalt | 15 % Durchschnittslohn | 33 % | 50 % |
+|---|---|---|---|
+| IT alleinerziehend, 1 Kind | +932 → +180 | +601 (unverändert) | +431 |
+| IT Paar, 2 Kinder | +1.631 → +798 | +1.259 (unverändert) | +1.074 |
+| ES alleinstehend | +628 → +398 | +390 | +246 |
+| ES alleinerziehend, 1 Kind | +986 → +575 | +749 | +494 |
+| ES Paar, 2 Kinder | +1.743 → +969 | +1.505 → +1.175 | +1.251 |
+| PL alleinerziehend, 1 Kind | +3.083 → +2.780 | +2.565 | +1.982 |
+| PL Paar, 2 Kinder | +5.137 → +4.058 | +4.620 → +4.108 | +4.038 |
+
+Anteil der Beschäftigten mit mehr (geltende Regel, `regel_boden.json`): unverändert (IT, ES 100 %; PL 100 / 98 / 98 %). In der Variante
+Kindergewicht 0,3 ohne Regeln (`kindergewicht.json`, `regeln_r1_r4.json`) sinkt IT alleinerziehend von 100 auf 87 %: Das ADI liegt dort bei
+niedrigen Löhnen über dem neuen Netto; die geltende Regel (Kindergewicht 0,55, Boden) ist nicht betroffen.
+
+Gini 2028 (Mitte): ES 25,1 → 25,5; IT und PL unverändert. **Einschränkung:** `gini.py` rechnet beobachtete Nettoeinkommen über das heutige
+Netto (monoton gemacht) auf Löhne zurück. Durch die IMV-Garantie wird das heutige Netto unten flach, die Rückrechnung dort mehrdeutig; die
+Bewegung um 0,4 Punkte ist deshalb zum Teil ein Effekt der Methode, nicht des Systems. Gini Frankreich: Familienbild 29,78 → 29,69 (über
+den Vergleich mit ES/IT in `gini_frankreich.py`).
+
+**Datenquelle:** wie oben (zwei Sekundärquellen, Rechtsgrundlagen genannt, nicht am Gesetzestext geprüft). **Wodurch aufgefallen:** Liste 7.1, R5.
+
+**Offen in R5:** Mehrwertsteuer nach Einkommen für FR, IT, ES, PL (Eurostat HBS), feinere Lohnverteilungen, FR RSA prüfen.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -3748,7 +3798,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.34
+## 7 | Offene Punkte, Stand v4.35
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3762,7 +3812,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R2 | **erledigt v4.29** (offen: Einstufung je Produkt statt je Gruppe, Vorsteueranteil steuerfreier Bereiche belegen) – **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
 | R3 | **erledigt v4.30 für Kapital und Miete** (offen: Spitze der Vermögen, Erbschaften, Untererfassung) – **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
 | R4 | **teilweise erledigt v4.31/v4.32** (BIP-Neuabruf als Schalter; Vermögens- und Erbschaftsbasis geprüft; offen: Renditen, COFOG, B19) – **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
-| R5 | **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
+| R5 | **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
 | R6 | **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
 | R7 | **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
 | R8 | **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |

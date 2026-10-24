@@ -258,12 +258,12 @@
    },
    "anteil_s05_ohne_regeln": {
     "alleinstehend": 100,
-    "alleinerziehend, 1 Kind": 100,
+    "alleinerziehend, 1 Kind": 87,
     "Paar, ein Einkommen, 2 Kinder": 100
    },
    "anteil_paket_s0.7": {
     "alleinstehend": 100,
-    "alleinerziehend, 1 Kind": 100,
+    "alleinerziehend, 1 Kind": 87,
     "Paar, ein Einkommen, 2 Kinder": 100
    },
    "faelle_paket_s0.7": {
@@ -290,7 +290,7 @@
    },
    "anteil_paket_s0.8": {
     "alleinstehend": 100,
-    "alleinerziehend, 1 Kind": 100,
+    "alleinerziehend, 1 Kind": 87,
     "Paar, ein Einkommen, 2 Kinder": 100
    },
    "faelle_paket_s0.8": {
@@ -317,7 +317,7 @@
    },
    "anteil_paket_s0.8_vorsorge_als_vermoegen": {
     "alleinstehend": 100,
-    "alleinerziehend, 1 Kind": 100,
+    "alleinerziehend, 1 Kind": 87,
     "Paar, ein Einkommen, 2 Kinder": 100
    },
    "mindestlohn": {
@@ -353,7 +353,7 @@
     "0.33": {
      "alleinstehend": 382,
      "alleinerziehend, 1 Kind": 451,
-     "Paar, ein Einkommen, 2 Kinder": 944
+     "Paar, ein Einkommen, 2 Kinder": 614
     },
     "0.5": {
      "alleinstehend": 329,
@@ -380,7 +380,7 @@
     "0.33": {
      "alleinstehend": 379,
      "alleinerziehend, 1 Kind": 466,
-     "Paar, ein Einkommen, 2 Kinder": 944
+     "Paar, ein Einkommen, 2 Kinder": 614
     },
     "0.5": {
      "alleinstehend": 326,
@@ -472,7 +472,7 @@
     "0.33": {
      "alleinstehend": 1576,
      "alleinerziehend, 1 Kind": 1219,
-     "Paar, ein Einkommen, 2 Kinder": 2900
+     "Paar, ein Einkommen, 2 Kinder": 2387
     },
     "0.5": {
      "alleinstehend": 1720,
@@ -499,7 +499,7 @@
     "0.33": {
      "alleinstehend": 1564,
      "alleinerziehend, 1 Kind": 1273,
-     "Paar, ein Einkommen, 2 Kinder": 2900
+     "Paar, ein Einkommen, 2 Kinder": 2387
     },
     "0.5": {
      "alleinstehend": 1710,

@@ -337,98 +337,98 @@
     {
      "jahr": 2028,
      "untere": {
-      "gini": 25.1,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
      },
      "obere": {
-      "gini": 25.1,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.6,
+      "gini_rentner_unveraendert": 27.1
      },
-     "mitte": 25.1
+     "mitte": 25.5
     },
     {
      "jahr": 2030,
      "untere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
      },
      "obere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.6,
+      "gini_rentner_unveraendert": 27.1
      },
-     "mitte": 25.2
+     "mitte": 25.5
     },
     {
      "jahr": 2035,
      "untere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
      },
      "obere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.6,
+      "gini_rentner_unveraendert": 27.2
      },
-     "mitte": 25.2
+     "mitte": 25.5
     },
     {
      "jahr": 2040,
      "untere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
      },
      "obere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.6,
+      "gini_rentner_unveraendert": 27.1
      },
-     "mitte": 25.2
+     "mitte": 25.5
     },
     {
      "jahr": 2045,
      "untere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
      },
      "obere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.6,
+      "gini_rentner_unveraendert": 27.1
      },
-     "mitte": 25.2
+     "mitte": 25.5
     },
     {
      "jahr": 2050,
      "untere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
      },
      "obere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.6,
+      "gini_rentner_unveraendert": 27.1
      },
-     "mitte": 25.2
+     "mitte": 25.5
     },
     {
      "jahr": 2055,
      "untere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
      },
      "obere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.6,
+      "gini_rentner_unveraendert": 27.1
      },
-     "mitte": 25.2
+     "mitte": 25.5
     },
     {
      "jahr": 2060,
      "untere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
      },
      "obere": {
-      "gini": 25.2,
-      "gini_rentner_unveraendert": 26.8
+      "gini": 25.6,
+      "gini_rentner_unveraendert": 27.1
      },
-     "mitte": 25.2
+     "mitte": 25.5
     }
    ]
   },
