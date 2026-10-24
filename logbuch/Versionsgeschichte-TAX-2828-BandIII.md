@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.52**
+Stand: 24. Oktober 2026 · Modellstand **v4.53**
 
 ---
 
@@ -4269,6 +4269,33 @@ OECD ohne Unfallversicherung und Fonds), offener Punkt R13.
 
 ---
 
+### v4.53 — R14: Kennzahlen maschinell gegen die Ergebnisdateien geprüft; Korrektur 81
+
+**Art der Änderung: MINOR (neue Prüfstufe), keine Rechnung bewegt; berichtigt veraltete Angaben.** 24. Oktober 2026.
+
+**Anlass:** Korrekturen 74, 79 und 80 – Werte in `KENNZAHLEN.md` wurden bei Rechenänderungen nicht nachgezogen. Offener Punkt R14 (v4.52).
+
+**Neu `modell/pruefe_kennzahlen.py` (+ `.toml`, Ausgabe `pruefe_kennzahlen.json`, Stufe 67):** 40 tragende Werte (Dividende, Fonds, Z, Gesamtlast,
+Grenzbelastung, Fondszins, Mikrosimulation, Rentnerregel E, Deckel und Gini, Verrechnung, Validierung) werden aus den Ergebnisdateien in
+deutscher Schreibweise formatiert und in der benannten Zeile von `KENNZAHLEN.md` gesucht; fehlt einer, schlägt die Kette fehl. Erster Lauf:
+**28 von 40** gefunden, 12 veraltet.
+
+**Korrektur 81:** veraltete Werte in `KENNZAHLEN.md` (Status „Prüfrechnung“, Rentnerregel E „geltend“):
+
+| Zeile | stand (Stand) | gilt (seit) |
+|---|---|---|
+| Haushalte mit mehr: Vollzeit / Teilzeit / Minijob | 99,3 / 99,8 / 47,6 % (v4.22) | 99,1 / 99,9 / 49,1 % (v4.38; Zwischenstand v4.30) |
+| Bürgergeld ohne Erwerb / Rentnerhaushalte | 14,7 % (−45 €) / 29,6 % (−129 €) (v4.26) | 18,0 % (−34 €) / 31,5 % (−127 €) (v4.38) |
+| Validierung Bruttolohnsumme / Lohnsteuer | −3,2 / −4,8 % (v4.22) | −2,8 / −5,4 % (v4.30) |
+| Rentnerregel E: mit mehr / Mittel / oberes Fünftel | 30,7 % / −124 € / −479 € (v4.26) | 32,2 % / −121 € / −478 € (v4.38) |
+
+Die Rentnerwerte stehen auch in der Verhaltensuntersuchung (Abschnitt 2.10, v4.48); dort berichtigt. Seite und Konzept bauen aus den Dateien und
+waren nicht betroffen. Nach der Berichtigung: 40 von 40.
+
+**Datenquelle:** Ergebnisdateien v4.52. **Wodurch aufgefallen:** neue Prüfstufe (R14).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4303,6 +4330,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 73 | `gesamtlast33.json` (seit v4.14): „Steuern 33,53“ neben „Summe 45,47“ – die Summe stammte aus dem Steuerbedarf 33,42; `KENNZAHLEN.md` nannte 45,46/49,56 | Summe aus den ausgewiesenen Teilen 33,53 + 12,05 = 45,58, mit Pflichtvorsorge 49,68; Steuerbedarf-Variante 45,47/49,57 daneben (v4.46) | Dritte Prüfung, Befund B17 |
 | 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
+| 81 | `KENNZAHLEN.md`: Mikrosimulation (Vollzeit/Teilzeit/Minijob, Bürgergeld, Rentner, Validierung) und Rentnerregel E auf Stand v4.22/v4.26; ebenso Verhaltensuntersuchung 2.10 (30,7 % / −124 €) | Stand v4.38 bzw. v4.30 (Tabelle in v4.53) | Prüfstufe `pruefe_kennzahlen.py` (v4.53) |
 | 80 | `KENNZAHLEN.md`, Zeile Deckel der Weitergabe: Beispiele 2× / 3× Durchschnittslohn DE +689 / +400, FR +849 / +717, IT +941 / +999 € (Stand v4.36) | seit v4.38 DE +710 / +431, FR +654 / +440, IT +766 / +749 €; seit v4.52 FR +480 / +269 € | Nachziehen der Kennzahlen v4.52 |
 | 79 | `KENNZAHLEN.md`, Zeile Deckel der Weitergabe: Gini 2028 FR 30,4, IT 27,4 | seit v4.38 (Verrechnung je Staat) 29,8 / 26,9; seit v4.51 FR 29,5 | Validierung v4.51 (Gegenprobe der Kennzahlen) |
 | 78 | `sozial_laender` (FR, seit v4.3): APL und prime d'activité ohne Anrechnung des forfait logement | bei APL-Bezug mindert der forfait (2026: 76,59 / 153,19 / 189,57 €) die prime d'activité; FR heute bei halbem SMIC 1.219 → 1.136 € | Gegenprobe mit den Fällen des Arbeitsministeriums (v4.51) |
@@ -4338,7 +4366,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.52
+## 7 | Offene Punkte, Stand v4.53
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4360,7 +4388,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R10 | **Möglichkeitsraum:** UK und Kanada; Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR); Wachstum je Land | Länder außerhalb der Referenzländer | v3.52/v3.53 |
 | R11 | **Regionen und gemeinsame Aufgaben:** heutige Gemeindeeinnahmen je Kreis (Daten der Initiative, `2828-Daten`), Strukturzuschlag 10 %, Kassenanteile und Bemessung am BNE, Anrechnung neutraler Staaten (N32, N33) | Gemeindehaushalte, nicht Haushaltseinkommen | v4.15/v4.16 |
 | R13 | **Abgrenzung erledigt v4.52 (E16); offen: Gesundheitsbeitrag PL bei der OECD, Paar mit zwei Einkommen, Alleinerziehende FR, Sätze AT/EP ES und AGS FR belegen** – **Abgrenzung der wegfallenden Arbeitgeberabgaben je Staat (v4.51):** welche Abgaben im neuen System entfallen und der Weitergabe unterliegen (Unfallversicherung, Fonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben); DE nur KV/PV/RV/AV, IT an der OECD geeicht, FR und PL mit allen Abgaben. Dazu: Gesundheitsbeitrag PL bei der OECD; Paar mit zwei Einkommen (OECD Tab. 1.5) im Modell nicht abbildbar; Alleinerziehende FR gegen Ministerium (+200 bis +400 €) | Weitergabe je Staat; PL ohne Wirkung auf die Anteile | v4.51 |
-| R14 | **Kennzahlen maschinell prüfen (v4.52):** Werte in `KENNZAHLEN.md` mit Status „geltend“ gegen die Ergebnisdateien abgleichen (Korrekturen 74, 79, 80) | keine; Verlässlichkeit der Angaben | v4.52 |
+| R14 | **erledigt v4.53** (`modell/pruefe_kennzahlen.py`, 40 Werte; Korrektur 81) – **Kennzahlen maschinell prüfen (v4.52):** Werte in `KENNZAHLEN.md` mit Status „geltend“ gegen die Ergebnisdateien abgleichen (Korrekturen 74, 79, 80) | keine; Verlässlichkeit der Angaben | v4.52 |
 | R12 | **Verhaltenswirkungen, Stufe 2 (v4.48):** V1 Grenzbelastung 0–30.000 € mit Aufstockung je Haushaltstyp; V2 Arbeitsangebot als Band (Elastizitäten mit Quelle) in der Mikrosimulation; V3 asymmetrische Überwälzung der Mehrwertsteuer im Preisniveau; V4 Ausweichband Vermögen gegen Jakobsen u. a. 2020; V5 Länderwerte (Nicht-Inanspruchnahme, nicht erklärte Arbeit, Vertrauen; zu R5); V6 Akzeptanzbefragung | Aufkommen und Dividende (V2–V4), Darstellung (V6) | v4.48, `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md` |
 
 ### 7.2 Offen – Entscheidungen der Initiative

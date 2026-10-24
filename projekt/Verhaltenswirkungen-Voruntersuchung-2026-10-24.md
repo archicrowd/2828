@@ -245,8 +245,8 @@ Uncertainty 1988). Belegstufe A für den Befund, C für die Übertragung.
 
 **Einordnung**
 
-- Nach Regel E haben 30,7 % der Rentnerhaushalte mehr, im Mittel −124 € im Monat (`rentner_kombi.json`). Die Verluste konzentrieren sich im
-  oberen Fünftel (−479 €). Mit Verlustaversion ist die wahrgenommene Bilanz der Rentner deutlich schlechter als die gerechnete.
+- Nach Regel E haben 32,2 % der Rentnerhaushalte mehr, im Mittel −121 € im Monat (`rentner_kombi.json`, Stand v4.38; in der ersten
+  Fassung dieser Untersuchung stand der veraltete Wert 30,7 % / −124 €, Korrektur 81). Die Verluste konzentrieren sich im oberen Fünftel (−478 €). Mit Verlustaversion ist die wahrgenommene Bilanz der Rentner deutlich schlechter als die gerechnete.
 - Mögliche Verhaltenswirkungen: früherer Rentenbeginn vor dem Stichtag, um unter alte Regeln zu fallen (Vorzieheffekt); politischer
   Widerstand. Regel E nimmt Teile davon auf (Kürzung nur über dem Grundbedarf, Wegfall der KV- und PV-Beiträge). Ob ein Stichtag Vorzieheffekte
   auslöst, hängt davon ab, ob früher beginnende Renten ebenfalls gekürzt werden – zu klären in der Ausgestaltung.

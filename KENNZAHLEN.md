@@ -1,6 +1,6 @@
 # Kennzahlen Stand C – welche Zahl gilt, und was sie bedeutet
 
-Angelegt mit v4.21 (21. Oktober 2026), fortgeschrieben bis v4.52 (24. Oktober 2026). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
+Angelegt mit v4.21 (21. Oktober 2026), fortgeschrieben bis v4.53 (24. Oktober 2026); tragende Werte seit v4.53 maschinell geprüft (`modell/pruefe_kennzahlen.py`). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
 mit verschiedenen Werten, weil die Abgrenzungen verschieden sind. Hier steht je Größe, **welcher Wert gilt** und wie die anderen zu lesen sind.
 Wer eine Zahl zitiert, nennt die Zeile dieser Tabelle.
 
@@ -72,12 +72,12 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 
 | Größe | Wert | Datei | Status |
 |---|---|---|---|
-| Eigene Population: Haushalte mit mehr, Hauptperson Vollzeit / Teilzeit / Minijob, Weitergabe 80 % | 99,3 / 99,8 / 47,6 % | `mikro_de.json` | Prüfrechnung, synthetisch geeicht (v4.22) |
-| Eigene Population: Bürgergeld ohne Erwerb / Rentnerhaushalte mit mehr | 14,7 % (−45 €) / 29,6 % (−129 € im Monat; allein −106, Paar −153; v4.26 Regel E, vorher 5,4 % / −145 €) | `mikro_de.json` | Prüfrechnung; Rentner mit Haushaltseinkommen (EU-SILC, ASID) |
+| Eigene Population: Haushalte mit mehr, Hauptperson Vollzeit / Teilzeit / Minijob, Weitergabe 80 % | 99,1 / 99,9 / 49,1 % (v4.38; Korrektur 81: hier stand bis v4.52 der Stand v4.22–v4.29, 99,3 / 99,8 / 47,6 %) | `mikro_de.json` | Prüfrechnung, synthetisch geeicht (v4.22) |
+| Eigene Population: Bürgergeld ohne Erwerb / Rentnerhaushalte mit mehr | 18,0 % (−34 €) / 31,5 % (−127 € im Monat; allein −98, Paar −159) (v4.38; Korrektur 81: bis v4.52 stand hier der Stand v4.26, 14,7 % / −45 € und 29,6 % / −129 €; vor Regel E 5,4 % / −145 €) | `mikro_de.json` | Prüfrechnung; Rentner mit Haushaltseinkommen (EU-SILC, ASID) |
 | Eigene Population: erwerbsfähige Haushalte / alle Haushalte / alle Personen mit mehr | 85,1 / 69,3 / 76,7 % (v4.38 Verrechnung; v4.36 Deckel: 84,9 / 68,9 / 76,3; v4.31: 85,1 / 69,0 / 76,5; v4.26: 89,2 / 69,6 / 78,3) | `mikro_de.json` | Prüfrechnung; Spanne der Ziehungen < 0,5 Punkte |
 | Nicht-Inanspruchnahme (v4.40, Variante): Quote bei Haushalten mit Erwerb / alle Haushalte mit mehr / Minijob / unterstes Zehntel | 69 % (beobachtet 4,0 Mio. gegen Anspruch 4,7 Mio.) / 69,3 → 69,6 % / 49 → 64 % / 39,8 → 42,6 % (+21 → +63 €; neu voll +96 €) | `mikro_de.json` → `inanspruchnahme` | Prüfrechnung; geltend volle Inanspruchnahme (vorsichtig) |
-| Validierung 2025: Bruttolohnsumme / Lohnsteuer ohne Eichung | −3,2 / −4,8 % gegen amtlich | `mikro_de.json` | Prüfrechnung |
-| Rentnerregel E (Beschluss 22.10.2026, v4.26): Boden 1.083 / 1.632 €, 15 % auf Zusagen über dem Grundbedarf | Rentnerhaushalte mit mehr 30,7 %, Mittel −124 €; Fünftel +21 / −1 / −33 / −134 / −479 € (Zuschlag 15,5 %); gegen bisherige Regel −0,05 % BIP | `rentner_kombi.json` | **geltend** (Beschluss 22.10.2026) |
+| Validierung 2025: Bruttolohnsumme / Lohnsteuer ohne Eichung | −2,8 / −5,4 % gegen amtlich (seit v4.30 mit Kapital- und Mieteinkünften; Korrektur 81: bis v4.52 stand hier −3,2 / −4,8 % aus v4.22) | `mikro_de.json` | Prüfrechnung |
+| Rentnerregel E (Beschluss 22.10.2026, v4.26): Boden 1.083 / 1.632 €, 15 % auf Zusagen über dem Grundbedarf | Rentnerhaushalte mit mehr 32,2 %, Mittel −121 €; Fünftel +24 / +3 / −30 / −131 / −478 € (v4.38, Zuschlag DE nach Verrechnung 15,0 %; Korrektur 81: bis v4.52 stand hier der Stand v4.26, 30,7 % / −124 € / +21 / −1 / −33 / −134 / −479 €); gegen bisherige Regel −0,05 % BIP | `rentner_kombi.json` | **geltend** (Beschluss 22.10.2026) |
 | Eigene Population: Beamte, 20 % der Beihilfe-Ersparnis (geltend, v4.31) / mit Versicherungszulage (Variante) / Selbständige mit mehr | 56,4 % (+112 €) / 82,8 % (+389 €) / 77,7 % (+315 €) (v4.38; v4.36: 55,9 / 81,3 / 76,9 %; v4.31: 56,0 / 81,4 / 77,0 %) | `mikro_de.json` | Prüfrechnung; Bezüge, PKV und Haushaltsform Annahmen |
 | Mehrwertsteuer nach Einkommen (v4.29): sichtbare Mehrbelastung / gezahlte Steuer im Mittel | 1,54 % / 10,76 % des Konsums gegen bisher einheitlich 2,48 % / 15,85 %; Faktor je Einkommen 0,87 (unter 1.000 €) bis 1,07 (über 5.000 €) | `mwst_verteilung.json` | geltend: Rest gleichmäßig je Euro Konsum (Annahme); Band: nur sichtbare Steuer hebt 42.000 € um rund +50 € |
 | Basis Große Vermögen statisch 2028 (v4.32): Bundesbank-Befragung / DIW mit Spitze / Deckung | 0,79 / 2,06 / 1,94 % BIP | `vermoegensbasis33.json` | Prüfrechnung; je eine Studie, Pareto-Annahme |

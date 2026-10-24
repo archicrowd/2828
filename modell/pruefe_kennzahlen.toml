@@ -1,0 +1,54 @@
+# Abgleich der Werte in KENNZAHLEN.md mit den Ergebnisdateien (modell/pruefe_kennzahlen.py, Logbuch v4.53, offener Punkt R14).
+# Je Prüfung: zeile = eindeutiger Textanfang der Tabellenzeile in KENNZAHLEN.md; datei = Ergebnisdatei in daten/aggregate/;
+# pfad = Schlüsselpfad mit "/" (Listenindex als Zahl); stellen = Nachkommastellen in der deutschen Schreibweise.
+# Geprüft wird, ob der formatierte Wert in der Zeile vorkommt. Die Liste ist eine Auswahl der tragenden Werte, keine Vollprüfung.
+version = "v4.53"
+
+pruefungen = [
+  # Dividende und Altlasten
+  { zeile = "| **373 € (2028)", datei = "netz33.json", pfad = "beschluss/reihe/0/dividende_erw_eur2026", stellen = 0 },
+  { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "beitrag_pct_bip", stellen = 2 },
+  { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "zuschlag_auf_alle_steuern_pct", stellen = 1 },
+  { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "schuldenquote_spitze", stellen = 1 },
+  { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "zieljahr", stellen = 0 },
+  { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "zins", stellen = 2 },
+  { zeile = "| Z 2028 = 9,42", datei = "altlasten.json", pfad = "beschluss/verhandlungsmasse_z_2028_pct_bip", stellen = 2 },
+  # Gesamtlast
+  { zeile = "| **38,70**", datei = "gesamtlast33.json", pfad = "reihe/0/a_steuern_und_fonds", stellen = 2 },
+  { zeile = "| **42,80**", datei = "gesamtlast33.json", pfad = "reihe/0/b_mit_pflichtvorsorge", stellen = 2 },
+  { zeile = "| 45,58 / 49,68", datei = "gesamtlast33.json", pfad = "c_ohne_fonds_2028/summe", stellen = 2 },
+  { zeile = "| 45,58 / 49,68", datei = "gesamtlast33.json", pfad = "c_ohne_fonds_2028/mit_route", stellen = 2 },
+  # Haushalte und Grenzbelastung
+  { zeile = "| Grenzbelastung je Euro Bruttolohn", datei = "grenzbelastung33.json", pfad = "zeilen/5/heute_pct", stellen = 1 },
+  { zeile = "| Grenzbelastung je Euro Bruttolohn", datei = "grenzbelastung33.json", pfad = "zeilen/5/neu_2028_pct", stellen = 1 },
+  { zeile = "| Grenzbelastung je Euro Bruttolohn", datei = "grenzbelastung33.json", pfad = "zeilen/5/neu_nach_tilgung_pct", stellen = 1 },
+  # Fondszins
+  { zeile = "| Vorteil alleinstehend, 42.000 €", datei = "fondszins.json", pfad = "varianten/0/haushalt_de/mehr_monat_42000/alleinstehend", stellen = 0 },
+  { zeile = "| Vorteil alleinstehend, 42.000 €", datei = "fondszins.json", pfad = "varianten/3/haushalt_de/mehr_monat_42000/alleinstehend", stellen = 0 },
+  # Mikrosimulation DE (Weitergabe 80 %)
+  { zeile = "| Eigene Population: Haushalte mit mehr, Hauptperson", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/status/Hauptperson Vollzeit/anteil_mehr_haushalte_pct", stellen = 1 },
+  { zeile = "| Eigene Population: Haushalte mit mehr, Hauptperson", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/status/Hauptperson Teilzeit/anteil_mehr_haushalte_pct", stellen = 1 },
+  { zeile = "| Eigene Population: Haushalte mit mehr, Hauptperson", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/status/Hauptperson Minijob/anteil_mehr_haushalte_pct", stellen = 1 },
+  { zeile = "| Eigene Population: Bürgergeld ohne Erwerb", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/status/ohne Erwerb (Bürgergeld)/anteil_mehr_haushalte_pct", stellen = 1 },
+  { zeile = "| Eigene Population: Bürgergeld ohne Erwerb", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/status/ohne Erwerb (Bürgergeld)/mittel_mehr_monat_eur", stellen = 0 },
+  { zeile = "| Eigene Population: Bürgergeld ohne Erwerb", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/status/Rentner/anteil_mehr_haushalte_pct", stellen = 1 },
+  { zeile = "| Eigene Population: Bürgergeld ohne Erwerb", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/status/Rentner/mittel_mehr_monat_eur", stellen = 0 },
+  { zeile = "| Eigene Population: erwerbsfähige Haushalte", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/erwerbsfaehige_haushalte/anteil_mehr_haushalte_pct", stellen = 1 },
+  { zeile = "| Eigene Population: erwerbsfähige Haushalte", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/gesamt/anteil_mehr_haushalte_pct", stellen = 1 },
+  { zeile = "| Eigene Population: erwerbsfähige Haushalte", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/gesamt/anteil_mehr_personen_pct", stellen = 1 },
+  { zeile = "| Validierung 2025: Bruttolohnsumme", datei = "mikro_de.json", pfad = "basis/validierung_2025/bruttolohnsumme/abweichung_pct", stellen = 1 },
+  { zeile = "| Validierung 2025: Bruttolohnsumme", datei = "mikro_de.json", pfad = "basis/validierung_2025/lohnsteuer/abweichung_pct", stellen = 1 },
+  { zeile = "| Rentnerregel E", datei = "rentner_kombi.json", pfad = "varianten/4/anteil_mehr_pct", stellen = 1 },
+  { zeile = "| Rentnerregel E", datei = "rentner_kombi.json", pfad = "varianten/4/mittel_monat", stellen = 0 },
+  { zeile = "| Rentnerregel E", datei = "rentner_kombi.json", pfad = "varianten/4/fuenftel_monat/4", stellen = 0 },
+  # Länder
+  { zeile = "| Deckel der Weitergabe, einheitlich", datei = "deckel_einheitlich.json", pfad = "geltend/DE/mehr_monat/2", stellen = 0 },
+  { zeile = "| Deckel der Weitergabe, einheitlich", datei = "deckel_einheitlich.json", pfad = "geltend/FR/mehr_monat/2", stellen = 0 },
+  { zeile = "| Deckel der Weitergabe, einheitlich", datei = "deckel_einheitlich.json", pfad = "geltend/IT/mehr_monat/3", stellen = 0 },
+  { zeile = "| Deckel der Weitergabe, einheitlich", datei = "gini.json", pfad = "staaten/DE/reihe/0/mitte", stellen = 1 },
+  { zeile = "| Deckel der Weitergabe, einheitlich", datei = "gini.json", pfad = "staaten/FR/reihe/0/mitte", stellen = 1 },
+  { zeile = "| Deckel der Weitergabe, einheitlich", datei = "gini.json", pfad = "staaten/IT/reihe/0/mitte", stellen = 1 },
+  { zeile = "| Verrechnung je Staat im Fonds der 30", datei = "verrechnung_haushalte.json", pfad = "laender/FR/verrechnung_2028/mehr_monat/1", stellen = 0 },
+  { zeile = "| Steuer- und Abgabenkeil Modell", datei = "validierung_laender.json", pfad = "keil/FR/paar_ein_einkommen_2k/abw_pp", stellen = 1 },
+  { zeile = "| Steuer- und Abgabenkeil Modell", datei = "validierung_laender.json", pfad = "keil/PL/allein_100/abw_pp", stellen = 1 },
+]

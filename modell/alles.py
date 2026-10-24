@@ -79,6 +79,7 @@ STUFEN = [
     ("Webseite Fassung 4.x (sechs Sprachen, Länderbezug)", ["seite/werkzeuge/drittel_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),
+    ("Kennzahlen gegen Ergebnisdateien (KENNZAHLEN.md)", ["modell/pruefe_kennzahlen.py"]),
     ("Eingangswerte (Datenzugang)", ["modell/eingangswerte.py"]),
     ("Projektkarte (Datenzugang)", ["projekt/manifest.py"]),
     ("Projektprüfung", ["projekt/pruefe_projekt.py"]),

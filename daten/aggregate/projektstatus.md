@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.52 · höchste Korrekturnummer 80 · 484 Dateien im Repository
+Modellstand v4.53 · höchste Korrekturnummer 81 · 487 Dateien im Repository
 
 ## Bausteine
 
@@ -82,6 +82,7 @@ Modellstand v4.52 · höchste Korrekturnummer 80 · 484 Dateien im Repository
 | N37 | B30 Altlastenfonds | B32 Länderseiten | geschlossen |
 | N38 | B31 Drittel-System | B32 Länderseiten | offen |
 | N39 | B32 Länderseiten | B31 Drittel-System | offen |
+| N40 | B31 Drittel-System | B01 Logbuch | geschlossen |
 
 ## Ergebnis dieses Laufs
 
