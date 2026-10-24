@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.48**
+Stand: 24. Oktober 2026 · Modellstand **v4.49**
 
 ---
 
@@ -4127,6 +4127,31 @@ Pflichtvorsorge; Behandlung von Rentenbeginnen vor dem Stichtag (Vorzieheffekt);
 
 ---
 
+### v4.49 — Gestaltungsfragen aus der Verhaltensuntersuchung: Antworten der Initiative (E12–E15); Konzepttexte
+
+**Art der Änderung: PATCH (Entscheidungen und Texte), keine Zahl bewegt.** 24. Oktober 2026.
+
+**Anlass:** Antworten der Initiative (24.10.2026) auf die vier Gestaltungsfragen aus v4.48.
+
+| Nr. | Frage | Antwort der Initiative | Folge |
+|---|---|---|---|
+| E12 | Aufstockung von Amts wegen oder auf Antrag | „Die Kommune zahlt die Aufstockung auf Antrag?“ (als Frage gestellt) | Vorschlag des Projekts: Antrag mit Hinweisschreiben und Vorausfüllung von Amts wegen aus Steuer- und Lohndaten, Weiterbewilligung ohne neuen Antrag. Rechnung unverändert (volle Inanspruchnahme auf beiden Seiten); mit Antrag Wirkung unten und Kosten kleiner als ausgewiesen. **Offen** |
+| E13 | Eigentum am Vorsorgekonto | Sperrkonto mit Altersgrenze, Wahloptionen für die Anlage | entschieden. Ergänzungsvorschlag: wenige Optionen und ein Standardfonds (Schweden: Wahl bei Berufsanfängern 8–18 %, Standardfonds 2003 rund 90 % der Beiträge; SSA 2004); Schutz gegen Zugriff des Gesetzgebers zur Rechtsprüfung P1 (Polen 2014) |
+| E14 | Rentenkürzung und Stichtag | pauschal auf Rentenzahlungen | entschieden; entspricht Regel E in der Rechnung. Ein Vorzieheffekt aus der Kürzung entfällt |
+| E15 | Dividende und Label | Dividende nicht nur Rückgabe des CO₂-Preises, auch Digitalisierungsgewinne (Plattformbesteuerung); Label: Wettbewerb um Nachhaltigkeit über Zertifizierung bei zugelassenen, staatlich überwachten Stellen gegen stumme Weitergabe von Mehrkosten | entschieden. Konzept angepasst; Anteil der Plattformbesteuerung nicht beziffert (Basis Unternehmensposition, B23/R4). Europarecht: Neutralitätsgrundsatz (EuGH C-515/20; Sekundärquelle) bei anbieterbezogenen Sätzen zu P1; Unabhängigkeit der Zertifizierer (Dranove/Jin 2010) |
+
+**Konzept (`konzept33-bau.js`, Fassung 4.49):** Pflichtvorsorge „gesperrt bis zur Altersgrenze; die Anlage ist wählbar“; Dividende „beteiligt alle an
+dem, was Lenkungssteuern und die Besteuerung von Unternehmen und digitalen Plattformen am Ort der Kunden einbringen“, mit Satz zum nicht
+bezifferten Plattformanteil; Label mit Zertifizierung. Webseite (sechs Sprachen) noch nicht angepasst.
+
+**Untersuchung:** Abschnitt 8 in `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md` (vier neue Quellen). V3 (asymmetrische Überwälzung)
+mit zwei Fällen: allgemeine Satzänderung und zertifizierungsgetriebene Senkung.
+
+**Datenquelle:** Antworten der Initiative; SSA Social Security Bulletin 65(4); EuGH C-515/20 (über PwC, Sekundärquelle); Dranove/Jin 2010.
+**Wodurch aufgefallen:** Gestaltungsfragen aus v4.48.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4192,7 +4217,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.48
+## 7 | Offene Punkte, Stand v4.49
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4230,12 +4255,16 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E7 | Dauer der Dividende unter Trends, Mindestniveau (N23) |
 | E8 | Weitergabe nach dem Stichtag: neue Arbeitsverträge (N30) |
 | E9 | **entschieden v4.31:** 20 % der Beihilfe-Ersparnis an Beamte, keine Versicherungszulage |
+| E12 | Aufstockung auf Antrag oder von Amts wegen (v4.49): Vorschlag Antrag mit Hinweis und Vorausfüllung von Amts wegen |
+| E13 | **entschieden v4.49:** Pflichtvorsorge als Sperrkonto bis zur Altersgrenze mit Anlagewahl; offen: Zahl der Optionen, Standardfonds |
+| E14 | **entschieden v4.49:** Rentenkürzung pauschal auf alle Rentenzahlungen aus dem alten System, unabhängig vom Rentenbeginn |
+| E15 | **entschieden v4.49:** Dividende beteiligt an Lenkung und Digitalisierungsgewinnen (Plattformen); Label mit Zertifizierung durch zugelassene, staatlich überwachte Stellen |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 
 | Nr. | Punkt |
 |---|---|
-| P1 | Rechtsprüfung: Eigentumsschutz der Anwartschaften (Art. 14 GG, Regel E), Art. 125 AEUV (Neustart), Sicherheitsunion, Europarecht der Dividende nach Preisniveau (B17), WTO (Labels) |
+| P1 | Rechtsprüfung: Eigentumsschutz der Anwartschaften (Art. 14 GG, Regel E), Art. 125 AEUV (Neustart), Sicherheitsunion, Europarecht der Dividende nach Preisniveau (B17), WTO (Labels); v4.49: Neutralitätsgrundsatz bei anbieterbezogenen Labelsätzen (EuGH C-515/20), Zulassung und Aufsicht der Zertifizierer, Schutz des Vorsorgekontos gegen Zugriff des Gesetzgebers |
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |

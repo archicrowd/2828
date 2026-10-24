@@ -69,7 +69,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.48 · 24. Oktober 2026 (zur Freigabe)",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.49 · 24. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -107,9 +107,9 @@ add(H1("2  Begriffe"),
   tab([{t:"Begriff",w:2300},{t:"Bedeutung",w:6726}],[
     ["Das Goldene Drittel","Die Einnahmeregel: Kein Euro wird mit mehr als einem Drittel besteuert – Einkommen, Kapitalerträge, Unternehmensgewinne, Erbschaften. Umfasst alle Steuern des Systems."],
     ["Das starke Netz","Die Grundversorgung ohne Prämie: Gesundheit, Pflege als Teilkasko, Mindestrente, Grundbedarf bei Invalidität und Arbeitslosigkeit, Waisen, Härtefall. Keine Extras."],
-    ["Transformationsdividende","Monatliche Zahlung an jeden Erwachsenen (Kinder 80 %), ohne Antrag. Sie ist der Rest nach allen Aufgaben und gibt vor allem zurück, was Lenkungssteuern einbringen."],
+    ["Transformationsdividende","Monatliche Zahlung an jeden Erwachsenen (Kinder 80 %), ohne Antrag. Sie ist der Rest nach allen Aufgaben und beteiligt alle an dem, was Lenkungssteuern und die Besteuerung von Unternehmen und digitalen Plattformen am Ort der Kunden einbringen."],
     ["Ihre eigene Route","Alles über der Grundversorgung: Pflichtvorsorge auf eigenem, vererbbarem Konto, freiwillige Vorsorge, Zusatzversicherungen (Komfort, Lohnersatz, Berufsunfähigkeit)."],
-    ["Pflichtvorsorge","10 % des Bruttolohns auf ein eigenes Konto. Kein Beitrag an den Staat: Das Geld gehört dem Sparer."],
+    ["Pflichtvorsorge","10 % des Bruttolohns auf ein eigenes Konto, gesperrt bis zur Altersgrenze; die Anlage ist wählbar. Kein Beitrag an den Staat: Das Geld gehört dem Sparer."],
     ["Mindestrente","Aufstockung ab 67 bis zum Grundbedarf, die eigene Rente wird nur zur Hälfte angerechnet."],
     ["Grundauskommen","Was jedem Haushalt sicher bleibt: Grundbedarf des Landes, je weitere/n Erwachsene/n × 0,5, je Kind × "+de(KW,2)+". Wer darunter liegt, wird aufgestockt – im Erwerbsalter wie im Alter (dort Mindestrente genannt). Dividenden und Renten aus dem alten System zählen voll, selbst verdientes Einkommen und eigene Vorsorge zur Hälfte. Pflichtvorsorge ab dem ersten Euro."],
     ["Härtefall","Zuschlag zum Grundauskommen für Wohnkosten über dem Wohnanteil, Mehrbedarf und einmalige Notlagen; ausgezahlt von der Gemeinde."],
@@ -136,7 +136,7 @@ add(H1("3  Die Regeln"),
   L([["Große Vermögen: ",true],["1,5 % ab 2 Mio. €, anrechenbar auf die Einkommensteuer."]]),
   L([["Boden: ",true],["Die Gemeinde erhebt 0,1 bis 1 % auf den Bodenwert, nicht auf das Gebäude."]]),
   L([["Klima: ",true],["europäischer CO₂-Preis; das Aufkommen geht über die Transformationsdividende zurück."]]),
-  L([["Konsum: ",true],["Die Mehrwertsteuer wird zum Label: A+ 5 % (Grundbedarf, Reparatur), A 11 % (nachhaltige Güter), B 17 % (Standardgüter), C 25 % (ressourcenintensiv, Luxus); Sonderstufe S 33 % nur für Schädliches: Tabak, Alkohol, Kraftstoffe, Fahrzeuge mit Verbrennungsmotor. Im Mittel "+pr(V.label_effektiv,1)+" (heute in Deutschland rund 16,0 %)."]]),
+  L([["Konsum: ",true],["Die Mehrwertsteuer wird zum Label: A+ 5 % (Grundbedarf, Reparatur), A 11 % (nachhaltige Güter), B 17 % (Standardgüter), C 25 % (ressourcenintensiv, Luxus); Sonderstufe S 33 % nur für Schädliches: Tabak, Alkohol, Kraftstoffe, Fahrzeuge mit Verbrennungsmotor. Im Mittel "+pr(V.label_effektiv,1)+" (heute in Deutschland rund 16,0 %). Anbieter erreichen eine günstigere Stufe durch Zertifizierung bei zugelassenen, staatlich überwachten Stellen; so entsteht ein Wettbewerb um Nachhaltigkeit."]]),
   L([["Weitergabe: ",true],["Betriebe müssen mindestens 80 % der wegfallenden Arbeitgeberbeiträge in den Lohn geben. Durchsetzung (Beschluss 20.10.2026): Ein Gesetz verpflichtet, alle Arbeitsverträge bis zum Stichtag der Einführung entsprechend anzupassen – neuer Bruttolohn = bisheriger Bruttolohn + mindestens 80 % des bisherigen Arbeitgeberbeitrags. Ein unabhängiges Monitoring der Bruttolöhne je Branche begleitet die ersten Jahre. Wer die Anpassung unterlässt, führt die Differenz an den Altlastenfonds ab; das Einbehalten bringt dem Betrieb damit nichts (bei 50 % tatsächlicher Weitergabe flössen 2,4 bis 2,8 % des BIP an den Fonds, modell/weitergabe_rueckfall.py). Ohne jede Weitergabe bliebe der Vorteil in Deutschland positiv (42.000 €: "+vz(WS.varianten["0.0"].de_mehr_monat.alleinstehend["42000"])+" statt "+vz(WS.varianten["0.8"].de_mehr_monat.alleinstehend["42000"])+" im Monat), in Frankreich und Spanien nicht (modell/weitergabe_sensitivitaet.py). Über die Lohnentwicklung nach dem Stichtag entscheidet wieder der Arbeitsmarkt; die Inzidenzforschung ist dazu uneinheitlich."]]),
   tab([{t:"Aufkommen 2028 (% des BIP)",w:5426},{t:"Wert",w:3600,al:RT}],
     Object.entries(V.deckung_positionen).map(([k,v])=>[k,de(v,2)]).concat([["Summe",de(V.deckung,2)]]),{hl:{[Object.keys(V.deckung_positionen).length]:1}}),
@@ -176,7 +176,7 @@ add(H1("3  Die Regeln"),
   P("Die Mindestrente ist die einzige gerechnete Variante, die dauerhaft eine spürbare Dividende lässt. Sie verbindet Sicherheit (niemand liegt im Alter unter dem Grundbedarf) mit Eigenverantwortung (das Konto gehört dem Sparer und ist vererbbar). Die halbe Anrechnung der eigenen Rente sorgt dafür, dass sich Sparen auch bei kleinen Einkommen lohnt; sie wirkt dort aber wie eine Belastung von 50 % auf die eigene Rente."),
 
   H2("3.4  Die Transformationsdividende"),
-  P("Jeder Erwachsene erhält jeden Monat denselben Betrag, Kinder "+pr(SK*100,0)+" davon, ohne Antrag; die Dividende ist steuerpflichtig wie jedes Einkommen. Sie ist der Rest nach Dach, Gemeinden und Netz. Rund "+pr(PR[2028].lenkung_pct_bip/V.dividende_pct_bip_2028*100,0)+" ihres Ausgangswerts stammen aus Lenkungseinnahmen; sie wird kleiner, wenn Verbrenner und Emissionen verschwinden – das ist gewollt."),
+  P("Jeder Erwachsene erhält jeden Monat denselben Betrag, Kinder "+pr(SK*100,0)+" davon, ohne Antrag; die Dividende ist steuerpflichtig wie jedes Einkommen. Sie ist der Rest nach Dach, Gemeinden und Netz. Rund "+pr(PR[2028].lenkung_pct_bip/V.dividende_pct_bip_2028*100,0)+" ihres Ausgangswerts stammen aus Lenkungseinnahmen; sie wird kleiner, wenn Verbrenner und Emissionen verschwinden – das ist gewollt. Dazu trägt die Besteuerung digitaler Plattformen am Ort der Kunden bei; ihr Anteil ist nicht gesondert beziffert, weil die Basis der Unternehmensposition noch zu belegen ist."),
   tab([{t:"Jahr",w:2000},{t:"je Erwachsenem",w:2400,al:RT},{t:"je Kind",w:2200,al:RT},{t:"% des BIP",w:2426,al:RT}],
     ['2028','2035','2045','2060','dauer'].map(j=>[j==='dauer'?'Dauerzustand':j,eu(dv(NB[j].dividende_erw_eur2026)),eu(dv(NB[j].dividende_erw_eur2026)*SK),de(NB[j].dividende_pct_bip,2)])),
   Q("Kaufkraft 2026, Deutschland. Die Kinderdividende ("+eu(kind28)+" im Jahr 2028) liegt über dem heutigen Kindergeld (259 €). Kinderanteil 80 % (Beschluss R1, 18.10.2026): Existenzminimum eines Kindes einschließlich Betreuung, Erziehung, Ausbildung im Verhältnis zu dem eines Erwachsenen (0,79); aus demselben Topf, die Erwachsenendividende sinkt dadurch um "+pr((1-TOPF)*100,1)+"."),
@@ -342,7 +342,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.48)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.49)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -350,7 +350,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.48 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.49 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

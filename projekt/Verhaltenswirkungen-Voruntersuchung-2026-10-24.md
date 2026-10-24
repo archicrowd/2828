@@ -1,6 +1,6 @@
 # Verhaltenswirkungen des Goldenen Drittels – qualitative Voruntersuchung
 
-Initiative 28:28 · 24. Oktober 2026 · Logbuch v4.48 · Stand C, Fassung 4.48 · Status: **Voruntersuchung, keine Rechnung**
+Initiative 28:28 · 24. Oktober 2026 · Logbuch v4.48, ergänzt v4.49 (Abschnitt 8) · Stand C, Fassung 4.49 · Status: **Voruntersuchung, keine Rechnung**
 
 ## 0 | Zweck, Grenzen, Vorgehen
 
@@ -292,7 +292,7 @@ und nicht erklärter Einkommen, (3) Vertrauen in staatliche Zusagen (z. B. Eurob
 10. **Rentner** erleben Verluste stärker als gerechnet; Akzeptanzrisiko in der größten Wählergruppe.
 
 Keiner dieser Befunde stellt die Rechnung grundsätzlich in Frage; mehrere zeigen, dass Teile der Wirkung von der Ausgestaltung abhängen, die
-das Konzept noch offen lässt (Auszahlung von Amts wegen, Eigentumsschutz der Vorsorge, Stichtag der Rentenregel, Sichtbarkeit der Dividende).
+das Konzept noch offen lässt (Auszahlung von Amts wegen, Eigentumsschutz der Vorsorge, Stichtag der Rentenregel, Sichtbarkeit der Dividende). Antworten der Initiative und Einordnung: Abschnitt 8.
 
 ## 5 | Nächste Schritte (Stufe 2, quantitativ)
 
@@ -314,19 +314,35 @@ das Konzept noch offen lässt (Auszahlung von Amts wegen, Eigentumsschutz der Vo
 - Mehrere Zahlen sind nur aus Abstracts gelesen; die Volltexte enthalten Einschränkungen, die hier fehlen können.
 - Die psychologischen Befunde (Verlustaversion, Status quo) sind gut belegt, ihre Übertragung auf die konkrete Reform ist Urteil.
 
+## 8 | Antworten der Initiative zu den Gestaltungsfragen (24.10.2026) und Einordnung
+
+| Frage | Antwort der Initiative | Einordnung nach den Belegen | Status |
+|---|---|---|---|
+| Aufstockung von Amts wegen oder auf Antrag? | „Die Kommune zahlt die Aufstockung auf Antrag?“ (mit Fragezeichen) | Ein Antrag erhält einen Teil der heutigen Nicht-Inanspruchnahme (DE ~60 % bei der Grundsicherung im Alter, FR 34 % beim RSA). Was nach Bhargava/Manoli wirkt, ist mit einem Antrag vereinbar: ein Hinweisschreiben von Amts wegen an Haushalte, deren Steuer- und Lohndaten einen Anspruch nahelegen, mit vorausgefülltem Antrag und dem Betrag; Weiterbewilligung ohne neuen Antrag, solange die Daten passen. Vorschlag: **Antrag mit Hinweis und Vorausfüllung von Amts wegen.** Die Rechnung setzt auf beiden Seiten (heute, neu) volle Inanspruchnahme an; mit Antrag ist die Wirkung unten kleiner als ausgewiesen, die Kosten auch | offen, Vorschlag (E12) |
+| Eigentum am Vorsorgekonto | Sperrkonto mit Altersgrenze, ggf. Wahloptionen für die Anlage | Die Sperre schützt gegen vorzeitiges Entnehmen durch den Sparer, nicht gegen den Zugriff des Gesetzgebers (Polen 2014: per Gesetz übertragen, 2015 vom Verfassungsgericht als öffentliche Mittel eingestuft; Sekundärquelle). Dafür braucht es zusätzlich Verwahrung außerhalb des Staatshaushalts bei getrennten Trägern, Pfändungs- und Insolvenzschutz und eine ausdrückliche Eigentumszuordnung (Rechtsprüfung P1). Zur Wahl der Anlage: In Schweden (Prämienpension, 2000 rund 460, 2004 rund 660 Fonds) trafen 2000 noch 67 % eine eigene Wahl, bei späteren Berufsanfängern nur noch rund 8 bis 18 %; der Standardfonds erhielt 2003 rund 90 % der Beiträge (SSA, Social Security Bulletin 65(4); Cronqvist/Thaler, AER 2004). Folgerung: **wenige Wahloptionen und ein sorgfältig gestalteter Standardfonds** für die passive Mehrheit (vgl. Abschnitt 2.4: 85 % passive Sparer) | entschieden (Sperrkonto, Anlagewahl); Ausgestaltung offen |
+| Rentenkürzung und Stichtag | Die Kürzung bezieht sich pauschal auf Rentenzahlungen | Gilt die Kürzung für alle Zahlungen aus dem alten System ab dem Stichtag, gleich wann die Rente begann, entfällt der Anreiz, den Rentenbeginn vor den Stichtag zu ziehen. Das entspricht der Rechnung (Regel E auf alle Zusagen über dem Grundbedarf). Bleibt: Abschläge für frühen Rentenbeginn und anteilige Verrechnung (T1) für Übergangsjahrgänge wirken wie bisher | entschieden, Vorzieheffekt aus der Kürzung entfällt |
+| Dividende als Rückgabe des CO₂-Preises? | Nicht ausschließlich; es geht auch um Digitalisierungsgewinne, z. B. aus der Plattformbesteuerung | Sachlich richtig: Die Dividende ist der Rest nach allen Aufgaben, nicht zweckgebunden. Bezifferbar ist bisher nur der Anteil der Lenkungseinnahmen; der Anteil der Plattformbesteuerung ist nicht ausgewiesen, weil die Basis der Unternehmensposition nicht belegt ist (B23, R4). Für die Akzeptanz (Abschnitt 2.8) spricht eine breitere Begründung nicht dagegen: Die Ablehnung in FR und Kanada hing an der wahrgenommenen Belastung durch den CO₂-Preis. Konzept angepasst (v4.49) | entschieden; Anteil Plattformen zu beziffern (R4) |
+| Mehrwertsteuer-Label und Überwälzung | Wettbewerb um Nachhaltigkeit: Anbieter bemühen sich um günstigere Sätze durch Zertifizierung bei qualifizierten, zugelassenen, staatlich überwachten Stellen; das wirkt einer stummen Weitergabe von Mehrkosten entgegen | Plausibel als Mechanismus: Wo ein Anbieter durch Zertifizierung eine günstigere Stufe erreicht und Wettbewerber in derselben Gütergruppe nicht, kann er die Ersparnis im Preis zeigen oder als Marge behalten; Wettbewerb und das sichtbare Label sprechen für Weitergabe. Belegt ist das nicht (Belegstufe C); Benzarti u. a. fanden die Asymmetrie gerade bei allgemeinen Satzsenkungen ohne Wettbewerbsvorteil des Einzelnen. Zwei Risiken: (1) **Zertifizierer** – Unabhängigkeit, Interessenkonflikte und Gefälligkeitsprüfungen sind ein bekanntes Problem von Zertifizierungsmärkten (Dranove/Jin, JEL 2010, Übersichtsarbeit; Befunde im Volltext nicht geprüft); staatliche Zulassung, Rotation, Stichproben und Haftung begrenzen es. (2) **Europarecht** – Nach dem Neutralitätsgrundsatz dürfen gleichartige, miteinander im Wettbewerb stehende Waren nicht unterschiedlich besteuert werden; maßgeblich ist die Sicht des Durchschnittsverbrauchers (EuGH C-515/20 vom 3.2.2022; Sekundärquelle PwC-Blog, an der Quelle zu prüfen). Ein anbieterbezogener Satz für sonst gleiche Waren muss sich daran messen lassen: Die Zertifizierung müsste eine objektive, für Verbraucher erkennbare Eigenschaft begründen. Zur Rechtsprüfung P1 | entschieden (Mechanismus); Rechtsprüfung und Variante V3 offen |
+
+Folgerung für Stufe 2: V3 (asymmetrische Überwälzung) bleibt als Variante sinnvoll, mit zwei Fällen: allgemeine Satzänderung (Benzarti) und
+zertifizierungsgetriebene Senkung (Wettbewerb, Annahme höherer Weitergabe).
+
 ## 7 | Quellen (abgerufen am 24.10.2026)
 
 - Benzarti, Y., Carloni, D., Harju, J., Kosonen, T. (2020): What Goes Up May Not Come Down: Asymmetric Incidence of Value-Added Taxes. JPE 128(12). Zusammenfassung: [VATT](https://vatt.fi/en/-/vat-cuts-do-not-increase-consumer-purchasing-power)
 - Bhargava, S., Manoli, D. (2015): Psychological Frictions and the Incomplete Take-Up of Social Benefits. AER 105(11). [IDEAS](https://ideas.repec.org/a/aea/aecrev/v105y2015i11p3489-3529.html)
 - Bick, A., Fuchs-Schündeln, N. (2018): Taxation and Labour Supply of Married Couples across Countries. Review of Economic Studies 85(3). [CEPR DP9115](https://repec.cepr.org/repec/cpr/ceprdp/DP9115.pdf)
 - Blömer, M., Hansen, E., Peichl, A. (2024): Die Ausgestaltung des Transferentzugs. ifo Forschungsbericht 145. [ifo](https://www.ifo.de/publikationen/2024/monographie-autorenschaft/die-ausgestaltung-des-transferentzugs)
+- Cronqvist, H., Thaler, R. (2004): Design Choices in Privatized Social-Security Systems: Learning from the Swedish Experience. AER 94(2). [IDEAS](https://ideas.repec.org/a/aea/aecrev/v94y2004i2p424-428.html)
 - Chetty, R., Friedman, J., Leth-Petersen, S., Nielsen, T., Olsen, T. (2014): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts. QJE 129(3). [NBER w18565](https://www.nber.org/papers/18565)
 - Chetty, R., Friedman, J., Saez, E. (2013): Using Differences in Knowledge across Neighborhoods to Uncover the Impacts of the EITC on Earnings. AER 103(7). [NBER w18232](https://nber.org/papers/w18232)
 - Chetty, R., Looney, A., Kroft, K. (2009): Salience and Taxation. AER 99(4). [NBER w13330](https://www.nber.org/papers/w13330)
 - DIW (2019): Starke Nichtinanspruchnahme von Grundsicherung deutet auf hohe verdeckte Altersarmut. Wochenbericht 49/2019. [DIW](https://www.diw.de/de/diw_01.c.699957.de/publikationen/wochenberichte/2019_49/starke_nichtinanspruchnahme_von_grundsicherung_deutet_auf_hohe_verdeckte_altersarmut.html)
 - DREES (2022): Mesurer régulièrement le non-recours au RSA et à la prime d'activité. Les Dossiers de la DREES 92. [DREES](https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse/les-dossiers-de-la-drees/mesurer-regulierement-le-non-recours-au)
+- Dranove, D., Jin, G. Z. (2010): Quality Disclosure and Certification: Theory and Practice. Journal of Economic Literature 48(4). [NBER w15644](https://www.nber.org/papers/w15644)
 - Douenne, T., Fabre, A. (2022): Yellow Vests, Pessimistic Beliefs, and Carbon Tax Aversion. AEJ: Economic Policy 14(1). [IDEAS](https://ideas.repec.org/a/aea/aejpol/v14y2022i1p81-110.html)
 - Eurofound (2015): Access to social benefits: Reducing non-take-up. [Eurofound](https://www.eurofound.europa.eu/en/publications/all/access-social-benefits-reducing-non-take)
+- EuGH, Urteil vom 3.2.2022, C-515/20 (Neutralitätsgrundsatz bei ermäßigten Sätzen), nach PwC-Blog [Update: Bedeutung des Neutralitätsgrundsatzes](https://blogs.pwc.de/de/steuern-und-recht/article/233341/update-bedeutung-des-neutralitaetsgrundsatzes-fuer-steuersatzermaessigungen/) (Sekundärquelle)
 - Europäische Kommission / ELA, Williams, C., Horodnic, I. (2020): Undeclared work in the European Union (Special Eurobarometer 498). [ELA](https://www.ela.europa.eu/sites/default/files/2022-06/KE-02-20-972-EN-N_0.pdf)
 - Gorodnichenko, Y., Martinez-Vazquez, J., Sabirianova Peter, K. (2009): Myth and Reality of Flat Tax Reform. JPE 117(3). [NBER w13719](https://www.nber.org/papers/w13719)
 - Jakobsen, K., Jakobsen, K., Kleven, H., Zucman, G. (2020): Wealth Taxation and Wealth Accumulation: Theory and Evidence from Denmark. QJE 135(1). [NBER w24371](https://www.nber.org/papers/w24371)
@@ -341,6 +357,7 @@ das Konzept noch offen lässt (Auszahlung von Amts wegen, Eigentumsschutz der Vo
 - Saez, E., Schoefer, B., Seim, D. (2019): Payroll Taxes, Firm Behavior, and Rent Sharing: Evidence from a Young Workers' Tax Cut in Sweden. AER 109(5). [NBER w23976](https://www.nber.org/papers/w23976)
 - Samuelson, W., Zeckhauser, R. (1988): Status Quo Bias in Decision Making. Journal of Risk and Uncertainty 1. (Standardliteratur, nicht erneut abgerufen)
 - SII (Stowarzyszenie Inwestorów Indywidualnych): 8 lat od pierwszego skoku na OFE. [SII](https://www.sii.org.pl/15073/analizy/newsroom/8-lat-od-pierwszego-skoku-na-ofe-na-drugi-gieldowy-wciaz-czekamy.html) (Sekundärquelle)
+- SSA (2004): Design and Implementation Issues in Swedish Individual Pension Accounts. Social Security Bulletin 65(4). [SSA](https://www.ssa.gov/policy/docs/ssb/v65n4/v65n4p38.html)
 - STM, Sozial- und Gesundheitsministerium Finnland (2020): Ergebnisse des Grundeinkommensexperiments. [STM](https://stm.fi/en/-/perustulokokeilun-tulokset-tyollisyysvaikutukset-vahaisia-toimeentulo-ja-psyykkinen-terveys-koettiin-paremmaksi)
 - Vivalt, E., Rhodes, E., Bartik, A., Broockman, D., Miller, S. (2024): The Employment Effects of a Guaranteed Income. NBER w32719. [NBER](https://www.nber.org/system/files/working_papers/w32719/w32719.pdf)
 
