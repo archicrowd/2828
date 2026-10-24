@@ -54,6 +54,7 @@ STUFEN = [
     ("Regeln R1–R4 in der Modellrechnung", ["modell/regeln_r1_r4.py"]),
     ("Regel Boden: Grundbedarf, Halbanrechnung, Vorsorge ab dem ersten Euro", ["modell/regel_boden.py"]),
     ("Fonds der 30: Verrechnung je Staat in den Haushalten (Empfindlichkeit, R6)", ["modell/verrechnung_haushalte.py"]),
+    ("Grenzbelastung heute gegen neu, bereinigt um Gegenwerte", ["modell/grenzbelastung33.py"]),
     ("Regel Boden: Kosten aus der Dezilverteilung (EU-SILC)", ["modell/boden_kosten.py"]),
     ("Kindergewicht im Boden: Varianten 0,3–0,8", ["modell/kindergewicht.py"]),
     ("Härtefall H1–H3 gegen das Netzbudget", ["modell/haertefall.py"]),

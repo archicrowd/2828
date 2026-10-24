@@ -43,6 +43,7 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Größe | Basis |
 |---|---|
 | „Durchschnittslohn“ in Aussagen über Vielfache (z. B. „3-facher Durchschnittslohn“) | OECD Taxing Wages 2025, DE 63.288 € (Vollzeit, Alleinstehende). Wer das Durchschnittsentgelt der Rentenversicherung (~50.000 €) nimmt, kommt auf andere Prozentzahlen (Prüfbericht B14) |
+| Grenzbelastung je Euro Bruttolohn, alleinstehend (v4.47): heute / neu 2028 / neu nach Tilgung | 42.000 €: 43,8 / 40,3 / 34,2 %; 60.000 €: 48,8 (bereinigt um den Rentenanspruch 44,1–39,5) / 40,0 / 34,1 %; 100.000 €: 53,1 / 39,1 / 33,6 %; 150.000 €: 44,3 / 40,0 / 34,1 %; 500.000 €: 47,5 / 40,0 / 34,1 %. Mit Pflichtvorsorge (Ersparnis, kein Abgabe) neu jeweils rund 9–10 Punkte mehr | `grenzbelastung33.json` | Prüfrechnung; Äquivalenz des Rentenbeitrags als Band (Annahme) |
 | Vorsorge in Vergleichen | geltend: Pflichtvorsorge 10 % ab dem ersten Euro. Variante „Vorsorge wie heute“ (18,6 % bis zur Beitragsbemessungsgrenze) nur in `haushalte33.json` zum Vergleich |
 | Grundauskommen | Grundbedarf × 1 / 0,5 je weitere/n Erwachsene/n / 0,55 je Kind; DE 1.029 € (allein), 2.675 € (Paar + 2) im Monat, 2028, Kaufkraft 2026 |
 | Bestandsrenten | Regel E (Beschluss 22.10.2026): Zusagen (GRV, Beamtenversorgung) auf den Teil über dem Grundbedarf (1.029 € je Person) um 15 % gekürzt, eigene Vorsorge ungekürzt; Grundauskommen im Bestand = heutige Grundsicherung (1.083 € allein, 1.632 € Paar); KV- und PV-Beiträge entfallen |
@@ -67,7 +68,7 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Zins × nominales Wachstum (v4.46, Prüfbefund B21): Beitrag / Zuschlag bei Zins 2,45 % und Wachstum 3,0 / 2,5 / 2,0 % | 5,17 / 5,68 / 6,22 % BIP; 15,5 / 17,0 / 18,6 %; Spitze (zehn) 149,9 / 152,2 / 154,1 %. Bei festem Beschlussbeitrag und 2,0 % Wachstum Restschuld 2098 rund 87 % BIP (zehn), Spitze 191 % (2064) | `fondszins.json → zins_wachstum` | Empfindlichkeit; Z in % BIP unverändert (Annahme) |
 | Zinsband 42.000 € DE (v4.38 mit Verrechnung) | Zuschlag gemeinsam 15,5 / 17,1 / 18,7 / 20,4 % = für Deutschland 2028 15,0 / 16,5 / 18,1 / 19,7 %; +611 / +590 / +570 / +548 € | `fondszins.json → varianten` | Lesart geklärt v4.46 (Prüfbefund B24, Korrektur 75) |
 
-## Mikrosimulation (extern, v4.21; eigene, v4.22)
+## Mikrosimulation (im Auftrag der Initiative, v4.21; eigene, v4.22)
 
 | Größe | Wert | Datei | Status |
 |---|---|---|---|
@@ -83,7 +84,7 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Verrechnung je Staat im Fonds der 30 (E11, v4.38): Zuschlag 2028 DE / FR / IT / ES / PL | 15,0 / 21,3 / 22,3 / 18,3 / 13,5 % (gemeinsamer Satz 15,5 %, Angleichung bis 2058); FR alleinerziehend mit mehr 100 → 73 %, Durchschnittslohn FR +480 → +390 €, IT +494 → +412 € | `fonds_geltend.json`, `verrechnung_haushalte.json` | geltend (Beschluss 24.10.2026) |
 | Deckel der Weitergabe, einheitlich 6 × Grundbedarf (v4.36, E2; DE 74.088 €): allein bei 2× / 3× Durchschnittslohn DE / FR / IT | +689 / +400 € · +849 / +717 € · +941 / +999 € (vorher DE +804 / +515, IT +1.060 / +1.574; FR v4.33 +887 / +755) ; Gini 2028 DE 26,1, FR 30,4 (amtlich 30,4), IT 27,4 | `deckel_einheitlich.json`, `gini.json` | geltend (Beschluss E2, einheitliche Regel; v4.33 nur FR) |
 | Validierung Rentner (v4.23, ohne Eichung): Netto je Haushalt / GRV je Person / unter Grundsicherungsbedarf | +4 % gegen ASID 2023 / 1.311 € gegen DRV ≈ 1.317 € / 1,13 Mio. gegen 0,76 Mio. Empfänger | `mikro_de.json` | Rückrechnung und DRV-Bruttowert als Annahme |
-| Vollzeitbeschäftigte mit mehr verfügbarem Einkommen, Beschluss / halbe / keine Weitergabe | 99,0 / 98,4 / 92,0 % | `beitraege/kvribbeck-2028/ergebnis.csv` | externe Rechnung (Kulturverein Ribbeck e.V.), eine Quelle; Formprüfung bestanden; Grenzen in der LIESMICH.md |
+| Vollzeitbeschäftigte mit mehr verfügbarem Einkommen, Beschluss / halbe / keine Weitergabe | 99,0 / 98,4 / 92,0 % | `beitraege/kvribbeck-2028/ergebnis.csv` | Rechnung im Auftrag der Initiative (Kulturverein Ribbeck e.V.), eine Quelle; Formprüfung bestanden; Grenzen in der LIESMICH.md |
 | Beispielhaushalte des Repositorys, Beschluss | 97,8 bis 100 % je Haushaltstyp (`haushalte33`), 98 % (`regel_boden`, mit Grundauskommen und Bedarfsleistungen) | `haushalte33.json`, `regel_boden.json` | Prüfrechnung |
 
 ## Deckungspositionen 33R 2028: Herkunft, Basis, Satz (v4.46, Prüfbefunde B22/B23)

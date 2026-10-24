@@ -30,8 +30,11 @@ Text berichtigt. Ob es öffentlich bleiben soll, entscheidet die Initiative.
   entspricht der Konstruktion.
 - **Frage 2 (Aufkommen):** Die Eichung der Einkommensposition gegen die Lohn- und Einkommensteuerstatistik nehmen wir als offenen Punkt auf (R4).
 - **Frage 3:** Band für die Skalierung 10 → 30 bleibt offen (R6); jetzt mit Wachstumsdimension (B21).
-- **M1 Grenzbelastung:** Ihr Befund, dass der Spitzen-Grenzsatz einschließlich Zuschlag (~50 %) zunächst über dem heutigen (44,3 %) liegt, ist
-  für die Darstellung wichtig; er gehört in Konzept und Seite (offen).
+- **M1 Grenzbelastung (v4.47 nachgerechnet, `grenzbelastung33.json`):** Die ~50 % an der Spitze enthalten die Pflichtvorsorge (10 %), die auf
+  ein eigenes, vererbbares Konto geht. Als Abgabe gezählt liegt der Spitzensatz 2028 bei 40,0 % (nach Tilgung 34,1 %) gegen heute 44,3 % (47,5 %
+  über der Reichensteuergrenze); er ist also nicht höher, sondern niedriger. Im Bereich der Bemessungsgrenzen ist der Vergleich zudem um
+  Gegenwerte zu bereinigen: Kranken- und Pflegebeiträge sind am Rand reine Abgabe, der Rentenbeitrag begründet einen eigenen Anspruch
+  (Äquivalenz als Band 0 / 0,5 / 1). Bei 60.000 €: heute 48,8 % (bereinigt 44,1 bis 39,5 %), neu 40,0 %.
 - **M3/M4:** Oberes Ausweichband bei Vermögen, Exit-Regeln und Register sowie ein handelsrechtliches Gutachten (WTO, Finanzsektor) führen wir unter
   P1 und R4.
 

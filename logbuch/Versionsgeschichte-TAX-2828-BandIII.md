@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.46**
+Stand: 24. Oktober 2026 · Modellstand **v4.47**
 
 ---
 
@@ -4062,6 +4062,40 @@ bestätigt, acht Befunde B17–B24. Beilagen unter `beitraege/kvribbeck-2028/pru
 
 ---
 
+### v4.47 — Grenzbelastung bereinigt um Gegenwerte; Prüfungen „im Auftrag der Initiative“
+
+**Art der Änderung: MINOR (neue Rechnung), Prüfrechnung; keine geltende Zahl bewegt.** 24. Oktober 2026.
+
+**Anlass:** Die dritte Prüfung (M1) las den Spitzen-Grenzsatz neu mit rund 50 % über dem heutigen (44,3 %). Frage der Initiative: Ist das nicht
+bereinigt zu denken, weil Sozialleistungen neu aus Steuern bezahlt werden?
+
+**Rechnung (`modell/grenzbelastung33.py`, `.toml`, Ausgabe `grenzbelastung33.json`):** Grenzbelastung je zusätzlichem Euro Bruttolohn,
+alleinstehend ohne Kinder. Heute: Einkommensteuer, Soli und Beiträge der Beschäftigten (Kernmodell, Recht 2026); bereinigt um den Teil des
+Rentenbeitrags, der einen eigenen Anspruch begründet (Äquivalenz als Band 0 / 0,5 / 1, Annahme). Kranken- und Pflegebeiträge sind am Rand reine
+Abgabe (Leistung unabhängig von der Beitragshöhe). Neu: Einkommensteuer 33R, Zuschlag (DE 2028 15,0 %; nach Tilgung 0), Mehrbelastung aus der
+Mehrwertsteuer; die Pflichtvorsorge (10 %, eigenes Konto) zählt als Ersparnis, nicht als Abgabe (zum Vergleich mit ihr ausgewiesen).
+
+| Bruttolohn | heute | heute bereinigt (Äquivalenz 0,5 / 1) | neu 2028 | neu nach Tilgung | neu 2028 mit Pflichtvorsorge |
+|---|---|---|---|---|---|
+| 20.000 € | 35,8 | 31,1 / 26,5 | 32,0 | 26,7 | 40,5 |
+| 42.000 € | 43,8 | 39,1 / 34,5 | 40,3 | 34,2 | 48,9 |
+| 60.000 € | 48,8 | 44,1 / 39,5 | 40,0 | 34,1 | 48,5 |
+| 100.000 € | 53,1 | 48,5 / 43,8 | 39,1 | 33,6 | 49,1 |
+| 150.000 € | 44,3 | 44,3 | 40,0 | 34,1 | 50,0 |
+| 500.000 € | 47,5 | 47,5 | 40,0 | 34,1 | 50,0 |
+
+**Ergebnis:** Die „rund 50 %“ der Prüfung enthalten die Pflichtvorsorge. Als Abgabe gezählt liegt die Spitze neu bei 40,0 % (2028) bzw. 34,1 %
+(nach Tilgung), also unter heute (44,3 / 47,5 %). Im Bereich der Bemessungsgrenzen ist heute höher, auch bereinigt; bei voller Äquivalenz des
+Rentenbeitrags liegen heute und neu um 40.000–60.000 € nahe beieinander. Unten (15.000 €) ist neu etwas höher (25,5 gegen 21,8 %), weil die
+Grundsicherungsleistungen hier nicht gerechnet sind. Nicht enthalten: Arbeitgeberseite, Bedarfsleistungen und Aufstockung (Halbanrechnung).
+
+**Bezeichnung der Prüfungen (Entscheidung der Initiative, 24.10.2026):** Die Prüfungen vom 19., 20. und 24.10.2026 (Kulturverein Ribbeck e.V.)
+heißen „Prüfungen im Auftrag der Initiative“, nicht „extern“: Methodik der Seite (sechs Sprachen), Konzept, `KENNZAHLEN.md`.
+
+**Datenquelle:** Kernmodell (Recht 2026), haushalte33. **Wodurch aufgefallen:** Frage der Initiative zur dritten Prüfung (M1).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4127,7 +4161,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.46
+## 7 | Offene Punkte, Stand v4.47
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

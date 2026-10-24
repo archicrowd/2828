@@ -1,0 +1,14 @@
+# Grenzbelastung heute gegen Goldenes Drittel, bereinigt um Gegenwerte (modell/grenzbelastung33.py, Logbuch v4.47). Prüfrechnung.
+# Anlass: dritte Prüfung (M1, 24.10.2026) und Frage der Initiative, ob die Grenzsätze um steuer- bzw. beitragsfinanzierte Gegenleistungen bereinigt zu lesen sind.
+version = "v4.47"
+einkommen = [15000, 20000, 30000, 42000, 52159, 60000, 75000, 100000, 150000, 250000, 500000]
+schritt = 100
+# Teil des Rentenbeitrags, dem ein eigener, beitragsbezogener Anspruch gegenübersteht (Teilhabeäquivalenz; Anteil des Beitrags, der als Ersparnis
+# statt als Abgabe zählt). Kein amtlicher Wert: Band 0 / 0,5 / 1 (Annahme). Kranken- und Pflegebeiträge: Leistung unabhängig von der Beitragshöhe →
+# am Rand reine Abgabe. Arbeitslosenversicherung: Anspruch lohnbezogen, hier wie Abgabe (Annahme, vorsichtig).
+rv_aequivalenz = [0.0, 0.5, 1.0]
+rv_an = 0.093
+av_an = 0.013
+kinderlos = true
+# neu: Zuschlag DE 2028 nach Verrechnung (fonds_geltend) und nach Tilgung (0); Pflichtvorsorge 10 % = eigenes Konto (Ersparnis, nicht Abgabe)
+weitergabe = 0.8
