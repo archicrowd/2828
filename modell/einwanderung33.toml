@@ -1,6 +1,6 @@
 # Einwanderung im Drittel-System (modell/einwanderung33.py, Logbuch v3.48). Frage der Initiative: Was bedeuten Einwanderungsziele, wenn die Staaten
 # des Möglichkeitsraums kontrollierte Einwanderung ermöglichen, um die Alterung auszugleichen? Prüfrechnung mit gekennzeichneten Annahmen.
-version = "v3.48"
+version = "v4.41"
 # Zusätzliche Nettoeinwanderung über die Annahmen der amtlichen Projektionen hinaus, in % der Bevölkerung 2028 je Jahr.
 # 0,2 % ≈ 0,5 Mio. Menschen je Jahr im Klub der zehn (255 Mio.); 0,4 % ≈ 1 Mio.
 zusatz_pct = [0.2, 0.4]

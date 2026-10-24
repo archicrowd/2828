@@ -21,6 +21,10 @@ AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "einwanderung33.toml").read_text(encoding="utf-8"))
 PJ = json.loads((AGG / "projektion33.json").read_text(encoding="utf-8"))
 AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))
+# v4.41 (R9): Dividende nach dem Netz-Beschluss (netz33.json, geltend) statt projektion33 (Vorstufe); Fonds der 30 (fonds_geltend.json)
+NZ = {r["jahr"]: r for r in json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))["beschluss"]["reihe"]}
+FG = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))
+V30 = FG["grundlage"]["verhaeltnis_beitrag_30_zu_10"]
 spec = importlib.util.spec_from_file_location("al", W / "modell" / "altlasten.py")
 ALM = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -93,24 +97,31 @@ def main():
         for j in (2035, 2045, 2060):
             x, r = s[j], R[j]
             # Gesundheit und Pflege: Bestand (gs0 + Anstieg) bezogen auf das größere BIP, dazu Eingewanderte mit relativen Kosten
-            gs = gs0 + r["gesundheit_plus"]
+            n = NZ[j]                                         # v4.41: Netz-Beschluss
+            gs = n["positionen"]["Gesundheit (Grundversorgung)"] + n["positionen"]["Pflege (Teilkasko)"]
             gs_neu = (gs + gs0 * P["gesundheit_relativ"] * x["dp"]) / (1 + x["dy"])
             # Kopfbeträge (Dividende, Gemeinden) wachsen mit der Bevölkerung; vereinfachend: Dividende in % BIP gleich, plus Gesundheitsentlastung
-            div_pct = r["dividende_pct_bip"] + (gs - gs_neu) - 0.0
+            div_pct = n["dividende_pct_bip"] + (gs - gs_neu)
             kopf = (1 + x["dy"]) / (1 + x["dp"])            # BIP je Einwohner gegen Grundpfad
-            eur = r["dividende_erw_eur2026"] / r["dividende_pct_bip"] * div_pct * kopf if r["dividende_pct_bip"] > 0 else 0
+            eur = n["dividende_erw_eur2026"] / n["dividende_pct_bip"] * div_pct * kopf if n["dividende_pct_bip"] > 0 else 0
             reihe[str(j)] = dict(altenquotient_basis=round(x["oadr_basis"], 3), altenquotient=round(x["oadr"], 3),
                                  bevoelkerung_plus_pct=round(x["dp"] * 100, 1), bip_plus_pct=round(x["dy"] * 100, 1),
                                  bip_je_kopf_pct=round((kopf - 1) * 100, 1), gesundheit_pflege_pct_bip=round(gs_neu, 2),
                                  gesundheit_pflege_basis=round(gs, 2), dividende_erw_eur2026=round(eur),
-                                 dividende_basis_eur2026=r["dividende_erw_eur2026"])
+                                 dividende_basis_eur2026=n["dividende_erw_eur2026"])
         c, spitze, sj = fonds({j: v["dy"] for j, v in s.items()})
+        # v4.41: auf den Fonds der 30 übertragen (Verhältnis wie fonds_klub.py; Spitze mit Spitze 30 / Spitze zehn skaliert, Annahme)
+        c30 = c * V30
         erg.append(dict(zusatz_pct=m, integration=art, zusatz_mio_je_jahr_klub=round(m / 100 * 255.06, 2), reihe=reihe,
-                        fonds_beitrag_pct_bip=c, fonds_spitze=spitze, fonds_spitzenjahr=sj))
+                        fonds_beitrag_pct_bip=round(c30, 2), fonds_zuschlag_pct=round(c30 / FG["beitrag_pct_bip"] * FG["zuschlag_auf_alle_steuern_pct"], 1),
+                        fonds_spitze=round(spitze * FG["schuldenquote_spitze"] / AL["beschluss"]["schuldenquote_spitze"], 1), fonds_spitzenjahr=sj,
+                        fonds_beitrag_zehn_pct_bip=c))
     B = AL["beschluss"]
     E = dict(version=P["version"], status="Prüfrechnung", annahmen={k: P[k] for k in P if k != "version"}, szenarien=erg,
-             grundpfad_fonds=dict(beitrag_pct_bip=B["beitrag_pct_bip"], spitze=B["schuldenquote_spitze"], spitzenjahr=B["spitzenjahr"]),
-             hinweis="Grundpfad: projektion33.json (33R) und altlasten.json (Beschluss); Einwanderung zusätzlich zu den amtlichen Annahmen")
+             grundpfad_fonds=dict(beitrag_pct_bip=FG["beitrag_pct_bip"], zuschlag_pct=FG["zuschlag_auf_alle_steuern_pct"], spitze=FG["schuldenquote_spitze"],
+                                  spitzenjahr=FG["spitzenjahr"], zehn=dict(beitrag_pct_bip=B["beitrag_pct_bip"], spitze=B["schuldenquote_spitze"])),
+             hinweis="v4.41: Grundpfad Dividende netz33.json (Netz-Beschluss), Fonds der 30 (Beschluss der zehn mit Wirtschaftszuwachs gelöst, Verhältnis 30/10); "
+                     "Einwanderung zusätzlich zu den amtlichen Annahmen")
     (AGG / "einwanderung33.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print("Grundpfad Fonds:", E["grundpfad_fonds"])
     for e in erg:

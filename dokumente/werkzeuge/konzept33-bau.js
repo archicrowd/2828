@@ -69,7 +69,7 @@ const add=(...x)=>inhalt.push(...x);
 // ---- Titel
 add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"Das Goldene Drittel",font:F,bold:true,size:56,color:"1F3864"})]}),
   P("Bauplan für ein einfaches Steuer- und Sozialsystem: höchstens ein Drittel auf jeden Euro, ein starkes Netz als Grundversorgung, eine Transformationsdividende für alle",{sz:28,sp:400}),
-  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.40 · 24. Oktober 2026 (zur Freigabe)",{sz:22}),
+  P("Initiative 28:28 · "+(KURZ?"Kurzfassung · ":"")+"Fassung 4.41 · 24. Oktober 2026 (zur Freigabe)",{sz:22}),
   P("Alle Zahlen stammen aus offenen Prüfrechnungen (Repository, Ordner modell/ und daten/aggregate/). Beträge in Euro sind, wenn nicht anders angegeben, Euro je Monat in Kaufkraft 2026 für Deutschland als Referenzland; Anteile sind Prozent der Wirtschaftsleistung (BIP) im Durchschnitt der zehn gerechneten Staaten.",{i:true,sz:19,sp:200}),
   P("Lizenz: Text und Ergebnisse CC BY 4.0, Skripte MIT.",{sz:18}),
   ...(KURZ?[]:[BR(),new TableOfContents("Inhalt",{hyperlink:true,headingStyleRange:"1-2"}),BR()]));
@@ -268,7 +268,8 @@ add(H1("6  Bis 2060: Trends, Automatisierung, Einwanderung"),
   tab([{t:"2060",w:3626},{t:"ohne",w:1500,al:RT},{t:"+0,5 Mio./Jahr",w:1950,al:RT},{t:"+1 Mio./Jahr",w:1950,al:RT}],[
     ["Menschen über 65 je Person im Erwerbsalter",de(ew(0.2,'kontrolliert').reihe['2060'].altenquotient_basis,2),de(ew(0.2,'kontrolliert').reihe['2060'].altenquotient,2),de(ew(0.4,'kontrolliert').reihe['2060'].altenquotient,2)],
     ["BIP je Einwohner (gut / schwierig integriert)","–",pr(ew(0.2,'kontrolliert').reihe['2060'].bip_je_kopf_pct)+" / "+pr(ew(0.2,'schwierig').reihe['2060'].bip_je_kopf_pct),pr(ew(0.4,'kontrolliert').reihe['2060'].bip_je_kopf_pct)+" / "+pr(ew(0.4,'schwierig').reihe['2060'].bip_je_kopf_pct)],
-    ["Beitrag Altlastenfonds, zehn Staaten (% BIP)",de(AL.beschluss.beitrag_pct_bip,2),de(ew(0.2,'kontrolliert').fonds_beitrag_pct_bip,2),de(ew(0.4,'kontrolliert').fonds_beitrag_pct_bip,2)]]),
+    ["Beitrag Altlastenfonds, 30 Staaten (% BIP)",de(EW.grundpfad_fonds.beitrag_pct_bip,2),de(ew(0.2,'kontrolliert').fonds_beitrag_pct_bip,2),de(ew(0.4,'kontrolliert').fonds_beitrag_pct_bip,2)],
+    ["Dividende je Erwachsenem (Kaufkraft 2026, gut integriert)",eu(ew(0.2,'kontrolliert').reihe['2060'].dividende_basis_eur2026),eu(ew(0.2,'kontrolliert').reihe['2060'].dividende_erw_eur2026),eu(ew(0.4,'kontrolliert').reihe['2060'].dividende_erw_eur2026)]]),
   Q("Einwanderung im Erwerbsalter mildert die Alterung und verdünnt die festen Altlasten; sie gleicht die Alterung nicht aus. Eingewanderte erwerben im neuen System keine Ansprüche über der Grundversorgung. Annahmen: Erwerbstätigkeit und Produktivität der Eingewanderten, Altenquotient interpoliert."));
 
 // ---- 6.4 Möglichkeitsraum
@@ -341,7 +342,7 @@ add(H1("9  Quellen"),
   Q("Bewertung der einzelnen Angaben (amtlich, Sekundärquelle, Annahme): seite/entwurf/QUELLEN-33.md und Logbuch Band III, v3.47 bis v3.51."));
 
 const doc=new Document({
-  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.40)",
+  creator:"Initiative 28:28", title:"Das Goldene Drittel – "+(KURZ?"Kurzfassung":"Konzept")+" (Fassung 4.41)",
   styles:{default:{document:{run:{font:F,size:21}}},
     paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:340,after:140},outlineLevel:0}},
                      {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,font:F,color:"1F3864"},paragraph:{spacing:{before:220,after:120},outlineLevel:1}}]},
@@ -349,7 +350,7 @@ const doc=new Document({
                                                  {level:1,format:LevelFormat.BULLET,text:"·",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:880,hanging:260}}}}]}]},
   features:{updateFields:true},
   sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1300,bottom:1300,left:1440,right:1440}}},
-    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.40 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:"Das Goldene Drittel · Fassung 4.41 · Seite ",size:16,font:F,color:"808080"}),new TextRun({children:[PageNumber.CURRENT],size:16,font:F,color:"808080"})]})]})},
     children:KURZ?inhalt.slice(0,N_KURZ):inhalt}]});
 const ziel=path.join(WURZEL,'dokumente','entwurf',KURZ?'TAX-Drittel-Kurzfassung.docx':'TAX-Drittel-Konzept.docx');
 fs.mkdirSync(path.dirname(ziel),{recursive:true});

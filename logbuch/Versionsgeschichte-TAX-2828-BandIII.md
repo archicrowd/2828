@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.40**
+Stand: 24. Oktober 2026 · Modellstand **v4.41**
 
 ---
 
@@ -3916,6 +3916,39 @@ Liste 7.1, R8; dabei die Vergleichsgröße der Validierung v4.22 geprüft (Korre
 
 ---
 
+### v4.41 — R9: Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umgestellt
+
+**Art der Änderung: PATCH (Grundpfad der Szenarien berichtigt), Prüfrechnung.** 24. Oktober 2026.
+
+**Anlass:** `einwanderung33.py` (v3.48) und `dynamik33.py` (v3.49) rechneten auf dem Dividendenpfad von `projektion33` (Vorstufe vor dem
+Netz-Beschluss, 2060: 170 €) und mit dem Fonds der zehn. Geltend sind der Netz-Beschluss (`netz33.json → beschluss.reihe`, 2060: 239 €) und
+der Fonds der 30 (`fonds_geltend.json`, 5,17 % BIP). Die Seite rechnete schon mit Differenzen auf den Netz-Pfad, das Konzept zeigte in der
+Einwanderungstabelle den Fonds der zehn.
+
+**Umsetzung:** Grundpfad Dividende, Gesundheit und Pflege aus `netz33`; Fondsbeitrag mit Wirtschaftszuwachs weiter für die zehn gelöst und mit
+dem Verhältnis 30/10 (fonds_klub) übertragen, Spitze entsprechend skaliert (Annahme), neu auch als Zuschlag. Stufen in `alles.py` hinter
+`fonds_klub.py` verlegt (lasen vorher den Stand des vorigen Laufs). Konzept 6.3: Zeile „Altlastenfonds, 30 Staaten“ und neue Zeile Dividende.
+
+**Bewegte Zahlen (2060, Kaufkraft 2026, je Erwachsenem):**
+
+| Szenario | Dividende vorher (Grundpfad 170 €) | jetzt (Grundpfad 239 €) | Fonds % BIP vorher (zehn) → jetzt (30) |
+|---|---|---|---|
+| Einwanderung +0,5 Mio./Jahr, gut integriert | 207 € | 280 € | 4,86 → 4,79 (Zuschlag 14,3 %) |
+| Einwanderung +0,5 Mio./Jahr, schwierig | 183 € | 254 € | 4,98 → 4,90 |
+| Einwanderung +1 Mio./Jahr, gut integriert | 238 € | 316 € | 4,52 → 4,45 (Zuschlag 13,3 %) |
+| KI +0,3 Pp Produktivität | 198 € | 272 € | ≈ 5,08 → 5,00 |
+| KI +0,6 Pp, Arbeitsvolumen +4,6 % | 249 € | 330 € | ≈ 4,83 → 4,75 |
+
+Die Wirkungen gegen den Grundpfad bleiben in derselben Größe (Einwanderung +1 Mio.: +68 → +77 €; KI +0,6: +63 → +73 €), weil sie mit dem
+höheren Grundpfad proportional wachsen. Seite: unverändert in der Methode (Differenzen), Zahlen der Szenarien leicht höher.
+
+**Datenquelle:** wie die Grundpfade (`netz33.json`, `fonds_geltend.json`); Annahmen der Szenarien unverändert (`einwanderung33.toml`,
+`dynamik33.toml`). **Wodurch aufgefallen:** Liste 7.1, R9.
+
+**Offen in R9:** Altersprofil je Staat (Ageing Report), Preisniveau mit Zweitrundeneffekten, CO₂-Pfad.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -3977,7 +4010,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.40
+## 7 | Offene Punkte, Stand v4.41
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3995,7 +4028,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R6 | **erledigt v4.37** (offen: Boden B1 je Staat, Verteilungsform je Staat; Entscheidung E11) – **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
 | R7 | **teilweise erledigt v4.39** (H1 DE aus Mietdaten; offen: Mietdaten FR/IT/ES/PL, H2/H3 belegen, H1 auch über der Aufstockung) – **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
 | R8 | **teilweise erledigt v4.40** (Nicht-Inanspruchnahme als Variante; offen: Teilzeit-Dezile, Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini) – **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |
-| R9 | **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
+| R9 | **teilweise erledigt v4.41** (Einwanderung und Automatisierung umgerechnet; offen: Altersprofil je Staat, Preisniveau mit Zweitrundeneffekten und CO₂-Pfad) – **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
 | R10 | **Möglichkeitsraum:** UK und Kanada; Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR); Wachstum je Land | Länder außerhalb der Referenzländer | v3.52/v3.53 |
 | R11 | **Regionen und gemeinsame Aufgaben:** heutige Gemeindeeinnahmen je Kreis (Daten der Initiative, `2828-Daten`), Strukturzuschlag 10 %, Kassenanteile und Bemessung am BNE, Anrechnung neutraler Staaten (N32, N33) | Gemeindehaushalte, nicht Haushaltseinkommen | v4.15/v4.16 |
 

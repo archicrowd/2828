@@ -1,5 +1,5 @@
 {
- "version": "v3.48",
+ "version": "v4.41",
  "status": "Prüfrechnung",
  "annahmen": {
   "zusatz_pct": [
@@ -66,10 +66,10 @@
      "bevoelkerung_plus_pct": 2.1,
      "bip_plus_pct": 2.1,
      "bip_je_kopf_pct": -0.0,
-     "gesundheit_pflege_pct_bip": 7.89,
-     "gesundheit_pflege_basis": 7.96,
-     "dividende_erw_eur2026": 221,
-     "dividende_basis_eur2026": 217
+     "gesundheit_pflege_pct_bip": 8.34,
+     "gesundheit_pflege_basis": 8.42,
+     "dividende_erw_eur2026": 298,
+     "dividende_basis_eur2026": 294
     },
     "2045": {
      "altenquotient_basis": 0.445,
@@ -77,10 +77,10 @@
      "bevoelkerung_plus_pct": 4.7,
      "bip_plus_pct": 5.1,
      "bip_je_kopf_pct": 0.4,
-     "gesundheit_pflege_pct_bip": 8.08,
-     "gesundheit_pflege_basis": 8.27,
-     "dividende_erw_eur2026": 183,
-     "dividende_basis_eur2026": 170
+     "gesundheit_pflege_pct_bip": 8.51,
+     "gesundheit_pflege_basis": 8.73,
+     "dividende_erw_eur2026": 261,
+     "dividende_basis_eur2026": 247
     },
     "2060": {
      "altenquotient_basis": 0.52,
@@ -88,15 +88,17 @@
      "bevoelkerung_plus_pct": 7.7,
      "bip_plus_pct": 10.0,
      "bip_je_kopf_pct": 2.2,
-     "gesundheit_pflege_pct_bip": 8.13,
-     "gesundheit_pflege_basis": 8.59,
-     "dividende_erw_eur2026": 207,
-     "dividende_basis_eur2026": 170
+     "gesundheit_pflege_pct_bip": 8.54,
+     "gesundheit_pflege_basis": 9.04,
+     "dividende_erw_eur2026": 280,
+     "dividende_basis_eur2026": 239
     }
    },
-   "fonds_beitrag_pct_bip": 4.86,
-   "fonds_spitze": 143.5,
-   "fonds_spitzenjahr": 2053
+   "fonds_beitrag_pct_bip": 4.79,
+   "fonds_zuschlag_pct": 14.3,
+   "fonds_spitze": 141.8,
+   "fonds_spitzenjahr": 2053,
+   "fonds_beitrag_zehn_pct_bip": 4.86
   },
   {
    "zusatz_pct": 0.2,
@@ -109,10 +111,10 @@
      "bevoelkerung_plus_pct": 2.1,
      "bip_plus_pct": 1.4,
      "bip_je_kopf_pct": -0.7,
-     "gesundheit_pflege_pct_bip": 7.95,
-     "gesundheit_pflege_basis": 7.96,
-     "dividende_erw_eur2026": 216,
-     "dividende_basis_eur2026": 217
+     "gesundheit_pflege_pct_bip": 8.4,
+     "gesundheit_pflege_basis": 8.42,
+     "dividende_erw_eur2026": 293,
+     "dividende_basis_eur2026": 294
     },
     "2045": {
      "altenquotient_basis": 0.445,
@@ -120,10 +122,10 @@
      "bevoelkerung_plus_pct": 4.7,
      "bip_plus_pct": 3.4,
      "bip_je_kopf_pct": -1.2,
-     "gesundheit_pflege_pct_bip": 8.21,
-     "gesundheit_pflege_basis": 8.27,
-     "dividende_erw_eur2026": 172,
-     "dividende_basis_eur2026": 170
+     "gesundheit_pflege_pct_bip": 8.65,
+     "gesundheit_pflege_basis": 8.73,
+     "dividende_erw_eur2026": 249,
+     "dividende_basis_eur2026": 247
     },
     "2060": {
      "altenquotient_basis": 0.52,
@@ -131,15 +133,17 @@
      "bevoelkerung_plus_pct": 7.7,
      "bip_plus_pct": 6.8,
      "bip_je_kopf_pct": -0.8,
-     "gesundheit_pflege_pct_bip": 8.38,
-     "gesundheit_pflege_basis": 8.59,
-     "dividende_erw_eur2026": 183,
-     "dividende_basis_eur2026": 170
+     "gesundheit_pflege_pct_bip": 8.8,
+     "gesundheit_pflege_basis": 9.04,
+     "dividende_erw_eur2026": 254,
+     "dividende_basis_eur2026": 239
     }
    },
-   "fonds_beitrag_pct_bip": 4.98,
-   "fonds_spitze": 145.5,
-   "fonds_spitzenjahr": 2054
+   "fonds_beitrag_pct_bip": 4.9,
+   "fonds_zuschlag_pct": 14.7,
+   "fonds_spitze": 143.8,
+   "fonds_spitzenjahr": 2054,
+   "fonds_beitrag_zehn_pct_bip": 4.98
   },
   {
    "zusatz_pct": 0.4,
@@ -152,10 +156,10 @@
      "bevoelkerung_plus_pct": 4.2,
      "bip_plus_pct": 4.1,
      "bip_je_kopf_pct": -0.0,
-     "gesundheit_pflege_pct_bip": 7.83,
-     "gesundheit_pflege_basis": 7.96,
-     "dividende_erw_eur2026": 224,
-     "dividende_basis_eur2026": 217
+     "gesundheit_pflege_pct_bip": 8.27,
+     "gesundheit_pflege_basis": 8.42,
+     "dividende_erw_eur2026": 302,
+     "dividende_basis_eur2026": 294
     },
     "2045": {
      "altenquotient_basis": 0.445,
@@ -163,10 +167,10 @@
      "bevoelkerung_plus_pct": 9.4,
      "bip_plus_pct": 10.2,
      "bip_je_kopf_pct": 0.8,
-     "gesundheit_pflege_pct_bip": 7.9,
-     "gesundheit_pflege_basis": 8.27,
-     "dividende_erw_eur2026": 194,
-     "dividende_basis_eur2026": 170
+     "gesundheit_pflege_pct_bip": 8.32,
+     "gesundheit_pflege_basis": 8.73,
+     "dividende_erw_eur2026": 274,
+     "dividende_basis_eur2026": 247
     },
     "2060": {
      "altenquotient_basis": 0.52,
@@ -174,15 +178,17 @@
      "bevoelkerung_plus_pct": 15.4,
      "bip_plus_pct": 20.1,
      "bip_je_kopf_pct": 4.1,
-     "gesundheit_pflege_pct_bip": 7.75,
-     "gesundheit_pflege_basis": 8.59,
-     "dividende_erw_eur2026": 238,
-     "dividende_basis_eur2026": 170
+     "gesundheit_pflege_pct_bip": 8.12,
+     "gesundheit_pflege_basis": 9.04,
+     "dividende_erw_eur2026": 316,
+     "dividende_basis_eur2026": 239
     }
    },
-   "fonds_beitrag_pct_bip": 4.52,
-   "fonds_spitze": 138.3,
-   "fonds_spitzenjahr": 2052
+   "fonds_beitrag_pct_bip": 4.45,
+   "fonds_zuschlag_pct": 13.3,
+   "fonds_spitze": 136.6,
+   "fonds_spitzenjahr": 2052,
+   "fonds_beitrag_zehn_pct_bip": 4.52
   },
   {
    "zusatz_pct": 0.4,
@@ -195,10 +201,10 @@
      "bevoelkerung_plus_pct": 4.2,
      "bip_plus_pct": 2.7,
      "bip_je_kopf_pct": -1.4,
-     "gesundheit_pflege_pct_bip": 7.94,
-     "gesundheit_pflege_basis": 7.96,
-     "dividende_erw_eur2026": 215,
-     "dividende_basis_eur2026": 217
+     "gesundheit_pflege_pct_bip": 8.39,
+     "gesundheit_pflege_basis": 8.42,
+     "dividende_erw_eur2026": 292,
+     "dividende_basis_eur2026": 294
     },
     "2045": {
      "altenquotient_basis": 0.445,
@@ -206,10 +212,10 @@
      "bevoelkerung_plus_pct": 9.4,
      "bip_plus_pct": 6.8,
      "bip_je_kopf_pct": -2.3,
-     "gesundheit_pflege_pct_bip": 8.15,
-     "gesundheit_pflege_basis": 8.27,
-     "dividende_erw_eur2026": 173,
-     "dividende_basis_eur2026": 170
+     "gesundheit_pflege_pct_bip": 8.58,
+     "gesundheit_pflege_basis": 8.73,
+     "dividende_erw_eur2026": 250,
+     "dividende_basis_eur2026": 247
     },
     "2060": {
      "altenquotient_basis": 0.52,
@@ -217,21 +223,28 @@
      "bevoelkerung_plus_pct": 15.4,
      "bip_plus_pct": 13.5,
      "bip_je_kopf_pct": -1.6,
-     "gesundheit_pflege_pct_bip": 8.19,
-     "gesundheit_pflege_basis": 8.59,
-     "dividende_erw_eur2026": 195,
-     "dividende_basis_eur2026": 170
+     "gesundheit_pflege_pct_bip": 8.59,
+     "gesundheit_pflege_basis": 9.04,
+     "dividende_erw_eur2026": 266,
+     "dividende_basis_eur2026": 239
     }
    },
-   "fonds_beitrag_pct_bip": 4.73,
-   "fonds_spitze": 141.7,
-   "fonds_spitzenjahr": 2053
+   "fonds_beitrag_pct_bip": 4.66,
+   "fonds_zuschlag_pct": 14.0,
+   "fonds_spitze": 140.0,
+   "fonds_spitzenjahr": 2053,
+   "fonds_beitrag_zehn_pct_bip": 4.73
   }
  ],
  "grundpfad_fonds": {
-  "beitrag_pct_bip": 5.25,
-  "spitze": 149.9,
-  "spitzenjahr": 2056
+  "beitrag_pct_bip": 5.17,
+  "zuschlag_pct": 15.5,
+  "spitze": 148.1,
+  "spitzenjahr": 2055,
+  "zehn": {
+   "beitrag_pct_bip": 5.25,
+   "spitze": 149.9
+  }
  },
- "hinweis": "Grundpfad: projektion33.json (33R) und altlasten.json (Beschluss); Einwanderung zusätzlich zu den amtlichen Annahmen"
+ "hinweis": "v4.41: Grundpfad Dividende netz33.json (Netz-Beschluss), Fonds der 30 (Beschluss der zehn mit Wirtschaftszuwachs gelöst, Verhältnis 30/10); Einwanderung zusätzlich zu den amtlichen Annahmen"
 }

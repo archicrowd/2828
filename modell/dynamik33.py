@@ -20,6 +20,8 @@ P = tomllib.loads((W / "modell" / "dynamik33.toml").read_text(encoding="utf-8"))
 PJ = json.loads((AGG / "projektion33.json").read_text(encoding="utf-8"))
 AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))
 R = {r["jahr"]: r for r in PJ["reihe"]}
+NZ = {r["jahr"]: r for r in json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))["beschluss"]["reihe"]}   # v4.41 (R9): Netz-Beschluss
+FG = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))                                            # v4.41: Fonds der 30
 _s = importlib.util.spec_from_file_location("pj", W / "modell" / "projektion33.py")
 PJM = importlib.util.module_from_spec(_s)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -52,15 +54,16 @@ def main():
             fr = r["wachstum_je_kopf_faktor"]
             prog = E0 * (PJM.progression((fr * fy) ** (1 - LA)) - PJM.progression(fr ** (1 - LA)))   # zusätzliche Progression durch mehr Wachstum
             plus_33 += prog
-            div_pct = r["dividende_pct_bip"] + plus_33
-            eur = r["dividende_erw_eur2026"] / r["dividende_pct_bip"] * div_pct * fy
+            n = NZ[j]
+            div_pct = n["dividende_pct_bip"] + plus_33                        # v4.41: Grundpfad Netz-Beschluss statt projektion33
+            eur = n["dividende_erw_eur2026"] / n["dividende_pct_bip"] * div_pct * fy
             reihe[str(j)] = dict(bip_faktor=round(fy, 3), aufkommen_aenderung_33_pct_bip=round(plus_33, 2),
                                  dividende_pct_bip=round(div_pct, 2), dividende_erw_eur2026=round(eur))
         fy60 = reihe["2060"]["bip_faktor"]
         erg.append(dict(beschaeftigung_pct=b, ki_pp=ki, kapital_verschiebung_pp=kv, reihe=reihe,
-                        fondsbeitrag_naeherung_pct_bip=round(AL["beschluss"]["beitrag_pct_bip"] / ((1 + fy60) / 2), 2),
+                        fondsbeitrag_naeherung_pct_bip=round(FG["beitrag_pct_bip"] / ((1 + fy60) / 2), 2),   # v4.41: Fonds der 30
                         heute_aufkommen_aenderung_2060_pct_bip=round(kv * (P["belastung_kapital_heute"] - P["belastung_arbeit_heute"]), 2)))
-    E = dict(version=P["version"], status="Prüfrechnung", grundpfad="projektion33.json (33R)", szenarien=erg,
+    E = dict(version="v4.41", status="Prüfrechnung", grundpfad="netz33.json beschluss.reihe (Netz-Beschluss); Fonds der 30 (fonds_geltend.json)", szenarien=erg,
              hinweis="Szenarien mit Annahmen; KI-Spanne Acemoglu 2024 bis OECD 2024; Fondsbeitrag nur als Näherung (Mittel des BIP-Faktors)")
     (AGG / "dynamik33.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     for e in erg:
