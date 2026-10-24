@@ -421,7 +421,9 @@ def gruppe_status(h):
     return {"vz": "Hauptperson Vollzeit", "tz": "Hauptperson Teilzeit", "mini": "Hauptperson Minijob", "ohne": "Hauptperson ohne Erwerb"}[a]
 
 
-def rechne(haushalte, rentner, w, wr, weitergaben, rentner_variante="asid", inanspruchnahme="voll", zulage=None):
+def rechne(haushalte, rentner, w, wr, weitergaben, rentner_variante="asid", inanspruchnahme="voll", zulage=None, nutzung=None):
+    """nutzung (v4.40, R8): None = volle Inanspruchnahme heute und neu; sonst dict(p=Quote der Haushalte mit Erwerb und Anspruch, neu_voll=bool):
+    jeder solche Haushalt wird in zwei gewichtete Fälle geteilt (mit / ohne Leistung heute; neu ohne Aufstockung, außer neu_voll)."""
     f = P["lohn_2024_2026"]
     zeilen = []
     for h, wi in zip(haushalte, w):
@@ -431,8 +433,15 @@ def rechne(haushalte, rentner, w, wr, weitergaben, rentner_variante="asid", inan
         for wg in weitergaben:
             y1, auf = neu(hh, wg, zulage)
             res[wg] = (y1, auf)
-        zeilen.append(dict(w=wi, p=personen(h), typ=h["typ"], status=gruppe_status(h), tz=any(a == "tz" for _, a in h["erw"]),
-                           kinder=h["kind"] > 0, heute=y0, aeq=aequiv(h, y0), neu=res, bg_heute=d0["buergergeld"]))
+        basis = dict(p=personen(h), typ=h["typ"], status=gruppe_status(h), tz=any(a == "tz" for _, a in h["erw"]), kinder=h["kind"] > 0)
+        if nutzung and d0["buergergeld"] > 0 and not h["bg"]:
+            q = nutzung["p"]
+            y0o = y0 - d0["buergergeld"]
+            res_o = res if nutzung.get("neu_voll") else {wg: (y - a, 0.0) for wg, (y, a) in res.items()}
+            zeilen.append(dict(basis, w=wi * q, heute=y0, aeq=aequiv(h, y0), neu=res, bg_heute=d0["buergergeld"]))
+            zeilen.append(dict(basis, w=wi * (1 - q), heute=y0o, aeq=aequiv(h, y0o), neu=res_o, bg_heute=0.0))
+            continue
+        zeilen.append(dict(basis, w=wi, heute=y0, aeq=aequiv(h, y0), neu=res, bg_heute=d0["buergergeld"]))
     for r, wi in zip(rentner, wr):
         res = {}
         for wg in weitergaben:
@@ -527,6 +536,21 @@ def main():
                 a = auswerten(rechne(hh, rr, w, wr, [wg0]), wg0)
                 E["kapital"]["skalierung"][str(sk)] = dict(gesamt=a["gesamt"], dezil_10=a["dezile"][9], dezil_9=a["dezile"][8])
             KAP_SKAL[0] = 1.0
+            # v4.40 (R8): Nicht-Inanspruchnahme heute (Bürgergeld-Näherung einschließlich Wohngeld und Kinderzuschlag) bei Haushalten mit Erwerb
+            IN = P["inanspruchnahme"]
+            v = basis["validierung_2025"]["buergergeld"]
+            beob = IN["bg_mio"] + IN["wohngeld_erwerbsalter_mio"] + IN["kiz_familien_mio"] * (1 - IN["kiz_ueberlappung"])
+            ohne_erw = v["anspruch_haushalte_mio"] - v["davon_mit_erwerb_mio"]
+            q = min(1.0, max(0.0, (beob - ohne_erw) / v["davon_mit_erwerb_mio"]))
+            E["inanspruchnahme"] = dict(beobachtet_mio=round(beob, 2), anspruch_modell_mio=v["anspruch_haushalte_mio"], ohne_erwerb_mio=round(ohne_erw, 2),
+                                        quote_mit_erwerb=round(q, 3), varianten={})
+            for name, nz in (("voll (geltend)", None), ("beobachtet, neu ebenso", dict(p=q, neu_voll=False)),
+                             ("beobachtet, neu voll", dict(p=q, neu_voll=True))):
+                a = auswerten(rechne(hh, rr, w, wr, [wg0], nutzung=nz), wg0)
+                E["inanspruchnahme"]["varianten"][name] = dict(gesamt=a["gesamt"], erwerbsfaehige=a["erwerbsfaehige_haushalte"],
+                                                              teilzeit=a["status"]["Hauptperson Teilzeit"], minijob=a["status"]["Hauptperson Minijob"],
+                                                              alleinerziehend=a["haushaltstyp"]["alleinerziehend"], dezil_1=a["dezile"][0],
+                                                              dezil_2=a["dezile"][1], kosten_mrd=a["kosten_mrd"])
             # v4.23: Varianten der Rentnerhaushalte (Ziehung 1, Basis-Weitergabe)
             E["rentner_varianten"] = {}
             for var, inan in (("asid", "voll"), ("asid", "beobachtet"), ("nur_grv", "voll")):
@@ -565,7 +589,7 @@ def main():
     E["hinweis"] = ("Synthetische Population aus veröffentlichten Eckwerten; Spanne der Ziehungen misst nur das Rauschen der Ziehung, nicht die "
                     "Unsicherheit der Annahmen (Haushaltszahlen, Teilzeitstreuung, Partnerstatus, Zusammensetzung der Alterseinkommen). Nicht abgebildet: "
                     "Vermögenseinkommen der Erwerbstätigen, Rentner unter 65, Partner der Beamten und Selbständigen nicht in der Eichung (Doppelzählung möglich), "
-                    "Nicht-Inanspruchnahme von Bürgergeld (Rentner: Variante beobachtet). Validierung nur an Aggregaten, auf die nicht geeicht wurde.")
+                    "Nicht-Inanspruchnahme nur als Variante (inanspruchnahme; Rentner: Variante beobachtet). Validierung nur an Aggregaten, auf die nicht geeicht wurde.")
     (AGG / "mikro_de.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     b = basis["ergebnis"]
     print("Gegenprobe", abw, "€ | Eichung", basis["eichung"])

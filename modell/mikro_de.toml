@@ -2,7 +2,7 @@
 # Grundsatz: nur veröffentlichte Aggregate, keine Mikrodaten. Jede Zahl mit Quelle; „Annahme“ wo keine amtliche Zahl abgerufen wurde.
 # Euro: Verteilungen 2024 nominal (Quelle), für den Vergleich 2028 in Kaufkraft 2026 mit lohn_2024_2026 hochgerechnet;
 # Validierung gegen 2025 mit lohn_2024_2025.
-version = "v4.30"
+version = "v4.40"
 seeds = [1, 2, 3, 4, 5]          # fünf Ziehungen; Spanne = Kalibrierungsrauschen, nicht strukturelle Unsicherheit
 haushalte_stichprobe = 40000     # Datensätze je Ziehung (erwerbsfähige Haushalte); Rentnerhaushalte zusätzlich 8.000
 rentner_stichprobe = 8000
@@ -96,3 +96,10 @@ sparerpauschbetrag = 1000       # je Erwachsenem, Abgeltungsteuer 25 % + Soli 5,
 abgeltung_satz = 0.26375
 skalierung_varianten = [1.0, 2.0, 4.0]   # Umfragen untererfassen Kapitaleinkünfte: Abgeltungsaufkommen 2025 24,8 Mrd. € entspricht rund 94 Mrd. €
                                          # Erträgen über dem Freibetrag (Haushalte und andere), EU-SILC rund 25 Mrd. € → Empfindlichkeit
+
+[inanspruchnahme]   # v4.40 (R8): beobachtete Haushalte mit bedarfsgeprüften Leistungen im Erwerbsalter (die Näherung im Modell umfasst Bürgergeld,
+# Wohngeld und Kinderzuschlag). Quote der Haushalte mit Erwerb = (beobachtet − Anspruch ohne Erwerb) / Anspruch mit Erwerb, im Skript gerechnet.
+bg_mio = 3.1                     # Bedarfsgemeinschaften 2025 (wie [validierung], aus 5,6 Mio. Personen abgeleitet, Annahme)
+wohngeld_erwerbsalter_mio = 0.618   # Destatis PM 339/2026: 1,3 Mio. Wohngeldhaushalte Ende 2025, davon 682.000 mit Rentnern als Haupteinkommen (Differenz)
+kiz_familien_mio = 0.564         # BA Familienkasse, Jahresdurchschnitt 2025: 563.655 Berechtigte mit Kinderzuschlag (Tabelle 1.4)
+kiz_ueberlappung = 0.5           # Annahme: Hälfte der Kinderzuschlag-Familien bezieht auch Wohngeld (Doppelzählung)

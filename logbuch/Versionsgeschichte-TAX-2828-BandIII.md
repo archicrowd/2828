@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.39**
+Stand: 24. Oktober 2026 · Modellstand **v4.40**
 
 ---
 
@@ -3880,6 +3880,42 @@ bleiben Annahmen; Gesamtausgaben für Mehrbedarfe im SGB II nicht gefunden.
 
 ---
 
+### v4.40 — R8: Nicht-Inanspruchnahme in der Mikrosimulation; Korrektur 72
+
+**Art der Änderung: MINOR (neue Variante), Prüfrechnung; geltende Zahlen unverändert.** 24. Oktober 2026.
+
+**Anlass:** Liste 7.1, R8. Die Mikrosimulation rechnet „heute“ mit voller Inanspruchnahme der bedarfsgeprüften Leistungen (Bürgergeld als
+Näherung, einschließlich Wohngeld und Kinderzuschlag). Wer heute keinen Antrag stellt, hat heute weniger; die Rechnung unterschätzt dann den
+Vorteil unten. Das war bisher nur bei Rentnern als Variante gerechnet.
+
+**Vergleichsgröße (Korrektur 72):** Beobachtet sind 2025 rund 3,1 Mio. Bedarfsgemeinschaften (Annahme wie bisher), 0,62 Mio. Wohngeldhaushalte
+im Erwerbsalter (Destatis PM 339/2026: 1,3 Mio. Wohngeldhaushalte Ende 2025, davon 682.000 mit Rentnern als Haupteinkommen) und 0,56 Mio.
+Familien mit Kinderzuschlag (BA Familienkasse, Jahresdurchschnitt 2025: 563.655), zur Hälfte auch mit Wohngeld (Annahme): zusammen 4,0 Mio.
+Der Anspruch im Modell: 4,7 Mio., davon 2,42 Mio. ohne Erwerb (als Bezieher geeicht) und 2,28 Mio. mit Erwerb. **Quote der Haushalte mit Erwerb
+und Anspruch: 69 %** (über alle Haushalte mit Anspruch 85 %). Einordnung: Simulationsstudien nennen für SGB II eine Nicht-Inanspruchnahme von
+35–40 % (Bruckmeier u. a. 2020, PASS 2008–2013) bis 42–71 % (Harnisch 2019, SOEP); Übersicht in einem Vortrag des IAB (Nürnberg 2022,
+Sekundärquelle). Die hier abgeleitete Quote liegt damit eher hoch; die Variante unterschätzt die Nicht-Inanspruchnahme eher.
+
+**Rechnung (`mikro_de.rechne(nutzung=…)`, Ausgabe `mikro_de.json → inanspruchnahme`):** Jeder Haushalt mit Erwerb und Anspruch wird in zwei
+gewichtete Fälle geteilt (69 % mit, 31 % ohne Leistung heute). Neu zwei Lesarten: Aufstockung ebenfalls zu 69 % (gleiche Hürde) oder voll
+(Auszahlung durch die Gemeinde aus den Steuerdaten, ohne Antrag).
+
+| 2028, Weitergabe 80 % | voll (geltend) | beobachtet, neu ebenso | beobachtet, neu voll |
+|---|---|---|---|
+| alle Haushalte mit mehr | 69,3 % | 69,6 % | 69,6 % |
+| erwerbsfähige Haushalte | 85,1 % | 85,7 % | 85,7 % |
+| Hauptperson Minijob | 49,1 % | 64,4 % | 64,4 % |
+| unterstes Zehntel: mit mehr / Mittel | 39,8 % / +21 € | 42,6 % / +63 € | 42,6 % / +96 € |
+| Grundauskommen neu / Leistung heute (Mrd. €) | 32,9 / 50,9 | 30,7 / 46,6 | 32,9 / 46,6 |
+
+**Geltend bleibt die volle Inanspruchnahme** (vorsichtige Lesart: der Vorteil unten wird eher unterschätzt). Die Aussage für die unteren
+Einkommen wird mit beobachteter Inanspruchnahme deutlich günstiger, vor allem, wenn das Grundauskommen ohne Antrag ausgezahlt wird.
+
+**Datenquelle:** Destatis PM 339/2026 (Wohngeld), BA Familienkasse Jahreszahlen 2025 (Tabelle 1.4, Kinderzuschlag). **Wodurch aufgefallen:**
+Liste 7.1, R8; dabei die Vergleichsgröße der Validierung v4.22 geprüft (Korrektur 72).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -3911,6 +3947,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 68 | Modellstand in parameter.toml, README, INDEX und Band III nach v4.15–v4.17 nicht fortgeschrieben (blieb v4.14) | alle auf v4.18; README-Skriptkarte ergänzt (v4.18) | Bau des Upload-Pakets, Projektprüfung |
 | 69 | haushalte33.py seit v4.5 mit 373 € und Kindern zur Hälfte statt Kinderanteil 0,8 bei gleichem Topf (354/283 €) | Topf-Faktor und Kinderanteil aus regel_boden.toml in neu() (v4.21); Beispiele 42.000 €: allein +608, alleinerziehend +607, Paar mit 2 Kindern +673 € | Hinweis des Prüfers (Kulturverein Ribbeck e.V.), 21.10.2026 |
 | 70 | fonds_klub.py übertrug den auf eine Stelle gerundeten Zuschlag der zehn auf den Fonds der 30 (doppelte Rundung) | ungerundete Werte aus altlasten.json (v4.26); Zuschlag 15,5 statt 15,4 %, 42.000 € +606 statt +608 € (zusammen mit Regel E) | eigener Abgleich fondszins.json gegen fonds_geltend.json, 22.10.2026 |
+| 72 | Logbuch v4.22/v4.23, Validierung der Mikrosimulation: Bürgergeld-Anspruch 4,65 Mio. Haushalte „zu hoch“ gegen rund 3,1 Mio. Bedarfsgemeinschaften | Die Näherung im Modell umfasst Bürgergeld, Wohngeld und Kinderzuschlag. Vergleichswert daher rund 4,0 Mio. (3,1 Mio. BG + 0,62 Mio. Wohngeldhaushalte im Erwerbsalter + 0,56 Mio. Kinderzuschlag-Familien, zur Hälfte überlappend, Annahme). Abstand 0,7 Mio. = Nicht-Inanspruchnahme (Quote 69 % bei Haushalten mit Erwerb), nicht ein Fehler der Verteilung | Umsetzung R8 (v4.40): Abgrenzung der Vergleichsgröße geprüft |
 | 71 | Rechner der Webseite (Stand C) in FR seit v4.33: Weitergabe ohne Deckel (Raster `heute_laender.json` mit ungedeckelten Arbeitgeberbeiträgen); Rechnung und Texte gedeckelt | Raster aus `ag_weitergabe`, DE-Raster mit `deckel_lohn` (v4.36); der Rechner zeigte in FR über dem Deckel die Werte ohne Deckel (Rechnung ohne Deckel v4.33 bei 2× Durchschnittslohn: +1.274 € statt +887 €; Rechnerwert nicht nachgeprüft) | Umsetzung des einheitlichen Deckels: Suche aller Stellen, an denen Arbeitgeberbeiträge in die Weitergabe gehen (v4.36) |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
@@ -3940,7 +3977,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.39
+## 7 | Offene Punkte, Stand v4.40
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3957,7 +3994,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R5 | **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
 | R6 | **erledigt v4.37** (offen: Boden B1 je Staat, Verteilungsform je Staat; Entscheidung E11) – **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
 | R7 | **teilweise erledigt v4.39** (H1 DE aus Mietdaten; offen: Mietdaten FR/IT/ES/PL, H2/H3 belegen, H1 auch über der Aufstockung) – **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
-| R8 | **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |
+| R8 | **teilweise erledigt v4.40** (Nicht-Inanspruchnahme als Variante; offen: Teilzeit-Dezile, Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini) – **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |
 | R9 | **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
 | R10 | **Möglichkeitsraum:** UK und Kanada; Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR); Wachstum je Land | Länder außerhalb der Referenzländer | v3.52/v3.53 |
 | R11 | **Regionen und gemeinsame Aufgaben:** heutige Gemeindeeinnahmen je Kreis (Daten der Initiative, `2828-Daten`), Strukturzuschlag 10 %, Kassenanteile und Bemessung am BNE, Anrechnung neutraler Staaten (N32, N33) | Gemeindehaushalte, nicht Haushaltseinkommen | v4.15/v4.16 |

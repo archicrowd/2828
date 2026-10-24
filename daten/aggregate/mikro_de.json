@@ -1,5 +1,5 @@
 {
- "version": "v4.30",
+ "version": "v4.40",
  "status": "Prüfrechnung (synthetische Population; Rentner Stufe 2; Beamte und Selbständige v4.28)",
  "jahr": 2028,
  "kaufkraft": 2026,
@@ -169,6 +169,224 @@
      "mittel_mehr_monat_eur": 570,
      "median_mehr_monat_eur": 736,
      "haushalte_mio": 3.97
+    }
+   }
+  }
+ },
+ "inanspruchnahme": {
+  "beobachtet_mio": 4.0,
+  "anspruch_modell_mio": 4.7,
+  "ohne_erwerb_mio": 2.42,
+  "quote_mit_erwerb": 0.693,
+  "varianten": {
+   "voll (geltend)": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.3,
+     "anteil_mehr_personen_pct": 76.7,
+     "mittel_mehr_monat_eur": 441,
+     "median_mehr_monat_eur": 480,
+     "haushalte_mio": 41.1
+    },
+    "erwerbsfaehige": {
+     "anteil_mehr_haushalte_pct": 85.1,
+     "anteil_mehr_personen_pct": 89.1,
+     "mittel_mehr_monat_eur": 679,
+     "median_mehr_monat_eur": 680,
+     "haushalte_mio": 28.95
+    },
+    "teilzeit": {
+     "anteil_mehr_haushalte_pct": 99.9,
+     "anteil_mehr_personen_pct": 99.9,
+     "mittel_mehr_monat_eur": 718,
+     "median_mehr_monat_eur": 634,
+     "haushalte_mio": 4.6
+    },
+    "minijob": {
+     "anteil_mehr_haushalte_pct": 49.1,
+     "anteil_mehr_personen_pct": 69.5,
+     "mittel_mehr_monat_eur": 221,
+     "median_mehr_monat_eur": -1,
+     "haushalte_mio": 0.87
+    },
+    "alleinerziehend": {
+     "anteil_mehr_haushalte_pct": 86.1,
+     "anteil_mehr_personen_pct": 88.7,
+     "mittel_mehr_monat_eur": 416,
+     "median_mehr_monat_eur": 489,
+     "haushalte_mio": 1.62
+    },
+    "dezil_1": {
+     "dezil": 1,
+     "obergrenze_aequiv_monat_eur": 1386,
+     "anteil_mehr_haushalte_pct": 39.8,
+     "anteil_mehr_personen_pct": 46.1,
+     "mittel_mehr_monat_eur": 21,
+     "median_mehr_monat_eur": 0,
+     "haushalte_mio": 5.25
+    },
+    "dezil_2": {
+     "dezil": 2,
+     "obergrenze_aequiv_monat_eur": 1677,
+     "anteil_mehr_haushalte_pct": 94.8,
+     "anteil_mehr_personen_pct": 97.4,
+     "mittel_mehr_monat_eur": 306,
+     "median_mehr_monat_eur": 201,
+     "haushalte_mio": 4.04
+    },
+    "kosten_mrd": {
+     "grundauskommen_neu": 32.9,
+     "davon_ohne_erwerb": 23.7,
+     "davon_erwerbstaetige_haushalte": 7.2,
+     "davon_rentner": 2.0,
+     "buergergeld_naeherung_heute": 50.9,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   },
+   "beobachtet, neu ebenso": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.6,
+     "anteil_mehr_personen_pct": 76.9,
+     "mittel_mehr_monat_eur": 445,
+     "median_mehr_monat_eur": 496,
+     "haushalte_mio": 41.1
+    },
+    "erwerbsfaehige": {
+     "anteil_mehr_haushalte_pct": 85.7,
+     "anteil_mehr_personen_pct": 89.4,
+     "mittel_mehr_monat_eur": 685,
+     "median_mehr_monat_eur": 682,
+     "haushalte_mio": 28.95
+    },
+    "teilzeit": {
+     "anteil_mehr_haushalte_pct": 99.9,
+     "anteil_mehr_personen_pct": 99.9,
+     "mittel_mehr_monat_eur": 734,
+     "median_mehr_monat_eur": 646,
+     "haushalte_mio": 4.6
+    },
+    "minijob": {
+     "anteil_mehr_haushalte_pct": 64.4,
+     "anteil_mehr_personen_pct": 78.3,
+     "mittel_mehr_monat_eur": 306,
+     "median_mehr_monat_eur": 344,
+     "haushalte_mio": 0.87
+    },
+    "alleinerziehend": {
+     "anteil_mehr_haushalte_pct": 86.3,
+     "anteil_mehr_personen_pct": 88.8,
+     "mittel_mehr_monat_eur": 427,
+     "median_mehr_monat_eur": 525,
+     "haushalte_mio": 1.62
+    },
+    "dezil_1": {
+     "dezil": 1,
+     "obergrenze_aequiv_monat_eur": 1353,
+     "anteil_mehr_haushalte_pct": 42.6,
+     "anteil_mehr_personen_pct": 48.2,
+     "mittel_mehr_monat_eur": 63,
+     "median_mehr_monat_eur": 0,
+     "haushalte_mio": 5.25
+    },
+    "dezil_2": {
+     "dezil": 2,
+     "obergrenze_aequiv_monat_eur": 1677,
+     "anteil_mehr_haushalte_pct": 94.9,
+     "anteil_mehr_personen_pct": 97.4,
+     "mittel_mehr_monat_eur": 296,
+     "median_mehr_monat_eur": 140,
+     "haushalte_mio": 4.04
+    },
+    "kosten_mrd": {
+     "grundauskommen_neu": 30.7,
+     "davon_ohne_erwerb": 23.7,
+     "davon_erwerbstaetige_haushalte": 5.1,
+     "davon_rentner": 2.0,
+     "buergergeld_naeherung_heute": 46.6,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   },
+   "beobachtet, neu voll": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.6,
+     "anteil_mehr_personen_pct": 76.9,
+     "mittel_mehr_monat_eur": 449,
+     "median_mehr_monat_eur": 523,
+     "haushalte_mio": 41.1
+    },
+    "erwerbsfaehige": {
+     "anteil_mehr_haushalte_pct": 85.7,
+     "anteil_mehr_personen_pct": 89.4,
+     "mittel_mehr_monat_eur": 692,
+     "median_mehr_monat_eur": 688,
+     "haushalte_mio": 28.95
+    },
+    "teilzeit": {
+     "anteil_mehr_haushalte_pct": 99.9,
+     "anteil_mehr_personen_pct": 99.9,
+     "mittel_mehr_monat_eur": 747,
+     "median_mehr_monat_eur": 659,
+     "haushalte_mio": 4.6
+    },
+    "minijob": {
+     "anteil_mehr_haushalte_pct": 64.4,
+     "anteil_mehr_personen_pct": 78.3,
+     "mittel_mehr_monat_eur": 414,
+     "median_mehr_monat_eur": 538,
+     "haushalte_mio": 0.87
+    },
+    "alleinerziehend": {
+     "anteil_mehr_haushalte_pct": 86.3,
+     "anteil_mehr_personen_pct": 88.8,
+     "mittel_mehr_monat_eur": 459,
+     "median_mehr_monat_eur": 586,
+     "haushalte_mio": 1.62
+    },
+    "dezil_1": {
+     "dezil": 1,
+     "obergrenze_aequiv_monat_eur": 1353,
+     "anteil_mehr_haushalte_pct": 42.6,
+     "anteil_mehr_personen_pct": 48.2,
+     "mittel_mehr_monat_eur": 96,
+     "median_mehr_monat_eur": 0,
+     "haushalte_mio": 5.25
+    },
+    "dezil_2": {
+     "dezil": 2,
+     "obergrenze_aequiv_monat_eur": 1677,
+     "anteil_mehr_haushalte_pct": 94.9,
+     "anteil_mehr_personen_pct": 97.4,
+     "mittel_mehr_monat_eur": 297,
+     "median_mehr_monat_eur": 140,
+     "haushalte_mio": 4.04
+    },
+    "kosten_mrd": {
+     "grundauskommen_neu": 32.9,
+     "davon_ohne_erwerb": 23.7,
+     "davon_erwerbstaetige_haushalte": 7.2,
+     "davon_rentner": 2.0,
+     "buergergeld_naeherung_heute": 46.6,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
     }
    }
   }
@@ -1569,5 +1787,5 @@
    }
   }
  },
- "hinweis": "Synthetische Population aus veröffentlichten Eckwerten; Spanne der Ziehungen misst nur das Rauschen der Ziehung, nicht die Unsicherheit der Annahmen (Haushaltszahlen, Teilzeitstreuung, Partnerstatus, Zusammensetzung der Alterseinkommen). Nicht abgebildet: Vermögenseinkommen der Erwerbstätigen, Rentner unter 65, Partner der Beamten und Selbständigen nicht in der Eichung (Doppelzählung möglich), Nicht-Inanspruchnahme von Bürgergeld (Rentner: Variante beobachtet). Validierung nur an Aggregaten, auf die nicht geeicht wurde."
+ "hinweis": "Synthetische Population aus veröffentlichten Eckwerten; Spanne der Ziehungen misst nur das Rauschen der Ziehung, nicht die Unsicherheit der Annahmen (Haushaltszahlen, Teilzeitstreuung, Partnerstatus, Zusammensetzung der Alterseinkommen). Nicht abgebildet: Vermögenseinkommen der Erwerbstätigen, Rentner unter 65, Partner der Beamten und Selbständigen nicht in der Eichung (Doppelzählung möglich), Nicht-Inanspruchnahme nur als Variante (inanspruchnahme; Rentner: Variante beobachtet). Validierung nur an Aggregaten, auf die nicht geeicht wurde."
 }
