@@ -49,19 +49,20 @@ def z_beschluss():
     return [x * B["z_anteil"] for x in AL.SZ.z_klub(vb["dividende_pct_bip_2028"] / (1 - k / 2), w)], vb["punkte"]["2028"]["steuerbedarf"]
 
 
-def pfad(c, z, zinsen, d0, n):
+def pfad(c, z, zinsen, d0, n, g=None):
+    g = AL.G_NOM if g is None else g                         # v4.46 (Prüfbefund B21): Wachstum als zweite Dimension
     d, out = d0, []
     for t in range(n):
-        d = d * (1 + zinsen[t]) / (1 + AL.G_NOM) + (z[t] if t < len(z) else 0.0) - c
+        d = d * (1 + zinsen[t]) / (1 + g) + (z[t] if t < len(z) else 0.0) - c
         out.append(d)
     return out
 
 
-def loese(z, zinsen, d0, n):
+def loese(z, zinsen, d0, n, g=None):
     lo, hi = -5.0, 30.0
     for _ in range(80):
         c = (lo + hi) / 2
-        lo, hi = (c, hi) if pfad(c, z, zinsen, d0, n)[-1] > 0 else (lo, c)
+        lo, hi = (c, hi) if pfad(c, z, zinsen, d0, n, g)[-1] > 0 else (lo, c)
     return hi
 
 
@@ -85,10 +86,26 @@ def main():
     for ziel in P["uebergang_ziel"]:
         fall(f"Übergang {start:.2f} → {ziel} %", [start + (ziel - start) * min(1.0, t / P["uebergang_jahre"]) for t in range(n)])
     basis = varianten[0]
+    # v4.46 (Prüfbefund B21, dritte Prüfung 24.10.2026): Zins × nominales Wachstum. Z in % des BIP unverändert (Annahme: Renten mit den Löhnen
+    # fortgeschrieben, Steuern als Anteil am BIP); nur die Schuldendynamik d·(1+i)/(1+g) ändert sich. Dazu: Beschlussbeitrag fest, Restschuld 2098.
+    raster = []
+    c_fest = basis["beitrag_zehn_pct_bip"]
+    for g in P["wachstum"]:
+        for i in P["zinsen"]:
+            zi = [i / 100] * n
+            c = loese(z, zi, d0, n, g / 100)
+            p = pfad(c, z, zi, d0, n, g / 100)
+            pf = pfad(c_fest, z, zi, d0, n, g / 100)
+            raster.append(dict(wachstum=g, zins=i, beitrag_pct_bip=round(c * FGV["verhaeltnis_beitrag_30_zu_10"], 2),
+                               zuschlag_pct=round(c / quote * 100 * FGV["verhaeltnis_zuschlag_30_zu_10"], 1),
+                               spitze_zehn=round(max(p), 1), spitzenjahr_zehn=2029 + p.index(max(p)),
+                               beschlussbeitrag_fest=dict(restschuld_2098_zehn=round(pf[-1], 1), spitze_zehn=round(max(pf), 1),
+                                                          spitzenjahr_zehn=2029 + pf.index(max(pf)))))
     E = dict(version=P["version"], status="Prüfrechnung, Empfindlichkeit", wachstum_nominal=AL.G_NOM * 100, startschuld_2028=d0,
              durchschnittszins_2028=round(start, 2), markt_oktober_2026=dict(bund_10j=P["markt_bund_10j"], eu_10j=P["markt_eu_10j"],
              frankreich_10j=P["markt_frankreich_10j"], status="Sekundärquellen"), varianten=varianten,
              abgleich_beschluss=dict(altlasten_json_zehn=BJ["beitrag_pct_bip"], hier_zehn=basis["beitrag_zehn_pct_bip"]),
+             zins_wachstum=raster,
              hinweis="Zins über dem nominalen Wachstum (3 %): Die Schuld schmilzt nicht mehr von selbst, der Beitrag muss auch Zinsen tilgen. "
                      "Gemeinsame Anleihen (EU) rentieren derzeit über Bundesanleihen; günstiger als heute ist der Fonds für FR und IT, nicht für DE.")
     (AGG / "fondszins.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")

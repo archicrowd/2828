@@ -1,6 +1,6 @@
 # Prüfmappe für eine externe Prüfung – Stand C „Das Goldene Drittel“
 
-Initiative 28:28 · Modellstand v4.42 · 24. Oktober 2026 · Lizenz: Text CC BY 4.0
+Initiative 28:28 · Modellstand v4.42, nachgeführt v4.46 (Befunde der dritten Prüfung) · 24. Oktober 2026 · Lizenz: Text CC BY 4.0
 
 Diese Mappe ist für Prüferinnen und Prüfer geschrieben, die die Rechnung von außen nachvollziehen sollen. Sie nennt, was gilt, worauf das
 Ergebnis beruht, was nur angenommen ist und wo wir selbst die größten Schwächen sehen. Sie ersetzt keine Quelle: Jede Zahl verweist auf eine
@@ -29,7 +29,7 @@ eingecheckten Aggregaten; Rückgabe 0 = alle Selbstprüfungen bestanden. Einzeln
 mit veröffentlichten Aggregaten. Die amtlichen Eingangswerte (Eurostat) lassen sich mit `python3 modell/eingangswerte.py --abrufen`
 erneut abrufen und gegen die eingecheckten Werte vergleichen (nur dieser Schritt braucht Netzzugang).
 
-**Zugang:** Das Repository ist privat; Lesezugang auf Anfrage an die Initiative (Kontakt im Impressum der Webseite).
+**Zugang:** github.com/archicrowd/2828 (Sichtbarkeit laut GitHub am 24.10.2026: öffentlich; bis v4.45 stand hier „privat“, Korrektur 76).
 
 ---
 
@@ -71,7 +71,8 @@ gerechnet.
 |---|---|---|---|
 | **Weitergabe der Arbeitgeberbeiträge in den Lohn** | 80 %, bis 6 × Grundbedarf; Rest beim Betrieb; Gesetz zur Vertragsanpassung, Rückfallregel | Haushalte mit Vollzeit-Hauptperson mit mehr bei 0 / 50 / 80 / 100 %: 92,9 / 98,4 / 99,1 / 99,4 %; alle Haushalte 61,0 / 66,9 / 69,3 / 71,1 %. Empirie zur Inzidenz: eine Studie (Saez, Schoefer, Seim 2019) | `mikro_de.json → basis.ergebnis`, `weitergabe_sensitivitaet.json` |
 | **Rentnerregel E** | 15 % Kürzung der Zusagen über dem Grundbedarf; Boden = heutige Grundsicherung (1.083 / 1.632 €) | effektiv 6,95 % aller Zusagen in DE; je Staat 1,9 % (IS) bis 12,1 % (LU) | `rentner_kombi.json`, `kuerzung_laender.json` |
-| **Fonds: Zins und Laufzeit** | 2,45 % (Mittel Euroraum 2006–2025), Tilgung bis 2098 | Zins 3,0 / 3,5 / 4,0 %: Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € DE +590 / +570 / +548 € | `fondszins.json` |
+| **Fonds: Zins und Laufzeit** | 2,45 % (Mittel Euroraum 2006–2025), Tilgung bis 2098 | Zins 3,0 / 3,5 / 4,0 %: gemeinsamer Zuschlag 17,1 / 18,7 / 20,4 %, für Deutschland 2028 nach Verrechnung 16,5 / 18,1 / 19,7 %; 42.000 € DE +590 / +570 / +548 € (Lesart seit v4.46 benannt, Korrektur 75) | `fondszins.json` |
+| **Fonds: nominales Wachstum** (seit v4.46, Prüfbefund B21) | 3,0 % | Wachstum 2,5 / 2,0 % bei Zins 2,45 %: Beitrag 5,68 / 6,22 % BIP, Zuschlag 17,0 / 18,6 %; bei festem Beitrag und 2,0 % Restschuld 2098 rund 87 % BIP | `fondszins.json → zins_wachstum` |
 | **Fonds der 30 aus dem Fonds der zehn skaliert** | Beschluss der zehn × Verhältnis 30/10 in der Abgrenzung des Möglichkeitsraums | nicht als Band gerechnet (siehe 5) | `fonds_klub.py` |
 | **Tarif und Labels** | 0/11/19/25/33 %, Labels 5/11/17/25 % plus Sonderstufe | Deckung 2028 und Pfad in `projektion33`, `systemvarianten` | `systemvarianten.toml` |
 | **Kinder** | Kinderdividende 0,8; Kindergewicht im Boden 0,55 | Varianten 0,3 / 0,45 / 0,5 | `kindergewicht.json` |
@@ -136,7 +137,7 @@ Vollständig im Logbuch, Abschnitt 7. Die für eine Prüfung wichtigsten:
 1. **Weitergabe:** Ist eine gesetzliche Pflicht zur Vertragsanpassung mit 80 % bis zum Sechsfachen des Grundbedarfs durchsetzbar, und wie
    belastbar ist die Annahme, dass sie in den Löhnen ankommt? Was folgt aus der Inzidenz-Literatur über die Schwedenstudie hinaus?
 2. **Aufkommen 33R:** Trägt der Tarif mit Labels die Deckung 2028 (Quote 33,53 % BIP Steuern)? Prüfbar über `systemvarianten.py` und `projektion33.py`.
-3. **Altlasten:** Sind Z (Altrenten über der Dividende, 9,45 % BIP 2028 im Klubschnitt) und die Übertragung von zehn auf 30 Staaten sachgerecht
+3. **Altlasten:** Sind Z (Altrenten über der Dividende, 9,42 % BIP 2028 im Klubschnitt; bis v4.45 hier 9,45, Korrektur 74) und die Übertragung von zehn auf 30 Staaten sachgerecht
    abgegrenzt? Ist der Fondszins (Mittel 2006–2025 statt Marktzins) vertretbar?
 4. **Länder:** Wie weit tragen die vereinfachten Steuer- und Abgabenmodelle FR, IT, ES, PL (Abgleich nur mit OECD Taxing Wages)? Welche
    Leistungen fehlen „heute“?
@@ -147,7 +148,7 @@ Vollständig im Logbuch, Abschnitt 7. Die für eine Prüfung wichtigsten:
 **Form der Rückmeldung:** je Befund: Datei und Zeile oder Kennzahl, was falsch ist, was richtig wäre, Quelle. Externe Rechnungen bitte im Format
 `schnittstelle/ergebnis-schema.csv` (Beschreibung `schnittstelle/MIKROSIMULATION.md`); wir prüfen sie mit `schnittstelle/pruefe_beitrag.py`
 und führen jede Übernahme im Logbuch.
-Befunde, die zutreffen, werden als Korrektur mit Nummer geführt (nächste freie: 73).
+Befunde, die zutreffen, werden als Korrektur mit Nummer geführt (nächste freie: 77). Antwort auf die dritte Prüfung: `projekt/Stellungnahme-Pruefung4-2026-10-24.md`.
 
 ---
 

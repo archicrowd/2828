@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.45**
+Stand: 24. Oktober 2026 · Modellstand **v4.46**
 
 ---
 
@@ -4037,6 +4037,31 @@ offenen Platzhalter.
 
 ---
 
+### v4.46 — Dritte Prüfung (Issue #2, Modellstand v4.42) beantwortet: Korrekturen 73 bis 76, Zins × Wachstum, Deckungspositionen
+
+**Art der Änderung: PATCH (Ausweis und Empfindlichkeit), keine geltende Haushalts- oder Fondszahl bewegt.** 24. Oktober 2026.
+
+Prüfbericht und Übergabepaket des Kulturverein Ribbeck e.V. (Issue #2, 24.10.2026) zum Stand v4.42: Rechenkern in vier Reproduktionsfamilien
+bestätigt, acht Befunde B17–B24. Beilagen unter `beitraege/kvribbeck-2028/pruefung3/`, Antwort `projekt/Stellungnahme-Pruefung4-2026-10-24.md`.
+
+- **B17 → Korrektur 73:** Gesamtlast ohne Fonds 2028 jetzt 45,58 / 49,68 % BIP (Deckung + Altlasten [+ Pflichtvorsorge]); vorher 45,47/49,57
+  (Datei, mit Steuerbedarf) und 45,46/49,56 (KENNZAHLEN).
+- **B18 → Korrektur 74:** Z 2028 = 9,42 % BIP (seit v4.37).
+- **B19:** `deckung_quote.csv` als Stand B (archiviert) in `KENNZAHLEN.md` benannt. **B20:** Hinweistext `gesamtlast33.json` auf den Fonds der 30.
+- **B21:** `fondszins.py`/`.toml`: Raster Zins 2,45–4,0 % × Wachstum 3,0 / 2,5 / 2,0 %. Bei 2,45 % und 2,0 %: Beitrag 6,22 statt 5,17 % BIP,
+  Zuschlag 18,6 statt 15,5 %; bei festem Beitrag Restschuld 2098 rund 87 % BIP (zehn), Spitze 191 % (2064). Annahme: Z in % BIP unabhängig vom
+  Wachstum.
+- **B22/B23:** Definitionstabelle der zehn Deckungspositionen in `KENNZAHLEN.md`; Unternehmen (4,42 % BIP, implizite Basis rund 580 Mrd. € aus dem
+  Stand-A-Modell) als „Basis nicht belegt“ markiert; Erbschaft mit der Datenprüfung aus v4.32. Offene Punkte in R4.
+- **B24 → Korrektur 75:** Zinsband der Mappe mit gemeinsamem und deutschem Satz.
+- **Korrektur 76 (eigene):** Repository nicht privat, sondern öffentlich (GitHub, 24.10.2026).
+- Nebenbei: Das Upload-Paket v4.45 (`seite/Webseite-v4.45.zip`, `seite/paket/`) lag nach dem Bau im Arbeitsbaum; die Projektprüfung meldet
+  es als verwaist. Paket nach dem Bau aus dem Arbeitsbaum nehmen (nicht im Repository, siehe `.gitignore`).
+
+**Datenquelle:** Prüfbericht vom 24.10.2026; eigene Nachrechnung. **Wodurch aufgefallen:** dritte Prüfung (Issue #2).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4068,6 +4093,10 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 68 | Modellstand in parameter.toml, README, INDEX und Band III nach v4.15–v4.17 nicht fortgeschrieben (blieb v4.14) | alle auf v4.18; README-Skriptkarte ergänzt (v4.18) | Bau des Upload-Pakets, Projektprüfung |
 | 69 | haushalte33.py seit v4.5 mit 373 € und Kindern zur Hälfte statt Kinderanteil 0,8 bei gleichem Topf (354/283 €) | Topf-Faktor und Kinderanteil aus regel_boden.toml in neu() (v4.21); Beispiele 42.000 €: allein +608, alleinerziehend +607, Paar mit 2 Kindern +673 € | Hinweis des Prüfers (Kulturverein Ribbeck e.V.), 21.10.2026 |
 | 70 | fonds_klub.py übertrug den auf eine Stelle gerundeten Zuschlag der zehn auf den Fonds der 30 (doppelte Rundung) | ungerundete Werte aus altlasten.json (v4.26); Zuschlag 15,5 statt 15,4 %, 42.000 € +606 statt +608 € (zusammen mit Regel E) | eigener Abgleich fondszins.json gegen fonds_geltend.json, 22.10.2026 |
+| 73 | `gesamtlast33.json` (seit v4.14): „Steuern 33,53“ neben „Summe 45,47“ – die Summe stammte aus dem Steuerbedarf 33,42; `KENNZAHLEN.md` nannte 45,46/49,56 | Summe aus den ausgewiesenen Teilen 33,53 + 12,05 = 45,58, mit Pflichtvorsorge 49,68; Steuerbedarf-Variante 45,47/49,57 daneben (v4.46) | Dritte Prüfung, Befund B17 |
+| 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
+| 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
+| 76 | `DATENZUGANG.md` und Prüfmappe: Repository „privat“ | laut GitHub am 24.10.2026 öffentlich; Text berichtigt (v4.46) | Nachsehen der Issues (GitHub-Abfrage der Sichtbarkeit) |
 | 72 | Logbuch v4.22/v4.23, Validierung der Mikrosimulation: Bürgergeld-Anspruch 4,65 Mio. Haushalte „zu hoch“ gegen rund 3,1 Mio. Bedarfsgemeinschaften | Die Näherung im Modell umfasst Bürgergeld, Wohngeld und Kinderzuschlag. Vergleichswert daher rund 4,0 Mio. (3,1 Mio. BG + 0,62 Mio. Wohngeldhaushalte im Erwerbsalter + 0,56 Mio. Kinderzuschlag-Familien, zur Hälfte überlappend, Annahme). Abstand 0,7 Mio. = Nicht-Inanspruchnahme (Quote 69 % bei Haushalten mit Erwerb), nicht ein Fehler der Verteilung | Umsetzung R8 (v4.40): Abgrenzung der Vergleichsgröße geprüft |
 | 71 | Rechner der Webseite (Stand C) in FR seit v4.33: Weitergabe ohne Deckel (Raster `heute_laender.json` mit ungedeckelten Arbeitgeberbeiträgen); Rechnung und Texte gedeckelt | Raster aus `ag_weitergabe`, DE-Raster mit `deckel_lohn` (v4.36); der Rechner zeigte in FR über dem Deckel die Werte ohne Deckel (Rechnung ohne Deckel v4.33 bei 2× Durchschnittslohn: +1.274 € statt +887 €; Rechnerwert nicht nachgeprüft) | Umsetzung des einheitlichen Deckels: Suche aller Stellen, an denen Arbeitgeberbeiträge in die Weitergabe gehen (v4.36) |
 
@@ -4098,7 +4127,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.45
+## 7 | Offene Punkte, Stand v4.46
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4111,7 +4140,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R1 | **erledigt v4.28** (Zulage als Vorschlag, Entscheidung E9; Kosten der Zulage gegen Beihilfe und Versorgung gegenrechnen) – **Beamte und Selbständige in der Mikrosimulation** (rund 1,9 Mio. Beamte mit Pensionären, 3,9 Mio. Selbständige): heute ohne Sozialbeiträge bzw. mit eigener Vorsorge; neu ohne Gewinn aus wegfallenden Beiträgen, aber mit voller Besteuerung | Vorzeichen offen; kann die Aussage „9 von 10 Beschäftigten“ berühren (Beamte sind Beschäftigte) | Mehrheitsaussage, v4.22 |
 | R2 | **erledigt v4.29** (offen: Einstufung je Produkt statt je Gruppe, Vorsteueranteil steuerfreier Bereiche belegen) – **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
 | R3 | **erledigt v4.30 für Kapital und Miete** (offen: Spitze der Vermögen, Erbschaften, Untererfassung) – **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
-| R4 | **teilweise erledigt v4.31/v4.32** (BIP-Neuabruf als Schalter; Vermögens- und Erbschaftsbasis geprüft; offen: Renditen, COFOG, B19) – **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
+| R4 | **v4.46 ergänzt aus der dritten Prüfung:** Basis und Definition der Position Unternehmen belegen (B23), Erbschaft: Schenkungs-Parität und reale Übertragungen als Obergrenze (B22), Einkommensposition gegen Lohn- und Einkommensteuerstatistik eichen, oberes Ausweichband Vermögen (M3); **teilweise erledigt v4.31/v4.32** (BIP-Neuabruf als Schalter; Vermögens- und Erbschaftsbasis geprüft; offen: Renditen, COFOG, B19) – **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
 | R5 | **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
 | R6 | **erledigt v4.37** (offen: Boden B1 je Staat, Verteilungsform je Staat; Entscheidung E11) – **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
 | R7 | **teilweise erledigt v4.39** (H1 DE aus Mietdaten; offen: Mietdaten FR/IT/ES/PL, H2/H3 belegen, H1 auch über der Aufstockung) – **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |

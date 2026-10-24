@@ -1,7 +1,7 @@
 # Zins des gemeinsamen Altlastenfonds gegen Marktrenditen (modell/fondszins.py, Logbuch v4.19). Prüfrechnung, Empfindlichkeit.
 # Anlass: Prüfung offener Punkte 21.10.2026. Beschluss rechnet mit 2,5 % (Garantiezins der Gesamtrechnung, „Setzung“) bei 3,0 % nominalem
 # Wachstum; das Konzept sagt „Solange der gemeinsame Zins unter dem Wachstum liegt, schmilzt alte Schuld von selbst“.
-version = "v4.20"
+version = "v4.46"
 
 # Marktrenditen 10 Jahre, Oktober 2026 (Sekundärquellen, abgerufen 21.10.2026; an amtlicher Quelle – Bundesbank, EZB – zu prüfen):
 markt_bund_10j = 3.46        # Trading Economics, Deutschland 10 Jahre, 19./20.10.2026
@@ -9,6 +9,7 @@ markt_eu_10j = 3.95          # bondScovery, EU-Anleihen, geschätzte Spot-Kurve 
 markt_frankreich_10j = 4.79  # ideal-investisseur.fr, 16.10.2026 (bereits in zerlegung_laender.py verwendet)
 
 zinsen = [2.45, 3.0, 3.5, 4.0]     # v4.20: 2,45 = Beschluss (Mittel 2006–2025)
+wachstum = [2.0, 2.5, 3.0]          # v4.46 (Prüfbefund B21): nominales Wachstum; 3,0 = Annahme der Gesamtrechnung, 2,0 = Unterkante (Prüfung)
 # Übergang: Der Fonds übernimmt die Altschulden mit ihren laufenden Kupons; der Durchschnittszins steigt erst mit der Umschuldung auf den
 # Marktzins. Start = Durchschnittszins 2028 der Gesamtrechnung (gesamtrechnung.json, zins_2028), linear über die Restlaufzeit (7,5 Jahre, Annahme).
 uebergang_jahre = 7.5

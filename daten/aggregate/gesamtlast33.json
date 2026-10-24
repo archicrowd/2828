@@ -36,8 +36,13 @@
  "c_ohne_fonds_2028": {
   "steuern": 33.53,
   "altlasten_im_jahr": 12.05,
-  "summe": 45.47,
-  "mit_route": 49.57
+  "summe": 45.58,
+  "mit_route": 49.68,
+  "systemvarianten_mit_steuerbedarf": {
+   "steuerbedarf": 33.42,
+   "summe": 45.47,
+   "mit_route": 49.57
+  }
  },
  "fonds": {
   "beitrag_pct_bip": 5.17,
@@ -46,5 +51,5 @@
   "spitzenjahr": 2055,
   "zieljahr": 2098
  },
- "hinweis": "% des BIP, Klub der zehn (gemeinsamer Fonds, Beschluss). Steuern: Deckung 33R einschließlich Progression (projektion33). Heute ohne private Vorsorge; die Pflichtvorsorge ist eigenes, vererbbares Vermögen und deshalb getrennt ausgewiesen."
+ "hinweis": "% des BIP; Fonds: gemeinsamer Fonds der 30 Staaten (fonds_geltend.json; v4.46, Prüfbefund B20 – vorher stand hier „Klub der zehn“). Steuern: Deckung 33R einschließlich Progression (projektion33). Heute ohne private Vorsorge; die Pflichtvorsorge ist eigenes, vererbbares Vermögen und deshalb getrennt ausgewiesen."
 }

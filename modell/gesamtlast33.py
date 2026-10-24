@@ -35,11 +35,15 @@ def main():
         reihe.append(dict(jahr=j, steuern=round(steuern, 2), fonds=fonds, a_steuern_und_fonds=round(steuern + fonds, 2),
                           b_mit_pflichtvorsorge=round(steuern + fonds + route, 2)))
     E = dict(version=P["version"], status="Prüfrechnung", heute=SV.get("last_heute", 40.76), pflichtvorsorge_route=route, reihe=reihe,
-             c_ohne_fonds_2028=dict(steuern=p28["deckung"], altlasten_im_jahr=p28["altlastenbeitrag"], summe=p28["gesamtlast_ohne_route"],
-                                    mit_route=p28["gesamtlast_mit_route"]),
+             # v4.46 (Korrektur 73, Prüfbefund B17): Summe aus den ausgewiesenen Teilen (Deckung + Altlasten), nicht aus dem Steuerbedarf 33,42
+             c_ohne_fonds_2028=dict(steuern=p28["deckung"], altlasten_im_jahr=p28["altlastenbeitrag"],
+                                    summe=round(p28["deckung"] + p28["altlastenbeitrag"], 2),
+                                    mit_route=round(p28["deckung"] + p28["altlastenbeitrag"] + route, 2),
+                                    systemvarianten_mit_steuerbedarf=dict(steuerbedarf=p28["steuerbedarf"], summe=p28["gesamtlast_ohne_route"],
+                                                                          mit_route=p28["gesamtlast_mit_route"])),
              fonds=dict(beitrag_pct_bip=AL["beitrag_pct_bip"], zuschlag_pct=AL["zuschlag_auf_alle_steuern_pct"], schuldenquote_spitze=AL["schuldenquote_spitze"],
                         spitzenjahr=AL["spitzenjahr"], zieljahr=AL["zieljahr"]),
-             hinweis="% des BIP, Klub der zehn (gemeinsamer Fonds, Beschluss). Steuern: Deckung 33R einschließlich Progression (projektion33). "
+             hinweis="% des BIP; Fonds: gemeinsamer Fonds der 30 Staaten (fonds_geltend.json; v4.46, Prüfbefund B20 – vorher stand hier „Klub der zehn“). Steuern: Deckung 33R einschließlich Progression (projektion33). "
                      "Heute ohne private Vorsorge; die Pflichtvorsorge ist eigenes, vererbbares Vermögen und deshalb getrennt ausgewiesen.")
     (AGG / "gesamtlast33.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print("heute", E["heute"], "| C ohne Fonds 2028", E["c_ohne_fonds_2028"])
