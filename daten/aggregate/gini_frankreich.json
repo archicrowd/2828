@@ -107,16 +107,16 @@
   },
   "FR": {
    "gini_amtlich": 30.4,
-   "gini_2028": 29.6,
-   "gini_weitergabe_gedeckelt_1x": 27.34,
-   "gini_weitergabe_gedeckelt_1_5x": 29.48,
-   "gini_abbildung_familie": 24.6,
+   "gini_2028": 29.29,
+   "gini_weitergabe_gedeckelt_1x": 27.03,
+   "gini_weitergabe_gedeckelt_1_5x": 29.18,
+   "gini_abbildung_familie": 24.45,
    "aenderung_je_dezil_pct": [
-    58.3,
-    12.0,
-    2.5,
-    6.0,
-    16.6,
+    57.9,
+    16.2,
+    3.1,
+    8.5,
+    16.9,
     16.4,
     17.6,
     21.2,
@@ -128,17 +128,17 @@
      "lohn_x_durchschnitt": 0.3,
      "brutto": 13490,
      "ag_beitraege_pct_brutto": 0.0,
-     "heute_pct_brutto": 117.5,
+     "heute_pct_brutto": 110.0,
      "neu_pct_brutto": 121.4,
-     "aenderung_pct": 3.3
+     "aenderung_pct": 10.3
     },
     {
      "lohn_x_durchschnitt": 0.5,
      "brutto": 22484,
      "ag_beitraege_pct_brutto": 0.7,
-     "heute_pct_brutto": 92.7,
+     "heute_pct_brutto": 91.8,
      "neu_pct_brutto": 84.1,
-     "aenderung_pct": -9.3
+     "aenderung_pct": -8.4
     },
     {
      "lohn_x_durchschnitt": 0.75,

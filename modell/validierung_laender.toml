@@ -1,0 +1,31 @@
+# Validierung der Ländermodelle „heute“ gegen amtliche Vergleichswerte (modell/validierung_laender.py, Logbuch v4.51). Prüfrechnung.
+version = "v4.51"
+# Abweichung des Steuer- und Abgabenkeils (Prozentpunkte der Arbeitskosten), bis zu der ein Haushaltstyp als bestanden gilt (Setzung der Prüfung)
+toleranz_pp = 2.0
+
+[oecd]
+# OECD (2026), Taxing Wages 2026, Daten 2025; Kapitel 1 (Overview), Tab. 1.1, 1.2, 1.4, 1.7; amtlich, abgerufen 24.10.2026 über
+# https://www.oecd.org/en/publications/taxing-wages-2026_3a5169ef-en/full-report/overview_d93131c3.html (maschinell aus der Seite gelesen)
+quelle = "OECD (2026), Taxing Wages 2026 (Daten 2025), Tab. 1.1, 1.2, 1.4, 1.7"
+durchschnittslohn_2025 = { DE = 66700, FR = 45964, IT = 36594, ES = 32678, PL = 105738 }
+keil_allein_100 = { DE = 49.3, FR = 47.2, IT = 45.8, ES = 41.4, PL = 35.0 }
+est_allein_100 = { DE = 14.2, FR = 12.2, IT = 14.5, ES = 13.1, PL = 5.7 }
+sv_an_allein_100 = { DE = 17.8, FR = 8.3, IT = 7.2, ES = 5.0, PL = 15.3 }
+sv_ag_allein_100 = { DE = 17.3, FR = 26.7, IT = 24.0, ES = 23.4, PL = 14.0 }
+keil_paar_ein_einkommen_2k = { DE = 34.9, FR = 39.1, IT = 34.3, ES = 36.8, PL = 14.2 }
+# Tab. 1.5 (Paar, 100 % + 67 %, zwei Kinder): DE 42,6, FR 41,0, IT 36,1, ES 38,7, PL 23,7 – nicht geprüft, weil die Ländermodelle je Haushalt
+# nur ein Erwerbseinkommen kennen (offener Punkt)
+keil_paar_zwei_einkommen_2k = { DE = 42.6, FR = 41.0, IT = 36.1, ES = 38.7, PL = 23.7 }
+
+# Prime d'activité nach der Reform zum 1.4.2026: Beispielfälle des Ministère du Travail et des Solidarités (Dossier de presse, Februar 2026),
+# €/Monat nach Vielfachem des SMIC; abgerufen über lemediasocial.fr (Wiedergabe des amtlichen Dossiers; maschinell aus dem PDF gelesen, an der
+# Quelle zu prüfen; Zuordnung der Tabellen zu den Fällen nach Reihenfolge, Annahme). Haushalt = [Erwachsene, Kinder].
+[fr_ministerium.allein]
+haushalt = [1, 0]
+werte = [[1.15, 212], [1.2, 184], [1.4, 70]]
+[fr_ministerium.paar_ein_einkommen_2k]
+haushalt = [2, 2]
+werte = [[1.15, 568], [1.2, 539], [1.5, 461], [2.0, 271]]
+[fr_ministerium.alleinerziehend_2k]
+haushalt = [1, 2]
+werte = [[1.15, 168], [1.2, 139], [1.5, 61]]

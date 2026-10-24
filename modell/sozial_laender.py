@@ -57,7 +57,16 @@ def fr_apl(b, e, k, netto):
     pers = e + k
     skala = 1 + 0.5 * min(pers - 1, 1) + 0.3 * max(pers - 2, 0)
     r0 = d["rsa_niveau"] * skala
-    return 12 * max(0.0, d["apl_max"][min(pers, 6) - 1] - d["apl_satz"] * max(0.0, netto / 12 - r0))
+    apl = 12 * max(0.0, d["apl_max"][min(pers, 6) - 1] - d["apl_satz"] * max(0.0, netto / 12 - r0))
+    if apl > 0 and d.get("forfait_bei_apl", False):
+        # v4.51 (Korrektur 78): Wer APL erhält, dem rechnet die CAF den forfait logement als Ressource der prime d'activité an
+        pa = HL.F["pa"]
+        alt = pa.get("forfait_anteil", 0.0)
+        pa["forfait_anteil"] = 1.0
+        mit = HL.MODELLE["FR"][0](b, e, k)["netto"]
+        pa["forfait_anteil"] = alt
+        apl -= max(0.0, netto - mit)
+    return apl
 
 
 def es_capi(b, e, k, netto):

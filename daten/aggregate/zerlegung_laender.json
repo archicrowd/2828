@@ -5,34 +5,34 @@
   "FR": {
    "zerlegung_monat": {
     "20000|1|0": {
-     "gesamt": -142,
+     "gesamt": -127,
      "altlastenzuschlag": -81,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -106,
-     "prime_activite": -276,
+     "prime_activite": -261,
      "allocations_familiales": 0,
      "quotient_familial": 0,
      "rest": 488
     },
     "20000|1|1": {
-     "gesamt": -366,
+     "gesamt": -351,
      "altlastenzuschlag": -84,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -179,
-     "prime_activite": -595,
+     "prime_activite": -580,
      "allocations_familiales": 0,
      "quotient_familial": 0,
      "rest": 659
     },
     "30000|2|2": {
-     "gesamt": -217,
+     "gesamt": -195,
      "altlastenzuschlag": -184,
      "pflichtvorsorge": -250,
      "dividende_unter_de_niveau": -380,
-     "prime_activite": -657,
+     "prime_activite": -634,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 1254
+     "rest": 1253
     },
     "45000|1|0": {
      "gesamt": 396,
@@ -45,11 +45,11 @@
      "rest": 1190
     },
     "45000|2|2": {
-     "gesamt": 105,
+     "gesamt": 140,
      "altlastenzuschlag": -339,
      "pflichtvorsorge": -375,
      "dividende_unter_de_niveau": -382,
-     "prime_activite": -271,
+     "prime_activite": -236,
      "allocations_familiales": 0,
      "quotient_familial": -10,
      "rest": 1482
@@ -63,9 +63,9 @@
     "Paar, ein Einkommen, 2 Kinder": 18
    },
    "anteil_neustart": {
-    "alleinstehend": 36,
+    "alleinstehend": 62,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 18
+    "Paar, ein Einkommen, 2 Kinder": 33
    },
    "anteil_ohne_zuschlag": {
     "alleinstehend": 62,
@@ -73,7 +73,7 @@
     "Paar, ein Einkommen, 2 Kinder": 36
    },
    "anteil_vorsorge_als_vermoegen": {
-    "alleinstehend": 62,
+    "alleinstehend": 87,
     "alleinerziehend, 1 Kind": 36,
     "Paar, ein Einkommen, 2 Kinder": 36
    },

@@ -60,6 +60,7 @@ STUFEN = [
     ("Härtefall H1–H3 gegen das Netzbudget", ["modell/haertefall.py"]),
     ("Gini heute und neu (EU-SILC)", ["modell/gini.py"]),
     ("Gini Frankreich und Polen: Zerlegung, Gegenproben", ["modell/gini_frankreich.py"]),
+    ("Validierung der Ländermodelle gegen OECD Taxing Wages 2026 und Ministerium (FR)", ["modell/validierung_laender.py"]),
     ("Rentnerausgleich und Lebensarbeitszeit", ["modell/rentnerausgleich.py"]),
     ("Weitergabe der Arbeitgeberbeiträge: Empfindlichkeit", ["modell/weitergabe_sensitivitaet.py"]),
     ("Weitergabe: Rückfallregel (Differenz an den Fonds)", ["modell/weitergabe_rueckfall.py"]),

@@ -27,6 +27,7 @@ freibetrag = [100, 520, 1000, 1200, 1500]     # § 11b SGB II: 100 € + 20 % bi
 [fr]  # APL, grob (Annahme): Höchstbetrag nach Haushaltsgröße, Abschmelzung 30 % des Nettoeinkommens über dem RSA-Niveau
 apl_max = [270, 330, 390, 440, 490, 540]
 apl_satz = 0.30
+forfait_bei_apl = true   # v4.51 (Korrektur 78): forfait logement mindert die prime d'activité bei APL-Bezug (CAF-Regel; DREES Minima sociaux 2025, Fiche 30)
 rsa_niveau = 646.52   # RSA Montant forfaitaire Person allein (2025), Skala +50 % / +30 % (Annahme)
 
 [es]  # Complemento de ayuda para la infancia (CAPI), Annahme: 80 € je Kind und Monat (Mittel aus 115/80,50/57,50 nach Alter, Werte 2023), bis 300 % der renta garantizada des IMV

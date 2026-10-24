@@ -121,7 +121,7 @@
     },
     "FR": {
      "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 73,
+     "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "IT": {
@@ -166,7 +166,7 @@
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "FR": {
-     "alleinstehend": 73,
+     "alleinstehend": 100,
      "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 98
     },

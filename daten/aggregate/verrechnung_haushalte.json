@@ -35,25 +35,25 @@
    "zuschlag_verrechnung_2028": 21.3,
    "gleich": {
     "mehr_monat": {
-     "0.5": -136,
+     "0.5": -119,
      "1": 480,
      "2": 849
     },
     "anteil_mehr": {
-     "alleinstehend": 73,
+     "alleinstehend": 100,
      "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 98
     }
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": -162,
+     "0.5": -145,
      "1": 390,
      "2": 654
     },
     "anteil_mehr": {
      "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 73,
+     "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 98
     }
    }

@@ -46,7 +46,8 @@ ag_satz = { maladie = 13.0, maladie_red = 7.0, vieillesse_plaf = 8.55, vieilless
 ag_schwellen_smic = { maladie_red = 2.25, af_red = 3.3 }   # Annahme: Schwellen der ermäßigten Sätze wie 2025
 rgdu = { tmin = 0.02, tdelta = 0.3781, p = 1.75, bis_smic = 3.0 }   # FNTP nach Décret RGDU 2026 (Sekundärquelle); AT 2,2 %, Versement mobilité 1,75 % Annahme
 quelle_pa = "Prime d'activité: Montant forfaitaire 638,28 € (1.4.2026), Bonifikation bis 239 € ab 1,15 SMIC (Reform 2026): previssima.fr (Sekundärquelle); 61 % der Erwerbseinkommen (Annahme nach Code de la sécurité sociale)"
-pa = { mf = 638.28, taux = 0.61, bonif_max = 239.0, bonif_ab_smic = 0.5, bonif_voll_smic = 1.15, seuil = 15.0 }
+pa = { mf = 638.28, taux = 0.5985, bonif_max = 239.0, bonif_ab_smic = 0.5, bonif_voll_smic = 1.15, seuil = 15.0, forfait_logement = [76.59, 153.19, 189.57], forfait_anteil = 0.0 }
+# v4.51: forfait logement ab 1.4.2026 (moneyvox.fr, Sekundärquelle); forfait_anteil = Anteil der Haushalte, für die er gilt: geltend 0 (wie bisher), Variante 1 in validierung_laender (Obergrenze)
 quelle_af = "Allocations familiales: Monatsbeträge 151,05 € (2 Kinder), 344,58 € (3), +193,53 € je weiteres Kind; Einkommensgrenze 78.446 € (Halbierung), 104.560 € (Viertel) – Werte 2025 (Annahme für 2026)"
 af = { zwei = 151.05, drei = 344.58, weitere = 193.53, grenze1 = 78446, grenze2 = 104560 }
 

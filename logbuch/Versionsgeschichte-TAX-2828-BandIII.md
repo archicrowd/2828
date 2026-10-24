@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.50**
+Stand: 24. Oktober 2026 · Modellstand **v4.51**
 
 ---
 
@@ -4169,6 +4169,66 @@ Nicht-Inanspruchnahme zu erwarten; als Variante zu R12 (V1/V2) vorzumerken.
 
 ---
 
+### v4.51 — Validierung international: Ländermodelle gegen OECD Taxing Wages 2026; prime d'activité berichtigt (Korrekturen 77 bis 79)
+
+**Art der Änderung: MINOR (neue Prüfrechnung, Annahme durch amtliche Quelle ersetzt); bewegt Zahlen für Frankreich.** 24. Oktober 2026.
+
+**Anlass:** Auftrag der Initiative (24.10.2026): „Fortsetzung der Validierung international“ (R5). Bisher waren die Ländermodelle „heute“ nur an
+einem Punkt (Alleinstehende, 100 % des Durchschnittslohns, OECD-Daten 2024) geprüft.
+
+**Rechnung (`modell/validierung_laender.py`, `.toml`, Ausgabe `validierung_laender.json`, Stufe 63 von 66):** Steuer- und Abgabenkeil der Modelle
+(Recht 2026) gegen OECD Taxing Wages 2026 (Daten 2025, Tab. 1.1, 1.2, 1.4, 1.7; amtlich, maschinell aus der OECD-Seite gelesen) für
+Alleinstehende bei 100 % und Paare mit einem Einkommen und zwei Kindern; Toleranz ±2 Prozentpunkte (Setzung).
+
+| Staat | allein: Modell / OECD (Abw.) | ESt / SV-AN / SV-AG Modell gegen OECD (% Arbeitskosten) | Paar, 2 Kinder: Modell / OECD (Abw.) |
+|---|---|---|---|
+| DE | 48,9 / 49,3 (−0,4) | 13,5/14,2 · 18,0/17,8 · 17,5/17,3 | 34,7 / 34,9 (−0,2) |
+| FR | 46,0 / 47,2 (−1,2) | 12,5/12,2 · 8,5/8,3 · 25,0/26,7 | 33,5 / 39,1 (**−5,6**) |
+| IT | 44,4 / 45,8 (−1,4) | 13,4/14,5 · 7,0/7,2 · 24,0/24,0 | 33,0 / 34,3 (−1,3) |
+| ES | 42,4 / 41,4 (+1,0) | 13,1/13,1 · 4,9/5,0 · 24,3/23,4 | 37,8 / 36,8 (+1,0) |
+| PL | 40,3 / 35,0 (**+5,3**) | 5,5/5,7 · 17,8/15,3 · 17,0/14,0 | 20,7 / 14,2 (**+6,5**) |
+
+7 von 10 Haushaltstypen innerhalb ±2 Pp. Gini heute (Rekonstruktion gegen Eurostat 2025, aus `gini.json`): Abweichung +0,1 bis +0,3 Punkte.
+
+**Polen:** Die Arbeitgeberseite der OECD entspricht genau Renten- und Invaliditätsbeitrag (9,76 + 6,5 % = 16,26 % des Bruttos = 14,0 % der
+Arbeitskosten); Unfallversicherung, Arbeitsfonds und Garantiefonds (zusammen 4,22 %) zählt sie nicht. Auf der Beschäftigtenseite rechnet die
+OECD 17,8 % des Bruttos, das Modell 21,5 % (ZUS 13,71 % + Gesundheitsbeitrag 9 % auf das Brutto nach ZUS); die Abgrenzung des
+Gesundheitsbeitrags bei der OECD ist nicht geklärt (offen; das Modell folgt polnischen Lohnrechnern, Logbuch v4.2). **Wirkung auf die Aussagen:
+keine** – ohne die 4,22 % in Rechnung und Weitergabe bleiben die Anteile mit mehr Geld bei 100 / 97,8 / 97,8 %. Offen bleibt, welche
+Arbeitgeberabgaben im neuen System entfallen und damit der Weitergabe unterliegen (Unfallversicherung, Fonds, Ausbildungs- und Wohnungsabgaben
+in FR); die Länder sind hier nicht einheitlich abgegrenzt (DE nur KV, PV, RV, AV; IT an der OECD geeicht; FR und PL mit allen Abgaben). Neuer
+offener Punkt R13.
+
+**Frankreich, prime d'activité:** Prüfung gegen die Beispielfälle des Arbeitsministeriums zur Reform vom 1.4.2026 (Dossier de presse, Februar
+2026; Wiedergabe über lemediasocial.fr, maschinell gelesen, an der Quelle zu prüfen) und die DREES (Minima sociaux 2025, Fiche 30, amtlich):
+
+- **Korrektur 77:** Satz auf die Erwerbseinkommen 61 % (Annahme seit v4.2) statt amtlich **59,85 %** (seit 1.4.2025, DREES). Danach trifft das
+  Modell die Fälle des Ministeriums für Alleinstehende (1,15 / 1,2 / 1,4 SMIC: 211 / 182 / 66 € gegen 212 / 184 / 70 €).
+- **Korrektur 78:** Der *forfait logement* (ab 1.4.2026 76,59 / 153,19 / 189,57 € nach Haushaltsgröße; moneyvox.fr, Sekundärquelle; im Dossier
+  75,99 / 151,97 / 188,06 € für 2025) mindert die prime d'activité, wenn der Haushalt Wohnbeihilfe (APL) erhält, Eigentum ohne Kredit hat oder
+  kostenfrei wohnt. Das Modell rechnete APL (`sozial_laender`) und prime d'activité nebeneinander ohne diese Anrechnung; die Haushalte mit APL
+  waren heute zu reich gerechnet. Jetzt: bei APL-Bezug mit forfait (`sozial_laender.toml: forfait_bei_apl`). Mit forfait trifft das Modell das
+  Paar mit zwei Kindern bei 1,15 / 1,2 SMIC (572 / 543 € gegen 568 / 539 €).
+- Nicht erklärt: Alleinerziehende mit zwei Kindern liegen im Modell 200 bis 400 € über den Fällen des Ministeriums (vermutlich Unterhalt oder
+  allocation de soutien familial als Ressource im Beispiel; Annahme). Die Abweichung des Paares bei 100 % gegen die OECD (−5,6 Pp) entspricht
+  der prime d'activité, die das Modell nach den Fällen des Ministeriums dort noch zahlt (2,0 SMIC: 270 € gegen 271 €); die OECD rechnet sie
+  offenbar nicht (Behandlung im Länderkapitel Frankreich zu prüfen).
+
+**Bewegte Zahlen (Frankreich, 2028):** verfügbares Einkommen heute bei halbem SMIC, Vollzeit, allein 1.219 → 1.136 € im Monat (neu
+unverändert 1.299 €), Vorteil −162 → −145 € (`verrechnung_haushalte`); Anteile mit mehr (Verrechnung je Staat) alleinerziehend 73 → 100 %
+(allein 73 %, Paar 98 % unverändert); Paket mit Boden: Paar mit zwei Kindern 56 → 71 %, alleinerziehend 36 → 49 %; Gini FR 2028 29,8 → 29,5
+(Spanne 29,3–29,6). Andere Staaten unverändert. Webseite (FR) und Konzept bauen aus diesen Dateien; die Webseite wird auf Wunsch der Initiative
+vorerst nicht hochgeladen.
+
+**Korrektur 79:** `KENNZAHLEN.md` nannte den Gini 2028 für FR mit 30,4 und IT mit 27,4 (Stand v4.36); seit v4.38 (Verrechnung je Staat)
+galten 29,8 und 26,9. Nachgezogen (FR jetzt 29,5).
+
+**Datenquelle:** OECD Taxing Wages 2026; DREES Minima sociaux 2025 (Fiche 30); Ministère du Travail et des Solidarités, Dossier de presse prime
+d'activité (Februar 2026); moneyvox.fr (forfait logement 2026, Sekundärquelle). **Wodurch aufgefallen:** Validierung gegen OECD (Paar FR
+−6,3 Pp vor der Berichtigung) und Gegenprobe mit den Fällen des Ministeriums.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4203,6 +4263,9 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 73 | `gesamtlast33.json` (seit v4.14): „Steuern 33,53“ neben „Summe 45,47“ – die Summe stammte aus dem Steuerbedarf 33,42; `KENNZAHLEN.md` nannte 45,46/49,56 | Summe aus den ausgewiesenen Teilen 33,53 + 12,05 = 45,58, mit Pflichtvorsorge 49,68; Steuerbedarf-Variante 45,47/49,57 daneben (v4.46) | Dritte Prüfung, Befund B17 |
 | 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
+| 79 | `KENNZAHLEN.md`, Zeile Deckel der Weitergabe: Gini 2028 FR 30,4, IT 27,4 | seit v4.38 (Verrechnung je Staat) 29,8 / 26,9; seit v4.51 FR 29,5 | Validierung v4.51 (Gegenprobe der Kennzahlen) |
+| 78 | `sozial_laender` (FR, seit v4.3): APL und prime d'activité ohne Anrechnung des forfait logement | bei APL-Bezug mindert der forfait (2026: 76,59 / 153,19 / 189,57 €) die prime d'activité; FR heute bei halbem SMIC 1.219 → 1.136 € | Gegenprobe mit den Fällen des Arbeitsministeriums (v4.51) |
+| 77 | `heute_laender.toml` (FR, seit v4.2): prime d'activité mit 61 % der Erwerbseinkommen (Annahme) | amtlich 59,85 % seit 1.4.2025 (DREES, Minima sociaux 2025, Fiche 30) | Validierung gegen OECD Taxing Wages 2026 (v4.51) |
 | 76 | `DATENZUGANG.md` und Prüfmappe: Repository „privat“ | laut GitHub am 24.10.2026 öffentlich; Text berichtigt (v4.46) | Nachsehen der Issues (GitHub-Abfrage der Sichtbarkeit) |
 | 72 | Logbuch v4.22/v4.23, Validierung der Mikrosimulation: Bürgergeld-Anspruch 4,65 Mio. Haushalte „zu hoch“ gegen rund 3,1 Mio. Bedarfsgemeinschaften | Die Näherung im Modell umfasst Bürgergeld, Wohngeld und Kinderzuschlag. Vergleichswert daher rund 4,0 Mio. (3,1 Mio. BG + 0,62 Mio. Wohngeldhaushalte im Erwerbsalter + 0,56 Mio. Kinderzuschlag-Familien, zur Hälfte überlappend, Annahme). Abstand 0,7 Mio. = Nicht-Inanspruchnahme (Quote 69 % bei Haushalten mit Erwerb), nicht ein Fehler der Verteilung | Umsetzung R8 (v4.40): Abgrenzung der Vergleichsgröße geprüft |
 | 71 | Rechner der Webseite (Stand C) in FR seit v4.33: Weitergabe ohne Deckel (Raster `heute_laender.json` mit ungedeckelten Arbeitgeberbeiträgen); Rechnung und Texte gedeckelt | Raster aus `ag_weitergabe`, DE-Raster mit `deckel_lohn` (v4.36); der Rechner zeigte in FR über dem Deckel die Werte ohne Deckel (Rechnung ohne Deckel v4.33 bei 2× Durchschnittslohn: +1.274 € statt +887 €; Rechnerwert nicht nachgeprüft) | Umsetzung des einheitlichen Deckels: Suche aller Stellen, an denen Arbeitgeberbeiträge in die Weitergabe gehen (v4.36) |
@@ -4234,7 +4297,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.50
+## 7 | Offene Punkte, Stand v4.51
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4248,13 +4311,14 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R2 | **erledigt v4.29** (offen: Einstufung je Produkt statt je Gruppe, Vorsteueranteil steuerfreier Bereiche belegen) – **Mehrwertsteuer: Zuordnung der Produkte zu den Labelstufen und Konsumquoten** (effektiver Satz 18,84 % gegen 15,97 %, Konsumquote 0,95 bis 0,60 als Annahme) | trifft jeden Haushalt; je Punkt effektiver Satz rund 20 € im Monat bei 42.000 €; zugleich Aufkommen und Dividende | Konsumaufkommen (v3.33), Labels (externe Prüfung) |
 | R3 | **erledigt v4.30 für Kapital und Miete** (offen: Spitze der Vermögen, Erbschaften, Untererfassung) – **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
 | R4 | **v4.46 ergänzt aus der dritten Prüfung:** Basis und Definition der Position Unternehmen belegen (B23), Erbschaft: Schenkungs-Parität und reale Übertragungen als Obergrenze (B22), Einkommensposition gegen Lohn- und Einkommensteuerstatistik eichen, oberes Ausweichband Vermögen (M3); **teilweise erledigt v4.31/v4.32** (BIP-Neuabruf als Schalter; Vermögens- und Erbschaftsbasis geprüft; offen: Renditen, COFOG, B19) – **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
-| R5 | **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
+| R5 | **v4.51: Ländermodelle gegen OECD Taxing Wages 2026 validiert (7 von 10 Typen ±2 Pp), prime d'activité berichtigt (Korrekturen 77/78); offen: Mehrwertsteuer nach Einkommen FR/IT/ES/PL, Lohnverteilungen je Land, Verhaltensgrößen V5;** **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
 | R6 | **erledigt v4.37** (offen: Boden B1 je Staat, Verteilungsform je Staat; Entscheidung E11) – **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
 | R7 | **teilweise erledigt v4.39** (H1 DE aus Mietdaten; offen: Mietdaten FR/IT/ES/PL, H2/H3 belegen, H1 auch über der Aufstockung) – **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
 | R8 | **teilweise erledigt v4.40** (Nicht-Inanspruchnahme als Variante; offen: Teilzeit-Dezile, Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini) – **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |
 | R9 | **teilweise erledigt v4.41** (Einwanderung und Automatisierung umgerechnet; offen: Altersprofil je Staat, Preisniveau mit Zweitrundeneffekten und CO₂-Pfad) – **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
 | R10 | **Möglichkeitsraum:** UK und Kanada; Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR); Wachstum je Land | Länder außerhalb der Referenzländer | v3.52/v3.53 |
 | R11 | **Regionen und gemeinsame Aufgaben:** heutige Gemeindeeinnahmen je Kreis (Daten der Initiative, `2828-Daten`), Strukturzuschlag 10 %, Kassenanteile und Bemessung am BNE, Anrechnung neutraler Staaten (N32, N33) | Gemeindehaushalte, nicht Haushaltseinkommen | v4.15/v4.16 |
+| R13 | **Abgrenzung der wegfallenden Arbeitgeberabgaben je Staat (v4.51):** welche Abgaben im neuen System entfallen und der Weitergabe unterliegen (Unfallversicherung, Fonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben); DE nur KV/PV/RV/AV, IT an der OECD geeicht, FR und PL mit allen Abgaben. Dazu: Gesundheitsbeitrag PL bei der OECD; Paar mit zwei Einkommen (OECD Tab. 1.5) im Modell nicht abbildbar; Alleinerziehende FR gegen Ministerium (+200 bis +400 €) | Weitergabe je Staat; PL ohne Wirkung auf die Anteile | v4.51 |
 | R12 | **Verhaltenswirkungen, Stufe 2 (v4.48):** V1 Grenzbelastung 0–30.000 € mit Aufstockung je Haushaltstyp; V2 Arbeitsangebot als Band (Elastizitäten mit Quelle) in der Mikrosimulation; V3 asymmetrische Überwälzung der Mehrwertsteuer im Preisniveau; V4 Ausweichband Vermögen gegen Jakobsen u. a. 2020; V5 Länderwerte (Nicht-Inanspruchnahme, nicht erklärte Arbeit, Vertrauen; zu R5); V6 Akzeptanzbefragung | Aufkommen und Dividende (V2–V4), Darstellung (V6) | v4.48, `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md` |
 
 ### 7.2 Offen – Entscheidungen der Initiative

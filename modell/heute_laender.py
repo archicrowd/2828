@@ -96,7 +96,9 @@ def fr_heute(b, e, k):
     mf = pa["mf"] * (1 + 0.5 * min(pers - 1, 1) + 0.3 * min(max(pers - 2, 0), 2) + 0.4 * max(pers - 4, 0))
     rm, smic_m = net / 12, F["smic"] / 12
     bon = pa["bonif_max"] * min(1.0, max(0.0, (b / 12 - pa["bonif_ab_smic"] * smic_m) / ((pa["bonif_voll_smic"] - pa["bonif_ab_smic"]) * smic_m)))
-    prime = mf + pa["taux"] * rm + bon - (rm + af)
+    # v4.51: forfait logement (Ressource bei Wohnbeihilfe, Eigentum ohne Kredit, kostenfreiem Wohnen); geltend Anteil 0, Variante in validierung_laender
+    fl = pa.get("forfait_logement", [0.0, 0.0, 0.0])[min(pers, 3) - 1] * pa.get("forfait_anteil", 0.0)
+    prime = mf + pa["taux"] * rm + bon - (rm + af + fl)
     prime = prime if prime >= pa["seuil"] else 0.0
     return dict(netto=net - ir + 12 * (af + prime), est=ir, sv=sv + csg, steuer_oecd=ir + csg, sv_oecd=sv)
 
