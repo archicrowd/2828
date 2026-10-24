@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.35**
+Stand: 24. Oktober 2026 · Modellstand **v4.36**
 
 ---
 
@@ -3739,6 +3739,47 @@ den Vergleich mit ES/IT in `gini_frankreich.py`).
 
 ---
 
+### v4.36 — E2: Deckel der Weitergabe einheitlich beim 6-fachen Grundbedarf in allen Staaten; Korrektur 71
+
+**Art der Änderung: MINOR (Regel geltend), bewegt Zahlen über dem Deckel.** 24. Oktober 2026.
+
+**Beschluss E2, einheitliche Regel:** Arbeitgeberbeiträge unterliegen der 80-%-Weitergabe in allen Staaten nur bis zum Betrag beim Lohn
+von 6 × Grundbedarf des Landes (DE 6 × 12.348 = 74.088 €; FR 69.912 €). Damit entfällt die Ausnahme für Frankreich (v4.33, 1,602 ×
+Durchschnittslohn). Der Rest bleibt beim Betrieb (E10). Im Logbuch v4.34 und im Bericht zu v4.35 war die Regel als Option mit offener
+Entscheidung geführt; nach Angabe der Initiative (24.10.2026) war sie entschieden. Umgesetzt mit v4.36.
+
+**Umsetzung:** `heute_laender.toml [weitergabe_deckel] grundbedarf_faktor = 6`; `heute_laender.deckel_lohn(c)` und `ag_weitergabe(c, b)` für
+alle Staaten; `haushalte33.ag(b)` gedeckelt, neu `ag_roh(b)` für die Arbeitskosten (Grenzbelastung bezogen auf die heutigen Arbeitskosten);
+damit auch Mikrosimulation DE, Rentner mit Erwerb und `sozial_laender` (DE). `deckel_einheitlich.py` weist „geltend“ jetzt mit k = 6 aus.
+
+**Bewegte Zahlen (2028, mehr im Monat, alleinstehend):**
+
+| | 1× Durchschnittslohn | 2× | 3× |
+|---|---|---|---|
+| DE | +716 (unverändert) | +804 → +689 | +515 → +400 |
+| FR | +480 | +887 → +849 | +755 → +717 |
+| IT | +494 | +1.060 → +941 | +1.574 → +999 |
+| ES | +380 | +501 → +454 | +401 → +340 |
+| PL (zł) | +1.418 | +1.564 | +2.328 → +1.648 |
+
+Beispiel 42.000 € (+604 €) unverändert. Gini 2028: DE 26,3 → 26,1, FR 30,5 → 30,4 (amtlich 30,4), IT 29,0 → 27,4, ES 25,5 → 25,2,
+PL 18,9 → 18,7. Mikrosimulation DE (Weitergabe 80 %): alle Haushalte mit mehr 69,0 → 68,9 %, Personen 76,5 → 76,3 %, Hauptperson Vollzeit
+99,3 → 99,0 %, Beamte 56,0 → 55,9 % (+106 → +100 €), Selbständige 77,0 → 76,9 %; oberstes Dezil Mittel +394 → +325 €. Haushalte33: Grenzbelastung
+über 74.088 € bezogen auf die heutigen Arbeitskosten 35 → 40 % (der Arbeitgeberbeitrag über dem Deckel erreicht den Lohn nicht mehr).
+
+**Korrektur 71:** Der Rechner der Webseite bezog die Arbeitgeberbeiträge für FR seit v4.33 aus dem ungedeckelten Raster (`heute_laender.json`,
+`raster.ag`); Rechnung und Texte waren gedeckelt, der Rechner nicht. Jetzt aus `ag_weitergabe`; das DE-Raster (`drittel_bau.rr_de`) erhält
+`deckel_lohn` aus `haushalte33_raster.json`.
+
+**Nebenbei berichtigt:** `projekt/Projektsteuerung.md` nannte als nächste freie Korrekturnummer 59; jetzt 72 mit Verweis auf CLAUDE.md.
+
+**Datenquelle:** Grundbedarf je Land (`laenderseiten.json`), Beitragsmodelle wie v4.33. **Wodurch aufgefallen:** Hinweis der Initiative
+(Entscheidung lag vor); Korrektur 71 bei der Suche aller Stellen der Weitergabe.
+
+**Offen:** Webseitentexte zum Deckel (Frankreich-Abschnitt, Gini-Satz) – Texte der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -3770,6 +3811,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 68 | Modellstand in parameter.toml, README, INDEX und Band III nach v4.15–v4.17 nicht fortgeschrieben (blieb v4.14) | alle auf v4.18; README-Skriptkarte ergänzt (v4.18) | Bau des Upload-Pakets, Projektprüfung |
 | 69 | haushalte33.py seit v4.5 mit 373 € und Kindern zur Hälfte statt Kinderanteil 0,8 bei gleichem Topf (354/283 €) | Topf-Faktor und Kinderanteil aus regel_boden.toml in neu() (v4.21); Beispiele 42.000 €: allein +608, alleinerziehend +607, Paar mit 2 Kindern +673 € | Hinweis des Prüfers (Kulturverein Ribbeck e.V.), 21.10.2026 |
 | 70 | fonds_klub.py übertrug den auf eine Stelle gerundeten Zuschlag der zehn auf den Fonds der 30 (doppelte Rundung) | ungerundete Werte aus altlasten.json (v4.26); Zuschlag 15,5 statt 15,4 %, 42.000 € +606 statt +608 € (zusammen mit Regel E) | eigener Abgleich fondszins.json gegen fonds_geltend.json, 22.10.2026 |
+| 71 | Rechner der Webseite (Stand C) in FR seit v4.33: Weitergabe ohne Deckel (Raster `heute_laender.json` mit ungedeckelten Arbeitgeberbeiträgen); Rechnung und Texte gedeckelt | Raster aus `ag_weitergabe`, DE-Raster mit `deckel_lohn` (v4.36); der Rechner zeigte in FR über dem Deckel die Werte ohne Deckel (Rechnung ohne Deckel v4.33 bei 2× Durchschnittslohn: +1.274 € statt +887 €; Rechnerwert nicht nachgeprüft) | Umsetzung des einheitlichen Deckels: Suche aller Stellen, an denen Arbeitgeberbeiträge in die Weitergabe gehen (v4.36) |
 
 Der Originaltext in Band II bleibt stehen, damit der Fehler prüfbar ist; an der Vorbemerkung
 steht seit v3.8 ein Verweis auf diese Korrekturen. Maßgeblich für v3.2 bis v3.4 ist Band I.
@@ -3798,7 +3840,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.35
+## 7 | Offene Punkte, Stand v4.36
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3825,7 +3867,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | Nr. | Punkt |
 |---|---|
 | E1 | Architekturvariante „Regelwerk statt Dach“ (Vorlage v4.13) |
-| E2 | **entschieden v4.33:** Deckel in Frankreich beim 1,6-fachen Durchschnittslohn (erste Ausnahme); offen: Familienleistungen FR; einheitliche Regel 6 × Grundbedarf als Option (v4.34) |
+| E2 | **entschieden, geltend seit v4.36:** Deckel der Weitergabe einheitlich beim 6-fachen Grundbedarf in allen Staaten (v4.33 bis v4.35: nur FR, 1,6 × Durchschnittslohn); offen: Familienleistungen FR |
 | E10 | **entschieden v4.34:** Rest über dem Deckel bleibt beim Betrieb (keine Abgabe) |
 | E3 | Härtefall H1–H3 und Rolle der Gemeinden G1–G5 (N27; Kindergewicht 0,55 gilt seit v4.8) |
 | E4 | Sicherheitsunion (50 % der Verteidigung über rund 15 % der Mehrwertsteuer, N34) |

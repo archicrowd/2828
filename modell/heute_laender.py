@@ -210,13 +210,14 @@ def pl_heute(b, e, k):
 MODELLE = {"FR": (fr_heute, fr_ag), "IT": (it_heute, it_ag), "ES": (es_heute, es_ag), "PL": (pl_heute, pl_ag)}
 
 
+def deckel_lohn(c):
+    """v4.36 (E2): Lohn, bis zu dem Arbeitgeberbeiträge weitergegeben werden: k-facher Grundbedarf des Landes (Landeswährung)."""
+    return P["weitergabe_deckel"]["grundbedarf_faktor"] * LS["staaten"][c]["grundbedarf_jahr_eur"] * faktor(c)
+
+
 def ag_weitergabe(c, b):
-    """v4.33 (E2): Arbeitgeberbeiträge für die Weitergabe, in den Ländern mit Deckel höchstens der Betrag beim faktor-fachen Durchschnittslohn."""
-    a = MODELLE[c][1](b)
-    D = P.get("weitergabe_deckel", {})
-    if c in D.get("laender", []):
-        a = min(a, MODELLE[c][1](D["faktor"] * P["oecd"]["durchschnittslohn"][c]))
-    return a
+    """v4.36 (E2, einheitlich): Arbeitgeberbeiträge für die Weitergabe, höchstens der Betrag beim Deckel-Lohn (vorher v4.33 nur FR)."""
+    return min(MODELLE[c][1](b), MODELLE[c][1](deckel_lohn(c)))
 
 
 def faktor(c):
@@ -293,7 +294,7 @@ def main():
         awr = round(aw / 1000) * 1000
         beispiel_aw = dict(brutto=awr, plus_monat=round((neu(c, awr, 1, 0, 2028)["netto"] - heute(awr, 1, 0)["netto"]) / 12))
         br, schritt = brutto_raster(c)
-        ras = dict(brutto=br, heute={}, ag=[round(ag(b), 1) for b in br])
+        ras = dict(brutto=br, heute={}, ag=[round(ag_weitergabe(c, b), 1) for b in br])   # v4.36 (Korrektur 71): gedeckelt wie in der Rechnung
         for e in (1, 2, 3):
             for k in range(4):
                 ras["heute"][f"{e}|{k}"] = [round(heute(b, e, k)["netto"]) for b in br]

@@ -130,12 +130,12 @@
    },
    "anteil_kind_1_0": {
     "alleinstehend": 84,
-    "alleinerziehend, 1 Kind": 87,
+    "alleinerziehend, 1 Kind": 84,
     "Paar, ein Einkommen, 2 Kinder": 60
    },
    "anteil_paket": {
-    "alleinstehend": 87,
-    "alleinerziehend, 1 Kind": 87,
+    "alleinstehend": 84,
+    "alleinerziehend, 1 Kind": 84,
     "Paar, ein Einkommen, 2 Kinder": 60
    },
    "faelle_paket": {

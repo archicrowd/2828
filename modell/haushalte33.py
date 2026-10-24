@@ -76,8 +76,18 @@ def kq(n):
     return pkt[-1][1]
 
 
-def ag(b):
+def ag_roh(b):
+    """Arbeitgeberbeiträge heute (Arbeitskosten)."""
     return K.AN_KV_PV * min(b, K.BBG_KV) + K.AN_RV_AV * min(b, K.BBG_RV)
+
+
+# v4.36 (E2, einheitliche Regel): Weitergabe nur bis zum 6-fachen Grundbedarf (heute_laender.toml [weitergabe_deckel]); G26 = Grundbedarf DE
+DECKEL_LOHN = tomllib.loads((W / "modell" / "heute_laender.toml").read_text(encoding="utf-8"))["weitergabe_deckel"]["grundbedarf_faktor"] * G26
+
+
+def ag(b):
+    """Arbeitgeberbeiträge, die der Weitergabe unterliegen (gedeckelt)."""
+    return min(ag_roh(b), ag_roh(DECKEL_LOHN))
 
 
 def est(x):
@@ -144,7 +154,7 @@ def main():
             zeilen = []
             for b in P["bruttoeinkommen"]:
                 h, n = heute(b, ki, pa), neu(b, ki, pa, wg, zu, vs, j)
-                db, dak = 1000, 1000 + ag(b + 1000) - ag(b)
+                db, dak = 1000, 1000 + ag_roh(b + 1000) - ag_roh(b)
                 gh = 1 - (heute(b + db, ki, pa) - h) / dak
                 gn = 1 - (neu(b + db, ki, pa, wg, zu, 0, j) - neu(b, ki, pa, wg, zu, 0, j)) / dak
                 zeilen.append(dict(brutto=b, netto_heute=round(h), netto_33=round(n), differenz=round(n - h),
@@ -165,14 +175,14 @@ def main():
     setze_jahr(2028)
     gb = list(range(10000, 150001, 2500))
     raster["grenz_brutto"] = gb
-    raster["grenz_heute"] = [round(100 * (1 - (heute(b + 500, 0, False) - heute(b, 0, False)) / (500 + ag(b + 500) - ag(b))), 1) for b in gb]
+    raster["grenz_heute"] = [round(100 * (1 - (heute(b + 500, 0, False) - heute(b, 0, False)) / (500 + ag_roh(b + 500) - ag_roh(b))), 1) for b in gb]
     for wg in P["weitergabe_ag"]:
         raster["grenz_neu"][str(wg)] = [round(100 * (1 - (neu(b + 500, 0, False, wg, 0, 0, 2028) - neu(b, 0, False, wg, 0, 0, 2028))
-                                                / (500 + ag(b + 500) - ag(b))), 1) for b in gb]
+                                                / (500 + ag_roh(b + 500) - ag_roh(b))), 1) for b in gb]
     # v3.56: Rechner der Webseite (Zeitstrahl 2028–2060, 1–3 Erwachsene, 0–3 Kinder). „Heute" hängt nur vom Beitragsregime ab (bis 2034
     # Recht 2026, ab 2035 IGES-Sätze, danach gleich gehalten: Annahme); das Neue rechnet die Seite mit denselben Formeln wie neu() nach,
     # mit Dividende und effektivem Labelsatz des Jahres. Dritter Erwachsener ohne Einkommen: heute wie Paar, neu eigene Dividende (Annahme).
-    rr = dict(brutto=raster["brutto"], heute={}, beitrag={}, jahre=[], div=[], eff=[], bbg_kv=K.BBG_KV, bbg_rv=K.BBG_RV,
+    rr = dict(brutto=raster["brutto"], heute={}, beitrag={}, jahre=[], div=[], eff=[], bbg_kv=K.BBG_KV, bbg_rv=K.BBG_RV, deckel_lohn=DECKEL_LOHN,
               stufen=STUFEN, saetze=SAETZE, eff_alt=EFF_ALT, weitergabe=min(P["weitergabe_ag"]), zuschlag=max(P["zuschlag_pct"]),
               vorsorge=min(P["vorsorge_satz"]), kq=[[12500, .95], [37500, .85], [65000, .75], [100000, .60]])
     for reg in (2028, 2035):

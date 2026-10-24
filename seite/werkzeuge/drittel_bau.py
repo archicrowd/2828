@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.35"
+VERSION = "v4.36"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -212,7 +212,8 @@ def texte(sp, c):
 def rr_de():
     """Rechner-Raster Deutschland im einheitlichen Format (heute und Arbeitgeberbeiträge je Beitragsregime)."""
     r = json.loads((AGG / "haushalte33_raster.json").read_text(encoding="utf-8"))["rechner"]
-    ag = {reg: [round(c[0] * min(b, r["bbg_kv"]) + c[1] * min(b, r["bbg_rv"]), 1) for b in r["brutto"]] for reg, c in r["beitrag"].items()}
+    D = r["deckel_lohn"]   # v4.36: einheitlicher Deckel der Weitergabe (6 × Grundbedarf)
+    ag = {reg: [round(c[0] * min(b, D, r["bbg_kv"]) + c[1] * min(b, D, r["bbg_rv"]), 1) for b in r["brutto"]] for reg, c in r["beitrag"].items()}
     heute = {key: VB.heute_mit_bedarf("DE", r["brutto"], v, int(key.split("|")[1]), int(key.split("|")[2])) for key, v in r["heute"].items()}
     return dict(brutto=r["brutto"], schritt=1000, start=42000, heute=heute, ag=ag, jahre=r["jahre"], div=r["div"], eff=r["eff"],
                 stufen=r["stufen"], saetze=r["saetze"], eff_alt=r["eff_alt"], weitergabe=r["weitergabe"], zuschlag=r["zuschlag"],

@@ -111,7 +111,7 @@ def heute(c, b, e, k, mit_bedarf=True):
 
 
 def ag(c, b):
-    return H33.ag(b) if c == "DE" else HL.ag_weitergabe(c, b)   # v4.33: Deckel FR
+    return H33.ag(b) if c == "DE" else HL.ag_weitergabe(c, b)   # v4.36: einheitlicher Deckel (DE in haushalte33.ag)
 
 
 # ---------------- neu: Kinderanteil, Boden
