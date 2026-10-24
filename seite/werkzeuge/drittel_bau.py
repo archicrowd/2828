@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.43"
+VERSION = "v4.44"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -201,6 +201,8 @@ def texte(sp, c):
     if "svg_gemeinde_sub_kurz" not in quelle:      # 24.10.2026: ohne eigenen Text wie der Untertitel der großen Grafik
         quelle["svg_gemeinde_sub_kurz"] = quelle.get("svg_gemeinde_sub") or json.loads((SB.SPRACHEN_DIR / f"{sp}.json").read_text(encoding="utf-8"))["svg_gemeinde_sub"]
     quelle["sich4_p"] += VT.RENTEN_SATZ[sp]   # v4.14
+    # 24.10.2026: Staatsschulden-Grafik entfällt; ihr Text zum gemeinsamen Fonds (ohne den ersten Satz) an den Abschnitt Altlasten
+    quelle["sich4_p"] += " " + quelle["js_schuld_text"].split(". ", 1)[1]
     anteil = VB.anteil(c)[0] if c in VB.LAENDER else _ANT
     if c == "EU30" or anteil >= 90:
         quelle["stamp3_val"], quelle["stamp3_lbl"] = LT.STAMP_A[sp]
@@ -318,7 +320,7 @@ ERSETZE = [  # (alt, neu) in der Vorlage; jede Stelle muss genau einmal vorkomme
     ('<div class="chart-card">\n      <div class="tabs" id="gtabs">', '<details class="mehr"><summary>@@zeit_mehr@@</summary><div class="chart-card">\n      <div class="tabs" id="gtabs">'),
     ('<span class="l-hist"><i></i>@@zeit_l2@@</span></div>\n    </div>', '<span class="l-hist"><i></i>@@zeit_l2@@</span></div>\n    </div></details>'),
     ('<button type="button" aria-pressed="true" data-v="schuld">@@reise_t1@@</button><button type="button" aria-pressed="false" data-v="co2">@@reise_t2@@</button>',
-     '<button type="button" aria-pressed="true" data-v="co2">@@reise_t2@@</button><button type="button" aria-pressed="false" data-v="schuld">@@reise_t1@@</button>'),
+     '<button type="button" aria-pressed="true" data-v="co2">@@reise_t2@@</button>'),   # 24.10.2026: Staatsschulden-Grafik entfällt (ohne Vergleich zum heutigen Pfad)
     ("seg('ztabs',chart2);chart2('schuld');", "seg('ztabs',chart2);chart2('co2');"),
     ('<div><h3>@@klub_6_h@@</h3><p>@@klub_6_p@@</p></div>', '<div><h3>@@klub_6_h@@</h3><p>@@klub_6_p@@</p></div>\n      <div><h3>@@welt_h@@</h3><p>@@welt_p@@</p></div>'),
 ]

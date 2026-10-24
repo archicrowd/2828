@@ -44,13 +44,16 @@ def rechner_felder(c, f=1.0):
     return dict(s=S_KIND, topf=round(TOPF, 5), gb=round(gb, 2), kw=KW, anr=ANR)
 
 
+GINI_JAHR = 2035   # 24.10.2026 (Initiative): ein Jahr im Bild statt 2028 und 2060
+
+
 def gini_svg(name, ref, l1, l2, l3, lref, unit):
     """Waagrechte Balken: heute (amtlich 2025), 2028 und 2060 (Modell, Mitte) je Land; DK und SE zum Vergleich."""
     zeilen = []
     for c in LAENDER:
         x = GINI["staaten"][c]
         r = {z["jahr"]: z["mitte"] for z in x["reihe"]}
-        zeilen.append((c, [(x["gini_amtlich_2025"], "#9AA9B6"), (r[2028], "#1D7A4F"), (r[2060], "#8FB8A0")]))
+        zeilen.append((c, [(x["gini_amtlich_2025"], "#9AA9B6"), (r[GINI_JAHR], "#1D7A4F")]))   # 24.10.2026: ein grüner Balken (Initiative)
     for c, v in GINI["vergleich_amtlich_2025"].items():
         zeilen.append((c, [(v, "#C9D3DB")]))
     x0, x1, vmax = 170, 860, 35.0
@@ -73,7 +76,7 @@ def gini_svg(name, ref, l1, l2, l3, lref, unit):
         y += 14 + (8 if zusatz else 0)
     hoehe = y + 6
     leg = "".join(f'<span><b style="background:{f};display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px"></b>{t}</span>'
-                  for t, f in ((l1, "#9AA9B6"), (l2, "#1D7A4F"), (l3, "#8FB8A0")))
+                  for t, f in ((l1, "#9AA9B6"), (l2, "#1D7A4F")))
     svg = (f'<div class="giniwrap"><svg viewBox="0 0 900 {hoehe}" role="img" aria-label="{unit}" style="width:100%;height:auto">'
            + "".join(teile).replace("@@H@@", str(hoehe - 4)) + "</svg></div>")
     return svg, f'<div class="legend" style="display:flex;gap:18px;flex-wrap:wrap">{leg}</div>'

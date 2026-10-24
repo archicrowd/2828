@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.43**
+Stand: 24. Oktober 2026 · Modellstand **v4.44**
 
 ---
 
@@ -3989,6 +3989,31 @@ Nicht geändert: die anderen fünf Sprachen, das Konzept (`konzept33-bau.js`), S
 
 ---
 
+### v4.44 — Webseite: Korrekturen der Initiative (Gini-Grafik, Dividende, Mehrheitsentscheid, Staatsschulden, Methodik) und Regel E im Text
+
+**Art der Änderung: PATCH (Seite), keine Zahl bewegt.** 24. Oktober 2026.
+
+Auf Anweisung der Initiative (24.10.2026):
+- **Gini-Grafik:** ein grüner Balken (2035) statt 2028 und 2060 (`v48_bau.GINI_JAHR`), Legende in sechs Sprachen. Die Tabelle „heute gegen
+  neu“ zeigt weiter 2028 (DE 26,1 gegen 26,2 im Bild).
+- **Dividende (DE):** „… was an Steuern auf schädliche Produkte und Verhaltensweisen zuvor eingezahlt wurde.“
+- **Mehrheitsentscheid (DE):** Absatz erweitert: „Die EU ist zuletzt nicht mehr handlungsfähig. … Daher ein Wechsel für Handlungs- und
+  Wettbewerbsfähigkeit durch den Mehrheitsentscheid.“ (Wertung der Initiative; Rechtschreibung angepasst.)
+- **Staatsschulden-Grafik entfernt** (Reiter „Staatsschulden“; ohne Vergleich zum heutigen Schuldenpfad nicht aussagekräftig). Ihr Text zum
+  gemeinsamen Fonds steht jetzt im Abschnitt „Altlasten: Sache der Staaten“; DE: Marktzinsvariante als „gemeinsamer Satz“ benannt.
+- **Methodik (DE):** offene, nachrechenbare Rechnung, Quellen (Eurostat, OECD, Statistisches Bundesamt, Bundesagentur für Arbeit),
+  Mikrosimulation, Logbuch mit nummerierten Fehlern, externe Prüfungen Oktober 2026 (zwei Prüfberichte, darin eine eigene Mikrosimulation).
+
+Dazu berichtigt (Frage der Initiative „7,5 % und 15 %?“): Die Seite nannte im Abschnitt Altlasten noch die Rentenkürzung um 7,5 % auf die ganze
+Rente (Beschluss v4.11), das Konzept seit v4.26 die geltende Regel E (15 % auf den Teil über dem Grundbedarf). Jetzt in sechs Sprachen Regel E
+(Fassung des Projekts). Ebenso der Gini-Text: „In Frankreich steigt er … entschieden ist das nicht“ war seit v4.36/v4.38 überholt; jetzt:
+sinkt in allen fünf Ländern, in Frankreich wenig, Deckel begrenzt den Effekt (sechs Sprachen).
+
+**Wodurch aufgefallen:** Durchsicht der Initiative. **Offen:** übrige Sprachen für Dividende, Mehrheitsentscheid und Methodik; weitere
+Länderbeispiele (Vorschlag an die Initiative).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4050,7 +4075,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.43
+## 7 | Offene Punkte, Stand v4.44
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4093,7 +4118,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | Nr. | Punkt |
 |---|---|
 | P1 | Rechtsprüfung: Eigentumsschutz der Anwartschaften (Art. 14 GG, Regel E), Art. 125 AEUV (Neustart), Sicherheitsunion, Europarecht der Dividende nach Preisniveau (B17), WTO (Labels) |
-| P2 | Webseite: Texte zur Rentnerregel in sechs Sprachen (Initiative, angekündigt); Entwurf `seite/entwurf/rentner-e/` danach neu bauen |
+| P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative) |
