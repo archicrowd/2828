@@ -77,6 +77,16 @@ def z_anteil_vor_stichtag(jahr):
 KUERZUNG = 0.0
 
 
+def kuerzung(c):
+    """v4.37: Kürzungssatz je Staat (dict) oder einheitlich (float)."""
+    return KUERZUNG.get(c, KUERZUNG.get("DE", 0.0)) if isinstance(KUERZUNG, dict) else KUERZUNG
+
+
+def kuerzung_aus(al):
+    """v4.37: aus altlasten.toml – Tabelle je Staat, wenn kuerzung_je_staat, sonst der einheitliche Satz."""
+    return dict(al["kuerzung_staat"]) if al.get("kuerzung_je_staat") else al.get("kuerzung", 0.0)
+
+
 def kopplung_faktor(jahr):
     """L1: Anteil der Rentnerjahrgänge, die bei an die Lebenserwartung gekoppeltem Rentenbeginn noch in Rente sind (Gleichverteilung)."""
     r = P.get("rentner", {})
@@ -93,9 +103,9 @@ def z_pfad(c, rente_pct, anteil65, div_erw_pct_kopf, faktor_rentner):
         zahl = anteil65 * faktor_rentner(j) * kopplung_faktor(j)   # Rentner in % der Bevölkerung (v4.11: L1 späterer Rentenbeginn)
         r = P.get("rentner", {})
         if r.get("anteilige_verrechnung"):       # v4.11 T1: Altanteil f verrechnet die Dividende nur zu f
-            ueber = f * max(je_rentner * (1 - KUERZUNG) - div_erw_pct_kopf, 0.0)
+            ueber = f * max(je_rentner * (1 - kuerzung(c)) - div_erw_pct_kopf, 0.0)
         else:
-            anspruch = je_rentner * f * (1 - KUERZUNG)   # erworbener Anspruch je Rentner, ggf. um eingesparte Beiträge gekürzt
+            anspruch = je_rentner * f * (1 - kuerzung(c))   # erworbener Anspruch je Rentner, ggf. um eingesparte Beiträge gekürzt
             ueber = max(anspruch - div_erw_pct_kopf, 0.0)   # Z = erworbener Anspruch über der Dividende (die jeder Rentner erhält)
         b1 = r.get("grundauskommen_bestand_pct_bip", 0.0) * f * faktor_rentner(j)   # v4.11 B1: Grundauskommen kleiner Bestandsrenten
         out.append(dict(land=c, jahr=j, anteil_vor_stichtag=round(f, 4), z_pct_bip=round(zahl / 100 * ueber + b1, 3)))

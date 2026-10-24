@@ -44,12 +44,12 @@
     "grundbedarf_monat_eur": 1162
    },
    "altlasten": {
-    "z_2028": 12.62,
-    "beitrag_pct_bip": 6.45,
-    "zuschlag_pct": 19.8,
-    "spitze": 181
+    "z_2028": 12.26,
+    "beitrag_pct_bip": 6.29,
+    "zuschlag_pct": 19.4,
+    "spitze": 177
    },
-   "gesamtlast_2028": 39.0
+   "gesamtlast_2028": 38.8
   },
   "BE": {
    "name": "Belgien",
@@ -92,10 +92,10 @@
     "grundbedarf_monat_eur": 1115
    },
    "altlasten": {
-    "z_2028": 9.05,
-    "beitrag_pct_bip": 5.17,
-    "zuschlag_pct": 15.7,
-    "spitze": 156
+    "z_2028": 8.96,
+    "beitrag_pct_bip": 5.13,
+    "zuschlag_pct": 15.6,
+    "spitze": 155
    },
    "gesamtlast_2028": 38.1
   },
@@ -140,12 +140,12 @@
     "grundbedarf_monat_eur": 610
    },
    "altlasten": {
-    "z_2028": 4.08,
-    "beitrag_pct_bip": 2.06,
-    "zuschlag_pct": 6.2,
-    "spitze": 57
+    "z_2028": 4.38,
+    "beitrag_pct_bip": 2.19,
+    "zuschlag_pct": 6.5,
+    "spitze": 61
    },
-   "gesamtlast_2028": 35.6
+   "gesamtlast_2028": 35.7
   },
   "CH": {
    "name": "Schweiz",
@@ -188,9 +188,9 @@
     "grundbedarf_monat_eur": 1631
    },
    "altlasten": {
-    "z_2028": 4.57,
-    "beitrag_pct_bip": 2.43,
-    "zuschlag_pct": 7.2,
+    "z_2028": 4.61,
+    "beitrag_pct_bip": 2.45,
+    "zuschlag_pct": 7.3,
     "spitze": 70
    },
    "gesamtlast_2028": 36.2
@@ -236,9 +236,9 @@
     "grundbedarf_monat_eur": 929
    },
    "altlasten": {
-    "z_2028": 7.82,
-    "beitrag_pct_bip": 4.15,
-    "zuschlag_pct": 12.5,
+    "z_2028": 7.79,
+    "beitrag_pct_bip": 4.14,
+    "zuschlag_pct": 12.4,
     "spitze": 119
    },
    "gesamtlast_2028": 37.4
@@ -284,12 +284,12 @@
     "grundbedarf_monat_eur": 801
    },
    "altlasten": {
-    "z_2028": 7.02,
-    "beitrag_pct_bip": 3.57,
-    "zuschlag_pct": 11.1,
-    "spitze": 100
+    "z_2028": 7.25,
+    "beitrag_pct_bip": 3.67,
+    "zuschlag_pct": 11.4,
+    "spitze": 102
    },
-   "gesamtlast_2028": 35.8
+   "gesamtlast_2028": 35.9
   },
   "DE": {
    "name": "Deutschland",
@@ -428,12 +428,12 @@
     "grundbedarf_monat_eur": 910
    },
    "altlasten": {
-    "z_2028": 5.49,
-    "beitrag_pct_bip": 2.67,
-    "zuschlag_pct": 8.1,
-    "spitze": 73
+    "z_2028": 5.81,
+    "beitrag_pct_bip": 2.81,
+    "zuschlag_pct": 8.5,
+    "spitze": 76
    },
-   "gesamtlast_2028": 35.6
+   "gesamtlast_2028": 35.8
   },
   "EL": {
    "name": "Griechenland",
@@ -476,12 +476,12 @@
     "grundbedarf_monat_eur": 806
    },
    "altlasten": {
-    "z_2028": 10.96,
-    "beitrag_pct_bip": 6.6,
-    "zuschlag_pct": 19.2,
-    "spitze": 206
+    "z_2028": 11.24,
+    "beitrag_pct_bip": 6.72,
+    "zuschlag_pct": 19.5,
+    "spitze": 209
    },
-   "gesamtlast_2028": 41.0
+   "gesamtlast_2028": 41.2
   },
   "ES": {
    "name": "Spanien",
@@ -524,8 +524,8 @@
     "grundbedarf_monat_eur": 879
    },
    "altlasten": {
-    "z_2028": 10.0,
-    "beitrag_pct_bip": 5.56,
+    "z_2028": 10.02,
+    "beitrag_pct_bip": 5.57,
     "zuschlag_pct": 16.6,
     "spitze": 165
    },
@@ -572,10 +572,10 @@
     "grundbedarf_monat_eur": 1180
    },
    "altlasten": {
-    "z_2028": 9.54,
-    "beitrag_pct_bip": 5.13,
-    "zuschlag_pct": 15.9,
-    "spitze": 149
+    "z_2028": 9.41,
+    "beitrag_pct_bip": 5.07,
+    "zuschlag_pct": 15.7,
+    "spitze": 147
    },
    "gesamtlast_2028": 37.4
   },
@@ -620,12 +620,12 @@
     "grundbedarf_monat_eur": 1066
    },
    "altlasten": {
-    "z_2028": 11.88,
-    "beitrag_pct_bip": 6.51,
-    "zuschlag_pct": 19.8,
-    "spitze": 191
+    "z_2028": 11.75,
+    "beitrag_pct_bip": 6.45,
+    "zuschlag_pct": 19.7,
+    "spitze": 189
    },
-   "gesamtlast_2028": 39.3
+   "gesamtlast_2028": 39.2
   },
   "HR": {
    "name": "Kroatien",
@@ -668,12 +668,12 @@
     "grundbedarf_monat_eur": 713
    },
    "altlasten": {
-    "z_2028": 6.89,
-    "beitrag_pct_bip": 3.68,
-    "zuschlag_pct": 11.3,
-    "spitze": 106
+    "z_2028": 7.26,
+    "beitrag_pct_bip": 3.84,
+    "zuschlag_pct": 11.8,
+    "spitze": 110
    },
-   "gesamtlast_2028": 36.2
+   "gesamtlast_2028": 36.3
   },
   "HU": {
    "name": "Ungarn",
@@ -716,12 +716,12 @@
     "grundbedarf_monat_eur": 693
    },
    "altlasten": {
-    "z_2028": 5.37,
-    "beitrag_pct_bip": 3.21,
-    "zuschlag_pct": 10.2,
-    "spitze": 100
+    "z_2028": 5.7,
+    "beitrag_pct_bip": 3.35,
+    "zuschlag_pct": 10.7,
+    "spitze": 103
    },
-   "gesamtlast_2028": 34.5
+   "gesamtlast_2028": 34.6
   },
   "IE": {
    "name": "Irland",
@@ -764,10 +764,10 @@
     "grundbedarf_monat_eur": 1221
    },
    "altlasten": {
-    "z_2028": 2.3,
-    "beitrag_pct_bip": 1.46,
-    "zuschlag_pct": 5.1,
-    "spitze": 47
+    "z_2028": 2.36,
+    "beitrag_pct_bip": 1.48,
+    "zuschlag_pct": 5.2,
+    "spitze": 48
    },
    "gesamtlast_2028": 30.1
   },
@@ -812,12 +812,12 @@
     "grundbedarf_monat_eur": 1486
    },
    "altlasten": {
-    "z_2028": 1.88,
-    "beitrag_pct_bip": 1.54,
-    "zuschlag_pct": 4.8,
-    "spitze": 61
+    "z_2028": 2.03,
+    "beitrag_pct_bip": 1.6,
+    "zuschlag_pct": 5.0,
+    "spitze": 62
    },
-   "gesamtlast_2028": 33.6
+   "gesamtlast_2028": 33.7
   },
   "IT": {
    "name": "Italien",
@@ -860,10 +860,10 @@
     "grundbedarf_monat_eur": 946
    },
    "altlasten": {
-    "z_2028": 11.99,
-    "beitrag_pct_bip": 6.81,
-    "zuschlag_pct": 20.5,
-    "spitze": 205
+    "z_2028": 11.87,
+    "beitrag_pct_bip": 6.76,
+    "zuschlag_pct": 20.4,
+    "spitze": 204
    },
    "gesamtlast_2028": 40.0
   },
@@ -908,12 +908,12 @@
     "grundbedarf_monat_eur": 777
    },
    "altlasten": {
-    "z_2028": 4.48,
-    "beitrag_pct_bip": 2.4,
-    "zuschlag_pct": 7.2,
-    "spitze": 69
+    "z_2028": 4.76,
+    "beitrag_pct_bip": 2.53,
+    "zuschlag_pct": 7.6,
+    "spitze": 72
    },
-   "gesamtlast_2028": 35.7
+   "gesamtlast_2028": 35.8
   },
   "LU": {
    "name": "Luxemburg",
@@ -956,12 +956,12 @@
     "grundbedarf_monat_eur": 1318
    },
    "altlasten": {
-    "z_2028": 8.63,
-    "beitrag_pct_bip": 4.08,
-    "zuschlag_pct": 13.7,
-    "spitze": 109
+    "z_2028": 8.11,
+    "beitrag_pct_bip": 3.85,
+    "zuschlag_pct": 13.0,
+    "spitze": 103
    },
-   "gesamtlast_2028": 33.8
+   "gesamtlast_2028": 33.5
   },
   "LV": {
    "name": "Lettland",
@@ -1004,12 +1004,12 @@
     "grundbedarf_monat_eur": 766
    },
    "altlasten": {
-    "z_2028": 5.43,
-    "beitrag_pct_bip": 2.92,
-    "zuschlag_pct": 8.6,
-    "spitze": 84
+    "z_2028": 5.81,
+    "beitrag_pct_bip": 3.08,
+    "zuschlag_pct": 9.1,
+    "spitze": 88
    },
-   "gesamtlast_2028": 36.8
+   "gesamtlast_2028": 37.0
   },
   "MT": {
    "name": "Malta",
@@ -1052,10 +1052,10 @@
     "grundbedarf_monat_eur": 921
    },
    "altlasten": {
-    "z_2028": 4.71,
-    "beitrag_pct_bip": 2.59,
-    "zuschlag_pct": 8.1,
-    "spitze": 76
+    "z_2028": 4.86,
+    "beitrag_pct_bip": 2.66,
+    "zuschlag_pct": 8.3,
+    "spitze": 78
    },
    "gesamtlast_2028": 34.7
   },
@@ -1100,12 +1100,12 @@
     "grundbedarf_monat_eur": 1127
    },
    "altlasten": {
-    "z_2028": 4.34,
-    "beitrag_pct_bip": 2.41,
-    "zuschlag_pct": 7.6,
-    "spitze": 71
+    "z_2028": 4.48,
+    "beitrag_pct_bip": 2.47,
+    "zuschlag_pct": 7.8,
+    "spitze": 73
    },
-   "gesamtlast_2028": 34.1
+   "gesamtlast_2028": 34.2
   },
   "NO": {
    "name": "Norwegen",
@@ -1148,12 +1148,12 @@
     "grundbedarf_monat_eur": 1261
    },
    "altlasten": {
-    "z_2028": 6.43,
-    "beitrag_pct_bip": 3.33,
-    "zuschlag_pct": 10.9,
-    "spitze": 94
+    "z_2028": 6.34,
+    "beitrag_pct_bip": 3.29,
+    "zuschlag_pct": 10.7,
+    "spitze": 93
    },
-   "gesamtlast_2028": 34.0
+   "gesamtlast_2028": 33.9
   },
   "PL": {
    "name": "Polen",
@@ -1196,12 +1196,12 @@
     "grundbedarf_monat_eur": 730
    },
    "altlasten": {
-    "z_2028": 7.66,
-    "beitrag_pct_bip": 3.99,
-    "zuschlag_pct": 12.0,
-    "spitze": 113
+    "z_2028": 7.83,
+    "beitrag_pct_bip": 4.06,
+    "zuschlag_pct": 12.2,
+    "spitze": 115
    },
-   "gesamtlast_2028": 37.1
+   "gesamtlast_2028": 37.2
   },
   "PT": {
    "name": "Portugal",
@@ -1244,12 +1244,12 @@
     "grundbedarf_monat_eur": 778
    },
    "altlasten": {
-    "z_2028": 9.19,
-    "beitrag_pct_bip": 5.11,
-    "zuschlag_pct": 15.1,
-    "spitze": 151
+    "z_2028": 9.46,
+    "beitrag_pct_bip": 5.23,
+    "zuschlag_pct": 15.4,
+    "spitze": 154
    },
-   "gesamtlast_2028": 39.0
+   "gesamtlast_2028": 39.1
   },
   "RO": {
    "name": "Rumänien",
@@ -1292,12 +1292,12 @@
     "grundbedarf_monat_eur": 591
    },
    "altlasten": {
-    "z_2028": 6.29,
-    "beitrag_pct_bip": 3.39,
-    "zuschlag_pct": 9.9,
-    "spitze": 98
+    "z_2028": 6.58,
+    "beitrag_pct_bip": 3.52,
+    "zuschlag_pct": 10.3,
+    "spitze": 101
    },
-   "gesamtlast_2028": 37.5
+   "gesamtlast_2028": 37.6
   },
   "SE": {
    "name": "Schweden",
@@ -1340,10 +1340,10 @@
     "grundbedarf_monat_eur": 1167
    },
    "altlasten": {
-    "z_2028": 5.53,
+    "z_2028": 5.51,
     "beitrag_pct_bip": 2.81,
     "zuschlag_pct": 9.3,
-    "spitze": 79
+    "spitze": 78
    },
    "gesamtlast_2028": 33.1
   },
@@ -1388,12 +1388,12 @@
     "grundbedarf_monat_eur": 862
    },
    "altlasten": {
-    "z_2028": 8.72,
-    "beitrag_pct_bip": 4.59,
-    "zuschlag_pct": 14.0,
-    "spitze": 131
+    "z_2028": 8.89,
+    "beitrag_pct_bip": 4.66,
+    "zuschlag_pct": 14.2,
+    "spitze": 133
    },
-   "gesamtlast_2028": 37.4
+   "gesamtlast_2028": 37.5
   },
   "SK": {
    "name": "Slowakei",
@@ -1436,12 +1436,12 @@
     "grundbedarf_monat_eur": 792
    },
    "altlasten": {
-    "z_2028": 5.91,
-    "beitrag_pct_bip": 3.28,
-    "zuschlag_pct": 9.7,
-    "spitze": 97
+    "z_2028": 6.11,
+    "beitrag_pct_bip": 3.37,
+    "zuschlag_pct": 9.9,
+    "spitze": 99
    },
-   "gesamtlast_2028": 37.2
+   "gesamtlast_2028": 37.3
   }
  },
  "raum": {

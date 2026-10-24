@@ -15,11 +15,11 @@
    "fall": "fest 2.45 %",
    "beitrag_pct_bip": 5.17,
    "zuschlag_pct": 15.5,
-   "spitze_zehn": 150.2,
+   "spitze_zehn": 149.9,
    "spitzenjahr_zehn": 2056,
    "zins_2028": 2.45,
    "zins_ab_2036": 2.45,
-   "beitrag_zehn_pct_bip": 5.26,
+   "beitrag_zehn_pct_bip": 5.25,
    "haushalt_de": {
     "mehr_monat_42000": {
      "alleinstehend": 604,
@@ -35,13 +35,13 @@
   },
   {
    "fall": "fest 3.0 %",
-   "beitrag_pct_bip": 5.73,
+   "beitrag_pct_bip": 5.74,
    "zuschlag_pct": 17.1,
-   "spitze_zehn": 152.7,
+   "spitze_zehn": 152.4,
    "spitzenjahr_zehn": 2057,
    "zins_2028": 3.0,
    "zins_ab_2036": 3.0,
-   "beitrag_zehn_pct_bip": 5.84,
+   "beitrag_zehn_pct_bip": 5.82,
    "haushalt_de": {
     "mehr_monat_42000": {
      "alleinstehend": 583,
@@ -59,11 +59,11 @@
    "fall": "fest 3.5 %",
    "beitrag_pct_bip": 6.27,
    "zuschlag_pct": 18.7,
-   "spitze_zehn": 154.6,
+   "spitze_zehn": 154.3,
    "spitzenjahr_zehn": 2058,
    "zins_2028": 3.5,
    "zins_ab_2036": 3.5,
-   "beitrag_zehn_pct_bip": 6.38,
+   "beitrag_zehn_pct_bip": 6.37,
    "haushalt_de": {
     "mehr_monat_42000": {
      "alleinstehend": 562,
@@ -81,11 +81,11 @@
    "fall": "fest 4.0 %",
    "beitrag_pct_bip": 6.82,
    "zuschlag_pct": 20.4,
-   "spitze_zehn": 156.1,
+   "spitze_zehn": 155.8,
    "spitzenjahr_zehn": 2059,
    "zins_2028": 4.0,
    "zins_ab_2036": 4.0,
-   "beitrag_zehn_pct_bip": 6.94,
+   "beitrag_zehn_pct_bip": 6.93,
    "haushalt_de": {
     "mehr_monat_42000": {
      "alleinstehend": 539,
@@ -101,13 +101,13 @@
   },
   {
    "fall": "Übergang 2.22 → 3.5 %",
-   "beitrag_pct_bip": 6.19,
+   "beitrag_pct_bip": 6.2,
    "zuschlag_pct": 18.5,
-   "spitze_zehn": 151.8,
+   "spitze_zehn": 151.5,
    "spitzenjahr_zehn": 2058,
    "zins_2028": 2.22,
    "zins_ab_2036": 3.5,
-   "beitrag_zehn_pct_bip": 6.3,
+   "beitrag_zehn_pct_bip": 6.29,
    "haushalt_de": {
     "mehr_monat_42000": {
      "alleinstehend": 564,
@@ -125,11 +125,11 @@
    "fall": "Übergang 2.22 → 4.0 %",
    "beitrag_pct_bip": 6.7,
    "zuschlag_pct": 20.0,
-   "spitze_zehn": 152.1,
+   "spitze_zehn": 151.8,
    "spitzenjahr_zehn": 2059,
    "zins_2028": 2.22,
    "zins_ab_2036": 4.0,
-   "beitrag_zehn_pct_bip": 6.82,
+   "beitrag_zehn_pct_bip": 6.81,
    "haushalt_de": {
     "mehr_monat_42000": {
      "alleinstehend": 544,
@@ -145,8 +145,8 @@
   }
  ],
  "abgleich_beschluss": {
-  "altlasten_json_zehn": 5.26,
-  "hier_zehn": 5.26
+  "altlasten_json_zehn": 5.25,
+  "hier_zehn": 5.25
  },
  "hinweis": "Zins über dem nominalen Wachstum (3 %): Die Schuld schmilzt nicht mehr von selbst, der Beitrag muss auch Zinsen tilgen. Gemeinsame Anleihen (EU) rentieren derzeit über Bundesanleihen; günstiger als heute ist der Fonds für FR und IT, nicht für DE."
 }

@@ -234,6 +234,16 @@
    "schritt": "+ E: 15 % über dem Grundbedarf, Boden 1.083 € (= Beschluss v4.26)",
    "beitrag_pct_bip": 5.26,
    "aenderung": 0.03
+  },
+  {
+   "schritt": "+ R6: Kürzungssatz je Staat (= v4.37)",
+   "beitrag_pct_bip": 5.25,
+   "aenderung": -0.01
+  },
+  {
+   "schritt": "Prüfung T1 (v4.37): geltend ohne anteilige Verrechnung",
+   "beitrag_pct_bip": 4.8,
+   "aenderung": -0.46
   }
  ],
  "grundsicherung_heute": {

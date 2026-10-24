@@ -139,12 +139,16 @@ def zerlegung():
                 ("+ B1: Grundauskommen im Bestand", (0.075, True, P["b1_v411"], 0.0)),
                 ("+ L1: Rentenbeginn ⅔ gekoppelt (= Beschluss v4.11)", (0.075, True, P["b1_v411"], r0.get("kopplung", 0.0))),
                 ("+ E: 15 % über dem Grundbedarf, Boden 1.083 € (= Beschluss v4.26)", (AL.P["kuerzung"], True,
-                                                                                       r0.get("grundauskommen_bestand_pct_bip", 0.0), r0.get("kopplung", 0.0)))]
+                                                                                       r0.get("grundauskommen_bestand_pct_bip", 0.0), r0.get("kopplung", 0.0))),
+                ("+ R6: Kürzungssatz je Staat (= v4.37)", (SZ.kuerzung_aus(AL.P), True, r0.get("grundauskommen_bestand_pct_bip", 0.0), r0.get("kopplung", 0.0)))]
     out, vor = [], None
     for name, a in schritte:
         c = beitrag(*a)
         out.append(dict(schritt=name, beitrag_pct_bip=round(c, 2), aenderung=round(c - vor, 2) if vor is not None else None))
         vor = c
+    # v4.37 (R6): Preis von T1 unter den geltenden Regeln (E, je Staat, B1, L1): ohne anteilige Verrechnung
+    ohne = beitrag(SZ.kuerzung_aus(AL.P), False, r0.get("grundauskommen_bestand_pct_bip", 0.0), r0.get("kopplung", 0.0))
+    out.append(dict(schritt="Prüfung T1 (v4.37): geltend ohne anteilige Verrechnung", beitrag_pct_bip=round(ohne, 2), aenderung=round(ohne - vor, 2)))
     SZ.P["rentner"] = r0
     return out
 

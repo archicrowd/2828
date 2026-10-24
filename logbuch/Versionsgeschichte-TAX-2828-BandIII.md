@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.36**
+Stand: 24. Oktober 2026 · Modellstand **v4.37**
 
 ---
 
@@ -3780,6 +3780,46 @@ PL 18,9 → 18,7. Mikrosimulation DE (Weitergabe 80 %): alle Haushalte mit mehr 
 
 ---
 
+### v4.37 — R6: Kürzungssatz der Renten je Staat, Verrechnung je Staat im Fonds der 30, Preis von T1
+
+**Art der Änderung: MINOR (Parameter je Staat), Prüfrechnung.** 24. Oktober 2026.
+
+**1. Kürzungssatz der Zusagen je Staat (`modell/kuerzung_laender.py`, `altlasten.toml [kuerzung_staat]`).** Regel E kürzt 15 % auf den Teil der
+Zusage über dem Grundbedarf. Wie viel das effektiv ist, hängt davon ab, wie hoch die Zusagen über dem Grundbedarf liegen. Bis v4.36 galt der
+deutsche Wert 6,95 % für alle 30 Staaten (Annahme). Neu: r = Grundbedarf / mittlere Zusage je Person ab 65; Mittel aus COFOG GF1002 + GF1003
+(% BIP 2024) / Anteil 65+ × BIP je Kopf; Grundbedarf nach Preisniveau (beides wie im Möglichkeitsraum). Verteilungsform der Zusagen je Person
+aus der deutschen Mikrosimulation (200 Quantile, neu in `rentner_kombi.json`), für alle Staaten gleich (Annahme). Der Abstand zwischen COFOG-
+Mittel und Mikrosimulation in Deutschland (2.357 gegen 1.822 € im Monat) wird überall gleich angenommen; Deutschland bleibt damit bei 6,95 %.
+
+Ergebnis: von 1,9 % (Island) und 2,3 bis 2,8 % (LV, HU, BG, EE, LT, HR) über 6,8 % (ES), 7,7 % (IT), 7,9 % (FR) bis 9,4 % (AT) und 12,1 % (LU).
+Hohe Zusagen über dem Grundbedarf werden stärker gekürzt; Staaten mit niedrigen Renten nahe am Grundbedarf kaum. Eigener Fonds: Zuschlag
+LU 13,7 → 13,0 %, AT 19,8 → 19,4 %, FR 19,8 → 19,7 %, IT 20,5 → 20,4 %; LV 8,6 → 9,1 %, HU 10,2 → 10,7 %, PL 12,0 → 12,2 %.
+**Gemeinsamer Fonds der 30 unverändert: 5,17 % BIP, Zuschlag 15,5 %, Spitze 148,1 % (2055)**; die Effekte gleichen sich im Klub aus.
+Beschluss der zehn (Grundlage der Skalierung): 5,26 → 5,25 % BIP, Spitze 150,2 → 149,9 %.
+
+**2. Verrechnung je Staat für die 30 (`fonds_klub.py`, `fonds_geltend.json` → `verrechnung`).** Beschlusslogik der zehn (v3.46) auf die 30
+übertragen: Beitrag je Staat = gemeinsamer Beitrag × (m × eigene Altlast 2028 / Mittel + 1 − m), m schmilzt in 30 Jahren von 1 auf 0. Altlast
+2028 in der Abgrenzung des Möglichkeitsraums (Z 2028 + Schuld 2024 × 2,45 %), Mittel 10,54 % BIP. Zuschlag 2028: IT 22,3, EL 22,0, FR 21,3,
+AT 20,9, ES 18,3, DE 15,0, PL 13,5, NL 8,1, IE 4,8, DK 1,3 %; 2040 schon näher am gleichen Satz (IT 19,5, DK 7,0 %). Seiten-Daten:
+`laenderseiten.json` → `fonds.verrechnung_30`.
+
+Wirkung in den Haushalten, wenn man die Verrechnung 2028 statt des gleichen Satzes anwendet (`verrechnung_haushalte.py`, Empfindlichkeit;
+alleinstehend, mehr im Monat bei 1× / 2× Durchschnittslohn): DE +716 / +689 → +726 / +710 €; FR +480 / +849 → +390 / +654 €;
+IT +494 / +941 → +412 / +766 €; ES +380 / +454 → +350 / +389 €; PL +1.418 / +1.564 → +1.474 / +1.695 zł. Anteil mit mehr: FR alleinerziehend
+100 → 73 %, sonst unverändert. **Geltend in Haushalten und auf den Seiten bleibt der gleiche Satz (bisherige Vereinfachung); Entscheidung E11.**
+
+**3. Preis von T1 (anteilige Verrechnung der Dividende).** v4.11 rechnete +0,50 % BIP (Kürzung 7,5 %, ohne E). Unter den geltenden Regeln
+(E, Satz je Staat, B1, L1): ohne T1 4,80 statt 5,25 % BIP im Beschluss der zehn, also **+0,46 % BIP**; Größenordnung bestätigt
+(`rentnerausgleich.json` → `fonds_zerlegung`, neue Schritte „R6“ und „Prüfung T1“).
+
+**Einschränkungen:** Rentner ab 65 als Bezieher (Frühverrentung erhöht das Mittel je Person scheinbar); Verteilungsform DE für alle Staaten;
+Boden B1 (Grundauskommen im Bestand) weiter deutsch skaliert; Verrechnung in der Abgrenzung des Möglichkeitsraums, nicht des Beschlusses.
+
+**Datenquelle:** Eurostat COFOG (gov_10a_exp, 2024, über `moeglichkeitsraum_2024.json`), Mikrosimulation DE (EU-SILC 2025, ASID 2023).
+**Wodurch aufgefallen:** Liste 7.1, R6.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -3840,7 +3880,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.36
+## 7 | Offene Punkte, Stand v4.37
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3855,7 +3895,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R3 | **erledigt v4.30 für Kapital und Miete** (offen: Spitze der Vermögen, Erbschaften, Untererfassung) – **Kapitaleinkommen, Vermögen und Erbschaften in der Mikrosimulation** (33 % auf alle Erträge statt 26,4 %, Mindeststeuer ab 2 Mio. €) | obere Dezile; Gewinneraussage im obersten Dezil | Rechner „hohe Einkommen“, Ausweichen |
 | R4 | **teilweise erledigt v4.31/v4.32** (BIP-Neuabruf als Schalter; Vermögens- und Erbschaftsbasis geprüft; offen: Renditen, COFOG, B19) – **Einnahmeseite der Dividende belastbar machen:** Ausweichreaktionen mit Verteilungsdaten (bisher −55 € Dividende 2028 im ungünstigen Fall), Neuabruf BIP und Posten (B15, BIP DE 2024 +1,34 % revidiert), Zuordnung der Posten (B19) | Dividende 354 € je Erwachsenem ist der größte Einzelposten unterer Einkommen | B15, B19, v4.18 |
 | R5 | **teilweise erledigt v4.35** (Mindestsicherung heute IT, ES, PL; offen: Mehrwertsteuer nach Einkommen, FR RSA) – **Länderrechnungen FR, IT, ES, PL:** feinere Lohnverteilungen, Mindestsicherung und Bedarfsleistungen heute in IT und PL, Familienleistungen FR; Deckel der Weitergabe in FR (N24, N28) | Gewinneraussage je Land; FR heute 73 % (allein) | v4.1–v4.9 |
-| R6 | **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
+| R6 | **erledigt v4.37** (offen: Boden B1 je Staat, Verteilungsform je Staat; Entscheidung E11) – **Fonds der 30 direkt rechnen:** Verrechnung je Staat, effektiver Kürzungssatz der Renten je Staat (bisher DE-Verteilung), T1 (0,50 % BIP) prüfen | Zuschlag: je Punkt rund 13 € im Monat bei 42.000 € | v4.20, v4.26 |
 | R7 | **Härtefall mit Mietdaten (H1)** und Kosten von H1–H3 | einkommensschwache Haushalte mit hohen Mieten | N27 |
 | R8 | **Mikrosimulation verfeinern:** Teilzeit-Dezile, Nicht-Inanspruchnahme, Zusammensetzung der Alterseinkommen nach Einkommenshöhe, Rentner mit Minijob, Haushaltsmischung im Gini | Feinheit; Ergebnisse bisher stabil (Ziehungen < 0,5 Punkte) | v4.22, v4.23 |
 | R9 | **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
@@ -3869,6 +3909,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E1 | Architekturvariante „Regelwerk statt Dach“ (Vorlage v4.13) |
 | E2 | **entschieden, geltend seit v4.36:** Deckel der Weitergabe einheitlich beim 6-fachen Grundbedarf in allen Staaten (v4.33 bis v4.35: nur FR, 1,6 × Durchschnittslohn); offen: Familienleistungen FR |
 | E10 | **entschieden v4.34:** Rest über dem Deckel bleibt beim Betrieb (keine Abgabe) |
+| E11 | **neu v4.37:** Verrechnung je Staat in den Haushaltsrechnungen und auf den Seiten anwenden (2028 FR 21,3 %, IT 22,3 %, ES 18,3 %, DE 15,0 %, PL 13,5 % statt 15,5 % für alle) oder beim gleichen Satz bleiben (vereinfachend, bisher) |
 | E3 | Härtefall H1–H3 und Rolle der Gemeinden G1–G5 (N27; Kindergewicht 0,55 gilt seit v4.8) |
 | E4 | Sicherheitsunion (50 % der Verteidigung über rund 15 % der Mehrwertsteuer, N34) |
 | E5 | Neustartverfahren |

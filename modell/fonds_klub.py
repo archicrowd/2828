@@ -13,6 +13,7 @@ import contextlib
 import importlib.util
 import io
 import json
+import tomllib
 from pathlib import Path
 
 W = Path(__file__).resolve().parent.parent
@@ -71,7 +72,7 @@ def main():
     f_niveau = BJ["schuldenquote_spitze"] / max(p10)
     pf = [x * f_niveau for x in p30]
     sp = max(pf)
-    G = dict(version="v4.26", status="geltend (Beschluss 21.10.2026: 30 Staaten, Zins = Mittel 2006–2025)", staaten=len(MRJ), zins=MR.P["zins"],
+    G = dict(version="v4.37", status="geltend (Beschluss 21.10.2026: 30 Staaten, Zins = Mittel 2006–2025)", staaten=len(MRJ), zins=MR.P["zins"],
              beitrag_pct_bip=round(BU["beitrag_pct_bip"] * b30 / b10, 2), zuschlag_auf_alle_steuern_pct=round(BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10, 1),
              schuldenquote_spitze=round(sp, 1), spitzenjahr=JAHRE[pf.index(sp)], zieljahr=BJ["zieljahr"],
              schuldenquote={str(j): round(pf[j - 2029], 1) for j in (2030, 2040, 2050, 2060, 2070, 2080, 2090, 2098)},
@@ -80,6 +81,27 @@ def main():
                             verhaeltnis_beitrag_30_zu_10=round(b30 / b10, 4), verhaeltnis_zuschlag_30_zu_10=round(z30 / z10, 4)),
              hinweis="Beschluss der zehn (altlasten.py, Rentnerpaket) × Verhältnis 30/10 aus dem Möglichkeitsraum; Schuldenpfad der 30, Niveau skaliert "
                      "(Annahme). Gleicher Satz für alle Staaten; die Verrechnung je Staat (30 Jahre) ist nur für die zehn gerechnet.")
+    # v4.37 (R6): Verrechnung je Staat für die 30 wie im Beschluss der zehn (altlasten.py): Beitrag je Staat = gemeinsamer Beitrag × (m × eigene
+    # Altlast 2028 / BIP-gewichtetes Mittel + 1 − m), m linear in verrechnung_jahre von 1 auf 0. Altlast 2028 in der Abgrenzung des Möglichkeitsraums:
+    # Z 2028 + Staatsschuld 2024 × Fondszins (% des eigenen BIP).
+    bip = {c: MRJ[c]["bip_kopf_eur_2024"] * MRJ[c]["einwohner_mio"] for c in MRJ}
+    alt = {c: MRJ[c]["altlasten"]["z_2028"] + MR.D["schuld"][c] * MR.P["zins"] / 100 for c in MRJ}
+    alt_s = sum(bip[c] * alt[c] for c in MRJ) / sum(bip.values())
+    c30 = BU["beitrag_pct_bip"] * b30 / b10
+    z_je_b = BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10 / c30
+    vj = tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8"))["beschluss"]["verrechnung_jahre"]
+    verr = {}
+    for c in MRJ:
+        reihe = {}
+        for j in (2028, 2035, 2040, 2050, 2058):
+            m = max(0.0, 1 - (j - 2028) / vj)
+            b = c30 * (m * alt[c] / alt_s + (1 - m))
+            reihe[str(j)] = dict(beitrag_pct_bip=round(b, 2), zuschlag_pct=round(b * z_je_b, 1))
+        verr[c] = dict(altlast_2028_pct_bip=round(alt[c], 2), reihe=reihe)
+    G["verrechnung"] = dict(jahre=vj, altlast_schnitt_2028=round(alt_s, 2), laender=verr,
+                            hinweis="Prüfrechnung: Abgrenzung des Möglichkeitsraums (Z 2028 + Schuld 2024 × Zins); Zuschlag = Beitrag × Verhältnis des "
+                                    "gemeinsamen Zuschlags zum Beitrag (gleiche Steuerquote, vereinfachend). Haushaltsrechnungen nutzen den gleichen Satz für alle.")
+    G["hinweis"] = G["hinweis"].replace("die Verrechnung je Staat (30 Jahre) ist nur für die zehn gerechnet.", "Verrechnung je Staat für die 30 seit v4.37 (verrechnung).")
     (AGG / "fonds_geltend.json").write_text(json.dumps(G, ensure_ascii=False, indent=1), encoding="utf-8")
     for r in erg:
         print(r)

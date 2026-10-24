@@ -122,7 +122,8 @@ def main():
             e["fonds"] = dict(abgrenzung="gemeinsamer Fonds der 30 Staaten (Beschluss 21.10.2026)", beitrag_pct_bip=FG["beitrag_pct_bip"],
                               zuschlag_pct=FG["zuschlag_auf_alle_steuern_pct"], spitze=FG["schuldenquote_spitze"], spitzenjahr=FG["spitzenjahr"],
                               zieljahr=FG["zieljahr"], zins=FG["zins"], verrechnung_2028_zehn=vr,
-                              hinweis="gleicher Satz für alle (vereinfachend wie im Beschluss); Verrechnung je Staat nur für die zehn gerechnet")
+                              verrechnung_30=FG.get("verrechnung", {}).get("laender", {}).get(c),   # v4.37 (R6)
+                              hinweis="Haushalte mit gleichem Satz für alle (vereinfachend); Verrechnung je Staat der 30 in verrechnung_30 (v4.37, Prüfrechnung)")
         erg[c] = e
     erg["DE"]["abgleich"] = "DE-Pfad identisch mit netz33 (Verhältnis 1)"
     E = dict(version=P["version"], status="Prüfrechnung", jahre=JAHRE, staaten=erg,

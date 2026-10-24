@@ -37,7 +37,7 @@ def lade(name, pfad):
 
 
 SZ = lade("sz", W / "modell" / "sozialschutz.py")
-SZ.KUERZUNG = P.get("kuerzung", 0.0)                   # v3.48: Renten um eingesparte Beiträge gekürzt
+SZ.KUERZUNG = SZ.kuerzung_aus(P)                       # v3.48: Renten um eingesparte Beiträge gekürzt; v4.37 je Staat
 G = json.loads((AGG / "gesamtrechnung.json").read_text(encoding="utf-8"))
 SV = json.loads((AGG / "systemvarianten.json").read_text(encoding="utf-8"))
 G_NOM = G.get("wachstum_nominal", 3.0) / 100 if G.get("wachstum_nominal") else 0.03

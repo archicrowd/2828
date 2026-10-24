@@ -22,6 +22,39 @@ tilgungsregel = "Einnahmen über dem gleitenden Fünfjahresdurchschnitt des Aufk
 # gleich; tatsächlich unterschiedlich, z. B. Frankreich CSG/CRDS, Dänemark keine Beiträge – je Staat zu setzen).
 kuerzung = 0.0695           # v4.26 (Beschluss 22.10.2026, Regel E): 15 % auf den Teil der Zusage über dem Grundbedarf = effektiv 6,95 % aller
                             # Zusagen (rentner_kombi.json, DE-Verteilung, für alle Staaten übernommen: Annahme); vorher 7,5 % (v4.11), 12,35 % (v3.48)
+kuerzung_je_staat = true    # v4.37 (R6): Satz je Staat nach Lage der Zusagen zum Grundbedarf (modell/kuerzung_laender.py, prüft die Tabelle unten); false = kuerzung für alle
+
+[kuerzung_staat]   # v4.37: aus daten/aggregate/kuerzung_laender.json übertragen (Verteilungsform DE, Mittel aus COFOG GF1002+GF1003 je Person ab 65: Annahmen)
+AT = 0.0939
+BE = 0.0778
+BG = 0.0264
+CH = 0.0633
+CY = 0.0719
+CZ = 0.0427
+DE = 0.0695
+DK = 0.0515
+EE = 0.0276
+EL = 0.0499
+ES = 0.0676
+FI = 0.0806
+FR = 0.0793
+HR = 0.0285
+HU = 0.0252
+IE = 0.053
+IS = 0.0193
+IT = 0.0771
+LT = 0.028
+LU = 0.1206
+LV = 0.0228
+MT = 0.046
+NL = 0.0452
+NO = 0.0812
+PL = 0.0538
+PT = 0.0474
+RO = 0.0382
+SE = 0.0715
+SI = 0.0545
+SK = 0.0449
 
 [beschluss]
 system = "33R"

@@ -56,7 +56,7 @@
     }
    },
    "zuschlag": 15.5,
-   "zuschlag_neustart": 13.2,
+   "zuschlag_neustart": 13.1,
    "anteil_basis": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
@@ -85,9 +85,9 @@
    "dividende_2028": 200.0,
    "dividende_de_kaufkraftgleich": 352,
    "zuschlag_nach_zins": {
-    "2.5": 20.4,
-    "3.5": 24.7,
-    "4.5": 29.4
+    "2.5": 20.2,
+    "3.5": 24.5,
+    "4.5": 29.1
    },
    "netz_pct_bip_2028": {
     "Gesundheit": 8.36,
@@ -157,9 +157,9 @@
    "dividende_2028": 276.3,
    "dividende_de_kaufkraftgleich": 312,
    "zuschlag_nach_zins": {
-    "2.5": 20.9,
-    "3.5": 25.4,
-    "4.5": 30.3
+    "2.5": 20.7,
+    "3.5": 25.2,
+    "4.5": 30.1
    },
    "netz_pct_bip_2028": {
     "Gesundheit": 6.17,

@@ -23,7 +23,7 @@ spec = importlib.util.spec_from_file_location("sz", W / "modell" / "sozialschutz
 SZ = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
     spec.loader.exec_module(SZ)
-SZ.KUERZUNG = tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8"))["kuerzung"]   # v4.11: aus altlasten.toml
+SZ.KUERZUNG = SZ.kuerzung_aus(tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8")))   # v4.11: aus altlasten.toml; v4.37 je Staat
 V = next(x for x in SV["varianten"] if x["id"] == PJ["system"])
 R = {r["jahr"]: r for r in PJ["reihe"]}
 K = G["anteil_minderjaehrige"] / 100

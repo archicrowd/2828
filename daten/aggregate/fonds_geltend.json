@@ -1,5 +1,5 @@
 {
- "version": "v4.26",
+ "version": "v4.37",
  "status": "geltend (Beschluss 21.10.2026: 30 Staaten, Zins = Mittel 2006–2025)",
  "staaten": 30,
  "zins": 2.45,
@@ -20,13 +20,770 @@
  },
  "grundlage": {
   "beschluss_zehn": {
-   "beitrag_pct_bip": 5.26,
+   "beitrag_pct_bip": 5.25,
    "zuschlag_pct": 15.7,
-   "spitze": 150.2,
+   "spitze": 149.9,
    "spitzenjahr": 2056
   },
-  "verhaeltnis_beitrag_30_zu_10": 0.9822,
-  "verhaeltnis_zuschlag_30_zu_10": 0.9816
+  "verhaeltnis_beitrag_30_zu_10": 0.9848,
+  "verhaeltnis_zuschlag_30_zu_10": 0.9839
  },
- "hinweis": "Beschluss der zehn (altlasten.py, Rentnerpaket) × Verhältnis 30/10 aus dem Möglichkeitsraum; Schuldenpfad der 30, Niveau skaliert (Annahme). Gleicher Satz für alle Staaten; die Verrechnung je Staat (30 Jahre) ist nur für die zehn gerechnet."
+ "hinweis": "Beschluss der zehn (altlasten.py, Rentnerpaket) × Verhältnis 30/10 aus dem Möglichkeitsraum; Schuldenpfad der 30, Niveau skaliert (Annahme). Gleicher Satz für alle Staaten; Verrechnung je Staat für die 30 seit v4.37 (verrechnung).",
+ "verrechnung": {
+  "jahre": 30,
+  "altlast_schnitt_2028": 10.54,
+  "laender": {
+   "AT": {
+    "altlast_2028_pct_bip": 14.22,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 6.98,
+      "zuschlag_pct": 20.9
+     },
+     "2035": {
+      "beitrag_pct_bip": 6.56,
+      "zuschlag_pct": 19.6
+     },
+     "2040": {
+      "beitrag_pct_bip": 6.26,
+      "zuschlag_pct": 18.7
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.65,
+      "zuschlag_pct": 16.9
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "BE": {
+    "altlast_2028_pct_bip": 11.51,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 5.65,
+      "zuschlag_pct": 16.9
+     },
+     "2035": {
+      "beitrag_pct_bip": 5.54,
+      "zuschlag_pct": 16.5
+     },
+     "2040": {
+      "beitrag_pct_bip": 5.46,
+      "zuschlag_pct": 16.3
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.3,
+      "zuschlag_pct": 15.8
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "BG": {
+    "altlast_2028_pct_bip": 4.96,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 2.44,
+      "zuschlag_pct": 7.3
+     },
+     "2035": {
+      "beitrag_pct_bip": 3.07,
+      "zuschlag_pct": 9.2
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.53,
+      "zuschlag_pct": 10.6
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.44,
+      "zuschlag_pct": 13.3
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "CH": {
+    "altlast_2028_pct_bip": 5.52,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 2.71,
+      "zuschlag_pct": 8.1
+     },
+     "2035": {
+      "beitrag_pct_bip": 3.28,
+      "zuschlag_pct": 9.8
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.69,
+      "zuschlag_pct": 11.0
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.51,
+      "zuschlag_pct": 13.5
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "CY": {
+    "altlast_2028_pct_bip": 9.33,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 4.58,
+      "zuschlag_pct": 13.7
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.72,
+      "zuschlag_pct": 14.1
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.81,
+      "zuschlag_pct": 14.4
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.01,
+      "zuschlag_pct": 15.0
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "CZ": {
+    "altlast_2028_pct_bip": 8.31,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 4.08,
+      "zuschlag_pct": 12.2
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.33,
+      "zuschlag_pct": 13.0
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.52,
+      "zuschlag_pct": 13.5
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.88,
+      "zuschlag_pct": 14.6
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "DE": {
+    "altlast_2028_pct_bip": 10.19,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 5.0,
+      "zuschlag_pct": 15.0
+     },
+     "2035": {
+      "beitrag_pct_bip": 5.04,
+      "zuschlag_pct": 15.1
+     },
+     "2040": {
+      "beitrag_pct_bip": 5.07,
+      "zuschlag_pct": 15.2
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.13,
+      "zuschlag_pct": 15.3
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "DK": {
+    "altlast_2028_pct_bip": 0.9,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 0.44,
+      "zuschlag_pct": 1.3
+     },
+     "2035": {
+      "beitrag_pct_bip": 1.54,
+      "zuschlag_pct": 4.6
+     },
+     "2040": {
+      "beitrag_pct_bip": 2.33,
+      "zuschlag_pct": 7.0
+     },
+     "2050": {
+      "beitrag_pct_bip": 3.91,
+      "zuschlag_pct": 11.7
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "EE": {
+    "altlast_2028_pct_bip": 6.39,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 3.13,
+      "zuschlag_pct": 9.4
+     },
+     "2035": {
+      "beitrag_pct_bip": 3.61,
+      "zuschlag_pct": 10.8
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.95,
+      "zuschlag_pct": 11.8
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.63,
+      "zuschlag_pct": 13.8
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "EL": {
+    "altlast_2028_pct_bip": 15.02,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 7.37,
+      "zuschlag_pct": 22.0
+     },
+     "2035": {
+      "beitrag_pct_bip": 6.86,
+      "zuschlag_pct": 20.5
+     },
+     "2040": {
+      "beitrag_pct_bip": 6.49,
+      "zuschlag_pct": 19.4
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.76,
+      "zuschlag_pct": 17.2
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "ES": {
+    "altlast_2028_pct_bip": 12.51,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 6.14,
+      "zuschlag_pct": 18.3
+     },
+     "2035": {
+      "beitrag_pct_bip": 5.91,
+      "zuschlag_pct": 17.7
+     },
+     "2040": {
+      "beitrag_pct_bip": 5.75,
+      "zuschlag_pct": 17.2
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.43,
+      "zuschlag_pct": 16.2
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "FI": {
+    "altlast_2028_pct_bip": 11.43,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 5.61,
+      "zuschlag_pct": 16.8
+     },
+     "2035": {
+      "beitrag_pct_bip": 5.51,
+      "zuschlag_pct": 16.5
+     },
+     "2040": {
+      "beitrag_pct_bip": 5.43,
+      "zuschlag_pct": 16.2
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.29,
+      "zuschlag_pct": 15.8
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "FR": {
+    "altlast_2028_pct_bip": 14.51,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 7.12,
+      "zuschlag_pct": 21.3
+     },
+     "2035": {
+      "beitrag_pct_bip": 6.66,
+      "zuschlag_pct": 19.9
+     },
+     "2040": {
+      "beitrag_pct_bip": 6.34,
+      "zuschlag_pct": 19.0
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.69,
+      "zuschlag_pct": 17.0
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "HR": {
+    "altlast_2028_pct_bip": 8.67,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 4.25,
+      "zuschlag_pct": 12.7
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.47,
+      "zuschlag_pct": 13.4
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.62,
+      "zuschlag_pct": 13.8
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.93,
+      "zuschlag_pct": 14.7
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "HU": {
+    "altlast_2028_pct_bip": 7.5,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 3.68,
+      "zuschlag_pct": 11.0
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.03,
+      "zuschlag_pct": 12.0
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.28,
+      "zuschlag_pct": 12.8
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.77,
+      "zuschlag_pct": 14.3
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "IE": {
+    "altlast_2028_pct_bip": 3.3,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 1.62,
+      "zuschlag_pct": 4.8
+     },
+     "2035": {
+      "beitrag_pct_bip": 2.45,
+      "zuschlag_pct": 7.3
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.04,
+      "zuschlag_pct": 9.1
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.22,
+      "zuschlag_pct": 12.6
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "IS": {
+    "altlast_2028_pct_bip": 3.52,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 1.73,
+      "zuschlag_pct": 5.2
+     },
+     "2035": {
+      "beitrag_pct_bip": 2.53,
+      "zuschlag_pct": 7.6
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.11,
+      "zuschlag_pct": 9.3
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.25,
+      "zuschlag_pct": 12.7
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "IT": {
+    "altlast_2028_pct_bip": 15.17,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 7.44,
+      "zuschlag_pct": 22.3
+     },
+     "2035": {
+      "beitrag_pct_bip": 6.91,
+      "zuschlag_pct": 20.7
+     },
+     "2040": {
+      "beitrag_pct_bip": 6.54,
+      "zuschlag_pct": 19.5
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.78,
+      "zuschlag_pct": 17.3
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "LT": {
+    "altlast_2028_pct_bip": 5.69,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 2.79,
+      "zuschlag_pct": 8.3
+     },
+     "2035": {
+      "beitrag_pct_bip": 3.35,
+      "zuschlag_pct": 10.0
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.74,
+      "zuschlag_pct": 11.2
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.54,
+      "zuschlag_pct": 13.6
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "LU": {
+    "altlast_2028_pct_bip": 8.75,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 4.3,
+      "zuschlag_pct": 12.8
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.5,
+      "zuschlag_pct": 13.5
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.65,
+      "zuschlag_pct": 13.9
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.94,
+      "zuschlag_pct": 14.8
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "LV": {
+    "altlast_2028_pct_bip": 6.94,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 3.41,
+      "zuschlag_pct": 10.2
+     },
+     "2035": {
+      "beitrag_pct_bip": 3.82,
+      "zuschlag_pct": 11.4
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.11,
+      "zuschlag_pct": 12.3
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.7,
+      "zuschlag_pct": 14.1
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "MT": {
+    "altlast_2028_pct_bip": 5.98,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 2.94,
+      "zuschlag_pct": 8.8
+     },
+     "2035": {
+      "beitrag_pct_bip": 3.46,
+      "zuschlag_pct": 10.3
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.83,
+      "zuschlag_pct": 11.5
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.58,
+      "zuschlag_pct": 13.7
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "NL": {
+    "altlast_2028_pct_bip": 5.55,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 2.72,
+      "zuschlag_pct": 8.1
+     },
+     "2035": {
+      "beitrag_pct_bip": 3.3,
+      "zuschlag_pct": 9.9
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.7,
+      "zuschlag_pct": 11.1
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.52,
+      "zuschlag_pct": 13.5
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "NO": {
+    "altlast_2028_pct_bip": 7.42,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 3.64,
+      "zuschlag_pct": 10.9
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.0,
+      "zuschlag_pct": 11.9
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.25,
+      "zuschlag_pct": 12.7
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.76,
+      "zuschlag_pct": 14.2
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "PL": {
+    "altlast_2028_pct_bip": 9.17,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 4.5,
+      "zuschlag_pct": 13.5
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.66,
+      "zuschlag_pct": 13.9
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.77,
+      "zuschlag_pct": 14.3
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.99,
+      "zuschlag_pct": 14.9
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "PT": {
+    "altlast_2028_pct_bip": 11.75,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 5.77,
+      "zuschlag_pct": 17.2
+     },
+     "2035": {
+      "beitrag_pct_bip": 5.63,
+      "zuschlag_pct": 16.8
+     },
+     "2040": {
+      "beitrag_pct_bip": 5.53,
+      "zuschlag_pct": 16.5
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.33,
+      "zuschlag_pct": 15.9
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "RO": {
+    "altlast_2028_pct_bip": 7.92,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 3.89,
+      "zuschlag_pct": 11.6
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.19,
+      "zuschlag_pct": 12.5
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.4,
+      "zuschlag_pct": 13.2
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.83,
+      "zuschlag_pct": 14.4
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "SE": {
+    "altlast_2028_pct_bip": 6.35,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 3.11,
+      "zuschlag_pct": 9.3
+     },
+     "2035": {
+      "beitrag_pct_bip": 3.59,
+      "zuschlag_pct": 10.7
+     },
+     "2040": {
+      "beitrag_pct_bip": 3.94,
+      "zuschlag_pct": 11.8
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.62,
+      "zuschlag_pct": 13.8
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "SI": {
+    "altlast_2028_pct_bip": 10.52,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 5.16,
+      "zuschlag_pct": 15.4
+     },
+     "2035": {
+      "beitrag_pct_bip": 5.16,
+      "zuschlag_pct": 15.4
+     },
+     "2040": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.4
+     },
+     "2050": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   },
+   "SK": {
+    "altlast_2028_pct_bip": 7.57,
+    "reihe": {
+     "2028": {
+      "beitrag_pct_bip": 3.72,
+      "zuschlag_pct": 11.1
+     },
+     "2035": {
+      "beitrag_pct_bip": 4.06,
+      "zuschlag_pct": 12.1
+     },
+     "2040": {
+      "beitrag_pct_bip": 4.3,
+      "zuschlag_pct": 12.8
+     },
+     "2050": {
+      "beitrag_pct_bip": 4.78,
+      "zuschlag_pct": 14.3
+     },
+     "2058": {
+      "beitrag_pct_bip": 5.17,
+      "zuschlag_pct": 15.5
+     }
+    }
+   }
+  },
+  "hinweis": "Prüfrechnung: Abgrenzung des Möglichkeitsraums (Z 2028 + Schuld 2024 × Zins); Zuschlag = Beitrag × Verhältnis des gemeinsamen Zuschlags zum Beitrag (gleiche Steuerquote, vereinfachend). Haushaltsrechnungen nutzen den gleichen Satz für alle."
+ }
 }

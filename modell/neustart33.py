@@ -20,11 +20,12 @@ def main():
     for c in P["staaten"]:
         a = MR.land(c, "2028")
         schuld0, k0 = MR.D["schuld"][c], MR.SZ.KUERZUNG
+        kc = MR.SZ.kuerzung(c)
         reihe = []
         for s in P["schnitt"]:
             for k in P["altrenten_kuerzung"]:
                 MR.D["schuld"][c] = schuld0 * (1 - s)
-                MR.SZ.KUERZUNG = 1 - (1 - k0) * (1 - k)
+                MR.SZ.KUERZUNG = 1 - (1 - kc) * (1 - k)   # v4.37: Satz des Staates (kc)
                 al = MR.altlasten(c, a["div_erw_pct_kopf"], a["deckung_pct_bip"])
                 reihe.append(dict(schnitt=s, altrenten_kuerzung=k, schuld_nach=round(schuld0 * (1 - s), 1), **al))
         MR.D["schuld"][c], MR.SZ.KUERZUNG = schuld0, k0

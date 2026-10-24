@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.36 · höchste Korrekturnummer 71 · 466 Dateien im Repository
+Modellstand v4.37 · höchste Korrekturnummer 71 · 470 Dateien im Repository
 
 ## Bausteine
 
@@ -79,6 +79,7 @@ Modellstand v4.36 · höchste Korrekturnummer 71 · 466 Dateien im Repository
 | N34 | B32 Länderseiten | B31 Drittel-System | offen |
 | N35 | B30 Altlastenfonds | B31 Drittel-System | geschlossen |
 | N36 | B32 Länderseiten | B31 Drittel-System | offen |
+| N37 | B30 Altlastenfonds | B32 Länderseiten | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -94,3 +95,4 @@ Modellstand v4.36 · höchste Korrekturnummer 71 · 466 Dateien im Repository
 - Hinweis: Naht N33 offen: B31 Drittel-System -> B32 Länderseiten: v4.15: nicht gerechnet | v4.16: 400 Kreise (Eurostat): Formel P90/P10 1,05, Strukturzuschlag 10 % hebt dünn besiedelte Kreise auf Index 111; heutige Gemeindeeinnahmen je Kreis fehlen (robots.txt)
 - Hinweis: Naht N34 offen: B32 Länderseiten -> B31 Drittel-System: v4.16: 50 % der Verteidigung gemeinsam = 15,1 % der Mehrwertsteuer 2035; Gesamtlast unverändert
 - Hinweis: Naht N36 offen: B32 Länderseiten -> B31 Drittel-System: v4.22: Vollzeit 99,3 %, Teilzeit 99,8 %, Minijob 47,6 %, Bürgergeld ohne Erwerb 14,7 %, Rentner 0 %; Validierung Lohnsumme −3,2 %, Lohnsteuer −4,8 %; Grundsicherung im Alter nicht bestanden (Rentenverteilung je Rente) | v4.23: Rentner mit Haushaltseinkommen: 5,4 % mit mehr, −145 € im Mittel; Prüfwerte bestanden; Ausgleich offen | v4.24: Vorschlag E (Boden 1.083/1.632 €, 15 % auf Zusagen über dem Grundbedarf): unteres Fünftel +21 €, oberes −477 €, gegen Beschluss −0,05 % BIP; Entscheidung offen | v4.26: E beschlossen und eingerechnet (Fonds 5,17 %, Zuschlag 15,5 %); Webseitentexte offen | v4.28: Beamte 83 % (Zulage), Selbständige 78 %
+- Hinweis: Naht N37 offen: B30 Altlastenfonds -> B32 Länderseiten: v4.37: 2028 IT 22,3 / FR 21,3 / ES 18,3 / DE 15,0 / PL 13,5 % statt 15,5 %; FR alleinerziehend mit mehr 100 → 73 %

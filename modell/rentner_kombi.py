@@ -66,7 +66,17 @@ def main():
                      b1_soll=round(b1_alt * e["boden_mrd_genau"] / a["boden_mrd_genau"], 4), b1_toml=b1)
     if abs(k_al - e["effektiver_satz"]) > 0.0005 or abs(b1 - uebertrag["b1_soll"]) > 0.0005:
         raise SystemExit(f"Übertrag Regel E in den Fonds veraltet: {uebertrag}")
+    # v4.37 (R6): Verteilung der Zusage je Person (GRV + andere Systeme), relativ zum gewichteten Mittel, für den Kürzungssatz je Staat
+    zp = np.array([g * (A["grv"] + A["andere"]) for g, _, _ in pre])
+    wp = gw * np.array([n for _, _, n in pre])
+    o = np.argsort(zp)
+    cw = np.cumsum(wp[o]) / wp.sum()
+    mz = float(np.average(zp, weights=wp))
+    verteilung = dict(mittel_jahr=round(mz), grundbedarf_jahr=round(M.GB), r_grundbedarf_zu_mittel=round(M.GB / mz, 4),
+                      quantile_rel=[round(float(zp[o][min(np.searchsorted(cw, (i + 0.5) / 200), len(o) - 1)] / mz), 4) for i in range(200)],
+                      hinweis="200 Quantile der Zusage je Person (Rentnerhaushalte, Personen gewichtet) relativ zum Mittel; Kaufkraft 2026")
     E = dict(version=P["version"], status="Beschluss E (22.10.2026), Prüfrechnung (2028, Kaufkraft 2026)", varianten=erg, uebertrag_fonds=uebertrag,
+             verteilung_zusage=verteilung,
              hinweis="Fünftel nach heutigem Haushaltsnetto der Rentnerhaushalte. Zusammensetzung der Alterseinkommen gleich über alle Einkommen "
                      "(ASID, Annahme); Beamtenversorgung als Zusage behandelt (Annahme). Kosten nur für 2028; der Bestand sinkt mit der Zeit.")
     (W / "daten" / "aggregate" / "rentner_kombi.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
