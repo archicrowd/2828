@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.44"
+VERSION = "v4.45"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -102,6 +102,9 @@ _ANT = min(v for k, v in H["anteil_erwachsene_mit_mehr"].items() if k.startswith
 assert _ANT >= 90, f"Aussage 9 von 10 nicht gedeckt: {_ANT} %"
 
 
+_spec_k = importlib.util.spec_from_file_location("kommunen_texte", Path(__file__).resolve().parent / "kommunen_texte.py")   # v4.45
+KT = importlib.util.module_from_spec(_spec_k)
+_spec_k.loader.exec_module(KT)
 spec_l = importlib.util.spec_from_file_location("laender_texte", Path(__file__).resolve().parent / "laender_texte.py")
 LT = importlib.util.module_from_spec(spec_l)
 spec_l.loader.exec_module(LT)
@@ -190,6 +193,7 @@ def texte(sp, c):
     for k, v in nt.items():
         if not k.startswith(("rech_fein_", "chan1_zusatz")):
             quelle[k] = v
+    KT.anwenden(sp, quelle, json.loads((SB.SPRACHEN_DIR / f"{sp}.json").read_text(encoding="utf-8")))   # v4.45: Korrekturen 24.10.2026
     if nt["rech_fein_alt"] and nt["rech_fein_alt"] in quelle["rech_fein"]:
         quelle["rech_fein"] = quelle["rech_fein"].replace(nt["rech_fein_alt"], nt["rech_fein_neu"])
     quelle["rech_fein"] += nt["rech_fein_zusatz"]
@@ -283,6 +287,8 @@ if(D.rrs){seg('rland',()=>{R=D.rrs[val('rland')];rset();rechner();});}
 rset();$('brutto').addEventListener('input',rechner);$('rj').addEventListener('input',rechner);['erw','kin'].forEach(x=>seg(x,rechner));rechner();"""
 
 ERSETZE = [  # (alt, neu) in der Vorlage; jede Stelle muss genau einmal vorkommen
+    # 24.10.2026 (Initiative): Länderkarten Australien und Schweden
+    ('<div class="land"><div class="n">@@erf4_n@@</div><h3>@@erf4_h@@</h3><span class="k">@@erf4_k@@</span><p>@@erf4_p@@</p></div>', '<div class="land"><div class="n">@@erf4_n@@</div><h3>@@erf4_h@@</h3><span class="k">@@erf4_k@@</span><p>@@erf4_p@@</p></div>\n      <div class="land"><div class="n">@@erf5_n@@</div><h3>@@erf5_h@@</h3><span class="k">@@erf5_k@@</span><p>@@erf5_p@@</p></div>\n      <div class="land"><div class="n">@@erf6_n@@</div><h3>@@erf6_h@@</h3><span class="k">@@erf6_k@@</span><p>@@erf6_p@@</p></div>'),
     # 24.10.2026: eigener Untertitel für das schmale Feld der mobilen Grafik („Kommunen und Regionen“ passt dort nicht in eine Zeile)
     ('<text class="s" x="270" y="280" text-anchor="middle" style="font-size:10px">@@svg_gemeinde_sub@@</text>',
      '<text class="s" x="270" y="280" text-anchor="middle" style="font-size:10px">@@svg_gemeinde_sub_kurz@@</text>'),
@@ -360,7 +366,7 @@ def main():
         SB.VORLAGE = v
         T = json.loads((SB.SPRACHEN_DIR / f"{sp}.json").read_text(encoding="utf-8"))
         TX = texte(sp, c)
-        fehlt = set(TX) - set(T) - set(VT.NEU[sp]) - {"svg_gemeinde_sub_kurz"}   # 24.10.2026: neuer Schlüssel nur für Stand C
+        fehlt = set(TX) - set(T) - set(VT.NEU[sp]) - KT.NEUE_SCHLUESSEL   # 24.10.2026: neue Schlüssel nur für Stand C
         if fehlt:
             raise SystemExit(f"{sp}: unbekannte Schlüssel: {sorted(fehlt)}")
         T.update(TX)

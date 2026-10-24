@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.44**
+Stand: 24. Oktober 2026 · Modellstand **v4.45**
 
 ---
 
@@ -4014,6 +4014,29 @@ Länderbeispiele (Vorschlag an die Initiative).
 
 ---
 
+### v4.45 — Webseite: Länderfassungen, Gini-Grafik ohne Vergleichsländer, Karten Australien und Schweden; Upload-Paket
+
+**Art der Änderung: PATCH (Seite), keine Zahl bewegt.** 24. Oktober 2026.
+
+Auf Anweisung der Initiative (24.10.2026):
+- **Gini-Grafik:** Dänemark und Schweden (nur amtliche Werte, ohne Werte des Goldenen Drittels) entfernt; Fußnote ohne den Satz zu DK/SE;
+  der Frankreich-Hinweis trägt das Jahr („Frankreich 2028: … 24,6 statt 29,8“), weil die Grafik 2035 zeigt.
+- **Länderkarten:** neu Australien (Pflichtvorsorge, Superannuation seit 1992, 12 % des Lohns seit 1.7.2025; ATO) und Schweden (Prämienrente,
+  2,5 von 18,5 % Rentenbeitrag auf eigenem Konto mit Fondswahl, Standardfonds; Pensionsmyndigheten, Faktenblatt 2025); „seit 2000“
+  (erste Fondswahl) ohne eigenen Abruf, an der Quelle zu prüfen. Niederlande und Finnland nicht aufgenommen.
+- **Übersetzung der Korrekturen v4.43/v4.44 in EN, FR, IT, ES, PL** (`seite/werkzeuge/kommunen_texte.py`, angewandt in `drittel_bau.texte`):
+  „Kommunen und Regionen“ (municipalities and regions / communes et régions / comuni e regioni / municipios y regiones / gminy i regiony; Ausnahmen
+  wie im Deutschen: heutiger Staatsaufbau, Dänemark, Schweiz, Fachleute der kommunalen Praxis), Grafiken mit eigenem Untertitel; Mehrheitsentscheid;
+  Methodik mit externen Prüfungen; Dividende „zuvor eingezahlt“. Übersetzungen des Projekts, muttersprachlich gegenzulesen (P3).
+- **Upload-Paket** mit `seite/werkzeuge/paket_bau.py` gebaut (sechs Sprachen, Konzept und Kurzfassung als PDF, Weiterleitungen).
+
+Geprüft mit Bildschirmfotos (Gini-Grafik, Karten, Dach-Grafik DE/FR 1280 px, EN/PL 390 px): keine überlaufenden Beschriftungen, keine
+offenen Platzhalter.
+
+**Wodurch aufgefallen:** Durchsicht der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4075,7 +4098,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.44
+## 7 | Offene Punkte, Stand v4.45
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

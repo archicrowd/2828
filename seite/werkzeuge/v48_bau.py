@@ -54,8 +54,7 @@ def gini_svg(name, ref, l1, l2, l3, lref, unit):
         x = GINI["staaten"][c]
         r = {z["jahr"]: z["mitte"] for z in x["reihe"]}
         zeilen.append((c, [(x["gini_amtlich_2025"], "#9AA9B6"), (r[GINI_JAHR], "#1D7A4F")]))   # 24.10.2026: ein grüner Balken (Initiative)
-    for c, v in GINI["vergleich_amtlich_2025"].items():
-        zeilen.append((c, [(v, "#C9D3DB")]))
+    # 24.10.2026 (Initiative): Länder ohne Werte des Goldenen Drittels (DK, SE) nicht mehr im Bild
     x0, x1, vmax = 170, 860, 35.0
     sx = lambda v: x0 + (x1 - x0) * v / vmax
     y, teile = 30, []
