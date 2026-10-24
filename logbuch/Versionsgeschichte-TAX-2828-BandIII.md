@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.42**
+Stand: 24. Oktober 2026 · Modellstand **v4.43**
 
 ---
 
@@ -3966,6 +3966,29 @@ weiter überwiegend Stand B); Kopf von KENNZAHLEN berichtigt („Stand v4.21“ 
 
 ---
 
+### v4.43 — Webseite DE: „Gemeinde(n)“ durchgängig „Kommunen und Regionen“ (Korrektur der Initiative)
+
+**Art der Änderung: PATCH (Text), keine Zahl bewegt.** 24. Oktober 2026.
+
+Auf Anweisung der Initiative (24.10.2026) auf der deutschen Seite (`seite/stand-c/de.html`) jedes „Gemeinde“, „Gemeinden“ und
+„Gemeindehaushalt“ ersetzt; Verben, Pronomen und Artikel in die Mehrzahl gesetzt (z. B. „Kommunen und Regionen erhalten ihren Anteil direkt vom
+Dach, entscheiden selbst …“). Texte in `seite/werkzeuge/drittel_texte.py` (DE, auch Schlüssel, die bisher aus `sprachen/de.json` kamen, damit
+Stand B unverändert bleibt) und `v48_texte.py` (DE).
+
+**Bewusst abweichend vom Wortlaut der Anweisung (zur Bestätigung):**
+- „5 Ebenen … Gemeinde, Kreis, Land, Bund und EU“ (heutiger Staatsaufbau) → „Kommune, Kreis, …“ – mit „und Regionen“ stimmte die Zählung nicht.
+- Bildungsausgaben „Bund, Länder und Gemeinden“ (Statistisches Bundesamt) → „Bund, Länder und Kommunen“ – Regionen sind dort keine Ebene.
+- Dänemark und Schweiz (Abschnitt Erfahrungen) → „Kommunen“ – beschreibt die dortigen Gemeinden, nicht den Entwurf.
+- Grafiken: Kasten „Kommunen“ mit Untertitel „und Regionen entscheiden selbst“ (mobil: „und Regionen“); Dach: „mindestens 68 % an Kommunen
+  und Regionen“ – sonst überlaufen die Kästen (geprüft mit Bildschirmfotos 1280 und 390 Pixel breit).
+- Navigation: „Kommunen und Regionen“.
+
+Nicht geändert: die anderen fünf Sprachen, das Konzept (`konzept33-bau.js`), Stand B, Kommentare und Funktionsnamen im Code.
+
+**Datenquelle:** keine. **Wodurch aufgefallen:** Textkorrektur der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4027,7 +4050,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.42
+## 7 | Offene Punkte, Stand v4.43
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

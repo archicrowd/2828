@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.42"
+VERSION = "v4.43"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -198,6 +198,8 @@ def texte(sp, c):
     i80 = next(i for i, x in enumerate(saetze) if "80" in x)
     quelle["b2_p"] = " ".join(saetze[:i80 + 1] + [VT.WEITERGABE_SATZ[sp]] + saetze[i80 + 1:])
     quelle["b11_p"] += VT.NETZ_NIVEAU[sp]
+    if "svg_gemeinde_sub_kurz" not in quelle:      # 24.10.2026: ohne eigenen Text wie der Untertitel der großen Grafik
+        quelle["svg_gemeinde_sub_kurz"] = quelle.get("svg_gemeinde_sub") or json.loads((SB.SPRACHEN_DIR / f"{sp}.json").read_text(encoding="utf-8"))["svg_gemeinde_sub"]
     quelle["sich4_p"] += VT.RENTEN_SATZ[sp]   # v4.14
     anteil = VB.anteil(c)[0] if c in VB.LAENDER else _ANT
     if c == "EU30" or anteil >= 90:
@@ -279,6 +281,9 @@ if(D.rrs){seg('rland',()=>{R=D.rrs[val('rland')];rset();rechner();});}
 rset();$('brutto').addEventListener('input',rechner);$('rj').addEventListener('input',rechner);['erw','kin'].forEach(x=>seg(x,rechner));rechner();"""
 
 ERSETZE = [  # (alt, neu) in der Vorlage; jede Stelle muss genau einmal vorkommen
+    # 24.10.2026: eigener Untertitel für das schmale Feld der mobilen Grafik („Kommunen und Regionen“ passt dort nicht in eine Zeile)
+    ('<text class="s" x="270" y="280" text-anchor="middle" style="font-size:10px">@@svg_gemeinde_sub@@</text>',
+     '<text class="s" x="270" y="280" text-anchor="middle" style="font-size:10px">@@svg_gemeinde_sub_kurz@@</text>'),
     # v3.56: Wortmarke „Das Goldene Drittel" in drei Zeilen, alle Zeilen in derselben Schriftgröße
     ('<svg class="hero-mark" viewBox="0 0 560 300" role="img" aria-label="TAX 28:28">', '<svg class="hero-mark" viewBox="0 0 560 @@MARKE_H@@" role="img" aria-label="@@MARKE_NAME@@">'),
     ('<text x="60" y="168" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="196" fill="#0F3B5C" textLength="440" lengthAdjust="spacing">TAX</text>',
@@ -353,7 +358,7 @@ def main():
         SB.VORLAGE = v
         T = json.loads((SB.SPRACHEN_DIR / f"{sp}.json").read_text(encoding="utf-8"))
         TX = texte(sp, c)
-        fehlt = set(TX) - set(T) - set(VT.NEU[sp])
+        fehlt = set(TX) - set(T) - set(VT.NEU[sp]) - {"svg_gemeinde_sub_kurz"}   # 24.10.2026: neuer Schlüssel nur für Stand C
         if fehlt:
             raise SystemExit(f"{sp}: unbekannte Schlüssel: {sorted(fehlt)}")
         T.update(TX)
