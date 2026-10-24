@@ -119,11 +119,13 @@ def main():
             e["fonds_eigen"] = fonds(c, d0)
             e["fonds_eigen"]["start_2028"] = d0
             vr = AL["laender"].get(DNAME.get(c, ""), {}).get("reihe", {}).get("2028")
+            zh = FG["zuschlag_haushalte"]["laender"][c]                                       # v4.38 (E11): Zuschlag des Staates nach Verrechnung
             e["fonds"] = dict(abgrenzung="gemeinsamer Fonds der 30 Staaten (Beschluss 21.10.2026)", beitrag_pct_bip=FG["beitrag_pct_bip"],
-                              zuschlag_pct=FG["zuschlag_auf_alle_steuern_pct"], spitze=FG["schuldenquote_spitze"], spitzenjahr=FG["spitzenjahr"],
+                              zuschlag_pct=round(zh["2028"], 1), zuschlag_gemeinsam_pct=FG["zuschlag_auf_alle_steuern_pct"],
+                              zuschlag_faktor_jahr={str(j): round(zh[str(j)] / zh["2028"], 5) for j in JAHRE}, verrechnung_aktiv=FG["zuschlag_haushalte"]["aktiv"], spitze=FG["schuldenquote_spitze"], spitzenjahr=FG["spitzenjahr"],
                               zieljahr=FG["zieljahr"], zins=FG["zins"], verrechnung_2028_zehn=vr,
                               verrechnung_30=FG.get("verrechnung", {}).get("laender", {}).get(c),   # v4.37 (R6)
-                              hinweis="Haushalte mit gleichem Satz für alle (vereinfachend); Verrechnung je Staat der 30 in verrechnung_30 (v4.37, Prüfrechnung)")
+                              hinweis="zuschlag_pct: Zuschlag des Staates 2028 nach Verrechnung (E11, v4.38), abschmelzend auf den gemeinsamen Satz bis 2058 (zuschlag_faktor_jahr)")
         erg[c] = e
     erg["DE"]["abgleich"] = "DE-Pfad identisch mit netz33 (Verhältnis 1)"
     E = dict(version=P["version"], status="Prüfrechnung", jahre=JAHRE, staaten=erg,

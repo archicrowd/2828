@@ -6,19 +6,19 @@
   "0.0": {
    "de_mehr_monat": {
     "alleinstehend": {
-     "20000": 171,
-     "42000": 252,
-     "75000": 150
+     "20000": 173,
+     "42000": 258,
+     "75000": 161
     },
     "alleinerziehend, 1 Kind": {
-     "20000": 168,
-     "42000": 251,
-     "75000": 144
+     "20000": 169,
+     "42000": 257,
+     "75000": 155
     },
     "Paar, ein Einkommen, 2 Kinder": {
-     "20000": 185,
-     "42000": 433,
-     "75000": 34
+     "20000": 187,
+     "42000": 436,
+     "75000": 46
     }
    },
    "anteil_mit_mehr": {
@@ -33,7 +33,7 @@
      "Paar, ein Einkommen, 2 Kinder": 91
     },
     "IT": {
-     "alleinstehend": 100,
+     "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 100
     },
@@ -43,8 +43,8 @@
      "Paar, ein Einkommen, 2 Kinder": 91
     },
     "PL": {
-     "alleinstehend": 91,
-     "alleinerziehend, 1 Kind": 80,
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 91,
      "Paar, ein Einkommen, 2 Kinder": 91
     }
    }
@@ -52,19 +52,19 @@
   "0.5": {
    "de_mehr_monat": {
     "alleinstehend": {
-     "20000": 293,
-     "42000": 472,
-     "75000": 530
+     "20000": 295,
+     "42000": 479,
+     "75000": 542
     },
     "alleinerziehend, 1 Kind": {
-     "20000": 229,
-     "42000": 471,
-     "75000": 525
+     "20000": 230,
+     "42000": 478,
+     "75000": 537
     },
     "Paar, ein Einkommen, 2 Kinder": {
-     "20000": 247,
-     "42000": 543,
-     "75000": 417
+     "20000": 248,
+     "42000": 546,
+     "75000": 430
     }
    },
    "anteil_mit_mehr": {
@@ -74,9 +74,9 @@
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "FR": {
-     "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 58,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "alleinstehend": 71,
+     "alleinerziehend, 1 Kind": 56,
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
     "IT": {
      "alleinstehend": 100,
@@ -98,19 +98,19 @@
   "0.8": {
    "de_mehr_monat": {
     "alleinstehend": {
-     "20000": 365,
-     "42000": 604,
-     "75000": 759
+     "20000": 367,
+     "42000": 611,
+     "75000": 771
     },
     "alleinerziehend, 1 Kind": {
-     "20000": 265,
-     "42000": 603,
-     "75000": 754
+     "20000": 266,
+     "42000": 610,
+     "75000": 767
     },
     "Paar, ein Einkommen, 2 Kinder": {
-     "20000": 283,
-     "42000": 667,
-     "75000": 647
+     "20000": 284,
+     "42000": 674,
+     "75000": 660
     }
    },
    "anteil_mit_mehr": {
@@ -121,7 +121,7 @@
     },
     "FR": {
      "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 73,
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "IT": {
@@ -144,19 +144,19 @@
   "1.0": {
    "de_mehr_monat": {
     "alleinstehend": {
-     "20000": 413,
-     "42000": 692,
-     "75000": 911
+     "20000": 415,
+     "42000": 699,
+     "75000": 925
     },
     "alleinerziehend, 1 Kind": {
-     "20000": 289,
-     "42000": 692,
-     "75000": 907
+     "20000": 290,
+     "42000": 699,
+     "75000": 921
     },
     "Paar, ein Einkommen, 2 Kinder": {
-     "20000": 307,
-     "42000": 755,
-     "75000": 801
+     "20000": 309,
+     "42000": 763,
+     "75000": 814
     }
    },
    "anteil_mit_mehr": {
@@ -166,9 +166,9 @@
      "Paar, ein Einkommen, 2 Kinder": 98
     },
     "FR": {
-     "alleinstehend": 100,
+     "alleinstehend": 73,
      "alleinerziehend, 1 Kind": 100,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "IT": {
      "alleinstehend": 100,

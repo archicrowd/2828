@@ -89,7 +89,8 @@ def main():
     alt_s = sum(bip[c] * alt[c] for c in MRJ) / sum(bip.values())
     c30 = BU["beitrag_pct_bip"] * b30 / b10
     z_je_b = BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10 / c30
-    vj = tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8"))["beschluss"]["verrechnung_jahre"]
+    BT = tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8"))["beschluss"]
+    vj = BT["verrechnung_jahre"]
     verr = {}
     for c in MRJ:
         reihe = {}
@@ -101,6 +102,13 @@ def main():
     G["verrechnung"] = dict(jahre=vj, altlast_schnitt_2028=round(alt_s, 2), laender=verr,
                             hinweis="Prüfrechnung: Abgrenzung des Möglichkeitsraums (Z 2028 + Schuld 2024 × Zins); Zuschlag = Beitrag × Verhältnis des "
                                     "gemeinsamen Zuschlags zum Beitrag (gleiche Steuerquote, vereinfachend). Haushaltsrechnungen nutzen den gleichen Satz für alle.")
+    # v4.38 (E11): Zuschlag je Staat und Jahr für Haushalte und Seiten (2028–2100); ohne Schalter der gleiche Satz
+    aktiv = bool(BT.get("verrechnung_haushalte"))
+    zh = {}
+    for c in MRJ:
+        zh[c] = {str(j): round(c30 * z_je_b * ((max(0.0, 1 - (j - 2028) / vj) * alt[c] / alt_s + 1 - max(0.0, 1 - (j - 2028) / vj)) if aktiv else 1.0), 3)
+                 for j in range(2028, 2101)}
+    G["zuschlag_haushalte"] = dict(aktiv=aktiv, laender=zh, hinweis="Zuschlag auf alle Steuern in % je Staat und Jahr; aktiv = Verrechnung je Staat (E11, v4.38)")
     G["hinweis"] = G["hinweis"].replace("die Verrechnung je Staat (30 Jahre) ist nur für die zehn gerechnet.", "Verrechnung je Staat für die 30 seit v4.37 (verrechnung).")
     (AGG / "fonds_geltend.json").write_text(json.dumps(G, ensure_ascii=False, indent=1), encoding="utf-8")
     for r in erg:

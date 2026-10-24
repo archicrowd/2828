@@ -5,9 +5,9 @@
   "Beschluss v4.26 (Regel E: 15 % über dem Grundbedarf, Boden 1.083 €)": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 23,
-    "1600": 1,
-    "2200": -56
+    "1200": 24,
+    "1600": 2,
+    "2200": -54
    },
    "mehrkosten_mrd": 0.0,
    "mehrkosten_pct_bip": 0.0
@@ -16,8 +16,8 @@
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -28,
-    "2200": -48
+    "1600": -27,
+    "2200": -46
    },
    "mehrkosten_mrd": -2.4,
    "mehrkosten_pct_bip": -0.05
@@ -26,18 +26,18 @@
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -93,
-    "2200": -128
+    "1600": -92,
+    "2200": -126
    },
-   "mehrkosten_mrd": -10.1,
+   "mehrkosten_mrd": -10.2,
    "mehrkosten_pct_bip": -0.21
   },
   "Kürzung 10,0 %": {
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -61,
-    "2200": -89
+    "1600": -60,
+    "2200": -87
    },
    "mehrkosten_mrd": -6.4,
    "mehrkosten_pct_bip": -0.13
@@ -45,9 +45,9 @@
   "Besteuerungsanteil 83 % wie heute": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 41,
-    "1600": 32,
-    "2200": 16
+    "1200": 42,
+    "1600": 33,
+    "2200": 18
    },
    "mehrkosten_mrd": 6.6,
    "mehrkosten_pct_bip": 0.13
@@ -59,15 +59,15 @@
     "1600": 41,
     "2200": 8
    },
-   "mehrkosten_mrd": 7.1,
+   "mehrkosten_mrd": 6.9,
    "mehrkosten_pct_bip": 0.14
   },
   "Pauschale 25 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 47,
-    "1600": 24,
-    "2200": -32
+    "1200": 48,
+    "1600": 26,
+    "2200": -30
    },
    "mehrkosten_mrd": 3.9,
    "mehrkosten_pct_bip": 0.08
@@ -75,9 +75,9 @@
   "Pauschale 50 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 71,
-    "1600": 48,
-    "2200": -8
+    "1200": 72,
+    "1600": 50,
+    "2200": -6
    },
    "mehrkosten_mrd": 7.7,
    "mehrkosten_pct_bip": 0.16
@@ -92,15 +92,15 @@
    "heute_mit_grundsicherung": 1083
   },
   "900": {
-   "neu_ohne_grundauskommen": 862,
+   "neu_ohne_grundauskommen": 863,
    "neu_mit_grundauskommen": 1083,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 789,
    "heute_mit_grundsicherung": 1083
   },
   "1200": {
-   "neu_ohne_grundauskommen": 1106,
-   "neu_mit_grundauskommen": 1106,
+   "neu_ohne_grundauskommen": 1107,
+   "neu_mit_grundauskommen": 1107,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 1052,
    "heute_mit_grundsicherung": 1083

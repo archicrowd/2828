@@ -9,7 +9,7 @@
   },
   {
    "rente_monat": 900,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "netto_heute_monat": 1083,
    "netto_33_monat": 1083,
    "differenz_monat": 0
@@ -23,10 +23,10 @@
   },
   {
    "rente_monat": 1200,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "netto_heute_monat": 1083,
-   "netto_33_monat": 1106,
-   "differenz_monat": 23
+   "netto_33_monat": 1107,
+   "differenz_monat": 24
   },
   {
    "rente_monat": 1600,
@@ -37,10 +37,10 @@
   },
   {
    "rente_monat": 1600,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "netto_heute_monat": 1389,
-   "netto_33_monat": 1390,
-   "differenz_monat": 1
+   "netto_33_monat": 1391,
+   "differenz_monat": 2
   },
   {
    "rente_monat": 2200,
@@ -51,10 +51,10 @@
   },
   {
    "rente_monat": 2200,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "netto_heute_monat": 1828,
-   "netto_33_monat": 1772,
-   "differenz_monat": -56
+   "netto_33_monat": 1774,
+   "differenz_monat": -54
   }
  ],
  "rentner_hinweis": "Rente um die eingesparten Kranken- und Pflegebeiträge gekürzt (Beschluss v3.48), sonst voll weitergezahlt; Besteuerungsanteil 83 % (Annahme)",
@@ -556,80 +556,80 @@
    "jahr": 2028,
    "haushalt": "alleinstehend",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 9390,
-     "netto_33": 15561,
-     "differenz": 6171,
-     "differenz_monat": 514,
+     "netto_33": 15576,
+     "differenz": 6186,
+     "differenz_monat": 516,
      "grenzbelastung_heute": 35.4,
-     "grenzbelastung_33": 26.4
+     "grenzbelastung_33": 26.3
     },
     {
      "brutto": 20000,
      "netto_heute": 15328,
-     "netto_33": 21549,
-     "differenz": 6221,
-     "differenz_monat": 518,
+     "netto_33": 21580,
+     "differenz": 6252,
+     "differenz_monat": 521,
      "grenzbelastung_heute": 47.4,
-     "grenzbelastung_33": 34.5
+     "grenzbelastung_33": 34.3
     },
     {
      "brutto": 30000,
      "netto_heute": 21350,
-     "netto_33": 28309,
-     "differenz": 6959,
-     "differenz_monat": 580,
+     "netto_33": 28361,
+     "differenz": 7011,
+     "differenz_monat": 584,
      "grenzbelastung_heute": 52.0,
-     "grenzbelastung_33": 42.7
+     "grenzbelastung_33": 42.5
     },
     {
      "brutto": 42000,
      "netto_heute": 28193,
-     "netto_33": 35445,
-     "differenz": 7252,
-     "differenz_monat": 604,
+     "netto_33": 35526,
+     "differenz": 7333,
+     "differenz_monat": 611,
      "grenzbelastung_heute": 54.1,
-     "grenzbelastung_33": 42.6
+     "grenzbelastung_33": 42.4
     },
     {
      "brutto": 55000,
      "netto_heute": 35262,
-     "netto_33": 43204,
-     "differenz": 7942,
-     "differenz_monat": 662,
+     "netto_33": 43315,
+     "differenz": 8053,
+     "differenz_monat": 671,
      "grenzbelastung_heute": 56.4,
-     "grenzbelastung_33": 42.4
+     "grenzbelastung_33": 42.2
     },
     {
      "brutto": 75000,
      "netto_heute": 45803,
-     "netto_33": 54905,
-     "differenz": 9102,
-     "differenz_monat": 759,
+     "netto_33": 55061,
+     "differenz": 9258,
+     "differenz_monat": 771,
      "grenzbelastung_heute": 49.9,
-     "grenzbelastung_33": 45.5
+     "grenzbelastung_33": 45.4
     },
     {
      "brutto": 100000,
      "netto_heute": 58741,
-     "netto_33": 67516,
-     "differenz": 8775,
-     "differenz_monat": 731,
+     "netto_33": 67718,
+     "differenz": 8978,
+     "differenz_monat": 748,
      "grenzbelastung_heute": 57.2,
-     "grenzbelastung_33": 45.1
+     "grenzbelastung_33": 45.0
     },
     {
      "brutto": 150000,
      "netto_heute": 85528,
-     "netto_33": 92677,
-     "differenz": 7149,
-     "differenz_monat": 596,
+     "netto_33": 92974,
+     "differenz": 7446,
+     "differenz_monat": 621,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -637,80 +637,80 @@
    "jahr": 2028,
    "haushalt": "alleinerziehend, 1 Kind",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 12570,
-     "netto_33": 18800,
-     "differenz": 6230,
-     "differenz_monat": 519,
+     "netto_33": 18818,
+     "differenz": 6248,
+     "differenz_monat": 521,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 26.3
+     "grenzbelastung_33": 26.1
     },
     {
      "brutto": 20000,
      "netto_heute": 18534,
-     "netto_33": 24800,
-     "differenz": 6266,
-     "differenz_monat": 522,
+     "netto_33": 24833,
+     "differenz": 6299,
+     "differenz_monat": 525,
      "grenzbelastung_heute": 47.0,
-     "grenzbelastung_33": 34.2
+     "grenzbelastung_33": 34.0
     },
     {
      "brutto": 30000,
      "netto_heute": 24592,
-     "netto_33": 31577,
-     "differenz": 6985,
-     "differenz_monat": 582,
+     "netto_33": 31631,
+     "differenz": 7039,
+     "differenz_monat": 587,
      "grenzbelastung_heute": 51.7,
-     "grenzbelastung_33": 42.7
+     "grenzbelastung_33": 42.5
     },
     {
      "brutto": 42000,
      "netto_heute": 31481,
-     "netto_33": 38722,
-     "differenz": 7241,
-     "differenz_monat": 603,
+     "netto_33": 38804,
+     "differenz": 7323,
+     "differenz_monat": 610,
      "grenzbelastung_heute": 53.8,
-     "grenzbelastung_33": 42.5
+     "grenzbelastung_33": 42.3
     },
     {
      "brutto": 55000,
      "netto_heute": 38594,
-     "netto_33": 46492,
-     "differenz": 7899,
-     "differenz_monat": 658,
+     "netto_33": 46605,
+     "differenz": 8011,
+     "differenz_monat": 668,
      "grenzbelastung_heute": 56.0,
-     "grenzbelastung_33": 42.3
+     "grenzbelastung_33": 42.1
     },
     {
      "brutto": 75000,
      "netto_heute": 49170,
-     "netto_33": 58218,
-     "differenz": 9048,
-     "differenz_monat": 754,
+     "netto_33": 58375,
+     "differenz": 9205,
+     "differenz_monat": 767,
      "grenzbelastung_heute": 50.1,
-     "grenzbelastung_33": 45.5
+     "grenzbelastung_33": 45.3
     },
     {
      "brutto": 100000,
      "netto_heute": 62070,
-     "netto_33": 70852,
-     "differenz": 8782,
-     "differenz_monat": 732,
+     "netto_33": 71056,
+     "differenz": 8986,
+     "differenz_monat": 749,
      "grenzbelastung_heute": 57.2,
-     "grenzbelastung_33": 45.0
+     "grenzbelastung_33": 44.9
     },
     {
      "brutto": 150000,
      "netto_heute": 88869,
-     "netto_33": 95966,
-     "differenz": 7097,
-     "differenz_monat": 591,
+     "netto_33": 96265,
+     "differenz": 7396,
+     "differenz_monat": 616,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -718,80 +718,80 @@
    "jahr": 2028,
    "haushalt": "Paar, ein Einkommen, 2 Kinder",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 15678,
-     "netto_33": 26111,
-     "differenz": 10433,
-     "differenz_monat": 869,
+     "netto_33": 26134,
+     "differenz": 10456,
+     "differenz_monat": 871,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 25.9
+     "grenzbelastung_33": 25.8
     },
     {
      "brutto": 20000,
      "netto_heute": 21986,
-     "netto_33": 32147,
-     "differenz": 10161,
-     "differenz_monat": 847,
+     "netto_33": 32184,
+     "differenz": 10198,
+     "differenz_monat": 850,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 34.0
+     "grenzbelastung_33": 33.9
     },
     {
      "brutto": 30000,
      "netto_heute": 29871,
-     "netto_33": 38940,
-     "differenz": 9069,
-     "differenz_monat": 756,
+     "netto_33": 38998,
+     "differenz": 9127,
+     "differenz_monat": 761,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 42.5
+     "grenzbelastung_33": 42.3
     },
     {
      "brutto": 42000,
      "netto_heute": 38105,
-     "netto_33": 46106,
-     "differenz": 8001,
-     "differenz_monat": 667,
+     "netto_33": 46192,
+     "differenz": 8087,
+     "differenz_monat": 674,
      "grenzbelastung_heute": 48.5,
-     "grenzbelastung_33": 42.3
+     "grenzbelastung_33": 42.1
     },
     {
      "brutto": 55000,
      "netto_heute": 45930,
-     "netto_33": 53903,
-     "differenz": 7974,
-     "differenz_monat": 664,
+     "netto_33": 54020,
+     "differenz": 8090,
+     "differenz_monat": 674,
      "grenzbelastung_heute": 51.4,
-     "grenzbelastung_33": 42.1
+     "grenzbelastung_33": 41.9
     },
     {
      "brutto": 75000,
      "netto_heute": 57925,
-     "netto_33": 65690,
-     "differenz": 7765,
-     "differenz_monat": 647,
+     "netto_33": 65850,
+     "differenz": 7924,
+     "differenz_monat": 660,
      "grenzbelastung_heute": 41.8,
-     "grenzbelastung_33": 45.3
+     "grenzbelastung_33": 45.1
     },
     {
      "brutto": 100000,
      "netto_heute": 73605,
-     "netto_33": 78395,
-     "differenz": 4789,
-     "differenz_monat": 399,
+     "netto_33": 78600,
+     "differenz": 4994,
+     "differenz_monat": 416,
      "grenzbelastung_heute": 45.0,
-     "grenzbelastung_33": 44.7
+     "grenzbelastung_33": 44.5
     },
     {
      "brutto": 150000,
      "netto_heute": 105461,
-     "netto_33": 103367,
-     "differenz": -2094,
-     "differenz_monat": -175,
+     "netto_33": 103670,
+     "differenz": -1791,
+     "differenz_monat": -149,
      "grenzbelastung_heute": 40.6,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -799,80 +799,80 @@
    "jahr": 2028,
    "haushalt": "alleinstehend",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 9390,
-     "netto_33": 14529,
-     "differenz": 5139,
-     "differenz_monat": 428,
+     "netto_33": 14544,
+     "differenz": 5154,
+     "differenz_monat": 430,
      "grenzbelastung_heute": 35.4,
-     "grenzbelastung_33": 26.4
+     "grenzbelastung_33": 26.3
     },
     {
      "brutto": 20000,
      "netto_heute": 15328,
-     "netto_33": 19829,
-     "differenz": 4501,
-     "differenz_monat": 375,
+     "netto_33": 19860,
+     "differenz": 4532,
+     "differenz_monat": 378,
      "grenzbelastung_heute": 47.4,
-     "grenzbelastung_33": 34.5
+     "grenzbelastung_33": 34.3
     },
     {
      "brutto": 30000,
      "netto_heute": 21350,
-     "netto_33": 25729,
-     "differenz": 4379,
-     "differenz_monat": 365,
+     "netto_33": 25781,
+     "differenz": 4431,
+     "differenz_monat": 369,
      "grenzbelastung_heute": 52.0,
-     "grenzbelastung_33": 42.7
+     "grenzbelastung_33": 42.5
     },
     {
      "brutto": 42000,
      "netto_heute": 28193,
-     "netto_33": 31833,
-     "differenz": 3640,
-     "differenz_monat": 303,
+     "netto_33": 31914,
+     "differenz": 3721,
+     "differenz_monat": 310,
      "grenzbelastung_heute": 54.1,
-     "grenzbelastung_33": 42.6
+     "grenzbelastung_33": 42.4
     },
     {
      "brutto": 55000,
      "netto_heute": 35262,
-     "netto_33": 38474,
-     "differenz": 3212,
-     "differenz_monat": 268,
+     "netto_33": 38585,
+     "differenz": 3323,
+     "differenz_monat": 277,
      "grenzbelastung_heute": 56.4,
-     "grenzbelastung_33": 42.4
+     "grenzbelastung_33": 42.2
     },
     {
      "brutto": 75000,
      "netto_heute": 45803,
-     "netto_33": 48455,
-     "differenz": 2652,
-     "differenz_monat": 221,
+     "netto_33": 48611,
+     "differenz": 2808,
+     "differenz_monat": 234,
      "grenzbelastung_heute": 49.9,
-     "grenzbelastung_33": 45.5
+     "grenzbelastung_33": 45.4
     },
     {
      "brutto": 100000,
      "netto_heute": 58741,
-     "netto_33": 58916,
-     "differenz": 175,
-     "differenz_monat": 15,
+     "netto_33": 59118,
+     "differenz": 378,
+     "differenz_monat": 31,
      "grenzbelastung_heute": 57.2,
-     "grenzbelastung_33": 45.1
+     "grenzbelastung_33": 45.0
     },
     {
      "brutto": 150000,
      "netto_heute": 85528,
-     "netto_33": 88817,
-     "differenz": 3288,
-     "differenz_monat": 274,
+     "netto_33": 89114,
+     "differenz": 3586,
+     "differenz_monat": 299,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -880,80 +880,80 @@
    "jahr": 2028,
    "haushalt": "alleinerziehend, 1 Kind",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 12570,
-     "netto_33": 17768,
-     "differenz": 5198,
-     "differenz_monat": 433,
+     "netto_33": 17786,
+     "differenz": 5216,
+     "differenz_monat": 435,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 26.3
+     "grenzbelastung_33": 26.1
     },
     {
      "brutto": 20000,
      "netto_heute": 18534,
-     "netto_33": 23080,
-     "differenz": 4546,
-     "differenz_monat": 379,
+     "netto_33": 23113,
+     "differenz": 4579,
+     "differenz_monat": 382,
      "grenzbelastung_heute": 47.0,
-     "grenzbelastung_33": 34.2
+     "grenzbelastung_33": 34.0
     },
     {
      "brutto": 30000,
      "netto_heute": 24592,
-     "netto_33": 28997,
-     "differenz": 4405,
-     "differenz_monat": 367,
+     "netto_33": 29051,
+     "differenz": 4459,
+     "differenz_monat": 372,
      "grenzbelastung_heute": 51.7,
-     "grenzbelastung_33": 42.7
+     "grenzbelastung_33": 42.5
     },
     {
      "brutto": 42000,
      "netto_heute": 31481,
-     "netto_33": 35110,
-     "differenz": 3629,
-     "differenz_monat": 302,
+     "netto_33": 35192,
+     "differenz": 3711,
+     "differenz_monat": 309,
      "grenzbelastung_heute": 53.8,
-     "grenzbelastung_33": 42.5
+     "grenzbelastung_33": 42.3
     },
     {
      "brutto": 55000,
      "netto_heute": 38594,
-     "netto_33": 41762,
-     "differenz": 3169,
-     "differenz_monat": 264,
+     "netto_33": 41875,
+     "differenz": 3281,
+     "differenz_monat": 273,
      "grenzbelastung_heute": 56.0,
-     "grenzbelastung_33": 42.3
+     "grenzbelastung_33": 42.1
     },
     {
      "brutto": 75000,
      "netto_heute": 49170,
-     "netto_33": 51768,
-     "differenz": 2598,
-     "differenz_monat": 216,
+     "netto_33": 51925,
+     "differenz": 2755,
+     "differenz_monat": 230,
      "grenzbelastung_heute": 50.1,
-     "grenzbelastung_33": 45.5
+     "grenzbelastung_33": 45.3
     },
     {
      "brutto": 100000,
      "netto_heute": 62070,
-     "netto_33": 62252,
-     "differenz": 182,
-     "differenz_monat": 15,
+     "netto_33": 62456,
+     "differenz": 386,
+     "differenz_monat": 32,
      "grenzbelastung_heute": 57.2,
-     "grenzbelastung_33": 45.0
+     "grenzbelastung_33": 44.9
     },
     {
      "brutto": 150000,
      "netto_heute": 88869,
-     "netto_33": 92106,
-     "differenz": 3237,
-     "differenz_monat": 270,
+     "netto_33": 92405,
+     "differenz": 3536,
+     "differenz_monat": 295,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -961,80 +961,80 @@
    "jahr": 2028,
    "haushalt": "Paar, ein Einkommen, 2 Kinder",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 15678,
-     "netto_33": 25079,
-     "differenz": 9401,
-     "differenz_monat": 783,
+     "netto_33": 25102,
+     "differenz": 9424,
+     "differenz_monat": 785,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 25.9
+     "grenzbelastung_33": 25.8
     },
     {
      "brutto": 20000,
      "netto_heute": 21986,
-     "netto_33": 30427,
-     "differenz": 8441,
-     "differenz_monat": 703,
+     "netto_33": 30464,
+     "differenz": 8478,
+     "differenz_monat": 707,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 34.0
+     "grenzbelastung_33": 33.9
     },
     {
      "brutto": 30000,
      "netto_heute": 29871,
-     "netto_33": 36360,
-     "differenz": 6489,
-     "differenz_monat": 541,
+     "netto_33": 36418,
+     "differenz": 6547,
+     "differenz_monat": 546,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 42.5
+     "grenzbelastung_33": 42.3
     },
     {
      "brutto": 42000,
      "netto_heute": 38105,
-     "netto_33": 42494,
-     "differenz": 4389,
-     "differenz_monat": 366,
+     "netto_33": 42580,
+     "differenz": 4475,
+     "differenz_monat": 373,
      "grenzbelastung_heute": 48.5,
-     "grenzbelastung_33": 42.3
+     "grenzbelastung_33": 42.1
     },
     {
      "brutto": 55000,
      "netto_heute": 45930,
-     "netto_33": 49173,
-     "differenz": 3244,
-     "differenz_monat": 270,
+     "netto_33": 49290,
+     "differenz": 3360,
+     "differenz_monat": 280,
      "grenzbelastung_heute": 51.4,
-     "grenzbelastung_33": 42.1
+     "grenzbelastung_33": 41.9
     },
     {
      "brutto": 75000,
      "netto_heute": 57925,
-     "netto_33": 59240,
-     "differenz": 1315,
-     "differenz_monat": 110,
+     "netto_33": 59400,
+     "differenz": 1474,
+     "differenz_monat": 123,
      "grenzbelastung_heute": 41.8,
-     "grenzbelastung_33": 45.3
+     "grenzbelastung_33": 45.1
     },
     {
      "brutto": 100000,
      "netto_heute": 73605,
-     "netto_33": 69795,
-     "differenz": -3811,
-     "differenz_monat": -318,
+     "netto_33": 70000,
+     "differenz": -3606,
+     "differenz_monat": -300,
      "grenzbelastung_heute": 45.0,
-     "grenzbelastung_33": 44.7
+     "grenzbelastung_33": 44.5
     },
     {
      "brutto": 150000,
      "netto_heute": 105461,
-     "netto_33": 99506,
-     "differenz": -5955,
-     "differenz_monat": -496,
+     "netto_33": 99809,
+     "differenz": -5652,
+     "differenz_monat": -471,
      "grenzbelastung_heute": 40.6,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -1528,80 +1528,80 @@
    "jahr": 2028,
    "haushalt": "alleinstehend",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 9390,
-     "netto_33": 15960,
-     "differenz": 6570,
-     "differenz_monat": 547,
+     "netto_33": 15976,
+     "differenz": 6586,
+     "differenz_monat": 549,
      "grenzbelastung_heute": 35.4,
-     "grenzbelastung_33": 25.7
+     "grenzbelastung_33": 25.5
     },
     {
      "brutto": 20000,
      "netto_heute": 15328,
-     "netto_33": 22123,
-     "differenz": 6795,
-     "differenz_monat": 566,
+     "netto_33": 22155,
+     "differenz": 6827,
+     "differenz_monat": 569,
      "grenzbelastung_heute": 47.4,
-     "grenzbelastung_33": 32.1
+     "grenzbelastung_33": 32.0
     },
     {
      "brutto": 30000,
      "netto_heute": 21350,
-     "netto_33": 29062,
-     "differenz": 7712,
-     "differenz_monat": 643,
+     "netto_33": 29116,
+     "differenz": 7766,
+     "differenz_monat": 647,
      "grenzbelastung_heute": 52.0,
-     "grenzbelastung_33": 40.6
+     "grenzbelastung_33": 40.4
     },
     {
      "brutto": 42000,
      "netto_heute": 28193,
-     "netto_33": 36503,
-     "differenz": 8310,
-     "differenz_monat": 692,
+     "netto_33": 36586,
+     "differenz": 8393,
+     "differenz_monat": 699,
      "grenzbelastung_heute": 54.1,
-     "grenzbelastung_33": 40.5
+     "grenzbelastung_33": 40.3
     },
     {
      "brutto": 55000,
      "netto_heute": 35262,
-     "netto_33": 44594,
-     "differenz": 9332,
-     "differenz_monat": 778,
+     "netto_33": 44710,
+     "differenz": 9447,
+     "differenz_monat": 787,
      "grenzbelastung_heute": 56.4,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 75000,
      "netto_heute": 45803,
-     "netto_33": 56738,
-     "differenz": 10935,
-     "differenz_monat": 911,
+     "netto_33": 56899,
+     "differenz": 11096,
+     "differenz_monat": 925,
      "grenzbelastung_heute": 49.9,
-     "grenzbelastung_33": 45.5
+     "grenzbelastung_33": 45.3
     },
     {
      "brutto": 100000,
      "netto_heute": 58741,
-     "netto_33": 69362,
-     "differenz": 10622,
-     "differenz_monat": 885,
+     "netto_33": 69571,
+     "differenz": 10830,
+     "differenz_monat": 903,
      "grenzbelastung_heute": 57.2,
-     "grenzbelastung_33": 45.1
+     "grenzbelastung_33": 44.9
     },
     {
      "brutto": 150000,
      "netto_heute": 85528,
-     "netto_33": 94496,
-     "differenz": 8968,
-     "differenz_monat": 747,
+     "netto_33": 94799,
+     "differenz": 9271,
+     "differenz_monat": 773,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -1609,80 +1609,80 @@
    "jahr": 2028,
    "haushalt": "alleinerziehend, 1 Kind",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 12570,
-     "netto_33": 19200,
-     "differenz": 6630,
-     "differenz_monat": 552,
+     "netto_33": 19219,
+     "differenz": 6649,
+     "differenz_monat": 554,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 25.5
+     "grenzbelastung_33": 25.3
     },
     {
      "brutto": 20000,
      "netto_heute": 18534,
-     "netto_33": 25377,
-     "differenz": 6843,
-     "differenz_monat": 570,
+     "netto_33": 25411,
+     "differenz": 6877,
+     "differenz_monat": 573,
      "grenzbelastung_heute": 47.0,
-     "grenzbelastung_33": 31.8
+     "grenzbelastung_33": 31.6
     },
     {
      "brutto": 30000,
      "netto_heute": 24592,
-     "netto_33": 32331,
-     "differenz": 7739,
-     "differenz_monat": 645,
+     "netto_33": 32387,
+     "differenz": 7795,
+     "differenz_monat": 650,
      "grenzbelastung_heute": 51.7,
-     "grenzbelastung_33": 40.6
+     "grenzbelastung_33": 40.4
     },
     {
      "brutto": 42000,
      "netto_heute": 31481,
-     "netto_33": 39780,
-     "differenz": 8299,
-     "differenz_monat": 692,
+     "netto_33": 39866,
+     "differenz": 8385,
+     "differenz_monat": 699,
      "grenzbelastung_heute": 53.8,
-     "grenzbelastung_33": 40.4
+     "grenzbelastung_33": 40.2
     },
     {
      "brutto": 55000,
      "netto_heute": 38594,
-     "netto_33": 47884,
-     "differenz": 9290,
-     "differenz_monat": 774,
+     "netto_33": 48001,
+     "differenz": 9407,
+     "differenz_monat": 784,
      "grenzbelastung_heute": 56.0,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 75000,
      "netto_heute": 49170,
-     "netto_33": 60054,
-     "differenz": 10884,
-     "differenz_monat": 907,
+     "netto_33": 60217,
+     "differenz": 11046,
+     "differenz_monat": 921,
      "grenzbelastung_heute": 50.1,
-     "grenzbelastung_33": 45.4
+     "grenzbelastung_33": 45.2
     },
     {
      "brutto": 100000,
      "netto_heute": 62070,
-     "netto_33": 72704,
-     "differenz": 10634,
-     "differenz_monat": 886,
+     "netto_33": 72913,
+     "differenz": 10843,
+     "differenz_monat": 904,
      "grenzbelastung_heute": 57.2,
-     "grenzbelastung_33": 44.8
+     "grenzbelastung_33": 44.7
     },
     {
      "brutto": 150000,
      "netto_heute": 88869,
-     "netto_33": 97785,
-     "differenz": 8916,
-     "differenz_monat": 743,
+     "netto_33": 98090,
+     "differenz": 9221,
+     "differenz_monat": 768,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -1690,80 +1690,80 @@
    "jahr": 2028,
    "haushalt": "Paar, ein Einkommen, 2 Kinder",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 15678,
-     "netto_33": 26513,
-     "differenz": 10835,
-     "differenz_monat": 903,
+     "netto_33": 26537,
+     "differenz": 10859,
+     "differenz_monat": 905,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 25.1
+     "grenzbelastung_33": 25.0
     },
     {
      "brutto": 20000,
      "netto_heute": 21986,
-     "netto_33": 32725,
-     "differenz": 10739,
-     "differenz_monat": 895,
+     "netto_33": 32764,
+     "differenz": 10778,
+     "differenz_monat": 898,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 31.6
+     "grenzbelastung_33": 31.5
     },
     {
      "brutto": 30000,
      "netto_heute": 29871,
-     "netto_33": 39696,
-     "differenz": 9825,
-     "differenz_monat": 819,
+     "netto_33": 39756,
+     "differenz": 9885,
+     "differenz_monat": 824,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 40.4
+     "grenzbelastung_33": 40.2
     },
     {
      "brutto": 42000,
      "netto_heute": 38105,
-     "netto_33": 47168,
-     "differenz": 9063,
-     "differenz_monat": 755,
+     "netto_33": 47258,
+     "differenz": 9153,
+     "differenz_monat": 763,
      "grenzbelastung_heute": 48.5,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 55000,
      "netto_heute": 45930,
-     "netto_33": 55301,
-     "differenz": 9371,
-     "differenz_monat": 781,
+     "netto_33": 55421,
+     "differenz": 9492,
+     "differenz_monat": 791,
      "grenzbelastung_heute": 51.4,
-     "grenzbelastung_33": 39.8
+     "grenzbelastung_33": 39.7
     },
     {
      "brutto": 75000,
      "netto_heute": 57925,
-     "netto_33": 67532,
-     "differenz": 9607,
-     "differenz_monat": 801,
+     "netto_33": 67697,
+     "differenz": 9772,
+     "differenz_monat": 814,
      "grenzbelastung_heute": 41.8,
-     "grenzbelastung_33": 45.2
+     "grenzbelastung_33": 45.1
     },
     {
      "brutto": 100000,
      "netto_heute": 73605,
-     "netto_33": 80257,
-     "differenz": 6651,
-     "differenz_monat": 554,
+     "netto_33": 80467,
+     "differenz": 6862,
+     "differenz_monat": 572,
      "grenzbelastung_heute": 45.0,
-     "grenzbelastung_33": 44.6
+     "grenzbelastung_33": 44.5
     },
     {
      "brutto": 150000,
      "netto_heute": 105461,
-     "netto_33": 105186,
-     "differenz": -275,
-     "differenz_monat": -23,
+     "netto_33": 105495,
+     "differenz": 34,
+     "differenz_monat": 3,
      "grenzbelastung_heute": 40.6,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -1771,80 +1771,80 @@
    "jahr": 2028,
    "haushalt": "alleinstehend",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 9390,
-     "netto_33": 14928,
-     "differenz": 5538,
-     "differenz_monat": 461,
+     "netto_33": 14944,
+     "differenz": 5554,
+     "differenz_monat": 463,
      "grenzbelastung_heute": 35.4,
-     "grenzbelastung_33": 25.7
+     "grenzbelastung_33": 25.5
     },
     {
      "brutto": 20000,
      "netto_heute": 15328,
-     "netto_33": 20403,
-     "differenz": 5075,
-     "differenz_monat": 423,
+     "netto_33": 20435,
+     "differenz": 5107,
+     "differenz_monat": 426,
      "grenzbelastung_heute": 47.4,
-     "grenzbelastung_33": 32.1
+     "grenzbelastung_33": 32.0
     },
     {
      "brutto": 30000,
      "netto_heute": 21350,
-     "netto_33": 26482,
-     "differenz": 5132,
-     "differenz_monat": 428,
+     "netto_33": 26536,
+     "differenz": 5186,
+     "differenz_monat": 432,
      "grenzbelastung_heute": 52.0,
-     "grenzbelastung_33": 40.6
+     "grenzbelastung_33": 40.4
     },
     {
      "brutto": 42000,
      "netto_heute": 28193,
-     "netto_33": 32891,
-     "differenz": 4698,
-     "differenz_monat": 391,
+     "netto_33": 32974,
+     "differenz": 4781,
+     "differenz_monat": 398,
      "grenzbelastung_heute": 54.1,
-     "grenzbelastung_33": 40.5
+     "grenzbelastung_33": 40.3
     },
     {
      "brutto": 55000,
      "netto_heute": 35262,
-     "netto_33": 39864,
-     "differenz": 4602,
-     "differenz_monat": 383,
+     "netto_33": 39980,
+     "differenz": 4717,
+     "differenz_monat": 393,
      "grenzbelastung_heute": 56.4,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 75000,
      "netto_heute": 45803,
-     "netto_33": 50288,
-     "differenz": 4485,
-     "differenz_monat": 374,
+     "netto_33": 50449,
+     "differenz": 4646,
+     "differenz_monat": 387,
      "grenzbelastung_heute": 49.9,
-     "grenzbelastung_33": 45.5
+     "grenzbelastung_33": 45.3
     },
     {
      "brutto": 100000,
      "netto_heute": 58741,
-     "netto_33": 60762,
-     "differenz": 2022,
-     "differenz_monat": 168,
+     "netto_33": 60971,
+     "differenz": 2230,
+     "differenz_monat": 186,
      "grenzbelastung_heute": 57.2,
-     "grenzbelastung_33": 45.1
+     "grenzbelastung_33": 44.9
     },
     {
      "brutto": 150000,
      "netto_heute": 85528,
-     "netto_33": 90635,
-     "differenz": 5107,
-     "differenz_monat": 426,
+     "netto_33": 90939,
+     "differenz": 5411,
+     "differenz_monat": 451,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -1852,80 +1852,80 @@
    "jahr": 2028,
    "haushalt": "alleinerziehend, 1 Kind",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 12570,
-     "netto_33": 18168,
-     "differenz": 5598,
-     "differenz_monat": 466,
+     "netto_33": 18187,
+     "differenz": 5617,
+     "differenz_monat": 468,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 25.5
+     "grenzbelastung_33": 25.3
     },
     {
      "brutto": 20000,
      "netto_heute": 18534,
-     "netto_33": 23657,
-     "differenz": 5123,
-     "differenz_monat": 427,
+     "netto_33": 23691,
+     "differenz": 5157,
+     "differenz_monat": 430,
      "grenzbelastung_heute": 47.0,
-     "grenzbelastung_33": 31.8
+     "grenzbelastung_33": 31.6
     },
     {
      "brutto": 30000,
      "netto_heute": 24592,
-     "netto_33": 29751,
-     "differenz": 5159,
-     "differenz_monat": 430,
+     "netto_33": 29807,
+     "differenz": 5215,
+     "differenz_monat": 435,
      "grenzbelastung_heute": 51.7,
-     "grenzbelastung_33": 40.6
+     "grenzbelastung_33": 40.4
     },
     {
      "brutto": 42000,
      "netto_heute": 31481,
-     "netto_33": 36168,
-     "differenz": 4687,
-     "differenz_monat": 391,
+     "netto_33": 36254,
+     "differenz": 4773,
+     "differenz_monat": 398,
      "grenzbelastung_heute": 53.8,
-     "grenzbelastung_33": 40.4
+     "grenzbelastung_33": 40.2
     },
     {
      "brutto": 55000,
      "netto_heute": 38594,
-     "netto_33": 43154,
-     "differenz": 4560,
-     "differenz_monat": 380,
+     "netto_33": 43271,
+     "differenz": 4677,
+     "differenz_monat": 390,
      "grenzbelastung_heute": 56.0,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 75000,
      "netto_heute": 49170,
-     "netto_33": 53604,
-     "differenz": 4434,
-     "differenz_monat": 369,
+     "netto_33": 53767,
+     "differenz": 4596,
+     "differenz_monat": 383,
      "grenzbelastung_heute": 50.1,
-     "grenzbelastung_33": 45.4
+     "grenzbelastung_33": 45.2
     },
     {
      "brutto": 100000,
      "netto_heute": 62070,
-     "netto_33": 64104,
-     "differenz": 2034,
-     "differenz_monat": 169,
+     "netto_33": 64313,
+     "differenz": 2243,
+     "differenz_monat": 187,
      "grenzbelastung_heute": 57.2,
-     "grenzbelastung_33": 44.8
+     "grenzbelastung_33": 44.7
     },
     {
      "brutto": 150000,
      "netto_heute": 88869,
-     "netto_33": 93925,
-     "differenz": 5056,
-     "differenz_monat": 421,
+     "netto_33": 94230,
+     "differenz": 5361,
+     "differenz_monat": 447,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -1933,80 +1933,80 @@
    "jahr": 2028,
    "haushalt": "Paar, ein Einkommen, 2 Kinder",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 15678,
-     "netto_33": 25481,
-     "differenz": 9803,
-     "differenz_monat": 817,
+     "netto_33": 25505,
+     "differenz": 9827,
+     "differenz_monat": 819,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 25.1
+     "grenzbelastung_33": 25.0
     },
     {
      "brutto": 20000,
      "netto_heute": 21986,
-     "netto_33": 31005,
-     "differenz": 9019,
-     "differenz_monat": 752,
+     "netto_33": 31044,
+     "differenz": 9058,
+     "differenz_monat": 755,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 31.6
+     "grenzbelastung_33": 31.5
     },
     {
      "brutto": 30000,
      "netto_heute": 29871,
-     "netto_33": 37116,
-     "differenz": 7245,
-     "differenz_monat": 604,
+     "netto_33": 37176,
+     "differenz": 7305,
+     "differenz_monat": 609,
      "grenzbelastung_heute": 34.9,
-     "grenzbelastung_33": 40.4
+     "grenzbelastung_33": 40.2
     },
     {
      "brutto": 42000,
      "netto_heute": 38105,
-     "netto_33": 43556,
-     "differenz": 5451,
-     "differenz_monat": 454,
+     "netto_33": 43646,
+     "differenz": 5541,
+     "differenz_monat": 462,
      "grenzbelastung_heute": 48.5,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 55000,
      "netto_heute": 45930,
-     "netto_33": 50571,
-     "differenz": 4641,
-     "differenz_monat": 387,
+     "netto_33": 50691,
+     "differenz": 4762,
+     "differenz_monat": 397,
      "grenzbelastung_heute": 51.4,
-     "grenzbelastung_33": 39.8
+     "grenzbelastung_33": 39.7
     },
     {
      "brutto": 75000,
      "netto_heute": 57925,
-     "netto_33": 61082,
-     "differenz": 3157,
-     "differenz_monat": 263,
+     "netto_33": 61247,
+     "differenz": 3322,
+     "differenz_monat": 277,
      "grenzbelastung_heute": 41.8,
-     "grenzbelastung_33": 45.2
+     "grenzbelastung_33": 45.1
     },
     {
      "brutto": 100000,
      "netto_heute": 73605,
-     "netto_33": 71657,
-     "differenz": -1949,
-     "differenz_monat": -162,
+     "netto_33": 71867,
+     "differenz": -1738,
+     "differenz_monat": -145,
      "grenzbelastung_heute": 45.0,
-     "grenzbelastung_33": 44.6
+     "grenzbelastung_33": 44.5
     },
     {
      "brutto": 150000,
      "netto_heute": 105461,
-     "netto_33": 101325,
-     "differenz": -4136,
-     "differenz_monat": -345,
+     "netto_33": 101634,
+     "differenz": -3827,
+     "differenz_monat": -319,
      "grenzbelastung_heute": 40.6,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     }
    ]
   },
@@ -2500,80 +2500,80 @@
    "jahr": 2035,
    "haushalt": "alleinstehend",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 15153,
-     "differenz": 6147,
-     "differenz_monat": 512,
+     "netto_33": 15164,
+     "differenz": 6158,
+     "differenz_monat": 513,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 22.1
+     "grenzbelastung_33": 22.0
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 21412,
-     "differenz": 6615,
-     "differenz_monat": 551,
+     "netto_33": 21435,
+     "differenz": 6638,
+     "differenz_monat": 553,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 34.4
+     "grenzbelastung_33": 34.3
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 28399,
-     "differenz": 7766,
-     "differenz_monat": 647,
+     "netto_33": 28438,
+     "differenz": 7805,
+     "differenz_monat": 650,
      "grenzbelastung_heute": 54.9,
-     "grenzbelastung_33": 42.7
+     "grenzbelastung_33": 42.5
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 35759,
-     "differenz": 8527,
-     "differenz_monat": 711,
+     "netto_33": 35820,
+     "differenz": 8588,
+     "differenz_monat": 716,
      "grenzbelastung_heute": 56.8,
-     "grenzbelastung_33": 42.6
+     "grenzbelastung_33": 42.4
     },
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 43759,
-     "differenz": 9694,
-     "differenz_monat": 808,
+     "netto_33": 43843,
+     "differenz": 9779,
+     "differenz_monat": 815,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 42.4
+     "grenzbelastung_33": 42.2
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 55786,
-     "differenz": 11446,
-     "differenz_monat": 954,
+     "netto_33": 55905,
+     "differenz": 11565,
+     "differenz_monat": 964,
      "grenzbelastung_heute": 51.3,
-     "grenzbelastung_33": 46.4
+     "grenzbelastung_33": 46.2
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 68443,
-     "differenz": 11215,
-     "differenz_monat": 935,
+     "netto_33": 68597,
+     "differenz": 11369,
+     "differenz_monat": 947,
      "grenzbelastung_heute": 58.9,
-     "grenzbelastung_33": 46.0
+     "grenzbelastung_33": 45.9
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 93688,
-     "differenz": 9764,
-     "differenz_monat": 814,
+     "netto_33": 93914,
+     "differenz": 9991,
+     "differenz_monat": 833,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -2581,80 +2581,80 @@
    "jahr": 2035,
    "haushalt": "alleinerziehend, 1 Kind",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 17721,
-     "differenz": 5535,
-     "differenz_monat": 461,
+     "netto_33": 17734,
+     "differenz": 5548,
+     "differenz_monat": 462,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 22.2
+     "grenzbelastung_33": 22.1
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 23986,
-     "differenz": 5981,
-     "differenz_monat": 498,
+     "netto_33": 24010,
+     "differenz": 6005,
+     "differenz_monat": 500,
      "grenzbelastung_heute": 49.8,
-     "grenzbelastung_33": 34.2
+     "grenzbelastung_33": 34.1
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 30987,
-     "differenz": 7111,
-     "differenz_monat": 593,
+     "netto_33": 31026,
+     "differenz": 7150,
+     "differenz_monat": 596,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 42.6
+     "grenzbelastung_33": 42.5
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 38352,
-     "differenz": 7831,
-     "differenz_monat": 653,
+     "netto_33": 38414,
+     "differenz": 7893,
+     "differenz_monat": 658,
      "grenzbelastung_heute": 56.5,
-     "grenzbelastung_33": 42.5
+     "grenzbelastung_33": 42.4
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 46360,
-     "differenz": 8962,
-     "differenz_monat": 747,
+     "netto_33": 46446,
+     "differenz": 9047,
+     "differenz_monat": 754,
      "grenzbelastung_heute": 58.6,
-     "grenzbelastung_33": 42.3
+     "grenzbelastung_33": 42.2
     },
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 58405,
-     "differenz": 10694,
-     "differenz_monat": 891,
+     "netto_33": 58525,
+     "differenz": 10814,
+     "differenz_monat": 901,
      "grenzbelastung_heute": 51.5,
-     "grenzbelastung_33": 46.3
+     "grenzbelastung_33": 46.2
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 71078,
-     "differenz": 10521,
-     "differenz_monat": 877,
+     "netto_33": 71233,
+     "differenz": 10676,
+     "differenz_monat": 890,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 45.9
+     "grenzbelastung_33": 45.8
     },
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 96290,
-     "differenz": 9025,
-     "differenz_monat": 752,
+     "netto_33": 96518,
+     "differenz": 9253,
+     "differenz_monat": 771,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -2662,80 +2662,80 @@
    "jahr": 2035,
    "haushalt": "Paar, ein Einkommen, 2 Kinder",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 23509,
-     "differenz": 8215,
-     "differenz_monat": 685,
+     "netto_33": 23524,
+     "differenz": 8230,
+     "differenz_monat": 686,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 21.9
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 29801,
-     "differenz": 8455,
-     "differenz_monat": 705,
+     "netto_33": 29827,
+     "differenz": 8481,
+     "differenz_monat": 707,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 34.1
+     "grenzbelastung_33": 33.9
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 36813,
-     "differenz": 7902,
-     "differenz_monat": 659,
+     "netto_33": 36856,
+     "differenz": 7945,
+     "differenz_monat": 662,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 42.6
+     "grenzbelastung_33": 42.4
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 44194,
-     "differenz": 7165,
-     "differenz_monat": 597,
+     "netto_33": 44258,
+     "differenz": 7229,
+     "differenz_monat": 602,
      "grenzbelastung_heute": 51.1,
-     "grenzbelastung_33": 42.4
+     "grenzbelastung_33": 42.2
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 52221,
-     "differenz": 7613,
-     "differenz_monat": 634,
+     "netto_33": 52309,
+     "differenz": 7701,
+     "differenz_monat": 642,
      "grenzbelastung_heute": 54.3,
-     "grenzbelastung_33": 42.2
+     "grenzbelastung_33": 42.1
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 64308,
-     "differenz": 8072,
-     "differenz_monat": 673,
+     "netto_33": 64429,
+     "differenz": 8194,
+     "differenz_monat": 683,
      "grenzbelastung_heute": 43.9,
-     "grenzbelastung_33": 46.2
+     "grenzbelastung_33": 46.0
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 77029,
-     "differenz": 5376,
-     "differenz_monat": 448,
+     "netto_33": 77185,
+     "differenz": 5532,
+     "differenz_monat": 461,
      "grenzbelastung_heute": 47.0,
-     "grenzbelastung_33": 45.7
+     "grenzbelastung_33": 45.5
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 102145,
-     "differenz": -1591,
-     "differenz_monat": -133,
+     "netto_33": 102375,
+     "differenz": -1361,
+     "differenz_monat": -113,
      "grenzbelastung_heute": 40.0,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -2743,80 +2743,80 @@
    "jahr": 2035,
    "haushalt": "alleinstehend",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 13689,
-     "differenz": 4683,
-     "differenz_monat": 390,
+     "netto_33": 13700,
+     "differenz": 4694,
+     "differenz_monat": 391,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 22.1
+     "grenzbelastung_33": 22.0
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 18973,
-     "differenz": 4176,
-     "differenz_monat": 348,
+     "netto_33": 18995,
+     "differenz": 4198,
+     "differenz_monat": 350,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 34.4
+     "grenzbelastung_33": 34.3
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 24740,
-     "differenz": 4107,
-     "differenz_monat": 342,
+     "netto_33": 24778,
+     "differenz": 4145,
+     "differenz_monat": 345,
      "grenzbelastung_heute": 54.9,
-     "grenzbelastung_33": 42.7
+     "grenzbelastung_33": 42.5
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 30637,
-     "differenz": 3405,
-     "differenz_monat": 284,
+     "netto_33": 30697,
+     "differenz": 3465,
+     "differenz_monat": 289,
      "grenzbelastung_heute": 56.8,
-     "grenzbelastung_33": 42.6
+     "grenzbelastung_33": 42.4
     },
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 37050,
-     "differenz": 2986,
-     "differenz_monat": 249,
+     "netto_33": 37135,
+     "differenz": 3070,
+     "differenz_monat": 256,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 42.4
+     "grenzbelastung_33": 42.2
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 46638,
-     "differenz": 2298,
-     "differenz_monat": 192,
+     "netto_33": 46757,
+     "differenz": 2417,
+     "differenz_monat": 201,
      "grenzbelastung_heute": 51.3,
-     "grenzbelastung_33": 46.4
+     "grenzbelastung_33": 46.2
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 56245,
-     "differenz": -983,
-     "differenz_monat": -82,
+     "netto_33": 56400,
+     "differenz": -828,
+     "differenz_monat": -69,
      "grenzbelastung_heute": 58.9,
-     "grenzbelastung_33": 46.0
+     "grenzbelastung_33": 45.9
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 86180,
-     "differenz": 2256,
-     "differenz_monat": 188,
+     "netto_33": 86407,
+     "differenz": 2483,
+     "differenz_monat": 207,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -2824,80 +2824,80 @@
    "jahr": 2035,
    "haushalt": "alleinerziehend, 1 Kind",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 16257,
-     "differenz": 4071,
-     "differenz_monat": 339,
+     "netto_33": 16270,
+     "differenz": 4084,
+     "differenz_monat": 340,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 22.2
+     "grenzbelastung_33": 22.1
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 21547,
-     "differenz": 3542,
-     "differenz_monat": 295,
+     "netto_33": 21571,
+     "differenz": 3566,
+     "differenz_monat": 297,
      "grenzbelastung_heute": 49.8,
-     "grenzbelastung_33": 34.2
+     "grenzbelastung_33": 34.1
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 27327,
-     "differenz": 3451,
-     "differenz_monat": 288,
+     "netto_33": 27367,
+     "differenz": 3491,
+     "differenz_monat": 291,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 42.6
+     "grenzbelastung_33": 42.5
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 33230,
-     "differenz": 2709,
-     "differenz_monat": 226,
+     "netto_33": 33291,
+     "differenz": 2770,
+     "differenz_monat": 231,
      "grenzbelastung_heute": 56.5,
-     "grenzbelastung_33": 42.5
+     "grenzbelastung_33": 42.4
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 39652,
-     "differenz": 2253,
-     "differenz_monat": 188,
+     "netto_33": 39737,
+     "differenz": 2339,
+     "differenz_monat": 195,
      "grenzbelastung_heute": 58.6,
-     "grenzbelastung_33": 42.3
+     "grenzbelastung_33": 42.2
     },
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 49257,
-     "differenz": 1546,
-     "differenz_monat": 129,
+     "netto_33": 49377,
+     "differenz": 1666,
+     "differenz_monat": 139,
      "grenzbelastung_heute": 51.5,
-     "grenzbelastung_33": 46.3
+     "grenzbelastung_33": 46.2
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 58881,
-     "differenz": -1676,
-     "differenz_monat": -140,
+     "netto_33": 59036,
+     "differenz": -1521,
+     "differenz_monat": -127,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 45.9
+     "grenzbelastung_33": 45.8
     },
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 88782,
-     "differenz": 1517,
-     "differenz_monat": 126,
+     "netto_33": 89010,
+     "differenz": 1745,
+     "differenz_monat": 145,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -2905,80 +2905,80 @@
    "jahr": 2035,
    "haushalt": "Paar, ein Einkommen, 2 Kinder",
    "weitergabe_ag": 0.8,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 22045,
-     "differenz": 6751,
-     "differenz_monat": 563,
+     "netto_33": 22061,
+     "differenz": 6767,
+     "differenz_monat": 564,
      "grenzbelastung_heute": 39.2,
      "grenzbelastung_33": 21.9
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 27361,
-     "differenz": 6015,
-     "differenz_monat": 501,
+     "netto_33": 27388,
+     "differenz": 6042,
+     "differenz_monat": 503,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 34.1
+     "grenzbelastung_33": 33.9
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 33154,
-     "differenz": 4243,
-     "differenz_monat": 354,
+     "netto_33": 33197,
+     "differenz": 4286,
+     "differenz_monat": 357,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 42.6
+     "grenzbelastung_33": 42.4
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 39071,
-     "differenz": 2042,
-     "differenz_monat": 170,
+     "netto_33": 39135,
+     "differenz": 2106,
+     "differenz_monat": 176,
      "grenzbelastung_heute": 51.1,
-     "grenzbelastung_33": 42.4
+     "grenzbelastung_33": 42.2
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 45513,
-     "differenz": 905,
-     "differenz_monat": 75,
+     "netto_33": 45600,
+     "differenz": 993,
+     "differenz_monat": 83,
      "grenzbelastung_heute": 54.3,
-     "grenzbelastung_33": 42.2
+     "grenzbelastung_33": 42.1
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 55160,
-     "differenz": -1076,
-     "differenz_monat": -90,
+     "netto_33": 55281,
+     "differenz": -954,
+     "differenz_monat": -80,
      "grenzbelastung_heute": 43.9,
-     "grenzbelastung_33": 46.2
+     "grenzbelastung_33": 46.0
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 64832,
-     "differenz": -6821,
-     "differenz_monat": -568,
+     "netto_33": 64988,
+     "differenz": -6665,
+     "differenz_monat": -555,
      "grenzbelastung_heute": 47.0,
-     "grenzbelastung_33": 45.7
+     "grenzbelastung_33": 45.5
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 94637,
-     "differenz": -9099,
-     "differenz_monat": -758,
+     "netto_33": 94867,
+     "differenz": -8869,
+     "differenz_monat": -739,
      "grenzbelastung_heute": 40.0,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -3472,80 +3472,80 @@
    "jahr": 2035,
    "haushalt": "alleinstehend",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 15642,
-     "differenz": 6636,
-     "differenz_monat": 553,
+     "netto_33": 15654,
+     "differenz": 6648,
+     "differenz_monat": 554,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 23.4
+     "grenzbelastung_33": 23.3
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 22077,
-     "differenz": 7280,
-     "differenz_monat": 607,
+     "netto_33": 22101,
+     "differenz": 7304,
+     "differenz_monat": 609,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 31.7
+     "grenzbelastung_33": 31.6
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 29270,
-     "differenz": 8637,
-     "differenz_monat": 720,
+     "netto_33": 29311,
+     "differenz": 8678,
+     "differenz_monat": 723,
      "grenzbelastung_heute": 54.9,
-     "grenzbelastung_33": 40.3
+     "grenzbelastung_33": 40.2
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 36982,
-     "differenz": 9750,
-     "differenz_monat": 813,
+     "netto_33": 37046,
+     "differenz": 9814,
+     "differenz_monat": 818,
      "grenzbelastung_heute": 56.8,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 45366,
-     "differenz": 11301,
-     "differenz_monat": 942,
+     "netto_33": 45454,
+     "differenz": 11390,
+     "differenz_monat": 949,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 57905,
-     "differenz": 13566,
-     "differenz_monat": 1131,
+     "netto_33": 58029,
+     "differenz": 13690,
+     "differenz_monat": 1141,
      "grenzbelastung_heute": 51.3,
-     "grenzbelastung_33": 46.3
+     "grenzbelastung_33": 46.2
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 70577,
-     "differenz": 13349,
-     "differenz_monat": 1112,
+     "netto_33": 70736,
+     "differenz": 13508,
+     "differenz_monat": 1126,
      "grenzbelastung_heute": 58.9,
-     "grenzbelastung_33": 45.9
+     "grenzbelastung_33": 45.8
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 95793,
-     "differenz": 11869,
-     "differenz_monat": 989,
+     "netto_33": 96025,
+     "differenz": 12101,
+     "differenz_monat": 1008,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -3553,80 +3553,80 @@
    "jahr": 2035,
    "haushalt": "alleinerziehend, 1 Kind",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 18210,
-     "differenz": 6024,
-     "differenz_monat": 502,
+     "netto_33": 18223,
+     "differenz": 6037,
+     "differenz_monat": 503,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 23.4
+     "grenzbelastung_33": 23.3
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 24653,
-     "differenz": 6648,
-     "differenz_monat": 554,
+     "netto_33": 24678,
+     "differenz": 6673,
+     "differenz_monat": 556,
      "grenzbelastung_heute": 49.8,
-     "grenzbelastung_33": 31.5
+     "grenzbelastung_33": 31.4
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 31859,
-     "differenz": 7983,
-     "differenz_monat": 665,
+     "netto_33": 31901,
+     "differenz": 8025,
+     "differenz_monat": 669,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 40.3
+     "grenzbelastung_33": 40.1
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 39576,
-     "differenz": 9055,
-     "differenz_monat": 755,
+     "netto_33": 39641,
+     "differenz": 9120,
+     "differenz_monat": 760,
      "grenzbelastung_heute": 56.5,
-     "grenzbelastung_33": 40.1
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 47969,
-     "differenz": 10570,
-     "differenz_monat": 881,
+     "netto_33": 48058,
+     "differenz": 10660,
+     "differenz_monat": 888,
      "grenzbelastung_heute": 58.6,
-     "grenzbelastung_33": 39.9
+     "grenzbelastung_33": 39.8
     },
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 60527,
-     "differenz": 12816,
-     "differenz_monat": 1068,
+     "netto_33": 60652,
+     "differenz": 12941,
+     "differenz_monat": 1078,
      "grenzbelastung_heute": 51.5,
-     "grenzbelastung_33": 46.2
+     "grenzbelastung_33": 46.1
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 73217,
-     "differenz": 12659,
-     "differenz_monat": 1055,
+     "netto_33": 73377,
+     "differenz": 12819,
+     "differenz_monat": 1068,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 45.7
+     "grenzbelastung_33": 45.6
     },
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 98395,
-     "differenz": 11130,
-     "differenz_monat": 928,
+     "netto_33": 98628,
+     "differenz": 11363,
+     "differenz_monat": 947,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -3634,80 +3634,80 @@
    "jahr": 2035,
    "haushalt": "Paar, ein Einkommen, 2 Kinder",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.1,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 23999,
-     "differenz": 8705,
-     "differenz_monat": 725,
+     "netto_33": 24015,
+     "differenz": 8721,
+     "differenz_monat": 727,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 23.2
+     "grenzbelastung_33": 23.1
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 30469,
-     "differenz": 9123,
-     "differenz_monat": 760,
+     "netto_33": 30497,
+     "differenz": 9151,
+     "differenz_monat": 763,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 31.4
+     "grenzbelastung_33": 31.2
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 37687,
-     "differenz": 8776,
-     "differenz_monat": 731,
+     "netto_33": 37731,
+     "differenz": 8820,
+     "differenz_monat": 735,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.1
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 45420,
-     "differenz": 8391,
-     "differenz_monat": 699,
+     "netto_33": 45488,
+     "differenz": 8459,
+     "differenz_monat": 705,
      "grenzbelastung_heute": 51.1,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.9
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 53833,
-     "differenz": 9225,
-     "differenz_monat": 769,
+     "netto_33": 53924,
+     "differenz": 9317,
+     "differenz_monat": 776,
      "grenzbelastung_heute": 54.3,
-     "grenzbelastung_33": 39.8
+     "grenzbelastung_33": 39.7
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 66435,
-     "differenz": 10199,
-     "differenz_monat": 850,
+     "netto_33": 66561,
+     "differenz": 10326,
+     "differenz_monat": 860,
      "grenzbelastung_heute": 43.9,
-     "grenzbelastung_33": 46.1
+     "grenzbelastung_33": 46.0
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 79177,
-     "differenz": 7524,
-     "differenz_monat": 627,
+     "netto_33": 79338,
+     "differenz": 7684,
+     "differenz_monat": 640,
      "grenzbelastung_heute": 47.0,
-     "grenzbelastung_33": 45.6
+     "grenzbelastung_33": 45.5
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 104250,
-     "differenz": 514,
-     "differenz_monat": 43,
+     "netto_33": 104486,
+     "differenz": 749,
+     "differenz_monat": 62,
      "grenzbelastung_heute": 40.0,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -3715,80 +3715,80 @@
    "jahr": 2035,
    "haushalt": "alleinstehend",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 9006,
-     "netto_33": 14178,
-     "differenz": 5172,
-     "differenz_monat": 431,
+     "netto_33": 14190,
+     "differenz": 5184,
+     "differenz_monat": 432,
      "grenzbelastung_heute": 39.6,
-     "grenzbelastung_33": 23.4
+     "grenzbelastung_33": 23.3
     },
     {
      "brutto": 20000,
      "netto_heute": 14797,
-     "netto_33": 19638,
-     "differenz": 4841,
-     "differenz_monat": 403,
+     "netto_33": 19661,
+     "differenz": 4864,
+     "differenz_monat": 405,
      "grenzbelastung_heute": 50.0,
-     "grenzbelastung_33": 31.7
+     "grenzbelastung_33": 31.6
     },
     {
      "brutto": 30000,
      "netto_heute": 20633,
-     "netto_33": 25611,
-     "differenz": 4978,
-     "differenz_monat": 415,
+     "netto_33": 25652,
+     "differenz": 5019,
+     "differenz_monat": 418,
      "grenzbelastung_heute": 54.9,
-     "grenzbelastung_33": 40.3
+     "grenzbelastung_33": 40.2
     },
     {
      "brutto": 42000,
      "netto_heute": 27232,
-     "netto_33": 31859,
-     "differenz": 4627,
-     "differenz_monat": 386,
+     "netto_33": 31923,
+     "differenz": 4691,
+     "differenz_monat": 391,
      "grenzbelastung_heute": 56.8,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 55000,
      "netto_heute": 34064,
-     "netto_33": 38658,
-     "differenz": 4593,
-     "differenz_monat": 383,
+     "netto_33": 38746,
+     "differenz": 4682,
+     "differenz_monat": 390,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     },
     {
      "brutto": 75000,
      "netto_heute": 44339,
-     "netto_33": 48758,
-     "differenz": 4418,
-     "differenz_monat": 368,
+     "netto_33": 48882,
+     "differenz": 4542,
+     "differenz_monat": 379,
      "grenzbelastung_heute": 51.3,
-     "grenzbelastung_33": 46.3
+     "grenzbelastung_33": 46.2
     },
     {
      "brutto": 100000,
      "netto_heute": 57228,
-     "netto_33": 58380,
-     "differenz": 1152,
-     "differenz_monat": 96,
+     "netto_33": 58539,
+     "differenz": 1311,
+     "differenz_monat": 109,
      "grenzbelastung_heute": 58.9,
-     "grenzbelastung_33": 45.9
+     "grenzbelastung_33": 45.8
     },
     {
      "brutto": 150000,
      "netto_heute": 83924,
-     "netto_33": 88285,
-     "differenz": 4361,
-     "differenz_monat": 363,
+     "netto_33": 88517,
+     "differenz": 4593,
+     "differenz_monat": 383,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -3796,80 +3796,80 @@
    "jahr": 2035,
    "haushalt": "alleinerziehend, 1 Kind",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 12186,
-     "netto_33": 16746,
-     "differenz": 4560,
-     "differenz_monat": 380,
+     "netto_33": 16759,
+     "differenz": 4573,
+     "differenz_monat": 381,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 23.4
+     "grenzbelastung_33": 23.3
     },
     {
      "brutto": 20000,
      "netto_heute": 18005,
-     "netto_33": 22214,
-     "differenz": 4209,
-     "differenz_monat": 351,
+     "netto_33": 22238,
+     "differenz": 4233,
+     "differenz_monat": 353,
      "grenzbelastung_heute": 49.8,
-     "grenzbelastung_33": 31.5
+     "grenzbelastung_33": 31.4
     },
     {
      "brutto": 30000,
      "netto_heute": 23876,
-     "netto_33": 28199,
-     "differenz": 4323,
-     "differenz_monat": 360,
+     "netto_33": 28241,
+     "differenz": 4365,
+     "differenz_monat": 364,
      "grenzbelastung_heute": 54.6,
-     "grenzbelastung_33": 40.3
+     "grenzbelastung_33": 40.1
     },
     {
      "brutto": 42000,
      "netto_heute": 30521,
-     "netto_33": 34453,
-     "differenz": 3932,
-     "differenz_monat": 328,
+     "netto_33": 34518,
+     "differenz": 3997,
+     "differenz_monat": 333,
      "grenzbelastung_heute": 56.5,
-     "grenzbelastung_33": 40.1
+     "grenzbelastung_33": 40.0
     },
     {
      "brutto": 55000,
      "netto_heute": 37398,
-     "netto_33": 41260,
-     "differenz": 3862,
-     "differenz_monat": 322,
+     "netto_33": 41350,
+     "differenz": 3951,
+     "differenz_monat": 329,
      "grenzbelastung_heute": 58.6,
-     "grenzbelastung_33": 39.9
+     "grenzbelastung_33": 39.8
     },
     {
      "brutto": 75000,
      "netto_heute": 47711,
-     "netto_33": 51379,
-     "differenz": 3668,
-     "differenz_monat": 306,
+     "netto_33": 51504,
+     "differenz": 3793,
+     "differenz_monat": 316,
      "grenzbelastung_heute": 51.5,
-     "grenzbelastung_33": 46.2
+     "grenzbelastung_33": 46.1
     },
     {
      "brutto": 100000,
      "netto_heute": 60557,
-     "netto_33": 61020,
-     "differenz": 462,
-     "differenz_monat": 39,
+     "netto_33": 61180,
+     "differenz": 622,
+     "differenz_monat": 52,
      "grenzbelastung_heute": 58.8,
-     "grenzbelastung_33": 45.7
+     "grenzbelastung_33": 45.6
     },
     {
      "brutto": 150000,
      "netto_heute": 87265,
-     "netto_33": 90887,
-     "differenz": 3622,
-     "differenz_monat": 302,
+     "netto_33": 91120,
+     "differenz": 3855,
+     "differenz_monat": 321,
      "grenzbelastung_heute": 44.3,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   },
@@ -3877,80 +3877,80 @@
    "jahr": 2035,
    "haushalt": "Paar, ein Einkommen, 2 Kinder",
    "weitergabe_ag": 1.0,
-   "zuschlag_pct": 15.5,
+   "zuschlag_pct": 15.0,
    "vorsorge_satz": 0.186,
    "zeilen": [
     {
      "brutto": 12000,
      "netto_heute": 15294,
-     "netto_33": 22535,
-     "differenz": 7241,
-     "differenz_monat": 603,
+     "netto_33": 22551,
+     "differenz": 7257,
+     "differenz_monat": 605,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 23.2
+     "grenzbelastung_33": 23.1
     },
     {
      "brutto": 20000,
      "netto_heute": 21346,
-     "netto_33": 28029,
-     "differenz": 6683,
-     "differenz_monat": 557,
+     "netto_33": 28057,
+     "differenz": 6711,
+     "differenz_monat": 559,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 31.4
+     "grenzbelastung_33": 31.2
     },
     {
      "brutto": 30000,
      "netto_heute": 28911,
-     "netto_33": 34028,
-     "differenz": 5117,
-     "differenz_monat": 426,
+     "netto_33": 34072,
+     "differenz": 5161,
+     "differenz_monat": 430,
      "grenzbelastung_heute": 39.2,
-     "grenzbelastung_33": 40.2
+     "grenzbelastung_33": 40.1
     },
     {
      "brutto": 42000,
      "netto_heute": 37029,
-     "netto_33": 40297,
-     "differenz": 3268,
-     "differenz_monat": 272,
+     "netto_33": 40365,
+     "differenz": 3336,
+     "differenz_monat": 278,
      "grenzbelastung_heute": 51.1,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.9
     },
     {
      "brutto": 55000,
      "netto_heute": 44608,
-     "netto_33": 47124,
-     "differenz": 2517,
-     "differenz_monat": 210,
+     "netto_33": 47216,
+     "differenz": 2608,
+     "differenz_monat": 217,
      "grenzbelastung_heute": 54.3,
-     "grenzbelastung_33": 39.8
+     "grenzbelastung_33": 39.7
     },
     {
      "brutto": 75000,
      "netto_heute": 56236,
-     "netto_33": 57287,
-     "differenz": 1051,
-     "differenz_monat": 88,
+     "netto_33": 57414,
+     "differenz": 1178,
+     "differenz_monat": 98,
      "grenzbelastung_heute": 43.9,
-     "grenzbelastung_33": 46.1
+     "grenzbelastung_33": 46.0
     },
     {
      "brutto": 100000,
      "netto_heute": 71653,
-     "netto_33": 66980,
-     "differenz": -4674,
-     "differenz_monat": -389,
+     "netto_33": 67140,
+     "differenz": -4513,
+     "differenz_monat": -376,
      "grenzbelastung_heute": 47.0,
-     "grenzbelastung_33": 45.6
+     "grenzbelastung_33": 45.5
     },
     {
      "brutto": 150000,
      "netto_heute": 103736,
-     "netto_33": 96742,
-     "differenz": -6994,
-     "differenz_monat": -583,
+     "netto_33": 96978,
+     "differenz": -6759,
+     "differenz_monat": -563,
      "grenzbelastung_heute": 40.0,
-     "grenzbelastung_33": 40.0
+     "grenzbelastung_33": 39.8
     }
    ]
   }
@@ -3958,20 +3958,20 @@
  "anteil_erwachsene_mit_mehr": {
   "2028|weitergabe 0.8|zuschlag 0.0|vorsorge 0.1": 100,
   "2028|weitergabe 0.8|zuschlag 0.0|vorsorge 0.186": 100,
-  "2028|weitergabe 0.8|zuschlag 15.5|vorsorge 0.1": 98,
-  "2028|weitergabe 0.8|zuschlag 15.5|vorsorge 0.186": 100,
+  "2028|weitergabe 0.8|zuschlag 15.0|vorsorge 0.1": 98,
+  "2028|weitergabe 0.8|zuschlag 15.0|vorsorge 0.186": 100,
   "2028|weitergabe 1.0|zuschlag 0.0|vorsorge 0.1": 100,
   "2028|weitergabe 1.0|zuschlag 0.0|vorsorge 0.186": 100,
-  "2028|weitergabe 1.0|zuschlag 15.5|vorsorge 0.1": 100,
-  "2028|weitergabe 1.0|zuschlag 15.5|vorsorge 0.186": 100,
+  "2028|weitergabe 1.0|zuschlag 15.0|vorsorge 0.1": 100,
+  "2028|weitergabe 1.0|zuschlag 15.0|vorsorge 0.186": 100,
   "2035|weitergabe 0.8|zuschlag 0.0|vorsorge 0.1": 100,
   "2035|weitergabe 0.8|zuschlag 0.0|vorsorge 0.186": 100,
-  "2035|weitergabe 0.8|zuschlag 15.5|vorsorge 0.1": 100,
-  "2035|weitergabe 0.8|zuschlag 15.5|vorsorge 0.186": 93,
+  "2035|weitergabe 0.8|zuschlag 15.0|vorsorge 0.1": 100,
+  "2035|weitergabe 0.8|zuschlag 15.0|vorsorge 0.186": 93,
   "2035|weitergabe 1.0|zuschlag 0.0|vorsorge 0.1": 100,
   "2035|weitergabe 1.0|zuschlag 0.0|vorsorge 0.186": 100,
-  "2035|weitergabe 1.0|zuschlag 15.5|vorsorge 0.1": 100,
-  "2035|weitergabe 1.0|zuschlag 15.5|vorsorge 0.186": 100,
+  "2035|weitergabe 1.0|zuschlag 15.0|vorsorge 0.1": 100,
+  "2035|weitergabe 1.0|zuschlag 15.0|vorsorge 0.186": 100,
   "beschluss|2028|alleinstehend": 97.8,
   "beschluss|2028|alleinerziehend, 1 Kind": 97.8,
   "beschluss|2028|Paar, ein Einkommen, 2 Kinder": 97.8,

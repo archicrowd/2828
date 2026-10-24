@@ -63,3 +63,4 @@ zins = 2.45                       # v4.20: = Mittel zins_reihe_ea (wird im Skrip
 zieljahr = 2098
 zielquote = 0.0
 verrechnung_jahre = 30            # Verrechnung je Staat schmilzt linear in 30 Jahren ab, wie der Aufschlag für die Altschulden im Konzept
+verrechnung_haushalte = true      # v4.38 (E11, Beschluss 24.10.2026): Haushalte und Seiten mit dem Zuschlag des eigenen Staates nach Verrechnung (Fonds der 30); false = gleicher Satz

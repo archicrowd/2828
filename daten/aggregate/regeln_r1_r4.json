@@ -24,57 +24,57 @@
     "Paar, ein Einkommen, 2 Kinder": 60
    },
    "anteil_paket_s0.7": {
-    "alleinstehend": 84,
+    "alleinstehend": 87,
     "alleinerziehend, 1 Kind": 84,
     "Paar, ein Einkommen, 2 Kinder": 60
    },
    "faelle_paket_s0.7": {
     "0.33": {
-     "alleinstehend": 524,
-     "alleinerziehend, 1 Kind": 234,
-     "Paar, ein Einkommen, 2 Kinder": -227
+     "alleinstehend": 527,
+     "alleinerziehend, 1 Kind": 237,
+     "Paar, ein Einkommen, 2 Kinder": -224
     },
     "0.5": {
-     "alleinstehend": 688,
-     "alleinerziehend, 1 Kind": 660,
-     "Paar, ein Einkommen, 2 Kinder": 365
+     "alleinstehend": 693,
+     "alleinerziehend, 1 Kind": 665,
+     "Paar, ein Einkommen, 2 Kinder": 370
     },
     "0.66": {
-     "alleinstehend": 710,
-     "alleinerziehend, 1 Kind": 679,
-     "Paar, ein Einkommen, 2 Kinder": 720
+     "alleinstehend": 717,
+     "alleinerziehend, 1 Kind": 686,
+     "Paar, ein Einkommen, 2 Kinder": 727
     },
     "1.0": {
-     "alleinstehend": 822,
-     "alleinerziehend, 1 Kind": 787,
-     "Paar, ein Einkommen, 2 Kinder": 729
+     "alleinstehend": 833,
+     "alleinerziehend, 1 Kind": 798,
+     "Paar, ein Einkommen, 2 Kinder": 740
     }
    },
    "anteil_paket_s0.8": {
-    "alleinstehend": 84,
-    "alleinerziehend, 1 Kind": 84,
+    "alleinstehend": 87,
+    "alleinerziehend, 1 Kind": 87,
     "Paar, ein Einkommen, 2 Kinder": 60
    },
    "faelle_paket_s0.8": {
     "0.33": {
-     "alleinstehend": 520,
-     "alleinerziehend, 1 Kind": 260,
-     "Paar, ein Einkommen, 2 Kinder": -178
+     "alleinstehend": 522,
+     "alleinerziehend, 1 Kind": 263,
+     "Paar, ein Einkommen, 2 Kinder": -175
     },
     "0.5": {
-     "alleinstehend": 685,
-     "alleinerziehend, 1 Kind": 686,
-     "Paar, ein Einkommen, 2 Kinder": 415
+     "alleinstehend": 689,
+     "alleinerziehend, 1 Kind": 691,
+     "Paar, ein Einkommen, 2 Kinder": 421
     },
     "0.66": {
-     "alleinstehend": 707,
-     "alleinerziehend, 1 Kind": 706,
-     "Paar, ein Einkommen, 2 Kinder": 770
+     "alleinstehend": 713,
+     "alleinerziehend, 1 Kind": 713,
+     "Paar, ein Einkommen, 2 Kinder": 777
     },
     "1.0": {
-     "alleinstehend": 819,
-     "alleinerziehend, 1 Kind": 814,
-     "Paar, ein Einkommen, 2 Kinder": 779
+     "alleinstehend": 829,
+     "alleinerziehend, 1 Kind": 825,
+     "Paar, ein Einkommen, 2 Kinder": 791
     }
    },
    "anteil_paket_s0.8_vorsorge_als_vermoegen": {
@@ -90,34 +90,34 @@
     "ag_heute_pct": 21.1,
     "alleinstehend": {
      "heute_monat": 1687,
-     "neu_monat": 2270,
-     "neu_regel50_monat": 2493,
+     "neu_monat": 2273,
+     "neu_regel50_monat": 2498,
      "lohnkosten_regel50_pct": -1.5
     },
     "alleinerziehend, 1 Kind": {
      "heute_monat": 1962,
-     "neu_monat": 2512,
-     "neu_regel50_monat": 2735,
+     "neu_monat": 2516,
+     "neu_regel50_monat": 2740,
      "lohnkosten_regel50_pct": -1.5
     },
     "Paar, ein Einkommen, 2 Kinder": {
      "heute_monat": 3012,
-     "neu_monat": 3101,
-     "neu_regel50_monat": 3325,
+     "neu_monat": 3106,
+     "neu_regel50_monat": 3331,
      "lohnkosten_regel50_pct": -1.5
     },
     "paket_s0.8": {
      "alleinstehend": {
       "heute": 1687,
-      "neu": 2592
+      "neu": 2597
      },
      "alleinerziehend, 1 Kind": {
       "heute": 1962,
-      "neu": 2864
+      "neu": 2869
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "heute": 3012,
-      "neu": 3478
+      "neu": 3484
      }
     }
    }
@@ -140,7 +140,7 @@
    "anteil_s05_ohne_regeln": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 71
+    "Paar, ein Einkommen, 2 Kinder": 56
    },
    "anteil_paket_s0.7": {
     "alleinstehend": 62,
@@ -149,24 +149,24 @@
    },
    "faelle_paket_s0.7": {
     "0.33": {
-     "alleinstehend": -90,
-     "alleinerziehend, 1 Kind": -340,
+     "alleinstehend": -104,
+     "alleinerziehend, 1 Kind": -345,
      "Paar, ein Einkommen, 2 Kinder": 83
     },
     "0.5": {
-     "alleinstehend": -36,
-     "alleinerziehend, 1 Kind": -229,
+     "alleinstehend": -62,
+     "alleinerziehend, 1 Kind": -256,
      "Paar, ein Einkommen, 2 Kinder": -225
     },
     "0.66": {
-     "alleinstehend": 295,
-     "alleinerziehend, 1 Kind": 44,
-     "Paar, ein Einkommen, 2 Kinder": -37
+     "alleinstehend": 248,
+     "alleinerziehend, 1 Kind": -4,
+     "Paar, ein Einkommen, 2 Kinder": -86
     },
     "1.0": {
-     "alleinstehend": 579,
-     "alleinerziehend, 1 Kind": 475,
-     "Paar, ein Einkommen, 2 Kinder": 352
+     "alleinstehend": 489,
+     "alleinerziehend, 1 Kind": 384,
+     "Paar, ein Einkommen, 2 Kinder": 260
     }
    },
    "anteil_paket_s0.8": {
@@ -176,29 +176,29 @@
    },
    "faelle_paket_s0.8": {
     "0.33": {
-     "alleinstehend": -93,
-     "alleinerziehend, 1 Kind": -327,
+     "alleinstehend": -107,
+     "alleinerziehend, 1 Kind": -343,
      "Paar, ein Einkommen, 2 Kinder": 83
     },
     "0.5": {
-     "alleinstehend": -38,
-     "alleinerziehend, 1 Kind": -215,
+     "alleinstehend": -65,
+     "alleinerziehend, 1 Kind": -242,
      "Paar, ein Einkommen, 2 Kinder": -225
     },
     "0.66": {
-     "alleinstehend": 293,
-     "alleinerziehend, 1 Kind": 58,
-     "Paar, ein Einkommen, 2 Kinder": -10
+     "alleinstehend": 247,
+     "alleinerziehend, 1 Kind": 10,
+     "Paar, ein Einkommen, 2 Kinder": -60
     },
     "1.0": {
-     "alleinstehend": 577,
-     "alleinerziehend, 1 Kind": 489,
-     "Paar, ein Einkommen, 2 Kinder": 379
+     "alleinstehend": 487,
+     "alleinerziehend, 1 Kind": 398,
+     "Paar, ein Einkommen, 2 Kinder": 287
     }
    },
    "anteil_paket_s0.8_vorsorge_als_vermoegen": {
     "alleinstehend": 62,
-    "alleinerziehend, 1 Kind": 62,
+    "alleinerziehend, 1 Kind": 36,
     "Paar, ein Einkommen, 2 Kinder": 73
    },
    "mindestlohn": {
@@ -209,14 +209,14 @@
     "ag_heute_pct": 0.0,
     "alleinstehend": {
      "heute_monat": 1702,
-     "neu_monat": 1567,
-     "neu_regel50_monat": 1662,
+     "neu_monat": 1542,
+     "neu_regel50_monat": 1634,
      "lohnkosten_regel50_pct": 8.9
     },
     "alleinerziehend, 1 Kind": {
      "heute_monat": 2036,
-     "neu_monat": 1697,
-     "neu_regel50_monat": 1792,
+     "neu_monat": 1671,
+     "neu_regel50_monat": 1763,
      "lohnkosten_regel50_pct": 8.9
     },
     "Paar, ein Einkommen, 2 Kinder": {
@@ -228,11 +228,11 @@
     "paket_s0.8": {
      "alleinstehend": {
       "heute": 1702,
-      "neu": 1756
+      "neu": 1728
      },
      "alleinerziehend, 1 Kind": {
       "heute": 2036,
-      "neu": 1902
+      "neu": 1873
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "heute": 2530,
@@ -268,24 +268,24 @@
    },
    "faelle_paket_s0.7": {
     "0.33": {
-     "alleinstehend": 371,
-     "alleinerziehend, 1 Kind": 353,
+     "alleinstehend": 351,
+     "alleinerziehend, 1 Kind": 332,
      "Paar, ein Einkommen, 2 Kinder": 640
     },
     "0.5": {
-     "alleinstehend": 427,
-     "alleinerziehend, 1 Kind": 409,
-     "Paar, ein Einkommen, 2 Kinder": 596
+     "alleinstehend": 393,
+     "alleinerziehend, 1 Kind": 374,
+     "Paar, ein Einkommen, 2 Kinder": 557
     },
     "0.66": {
-     "alleinstehend": 487,
-     "alleinerziehend, 1 Kind": 469,
-     "Paar, ein Einkommen, 2 Kinder": 656
+     "alleinstehend": 438,
+     "alleinerziehend, 1 Kind": 419,
+     "Paar, ein Einkommen, 2 Kinder": 603
     },
     "1.0": {
-     "alleinstehend": 583,
-     "alleinerziehend, 1 Kind": 566,
-     "Paar, ein Einkommen, 2 Kinder": 754
+     "alleinstehend": 500,
+     "alleinerziehend, 1 Kind": 482,
+     "Paar, ein Einkommen, 2 Kinder": 667
     }
    },
    "anteil_paket_s0.8": {
@@ -295,24 +295,24 @@
    },
    "faelle_paket_s0.8": {
     "0.33": {
-     "alleinstehend": 368,
-     "alleinerziehend, 1 Kind": 372,
+     "alleinstehend": 348,
+     "alleinerziehend, 1 Kind": 351,
      "Paar, ein Einkommen, 2 Kinder": 640
     },
     "0.5": {
-     "alleinstehend": 424,
-     "alleinerziehend, 1 Kind": 429,
-     "Paar, ein Einkommen, 2 Kinder": 634
+     "alleinstehend": 390,
+     "alleinerziehend, 1 Kind": 393,
+     "Paar, ein Einkommen, 2 Kinder": 595
     },
     "0.66": {
-     "alleinstehend": 484,
-     "alleinerziehend, 1 Kind": 489,
-     "Paar, ein Einkommen, 2 Kinder": 694
+     "alleinstehend": 436,
+     "alleinerziehend, 1 Kind": 439,
+     "Paar, ein Einkommen, 2 Kinder": 641
     },
     "1.0": {
-     "alleinstehend": 580,
-     "alleinerziehend, 1 Kind": 586,
-     "Paar, ein Einkommen, 2 Kinder": 792
+     "alleinstehend": 498,
+     "alleinerziehend, 1 Kind": 501,
+     "Paar, ein Einkommen, 2 Kinder": 705
     }
    },
    "anteil_paket_s0.8_vorsorge_als_vermoegen": {
@@ -351,24 +351,24 @@
    },
    "faelle_paket_s0.7": {
     "0.33": {
-     "alleinstehend": 382,
-     "alleinerziehend, 1 Kind": 451,
+     "alleinstehend": 375,
+     "alleinerziehend, 1 Kind": 443,
      "Paar, ein Einkommen, 2 Kinder": 614
     },
     "0.5": {
-     "alleinstehend": 329,
-     "alleinerziehend, 1 Kind": 398,
-     "Paar, ein Einkommen, 2 Kinder": 680
+     "alleinstehend": 317,
+     "alleinerziehend, 1 Kind": 385,
+     "Paar, ein Einkommen, 2 Kinder": 666
     },
     "0.66": {
-     "alleinstehend": 418,
-     "alleinerziehend, 1 Kind": 407,
-     "Paar, ein Einkommen, 2 Kinder": 626
+     "alleinstehend": 401,
+     "alleinerziehend, 1 Kind": 389,
+     "Paar, ein Einkommen, 2 Kinder": 607
     },
     "1.0": {
-     "alleinstehend": 462,
-     "alleinerziehend, 1 Kind": 440,
-     "Paar, ein Einkommen, 2 Kinder": 650
+     "alleinstehend": 432,
+     "alleinerziehend, 1 Kind": 410,
+     "Paar, ein Einkommen, 2 Kinder": 618
     }
    },
    "anteil_paket_s0.8": {
@@ -378,24 +378,24 @@
    },
    "faelle_paket_s0.8": {
     "0.33": {
-     "alleinstehend": 379,
-     "alleinerziehend, 1 Kind": 466,
+     "alleinstehend": 372,
+     "alleinerziehend, 1 Kind": 458,
      "Paar, ein Einkommen, 2 Kinder": 614
     },
     "0.5": {
-     "alleinstehend": 326,
-     "alleinerziehend, 1 Kind": 413,
-     "Paar, ein Einkommen, 2 Kinder": 711
+     "alleinstehend": 314,
+     "alleinerziehend, 1 Kind": 401,
+     "Paar, ein Einkommen, 2 Kinder": 697
     },
     "0.66": {
-     "alleinstehend": 416,
-     "alleinerziehend, 1 Kind": 423,
-     "Paar, ein Einkommen, 2 Kinder": 656
+     "alleinstehend": 399,
+     "alleinerziehend, 1 Kind": 405,
+     "Paar, ein Einkommen, 2 Kinder": 638
     },
     "1.0": {
-     "alleinstehend": 460,
-     "alleinerziehend, 1 Kind": 456,
-     "Paar, ein Einkommen, 2 Kinder": 681
+     "alleinstehend": 430,
+     "alleinerziehend, 1 Kind": 426,
+     "Paar, ein Einkommen, 2 Kinder": 649
     }
    },
    "anteil_paket_s0.8_vorsorge_als_vermoegen": {
@@ -411,34 +411,34 @@
     "ag_heute_pct": 32.1,
     "alleinstehend": {
      "heute_monat": 1314,
-     "neu_monat": 1563,
-     "neu_regel50_monat": 1563,
+     "neu_monat": 1550,
+     "neu_regel50_monat": 1550,
      "lohnkosten_regel50_pct": -24.3
     },
     "alleinerziehend, 1 Kind": {
      "heute_monat": 1412,
-     "neu_monat": 1712,
-     "neu_regel50_monat": 1712,
+     "neu_monat": 1699,
+     "neu_regel50_monat": 1699,
      "lohnkosten_regel50_pct": -24.3
     },
     "Paar, ein Einkommen, 2 Kinder": {
      "heute_monat": 1492,
-     "neu_monat": 2075,
-     "neu_regel50_monat": 2075,
+     "neu_monat": 2060,
+     "neu_regel50_monat": 2060,
      "lohnkosten_regel50_pct": -24.3
     },
     "paket_s0.8": {
      "alleinstehend": {
       "heute": 1314,
-      "neu": 1641
+      "neu": 1627
      },
      "alleinerziehend, 1 Kind": {
       "heute": 1412,
-      "neu": 1808
+      "neu": 1794
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "heute": 1492,
-      "neu": 2186
+      "neu": 2170
      }
     }
    }
@@ -470,24 +470,24 @@
    },
    "faelle_paket_s0.7": {
     "0.33": {
-     "alleinstehend": 1576,
-     "alleinerziehend, 1 Kind": 1219,
+     "alleinstehend": 1589,
+     "alleinerziehend, 1 Kind": 1234,
      "Paar, ein Einkommen, 2 Kinder": 2387
     },
     "0.5": {
-     "alleinstehend": 1720,
-     "alleinerziehend, 1 Kind": 1278,
+     "alleinstehend": 1742,
+     "alleinerziehend, 1 Kind": 1302,
      "Paar, ein Einkommen, 2 Kinder": 1827
     },
     "0.66": {
-     "alleinstehend": 1772,
-     "alleinerziehend, 1 Kind": 1198,
-     "Paar, ein Einkommen, 2 Kinder": 1610
+     "alleinstehend": 1805,
+     "alleinerziehend, 1 Kind": 1232,
+     "Paar, ein Einkommen, 2 Kinder": 1647
     },
     "1.0": {
-     "alleinstehend": 1708,
-     "alleinerziehend, 1 Kind": 1146,
-     "Paar, ein Einkommen, 2 Kinder": 1467
+     "alleinstehend": 1764,
+     "alleinerziehend, 1 Kind": 1203,
+     "Paar, ein Einkommen, 2 Kinder": 1528
     }
    },
    "anteil_paket_s0.8": {
@@ -497,24 +497,24 @@
    },
    "faelle_paket_s0.8": {
     "0.33": {
-     "alleinstehend": 1564,
-     "alleinerziehend, 1 Kind": 1273,
+     "alleinstehend": 1577,
+     "alleinerziehend, 1 Kind": 1288,
      "Paar, ein Einkommen, 2 Kinder": 2387
     },
     "0.5": {
-     "alleinstehend": 1710,
-     "alleinerziehend, 1 Kind": 1334,
+     "alleinstehend": 1732,
+     "alleinerziehend, 1 Kind": 1358,
      "Paar, ein Einkommen, 2 Kinder": 1827
     },
     "0.66": {
-     "alleinstehend": 1763,
-     "alleinerziehend, 1 Kind": 1255,
-     "Paar, ein Einkommen, 2 Kinder": 1720
+     "alleinstehend": 1795,
+     "alleinerziehend, 1 Kind": 1289,
+     "Paar, ein Einkommen, 2 Kinder": 1757
     },
     "1.0": {
-     "alleinstehend": 1700,
-     "alleinerziehend, 1 Kind": 1204,
-     "Paar, ein Einkommen, 2 Kinder": 1579
+     "alleinstehend": 1756,
+     "alleinerziehend, 1 Kind": 1262,
+     "Paar, ein Einkommen, 2 Kinder": 1639
     }
    },
    "anteil_paket_s0.8_vorsorge_als_vermoegen": {
@@ -530,34 +530,34 @@
     "ag_heute_pct": 20.5,
     "alleinstehend": {
      "heute_monat": 3606,
-     "neu_monat": 5081,
-     "neu_regel50_monat": 5081,
+     "neu_monat": 5110,
+     "neu_regel50_monat": 5110,
      "lohnkosten_regel50_pct": -17.0
     },
     "alleinerziehend, 1 Kind": {
      "heute_monat": 4667,
-     "neu_monat": 5618,
-     "neu_regel50_monat": 5618,
+     "neu_monat": 5648,
+     "neu_regel50_monat": 5648,
      "lohnkosten_regel50_pct": -17.0
     },
     "Paar, ein Einkommen, 2 Kinder": {
      "heute_monat": 5559,
-     "neu_monat": 6923,
-     "neu_regel50_monat": 6923,
+     "neu_monat": 6956,
+     "neu_regel50_monat": 6956,
      "lohnkosten_regel50_pct": -17.0
     },
     "paket_s0.8": {
      "alleinstehend": {
       "heute": 3606,
-      "neu": 5354
+      "neu": 5382
      },
      "alleinerziehend, 1 Kind": {
       "heute": 4667,
-      "neu": 5957
+      "neu": 5987
      },
      "Paar, ein Einkommen, 2 Kinder": {
       "heute": 5559,
-      "neu": 7314
+      "neu": 7348
      }
     }
    }

@@ -19,7 +19,15 @@ AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "haushalte33.toml").read_text(encoding="utf-8"))
 _AL = W / "daten" / "aggregate" / "fonds_geltend.json"
 if _AL.exists():   # v4.11: Altlastenzuschlag aus dem Fonds; v4.20: geltender gemeinsamer Fonds der 30 Staaten (fonds_klub.py)
-    P["zuschlag_pct"] = [0.0, json.loads(_AL.read_text(encoding="utf-8"))["zuschlag_auf_alle_steuern_pct"]]
+    _ZH = json.loads(_AL.read_text(encoding="utf-8"))["zuschlag_haushalte"]["laender"]["DE"]   # v4.38 (E11): Zuschlag DE nach Verrechnung
+    P["zuschlag_pct"] = [0.0, round(_ZH["2028"], 1)]
+else:
+    _ZH = {}
+
+
+def zu_faktor(j):
+    """v4.38 (E11): Zuschlag DE im Jahr j relativ zu 2028."""
+    return _ZH[str(j)] / _ZH["2028"] if _ZH else 1.0
 _spec_mv = importlib.util.spec_from_file_location("mwst_verteilung", W / "modell" / "mwst_verteilung.py")   # v4.29: Mehrwertsteuer nach Einkommen
 MV = importlib.util.module_from_spec(_spec_mv)
 _spec_mv.loader.exec_module(MV)
@@ -109,6 +117,7 @@ def neu(b, kinder, partner, wg, zu, vs, j):
     fm, fb = MV.faktoren(netto)                                  # v4.29: Güterstruktur je Einkommen (EVS 2023)
     mwst_mehr = fm * konsum * ((1 + EFF / 100) / (1 + EFF_ALT / 100) - 1)
     mwst_bezahlt = fb * konsum * EFF / (100 + EFF)
+    zu = zu * zu_faktor(j)                                       # v4.38 (E11)
     return netto - mwst_mehr - zu / 100 * (st + mwst_bezahlt) - (vs * K.AN_RV_AV / BASIS[1] * min(b, K.BBG_RV) if vs > 0.15 else vs * b)
 
 
@@ -132,6 +141,7 @@ def rentner(r_monat, zu, j):
     zve = max(0.0, P["besteuerungsanteil"] * r - kvpv - 102 - K.SA_PAUSCH)
     h = r - kvpv - K.est_2026(zve) - K.soli_2026(K.est_2026(zve))
     EFF = eff_jahr(j)
+    zu = zu * zu_faktor(j)                             # v4.38 (E11)
     r = kuerze(r)                                      # v4.26 Regel E (vorher v3.48/v4.11: r × (1 − rente_kuerzung))
     st = est(r)                                        # Dividende + Altrente zusammen r, ganz steuerpflichtig
     konsum = kq(r - st) * (r - st)
@@ -184,7 +194,7 @@ def main():
     # mit Dividende und effektivem Labelsatz des Jahres. Dritter Erwachsener ohne Einkommen: heute wie Paar, neu eigene Dividende (Annahme).
     rr = dict(brutto=raster["brutto"], heute={}, beitrag={}, jahre=[], div=[], eff=[], bbg_kv=K.BBG_KV, bbg_rv=K.BBG_RV, deckel_lohn=DECKEL_LOHN,
               stufen=STUFEN, saetze=SAETZE, eff_alt=EFF_ALT, weitergabe=min(P["weitergabe_ag"]), zuschlag=max(P["zuschlag_pct"]),
-              vorsorge=min(P["vorsorge_satz"]), kq=[[12500, .95], [37500, .85], [65000, .75], [100000, .60]])
+              zu=[], vorsorge=min(P["vorsorge_satz"]), kq=[[12500, .95], [37500, .85], [65000, .75], [100000, .60]])
     for reg in (2028, 2035):
         setze_jahr(reg)
         rr["beitrag"][str(reg)] = [K.AN_KV_PV, K.AN_RV_AV]
@@ -192,7 +202,7 @@ def main():
             for ki in range(4):
                 rr["heute"][f"{reg}|{e}|{ki}"] = [round(heute(b, ki, e > 1)) for b in raster["brutto"]]
     for j in sorted(JAHR):
-        rr["jahre"].append(j); rr["div"].append(JAHR[j]["dividende_erw_eur2026"]); rr["eff"].append(JAHR[j]["label_effektiv"])
+        rr["jahre"].append(j); rr["div"].append(JAHR[j]["dividende_erw_eur2026"]); rr["eff"].append(JAHR[j]["label_effektiv"]); rr["zu"].append(round(max(P["zuschlag_pct"]) * zu_faktor(j), 4))
     # Selbstprüfung: die Formel der Seite muss neu() für den Einpersonenhaushalt treffen
     setze_jahr(2028)
     assert abs(neu(42000, 0, False, rr["weitergabe"], rr["zuschlag"], rr["vorsorge"], 2028) - neu(42000, 0, False, 0.8, max(P["zuschlag_pct"]), 0.10, 2028)) < 1e-6

@@ -33,7 +33,8 @@ with contextlib.redirect_stdout(io.StringIO()):
 def haushalt_de(zu):
     """Mehr im Monat bei 42.000 € brutto (DE, 2028, Kaufkraft 2026, regel_boden) und Anteil mit mehr, bei Zuschlag zu."""
     SL, alt = RB.SL, RB.SL.P["zuschlag_de"]
-    SL.P["zuschlag_de"] = zu
+    gl = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))["zuschlag_auf_alle_steuern_pct"]
+    SL.P["zuschlag_de"] = zu * alt / gl          # v4.38 (E11): Anteil Deutschlands nach Verrechnung (2028) auf den Zuschlag der Variante
     try:
         mehr = {n: round((RB.neu("DE", 42000, e, k) - SL.heute("DE", 42000, e, k)) / 12) for n, e, k in SL.HAUSHALTE}
         return dict(mehr_monat_42000=mehr, anteil_mit_mehr=RB.anteile("DE"))

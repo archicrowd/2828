@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.37"
+VERSION = "v4.38"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -144,12 +144,20 @@ def zeitreihen(c):
     return z
 
 
+ZU_VERR = {  # v4.38 (E11): Zuschlag des Staates 2028, Angleichung an den gemeinsamen Satz bis 2058
+    "de": " (2028; bis 2058 Angleichung an den gemeinsamen Satz von {zg})", "en": " (2028; converging to the common rate of {zg} by 2058)",
+    "fr": " (2028 ; convergence vers le taux commun de {zg} d'ici 2058)", "it": " (2028; convergenza verso l'aliquota comune del {zg} entro il 2058)",
+    "es": " (2028; convergencia hacia el tipo común del {zg} hasta 2058)", "pl": " (2028; do 2058 r. zbieżność do wspólnej stawki {zg})"}
+
+
 def werte_neu(sp, c):
     fx = FX.get(c, 1.0)
     E = lambda x, nk=0: SB.eur(x, sp, nk)
     P = lambda x, nk=0: SB.pct(x, sp, nk)
     fzm = [v["zuschlag_pct"] for v in FZ["varianten"] if v["fall"] in ("fest 3.5 %", "fest 4.0 %")]   # v4.19: Marktzins Oktober 2026
     w = {"zins_fonds": P(FGJ["zins"], 2), "zu_markt": P(min(fzm), 1) + "–" + P(max(fzm), 1), "p33": P(33), "e0": E(0), "e100k": E(100000 * fx), "e2m": E(2e6 * fx), "staaten": str(RM["staaten"]), "einw": SB.zahl(RM["einwohner_mio"], 1, sp)}
+    zg = P(FGJ["zuschlag_auf_alle_steuern_pct"], 1)                          # v4.38 (E11): gemeinsamer Satz, Ziel der Verrechnung
+    w["zu_verr"] = ZU_VERR[sp].format(zg=zg) if FGJ.get("zuschlag_haushalte", {}).get("aktiv") else ""
     if c == "DE":
         w.update(plus="+" + E(plus42), bsp=E(42000), zu=P(ZU, 1))
     elif c in HL["staaten"]:
@@ -163,7 +171,7 @@ def werte_neu(sp, c):
                  keil=P(HT["oecd"]["keil"][c], 1), anteil=LT.ANTEIL_TXT.get(sp, "{a}–{b}").format(a=round(amin / 10), b=round(amax / 10)))
     else:
         amin, amax = VB.anteil("FR")
-        w.update(fr_anteil=LT.ANTEIL_TXT.get(sp, "{a}–{b}").format(a=round(amin / 10), b=round(amax / 10)), zu=P(ZU, 1))
+        w.update(fr_anteil=LT.ANTEIL_TXT.get(sp, "{a}–{b}").format(a=round(amin / 10), b=round(amax / 10)), zu=zg, zu_verr="")   # EU-Mittel: gemeinsamer Satz
     k = "EU27" if c == "EU30" else c
     if k in ZR["thg_1990"]:
         w["thg_minus"] = LT.THG[sp].format(p=P(round(100 * (1 - ZR["thg"][k][-1] / ZR["thg_1990"][k]))))
@@ -216,7 +224,7 @@ def rr_de():
     ag = {reg: [round(c[0] * min(b, D, r["bbg_kv"]) + c[1] * min(b, D, r["bbg_rv"]), 1) for b in r["brutto"]] for reg, c in r["beitrag"].items()}
     heute = {key: VB.heute_mit_bedarf("DE", r["brutto"], v, int(key.split("|")[1]), int(key.split("|")[2])) for key, v in r["heute"].items()}
     return dict(brutto=r["brutto"], schritt=1000, start=42000, heute=heute, ag=ag, jahre=r["jahre"], div=r["div"], eff=r["eff"],
-                stufen=r["stufen"], saetze=r["saetze"], eff_alt=r["eff_alt"], weitergabe=r["weitergabe"], zuschlag=r["zuschlag"],
+                stufen=r["stufen"], saetze=r["saetze"], eff_alt=r["eff_alt"], weitergabe=r["weitergabe"], zuschlag=r["zuschlag"], zu=r["zu"],
                 vorsorge=r["vorsorge"], kq=r["kq"], **VB.rechner_felder("DE"))
 
 
@@ -233,7 +241,7 @@ def rr_land(c, in_eur=False):
             heute[f"{reg}|{k}"] = hv
     return dict(brutto=m(r["brutto"]), schritt=r["schritt"] * f, start=round(h["beispiel"]["brutto"] * f, 2), heute=heute,
                 ag={"2028": m(r["ag"]), "2035": m(r["ag"])}, jahre=r["jahre"], div=m(r["div"]), eff=r["eff"], stufen=m(r["stufen"]),
-                saetze=r["saetze"], eff_alt=r["eff_alt"], weitergabe=r["weitergabe"], zuschlag=r["zuschlag"], vorsorge=r["vorsorge"],
+                saetze=r["saetze"], eff_alt=r["eff_alt"], weitergabe=r["weitergabe"], zuschlag=r["zuschlag"], zu=r["zu"], vorsorge=r["vorsorge"],
                 kq=[[x * f, y] for x, y in r["kq"]], **VB.rechner_felder(c, f))
 
 
@@ -255,7 +263,7 @@ function kqR(n){const p=R.kq;if(n<=p[0][0])return p[0][1];for(let i=1;i<p.length
 function neuR(i,b,e,k,j){const t=R.jahre.indexOf(j),DIV=R.div[t]*12*R.topf,EFF=R.eff[t],reg=j>=2035?'2035':'2028';
   const brutto=b+R.weitergabe*R.ag[reg][i],st=estR(brutto+DIV)+(e-1)*estR(DIV),div=DIV*e+k*DIV*R.s,netto=brutto-st+div;
   const konsum=kqR(netto)*netto,mm=konsum*((1+EFF/100)/(1+R.eff_alt/100)-1),mb=konsum*EFF/(100+EFF);
-  const x=netto-mm-R.zuschlag/100*(st+mb),F=R.gb*(1+0.5*(e-1)+R.kw*k),auf=Math.max(0,F-div-R.anr*Math.max(0,x-div));
+  const ZU=R.zu?R.zu[t]:R.zuschlag,x=netto-mm-ZU/100*(st+mb),F=R.gb*(1+0.5*(e-1)+R.kw*k),auf=Math.max(0,F-div-R.anr*Math.max(0,x-div));
   return {netto:x+auf-R.vorsorge*b,div:div};}
 function rset(){const s=$('brutto');s.min=R.brutto[0];s.max=R.brutto[R.brutto.length-1];s.step=R.schritt;s.value=R.start;}
 function rechner(){const i=Math.max(0,Math.min(R.brutto.length-1,Math.round((+$('brutto').value-R.brutto[0])/R.schritt))),br=R.brutto[i],e=+val('erw'),k=+val('kin'),j=+$('rj').value;

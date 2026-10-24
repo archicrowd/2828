@@ -1,6 +1,6 @@
 {
- "version": "v4.37",
- "status": "Prüfrechnung, Empfindlichkeit (geltend in den Haushalten: gleicher Satz)",
+ "version": "v4.38",
+ "status": "geltend: Verrechnung je Staat (E11, Beschluss 24.10.2026); Vergleich gleicher Satz",
  "laender": {
   "DE": {
    "zuschlag_gleich": 15.5,

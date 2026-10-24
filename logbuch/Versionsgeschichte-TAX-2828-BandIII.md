@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.37**
+Stand: 24. Oktober 2026 · Modellstand **v4.38**
 
 ---
 
@@ -3820,6 +3820,36 @@ Boden B1 (Grundauskommen im Bestand) weiter deutsch skaliert; Verrechnung in der
 
 ---
 
+### v4.38 — E11: Verrechnung je Staat in Haushaltsrechnungen, Rechner und Seiten
+
+**Art der Änderung: MINOR (Beschluss), bewegt die Haushaltszahlen aller Länder.** 24. Oktober 2026.
+
+**Beschluss E11 (24.10.2026):** Die Haushalte tragen den Altlastenzuschlag ihres eigenen Staates nach der Verrechnung im Fonds der 30 (v4.37),
+nicht den gemeinsamen Satz. Zuschlag 2028: DE 15,0, FR 21,3, IT 22,3, ES 18,3, PL 13,5 %; linear bis 2058 Angleichung an den gemeinsamen
+Satz 15,5 %. Der Fonds selbst bleibt unverändert (5,17 % BIP, Spitze 148,1 %).
+
+**Umsetzung:** Schalter `altlasten.toml [beschluss] verrechnung_haushalte = true`; `fonds_klub.py` schreibt `fonds_geltend.json →
+zuschlag_haushalte` (je Staat und Jahr 2028–2100); `laenderseiten.json → fonds.zuschlag_pct` = Staat 2028, dazu `zuschlag_faktor_jahr` und
+`zuschlag_gemeinsam_pct`; Zuschlag je Jahr in `heute_laender.neu`, `sozial_laender.neu`, `haushalte33.neu` und `rentner`; Mikrosimulation und
+Rentner mit DE 2028; `fondszins.py` (Zinsvarianten) mit dem Anteil Deutschlands. Rechner der Seiten: Zuschlag je Jahr (`R.zu`). Texte: hinter
+dem Zuschlag der Zusatz „(2028; bis 2058 Angleichung an den gemeinsamen Satz von 15,5 %)“ in sechs Sprachen (Platzhalter `«zu_verr»`);
+EU-Seite (EN) weiter mit dem gemeinsamen Satz. Konzept: Zeile „Verrechnung je Staat 2028“ in der Fondstabelle und ein Satz zur Verrechnung.
+
+**Bewegte Zahlen (2028, mehr im Monat):**
+- Alleinstehend, 42.000 €, DE: +604 → **+611 €**; bei Fondszins 3,0 / 3,5 / 4,0 %: 590 / 570 / 548 € (vorher 583 / 562 / 539).
+- Alleinstehend beim Durchschnittslohn: FR +480 → +390 €, IT +494 → +412 €, ES +380 → +350 €, PL +1.418 → +1.474 zł, DE +716 → +726 €.
+- Beispiel der Länderseiten (Median): FR 30.000 € +214 → +166 €, IT 24.000 € +409 → +359 €, ES 21.000 € +346 → +329 €, PL 64.000 zł +1.511 → +1.544 zł.
+- Anteil mit mehr (regel_boden): FR alleinerziehend 100 → 73 %; sonst unverändert.
+- Mikrosimulation DE: alle Haushalte mit mehr 68,9 → 69,3 %, Personen 76,3 → 76,7 %; Beamte 55,9 → 56,4 % (+100 → +112 €); Rentnerhaushalte 32,2 % mit mehr, Mittel −121 €.
+- Gini 2028: FR 30,4 → 29,8, IT 27,4 → 26,9, ES 25,2 → 25,0, PL 18,7 → 18,8, DE 26,1 unverändert (ein höherer Zuschlag auf die Steuern wirkt progressiv).
+
+**Hinweis für die Texte:** In Frankreich liegt der Zuschlag mit Verrechnung 2028 (21,3 %) über dem eines eigenen Fonds (20,0 %, gleichbleibend
+bis 2098); ab etwa 2033 liegt er darunter (2035: 19,9 %, 2040: 19,0 %). Der Vergleich auf der Seite ist damit nicht mehr einfach „gemeinsam billiger“.
+
+**Datenquelle:** wie v4.37. **Wodurch aufgefallen:** Beschluss der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -3880,7 +3910,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.37
+## 7 | Offene Punkte, Stand v4.38
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3909,7 +3939,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E1 | Architekturvariante „Regelwerk statt Dach“ (Vorlage v4.13) |
 | E2 | **entschieden, geltend seit v4.36:** Deckel der Weitergabe einheitlich beim 6-fachen Grundbedarf in allen Staaten (v4.33 bis v4.35: nur FR, 1,6 × Durchschnittslohn); offen: Familienleistungen FR |
 | E10 | **entschieden v4.34:** Rest über dem Deckel bleibt beim Betrieb (keine Abgabe) |
-| E11 | **neu v4.37:** Verrechnung je Staat in den Haushaltsrechnungen und auf den Seiten anwenden (2028 FR 21,3 %, IT 22,3 %, ES 18,3 %, DE 15,0 %, PL 13,5 % statt 15,5 % für alle) oder beim gleichen Satz bleiben (vereinfachend, bisher) |
+| E11 | **entschieden v4.38 (24.10.2026):** Verrechnung je Staat in Haushaltsrechnungen und auf den Seiten (2028 FR 21,3 %, IT 22,3 %, ES 18,3 %, DE 15,0 %, PL 13,5 %; bis 2058 Angleichung an 15,5 %) |
 | E3 | Härtefall H1–H3 und Rolle der Gemeinden G1–G5 (N27; Kindergewicht 0,55 gilt seit v4.8) |
 | E4 | Sicherheitsunion (50 % der Verteidigung über rund 15 % der Mehrwertsteuer, N34) |
 | E5 | Neustartverfahren |

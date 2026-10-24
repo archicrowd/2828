@@ -18,7 +18,7 @@ from pathlib import Path
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "sozial_laender.toml").read_text(encoding="utf-8"))
-P["zuschlag_de"] = json.loads((W / "daten" / "aggregate" / "fonds_geltend.json").read_text(encoding="utf-8"))["zuschlag_auf_alle_steuern_pct"]   # v4.11; v4.20 geltender Fonds der 30
+P["zuschlag_de"] = round(json.loads((W / "daten" / "aggregate" / "fonds_geltend.json").read_text(encoding="utf-8"))["zuschlag_haushalte"]["laender"]["DE"]["2028"], 1)   # v4.38 (E11): DE 2028 nach Verrechnung   # v4.11; v4.20 geltender Fonds der 30
 
 
 def lade_modul(name, pfad):
@@ -127,7 +127,7 @@ def neu(c, b, e, k, j=2028, s=0.5, boden=True, lohn_faktor=1.0, vorsorge_frei=Fa
     st = est(brutto + DIV) + (e - 1) * est(DIV)
     netto = brutto - st + DIV * e + k * DIV * s
     konsum = HL.kq(netto, c) * netto
-    zu = P["zuschlag_de"] if c == "DE" else st_c["fonds"]["zuschlag_pct"]
+    zu = (P["zuschlag_de"] if c == "DE" else st_c["fonds"]["zuschlag_pct"]) * HL.zu_faktor(c, j)   # v4.38 (E11)
     fm, fb = HL.mwst_phi(c, netto)                                                      # v4.29
     netto = netto - fm * konsum * ((1 + EFF / 100) / (1 + HL.eff_alt(c) / 100) - 1) - zu / 100 * (st + fb * konsum * EFF / (100 + EFF))
     gbj = st_c["grundbedarf_jahr_eur"] * fx

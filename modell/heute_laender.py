@@ -220,6 +220,11 @@ def ag_weitergabe(c, b):
     return min(MODELLE[c][1](b), MODELLE[c][1](deckel_lohn(c)))
 
 
+def zu_faktor(c, j):
+    """v4.38 (E11): Verhältnis Zuschlag des Jahres j zu 2028 (Verrechnung je Staat schmilzt ab); 1, wenn nicht vorhanden."""
+    return LS["staaten"].get(c, {}).get("fonds", {}).get("zuschlag_faktor_jahr", {}).get(str(j), 1.0)
+
+
 def faktor(c):
     return P["waehrung"].get(c, 1.0)
 
@@ -257,7 +262,7 @@ def neu(c, b, e, k, j):
     fm, fb = mwst_phi(c, netto)
     mm = fm * konsum * ((1 + EFF / 100) / (1 + eff_alt(c) / 100) - 1)
     mb = fb * konsum * EFF / (100 + EFF)
-    zu = st_c["fonds"]["zuschlag_pct"]
+    zu = st_c["fonds"]["zuschlag_pct"] * zu_faktor(c, j)          # v4.38 (E11): Verrechnung je Staat
     return dict(netto=netto - mm - zu / 100 * (st + mb) - P["vorsorge"] * b, div=div)
 
 
@@ -301,6 +306,7 @@ def main():
         ras.update(jahre=JAHRE, div=[round(d * faktor(c), 2) for d in LS["staaten"][c]["dividende_erw_eur"]], eff=[EFF_NEU[j] for j in JAHRE],
                    stufen=[g * faktor(c) for g in LS["staaten"][c]["tarif_stufen"]], saetze=[0.0, 11.0, 19.0, 25.0, 33.0], eff_alt=round(eff_alt(c), 2),
                    weitergabe=P["weitergabe"], zuschlag=LS["staaten"][c]["fonds"]["zuschlag_pct"], vorsorge=P["vorsorge"],
+                   zu=[round(LS["staaten"][c]["fonds"]["zuschlag_pct"] * zu_faktor(c, j), 4) for j in JAHRE],   # v4.38: Zuschlag je Jahr
                    kq=[[x * LS["staaten"][c]["grundbedarf_jahr_eur"] / LS["staaten"]["DE"]["grundbedarf_jahr_eur"] * faktor(c), y]
                        for x, y in ((12500, .95), (37500, .85), (65000, .75), (100000, .60))], schritt=schritt, waehrung="PLN" if c == "PL" else "EUR")
         # Selbstprüfung: Rasterformel = neu()

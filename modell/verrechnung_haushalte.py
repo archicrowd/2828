@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verrechnung je Staat im Fonds der 30: Wirkung auf die Haushalte 2028 (Logbuch v4.37, R6). Prüfrechnung, Empfindlichkeit.
+"""Verrechnung je Staat im Fonds der 30: Wirkung auf die Haushalte 2028 (Logbuch v4.37, R6). Prüfrechnung; seit v4.38 geltend (E11), Vergleich mit dem gleichen Satz.
 
 Die Haushaltsrechnungen nutzen den gleichen Zuschlag für alle Staaten (fonds_geltend.json, vereinfachend). Nach der Verrechnung je Staat
 (fonds_klub.py, Beschlusslogik der zehn auf die 30 übertragen) trägt 2028 jeder Staat nach seiner eigenen Altlast; der Unterschied schmilzt
@@ -26,23 +26,22 @@ def lauf(c):
 
 
 def main():
+    """v4.38: geltend = Verrechnung je Staat (E11); Vergleich = gleicher Satz für alle (bis v4.37)."""
     out = {}
+    gl = FG["zuschlag_auf_alle_steuern_pct"]
     for c in LAENDER:
         st = SL.HL.LS["staaten"][c]["fonds"]
-        z0 = SL.P["zuschlag_de"] if c == "DE" else st["zuschlag_pct"]
-        zn = FG["verrechnung"]["laender"][c]["reihe"]["2028"]["zuschlag_pct"]
-        gleich = lauf(c)
+        z0, f0, zde0 = st["zuschlag_pct"], st.get("zuschlag_faktor_jahr"), SL.P["zuschlag_de"]
+        verr = lauf(c)
+        st["zuschlag_pct"], st["zuschlag_faktor_jahr"] = gl, {}
         if c == "DE":
-            SL.P["zuschlag_de"] = zn
-        else:
-            st["zuschlag_pct"] = zn
+            SL.P["zuschlag_de"] = gl
         try:
-            verr = lauf(c)
+            gleich = lauf(c)
         finally:
-            SL.P["zuschlag_de"] = FG["zuschlag_auf_alle_steuern_pct"]
-            st["zuschlag_pct"] = z0 if c != "DE" else st["zuschlag_pct"]
-        out[c] = dict(zuschlag_gleich=z0, zuschlag_verrechnung_2028=zn, gleich=gleich, verrechnung_2028=verr)
-    E = dict(version="v4.37", status="Prüfrechnung, Empfindlichkeit (geltend in den Haushalten: gleicher Satz)", laender=out,
+            st["zuschlag_pct"], st["zuschlag_faktor_jahr"], SL.P["zuschlag_de"] = z0, f0, zde0
+        out[c] = dict(zuschlag_gleich=gl, zuschlag_verrechnung_2028=zde0 if c == "DE" else z0, gleich=gleich, verrechnung_2028=verr)
+    E = dict(version="v4.38", status="geltend: Verrechnung je Staat (E11, Beschluss 24.10.2026); Vergleich gleicher Satz", laender=out,
              hinweis="2028; die Verrechnung schmilzt in 30 Jahren auf den gleichen Satz ab. PL in zł.")
     (W / "daten" / "aggregate" / "verrechnung_haushalte.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     for c, x in out.items():
