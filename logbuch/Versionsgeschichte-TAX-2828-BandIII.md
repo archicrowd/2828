@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. Oktober 2026 · Modellstand **v4.33**
+Stand: 21. Oktober 2026 · Modellstand **v4.34**
 
 ---
 
@@ -3663,6 +3663,30 @@ er“) ist überholt; Korrektur über die Texte der Initiative. Das Konzept ist 
 
 **Datenquelle:** OECD Durchschnittslöhne (heute_laender.toml), Kernmodell (Bemessungsgrenzen 2026). **Wodurch aufgefallen:** Beschluss der Initiative.
 
+### v4.34 — E10: Rest über dem Deckel bleibt beim Betrieb; einheitlicher Deckel am Grundbedarf geprüft (modell/deckel_einheitlich.py)
+
+**Art der Änderung: PATCH (Beschluss, Prüfrechnung), keine Zahl bewegt.** 24. Oktober 2026.
+
+**Beschluss E10 (24.10.2026):** Der Teil der Arbeitgeberbeiträge über dem Deckel, für den keine Weitergabepflicht besteht, bleibt beim Betrieb
+(wie die 20 %, die heute schon nicht weitergegeben werden müssen); als Gewinn oder Lohn trägt er höchstens ein Drittel Steuer. Verworfen:
+Abführung an den Altlastenfonds – das wäre eine Abgabe auf hohe Löhne und widerspräche „0 % auf den Lohn“. Die Rückfallregel (v4.18) bleibt
+eine Sanktion bei unterlassener Weitergabe, keine Einnahme. Die Deckung führt diese Ströme pauschal (Einkommen, Unternehmen); keine Neurechnung.
+
+**Geprüft: Deckel als einheitliche Regel am Grundbedarf (Frage der Initiative, 24.10.2026).** Mehr im Monat, alleinstehend, 2028:
+
+| Deckel | DE 1× / 2× / 3× Durchschnittslohn | FR | IT | ES | PL (zł) |
+|---|---|---|---|---|---|
+| geltend (nur FR, 1,6 × Durchschnittslohn) | +716 / +804 / +515 | +480 / +887 / +755 | +494 / +1.060 / +1.574 | +380 / +501 / +401 | +1.418 / +1.564 / +2.328 |
+| 3 × Grundbedarf | +494 / +393 / +106 | +263 / −15 / −134 | +436 / +540 / +600 | +343 / +76 / −37 | +1.418 / +802 / +796 |
+| 6 × Grundbedarf | +716 / +689 / +400 | +480 / +849 / +717 | +494 / +941 / +999 | +380 / +454 / +340 | +1.418 / +1.564 / +1.648 |
+
+Der dreifache Grundbedarf liegt unter dem Durchschnittslohn (DE 0,59, FR 0,78, IT 0,87, ES 0,91, PL 1,05) und trifft die Mitte; nicht tragfähig.
+Der sechsfache Grundbedarf (DE 74.088 €, nahe der Bemessungsgrenze der Krankenversicherung; FR 69.912 €, nahe dem beschlossenen Deckel) lässt alle
+Einkommen bis zum Durchschnittslohn unverändert und kostet hohe Löhne in DE, IT, ES und PL. Option für eine einheitliche Regel statt der Ausnahme;
+Entscheidung der Initiative offen (E2).
+
+**Datenquelle:** wie v4.33. **Wodurch aufgefallen:** Frage der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -3724,7 +3748,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.33
+## 7 | Offene Punkte, Stand v4.34
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -3751,8 +3775,8 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | Nr. | Punkt |
 |---|---|
 | E1 | Architekturvariante „Regelwerk statt Dach“ (Vorlage v4.13) |
-| E2 | **entschieden v4.33:** Deckel in Frankreich beim 1,6-fachen Durchschnittslohn (erste Ausnahme); offen: Familienleistungen FR, allgemeine Regel für alle Staaten |
-| E10 | Verwendung des Rests über dem Deckel in Frankreich (Vorschlag: Altlastenfonds wie die Rückfallregel, N28) |
+| E2 | **entschieden v4.33:** Deckel in Frankreich beim 1,6-fachen Durchschnittslohn (erste Ausnahme); offen: Familienleistungen FR; einheitliche Regel 6 × Grundbedarf als Option (v4.34) |
+| E10 | **entschieden v4.34:** Rest über dem Deckel bleibt beim Betrieb (keine Abgabe) |
 | E3 | Härtefall H1–H3 und Rolle der Gemeinden G1–G5 (N27; Kindergewicht 0,55 gilt seit v4.8) |
 | E4 | Sicherheitsunion (50 % der Verteidigung über rund 15 % der Mehrwertsteuer, N34) |
 | E5 | Neustartverfahren |

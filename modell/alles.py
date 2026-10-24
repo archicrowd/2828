@@ -64,6 +64,7 @@ STUFEN = [
     ("Preisniveauschub bei Einführung (statisch)", ["modell/preisniveau33.py"]),
     ("Ausweichreaktionen Erbschaft und Vermögen: Empfindlichkeit", ["modell/ausweichen33.py"]),
     ("Basis Große Vermögen und Erbschaften gegen Verteilungsdaten", ["modell/vermoegensbasis33.py"]),
+    ("Deckel der Weitergabe: einheitliche Regel (Option)", ["modell/deckel_einheitlich.py"]),
     ("Fondszins gegen Marktrenditen", ["modell/fondszins.py"]),
     ("Mikrosimulation DE, synthetische Population (Stufe 1)", ["modell/mikro_de.py"]),
     ("Rentner: Grundbedarf garantiert, Zusagen darüber gekürzt (Vorschlag)", ["modell/rentner_kombi.py"]),
