@@ -92,10 +92,18 @@ zus_an_limit = 11.26   # emerytalne 9,76 + rentowe 1,5 (bis zur Grenze)
 zus_an_chorobowe = 2.45
 zdrowotna = 9.0
 zus_ag_limit = 16.26   # 9,76 + 6,5
-zus_ag_rest = 4.22     # wypadkowe 1,67 + FP 2,45 + FGŚP 0,10
+zus_ag_rest = 4.22     # wypadkowe 1,67 + FP 2,45 + FGŚP 0,10 (v4.52: FP entfällt mit der Arbeitslosenversicherung, wypadkowe und FGŚP bleiben, [ag_bleibt])
 limit_30 = 282600
 
 [weitergabe_deckel]   # v4.36 (E2, einheitliche Regel): Arbeitgeberbeiträge zählen für die 80-%-Weitergabe in allen Staaten nur bis zum Betrag beim
 # grundbedarf_faktor-fachen Grundbedarf des Landes (laenderseiten.json, × Währung); DE 6 × 12.348 = 74.088 €. Gilt auch für DE (haushalte33.ag).
 # Vorher v4.33: nur FR, 1,602 × Durchschnittslohn (deutsche BBG RV 101.400 € / Durchschnittslohn 63.288 €); Rest bleibt beim Betrieb (E10).
 grundbedarf_faktor = 6.0
+
+[ag_bleibt]   # v4.52 (R13, Beschluss der Initiative 24.10.2026): Arbeitgeberabgaben, die im neuen System bleiben und nicht der Weitergabe unterliegen
+# Grundsatz wie DE (haushalte33.ag_roh: nur KV, PV, RV, AV): Beiträge zur sozialen Sicherung entfallen; Unfallversicherung, Insolvenz- und
+# Garantiefonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben. IT unverändert (an der OECD geeicht, INPS; Annahme: ohne INAIL).
+es = 2.30   # % bis zur base máxima: FOGASA 0,20 + Formación profesional 0,60 + AT/EP 1,50 (Annahme 1,50, siehe [es])
+pl = 1.77   # % des Bruttos: wypadkowe 1,67 + FGŚP 0,10
+[ag_bleibt.fr]
+ags = 0.20  # AGS (Insolvenzgarantie) im Satz chomage_ags enthalten (Annahme 0,20; chômage 4,05)

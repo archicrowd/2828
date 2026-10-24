@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.51**
+Stand: 24. Oktober 2026 · Modellstand **v4.52**
 
 ---
 
@@ -4229,6 +4229,46 @@ d'activité (Februar 2026); moneyvox.fr (forfait logement 2026, Sekundärquelle)
 
 ---
 
+### v4.52 — R13: Weitergabe nur aus den entfallenden Beiträgen zur sozialen Sicherung, in allen Staaten wie in Deutschland (E16)
+
+**Art der Änderung: MAJOR für die Länderrechnungen (Position: Abgrenzung der Weitergabe), Beschluss der Initiative; bewegt Zahlen für FR, ES, PL.**
+24. Oktober 2026.
+
+**Beschluss (24.10.2026, E16):** Der Weitergabe unterliegen nur die Arbeitgeberbeiträge, die im neuen System entfallen: Beiträge zur sozialen
+Sicherung (Krankheit, Pflege/Autonomie, Rente einschließlich Zusatzrente, Arbeitslosigkeit, Familie, Invalidität). Unfallversicherung,
+Insolvenz- und Garantiefonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben beim Betrieb. So rechnete Deutschland schon bisher
+(`haushalte33.ag_roh`: KV, PV, RV, AV).
+
+**Umsetzung (`heute_laender.ag_entfaellt`, `heute_laender.toml [ag_bleibt]`):**
+- **FR:** entfallend maladie, vieillesse, AGIRC-ARRCO, allocations familiales, CSA, chômage; bleibend accidents du travail (2,2 %), FNAL, AGS
+  (0,20 %, Annahme), formation (1,0), apprentissage (0,68), versement mobilité (1,75, Annahme), PEEC (0,45). Die RGDU mindert die Beiträge in
+  ihrer Bemessung anteilig (Annahme proportional). Beim Durchschnittslohn entfallen 12.118 von 14.825 € (82 %).
+- **ES:** bleibend FOGASA 0,20, Formación profesional 0,60, AT/EP 1,50 % (Annahme); entfallend 29,85 % (Contingencias comunes, Desempleo, MEI).
+- **PL:** bleibend wypadkowe 1,67 und FGŚP 0,10 %; Fundusz Pracy (2,45 %) entfällt mit der Arbeitslosenversicherung.
+- **IT:** unverändert (Satz an der OECD geeicht, INPS; Annahme: ohne INAIL).
+- Die Arbeitskosten „heute“ (Validierung, Keil) zählen weiter alle Abgaben. `deckel_einheitlich` rechnet ebenfalls mit den entfallenden Beiträgen.
+
+**Bewegte Zahlen (2028, Verrechnung je Staat, allein, im Monat):**
+
+| Staat | ½ Durchschnittslohn | 1× | 2× | 3× | Anteil mit mehr (allein / alleinerziehend / Paar 2 K) |
+|---|---|---|---|---|---|
+| FR | −145 → −152 € | +390 → +286 € | +654 → +480 € | +440 → +269 € | 73 / 100 → 73 / 98 % (alleinerziehend 100 → 73 %) |
+| ES | +233 → +217 € | +350 → +321 € | +389 → +336 € | +249 → +196 € | 100 → 98 / 100 / 100 % |
+| PL | +1.450 → +1.406 zł | +1.474 → +1.404 zł | +1.695 → +1.554 zł | +1.838 → +1.689 zł | unverändert 100 / 98 / 98 % |
+| IT, DE | unverändert | | | | |
+
+Gini 2028: FR 29,5 → 29,0, PL 18,8 → 18,7; DE, IT, ES unverändert. Anteile im Paket mit Grundauskommen (FR 62 / 49 / 71 %) unverändert.
+
+**Korrektur 80:** `KENNZAHLEN.md`, Zeile „Deckel der Weitergabe“: Beispiele bei 2× / 3× Durchschnittslohn standen seit v4.36 (DE +689 / +400,
+FR +849 / +717, IT +941 / +999 €); seit v4.38 galten DE +710 / +431, FR +654 / +440, IT +766 / +749 €. Nachgezogen (jetzt FR +480 / +269 €).
+Zweiter Fall nach Korrektur 79: Die Kennzahlen wurden bei Rechenänderungen nicht vollständig gegengeprüft. Vorkehrung: offener Punkt, die
+Werte in `KENNZAHLEN.md` maschinell aus den Ergebnisdateien zu prüfen (R14).
+
+**Datenquelle:** Sätze wie in `heute_laender.toml` (Quellen dort); Beschluss der Initiative. **Wodurch aufgefallen:** Validierung v4.51 (Polen:
+OECD ohne Unfallversicherung und Fonds), offener Punkt R13.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4263,6 +4303,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 73 | `gesamtlast33.json` (seit v4.14): „Steuern 33,53“ neben „Summe 45,47“ – die Summe stammte aus dem Steuerbedarf 33,42; `KENNZAHLEN.md` nannte 45,46/49,56 | Summe aus den ausgewiesenen Teilen 33,53 + 12,05 = 45,58, mit Pflichtvorsorge 49,68; Steuerbedarf-Variante 45,47/49,57 daneben (v4.46) | Dritte Prüfung, Befund B17 |
 | 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
+| 80 | `KENNZAHLEN.md`, Zeile Deckel der Weitergabe: Beispiele 2× / 3× Durchschnittslohn DE +689 / +400, FR +849 / +717, IT +941 / +999 € (Stand v4.36) | seit v4.38 DE +710 / +431, FR +654 / +440, IT +766 / +749 €; seit v4.52 FR +480 / +269 € | Nachziehen der Kennzahlen v4.52 |
 | 79 | `KENNZAHLEN.md`, Zeile Deckel der Weitergabe: Gini 2028 FR 30,4, IT 27,4 | seit v4.38 (Verrechnung je Staat) 29,8 / 26,9; seit v4.51 FR 29,5 | Validierung v4.51 (Gegenprobe der Kennzahlen) |
 | 78 | `sozial_laender` (FR, seit v4.3): APL und prime d'activité ohne Anrechnung des forfait logement | bei APL-Bezug mindert der forfait (2026: 76,59 / 153,19 / 189,57 €) die prime d'activité; FR heute bei halbem SMIC 1.219 → 1.136 € | Gegenprobe mit den Fällen des Arbeitsministeriums (v4.51) |
 | 77 | `heute_laender.toml` (FR, seit v4.2): prime d'activité mit 61 % der Erwerbseinkommen (Annahme) | amtlich 59,85 % seit 1.4.2025 (DREES, Minima sociaux 2025, Fiche 30) | Validierung gegen OECD Taxing Wages 2026 (v4.51) |
@@ -4297,7 +4338,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.51
+## 7 | Offene Punkte, Stand v4.52
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4318,7 +4359,8 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R9 | **teilweise erledigt v4.41** (Einwanderung und Automatisierung umgerechnet; offen: Altersprofil je Staat, Preisniveau mit Zweitrundeneffekten und CO₂-Pfad) – **Langfristpfad:** Einwanderung und Automatisierung auf Netz-Beschluss und Fonds der 30 umrechnen; Altersprofil je Staat (Ageing Report); Preisniveau mit Zweitrundeneffekten und CO₂-Pfad | Dividende 2035–2060 | v3.48–v4.18 |
 | R10 | **Möglichkeitsraum:** UK und Kanada; Staaten mit Lücke im Dauerzustand (SE, DK, CZ, FR); Wachstum je Land | Länder außerhalb der Referenzländer | v3.52/v3.53 |
 | R11 | **Regionen und gemeinsame Aufgaben:** heutige Gemeindeeinnahmen je Kreis (Daten der Initiative, `2828-Daten`), Strukturzuschlag 10 %, Kassenanteile und Bemessung am BNE, Anrechnung neutraler Staaten (N32, N33) | Gemeindehaushalte, nicht Haushaltseinkommen | v4.15/v4.16 |
-| R13 | **Abgrenzung der wegfallenden Arbeitgeberabgaben je Staat (v4.51):** welche Abgaben im neuen System entfallen und der Weitergabe unterliegen (Unfallversicherung, Fonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben); DE nur KV/PV/RV/AV, IT an der OECD geeicht, FR und PL mit allen Abgaben. Dazu: Gesundheitsbeitrag PL bei der OECD; Paar mit zwei Einkommen (OECD Tab. 1.5) im Modell nicht abbildbar; Alleinerziehende FR gegen Ministerium (+200 bis +400 €) | Weitergabe je Staat; PL ohne Wirkung auf die Anteile | v4.51 |
+| R13 | **Abgrenzung erledigt v4.52 (E16); offen: Gesundheitsbeitrag PL bei der OECD, Paar mit zwei Einkommen, Alleinerziehende FR, Sätze AT/EP ES und AGS FR belegen** – **Abgrenzung der wegfallenden Arbeitgeberabgaben je Staat (v4.51):** welche Abgaben im neuen System entfallen und der Weitergabe unterliegen (Unfallversicherung, Fonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben); DE nur KV/PV/RV/AV, IT an der OECD geeicht, FR und PL mit allen Abgaben. Dazu: Gesundheitsbeitrag PL bei der OECD; Paar mit zwei Einkommen (OECD Tab. 1.5) im Modell nicht abbildbar; Alleinerziehende FR gegen Ministerium (+200 bis +400 €) | Weitergabe je Staat; PL ohne Wirkung auf die Anteile | v4.51 |
+| R14 | **Kennzahlen maschinell prüfen (v4.52):** Werte in `KENNZAHLEN.md` mit Status „geltend“ gegen die Ergebnisdateien abgleichen (Korrekturen 74, 79, 80) | keine; Verlässlichkeit der Angaben | v4.52 |
 | R12 | **Verhaltenswirkungen, Stufe 2 (v4.48):** V1 Grenzbelastung 0–30.000 € mit Aufstockung je Haushaltstyp; V2 Arbeitsangebot als Band (Elastizitäten mit Quelle) in der Mikrosimulation; V3 asymmetrische Überwälzung der Mehrwertsteuer im Preisniveau; V4 Ausweichband Vermögen gegen Jakobsen u. a. 2020; V5 Länderwerte (Nicht-Inanspruchnahme, nicht erklärte Arbeit, Vertrauen; zu R5); V6 Akzeptanzbefragung | Aufkommen und Dividende (V2–V4), Darstellung (V6) | v4.48, `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md` |
 
 ### 7.2 Offen – Entscheidungen der Initiative
@@ -4340,6 +4382,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E13 | **entschieden v4.49/v4.50:** Pflichtvorsorge als Sperrkonto bis zur Altersgrenze, wenige Anlageoptionen, Standardfonds |
 | E14 | **entschieden v4.49:** Rentenkürzung pauschal auf alle Rentenzahlungen aus dem alten System, unabhängig vom Rentenbeginn |
 | E15 | **entschieden v4.49:** Dividende beteiligt an Lenkung und Digitalisierungsgewinnen (Plattformen); Label mit Zertifizierung durch zugelassene, staatlich überwachte Stellen |
+| E16 | **entschieden v4.52:** Weitergabe nur aus den entfallenden Beiträgen zur sozialen Sicherung, in allen Staaten wie DE (Unfallversicherung, Garantiefonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben) |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

@@ -217,9 +217,39 @@ def deckel_lohn(c):
     return P["weitergabe_deckel"]["grundbedarf_faktor"] * LS["staaten"][c]["grundbedarf_jahr_eur"] * faktor(c)
 
 
+def fr_ag_entfaellt(b):
+    """v4.52 (R13): Teil der Arbeitgeberabgaben FR, der im neuen System entfällt (soziale Sicherung: maladie, vieillesse, agirc-arrco,
+    allocations familiales, csa, chômage). Bleiben: accidents du travail, FNAL, AGS, formation, apprentissage, versement mobilité, PEEC.
+    Die RGDU mindert die Beiträge in ihrer Bemessung anteilig (Annahme: proportional), formation/apprentissage/mobilité/PEEC mindert sie nicht."""
+    a, smic, pss, B = F["ag_satz"], F["smic"], F["pss"], P["ag_bleibt"]["fr"]
+    r = b / smic if smic else 9
+    fall = b * ((a["maladie_red"] if r <= F["ag_schwellen_smic"]["maladie_red"] else a["maladie"]) + (a["af_red"] if r <= F["ag_schwellen_smic"]["af_red"] else a["af"])
+                + a["vieillesse_deplaf"] + a["csa"]) / 100 + min(b, 4 * pss) * (a["chomage_ags"] - B["ags"]) / 100 \
+        + min(b, pss) * (a["vieillesse_plaf"] + a["agirc_t1"]) / 100 + max(0.0, min(b, 8 * pss) - pss) * a["agirc_t2"] / 100
+    rgdu_bleibt = b * a["at"] / 100 + min(b, pss) * a["fnal"] / 100 + min(b, 4 * pss) * B["ags"] / 100
+    nicht_rgdu = b * (a["formation"] + a["apprentissage"] + a["mobilite"] + a["peec"]) / 100
+    gesamt = fr_ag(b)                                   # nach RGDU
+    basis = fall + rgdu_bleibt
+    nach_rgdu = max(0.0, gesamt - nicht_rgdu)           # Beiträge in der Bemessung der RGDU nach Abzug
+    return nach_rgdu * fall / basis if basis > 0 else 0.0
+
+
+def ag_entfaellt(c, b):
+    """v4.52 (R13, Beschluss 24.10.2026): nur Beiträge zur sozialen Sicherung entfallen und unterliegen der Weitergabe (wie DE: KV, PV, RV, AV).
+    Unfallversicherung, Insolvenz- und Garantiefonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben beim Betrieb."""
+    if c == "FR":
+        return fr_ag_entfaellt(b)
+    if c == "ES":
+        return es_ag(b) - min(b, S["base_max"]) * P["ag_bleibt"]["es"] / 100
+    if c == "PL":
+        return pl_ag(b) - b * P["ag_bleibt"]["pl"] / 100
+    return MODELLE[c][1](b)                             # IT: an der OECD geeicht (INPS), Annahme: ohne INAIL
+
+
 def ag_weitergabe(c, b):
-    """v4.36 (E2, einheitlich): Arbeitgeberbeiträge für die Weitergabe, höchstens der Betrag beim Deckel-Lohn (vorher v4.33 nur FR)."""
-    return min(MODELLE[c][1](b), MODELLE[c][1](deckel_lohn(c)))
+    """v4.36 (E2, einheitlich): Arbeitgeberbeiträge für die Weitergabe, höchstens der Betrag beim Deckel-Lohn (vorher v4.33 nur FR).
+    v4.52 (R13): nur die entfallenden Beiträge."""
+    return min(ag_entfaellt(c, b), ag_entfaellt(c, deckel_lohn(c)))
 
 
 def zu_faktor(c, j):

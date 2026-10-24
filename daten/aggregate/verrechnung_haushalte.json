@@ -35,25 +35,25 @@
    "zuschlag_verrechnung_2028": 21.3,
    "gleich": {
     "mehr_monat": {
-     "0.5": -119,
-     "1": 480,
-     "2": 849
+     "0.5": -126,
+     "1": 371,
+     "2": 668
     },
     "anteil_mehr": {
-     "alleinstehend": 100,
+     "alleinstehend": 73,
      "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 98
     }
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": -145,
-     "1": 390,
-     "2": 654
+     "0.5": -152,
+     "1": 286,
+     "2": 480
     },
     "anteil_mehr": {
      "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 100,
+     "alleinerziehend, 1 Kind": 73,
      "Paar, ein Einkommen, 2 Kinder": 98
     }
    }
@@ -91,9 +91,9 @@
    "zuschlag_verrechnung_2028": 18.3,
    "gleich": {
     "mehr_monat": {
-     "0.5": 245,
-     "1": 380,
-     "2": 454
+     "0.5": 228,
+     "1": 350,
+     "2": 400
     },
     "anteil_mehr": {
      "alleinstehend": 100,
@@ -103,12 +103,12 @@
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": 233,
-     "1": 350,
-     "2": 389
+     "0.5": 217,
+     "1": 321,
+     "2": 336
     },
     "anteil_mehr": {
-     "alleinstehend": 100,
+     "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 100,
      "Paar, ein Einkommen, 2 Kinder": 100
     }
@@ -119,9 +119,9 @@
    "zuschlag_verrechnung_2028": 13.5,
    "gleich": {
     "mehr_monat": {
-     "0.5": 1428,
-     "1": 1418,
-     "2": 1564
+     "0.5": 1393,
+     "1": 1348,
+     "2": 1425
     },
     "anteil_mehr": {
      "alleinstehend": 100,
@@ -131,9 +131,9 @@
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": 1450,
-     "1": 1474,
-     "2": 1695
+     "0.5": 1406,
+     "1": 1404,
+     "2": 1554
     },
     "anteil_mehr": {
      "alleinstehend": 100,

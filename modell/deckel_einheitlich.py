@@ -14,7 +14,7 @@ RB = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
     spec.loader.exec_module(RB)
 SL, HL = RB.SL, RB.SL.HL
-ROH = lambda c, b: SL.H33.ag_roh(b) if c == "DE" else HL.MODELLE[c][1](b)
+ROH = lambda c, b: SL.H33.ag_roh(b) if c == "DE" else HL.ag_entfaellt(c, b)   # v4.52 (R13): nur entfallende Beiträge
 LAENDER = ("DE", "FR", "IT", "ES", "PL")
 FAKTOREN = (3, 5, 6, 6.5, 7, 8)
 

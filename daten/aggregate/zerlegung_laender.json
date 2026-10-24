@@ -25,47 +25,47 @@
      "rest": 659
     },
     "30000|2|2": {
-     "gesamt": -195,
-     "altlastenzuschlag": -184,
+     "gesamt": -253,
+     "altlastenzuschlag": -175,
      "pflichtvorsorge": -250,
      "dividende_unter_de_niveau": -380,
      "prime_activite": -634,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 1253
+     "rest": 1186
     },
     "45000|1|0": {
-     "gesamt": 396,
-     "altlastenzuschlag": -331,
+     "gesamt": 292,
+     "altlastenzuschlag": -316,
      "pflichtvorsorge": -375,
      "dividende_unter_de_niveau": -88,
      "prime_activite": 0,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 1190
+     "rest": 1071
     },
     "45000|2|2": {
-     "gesamt": 140,
-     "altlastenzuschlag": -339,
+     "gesamt": 35,
+     "altlastenzuschlag": -324,
      "pflichtvorsorge": -375,
      "dividende_unter_de_niveau": -382,
      "prime_activite": -236,
      "allocations_familiales": 0,
      "quotient_familial": -10,
-     "rest": 1482
+     "rest": 1362
     }
    },
    "zuschlag": 21.3,
    "zuschlag_neustart": 17.9,
    "anteil_basis": {
     "alleinstehend": 36,
-    "alleinerziehend, 1 Kind": 36,
+    "alleinerziehend, 1 Kind": 20,
     "Paar, ein Einkommen, 2 Kinder": 18
    },
    "anteil_neustart": {
-    "alleinstehend": 62,
+    "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 36,
-    "Paar, ein Einkommen, 2 Kinder": 33
+    "Paar, ein Einkommen, 2 Kinder": 18
    },
    "anteil_ohne_zuschlag": {
     "alleinstehend": 62,
