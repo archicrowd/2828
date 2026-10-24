@@ -8,7 +8,7 @@ einen europäischen Kern von zehn Staaten.
 Dieses Repository ist die **Rückseite der Webseite**: Es zeigt, woher jede Zahl
 kommt, wann sie sich geändert hat und was sich als falsch erwiesen hat.
 
-**Modellstand: v4.41** (Logbuch Band III, 24. Oktober 2026). Geltend ist Stand C „Das Goldene Drittel“ (siehe unten); die frühere Fassung des Gesamtkonzepts vom 10. Oktober 2026 (Stand B, Quote 30,2 %, `modell/gesamtrechnung.py`) ist Vorläufer. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`). **Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`.** Das Release `v3.5`
+**Modellstand: v4.42** (Logbuch Band III, 24. Oktober 2026). Geltend ist Stand C „Das Goldene Drittel“ (siehe unten); die frühere Fassung des Gesamtkonzepts vom 10. Oktober 2026 (Stand B, Quote 30,2 %, `modell/gesamtrechnung.py`) ist Vorläufer. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0 (`LIZENZ.md`). **Einstieg für Dritte: `DATENZUGANG.md`, für KI-Agenten: `AGENTS.md`.** Das Release `v3.5`
 auf GitHub zeigt auf den Stand des übernommenen Logbuchs (Commit `a5808b1`).
 
 Einstieg: `INDEX.md` (Wegweiser, Stand A und Stand B, Naht zwischen beiden).
@@ -31,10 +31,13 @@ Referenz und Regressionsprüfung erhalten. Bis v4.11 wiesen README, INDEX, AGENT
 | Verteilung (Gini), Empfindlichkeiten, Gesamtlast | `modell/gini.py`, `modell/gini_frankreich.py`, `modell/weitergabe_sensitivitaet.py`, `modell/gesamtlast33.py` |
 | Architektur: gemeinsame Aufgaben, Regionen (DE, Kreise) | `modell/dach_beitrag.py`, `modell/regionen_de.py` (Rohdaten je Kreis nur lokal) |
 | Offene Punkte der Prüfung: Rückfallregel, Preisniveau, Ausweichen | `modell/weitergabe_rueckfall.py`, `modell/preisniveau33.py`, `modell/ausweichen33.py` |
+| Fonds der 30, Verrechnung je Staat, Kürzungssatz der Renten je Staat | `modell/fonds_klub.py`, `modell/kuerzung_laender.py`, `modell/verrechnung_haushalte.py`, `modell/fondszins.py` |
+| Mikrosimulation DE (Beschäftigte, Beamte, Selbständige, Rentner, Kapital, Inanspruchnahme), Rentnerregel E | `modell/mikro_de.py`, `modell/mikro_bs_de.py`, `modell/mikro_rentner_de.py`, `modell/rentner_kombi.py` |
+| Mehrwertsteuer nach Einkommen, Vermögensbasis, Deckel der Weitergabe | `modell/mwst_verteilung.py`, `modell/vermoegensbasis33.py`, `modell/deckel_einheitlich.py` |
 | Webseite (sechs Sprachen) | `seite/werkzeuge/drittel_bau.py` → `seite/stand-c/` |
 | Konzept und Kurzfassung | `dokumente/werkzeuge/konzept33-bau.js` → `dokumente/entwurf/TAX-Drittel-Konzept.pdf` |
 
-Welche Zahl gilt und wie sie abgegrenzt ist (Dividendenpfade, Altlasten, Gesamtlast, Lohnbasis): **`KENNZAHLEN.md`**. Alle Stufen: `python3 modell/alles.py`. Beschlüsse und offene Punkte: Logbuch Band III ab v3.43, Abschnitt 7.
+Welche Zahl gilt und wie sie abgegrenzt ist (Dividendenpfade, Altlasten, Gesamtlast, Lohnbasis): **`KENNZAHLEN.md`**. Für eine externe Prüfung: **`projekt/Pruefmappe-Extern-2026-10-24.md`**. Alle Stufen: `python3 modell/alles.py`. Beschlüsse und offene Punkte: Logbuch Band III ab v3.43, Abschnitt 7.
 
 ## Aufbau
 

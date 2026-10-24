@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.41**
+Stand: 24. Oktober 2026 · Modellstand **v4.42**
 
 ---
 
@@ -3949,6 +3949,23 @@ höheren Grundpfad proportional wachsen. Seite: unverändert in der Methode (Dif
 
 ---
 
+### v4.42 — Prüfmappe für eine externe Prüfung (Stand C)
+
+**Art der Änderung: PATCH (Dokumentation), keine Zahl bewegt.** 24. Oktober 2026.
+
+Neu `projekt/Pruefmappe-Extern-2026-10-24.md`: was geprüft werden soll (Stand C, nicht Stand B – Lehre aus Korrektur 66), wie man nachrechnet,
+die tragenden Zahlen, die Setzungen mit ihrer Empfindlichkeit (Weitergabe, Rentnerregel E, Fondszins, Skalierung 10 → 30, Tarif, Kinder,
+Beamte, Ausweichen), Annahmen ohne amtlichen Beleg, bisherige Prüfungen gegen amtliche Werte, offene Punkte und sechs Prüffragen mit Form
+der Rückmeldung. Alle Zahlen gegen die Ergebnisdateien geprüft (zwei Werte beim Schreiben berichtigt: Anteile nach Weitergabe aus
+`basis.ergebnis` statt aus der Spanne der Ziehungen; Prüfskript der Schnittstelle heißt `schnittstelle/pruefe_beitrag.py`).
+
+Dazu: README-Skriptkarte um die Skripte seit v4.20 ergänzt; Hinweis auf die Prüfmappe in README und DATENZUGANG (dessen Datenweg beschreibt
+weiter überwiegend Stand B); Kopf von KENNZAHLEN berichtigt („Stand v4.21“ stand seit v4.22 unverändert, obwohl fortgeschrieben).
+
+**Datenquelle:** Ergebnisdateien v4.41. **Wodurch aufgefallen:** Auftrag der Initiative (24.10.2026).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4010,7 +4027,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.41
+## 7 | Offene Punkte, Stand v4.42
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4058,7 +4075,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative) |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
-| P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`) |
+| P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |
 | P8 | Obergrenze des Dachs (32 %) für Stand C neu herleiten; Estland-Satz prüfen |
 
 ### 7.4 Erledigt (mit Version)
