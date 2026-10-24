@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.49**
+Stand: 24. Oktober 2026 · Modellstand **v4.50**
 
 ---
 
@@ -4152,6 +4152,23 @@ mit zwei Fällen: allgemeine Satzänderung und zertifizierungsgetriebene Senkung
 
 ---
 
+### v4.50 — E12 entschieden (Aufstockung auf Antrag), Empfehlungen übernommen
+
+**Art der Änderung: PATCH (Entscheidung und Text), keine Zahl bewegt.** 24. Oktober 2026.
+
+**Entscheidung der Initiative (24.10.2026):** „Die Kommune zahlt die Aufstockung auf Antrag“; den Empfehlungen aus v4.49 wird gefolgt: Hinweisschreiben
+mit vorausgefülltem Antrag von Amts wegen aus Steuer- und Lohndaten, Weiterbewilligung ohne neuen Antrag, solange die Daten passen (E12);
+Pflichtvorsorge mit wenigen Anlageoptionen und einem Standardfonds (E13). Webseite vorerst nicht aktualisieren.
+
+**Konzept (Fassung 4.50):** Abschnitt 3.2 (Auszahlung auf Antrag mit Hinweis und Vorausfüllung), Begriff Pflichtvorsorge (Standardfonds).
+
+**Rechnung:** unverändert volle Inanspruchnahme auf beiden Seiten (vorsichtig für die Kosten). Mit Antrag ist neu eine Restquote der
+Nicht-Inanspruchnahme zu erwarten; als Variante zu R12 (V1/V2) vorzumerken.
+
+**Datenquelle:** Entscheidung der Initiative. **Wodurch aufgefallen:** Gestaltungsfrage E12 aus v4.48/v4.49.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4217,7 +4234,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.49
+## 7 | Offene Punkte, Stand v4.50
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4255,8 +4272,8 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E7 | Dauer der Dividende unter Trends, Mindestniveau (N23) |
 | E8 | Weitergabe nach dem Stichtag: neue Arbeitsverträge (N30) |
 | E9 | **entschieden v4.31:** 20 % der Beihilfe-Ersparnis an Beamte, keine Versicherungszulage |
-| E12 | Aufstockung auf Antrag oder von Amts wegen (v4.49): Vorschlag Antrag mit Hinweis und Vorausfüllung von Amts wegen |
-| E13 | **entschieden v4.49:** Pflichtvorsorge als Sperrkonto bis zur Altersgrenze mit Anlagewahl; offen: Zahl der Optionen, Standardfonds |
+| E12 | **entschieden v4.50:** Aufstockung auf Antrag bei der Kommune, mit Hinweis und vorausgefülltem Antrag von Amts wegen, Weiterbewilligung ohne neuen Antrag |
+| E13 | **entschieden v4.49/v4.50:** Pflichtvorsorge als Sperrkonto bis zur Altersgrenze, wenige Anlageoptionen, Standardfonds |
 | E14 | **entschieden v4.49:** Rentenkürzung pauschal auf alle Rentenzahlungen aus dem alten System, unabhängig vom Rentenbeginn |
 | E15 | **entschieden v4.49:** Dividende beteiligt an Lenkung und Digitalisierungsgewinnen (Plattformen); Label mit Zertifizierung durch zugelassene, staatlich überwachte Stellen |
 
