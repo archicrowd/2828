@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.54**
+Stand: 24. Oktober 2026 · Modellstand **v4.55**
 
 ---
 
@@ -4330,6 +4330,35 @@ Prüfwert: sichtbar gezahlte Mehrwertsteuer heute im Mittel 8,6 % des Konsums (e
 
 ---
 
+### v4.55 — Webseite nach Projektstand: maßgebliche Textänderungen in sechs Sprachen; Upload-Paket
+
+**Art der Änderung: PATCH (Texte), keine Zahl bewegt.** 30. Oktober 2026.
+
+**Auftrag der Initiative (30.10.2026):** Webseite nach dem Stand des Projekts überarbeiten, beschränkt auf maßgebliche Änderungen. Letztes
+hochgeladenes Paket: v4.45. Zahlen (FR nach Korrekturen 77/78, E16, Mehrwertsteuer nach Einkommen; Kennzahlen) kommen aus den Ergebnisdateien
+und waren in den gebauten Seiten seit v4.51–v4.54 bereits enthalten; geändert werden die Texte, die Beschlüssen seit v4.46 widersprachen oder
+sie nicht nannten.
+
+**Neu `seite/werkzeuge/stand_texte.py`** (angewandt am Ende von `drittel_bau.texte()`, jede Stelle muss genau einmal vorkommen):
+
+| Schlüssel | Änderung | Grundlage |
+|---|---|---|
+| `b2_p` | Weitergabe: nur die wegfallenden Beiträge (Krankheit, Pflege, Rente, Arbeitslosigkeit, Familie); Unfallversicherung, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben beim Betrieb (ES/PL mit den Landesbegriffen) | E16, v4.52 |
+| `b8_p` | Label: günstigere Stufe über Zertifizierung bei zugelassenen, staatlich überwachten Stellen | E15, v4.49 |
+| `b10_p`, `div_p1` | Dividende beteiligt an Lenkung und Digitalisierungsgewinnen (Plattformen am Ort der Kundschaft) statt „gibt vor allem zurück“ | E15, v4.49 |
+| `b11_p` | Pflichtvorsorge gesperrt bis zur Altersgrenze, wenige Anlageoptionen, Standardfonds | E13, v4.49/v4.50 |
+| `eff2_p`, `bess_r4b` | Aufstockung auf Antrag, Hinweis und vorausgefüllter Antrag von Amts wegen (EN, FR, IT, ES: Satz neu, fehlte bisher) | E12, v4.50 |
+| `sich4_p` | Kürzung der Altzusagen ab dem Stichtag, gleich wann die Rente begann | E14, v4.49 |
+| `fuss_meth_p` | Methodik: Ländermodelle gegen OECD Taxing Wages 2026 geprüft, Abweichungen im Logbuch | v4.51 |
+
+Übersetzungen maschinell; muttersprachlich gegenzulesen (P3). Prüfung: Darstellung DE auf Desktop und Mobil (390 px) ohne waagrechten Überlauf.
+Nicht geändert (keine maßgebliche Änderung): Rechner, Grafiken, Länderkarten, Gini-Text, Kommunen. Die Grenzbelastungstabelle (v4.47) ist weiter
+nicht auf der Seite (Entscheidung der Initiative offen).
+
+**Paket:** `Webseite-v4.55.zip` (außerhalb des Repositorys). **Datenquelle:** Beschlüsse E12–E16. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4400,7 +4429,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.54
+## 7 | Offene Punkte, Stand v4.55
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4454,7 +4483,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
-| P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative) |
+| P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |
 | P8 | Obergrenze des Dachs (32 %) für Stand C neu herleiten; Estland-Satz prüfen |

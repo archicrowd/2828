@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.54"
+VERSION = "v4.55"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -102,6 +102,9 @@ _ANT = min(v for k, v in H["anteil_erwachsene_mit_mehr"].items() if k.startswith
 assert _ANT >= 90, f"Aussage 9 von 10 nicht gedeckt: {_ANT} %"
 
 
+_spec_s = importlib.util.spec_from_file_location("stand_texte", Path(__file__).resolve().parent / "stand_texte.py")   # v4.55
+ST = importlib.util.module_from_spec(_spec_s)
+_spec_s.loader.exec_module(ST)
 _spec_k = importlib.util.spec_from_file_location("kommunen_texte", Path(__file__).resolve().parent / "kommunen_texte.py")   # v4.45
 KT = importlib.util.module_from_spec(_spec_k)
 _spec_k.loader.exec_module(KT)
@@ -222,7 +225,7 @@ def texte(sp, c):
         if re.search(r"«[a-z0-9_]+»", v):
             raise SystemExit(f"{sp}/{k}: Platzhalter ohne Wert: {v}")
         out[k] = v
-    return out
+    return ST.anwenden(sp, out)   # v4.55: Texte nach Projektstand v4.54
 
 
 def rr_de():
