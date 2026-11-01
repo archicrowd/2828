@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.59**
+Stand: 24. Oktober 2026 · Modellstand **v4.60**
 
 ---
 
@@ -4469,6 +4469,30 @@ Kit und Kontaktabschnitt nennen das Archiv; `CITATION.cff` der Seite mit `doi`; 
 
 ---
 
+### v4.60 — Working Paper (Entwurf, englisch) aus den Ergebnisdateien
+
+**Art der Änderung: MINOR (neue Ausgabe der Kette), keine Zahl bewegt.** 1. November 2026.
+
+**Anlass:** Auftrag der Initiative (01.11.2026): Working Paper als Anker für Zitate, nach dem Archiv des Forschungs-Kits auf Zenodo (v4.59).
+
+**Neu `dokumente/werkzeuge/working_paper_bau.py` → `dokumente/working-paper/Golden-Third-Working-Paper.html/.pdf`** (10 Seiten A4, Stufe der
+Kette nach der Forschungsseite; PDF-Stand über `quellen.sha256` wie bei der Seite). Gliederung: Abstract; 1 Einleitung; 2 Vorschlag; 3 Modell und
+Daten; 4 Ergebnisse (Haushalte in fünf Ländern, Gini, OECD-Abgleich, Mikrosimulation DE und Rentner, Netz und Dividende, Fonds, Mehrwertsteuer,
+Grenzbelastung); 5 Empfindlichkeit (Weitergabe, Fondszins, Zins × Wachstum, Ausweichen, Inanspruchnahme); 6 Verhaltenswirkungen (qualitativ);
+7 Grenzen; 8 Prüfungen und Korrekturen; 20 Quellen; Anhang Z01–Z34. Alle Zahlen aus den Ergebnisdateien über `forschung_bau`/`forschung_en`.
+Literatur nur aus der Quellenliste der Verhaltensuntersuchung (am 24.10.2026 an Zusammenfassung oder Volltext geprüft) und amtlichen Datenquellen.
+
+**Beim Gegenlesen berichtigt (vor dem Commit, keine Korrektur im Sinne des Logbuchs):** „Dividende 354 € nach Finanzierung des Bodens“ war falsch –
+der Faktor `topf` (0,948) verteilt denselben Betrag neu, weil Kinder 80 % statt 50 % erhalten; „re-implemented the core independently“ ersetzt
+durch „in their own code“ (Bezeichnung der Prüfungen, v4.58); Aussage zur Sichtbarkeit von Steuern (Chetty, Looney, Kroft 2009) auf den Befund
+begrenzt, Übertragung auf das Label als ungeprüft gekennzeichnet.
+
+**Status:** Entwurf zur Durchsicht durch die Initiative; nicht auf der Seite und nicht auf Zenodo. JEL-Codes und Schlüsselwörter sind Vorschlag.
+
+**Datenquelle:** Ergebnisdateien v4.59. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4541,7 +4565,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.59
+## 7 | Offene Punkte, Stand v4.60
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4595,7 +4619,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
-| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.58 (`projekt/Pruefprogramm-Delta-v4.42-v4.58.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper mit DOI (Zenodo) |
+| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.58 (`projekt/Pruefprogramm-Delta-v4.42-v4.58.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper: Entwurf v4.60 durchsehen, dann eigener DOI (Zenodo) |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |

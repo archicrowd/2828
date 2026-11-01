@@ -50,6 +50,7 @@ SEIT_PRUEFUNG = [
  ("v4.57", "Haushaltstypen je Land (neue Ausgabe)", "keine geltende Zahl; neue Werte Z20–Z34 der englischen Fassung"),
  ("v4.58", "Prüfstand auf der Seite; Korrektur 83", "keine Rechnung"),
  ("v4.59", "Archiv auf Zenodo, DOI auf der Seite", "keine Rechnung"),
+ ("v4.60", "Working Paper (Entwurf, englisch) aus den Ergebnisdateien", "keine Rechnung"),
 ]
 
 

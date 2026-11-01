@@ -26,6 +26,7 @@ SINCE_REVIEW = [
  ("v4.57", "Household types by country (new output)", "no adopted figure; new values Z20–Z34"),
  ("v4.58", "Review coverage shown on the site; correction 83", "no calculation"),
  ("v4.59", "Archive on Zenodo, DOI on the site", "no calculation"),
+ ("v4.60", "Working paper (draft) built from the result files", "no calculation"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]

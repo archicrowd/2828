@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.59 · höchste Korrekturnummer 83 · 544 Dateien im Repository
+Modellstand v4.60 · höchste Korrekturnummer 83 · 548 Dateien im Repository
 
 ## Bausteine
 
@@ -86,6 +86,7 @@ Modellstand v4.59 · höchste Korrekturnummer 83 · 544 Dateien im Repository
 | N41 | B32 Länderseiten | B31 Drittel-System | offen |
 | N42 | B31 Drittel-System | B01 Logbuch | offen |
 | N43 | B31 Drittel-System | B01 Logbuch | offen |
+| N44 | B31 Drittel-System | B01 Logbuch | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -106,3 +107,4 @@ Modellstand v4.59 · höchste Korrekturnummer 83 · 544 Dateien im Repository
 - Hinweis: Naht N41 offen: B32 Länderseiten -> B31 Drittel-System: v4.54: FR aus Eurostat hbs_str_t223 (2020); IT, ES, PL Faktor 1 bis zum gesicherten Abruf
 - Hinweis: Naht N42 offen: B31 Drittel-System -> B01 Logbuch: v4.56: Prüfsumme der Quellen in docs/downloads/quellen.sha256, Stufe schlägt fehl bis --pdf; Veröffentlichung über GitHub Pages durch die Initiative (P9) v4.57: englische Hauptfassung im Wurzelverzeichnis, deutsch unter docs/de/, gemeinsame Prüfsumme beider Kits; öffentliches Repository goldenes-drittel v4.59: Zenodo-Archiv, Concept-DOI 10.5281/zenodo.23855733
 - Hinweis: Naht N43 offen: B31 Drittel-System -> B01 Logbuch: v4.58: geprüft bis v4.42; Nachprüfung nach projekt/Pruefprogramm-Delta-v4.42-v4.58.md; Zahl der Korrekturen und Stufen aus Logbuch und Kette gelesen (Korrektur 83)
+- Hinweis: Naht N44 offen: B31 Drittel-System -> B01 Logbuch: v4.60: Prüfsumme dokumente/working-paper/quellen.sha256, Stufe schlägt fehl bis --pdf; Entwurf zur Durchsicht
