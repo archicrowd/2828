@@ -22,7 +22,11 @@ LAENDER = ("DE", "FR", "IT", "ES", "PL")
 
 def lauf(c):
     aw = SL.HL.P["oecd"]["durchschnittslohn"][c]
-    return dict(mehr_monat={str(f): round((RB.neu(c, f * aw, 1, 0) - SL.heute(c, f * aw, 1, 0)) / 12) for f in (0.5, 1, 2)}, anteil_mehr=RB.anteile(c))
+    typen = {"alleinstehend": (1, 0), "alleinerziehend, 1 Kind": (1, 1), "Paar, ein Einkommen, 2 Kinder": (2, 2)}
+    return dict(mehr_monat={str(f): round((RB.neu(c, f * aw, 1, 0) - SL.heute(c, f * aw, 1, 0)) / 12) for f in (0.5, 1, 2)}, anteil_mehr=RB.anteile(c),
+                # v4.57: alle drei Haushaltstypen (für die internationale Forschungsseite), gleiche Rechnung wie mehr_monat
+                mehr_monat_typen={t: {str(f): round((RB.neu(c, f * aw, e, k) - SL.heute(c, f * aw, e, k)) / 12) for f in (0.5, 1, 2)}
+                                  for t, (e, k) in typen.items()}, durchschnittslohn=aw)
 
 
 def main():

@@ -1,0 +1,348 @@
+{
+ "model_version": "v4.57",
+ "date": "1 November 2026",
+ "licence": "CC BY 4.0",
+ "citation": "Initiative 28:28 (2026): The Golden Third – model, log and documentation, model version v4.57, 1 November 2026. Licence: scripts MIT, texts and results CC BY 4.0.",
+ "figures": [
+  {
+   "id": "Z01",
+   "item": "Transformation dividend per adult (Germany)",
+   "value": 354,
+   "unit": "€ per month",
+   "reference": "2028, purchasing power 2026",
+   "file_path": "netz33.json × regel_boden.json topf",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z02",
+   "item": "Transformation dividend per child (Germany)",
+   "value": 283,
+   "unit": "€ per month",
+   "reference": "as Z01, child share 0.8",
+   "file_path": "as Z01",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z03",
+   "item": "Gain, single, gross wage € 42,000 (Germany)",
+   "value": 611,
+   "unit": "€ per month",
+   "reference": "2028; pass-through 80 %, surcharge 15.0 %, compulsory saving 10 %",
+   "file_path": "haushalte33.json faelle",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z04",
+   "item": "Gain, couple with one earner and 2 children, € 42,000 (Germany)",
+   "value": 674,
+   "unit": "€ per month",
+   "reference": "as Z03",
+   "file_path": "haushalte33.json faelle",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z05",
+   "item": "Working-age households better off (Germany)",
+   "value": 85.1,
+   "unit": "%",
+   "reference": "2028; synthetic microsimulation, pass-through 80 %",
+   "file_path": "mikro_de.json basis/ergebnis/0.8",
+   "status": "check",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z06",
+   "item": "All households better off (Germany)",
+   "value": 69.3,
+   "unit": "%",
+   "reference": "as Z05",
+   "file_path": "mikro_de.json basis/ergebnis/0.8/gesamt",
+   "status": "check",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z07",
+   "item": "Pensioner households better off (pension rule E)",
+   "value": 32.2,
+   "unit": "%",
+   "reference": "2028, Germany",
+   "file_path": "rentner_kombi.json varianten/4",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z08",
+   "item": "Pensioner households, mean change (pension rule E)",
+   "value": -121,
+   "unit": "€ per month",
+   "reference": "2028, Germany",
+   "file_path": "rentner_kombi.json varianten/4",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z09",
+   "item": "Contribution to the common fund of 30 states",
+   "value": 5.17,
+   "unit": "% of GDP",
+   "reference": "annual until repaid",
+   "file_path": "fonds_geltend.json",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z10",
+   "item": "Legacy surcharge on all taxes (common rate)",
+   "value": 15.5,
+   "unit": "%",
+   "reference": "fund interest 2.45 %",
+   "file_path": "fonds_geltend.json",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z11",
+   "item": "Debt ratio of the fund, peak",
+   "value": 148.1,
+   "unit": "% of GDP",
+   "reference": "in 2055",
+   "file_path": "fonds_geltend.json",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z12",
+   "item": "Fund fully repaid",
+   "value": 2098,
+   "unit": "year",
+   "reference": "",
+   "file_path": "fonds_geltend.json",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z13",
+   "item": "Old pension claims above the dividend (Z)",
+   "value": 9.42,
+   "unit": "% of GDP",
+   "reference": "2028, average of states",
+   "file_path": "altlasten.json beschluss",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z14",
+   "item": "Total burden, taxes and fund (Germany)",
+   "value": 38.7,
+   "unit": "% of GDP",
+   "reference": "2028; today 40.76 % (Eurostat 2024)",
+   "file_path": "gesamtlast33.json reihe/0",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z15",
+   "item": "Total burden including compulsory saving (own account)",
+   "value": 42.8,
+   "unit": "% of GDP",
+   "reference": "2028",
+   "file_path": "gesamtlast33.json reihe/0",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z16",
+   "item": "Cost of the strong net (Germany)",
+   "value": 9.63,
+   "unit": "% of GDP",
+   "reference": "2028",
+   "file_path": "netz33.json beschluss/reihe/0",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z17",
+   "item": "Marginal burden at € 60,000: today / new 2028 (Germany)",
+   "value": "48.8 / 40.0",
+   "unit": "% per additional euro",
+   "reference": "single; new without compulsory saving",
+   "file_path": "grenzbelastung33.json zeilen/5",
+   "status": "check",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z18",
+   "item": "VAT label burden, factor lowest / highest income class (Germany)",
+   "value": "0.87 / 1.07",
+   "unit": "relative to mean",
+   "reference": "EVS 2023",
+   "file_path": "mwst_verteilung.json klassen",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z19",
+   "item": "One-off price level effect of the VAT label 2028",
+   "value": "1.2 to 2.1",
+   "unit": "%",
+   "reference": "mechanical 2.47 %",
+   "file_path": "preisniveau33.json reihe/0",
+   "status": "check",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z20",
+   "item": "Gain, single employee at the average wage (Germany)",
+   "value": 726,
+   "unit": "€ per month",
+   "reference": "2028; country's own legacy surcharge after netting",
+   "file_path": "verrechnung_haushalte.json laender/DE",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z21",
+   "item": "Gain, single employee at the average wage (France)",
+   "value": 276,
+   "unit": "€ per month",
+   "reference": "2028; country's own legacy surcharge after netting",
+   "file_path": "verrechnung_haushalte.json laender/FR",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z22",
+   "item": "Gain, single employee at the average wage (Italy)",
+   "value": 412,
+   "unit": "€ per month",
+   "reference": "2028; country's own legacy surcharge after netting",
+   "file_path": "verrechnung_haushalte.json laender/IT",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z23",
+   "item": "Gain, single employee at the average wage (Spain)",
+   "value": 321,
+   "unit": "€ per month",
+   "reference": "2028; country's own legacy surcharge after netting",
+   "file_path": "verrechnung_haushalte.json laender/ES",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z24",
+   "item": "Gain, single employee at the average wage (Poland)",
+   "value": 1404,
+   "unit": "zł per month",
+   "reference": "2028; country's own legacy surcharge after netting",
+   "file_path": "verrechnung_haushalte.json laender/PL",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z25",
+   "item": "Legacy surcharge 2028 after netting (Germany)",
+   "value": 15.0,
+   "unit": "%",
+   "reference": "converging to the common rate by 2058",
+   "file_path": "laenderseiten.json staaten/DE/fonds",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z26",
+   "item": "Legacy surcharge 2028 after netting (France)",
+   "value": 21.3,
+   "unit": "%",
+   "reference": "converging to the common rate by 2058",
+   "file_path": "laenderseiten.json staaten/FR/fonds",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z27",
+   "item": "Legacy surcharge 2028 after netting (Italy)",
+   "value": 22.3,
+   "unit": "%",
+   "reference": "converging to the common rate by 2058",
+   "file_path": "laenderseiten.json staaten/IT/fonds",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z28",
+   "item": "Legacy surcharge 2028 after netting (Spain)",
+   "value": 18.3,
+   "unit": "%",
+   "reference": "converging to the common rate by 2058",
+   "file_path": "laenderseiten.json staaten/ES/fonds",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z29",
+   "item": "Legacy surcharge 2028 after netting (Poland)",
+   "value": 13.5,
+   "unit": "%",
+   "reference": "converging to the common rate by 2058",
+   "file_path": "laenderseiten.json staaten/PL/fonds",
+   "status": "adopted",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z30",
+   "item": "Gini coefficient 2025 → 2028 (Germany)",
+   "value": "30.1 → 26.1",
+   "unit": "index 0–100",
+   "reference": "official 2025 (Eurostat) plus model change",
+   "file_path": "gini.json staaten/DE",
+   "status": "check",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z31",
+   "item": "Gini coefficient 2025 → 2028 (France)",
+   "value": "30.4 → 29.0",
+   "unit": "index 0–100",
+   "reference": "official 2025 (Eurostat) plus model change",
+   "file_path": "gini.json staaten/FR",
+   "status": "check",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z32",
+   "item": "Gini coefficient 2025 → 2028 (Italy)",
+   "value": "31.0 → 26.9",
+   "unit": "index 0–100",
+   "reference": "official 2025 (Eurostat) plus model change",
+   "file_path": "gini.json staaten/IT",
+   "status": "check",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z33",
+   "item": "Gini coefficient 2025 → 2028 (Spain)",
+   "value": "30.8 → 25.0",
+   "unit": "index 0–100",
+   "reference": "official 2025 (Eurostat) plus model change",
+   "file_path": "gini.json staaten/ES",
+   "status": "check",
+   "model_version": "v4.57"
+  },
+  {
+   "id": "Z34",
+   "item": "Gini coefficient 2025 → 2028 (Poland)",
+   "value": "24.9 → 18.7",
+   "unit": "index 0–100",
+   "reference": "official 2025 (Eurostat) plus model change",
+   "file_path": "gini.json staaten/PL",
+   "status": "check",
+   "model_version": "v4.57"
+  }
+ ]
+}

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.56**
+Stand: 24. Oktober 2026 · Modellstand **v4.57**
 
 ---
 
@@ -4391,6 +4391,36 @@ Ein DOI über Zenodo setzt ein öffentliches Repository oder ein hochgeladenes P
 
 ---
 
+### v4.57 — Forschungsseite englisch und international (Hauptfassung), Haushaltstypen je Land
+
+**Art der Änderung: MINOR (neue Ausgabe, neue Spalten in einer Ergebnisdatei), keine geltende Zahl bewegt.** 1. November 2026.
+
+**Anlass:** Auftrag der Initiative (01.11.2026): Das öffentliche Repository `archicrowd/goldenes-drittel` trägt die Forschungsseite; die englische,
+inhaltlich internationale Fassung ist die wichtigste. Entwurf der Startseite am 01.11.2026 freigegeben (Titel „The Golden Third“, Abschnitt „Which states?“).
+
+**`modell/verrechnung_haushalte.py`:** zusätzlich `mehr_monat_typen` (alleinstehend, alleinerziehend mit einem Kind, Paar mit einem Einkommen und
+zwei Kindern; je 0,5 / 1 / 2 × Durchschnittslohn, OECD Taxing Wages 2024) und `durchschnittslohn` je Land. Die bisherigen Werte bleiben unverändert.
+Neue Werte (€ bzw. zł je Monat, 2028, Kaufkraft 2026), Durchschnittslohn: DE 726, FR 276, IT 412, ES 321, PL 1.404 zł (alleinstehend).
+Auffällig und geprüft: FR Paar mit einem Einkommen bei 2 × Durchschnittslohn 0 € (Schnittpunkt; 1,9 × +81,5 €, 2,1 × −86,3 €), Ursache Wegfall
+des quotient familial; DE Paar bei 2 × +78 € (Ehegattensplitting); FR alleinstehend bei 0,5 × −148 € (prime d'activité, RGDU).
+
+**Forschungsseite neu gegliedert:** englische Hauptfassung im Wurzelverzeichnis von `docs/` (`seite/werkzeuge/forschung_en.py`: Übersicht, Households,
+Legacy fund, VAT label, Marginal burden, Reviews, Research kit), deutsche Fassung unter `docs/de/`, gemeinsame Ordner `data/` (vorher `daten/`) und
+`downloads/`. Englisches Kit als PDF (`Research-Kit-Golden-Third.pdf`), `data/figures-to-cite.csv/.json` mit 34 Zahlen (Z01–Z19 wie deutsch, Z20–Z34
+je Referenzland: Gewinn Alleinstehende beim Durchschnittslohn, Zuschlag 2028, Gini). Prüfsumme der Quellen umfasst beide Kits. Prüfprotokolle bleiben
+deutsch; englische Kurzfassungen je Prüfung auf der Seite (eigene Zusammenfassung, an den Protokollen zu prüfen). Geprüft: 1280 und 390 px ohne
+waagrechten Überlauf, keine toten internen Verweise.
+
+**Einschränkung (offen geführt):** Der Anteil „better off“ je Land überträgt die deutsche Lohnverteilung auf den Durchschnittslohn des Landes (Annahme,
+wie seit v4.38). Die Länderrechnungen kennen je Haushalt ein Einkommen; Paare mit zwei Einkommen sind nicht gerechnet.
+
+**Veröffentlichung:** Push in `archicrowd/goldenes-drittel` aus der Sitzung abgelehnt (keine Berechtigung der GitHub-App für dieses Repository).
+Inhalt von `docs/` als Paket für das Hochladen durch die Initiative.
+
+**Datenquelle:** Ergebnisdateien v4.56; OECD Taxing Wages 2024 (Durchschnittslöhne, schon in `heute_laender`). **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4462,7 +4492,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.56
+## 7 | Offene Punkte, Stand v4.57
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4516,7 +4546,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
-| P9 | **Forschungsseite veröffentlichen (v4.56):** GitHub Pages einschalten (Repository öffentlich oder eigenes öffentliches Repository für `docs/`), Prüfberichte 1 und 2 nach Zustimmung ergänzen, englische Fassung, Working Paper mit DOI (Zenodo) |
+| P9 | **Forschungsseite veröffentlichen (v4.56, v4.57):** Inhalt von `docs/` in `archicrowd/goldenes-drittel` hochladen (Sitzung ohne Schreibrecht) und GitHub Pages einschalten (main, Wurzel); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper mit DOI (Zenodo) |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |

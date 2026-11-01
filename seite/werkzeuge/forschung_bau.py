@@ -5,7 +5,8 @@ Empfehlung an die Initiative (01.11.2026): Startseite mit einer Seite je Kernthe
 Grenzbelastung), Prüfprotokolle als Download, Forschungs-Kit (PDF und Zahlen zum Zitieren), Kontakt; später Working Paper mit DOI.
 Alle Zahlen kommen aus den Ergebnisdateien (daten/aggregate/), nicht von Hand. Aufruf in der Kette (modell/alles.py) hält sie aktuell.
 PDFs (Prüfprotokolle, Kit) entstehen mit Chromium aus Markdown/HTML; ohne --pdf werden nur HTML und Daten geschrieben.
-Ausgabe: docs/ (index.html, Themen, pruefungen.html, kit.html, style.css, daten/, downloads/)
+Ausgabe: docs/ (v4.57: englische Hauptfassung im Wurzelverzeichnis aus forschung_en.py, deutsche Fassung in docs/de/, gemeinsam style.css,
+data/ und downloads/)
 """
 import csv, hashlib, html, json, shutil, sys, tomllib
 from pathlib import Path
@@ -94,19 +95,19 @@ ZAHLEN = [
 
 
 def zahlen_dateien(ziel):
-    (ziel / "daten").mkdir(parents=True, exist_ok=True)
+    (ziel / "data").mkdir(parents=True, exist_ok=True)
     kopf = ["id", "groesse", "wert", "einheit", "bezug", "datei_pfad", "status", "modellstand"]
-    with open(ziel / "daten" / "zahlen-zum-zitieren.csv", "w", encoding="utf-8", newline="") as f:
+    with open(ziel / "data" / "zahlen-zum-zitieren.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(kopf)
         for z in ZAHLEN:
             w.writerow(list(z) + [VERSION])
-    (ziel / "daten" / "zahlen-zum-zitieren.json").write_text(json.dumps(
+    (ziel / "data" / "zahlen-zum-zitieren.json").write_text(json.dumps(
         dict(modellstand=VERSION, stand=DATUM, lizenz="CC BY 4.0", zitiervorschlag=ZITAT,
              zahlen=[dict(zip(kopf, list(z) + [VERSION])) for z in ZAHLEN]), ensure_ascii=False, indent=1), encoding="utf-8")
     for n in ("haushalte33.json", "fonds_geltend.json", "fondszins.json", "grenzbelastung33.json", "mwst_verteilung.json",
               "mwst_laender.json", "preisniveau33.json", "validierung_laender.json", "mikro_de.json", "rentner_kombi.json"):
-        shutil.copy(AGG / n, ziel / "daten" / n)
+        shutil.copy(AGG / n, ziel / "data" / n)
 
 
 ZITAT = (f"Initiative 28:28 (2026): Das Goldene Drittel – Modell, Logbuch und Dokumentation, Modellstand {VERSION}, {DATUM}. "
@@ -152,15 +153,15 @@ NAV = [("index.html", "Übersicht"), ("faelle-42000.html", "42.000-€-Fälle"),
 
 
 def seite(datei, titel, inhalt, beschreibung):
-    nav = "".join(f'<a href="{h}"{" aria-current=page" if h == datei else ""}>{t}</a>' for h, t in NAV)
+    nav = "".join(f'<a href="{h}"{" aria-current=page" if h == datei else ""}>{t}</a>' for h, t in NAV) + '<a href="../index.html" lang="en">English</a>'
     return f"""<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(titel)} – Das Goldene Drittel (Forschung)</title><meta name="description" content="{html.escape(beschreibung)}">
-<link rel="stylesheet" href="style.css"></head><body>
+<link rel="stylesheet" href="../style.css"></head><body>
 <header><div class="marke"><a href="index.html">Das Goldene Drittel · Forschung und Prüfung</a></div><nav>{nav}</nav></header>
 <main>{inhalt}</main>
 <footer>Initiative 28:28 · Modellstand {VERSION} · Stand {DATUM} · Texte und Ergebnisse CC BY 4.0, Skripte MIT ·
-Zahlen aus den Ergebnisdateien des Modells (<a href="daten/">daten/</a>) · Kontakt <a href="mailto:{KONTAKT}">{KONTAKT}</a> ·
+Zahlen aus den Ergebnisdateien des Modells (<a href="../data/">data/</a>) · Kontakt <a href="mailto:{KONTAKT}">{KONTAKT}</a> ·
 Impressum und Datenschutz: <a href="{SEITE}">{SEITE.replace("https://", "")}</a></footer>
 </body></html>"""
 
@@ -173,7 +174,7 @@ def tabelle(kopf, zeilen, rechts=(), hl=()):
 
 
 def quelle(*dateien):
-    return '<p class="meta">Daten: ' + ", ".join(f'<a href="daten/{d}"><code>{d}</code></a>' for d in dateien) + \
+    return '<p class="meta">Daten: ' + ", ".join(f'<a href="../data/{d}"><code>{d}</code></a>' for d in dateien) + \
            f" · Modellstand {VERSION} · Zitierfähige Werte: <a href=\"kit.html\">Forschungs-Kit</a></p>"
 
 
@@ -358,7 +359,7 @@ def pdf_name(pfad):
 def p_pruef():
     teile = []
     for titel, text, dok in PRUEF:
-        li = "".join(f'<li><a href="downloads/{pdf_name(p)}">{t}</a> (PDF)</li>' for p, t in dok)
+        li = "".join(f'<li><a href="../downloads/{pdf_name(p)}">{t}</a> (PDF)</li>' for p, t in dok)
         teile.append(f"<h2>{titel}</h2><p>{text}</p><ul>{li}</ul>")
     inhalt = f"""
 <h1>Prüfungen</h1>
@@ -379,9 +380,9 @@ def p_kit():
 und ein Zitiervorschlag.</p>
 <h2>Downloads</h2>
 <ul>
-<li><a href="downloads/Forschungs-Kit-Goldenes-Drittel.pdf">Kurzdarstellung mit Zahlen zum Zitieren</a> (PDF)</li>
-<li><a href="daten/zahlen-zum-zitieren.csv">Zahlen zum Zitieren</a> (CSV) · <a href="daten/zahlen-zum-zitieren.json">JSON</a></li>
-<li><a href="daten/">Ergebnisdateien</a> der hier gezeigten Rechnungen (JSON)</li>
+<li><a href="../downloads/Forschungs-Kit-Goldenes-Drittel.pdf">Kurzdarstellung mit Zahlen zum Zitieren</a> (PDF)</li>
+<li><a href="../data/zahlen-zum-zitieren.csv">Zahlen zum Zitieren</a> (CSV) · <a href="../data/zahlen-zum-zitieren.json">JSON</a></li>
+<li><a href="../data/">Ergebnisdateien</a> der hier gezeigten Rechnungen (JSON)</li>
 </ul>
 <h2>Zahlen zum Zitieren</h2>
 {tabelle(["Nr.", "Größe", "Wert", "Einheit", "Bezug", "Status"], z, rechts=(2,))}
@@ -451,31 +452,42 @@ def pdfs(ziel):
 
 def main():
     OUT.mkdir(exist_ok=True)
+    DE = OUT / "de"
+    DE.mkdir(exist_ok=True)
+    for alt in ("index.html", "faelle-42000.html", "fonds.html", "mwst.html", "grenzbelastung.html", "pruefungen.html", "kit.html"):   # bis v4.56 im Wurzelverzeichnis
+        if (OUT / alt).exists() and alt != "index.html":
+            (OUT / alt).unlink()
+    if (OUT / "daten").exists():
+        shutil.rmtree(OUT / "daten")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     (OUT / "style.css").write_text(CSS.strip() + "\n", encoding="utf-8")
     for name, f in (("index.html", p_index), ("faelle-42000.html", p_faelle), ("fonds.html", p_fonds), ("mwst.html", p_mwst),
                     ("grenzbelastung.html", p_grenz), ("pruefungen.html", p_pruef), ("kit.html", p_kit)):
-        (OUT / name).write_text(f(), encoding="utf-8")
+        (DE / name).write_text(f(), encoding="utf-8")
     zahlen_dateien(OUT)
-    liste = "".join(f'<li><a href="{p.name}">{p.name}</a></li>' for p in sorted((OUT / "daten").glob("*")) if p.name != "index.html")
-    (OUT / "daten" / "index.html").write_text(f'<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-                                              f'<title>Daten</title><link rel="stylesheet" href="../style.css"></head><body><main><h1>Ergebnisdateien</h1>'
-                                              f'<p class="meta">Modellstand {VERSION} · CC BY 4.0</p><ul>{liste}</ul><p><a href="../index.html">zurück</a></p></main></body></html>',
-                                              encoding="utf-8")
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("forschung_en", Path(__file__).resolve().parent / "forschung_en.py")
+    EN = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(EN)
+    EN.schreiben(OUT)
+    liste = "".join(f'<li><a href="{p.name}">{p.name}</a></li>' for p in sorted((OUT / "data").glob("*")) if p.name != "index.html")
+    (OUT / "data" / "index.html").write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+                                             f'<title>Result files</title><link rel="stylesheet" href="../style.css"></head><body><main><h1>Result files · Ergebnisdateien</h1>'
+                                             f'<p class="meta">Model version {VERSION} · CC BY 4.0. Keys of the result files are German; field descriptions in figures-to-cite.csv.</p>'
+                                             f'<ul>{liste}</ul><p><a href="../index.html">English</a> · <a href="../de/index.html">Deutsch</a></p></main></body></html>',
+                                             encoding="utf-8")
     # Stand der PDFs: Prüfsumme über die Quellen (Kit-HTML ohne Datum, Markdown der Protokolle); ohne --pdf nur prüfen
-    quellen = kit_html().replace(DATUM, "") + "".join((W / p).read_text(encoding="utf-8") for _, _, d in PRUEF for p, _ in d)
+    quellen = kit_html().replace(DATUM, "") + EN.kit_html().replace(EN.DATUM, "") + "".join((W / p).read_text(encoding="utf-8") for _, _, d in PRUEF for p, _ in d)
     summe = hashlib.sha256(quellen.encode("utf-8")).hexdigest()
     marke = OUT / "downloads" / "quellen.sha256"
     if "--pdf" in sys.argv:
         pdfs(OUT)
+        EN.pdf(OUT)
         marke.write_text(summe + "\n", encoding="utf-8")
     elif not marke.exists() or marke.read_text(encoding="utf-8").strip() != summe:
         print("PDFs veraltet: Zahlen oder Protokolle haben sich geändert – neu bauen mit: python3 seite/werkzeuge/forschung_bau.py --pdf")
         return 1
-    fehlt = [pdf_name(p) for _, _, d in PRUEF for p, _ in d if not (OUT / "downloads" / pdf_name(p)).exists()]
-    if not (OUT / "downloads" / "Forschungs-Kit-Goldenes-Drittel.pdf").exists():
-        fehlt.append("Forschungs-Kit-Goldenes-Drittel.pdf")
-    print(f"docs/: 7 Seiten, {len(ZAHLEN)} Zahlen zum Zitieren, Modellstand {VERSION}" + (f"; PDFs fehlen (mit --pdf bauen): {fehlt}" if fehlt else ""))
+    print(f"docs/: englisch 7 Seiten, deutsch 7 Seiten (de/), {len(ZAHLEN)} + {len(EN.FIGURES)} Zahlen zum Zitieren, Modellstand {VERSION}")
     return 0
 
 

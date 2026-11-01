@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.56 · höchste Korrekturnummer 82 · 525 Dateien im Repository
+Modellstand v4.57 · höchste Korrekturnummer 82 · 539 Dateien im Repository
 
 ## Bausteine
 
@@ -103,4 +103,4 @@ Modellstand v4.56 · höchste Korrekturnummer 82 · 525 Dateien im Repository
 - Hinweis: Naht N38 offen: B31 Drittel-System -> B32 Länderseiten: v4.48: qualitative Voruntersuchung (projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md), Belegstufen A/B/C je Baustein, Übertragbarkeit DE/FR/IT/ES/PL; Stufe 2 als R12 (V1–V6) | v4.49: Gestaltungsfragen E12–E15 beantwortet bzw. Vorschlag; V3 mit Zertifizierungsfall | v4.50: E12 Antrag mit Hinweis; Restquote Nicht-Inanspruchnahme als Variante
 - Hinweis: Naht N39 offen: B32 Länderseiten -> B31 Drittel-System: v4.51: 7 von 10 Haushaltstypen ±2 Pp; Korrekturen 77/78 (prime d'activité); offen R13 (Abgrenzung AG-Abgaben, Gesundheitsbeitrag PL, Paar mit zwei Einkommen, Alleinerziehende FR) | v4.52: Abgrenzung beschlossen und umgesetzt (E16)
 - Hinweis: Naht N41 offen: B32 Länderseiten -> B31 Drittel-System: v4.54: FR aus Eurostat hbs_str_t223 (2020); IT, ES, PL Faktor 1 bis zum gesicherten Abruf
-- Hinweis: Naht N42 offen: B31 Drittel-System -> B01 Logbuch: v4.56: Prüfsumme der Quellen in docs/downloads/quellen.sha256, Stufe schlägt fehl bis --pdf; Veröffentlichung über GitHub Pages durch die Initiative (P9)
+- Hinweis: Naht N42 offen: B31 Drittel-System -> B01 Logbuch: v4.56: Prüfsumme der Quellen in docs/downloads/quellen.sha256, Stufe schlägt fehl bis --pdf; Veröffentlichung über GitHub Pages durch die Initiative (P9) v4.57: englische Hauptfassung im Wurzelverzeichnis, deutsch unter docs/de/, gemeinsame Prüfsumme beider Kits; öffentliches Repository goldenes-drittel

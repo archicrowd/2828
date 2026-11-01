@@ -1,0 +1,543 @@
+{
+ "version": "v4.8",
+ "status": "Prüfrechnung, statisch",
+ "quelle": "Eurostat ilc_di12 (Gini des äquivalenzgewichteten verfügbaren Einkommens, EU-SILC 2025) und ilc_di01 (Dezilgrenzen D1–D9, Anteile D1 und D10), Abruf 18.10.2026, amtlich",
+ "kindergewicht": 0.55,
+ "vergleich_amtlich_2025": {
+  "DK": 28.2,
+  "SE": 28.6
+ },
+ "staaten": {
+  "DE": {
+   "gini_amtlich_2025": 30.1,
+   "gini_rekonstruktion_heute": 30.2,
+   "kalibrierung": {
+    "untergrenze_d1": 7252,
+    "pareto_exponent": 3.18
+   },
+   "reihe": [
+    {
+     "jahr": 2028,
+     "untere": {
+      "gini": 25.8,
+      "gini_rentner_unveraendert": 27.3
+     },
+     "obere": {
+      "gini": 26.3,
+      "gini_rentner_unveraendert": 27.7
+     },
+     "mitte": 26.1
+    },
+    {
+     "jahr": 2030,
+     "untere": {
+      "gini": 25.9,
+      "gini_rentner_unveraendert": 27.4
+     },
+     "obere": {
+      "gini": 26.3,
+      "gini_rentner_unveraendert": 27.7
+     },
+     "mitte": 26.1
+    },
+    {
+     "jahr": 2035,
+     "untere": {
+      "gini": 26.0,
+      "gini_rentner_unveraendert": 27.4
+     },
+     "obere": {
+      "gini": 26.5,
+      "gini_rentner_unveraendert": 27.8
+     },
+     "mitte": 26.2
+    },
+    {
+     "jahr": 2040,
+     "untere": {
+      "gini": 26.1,
+      "gini_rentner_unveraendert": 27.5
+     },
+     "obere": {
+      "gini": 26.6,
+      "gini_rentner_unveraendert": 27.8
+     },
+     "mitte": 26.4
+    },
+    {
+     "jahr": 2045,
+     "untere": {
+      "gini": 26.2,
+      "gini_rentner_unveraendert": 27.5
+     },
+     "obere": {
+      "gini": 26.6,
+      "gini_rentner_unveraendert": 27.9
+     },
+     "mitte": 26.4
+    },
+    {
+     "jahr": 2050,
+     "untere": {
+      "gini": 26.2,
+      "gini_rentner_unveraendert": 27.5
+     },
+     "obere": {
+      "gini": 26.7,
+      "gini_rentner_unveraendert": 27.9
+     },
+     "mitte": 26.4
+    },
+    {
+     "jahr": 2055,
+     "untere": {
+      "gini": 26.2,
+      "gini_rentner_unveraendert": 27.5
+     },
+     "obere": {
+      "gini": 26.7,
+      "gini_rentner_unveraendert": 27.9
+     },
+     "mitte": 26.4
+    },
+    {
+     "jahr": 2060,
+     "untere": {
+      "gini": 26.2,
+      "gini_rentner_unveraendert": 27.5
+     },
+     "obere": {
+      "gini": 26.6,
+      "gini_rentner_unveraendert": 27.9
+     },
+     "mitte": 26.4
+    }
+   ]
+  },
+  "FR": {
+   "gini_amtlich_2025": 30.4,
+   "gini_rekonstruktion_heute": 30.5,
+   "kalibrierung": {
+    "untergrenze_d1": 5798,
+    "pareto_exponent": 2.88
+   },
+   "reihe": [
+    {
+     "jahr": 2028,
+     "untere": {
+      "gini": 28.8,
+      "gini_rentner_unveraendert": 29.3
+     },
+     "obere": {
+      "gini": 29.1,
+      "gini_rentner_unveraendert": 29.6
+     },
+     "mitte": 29.0
+    },
+    {
+     "jahr": 2030,
+     "untere": {
+      "gini": 28.8,
+      "gini_rentner_unveraendert": 29.4
+     },
+     "obere": {
+      "gini": 29.2,
+      "gini_rentner_unveraendert": 29.6
+     },
+     "mitte": 29.0
+    },
+    {
+     "jahr": 2035,
+     "untere": {
+      "gini": 28.9,
+      "gini_rentner_unveraendert": 29.4
+     },
+     "obere": {
+      "gini": 29.2,
+      "gini_rentner_unveraendert": 29.6
+     },
+     "mitte": 29.0
+    },
+    {
+     "jahr": 2040,
+     "untere": {
+      "gini": 29.0,
+      "gini_rentner_unveraendert": 29.5
+     },
+     "obere": {
+      "gini": 29.3,
+      "gini_rentner_unveraendert": 29.7
+     },
+     "mitte": 29.1
+    },
+    {
+     "jahr": 2045,
+     "untere": {
+      "gini": 29.0,
+      "gini_rentner_unveraendert": 29.5
+     },
+     "obere": {
+      "gini": 29.4,
+      "gini_rentner_unveraendert": 29.8
+     },
+     "mitte": 29.2
+    },
+    {
+     "jahr": 2050,
+     "untere": {
+      "gini": 29.1,
+      "gini_rentner_unveraendert": 29.6
+     },
+     "obere": {
+      "gini": 29.4,
+      "gini_rentner_unveraendert": 29.8
+     },
+     "mitte": 29.2
+    },
+    {
+     "jahr": 2055,
+     "untere": {
+      "gini": 29.2,
+      "gini_rentner_unveraendert": 29.7
+     },
+     "obere": {
+      "gini": 29.5,
+      "gini_rentner_unveraendert": 29.9
+     },
+     "mitte": 29.4
+    },
+    {
+     "jahr": 2060,
+     "untere": {
+      "gini": 29.3,
+      "gini_rentner_unveraendert": 29.7
+     },
+     "obere": {
+      "gini": 29.6,
+      "gini_rentner_unveraendert": 29.9
+     },
+     "mitte": 29.5
+    }
+   ]
+  },
+  "IT": {
+   "gini_amtlich_2025": 31.0,
+   "gini_rekonstruktion_heute": 31.3,
+   "kalibrierung": {
+    "untergrenze_d1": 3565,
+    "pareto_exponent": 3.21
+   },
+   "reihe": [
+    {
+     "jahr": 2028,
+     "untere": {
+      "gini": 26.9,
+      "gini_rentner_unveraendert": 28.3
+     },
+     "obere": {
+      "gini": 26.9,
+      "gini_rentner_unveraendert": 28.3
+     },
+     "mitte": 26.9
+    },
+    {
+     "jahr": 2030,
+     "untere": {
+      "gini": 26.9,
+      "gini_rentner_unveraendert": 28.3
+     },
+     "obere": {
+      "gini": 26.9,
+      "gini_rentner_unveraendert": 28.3
+     },
+     "mitte": 26.9
+    },
+    {
+     "jahr": 2035,
+     "untere": {
+      "gini": 27.1,
+      "gini_rentner_unveraendert": 28.5
+     },
+     "obere": {
+      "gini": 27.1,
+      "gini_rentner_unveraendert": 28.5
+     },
+     "mitte": 27.1
+    },
+    {
+     "jahr": 2040,
+     "untere": {
+      "gini": 27.2,
+      "gini_rentner_unveraendert": 28.6
+     },
+     "obere": {
+      "gini": 27.2,
+      "gini_rentner_unveraendert": 28.6
+     },
+     "mitte": 27.2
+    },
+    {
+     "jahr": 2045,
+     "untere": {
+      "gini": 27.4,
+      "gini_rentner_unveraendert": 28.7
+     },
+     "obere": {
+      "gini": 27.4,
+      "gini_rentner_unveraendert": 28.7
+     },
+     "mitte": 27.4
+    },
+    {
+     "jahr": 2050,
+     "untere": {
+      "gini": 27.5,
+      "gini_rentner_unveraendert": 28.7
+     },
+     "obere": {
+      "gini": 27.5,
+      "gini_rentner_unveraendert": 28.7
+     },
+     "mitte": 27.5
+    },
+    {
+     "jahr": 2055,
+     "untere": {
+      "gini": 27.6,
+      "gini_rentner_unveraendert": 28.8
+     },
+     "obere": {
+      "gini": 27.6,
+      "gini_rentner_unveraendert": 28.8
+     },
+     "mitte": 27.6
+    },
+    {
+     "jahr": 2060,
+     "untere": {
+      "gini": 27.6,
+      "gini_rentner_unveraendert": 28.9
+     },
+     "obere": {
+      "gini": 27.6,
+      "gini_rentner_unveraendert": 28.9
+     },
+     "mitte": 27.6
+    }
+   ]
+  },
+  "ES": {
+   "gini_amtlich_2025": 30.8,
+   "gini_rekonstruktion_heute": 31.1,
+   "kalibrierung": {
+    "untergrenze_d1": 2554,
+    "pareto_exponent": 3.94
+   },
+   "reihe": [
+    {
+     "jahr": 2028,
+     "untere": {
+      "gini": 24.8,
+      "gini_rentner_unveraendert": 26.5
+     },
+     "obere": {
+      "gini": 25.1,
+      "gini_rentner_unveraendert": 26.7
+     },
+     "mitte": 25.0
+    },
+    {
+     "jahr": 2030,
+     "untere": {
+      "gini": 24.8,
+      "gini_rentner_unveraendert": 26.5
+     },
+     "obere": {
+      "gini": 25.1,
+      "gini_rentner_unveraendert": 26.7
+     },
+     "mitte": 25.0
+    },
+    {
+     "jahr": 2035,
+     "untere": {
+      "gini": 24.8,
+      "gini_rentner_unveraendert": 26.5
+     },
+     "obere": {
+      "gini": 25.2,
+      "gini_rentner_unveraendert": 26.8
+     },
+     "mitte": 25.0
+    },
+    {
+     "jahr": 2040,
+     "untere": {
+      "gini": 24.9,
+      "gini_rentner_unveraendert": 26.5
+     },
+     "obere": {
+      "gini": 25.2,
+      "gini_rentner_unveraendert": 26.8
+     },
+     "mitte": 25.0
+    },
+    {
+     "jahr": 2045,
+     "untere": {
+      "gini": 24.9,
+      "gini_rentner_unveraendert": 26.6
+     },
+     "obere": {
+      "gini": 25.2,
+      "gini_rentner_unveraendert": 26.8
+     },
+     "mitte": 25.0
+    },
+    {
+     "jahr": 2050,
+     "untere": {
+      "gini": 24.9,
+      "gini_rentner_unveraendert": 26.6
+     },
+     "obere": {
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.8
+     },
+     "mitte": 25.1
+    },
+    {
+     "jahr": 2055,
+     "untere": {
+      "gini": 25.0,
+      "gini_rentner_unveraendert": 26.6
+     },
+     "obere": {
+      "gini": 25.3,
+      "gini_rentner_unveraendert": 26.9
+     },
+     "mitte": 25.1
+    },
+    {
+     "jahr": 2060,
+     "untere": {
+      "gini": 25.0,
+      "gini_rentner_unveraendert": 26.7
+     },
+     "obere": {
+      "gini": 25.4,
+      "gini_rentner_unveraendert": 26.9
+     },
+     "mitte": 25.2
+    }
+   ]
+  },
+  "PL": {
+   "gini_amtlich_2025": 24.9,
+   "gini_rekonstruktion_heute": 25.1,
+   "kalibrierung": {
+    "untergrenze_d1": 18051,
+    "pareto_exponent": 3.95
+   },
+   "reihe": [
+    {
+     "jahr": 2028,
+     "untere": {
+      "gini": 18.7,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "obere": {
+      "gini": 18.7,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "mitte": 18.7
+    },
+    {
+     "jahr": 2030,
+     "untere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "obere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "mitte": 18.8
+    },
+    {
+     "jahr": 2035,
+     "untere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "obere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "mitte": 18.8
+    },
+    {
+     "jahr": 2040,
+     "untere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "obere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "mitte": 18.8
+    },
+    {
+     "jahr": 2045,
+     "untere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "obere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.8
+     },
+     "mitte": 18.8
+    },
+    {
+     "jahr": 2050,
+     "untere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.7
+     },
+     "obere": {
+      "gini": 18.8,
+      "gini_rentner_unveraendert": 20.7
+     },
+     "mitte": 18.8
+    },
+    {
+     "jahr": 2055,
+     "untere": {
+      "gini": 18.7,
+      "gini_rentner_unveraendert": 20.7
+     },
+     "obere": {
+      "gini": 18.7,
+      "gini_rentner_unveraendert": 20.7
+     },
+     "mitte": 18.7
+    },
+    {
+     "jahr": 2060,
+     "untere": {
+      "gini": 18.7,
+      "gini_rentner_unveraendert": 20.7
+     },
+     "obere": {
+      "gini": 18.7,
+      "gini_rentner_unveraendert": 20.7
+     },
+     "mitte": 18.7
+    }
+   ]
+  }
+ },
+ "hinweis": "Gini in Punkten (0–100) des äquivalenzgewichteten verfügbaren Einkommens. Neu = amtlicher Wert 2025 + Modelländerung. Band aus der Annahme über Transfers in den unteren Dezilen; Variante mit unveränderten Rentnerhaushalten (25 %). Statisch: heutige Verteilung, keine Verhaltensänderung, ohne Kapitaleinkommen."
+}
