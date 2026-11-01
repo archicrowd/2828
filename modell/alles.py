@@ -78,6 +78,7 @@ STUFEN = [
     ("Gemeindeformel je Kreis (Deutschland), Strukturzuschlag", ["modell/regionen_de.py"]),
     ("Vergleich Dänemark/Schweden, Härtefall", ["modell/vergleich_dk_se.py"]),
     ("Webseite Fassung 4.x (sechs Sprachen, Länderbezug)", ["seite/werkzeuge/drittel_bau.py"]),
+    ("Forschungsseite (docs/, GitHub Pages): Themen, Prüfungen, Zahlen zum Zitieren", ["seite/werkzeuge/forschung_bau.py"]),
     ("Gesamtkonzept gegen Rechnung", ["modell/pruefe_konzept.py"]),
     ("Textentwurf gegen Rechnung", ["modell/pruefe_konzept.py", "--entwurf"]),
     ("Kennzahlen gegen Ergebnisdateien (KENNZAHLEN.md)", ["modell/pruefe_kennzahlen.py"]),

@@ -1,0 +1,290 @@
+{
+ "version": "v4.51",
+ "status": "Prüfrechnung",
+ "quelle": "OECD (2026), Taxing Wages 2026 (Daten 2025), Tab. 1.1, 1.2, 1.4, 1.7",
+ "toleranz_pp": 2.0,
+ "keil": {
+  "DE": {
+   "durchschnittslohn_2025": 66700,
+   "allein_100": {
+    "modell_keil": 48.9,
+    "oecd_keil": 49.3,
+    "abw_pp": -0.4,
+    "modell_est": 13.5,
+    "oecd_est": 14.2,
+    "modell_sv_an": 18.0,
+    "oecd_sv_an": 17.8,
+    "modell_sv_ag": 17.5,
+    "oecd_sv_ag": 17.3,
+    "bestanden": true
+   },
+   "paar_ein_einkommen_2k": {
+    "modell_keil": 34.7,
+    "oecd_keil": 34.9,
+    "abw_pp": -0.2,
+    "bestanden": true
+   }
+  },
+  "FR": {
+   "durchschnittslohn_2025": 45964,
+   "allein_100": {
+    "modell_keil": 46.0,
+    "oecd_keil": 47.2,
+    "abw_pp": -1.2,
+    "modell_est": 12.5,
+    "oecd_est": 12.2,
+    "modell_sv_an": 8.5,
+    "oecd_sv_an": 8.3,
+    "modell_sv_ag": 25.0,
+    "oecd_sv_ag": 26.7,
+    "bestanden": true
+   },
+   "paar_ein_einkommen_2k": {
+    "modell_keil": 33.5,
+    "oecd_keil": 39.1,
+    "abw_pp": -5.6,
+    "bestanden": false
+   }
+  },
+  "IT": {
+   "durchschnittslohn_2025": 36594,
+   "allein_100": {
+    "modell_keil": 44.4,
+    "oecd_keil": 45.8,
+    "abw_pp": -1.4,
+    "modell_est": 13.4,
+    "oecd_est": 14.5,
+    "modell_sv_an": 7.0,
+    "oecd_sv_an": 7.2,
+    "modell_sv_ag": 24.0,
+    "oecd_sv_ag": 24.0,
+    "bestanden": true
+   },
+   "paar_ein_einkommen_2k": {
+    "modell_keil": 33.0,
+    "oecd_keil": 34.3,
+    "abw_pp": -1.3,
+    "bestanden": true
+   }
+  },
+  "ES": {
+   "durchschnittslohn_2025": 32678,
+   "allein_100": {
+    "modell_keil": 42.4,
+    "oecd_keil": 41.4,
+    "abw_pp": 1.0,
+    "modell_est": 13.1,
+    "oecd_est": 13.1,
+    "modell_sv_an": 4.9,
+    "oecd_sv_an": 5.0,
+    "modell_sv_ag": 24.3,
+    "oecd_sv_ag": 23.4,
+    "bestanden": true
+   },
+   "paar_ein_einkommen_2k": {
+    "modell_keil": 37.8,
+    "oecd_keil": 36.8,
+    "abw_pp": 1.0,
+    "bestanden": true
+   }
+  },
+  "PL": {
+   "durchschnittslohn_2025": 105738,
+   "allein_100": {
+    "modell_keil": 40.3,
+    "oecd_keil": 35.0,
+    "abw_pp": 5.3,
+    "modell_est": 5.5,
+    "oecd_est": 5.7,
+    "modell_sv_an": 17.8,
+    "oecd_sv_an": 15.3,
+    "modell_sv_ag": 17.0,
+    "oecd_sv_ag": 14.0,
+    "bestanden": false
+   },
+   "paar_ein_einkommen_2k": {
+    "modell_keil": 20.7,
+    "oecd_keil": 14.2,
+    "abw_pp": 6.5,
+    "bestanden": false
+   }
+  }
+ },
+ "varianten": {
+  "FR_prime_activite": {
+   "spalten": "Vielfaches des SMIC, Modell, Ministerium (€/Monat)",
+   "ohne_forfait": {
+    "allein": [
+     [
+      1.15,
+      211,
+      212
+     ],
+     [
+      1.2,
+      182,
+      184
+     ],
+     [
+      1.4,
+      66,
+      70
+     ]
+    ],
+    "paar_ein_einkommen_2k": [
+     [
+      1.15,
+      762,
+      568
+     ],
+     [
+      1.2,
+      733,
+      539
+     ],
+     [
+      1.5,
+      559,
+      461
+     ],
+     [
+      2.0,
+      270,
+      271
+     ]
+    ],
+    "alleinerziehend_2k": [
+     [
+      1.15,
+      571,
+      168
+     ],
+     [
+      1.2,
+      542,
+      139
+     ],
+     [
+      1.5,
+      368,
+      61
+     ]
+    ],
+    "keil_paar_2k_aw": 33.5,
+    "anteile_mit_mehr": {
+     "alleinstehend": 35.6,
+     "alleinerziehend, 1 Kind": 17.8,
+     "Paar, ein Einkommen, 2 Kinder": 17.8
+    }
+   },
+   "mit_forfait": {
+    "allein": [
+     [
+      1.15,
+      134,
+      212
+     ],
+     [
+      1.2,
+      105,
+      184
+     ],
+     [
+      1.4,
+      0,
+      70
+     ]
+    ],
+    "paar_ein_einkommen_2k": [
+     [
+      1.15,
+      572,
+      568
+     ],
+     [
+      1.2,
+      543,
+      539
+     ],
+     [
+      1.5,
+      370,
+      461
+     ],
+     [
+      2.0,
+      80,
+      271
+     ]
+    ],
+    "alleinerziehend_2k": [
+     [
+      1.15,
+      381,
+      168
+     ],
+     [
+      1.2,
+      352,
+      139
+     ],
+     [
+      1.5,
+      178,
+      61
+     ]
+    ],
+    "keil_paar_2k_aw": 37.2,
+    "anteile_mit_mehr": {
+     "alleinstehend": 62.2,
+     "alleinerziehend, 1 Kind": 33.3,
+     "Paar, ein Einkommen, 2 Kinder": 33.3
+    }
+   }
+  },
+  "PL_ag_wie_oecd": {
+   "keil_allein": 38.1,
+   "keil_paar_2k": 17.8,
+   "anteile_mit_mehr_ohne_rest_in_weitergabe": {
+    "alleinstehend": 100.0,
+    "alleinerziehend, 1 Kind": 97.8,
+    "Paar, ein Einkommen, 2 Kinder": 97.8
+   },
+   "anteile_mit_mehr_geltend": {
+    "alleinstehend": 100.0,
+    "alleinerziehend, 1 Kind": 97.8,
+    "Paar, ein Einkommen, 2 Kinder": 97.8
+   }
+  }
+ },
+ "gini_heute": {
+  "DE": {
+   "amtlich_2025": 30.1,
+   "rekonstruktion": 30.2,
+   "abw": 0.1
+  },
+  "FR": {
+   "amtlich_2025": 30.4,
+   "rekonstruktion": 30.5,
+   "abw": 0.1
+  },
+  "IT": {
+   "amtlich_2025": 31.0,
+   "rekonstruktion": 31.3,
+   "abw": 0.3
+  },
+  "ES": {
+   "amtlich_2025": 30.8,
+   "rekonstruktion": 31.1,
+   "abw": 0.3
+  },
+  "PL": {
+   "amtlich_2025": 24.9,
+   "rekonstruktion": 25.1,
+   "abw": 0.2
+  }
+ },
+ "bestanden": "7 von 10 Haushaltstypen innerhalb ±2.0 Pp",
+ "offen": "Paar mit zwei Einkommen (Tab. 1.5) nicht geprüft: Ländermodelle kennen je Haushalt ein Erwerbseinkommen",
+ "hinweis": "Modelle Recht 2026, OECD Daten 2025. Keil in % der Arbeitskosten, einschließlich Geldleistungen (Kindergeld, allocations familiales, prime d'activité, assegno unico, 800+). DE heute ohne Günstigerprüfung Kinderfreibetrag (Kernmodell)."
+}

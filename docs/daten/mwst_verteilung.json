@@ -1,0 +1,256 @@
+{
+ "version": "v4.29",
+ "status": "Prüfrechnung",
+ "variante": "mit_vorsteuer",
+ "eff_neu": 18.84,
+ "eff_heute": 15.97,
+ "bisher": {
+  "mehr_pct_konsum": 2.475,
+  "bezahlt_pct_konsum": 15.853
+ },
+ "sichtbar_mittel": {
+  "mehr_pct_konsum": 1.536,
+  "bezahlt_pct_konsum": 10.761
+ },
+ "rest_gleichmaessig": {
+  "mehr_pct_konsum": 0.939,
+  "bezahlt_pct_konsum": 5.092
+ },
+ "saetze_heute": {
+  "lebensmittel": 7,
+  "alkohol_tabak": 19,
+  "kleidung": 19,
+  "wohnen_miete": 0,
+  "haushaltsenergie": 19,
+  "einrichtung": 19,
+  "gesundheit_bildung": 0,
+  "fahrzeuge": 19,
+  "kraftstoffe": 19,
+  "verkehrsdienste": 13,
+  "kommunikation": 19,
+  "freizeit": 19,
+  "gaststaetten_hotels": 19,
+  "reparatur_persoenliche_dienste": 19,
+  "sonstiges": 19
+ },
+ "saetze_neu": {
+  "lebensmittel": 5,
+  "alkohol_tabak": 33,
+  "kleidung": 25,
+  "wohnen_miete": 0.0,
+  "haushaltsenergie": 25,
+  "einrichtung": 25,
+  "gesundheit_bildung": 0.0,
+  "fahrzeuge": 31,
+  "kraftstoffe": 33,
+  "verkehrsdienste": 5,
+  "kommunikation": 17,
+  "freizeit": 25,
+  "gaststaetten_hotels": 11,
+  "reparatur_persoenliche_dienste": 5,
+  "sonstiges": 25
+ },
+ "klassen": [
+  {
+   "klasse": "<1000",
+   "netto_monat": 800,
+   "konsum": 1121,
+   "summe_gueter": 1123,
+   "steuerpflichtig": 0.619,
+   "sichtbar_mehr_pct": 1.215,
+   "sichtbar_bezahlt_neu_pct": 9.531,
+   "sichtbar_bezahlt_heute_pct": 8.316,
+   "konsumquote_evs": 1.401,
+   "phi": {
+    "mit_vorsteuer": [
+     0.8703,
+     0.9224
+    ],
+    "sichtbar": [
+     0.491,
+     0.6012
+    ],
+    "einheitlich": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "klasse": "1000-1300",
+   "netto_monat": 1150,
+   "konsum": 1280,
+   "summe_gueter": 1279,
+   "steuerpflichtig": 0.623,
+   "sichtbar_mehr_pct": 1.315,
+   "sichtbar_bezahlt_neu_pct": 9.752,
+   "sichtbar_bezahlt_heute_pct": 8.437,
+   "konsumquote_evs": 1.113,
+   "phi": {
+    "mit_vorsteuer": [
+     0.9107,
+     0.9363
+    ],
+    "sichtbar": [
+     0.5314,
+     0.6151
+    ],
+    "einheitlich": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "klasse": "1300-1500",
+   "netto_monat": 1400,
+   "konsum": 1459,
+   "summe_gueter": 1460,
+   "steuerpflichtig": 0.635,
+   "sichtbar_mehr_pct": 1.335,
+   "sichtbar_bezahlt_neu_pct": 10.032,
+   "sichtbar_bezahlt_heute_pct": 8.697,
+   "konsumquote_evs": 1.042,
+   "phi": {
+    "mit_vorsteuer": [
+     0.9188,
+     0.954
+    ],
+    "sichtbar": [
+     0.5394,
+     0.6328
+    ],
+    "einheitlich": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "klasse": "1500-2000",
+   "netto_monat": 1750,
+   "konsum": 1717,
+   "summe_gueter": 1716,
+   "steuerpflichtig": 0.645,
+   "sichtbar_mehr_pct": 1.441,
+   "sichtbar_bezahlt_neu_pct": 10.31,
+   "sichtbar_bezahlt_heute_pct": 8.869,
+   "konsumquote_evs": 0.981,
+   "phi": {
+    "mit_vorsteuer": [
+     0.9616,
+     0.9715
+    ],
+    "sichtbar": [
+     0.5823,
+     0.6503
+    ],
+    "einheitlich": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "klasse": "2000-2600",
+   "netto_monat": 2300,
+   "konsum": 2090,
+   "summe_gueter": 2091,
+   "steuerpflichtig": 0.655,
+   "sichtbar_mehr_pct": 1.532,
+   "sichtbar_bezahlt_neu_pct": 10.611,
+   "sichtbar_bezahlt_heute_pct": 9.079,
+   "konsumquote_evs": 0.909,
+   "phi": {
+    "mit_vorsteuer": [
+     0.9984,
+     0.9905
+    ],
+    "sichtbar": [
+     0.619,
+     0.6693
+    ],
+    "einheitlich": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "klasse": "2600-3600",
+   "netto_monat": 3100,
+   "konsum": 2591,
+   "summe_gueter": 2591,
+   "steuerpflichtig": 0.661,
+   "sichtbar_mehr_pct": 1.568,
+   "sichtbar_bezahlt_neu_pct": 10.78,
+   "sichtbar_bezahlt_heute_pct": 9.212,
+   "konsumquote_evs": 0.836,
+   "phi": {
+    "mit_vorsteuer": [
+     1.0129,
+     1.0012
+    ],
+    "sichtbar": [
+     0.6336,
+     0.68
+    ],
+    "einheitlich": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "klasse": "3600-5000",
+   "netto_monat": 4300,
+   "konsum": 3273,
+   "summe_gueter": 3273,
+   "steuerpflichtig": 0.674,
+   "sichtbar_mehr_pct": 1.606,
+   "sichtbar_bezahlt_neu_pct": 11.052,
+   "sichtbar_bezahlt_heute_pct": 9.446,
+   "konsumquote_evs": 0.761,
+   "phi": {
+    "mit_vorsteuer": [
+     1.0283,
+     1.0183
+    ],
+    "sichtbar": [
+     0.6489,
+     0.6971
+    ],
+    "einheitlich": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "klasse": ">=5000",
+   "netto_monat": 7500,
+   "konsum": 4760,
+   "summe_gueter": 4760,
+   "steuerpflichtig": 0.694,
+   "sichtbar_mehr_pct": 1.703,
+   "sichtbar_bezahlt_neu_pct": 11.565,
+   "sichtbar_bezahlt_heute_pct": 9.863,
+   "konsumquote_evs": 0.635,
+   "phi": {
+    "mit_vorsteuer": [
+     1.0675,
+     1.0507
+    ],
+    "sichtbar": [
+     0.6881,
+     0.7295
+    ],
+    "einheitlich": [
+     1.0,
+     1.0
+    ]
+   }
+  }
+ ],
+ "hinweis": "EVS 2023 (Destatis, amtlich), Klassenmitten und Aufteilung der EVS-Gruppen Annahmen; sichtbar = Steuer auf den Gütern selbst; Rest = bisheriger Durchschnitt minus sichtbar (Vorsteuer steuerfreier Bereiche u. a.), gleichmäßig je Euro Konsum (Annahme)."
+}

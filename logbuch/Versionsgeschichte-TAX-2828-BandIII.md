@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.55**
+Stand: 24. Oktober 2026 · Modellstand **v4.56**
 
 ---
 
@@ -4359,6 +4359,38 @@ nicht auf der Seite (Entscheidung der Initiative offen).
 
 ---
 
+### v4.56 — Forschungsseite für GitHub Pages (docs/), Prüfprotokolle und Forschungs-Kit; Korrektur 82
+
+**Art der Änderung: MINOR (neue Ausgabe der Kette), keine Zahl bewegt.** 1. November 2026.
+
+**Anlass:** Empfehlung an die Initiative für die wissenschaftliche Diskussion (01.11.2026): Landing-Page aus dem Repository über GitHub Pages;
+je eine Seite zu den Kernthemen (42.000-€-Fälle, Fonds, Mehrwertsteuer-Faktoren, Grenzbelastung), die Prüfprotokolle als Download, ein Presse-
+und Forschungs-Kit (PDF und Zahlen zum Zitieren), Kontakt; später ein Working Paper mit DOI.
+
+**Neu `seite/werkzeuge/forschung_bau.py` → `docs/`** (Stufe der Kette nach der Webseite):
+- Sieben Seiten (Übersicht, vier Themen, Prüfungen, Forschungs-Kit), deutsch, ohne externe Abhängigkeiten, hell und dunkel, mobil geprüft
+  (390 px ohne waagrechten Überlauf). Alle Zahlen aus den Ergebnisdateien; Kopien der zehn verwendeten Ergebnisdateien in `docs/daten/`.
+- `docs/daten/zahlen-zum-zitieren.csv/.json`: 19 Zahlen (Z01–Z19) mit Einheit, Bezug, Datei und Pfad, Status (geltend / Prüfrechnung), Modellstand.
+- `docs/downloads/`: Forschungs-Kit (2 Seiten) und neun Protokolle als PDF (Stellungnahmen zu allen drei Prüfungen, Rückmeldung, Beitrag
+  Mikrosimulation, Prüfbericht der dritten Prüfung, Prüfmappe, Verhaltensuntersuchung), mit Chromium aus dem Markdown gesetzt.
+- Prüfung in der Kette: Ändern sich Zahlen oder Protokolle, schlägt die Stufe fehl, bis die PDFs mit `--pdf` neu gebaut sind
+  (`docs/downloads/quellen.sha256`). Bauablauf damit: alles → Seite → Konzept → `forschung_bau.py --pdf` → alles.
+- `CITATION.cff` auf Stand C umgestellt (stand noch auf v4.6, 28 %, Stand B), mit Zitierhinweis auf die Nummern des Kits.
+- Nicht übernommen: Personennamen (Impressum über archicrowd.de), Prüfberichte der ersten und zweiten Prüfung (liegen nicht im Repository;
+  Veröffentlichung nach Zustimmung der Prüfenden), englische Fassung (offen).
+
+**Korrektur 82:** `DATENZUGANG.md` und Prüfmappe nannten das Repository „öffentlich“ (Stand 24.10.2026, Korrektur 76). Laut GitHub-Schnittstelle
+ist es am 01.11.2026 privat. Text berichtigt („Zugang für Prüfende auf Anfrage“).
+
+**Für die Veröffentlichung (Initiative):** GitHub Pages lässt sich aus der Sitzung nicht einschalten (Schnittstelle über den Proxy gesperrt).
+Für ein privates Repository verlangt GitHub Pages einen kostenpflichtigen Plan; die Seite selbst ist dann trotzdem öffentlich. Wege: Repository
+öffentlich stellen oder `docs/` in ein eigenes öffentliches Repository übernehmen; Einstellung „Pages → Deploy from a branch → main, /docs“.
+Ein DOI über Zenodo setzt ein öffentliches Repository oder ein hochgeladenes Paket voraus.
+
+**Datenquelle:** Ergebnisdateien v4.55. **Wodurch aufgefallen:** Auftrag der Initiative; Korrektur 82 bei der Abfrage der Repository-Einstellungen.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4393,6 +4425,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 73 | `gesamtlast33.json` (seit v4.14): „Steuern 33,53“ neben „Summe 45,47“ – die Summe stammte aus dem Steuerbedarf 33,42; `KENNZAHLEN.md` nannte 45,46/49,56 | Summe aus den ausgewiesenen Teilen 33,53 + 12,05 = 45,58, mit Pflichtvorsorge 49,68; Steuerbedarf-Variante 45,47/49,57 daneben (v4.46) | Dritte Prüfung, Befund B17 |
 | 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
+| 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
 | 81 | `KENNZAHLEN.md`: Mikrosimulation (Vollzeit/Teilzeit/Minijob, Bürgergeld, Rentner, Validierung) und Rentnerregel E auf Stand v4.22/v4.26; ebenso Verhaltensuntersuchung 2.10 (30,7 % / −124 €) | Stand v4.38 bzw. v4.30 (Tabelle in v4.53) | Prüfstufe `pruefe_kennzahlen.py` (v4.53) |
 | 80 | `KENNZAHLEN.md`, Zeile Deckel der Weitergabe: Beispiele 2× / 3× Durchschnittslohn DE +689 / +400, FR +849 / +717, IT +941 / +999 € (Stand v4.36) | seit v4.38 DE +710 / +431, FR +654 / +440, IT +766 / +749 €; seit v4.52 FR +480 / +269 € | Nachziehen der Kennzahlen v4.52 |
 | 79 | `KENNZAHLEN.md`, Zeile Deckel der Weitergabe: Gini 2028 FR 30,4, IT 27,4 | seit v4.38 (Verrechnung je Staat) 29,8 / 26,9; seit v4.51 FR 29,5 | Validierung v4.51 (Gegenprobe der Kennzahlen) |
@@ -4429,7 +4462,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.55
+## 7 | Offene Punkte, Stand v4.56
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4483,6 +4516,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
+| P9 | **Forschungsseite veröffentlichen (v4.56):** GitHub Pages einschalten (Repository öffentlich oder eigenes öffentliches Repository für `docs/`), Prüfberichte 1 und 2 nach Zustimmung ergänzen, englische Fassung, Working Paper mit DOI (Zenodo) |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |

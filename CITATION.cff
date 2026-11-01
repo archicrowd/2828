@@ -1,21 +1,26 @@
 cff-version: 1.2.0
-message: "Wenn Sie dieses Modell oder seine Zahlen verwenden, nennen Sie bitte Modellstand und Stand des Konzepts (Stand A oder Stand B, siehe INDEX.md)."
-title: "TAX 28:28 - Modell, Logbuch und Dokumentation"
+message: "Wenn Sie dieses Modell oder seine Zahlen verwenden, nennen Sie bitte den Modellstand und die Nummer der Zahl (Forschungs-Kit, docs/daten/zahlen-zum-zitieren.csv)."
+title: "Das Goldene Drittel – Modell, Logbuch und Dokumentation (TAX 28:28)"
 type: software
 license: MIT
 authors:
   - name: "Initiative 28:28"
     email: "2828@archicrowd.de"
-version: "v4.6"
-date-released: "2026-10-18"
+version: "v4.56"
+date-released: "2026-11-01"
+url: "https://www.archicrowd.de"
 abstract: >-
-  Modell und Dokumentation eines Steuer- und Abgabenkonzepts mit einheitlichem Satz von 28 %
-  (Stand B: Klub von zehn Staaten, Ebene A und B). Rechnung und Dokumentation wurden mit
-  Unterstützung eines KI-Systems (Claude, Anthropic) erstellt; die Verantwortung für Inhalt und
-  Entscheidungen liegt beim Autor. Entwurf zur Diskussion, keine beschlossene Fassung.
+  Rechenmodell, Logbuch und Dokumentation zum Vorschlag „Das Goldene Drittel“ (Stand C): Tarif 0/11/19/25/33 % am Grundbedarf,
+  Wegfall der Sozialbeiträge mit Weitergabe der Arbeitgeberbeiträge, starkes Netz ohne Prämien, Transformationsdividende,
+  Pflichtvorsorge auf eigenem Konto, Mehrwertsteuer-Label und gemeinsamer Fonds für Altlasten der 30 Staaten. Statische Rechnung
+  auf Grundlage amtlicher Statistiken mit synthetischer Mikrosimulation für Deutschland; Prüfungen im Auftrag der Initiative
+  (Oktober 2026). Rechnung und Dokumentation wurden mit Unterstützung eines KI-Systems (Claude, Anthropic) erstellt; die
+  Verantwortung für Inhalt und Entscheidungen liegt bei der Initiative. Entwurf zur Diskussion, keine beschlossene Fassung.
 keywords:
   - Steuerreform
-  - Dividende
+  - soziale Sicherung
+  - Transformationsdividende
   - Mikrosimulation
+  - Europa
 
 # Texte und Ergebnisdateien: CC BY 4.0 (LICENSE-DOKUMENTE.md, LIZENZ.md)

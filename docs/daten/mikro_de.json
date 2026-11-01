@@ -1,0 +1,1791 @@
+{
+ "version": "v4.40",
+ "status": "Prüfrechnung (synthetische Population; Rentner Stufe 2; Beamte und Selbständige v4.28)",
+ "jahr": 2028,
+ "kaufkraft": 2026,
+ "gegenprobe_max_abweichung_eur": 0.0,
+ "vollzeit_pareto_alpha": 2.827,
+ "beamte_zulage": {
+  "basis": "weitergabe_20",
+  "beihilfe_je_beamter": 4735,
+  "selbst_netto_lognormal": {
+   "mu": 8.003373913615667,
+   "sigma": 0.7083343959845348,
+   "kum_anteile": [
+    0.172,
+    0.403,
+    0.725
+   ]
+  },
+  "varianten": {
+   "ohne": {
+    "beamte": {
+     "anteil_mehr_haushalte_pct": 53.4,
+     "anteil_mehr_personen_pct": 66.6,
+     "mittel_mehr_monat_eur": 65,
+     "median_mehr_monat_eur": 54,
+     "haushalte_mio": 1.96
+    },
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.1,
+     "anteil_mehr_personen_pct": 76.5,
+     "mittel_mehr_monat_eur": 438,
+     "median_mehr_monat_eur": 471,
+     "haushalte_mio": 41.1
+    }
+   },
+   "vorsorge": {
+    "beamte": {
+     "anteil_mehr_haushalte_pct": 77.8,
+     "anteil_mehr_personen_pct": 85.9,
+     "mittel_mehr_monat_eur": 359,
+     "median_mehr_monat_eur": 338,
+     "haushalte_mio": 1.96
+    },
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 70.3,
+     "anteil_mehr_personen_pct": 77.6,
+     "mittel_mehr_monat_eur": 452,
+     "median_mehr_monat_eur": 529,
+     "haushalte_mio": 41.1
+    }
+   },
+   "vorsorge_gesundheit": {
+    "beamte": {
+     "anteil_mehr_haushalte_pct": 82.8,
+     "anteil_mehr_personen_pct": 88.8,
+     "mittel_mehr_monat_eur": 389,
+     "median_mehr_monat_eur": 368,
+     "haushalte_mio": 1.96
+    },
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 70.5,
+     "anteil_mehr_personen_pct": 77.7,
+     "mittel_mehr_monat_eur": 454,
+     "median_mehr_monat_eur": 533,
+     "haushalte_mio": 41.1
+    }
+   },
+   "weitergabe_20": {
+    "beamte": {
+     "anteil_mehr_haushalte_pct": 56.4,
+     "anteil_mehr_personen_pct": 69.2,
+     "mittel_mehr_monat_eur": 112,
+     "median_mehr_monat_eur": 101,
+     "haushalte_mio": 1.96
+    },
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.3,
+     "anteil_mehr_personen_pct": 76.7,
+     "mittel_mehr_monat_eur": 441,
+     "median_mehr_monat_eur": 480,
+     "haushalte_mio": 41.1
+    }
+   }
+  }
+ },
+ "kapital": {
+  "summe_kapital_mrd_2024": 20.7,
+  "summe_miete_mrd_2024": 34.1,
+  "abgeltung_heute_mrd": 3.5,
+  "vergleich": "EU-SILC (Umfrage) erfasst rund 25 Mrd. € Kapitaleinkünfte aller Haushalte; Abgeltungsteuer 2025 24,8 Mrd. € (alle Steuerpflichtigen) entspricht rund 94 Mrd. € Erträgen über den Freibeträgen",
+  "skalierung": {
+   "1.0": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.3,
+     "anteil_mehr_personen_pct": 76.7,
+     "mittel_mehr_monat_eur": 441,
+     "median_mehr_monat_eur": 480,
+     "haushalte_mio": 41.1
+    },
+    "dezil_10": {
+     "dezil": 10,
+     "obergrenze_aequiv_monat_eur": 51701,
+     "anteil_mehr_haushalte_pct": 64.1,
+     "anteil_mehr_personen_pct": 67.8,
+     "mittel_mehr_monat_eur": 354,
+     "median_mehr_monat_eur": 552,
+     "haushalte_mio": 4.16
+    },
+    "dezil_9": {
+     "dezil": 9,
+     "obergrenze_aequiv_monat_eur": 4970,
+     "anteil_mehr_haushalte_pct": 72.6,
+     "anteil_mehr_personen_pct": 77.1,
+     "mittel_mehr_monat_eur": 603,
+     "median_mehr_monat_eur": 738,
+     "haushalte_mio": 3.98
+    }
+   },
+   "2.0": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.2,
+     "anteil_mehr_personen_pct": 76.6,
+     "mittel_mehr_monat_eur": 435,
+     "median_mehr_monat_eur": 466,
+     "haushalte_mio": 41.1
+    },
+    "dezil_10": {
+     "dezil": 10,
+     "obergrenze_aequiv_monat_eur": 51701,
+     "anteil_mehr_haushalte_pct": 63.8,
+     "anteil_mehr_personen_pct": 67.2,
+     "mittel_mehr_monat_eur": 331,
+     "median_mehr_monat_eur": 522,
+     "haushalte_mio": 4.13
+    },
+    "dezil_9": {
+     "dezil": 9,
+     "obergrenze_aequiv_monat_eur": 5018,
+     "anteil_mehr_haushalte_pct": 72.2,
+     "anteil_mehr_personen_pct": 76.7,
+     "mittel_mehr_monat_eur": 588,
+     "median_mehr_monat_eur": 737,
+     "haushalte_mio": 3.98
+    }
+   },
+   "4.0": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.0,
+     "anteil_mehr_personen_pct": 76.3,
+     "mittel_mehr_monat_eur": 423,
+     "median_mehr_monat_eur": 437,
+     "haushalte_mio": 41.1
+    },
+    "dezil_10": {
+     "dezil": 10,
+     "obergrenze_aequiv_monat_eur": 57513,
+     "anteil_mehr_haushalte_pct": 62.4,
+     "anteil_mehr_personen_pct": 65.3,
+     "mittel_mehr_monat_eur": 266,
+     "median_mehr_monat_eur": 445,
+     "haushalte_mio": 4.11
+    },
+    "dezil_9": {
+     "dezil": 9,
+     "obergrenze_aequiv_monat_eur": 5122,
+     "anteil_mehr_haushalte_pct": 72.0,
+     "anteil_mehr_personen_pct": 76.4,
+     "mittel_mehr_monat_eur": 570,
+     "median_mehr_monat_eur": 736,
+     "haushalte_mio": 3.97
+    }
+   }
+  }
+ },
+ "inanspruchnahme": {
+  "beobachtet_mio": 4.0,
+  "anspruch_modell_mio": 4.7,
+  "ohne_erwerb_mio": 2.42,
+  "quote_mit_erwerb": 0.693,
+  "varianten": {
+   "voll (geltend)": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.3,
+     "anteil_mehr_personen_pct": 76.7,
+     "mittel_mehr_monat_eur": 441,
+     "median_mehr_monat_eur": 480,
+     "haushalte_mio": 41.1
+    },
+    "erwerbsfaehige": {
+     "anteil_mehr_haushalte_pct": 85.1,
+     "anteil_mehr_personen_pct": 89.1,
+     "mittel_mehr_monat_eur": 679,
+     "median_mehr_monat_eur": 680,
+     "haushalte_mio": 28.95
+    },
+    "teilzeit": {
+     "anteil_mehr_haushalte_pct": 99.9,
+     "anteil_mehr_personen_pct": 99.9,
+     "mittel_mehr_monat_eur": 718,
+     "median_mehr_monat_eur": 634,
+     "haushalte_mio": 4.6
+    },
+    "minijob": {
+     "anteil_mehr_haushalte_pct": 49.1,
+     "anteil_mehr_personen_pct": 69.5,
+     "mittel_mehr_monat_eur": 221,
+     "median_mehr_monat_eur": -1,
+     "haushalte_mio": 0.87
+    },
+    "alleinerziehend": {
+     "anteil_mehr_haushalte_pct": 86.1,
+     "anteil_mehr_personen_pct": 88.7,
+     "mittel_mehr_monat_eur": 416,
+     "median_mehr_monat_eur": 489,
+     "haushalte_mio": 1.62
+    },
+    "dezil_1": {
+     "dezil": 1,
+     "obergrenze_aequiv_monat_eur": 1386,
+     "anteil_mehr_haushalte_pct": 39.8,
+     "anteil_mehr_personen_pct": 46.1,
+     "mittel_mehr_monat_eur": 21,
+     "median_mehr_monat_eur": 0,
+     "haushalte_mio": 5.25
+    },
+    "dezil_2": {
+     "dezil": 2,
+     "obergrenze_aequiv_monat_eur": 1677,
+     "anteil_mehr_haushalte_pct": 94.8,
+     "anteil_mehr_personen_pct": 97.4,
+     "mittel_mehr_monat_eur": 306,
+     "median_mehr_monat_eur": 201,
+     "haushalte_mio": 4.04
+    },
+    "kosten_mrd": {
+     "grundauskommen_neu": 32.9,
+     "davon_ohne_erwerb": 23.7,
+     "davon_erwerbstaetige_haushalte": 7.2,
+     "davon_rentner": 2.0,
+     "buergergeld_naeherung_heute": 50.9,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   },
+   "beobachtet, neu ebenso": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.6,
+     "anteil_mehr_personen_pct": 76.9,
+     "mittel_mehr_monat_eur": 445,
+     "median_mehr_monat_eur": 496,
+     "haushalte_mio": 41.1
+    },
+    "erwerbsfaehige": {
+     "anteil_mehr_haushalte_pct": 85.7,
+     "anteil_mehr_personen_pct": 89.4,
+     "mittel_mehr_monat_eur": 685,
+     "median_mehr_monat_eur": 682,
+     "haushalte_mio": 28.95
+    },
+    "teilzeit": {
+     "anteil_mehr_haushalte_pct": 99.9,
+     "anteil_mehr_personen_pct": 99.9,
+     "mittel_mehr_monat_eur": 734,
+     "median_mehr_monat_eur": 646,
+     "haushalte_mio": 4.6
+    },
+    "minijob": {
+     "anteil_mehr_haushalte_pct": 64.4,
+     "anteil_mehr_personen_pct": 78.3,
+     "mittel_mehr_monat_eur": 306,
+     "median_mehr_monat_eur": 344,
+     "haushalte_mio": 0.87
+    },
+    "alleinerziehend": {
+     "anteil_mehr_haushalte_pct": 86.3,
+     "anteil_mehr_personen_pct": 88.8,
+     "mittel_mehr_monat_eur": 427,
+     "median_mehr_monat_eur": 525,
+     "haushalte_mio": 1.62
+    },
+    "dezil_1": {
+     "dezil": 1,
+     "obergrenze_aequiv_monat_eur": 1353,
+     "anteil_mehr_haushalte_pct": 42.6,
+     "anteil_mehr_personen_pct": 48.2,
+     "mittel_mehr_monat_eur": 63,
+     "median_mehr_monat_eur": 0,
+     "haushalte_mio": 5.25
+    },
+    "dezil_2": {
+     "dezil": 2,
+     "obergrenze_aequiv_monat_eur": 1677,
+     "anteil_mehr_haushalte_pct": 94.9,
+     "anteil_mehr_personen_pct": 97.4,
+     "mittel_mehr_monat_eur": 296,
+     "median_mehr_monat_eur": 140,
+     "haushalte_mio": 4.04
+    },
+    "kosten_mrd": {
+     "grundauskommen_neu": 30.7,
+     "davon_ohne_erwerb": 23.7,
+     "davon_erwerbstaetige_haushalte": 5.1,
+     "davon_rentner": 2.0,
+     "buergergeld_naeherung_heute": 46.6,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   },
+   "beobachtet, neu voll": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.6,
+     "anteil_mehr_personen_pct": 76.9,
+     "mittel_mehr_monat_eur": 449,
+     "median_mehr_monat_eur": 523,
+     "haushalte_mio": 41.1
+    },
+    "erwerbsfaehige": {
+     "anteil_mehr_haushalte_pct": 85.7,
+     "anteil_mehr_personen_pct": 89.4,
+     "mittel_mehr_monat_eur": 692,
+     "median_mehr_monat_eur": 688,
+     "haushalte_mio": 28.95
+    },
+    "teilzeit": {
+     "anteil_mehr_haushalte_pct": 99.9,
+     "anteil_mehr_personen_pct": 99.9,
+     "mittel_mehr_monat_eur": 747,
+     "median_mehr_monat_eur": 659,
+     "haushalte_mio": 4.6
+    },
+    "minijob": {
+     "anteil_mehr_haushalte_pct": 64.4,
+     "anteil_mehr_personen_pct": 78.3,
+     "mittel_mehr_monat_eur": 414,
+     "median_mehr_monat_eur": 538,
+     "haushalte_mio": 0.87
+    },
+    "alleinerziehend": {
+     "anteil_mehr_haushalte_pct": 86.3,
+     "anteil_mehr_personen_pct": 88.8,
+     "mittel_mehr_monat_eur": 459,
+     "median_mehr_monat_eur": 586,
+     "haushalte_mio": 1.62
+    },
+    "dezil_1": {
+     "dezil": 1,
+     "obergrenze_aequiv_monat_eur": 1353,
+     "anteil_mehr_haushalte_pct": 42.6,
+     "anteil_mehr_personen_pct": 48.2,
+     "mittel_mehr_monat_eur": 96,
+     "median_mehr_monat_eur": 0,
+     "haushalte_mio": 5.25
+    },
+    "dezil_2": {
+     "dezil": 2,
+     "obergrenze_aequiv_monat_eur": 1677,
+     "anteil_mehr_haushalte_pct": 94.9,
+     "anteil_mehr_personen_pct": 97.4,
+     "mittel_mehr_monat_eur": 297,
+     "median_mehr_monat_eur": 140,
+     "haushalte_mio": 4.04
+    },
+    "kosten_mrd": {
+     "grundauskommen_neu": 32.9,
+     "davon_ohne_erwerb": 23.7,
+     "davon_erwerbstaetige_haushalte": 7.2,
+     "davon_rentner": 2.0,
+     "buergergeld_naeherung_heute": 46.6,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   }
+  }
+ },
+ "rentner_varianten": {
+  "asid/voll": {
+   "rentner": {
+    "anteil_mehr_haushalte_pct": 31.5,
+    "anteil_mehr_personen_pct": 33.0,
+    "mittel_mehr_monat_eur": -127,
+    "median_mehr_monat_eur": -35,
+    "haushalte_mio": 12.15
+   },
+   "rentner_allein": {
+    "anteil_mehr_haushalte_pct": 27.0,
+    "anteil_mehr_personen_pct": 27.0,
+    "mittel_mehr_monat_eur": -98,
+    "median_mehr_monat_eur": -30,
+    "haushalte_mio": 6.3
+   },
+   "rentner_paar": {
+    "anteil_mehr_haushalte_pct": 36.2,
+    "anteil_mehr_personen_pct": 36.2,
+    "mittel_mehr_monat_eur": -159,
+    "median_mehr_monat_eur": -46,
+    "haushalte_mio": 5.85
+   },
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 69.3,
+    "anteil_mehr_personen_pct": 76.7,
+    "mittel_mehr_monat_eur": 441,
+    "median_mehr_monat_eur": 480,
+    "haushalte_mio": 41.1
+   },
+   "dezil_1": {
+    "dezil": 1,
+    "obergrenze_aequiv_monat_eur": 1386,
+    "anteil_mehr_haushalte_pct": 39.8,
+    "anteil_mehr_personen_pct": 46.1,
+    "mittel_mehr_monat_eur": 21,
+    "median_mehr_monat_eur": 0,
+    "haushalte_mio": 5.25
+   },
+   "kosten_mrd": {
+    "grundauskommen_neu": 32.9,
+    "davon_ohne_erwerb": 23.7,
+    "davon_erwerbstaetige_haushalte": 7.2,
+    "davon_rentner": 2.0,
+    "buergergeld_naeherung_heute": 50.9,
+    "grundsicherung_alter_heute": 2.7,
+    "grundsicherung_alter_faelle_heute_mio": 1.05,
+    "amtlich_grundsicherung_alter": {
+     "empfaenger_mio": 0.764,
+     "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+     "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+    },
+    "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+   }
+  },
+  "asid/beobachtet": {
+   "rentner": {
+    "anteil_mehr_haushalte_pct": 37.2,
+    "anteil_mehr_personen_pct": 37.8,
+    "mittel_mehr_monat_eur": -109,
+    "median_mehr_monat_eur": -35,
+    "haushalte_mio": 12.15
+   },
+   "rentner_allein": {
+    "anteil_mehr_haushalte_pct": 35.6,
+    "anteil_mehr_personen_pct": 35.6,
+    "mittel_mehr_monat_eur": -74,
+    "median_mehr_monat_eur": -30,
+    "haushalte_mio": 6.3
+   },
+   "rentner_paar": {
+    "anteil_mehr_haushalte_pct": 39.0,
+    "anteil_mehr_personen_pct": 39.0,
+    "mittel_mehr_monat_eur": -147,
+    "median_mehr_monat_eur": -46,
+    "haushalte_mio": 5.85
+   },
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 71.0,
+    "anteil_mehr_personen_pct": 77.7,
+    "mittel_mehr_monat_eur": 446,
+    "median_mehr_monat_eur": 499,
+    "haushalte_mio": 41.1
+   },
+   "dezil_1": {
+    "dezil": 1,
+    "obergrenze_aequiv_monat_eur": 1386,
+    "anteil_mehr_haushalte_pct": 53.2,
+    "anteil_mehr_personen_pct": 56.8,
+    "mittel_mehr_monat_eur": 64,
+    "median_mehr_monat_eur": 36,
+    "haushalte_mio": 5.25
+   },
+   "kosten_mrd": {
+    "grundauskommen_neu": 32.9,
+    "davon_ohne_erwerb": 23.7,
+    "davon_erwerbstaetige_haushalte": 7.2,
+    "davon_rentner": 2.0,
+    "buergergeld_naeherung_heute": 50.9,
+    "grundsicherung_alter_heute": 0.0,
+    "grundsicherung_alter_faelle_heute_mio": 0.0,
+    "amtlich_grundsicherung_alter": {
+     "empfaenger_mio": 0.764,
+     "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+     "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+    },
+    "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+   }
+  },
+  "nur_grv/voll": {
+   "rentner": {
+    "anteil_mehr_haushalte_pct": 19.4,
+    "anteil_mehr_personen_pct": 20.6,
+    "mittel_mehr_monat_eur": -191,
+    "median_mehr_monat_eur": -86,
+    "haushalte_mio": 12.15
+   },
+   "rentner_allein": {
+    "anteil_mehr_haushalte_pct": 15.8,
+    "anteil_mehr_personen_pct": 15.8,
+    "mittel_mehr_monat_eur": -142,
+    "median_mehr_monat_eur": -63,
+    "haushalte_mio": 6.3
+   },
+   "rentner_paar": {
+    "anteil_mehr_haushalte_pct": 23.2,
+    "anteil_mehr_personen_pct": 23.2,
+    "mittel_mehr_monat_eur": -243,
+    "median_mehr_monat_eur": -111,
+    "haushalte_mio": 5.85
+   },
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 65.7,
+    "anteil_mehr_personen_pct": 73.9,
+    "mittel_mehr_monat_eur": 422,
+    "median_mehr_monat_eur": 480,
+    "haushalte_mio": 41.1
+   },
+   "dezil_1": {
+    "dezil": 1,
+    "obergrenze_aequiv_monat_eur": 1386,
+    "anteil_mehr_haushalte_pct": 39.7,
+    "anteil_mehr_personen_pct": 46.1,
+    "mittel_mehr_monat_eur": 17,
+    "median_mehr_monat_eur": 0,
+    "haushalte_mio": 5.25
+   },
+   "kosten_mrd": {
+    "grundauskommen_neu": 32.9,
+    "davon_ohne_erwerb": 23.7,
+    "davon_erwerbstaetige_haushalte": 7.2,
+    "davon_rentner": 2.0,
+    "buergergeld_naeherung_heute": 50.9,
+    "grundsicherung_alter_heute": 2.7,
+    "grundsicherung_alter_faelle_heute_mio": 1.05,
+    "amtlich_grundsicherung_alter": {
+     "empfaenger_mio": 0.764,
+     "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+     "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+    },
+    "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+   }
+  }
+ },
+ "basis": {
+  "eichung": {
+   "gewicht_min_max": [
+    0.442,
+    2.371
+   ],
+   "restfehler_max": 4.028832470929181e-12
+  },
+  "validierung_2025": {
+   "bruttolohnsumme": {
+    "modell_mrd": 1969.0,
+    "davon_population": 1954.1,
+    "nebenjob_minijobs": 14.9,
+    "amtlich_d11_mrd": 2026.5,
+    "abweichung_pct": -2.8
+   },
+   "lohnsteuer": {
+    "modell_mrd": 300.9,
+    "amtlich_lohnsteuer_plus_kindergeld_mrd": 318.0,
+    "abweichung_pct": -5.4,
+    "nicht_abgebildet": "Lohnsteuer auf Beamtenpensionen und Betriebsrenten, Steuerklasse VI (Nebenjobs), Selbständigenhaushalte mit Beschäftigten, Erstattungen aus der Veranlagung; Tarif 2026 statt 2025 (Grundfreibetrag 12.348 statt 12.096 €)"
+   },
+   "soli": {
+    "modell_mrd": 6.8,
+    "amtlich_mrd": 12.9,
+    "hinweis": "amtlich einschließlich Soli auf Körperschaft- und Kapitalertragsteuer"
+   },
+   "kindergeld": {
+    "modell_mrd": 54.6,
+    "amtlich_mrd": 55.32,
+    "hinweis": "Konsistenzprüfung (Kinderzahl geeicht), Satz 2026 259 €; amtlich mit Kindern im Ausland und Nachzahlungen"
+   },
+   "buergergeld": {
+    "anspruch_haushalte_mio": 4.7,
+    "davon_mit_erwerb_mio": 2.28,
+    "hinweis": "Anspruch bei voller Inanspruchnahme (Bürgergeld als Näherung auch für Wohngeld und Kinderzuschlag); amtlich 2025 rund 3,1 Mio. Bedarfsgemeinschaften (abgeleitet aus 5,6 Mio. Personen, Annahme)"
+   }
+  },
+  "pruefung_rentner": {
+   "paar_aequiv": {
+    "modell_mittel": 32535,
+    "modell_median": 28320,
+    "silc_mittel": 31053,
+    "silc_median": 26606,
+    "hinweis": "ilc_di04 A2_GE1_GE65, nicht geeicht (enthält Paare mit nur einer Person ab 65)"
+   },
+   "netto_haushalt_monat": {
+    "modell_2024": 3035,
+    "modell_auf_2023": 2902,
+    "asid_2023": 2769,
+    "hinweis": "ASID: Haushalte ab 65, Abgrenzung abweichend; Rückrechnung 2024→2023 mit Rentenanpassung (Annahme)"
+   },
+   "unter_grundsicherungsbedarf_personen_mio": 1.05,
+   "grundsicherung_alter_empfaenger_mio": 0.764,
+   "grv_brutto_je_person_monat_2024": 1318,
+   "aequiv_unter_60_pct": 19.6,
+   "aequiv_unter_60_silc_pct": 19.5,
+   "sigma_ueber_median": 0.51,
+   "faktor_typ": {
+    "rentner_allein": 0.8689,
+    "rentner_paar": 1.1121
+   }
+  },
+  "ergebnis": {
+   "0.0": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 61.0,
+     "anteil_mehr_personen_pct": 67.7,
+     "mittel_mehr_monat_eur": 85,
+     "median_mehr_monat_eur": 100,
+     "haushalte_mio": 41.1
+    },
+    "haushaltstyp": {
+     "allein": {
+      "anteil_mehr_haushalte_pct": 70.6,
+      "anteil_mehr_personen_pct": 70.6,
+      "mittel_mehr_monat_eur": 104,
+      "median_mehr_monat_eur": 165,
+      "haushalte_mio": 10.7
+     },
+     "alleinerziehend": {
+      "anteil_mehr_haushalte_pct": 83.4,
+      "anteil_mehr_personen_pct": 86.1,
+      "mittel_mehr_monat_eur": 169,
+      "median_mehr_monat_eur": 171,
+      "haushalte_mio": 1.62
+     },
+     "paar_ohne": {
+      "anteil_mehr_haushalte_pct": 83.4,
+      "anteil_mehr_personen_pct": 84.0,
+      "mittel_mehr_monat_eur": 268,
+      "median_mehr_monat_eur": 365,
+      "haushalte_mio": 9.83
+     },
+     "paar_mit": {
+      "anteil_mehr_haushalte_pct": 81.2,
+      "anteil_mehr_personen_pct": 81.8,
+      "mittel_mehr_monat_eur": 251,
+      "median_mehr_monat_eur": 342,
+      "haushalte_mio": 6.8
+     },
+     "rentner_allein": {
+      "anteil_mehr_haushalte_pct": 16.5,
+      "anteil_mehr_personen_pct": 16.5,
+      "mittel_mehr_monat_eur": -137,
+      "median_mehr_monat_eur": -63,
+      "haushalte_mio": 6.3
+     },
+     "rentner_paar": {
+      "anteil_mehr_haushalte_pct": 23.8,
+      "anteil_mehr_personen_pct": 23.8,
+      "mittel_mehr_monat_eur": -237,
+      "median_mehr_monat_eur": -112,
+      "haushalte_mio": 5.85
+     }
+    },
+    "status": {
+     "Hauptperson Beamte": {
+      "anteil_mehr_haushalte_pct": 34.6,
+      "anteil_mehr_personen_pct": 42.9,
+      "mittel_mehr_monat_eur": -103,
+      "median_mehr_monat_eur": -103,
+      "haushalte_mio": 1.96
+     },
+     "Hauptperson Minijob": {
+      "anteil_mehr_haushalte_pct": 40.0,
+      "anteil_mehr_personen_pct": 58.7,
+      "mittel_mehr_monat_eur": 29,
+      "median_mehr_monat_eur": -48,
+      "haushalte_mio": 0.87
+     },
+     "Hauptperson Teilzeit": {
+      "anteil_mehr_haushalte_pct": 94.5,
+      "anteil_mehr_personen_pct": 95.8,
+      "mittel_mehr_monat_eur": 294,
+      "median_mehr_monat_eur": 294,
+      "haushalte_mio": 4.6
+     },
+     "Hauptperson Vollzeit": {
+      "anteil_mehr_haushalte_pct": 92.9,
+      "anteil_mehr_personen_pct": 92.0,
+      "mittel_mehr_monat_eur": 280,
+      "median_mehr_monat_eur": 287,
+      "haushalte_mio": 15.2
+     },
+     "Hauptperson selbständig": {
+      "anteil_mehr_haushalte_pct": 69.7,
+      "anteil_mehr_personen_pct": 70.8,
+      "mittel_mehr_monat_eur": 100,
+      "median_mehr_monat_eur": 179,
+      "haushalte_mio": 3.9
+     },
+     "Rentner": {
+      "anteil_mehr_haushalte_pct": 20.0,
+      "anteil_mehr_personen_pct": 21.3,
+      "mittel_mehr_monat_eur": -185,
+      "median_mehr_monat_eur": -86,
+      "haushalte_mio": 12.15
+     },
+     "ohne Erwerb (Bürgergeld)": {
+      "anteil_mehr_haushalte_pct": 16.8,
+      "anteil_mehr_personen_pct": 31.0,
+      "mittel_mehr_monat_eur": -41,
+      "median_mehr_monat_eur": -69,
+      "haushalte_mio": 2.42
+     }
+    },
+    "erwerbsfaehige_haushalte": {
+     "anteil_mehr_haushalte_pct": 78.1,
+     "anteil_mehr_personen_pct": 81.0,
+     "mittel_mehr_monat_eur": 198,
+     "median_mehr_monat_eur": 231,
+     "haushalte_mio": 28.95
+    },
+    "mit_teilzeit": {
+     "anteil_mehr_haushalte_pct": 90.4,
+     "anteil_mehr_personen_pct": 90.5,
+     "mittel_mehr_monat_eur": 306,
+     "median_mehr_monat_eur": 328,
+     "haushalte_mio": 9.83
+    },
+    "mit_kindern": {
+     "anteil_mehr_haushalte_pct": 81.6,
+     "anteil_mehr_personen_pct": 82.5,
+     "mittel_mehr_monat_eur": 235,
+     "median_mehr_monat_eur": 288,
+     "haushalte_mio": 8.42
+    },
+    "dezile": [
+     {
+      "dezil": 1,
+      "obergrenze_aequiv_monat_eur": 1386,
+      "anteil_mehr_haushalte_pct": 35.8,
+      "anteil_mehr_personen_pct": 41.6,
+      "mittel_mehr_monat_eur": -2,
+      "median_mehr_monat_eur": 0,
+      "haushalte_mio": 5.25
+     },
+     {
+      "dezil": 2,
+      "obergrenze_aequiv_monat_eur": 1677,
+      "anteil_mehr_haushalte_pct": 77.2,
+      "anteil_mehr_personen_pct": 88.6,
+      "mittel_mehr_monat_eur": 184,
+      "median_mehr_monat_eur": 102,
+      "haushalte_mio": 4.04
+     },
+     {
+      "dezil": 3,
+      "obergrenze_aequiv_monat_eur": 2022,
+      "anteil_mehr_haushalte_pct": 68.4,
+      "anteil_mehr_personen_pct": 80.7,
+      "mittel_mehr_monat_eur": 186,
+      "median_mehr_monat_eur": 239,
+      "haushalte_mio": 4.13
+     },
+     {
+      "dezil": 4,
+      "obergrenze_aequiv_monat_eur": 2347,
+      "anteil_mehr_haushalte_pct": 62.3,
+      "anteil_mehr_personen_pct": 70.6,
+      "mittel_mehr_monat_eur": 187,
+      "median_mehr_monat_eur": 230,
+      "haushalte_mio": 3.91
+     },
+     {
+      "dezil": 5,
+      "obergrenze_aequiv_monat_eur": 2673,
+      "anteil_mehr_haushalte_pct": 66.4,
+      "anteil_mehr_personen_pct": 72.9,
+      "mittel_mehr_monat_eur": 188,
+      "median_mehr_monat_eur": 229,
+      "haushalte_mio": 3.93
+     },
+     {
+      "dezil": 6,
+      "obergrenze_aequiv_monat_eur": 3029,
+      "anteil_mehr_haushalte_pct": 67.6,
+      "anteil_mehr_personen_pct": 73.1,
+      "mittel_mehr_monat_eur": 173,
+      "median_mehr_monat_eur": 208,
+      "haushalte_mio": 3.93
+     },
+     {
+      "dezil": 7,
+      "obergrenze_aequiv_monat_eur": 3442,
+      "anteil_mehr_haushalte_pct": 68.8,
+      "anteil_mehr_personen_pct": 73.7,
+      "mittel_mehr_monat_eur": 154,
+      "median_mehr_monat_eur": 193,
+      "haushalte_mio": 3.89
+     },
+     {
+      "dezil": 8,
+      "obergrenze_aequiv_monat_eur": 4003,
+      "anteil_mehr_haushalte_pct": 66.9,
+      "anteil_mehr_personen_pct": 70.6,
+      "mittel_mehr_monat_eur": 94,
+      "median_mehr_monat_eur": 172,
+      "haushalte_mio": 3.89
+     },
+     {
+      "dezil": 9,
+      "obergrenze_aequiv_monat_eur": 4970,
+      "anteil_mehr_haushalte_pct": 63.6,
+      "anteil_mehr_personen_pct": 64.5,
+      "mittel_mehr_monat_eur": -2,
+      "median_mehr_monat_eur": 123,
+      "haushalte_mio": 3.98
+     },
+     {
+      "dezil": 10,
+      "obergrenze_aequiv_monat_eur": 51701,
+      "anteil_mehr_haushalte_pct": 41.4,
+      "anteil_mehr_personen_pct": 41.2,
+      "mittel_mehr_monat_eur": -270,
+      "median_mehr_monat_eur": -88,
+      "haushalte_mio": 4.16
+     }
+    ],
+    "kosten_mrd": {
+     "grundauskommen_neu": 35.0,
+     "davon_ohne_erwerb": 23.8,
+     "davon_erwerbstaetige_haushalte": 9.0,
+     "davon_rentner": 2.2,
+     "buergergeld_naeherung_heute": 50.9,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   },
+   "0.5": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 66.9,
+     "anteil_mehr_personen_pct": 74.5,
+     "mittel_mehr_monat_eur": 307,
+     "median_mehr_monat_eur": 338,
+     "haushalte_mio": 41.1
+    },
+    "haushaltstyp": {
+     "allein": {
+      "anteil_mehr_haushalte_pct": 73.0,
+      "anteil_mehr_personen_pct": 73.0,
+      "mittel_mehr_monat_eur": 270,
+      "median_mehr_monat_eur": 462,
+      "haushalte_mio": 10.7
+     },
+     "alleinerziehend": {
+      "anteil_mehr_haushalte_pct": 85.1,
+      "anteil_mehr_personen_pct": 87.7,
+      "mittel_mehr_monat_eur": 322,
+      "median_mehr_monat_eur": 401,
+      "haushalte_mio": 1.62
+     },
+     "paar_ohne": {
+      "anteil_mehr_haushalte_pct": 91.5,
+      "anteil_mehr_personen_pct": 91.9,
+      "mittel_mehr_monat_eur": 695,
+      "median_mehr_monat_eur": 835,
+      "haushalte_mio": 9.83
+     },
+     "paar_mit": {
+      "anteil_mehr_haushalte_pct": 90.1,
+      "anteil_mehr_personen_pct": 90.6,
+      "mittel_mehr_monat_eur": 617,
+      "median_mehr_monat_eur": 726,
+      "haushalte_mio": 6.8
+     },
+     "rentner_allein": {
+      "anteil_mehr_haushalte_pct": 22.2,
+      "anteil_mehr_personen_pct": 22.2,
+      "mittel_mehr_monat_eur": -113,
+      "median_mehr_monat_eur": -43,
+      "haushalte_mio": 6.3
+     },
+     "rentner_paar": {
+      "anteil_mehr_haushalte_pct": 30.6,
+      "anteil_mehr_personen_pct": 30.6,
+      "mittel_mehr_monat_eur": -188,
+      "median_mehr_monat_eur": -71,
+      "haushalte_mio": 5.85
+     }
+    },
+    "status": {
+     "Hauptperson Beamte": {
+      "anteil_mehr_haushalte_pct": 52.7,
+      "anteil_mehr_personen_pct": 64.8,
+      "mittel_mehr_monat_eur": 32,
+      "median_mehr_monat_eur": 34,
+      "haushalte_mio": 1.96
+     },
+     "Hauptperson Minijob": {
+      "anteil_mehr_haushalte_pct": 46.0,
+      "anteil_mehr_personen_pct": 66.4,
+      "mittel_mehr_monat_eur": 149,
+      "median_mehr_monat_eur": -18,
+      "haushalte_mio": 0.87
+     },
+     "Hauptperson Teilzeit": {
+      "anteil_mehr_haushalte_pct": 98.9,
+      "anteil_mehr_personen_pct": 99.2,
+      "mittel_mehr_monat_eur": 559,
+      "median_mehr_monat_eur": 489,
+      "haushalte_mio": 4.6
+     },
+     "Hauptperson Vollzeit": {
+      "anteil_mehr_haushalte_pct": 98.4,
+      "anteil_mehr_personen_pct": 98.2,
+      "mittel_mehr_monat_eur": 714,
+      "median_mehr_monat_eur": 685,
+      "haushalte_mio": 15.2
+     },
+     "Hauptperson selbständig": {
+      "anteil_mehr_haushalte_pct": 75.7,
+      "anteil_mehr_personen_pct": 78.4,
+      "mittel_mehr_monat_eur": 234,
+      "median_mehr_monat_eur": 259,
+      "haushalte_mio": 3.9
+     },
+     "Rentner": {
+      "anteil_mehr_haushalte_pct": 26.3,
+      "anteil_mehr_personen_pct": 27.7,
+      "mittel_mehr_monat_eur": -149,
+      "median_mehr_monat_eur": -53,
+      "haushalte_mio": 12.15
+     },
+     "ohne Erwerb (Bürgergeld)": {
+      "anteil_mehr_haushalte_pct": 17.6,
+      "anteil_mehr_personen_pct": 32.7,
+      "mittel_mehr_monat_eur": -36,
+      "median_mehr_monat_eur": -69,
+      "haushalte_mio": 2.42
+     }
+    },
+    "erwerbsfaehige_haushalte": {
+     "anteil_mehr_haushalte_pct": 84.0,
+     "anteil_mehr_personen_pct": 87.8,
+     "mittel_mehr_monat_eur": 499,
+     "median_mehr_monat_eur": 497,
+     "haushalte_mio": 28.95
+    },
+    "mit_teilzeit": {
+     "anteil_mehr_haushalte_pct": 96.1,
+     "anteil_mehr_personen_pct": 96.0,
+     "mittel_mehr_monat_eur": 642,
+     "median_mehr_monat_eur": 696,
+     "haushalte_mio": 9.83
+    },
+    "mit_kindern": {
+     "anteil_mehr_haushalte_pct": 89.1,
+     "anteil_mehr_personen_pct": 90.1,
+     "mittel_mehr_monat_eur": 560,
+     "median_mehr_monat_eur": 597,
+     "haushalte_mio": 8.42
+    },
+    "dezile": [
+     {
+      "dezil": 1,
+      "obergrenze_aequiv_monat_eur": 1386,
+      "anteil_mehr_haushalte_pct": 38.0,
+      "anteil_mehr_personen_pct": 44.4,
+      "mittel_mehr_monat_eur": 13,
+      "median_mehr_monat_eur": 0,
+      "haushalte_mio": 5.25
+     },
+     {
+      "dezil": 2,
+      "obergrenze_aequiv_monat_eur": 1677,
+      "anteil_mehr_haushalte_pct": 87.8,
+      "anteil_mehr_personen_pct": 93.9,
+      "mittel_mehr_monat_eur": 259,
+      "median_mehr_monat_eur": 161,
+      "haushalte_mio": 4.04
+     },
+     {
+      "dezil": 3,
+      "obergrenze_aequiv_monat_eur": 2022,
+      "anteil_mehr_haushalte_pct": 74.2,
+      "anteil_mehr_personen_pct": 86.6,
+      "mittel_mehr_monat_eur": 318,
+      "median_mehr_monat_eur": 459,
+      "haushalte_mio": 4.13
+     },
+     {
+      "dezil": 4,
+      "obergrenze_aequiv_monat_eur": 2347,
+      "anteil_mehr_haushalte_pct": 66.3,
+      "anteil_mehr_personen_pct": 74.7,
+      "mittel_mehr_monat_eur": 364,
+      "median_mehr_monat_eur": 478,
+      "haushalte_mio": 3.91
+     },
+     {
+      "dezil": 5,
+      "obergrenze_aequiv_monat_eur": 2673,
+      "anteil_mehr_haushalte_pct": 67.5,
+      "anteil_mehr_personen_pct": 75.0,
+      "mittel_mehr_monat_eur": 408,
+      "median_mehr_monat_eur": 479,
+      "haushalte_mio": 3.93
+     },
+     {
+      "dezil": 6,
+      "obergrenze_aequiv_monat_eur": 3029,
+      "anteil_mehr_haushalte_pct": 69.7,
+      "anteil_mehr_personen_pct": 76.8,
+      "mittel_mehr_monat_eur": 434,
+      "median_mehr_monat_eur": 489,
+      "haushalte_mio": 3.93
+     },
+     {
+      "dezil": 7,
+      "obergrenze_aequiv_monat_eur": 3442,
+      "anteil_mehr_haushalte_pct": 72.2,
+      "anteil_mehr_personen_pct": 78.6,
+      "mittel_mehr_monat_eur": 459,
+      "median_mehr_monat_eur": 518,
+      "haushalte_mio": 3.89
+     },
+     {
+      "dezil": 8,
+      "obergrenze_aequiv_monat_eur": 4003,
+      "anteil_mehr_haushalte_pct": 71.1,
+      "anteil_mehr_personen_pct": 76.4,
+      "mittel_mehr_monat_eur": 436,
+      "median_mehr_monat_eur": 544,
+      "haushalte_mio": 3.89
+     },
+     {
+      "dezil": 9,
+      "obergrenze_aequiv_monat_eur": 4970,
+      "anteil_mehr_haushalte_pct": 70.9,
+      "anteil_mehr_personen_pct": 74.8,
+      "mittel_mehr_monat_eur": 376,
+      "median_mehr_monat_eur": 508,
+      "haushalte_mio": 3.98
+     },
+     {
+      "dezil": 10,
+      "obergrenze_aequiv_monat_eur": 51701,
+      "anteil_mehr_haushalte_pct": 60.6,
+      "anteil_mehr_personen_pct": 63.4,
+      "mittel_mehr_monat_eur": 120,
+      "median_mehr_monat_eur": 300,
+      "haushalte_mio": 4.16
+     }
+    ],
+    "kosten_mrd": {
+     "grundauskommen_neu": 33.6,
+     "davon_ohne_erwerb": 23.7,
+     "davon_erwerbstaetige_haushalte": 7.8,
+     "davon_rentner": 2.1,
+     "buergergeld_naeherung_heute": 50.9,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   },
+   "0.8": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 69.3,
+     "anteil_mehr_personen_pct": 76.7,
+     "mittel_mehr_monat_eur": 441,
+     "median_mehr_monat_eur": 480,
+     "haushalte_mio": 41.1
+    },
+    "haushaltstyp": {
+     "allein": {
+      "anteil_mehr_haushalte_pct": 73.7,
+      "anteil_mehr_personen_pct": 73.7,
+      "mittel_mehr_monat_eur": 370,
+      "median_mehr_monat_eur": 583,
+      "haushalte_mio": 10.7
+     },
+     "alleinerziehend": {
+      "anteil_mehr_haushalte_pct": 86.1,
+      "anteil_mehr_personen_pct": 88.7,
+      "mittel_mehr_monat_eur": 416,
+      "median_mehr_monat_eur": 489,
+      "haushalte_mio": 1.62
+     },
+     "paar_ohne": {
+      "anteil_mehr_haushalte_pct": 92.9,
+      "anteil_mehr_personen_pct": 93.3,
+      "mittel_mehr_monat_eur": 950,
+      "median_mehr_monat_eur": 1122,
+      "haushalte_mio": 9.83
+     },
+     "paar_mit": {
+      "anteil_mehr_haushalte_pct": 91.7,
+      "anteil_mehr_personen_pct": 92.1,
+      "mittel_mehr_monat_eur": 837,
+      "median_mehr_monat_eur": 921,
+      "haushalte_mio": 6.8
+     },
+     "rentner_allein": {
+      "anteil_mehr_haushalte_pct": 27.0,
+      "anteil_mehr_personen_pct": 27.0,
+      "mittel_mehr_monat_eur": -98,
+      "median_mehr_monat_eur": -30,
+      "haushalte_mio": 6.3
+     },
+     "rentner_paar": {
+      "anteil_mehr_haushalte_pct": 36.2,
+      "anteil_mehr_personen_pct": 36.2,
+      "mittel_mehr_monat_eur": -159,
+      "median_mehr_monat_eur": -46,
+      "haushalte_mio": 5.85
+     }
+    },
+    "status": {
+     "Hauptperson Beamte": {
+      "anteil_mehr_haushalte_pct": 56.4,
+      "anteil_mehr_personen_pct": 69.2,
+      "mittel_mehr_monat_eur": 112,
+      "median_mehr_monat_eur": 101,
+      "haushalte_mio": 1.96
+     },
+     "Hauptperson Minijob": {
+      "anteil_mehr_haushalte_pct": 49.1,
+      "anteil_mehr_personen_pct": 69.5,
+      "mittel_mehr_monat_eur": 221,
+      "median_mehr_monat_eur": -1,
+      "haushalte_mio": 0.87
+     },
+     "Hauptperson Teilzeit": {
+      "anteil_mehr_haushalte_pct": 99.9,
+      "anteil_mehr_personen_pct": 99.9,
+      "mittel_mehr_monat_eur": 718,
+      "median_mehr_monat_eur": 634,
+      "haushalte_mio": 4.6
+     },
+     "Hauptperson Vollzeit": {
+      "anteil_mehr_haushalte_pct": 99.1,
+      "anteil_mehr_personen_pct": 99.0,
+      "mittel_mehr_monat_eur": 974,
+      "median_mehr_monat_eur": 930,
+      "haushalte_mio": 15.2
+     },
+     "Hauptperson selbständig": {
+      "anteil_mehr_haushalte_pct": 77.7,
+      "anteil_mehr_personen_pct": 81.0,
+      "mittel_mehr_monat_eur": 315,
+      "median_mehr_monat_eur": 294,
+      "haushalte_mio": 3.9
+     },
+     "Rentner": {
+      "anteil_mehr_haushalte_pct": 31.5,
+      "anteil_mehr_personen_pct": 33.0,
+      "mittel_mehr_monat_eur": -127,
+      "median_mehr_monat_eur": -35,
+      "haushalte_mio": 12.15
+     },
+     "ohne Erwerb (Bürgergeld)": {
+      "anteil_mehr_haushalte_pct": 18.0,
+      "anteil_mehr_personen_pct": 33.2,
+      "mittel_mehr_monat_eur": -34,
+      "median_mehr_monat_eur": -69,
+      "haushalte_mio": 2.42
+     }
+    },
+    "erwerbsfaehige_haushalte": {
+     "anteil_mehr_haushalte_pct": 85.1,
+     "anteil_mehr_personen_pct": 89.1,
+     "mittel_mehr_monat_eur": 679,
+     "median_mehr_monat_eur": 680,
+     "haushalte_mio": 28.95
+    },
+    "mit_teilzeit": {
+     "anteil_mehr_haushalte_pct": 97.4,
+     "anteil_mehr_personen_pct": 97.2,
+     "mittel_mehr_monat_eur": 842,
+     "median_mehr_monat_eur": 891,
+     "haushalte_mio": 9.83
+    },
+    "mit_kindern": {
+     "anteil_mehr_haushalte_pct": 90.6,
+     "anteil_mehr_personen_pct": 91.6,
+     "mittel_mehr_monat_eur": 756,
+     "median_mehr_monat_eur": 786,
+     "haushalte_mio": 8.42
+    },
+    "dezile": [
+     {
+      "dezil": 1,
+      "obergrenze_aequiv_monat_eur": 1386,
+      "anteil_mehr_haushalte_pct": 39.8,
+      "anteil_mehr_personen_pct": 46.1,
+      "mittel_mehr_monat_eur": 21,
+      "median_mehr_monat_eur": 0,
+      "haushalte_mio": 5.25
+     },
+     {
+      "dezil": 2,
+      "obergrenze_aequiv_monat_eur": 1677,
+      "anteil_mehr_haushalte_pct": 94.8,
+      "anteil_mehr_personen_pct": 97.4,
+      "mittel_mehr_monat_eur": 306,
+      "median_mehr_monat_eur": 201,
+      "haushalte_mio": 4.04
+     },
+     {
+      "dezil": 3,
+      "obergrenze_aequiv_monat_eur": 2022,
+      "anteil_mehr_haushalte_pct": 74.2,
+      "anteil_mehr_personen_pct": 86.6,
+      "mittel_mehr_monat_eur": 396,
+      "median_mehr_monat_eur": 554,
+      "haushalte_mio": 4.13
+     },
+     {
+      "dezil": 4,
+      "obergrenze_aequiv_monat_eur": 2347,
+      "anteil_mehr_haushalte_pct": 74.7,
+      "anteil_mehr_personen_pct": 82.8,
+      "mittel_mehr_monat_eur": 470,
+      "median_mehr_monat_eur": 595,
+      "haushalte_mio": 3.91
+     },
+     {
+      "dezil": 5,
+      "obergrenze_aequiv_monat_eur": 2673,
+      "anteil_mehr_haushalte_pct": 67.6,
+      "anteil_mehr_personen_pct": 75.1,
+      "mittel_mehr_monat_eur": 539,
+      "median_mehr_monat_eur": 621,
+      "haushalte_mio": 3.93
+     },
+     {
+      "dezil": 6,
+      "obergrenze_aequiv_monat_eur": 3029,
+      "anteil_mehr_haushalte_pct": 69.8,
+      "anteil_mehr_personen_pct": 76.9,
+      "mittel_mehr_monat_eur": 589,
+      "median_mehr_monat_eur": 658,
+      "haushalte_mio": 3.93
+     },
+     {
+      "dezil": 7,
+      "obergrenze_aequiv_monat_eur": 3442,
+      "anteil_mehr_haushalte_pct": 72.5,
+      "anteil_mehr_personen_pct": 79.1,
+      "mittel_mehr_monat_eur": 642,
+      "median_mehr_monat_eur": 713,
+      "haushalte_mio": 3.89
+     },
+     {
+      "dezil": 8,
+      "obergrenze_aequiv_monat_eur": 4003,
+      "anteil_mehr_haushalte_pct": 71.9,
+      "anteil_mehr_personen_pct": 77.8,
+      "mittel_mehr_monat_eur": 641,
+      "median_mehr_monat_eur": 766,
+      "haushalte_mio": 3.89
+     },
+     {
+      "dezil": 9,
+      "obergrenze_aequiv_monat_eur": 4970,
+      "anteil_mehr_haushalte_pct": 72.6,
+      "anteil_mehr_personen_pct": 77.1,
+      "mittel_mehr_monat_eur": 603,
+      "median_mehr_monat_eur": 738,
+      "haushalte_mio": 3.98
+     },
+     {
+      "dezil": 10,
+      "obergrenze_aequiv_monat_eur": 51701,
+      "anteil_mehr_haushalte_pct": 64.1,
+      "anteil_mehr_personen_pct": 67.8,
+      "mittel_mehr_monat_eur": 354,
+      "median_mehr_monat_eur": 552,
+      "haushalte_mio": 4.16
+     }
+    ],
+    "kosten_mrd": {
+     "grundauskommen_neu": 32.9,
+     "davon_ohne_erwerb": 23.7,
+     "davon_erwerbstaetige_haushalte": 7.2,
+     "davon_rentner": 2.0,
+     "buergergeld_naeherung_heute": 50.9,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   },
+   "1.0": {
+    "gesamt": {
+     "anteil_mehr_haushalte_pct": 71.1,
+     "anteil_mehr_personen_pct": 78.3,
+     "mittel_mehr_monat_eur": 529,
+     "median_mehr_monat_eur": 570,
+     "haushalte_mio": 41.1
+    },
+    "haushaltstyp": {
+     "allein": {
+      "anteil_mehr_haushalte_pct": 74.3,
+      "anteil_mehr_personen_pct": 74.3,
+      "mittel_mehr_monat_eur": 437,
+      "median_mehr_monat_eur": 647,
+      "haushalte_mio": 10.7
+     },
+     "alleinerziehend": {
+      "anteil_mehr_haushalte_pct": 86.5,
+      "anteil_mehr_personen_pct": 89.0,
+      "mittel_mehr_monat_eur": 479,
+      "median_mehr_monat_eur": 545,
+      "haushalte_mio": 1.62
+     },
+     "paar_ohne": {
+      "anteil_mehr_haushalte_pct": 93.7,
+      "anteil_mehr_personen_pct": 94.0,
+      "mittel_mehr_monat_eur": 1119,
+      "median_mehr_monat_eur": 1306,
+      "haushalte_mio": 9.83
+     },
+     "paar_mit": {
+      "anteil_mehr_haushalte_pct": 92.5,
+      "anteil_mehr_personen_pct": 93.0,
+      "mittel_mehr_monat_eur": 983,
+      "median_mehr_monat_eur": 1048,
+      "haushalte_mio": 6.8
+     },
+     "rentner_allein": {
+      "anteil_mehr_haushalte_pct": 31.3,
+      "anteil_mehr_personen_pct": 31.3,
+      "mittel_mehr_monat_eur": -89,
+      "median_mehr_monat_eur": -22,
+      "haushalte_mio": 6.3
+     },
+     "rentner_paar": {
+      "anteil_mehr_haushalte_pct": 40.9,
+      "anteil_mehr_personen_pct": 40.9,
+      "mittel_mehr_monat_eur": -139,
+      "median_mehr_monat_eur": -30,
+      "haushalte_mio": 5.85
+     }
+    },
+    "status": {
+     "Hauptperson Beamte": {
+      "anteil_mehr_haushalte_pct": 58.0,
+      "anteil_mehr_personen_pct": 71.1,
+      "mittel_mehr_monat_eur": 166,
+      "median_mehr_monat_eur": 143,
+      "haushalte_mio": 1.96
+     },
+     "Hauptperson Minijob": {
+      "anteil_mehr_haushalte_pct": 56.0,
+      "anteil_mehr_personen_pct": 73.8,
+      "mittel_mehr_monat_eur": 269,
+      "median_mehr_monat_eur": 10,
+      "haushalte_mio": 0.87
+     },
+     "Hauptperson Teilzeit": {
+      "anteil_mehr_haushalte_pct": 99.9,
+      "anteil_mehr_personen_pct": 99.9,
+      "mittel_mehr_monat_eur": 824,
+      "median_mehr_monat_eur": 733,
+      "haushalte_mio": 4.6
+     },
+     "Hauptperson Vollzeit": {
+      "anteil_mehr_haushalte_pct": 99.4,
+      "anteil_mehr_personen_pct": 99.3,
+      "mittel_mehr_monat_eur": 1147,
+      "median_mehr_monat_eur": 1092,
+      "haushalte_mio": 15.2
+     },
+     "Hauptperson selbständig": {
+      "anteil_mehr_haushalte_pct": 78.7,
+      "anteil_mehr_personen_pct": 82.3,
+      "mittel_mehr_monat_eur": 368,
+      "median_mehr_monat_eur": 300,
+      "haushalte_mio": 3.9
+     },
+     "Rentner": {
+      "anteil_mehr_haushalte_pct": 36.0,
+      "anteil_mehr_personen_pct": 37.6,
+      "mittel_mehr_monat_eur": -113,
+      "median_mehr_monat_eur": -24,
+      "haushalte_mio": 12.15
+     },
+     "ohne Erwerb (Bürgergeld)": {
+      "anteil_mehr_haushalte_pct": 18.8,
+      "anteil_mehr_personen_pct": 34.7,
+      "mittel_mehr_monat_eur": -32,
+      "median_mehr_monat_eur": -69,
+      "haushalte_mio": 2.42
+     }
+    },
+    "erwerbsfaehige_haushalte": {
+     "anteil_mehr_haushalte_pct": 85.8,
+     "anteil_mehr_personen_pct": 89.9,
+     "mittel_mehr_monat_eur": 799,
+     "median_mehr_monat_eur": 799,
+     "haushalte_mio": 28.95
+    },
+    "mit_teilzeit": {
+     "anteil_mehr_haushalte_pct": 97.8,
+     "anteil_mehr_personen_pct": 97.6,
+     "mittel_mehr_monat_eur": 976,
+     "median_mehr_monat_eur": 1011,
+     "haushalte_mio": 9.83
+    },
+    "mit_kindern": {
+     "anteil_mehr_haushalte_pct": 91.4,
+     "anteil_mehr_personen_pct": 92.3,
+     "mittel_mehr_monat_eur": 886,
+     "median_mehr_monat_eur": 914,
+     "haushalte_mio": 8.42
+    },
+    "dezile": [
+     {
+      "dezil": 1,
+      "obergrenze_aequiv_monat_eur": 1386,
+      "anteil_mehr_haushalte_pct": 41.7,
+      "anteil_mehr_personen_pct": 48.0,
+      "mittel_mehr_monat_eur": 27,
+      "median_mehr_monat_eur": 0,
+      "haushalte_mio": 5.25
+     },
+     {
+      "dezil": 2,
+      "obergrenze_aequiv_monat_eur": 1677,
+      "anteil_mehr_haushalte_pct": 99.3,
+      "anteil_mehr_personen_pct": 99.7,
+      "mittel_mehr_monat_eur": 337,
+      "median_mehr_monat_eur": 229,
+      "haushalte_mio": 4.04
+     },
+     {
+      "dezil": 3,
+      "obergrenze_aequiv_monat_eur": 2022,
+      "anteil_mehr_haushalte_pct": 76.0,
+      "anteil_mehr_personen_pct": 87.5,
+      "mittel_mehr_monat_eur": 448,
+      "median_mehr_monat_eur": 616,
+      "haushalte_mio": 4.13
+     },
+     {
+      "dezil": 4,
+      "obergrenze_aequiv_monat_eur": 2347,
+      "anteil_mehr_haushalte_pct": 81.7,
+      "anteil_mehr_personen_pct": 89.6,
+      "mittel_mehr_monat_eur": 540,
+      "median_mehr_monat_eur": 672,
+      "haushalte_mio": 3.91
+     },
+     {
+      "dezil": 5,
+      "obergrenze_aequiv_monat_eur": 2673,
+      "anteil_mehr_haushalte_pct": 67.6,
+      "anteil_mehr_personen_pct": 75.1,
+      "mittel_mehr_monat_eur": 627,
+      "median_mehr_monat_eur": 716,
+      "haushalte_mio": 3.93
+     },
+     {
+      "dezil": 6,
+      "obergrenze_aequiv_monat_eur": 3029,
+      "anteil_mehr_haushalte_pct": 69.9,
+      "anteil_mehr_personen_pct": 77.0,
+      "mittel_mehr_monat_eur": 693,
+      "median_mehr_monat_eur": 771,
+      "haushalte_mio": 3.93
+     },
+     {
+      "dezil": 7,
+      "obergrenze_aequiv_monat_eur": 3442,
+      "anteil_mehr_haushalte_pct": 72.6,
+      "anteil_mehr_personen_pct": 79.3,
+      "mittel_mehr_monat_eur": 763,
+      "median_mehr_monat_eur": 843,
+      "haushalte_mio": 3.89
+     },
+     {
+      "dezil": 8,
+      "obergrenze_aequiv_monat_eur": 4003,
+      "anteil_mehr_haushalte_pct": 72.2,
+      "anteil_mehr_personen_pct": 78.2,
+      "mittel_mehr_monat_eur": 777,
+      "median_mehr_monat_eur": 915,
+      "haushalte_mio": 3.89
+     },
+     {
+      "dezil": 9,
+      "obergrenze_aequiv_monat_eur": 4970,
+      "anteil_mehr_haushalte_pct": 73.3,
+      "anteil_mehr_personen_pct": 78.2,
+      "mittel_mehr_monat_eur": 754,
+      "median_mehr_monat_eur": 892,
+      "haushalte_mio": 3.98
+     },
+     {
+      "dezil": 10,
+      "obergrenze_aequiv_monat_eur": 51701,
+      "anteil_mehr_haushalte_pct": 65.9,
+      "anteil_mehr_personen_pct": 70.0,
+      "mittel_mehr_monat_eur": 510,
+      "median_mehr_monat_eur": 716,
+      "haushalte_mio": 4.16
+     }
+    ],
+    "kosten_mrd": {
+     "grundauskommen_neu": 32.5,
+     "davon_ohne_erwerb": 23.6,
+     "davon_erwerbstaetige_haushalte": 6.9,
+     "davon_rentner": 2.0,
+     "buergergeld_naeherung_heute": 50.9,
+     "grundsicherung_alter_heute": 2.7,
+     "grundsicherung_alter_faelle_heute_mio": 1.05,
+     "amtlich_grundsicherung_alter": {
+      "empfaenger_mio": 0.764,
+      "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+      "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+     },
+     "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+    }
+   }
+  }
+ },
+ "ziehungen": {
+  "0.0": {
+   "gesamt_haushalte": [
+    60.6,
+    61.0
+   ],
+   "vollzeit": [
+    92.5,
+    92.9
+   ],
+   "teilzeit": [
+    93.6,
+    94.5
+   ],
+   "rentner": [
+    19.8,
+    20.8
+   ],
+   "grundauskommen_mrd": [
+    35.0,
+    35.7
+   ]
+  },
+  "0.5": {
+   "gesamt_haushalte": [
+    66.8,
+    67.2
+   ],
+   "vollzeit": [
+    98.3,
+    98.4
+   ],
+   "teilzeit": [
+    98.5,
+    98.9
+   ],
+   "rentner": [
+    26.1,
+    27.3
+   ],
+   "grundauskommen_mrd": [
+    33.6,
+    34.3
+   ]
+  },
+  "0.8": {
+   "gesamt_haushalte": [
+    69.0,
+    69.5
+   ],
+   "vollzeit": [
+    99.0,
+    99.1
+   ],
+   "teilzeit": [
+    99.7,
+    99.9
+   ],
+   "rentner": [
+    31.0,
+    32.1
+   ],
+   "grundauskommen_mrd": [
+    32.9,
+    33.6
+   ]
+  },
+  "1.0": {
+   "gesamt_haushalte": [
+    70.7,
+    71.2
+   ],
+   "vollzeit": [
+    99.4,
+    99.4
+   ],
+   "teilzeit": [
+    99.9,
+    99.9
+   ],
+   "rentner": [
+    35.2,
+    36.1
+   ],
+   "grundauskommen_mrd": [
+    32.5,
+    33.2
+   ]
+  }
+ },
+ "partnerkorrelation": {
+  "0.0": {
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 69.3,
+    "anteil_mehr_personen_pct": 76.6,
+    "mittel_mehr_monat_eur": 437,
+    "median_mehr_monat_eur": 476,
+    "haushalte_mio": 41.1
+   },
+   "paar_ohne": {
+    "anteil_mehr_haushalte_pct": 92.9,
+    "anteil_mehr_personen_pct": 93.2,
+    "mittel_mehr_monat_eur": 941,
+    "median_mehr_monat_eur": 1102,
+    "haushalte_mio": 9.83
+   },
+   "paar_mit": {
+    "anteil_mehr_haushalte_pct": 91.7,
+    "anteil_mehr_personen_pct": 92.1,
+    "mittel_mehr_monat_eur": 829,
+    "median_mehr_monat_eur": 914,
+    "haushalte_mio": 6.8
+   }
+  },
+  "0.3": {
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 69.3,
+    "anteil_mehr_personen_pct": 76.7,
+    "mittel_mehr_monat_eur": 441,
+    "median_mehr_monat_eur": 480,
+    "haushalte_mio": 41.1
+   },
+   "paar_ohne": {
+    "anteil_mehr_haushalte_pct": 92.9,
+    "anteil_mehr_personen_pct": 93.3,
+    "mittel_mehr_monat_eur": 950,
+    "median_mehr_monat_eur": 1122,
+    "haushalte_mio": 9.83
+   },
+   "paar_mit": {
+    "anteil_mehr_haushalte_pct": 91.7,
+    "anteil_mehr_personen_pct": 92.1,
+    "mittel_mehr_monat_eur": 837,
+    "median_mehr_monat_eur": 921,
+    "haushalte_mio": 6.8
+   }
+  },
+  "0.5": {
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 69.3,
+    "anteil_mehr_personen_pct": 76.7,
+    "mittel_mehr_monat_eur": 443,
+    "median_mehr_monat_eur": 483,
+    "haushalte_mio": 41.1
+   },
+   "paar_ohne": {
+    "anteil_mehr_haushalte_pct": 92.9,
+    "anteil_mehr_personen_pct": 93.2,
+    "mittel_mehr_monat_eur": 956,
+    "median_mehr_monat_eur": 1132,
+    "haushalte_mio": 9.83
+   },
+   "paar_mit": {
+    "anteil_mehr_haushalte_pct": 91.7,
+    "anteil_mehr_personen_pct": 92.2,
+    "mittel_mehr_monat_eur": 841,
+    "median_mehr_monat_eur": 927,
+    "haushalte_mio": 6.8
+   }
+  }
+ },
+ "struktur": {
+  "basis": {
+   "faktor_allein": 1.0,
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 69.3,
+    "anteil_mehr_personen_pct": 76.7,
+    "mittel_mehr_monat_eur": 441,
+    "median_mehr_monat_eur": 480,
+    "haushalte_mio": 41.1
+   },
+   "kosten_mrd": {
+    "grundauskommen_neu": 32.9,
+    "davon_ohne_erwerb": 23.7,
+    "davon_erwerbstaetige_haushalte": 7.2,
+    "davon_rentner": 2.0,
+    "buergergeld_naeherung_heute": 50.9,
+    "grundsicherung_alter_heute": 2.7,
+    "grundsicherung_alter_faelle_heute_mio": 1.05,
+    "amtlich_grundsicherung_alter": {
+     "empfaenger_mio": 0.764,
+     "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+     "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+    },
+    "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+   }
+  },
+  "mehr_allein": {
+   "faktor_allein": 1.15,
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 69.7,
+    "anteil_mehr_personen_pct": 77.3,
+    "mittel_mehr_monat_eur": 438,
+    "median_mehr_monat_eur": 492,
+    "haushalte_mio": 41.1
+   },
+   "kosten_mrd": {
+    "grundauskommen_neu": 32.6,
+    "davon_ohne_erwerb": 23.1,
+    "davon_erwerbstaetige_haushalte": 7.5,
+    "davon_rentner": 2.1,
+    "buergergeld_naeherung_heute": 49.1,
+    "grundsicherung_alter_heute": 2.7,
+    "grundsicherung_alter_faelle_heute_mio": 1.06,
+    "amtlich_grundsicherung_alter": {
+     "empfaenger_mio": 0.764,
+     "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+     "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+    },
+    "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+   }
+  },
+  "weniger_allein": {
+   "faktor_allein": 0.85,
+   "gesamt": {
+    "anteil_mehr_haushalte_pct": 69.0,
+    "anteil_mehr_personen_pct": 76.4,
+    "mittel_mehr_monat_eur": 441,
+    "median_mehr_monat_eur": 449,
+    "haushalte_mio": 41.1
+   },
+   "kosten_mrd": {
+    "grundauskommen_neu": 33.8,
+    "davon_ohne_erwerb": 24.2,
+    "davon_erwerbstaetige_haushalte": 7.5,
+    "davon_rentner": 2.1,
+    "buergergeld_naeherung_heute": 53.4,
+    "grundsicherung_alter_heute": 2.8,
+    "grundsicherung_alter_faelle_heute_mio": 1.08,
+    "amtlich_grundsicherung_alter": {
+     "empfaenger_mio": 0.764,
+     "ausgaben_mrd_mit_erwerbsminderung": 11.8,
+     "quelle": "rentnerausgleich.toml (Destatis/BMAS über Münster Aktuell, Sekundärquelle)"
+    },
+    "hinweis": "Jahresbeträge 2028 in Kaufkraft 2026; Grundauskommen = Aufstockung über Dividende und eigenes Einkommen; heute: Bürgergeld-Näherung bei voller Inanspruchnahme (einschließlich Wohngeld und Kinderzuschlag genähert), ohne Grundsicherung im Alter"
+   }
+  }
+ },
+ "hinweis": "Synthetische Population aus veröffentlichten Eckwerten; Spanne der Ziehungen misst nur das Rauschen der Ziehung, nicht die Unsicherheit der Annahmen (Haushaltszahlen, Teilzeitstreuung, Partnerstatus, Zusammensetzung der Alterseinkommen). Nicht abgebildet: Vermögenseinkommen der Erwerbstätigen, Rentner unter 65, Partner der Beamten und Selbständigen nicht in der Eichung (Doppelzählung möglich), Nicht-Inanspruchnahme nur als Variante (inanspruchnahme; Rentner: Variante beobachtet). Validierung nur an Aggregaten, auf die nicht geeicht wurde."
+}

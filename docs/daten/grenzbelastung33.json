@@ -1,0 +1,156 @@
+{
+ "version": "v4.47",
+ "status": "Prüfrechnung",
+ "zuschlag_2028": 15.0,
+ "rv_aequivalenz_band": [
+  0.0,
+  0.5,
+  1.0
+ ],
+ "zeilen": [
+  {
+   "brutto": 15000,
+   "heute_pct": 21.8,
+   "heute_bereinigt_pct": {
+    "0.0": 21.8,
+    "0.5": 17.1,
+    "1.0": 12.5
+   },
+   "neu_2028_pct": 25.5,
+   "neu_2028_mit_vorsorge_pct": 34.1,
+   "neu_nach_tilgung_pct": 21.0,
+   "neu_nach_tilgung_mit_vorsorge_pct": 29.5
+  },
+  {
+   "brutto": 20000,
+   "heute_pct": 35.8,
+   "heute_bereinigt_pct": {
+    "0.0": 35.8,
+    "0.5": 31.1,
+    "1.0": 26.5
+   },
+   "neu_2028_pct": 32.0,
+   "neu_2028_mit_vorsorge_pct": 40.5,
+   "neu_nach_tilgung_pct": 26.7,
+   "neu_nach_tilgung_mit_vorsorge_pct": 35.2
+  },
+  {
+   "brutto": 30000,
+   "heute_pct": 41.8,
+   "heute_bereinigt_pct": {
+    "0.0": 41.8,
+    "0.5": 37.1,
+    "1.0": 32.5
+   },
+   "neu_2028_pct": 40.5,
+   "neu_2028_mit_vorsorge_pct": 49.0,
+   "neu_nach_tilgung_pct": 34.3,
+   "neu_nach_tilgung_mit_vorsorge_pct": 42.8
+  },
+  {
+   "brutto": 42000,
+   "heute_pct": 43.8,
+   "heute_bereinigt_pct": {
+    "0.0": 43.8,
+    "0.5": 39.1,
+    "1.0": 34.5
+   },
+   "neu_2028_pct": 40.3,
+   "neu_2028_mit_vorsorge_pct": 48.9,
+   "neu_nach_tilgung_pct": 34.2,
+   "neu_nach_tilgung_mit_vorsorge_pct": 42.8
+  },
+  {
+   "brutto": 52159,
+   "heute_pct": 46.8,
+   "heute_bereinigt_pct": {
+    "0.0": 46.8,
+    "0.5": 42.1,
+    "1.0": 37.5
+   },
+   "neu_2028_pct": 40.1,
+   "neu_2028_mit_vorsorge_pct": 48.7,
+   "neu_nach_tilgung_pct": 34.1,
+   "neu_nach_tilgung_mit_vorsorge_pct": 42.7
+  },
+  {
+   "brutto": 60000,
+   "heute_pct": 48.8,
+   "heute_bereinigt_pct": {
+    "0.0": 48.8,
+    "0.5": 44.1,
+    "1.0": 39.5
+   },
+   "neu_2028_pct": 40.0,
+   "neu_2028_mit_vorsorge_pct": 48.5,
+   "neu_nach_tilgung_pct": 34.1,
+   "neu_nach_tilgung_mit_vorsorge_pct": 42.6
+  },
+  {
+   "brutto": 75000,
+   "heute_pct": 44.6,
+   "heute_bereinigt_pct": {
+    "0.0": 44.6,
+    "0.5": 39.9,
+    "1.0": 35.3
+   },
+   "neu_2028_pct": 39.6,
+   "neu_2028_mit_vorsorge_pct": 49.6,
+   "neu_nach_tilgung_pct": 33.8,
+   "neu_nach_tilgung_mit_vorsorge_pct": 43.8
+  },
+  {
+   "brutto": 100000,
+   "heute_pct": 53.1,
+   "heute_bereinigt_pct": {
+    "0.0": 53.1,
+    "0.5": 48.5,
+    "1.0": 43.8
+   },
+   "neu_2028_pct": 39.1,
+   "neu_2028_mit_vorsorge_pct": 49.1,
+   "neu_nach_tilgung_pct": 33.6,
+   "neu_nach_tilgung_mit_vorsorge_pct": 43.6
+  },
+  {
+   "brutto": 150000,
+   "heute_pct": 44.3,
+   "heute_bereinigt_pct": {
+    "0.0": 44.3,
+    "0.5": 44.3,
+    "1.0": 44.3
+   },
+   "neu_2028_pct": 40.0,
+   "neu_2028_mit_vorsorge_pct": 50.0,
+   "neu_nach_tilgung_pct": 34.1,
+   "neu_nach_tilgung_mit_vorsorge_pct": 44.1
+  },
+  {
+   "brutto": 250000,
+   "heute_pct": 44.3,
+   "heute_bereinigt_pct": {
+    "0.0": 44.3,
+    "0.5": 44.3,
+    "1.0": 44.3
+   },
+   "neu_2028_pct": 40.0,
+   "neu_2028_mit_vorsorge_pct": 50.0,
+   "neu_nach_tilgung_pct": 34.1,
+   "neu_nach_tilgung_mit_vorsorge_pct": 44.1
+  },
+  {
+   "brutto": 500000,
+   "heute_pct": 47.5,
+   "heute_bereinigt_pct": {
+    "0.0": 47.5,
+    "0.5": 47.5,
+    "1.0": 47.5
+   },
+   "neu_2028_pct": 40.0,
+   "neu_2028_mit_vorsorge_pct": 50.0,
+   "neu_nach_tilgung_pct": 34.1,
+   "neu_nach_tilgung_mit_vorsorge_pct": 44.1
+  }
+ ],
+ "hinweis": "Grenzbelastung in % je zusätzlichem Euro Bruttolohn, alleinstehend, ohne Kinder. heute: Recht 2026 (Kernmodell), ohne Mehrwertsteuer; neu: mit der Mehrbelastung aus der Mehrwertsteuer (Labels gegen heute). Bereinigt heute: Rentenbeitrag zum Anteil der Äquivalenz abgezogen (Annahme). neu ohne Pflichtvorsorge = Abgabenbelastung; mit Pflichtvorsorge = Abfluss vom verfügbaren Einkommen."
+}
