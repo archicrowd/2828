@@ -1,8 +1,8 @@
 {
- "modellstand": "v4.58",
+ "modellstand": "v4.59",
  "stand": "1. November 2026",
  "lizenz": "CC BY 4.0",
- "zitiervorschlag": "Initiative 28:28 (2026): Das Goldene Drittel – Modell, Logbuch und Dokumentation, Modellstand v4.58, 1. November 2026. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.",
+ "zitiervorschlag": "Initiative 28:28 (2026): Das Goldene Drittel – Forschungs-Kit und Zahlen zum Zitieren, Modellstand v4.59, 1. November 2026. Zenodo. https://doi.org/10.5281/zenodo.23855733. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.",
  "zahlen": [
   {
    "id": "Z01",
@@ -12,7 +12,7 @@
    "bezug": "2028, Kaufkraft 2026",
    "datei_pfad": "netz33.json beschluss/reihe/0 × regel_boden.json topf",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z02",
@@ -22,7 +22,7 @@
    "bezug": "2028, Kaufkraft 2026",
    "datei_pfad": "wie Z01, Kinderanteil 0,8",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z03",
@@ -32,7 +32,7 @@
    "bezug": "2028, Kaufkraft 2026; Weitergabe 80 %, Zuschlag DE 15,0 %, Pflichtvorsorge 10 %",
    "datei_pfad": "haushalte33.json faelle",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z04",
@@ -42,7 +42,7 @@
    "bezug": "wie Z03",
    "datei_pfad": "haushalte33.json faelle",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z05",
@@ -52,7 +52,7 @@
    "bezug": "2028; synthetische Mikrosimulation, Weitergabe 80 %",
    "datei_pfad": "mikro_de.json basis/ergebnis/0.8",
    "status": "Prüfrechnung",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z06",
@@ -62,7 +62,7 @@
    "bezug": "wie Z05",
    "datei_pfad": "mikro_de.json basis/ergebnis/0.8/gesamt",
    "status": "Prüfrechnung",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z07",
@@ -72,7 +72,7 @@
    "bezug": "2028, Kaufkraft 2026",
    "datei_pfad": "rentner_kombi.json varianten/4",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z08",
@@ -82,7 +82,7 @@
    "bezug": "wie Z07",
    "datei_pfad": "rentner_kombi.json varianten/4",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z09",
@@ -92,7 +92,7 @@
    "bezug": "jährlich bis zur Tilgung",
    "datei_pfad": "fonds_geltend.json",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z10",
@@ -102,7 +102,7 @@
    "bezug": "Fondszins 2,45 %",
    "datei_pfad": "fonds_geltend.json",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z11",
@@ -112,7 +112,7 @@
    "bezug": "im Jahr 2055",
    "datei_pfad": "fonds_geltend.json",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z12",
@@ -122,7 +122,7 @@
    "bezug": "",
    "datei_pfad": "fonds_geltend.json",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z13",
@@ -132,7 +132,7 @@
    "bezug": "2028, Mittel der Staaten",
    "datei_pfad": "altlasten.json beschluss",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z14",
@@ -142,7 +142,7 @@
    "bezug": "2028; heute 40,76 % (Eurostat 2024)",
    "datei_pfad": "gesamtlast33.json reihe/0",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z15",
@@ -152,7 +152,7 @@
    "bezug": "2028",
    "datei_pfad": "gesamtlast33.json reihe/0",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z16",
@@ -162,7 +162,7 @@
    "bezug": "2028",
    "datei_pfad": "netz33.json beschluss/reihe/0",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z17",
@@ -172,7 +172,7 @@
    "bezug": "alleinstehend; neu ohne Pflichtvorsorge (eigenes Konto)",
    "datei_pfad": "grenzbelastung33.json zeilen/5",
    "status": "Prüfrechnung",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z18",
@@ -182,7 +182,7 @@
    "bezug": "EVS 2023",
    "datei_pfad": "mwst_verteilung.json klassen",
    "status": "geltend",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   },
   {
    "id": "Z19",
@@ -192,7 +192,7 @@
    "bezug": "einmalig; mechanisch 2,47 %",
    "datei_pfad": "preisniveau33.json reihe/0",
    "status": "Prüfrechnung",
-   "modellstand": "v4.58"
+   "modellstand": "v4.59"
   }
  ]
 }

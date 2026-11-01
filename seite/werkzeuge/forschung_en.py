@@ -25,6 +25,7 @@ SINCE_REVIEW = [
  ("v4.54", "VAT by income for France (Eurostat HBS 2020)", "FR average wage +286 → +276 €"),
  ("v4.57", "Household types by country (new output)", "no adopted figure; new values Z20–Z34"),
  ("v4.58", "Review coverage shown on the site; correction 83", "no calculation"),
+ ("v4.59", "Archive on Zenodo, DOI on the site", "no calculation"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
@@ -90,8 +91,8 @@ for i, c in enumerate(LAENDER):
     FIGURES.append((f"Z{30 + i}", f"Gini coefficient 2025 → 2028 ({NAME[c]})", f"{en(G[c]['gini_amtlich_2025'], 1)} → {en(G[c]['reihe'][0]['mitte'], 1)}", "index 0–100",
                     "official 2025 (Eurostat) plus model change", "gini.json staaten/" + c, "check"))
 
-ZITAT = (f"Initiative 28:28 (2026): The Golden Third – model, log and documentation, model version {VERSION}, {DATUM}. "
-         "Licence: scripts MIT, texts and results CC BY 4.0.")
+ZITAT = (f"Initiative 28:28 (2026): The Golden Third – research kit and figures to cite, model version {VERSION}, {DATUM}. "
+         f"Zenodo. https://doi.org/{F.DOI_KONZEPT}. Licence: scripts MIT, texts and results CC BY 4.0.")
 
 NAV = [("index.html", "Overview"), ("households.html", "Households"), ("fund.html", "Legacy fund"), ("vat.html", "VAT label"),
        ("marginal.html", "Marginal burden"), ("reviews.html", "Reviews"), ("kit.html", "Research kit"), ("index.html#contact", "Contact")]
@@ -201,7 +202,7 @@ invited; the material is ready.</div>
 <a href="kit.html">Research kit</a>: short summary (PDF), numbered figures to cite (CSV, JSON), result files and a citation.</p>
 <h2 id="contact">Contact</h2>
 <p>Questions, objections and offers to review: <a href="mailto:{KONTAKT}">{KONTAKT}</a>. Scripts, parameters and the full log of all versions are
-available to reviewers on request. A working paper with DOI is in preparation.</p>"""
+available to reviewers on request. Archive with DOI: <a href="https://doi.org/{F.DOI_KONZEPT}">{F.DOI_KONZEPT}</a>; a working paper is in preparation.</p>"""
     return seite("index.html", "Overview", inhalt, "Calculations, reviews and citable figures for the Golden Third proposal.")
 
 
@@ -416,7 +417,8 @@ def p_kit():
 Euro amounts in purchasing power 2026 unless stated otherwise.</p>
 <h2>Citation</h2>
 <p>{html.escape(ZITAT)} {SEITE.replace("https://", "")}</p>
-<p class="meta">A working paper with DOI is in preparation and will then serve as the anchor for citations.</p>"""
+<p class="meta">DOI {F.DOI_KONZEPT} always resolves to the latest archived version. Archived versions: {", ".join(f"model version {v}: <a href=\"https://doi.org/{d}\">{d}</a>" for v, d in F.DOI_ARCHIV.items())}.
+A working paper with its own DOI is in preparation.</p>"""
     return seite("kit.html", "Research kit", inhalt, "Figures to cite, result files and citation.")
 
 
@@ -486,6 +488,7 @@ version: "{VERSION}"
 license: CC-BY-4.0
 url: "{PAGES}"
 repository-code: "https://github.com/archicrowd/goldenes-drittel"
+doi: "{F.DOI_KONZEPT}"
 keywords: [tax policy, social protection, basic income, transformation dividend, microsimulation, public debt, Europe]
 """, encoding="utf-8")
     (ziel / ".zenodo.json").write_text(json.dumps(dict(

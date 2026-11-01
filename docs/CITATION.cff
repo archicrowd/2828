@@ -4,8 +4,9 @@ title: "The Golden Third – research kit and figures to cite"
 type: dataset
 authors:
   - name: "Initiative 28:28"
-version: "v4.58"
+version: "v4.59"
 license: CC-BY-4.0
 url: "https://archicrowd.github.io/goldenes-drittel/"
 repository-code: "https://github.com/archicrowd/goldenes-drittel"
+doi: "10.5281/zenodo.23855733"
 keywords: [tax policy, social protection, basic income, transformation dividend, microsimulation, public debt, Europe]

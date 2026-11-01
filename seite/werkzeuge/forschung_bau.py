@@ -20,6 +20,9 @@ KONTAKT = "tax.better@archicrowd.de"
 SEITE = "https://www.archicrowd.de"
 DATUM = "1. November 2026"
 PAGES = "https://archicrowd.github.io/goldenes-drittel/"
+# Zenodo (Archiv des öffentlichen Repositorys goldenes-drittel, eingeschaltet 01.11.2026): Concept-DOI zeigt immer auf die neueste Version
+DOI_KONZEPT = "10.5281/zenodo.23855733"
+DOI_ARCHIV = {"v4.58": "10.5281/zenodo.23855734"}   # Modellstand → DOI der archivierten Fassung (Release v4.58.1)
 
 
 def _korrekturen():
@@ -46,6 +49,7 @@ SEIT_PRUEFUNG = [
  ("v4.54", "Mehrwertsteuer nach Einkommen für Frankreich (Eurostat HBS 2020)", "FR Durchschnittslohn +286 → +276 €"),
  ("v4.57", "Haushaltstypen je Land (neue Ausgabe)", "keine geltende Zahl; neue Werte Z20–Z34 der englischen Fassung"),
  ("v4.58", "Prüfstand auf der Seite; Korrektur 83", "keine Rechnung"),
+ ("v4.59", "Archiv auf Zenodo, DOI auf der Seite", "keine Rechnung"),
 ]
 
 
@@ -142,8 +146,8 @@ def zahlen_dateien(ziel):
         shutil.copy(AGG / n, ziel / "data" / n)
 
 
-ZITAT = (f"Initiative 28:28 (2026): Das Goldene Drittel – Modell, Logbuch und Dokumentation, Modellstand {VERSION}, {DATUM}. "
-         "Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.")
+ZITAT = (f"Initiative 28:28 (2026): Das Goldene Drittel – Forschungs-Kit und Zahlen zum Zitieren, Modellstand {VERSION}, {DATUM}. "
+         f"Zenodo. https://doi.org/{DOI_KONZEPT}. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.")
 
 # ---------------- HTML
 CSS = """
@@ -241,7 +245,7 @@ Initiative</b> und erfassen den Modellstand bis {GEPRUEFT}; die Änderungen bis 
 <a href="kit.html">Forschungs-Kit</a>: Kurzdarstellung als PDF, Zahlen zum Zitieren (CSV, JSON), Ergebnisdateien und Zitiervorschlag.</p>
 <h2 id="kontakt">Kontakt</h2>
 <p>Fragen, Einwände und Prüfangebote an <a href="mailto:{KONTAKT}">{KONTAKT}</a>. Wer nachrechnen möchte, erhält Zugang zum Repository mit
-Skripten, Parametern und Logbuch. Ein Working Paper mit DOI ist in Vorbereitung.</p>"""
+Skripten, Parametern und Logbuch. Archiv mit DOI: <a href="https://doi.org/{DOI_KONZEPT}">{DOI_KONZEPT}</a>; ein Working Paper ist in Vorbereitung.</p>"""
     return seite("index.html", "Übersicht", inhalt, "Rechnung, Prüfungen und zitierfähige Zahlen zum Vorschlag Das Goldene Drittel.")
 
 
@@ -427,7 +431,8 @@ und ein Zitiervorschlag.</p>
 Modellstand angeben. Abgrenzungen: <code>KENNZAHLEN.md</code> im Repository.</p>
 <h2>Zitiervorschlag</h2>
 <p>{html.escape(ZITAT)} {SEITE.replace("https://", "")}</p>
-<p class="meta">Ein Working Paper mit DOI ist in Vorbereitung; dann gilt es als Anker für Zitate.</p>"""
+<p class="meta">Der DOI {DOI_KONZEPT} verweist immer auf die neueste archivierte Fassung. Archivierte Fassungen: {", ".join(f"Modellstand {v}: <a href=\"https://doi.org/{d}\">{d}</a>" for v, d in DOI_ARCHIV.items())}.
+Ein Working Paper mit eigenem DOI ist in Vorbereitung.</p>"""
     return seite("kit.html", "Forschungs-Kit", inhalt, "Zahlen zum Zitieren, Ergebnisdateien und Zitiervorschlag.")
 
 

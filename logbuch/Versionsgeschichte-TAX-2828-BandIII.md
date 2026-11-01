@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.58**
+Stand: 24. Oktober 2026 · Modellstand **v4.59**
 
 ---
 
@@ -4452,6 +4452,23 @@ gleiche Länge geprüft), `KORREKTUREN` und `STUFEN`.
 
 ---
 
+### v4.59 — Archiv auf Zenodo: DOI der Forschungsseite
+
+**Art der Änderung: PATCH (Ausweis), keine Zahl bewegt.** 1. November 2026.
+
+**Anlass:** Die Initiative hat am 01.11.2026 Zenodo mit `archicrowd/goldenes-drittel` verbunden und das Release `v4.58.1` angelegt (Inhalt wie
+Release `4.58`, Commit `2ef3b79`, Modellstand v4.58). Zenodo vergab den Concept-DOI **10.5281/zenodo.23855733** (zeigt immer auf die neueste
+Fassung) und den DOI der Fassung **10.5281/zenodo.23855734**. Quelle: Badge-Seite von Zenodo (Bildschirmfoto der Initiative); aus der Sitzung
+nicht abrufbar (zenodo.org über den Proxy gesperrt). Die Zuordnung „…734 = Fassung v4.58“ folgt aus der Anzeige „DOI“ neben dem Ziel des
+Badges „…733“ (Annahme nach dem üblichen Aufbau von Zenodo; an der Quelle zu prüfen).
+
+**Geändert:** `DOI_KONZEPT` und `DOI_ARCHIV` in `forschung_bau.py`; Zitiervorschlag (deutsch, englisch) mit DOI und dem Titel des Zenodo-Eintrags;
+Kit und Kontaktabschnitt nennen das Archiv; `CITATION.cff` der Seite mit `doi`; Badge im README des öffentlichen Repositorys.
+
+**Datenquelle:** Zenodo (Bildschirmfoto). **Wodurch aufgefallen:** Schritt der Veröffentlichung (P9).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4524,7 +4541,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.58
+## 7 | Offene Punkte, Stand v4.59
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4578,7 +4595,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
-| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbinden und Release mit DOI; Nachprüfung v4.42 → v4.58 (`projekt/Pruefprogramm-Delta-v4.42-v4.58.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper mit DOI (Zenodo) |
+| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.58 (`projekt/Pruefprogramm-Delta-v4.42-v4.58.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper mit DOI (Zenodo) |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |
