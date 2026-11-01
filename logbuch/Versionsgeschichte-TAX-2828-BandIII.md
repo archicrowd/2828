@@ -4446,6 +4446,8 @@ gleiche Länge geprüft), `KORREKTUREN` und `STUFEN`.
 
 **Korrektur 83:** siehe Tabelle.
 
+**Tags nicht übertragen (offen):** Der Push von Tags wird über den Proxy der Sitzung abgebrochen („remote end hung up“), in beiden Repositorys. `git ls-remote` zeigt auf GitHub nur wenige alte Tags; die Tags der Versionen dieser Sitzungen liegen nur lokal. Die frühere Annahme, Tags würden „still“ übertragen, war falsch. Die Initiative legt die Tags bzw. Releases über die Weboberfläche an (mindestens v4.58 im öffentlichen Repository, Voraussetzung für Zenodo).
+
 **Datenquelle:** Logbuch Band II und III, `git diff 43f7888 HEAD`. **Wodurch aufgefallen:** Rückmeldung vom 01.11.2026, Gegenprobe.
 
 ---
