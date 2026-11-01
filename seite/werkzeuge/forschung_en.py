@@ -14,6 +14,19 @@ _spec.loader.exec_module(F)
 
 J, VERSION, KONTAKT, SEITE = F.J, F.VERSION, F.KONTAKT, F.SEITE
 DATUM = "1 November 2026"
+KORR, STUFEN, GEPRUEFT, PAGES = F.KORREKTUREN, F.STUFEN, F.GEPRUEFT, F.PAGES
+SINCE_REVIEW = [
+ ("v4.46", "Responses to the third review: corrections 73–76 (presentation), interest × growth grid", "no adopted figure"),
+ ("v4.47", "Marginal burden adjusted for counter-values (cross-check, Z17)", "no adopted figure"),
+ ("v4.49–v4.50", "Design decisions E12–E15 (top-up, locked account, pension cut, dividend, label)", "no calculation"),
+ ("v4.51", "Country models checked against OECD Taxing Wages 2026; corrections 77–79 (prime d'activité 59.85 %, housing lump sum)", "France: today's income at half the minimum wage 1,219 → 1,136 € per month"),
+ ("v4.52", "Pass-through only from social-security contributions that disappear (decision E16); correction 80", "average wage, single: FR +390 → +286 €, ES +350 → +321 €, PL +1,474 → +1,404 zł"),
+ ("v4.53", "Key figures checked automatically against result files; correction 81", "no calculation; outdated statements corrected"),
+ ("v4.54", "VAT by income for France (Eurostat HBS 2020)", "FR average wage +286 → +276 €"),
+ ("v4.57", "Household types by country (new output)", "no adopted figure; new values Z20–Z34"),
+ ("v4.58", "Review coverage shown on the site; correction 83", "no calculation"),
+]
+assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
 VH = F.VH["laender"]
 G = J("gini.json")["staaten"]
@@ -171,16 +184,18 @@ debt peak {en(FG['schuldenquote_spitze'], 1)} % of GDP in {FG['spitzenjahr']}, r
 <p>The calculations cover a possibility space of 30 European states, with France, Italy, Spain and Poland as reference countries besides Germany.
 Common rules only work where they are broadly accepted and reliably enforced. A selection by structural criteria – rule of law, democratic
 legitimacy, data availability, acceptance – rather than by geography is under discussion; on the World Justice Project's Rule of Law Index 2025,
-Australia, Canada, New Zealand, the United Kingdom and Japan score at the level of the strongest European states.</p>
+Australia, Canada, New Zealand, the United Kingdom and Japan score at the level of the strongest European states. These states are not
+calculated in the model; the index is used here only as one possible criterion.</p>
 <h2>How the figures are produced</h2>
-<p>All values come from one open chain of calculations based on official statistics (Eurostat, OECD, national statistical offices) and published
+<p>All values come from one open chain of calculations ({STUFEN} stages) based on official statistics (Eurostat, OECD, national statistical offices) and published
 surveys. The country tax models are checked against the OECD's Taxing Wages 2026: {n_ok} of 10 household types lie within ±2 percentage points
 of the OECD tax wedge; the deviations for France and Poland are explained. For Germany, a synthetic microsimulation checks the distribution
-across all households. Every change and every error found is logged with a number (81 corrections so far). The model is static: labour supply,
+across all households. Every change and every error found is logged with a number ({KORR} corrections so far). The model is static: labour supply,
 saving and migration do not respond; pass-through, avoidance and take-up enter as assumptions or bands. A qualitative review of behavioural
 effects has been done; the quantitative stage is open.</p>
-<div class="hinweis vorbehalt">The three reviews so far (October 2026) were <b>commissioned by the initiative</b>. Independent review is explicitly
-invited; the material is ready (<a href="reviews.html">Reviews</a>).</div>
+<div class="hinweis vorbehalt">The three reviews so far (October 2026) were <b>commissioned by the initiative</b> and cover the model up to
+version {GEPRUEFT}. Changes up to {VERSION} have not yet been reviewed (<a href="reviews.html#since">list</a>). Independent review is explicitly
+invited; the material is ready.</div>
 <h2>Reviews and research kit</h2>
 <p><a href="reviews.html">Reviews</a>: review reports and responses, with all findings and how they were handled.
 <a href="kit.html">Research kit</a>: short summary (PDF), numbered figures to cite (CSV, JSON), result files and a citation.</p>
@@ -368,7 +383,11 @@ assessment and implementation; errors found are logged as numbered corrections.<
 reflect the state of their version; later calculations may have changed figures in them. Current values: <a href="kit.html">research kit</a>.
 The reports of the first and second review are held by the initiative and will be added with the reviewers' consent. Documents are in German;
 English summaries above each list.</div>
-{''.join(teile)}"""
+{''.join(teile)}
+<h2 id="since">Changed since the last review ({GEPRUEFT}), not yet reviewed</h2>
+<p>The third review covered model version {GEPRUEFT}. Since then the following calculations and statements have changed (log, volume III);
+a review of these changes is planned.</p>
+{tabelle(["Version", "Change", "Figure moved"], [list(z) for z in SINCE_REVIEW])}"""
     return seite("reviews.html", "Reviews", inhalt, "Review reports and responses on the Golden Third model.")
 
 
@@ -423,10 +442,11 @@ personal account locked until retirement; VAT as a label; legacy debt and pensio
 <table><thead><tr><th>Country</th><th>½ × av. wage</th><th>1 × av. wage</th><th>2 × av. wage</th><th>Legacy surcharge</th></tr></thead><tbody>{tz}</tbody></table>
 <h2>Method and limits</h2>
 <ul><li>One open chain of calculations, official statistics (Eurostat, OECD, national offices) and published surveys; every correction numbered in the log
-(81 so far). Country models checked against OECD Taxing Wages 2026.</li>
+({KORR} so far). Country models checked against OECD Taxing Wages 2026.</li>
 <li>Static: no behavioural responses in labour supply, saving or migration; pass-through, avoidance and take-up as assumptions or bands. A qualitative
 review of behavioural effects is available.</li>
-<li>Three reviews commissioned by the initiative (October 2026): calculation core confirmed, findings documented. Independent review is invited.</li>
+<li>Three reviews commissioned by the initiative (October 2026), last covering version {GEPRUEFT}: calculation core confirmed, findings documented.
+Later changes (up to {VERSION}) not yet reviewed. Independent review is invited.</li>
 <li>Largest undocumented position: the base of company taxation where customers are.</li></ul>
 <h2>Figures to cite</h2>
 <table><thead><tr><th>No.</th><th>Item</th><th>Value</th><th>Unit</th><th>Reference</th><th>Status</th></tr></thead><tbody>{zeilen}</tbody></table>
@@ -450,11 +470,38 @@ def daten(ziel):
         shutil.copy(F.AGG / n, ziel / "data" / n)
 
 
+def nebenbei(ziel):
+    seiten = ["", "households.html", "fund.html", "vat.html", "marginal.html", "reviews.html", "kit.html",
+              "de/", "de/faelle-42000.html", "de/fonds.html", "de/mwst.html", "de/grenzbelastung.html", "de/pruefungen.html", "de/kit.html"]
+    (ziel / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                      + "".join(f"<url><loc>{PAGES}{s}</loc></url>\n" for s in seiten) + "</urlset>\n", encoding="utf-8")
+    (ziel / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {PAGES}sitemap.xml\n", encoding="utf-8")
+    (ziel / "CITATION.cff").write_text(f"""cff-version: 1.2.0
+message: "Please cite the figure number (Z01–Z34) and the model version."
+title: "The Golden Third – research kit and figures to cite"
+type: dataset
+authors:
+  - name: "Initiative 28:28"
+version: "{VERSION}"
+license: CC-BY-4.0
+url: "{PAGES}"
+repository-code: "https://github.com/archicrowd/goldenes-drittel"
+keywords: [tax policy, social protection, basic income, transformation dividend, microsimulation, public debt, Europe]
+""", encoding="utf-8")
+    (ziel / ".zenodo.json").write_text(json.dumps(dict(
+        title=f"The Golden Third – research kit and figures to cite (model version {VERSION})", upload_type="dataset",
+        description=("Calculations, reviews and citable figures (Z01–Z34) for the proposal 'The Golden Third': taxation and social protection shared by "
+                     "a group of states. Static model; reviews commissioned by the initiative covered model versions up to " + GEPRUEFT + "."),
+        creators=[dict(name="Initiative 28:28")], license="cc-by-4.0", version=VERSION, language="eng",
+        keywords=["tax policy", "social protection", "basic income", "microsimulation", "public debt", "Europe"]), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
 def schreiben(ziel):
     for name, f in (("index.html", p_index), ("households.html", p_households), ("fund.html", p_fund), ("vat.html", p_vat),
                     ("marginal.html", p_marginal), ("reviews.html", p_reviews), ("kit.html", p_kit)):
         (ziel / name).write_text(f(), encoding="utf-8")
     daten(ziel)
+    nebenbei(ziel)
 
 
 def pdf(ziel):

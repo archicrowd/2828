@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.57**
+Stand: 24. Oktober 2026 · Modellstand **v4.58**
 
 ---
 
@@ -4421,6 +4421,35 @@ Inhalt von `docs/` als Paket für das Hochladen durch die Initiative.
 
 ---
 
+### v4.58 — Prüfstand auf der Forschungsseite, Prüfprogramm für die Nachprüfung v4.42 → v4.58; Korrektur 83
+
+**Art der Änderung: PATCH (Ausweis), keine Zahl bewegt.** 1. November 2026.
+
+**Anlass:** Rückmeldung einer von der Initiative veranlassten Durchsicht der Forschungsseite (01.11.2026). Geprüft wurde jede Aussage gegen
+Repository und Seite:
+
+| Aussage der Rückmeldung | Befund | Umsetzung |
+|---|---|---|
+| Die Prüfungen erfassen v4.42, die Seite zeigt v4.57 | trifft zu | Prüfstand auf Übersicht, Prüfungsseite und Kit (deutsch und englisch); Liste der Änderungen seit v4.42 mit bewegter Zahl; Prüfprogramm `projekt/Pruefprogramm-Delta-v4.42-v4.58.md` |
+| Das Korrekturlog steht bei 81 | die Seite nannte 81, vergeben sind 82 | Korrektur 83; Zahl der Korrekturen und der Stufen (68 → 69) wird jetzt gelesen, nicht geschrieben |
+| Die Fondsspitze sei 148,1 % (2055) statt 149,6 % (2056), also geändert | trifft nicht zu: 149,6 % war der Fonds der zehn Staaten bis v4.19; `fonds_geltend.json` ist seit v4.42 unverändert (`git diff --quiet`) | im Prüfprogramm als „nicht nachzuprüfen“ ausgewiesen; ebenso Netz 9,63 %, `haushalte33`, Rentnerregel E |
+| Staaten außerhalb Europas seien neu im Modell | trifft nicht zu: sie stehen nur als Beispiel im Text „Which states?“ | Satz ergänzt: nicht gerechnet, Index nur als möglicher Maßstab |
+| Meta-Descriptions fehlen | trifft nicht zu (jede Seite hat eine) | – |
+| Sitemap, Tags, Zitationsdatei fehlen | trifft zu | `sitemap.xml`, `robots.txt`, `CITATION.cff`, `.zenodo.json` im Wurzelverzeichnis der Seite; Tags im öffentlichen Repository |
+| Repository-Beschreibung und Topics leer, Search Console | trifft zu; aus der Sitzung nicht einstellbar (Schnittstelle gesperrt) | Aufgabe der Initiative (P9) |
+| Commits des öffentlichen Repositorys mit Autor „Claude“ | trifft zu | ab v4.58 Autor „Initiative 28:28“ (Projektregel Autorschaft); bestehender Commit bleibt (keine Umschreibung der Geschichte) |
+| Die Seite nenne nur die Antworten, nie die Kritik | teilweise: der Prüfbericht der dritten Prüfung liegt als PDF vor; die Berichte 1 und 2 fehlen | unverändert offen (Zustimmung der Prüfenden) |
+| „Drei unabhängige Prüfungen“ im Prüfprotokoll gegen „im Auftrag der Initiative“ auf der Seite | die Seite und die Repository-Texte nennen die Prüfungen nirgends „unabhängig“; das Wort stammt aus Unterlagen außerhalb des Repositorys | Prüfprogramm Abschnitt 5: „unabhängig in der Ausführung“ nur nach Klärung personeller und organisatorischer Verbindungen |
+
+**Neu:** In `seite/werkzeuge/forschung_bau.py` stehen `GEPRUEFT` (v4.42), `SEIT_PRUEFUNG` (deutsch; englisch `SINCE_REVIEW` in `forschung_en.py`,
+gleiche Länge geprüft), `KORREKTUREN` und `STUFEN`.
+
+**Korrektur 83:** siehe Tabelle.
+
+**Datenquelle:** Logbuch Band II und III, `git diff 43f7888 HEAD`. **Wodurch aufgefallen:** Rückmeldung vom 01.11.2026, Gegenprobe.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4455,6 +4484,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 73 | `gesamtlast33.json` (seit v4.14): „Steuern 33,53“ neben „Summe 45,47“ – die Summe stammte aus dem Steuerbedarf 33,42; `KENNZAHLEN.md` nannte 45,46/49,56 | Summe aus den ausgewiesenen Teilen 33,53 + 12,05 = 45,58, mit Pflichtvorsorge 49,68; Steuerbedarf-Variante 45,47/49,57 daneben (v4.46) | Dritte Prüfung, Befund B17 |
 | 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
+| 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
 | 81 | `KENNZAHLEN.md`: Mikrosimulation (Vollzeit/Teilzeit/Minijob, Bürgergeld, Rentner, Validierung) und Rentnerregel E auf Stand v4.22/v4.26; ebenso Verhaltensuntersuchung 2.10 (30,7 % / −124 €) | Stand v4.38 bzw. v4.30 (Tabelle in v4.53) | Prüfstufe `pruefe_kennzahlen.py` (v4.53) |
 | 80 | `KENNZAHLEN.md`, Zeile Deckel der Weitergabe: Beispiele 2× / 3× Durchschnittslohn DE +689 / +400, FR +849 / +717, IT +941 / +999 € (Stand v4.36) | seit v4.38 DE +710 / +431, FR +654 / +440, IT +766 / +749 €; seit v4.52 FR +480 / +269 € | Nachziehen der Kennzahlen v4.52 |
@@ -4492,7 +4522,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.57
+## 7 | Offene Punkte, Stand v4.58
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4546,7 +4576,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
-| P9 | **Forschungsseite veröffentlichen (v4.56, v4.57):** Inhalt von `docs/` in `archicrowd/goldenes-drittel` hochladen (Sitzung ohne Schreibrecht) und GitHub Pages einschalten (main, Wurzel); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper mit DOI (Zenodo) |
+| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbinden und Release mit DOI; Nachprüfung v4.42 → v4.58 (`projekt/Pruefprogramm-Delta-v4.42-v4.58.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper mit DOI (Zenodo) |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |

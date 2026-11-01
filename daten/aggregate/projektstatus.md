@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.57 · höchste Korrekturnummer 82 · 539 Dateien im Repository
+Modellstand v4.58 · höchste Korrekturnummer 83 · 544 Dateien im Repository
 
 ## Bausteine
 
@@ -85,6 +85,7 @@ Modellstand v4.57 · höchste Korrekturnummer 82 · 539 Dateien im Repository
 | N40 | B31 Drittel-System | B01 Logbuch | geschlossen |
 | N41 | B32 Länderseiten | B31 Drittel-System | offen |
 | N42 | B31 Drittel-System | B01 Logbuch | offen |
+| N43 | B31 Drittel-System | B01 Logbuch | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -104,3 +105,4 @@ Modellstand v4.57 · höchste Korrekturnummer 82 · 539 Dateien im Repository
 - Hinweis: Naht N39 offen: B32 Länderseiten -> B31 Drittel-System: v4.51: 7 von 10 Haushaltstypen ±2 Pp; Korrekturen 77/78 (prime d'activité); offen R13 (Abgrenzung AG-Abgaben, Gesundheitsbeitrag PL, Paar mit zwei Einkommen, Alleinerziehende FR) | v4.52: Abgrenzung beschlossen und umgesetzt (E16)
 - Hinweis: Naht N41 offen: B32 Länderseiten -> B31 Drittel-System: v4.54: FR aus Eurostat hbs_str_t223 (2020); IT, ES, PL Faktor 1 bis zum gesicherten Abruf
 - Hinweis: Naht N42 offen: B31 Drittel-System -> B01 Logbuch: v4.56: Prüfsumme der Quellen in docs/downloads/quellen.sha256, Stufe schlägt fehl bis --pdf; Veröffentlichung über GitHub Pages durch die Initiative (P9) v4.57: englische Hauptfassung im Wurzelverzeichnis, deutsch unter docs/de/, gemeinsame Prüfsumme beider Kits; öffentliches Repository goldenes-drittel
+- Hinweis: Naht N43 offen: B31 Drittel-System -> B01 Logbuch: v4.58: geprüft bis v4.42; Nachprüfung nach projekt/Pruefprogramm-Delta-v4.42-v4.58.md; Zahl der Korrekturen und Stufen aus Logbuch und Kette gelesen (Korrektur 83)

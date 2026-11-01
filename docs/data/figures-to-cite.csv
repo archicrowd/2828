@@ -1,35 +1,35 @@
 id,item,value,unit,reference,file_path,status,model_version
-Z01,Transformation dividend per adult (Germany),354,€ per month,"2028, purchasing power 2026",netz33.json × regel_boden.json topf,adopted,v4.57
-Z02,Transformation dividend per child (Germany),283,€ per month,"as Z01, child share 0.8",as Z01,adopted,v4.57
-Z03,"Gain, single, gross wage € 42,000 (Germany)",611,€ per month,"2028; pass-through 80 %, surcharge 15.0 %, compulsory saving 10 %",haushalte33.json faelle,adopted,v4.57
-Z04,"Gain, couple with one earner and 2 children, € 42,000 (Germany)",674,€ per month,as Z03,haushalte33.json faelle,adopted,v4.57
-Z05,Working-age households better off (Germany),85.1,%,"2028; synthetic microsimulation, pass-through 80 %",mikro_de.json basis/ergebnis/0.8,check,v4.57
-Z06,All households better off (Germany),69.3,%,as Z05,mikro_de.json basis/ergebnis/0.8/gesamt,check,v4.57
-Z07,Pensioner households better off (pension rule E),32.2,%,"2028, Germany",rentner_kombi.json varianten/4,adopted,v4.57
-Z08,"Pensioner households, mean change (pension rule E)",-121,€ per month,"2028, Germany",rentner_kombi.json varianten/4,adopted,v4.57
-Z09,Contribution to the common fund of 30 states,5.17,% of GDP,annual until repaid,fonds_geltend.json,adopted,v4.57
-Z10,Legacy surcharge on all taxes (common rate),15.5,%,fund interest 2.45 %,fonds_geltend.json,adopted,v4.57
-Z11,"Debt ratio of the fund, peak",148.1,% of GDP,in 2055,fonds_geltend.json,adopted,v4.57
-Z12,Fund fully repaid,2098,year,,fonds_geltend.json,adopted,v4.57
-Z13,Old pension claims above the dividend (Z),9.42,% of GDP,"2028, average of states",altlasten.json beschluss,adopted,v4.57
-Z14,"Total burden, taxes and fund (Germany)",38.7,% of GDP,2028; today 40.76 % (Eurostat 2024),gesamtlast33.json reihe/0,adopted,v4.57
-Z15,Total burden including compulsory saving (own account),42.8,% of GDP,2028,gesamtlast33.json reihe/0,adopted,v4.57
-Z16,Cost of the strong net (Germany),9.63,% of GDP,2028,netz33.json beschluss/reihe/0,adopted,v4.57
-Z17,"Marginal burden at € 60,000: today / new 2028 (Germany)",48.8 / 40.0,% per additional euro,single; new without compulsory saving,grenzbelastung33.json zeilen/5,check,v4.57
-Z18,"VAT label burden, factor lowest / highest income class (Germany)",0.87 / 1.07,relative to mean,EVS 2023,mwst_verteilung.json klassen,adopted,v4.57
-Z19,One-off price level effect of the VAT label 2028,1.2 to 2.1,%,mechanical 2.47 %,preisniveau33.json reihe/0,check,v4.57
-Z20,"Gain, single employee at the average wage (Germany)",726,€ per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/DE,adopted,v4.57
-Z21,"Gain, single employee at the average wage (France)",276,€ per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/FR,adopted,v4.57
-Z22,"Gain, single employee at the average wage (Italy)",412,€ per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/IT,adopted,v4.57
-Z23,"Gain, single employee at the average wage (Spain)",321,€ per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/ES,adopted,v4.57
-Z24,"Gain, single employee at the average wage (Poland)",1404,zł per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/PL,adopted,v4.57
-Z25,Legacy surcharge 2028 after netting (Germany),15.0,%,converging to the common rate by 2058,laenderseiten.json staaten/DE/fonds,adopted,v4.57
-Z26,Legacy surcharge 2028 after netting (France),21.3,%,converging to the common rate by 2058,laenderseiten.json staaten/FR/fonds,adopted,v4.57
-Z27,Legacy surcharge 2028 after netting (Italy),22.3,%,converging to the common rate by 2058,laenderseiten.json staaten/IT/fonds,adopted,v4.57
-Z28,Legacy surcharge 2028 after netting (Spain),18.3,%,converging to the common rate by 2058,laenderseiten.json staaten/ES/fonds,adopted,v4.57
-Z29,Legacy surcharge 2028 after netting (Poland),13.5,%,converging to the common rate by 2058,laenderseiten.json staaten/PL/fonds,adopted,v4.57
-Z30,Gini coefficient 2025 → 2028 (Germany),30.1 → 26.1,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/DE,check,v4.57
-Z31,Gini coefficient 2025 → 2028 (France),30.4 → 29.0,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/FR,check,v4.57
-Z32,Gini coefficient 2025 → 2028 (Italy),31.0 → 26.9,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/IT,check,v4.57
-Z33,Gini coefficient 2025 → 2028 (Spain),30.8 → 25.0,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/ES,check,v4.57
-Z34,Gini coefficient 2025 → 2028 (Poland),24.9 → 18.7,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/PL,check,v4.57
+Z01,Transformation dividend per adult (Germany),354,€ per month,"2028, purchasing power 2026",netz33.json × regel_boden.json topf,adopted,v4.58
+Z02,Transformation dividend per child (Germany),283,€ per month,"as Z01, child share 0.8",as Z01,adopted,v4.58
+Z03,"Gain, single, gross wage € 42,000 (Germany)",611,€ per month,"2028; pass-through 80 %, surcharge 15.0 %, compulsory saving 10 %",haushalte33.json faelle,adopted,v4.58
+Z04,"Gain, couple with one earner and 2 children, € 42,000 (Germany)",674,€ per month,as Z03,haushalte33.json faelle,adopted,v4.58
+Z05,Working-age households better off (Germany),85.1,%,"2028; synthetic microsimulation, pass-through 80 %",mikro_de.json basis/ergebnis/0.8,check,v4.58
+Z06,All households better off (Germany),69.3,%,as Z05,mikro_de.json basis/ergebnis/0.8/gesamt,check,v4.58
+Z07,Pensioner households better off (pension rule E),32.2,%,"2028, Germany",rentner_kombi.json varianten/4,adopted,v4.58
+Z08,"Pensioner households, mean change (pension rule E)",-121,€ per month,"2028, Germany",rentner_kombi.json varianten/4,adopted,v4.58
+Z09,Contribution to the common fund of 30 states,5.17,% of GDP,annual until repaid,fonds_geltend.json,adopted,v4.58
+Z10,Legacy surcharge on all taxes (common rate),15.5,%,fund interest 2.45 %,fonds_geltend.json,adopted,v4.58
+Z11,"Debt ratio of the fund, peak",148.1,% of GDP,in 2055,fonds_geltend.json,adopted,v4.58
+Z12,Fund fully repaid,2098,year,,fonds_geltend.json,adopted,v4.58
+Z13,Old pension claims above the dividend (Z),9.42,% of GDP,"2028, average of states",altlasten.json beschluss,adopted,v4.58
+Z14,"Total burden, taxes and fund (Germany)",38.7,% of GDP,2028; today 40.76 % (Eurostat 2024),gesamtlast33.json reihe/0,adopted,v4.58
+Z15,Total burden including compulsory saving (own account),42.8,% of GDP,2028,gesamtlast33.json reihe/0,adopted,v4.58
+Z16,Cost of the strong net (Germany),9.63,% of GDP,2028,netz33.json beschluss/reihe/0,adopted,v4.58
+Z17,"Marginal burden at € 60,000: today / new 2028 (Germany)",48.8 / 40.0,% per additional euro,single; new without compulsory saving,grenzbelastung33.json zeilen/5,check,v4.58
+Z18,"VAT label burden, factor lowest / highest income class (Germany)",0.87 / 1.07,relative to mean,EVS 2023,mwst_verteilung.json klassen,adopted,v4.58
+Z19,One-off price level effect of the VAT label 2028,1.2 to 2.1,%,mechanical 2.47 %,preisniveau33.json reihe/0,check,v4.58
+Z20,"Gain, single employee at the average wage (Germany)",726,€ per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/DE,adopted,v4.58
+Z21,"Gain, single employee at the average wage (France)",276,€ per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/FR,adopted,v4.58
+Z22,"Gain, single employee at the average wage (Italy)",412,€ per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/IT,adopted,v4.58
+Z23,"Gain, single employee at the average wage (Spain)",321,€ per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/ES,adopted,v4.58
+Z24,"Gain, single employee at the average wage (Poland)",1404,zł per month,2028; country's own legacy surcharge after netting,verrechnung_haushalte.json laender/PL,adopted,v4.58
+Z25,Legacy surcharge 2028 after netting (Germany),15.0,%,converging to the common rate by 2058,laenderseiten.json staaten/DE/fonds,adopted,v4.58
+Z26,Legacy surcharge 2028 after netting (France),21.3,%,converging to the common rate by 2058,laenderseiten.json staaten/FR/fonds,adopted,v4.58
+Z27,Legacy surcharge 2028 after netting (Italy),22.3,%,converging to the common rate by 2058,laenderseiten.json staaten/IT/fonds,adopted,v4.58
+Z28,Legacy surcharge 2028 after netting (Spain),18.3,%,converging to the common rate by 2058,laenderseiten.json staaten/ES/fonds,adopted,v4.58
+Z29,Legacy surcharge 2028 after netting (Poland),13.5,%,converging to the common rate by 2058,laenderseiten.json staaten/PL/fonds,adopted,v4.58
+Z30,Gini coefficient 2025 → 2028 (Germany),30.1 → 26.1,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/DE,check,v4.58
+Z31,Gini coefficient 2025 → 2028 (France),30.4 → 29.0,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/FR,check,v4.58
+Z32,Gini coefficient 2025 → 2028 (Italy),31.0 → 26.9,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/IT,check,v4.58
+Z33,Gini coefficient 2025 → 2028 (Spain),30.8 → 25.0,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/ES,check,v4.58
+Z34,Gini coefficient 2025 → 2028 (Poland),24.9 → 18.7,index 0–100,official 2025 (Eurostat) plus model change,gini.json staaten/PL,check,v4.58

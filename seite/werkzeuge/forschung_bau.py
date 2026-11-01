@@ -8,7 +8,7 @@ PDFs (Prüfprotokolle, Kit) entstehen mit Chromium aus Markdown/HTML; ohne --pdf
 Ausgabe: docs/ (v4.57: englische Hauptfassung im Wurzelverzeichnis aus forschung_en.py, deutsche Fassung in docs/de/, gemeinsam style.css,
 data/ und downloads/)
 """
-import csv, hashlib, html, json, shutil, sys, tomllib
+import re, csv, hashlib, html, json, shutil, sys, tomllib
 from pathlib import Path
 
 W = Path(__file__).resolve().parents[2]
@@ -19,6 +19,38 @@ VERSION = tomllib.loads((W / "modell" / "parameter.toml").read_text(encoding="ut
 KONTAKT = "tax.better@archicrowd.de"
 SEITE = "https://www.archicrowd.de"
 DATUM = "1. November 2026"
+PAGES = "https://archicrowd.github.io/goldenes-drittel/"
+
+
+def _korrekturen():
+    """Höchste vergebene Korrekturnummer aus den Korrekturtabellen des Logbuchs (alle Nummern bis dahin besetzt; Korrektur 83)."""
+    t = "".join((W / "logbuch" / n).read_text(encoding="utf-8") for n in ("Versionsgeschichte-TAX-2828-BandII.md", "Versionsgeschichte-TAX-2828-BandIII.md"))
+    return max(int(m) for m in re.findall(r"^\| (\d+) \|", t, re.M))
+
+
+def _stufen():
+    t = (W / "modell" / "alles.py").read_text(encoding="utf-8")
+    return len(re.findall(r'^\s*\("', t[t.index("STUFEN = ["):], re.M))
+
+
+KORREKTUREN, STUFEN = _korrekturen(), _stufen()
+GEPRUEFT = "v4.42"   # letzter von einer Prüfung erfasster Modellstand (dritte Prüfung, Commit 43f7888c)
+# Änderungen seit dem geprüften Stand: (Version, was, bewegte Zahl) – aus dem Logbuch Band III; nach jeder Version mit Rechenwirkung ergänzen
+SEIT_PRUEFUNG = [
+ ("v4.46", "Antworten auf die dritte Prüfung: Korrekturen 73–76 (Ausweis), Raster Zins × Wachstum", "keine geltende Zahl"),
+ ("v4.47", "Grenzbelastung bereinigt um Gegenwerte (Prüfrechnung, Z17)", "keine geltende Zahl"),
+ ("v4.49–v4.50", "Gestaltungsentscheidungen E12–E15 (Aufstockung, Sperrkonto, Kürzung, Dividende, Label)", "keine Rechnung"),
+ ("v4.51", "Ländermodelle gegen OECD Taxing Wages 2026; Korrekturen 77–79 (prime d'activité 59,85 %, forfait logement)", "Frankreich: heute bei halbem SMIC 1.219 → 1.136 € je Monat"),
+ ("v4.52", "Weitergabe nur aus entfallenden Beiträgen zur sozialen Sicherung (Beschluss E16); Korrektur 80", "Durchschnittslohn, allein: FR +390 → +286 €, ES +350 → +321 €, PL +1.474 → +1.404 zł"),
+ ("v4.53", "Kennzahlen maschinell gegen die Ergebnisdateien geprüft; Korrektur 81", "keine Rechnung; veraltete Angaben berichtigt"),
+ ("v4.54", "Mehrwertsteuer nach Einkommen für Frankreich (Eurostat HBS 2020)", "FR Durchschnittslohn +286 → +276 €"),
+ ("v4.57", "Haushaltstypen je Land (neue Ausgabe)", "keine geltende Zahl; neue Werte Z20–Z34 der englischen Fassung"),
+ ("v4.58", "Prüfstand auf der Seite; Korrektur 83", "keine Rechnung"),
+]
+
+
+def seit_pruefung_html(kopf=("Version", "Änderung", "Bewegte Zahl"), zeilen=None):
+    return tabelle(list(kopf), [list(z) for z in (zeilen or SEIT_PRUEFUNG)])
 
 
 def de(x, n=0):
@@ -196,13 +228,14 @@ tragenden Rechnungen mit ihren Annahmen, die bisherigen Prüfungen und die Zahle
 <p class="meta">Die allgemeine Seite in sechs Sprachen: <a href="{SEITE}">{SEITE.replace("https://", "")}</a>. Modellstand {VERSION}, {DATUM}.</p>
 <h2>Vier Kernthemen</h2><div class="karten">{karten}</div>
 <h2>Wie die Zahlen entstehen</h2>
-<p>Alle Werte stammen aus einer offenen Rechenkette (68 Stufen) auf Grundlage amtlicher Statistiken (Eurostat, OECD, Statistisches Bundesamt,
+<p>Alle Werte stammen aus einer offenen Rechenkette ({STUFEN} Stufen) auf Grundlage amtlicher Statistiken (Eurostat, OECD, Statistisches Bundesamt,
 Bundesagentur für Arbeit) und veröffentlichter Erhebungen. Jede Änderung und jeder gefundene Fehler steht mit Nummer im Logbuch; bisher sind
-81 Korrekturen geführt. Die Rechnung ist statisch: Arbeitsangebot, Sparen und Wanderung reagieren nicht; Weitergabe, Überwälzung, Ausweichen und
+{KORREKTUREN} Korrekturen geführt. Die Rechnung ist statisch: Arbeitsangebot, Sparen und Wanderung reagieren nicht; Weitergabe, Überwälzung, Ausweichen und
 Inanspruchnahme gehen als Annahmen oder Bänder ein. Eine qualitative Voruntersuchung der Verhaltenswirkungen liegt vor; die quantitative
 Stufe ist offen.</p>
 <div class="hinweis vorbehalt">Entwurf zur Diskussion, kein beschlossenes Programm. Die drei bisherigen Prüfungen erfolgten <b>im Auftrag der
-Initiative</b>; unabhängige Prüfungen sind ausdrücklich erwünscht. Die Unterlagen dafür liegen bereit (<a href="pruefungen.html">Prüfungen</a>).</div>
+Initiative</b> und erfassen den Modellstand bis {GEPRUEFT}; die Änderungen bis {VERSION} sind noch nicht geprüft (Liste unter
+<a href="pruefungen.html#seit">Prüfungen</a>). Unabhängige Prüfungen sind ausdrücklich erwünscht; die Unterlagen liegen bereit.</div>
 <h2>Prüfungen und Forschungs-Kit</h2>
 <p><a href="pruefungen.html">Prüfungen</a>: Prüfberichte und Stellungnahmen als PDF, mit allen Befunden und ihrer Umsetzung.
 <a href="kit.html">Forschungs-Kit</a>: Kurzdarstellung als PDF, Zahlen zum Zitieren (CSV, JSON), Ergebnisdateien und Zitiervorschlag.</p>
@@ -368,7 +401,11 @@ dokumentiert; gefundene Fehler stehen als nummerierte Korrekturen im Logbuch.</p
 <div class="hinweis vorbehalt">Die Prüfungen erfolgten im Auftrag der Initiative. Sie ersetzen keine unabhängige Begutachtung. Die
 Stellungnahmen geben den Stand ihrer Version wieder; spätere Rechnungen können Zahlen darin geändert haben. Geltende Werte: <a href="kit.html">Forschungs-Kit</a>.
 Die Prüfberichte der ersten und zweiten Prüfung liegen der Initiative vor und werden mit Zustimmung der Prüfenden ergänzt.</div>
-{''.join(teile)}"""
+{''.join(teile)}
+<h2 id="seit">Seit der letzten Prüfung ({GEPRUEFT}) geändert, noch nicht geprüft</h2>
+<p>Die dritte Prüfung erfasste den Modellstand {GEPRUEFT}. Seitdem haben sich folgende Rechnungen und Angaben geändert (Logbuch Band III);
+eine Nachprüfung dieser Änderungen ist vorgesehen.</p>
+{seit_pruefung_html()}"""
     return seite("pruefungen.html", "Prüfungen", inhalt, "Prüfberichte und Stellungnahmen zum Modell Das Goldene Drittel.")
 
 
@@ -411,11 +448,11 @@ Grundbedarf); Sozialbeiträge entfallen, Betriebe geben mindestens 80 % der wegf
 (Gesundheit, Pflege, Mindestrente, Grundbedarf) ohne Prämien; eine monatliche Transformationsdividende für jeden Erwachsenen; Pflichtvorsorge
 10 % auf ein eigenes, bis zur Altersgrenze gesperrtes Konto; Mehrwertsteuer als Label; Altlasten in einem gemeinsamen Fonds.</p>
 <h2>Methode und Grenzen</h2>
-<ul><li>Offene Rechenkette (68 Stufen), amtliche Statistiken (Eurostat, OECD, Destatis, BA) und veröffentlichte Erhebungen; jede Korrektur
-nummeriert im Logbuch (bisher 81).</li>
+<ul><li>Offene Rechenkette ({STUFEN} Stufen), amtliche Statistiken (Eurostat, OECD, Destatis, BA) und veröffentlichte Erhebungen; jede Korrektur
+nummeriert im Logbuch (bisher {KORREKTUREN}).</li>
 <li>Statisch: keine Verhaltensreaktionen beim Arbeitsangebot, Sparen und Wandern; Weitergabe, Überwälzung, Ausweichen und Inanspruchnahme als
 Annahmen oder Bänder. Qualitative Voruntersuchung der Verhaltenswirkungen liegt vor.</li>
-<li>Drei Prüfungen im Auftrag der Initiative (Oktober 2026): Rechenkern bestätigt, Befunde dokumentiert. Unabhängige Prüfung erwünscht.</li>
+<li>Drei Prüfungen im Auftrag der Initiative (Oktober 2026), zuletzt Modellstand {GEPRUEFT}: Rechenkern bestätigt, Befunde dokumentiert. Spätere Änderungen (bis {VERSION}) sind noch nicht geprüft. Unabhängige Prüfung erwünscht.</li>
 <li>Größte unbelegte Position: Basis der Unternehmensbesteuerung am Ort der Kunden.</li></ul>
 <h2>Zahlen zum Zitieren</h2>
 <table><thead><tr><th>Nr.</th><th>Größe</th><th>Wert</th><th>Einheit</th><th>Bezug</th><th>Status</th></tr></thead><tbody>{zeilen}</tbody></table>

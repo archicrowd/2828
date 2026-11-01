@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the figure number (Z01–Z34) and the model version."
+title: "The Golden Third – research kit and figures to cite"
+type: dataset
+authors:
+  - name: "Initiative 28:28"
+version: "v4.58"
+license: CC-BY-4.0
+url: "https://archicrowd.github.io/goldenes-drittel/"
+repository-code: "https://github.com/archicrowd/goldenes-drittel"
+keywords: [tax policy, social protection, basic income, transformation dividend, microsimulation, public debt, Europe]
