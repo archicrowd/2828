@@ -71,6 +71,20 @@ def t_objectives():
                      "the income base (dynamik33.toml, approximation). Marginal burden: single, Germany, without compulsory saving.")
 
 
+LABEL = [("A+", 5, "basic needs, repairs, circular products"), ("A", 11, "certified sustainable goods"), ("B", 17, "standard goods"),
+         ("C", 25, "resource-intensive goods"), ("Special", 33, "harmful goods (e.g. combustion-engine vehicles, tobacco, alcohol)")]
+
+
+def t_label():
+    b = 1.17
+    z = [[k, f"{s} %", d, pm(100 * ((1 + s / 100) / b - 1), 1) + " %", pm(100 * (b / (1 + s / 100) - 1), 1) + " %"] for k, s, d in LABEL]
+    return tab(["Class", "Rate", "Goods (examples)", "Price vs B (1)", "Revenue vs B (2)"], z,
+               rechts=(1, 3, 4),
+               notiz="(1) Consumer price relative to class B at the same net price. (2) Supplier net revenue relative to class B at the same consumer price. Mechanical price signals from the rates alone. Which share of a rate difference reaches consumers or stays with suppliers depends on "
+                     "pass-through, which is asymmetric for VAT changes (Benzarti et al. 2020). Assignment of goods to classes is set by law; lower classes "
+                     "A+ and A are reached through certification.")
+
+
 def t_digital():
     zeilen = []
     base = dy(0.0, 0.0, 0.0)["reihe"]["2060"]["dividende_erw_eur2026"]
@@ -195,7 +209,10 @@ REFS = [
  "Bick, A., Fuchs-Schündeln, N. (2018): Taxation and Labour Supply of Married Couples across Countries. Review of Economic Studies 85(3).",
  "Chetty, R., Friedman, J., Leth-Petersen, S., Nielsen, T., Olsen, T. (2014): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts. Quarterly Journal of Economics 129(3).",
  "Chetty, R., Looney, A., Kroft, K. (2009): Salience and Taxation: Theory and Evidence. American Economic Review 99(4).",
+ "Council of the European Union (2022): Council Directive (EU) 2022/542 of 5 April 2022 amending Directives 2006/112/EC and (EU) 2020/285 as regards rates of value added tax. Official Journal L 107.",
+ "Court of Justice of the European Union (2022): Case C-515/20, B & L Elektrotechnik (reduced VAT rates and the principle of fiscal neutrality); cited after a secondary source.",
  "DREES (2022): Mesurer régulièrement le non-recours au RSA et à la prime d'activité. Les Dossiers de la DREES 92.",
+ "Dranove, D., Jin, G. Z. (2010): Quality Disclosure and Certification: Theory and Practice. Journal of Economic Literature 48(4).",
  "Douenne, T., Fabre, A. (2022): Yellow Vests, Pessimistic Beliefs, and Carbon Tax Aversion. American Economic Journal: Economic Policy 14(1).",
  "Eurofound (2015): Access to social benefits: Reducing non-take-up. Luxembourg: Publications Office of the European Union.",
  "Eurostat: datasets gov_10a_exp, gov_10a_taxag, gov_10dd_edpt1, nama_10_gdp, nasa_10_pens1, demo_pjanind, une_rt_a, prc_ppp_ind (retrieved 17 October 2026); ilc_di12, ilc_di01 (EU-SILC 2025, retrieved 18 October 2026); hbs_str_t223 (Household Budget Survey 2020, retrieved 24 October 2026).",
@@ -206,9 +223,11 @@ REFS = [
  "Madrian, B., Shea, D. (2001): The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior. Quarterly Journal of Economics 116(4).",
  "Mildenberger, M., Lachapelle, E., Harrison, K., Stadelmann-Steffen, I. (2022): Limited impacts of carbon tax rebate programmes on public support for carbon pricing. Nature Climate Change 12(2).",
  "OECD (2025): Taxing Wages 2025. Paris: OECD Publishing. – OECD (2026): Taxing Wages 2026. Paris: OECD Publishing.",
+ "Potter, C., Bastounis, A., Hartmann-Boyce, J., Stewart, C., Frie, K., Tudor, K., Bianchi, F., Cartwright, E., Cook, B., Rayner, M., Jebb, S. A. (2021): The Effects of Environmental Sustainability Labels on Selection, Purchase, and Consumption of Food and Drink Products: A Systematic Review. Environment and Behavior 53(8).",
  "Saez, E., Schoefer, B., Seim, D. (2019): Payroll Taxes, Firm Behavior, and Rent Sharing: Evidence from a Young Workers' Tax Cut in Sweden. American Economic Review 109(5).",
  "Statistisches Bundesamt (Destatis): Einkommens- und Verbrauchsstichprobe (EVS) 2023, Konsumausgaben privater Haushalte.",
  "STM – Ministry of Social Affairs and Health, Finland (2020): Results of Finland's basic income experiment.",
+ "Umweltbundesamt et al. (2026): Projektionsbericht 2026 für Deutschland (with-measures scenario, transport).",
  "Vivalt, E., Rhodes, E., Bartik, A., Broockman, D., Miller, S. (2024): The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States. NBER Working Paper 32719.",
  "World Justice Project (2025): Rule of Law Index 2025. Washington, DC.",
 ]
@@ -286,9 +305,12 @@ systems pass on to later ones. The proposal makes them explicit, moves them into
 basic need are reduced, so that today's pensioners carry a share; basic need is guaranteed. New saving for old age is funded on an own account
 rather than promised by later contributors. The dividend is justified as a share for everyone in what earlier generations built – knowledge,
 technology, infrastructure.</p>
-<p><b>Climate change.</b> A carbon price and a special VAT rate of 33 % on harmful goods steer consumption; their revenue is returned to everyone
-through the dividend, so that households that consume little gain. Suppliers obtain lower VAT rates by certification, which is meant to create
-competition for sustainability. The dividend shrinks as emissions fall; the initiative regards this as intended.</p>
+<p><b>Climate change.</b> The proposal relies on economic incentives rather than on control of individual products and firms. A carbon price
+and a special VAT rate of 33 % on harmful goods make harmful consumption more expensive; their revenue is returned to everyone through the
+dividend, so that households that consume little gain. VAT becomes a label with five classes. Suppliers move their products into lower classes by
+certification at approved bodies under state supervision: the state supervises the certifiers, not each product. The intended result is a
+competition for sustainability in which a lower rate is a price advantage that suppliers earn. The dividend shrinks as emissions fall; the
+initiative regards this as intended.</p>
 <p><b>Digital transformation of work.</b> If more output is produced by machines and software and less by paid work, systems financed from wages
 lose their base and tie protection to employment that becomes less stable. The proposal finances social protection from all income, makes the
 net and the dividend independent of employment, keeps the pension account portable across jobs, and taxes platforms where their customers are.
@@ -442,10 +464,34 @@ these households.</p>
 <p><b>Intergenerational fairness.</b> Repayment by 2098 means that taxpayers after 2098 no longer carry today's legacy. The cost falls on taxpayers until
 then through the surcharge, and on pensioners with promises above basic need: German pensioner households lose {en(-RE['mittel_monat'])} € per month on
 average, while the lowest fifth gains slightly. A full assessment would need generational accounts by birth cohort, which the model does not compute.</p>
-<p><b>Climate.</b> The rules are consistent with the objective in that harmful consumption is taxed and the revenue returned. The model takes the
-emission path as given; it does not estimate how far the rules reduce emissions. The success of climate policy reduces steering revenue from
-{en(NZ0['lenkung_pct_bip'], 2)} % of GDP in 2028 to {en(NZ60['lenkung_pct_bip'], 2)} % in 2060 and is the main reason why the dividend falls. Later cohorts
-therefore receive a smaller dividend – a tension with intergenerational fairness that the initiative accepts as intended.</p>
+<p><b>Climate: incentive instead of control.</b> The rules are consistent with the objective in that harmful consumption is taxed and the revenue
+returned. Three elements work through prices rather than prohibitions:</p>
+<ul>
+<li><b>Carbon price.</b> The European carbon price for buildings and transport (ETS2) enters as a revenue path; its revenue falls with emissions
+even though the price rises. Road transport fuel expenditure follows the German projection report 2026 (with-measures scenario).</li>
+<li><b>Special rate on harmful goods.</b> Goods classified as harmful to health or the environment carry 33 % – in the model
+combustion-engine vehicles, tobacco and alcohol. The model assumes that the share of
+combustion engines in vehicle purchases falls from 80 % in 2028 to 10 % in 2035 (assumption, oriented to EU vehicle CO₂ standards).</li>
+<li><b>VAT label.</b> Table 13 shows the price signal implied by the rates alone. For the same net price, a certified product in class A costs
+{en(-100 * (1.11 / 1.17 - 1), 1)} % less than a standard product; a harmful product costs {en(100 * (1.33 / 1.17 - 1), 1)} % more. A supplier who keeps the consumer price
+unchanged earns {en(100 * (1.17 / 1.11 - 1), 1)} % more per unit after moving from B to A. Certification pays if its cost is lower than this advantage.</li>
+</ul>
+<p class="cap">Table 13: VAT label classes and the price signal</p>
+{t_label()}
+<p>The label is distributionally progressive in its burden (Table 6), and the revenue returns per head through the dividend. Evidence supports the
+direction of the mechanism but not its size: consumers respond more strongly to taxes shown at the point of purchase (Chetty, Looney and Kroft 2009);
+in a systematic review of environmental labels on food, 60 of 76 comparisons favoured the labelled option, with many studies at unclear or high
+risk of bias (Potter et al. 2021). Certification works only if certifiers are independent and supervised (Dranove and Jin 2010). VAT cuts are passed on
+to consumers less than increases (Benzarti et al. 2020), so part of the advantage of class A may stay with suppliers – which still rewards
+certification, but weakens the price signal to consumers. Carbon rebates are often underestimated by recipients (Mildenberger et al. 2022).</p>
+<p>The model does not estimate how far the rules reduce emissions: emissions are an exogenous path, and the demand response to the label is not
+quantified for the current rates. The legal frame is open. Current EU law allows at most two reduced rates of at least 5 % and one lower rate
+(Council Directive (EU) 2022/542), while the label has three rates below the standard class; rates that depend on a supplier's certification rather
+than on the product raise the question of fiscal neutrality (CJEU case C-515/20; secondary source). The same directive already points in the direction
+of the label: it permits reduced rates for solar panels and ends reduced rates for fossil fuels from 2030.</p>
+<p>The success of climate policy reduces steering revenue from {en(NZ0['lenkung_pct_bip'], 2)} % of GDP in 2028 to {en(NZ60['lenkung_pct_bip'], 2)} % in 2060
+and is the main reason why the dividend falls. Later cohorts therefore receive a smaller dividend – a tension with intergenerational fairness that
+the initiative accepts as intended.</p>
 <p><b>Digital transformation of work.</b> The clearest quantitative result concerns the tax base. Today a shift of three points of GDP from labour
 to capital income by 2060 would reduce revenue by {en(-dk['heute_aufkommen_aenderung_2060_pct_bip'], 2)} % of GDP, because capital income is taxed more lightly;
 in the new system the same shift raises revenue by {en(dk['reihe']['2060']['aufkommen_aenderung_33_pct_bip'], 2)} % of GDP. Faster productivity growth from
@@ -478,7 +524,8 @@ quantitative stage is open.</p>
 parameters rest on secondary sources.</li>
 <li>The share of employees better off uses the German wage distribution scaled to each country's average wage; national wage distributions and
 two-earner couples are open.</li>
-<li>VAT burdens by income are available only for Germany and France.</li>
+<li>VAT burdens by income are available only for Germany and France. The demand response to the label and the effect of the rules on emissions
+are not quantified; the label requires changes to EU VAT law.</li>
 <li>The tax base of company profits taxed where customers are has not been checked against an independent source.</li>
 <li>The common fund of 30 states is scaled from ten states; interest and growth are assumptions with a wide band.</li>
 <li>Compatibility with EU law and national constitutions has not been assessed.</li>

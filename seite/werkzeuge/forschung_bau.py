@@ -52,6 +52,7 @@ SEIT_PRUEFUNG = [
  ("v4.59", "Archiv auf Zenodo, DOI auf der Seite", "keine Rechnung"),
  ("v4.60", "Working Paper (Entwurf, englisch) aus den Ergebnisdateien", "keine Rechnung"),
  ("v4.61", "Working Paper: Ziele und Bewertung an den Zielen", "keine Rechnung"),
+ ("v4.62", "Working Paper: Klima und Label als wirtschaftlicher Anreiz", "keine Rechnung"),
 ]
 
 

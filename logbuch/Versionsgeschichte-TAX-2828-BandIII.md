@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.61**
+Stand: 24. Oktober 2026 · Modellstand **v4.62**
 
 ---
 
@@ -4517,6 +4517,32 @@ born after the late 2060s“ (unbelegt) ersetzt durch „taxpayers after 2098“
 
 ---
 
+### v4.62 — Working Paper: Klima und Mehrwertsteuer-Label als wirtschaftlicher Anreiz statt Kontrolle
+
+**Art der Änderung: MINOR (Text der Ausgabe), keine Zahl bewegt.** 2. November 2026.
+
+**Anlass:** Auftrag der Initiative (02.11.2026): „Kein 5. Thema, aber etwas mehr zum Climate Change und dem Labelsystem als Steuerungsinstrument
+in die Nachhaltigkeit. Wirtschaftlicher Anreiz statt Kontrolle.“
+
+**Neu im Working Paper:** Ziel „Climate change“ (Abschnitt 2) mit dem Grundsatz Anreiz statt Kontrolle (Aufsicht über die Zertifizierer, nicht
+über jedes Produkt). Abschnitt 7 „Climate: incentive instead of control“: CO₂-Preis (ETS2 als Aufkommenspfad), Sonderstufe 33 % (im Modell
+Verbrenner-Fahrzeuge, Tabak, Alkohol; Verbreneranteil 80 % → 10 % 2035, Annahme aus `projektion33.toml`), Tabelle 13 mit dem rein mechanischen
+Preissignal der Sätze (gleicher Nettopreis: A gegen B −5,1 %, Sonderstufe +13,7 %; gleicher Endpreis: Erlös des Anbieters B → A +5,4 %). Belege mit
+Einordnung der Stärke: Chetty/Looney/Kroft 2009; Potter u. a. 2021 (60 von 76 Vergleichen zugunsten des Labels, viele Studien mit unklarem oder hohem
+Verzerrungsrisiko; Zitat am Repositorium der Universität Nottingham geprüft); Dranove/Jin 2010; Benzarti u. a. 2020; Mildenberger u. a. 2022.
+Rechtsrahmen offen benannt: Richtlinie (EU) 2022/542 erlaubt höchstens zwei ermäßigte Sätze ab 5 % und einen niedrigeren (Inhalt nach BDO,
+Zusammenfassung der Ratseinigung vom 7.12.2021, Sekundärquelle), das Label hat drei Sätze unter der Standardklasse; anbieterbezogene Sätze und
+Neutralitätsgrundsatz (EuGH C-515/20, Sekundärquelle); dieselbe Richtlinie erlaubt ermäßigte Sätze für Solaranlagen und beendet ermäßigte Sätze für
+fossile Brennstoffe ab 2030. Nicht gerechnet und so ausgewiesen: Nachfragewirkung des Labels für die geltenden Sätze (die Nachfrageprüfung
+`nachfrage.toml` stammt aus Stand B, v3.32, mit anderen Sätzen) und die Emissionswirkung.
+
+**Beim Gegenlesen berichtigt:** „fossile Brennstoffe in der Sonderstufe“ war nicht belegt (das Modell führt dort Verbrenner-Fahrzeuge, Tabak,
+Alkohol).
+
+**Datenquelle:** Ergebnisdateien v4.61; `projektion33.toml`; Quellen wie genannt. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4589,7 +4615,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.61
+## 7 | Offene Punkte, Stand v4.62
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4643,7 +4669,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
-| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.58 (`projekt/Pruefprogramm-Delta-v4.42-v4.58.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper: Entwurf v4.61 durchsehen, dann eigener DOI (Zenodo) |
+| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.58 (`projekt/Pruefprogramm-Delta-v4.42-v4.58.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper: Entwurf v4.62 durchsehen, dann eigener DOI (Zenodo) |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |
