@@ -30,6 +30,7 @@ SINCE_REVIEW = [
  ("v4.61", "Working paper: objectives and assessment against them", "no calculation"),
  ("v4.62", "Working paper: climate and the label as an economic incentive", "no calculation"),
  ("v4.63", "Working paper published (site, kit)", "no calculation"),
+ ("v4.64", "Review programme extended to v4.63", "no calculation"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]

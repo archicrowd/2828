@@ -54,6 +54,7 @@ SEIT_PRUEFUNG = [
  ("v4.61", "Working Paper: Ziele und Bewertung an den Zielen", "keine Rechnung"),
  ("v4.62", "Working Paper: Klima und Label als wirtschaftlicher Anreiz", "keine Rechnung"),
  ("v4.63", "Working Paper veröffentlicht (Seite, Kit)", "keine Rechnung"),
+ ("v4.64", "Prüfprogramm der Nachprüfung bis v4.63 erweitert", "keine Rechnung"),
 ]
 
 

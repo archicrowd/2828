@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.63**
+Stand: 24. Oktober 2026 · Modellstand **v4.64**
 
 ---
 
@@ -4561,6 +4561,26 @@ Concept-DOI). Ein eigener DOI als „Publication / Working paper“ setzt einen 
 
 ---
 
+### v4.64 — Prüfprogramm der Nachprüfung auf v4.63 erweitert; Release v4.63 geprüft
+
+**Art der Änderung: PATCH (Dokument), keine Zahl bewegt.** 2. November 2026.
+
+**Anlass:** Auftrag der Initiative (02.11.2026): „Prüfe und mach weiter.“
+
+**Geprüft:** Release `v4.63` im öffentlichen Repository auf dem richtigen Stand (Commit `6d6d4cc` der Seite, mit Working Paper); der DOI der neuen
+Fassung ist aus der Sitzung nicht abrufbar (zenodo.org gesperrt) und wird bei der Initiative erfragt. Die Seite selbst ist aus der Sitzung nicht
+erreichbar (github.io über den Proxy gesperrt).
+
+**Prüfprogramm** umbenannt in `projekt/Pruefprogramm-Delta-v4.42-v4.63.md` (Register nachgezogen): Vergleichsbasis `43f7888` → `f8fc0f3`; Liste
+der unveränderten Ergebnisdateien neu maschinell geprüft und erweitert (`dynamik33`, `ausweichen33`, `preisniveau33`, `mwst_verteilung` unverändert);
+D4 um `weitergabe_sensitivitaet.json` ergänzt (geändert in v4.46/v4.51/v4.52/v4.54, im Working Paper Tabelle 8 verwendet); neuer Prüfpunkt D9
+Working Paper (Aussagen über die Zahlen hinaus: Bewertung an den Zielen, Label und EU-Recht, Literatur, Vergleich der effektiven Belastung);
+Hinweis auf fehlende Tags auf GitHub (Commit-Kennungen maßgeblich); Zahlen während der Prüfung eingefroren.
+
+**Datenquelle:** `git diff 43f7888 f8fc0f3`. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4633,7 +4653,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.63
+## 7 | Offene Punkte, Stand v4.64
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4687,7 +4707,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
-| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.58 (`projekt/Pruefprogramm-Delta-v4.42-v4.58.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper veröffentlicht (v4.63); Release für das Archiv, eigener DOI optional |
+| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.63 (`projekt/Pruefprogramm-Delta-v4.42-v4.63.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper veröffentlicht (v4.63); Release für das Archiv, eigener DOI optional |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |
