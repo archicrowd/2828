@@ -248,7 +248,7 @@ def text():
     gmin = min(LAENDER, key=lambda c: G[c]["reihe"][0]["mitte"] - G[c]["gini_amtlich_2025"])
     return f"""
 <header class="titel">
-<p class="kicker">Working paper · draft for discussion</p>
+<p class="kicker">Working paper · for discussion</p>
 <h1>The Golden Third</h1>
 <p class="sub">A static costing and distributional model of a shared tax and social-protection framework for a group of European states</p>
 <p class="autor">Initiative 28:28</p>
@@ -596,7 +596,7 @@ def main():
             s = b.new_page()
             s.set_content(h, wait_until="load")
             fuss = ('<div style="font:7.5pt Arial,sans-serif;color:#5a7186;width:100%;padding:0 20mm;display:flex;justify-content:space-between">'
-                    f'<span>The Golden Third · working paper · model version {VERSION} · draft</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>')
+                    f'<span>The Golden Third · working paper · model version {VERSION}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>')
             s.pdf(path=str(OUT / "Golden-Third-Working-Paper.pdf"), format="A4", display_header_footer=True, header_template="<span></span>",
                   footer_template=fuss, margin=dict(top="20mm", bottom="20mm", left="20mm", right="20mm"))
             b.close()

@@ -29,6 +29,7 @@ SINCE_REVIEW = [
  ("v4.60", "Working paper (draft) built from the result files", "no calculation"),
  ("v4.61", "Working paper: objectives and assessment against them", "no calculation"),
  ("v4.62", "Working paper: climate and the label as an economic incentive", "no calculation"),
+ ("v4.63", "Working paper published (site, kit)", "no calculation"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
@@ -202,10 +203,11 @@ version {GEPRUEFT}. Changes up to {VERSION} have not yet been reviewed (<a href=
 invited; the material is ready.</div>
 <h2>Reviews and research kit</h2>
 <p><a href="reviews.html">Reviews</a>: review reports and responses, with all findings and how they were handled.
-<a href="kit.html">Research kit</a>: short summary (PDF), numbered figures to cite (CSV, JSON), result files and a citation.</p>
+<a href="kit.html">Research kit</a>: short summary (PDF), numbered figures to cite (CSV, JSON), result files and a citation.
+<a href="downloads/Golden-Third-Working-Paper.pdf">Working paper</a> (PDF): objectives, model, results and an assessment against the objectives.</p>
 <h2 id="contact">Contact</h2>
 <p>Questions, objections and offers to review: <a href="mailto:{KONTAKT}">{KONTAKT}</a>. Scripts, parameters and the full log of all versions are
-available to reviewers on request. Archive with DOI: <a href="https://doi.org/{F.DOI_KONZEPT}">{F.DOI_KONZEPT}</a>; a working paper is in preparation.</p>"""
+available to reviewers on request. Archive with DOI: <a href="https://doi.org/{F.DOI_KONZEPT}">{F.DOI_KONZEPT}</a>; <a href="downloads/Golden-Third-Working-Paper.pdf">working paper</a> (PDF).</p>"""
     return seite("index.html", "Overview", inhalt, "Calculations, reviews and citable figures for the Golden Third proposal.")
 
 
@@ -410,6 +412,7 @@ def p_kit():
 <p class="lede">For research, press and review: a short summary, the core figures with origin and status, the result files and a citation.</p>
 <h2>Downloads</h2>
 <ul>
+<li><a href="downloads/Golden-Third-Working-Paper.pdf">Working paper</a> (PDF): objectives, rules, model, results, sensitivity, assessment against the objectives</li>
 <li><a href="downloads/Research-Kit-Golden-Third.pdf">Short summary with figures to cite</a> (PDF) · <a href="downloads/Forschungs-Kit-Goldenes-Drittel.pdf">German version</a></li>
 <li><a href="data/figures-to-cite.csv">Figures to cite</a> (CSV) · <a href="data/figures-to-cite.json">JSON</a></li>
 <li><a href="data/">Result files</a> of the calculations shown (JSON; keys in German)</li>
@@ -421,7 +424,7 @@ Euro amounts in purchasing power 2026 unless stated otherwise.</p>
 <h2>Citation</h2>
 <p>{html.escape(ZITAT)} {SEITE.replace("https://", "")}</p>
 <p class="meta">DOI {F.DOI_KONZEPT} always resolves to the latest archived version. Archived versions: {", ".join(f"model version {v}: <a href=\"https://doi.org/{d}\">{d}</a>" for v, d in F.DOI_ARCHIV.items())}.
-A working paper with its own DOI is in preparation.</p>"""
+Working paper: <a href="downloads/Golden-Third-Working-Paper.pdf">The Golden Third – a static costing and distributional model</a> (PDF, model version {VERSION}).</p>"""
     return seite("kit.html", "Research kit", inhalt, "Figures to cite, result files and citation.")
 
 
@@ -497,7 +500,7 @@ keywords: [tax policy, social protection, basic income, transformation dividend,
     (ziel / ".zenodo.json").write_text(json.dumps(dict(
         title=f"The Golden Third – research kit and figures to cite (model version {VERSION})", upload_type="dataset",
         description=("Calculations, reviews and citable figures (Z01–Z34) for the proposal 'The Golden Third': taxation and social protection shared by "
-                     "a group of states. Static model; reviews commissioned by the initiative covered model versions up to " + GEPRUEFT + "."),
+                     "a group of states, including the working paper (PDF). Static model; reviews commissioned by the initiative covered model versions up to " + GEPRUEFT + "."),
         creators=[dict(name="Initiative 28:28")], license="cc-by-4.0", version=VERSION, language="eng",
         keywords=["tax policy", "social protection", "basic income", "microsimulation", "public debt", "Europe"]), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 

@@ -53,6 +53,7 @@ SEIT_PRUEFUNG = [
  ("v4.60", "Working Paper (Entwurf, englisch) aus den Ergebnisdateien", "keine Rechnung"),
  ("v4.61", "Working Paper: Ziele und Bewertung an den Zielen", "keine Rechnung"),
  ("v4.62", "Working Paper: Klima und Label als wirtschaftlicher Anreiz", "keine Rechnung"),
+ ("v4.63", "Working Paper veröffentlicht (Seite, Kit)", "keine Rechnung"),
 ]
 
 
@@ -245,10 +246,11 @@ Initiative</b> und erfassen den Modellstand bis {GEPRUEFT}; die Änderungen bis 
 <a href="pruefungen.html#seit">Prüfungen</a>). Unabhängige Prüfungen sind ausdrücklich erwünscht; die Unterlagen liegen bereit.</div>
 <h2>Prüfungen und Forschungs-Kit</h2>
 <p><a href="pruefungen.html">Prüfungen</a>: Prüfberichte und Stellungnahmen als PDF, mit allen Befunden und ihrer Umsetzung.
-<a href="kit.html">Forschungs-Kit</a>: Kurzdarstellung als PDF, Zahlen zum Zitieren (CSV, JSON), Ergebnisdateien und Zitiervorschlag.</p>
+<a href="kit.html">Forschungs-Kit</a>: Kurzdarstellung als PDF, Zahlen zum Zitieren (CSV, JSON), Ergebnisdateien und Zitiervorschlag.
+<a href="../downloads/Golden-Third-Working-Paper.pdf">Working Paper</a> (PDF, englisch): Ziele, Modell, Ergebnisse und Bewertung an den Zielen.</p>
 <h2 id="kontakt">Kontakt</h2>
 <p>Fragen, Einwände und Prüfangebote an <a href="mailto:{KONTAKT}">{KONTAKT}</a>. Wer nachrechnen möchte, erhält Zugang zum Repository mit
-Skripten, Parametern und Logbuch. Archiv mit DOI: <a href="https://doi.org/{DOI_KONZEPT}">{DOI_KONZEPT}</a>; ein Working Paper ist in Vorbereitung.</p>"""
+Skripten, Parametern und Logbuch. Archiv mit DOI: <a href="https://doi.org/{DOI_KONZEPT}">{DOI_KONZEPT}</a>; <a href="../downloads/Golden-Third-Working-Paper.pdf">Working Paper</a> (PDF, englisch).</p>"""
     return seite("index.html", "Übersicht", inhalt, "Rechnung, Prüfungen und zitierfähige Zahlen zum Vorschlag Das Goldene Drittel.")
 
 
@@ -424,6 +426,7 @@ def p_kit():
 und ein Zitiervorschlag.</p>
 <h2>Downloads</h2>
 <ul>
+<li><a href="../downloads/Golden-Third-Working-Paper.pdf">Working Paper</a> (PDF, englisch): Ziele, Regeln, Modell, Ergebnisse, Empfindlichkeit, Bewertung an den Zielen</li>
 <li><a href="../downloads/Forschungs-Kit-Goldenes-Drittel.pdf">Kurzdarstellung mit Zahlen zum Zitieren</a> (PDF)</li>
 <li><a href="../data/zahlen-zum-zitieren.csv">Zahlen zum Zitieren</a> (CSV) · <a href="../data/zahlen-zum-zitieren.json">JSON</a></li>
 <li><a href="../data/">Ergebnisdateien</a> der hier gezeigten Rechnungen (JSON)</li>
@@ -435,7 +438,7 @@ Modellstand angeben. Abgrenzungen: <code>KENNZAHLEN.md</code> im Repository.</p>
 <h2>Zitiervorschlag</h2>
 <p>{html.escape(ZITAT)} {SEITE.replace("https://", "")}</p>
 <p class="meta">Der DOI {DOI_KONZEPT} verweist immer auf die neueste archivierte Fassung. Archivierte Fassungen: {", ".join(f"Modellstand {v}: <a href=\"https://doi.org/{d}\">{d}</a>" for v, d in DOI_ARCHIV.items())}.
-Ein Working Paper mit eigenem DOI ist in Vorbereitung.</p>"""
+Working Paper (englisch): <a href="../downloads/Golden-Third-Working-Paper.pdf">The Golden Third – a static costing and distributional model</a> (PDF, Modellstand {VERSION}).</p>"""
     return seite("kit.html", "Forschungs-Kit", inhalt, "Zahlen zum Zitieren, Ergebnisdateien und Zitiervorschlag.")
 
 
@@ -522,7 +525,11 @@ def main():
                                              f'<ul>{liste}</ul><p><a href="../index.html">English</a> · <a href="../de/index.html">Deutsch</a></p></main></body></html>',
                                              encoding="utf-8")
     # Stand der PDFs: Prüfsumme über die Quellen (Kit-HTML ohne Datum, Markdown der Protokolle); ohne --pdf nur prüfen
-    quellen = kit_html().replace(DATUM, "") + EN.kit_html().replace(EN.DATUM, "") + "".join((W / p).read_text(encoding="utf-8") for _, _, d in PRUEF for p, _ in d)
+    wp = W / "dokumente" / "working-paper"
+    if (wp / "Golden-Third-Working-Paper.pdf").exists():   # v4.63: Working Paper auf der Seite; Stand über seine Text-Prüfsumme
+        shutil.copy(wp / "Golden-Third-Working-Paper.pdf", OUT / "downloads" / "Golden-Third-Working-Paper.pdf")
+    quellen = (wp / "quellen.sha256").read_text(encoding="utf-8") if (wp / "quellen.sha256").exists() else ""
+    quellen += kit_html().replace(DATUM, "") + EN.kit_html().replace(EN.DATUM, "") + "".join((W / p).read_text(encoding="utf-8") for _, _, d in PRUEF for p, _ in d)
     summe = hashlib.sha256(quellen.encode("utf-8")).hexdigest()
     marke = OUT / "downloads" / "quellen.sha256"
     if "--pdf" in sys.argv:
