@@ -1,3 +1,3 @@
 # Vergleichbare Gesamtlast Stand C (modell/gesamtlast33.py, Logbuch v4.14). Prüfbericht vom 20.10.2026, Befund B15.
-version = "v4.14"
+version = "v4.46"   # Stand der letzten inhaltlichen Änderung der Ergebnisdatei (Nachprüfung B27, v4.65)
 jahre = [2028, 2035, 2045, 2060]

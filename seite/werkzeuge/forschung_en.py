@@ -31,6 +31,7 @@ SINCE_REVIEW = [
  ("v4.62", "Working paper: climate and the label as an economic incentive", "no calculation"),
  ("v4.63", "Working paper published (site, kit)", "no calculation"),
  ("v4.64", "Review programme extended to v4.63", "no calculation"),
+ ("v4.65", "Responses to B25–B29 (presentation), website, correction 84", "no figure; new field in fondszins.json"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
@@ -200,7 +201,7 @@ across all households. Every change and every error found is logged with a numbe
 saving and migration do not respond; pass-through, avoidance and take-up enter as assumptions or bands. A qualitative review of behavioural
 effects has been done; the quantitative stage is open.</p>
 <div class="hinweis vorbehalt">The three reviews so far (October 2026) were <b>commissioned by the initiative</b> and cover the model up to
-version {GEPRUEFT}. Changes up to {VERSION} have not yet been reviewed (<a href="reviews.html#since">list</a>). Independent review is explicitly
+version {GEPRUEFT}. A follow-up review of the changes up to v4.63 is under way (D1 and D2 passed; <a href="reviews.html#since">list of changes</a>). Independent review is explicitly
 invited; the material is ready.</div>
 <h2>Reviews and research kit</h2>
 <p><a href="reviews.html">Reviews</a>: review reports and responses, with all findings and how they were handled.
@@ -208,7 +209,7 @@ invited; the material is ready.</div>
 <a href="downloads/Golden-Third-Working-Paper.pdf">Working paper</a> (PDF): objectives, model, results and an assessment against the objectives.</p>
 <h2 id="contact">Contact</h2>
 <p>Questions, objections and offers to review: <a href="mailto:{KONTAKT}">{KONTAKT}</a>. Scripts, parameters and the full log of all versions are
-available to reviewers on request. Archive with DOI: <a href="https://doi.org/{F.DOI_KONZEPT}">{F.DOI_KONZEPT}</a>; <a href="downloads/Golden-Third-Working-Paper.pdf">working paper</a> (PDF).</p>"""
+public: <a href="{F.REPO}">{F.REPO.replace("https://", "")}</a>. Archive with DOI: <a href="https://doi.org/{F.DOI_KONZEPT}">{F.DOI_KONZEPT}</a>; <a href="downloads/Golden-Third-Working-Paper.pdf">working paper</a> (PDF).</p>"""
     return seite("index.html", "Overview", inhalt, "Calculations, reviews and citable figures for the Golden Third proposal.")
 
 
@@ -371,8 +372,12 @@ REVIEWS = [
   "all inconsistencies or gaps, none a calculation error – among them three different values for the same total burden, the undocumented base of "
   "the company tax position, and missing growth sensitivity of the fund. Response: corrections 73–76, interest × growth grid, definition table of "
   "revenue positions; the base of the company position remains open.", 2),
+ ("Follow-up review v4.42 → v4.63, since 2 November 2026 (in progress)",
+  "Review of the changes since the third review along the review programme (D1–D9). Passed so far: D1 (interest × growth grid, 84 of 84 values "
+  "reproduced) and D2 (marginal burden, 77 of 77 values). Findings B25–B29 answered: four source files published, German surcharge per interest "
+  "variant shown, stale version fields corrected, repository public again. Open: D3–D7 and D9 (including this working paper).", 3),
  ("For further reviews", "What should be reviewed, how to recalculate, assumptions and their sensitivity, review questions; plus the qualitative "
-  "review of behavioural effects.", 3),
+  "review of behavioural effects.", 4),
 ]
 
 
@@ -393,12 +398,13 @@ English summaries above each list.</div>
 {''.join(teile)}
 <h2 id="since">Changed since the last review ({GEPRUEFT}), not yet reviewed</h2>
 <p>The third review covered model version {GEPRUEFT}. Since then the following calculations and statements have changed (log, volume III);
-a review of these changes is planned.</p>
+a follow-up review of these changes is under way (D1 and D2 passed, D3–D7 and D9 open).</p>
 {tabelle(["Version", "Change", "Figure moved"], [list(z) for z in SINCE_REVIEW])}"""
     return seite("reviews.html", "Reviews", inhalt, "Review reports and responses on the Golden Third model.")
 
 
-DOK_EN = {"Stellungnahme-Pruefung-2026-10-20": "Response of the initiative (v4.12)", "Rueckmeldung-Pruefung-2026-10-20": "Reply to the reviewer (v4.13)",
+DOK_EN = {"Stellungnahme-Nachpruefung-2026-11-02": "Response to the interim report (v4.65)", "Pruefprogramm-Delta-v4.42-v4.63": "Review programme",
+          "Stellungnahme-Pruefung-2026-10-20": "Response of the initiative (v4.12)", "Rueckmeldung-Pruefung-2026-10-20": "Reply to the reviewer (v4.13)",
           "Stellungnahme-Pruefung2-2026-10-20": "Response to the second review (v4.14)",
           "Stellungnahme-Pruefung3-2026-10-20": "Response to the summarised report (v4.17/v4.18)",
           "LIESMICH": "Reviewer's contribution: microsimulation \"9 out of 10 employees\"", "STELLUNGNAHME-2026-10-24": "Review report",

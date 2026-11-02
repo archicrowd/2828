@@ -45,7 +45,7 @@ def main():
         finally:
             st["zuschlag_pct"], st["zuschlag_faktor_jahr"], SL.P["zuschlag_de"] = z0, f0, zde0
         out[c] = dict(zuschlag_gleich=gl, zuschlag_verrechnung_2028=zde0 if c == "DE" else z0, gleich=gleich, verrechnung_2028=verr)
-    E = dict(version="v4.38", status="geltend: Verrechnung je Staat (E11, Beschluss 24.10.2026); Vergleich gleicher Satz", laender=out,
+    E = dict(version="v4.57", status="geltend: Verrechnung je Staat (E11, Beschluss 24.10.2026); Vergleich gleicher Satz", laender=out,
              hinweis="2028; die Verrechnung schmilzt in 30 Jahren auf den gleichen Satz ab. PL in zł.")
     (W / "daten" / "aggregate" / "verrechnung_haushalte.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     for c, x in out.items():

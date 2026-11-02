@@ -11,7 +11,7 @@ Stand: Modellstand und Fassung siehe `INDEX.md`. **Für die Prüfung von Stand C
 
 | Was | Wo | Zugang |
 |---|---|---|
-| Repository (Rechnungen, Logbuch, Dokumente) | github.com/archicrowd/2828 | Sichtbarkeit laut GitHub am 01.11.2026: **privat** (am 24.10.2026 öffentlich, Korrektur 76; seitdem durch die Initiative umgestellt, Korrektur 82). Zugang für Prüfende auf Anfrage. Für Weitergabe ohne GitHub: `git archive --format=tar HEAD` erzeugt ein Paket ohne Versionsgeschichte |
+| Repository (Rechnungen, Logbuch, Dokumente) | github.com/archicrowd/2828 | Sichtbarkeit laut GitHub am 02.11.2026: **öffentlich** (24.10.2026 öffentlich, Korrektur 76; 01.11.2026 privat, Korrektur 82; seit 02.11.2026 wieder öffentlich, Korrektur 84). Für Weitergabe ohne GitHub: `git archive --format=tar HEAD` erzeugt ein Paket ohne Versionsgeschichte |
 | Gesamtkonzept und Kurzfassung | `dokumente/TAX-2828-Gesamtkonzept.pdf`, `dokumente/TAX-2828-Kurzfassung.pdf` | im Repository |
 | Logbuch (alle Versionen, 52 Korrekturen) | `logbuch/` (Band I bis III) | im Repository; Spiegel im Projektraum auf claude.ai (nicht öffentlich) |
 | Amtliche Eingangsdaten | Eurostat-API, OECD | offen, ohne Anmeldung |

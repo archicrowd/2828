@@ -1,20 +1,20 @@
 id,groesse,wert,einheit,bezug,datei_pfad,status,modellstand
-Z01,Transformationsdividende je Erwachsenem (Deutschland),354,€ je Monat,"2028, Kaufkraft 2026",netz33.json beschluss/reihe/0 × regel_boden.json topf,geltend,v4.64
-Z02,Transformationsdividende je Kind (Deutschland),283,€ je Monat,"2028, Kaufkraft 2026","wie Z01, Kinderanteil 0,8",geltend,v4.64
-Z03,"Vorteil alleinstehend, 42.000 € brutto (Deutschland)",611,€ je Monat,"2028, Kaufkraft 2026; Weitergabe 80 %, Zuschlag DE 15,0 %, Pflichtvorsorge 10 %",haushalte33.json faelle,geltend,v4.64
-Z04,"Vorteil Paar, ein Einkommen, 2 Kinder, 42.000 € brutto",674,€ je Monat,wie Z03,haushalte33.json faelle,geltend,v4.64
-Z05,Erwerbsfähige Haushalte mit mehr verfügbarem Einkommen (Deutschland),85.1,%,"2028; synthetische Mikrosimulation, Weitergabe 80 %",mikro_de.json basis/ergebnis/0.8,Prüfrechnung,v4.64
-Z06,Alle Haushalte mit mehr verfügbarem Einkommen (Deutschland),69.3,%,wie Z05,mikro_de.json basis/ergebnis/0.8/gesamt,Prüfrechnung,v4.64
-Z07,Rentnerhaushalte mit mehr (Rentnerregel E),32.2,%,"2028, Kaufkraft 2026",rentner_kombi.json varianten/4,geltend,v4.64
-Z08,"Rentnerhaushalte, Veränderung im Mittel (Rentnerregel E)",-121,€ je Monat,wie Z07,rentner_kombi.json varianten/4,geltend,v4.64
-Z09,Beitrag zum gemeinsamen Fonds der 30 Staaten,5.17,% des BIP,jährlich bis zur Tilgung,fonds_geltend.json,geltend,v4.64
-Z10,Altlastenzuschlag auf alle Steuern (gemeinsamer Satz),15.5,%,"Fondszins 2,45 %",fonds_geltend.json,geltend,v4.64
-Z11,"Schuldenquote des Fonds, Spitze",148.1,% des BIP,im Jahr 2055,fonds_geltend.json,geltend,v4.64
-Z12,Tilgung des Fonds abgeschlossen,2098,Jahr,,fonds_geltend.json,geltend,v4.64
-Z13,Altrentenansprüche über der Dividende (Z),9.42,% des BIP,"2028, Mittel der Staaten",altlasten.json beschluss,geltend,v4.64
-Z14,Gesamtlast Steuern und Fonds,38.7,% des BIP,"2028; heute 40,76 % (Eurostat 2024)",gesamtlast33.json reihe/0,geltend,v4.64
-Z15,Gesamtlast mit Pflichtvorsorge (eigenes Konto),42.8,% des BIP,2028,gesamtlast33.json reihe/0,geltend,v4.64
-Z16,Kosten des starken Netzes,9.63,% des BIP,2028,netz33.json beschluss/reihe/0,geltend,v4.64
-Z17,Grenzbelastung bei 60.000 € brutto: heute / neu 2028,"48,8 / 40,0",% je zusätzlichem Euro,alleinstehend; neu ohne Pflichtvorsorge (eigenes Konto),grenzbelastung33.json zeilen/5,Prüfrechnung,v4.64
-Z18,"Mehrwertsteuer-Mehrbelastung, Faktor unterste / oberste Einkommensklasse (DE)","0,87 / 1,07",relativ zum Mittel,EVS 2023,mwst_verteilung.json klassen,geltend,v4.64
-Z19,Preisniveauschub durch die Mehrwertsteuer 2028,"1,2 bis 2,1",%,"einmalig; mechanisch 2,47 %",preisniveau33.json reihe/0,Prüfrechnung,v4.64
+Z01,Transformationsdividende je Erwachsenem (Deutschland),354,€ je Monat,"2028, Kaufkraft 2026",netz33.json beschluss/reihe/0 × regel_boden.json topf,geltend,v4.65
+Z02,Transformationsdividende je Kind (Deutschland),283,€ je Monat,"2028, Kaufkraft 2026","wie Z01, Kinderanteil 0,8",geltend,v4.65
+Z03,"Vorteil alleinstehend, 42.000 € brutto (Deutschland)",611,€ je Monat,"2028, Kaufkraft 2026; Weitergabe 80 %, Zuschlag DE 15,0 %, Pflichtvorsorge 10 %",haushalte33.json faelle,geltend,v4.65
+Z04,"Vorteil Paar, ein Einkommen, 2 Kinder, 42.000 € brutto",674,€ je Monat,wie Z03,haushalte33.json faelle,geltend,v4.65
+Z05,Erwerbsfähige Haushalte mit mehr verfügbarem Einkommen (Deutschland),85.1,%,"2028; synthetische Mikrosimulation, Weitergabe 80 %",mikro_de.json basis/ergebnis/0.8,Prüfrechnung,v4.65
+Z06,Alle Haushalte mit mehr verfügbarem Einkommen (Deutschland),69.3,%,wie Z05,mikro_de.json basis/ergebnis/0.8/gesamt,Prüfrechnung,v4.65
+Z07,Rentnerhaushalte mit mehr (Rentnerregel E),32.2,%,"2028, Kaufkraft 2026",rentner_kombi.json varianten/4,geltend,v4.65
+Z08,"Rentnerhaushalte, Veränderung im Mittel (Rentnerregel E)",-121,€ je Monat,wie Z07,rentner_kombi.json varianten/4,geltend,v4.65
+Z09,Beitrag zum gemeinsamen Fonds der 30 Staaten,5.17,% des BIP,jährlich bis zur Tilgung,fonds_geltend.json,geltend,v4.65
+Z10,Altlastenzuschlag auf alle Steuern (gemeinsamer Satz),15.5,%,"Fondszins 2,45 %",fonds_geltend.json,geltend,v4.65
+Z11,"Schuldenquote des Fonds, Spitze",148.1,% des BIP,im Jahr 2055,fonds_geltend.json,geltend,v4.65
+Z12,Tilgung des Fonds abgeschlossen,2098,Jahr,,fonds_geltend.json,geltend,v4.65
+Z13,Altrentenansprüche über der Dividende (Z),9.42,% des BIP,"2028, Mittel der Staaten",altlasten.json beschluss,geltend,v4.65
+Z14,Gesamtlast Steuern und Fonds,38.7,% des BIP,"2028; heute 40,76 % (Eurostat 2024)",gesamtlast33.json reihe/0,geltend,v4.65
+Z15,Gesamtlast mit Pflichtvorsorge (eigenes Konto),42.8,% des BIP,2028,gesamtlast33.json reihe/0,geltend,v4.65
+Z16,Kosten des starken Netzes,9.63,% des BIP,2028,netz33.json beschluss/reihe/0,geltend,v4.65
+Z17,Grenzbelastung bei 60.000 € brutto: heute / neu 2028,"48,8 / 40,0",% je zusätzlichem Euro,alleinstehend; neu ohne Pflichtvorsorge (eigenes Konto),grenzbelastung33.json zeilen/5,Prüfrechnung,v4.65
+Z18,"Mehrwertsteuer-Mehrbelastung, Faktor unterste / oberste Einkommensklasse (DE)","0,87 / 1,07",relativ zum Mittel,EVS 2023,mwst_verteilung.json klassen,geltend,v4.65
+Z19,Preisniveauschub durch die Mehrwertsteuer 2028,"1,2 bis 2,1",%,"einmalig; mechanisch 2,47 %",preisniveau33.json reihe/0,Prüfrechnung,v4.65

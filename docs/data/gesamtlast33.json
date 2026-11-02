@@ -1,0 +1,55 @@
+{
+ "version": "v4.46",
+ "status": "Prüfrechnung",
+ "heute": 40.76,
+ "pflichtvorsorge_route": 4.1,
+ "reihe": [
+  {
+   "jahr": 2028,
+   "steuern": 33.53,
+   "fonds": 5.17,
+   "a_steuern_und_fonds": 38.7,
+   "b_mit_pflichtvorsorge": 42.8
+  },
+  {
+   "jahr": 2035,
+   "steuern": 33.03,
+   "fonds": 5.17,
+   "a_steuern_und_fonds": 38.2,
+   "b_mit_pflichtvorsorge": 42.3
+  },
+  {
+   "jahr": 2045,
+   "steuern": 32.18,
+   "fonds": 5.17,
+   "a_steuern_und_fonds": 37.35,
+   "b_mit_pflichtvorsorge": 41.45
+  },
+  {
+   "jahr": 2060,
+   "steuern": 32.13,
+   "fonds": 5.17,
+   "a_steuern_und_fonds": 37.3,
+   "b_mit_pflichtvorsorge": 41.4
+  }
+ ],
+ "c_ohne_fonds_2028": {
+  "steuern": 33.53,
+  "altlasten_im_jahr": 12.05,
+  "summe": 45.58,
+  "mit_route": 49.68,
+  "systemvarianten_mit_steuerbedarf": {
+   "steuerbedarf": 33.42,
+   "summe": 45.47,
+   "mit_route": 49.57
+  }
+ },
+ "fonds": {
+  "beitrag_pct_bip": 5.17,
+  "zuschlag_pct": 15.5,
+  "schuldenquote_spitze": 148.1,
+  "spitzenjahr": 2055,
+  "zieljahr": 2098
+ },
+ "hinweis": "% des BIP; Fonds: gemeinsamer Fonds der 30 Staaten (fonds_geltend.json; v4.46, Prüfbefund B20 – vorher stand hier „Klub der zehn“). Steuern: Deckung 33R einschließlich Progression (projektion33). Heute ohne private Vorsorge; die Pflichtvorsorge ist eigenes, vererbbares Vermögen und deshalb getrennt ausgewiesen."
+}

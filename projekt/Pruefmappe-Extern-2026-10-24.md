@@ -29,7 +29,7 @@ eingecheckten Aggregaten; Rückgabe 0 = alle Selbstprüfungen bestanden. Einzeln
 mit veröffentlichten Aggregaten. Die amtlichen Eingangswerte (Eurostat) lassen sich mit `python3 modell/eingangswerte.py --abrufen`
 erneut abrufen und gegen die eingecheckten Werte vergleichen (nur dieser Schritt braucht Netzzugang).
 
-**Zugang:** github.com/archicrowd/2828 (Sichtbarkeit laut GitHub am 01.11.2026: privat, Zugang für Prüfende auf Anfrage; am 24.10.2026 öffentlich, Korrektur 76 und 82).
+**Zugang:** github.com/archicrowd/2828 (Sichtbarkeit laut GitHub am 02.11.2026: öffentlich; zwischenzeitlich am 01.11.2026 privat; Korrekturen 76, 82 und 84).
 
 ---
 

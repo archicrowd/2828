@@ -20,6 +20,7 @@ KONTAKT = "tax.better@archicrowd.de"
 SEITE = "https://www.archicrowd.de"
 DATUM = "1. November 2026"
 PAGES = "https://archicrowd.github.io/goldenes-drittel/"
+REPO = "https://github.com/archicrowd/2828"   # öffentlich seit 2.11.2026 (Korrektur 84; vorher privat, Korrektur 82)
 # Zenodo (Archiv des öffentlichen Repositorys goldenes-drittel, eingeschaltet 01.11.2026): Concept-DOI zeigt immer auf die neueste Version
 DOI_KONZEPT = "10.5281/zenodo.23855733"
 DOI_ARCHIV = {"v4.58": "10.5281/zenodo.23855734"}   # Modellstand → DOI der archivierten Fassung (Release v4.58.1)
@@ -55,6 +56,7 @@ SEIT_PRUEFUNG = [
  ("v4.62", "Working Paper: Klima und Label als wirtschaftlicher Anreiz", "keine Rechnung"),
  ("v4.63", "Working Paper veröffentlicht (Seite, Kit)", "keine Rechnung"),
  ("v4.64", "Prüfprogramm der Nachprüfung bis v4.63 erweitert", "keine Rechnung"),
+ ("v4.65", "Antworten auf B25–B29 (Ausweis), Webseite, Korrektur 84", "keine Zahl; neues Feld in fondszins.json"),
 ]
 
 
@@ -147,7 +149,8 @@ def zahlen_dateien(ziel):
         dict(modellstand=VERSION, stand=DATUM, lizenz="CC BY 4.0", zitiervorschlag=ZITAT,
              zahlen=[dict(zip(kopf, list(z) + [VERSION])) for z in ZAHLEN]), ensure_ascii=False, indent=1), encoding="utf-8")
     for n in ("haushalte33.json", "fonds_geltend.json", "fondszins.json", "grenzbelastung33.json", "mwst_verteilung.json",
-              "mwst_laender.json", "preisniveau33.json", "validierung_laender.json", "mikro_de.json", "rentner_kombi.json"):
+              "mwst_laender.json", "preisniveau33.json", "validierung_laender.json", "mikro_de.json", "rentner_kombi.json",
+              "altlasten.json", "gesamtlast33.json", "netz33.json", "regel_boden.json"):   # v4.65: Quellen von Z01/Z02, Z13–Z16 (Nachprüfung B25)
         shutil.copy(AGG / n, ziel / "data" / n)
 
 
@@ -243,15 +246,15 @@ Bundesagentur für Arbeit) und veröffentlichter Erhebungen. Jede Änderung und 
 Inanspruchnahme gehen als Annahmen oder Bänder ein. Eine qualitative Voruntersuchung der Verhaltenswirkungen liegt vor; die quantitative
 Stufe ist offen.</p>
 <div class="hinweis vorbehalt">Entwurf zur Diskussion, kein beschlossenes Programm. Die drei bisherigen Prüfungen erfolgten <b>im Auftrag der
-Initiative</b> und erfassen den Modellstand bis {GEPRUEFT}; die Änderungen bis {VERSION} sind noch nicht geprüft (Liste unter
+Initiative</b> und erfassen den Modellstand bis {GEPRUEFT}; die Änderungen bis v4.63 werden nachgeprüft, D1 und D2 sind bestanden (Liste unter
 <a href="pruefungen.html#seit">Prüfungen</a>). Unabhängige Prüfungen sind ausdrücklich erwünscht; die Unterlagen liegen bereit.</div>
 <h2>Prüfungen und Forschungs-Kit</h2>
 <p><a href="pruefungen.html">Prüfungen</a>: Prüfberichte und Stellungnahmen als PDF, mit allen Befunden und ihrer Umsetzung.
 <a href="kit.html">Forschungs-Kit</a>: Kurzdarstellung als PDF, Zahlen zum Zitieren (CSV, JSON), Ergebnisdateien und Zitiervorschlag.
 <a href="../downloads/Golden-Third-Working-Paper.pdf">Working Paper</a> (PDF, englisch): Ziele, Modell, Ergebnisse und Bewertung an den Zielen.</p>
 <h2 id="kontakt">Kontakt</h2>
-<p>Fragen, Einwände und Prüfangebote an <a href="mailto:{KONTAKT}">{KONTAKT}</a>. Wer nachrechnen möchte, erhält Zugang zum Repository mit
-Skripten, Parametern und Logbuch. Archiv mit DOI: <a href="https://doi.org/{DOI_KONZEPT}">{DOI_KONZEPT}</a>; <a href="../downloads/Golden-Third-Working-Paper.pdf">Working Paper</a> (PDF, englisch).</p>"""
+<p>Fragen, Einwände und Prüfangebote an <a href="mailto:{KONTAKT}">{KONTAKT}</a>. Skripte, Parameter und Logbuch liegen öffentlich im
+Repository <a href="{REPO}">{REPO.replace("https://", "")}</a>. Archiv mit DOI: <a href="https://doi.org/{DOI_KONZEPT}">{DOI_KONZEPT}</a>; <a href="../downloads/Golden-Third-Working-Paper.pdf">Working Paper</a> (PDF, englisch).</p>"""
     return seite("index.html", "Übersicht", inhalt, "Rechnung, Prüfungen und zitierfähige Zahlen zum Vorschlag Das Goldene Drittel.")
 
 
@@ -389,6 +392,9 @@ PRUEF = [
  ("Dritte Prüfung, 24.10.2026", "Modellstand v4.42 nach den Prüffragen der Prüfmappe; Rechenkern bestätigt, acht Befunde (B17–B24).",
   [("beitraege/kvribbeck-2028/pruefung3/STELLUNGNAHME-2026-10-24.md", "Prüfbericht"),
    ("projekt/Stellungnahme-Pruefung4-2026-10-24.md", "Stellungnahme der Initiative (v4.46)")]),
+ ("Nachprüfung v4.42 → v4.63, seit 2.11.2026 (laufend)", "Prüfung der Änderungen seit der dritten Prüfung nach dem Prüfprogramm (D1–D9). Bisher bestanden: D1 (Raster Zins × Wachstum, 84/84 Werte) und D2 (Grenzbelastung, 77/77 Werte); Befunde B25–B29 beantwortet. Offen: D3–D7, D9.",
+  [("projekt/Stellungnahme-Nachpruefung-2026-11-02.md", "Stellungnahme der Initiative zum Zwischenstand (v4.65)"),
+   ("projekt/Pruefprogramm-Delta-v4.42-v4.63.md", "Prüfprogramm")]),
  ("Für weitere Prüfungen", "Was geprüft werden soll, wie man nachrechnet, Setzungen und ihre Empfindlichkeit, Prüffragen.",
   [("projekt/Pruefmappe-Extern-2026-10-24.md", "Prüfmappe"),
    ("projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md", "Verhaltenswirkungen: qualitative Voruntersuchung")]),
@@ -414,7 +420,7 @@ Die Prüfberichte der ersten und zweiten Prüfung liegen der Initiative vor und 
 {''.join(teile)}
 <h2 id="seit">Seit der letzten Prüfung ({GEPRUEFT}) geändert, noch nicht geprüft</h2>
 <p>Die dritte Prüfung erfasste den Modellstand {GEPRUEFT}. Seitdem haben sich folgende Rechnungen und Angaben geändert (Logbuch Band III);
-eine Nachprüfung dieser Änderungen ist vorgesehen.</p>
+die Nachprüfung dieser Änderungen läuft (D1 und D2 bestanden, D3–D7 und D9 offen).</p>
 {seit_pruefung_html()}"""
     return seite("pruefungen.html", "Prüfungen", inhalt, "Prüfberichte und Stellungnahmen zum Modell Das Goldene Drittel.")
 

@@ -536,11 +536,11 @@ Law Index (2025) is one possible criterion. States outside Europe are not calcul
 <h2>10 Reviews, corrections and access</h2>
 <p>The calculation chain was recalculated in three reviews in October 2026, commissioned by the initiative. The second and third reviews re-implemented
 the core in their own code and confirmed it at rounding level; their findings and the responses are documented. The last review covered model version
-{F.GEPRUEFT}; the changes since then (up to {VERSION}) are listed on the website and have not yet been reviewed. A review of these changes is planned.
+{F.GEPRUEFT}; the changes since then (up to {VERSION}) are listed on the website; a follow-up review of them is under way, in which the fund grid (D1) and the marginal burden (D2) have been reproduced in full so far.
 Independent review is invited.</p>
 <p>The log records every version with date, change, data source, moved figure and how it was noticed; {F.KORREKTUREN} corrections have been numbered
 so far. The research kit with all figures to cite, the result files and the review documents is archived at
-<a href="https://doi.org/{F.DOI_KONZEPT}">doi.org/{F.DOI_KONZEPT}</a>. Scripts, parameters and the full log are available to reviewers on request.</p>
+<a href="https://doi.org/{F.DOI_KONZEPT}">doi.org/{F.DOI_KONZEPT}</a>. Scripts, parameters and the full log are public at <a href="{F.REPO}">{F.REPO.replace("https://", "")}</a>.</p>
 
 <h2>References</h2>
 <ol class="refs">{''.join(f'<li>{html.escape(r)}</li>' for r in REFS)}</ol>

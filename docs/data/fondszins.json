@@ -30,7 +30,8 @@
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
-    }
+    },
+    "zuschlag_de_pct": 15.0
    }
   },
   {
@@ -52,7 +53,8 @@
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
-    }
+    },
+    "zuschlag_de_pct": 16.5
    }
   },
   {
@@ -74,7 +76,8 @@
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
-    }
+    },
+    "zuschlag_de_pct": 18.1
    }
   },
   {
@@ -96,7 +99,8 @@
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
-    }
+    },
+    "zuschlag_de_pct": 19.7
    }
   },
   {
@@ -118,7 +122,8 @@
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
-    }
+    },
+    "zuschlag_de_pct": 17.9
    }
   },
   {
@@ -140,7 +145,8 @@
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
      "Paar, ein Einkommen, 2 Kinder": 98
-    }
+    },
+    "zuschlag_de_pct": 19.4
    }
   }
  ],

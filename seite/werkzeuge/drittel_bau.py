@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.64"
+VERSION = "v4.65"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -335,12 +335,100 @@ ERSETZE = [  # (alt, neu) in der Vorlage; jede Stelle muss genau einmal vorkomme
 ]
 
 
+def _pfad(text, size, cx, base, breite=540):
+    """Wortmarke als Umriss (v4.65): unabhängig von Schriftladen und Ligaturen (Space Grotesk verbindet sonst „tt“ in „Drittel“)."""
+    from fontTools.ttLib import TTFont
+    from fontTools.pens.svgPathPen import SVGPathPen
+    from fontTools.pens.transformPen import TransformPen
+    global _FONT
+    if "_FONT" not in globals():
+        _FONT = TTFont(str(Path(__file__).resolve().parent / "schrift" / "SpaceGrotesk-Bold.ttf"))
+    gs, cmap, upm = _FONT.getGlyphSet(), _FONT.getBestCmap(), _FONT["head"].unitsPerEm
+    w = sum(gs[cmap[ord(ch)]].width for ch in text)
+    s = min(size / upm, breite / w)
+    x0, x, d = cx - w * s / 2, 0, []
+    for ch in text:
+        g = cmap[ord(ch)]
+        pen = SVGPathPen(gs)
+        gs[g].draw(TransformPen(pen, (s, 0, 0, -s, x0 + x * s, base)))
+        d.append(pen.getCommands())
+        x += gs[g].width
+    return re.sub(r"(\.\d\d)\d+", r"\1", " ".join(d))
+
+
 def marke(sp):
     z = TT.MARKE[sp]
     h = 130 * len(z)
-    zeilen = "".join(f'<text x="280" y="{112 + 130 * i}" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" '
-                     f'font-size="116" fill="#0F3B5C">{t}</text>' for i, t in enumerate(z))
+    d = " ".join(_pfad(t, 116, 280, 112 + 130 * i) for i, t in enumerate(z))
+    zeilen = f'<path fill="#0F3B5C" d="{d}"/>'
     return {"MARKE_H": str(h), "MARKE_ZEILEN": zeilen, "MARKE_NAME": TT.NAME[sp], "NETZ_NAME": TT.NETZ[sp]}
+
+
+MONATE = {"de": None, "en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          "fr": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+          "it": ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+          "es": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+          "pl": ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"]}
+MONATE_DE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+
+
+def stand_datum(sp):
+    """Datum des Modellstands aus dem Logbuch (v4.65; vorher fest „18. Oktober 2026“, Korrektur 84)."""
+    lb = (WURZEL / "logbuch" / "Versionsgeschichte-TAX-2828-BandIII.md").read_text(encoding="utf-8")
+    i = lb.index(f"### {VERSION} ")
+    m = re.search(r"(\d{1,2})\. (" + "|".join(MONATE_DE) + r") (\d{4})", lb[i:i + 2000])
+    tag, mon, jahr = int(m.group(1)), MONATE_DE.index(m.group(2)), m.group(3)
+    if sp == "de":
+        return f"{tag}. {MONATE_DE[mon]} {jahr}"
+    if sp == "en":
+        return f"{tag} {MONATE['en'][mon]} {jahr}"
+    if sp == "es":
+        return f"{tag} de {MONATE['es'][mon]} de {jahr}"
+    return f"{tag} {MONATE[sp][mon]} {jahr}"
+
+
+FORSCHUNG = "https://archicrowd.github.io/goldenes-drittel/"
+WP = FORSCHUNG + "downloads/Golden-Third-Working-Paper.pdf"
+DOI = "10.5281/zenodo.23855733"
+# v4.65: Verweise auf Working Paper, Forschungsseite und Archiv (DE von der Initiative freigegeben; übrige Sprachen maschinell übersetzt, gegenzulesen)
+KACHELN = {
+    "de": (("Working Paper", "Ziele, Modell, Ergebnisse und Zielkonflikte, 14 Seiten (englisch).", "PDF"),
+           ("Forschung und Prüfung", "Prüfberichte, Zahlen zum Zitieren, Ergebnisdateien. Archiv mit DOI.", "Forschungsseite"),
+           "Working Paper, Prüfberichte und Zahlen zum Zitieren: <a href=\"{f}de/\">Forschungsseite</a>; Archiv <a href=\"https://doi.org/{doi}\">doi.org/{doi}</a>. "
+           "Die Prüfungen erfassen den Modellstand bis v4.42; die Änderungen seither werden nachgeprüft."),
+    "en": (("Working paper", "Objectives, model, results and trade-offs, 14 pages.", "PDF"),
+           ("Research and review", "Review reports, figures to cite, result files. Archived with DOI.", "Research site"),
+           "Working paper, review reports and figures to cite: <a href=\"{f}\">research site</a>; archive <a href=\"https://doi.org/{doi}\">doi.org/{doi}</a>. "
+           "The reviews cover the model up to version v4.42; the changes since are being reviewed."),
+    "fr": (("Working paper", "Objectifs, modèle, résultats et arbitrages, 14 pages (en anglais).", "PDF"),
+           ("Recherche et vérification", "Rapports de vérification, chiffres à citer, fichiers de résultats. Archivé avec DOI.", "Site de recherche"),
+           "Working paper, rapports de vérification et chiffres à citer : <a href=\"{f}\">site de recherche</a> ; archive <a href=\"https://doi.org/{doi}\">doi.org/{doi}</a>. "
+           "Les vérifications portent sur la version v4.42 du modèle ; les modifications ultérieures sont en cours de vérification."),
+    "it": (("Working paper", "Obiettivi, modello, risultati e conflitti tra obiettivi, 14 pagine (in inglese).", "PDF"),
+           ("Ricerca e verifica", "Rapporti di verifica, dati da citare, file dei risultati. Archiviato con DOI.", "Sito di ricerca"),
+           "Working paper, rapporti di verifica e dati da citare: <a href=\"{f}\">sito di ricerca</a>; archivio <a href=\"https://doi.org/{doi}\">doi.org/{doi}</a>. "
+           "Le verifiche riguardano il modello fino alla versione v4.42; le modifiche successive sono in corso di verifica."),
+    "es": (("Working paper", "Objetivos, modelo, resultados y conflictos entre objetivos, 14 páginas (en inglés).", "PDF"),
+           ("Investigación y revisión", "Informes de revisión, cifras para citar, ficheros de resultados. Archivado con DOI.", "Sitio de investigación"),
+           "Working paper, informes de revisión y cifras para citar: <a href=\"{f}\">sitio de investigación</a>; archivo <a href=\"https://doi.org/{doi}\">doi.org/{doi}</a>. "
+           "Las revisiones abarcan el modelo hasta la versión v4.42; los cambios posteriores se están revisando."),
+    "pl": (("Working paper", "Cele, model, wyniki i konflikty celów, 14 stron (po angielsku).", "PDF"),
+           ("Badania i weryfikacja", "Raporty z weryfikacji, liczby do cytowania, pliki wyników. Archiwum z DOI.", "Strona badawcza"),
+           "Working paper, raporty z weryfikacji i liczby do cytowania: <a href=\"{f}\">strona badawcza</a>; archiwum <a href=\"https://doi.org/{doi}\">doi.org/{doi}</a>. "
+           "Weryfikacje obejmują model do wersji v4.42; późniejsze zmiany są weryfikowane."),
+}
+
+
+def forschung_einbauen(sp, html):
+    k1, k2, satz = KACHELN[sp]
+    zz = "".join(f'<a href="{u}"><span class="t">{t}</span><span class="d">{d}</span><span class="f">{f}</span></a>\n      '
+                 for u, (t, d, f) in ((WP, k1), (FORSCHUNG + ("de/" if sp == "de" else ""), k2)))
+    i = html.index('<div class="anl">')
+    j = html.index("</a>", html.index("</a>", i) + 4) + 4          # nach Kurzfassung und Gesamtkonzept
+    html = html[:j] + "\n      " + zz.rstrip() + html[j:]
+    assert html.count('<p class="verstamp">') == 1
+    html = html.replace('<p class="verstamp">', f'<p>{satz.format(f=FORSCHUNG, doi=DOI)}</p><p class="verstamp">', 1)
+    return html.replace("</style>", "html{font-variant-ligatures:no-common-ligatures}</style>", 1)
 
 
 def main():
@@ -374,7 +462,7 @@ def main():
             raise SystemExit(f"{sp}: unbekannte Schlüssel: {sorted(fehlt)}")
         T.update(TX)
         W = SB.werte(sp)
-        W.update(version=VERSION, fassung=TT.FASSUNG[sp])
+        W.update(version=VERSION, fassung=stand_datum(sp))
         nm = VT.LAENDER_NAME[sp]
         bc = c if c in VB.LAENDER else "DE"
         GF = json.loads((AGG / "gini_frankreich.json").read_text(encoding="utf-8"))["staaten"]["FR"]   # v4.9, Korrektur 64
@@ -414,6 +502,7 @@ def main():
         assert k >= 30, (sp, k)
         html = html.replace("</style>", VB.CSS + "#raum button{display:block;text-align:left}#raum button span{display:block}"
                                         "#raum button span:last-child{text-align:right;white-space:nowrap}</style>", 1)
+        html = forschung_einbauen(sp, html)
         for alt in ("TAX 28:28", "28%3A28"):
             if alt in html:
                 raise SystemExit(f"{sp}: Restbestand {alt!r} in der Seite")

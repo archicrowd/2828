@@ -1,5 +1,5 @@
 # Länderseiten der Fassung 4.x (modell/laenderseiten.py, Logbuch v4.1). Prüfrechnung.
-version = "v4.1"
+version = "v4.38"   # Stand der letzten inhaltlichen Änderung der Ergebnisdatei (Nachprüfung B27, v4.65)
 staaten = ["DE", "FR", "IT", "ES", "PL", "EU30"]
 
 [namen]

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.64**
+Stand: 24. Oktober 2026 · Modellstand **v4.65**
 
 ---
 
@@ -4581,6 +4581,45 @@ Hinweis auf fehlende Tags auf GitHub (Commit-Kennungen maßgeblich); Zahlen wäh
 
 ---
 
+### v4.65 — Nachprüfung: Zwischenstand beantwortet (B25–B29); Webseite (Wortmarke, Working Paper, Prüfstand); Korrektur 84
+
+**Art der Änderung: PATCH (Ausweis), keine Zahl bewegt.** 2. November 2026.
+
+**Anlass:** Prüfbericht des Kulturvereins Ribbeck e.V., Abschnitt 10 „Nachprüfung der Änderungen v4.42 → v4.63“, Zwischenstand vom 2.11.2026
+(übermittelt durch die Initiative; abgelegt als `beitraege/kvribbeck-2028/pruefung4/PRUEFBERICHT-2026-11-02.md`, E-Mail-Adresse und Kontoname
+entfernt). Bestanden: D1 (Raster Zins × Wachstum 84/84, Zinsvarianten 30/30, Beschlussbeitrag Abweichung 0) und D2 (Grenzbelastung 77/77). Offen:
+D3–D7, D9. Freigabe der Initiative für das Webseitenpaket nach der Vorschau vom 2.11.2026.
+
+**Antworten auf B25–B29** (`projekt/Stellungnahme-Nachpruefung-2026-11-02.md`):
+- B25: `altlasten.json`, `gesamtlast33.json`, `netz33.json`, `regel_boden.json` im Datenordner der Forschungsseite (Quellen von Z01/Z02, Z13–Z16).
+- B26: `fondszins.json` je Variante Feld `haushalt_de.zuschlag_de_pct` (15,0 / 16,5 / 18,1 / 19,7; Übergänge 17,9 / 19,4 %); alle übrigen Werte der
+  Datei unverändert (maschinell verglichen).
+- B27: Versionsfelder auf den Stand der letzten inhaltlichen Änderung (per `git log`): `verrechnung_haushalte` v4.57, `laenderseiten` v4.38,
+  `haushalte33` v4.38, `gesamtlast33` v4.46.
+- B28/B29: siehe Korrektur 84; keine Releases bis zum Abschluss der Nachprüfung.
+
+**Korrektur 84:** `DATENZUGANG.md`, Prüfmappe, Forschungsseite und Working Paper nannten das Repository „privat, Zugang für Prüfende auf Anfrage“
+(Stand 01.11.2026, Korrektur 82). Laut GitHub ist es am 02.11.2026 öffentlich (Seite abgerufen, Kennzeichnung „Public“). Texte berichtigt; der Verweis
+steht jetzt als `REPO` an einer Stelle in `forschung_bau.py`.
+
+**Webseite Stand C (`drittel_bau.py`), sechs Sprachen:**
+- **Wortmarke als Umriss:** Die Überschrift wurde teilweise beschädigt dargestellt. Ursache nach Nachstellung mit der Originalschrift: Space Grotesk
+  enthält eine Ligatur `t_t.liga`, die in „Drittel“ die Querstriche der beiden t verbindet. Die Schriften liegen auf dem Server (`paket_bau.py`), daher
+  tritt die Ligatur auf. Die Wortmarke wird jetzt beim Bau aus `seite/werkzeuge/schrift/SpaceGrotesk-Bold.ttf` (SIL OFL 1.1, Lizenz beigelegt) in
+  Pfade umgerechnet; seitenweit `font-variant-ligatures:no-common-ligatures` (auch Kopfzeile). Am Fehlerbild der Initiative nicht bestätigt (kein
+  Bildschirmfoto); Annahme.
+- **Verweise:** zwei Kacheln „Working Paper“ und „Forschung und Prüfung“ im Abschnitt „Offen entwickelt“; im Methodik-Absatz Forschungsseite, DOI und
+  Prüfstand (bis v4.42 geprüft, Nachprüfung läuft). Texte FR, IT, ES, PL, EN maschinell übersetzt (gegenzulesen, P3).
+- **Datum des Modellstands** aus dem Logbuch statt fest „18. Oktober 2026“ (Teil der Korrektur 84: Datum blieb seit v4.8 stehen).
+- Nicht geändert: Sperre für Suchmaschinen (Entscheidung der Initiative offen).
+
+**Nicht veröffentlicht:** der Prüfbericht selbst (Überschrift „Drei unabhängige Prüfungen“; Bezeichnung der Prüfungen offen, Prüfprogramm Abschnitt 5).
+
+**Datenquelle:** Prüfbericht vom 2.11.2026; GitHub (Sichtbarkeit); Space Grotesk (github.com/floriankarsten/space-grotesk). **Wodurch aufgefallen:**
+Prüfbericht; Hinweis der Initiative auf die beschädigte Überschrift.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4615,6 +4654,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 73 | `gesamtlast33.json` (seit v4.14): „Steuern 33,53“ neben „Summe 45,47“ – die Summe stammte aus dem Steuerbedarf 33,42; `KENNZAHLEN.md` nannte 45,46/49,56 | Summe aus den ausgewiesenen Teilen 33,53 + 12,05 = 45,58, mit Pflichtvorsorge 49,68; Steuerbedarf-Variante 45,47/49,57 daneben (v4.46) | Dritte Prüfung, Befund B17 |
 | 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
+| 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
 | 81 | `KENNZAHLEN.md`: Mikrosimulation (Vollzeit/Teilzeit/Minijob, Bürgergeld, Rentner, Validierung) und Rentnerregel E auf Stand v4.22/v4.26; ebenso Verhaltensuntersuchung 2.10 (30,7 % / −124 €) | Stand v4.38 bzw. v4.30 (Tabelle in v4.53) | Prüfstufe `pruefe_kennzahlen.py` (v4.53) |
@@ -4653,7 +4693,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.64
+## 7 | Offene Punkte, Stand v4.65
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

@@ -37,7 +37,9 @@ def haushalt_de(zu):
     SL.P["zuschlag_de"] = zu * alt / gl          # v4.38 (E11): Anteil Deutschlands nach Verrechnung (2028) auf den Zuschlag der Variante
     try:
         mehr = {n: round((RB.neu("DE", 42000, e, k) - SL.heute("DE", 42000, e, k)) / 12) for n, e, k in SL.HAUSHALTE}
-        return dict(mehr_monat_42000=mehr, anteil_mit_mehr=RB.anteile("DE"))
+        z = SL.P["zuschlag_de"]
+        # v4.65 (Nachprüfung B26): DE-Zuschlag nach Verrechnung, mit dem die Haushaltswerte gerechnet sind, als eigenes Feld
+        return dict(mehr_monat_42000=mehr, anteil_mit_mehr=RB.anteile("DE"), zuschlag_de_pct=round(z * 100 if z < 1 else z, 1))
     finally:
         SL.P["zuschlag_de"] = alt
 
