@@ -1,4 +1,4 @@
-<!-- Prüfbericht des Kulturvereins Ribbeck e.V., übermittelt am 2.11.2026 (Zwischenstand der Nachprüfung). Unverändert übernommen bis auf entfernte E-Mail-Adresse und Kontonamen (CLAUDE.md). Nicht auf der Forschungsseite veröffentlicht, bis die Bezeichnung der Prüfungen geklärt ist (Stellungnahme-Nachpruefung-2026-11-02.md, Abschnitt 3). -->
+<!-- Prüfbericht des Kulturvereins Ribbeck e.V., übermittelt am 2.11.2026 (Zwischenstand der Nachprüfung). Unverändert übernommen bis auf entfernte E-Mail-Adresse und Kontonamen (CLAUDE.md). Einordnung der Initiative (3.11.2026): interne Prüfung, durchgeführt mit einem anderen KI-Modell als die Rechnung; die Bezeichnung „unabhängig“ im Bericht ist die des Berichts. -->
 
 # Prüfbericht über das Steuerkonzept „TAX 28:28 / Das Goldene Drittel"
 ## Drei unabhängige Prüfungen des Repositories `archicrowd/2828` (19./20. und 24. Oktober 2026) — und Nachprüfung der Änderungen bis v4.63 (begonnen 2. November 2026)

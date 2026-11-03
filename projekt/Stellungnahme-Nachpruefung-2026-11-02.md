@@ -2,7 +2,7 @@
 
 Initiative 28:28 · 2. November 2026 · Modellstand v4.65
 
-Gegenstand: Prüfbericht des Kulturvereins Ribbeck e.V., Abschnitt 10 „Nachprüfung der Änderungen v4.42 → v4.63“ (Prüflog 1–17,
+Gegenstand: Prüfbericht der internen Prüfung, Abschnitt 10 „Nachprüfung der Änderungen v4.42 → v4.63“ (Prüflog 1–17,
 Befunde B25–B29, Abdeckungsmatrix Z01–Z34). Die Nachprüfung läuft; geprüft und bestanden sind D1 und D2, offen sind D3 bis D7 und D9.
 
 ## 1 Was die Nachprüfung bisher bestätigt
@@ -31,10 +31,10 @@ Bewegte Zahl: keine. `fondszins.json` erhält ein Feld, vier Ergebnisdateien ein
 
 ## 3 Bezeichnung der Prüfungen
 
-Der Bericht trägt die Überschrift „Drei unabhängige Prüfungen“. Auf der Forschungsseite und im Working Paper bezeichnen wir die Prüfungen als „im
-Auftrag der Initiative“. Für eine Veröffentlichung des Berichts ist zu klären, ob zwischen Prüfenden und Initiative eine personelle oder
-organisatorische Verbindung besteht (Prüfprogramm, Abschnitt 5). Bis dahin veröffentlichen wir nur diese Stellungnahme und den Prüfstand, nicht den
-Bericht selbst.
+Der Bericht trägt die Überschrift „Drei unabhängige Prüfungen“. Nach Festlegung der Initiative (3.11.2026) sind alle bisherigen Prüfungen
+**interne Prüfungen**: von der Initiative veranlasst und mit einem anderen KI-Modell durchgeführt als dem, mit dem die Rechnung entwickelt wird. So
+führen wir sie auf Forschungsseite, Webseite, im Working Paper und im Logbuch. Der Bericht wird unverändert veröffentlicht (ohne E-Mail-Adresse und
+Kontonamen), mit dieser Einordnung auf der Prüfungsseite.
 
 ## 4 Weiter offen
 

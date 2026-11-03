@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.65**
+Stand: 24. Oktober 2026 · Modellstand **v4.66**
 
 ---
 
@@ -4620,6 +4620,32 @@ Prüfbericht; Hinweis der Initiative auf die beschädigte Überschrift.
 
 ---
 
+### v4.66 — Prüfungen durchgängig als interne Prüfungen bezeichnet; Prüfbericht der Nachprüfung veröffentlicht
+
+**Art der Änderung: PATCH (Ausweis), keine Zahl bewegt.** 3. November 2026.
+
+**Anlass:** Festlegung der Initiative (3.11.2026): „Es sind keine unabhängigen, sondern intern veranlasste Prüfungen. Hierfür wird ein anderes LLM
+eingesetzt. Der Kulturverein ist dabei irrelevant, da er nicht selbst handelt. Für die Berichtsführung sollten wir also am besten von internen
+Prüfungen sprechen, auch wenn die Prüfberichte diesen benennen.“ Die Initiative hatte die Prüfungen schon vorher als intern veranlasst bezeichnet;
+die Rückfrage nach einer Verbindung zwischen Prüfenden und Initiative (v4.58, v4.65) war damit überflüssig.
+
+**Geändert (ein Begriff überall):** „interne Prüfung, von der Initiative veranlasst und mit einem anderen KI-Modell durchgeführt als dem, mit dem
+die Rechnung entwickelt wurde“ statt „im Auftrag der Initiative“:
+- Webseite, sechs Sprachen (Methodik-Absatz, Prüfstand; Ersatz im fertigen Text, `drittel_bau.PRUEF_ALT_NEU`; FR, IT, ES, PL, EN maschinell übersetzt).
+- Forschungsseite deutsch und englisch (Übersicht, Prüfungsseite mit Einordnung „Prüfberichte tragen teils andere Bezeichnungen, etwa ‚unabhängig‘;
+  maßgeblich ist diese Einordnung“, Kit, Zenodo-Beschreibung).
+- Working Paper (Abschnitte 1 und 10: „internal reviews … not independent reviews“).
+- Konzept (Abschnitt 8, Mikrosimulation: „interne Prüfrechnung“, ohne Vereinsnamen), `KENNZAHLEN.md`, Prüfprogramm Abschnitt 5, Stellungnahme zur
+  Nachprüfung Abschnitt 3.
+- Anschreiben an den Beirat (außerhalb des Repositorys) neu erzeugt.
+
+**Veröffentlicht:** Prüfbericht der Nachprüfung (Zwischenstand 2.11.2026) als PDF auf der Prüfungsseite; er enthält auch die erste bis dritte Prüfung.
+Damit ist der offene Punkt „Prüfberichte 1 und 2 nach Zustimmung“ erledigt.
+
+**Datenquelle:** Festlegung der Initiative. **Wodurch aufgefallen:** Rückmeldung der Initiative zu v4.65.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4693,7 +4719,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.65
+## 7 | Offene Punkte, Stand v4.66
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4747,7 +4773,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | P2 | Webseite: Texte zur Rentnerregel – **v4.44: Satz zur Regel E im Abschnitt Altlasten in sechs Sprachen** (Fassung des Projekts, Gegenlesen durch die Initiative offen); Entwurf `seite/entwurf/rentner-e/` |
 | P3 | Übersetzungen und Wortmarken muttersprachlich gegenlesen (B16, mindestens FR, PL); Konzept in weiteren Sprachen |
 | P4 | Namen markenrechtlich prüfen (Goldenes Drittel, Transformationsdividende) |
-| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.63 (`projekt/Pruefprogramm-Delta-v4.42-v4.63.md`); Prüfberichte 1 und 2 nach Zustimmung ergänzen; englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper veröffentlicht (v4.63); Release für das Archiv, eigener DOI optional |
+| P9 | **Forschungsseite (v4.56–v4.58):** seit 01.11.2026 online (GitHub Pages, `archicrowd/goldenes-drittel`); offen: Beschreibung, Website und Topics des Repositorys, Search Console, Zenodo verbunden (v4.59, Concept-DOI 10.5281/zenodo.23855733); Nachprüfung v4.42 → v4.63 (`projekt/Pruefprogramm-Delta-v4.42-v4.63.md`); englische Fassungen der Stellungnahmen; nationale Lohnverteilungen statt Übertragung der deutschen; Working Paper veröffentlicht (v4.63); Release für das Archiv, eigener DOI optional |
 | P5 | Webseitenpaket nach P2 bauen und hochladen (Initiative); **v4.55: Paket mit Texten nach Projektstand gebaut, Hochladen durch die Initiative** |
 | P6 | Tags v3.47 und v4.22 ff. auf dem Server setzen (aus der Sitzung abgelehnt) |
 | P7 | Prüfer: Rechenweg-Skript, Schreibrechte, Unabhängigkeit (`Buch-Rueckfragen.md`); **v4.42: Prüfmappe für Externe liegt vor** (`projekt/Pruefmappe-Extern-2026-10-24.md`), Prüfer zu benennen |

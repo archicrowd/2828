@@ -1,14 +1,14 @@
 {
- "title": "The Golden Third – research kit and figures to cite (model version v4.65)",
+ "title": "The Golden Third – research kit and figures to cite (model version v4.66)",
  "upload_type": "dataset",
- "description": "Calculations, reviews and citable figures (Z01–Z34) for the proposal 'The Golden Third': taxation and social protection shared by a group of states, including the working paper (PDF). Static model; reviews commissioned by the initiative covered model versions up to v4.42.",
+ "description": "Calculations, reviews and citable figures (Z01–Z34) for the proposal 'The Golden Third': taxation and social protection shared by a group of states, including the working paper (PDF). Static model; internal reviews (carried out with a different AI model) covered model versions up to v4.42.",
  "creators": [
   {
    "name": "Initiative 28:28"
   }
  ],
  "license": "cc-by-4.0",
- "version": "v4.65",
+ "version": "v4.66",
  "language": "eng",
  "keywords": [
   "tax policy",

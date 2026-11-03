@@ -57,6 +57,7 @@ SEIT_PRUEFUNG = [
  ("v4.63", "Working Paper veröffentlicht (Seite, Kit)", "keine Rechnung"),
  ("v4.64", "Prüfprogramm der Nachprüfung bis v4.63 erweitert", "keine Rechnung"),
  ("v4.65", "Antworten auf B25–B29 (Ausweis), Webseite, Korrektur 84", "keine Zahl; neues Feld in fondszins.json"),
+ ("v4.66", "Prüfungen als interne Prüfungen bezeichnet; Prüfbericht der Nachprüfung veröffentlicht", "keine Rechnung"),
 ]
 
 
@@ -245,8 +246,8 @@ Bundesagentur für Arbeit) und veröffentlichter Erhebungen. Jede Änderung und 
 {KORREKTUREN} Korrekturen geführt. Die Rechnung ist statisch: Arbeitsangebot, Sparen und Wanderung reagieren nicht; Weitergabe, Überwälzung, Ausweichen und
 Inanspruchnahme gehen als Annahmen oder Bänder ein. Eine qualitative Voruntersuchung der Verhaltenswirkungen liegt vor; die quantitative
 Stufe ist offen.</p>
-<div class="hinweis vorbehalt">Entwurf zur Diskussion, kein beschlossenes Programm. Die drei bisherigen Prüfungen erfolgten <b>im Auftrag der
-Initiative</b> und erfassen den Modellstand bis {GEPRUEFT}; die Änderungen bis v4.63 werden nachgeprüft, D1 und D2 sind bestanden (Liste unter
+<div class="hinweis vorbehalt">Entwurf zur Diskussion, kein beschlossenes Programm. Die drei bisherigen Prüfungen sind <b>interne
+Prüfungen</b> (mit einem anderen KI-Modell als die Rechnung) und erfassen den Modellstand bis {GEPRUEFT}; die Änderungen bis v4.63 werden nachgeprüft, D1 und D2 sind bestanden (Liste unter
 <a href="pruefungen.html#seit">Prüfungen</a>). Unabhängige Prüfungen sind ausdrücklich erwünscht; die Unterlagen liegen bereit.</div>
 <h2>Prüfungen und Forschungs-Kit</h2>
 <p><a href="pruefungen.html">Prüfungen</a>: Prüfberichte und Stellungnahmen als PDF, mit allen Befunden und ihrer Umsetzung.
@@ -393,7 +394,8 @@ PRUEF = [
   [("beitraege/kvribbeck-2028/pruefung3/STELLUNGNAHME-2026-10-24.md", "Prüfbericht"),
    ("projekt/Stellungnahme-Pruefung4-2026-10-24.md", "Stellungnahme der Initiative (v4.46)")]),
  ("Nachprüfung v4.42 → v4.63, seit 2.11.2026 (laufend)", "Prüfung der Änderungen seit der dritten Prüfung nach dem Prüfprogramm (D1–D9). Bisher bestanden: D1 (Raster Zins × Wachstum, 84/84 Werte) und D2 (Grenzbelastung, 77/77 Werte); Befunde B25–B29 beantwortet. Offen: D3–D7, D9.",
-  [("projekt/Stellungnahme-Nachpruefung-2026-11-02.md", "Stellungnahme der Initiative zum Zwischenstand (v4.65)"),
+  [("beitraege/kvribbeck-2028/pruefung4/PRUEFBERICHT-2026-11-02.md", "Prüfbericht, Zwischenstand 2.11.2026 (enthält auch die erste bis dritte Prüfung)"),
+   ("projekt/Stellungnahme-Nachpruefung-2026-11-02.md", "Stellungnahme der Initiative zum Zwischenstand (v4.65)"),
    ("projekt/Pruefprogramm-Delta-v4.42-v4.63.md", "Prüfprogramm")]),
  ("Für weitere Prüfungen", "Was geprüft werden soll, wie man nachrechnet, Setzungen und ihre Empfindlichkeit, Prüffragen.",
   [("projekt/Pruefmappe-Extern-2026-10-24.md", "Prüfmappe"),
@@ -414,9 +416,9 @@ def p_pruef():
 <h1>Prüfungen</h1>
 <p class="lede">Im Oktober 2026 wurden Webseite und Rechnung in drei Prüfungen nachgerechnet. Alle Befunde sind mit ihrer Bewertung und Umsetzung
 dokumentiert; gefundene Fehler stehen als nummerierte Korrekturen im Logbuch.</p>
-<div class="hinweis vorbehalt">Die Prüfungen erfolgten im Auftrag der Initiative. Sie ersetzen keine unabhängige Begutachtung. Die
+<div class="hinweis vorbehalt">Die Prüfungen sind <b>interne Prüfungen</b>: von der Initiative veranlasst und mit einem anderen KI-Modell durchgeführt als dem, mit dem die Rechnung entwickelt wurde. Sie ersetzen keine unabhängige Begutachtung. Die Prüfberichte tragen teils andere Bezeichnungen (etwa „unabhängig“); maßgeblich ist diese Einordnung. Die
 Stellungnahmen geben den Stand ihrer Version wieder; spätere Rechnungen können Zahlen darin geändert haben. Geltende Werte: <a href="kit.html">Forschungs-Kit</a>.
-Die Prüfberichte der ersten und zweiten Prüfung liegen der Initiative vor und werden mit Zustimmung der Prüfenden ergänzt.</div>
+Die erste und zweite Prüfung sind im Prüfbericht der Nachprüfung mit enthalten (Abschnitte 1 bis 7).</div>
 {''.join(teile)}
 <h2 id="seit">Seit der letzten Prüfung ({GEPRUEFT}) geändert, noch nicht geprüft</h2>
 <p>Die dritte Prüfung erfasste den Modellstand {GEPRUEFT}. Seitdem haben sich folgende Rechnungen und Angaben geändert (Logbuch Band III);
@@ -470,7 +472,7 @@ Grundbedarf); Sozialbeiträge entfallen, Betriebe geben mindestens 80 % der wegf
 nummeriert im Logbuch (bisher {KORREKTUREN}).</li>
 <li>Statisch: keine Verhaltensreaktionen beim Arbeitsangebot, Sparen und Wandern; Weitergabe, Überwälzung, Ausweichen und Inanspruchnahme als
 Annahmen oder Bänder. Qualitative Voruntersuchung der Verhaltenswirkungen liegt vor.</li>
-<li>Drei Prüfungen im Auftrag der Initiative (Oktober 2026), zuletzt Modellstand {GEPRUEFT}: Rechenkern bestätigt, Befunde dokumentiert. Spätere Änderungen (bis {VERSION}) sind noch nicht geprüft. Unabhängige Prüfung erwünscht.</li>
+<li>Drei interne Prüfungen, mit einem anderen KI-Modell als die Rechnung (Oktober 2026), zuletzt Modellstand {GEPRUEFT}: Rechenkern bestätigt, Befunde dokumentiert. Spätere Änderungen (bis {VERSION}) sind noch nicht geprüft. Unabhängige Prüfung erwünscht.</li>
 <li>Größte unbelegte Position: Basis der Unternehmensbesteuerung am Ort der Kunden.</li></ul>
 <h2>Zahlen zum Zitieren</h2>
 <table><thead><tr><th>Nr.</th><th>Größe</th><th>Wert</th><th>Einheit</th><th>Bezug</th><th>Status</th></tr></thead><tbody>{zeilen}</tbody></table>

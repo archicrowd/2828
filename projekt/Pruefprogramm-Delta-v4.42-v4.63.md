@@ -66,9 +66,9 @@ kleiner Nachprüfung (Empfehlung an die Initiative, 01.11.2026).
 
 ## 5 Bezeichnung der Prüfungen
 
-Auf der Seite stehen die Prüfungen als „im Auftrag der Initiative“. „Unabhängig“ steht dort nur für erwünschte weitere Prüfungen. Die
-Formulierung „unabhängig in der Ausführung, im Auftrag der Initiative“ ist nur tragfähig, wenn keine personelle oder organisatorische
-Verbindung zwischen Prüfenden und Initiative besteht. Das ist vor der Verwendung je Prüfung zu klären und offen anzugeben.
+Festlegung der Initiative (3.11.2026): Die Prüfungen sind **interne Prüfungen**. Sie werden von der Initiative veranlasst und mit einem anderen
+KI-Modell durchgeführt als dem, mit dem die Rechnung entwickelt wird. Sie ersetzen keine unabhängige Begutachtung. Prüfberichte können eine andere
+Bezeichnung oder einen Absender nennen; für die Berichtsführung der Initiative gilt „interne Prüfung“.
 
 ## 6 Nach der Prüfung
 

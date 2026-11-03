@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.65 · höchste Korrekturnummer 84 · 559 Dateien im Repository
+Modellstand v4.66 · höchste Korrekturnummer 84 · 560 Dateien im Repository
 
 ## Bausteine
 
@@ -106,5 +106,5 @@ Modellstand v4.65 · höchste Korrekturnummer 84 · 559 Dateien im Repository
 - Hinweis: Naht N39 offen: B32 Länderseiten -> B31 Drittel-System: v4.51: 7 von 10 Haushaltstypen ±2 Pp; Korrekturen 77/78 (prime d'activité); offen R13 (Abgrenzung AG-Abgaben, Gesundheitsbeitrag PL, Paar mit zwei Einkommen, Alleinerziehende FR) | v4.52: Abgrenzung beschlossen und umgesetzt (E16)
 - Hinweis: Naht N41 offen: B32 Länderseiten -> B31 Drittel-System: v4.54: FR aus Eurostat hbs_str_t223 (2020); IT, ES, PL Faktor 1 bis zum gesicherten Abruf
 - Hinweis: Naht N42 offen: B31 Drittel-System -> B01 Logbuch: v4.56: Prüfsumme der Quellen in docs/downloads/quellen.sha256, Stufe schlägt fehl bis --pdf; Veröffentlichung über GitHub Pages durch die Initiative (P9) v4.57: englische Hauptfassung im Wurzelverzeichnis, deutsch unter docs/de/, gemeinsame Prüfsumme beider Kits; öffentliches Repository goldenes-drittel v4.59: Zenodo-Archiv, Concept-DOI 10.5281/zenodo.23855733
-- Hinweis: Naht N43 offen: B31 Drittel-System -> B01 Logbuch: v4.58: geprüft bis v4.42; Nachprüfung nach projekt/Pruefprogramm-Delta-v4.42-v4.63.md; Zahl der Korrekturen und Stufen aus Logbuch und Kette gelesen (Korrektur 83) v4.64: Prüfprogramm bis v4.63 (D9 Working Paper) v4.65: D1, D2 bestanden; B25–B29 beantwortet
+- Hinweis: Naht N43 offen: B31 Drittel-System -> B01 Logbuch: v4.58: geprüft bis v4.42; Nachprüfung nach projekt/Pruefprogramm-Delta-v4.42-v4.63.md; Zahl der Korrekturen und Stufen aus Logbuch und Kette gelesen (Korrektur 83) v4.64: Prüfprogramm bis v4.63 (D9 Working Paper) v4.65: D1, D2 bestanden; B25–B29 beantwortet v4.66: Bezeichnung interne Prüfung festgelegt
 - Hinweis: Naht N44 offen: B31 Drittel-System -> B01 Logbuch: v4.60: Prüfsumme dokumente/working-paper/quellen.sha256, Stufe schlägt fehl bis --pdf; Entwurf zur Durchsicht v4.61: Ziele und Zielkonflikte im Text v4.62: Label und Rechtsrahmen im Text v4.63: veröffentlicht; Seite prüft die Text-Prüfsumme des Papiers mit

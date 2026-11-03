@@ -32,6 +32,7 @@ SINCE_REVIEW = [
  ("v4.63", "Working paper published (site, kit)", "no calculation"),
  ("v4.64", "Review programme extended to v4.63", "no calculation"),
  ("v4.65", "Responses to B25–B29 (presentation), website, correction 84", "no figure; new field in fondszins.json"),
+ ("v4.66", "Reviews labelled as internal reviews; follow-up review report published", "no calculation"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
@@ -200,7 +201,7 @@ of the OECD tax wedge; the deviations for France and Poland are explained. For G
 across all households. Every change and every error found is logged with a number ({KORR} corrections so far). The model is static: labour supply,
 saving and migration do not respond; pass-through, avoidance and take-up enter as assumptions or bands. A qualitative review of behavioural
 effects has been done; the quantitative stage is open.</p>
-<div class="hinweis vorbehalt">The three reviews so far (October 2026) were <b>commissioned by the initiative</b> and cover the model up to
+<div class="hinweis vorbehalt">The three reviews so far (October 2026) are <b>internal reviews</b> (carried out with a different AI model from the one used for the calculation) and cover the model up to
 version {GEPRUEFT}. A follow-up review of the changes up to v4.63 is under way (D1 and D2 passed; <a href="reviews.html#since">list of changes</a>). Independent review is explicitly
 invited; the material is ready.</div>
 <h2>Reviews and research kit</h2>
@@ -391,9 +392,9 @@ def p_reviews():
 <h1>Reviews</h1>
 <p class="lede">In October 2026 the website and the calculations were recalculated in three reviews. All findings are documented with their
 assessment and implementation; errors found are logged as numbered corrections.</p>
-<div class="hinweis vorbehalt">The reviews were commissioned by the initiative. They do not replace independent assessment. The documents
+<div class="hinweis vorbehalt">The reviews are <b>internal reviews</b>: initiated by the initiative and carried out with a different AI model from the one used to build the calculation. They do not replace independent assessment. Some review reports use other labels (such as “independent”); this classification applies. The documents
 reflect the state of their version; later calculations may have changed figures in them. Current values: <a href="kit.html">research kit</a>.
-The reports of the first and second review are held by the initiative and will be added with the reviewers' consent. Documents are in German;
+The first and second reviews are included in the report of the follow-up review (sections 1 to 7). Documents are in German;
 English summaries above each list.</div>
 {''.join(teile)}
 <h2 id="since">Changed since the last review ({GEPRUEFT}), not yet reviewed</h2>
@@ -403,7 +404,7 @@ a follow-up review of these changes is under way (D1 and D2 passed, D3–D7 and 
     return seite("reviews.html", "Reviews", inhalt, "Review reports and responses on the Golden Third model.")
 
 
-DOK_EN = {"Stellungnahme-Nachpruefung-2026-11-02": "Response to the interim report (v4.65)", "Pruefprogramm-Delta-v4.42-v4.63": "Review programme",
+DOK_EN = {"PRUEFBERICHT-2026-11-02": "Review report, interim 2 Nov 2026 (includes reviews 1–3)", "Stellungnahme-Nachpruefung-2026-11-02": "Response to the interim report (v4.65)", "Pruefprogramm-Delta-v4.42-v4.63": "Review programme",
           "Stellungnahme-Pruefung-2026-10-20": "Response of the initiative (v4.12)", "Rueckmeldung-Pruefung-2026-10-20": "Reply to the reviewer (v4.13)",
           "Stellungnahme-Pruefung2-2026-10-20": "Response to the second review (v4.14)",
           "Stellungnahme-Pruefung3-2026-10-20": "Response to the summarised report (v4.17/v4.18)",
@@ -460,7 +461,7 @@ personal account locked until retirement; VAT as a label; legacy debt and pensio
 ({KORR} so far). Country models checked against OECD Taxing Wages 2026.</li>
 <li>Static: no behavioural responses in labour supply, saving or migration; pass-through, avoidance and take-up as assumptions or bands. A qualitative
 review of behavioural effects is available.</li>
-<li>Three reviews commissioned by the initiative (October 2026), last covering version {GEPRUEFT}: calculation core confirmed, findings documented.
+<li>Three internal reviews, carried out with a different AI model from the calculation (October 2026), last covering version {GEPRUEFT}: calculation core confirmed, findings documented.
 Later changes (up to {VERSION}) not yet reviewed. Independent review is invited.</li>
 <li>Largest undocumented position: the base of company taxation where customers are.</li></ul>
 <h2>Figures to cite</h2>
@@ -507,7 +508,7 @@ keywords: [tax policy, social protection, basic income, transformation dividend,
     (ziel / ".zenodo.json").write_text(json.dumps(dict(
         title=f"The Golden Third – research kit and figures to cite (model version {VERSION})", upload_type="dataset",
         description=("Calculations, reviews and citable figures (Z01–Z34) for the proposal 'The Golden Third': taxation and social protection shared by "
-                     "a group of states, including the working paper (PDF). Static model; reviews commissioned by the initiative covered model versions up to " + GEPRUEFT + "."),
+                     "a group of states, including the working paper (PDF). Static model; internal reviews (carried out with a different AI model) covered model versions up to " + GEPRUEFT + "."),
         creators=[dict(name="Initiative 28:28")], license="cc-by-4.0", version=VERSION, language="eng",
         keywords=["tax policy", "social protection", "basic income", "microsimulation", "public debt", "Europe"]), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 

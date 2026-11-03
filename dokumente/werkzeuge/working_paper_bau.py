@@ -286,7 +286,7 @@ could adopt jointly.</p>
 <p>This paper does not derive an optimal tax system. It is a costing and distributional accounting exercise: given the rules, what does the
 system cost, who gains and who loses compared with the law of 2026, and how sensitive are these results to the main assumptions? All figures come
 from one calculation chain of {F.STUFEN} stages based on official statistics. Every change to the model is recorded in a log, and every error found is
-numbered as a correction ({F.KORREKTUREN} so far). The chain was recalculated in three reviews commissioned by the initiative; the last review covered
+numbered as a correction ({F.KORREKTUREN} so far). The chain was recalculated in three internal reviews, carried out with a different AI model from the one used to build the calculation; the last review covered
 model version {F.GEPRUEFT} (section 10).</p>
 <p>Section 2 states the objectives, section 3 the rules, section 4 the model and data, section 5 the results, section 6 the sensitivity to key
 assumptions. Section 7 assesses the results against the objectives, including the tensions between them. Section 8 summarises behavioural evidence
@@ -534,7 +534,7 @@ Law Index (2025) is one possible criterion. States outside Europe are not calcul
 </ul>
 
 <h2>10 Reviews, corrections and access</h2>
-<p>The calculation chain was recalculated in three reviews in October 2026, commissioned by the initiative. The second and third reviews re-implemented
+<p>The calculation chain was recalculated in three internal reviews in October 2026, initiated by the initiative and carried out with a different AI model from the one used to build the calculation; they are not independent reviews. The second and third reviews re-implemented
 the core in their own code and confirmed it at rounding level; their findings and the responses are documented. The last review covered model version
 {F.GEPRUEFT}; the changes since then (up to {VERSION}) are listed on the website; a follow-up review of them is under way, in which the fund grid (D1) and the marginal burden (D2) have been reproduced in full so far.
 Independent review is invited.</p>

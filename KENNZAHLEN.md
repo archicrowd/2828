@@ -68,7 +68,7 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Zins × nominales Wachstum (v4.46, Prüfbefund B21): Beitrag / Zuschlag bei Zins 2,45 % und Wachstum 3,0 / 2,5 / 2,0 % | 5,17 / 5,68 / 6,22 % BIP; 15,5 / 17,0 / 18,6 %; Spitze (zehn) 149,9 / 152,2 / 154,1 %. Bei festem Beschlussbeitrag und 2,0 % Wachstum Restschuld 2098 rund 87 % BIP (zehn), Spitze 191 % (2064) | `fondszins.json → zins_wachstum` | Empfindlichkeit; Z in % BIP unverändert (Annahme) |
 | Zinsband 42.000 € DE (v4.38 mit Verrechnung) | Zuschlag gemeinsam 15,5 / 17,1 / 18,7 / 20,4 % = für Deutschland 2028 15,0 / 16,5 / 18,1 / 19,7 %; +611 / +590 / +570 / +548 € | `fondszins.json → varianten` | Lesart geklärt v4.46 (Prüfbefund B24, Korrektur 75) |
 
-## Mikrosimulation (im Auftrag der Initiative, v4.21; eigene, v4.22)
+## Mikrosimulation (interne Prüfung, v4.21; eigene, v4.22)
 
 | Größe | Wert | Datei | Status |
 |---|---|---|---|
@@ -85,7 +85,7 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Verrechnung je Staat im Fonds der 30 (E11, v4.38): Zuschlag 2028 DE / FR / IT / ES / PL | 15,0 / 21,3 / 22,3 / 18,3 / 13,5 % (gemeinsamer Satz 15,5 %, Angleichung bis 2058); FR alleinerziehend mit mehr 100 → 73 % (v4.51 nach Korrektur 78: 100 %; v4.52 nach E16: 73 %), Durchschnittslohn FR +480 → +390 € (v4.52, E16: +286 €; v4.54 mit Mehrwertsteuer nach Einkommen: +276 €), IT +494 → +412 € | `fonds_geltend.json`, `verrechnung_haushalte.json` | geltend (Beschluss 24.10.2026) |
 | Deckel der Weitergabe, einheitlich 6 × Grundbedarf (v4.36, E2; DE 74.088 €): allein bei 2× / 3× Durchschnittslohn DE / FR / IT | +710 / +431 € · +459 / +243 € · +766 / +749 € (v4.54: FR mit Mehrwertsteuer nach Einkommen, HBS 2020; v4.52 E16: FR +480 / +269 €, Weitergabe nur aus entfallenden Beiträgen; v4.38–v4.51 FR +654 / +440; Korrektur 80: hier stand bis v4.51 der Stand v4.36, DE +689 / +400, FR +849 / +717, IT +941 / +999; vor dem Deckel DE +804 / +515, IT +1.060 / +1.574) ; Gini 2028 DE 26,1, FR 29,0 (v4.52; amtlich heute 30,4), IT 26,9 (v4.51, Korrektur 79: hier stand bis v4.50 der Stand v4.36, FR 30,4 / IT 27,4) | `deckel_einheitlich.json`, `gini.json` | geltend (Beschluss E2, einheitliche Regel; v4.33 nur FR) |
 | Validierung Rentner (v4.23, ohne Eichung): Netto je Haushalt / GRV je Person / unter Grundsicherungsbedarf | +4 % gegen ASID 2023 / 1.311 € gegen DRV ≈ 1.317 € / 1,13 Mio. gegen 0,76 Mio. Empfänger | `mikro_de.json` | Rückrechnung und DRV-Bruttowert als Annahme |
-| Vollzeitbeschäftigte mit mehr verfügbarem Einkommen, Beschluss / halbe / keine Weitergabe | 99,0 / 98,4 / 92,0 % | `beitraege/kvribbeck-2028/ergebnis.csv` | Rechnung im Auftrag der Initiative (Kulturverein Ribbeck e.V.), eine Quelle; Formprüfung bestanden; Grenzen in der LIESMICH.md |
+| Vollzeitbeschäftigte mit mehr verfügbarem Einkommen, Beschluss / halbe / keine Weitergabe | 99,0 / 98,4 / 92,0 % | `beitraege/kvribbeck-2028/ergebnis.csv` | interne Prüfrechnung (mit einem anderen KI-Modell), eine Quelle; Formprüfung bestanden; Grenzen in der LIESMICH.md |
 | Beispielhaushalte des Repositorys, Beschluss | 97,8 bis 100 % je Haushaltstyp (`haushalte33`), 98 % (`regel_boden`, mit Grundauskommen und Bedarfsleistungen) | `haushalte33.json`, `regel_boden.json` | Prüfrechnung |
 
 ## Deckungspositionen 33R 2028: Herkunft, Basis, Satz (v4.46, Prüfbefunde B22/B23)
