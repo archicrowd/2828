@@ -77,7 +77,7 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
 
 <div class="wrap">
   <header class="head">
-    <div class="kicker">Initiative 28:28 · Entwicklungsmodus · Modellstand v4.69 · vorläufig, kein Beschluss</div>
+    <div class="kicker">Initiative 28:28 · Entwicklungsmodus · Modellstand v4.71 · vorläufig, kein Beschluss</div>
     <h1>Ein Arbeitsleben schützt den doppelten Grundbedarf</h1>
     <p class="lead">Beispielrechner für die Variante N2/3: Die Rentenzusage bleibt bis zum doppelten Grundbedarf ungekürzt. Darüber trägt sie gestuft
       zum Altlastenfonds bei, 27,7 % auf den nächsten Grundbedarf und 55,4 % auf alles darüber. Die Stufen sind in Vielfachen des Grundbedarfs G
@@ -100,7 +100,7 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
           <input type="range" id="jr" min="0" max="50" step="1" value="45" aria-label="Versicherungsjahre">
           <input type="number" id="j" min="0" max="50" step="1" value="45"><span class="unit">Jahre</span>
         </div>
-        <p class="hint">Nur für den Vergleich mit dem Jahresschutz. N2/3 braucht die Jahre nicht.</p>
+        <p class="hint">Nur für den Vergleich mit der Option ab 35. N2/3 braucht die Jahre nicht.</p>
       </div>
       <div class="field">
         <label for="g">Grundbedarf G des Staates</label>
@@ -162,11 +162,12 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
         <p class="kv">Schwäche: Satz 55 % in der obersten Stufe (Eigentumsschutz, P1); über 3 G im Mittel −1.042 € im Monat.</p>
       </article>
       <article class="card">
-        <span class="tag">B · Option</span>
-        <h3>Jedes Jahr schützt</h3>
-        <p class="quote">„Jedes Versicherungsjahr schützt einen festen Teil, voll ab 35 Jahren.“</p>
-        <p class="kv">Rechnung: <b>Freibetrag min(J,35)/35 × 2 G, 27,5 / 55,1 %</b> · im Plus: <b>64 %</b></p>
-        <p class="kv">Schwäche: kürzt bei gleichen Beiträgen die kürzere Laufbahn; in Deutschland kaum Unterschied zu N2/3.</p>
+        <span class="tag">BS35 · international</span>
+        <h3>Jedes Jahr schützt, der Grundbedarf ist sicher</h3>
+        <p class="quote">„Ein Arbeitsleben schützt den doppelten Grundbedarf, und niemandem wird der Grundbedarf genommen.“</p>
+        <p class="kv">Rechnung: <b>Freibetrag max(1 G; min(J,35)/35 × 2 G), darüber 27,5 / 55,1 %</b> · im Plus: <b>64 %</b></p>
+        <p class="kv">Stärke: trifft hohe Zusagen nach kurzer Laufbahn (Sonderregime, Endgehaltsformeln). Schwäche: kürzt bei gleichen Beiträgen
+          die kürzere Laufbahn über 1 G; braucht die Versicherungsjahre je Person, auch aus anderen Staaten.</p>
       </article>
       <article class="card">
         <span class="tag">T · tarifgleich</span>
@@ -180,7 +181,7 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
 
   <footer class="foot">
     <p>Alle Anteile: Rentnerhaushalte in Deutschland 2028, Kaufkraft 2026, gleiche Entlastung des Fonds wie Regel E (25,1 Mrd. €), außer T.
-      Rechnung: <code>modell/rentner_varianten.py</code> und <code>modell/rentner_beitragsjahre.py</code> (EU-SILC 2025, ASID 2023;
+      Rechnung: <code>modell/rentner_varianten.py</code> und <code>modell/rentner_beitragsjahre.py</code> (v4.71) (EU-SILC 2025, ASID 2023;
       Versicherungsjahre zugeschätzt, Annahme).</p>
     <p>Der Rechner zeigt nur die Kürzung der Zusage, nicht die Änderung des Haushaltsnettos. Dazu kommen Dividende, Steuer, Label und der Boden
       (heutige Grundsicherung 1.083 € allein, 1.632 € als Paar). Die Modellwerte je Gruppe stehen unter dem Vergleich.</p>
@@ -198,7 +199,8 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
     {k:"30 J., höherer Verdienst",z:45*RW,j:30},
     {k:"45 J., Beitragsgrenze",z:90*RW,j:45},
     {k:"Ruhegehalt 40 Dienstjahre",z:0.7175*5000,j:40},
-    {k:"20 J., Durchschnitt",z:20*RW,j:20}
+    {k:"20 J., Durchschnitt",z:20*RW,j:20},
+    {k:"10 J., Rente = Grundbedarf",z:1029,j:10}
   ];
   // Modellmittel N2/3 je Gruppe nach Zusage (Deutschland, Änderung Haushaltsnetto je Monat; rentner_varianten.json v4.68/v4.69)
   var MODEL=[[1,64,71],[1.5,51,100],[2,24,100],[3,-162,5],[Infinity,-1042,0]];
@@ -209,7 +211,7 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
   function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
   function cutN23(z,G){return 0.277*clamp(z-2*G,0,G)+0.554*Math.max(0,z-3*G)}
   function cutE(z,G){return 0.15*Math.max(0,z-G)}
-  function cutB(z,j,G){var F=Math.min(j,35)/35*2*G;return 0.275*clamp(z-F,0,G)+0.551*Math.max(0,z-F-G)}
+  function cutB(z,j,G){var F=Math.max(G,Math.min(j,35)/35*2*G);return 0.275*clamp(z-F,0,G)+0.551*Math.max(0,z-F-G)}
   function num(id,def){var v=parseFloat($(id).value);return isFinite(v)&&v>=0?v:def}
 
   var pre=$("presets");
@@ -245,7 +247,7 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
     var rows=[
       ["N2/3 (Vorzug)",c,true],
       ["E (geltend)",cutE(z,G),false],
-      ["B, Jahresschutz ab 35 J. ("+j+" J.)",cutB(z,j,G),false]
+      ["Option ab 35 mit Sockel ("+fmt.format(j)+" J.)",cutB(z,j,G),false]
     ];
     $("cmp").innerHTML=rows.map(function(r){
       return '<tr class="'+(r[2]?"pick":"")+'"><td>'+r[0]+'</td><td class="n">'+eur(r[1])+'</td><td class="n">'+eur(z-r[1])+"</td></tr>";

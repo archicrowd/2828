@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.70**
+Stand: 24. Oktober 2026 · Modellstand **v4.71**
 
 ---
 
@@ -4737,6 +4737,22 @@ Veröffentlicht als privates Artifact (Entwurf).
 
 ---
 
+### v4.71 — Rentner: Option ab 35 mit Sockel (BS35), Rechner nachgeführt (Entwicklungsmodus)
+
+**Art der Änderung: MINOR (Prüfrechnung erweitert), keine geltende Zahl bewegt.** 5. November 2026.
+
+**Anlass:** Frage der Initiative nach der international besten Lösung. Befund der Durchsicht: Ohne Sockel kürzt die Option ab 35 niedrige Renten
+nach kurzer Laufbahn (10 J., 1 G: 121 € im Monat).
+
+**Änderung `modell/rentner_beitragsjahre.py` (+ `.toml`):** Parameter `sockel` (F = max(Sockel × G; Jahresfreibetrag)); Varianten BS35 und BS40;
+Kennzahl „kurze Laufbahn bis 1,5 G“; Einzelfall 10 J./1 G. **Bewegte Zahl (vorläufig):** BS35 64,5 % mit mehr (gleich B2/1-35), Satz 27,5 /
+55,1 %; Einzelfall 10 J./1 G: 0 statt 121 €. Der Sockel ändert die Summen in Deutschland nicht (Zuschätzung der Jahre aus der Höhe, Annahme).
+Rechner `seite/entwurf/rentner-n23/rechner.html`: Vergleichszeile und Erzählkarte auf BS35, Beispielfall 10 J. ergänzt.
+
+**Datenquelle:** wie v4.69. **Wodurch aufgefallen:** eigene Durchsicht bei der Antwort auf die Frage der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4811,7 +4827,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.70
+## 7 | Offene Punkte, Stand v4.71
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

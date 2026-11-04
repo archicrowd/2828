@@ -37,6 +37,7 @@ SINCE_REVIEW = [
  ("v4.68", "Pensioners: variants of rule E (preliminary cross-check)", "no adopted figure"),
  ("v4.69", "Pensioners: cut by promise per insurance year (preliminary cross-check)", "no adopted figure"),
  ("v4.70", "Pensioners: example calculator for variant N2/3 (draft)", "no calculation"),
+ ("v4.71", "Pensioners: option from 35 years with a floor (preliminary cross-check)", "no adopted figure"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]

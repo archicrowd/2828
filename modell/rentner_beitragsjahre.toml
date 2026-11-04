@@ -1,5 +1,5 @@
 # Rentner: Kürzung nach Zusage je Versicherungsjahr (modell/rentner_beitragsjahre.py, Logbuch v4.69). Entwicklungsmodus, vorläufig.
-version = "v4.69"
+version = "v4.71"
 boden = [1083, 1632]            # wie Regel E (€ je Monat, Kaufkraft 2026)
 volle_laufbahn = 45             # Jahre, ab denen der Freibetrag voll ist (Regelfall „besonders langjährig“)
 seed_jahre = 7                  # Zufallszahlen der Zuschätzung (unabhängig vom Seed der Stichprobe)
@@ -41,6 +41,20 @@ breite = 1.0
 faktor = 2.0
 voll = 35
 [[variante]]
+name = "BS35 – wie B2/1-35, mit Sockel: Freibetrag mindestens 1 G (v4.71)"
+f = 2.0
+breite = 1.0
+faktor = 2.0
+voll = 35
+sockel = 1.0
+[[variante]]
+name = "BS40 – wie B2/1-40, mit Sockel 1 G (v4.71)"
+f = 2.0
+breite = 1.0
+faktor = 2.0
+voll = 40
+sockel = 1.0
+[[variante]]
 name = "B2,5 – Freibetrag 2,5 G bei 45 Jahren, ein Satz darüber"
 f = 2.5
 
@@ -72,3 +86,7 @@ betrag = 3587.5
 name = "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)"
 jahre = 20
 betrag = 815.8
+[[fall]]
+name = "kurze Laufbahn, Rente in Höhe des Grundbedarfs (10 J., v4.71)"
+jahre = 10
+betrag = 1029

@@ -1,6 +1,6 @@
 # Rentner: Varianten zur Regel E (Entwicklungsmodus)
 
-Initiative 28:28 · 4. November 2026 · Modellstand v4.69 · vorläufig, kein Beschluss · Rechnung: `modell/rentner_varianten.py`, `modell/rentner_beitragsjahre.py`
+Initiative 28:28 · 4. November 2026 · Modellstand v4.71 · vorläufig, kein Beschluss · Rechnung: `modell/rentner_varianten.py`, `modell/rentner_beitragsjahre.py`
 
 ## Auftrag
 
@@ -138,6 +138,26 @@ anteilig. Ergebnis fast gleich N2/3 (64 % gegen 65 %), Fall 3 verliert 20 € st
 
 **Weiterführend (nicht gerechnet):** Für „ungedeckt“ im engen Sinn wäre der Maßstab die Zusage je Beitragseuro (Deckungsgrad), nicht je Jahr.
 Er setzt Beitragsdaten je Person voraus; für Beamte ist umstritten, ob niedrigere Bruttobezüge als impliziter Beitrag gelten.
+
+### Nachtrag v4.71: Option ab 35 mit Sockel (BS35), international gedacht
+
+**Anlass.** Ohne Sockel kürzt die Option ab 35 auch niedrige Renten nach kurzer Laufbahn: Bei 10 Jahren und einer Rente in Höhe von G liegt der
+Freibetrag bei 0,57 G, gekürzt würden 121 € im Monat. Kurze Laufbahnen sind häufig die von Zugewanderten, von Frauen mit Erziehungszeiten und,
+in vielen Staaten, von Menschen mit langer informeller Arbeit. Das widerspräche SDG 1 und dem Auftrag.
+
+**Regel BS35.** Freibetrag F = max(1 G; min(Jahre, 35)/35 × 2 G); Kürzung 27,5 % von F bis F + 1 G, 55,1 % darüber (neutral zu E).
+Kernsatz: **„Ein Arbeitsleben schützt den doppelten Grundbedarf, und niemandem wird der Grundbedarf genommen.“**
+
+**Ergebnis Deutschland 2028.** Gleich B2/1 (V = 35): 64 % der Rentnerhaushalte mit mehr, Satz unverändert 27,5 / 55,1 %, lange Laufbahn bis 2 G
+zu 98 % im Plus, kurze Laufbahn über 2 G im Mittel −224 €. Der Sockel ändert die Summen nicht, weil im Modell kurze Laufbahnen mit Zusagen über
+ihrem Freibetrag, aber unter 1 G kaum vorkommen. Das liegt auch an der Zuschätzung der Jahre aus der Höhe der Zusage (Annahme), die solche Fälle
+selten erzeugt. Im Einzelfall wirkt er: 10 Jahre, Rente 1.029 €: Kürzung 0 statt 121 €. In Staaten mit vielen kurzen Laufbahnen ist die Wirkung
+größer; nicht gerechnet, Daten fehlen.
+
+**Einordnung.** BS35 ist die Fassung für die internationale Regel: Sie trifft, was N2/3 nicht sieht (hohe Zusagen nach kurzer Laufbahn,
+Sonderregime, Endgehaltsformeln), und schützt den Grundbedarf ohne Ansehen der Jahre. Kosten gegenüber N2/3: eine zweite Größe je Person
+(Versicherungsjahre, auch aus anderen Staaten anzurechnen) und die ungleiche Behandlung gleicher Beiträge oberhalb von 1 G (Fall 3: 20 €).
+In Systemen mit Beitragskonten (Schweden, Italien nach 1996, Polen; eigene Kenntnis, zu prüfen) bleibt N2/3 die genauere Regel.
 
 ## Folgen für andere Bausteine (zu prüfen)
 

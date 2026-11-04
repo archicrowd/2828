@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rentner: Kürzung nach Zusage je Versicherungsjahr (Logbuch v4.69). Entwicklungsmodus, vorläufige Prüfrechnung, kein Beschluss.
+"""Rentner: Kürzung nach Zusage je Versicherungsjahr (Logbuch v4.69; Sockel v4.71). Entwicklungsmodus, vorläufige Prüfrechnung, kein Beschluss.
 
 Regel B: Jedes Versicherungsjahr schützt einen festen Teil der Zusage. Freibetrag F = min(Jahre, 45)/45 × f × G (G = Grundbedarf des
 Staates). Gekürzt wird nur der Teil der Zusage über F, mit einem Satz s, der so gesucht wird, dass der Fonds so viel entlastet wird wie
@@ -99,12 +99,15 @@ def main():
             return round(float(np.average(d[m], weights=gw[m]))) if m.any() else None
         lang_mittel = (jahre >= 40) & (zp <= 2 * G)
         kurz_hoch = (jahre < 35) & (zp > 2 * G)
+        kurz_niedrig = (jahre < 35) & (zp <= 1.5 * G)
         return dict(name=name, **extra, anteil_mehr_pct=round(float(gw[d > 0].sum() / gw.sum() * 100), 1),
                     mittel_monat=round(float(np.average(d, weights=gw))),
                     lange_laufbahn_bis_2G=dict(anteil_mehr_pct=anteil(lang_mittel), mittel_monat=mittel(lang_mittel),
                                                anteil_personen_pct=round(float(wp[lang_mittel].sum() / wp.sum() * 100))),
                     kurze_laufbahn_ueber_2G=dict(anteil_mehr_pct=anteil(kurz_hoch), mittel_monat=mittel(kurz_hoch),
                                                  anteil_personen_pct=round(float(wp[kurz_hoch].sum() / wp.sum() * 100))),
+                    kurze_laufbahn_bis_1_5G=dict(anteil_mehr_pct=anteil(kurz_niedrig), mittel_monat=mittel(kurz_niedrig),
+                                                 anteil_personen_pct=round(float(wp[kurz_niedrig].sum() / wp.sum() * 100))),
                     nach_jahren={JL[i]: dict(mehr_pct=anteil(jgr == i), mittel=mittel(jgr == i)) for i in range(4)},
                     nach_zusage={ZL[i]: dict(mehr_pct=anteil(zgr == i), mittel=mittel(zgr == i)) for i in range(5)},
                     matrix_mehr_pct={JL[j]: {ZL[i]: anteil((jgr == j) & (zgr == i)) for i in range(5)} for j in range(4)},
@@ -124,10 +127,10 @@ def main():
         erg.append(kennzahlen(nm, d, netto, dict(stufen=st, kuerzung_faelle_monat=faelle)))
 
     for v in P["variante"]:
-        f, br, fa, vo = v["f"], v.get("breite"), v.get("faktor", 1.0), v.get("voll", VOLL)
+        f, br, fa, vo, so = v["f"], v.get("breite"), v.get("faktor", 1.0), v.get("voll", VOLL), v.get("sockel", 0.0)
 
         def kf(z, J, s):
-            F = min(J, vo) / vo * f * G
+            F = max(so * G, min(J, vo) / vo * f * G)          # Sockel (v4.71): Freibetrag nie unter so × G
             if br is None:
                 return s * max(0.0, z - F)
             return s * max(0.0, min(z, F + br * G) - F) + min(0.95, fa * s) * max(0.0, z - F - br * G)
@@ -137,7 +140,7 @@ def main():
             d, netto = rechne(lambda z, J, s=s: kf(z, J, s))
             lo, hi = (lo, s) if netto > ref_E else (s, hi)
         faelle = {c["name"]: round(kf(12 * c["betrag"], c["jahre"], s) / 12) for c in P["fall"]}
-        erg.append(kennzahlen(v["name"], d, netto, dict(f=f, voll=vo, kuerzung_faelle_monat=faelle, satz=round(s, 3), satz_oben=round(min(0.95, fa * s), 3) if br else None,
+        erg.append(kennzahlen(v["name"], d, netto, dict(f=f, voll=vo, sockel=so, kuerzung_faelle_monat=faelle, satz=round(s, 3), satz_oben=round(min(0.95, fa * s), 3) if br else None,
                                                          freibetrag_45_jahre_monat=round(f * G / 12), je_jahr_monat=round(f * G / 12 / VOLL, 1))))
 
     E = dict(version=P["version"], status="Entwicklungsmodus: vorläufige Prüfrechnung (Deutschland, 2028, Kaufkraft 2026), kein Beschluss",

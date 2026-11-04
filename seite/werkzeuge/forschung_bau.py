@@ -62,6 +62,7 @@ SEIT_PRUEFUNG = [
  ("v4.68", "Rentner: Varianten zur Regel E (vorläufige Prüfrechnung)", "keine geltende Zahl"),
  ("v4.69", "Rentner: Kürzung nach Zusage je Versicherungsjahr (vorläufige Prüfrechnung)", "keine geltende Zahl"),
  ("v4.70", "Rentner: Beispielrechner N2/3 (Entwurf)", "keine Rechnung"),
+ ("v4.71", "Rentner: Option ab 35 mit Sockel (vorläufige Prüfrechnung)", "keine geltende Zahl"),
 ]
 
 
