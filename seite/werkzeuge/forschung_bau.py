@@ -58,6 +58,7 @@ SEIT_PRUEFUNG = [
  ("v4.64", "Prüfprogramm der Nachprüfung bis v4.63 erweitert", "keine Rechnung"),
  ("v4.65", "Antworten auf B25–B29 (Ausweis), Webseite, Korrektur 84", "keine Zahl; neues Feld in fondszins.json"),
  ("v4.66", "Prüfungen als interne Prüfungen bezeichnet; Prüfbericht der Nachprüfung veröffentlicht", "keine Rechnung"),
+ ("v4.67", "Kennzahlen SDG 1.2 und 10.1 (neue Prüfrechnung); Pestizide und Dünger in der Sonderstufe; Korrektur 85", "keine geltende Zahl"),
 ]
 
 

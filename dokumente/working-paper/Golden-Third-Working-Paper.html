@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Golden Third – working paper (v4.66)</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Golden Third – working paper (v4.67)</title><style>
 @page{size:A4;margin:22mm 20mm 20mm 20mm}
 body{font:10.3pt/1.5 Georgia,'Times New Roman',serif;color:#1d2a33;margin:0}
 h1{font:700 24pt/1.15 Arial,Helvetica,sans-serif;color:#0f3b5c;margin:0 0 4pt}
@@ -29,7 +29,7 @@ ul{margin:0 0 7pt;padding-left:15pt}li{margin:0 0 3pt}
 <h1>The Golden Third</h1>
 <p class="sub">A static costing and distributional model of a shared tax and social-protection framework for a group of European states</p>
 <p class="autor">Initiative 28:28</p>
-<p class="meta">Model version v4.66 · 1 November 2026 · Licence CC BY 4.0 · Research kit and figures to cite: <a href="https://doi.org/10.5281/zenodo.23855733">doi.org/10.5281/zenodo.23855733</a>
+<p class="meta">Model version v4.67 · 1 November 2026 · Licence CC BY 4.0 · Research kit and figures to cite: <a href="https://doi.org/10.5281/zenodo.23855733">doi.org/10.5281/zenodo.23855733</a>
 · Website: <a href="https://archicrowd.github.io/goldenes-drittel/">archicrowd.github.io/goldenes-drittel/</a> · Contact: tax.better@archicrowd.de</p>
 </header>
 
@@ -62,8 +62,8 @@ complex, and the marginal burden on additional earnings is high in parts of the 
 could adopt jointly.</p>
 <p>This paper does not derive an optimal tax system. It is a costing and distributional accounting exercise: given the rules, what does the
 system cost, who gains and who loses compared with the law of 2026, and how sensitive are these results to the main assumptions? All figures come
-from one calculation chain of 70 stages based on official statistics. Every change to the model is recorded in a log, and every error found is
-numbered as a correction (84 so far). The chain was recalculated in three internal reviews, carried out with a different AI model from the one used to build the calculation; the last review covered
+from one calculation chain of 71 stages based on official statistics. Every change to the model is recorded in a log, and every error found is
+numbered as a correction (85 so far). The chain was recalculated in three internal reviews, carried out with a different AI model from the one used to build the calculation; the last review covered
 model version v4.42 (section 10).</p>
 <p>Section 2 states the objectives, section 3 the rules, section 4 the model and data, section 5 the results, section 6 the sensitivity to key
 assumptions. Section 7 assesses the results against the objectives, including the tensions between them. Section 8 summarises behavioural evidence
@@ -247,14 +247,16 @@ returned. Three elements work through prices rather than prohibitions:</p>
 <li><b>Carbon price.</b> The European carbon price for buildings and transport (ETS2) enters as a revenue path; its revenue falls with emissions
 even though the price rises. Road transport fuel expenditure follows the German projection report 2026 (with-measures scenario).</li>
 <li><b>Special rate on harmful goods.</b> Goods classified as harmful to health or the environment carry 33 % – in the model
-combustion-engine vehicles, tobacco and alcohol. The model assumes that the share of
+motor fuels, combustion-engine vehicles, tobacco and alcohol; chemical pesticides and mineral fertilisers are included by decision of 4 November 2026
+(not yet in the calculation; the household share of these purchases is small). Because firms deduct VAT as input tax, the special rate does not
+reach agricultural use of pesticides and fertilisers; a levy differentiated by harmfulness, as in Denmark, is an open proposal. The model assumes that the share of
 combustion engines in vehicle purchases falls from 80 % in 2028 to 10 % in 2035 (assumption, oriented to EU vehicle CO₂ standards).</li>
 <li><b>VAT label.</b> Table 13 shows the price signal implied by the rates alone. For the same net price, a certified product in class A costs
 5.1 % less than a standard product; a harmful product costs 13.7 % more. A supplier who keeps the consumer price
 unchanged earns 5.4 % more per unit after moving from B to A. Certification pays if its cost is lower than this advantage.</li>
 </ul>
 <p class="cap">Table 13: VAT label classes and the price signal</p>
-<table><thead><tr><th>Class</th><th class=z>Rate</th><th>Goods (examples)</th><th class=z>Price vs B (1)</th><th class=z>Revenue vs B (2)</th></tr></thead><tbody><tr><td>A+</td><td class=z>5 %</td><td>basic needs, repairs, circular products</td><td class=z>−10.3 %</td><td class=z>+11.4 %</td></tr><tr><td>A</td><td class=z>11 %</td><td>certified sustainable goods</td><td class=z>−5.1 %</td><td class=z>+5.4 %</td></tr><tr><td>B</td><td class=z>17 %</td><td>standard goods</td><td class=z>0.0 %</td><td class=z>0.0 %</td></tr><tr><td>C</td><td class=z>25 %</td><td>resource-intensive goods</td><td class=z>+6.8 %</td><td class=z>−6.4 %</td></tr><tr><td>Special</td><td class=z>33 %</td><td>harmful goods (e.g. combustion-engine vehicles, tobacco, alcohol)</td><td class=z>+13.7 %</td><td class=z>−12.0 %</td></tr></tbody></table><p class="note">(1) Consumer price relative to class B at the same net price. (2) Supplier net revenue relative to class B at the same consumer price. Mechanical price signals from the rates alone. Which share of a rate difference reaches consumers or stays with suppliers depends on pass-through, which is asymmetric for VAT changes (Benzarti et al. 2020). Assignment of goods to classes is set by law; lower classes A+ and A are reached through certification.</p>
+<table><thead><tr><th>Class</th><th class=z>Rate</th><th>Goods (examples)</th><th class=z>Price vs B (1)</th><th class=z>Revenue vs B (2)</th></tr></thead><tbody><tr><td>A+</td><td class=z>5 %</td><td>basic needs, repairs, circular products</td><td class=z>−10.3 %</td><td class=z>+11.4 %</td></tr><tr><td>A</td><td class=z>11 %</td><td>certified sustainable goods</td><td class=z>−5.1 %</td><td class=z>+5.4 %</td></tr><tr><td>B</td><td class=z>17 %</td><td>standard goods</td><td class=z>0.0 %</td><td class=z>0.0 %</td></tr><tr><td>C</td><td class=z>25 %</td><td>resource-intensive goods</td><td class=z>+6.8 %</td><td class=z>−6.4 %</td></tr><tr><td>Special</td><td class=z>33 %</td><td>harmful goods (e.g. motor fuels, combustion-engine vehicles, tobacco, alcohol, chemical pesticides, mineral fertilisers)</td><td class=z>+13.7 %</td><td class=z>−12.0 %</td></tr></tbody></table><p class="note">(1) Consumer price relative to class B at the same net price. (2) Supplier net revenue relative to class B at the same consumer price. Mechanical price signals from the rates alone. Which share of a rate difference reaches consumers or stays with suppliers depends on pass-through, which is asymmetric for VAT changes (Benzarti et al. 2020). Assignment of goods to classes is set by law; lower classes A+ and A are reached through certification.</p>
 <p>The label is distributionally progressive in its burden (Table 6), and the revenue returns per head through the dividend. Evidence supports the
 direction of the mechanism but not its size: consumers respond more strongly to taxes shown at the point of purchase (Chetty, Looney and Kroft 2009);
 in a systematic review of environmental labels on food, 60 of 76 comparisons favoured the labelled option, with many studies at unclear or high
@@ -313,9 +315,9 @@ Law Index (2025) is one possible criterion. States outside Europe are not calcul
 <h2>10 Reviews, corrections and access</h2>
 <p>The calculation chain was recalculated in three internal reviews in October 2026, initiated by the initiative and carried out with a different AI model from the one used to build the calculation; they are not independent reviews. The second and third reviews re-implemented
 the core in their own code and confirmed it at rounding level; their findings and the responses are documented. The last review covered model version
-v4.42; the changes since then (up to v4.66) are listed on the website; a follow-up review of them is under way, in which the fund grid (D1) and the marginal burden (D2) have been reproduced in full so far.
+v4.42; the changes since then (up to v4.67) are listed on the website; a follow-up review of them is under way, in which the fund grid (D1) and the marginal burden (D2) have been reproduced in full so far.
 Independent review is invited.</p>
-<p>The log records every version with date, change, data source, moved figure and how it was noticed; 84 corrections have been numbered
+<p>The log records every version with date, change, data source, moved figure and how it was noticed; 85 corrections have been numbered
 so far. The research kit with all figures to cite, the result files and the review documents is archived at
 <a href="https://doi.org/10.5281/zenodo.23855733">doi.org/10.5281/zenodo.23855733</a>. Scripts, parameters and the full log are public at <a href="https://github.com/archicrowd/2828">github.com/archicrowd/2828</a>.</p>
 

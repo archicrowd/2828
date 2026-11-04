@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.66**
+Stand: 24. Oktober 2026 · Modellstand **v4.67**
 
 ---
 
@@ -4646,6 +4646,36 @@ Damit ist der offene Punkt „Prüfberichte 1 und 2 nach Zustimmung“ erledigt.
 
 ---
 
+### v4.67 — Nachhaltigkeitsziele: Armutsquote (SDG 1.2) und untere 40 % (SDG 10.1) gerechnet; Pestizide und Dünger in der Sonderstufe; Korrektur 85
+
+**Art der Änderung: MINOR (neue Prüfrechnung, Beschluss zur Sonderstufe ohne Rechenwirkung), keine geltende Zahl bewegt.** 4. November 2026.
+
+**Anlass:** Auftrag der Initiative (4.11.2026) nach der Durchsicht der 17 UN-Ziele: Pestizide und Kunstdünger ausdrücklich in die Sonderstufe 33 %;
+weg von Europa hin zu einem internationalen Modell für Staaten, die Standards sichern; Armutsquote nach Indikator 1.2 und globale Teilziele
+(10.c, 17.2) betrachten. Arbeitspapier: `projekt/Nachhaltigkeitsziele-und-internationales-Modell-2026-11-04.md`.
+
+**Neu `modell/sdg_kennzahlen.py` (+ `.toml`) → `daten/aggregate/sdg_kennzahlen.json`** (Stufe nach `gini.py`): Verfahren wie `gini.py`; Ausweis
+amtliche Quote 2025 × Verhältnis neu/heute der Rekonstruktion. Ergebnis 2028, Rentnerhaushalte unverändert (Hauptvariante): Armutsquote relativ
+DE 16,1 → 16,7 %, FR 16,3 → 14,7, IT 18,6 → 14,3, ES 19,5 → 13,4, PL 13,2 → 8,0 %; verankert an der heutigen Grenze überall niedriger
+(DE 10,5–13,1 %). Untere 40 % gegen alle: DE +27/+28 gegen +18 %, FR +10/+11 gegen +10 %, IT +32 gegen +20, ES +30/+31 gegen +15, PL +36 gegen
++20 %. Amtliche Quoten 2025 aus Eurostat ilc_li02 über eupublicdata.eu (Sekundärquelle; Eurostat aus der Sitzung nicht erreichbar).
+Befund: In Deutschland steigt die relative Armutsquote, weil unveränderte (tatsächlich verlierende) Rentnerhaushalte unter den steigenden Median
+fallen – Schwachstelle der Rentnerregel E für SDG 1.
+
+**Sonderstufe:** Konzept und Working Paper nennen chemische Pflanzenschutzmittel und mineralische Dünger ausdrücklich. Wirkung nur beim
+privaten Kauf und bei Betrieben ohne Vorsteuerabzug; für die Landwirtschaft eine Lenkungsabgabe nach dänischem Vorbild als offener Vorschlag.
+Keine Rechnung bewegt (Anteil am Konsum der Haushalte klein, nicht beziffert).
+
+**Korrektur 85:** Working Paper (v4.62 bis v4.66), Abschnitt 7: „Sonderstufe im Modell: Verbrenner-Fahrzeuge, Tabak, Alkohol“; beim Gegenlesen in
+v4.62 als „Kraftstoffe nicht belegt“ eingeordnet. Richtig: `projektion33.py` führt Kraftstoffe in der Sonderstufe (Konzept ebenso). Text berichtigt.
+Ebenso berichtigt (nur Gesprächsstand, nicht im Repository): Teilziel 10.c betrifft Kosten von Rücküberweisungen, nicht die Ungleichheit zwischen
+Staaten.
+
+**Datenquelle:** EU-SILC-Dezile wie `gini.py`; Eurostat ilc_li02 (Sekundärquelle); IVA Pflanzenschutzmarkt 2024 (Verbandsangabe);
+TemaNord 2025:523; UN, Ziel 17; OECD (April 2026). **Wodurch aufgefallen:** Auftrag der Initiative; Korrektur 85 beim Nachsehen der Sonderstufe.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4680,6 +4710,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 73 | `gesamtlast33.json` (seit v4.14): „Steuern 33,53“ neben „Summe 45,47“ – die Summe stammte aus dem Steuerbedarf 33,42; `KENNZAHLEN.md` nannte 45,46/49,56 | Summe aus den ausgewiesenen Teilen 33,53 + 12,05 = 45,58, mit Pflichtvorsorge 49,68; Steuerbedarf-Variante 45,47/49,57 daneben (v4.46) | Dritte Prüfung, Befund B17 |
 | 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
+| 85 | Working Paper v4.62–v4.66, Abschnitt 7: Sonderstufe „im Modell Verbrenner-Fahrzeuge, Tabak, Alkohol“ (Kraftstoffe beim Gegenlesen v4.62 irrtümlich gestrichen) | Kraftstoffe gehören dazu (`projektion33.py`, Konzept) | Beschluss Pestizide/Dünger (v4.67), Nachsehen der Sonderstufe im Modell |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -4719,7 +4750,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.66
+## 7 | Offene Punkte, Stand v4.67
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

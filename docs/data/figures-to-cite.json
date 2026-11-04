@@ -1,8 +1,8 @@
 {
- "model_version": "v4.66",
+ "model_version": "v4.67",
  "date": "1 November 2026",
  "licence": "CC BY 4.0",
- "citation": "Initiative 28:28 (2026): The Golden Third – research kit and figures to cite, model version v4.66, 1 November 2026. Zenodo. https://doi.org/10.5281/zenodo.23855733. Licence: scripts MIT, texts and results CC BY 4.0.",
+ "citation": "Initiative 28:28 (2026): The Golden Third – research kit and figures to cite, model version v4.67, 1 November 2026. Zenodo. https://doi.org/10.5281/zenodo.23855733. Licence: scripts MIT, texts and results CC BY 4.0.",
  "figures": [
   {
    "id": "Z01",
@@ -12,7 +12,7 @@
    "reference": "2028, purchasing power 2026",
    "file_path": "netz33.json × regel_boden.json topf",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z02",
@@ -22,7 +22,7 @@
    "reference": "as Z01, child share 0.8",
    "file_path": "as Z01",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z03",
@@ -32,7 +32,7 @@
    "reference": "2028; pass-through 80 %, surcharge 15.0 %, compulsory saving 10 %",
    "file_path": "haushalte33.json faelle",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z04",
@@ -42,7 +42,7 @@
    "reference": "as Z03",
    "file_path": "haushalte33.json faelle",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z05",
@@ -52,7 +52,7 @@
    "reference": "2028; synthetic microsimulation, pass-through 80 %",
    "file_path": "mikro_de.json basis/ergebnis/0.8",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z06",
@@ -62,7 +62,7 @@
    "reference": "as Z05",
    "file_path": "mikro_de.json basis/ergebnis/0.8/gesamt",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z07",
@@ -72,7 +72,7 @@
    "reference": "2028, Germany",
    "file_path": "rentner_kombi.json varianten/4",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z08",
@@ -82,7 +82,7 @@
    "reference": "2028, Germany",
    "file_path": "rentner_kombi.json varianten/4",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z09",
@@ -92,7 +92,7 @@
    "reference": "annual until repaid",
    "file_path": "fonds_geltend.json",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z10",
@@ -102,7 +102,7 @@
    "reference": "fund interest 2.45 %",
    "file_path": "fonds_geltend.json",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z11",
@@ -112,7 +112,7 @@
    "reference": "in 2055",
    "file_path": "fonds_geltend.json",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z12",
@@ -122,7 +122,7 @@
    "reference": "",
    "file_path": "fonds_geltend.json",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z13",
@@ -132,7 +132,7 @@
    "reference": "2028, average of states",
    "file_path": "altlasten.json beschluss",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z14",
@@ -142,7 +142,7 @@
    "reference": "2028; today 40.76 % (Eurostat 2024)",
    "file_path": "gesamtlast33.json reihe/0",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z15",
@@ -152,7 +152,7 @@
    "reference": "2028",
    "file_path": "gesamtlast33.json reihe/0",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z16",
@@ -162,7 +162,7 @@
    "reference": "2028",
    "file_path": "netz33.json beschluss/reihe/0",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z17",
@@ -172,7 +172,7 @@
    "reference": "single; new without compulsory saving",
    "file_path": "grenzbelastung33.json zeilen/5",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z18",
@@ -182,7 +182,7 @@
    "reference": "EVS 2023",
    "file_path": "mwst_verteilung.json klassen",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z19",
@@ -192,7 +192,7 @@
    "reference": "mechanical 2.47 %",
    "file_path": "preisniveau33.json reihe/0",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z20",
@@ -202,7 +202,7 @@
    "reference": "2028; country's own legacy surcharge after netting",
    "file_path": "verrechnung_haushalte.json laender/DE",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z21",
@@ -212,7 +212,7 @@
    "reference": "2028; country's own legacy surcharge after netting",
    "file_path": "verrechnung_haushalte.json laender/FR",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z22",
@@ -222,7 +222,7 @@
    "reference": "2028; country's own legacy surcharge after netting",
    "file_path": "verrechnung_haushalte.json laender/IT",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z23",
@@ -232,7 +232,7 @@
    "reference": "2028; country's own legacy surcharge after netting",
    "file_path": "verrechnung_haushalte.json laender/ES",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z24",
@@ -242,7 +242,7 @@
    "reference": "2028; country's own legacy surcharge after netting",
    "file_path": "verrechnung_haushalte.json laender/PL",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z25",
@@ -252,7 +252,7 @@
    "reference": "converging to the common rate by 2058",
    "file_path": "laenderseiten.json staaten/DE/fonds",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z26",
@@ -262,7 +262,7 @@
    "reference": "converging to the common rate by 2058",
    "file_path": "laenderseiten.json staaten/FR/fonds",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z27",
@@ -272,7 +272,7 @@
    "reference": "converging to the common rate by 2058",
    "file_path": "laenderseiten.json staaten/IT/fonds",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z28",
@@ -282,7 +282,7 @@
    "reference": "converging to the common rate by 2058",
    "file_path": "laenderseiten.json staaten/ES/fonds",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z29",
@@ -292,7 +292,7 @@
    "reference": "converging to the common rate by 2058",
    "file_path": "laenderseiten.json staaten/PL/fonds",
    "status": "adopted",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z30",
@@ -302,7 +302,7 @@
    "reference": "official 2025 (Eurostat) plus model change",
    "file_path": "gini.json staaten/DE",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z31",
@@ -312,7 +312,7 @@
    "reference": "official 2025 (Eurostat) plus model change",
    "file_path": "gini.json staaten/FR",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z32",
@@ -322,7 +322,7 @@
    "reference": "official 2025 (Eurostat) plus model change",
    "file_path": "gini.json staaten/IT",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z33",
@@ -332,7 +332,7 @@
    "reference": "official 2025 (Eurostat) plus model change",
    "file_path": "gini.json staaten/ES",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   },
   {
    "id": "Z34",
@@ -342,7 +342,7 @@
    "reference": "official 2025 (Eurostat) plus model change",
    "file_path": "gini.json staaten/PL",
    "status": "check",
-   "model_version": "v4.66"
+   "model_version": "v4.67"
   }
  ]
 }

@@ -72,7 +72,7 @@ def t_objectives():
 
 
 LABEL = [("A+", 5, "basic needs, repairs, circular products"), ("A", 11, "certified sustainable goods"), ("B", 17, "standard goods"),
-         ("C", 25, "resource-intensive goods"), ("Special", 33, "harmful goods (e.g. combustion-engine vehicles, tobacco, alcohol)")]
+         ("C", 25, "resource-intensive goods"), ("Special", 33, "harmful goods (e.g. motor fuels, combustion-engine vehicles, tobacco, alcohol, chemical pesticides, mineral fertilisers)")]
 
 
 def t_label():
@@ -470,7 +470,9 @@ returned. Three elements work through prices rather than prohibitions:</p>
 <li><b>Carbon price.</b> The European carbon price for buildings and transport (ETS2) enters as a revenue path; its revenue falls with emissions
 even though the price rises. Road transport fuel expenditure follows the German projection report 2026 (with-measures scenario).</li>
 <li><b>Special rate on harmful goods.</b> Goods classified as harmful to health or the environment carry 33 % – in the model
-combustion-engine vehicles, tobacco and alcohol. The model assumes that the share of
+motor fuels, combustion-engine vehicles, tobacco and alcohol; chemical pesticides and mineral fertilisers are included by decision of 4 November 2026
+(not yet in the calculation; the household share of these purchases is small). Because firms deduct VAT as input tax, the special rate does not
+reach agricultural use of pesticides and fertilisers; a levy differentiated by harmfulness, as in Denmark, is an open proposal. The model assumes that the share of
 combustion engines in vehicle purchases falls from 80 % in 2028 to 10 % in 2035 (assumption, oriented to EU vehicle CO₂ standards).</li>
 <li><b>VAT label.</b> Table 13 shows the price signal implied by the rates alone. For the same net price, a certified product in class A costs
 {en(-100 * (1.11 / 1.17 - 1), 1)} % less than a standard product; a harmful product costs {en(100 * (1.33 / 1.17 - 1), 1)} % more. A supplier who keeps the consumer price

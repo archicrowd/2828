@@ -60,6 +60,7 @@ STUFEN = [
     ("Kindergewicht im Boden: Varianten 0,3–0,8", ["modell/kindergewicht.py"]),
     ("Härtefall H1–H3 gegen das Netzbudget", ["modell/haertefall.py"]),
     ("Gini heute und neu (EU-SILC)", ["modell/gini.py"]),
+    ("UN-Nachhaltigkeitsziele: Armutsquote (SDG 1.2), untere 40 % (SDG 10.1)", ["modell/sdg_kennzahlen.py"]),
     ("Gini Frankreich und Polen: Zerlegung, Gegenproben", ["modell/gini_frankreich.py"]),
     ("Validierung der Ländermodelle gegen OECD Taxing Wages 2026 und Ministerium (FR)", ["modell/validierung_laender.py"]),
     ("Rentnerausgleich und Lebensarbeitszeit", ["modell/rentnerausgleich.py"]),

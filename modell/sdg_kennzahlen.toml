@@ -1,0 +1,8 @@
+# Kennzahlen der UN-Nachhaltigkeitsziele (modell/sdg_kennzahlen.py, Logbuch v4.67). Prüfrechnung, statisch.
+version = "v4.67"
+jahr = 2028
+# Armutsgefährdungsquote 2025 (60 % des Medians, Gesamtbevölkerung), Eurostat ilc_li02, EU-SILC 2025.
+# SEKUNDÄRQUELLE: eupublicdata.eu (Spiegel der Eurostat-Daten, abgerufen 4.11.2026; Aufschlüsselung „60 %, insgesamt“ dort nicht ausdrücklich
+# genannt) – an der Eurostat-Schnittstelle zu prüfen (aus der Sitzung nicht abrufbar).
+quelle_armutsquote = "Eurostat ilc_li02 (EU-SILC 2025), über eupublicdata.eu (Sekundärquelle, abgerufen 4.11.2026), an der Quelle zu prüfen"
+armutsquote_amtlich_2025 = { DE = 16.1, FR = 16.3, IT = 18.6, ES = 19.5, PL = 13.2 }

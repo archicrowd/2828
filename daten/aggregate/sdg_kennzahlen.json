@@ -1,0 +1,199 @@
+{
+ "version": "v4.67",
+ "status": "Prüfrechnung, statisch",
+ "jahr": 2028,
+ "quelle_armutsquote": "Eurostat ilc_li02 (EU-SILC 2025), über eupublicdata.eu (Sekundärquelle, abgerufen 4.11.2026), an der Quelle zu prüfen",
+ "staaten": {
+  "DE": {
+   "armutsquote_amtlich_2025": 16.1,
+   "armutsquote_rekonstruktion_heute": 16.6,
+   "grenze_heute_jahr": 18375,
+   "jahr": 2028,
+   "untere": {
+    "alle": {
+     "armutsquote_relativ": 13.5,
+     "armutsquote_verankert": 8.6,
+     "einkommen_untere_40_pct": 37.9,
+     "einkommen_alle_pct": 24.4,
+     "median_neu_zu_heute": 1.295
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 16.7,
+     "armutsquote_verankert": 10.5,
+     "einkommen_untere_40_pct": 28.4,
+     "einkommen_alle_pct": 18.3,
+     "median_neu_zu_heute": 1.227
+    }
+   },
+   "obere": {
+    "alle": {
+     "armutsquote_relativ": 13.5,
+     "armutsquote_verankert": 12.1,
+     "einkommen_untere_40_pct": 35.5,
+     "einkommen_alle_pct": 23.9,
+     "median_neu_zu_heute": 1.295
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 16.7,
+     "armutsquote_verankert": 13.1,
+     "einkommen_untere_40_pct": 26.6,
+     "einkommen_alle_pct": 17.9,
+     "median_neu_zu_heute": 1.227
+    }
+   }
+  },
+  "FR": {
+   "armutsquote_amtlich_2025": 16.3,
+   "armutsquote_rekonstruktion_heute": 16.2,
+   "grenze_heute_jahr": 16828,
+   "jahr": 2028,
+   "untere": {
+    "alle": {
+     "armutsquote_relativ": 14.8,
+     "armutsquote_verankert": 7.3,
+     "einkommen_untere_40_pct": 14.9,
+     "einkommen_alle_pct": 12.8,
+     "median_neu_zu_heute": 1.128
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 14.7,
+     "armutsquote_verankert": 9.5,
+     "einkommen_untere_40_pct": 11.2,
+     "einkommen_alle_pct": 9.6,
+     "median_neu_zu_heute": 1.096
+    }
+   },
+   "obere": {
+    "alle": {
+     "armutsquote_relativ": 14.8,
+     "armutsquote_verankert": 9.0,
+     "einkommen_untere_40_pct": 13.5,
+     "einkommen_alle_pct": 12.4,
+     "median_neu_zu_heute": 1.128
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 14.7,
+     "armutsquote_verankert": 10.9,
+     "einkommen_untere_40_pct": 10.1,
+     "einkommen_alle_pct": 9.3,
+     "median_neu_zu_heute": 1.096
+    }
+   }
+  },
+  "IT": {
+   "armutsquote_amtlich_2025": 18.6,
+   "armutsquote_rekonstruktion_heute": 18.8,
+   "grenze_heute_jahr": 14032,
+   "jahr": 2028,
+   "untere": {
+    "alle": {
+     "armutsquote_relativ": 13.7,
+     "armutsquote_verankert": 2.1,
+     "einkommen_untere_40_pct": 42.1,
+     "einkommen_alle_pct": 26.4,
+     "median_neu_zu_heute": 1.232
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 14.3,
+     "armutsquote_verankert": 6.2,
+     "einkommen_untere_40_pct": 31.6,
+     "einkommen_alle_pct": 19.8,
+     "median_neu_zu_heute": 1.179
+    }
+   },
+   "obere": {
+    "alle": {
+     "armutsquote_relativ": 13.7,
+     "armutsquote_verankert": 2.1,
+     "einkommen_untere_40_pct": 42.1,
+     "einkommen_alle_pct": 26.4,
+     "median_neu_zu_heute": 1.232
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 14.3,
+     "armutsquote_verankert": 6.2,
+     "einkommen_untere_40_pct": 31.6,
+     "einkommen_alle_pct": 19.8,
+     "median_neu_zu_heute": 1.179
+    }
+   }
+  },
+  "ES": {
+   "armutsquote_amtlich_2025": 19.5,
+   "armutsquote_rekonstruktion_heute": 19.6,
+   "grenze_heute_jahr": 12954,
+   "jahr": 2028,
+   "untere": {
+    "alle": {
+     "armutsquote_relativ": 11.8,
+     "armutsquote_verankert": 3.7,
+     "einkommen_untere_40_pct": 41.0,
+     "einkommen_alle_pct": 19.9,
+     "median_neu_zu_heute": 1.224
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 13.4,
+     "armutsquote_verankert": 7.7,
+     "einkommen_untere_40_pct": 30.7,
+     "einkommen_alle_pct": 14.9,
+     "median_neu_zu_heute": 1.175
+    }
+   },
+   "obere": {
+    "alle": {
+     "armutsquote_relativ": 11.8,
+     "armutsquote_verankert": 6.6,
+     "einkommen_untere_40_pct": 39.4,
+     "einkommen_alle_pct": 19.5,
+     "median_neu_zu_heute": 1.224
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 13.4,
+     "armutsquote_verankert": 9.8,
+     "einkommen_untere_40_pct": 29.5,
+     "einkommen_alle_pct": 14.6,
+     "median_neu_zu_heute": 1.175
+    }
+   }
+  },
+  "PL": {
+   "armutsquote_amtlich_2025": 13.2,
+   "armutsquote_rekonstruktion_heute": 13.8,
+   "grenze_heute_jahr": 42020,
+   "jahr": 2028,
+   "untere": {
+    "alle": {
+     "armutsquote_relativ": 5.0,
+     "armutsquote_verankert": 0.0,
+     "einkommen_untere_40_pct": 48.2,
+     "einkommen_alle_pct": 26.9,
+     "median_neu_zu_heute": 1.286
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 8.0,
+     "armutsquote_verankert": 3.3,
+     "einkommen_untere_40_pct": 36.2,
+     "einkommen_alle_pct": 20.2,
+     "median_neu_zu_heute": 1.228
+    }
+   },
+   "obere": {
+    "alle": {
+     "armutsquote_relativ": 5.0,
+     "armutsquote_verankert": 0.0,
+     "einkommen_untere_40_pct": 48.2,
+     "einkommen_alle_pct": 26.9,
+     "median_neu_zu_heute": 1.286
+    },
+    "rentner_unveraendert": {
+     "armutsquote_relativ": 8.0,
+     "armutsquote_verankert": 3.3,
+     "einkommen_untere_40_pct": 36.2,
+     "einkommen_alle_pct": 20.2,
+     "median_neu_zu_heute": 1.228
+    }
+   }
+  }
+ },
+ "hinweis": "SDG 1.2: Armutsgefährdungsquote (60 % des Medians), amtlicher Wert 2025 × Verhältnis neu/heute der Rekonstruktion; relativ = Grenze am neuen Median, verankert = heutige Grenze. SDG 10.1: Änderung des verfügbaren Einkommens der unteren 40 % (nach heutigem Einkommen) gegen alle, Kaufkraft 2026, ohne Preisniveauschub. Band untere/obere wie gini.json. Hauptvariante: Rentnerhaushalte (25 %) unverändert – Variante „alle“ bildet Rentner wie Erwerbstätige ab und ist eine obere Grenze. Statisch, ohne Kapitaleinkommen und Verhaltensänderung."
+}
