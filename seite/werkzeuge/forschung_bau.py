@@ -61,6 +61,7 @@ SEIT_PRUEFUNG = [
  ("v4.67", "Kennzahlen SDG 1.2 und 10.1 (neue Prüfrechnung); Pestizide und Dünger in der Sonderstufe; Korrektur 85", "keine geltende Zahl"),
  ("v4.68", "Rentner: Varianten zur Regel E (vorläufige Prüfrechnung)", "keine geltende Zahl"),
  ("v4.69", "Rentner: Kürzung nach Zusage je Versicherungsjahr (vorläufige Prüfrechnung)", "keine geltende Zahl"),
+ ("v4.70", "Rentner: Beispielrechner N2/3 (Entwurf)", "keine Rechnung"),
 ]
 
 

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.69**
+Stand: 24. Oktober 2026 · Modellstand **v4.70**
 
 ---
 
@@ -4723,6 +4723,20 @@ Sekundärfundort). **Wodurch aufgefallen:** Auftrag der Initiative.
 
 ---
 
+### v4.70 — Rentner: Beispielrechner zur Variante N2/3 und Erzählungen im Vergleich (Entwurf)
+
+**Art der Änderung: PATCH (Darstellung), keine Zahl bewegt.** 5. November 2026.
+
+**Neu `seite/entwurf/rentner-n23/rechner.html`:** Beispielrechner „Ein Arbeitsleben schützt den doppelten Grundbedarf“: Kürzung der Zusage unter
+N2/3 (0 % bis 2 G, 27,7 % bis 3 G, 55,4 % darüber) mit Vergleich zu E und Jahresschutz ab 35 Jahren (B2/1, 27,5 / 55,1 %); G frei wählbar
+(Deutschland 1.029 € im Monat, Kaufkraft 2026); Beispielfälle wie v4.69; Modellmittel je Zusagegruppe aus `rentner_varianten.json`. Zeigt nur
+die Kürzung, nicht das Haushaltsnetto (im Text vermerkt). Daneben die vier Erzählungen E, N2/3, B, T mit Rechnung, Anteil im Plus und Schwäche.
+Veröffentlicht als privates Artifact (Entwurf).
+
+**Datenquelle:** `daten/aggregate/rentner_varianten.json`, `rentner_beitragsjahre.json`. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4797,7 +4811,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.69
+## 7 | Offene Punkte, Stand v4.70
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

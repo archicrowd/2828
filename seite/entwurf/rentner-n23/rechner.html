@@ -1,0 +1,271 @@
+<title>Rentenrechner Doppelter Grundbedarf</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: ein Werkzeugblatt – Eingaben links, Ergebnis rechts, darunter das Band der Zusage und die vier Erzählungen im Vergleich */
+:root{
+  --bg:#f6f7f8; --panel:#ffffff; --fg:#14222e; --muted:#5a6b78; --line:#d7dee4;
+  --navy:#0F3B5C; --gold:#b8860b; --gold-soft:#f3e6c4; --free:#8FB8A0; --free-soft:#dcebe2;
+  --mid:#d9a441; --top:#a8452f; --good:#2f7d4f; --bad:#a8452f;
+  --display:"Space Grotesk",system-ui,sans-serif; --body:"Source Sans 3",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e161d; --panel:#15212b; --fg:#e6edf2; --muted:#9aabb8; --line:#2a3a47;
+  --navy:#8fbfe0; --gold:#e0b44a; --gold-soft:#3a3020; --free:#7fae92; --free-soft:#1d3428;
+  --mid:#d9a441; --top:#e07a62; --good:#6cc28f; --bad:#e07a62; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e161d; --panel:#15212b; --fg:#e6edf2; --muted:#9aabb8; --line:#2a3a47;
+  --navy:#8fbfe0; --gold:#e0b44a; --gold-soft:#3a3020; --free:#7fae92; --free-soft:#1d3428;
+  --mid:#d9a441; --top:#e07a62; --good:#6cc28f; --bad:#e07a62; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:1040px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);color:var(--navy);text-wrap:balance;margin:0}
+h1{font-size:1.9rem;line-height:1.15}
+h2{font-size:1.25rem}
+h3{font-size:1.02rem}
+p{margin:0}
+.lead{color:var(--muted);max-width:68ch}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.head{display:grid;gap:8px}
+.tool{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px}
+@media (max-width:760px){.tool{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:16px;min-width:0}
+label{font-weight:600;display:block;margin-bottom:4px}
+.hint{font-size:.85rem;color:var(--muted)}
+.field{display:grid;gap:6px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+input[type=number]{font-family:var(--mono);font-size:1.05rem;width:9ch;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+input[type=range]{flex:1;min-width:140px;accent-color:var(--gold)}
+input:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.unit{font-family:var(--mono);color:var(--muted);font-size:.9rem}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+.presets button{font:inherit;font-size:.85rem;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}
+.presets button:hover{border-color:var(--gold)}
+.presets button[aria-pressed="true"]{background:var(--gold-soft);border-color:var(--gold)}
+.big{font-family:var(--display);font-size:2.6rem;font-weight:700;line-height:1;color:var(--navy);font-variant-numeric:tabular-nums}
+.big small{font-size:1rem;font-weight:500;color:var(--muted)}
+.state{display:inline-block;font-family:var(--mono);font-size:.78rem;padding:2px 8px;border-radius:999px;background:var(--free-soft);color:var(--good)}
+.state.cut{background:var(--gold-soft);color:var(--fg)}
+dl{display:grid;grid-template-columns:auto auto;gap:6px 16px;margin:0;font-variant-numeric:tabular-nums}
+dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
+.cmp{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.95rem}
+.cmp th,.cmp td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right}
+.cmp th:first-child,.cmp td:first-child{text-align:left}
+.cmp th{font-weight:600;color:var(--muted);font-size:.82rem}
+.cmp tr.pick td{font-weight:600}
+.cmp td.n{font-family:var(--mono)}
+.band{display:grid;gap:8px}
+.bar{position:relative;height:40px;border-radius:6px;overflow:hidden;display:flex;border:1px solid var(--line)}
+.seg{height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.75rem;color:var(--fg);white-space:nowrap;overflow:hidden}
+.seg.f{background:var(--free-soft)} .seg.m{background:var(--gold-soft)} .seg.t{background:color-mix(in srgb,var(--top) 22%,var(--panel))}
+.marker{position:absolute;top:-2px;bottom:-2px;width:3px;background:var(--navy);transition:left .2s}
+@media (prefers-reduced-motion:reduce){.marker{transition:none}}
+.ticks{position:relative;height:18px;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.ticks span{position:absolute;transform:translateX(-50%)}
+.model{border-left:3px solid var(--free);padding-left:12px}
+.narr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:760px){.narr{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.card.pick{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.quote{font-family:var(--display);font-size:1.05rem;color:var(--fg)}
+.tag{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kv{font-size:.92rem;color:var(--muted)}
+.kv b{color:var(--fg);font-weight:600}
+.foot{font-size:.85rem;color:var(--muted);max-width:80ch;display:grid;gap:6px}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div class="kicker">Initiative 28:28 · Entwicklungsmodus · Modellstand v4.69 · vorläufig, kein Beschluss</div>
+    <h1>Ein Arbeitsleben schützt den doppelten Grundbedarf</h1>
+    <p class="lead">Beispielrechner für die Variante N2/3: Die Rentenzusage bleibt bis zum doppelten Grundbedarf ungekürzt. Darüber trägt sie gestuft
+      zum Altlastenfonds bei, 27,7 % auf den nächsten Grundbedarf und 55,4 % auf alles darüber. Die Stufen sind in Vielfachen des Grundbedarfs G
+      des jeweiligen Staates angegeben und gelten so in jedem Staat.</p>
+  </header>
+
+  <section class="tool" aria-label="Rechner">
+    <div class="panel">
+      <div class="field">
+        <label for="z">Zusage im Monat (gesetzliche Rente und Versorgung, brutto)</label>
+        <div class="row">
+          <input type="range" id="zr" min="0" max="6000" step="10" value="1836" aria-label="Zusage im Monat">
+          <input type="number" id="z" min="0" max="20000" step="10" value="1836"><span class="unit">€</span>
+        </div>
+        <p class="hint">Eigene Vorsorge (Betriebsrente, privat) und Erwerbseinkommen werden nicht gekürzt.</p>
+      </div>
+      <div class="field">
+        <label for="j">Versicherungsjahre</label>
+        <div class="row">
+          <input type="range" id="jr" min="0" max="50" step="1" value="45" aria-label="Versicherungsjahre">
+          <input type="number" id="j" min="0" max="50" step="1" value="45"><span class="unit">Jahre</span>
+        </div>
+        <p class="hint">Nur für den Vergleich mit dem Jahresschutz. N2/3 braucht die Jahre nicht.</p>
+      </div>
+      <div class="field">
+        <label for="g">Grundbedarf G des Staates</label>
+        <div class="row">
+          <input type="number" id="g" min="100" max="5000" step="1" value="1029"><span class="unit">€ im Monat</span>
+        </div>
+        <p class="hint">Deutschland: 1.029 € (12.348 € im Jahr, Kaufkraft 2026). Für einen anderen Staat dessen Grundbedarf eintragen.</p>
+      </div>
+      <div class="field">
+        <span class="tag">Beispielfälle (Deutschland, Größenordnung)</span>
+        <div class="presets" id="presets"></div>
+      </div>
+    </div>
+
+    <div class="panel" aria-live="polite">
+      <div class="row" style="justify-content:space-between">
+        <span class="tag">Kürzung unter N2/3</span>
+        <span class="state" id="state"></span>
+      </div>
+      <div class="big" id="cut">0 € <small>im Monat</small></div>
+      <dl>
+        <dt>Zusage in Vielfachen von G</dt><dd id="mult"></dd>
+        <dt>Zusage nach Kürzung</dt><dd id="rest"></dd>
+        <dt>Durchschnittlicher Kürzungssatz</dt><dd id="avg"></dd>
+        <dt>Satz auf den letzten Euro</dt><dd id="marg"></dd>
+      </dl>
+      <div class="band">
+        <div class="bar" id="bar">
+          <div class="seg f" id="s1">frei</div><div class="seg m" id="s2">27,7 %</div><div class="seg t" id="s3">55,4 %</div>
+          <div class="marker" id="mk"></div>
+        </div>
+        <div class="ticks" id="ticks"></div>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="cmp" aria-label="Vergleich der Regeln">
+          <thead><tr><th>Regel</th><th>Kürzung</th><th>nach Kürzung</th></tr></thead>
+          <tbody id="cmp"></tbody>
+        </table>
+      </div>
+      <p class="model hint" id="model"></p>
+    </div>
+  </section>
+
+  <section style="display:grid;gap:14px" aria-label="Erzählungen im Vergleich">
+    <h2>Vier Erzählungen nebeneinander</h2>
+    <div class="narr">
+      <article class="card">
+        <span class="tag">E · geltend</span>
+        <h3>Alle über dem Grundbedarf tragen ein wenig</h3>
+        <p class="quote">„Jeder Euro über dem Grundbedarf trägt 15 %.“</p>
+        <p class="kv">Rechnung: <b>15 % ab 1 G</b> · im Plus: <b>32 %</b> der Rentnerhaushalte</p>
+        <p class="kv">Schwäche: trifft die typische Rente nach langer Erwerbszeit (1,5–2 G: niemand im Plus).</p>
+      </article>
+      <article class="card pick">
+        <span class="tag">N2/3 · Vorzug</span>
+        <h3>Ein Arbeitsleben schützt den doppelten Grundbedarf</h3>
+        <p class="quote">„Was ein volles Arbeitsleben einbringt, bleibt. Was darüber hinaus versprochen wurde, trägt gestuft bei.“</p>
+        <p class="kv">Rechnung: <b>0 % bis 2 G, 27,7 % bis 3 G, 55,4 % darüber</b> · im Plus: <b>65 %</b>; Zusagen bis 2 G zu 100 %</p>
+        <p class="kv">Schwäche: Satz 55 % in der obersten Stufe (Eigentumsschutz, P1); über 3 G im Mittel −1.042 € im Monat.</p>
+      </article>
+      <article class="card">
+        <span class="tag">B · Option</span>
+        <h3>Jedes Jahr schützt</h3>
+        <p class="quote">„Jedes Versicherungsjahr schützt einen festen Teil, voll ab 35 Jahren.“</p>
+        <p class="kv">Rechnung: <b>Freibetrag min(J,35)/35 × 2 G, 27,5 / 55,1 %</b> · im Plus: <b>64 %</b></p>
+        <p class="kv">Schwäche: kürzt bei gleichen Beiträgen die kürzere Laufbahn; in Deutschland kaum Unterschied zu N2/3.</p>
+      </article>
+      <article class="card">
+        <span class="tag">T · tarifgleich</span>
+        <h3>Die Rente folgt dem Tarif</h3>
+        <p class="quote">„Die Zusage wird gestuft wie jedes Einkommen.“</p>
+        <p class="kv">Rechnung: <b>0 / 15 / 25 / 33 % ab 1,5 / 2 / 3 G</b> · im Plus: <b>52 %</b></p>
+        <p class="kv">Schwäche: kostet den Fonds 1,1 Mrd. € gegenüber E; 1,5–2 G nur zu 37 % im Plus.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Alle Anteile: Rentnerhaushalte in Deutschland 2028, Kaufkraft 2026, gleiche Entlastung des Fonds wie Regel E (25,1 Mrd. €), außer T.
+      Rechnung: <code>modell/rentner_varianten.py</code> und <code>modell/rentner_beitragsjahre.py</code> (EU-SILC 2025, ASID 2023;
+      Versicherungsjahre zugeschätzt, Annahme).</p>
+    <p>Der Rechner zeigt nur die Kürzung der Zusage, nicht die Änderung des Haushaltsnettos. Dazu kommen Dividende, Steuer, Label und der Boden
+      (heutige Grundsicherung 1.083 € allein, 1.632 € als Paar). Die Modellwerte je Gruppe stehen unter dem Vergleich.</p>
+    <p>Beispielfälle: Rentenwert 40,79 € je Entgeltpunkt; Ruhegehalt 1,79375 % je Dienstjahr (§ 14 BeamtVG), Bezüge 5.000 € angenommen.
+      Beides eigene Kenntnis, an der Quelle zu prüfen.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var RW=40.79;
+  var CASES=[
+    {k:"45 J., Durchschnitt",z:45*RW,j:45},
+    {k:"40 J., niedriger Verdienst",z:32*RW,j:40},
+    {k:"30 J., höherer Verdienst",z:45*RW,j:30},
+    {k:"45 J., Beitragsgrenze",z:90*RW,j:45},
+    {k:"Ruhegehalt 40 Dienstjahre",z:0.7175*5000,j:40},
+    {k:"20 J., Durchschnitt",z:20*RW,j:20}
+  ];
+  // Modellmittel N2/3 je Gruppe nach Zusage (Deutschland, Änderung Haushaltsnetto je Monat; rentner_varianten.json v4.68/v4.69)
+  var MODEL=[[1,64,71],[1.5,51,100],[2,24,100],[3,-162,5],[Infinity,-1042,0]];
+  var $=function(id){return document.getElementById(id)};
+  var fmt=new Intl.NumberFormat("de-DE",{maximumFractionDigits:0});
+  var pct=new Intl.NumberFormat("de-DE",{maximumFractionDigits:1});
+  function eur(x){return fmt.format(Math.round(x))+" €"}
+  function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+  function cutN23(z,G){return 0.277*clamp(z-2*G,0,G)+0.554*Math.max(0,z-3*G)}
+  function cutE(z,G){return 0.15*Math.max(0,z-G)}
+  function cutB(z,j,G){var F=Math.min(j,35)/35*2*G;return 0.275*clamp(z-F,0,G)+0.551*Math.max(0,z-F-G)}
+  function num(id,def){var v=parseFloat($(id).value);return isFinite(v)&&v>=0?v:def}
+
+  var pre=$("presets");
+  CASES.forEach(function(c,i){
+    var b=document.createElement("button");b.type="button";b.textContent=c.k;b.setAttribute("aria-pressed","false");
+    b.addEventListener("click",function(){
+      $("z").value=$("zr").value=Math.round(c.z);$("j").value=$("jr").value=c.j;$("g").value=1029;
+      render(i);
+    });
+    pre.appendChild(b);
+  });
+
+  function render(sel){
+    var z=num("z",0),j=num("j",0),G=Math.max(1,num("g",1029));
+    Array.prototype.forEach.call(pre.children,function(b,i){b.setAttribute("aria-pressed",i===sel?"true":"false")});
+    var c=cutN23(z,G);
+    $("cut").innerHTML=eur(c)+" <small>im Monat</small>";
+    var st=$("state");
+    if(c<=0){st.textContent="ungekürzt";st.className="state"}else{st.textContent="gekürzt";st.className="state cut"}
+    $("mult").textContent=pct.format(z/G)+" G";
+    $("rest").textContent=eur(z-c);
+    $("avg").textContent=z>0?pct.format(c/z*100)+" %":"–";
+    $("marg").textContent=z>3*G?"55,4 %":z>2*G?"27,7 %":"0 %";
+
+    var max=Math.max(4*G,z*1.08);
+    $("s1").style.width=(2*G/max*100)+"%";
+    $("s2").style.width=(G/max*100)+"%";
+    $("s3").style.width=((max-3*G)/max*100)+"%";
+    $("mk").style.left="calc("+clamp(z/max*100,0,100)+"% - 1px)";
+    var t="";[0,G,2*G,3*G].forEach(function(v,i){t+='<span style="left:'+(v/max*100)+'%">'+(i===0?"0":i+" G")+"</span>"});
+    $("ticks").innerHTML=t;
+
+    var rows=[
+      ["N2/3 (Vorzug)",c,true],
+      ["E (geltend)",cutE(z,G),false],
+      ["B, Jahresschutz ab 35 J. ("+j+" J.)",cutB(z,j,G),false]
+    ];
+    $("cmp").innerHTML=rows.map(function(r){
+      return '<tr class="'+(r[2]?"pick":"")+'"><td>'+r[0]+'</td><td class="n">'+eur(r[1])+'</td><td class="n">'+eur(z-r[1])+"</td></tr>";
+    }).join("");
+
+    var m=$("model");
+    if(Math.round(G)===1029){
+      var x=z/G,g=MODEL.find(function(r){return x<=r[0]});
+      var lab=x<=1?"bis 1 G":x<=1.5?"1–1,5 G":x<=2?"1,5–2 G":x<=3?"2–3 G":"über 3 G";
+      m.textContent="Im Modell (Deutschland 2028) ändert sich das Haushaltsnetto der Rentnerhaushalte mit einer Zusage von "+lab+
+        " unter N2/3 im Mittel um "+(g[1]>0?"+":"")+fmt.format(g[1])+" € im Monat; "+g[2]+" % von ihnen haben mehr.";
+      m.hidden=false;
+    }else{m.hidden=true}
+  }
+  function link(a,b){
+    $(a).addEventListener("input",function(){$(b).value=$(a).value;render(-1)});
+    $(b).addEventListener("input",function(){$(a).value=$(b).value;render(-1)});
+  }
+  link("zr","z");link("jr","j");
+  $("g").addEventListener("input",function(){render(-1)});
+  render(0);
+})();
+</script>
