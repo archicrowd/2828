@@ -1,0 +1,861 @@
+{
+ "version": "v4.69",
+ "status": "Entwicklungsmodus: vorläufige Prüfrechnung (Deutschland, 2028, Kaufkraft 2026), kein Beschluss",
+ "grundbedarf_monat": 1029,
+ "kalibrierung_jahre": {
+  "a": 44.0,
+  "b": 11.5,
+  "c": 7.0,
+  "ziel_anteile": [
+   0.412,
+   0.192,
+   0.396
+  ],
+  "modell_anteile": [
+   0.42,
+   0.204,
+   0.376
+  ],
+  "ziel_mittel_relativ": [
+   0.57,
+   1.128,
+   1.385
+  ],
+  "modell_mittel_relativ": [
+   0.675,
+   0.938,
+   1.397
+  ],
+  "rvb2025": {
+   "mittel_alle": 1204,
+   "mittel_klassen": [
+    686,
+    1358,
+    1668
+   ]
+  }
+ },
+ "varianten": [
+  {
+   "name": "E",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.15
+    ]
+   ],
+   "kuerzung_faelle_monat": {
+    "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)": 121,
+    "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)": 41,
+    "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)": 121,
+    "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)": 396,
+    "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)": 384,
+    "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0
+   },
+   "anteil_mehr_pct": 32.2,
+   "mittel_monat": -121,
+   "lange_laufbahn_bis_2G": {
+    "anteil_mehr_pct": 34,
+    "mittel_monat": -23,
+    "anteil_personen_pct": 31
+   },
+   "kurze_laufbahn_ueber_2G": {
+    "anteil_mehr_pct": 0,
+    "mittel_monat": -261,
+    "anteil_personen_pct": 1
+   },
+   "nach_jahren": {
+    "unter 35 J.": {
+     "mehr_pct": 56,
+     "mittel": 18
+    },
+    "35–40 J.": {
+     "mehr_pct": 47,
+     "mittel": -27
+    },
+    "40–45 J.": {
+     "mehr_pct": 31,
+     "mittel": -88
+    },
+    "ab 45 J.": {
+     "mehr_pct": 12,
+     "mittel": -269
+    }
+   },
+   "nach_zusage": {
+    "bis 1 G": {
+     "mehr_pct": 71,
+     "mittel": 64
+    },
+    "1–1,5 G": {
+     "mehr_pct": 57,
+     "mittel": 11
+    },
+    "1,5–2 G": {
+     "mehr_pct": 0,
+     "mittel": -89
+    },
+    "2–3 G": {
+     "mehr_pct": 0,
+     "mittel": -254
+    },
+    "über 3 G": {
+     "mehr_pct": 0,
+     "mittel": -649
+    }
+   },
+   "matrix_mehr_pct": {
+    "unter 35 J.": {
+     "bis 1 G": 60,
+     "1–1,5 G": 68,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "35–40 J.": {
+     "bis 1 G": 82,
+     "1–1,5 G": 60,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "40–45 J.": {
+     "bis 1 G": 84,
+     "1–1,5 G": 51,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "ab 45 J.": {
+     "bis 1 G": 90,
+     "1–1,5 G": 46,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
+     "über 3 G": 0
+    }
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": 0.0
+  },
+  {
+   "name": "N2/3",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     2.0,
+     0.277
+    ],
+    [
+     3.0,
+     0.554
+    ]
+   ],
+   "kuerzung_faelle_monat": {
+    "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)": 0,
+    "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)": 0,
+    "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)": 0,
+    "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)": 609,
+    "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)": 562,
+    "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0
+   },
+   "anteil_mehr_pct": 64.9,
+   "mittel_monat": -116,
+   "lange_laufbahn_bis_2G": {
+    "anteil_mehr_pct": 98,
+    "mittel_monat": 42,
+    "anteil_personen_pct": 31
+   },
+   "kurze_laufbahn_ueber_2G": {
+    "anteil_mehr_pct": 7,
+    "mittel_monat": -178,
+    "anteil_personen_pct": 1
+   },
+   "nach_jahren": {
+    "unter 35 J.": {
+     "mehr_pct": 76,
+     "mittel": 44
+    },
+    "35–40 J.": {
+     "mehr_pct": 83,
+     "mittel": 16
+    },
+    "40–45 J.": {
+     "mehr_pct": 73,
+     "mittel": -41
+    },
+    "ab 45 J.": {
+     "mehr_pct": 44,
+     "mittel": -318
+    }
+   },
+   "nach_zusage": {
+    "bis 1 G": {
+     "mehr_pct": 71,
+     "mittel": 64
+    },
+    "1–1,5 G": {
+     "mehr_pct": 100,
+     "mittel": 51
+    },
+    "1,5–2 G": {
+     "mehr_pct": 100,
+     "mittel": 24
+    },
+    "2–3 G": {
+     "mehr_pct": 5,
+     "mittel": -162
+    },
+    "über 3 G": {
+     "mehr_pct": 0,
+     "mittel": -1042
+    }
+   },
+   "matrix_mehr_pct": {
+    "unter 35 J.": {
+     "bis 1 G": 60,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 7,
+     "über 3 G": 0
+    },
+    "35–40 J.": {
+     "bis 1 G": 82,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 4,
+     "über 3 G": 0
+    },
+    "40–45 J.": {
+     "bis 1 G": 84,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 7,
+     "über 3 G": 0
+    },
+    "ab 45 J.": {
+     "bis 1 G": 90,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 4,
+     "über 3 G": 0
+    }
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": 0.0
+  },
+  {
+   "name": "B1,5 – Freibetrag 1,5 G bei 45 Jahren, ein Satz darüber",
+   "f": 1.5,
+   "voll": 45,
+   "kuerzung_faelle_monat": {
+    "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)": 64,
+    "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)": 0,
+    "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)": 176,
+    "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)": 465,
+    "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)": 484,
+    "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 28
+   },
+   "satz": 0.218,
+   "satz_oben": null,
+   "freibetrag_45_jahre_monat": 1544,
+   "je_jahr_monat": 34.3,
+   "anteil_mehr_pct": 43.6,
+   "mittel_monat": -119,
+   "lange_laufbahn_bis_2G": {
+    "anteil_mehr_pct": 66,
+    "mittel_monat": 17,
+    "anteil_personen_pct": 31
+   },
+   "kurze_laufbahn_ueber_2G": {
+    "anteil_mehr_pct": 0,
+    "mittel_monat": -338,
+    "anteil_personen_pct": 1
+   },
+   "nach_jahren": {
+    "unter 35 J.": {
+     "mehr_pct": 50,
+     "mittel": 7
+    },
+    "35–40 J.": {
+     "mehr_pct": 59,
+     "mittel": -20
+    },
+    "40–45 J.": {
+     "mehr_pct": 51,
+     "mittel": -69
+    },
+    "ab 45 J.": {
+     "mehr_pct": 27,
+     "mittel": -271
+    }
+   },
+   "nach_zusage": {
+    "bis 1 G": {
+     "mehr_pct": 71,
+     "mittel": 63
+    },
+    "1–1,5 G": {
+     "mehr_pct": 85,
+     "mittel": 35
+    },
+    "1,5–2 G": {
+     "mehr_pct": 15,
+     "mittel": -55
+    },
+    "2–3 G": {
+     "mehr_pct": 0,
+     "mittel": -254
+    },
+    "über 3 G": {
+     "mehr_pct": 0,
+     "mittel": -747
+    }
+   },
+   "matrix_mehr_pct": {
+    "unter 35 J.": {
+     "bis 1 G": 59,
+     "1–1,5 G": 55,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "35–40 J.": {
+     "bis 1 G": 82,
+     "1–1,5 G": 89,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "40–45 J.": {
+     "bis 1 G": 84,
+     "1–1,5 G": 100,
+     "1,5–2 G": 15,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "ab 45 J.": {
+     "bis 1 G": 90,
+     "1–1,5 G": 100,
+     "1,5–2 G": 25,
+     "2–3 G": 0,
+     "über 3 G": 0
+    }
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": -0.0
+  },
+  {
+   "name": "B2 – Freibetrag 2 G bei 45 Jahren, ein Satz darüber",
+   "f": 2.0,
+   "voll": 45,
+   "kuerzung_faelle_monat": {
+    "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)": 0,
+    "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)": 0,
+    "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)": 165,
+    "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)": 574,
+    "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)": 626,
+    "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0
+   },
+   "satz": 0.356,
+   "satz_oben": null,
+   "freibetrag_45_jahre_monat": 2058,
+   "je_jahr_monat": 45.7,
+   "anteil_mehr_pct": 59.3,
+   "mittel_monat": -116,
+   "lange_laufbahn_bis_2G": {
+    "anteil_mehr_pct": 96,
+    "mittel_monat": 41,
+    "anteil_personen_pct": 31
+   },
+   "kurze_laufbahn_ueber_2G": {
+    "anteil_mehr_pct": 0,
+    "mittel_monat": -395,
+    "anteil_personen_pct": 1
+   },
+   "nach_jahren": {
+    "unter 35 J.": {
+     "mehr_pct": 65,
+     "mittel": 23
+    },
+    "35–40 J.": {
+     "mehr_pct": 74,
+     "mittel": -5
+    },
+    "40–45 J.": {
+     "mehr_pct": 69,
+     "mittel": -53
+    },
+    "ab 45 J.": {
+     "mehr_pct": 44,
+     "mittel": -291
+    }
+   },
+   "nach_zusage": {
+    "bis 1 G": {
+     "mehr_pct": 71,
+     "mittel": 64
+    },
+    "1–1,5 G": {
+     "mehr_pct": 97,
+     "mittel": 48
+    },
+    "1,5–2 G": {
+     "mehr_pct": 77,
+     "mittel": 5
+    },
+    "2–3 G": {
+     "mehr_pct": 2,
+     "mittel": -218
+    },
+    "über 3 G": {
+     "mehr_pct": 0,
+     "mittel": -918
+    }
+   },
+   "matrix_mehr_pct": {
+    "unter 35 J.": {
+     "bis 1 G": 60,
+     "1–1,5 G": 90,
+     "1,5–2 G": 11,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "35–40 J.": {
+     "bis 1 G": 82,
+     "1–1,5 G": 100,
+     "1,5–2 G": 51,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "40–45 J.": {
+     "bis 1 G": 84,
+     "1–1,5 G": 100,
+     "1,5–2 G": 88,
+     "2–3 G": 1,
+     "über 3 G": 0
+    },
+    "ab 45 J.": {
+     "bis 1 G": 90,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 3,
+     "über 3 G": 0
+    }
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": -0.0
+  },
+  {
+   "name": "B2/1 – Freibetrag 2 G bei 45 Jahren, s bis F + 1 G, 2 s darüber",
+   "f": 2.0,
+   "voll": 45,
+   "kuerzung_faelle_monat": {
+    "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)": 0,
+    "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)": 0,
+    "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)": 120,
+    "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)": 567,
+    "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)": 642,
+    "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0
+   },
+   "satz": 0.258,
+   "satz_oben": 0.516,
+   "freibetrag_45_jahre_monat": 2058,
+   "je_jahr_monat": 45.7,
+   "anteil_mehr_pct": 60.2,
+   "mittel_monat": -116,
+   "lange_laufbahn_bis_2G": {
+    "anteil_mehr_pct": 96,
+    "mittel_monat": 42,
+    "anteil_personen_pct": 31
+   },
+   "kurze_laufbahn_ueber_2G": {
+    "anteil_mehr_pct": 0,
+    "mittel_monat": -340,
+    "anteil_personen_pct": 1
+   },
+   "nach_jahren": {
+    "unter 35 J.": {
+     "mehr_pct": 67,
+     "mittel": 28
+    },
+    "35–40 J.": {
+     "mehr_pct": 74,
+     "mittel": 2
+    },
+    "40–45 J.": {
+     "mehr_pct": 70,
+     "mittel": -45
+    },
+    "ab 45 J.": {
+     "mehr_pct": 44,
+     "mittel": -301
+    }
+   },
+   "nach_zusage": {
+    "bis 1 G": {
+     "mehr_pct": 71,
+     "mittel": 64
+    },
+    "1–1,5 G": {
+     "mehr_pct": 98,
+     "mittel": 49
+    },
+    "1,5–2 G": {
+     "mehr_pct": 80,
+     "mittel": 10
+    },
+    "2–3 G": {
+     "mehr_pct": 3,
+     "mittel": -175
+    },
+    "über 3 G": {
+     "mehr_pct": 0,
+     "mittel": -997
+    }
+   },
+   "matrix_mehr_pct": {
+    "unter 35 J.": {
+     "bis 1 G": 60,
+     "1–1,5 G": 93,
+     "1,5–2 G": 21,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "35–40 J.": {
+     "bis 1 G": 82,
+     "1–1,5 G": 100,
+     "1,5–2 G": 54,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "40–45 J.": {
+     "bis 1 G": 84,
+     "1–1,5 G": 100,
+     "1,5–2 G": 90,
+     "2–3 G": 1,
+     "über 3 G": 0
+    },
+    "ab 45 J.": {
+     "bis 1 G": 90,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 5,
+     "über 3 G": 0
+    }
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": -0.0
+  },
+  {
+   "name": "B2/1-40 – wie B2/1, Freibetrag voll ab 40 Jahren",
+   "f": 2.0,
+   "voll": 40,
+   "kuerzung_faelle_monat": {
+    "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)": 0,
+    "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)": 0,
+    "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)": 79,
+    "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)": 595,
+    "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)": 550,
+    "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0
+   },
+   "satz": 0.271,
+   "satz_oben": 0.541,
+   "freibetrag_45_jahre_monat": 2058,
+   "je_jahr_monat": 45.7,
+   "anteil_mehr_pct": 63.4,
+   "mittel_monat": -116,
+   "lange_laufbahn_bis_2G": {
+    "anteil_mehr_pct": 98,
+    "mittel_monat": 42,
+    "anteil_personen_pct": 31
+   },
+   "kurze_laufbahn_ueber_2G": {
+    "anteil_mehr_pct": 0,
+    "mittel_monat": -292,
+    "anteil_personen_pct": 1
+   },
+   "nach_jahren": {
+    "unter 35 J.": {
+     "mehr_pct": 71,
+     "mittel": 35
+    },
+    "35–40 J.": {
+     "mehr_pct": 81,
+     "mittel": 12
+    },
+    "40–45 J.": {
+     "mehr_pct": 73,
+     "mittel": -40
+    },
+    "ab 45 J.": {
+     "mehr_pct": 44,
+     "mittel": -313
+    }
+   },
+   "nach_zusage": {
+    "bis 1 G": {
+     "mehr_pct": 71,
+     "mittel": 64
+    },
+    "1–1,5 G": {
+     "mehr_pct": 100,
+     "mittel": 50
+    },
+    "1,5–2 G": {
+     "mehr_pct": 93,
+     "mittel": 19
+    },
+    "2–3 G": {
+     "mehr_pct": 5,
+     "mittel": -167
+    },
+    "über 3 G": {
+     "mehr_pct": 0,
+     "mittel": -1026
+    }
+   },
+   "matrix_mehr_pct": {
+    "unter 35 J.": {
+     "bis 1 G": 60,
+     "1–1,5 G": 99,
+     "1,5–2 G": 52,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "35–40 J.": {
+     "bis 1 G": 82,
+     "1–1,5 G": 100,
+     "1,5–2 G": 90,
+     "2–3 G": 1,
+     "über 3 G": 0
+    },
+    "40–45 J.": {
+     "bis 1 G": 84,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 7,
+     "über 3 G": 0
+    },
+    "ab 45 J.": {
+     "bis 1 G": 90,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 4,
+     "über 3 G": 0
+    }
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": 0.0
+  },
+  {
+   "name": "B2/1-35 – wie B2/1, Freibetrag voll ab 35 Jahren",
+   "f": 2.0,
+   "voll": 35,
+   "kuerzung_faelle_monat": {
+    "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)": 0,
+    "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)": 0,
+    "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)": 20,
+    "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)": 605,
+    "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)": 559,
+    "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0
+   },
+   "satz": 0.275,
+   "satz_oben": 0.551,
+   "freibetrag_45_jahre_monat": 2058,
+   "je_jahr_monat": 45.7,
+   "anteil_mehr_pct": 64.5,
+   "mittel_monat": -116,
+   "lange_laufbahn_bis_2G": {
+    "anteil_mehr_pct": 98,
+    "mittel_monat": 42,
+    "anteil_personen_pct": 31
+   },
+   "kurze_laufbahn_ueber_2G": {
+    "anteil_mehr_pct": 2,
+    "mittel_monat": -224,
+    "anteil_personen_pct": 1
+   },
+   "nach_jahren": {
+    "unter 35 J.": {
+     "mehr_pct": 74,
+     "mittel": 41
+    },
+    "35–40 J.": {
+     "mehr_pct": 83,
+     "mittel": 16
+    },
+    "40–45 J.": {
+     "mehr_pct": 73,
+     "mittel": -40
+    },
+    "ab 45 J.": {
+     "mehr_pct": 44,
+     "mittel": -317
+    }
+   },
+   "nach_zusage": {
+    "bis 1 G": {
+     "mehr_pct": 71,
+     "mittel": 64
+    },
+    "1–1,5 G": {
+     "mehr_pct": 100,
+     "mittel": 51
+    },
+    "1,5–2 G": {
+     "mehr_pct": 98,
+     "mittel": 23
+    },
+    "2–3 G": {
+     "mehr_pct": 5,
+     "mittel": -163
+    },
+    "über 3 G": {
+     "mehr_pct": 0,
+     "mittel": -1037
+    }
+   },
+   "matrix_mehr_pct": {
+    "unter 35 J.": {
+     "bis 1 G": 60,
+     "1–1,5 G": 100,
+     "1,5–2 G": 82,
+     "2–3 G": 2,
+     "über 3 G": 0
+    },
+    "35–40 J.": {
+     "bis 1 G": 82,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 4,
+     "über 3 G": 0
+    },
+    "40–45 J.": {
+     "bis 1 G": 84,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 7,
+     "über 3 G": 0
+    },
+    "ab 45 J.": {
+     "bis 1 G": 90,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 4,
+     "über 3 G": 0
+    }
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": 0.0
+  },
+  {
+   "name": "B2,5 – Freibetrag 2,5 G bei 45 Jahren, ein Satz darüber",
+   "f": 2.5,
+   "voll": 45,
+   "kuerzung_faelle_monat": {
+    "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)": 0,
+    "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)": 0,
+    "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)": 70,
+    "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)": 634,
+    "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)": 751,
+    "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0
+   },
+   "satz": 0.578,
+   "satz_oben": null,
+   "freibetrag_45_jahre_monat": 2572,
+   "je_jahr_monat": 57.2,
+   "anteil_mehr_pct": 66.1,
+   "mittel_monat": -116,
+   "lange_laufbahn_bis_2G": {
+    "anteil_mehr_pct": 98,
+    "mittel_monat": 42,
+    "anteil_personen_pct": 31
+   },
+   "kurze_laufbahn_ueber_2G": {
+    "anteil_mehr_pct": 0,
+    "mittel_monat": -409,
+    "anteil_personen_pct": 1
+   },
+   "nach_jahren": {
+    "unter 35 J.": {
+     "mehr_pct": 73,
+     "mittel": 32
+    },
+    "35–40 J.": {
+     "mehr_pct": 84,
+     "mittel": 7
+    },
+    "40–45 J.": {
+     "mehr_pct": 76,
+     "mittel": -39
+    },
+    "ab 45 J.": {
+     "mehr_pct": 47,
+     "mittel": -308
+    }
+   },
+   "nach_zusage": {
+    "bis 1 G": {
+     "mehr_pct": 71,
+     "mittel": 64
+    },
+    "1–1,5 G": {
+     "mehr_pct": 100,
+     "mittel": 50
+    },
+    "1,5–2 G": {
+     "mehr_pct": 97,
+     "mittel": 21
+    },
+    "2–3 G": {
+     "mehr_pct": 15,
+     "mittel": -127
+    },
+    "über 3 G": {
+     "mehr_pct": 0,
+     "mittel": -1092
+    }
+   },
+   "matrix_mehr_pct": {
+    "unter 35 J.": {
+     "bis 1 G": 60,
+     "1–1,5 G": 99,
+     "1,5–2 G": 71,
+     "2–3 G": 0,
+     "über 3 G": 0
+    },
+    "35–40 J.": {
+     "bis 1 G": 82,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 14,
+     "über 3 G": 0
+    },
+    "40–45 J.": {
+     "bis 1 G": 84,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 19,
+     "über 3 G": 0
+    },
+    "ab 45 J.": {
+     "bis 1 G": 90,
+     "1–1,5 G": 100,
+     "1,5–2 G": 100,
+     "2–3 G": 15,
+     "über 3 G": 0
+    }
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": -0.0
+  }
+ ],
+ "hinweis": "Versicherungsjahre zugeschätzt (Annahme), kalibriert an Rentenversicherungsbericht 2025 Übersichten A 3.1/A 3.2 (Bestand 31.12.2024, maschinell aus dem PDF gelesen). Freibetrag F = min(Jahre,45)/45 × f × G; Kürzung auf den Teil über F; Satz neutral zur Entlastung des Fonds unter E gesucht. Gruppen nach Zusage je Person und zugeschätzten Jahren."
+}

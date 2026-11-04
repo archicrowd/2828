@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.68**
+Stand: 24. Oktober 2026 · Modellstand **v4.69**
 
 ---
 
@@ -4698,6 +4698,31 @@ steigt wegen Rentnern).
 
 ---
 
+### v4.69 — Rentner: Kürzung nach Zusage je Versicherungsjahr (Entwicklungsmodus)
+
+**Art der Änderung: MINOR (neue vorläufige Prüfrechnung), keine geltende Zahl bewegt.** 4. November 2026.
+
+**Anlass:** Auftrag der Initiative (4.11.2026): Variante „Kürzung nach Zusage je Beitragsjahr“ vertiefen, Narrativ und Rechnung.
+
+**Neu `modell/rentner_beitragsjahre.py` (+ `.toml`) → `daten/aggregate/rentner_beitragsjahre.json`:** Regel B: Freibetrag
+F = min(Jahre, V)/V × f × G, Kürzung auf den Teil über F (ein Satz oder s/2 s), Satz neutral zur Entlastung des Fonds unter E (25,1 Mrd. €).
+Versicherungsjahre zugeschätzt (Annahme), kalibriert an Rentenversicherungsbericht 2025 (BT-Drs. 21/3080, Übersichten A 3.1/A 3.2, Bestand
+31.12.2024; maschinell aus dem PDF gelesen, an der Quelle zu prüfen): Anteile unter 40 / 40–45 / ab 45 Jahren 41,2 / 19,2 / 39,6 %, im Modell
+42,0 / 20,4 / 37,6 %; Mittel gegen Gesamtmittel 0,57 / 1,13 / 1,39, im Modell 0,68 / 0,94 / 1,40 (mäßige Anpassung). `rentner_varianten.neu`
+um den Parameter `kfun` erweitert (Ergebnis von v4.68 unverändert).
+
+**Bewegte Zahl (vorläufig):** Anteil der Rentnerhaushalte mit mehr: N2/3 65 %; B2/1 V = 45 60 %, V = 40 63 %, V = 35 64 %; B1,5 44 %; B2 59 %;
+B2,5 66 % (Satz 58 %). Lange Laufbahn (≥ 40 J.) bis 2 G im Plus: N2/3 98 %, B2/1 96–98 %. **Befund:** In Deutschland gehen lange Jahre und hohe
+Renten zusammen; Zusagen über 2 G mit weniger als 35 Jahren betreffen 1 % der Rentner. Das Kriterium Jahre bringt gegenüber N2/3 keinen
+Vorteil und kürzt bei gleichen Beiträgen die kürzere Laufbahn (Einzelfall 30 J./45 EP: 120 € unter B2/1 V = 45, 0 unter N2/3). Narrativ-
+Vorschlag „Ein Arbeitsleben schützt den doppelten Grundbedarf“ mit Rechnung N2/3; Jahresschutz ab 35 Jahren als Option für Systeme mit
+hohen Zusagen je Jahr. Arbeitspapier `projekt/Rentner-Varianten-2026-11-04.md`, Abschnitt „Vertiefung“.
+
+**Datenquelle:** wie v4.68; Rentenversicherungsbericht 2025; WD 6 - 3000 - 045/26; Antwort der Bundesregierung (Juni 2026, Arbeitsnummer 240,
+Sekundärfundort). **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4772,7 +4797,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.68
+## 7 | Offene Punkte, Stand v4.69
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

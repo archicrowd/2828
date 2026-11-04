@@ -34,10 +34,11 @@ def kuerzung(zusage, stufen):
     return k
 
 
-def neu(g, n, stufen, boden):
+def neu(g, n, stufen, boden, kfun=None):
+    """kfun(zusage) ersetzt die Stufenkürzung, wenn angegeben (v4.69: Freibetrag je Versicherungsjahr)."""
     p, an, b, v, e = (g * A[x] for x in ("grv", "andere", "bav", "privat", "erwerb"))
     zusage = p + an
-    kb = kuerzung(zusage, stufen)
+    kb = kfun(zusage) if kfun else kuerzung(zusage, stufen)
     eink = zusage - kb + b + v + e + RK.P["weitergabe"] * H.ag(e)
     st = HL.stufen(eink, DE["tarif_stufen"], [0.0, 11.0, 19.0, 25.0, 33.0]) * n
     y = eink * n - st

@@ -60,6 +60,7 @@ SEIT_PRUEFUNG = [
  ("v4.66", "Prüfungen als interne Prüfungen bezeichnet; Prüfbericht der Nachprüfung veröffentlicht", "keine Rechnung"),
  ("v4.67", "Kennzahlen SDG 1.2 und 10.1 (neue Prüfrechnung); Pestizide und Dünger in der Sonderstufe; Korrektur 85", "keine geltende Zahl"),
  ("v4.68", "Rentner: Varianten zur Regel E (vorläufige Prüfrechnung)", "keine geltende Zahl"),
+ ("v4.69", "Rentner: Kürzung nach Zusage je Versicherungsjahr (vorläufige Prüfrechnung)", "keine geltende Zahl"),
 ]
 
 

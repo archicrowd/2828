@@ -1,0 +1,74 @@
+# Rentner: Kürzung nach Zusage je Versicherungsjahr (modell/rentner_beitragsjahre.py, Logbuch v4.69). Entwicklungsmodus, vorläufig.
+version = "v4.69"
+boden = [1083, 1632]            # wie Regel E (€ je Monat, Kaufkraft 2026)
+volle_laufbahn = 45             # Jahre, ab denen der Freibetrag voll ist (Regelfall „besonders langjährig“)
+seed_jahre = 7                  # Zufallszahlen der Zuschätzung (unabhängig vom Seed der Stichprobe)
+
+# Kalibrierung der Versicherungsjahre: Rentenversicherungsbericht 2025, BT-Drs. 21/3080 (28.11.2025), Übersichten A 3.1 und A 3.2,
+# Renten wegen Alters ohne Vertragsrenten, Bestand 31.12.2024, Ø Rentenzahlbetrag € je Monat.
+# Maschinell aus dem PDF gelesen, an der Quelle zu prüfen.
+[rvb2025]
+maenner_alle = [6132479, 1490]
+frauen_alle = [7816311, 980]
+maenner_ab40 = [4771072, 1718]
+frauen_ab40 = [3436265, 1356]
+maenner_ab45 = [3672342, 1778]
+frauen_ab45 = [1855807, 1449]
+
+# Varianten: Freibetrag F = min(Jahre, 45)/45 × f × G; darüber Satz s (neutral zu E gesucht).
+# zweistufig: s von F bis F + Breite × G, Faktor × s darüber.
+[[variante]]
+name = "B1,5 – Freibetrag 1,5 G bei 45 Jahren, ein Satz darüber"
+f = 1.5
+[[variante]]
+name = "B2 – Freibetrag 2 G bei 45 Jahren, ein Satz darüber"
+f = 2.0
+[[variante]]
+name = "B2/1 – Freibetrag 2 G bei 45 Jahren, s bis F + 1 G, 2 s darüber"
+f = 2.0
+breite = 1.0
+faktor = 2.0
+[[variante]]
+name = "B2/1-40 – wie B2/1, Freibetrag voll ab 40 Jahren"
+f = 2.0
+breite = 1.0
+faktor = 2.0
+voll = 40
+[[variante]]
+name = "B2/1-35 – wie B2/1, Freibetrag voll ab 35 Jahren"
+f = 2.0
+breite = 1.0
+faktor = 2.0
+voll = 35
+[[variante]]
+name = "B2,5 – Freibetrag 2,5 G bei 45 Jahren, ein Satz darüber"
+f = 2.5
+
+# Einzelfälle (Bruttorente bzw. Ruhegehalt € je Monat, Größenordnung; gegen G 2026 gelesen).
+# Rentenwert 40,79 € je Entgeltpunkt ab 1.7.2025 (eigene Kenntnis, zu prüfen). Beamtenversorgung 1,79375 % der ruhegehaltfähigen
+# Bezüge je Dienstjahr (§ 14 BeamtVG, eigene Kenntnis, zu prüfen); Bezüge 5.000 € angenommen (Annahme).
+rentenwert = 40.79
+[[fall]]
+name = "lange Laufbahn, Durchschnittsverdienst (45 J., 1,0 EP je Jahr)"
+jahre = 45
+betrag = 1835.6
+[[fall]]
+name = "lange Laufbahn, niedriger Verdienst (40 J., 0,8 EP je Jahr)"
+jahre = 40
+betrag = 1305.3
+[[fall]]
+name = "kurze Laufbahn, gleiche Rente wie Fall 1 (30 J., 1,5 EP je Jahr)"
+jahre = 30
+betrag = 1835.6
+[[fall]]
+name = "lange Laufbahn an der Beitragsbemessungsgrenze (45 J., rund 2 EP je Jahr)"
+jahre = 45
+betrag = 3671.1
+[[fall]]
+name = "Ruhegehalt nach 40 Dienstjahren (71,75 % von 5.000 €)"
+jahre = 40
+betrag = 3587.5
+[[fall]]
+name = "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)"
+jahre = 20
+betrag = 815.8
