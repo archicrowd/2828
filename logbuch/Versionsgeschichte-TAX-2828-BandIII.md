@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.67**
+Stand: 24. Oktober 2026 · Modellstand **v4.68**
 
 ---
 
@@ -4676,6 +4676,28 @@ TemaNord 2025:523; UN, Ziel 17; OECD (April 2026). **Wodurch aufgefallen:** Auft
 
 ---
 
+### v4.68 — Rentner: Varianten zur Regel E im Entwicklungsmodus (Kürzung in Stufen des Grundbedarfs)
+
+**Art der Änderung: MINOR (neue vorläufige Prüfrechnung), keine geltende Zahl bewegt.** 4. November 2026.
+
+**Anlass:** Auftrag der Initiative (4.11.2026), Entwicklungsmodus: Verbesserungen nur vorläufig; Mechanismus optimieren, keine neuen Abgaben oder
+Sonderregeln; Rentner mit hohen ungedeckten Erwartungen sollen eher zurücktreten, Rentner mit langen Beitragszeiten und niedrigen Erwartungen
+sicher ins Plus kommen; internationale Übertragbarkeit vor nationalen Regeln. Arbeitspapier: `projekt/Rentner-Varianten-2026-11-04.md`.
+
+**Neu `modell/rentner_varianten.py` (+ `.toml`) → `daten/aggregate/rentner_varianten.json`:** Haushaltsmodell von `rentner_kombi.py`, nur die
+Kürzungsfunktion geändert: Stufen in Vielfachen des Grundbedarfs G wie der Tarif; aufkommensneutrale Varianten durch Bisektion auf die Entlastung
+des Fonds unter E (25,1 Mrd. €, Deutschland 2028). Ergebnisse (Anteil der Rentnerhaushalte mit mehr): E 32 %; ohne Kürzung 67 % (Mittel −3 €);
+T (0/15/25/33 % ab 1,5/2/3 G) 52 %, Fonds −1,1 Mrd. €; N1,5/3 neutral 51 %; **N2/3 neutral (0 % bis 2 G, 27,7 % bis 3 G, 55,4 % darüber) 65 %**,
+alle Zusagen bis 2 G im Plus, Zusagen über 3 G im Mittel −1.042 € im Monat.
+
+**Nicht gerechnet:** Nominalschutz statt Kürzung (Zeitpfad), Kürzung nach Zusage je Beitragsjahr (Daten fehlen), Boden nach der allgemeinen Regel
+statt Grundsicherung, Wirkung auf SDG 1.2 und auf den Kürzungssatz je Staat.
+
+**Datenquelle:** wie `rentner_kombi.py` (EU-SILC 2025, ASID 2023). **Wodurch aufgefallen:** Auftrag der Initiative; Befund v4.67 (Armutsquote DE
+steigt wegen Rentnern).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4750,7 +4772,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.67
+## 7 | Offene Punkte, Stand v4.68
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

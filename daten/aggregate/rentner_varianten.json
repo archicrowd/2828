@@ -1,0 +1,448 @@
+{
+ "version": "v4.68",
+ "status": "Entwicklungsmodus: vorläufige Prüfrechnung (Deutschland, 2028, Kaufkraft 2026), kein Beschluss",
+ "grundbedarf_jahr": 12348,
+ "boden_monat": [
+  1083,
+  1632
+ ],
+ "varianten": [
+  {
+   "name": "E geltend: 15 % auf den Teil über 1 G",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.15
+    ]
+   ],
+   "anteil_mehr_pct": 32.2,
+   "mittel_monat": -121,
+   "fuenftel_monat": [
+    24,
+    3,
+    -30,
+    -131,
+    -478
+   ],
+   "fuenftel_anteil_mehr_pct": [
+    70,
+    24,
+    51,
+    14,
+    0
+   ],
+   "nach_zusage_monat": {
+    "bis 1 G": 64,
+    "1–1,5 G": 11,
+    "1,5–2 G": -89,
+    "2–3 G": -254,
+    "über 3 G": -649
+   },
+   "nach_zusage_anteil_mehr_pct": {
+    "bis 1 G": 71,
+    "1–1,5 G": 57,
+    "1,5–2 G": 0,
+    "2–3 G": 0,
+    "über 3 G": 0
+   },
+   "anteil_personen_je_zusage_pct": {
+    "bis 1 G": 21,
+    "1–1,5 G": 30,
+    "1,5–2 G": 19,
+    "2–3 G": 19,
+    "über 3 G": 11
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": 0.0
+  },
+  {
+   "name": "0 ohne Kürzung (Bezug für die Strukturwirkung)",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "anteil_mehr_pct": 67.2,
+   "mittel_monat": -3,
+   "fuenftel_monat": [
+    30,
+    46,
+    34,
+    -1,
+    -124
+   ],
+   "fuenftel_anteil_mehr_pct": [
+    71,
+    100,
+    68,
+    70,
+    27
+   ],
+   "nach_zusage_monat": {
+    "bis 1 G": 64,
+    "1–1,5 G": 51,
+    "1,5–2 G": 24,
+    "2–3 G": -56,
+    "über 3 G": -225
+   },
+   "nach_zusage_anteil_mehr_pct": {
+    "bis 1 G": 71,
+    "1–1,5 G": 100,
+    "1,5–2 G": 100,
+    "2–3 G": 17,
+    "über 3 G": 1
+   },
+   "anteil_personen_je_zusage_pct": {
+    "bis 1 G": 21,
+    "1–1,5 G": 30,
+    "1,5–2 G": 19,
+    "2–3 G": 19,
+    "über 3 G": 11
+   },
+   "entlastung_fonds_mrd": -2.3,
+   "gegen_E_mrd": -27.4
+  },
+  {
+   "name": "T Stufen wie der Tarif: 0 % bis 1,5 G, 15 % bis 2 G, 25 % bis 3 G, 33 % darüber",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.5,
+     0.15
+    ],
+    [
+     2.0,
+     0.25
+    ],
+    [
+     3.0,
+     0.33
+    ]
+   ],
+   "anteil_mehr_pct": 52.2,
+   "mittel_monat": -112,
+   "fuenftel_monat": [
+    30,
+    39,
+    -7,
+    -82,
+    -548
+   ],
+   "fuenftel_anteil_mehr_pct": [
+    71,
+    77,
+    51,
+    61,
+    0
+   ],
+   "nach_zusage_monat": {
+    "bis 1 G": 64,
+    "1–1,5 G": 51,
+    "1,5–2 G": -12,
+    "2–3 G": -222,
+    "über 3 G": -856
+   },
+   "nach_zusage_anteil_mehr_pct": {
+    "bis 1 G": 71,
+    "1–1,5 G": 100,
+    "1,5–2 G": 37,
+    "2–3 G": 0,
+    "über 3 G": 0
+   },
+   "anteil_personen_je_zusage_pct": {
+    "bis 1 G": 21,
+    "1–1,5 G": 30,
+    "1,5–2 G": 19,
+    "2–3 G": 19,
+    "über 3 G": 11
+   },
+   "entlastung_fonds_mrd": 24.0,
+   "gegen_E_mrd": -1.1
+  },
+  {
+   "name": "T2 Stufen milder: 0 % bis 1,5 G, 10 % bis 2 G, 20 % bis 3 G, 33 % darüber",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.5,
+     0.1
+    ],
+    [
+     2.0,
+     0.2
+    ],
+    [
+     3.0,
+     0.33
+    ]
+   ],
+   "anteil_mehr_pct": 54.3,
+   "mittel_monat": -94,
+   "fuenftel_monat": [
+    30,
+    42,
+    5,
+    -67,
+    -487
+   ],
+   "fuenftel_anteil_mehr_pct": [
+    71,
+    82,
+    51,
+    67,
+    0
+   ],
+   "nach_zusage_monat": {
+    "bis 1 G": 64,
+    "1–1,5 G": 51,
+    "1,5–2 G": 0,
+    "2–3 G": -179,
+    "über 3 G": -788
+   },
+   "nach_zusage_anteil_mehr_pct": {
+    "bis 1 G": 71,
+    "1–1,5 G": 100,
+    "1,5–2 G": 48,
+    "2–3 G": 0,
+    "über 3 G": 0
+   },
+   "anteil_personen_je_zusage_pct": {
+    "bis 1 G": 21,
+    "1–1,5 G": 30,
+    "1,5–2 G": 19,
+    "2–3 G": 19,
+    "über 3 G": 11
+   },
+   "entlastung_fonds_mrd": 19.8,
+   "gegen_E_mrd": -5.3
+  },
+  {
+   "name": "N1,5 neutral zu E: 0 % bis 1,5 G, Satz darüber gleich (gesucht)",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.5,
+     0.242
+    ]
+   ],
+   "anteil_mehr_pct": 50.4,
+   "mittel_monat": -118,
+   "fuenftel_monat": [
+    30,
+    35,
+    -20,
+    -90,
+    -549
+   ],
+   "fuenftel_anteil_mehr_pct": [
+    71,
+    73,
+    51,
+    56,
+    0
+   ],
+   "nach_zusage_monat": {
+    "bis 1 G": 64,
+    "1–1,5 G": 51,
+    "1,5–2 G": -34,
+    "2–3 G": -263,
+    "über 3 G": -800
+   },
+   "nach_zusage_anteil_mehr_pct": {
+    "bis 1 G": 71,
+    "1–1,5 G": 100,
+    "1,5–2 G": 27,
+    "2–3 G": 0,
+    "über 3 G": 0
+   },
+   "anteil_personen_je_zusage_pct": {
+    "bis 1 G": 21,
+    "1–1,5 G": 30,
+    "1,5–2 G": 19,
+    "2–3 G": 19,
+    "über 3 G": 11
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": 0.0
+  },
+  {
+   "name": "N1,5/3 neutral zu E: 0 % bis 1,5 G, s bis 3 G, 2 s darüber",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.5,
+     0.194
+    ],
+    [
+     3.0,
+     0.387
+    ]
+   ],
+   "anteil_mehr_pct": 51.3,
+   "mittel_monat": -117,
+   "fuenftel_monat": [
+    30,
+    37,
+    -9,
+    -82,
+    -568
+   ],
+   "fuenftel_anteil_mehr_pct": [
+    71,
+    75,
+    51,
+    58,
+    0
+   ],
+   "nach_zusage_monat": {
+    "bis 1 G": 64,
+    "1–1,5 G": 51,
+    "1,5–2 G": -22,
+    "2–3 G": -221,
+    "über 3 G": -883
+   },
+   "nach_zusage_anteil_mehr_pct": {
+    "bis 1 G": 71,
+    "1–1,5 G": 100,
+    "1,5–2 G": 32,
+    "2–3 G": 0,
+    "über 3 G": 0
+   },
+   "anteil_personen_je_zusage_pct": {
+    "bis 1 G": 21,
+    "1–1,5 G": 30,
+    "1,5–2 G": 19,
+    "2–3 G": 19,
+    "über 3 G": 11
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": -0.0
+  },
+  {
+   "name": "N1,25 neutral zu E: 0 % bis 1,25 G, Satz darüber gleich (gesucht)",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.25,
+     0.191
+    ]
+   ],
+   "anteil_mehr_pct": 42.6,
+   "mittel_monat": -119,
+   "fuenftel_monat": [
+    30,
+    18,
+    -24,
+    -109,
+    -516
+   ],
+   "fuenftel_anteil_mehr_pct": [
+    71,
+    51,
+    51,
+    39,
+    0
+   ],
+   "nach_zusage_monat": {
+    "bis 1 G": 64,
+    "1–1,5 G": 39,
+    "1,5–2 G": -71,
+    "2–3 G": -264,
+    "über 3 G": -721
+   },
+   "nach_zusage_anteil_mehr_pct": {
+    "bis 1 G": 71,
+    "1–1,5 G": 91,
+    "1,5–2 G": 0,
+    "2–3 G": 0,
+    "über 3 G": 0
+   },
+   "anteil_personen_je_zusage_pct": {
+    "bis 1 G": 21,
+    "1–1,5 G": 30,
+    "1,5–2 G": 19,
+    "2–3 G": 19,
+    "über 3 G": 11
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": 0.0
+  },
+  {
+   "name": "N2/3 neutral zu E: 0 % bis 2 G, s bis 3 G, 2 s darüber",
+   "stufen": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     2.0,
+     0.277
+    ],
+    [
+     3.0,
+     0.554
+    ]
+   ],
+   "anteil_mehr_pct": 64.9,
+   "mittel_monat": -116,
+   "fuenftel_monat": [
+    30,
+    46,
+    14,
+    -76,
+    -599
+   ],
+   "fuenftel_anteil_mehr_pct": [
+    71,
+    100,
+    63,
+    70,
+    20
+   ],
+   "nach_zusage_monat": {
+    "bis 1 G": 64,
+    "1–1,5 G": 51,
+    "1,5–2 G": 24,
+    "2–3 G": -162,
+    "über 3 G": -1042
+   },
+   "nach_zusage_anteil_mehr_pct": {
+    "bis 1 G": 71,
+    "1–1,5 G": 100,
+    "1,5–2 G": 100,
+    "2–3 G": 5,
+    "über 3 G": 0
+   },
+   "anteil_personen_je_zusage_pct": {
+    "bis 1 G": 21,
+    "1–1,5 G": 30,
+    "1,5–2 G": 19,
+    "2–3 G": 19,
+    "über 3 G": 11
+   },
+   "entlastung_fonds_mrd": 25.1,
+   "gegen_E_mrd": 0.0
+  }
+ ],
+ "hinweis": "Kürzung je Person stufenweise auf die Zusage (gesetzliche Rente, Beamtenversorgung) in Vielfachen des Grundbedarfs G (1.029 € im Monat); eigene Vorsorge und Erwerb ungekürzt. Fünftel nach heutigem Haushaltsnetto. Entlastung des Fonds = Kürzung − Kosten des Bodens, nur 2028. Beitragsjahre sind in den Daten nicht enthalten."
+}

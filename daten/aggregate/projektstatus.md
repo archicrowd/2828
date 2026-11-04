@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.67 · höchste Korrekturnummer 85 · 564 Dateien im Repository
+Modellstand v4.68 · höchste Korrekturnummer 85 · 568 Dateien im Repository
 
 ## Bausteine
 
@@ -109,4 +109,4 @@ Modellstand v4.67 · höchste Korrekturnummer 85 · 564 Dateien im Repository
 - Hinweis: Naht N42 offen: B31 Drittel-System -> B01 Logbuch: v4.56: Prüfsumme der Quellen in docs/downloads/quellen.sha256, Stufe schlägt fehl bis --pdf; Veröffentlichung über GitHub Pages durch die Initiative (P9) v4.57: englische Hauptfassung im Wurzelverzeichnis, deutsch unter docs/de/, gemeinsame Prüfsumme beider Kits; öffentliches Repository goldenes-drittel v4.59: Zenodo-Archiv, Concept-DOI 10.5281/zenodo.23855733
 - Hinweis: Naht N43 offen: B31 Drittel-System -> B01 Logbuch: v4.58: geprüft bis v4.42; Nachprüfung nach projekt/Pruefprogramm-Delta-v4.42-v4.63.md; Zahl der Korrekturen und Stufen aus Logbuch und Kette gelesen (Korrektur 83) v4.64: Prüfprogramm bis v4.63 (D9 Working Paper) v4.65: D1, D2 bestanden; B25–B29 beantwortet v4.66: Bezeichnung interne Prüfung festgelegt
 - Hinweis: Naht N44 offen: B31 Drittel-System -> B01 Logbuch: v4.60: Prüfsumme dokumente/working-paper/quellen.sha256, Stufe schlägt fehl bis --pdf; Entwurf zur Durchsicht v4.61: Ziele und Zielkonflikte im Text v4.62: Label und Rechtsrahmen im Text v4.63: veröffentlicht; Seite prüft die Text-Prüfsumme des Papiers mit
-- Hinweis: Naht N45 offen: B32 Länderseiten -> B31 Drittel-System: v4.67: SDG 1.2/10.1 aus der Dezil-Rekonstruktion (Sekundärquelle für amtliche Quoten); Arbeitspapier projekt/Nachhaltigkeitsziele-und-internationales-Modell-2026-11-04.md
+- Hinweis: Naht N45 offen: B32 Länderseiten -> B31 Drittel-System: v4.67: SDG 1.2/10.1 aus der Dezil-Rekonstruktion (Sekundärquelle für amtliche Quoten); Arbeitspapier projekt/Nachhaltigkeitsziele-und-internationales-Modell-2026-11-04.md v4.68: Rentnervarianten N2/3 u. a. (projekt/Rentner-Varianten-2026-11-04.md)

@@ -1,0 +1,35 @@
+# Rentner: Varianten zur Regel E im Entwicklungsmodus (modell/rentner_varianten.py, Logbuch v4.68). Vorläufig, kein Beschluss.
+version = "v4.68"
+boden = [1083, 1632]          # wie Regel E (heutige Grundsicherung allein / Paar, € je Monat, Kaufkraft 2026)
+
+# Stufen: [ab Vielfachem des Grundbedarfs G, Kürzungssatz auf den Abschnitt]; erste Variante = Regel E (Bezug)
+[[variante]]
+name = "E geltend: 15 % auf den Teil über 1 G"
+stufen = [[0.0, 0.0], [1.0, 0.15]]
+[[variante]]
+name = "0 ohne Kürzung (Bezug für die Strukturwirkung)"
+stufen = [[0.0, 0.0]]
+[[variante]]
+name = "T Stufen wie der Tarif: 0 % bis 1,5 G, 15 % bis 2 G, 25 % bis 3 G, 33 % darüber"
+stufen = [[0.0, 0.0], [1.5, 0.15], [2.0, 0.25], [3.0, 0.33]]
+[[variante]]
+name = "T2 Stufen milder: 0 % bis 1,5 G, 10 % bis 2 G, 20 % bis 3 G, 33 % darüber"
+stufen = [[0.0, 0.0], [1.5, 0.10], [2.0, 0.20], [3.0, 0.33]]
+
+# Aufkommensneutral zu E: keine Kürzung bis zur Schwelle, darüber ein Satz s (optional ab zweiter Schwelle s × Faktor)
+[[neutral]]
+name = "N1,5 neutral zu E: 0 % bis 1,5 G, Satz darüber gleich (gesucht)"
+schwelle = 1.5
+[[neutral]]
+name = "N1,5/3 neutral zu E: 0 % bis 1,5 G, s bis 3 G, 2 s darüber"
+schwelle = 1.5
+zweite_schwelle = 3.0
+faktor_zweite = 2.0
+[[neutral]]
+name = "N1,25 neutral zu E: 0 % bis 1,25 G, Satz darüber gleich (gesucht)"
+schwelle = 1.25
+[[neutral]]
+name = "N2/3 neutral zu E: 0 % bis 2 G, s bis 3 G, 2 s darüber"
+schwelle = 2.0
+zweite_schwelle = 3.0
+faktor_zweite = 2.0

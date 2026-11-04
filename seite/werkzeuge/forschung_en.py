@@ -34,6 +34,7 @@ SINCE_REVIEW = [
  ("v4.65", "Responses to B25–B29 (presentation), website, correction 84", "no figure; new field in fondszins.json"),
  ("v4.66", "Reviews labelled as internal reviews; follow-up review report published", "no calculation"),
  ("v4.67", "Indicators SDG 1.2 and 10.1 (new cross-check); pesticides and fertilisers in the special rate; correction 85", "no adopted figure"),
+ ("v4.68", "Pensioners: variants of rule E (preliminary cross-check)", "no adopted figure"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
