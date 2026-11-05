@@ -1,8 +1,8 @@
 {
- "modellstand": "v4.71",
+ "modellstand": "v4.72",
  "stand": "1. November 2026",
  "lizenz": "CC BY 4.0",
- "zitiervorschlag": "Initiative 28:28 (2026): Das Goldene Drittel – Forschungs-Kit und Zahlen zum Zitieren, Modellstand v4.71, 1. November 2026. Zenodo. https://doi.org/10.5281/zenodo.23855733. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.",
+ "zitiervorschlag": "Initiative 28:28 (2026): Das Goldene Drittel – Forschungs-Kit und Zahlen zum Zitieren, Modellstand v4.72, 1. November 2026. Zenodo. https://doi.org/10.5281/zenodo.23855733. Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.",
  "zahlen": [
   {
    "id": "Z01",
@@ -12,7 +12,7 @@
    "bezug": "2028, Kaufkraft 2026",
    "datei_pfad": "netz33.json beschluss/reihe/0 × regel_boden.json topf",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z02",
@@ -22,7 +22,7 @@
    "bezug": "2028, Kaufkraft 2026",
    "datei_pfad": "wie Z01, Kinderanteil 0,8",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z03",
@@ -32,7 +32,7 @@
    "bezug": "2028, Kaufkraft 2026; Weitergabe 80 %, Zuschlag DE 15,0 %, Pflichtvorsorge 10 %",
    "datei_pfad": "haushalte33.json faelle",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z04",
@@ -42,7 +42,7 @@
    "bezug": "wie Z03",
    "datei_pfad": "haushalte33.json faelle",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z05",
@@ -52,67 +52,67 @@
    "bezug": "2028; synthetische Mikrosimulation, Weitergabe 80 %",
    "datei_pfad": "mikro_de.json basis/ergebnis/0.8",
    "status": "Prüfrechnung",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z06",
    "groesse": "Alle Haushalte mit mehr verfügbarem Einkommen (Deutschland)",
-   "wert": 69.3,
+   "wert": 78.6,
    "einheit": "%",
    "bezug": "wie Z05",
    "datei_pfad": "mikro_de.json basis/ergebnis/0.8/gesamt",
    "status": "Prüfrechnung",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z07",
-   "groesse": "Rentnerhaushalte mit mehr (Rentnerregel E)",
-   "wert": 32.2,
+   "groesse": "Rentnerhaushalte mit mehr (Rentnerregel BS35)",
+   "wert": 64.5,
    "einheit": "%",
    "bezug": "2028, Kaufkraft 2026",
-   "datei_pfad": "rentner_kombi.json varianten/4",
+   "datei_pfad": "rentner_kombi.json varianten/5",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z08",
-   "groesse": "Rentnerhaushalte, Veränderung im Mittel (Rentnerregel E)",
-   "wert": -121,
+   "groesse": "Rentnerhaushalte, Veränderung im Mittel (Rentnerregel BS35)",
+   "wert": -116,
    "einheit": "€ je Monat",
    "bezug": "wie Z07",
-   "datei_pfad": "rentner_kombi.json varianten/4",
+   "datei_pfad": "rentner_kombi.json varianten/5",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z09",
    "groesse": "Beitrag zum gemeinsamen Fonds der 30 Staaten",
-   "wert": 5.17,
+   "wert": 5.15,
    "einheit": "% des BIP",
    "bezug": "jährlich bis zur Tilgung",
    "datei_pfad": "fonds_geltend.json",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z10",
    "groesse": "Altlastenzuschlag auf alle Steuern (gemeinsamer Satz)",
-   "wert": 15.5,
+   "wert": 15.4,
    "einheit": "%",
    "bezug": "Fondszins 2,45 %",
    "datei_pfad": "fonds_geltend.json",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z11",
    "groesse": "Schuldenquote des Fonds, Spitze",
-   "wert": 148.1,
+   "wert": 147.5,
    "einheit": "% des BIP",
    "bezug": "im Jahr 2055",
    "datei_pfad": "fonds_geltend.json",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z12",
@@ -122,37 +122,37 @@
    "bezug": "",
    "datei_pfad": "fonds_geltend.json",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z13",
    "groesse": "Altrentenansprüche über der Dividende (Z)",
-   "wert": 9.42,
+   "wert": 9.35,
    "einheit": "% des BIP",
    "bezug": "2028, Mittel der Staaten",
    "datei_pfad": "altlasten.json beschluss",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z14",
    "groesse": "Gesamtlast Steuern und Fonds",
-   "wert": 38.7,
+   "wert": 38.68,
    "einheit": "% des BIP",
    "bezug": "2028; heute 40,76 % (Eurostat 2024)",
    "datei_pfad": "gesamtlast33.json reihe/0",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z15",
    "groesse": "Gesamtlast mit Pflichtvorsorge (eigenes Konto)",
-   "wert": 42.8,
+   "wert": 42.78,
    "einheit": "% des BIP",
    "bezug": "2028",
    "datei_pfad": "gesamtlast33.json reihe/0",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z16",
@@ -162,7 +162,7 @@
    "bezug": "2028",
    "datei_pfad": "netz33.json beschluss/reihe/0",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z17",
@@ -172,7 +172,7 @@
    "bezug": "alleinstehend; neu ohne Pflichtvorsorge (eigenes Konto)",
    "datei_pfad": "grenzbelastung33.json zeilen/5",
    "status": "Prüfrechnung",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z18",
@@ -182,7 +182,7 @@
    "bezug": "EVS 2023",
    "datei_pfad": "mwst_verteilung.json klassen",
    "status": "geltend",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   },
   {
    "id": "Z19",
@@ -192,7 +192,7 @@
    "bezug": "einmalig; mechanisch 2,47 %",
    "datei_pfad": "preisniveau33.json reihe/0",
    "status": "Prüfrechnung",
-   "modellstand": "v4.71"
+   "modellstand": "v4.72"
   }
  ]
 }

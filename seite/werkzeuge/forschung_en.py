@@ -38,6 +38,7 @@ SINCE_REVIEW = [
  ("v4.69", "Pensioners: cut by promise per insurance year (preliminary cross-check)", "no adopted figure"),
  ("v4.70", "Pensioners: example calculator for variant N2/3 (draft)", "no calculation"),
  ("v4.71", "Pensioners: option from 35 years with a floor (preliminary cross-check)", "no adopted figure"),
+ ("v4.72", "Pension rule BS35 replaces rule E (decision); poverty rate from the microsimulation", "fund 5.15 % of GDP, surcharge 15.4 %, pensioners better off 64.5 %, cut rate per state"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
@@ -79,8 +80,8 @@ FIGURES = [
  ("Z04", "Gain, couple with one earner and 2 children, € 42,000 (Germany)", F.fall(2028, F.TYPEN[2], 0.8, F.ZU_DE, 0.1)["differenz_monat"], "€ per month", "as Z03", "haushalte33.json faelle", "adopted"),
  ("Z05", "Working-age households better off (Germany)", MB["erwerbsfaehige_haushalte"]["anteil_mehr_haushalte_pct"], "%", "2028; synthetic microsimulation, pass-through 80 %", "mikro_de.json basis/ergebnis/0.8", "check"),
  ("Z06", "All households better off (Germany)", MB["gesamt"]["anteil_mehr_haushalte_pct"], "%", "as Z05", "mikro_de.json basis/ergebnis/0.8/gesamt", "check"),
- ("Z07", "Pensioner households better off (pension rule E)", RE["anteil_mehr_pct"], "%", "2028, Germany", "rentner_kombi.json varianten/4", "adopted"),
- ("Z08", "Pensioner households, mean change (pension rule E)", RE["mittel_monat"], "€ per month", "2028, Germany", "rentner_kombi.json varianten/4", "adopted"),
+ ("Z07", "Pensioner households better off (pension rule BS35)", RE["anteil_mehr_pct"], "%", "2028, Germany", "rentner_kombi.json varianten/5", "adopted"),
+ ("Z08", "Pensioner households, mean change (pension rule BS35)", RE["mittel_monat"], "€ per month", "2028, Germany", "rentner_kombi.json varianten/5", "adopted"),
  ("Z09", "Contribution to the common fund of 30 states", FG["beitrag_pct_bip"], "% of GDP", "annual until repaid", "fonds_geltend.json", "adopted"),
  ("Z10", "Legacy surcharge on all taxes (common rate)", FG["zuschlag_auf_alle_steuern_pct"], "%", "fund interest 2.45 %", "fonds_geltend.json", "adopted"),
  ("Z11", "Debt ratio of the fund, peak", FG["schuldenquote_spitze"], "% of GDP", f"in {FG['spitzenjahr']}", "fonds_geltend.json", "adopted"),
@@ -191,7 +192,7 @@ digitalisation; it shrinks as emissions disappear – by design</td></tr>
 <tr><td><b>Own route</b></td><td>Compulsory saving of 10 % of gross wages into a personal account, locked until retirement age, few investment options and a default fund</td></tr>
 <tr><td><b>VAT label</b></td><td>5 / 11 / 17 / 25 %, special rate 33 % only for harmful goods; lower rates through certification by supervised bodies</td></tr>
 <tr><td><b>Legacy</b></td><td>Public debt and unfunded pension promises in a common fund of the participating states: contribution {en(FG['beitrag_pct_bip'], 2)} % of GDP,
-debt peak {en(FG['schuldenquote_spitze'], 1)} % of GDP in {FG['spitzenjahr']}, repaid by {FG['zieljahr']}; existing pensions above basic needs reduced by 15 %</td></tr>
+debt peak {en(FG['schuldenquote_spitze'], 1)} % of GDP in {FG['spitzenjahr']}, repaid by {FG['zieljahr']}; existing pension promises free up to twice basic needs after 35 insurance years (at least basic needs), reduced in steps above</td></tr>
 </tbody></table></div>
 <h2>Which states?</h2>
 <p>The calculations cover a possibility space of 30 European states, with France, Italy, Spain and Poland as reference countries besides Germany.
@@ -299,7 +300,7 @@ common interest rate. It spreads the burden until repayment in {FG['zieljahr']} 
    ["Interest", en(FG["zins"], 2) + " % (euro area average 2006–2025)"], ["Old pension claims above the dividend (Z), 2028", en(F.AL['beschluss']['verhandlungsmasse_z_2028_pct_bip'], 2) + " % of GDP"],
    ["Total burden, taxes and fund, Germany 2028", en(F.ZR['a_steuern_und_fonds'], 2) + " % of GDP (today 40.76 %)"]])}
 <p class="meta">Fund of 30 states: decision of the ten states calculated in detail, scaled by the ratio 30/10 from the possibility space (assumption).
-Pension rule E: promises above basic needs reduced by 15 %, own savings not reduced; pensioners' health and care contributions disappear.</p>
+Pension rule BS35: promises free up to an allowance max(1 G; min(insurance years, 35)/35 × 2 G), 27.5 % up to the allowance + 1 G and 55.1 % above; own savings not reduced; pensioners' health and care contributions disappear.</p>
 <h2>Netting by state, 2028</h2>
 {tabelle(["State", "Contribution (% GDP)", "Surcharge (%)"], z1, rechts=(1, 2))}
 <p class="meta">Each state carries the surcharge after netting its own legacy; converging to the common rate by 2058.</p>

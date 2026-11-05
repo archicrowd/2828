@@ -2,12 +2,12 @@
  "version": "v4.11",
  "status": "Prüfrechnung, grob",
  "varianten": {
-  "Beschluss v4.26 (Regel E: 15 % über dem Grundbedarf, Boden 1.083 €)": {
+  "Beschluss v4.72 (Regel BS35, 45 Versicherungsjahre, Boden 1.083 €)": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 24,
-    "1600": 2,
-    "2200": -54
+    "1200": 45,
+    "1600": 68,
+    "2200": 41
    },
    "mehrkosten_mrd": 0.0,
    "mehrkosten_pct_bip": 0.0
@@ -19,8 +19,8 @@
     "1600": -27,
     "2200": -46
    },
-   "mehrkosten_mrd": -2.4,
-   "mehrkosten_pct_bip": -0.05
+   "mehrkosten_mrd": -12.3,
+   "mehrkosten_pct_bip": -0.25
   },
   "Kürzung 12,3 %": {
    "differenz_monat_je_rente": {
@@ -29,8 +29,8 @@
     "1600": -92,
     "2200": -126
    },
-   "mehrkosten_mrd": -10.2,
-   "mehrkosten_pct_bip": -0.21
+   "mehrkosten_mrd": -20.1,
+   "mehrkosten_pct_bip": -0.41
   },
   "Kürzung 10,0 %": {
    "differenz_monat_je_rente": {
@@ -39,35 +39,35 @@
     "1600": -60,
     "2200": -87
    },
-   "mehrkosten_mrd": -6.4,
-   "mehrkosten_pct_bip": -0.13
+   "mehrkosten_mrd": -16.3,
+   "mehrkosten_pct_bip": -0.33
   },
   "Besteuerungsanteil 83 % wie heute": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 42,
-    "1600": 33,
-    "2200": 18
+    "1200": 66,
+    "1600": 106,
+    "2200": 125
    },
-   "mehrkosten_mrd": 6.6,
-   "mehrkosten_pct_bip": 0.13
+   "mehrkosten_mrd": 7.7,
+   "mehrkosten_pct_bip": 0.16
   },
   "Befreiung vom Altlastenzuschlag": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 51,
-    "1600": 41,
-    "2200": 8
+    "1200": 73,
+    "1600": 111,
+    "2200": 110
    },
-   "mehrkosten_mrd": 6.9,
-   "mehrkosten_pct_bip": 0.14
+   "mehrkosten_mrd": 7.5,
+   "mehrkosten_pct_bip": 0.15
   },
   "Pauschale 25 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 48,
-    "1600": 26,
-    "2200": -30
+    "1200": 69,
+    "1600": 92,
+    "2200": 65
    },
    "mehrkosten_mrd": 3.9,
    "mehrkosten_pct_bip": 0.08
@@ -75,9 +75,9 @@
   "Pauschale 50 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 72,
-    "1600": 50,
-    "2200": -6
+    "1200": 93,
+    "1600": 116,
+    "2200": 89
    },
    "mehrkosten_mrd": 7.7,
    "mehrkosten_pct_bip": 0.16
@@ -99,8 +99,8 @@
    "heute_mit_grundsicherung": 1083
   },
   "1200": {
-   "neu_ohne_grundauskommen": 1107,
-   "neu_mit_grundauskommen": 1107,
+   "neu_ohne_grundauskommen": 1128,
+   "neu_mit_grundauskommen": 1128,
    "grundbedarf": 1029,
    "heute_ohne_grundsicherung": 1052,
    "heute_mit_grundsicherung": 1083
@@ -237,12 +237,12 @@
   },
   {
    "schritt": "+ R6: Kürzungssatz je Staat (= v4.37)",
-   "beitrag_pct_bip": 5.25,
-   "aenderung": -0.01
+   "beitrag_pct_bip": 5.22,
+   "aenderung": -0.04
   },
   {
    "schritt": "Prüfung T1 (v4.37): geltend ohne anteilige Verrechnung",
-   "beitrag_pct_bip": 4.8,
+   "beitrag_pct_bip": 4.77,
    "aenderung": -0.46
   }
  ],

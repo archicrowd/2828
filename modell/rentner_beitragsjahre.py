@@ -148,6 +148,15 @@ def main():
              hinweis="Versicherungsjahre zugeschätzt (Annahme), kalibriert an Rentenversicherungsbericht 2025 Übersichten A 3.1/A 3.2 "
                      "(Bestand 31.12.2024, maschinell aus dem PDF gelesen). Freibetrag F = min(Jahre,45)/45 × f × G; Kürzung auf den Teil "
                      "über F; Satz neutral zur Entlastung des Fonds unter E gesucht. Gruppen nach Zusage je Person und zugeschätzten Jahren.")
+    # v4.72: Übertrag in die geltende Regel prüfen (haushalte33.rente_regel = BS35, rente_jahre = Kalibrierung)
+    H = RK.H
+    bs = next(x for x in erg if x["name"].startswith("BS35"))
+    rr, rj = H.P["rente_regel"], H.P["rente_jahre"]
+    E["uebertrag_regel"] = dict(satz=bs["satz"], satz_oben=bs["satz_oben"], toml_satz=rr["satz"], toml_satz_oben=rr["satz_oben"],
+                                kalibrierung=[kal["a"], kal["b"], kal["c"]], toml_kalibrierung=[rj["a"], rj["b"], rj["c"]])
+    if abs(bs["satz"] - rr["satz"]) > 0.0005 or abs(bs["satz_oben"] - rr["satz_oben"]) > 0.0015 or \
+            any(abs(x - y) > 1e-9 for x, y in zip(E["uebertrag_regel"]["kalibrierung"], E["uebertrag_regel"]["toml_kalibrierung"])):
+        raise SystemExit(f"haushalte33.rente_regel / rente_jahre veraltet: {E['uebertrag_regel']}")
     (W / "daten" / "aggregate" / "rentner_beitragsjahre.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print("Kalibrierung", kal)
     for x in erg:

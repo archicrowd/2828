@@ -112,9 +112,10 @@ def brutto_aus_netto(n_person, a):
 
 
 # ------------------------------------------------------------------ neu je Haushalt
-def neu_haushalt(g_person, n_pers, a, w):
+def neu_haushalt(g_person, n_pers, a, w, eps=0.0):
     p, an, b, v, e = (g_person * a[x] for x in ("grv", "andere", "bav", "privat", "erwerb"))
-    eink = H.kuerze(p + an) + b + v + e + w * H.ag(e)          # v4.26 Regel E (haushalte33.rente_regel) auf die Zusagen; eigene Vorsorge ungekürzt
+    # v4.72 Regel BS35 (haushalte33.rente_regel) auf die Zusagen, Versicherungsjahre zugeschätzt (Annahme); eigene Vorsorge ungekürzt
+    eink = H.kuerze(p + an, jahre=H.jahre_zu(p + an, eps)) + b + v + e + w * H.ag(e)
     st = HL.stufen(eink, DE["tarif_stufen"], [0.0, 11.0, 19.0, 25.0, 33.0]) * n_pers
     y = eink * n_pers - st
     konsum = HL.kq(y, "DE") * y
@@ -141,6 +142,9 @@ def ziehe(rng, n, personen_mio, allein_mio):
         y_aeq = float(quantil([u[i]])[0]) * FAKTOR[typ]
         netto = y_aeq * (1 + 0.5 * (npers - 1))
         out.append(dict(typ=typ, n=npers, netto_2024=netto))
+    eps = np.random.default_rng(H.P["rente_jahre"]["seed"]).standard_normal(n)     # v4.72: Zufallszahl der Versicherungsjahre (eigener Strom)
+    for i, r in enumerate(out):
+        r["eps"] = float(eps[i])
     na = int(allein.sum())
     gew = np.where(allein, allein_mio * 1e6 / max(na, 1), (personen_mio - allein_mio) * 1e6 / 2 / max(n - na, 1))
     return out, gew
@@ -153,7 +157,7 @@ def rechne(r, faktor, w, variante="asid", inanspruchnahme="voll"):
     g = brutto_aus_netto(n_haus / r["n"], a)
     bed = bedarf_heute(r["n"])
     gs = max(0.0, bed - n_haus) if inanspruchnahme == "voll" else 0.0
-    neu, auf = neu_haushalt(g, r["n"], a, w)
+    neu, auf = neu_haushalt(g, r["n"], a, w, r.get("eps", 0.0))
     return n_haus + gs, neu, auf, gs, g
 
 

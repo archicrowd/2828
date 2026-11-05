@@ -63,6 +63,7 @@ SEIT_PRUEFUNG = [
  ("v4.69", "Rentner: Kürzung nach Zusage je Versicherungsjahr (vorläufige Prüfrechnung)", "keine geltende Zahl"),
  ("v4.70", "Rentner: Beispielrechner N2/3 (Entwurf)", "keine Rechnung"),
  ("v4.71", "Rentner: Option ab 35 mit Sockel (vorläufige Prüfrechnung)", "keine geltende Zahl"),
+ ("v4.72", "Rentnerregel BS35 ersetzt Regel E (Beschluss); Armutsquote aus der Mikrosimulation", "Fonds 5,15 % BIP, Zuschlag 15,4 %, Rentner mit mehr 64,5 %, Kürzungssatz je Staat"),
 ]
 
 
@@ -117,7 +118,7 @@ def fall(jahr, typ, wg, zu, vs, brutto=42000):
 
 
 MB = MI["basis"]["ergebnis"]["0.8"]
-RE = RK["varianten"][4]
+RE = RK["varianten"][-1]   # v4.72: geltende Regel ist die letzte Variante (BS35)
 
 # ---------------- Zahlen zum Zitieren (je Zeile: Größe, Wert, Einheit, Bezug, Datei/Pfad, Status)
 ZAHLEN = [
@@ -127,8 +128,8 @@ ZAHLEN = [
  ("Z04", "Vorteil Paar, ein Einkommen, 2 Kinder, 42.000 € brutto", fall(2028, TYPEN[2], 0.8, ZU_DE, 0.1)["differenz_monat"], "€ je Monat", "wie Z03", "haushalte33.json faelle", "geltend"),
  ("Z05", "Erwerbsfähige Haushalte mit mehr verfügbarem Einkommen (Deutschland)", MB["erwerbsfaehige_haushalte"]["anteil_mehr_haushalte_pct"], "%", "2028; synthetische Mikrosimulation, Weitergabe 80 %", "mikro_de.json basis/ergebnis/0.8", "Prüfrechnung"),
  ("Z06", "Alle Haushalte mit mehr verfügbarem Einkommen (Deutschland)", MB["gesamt"]["anteil_mehr_haushalte_pct"], "%", "wie Z05", "mikro_de.json basis/ergebnis/0.8/gesamt", "Prüfrechnung"),
- ("Z07", "Rentnerhaushalte mit mehr (Rentnerregel E)", RE["anteil_mehr_pct"], "%", "2028, Kaufkraft 2026", "rentner_kombi.json varianten/4", "geltend"),
- ("Z08", "Rentnerhaushalte, Veränderung im Mittel (Rentnerregel E)", RE["mittel_monat"], "€ je Monat", "wie Z07", "rentner_kombi.json varianten/4", "geltend"),
+ ("Z07", "Rentnerhaushalte mit mehr (Rentnerregel BS35)", RE["anteil_mehr_pct"], "%", "2028, Kaufkraft 2026", "rentner_kombi.json varianten/5", "geltend"),
+ ("Z08", "Rentnerhaushalte, Veränderung im Mittel (Rentnerregel BS35)", RE["mittel_monat"], "€ je Monat", "wie Z07", "rentner_kombi.json varianten/5", "geltend"),
  ("Z09", "Beitrag zum gemeinsamen Fonds der 30 Staaten", FG["beitrag_pct_bip"], "% des BIP", "jährlich bis zur Tilgung", "fonds_geltend.json", "geltend"),
  ("Z10", "Altlastenzuschlag auf alle Steuern (gemeinsamer Satz)", FG["zuschlag_auf_alle_steuern_pct"], "%", "Fondszins 2,45 %", "fonds_geltend.json", "geltend"),
  ("Z11", "Schuldenquote des Fonds, Spitze", FG["schuldenquote_spitze"], "% des BIP", f"im Jahr {FG['spitzenjahr']}", "fonds_geltend.json", "geltend"),
@@ -299,7 +300,7 @@ Arbeitgeberbeiträge, Mehrwertsteuer-Label nach Einkommen, Altlastenzuschlag Deu
 Hauptperson Minijob {de(MB['status']['Hauptperson Minijob']['anteil_mehr_haushalte_pct'], 1)} %, ohne Erwerb (Bürgergeld)
 {de(MB['status']['ohne Erwerb (Bürgergeld)']['anteil_mehr_haushalte_pct'], 1)} %. Validierung 2025: Bruttolohnsumme
 {de(MI['basis']['validierung_2025']['bruttolohnsumme']['abweichung_pct'], 1)} %, Lohnsteuer {de(MI['basis']['validierung_2025']['lohnsteuer']['abweichung_pct'], 1)} % gegen amtlich.</li>
-<li><b>Rentner</b> (Regel E): {de(RE['anteil_mehr_pct'], 1)} % der Rentnerhaushalte haben mehr, im Mittel {de(RE['mittel_monat'])} € im Monat;
+<li><b>Rentner</b> (Regel BS35): {de(RE['anteil_mehr_pct'], 1)} % der Rentnerhaushalte haben mehr, im Mittel {de(RE['mittel_monat'])} € im Monat;
 oberes Fünftel {de(RE['fuenftel_monat'][4])} €.</li>
 <li><b>Ländermodelle</b> gegen OECD Taxing Wages 2026: {VL['bestanden'].replace('±2.0 Pp', '±2 Prozentpunkte')}; Abweichungen in Frankreich (Paar mit Kindern) und Polen sind erklärt
 bzw. offen geführt.</li>
@@ -327,7 +328,7 @@ gemeinsamem Zins an. Er streckt die Last bis zur Tilgung im Jahr {FG['zieljahr']
    ["Zins", de(FG["zins"], 2) + " % (Mittel Euroraum 2006–2025)"], ["Altrentenansprüche über der Dividende (Z), 2028", de(AL['beschluss']['verhandlungsmasse_z_2028_pct_bip'], 2) + " % des BIP"],
    ["Gesamtlast Steuern und Fonds 2028", de(ZR['a_steuern_und_fonds'], 2) + " % des BIP (heute 40,76 %)"]], rechts=())}
 <p class="meta">Fonds der 30 Staaten: Beschluss der zehn gerechneten Staaten, skaliert mit dem Verhältnis 30/10 aus dem Möglichkeitsraum (Annahme).
-Rentnerregel E: Zusagen über dem Grundbedarf um 15 % gekürzt, eigene Vorsorge ungekürzt.</p>
+Rentnerregel BS35: Zusagen frei bis zum Freibetrag max(1 G; min(Versicherungsjahre, 35)/35 × 2 G), darüber 27,5 % bis F + 1 G und 55,1 % darüber; eigene Vorsorge ungekürzt.</p>
 <h2>Verrechnung je Staat, 2028</h2>
 {tabelle(["Staat", "Beitrag (% BIP)", "Zuschlag (%)"], z1, rechts=(1, 2))}
 <p class="meta">Jeder Staat trägt den Zuschlag nach seiner Verrechnung im Fonds; bis 2058 Angleichung an den gemeinsamen Satz.</p>

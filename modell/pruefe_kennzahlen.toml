@@ -12,10 +12,10 @@ pruefungen = [
   { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "schuldenquote_spitze", stellen = 1 },
   { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "zieljahr", stellen = 0 },
   { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "zins", stellen = 2 },
-  { zeile = "| Z 2028 = 9,42", datei = "altlasten.json", pfad = "beschluss/verhandlungsmasse_z_2028_pct_bip", stellen = 2 },
+  { zeile = "| Z 2028 = 9,35", datei = "altlasten.json", pfad = "beschluss/verhandlungsmasse_z_2028_pct_bip", stellen = 2 },
   # Gesamtlast
-  { zeile = "| **38,70**", datei = "gesamtlast33.json", pfad = "reihe/0/a_steuern_und_fonds", stellen = 2 },
-  { zeile = "| **42,80**", datei = "gesamtlast33.json", pfad = "reihe/0/b_mit_pflichtvorsorge", stellen = 2 },
+  { zeile = "| **38,68**", datei = "gesamtlast33.json", pfad = "reihe/0/a_steuern_und_fonds", stellen = 2 },
+  { zeile = "| **42,78**", datei = "gesamtlast33.json", pfad = "reihe/0/b_mit_pflichtvorsorge", stellen = 2 },
   { zeile = "| 45,58 / 49,68", datei = "gesamtlast33.json", pfad = "c_ohne_fonds_2028/summe", stellen = 2 },
   { zeile = "| 45,58 / 49,68", datei = "gesamtlast33.json", pfad = "c_ohne_fonds_2028/mit_route", stellen = 2 },
   # Haushalte und Grenzbelastung
@@ -38,9 +38,9 @@ pruefungen = [
   { zeile = "| Eigene Population: erwerbsfähige Haushalte", datei = "mikro_de.json", pfad = "basis/ergebnis/0.8/gesamt/anteil_mehr_personen_pct", stellen = 1 },
   { zeile = "| Validierung 2025: Bruttolohnsumme", datei = "mikro_de.json", pfad = "basis/validierung_2025/bruttolohnsumme/abweichung_pct", stellen = 1 },
   { zeile = "| Validierung 2025: Bruttolohnsumme", datei = "mikro_de.json", pfad = "basis/validierung_2025/lohnsteuer/abweichung_pct", stellen = 1 },
-  { zeile = "| Rentnerregel E", datei = "rentner_kombi.json", pfad = "varianten/4/anteil_mehr_pct", stellen = 1 },
-  { zeile = "| Rentnerregel E", datei = "rentner_kombi.json", pfad = "varianten/4/mittel_monat", stellen = 0 },
-  { zeile = "| Rentnerregel E", datei = "rentner_kombi.json", pfad = "varianten/4/fuenftel_monat/4", stellen = 0 },
+  { zeile = "| Rentnerregel BS35", datei = "rentner_kombi.json", pfad = "varianten/5/anteil_mehr_pct", stellen = 1 },
+  { zeile = "| Rentnerregel BS35", datei = "rentner_kombi.json", pfad = "varianten/5/mittel_monat", stellen = 0 },
+  { zeile = "| Rentnerregel BS35", datei = "rentner_kombi.json", pfad = "varianten/5/fuenftel_monat/4", stellen = 0 },
   # Länder
   { zeile = "| Deckel der Weitergabe, einheitlich", datei = "deckel_einheitlich.json", pfad = "geltend/DE/mehr_monat/2", stellen = 0 },
   { zeile = "| Deckel der Weitergabe, einheitlich", datei = "deckel_einheitlich.json", pfad = "geltend/FR/mehr_monat/2", stellen = 0 },

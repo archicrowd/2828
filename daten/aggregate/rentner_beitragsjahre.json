@@ -1127,5 +1127,21 @@
    "gegen_E_mrd": -0.0
   }
  ],
- "hinweis": "Versicherungsjahre zugeschätzt (Annahme), kalibriert an Rentenversicherungsbericht 2025 Übersichten A 3.1/A 3.2 (Bestand 31.12.2024, maschinell aus dem PDF gelesen). Freibetrag F = min(Jahre,45)/45 × f × G; Kürzung auf den Teil über F; Satz neutral zur Entlastung des Fonds unter E gesucht. Gruppen nach Zusage je Person und zugeschätzten Jahren."
+ "hinweis": "Versicherungsjahre zugeschätzt (Annahme), kalibriert an Rentenversicherungsbericht 2025 Übersichten A 3.1/A 3.2 (Bestand 31.12.2024, maschinell aus dem PDF gelesen). Freibetrag F = min(Jahre,45)/45 × f × G; Kürzung auf den Teil über F; Satz neutral zur Entlastung des Fonds unter E gesucht. Gruppen nach Zusage je Person und zugeschätzten Jahren.",
+ "uebertrag_regel": {
+  "satz": 0.275,
+  "satz_oben": 0.551,
+  "toml_satz": 0.275,
+  "toml_satz_oben": 0.551,
+  "kalibrierung": [
+   44.0,
+   11.5,
+   7.0
+  ],
+  "toml_kalibrierung": [
+   44.0,
+   11.5,
+   7.0
+  ]
+ }
 }

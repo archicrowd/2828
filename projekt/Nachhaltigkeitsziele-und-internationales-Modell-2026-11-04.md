@@ -1,6 +1,6 @@
 # Nachhaltigkeitsziele der UN und Weg zu einem internationalen Modell
 
-Initiative 28:28 · 4. November 2026 · Modellstand v4.67 · Arbeitspapier (Rechnung: `modell/sdg_kennzahlen.py`)
+Initiative 28:28 · 4. November 2026 · Modellstand v4.67, Nachtrag v4.72 · Arbeitspapier (Rechnung: `modell/sdg_kennzahlen.py`)
 
 ## 1 Entscheidung: Pestizide und mineralische Dünger in der Sonderstufe 33 %
 
@@ -43,7 +43,12 @@ unverändert. Die Variante, die alle wie Erwerbstätige abbildet, ist eine obere
 - **Grenzen:** statisch, ohne Preisniveauschub (1,2–2,1 %), ohne Kapitaleinkommen; Rentner nur als unveränderte Gruppe, nicht mit ihren Verlusten.
   Für Deutschland wäre die Mikrosimulation mit Rentnerhaushalten die bessere Grundlage (nächster Schritt).
 
-**Folgerung:** Für SDG 1 ist die Rentnerregel E die Schwachstelle. Eine Armutsquote, die bei Rentnern steigt, widerspricht dem Ziel; zu prüfen ist
+**Nachtrag v4.72 (Mikrosimulation Deutschland mit Rentnerhaushalten, Regel BS35):** Modellquote heute 18,3 % (amtlich 16,1 %), neu relativ
+18,1 %, verankert 12,5 %. Rentner: heute 22,3 %, neu relativ 30,3 %, verankert 20,3 % (unter E 30,8 / 20,8 %). Erwerbsfähige: 17,1 → 14,7 / 10,3 %.
+Untere 40 % +13,6 % gegen alle +10,8 % (SDG 10.1 erfüllt). Die Rentnerregel bewegt die Quote kaum; sie wirkt in der Mitte und oben. Die relative
+Quote der Rentner steigt, weil ihr Boden (Grundsicherung) unter der neuen Schwelle von 60 % des gestiegenen Medians liegt.
+
+**Folgerung (bis v4.71):** Für SDG 1 ist die Rentnerregel E die Schwachstelle. Eine Armutsquote, die bei Rentnern steigt, widerspricht dem Ziel; zu prüfen ist
 ein höherer Boden für Rentner oder eine Kürzung erst oberhalb eines höheren Betrags.
 
 ## 3 Globale Teilziele

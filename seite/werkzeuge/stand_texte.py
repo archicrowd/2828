@@ -37,8 +37,8 @@ ERSATZ = {
    "einen vorausgefüllten Antrag. Höhe und Anrechnung legt das Land fest."),
   ("bess_r4b", "Aufstockung an einer Stelle der Kommunen und Regionen",
    "Aufstockung auf vorausgefüllten Antrag an einer Stelle der Kommunen und Regionen"),
-  ("sich4_p", "werden auf den Teil über dem Grundbedarf um 15 % gekürzt;",
-   "werden ab dem Stichtag auf den Teil über dem Grundbedarf um 15 % gekürzt, gleich wann die Rente begann;"),
+  ("sich4_p", "darüber werden sie gestuft gekürzt, um 27,5 % und 55,1 %.",
+   "darüber werden sie ab dem Stichtag gestuft gekürzt, um 27,5 % und 55,1 %, gleich wann die Rente begann."),
   ("fuss_meth_p", "prüft eine synthetische Mikrosimulation die Verteilung über alle Haushalte.",
    "prüft eine synthetische Mikrosimulation die Verteilung über alle Haushalte; die Steuer- und Abgabenmodelle der Länder sind gegen die "
    "Vergleichsrechnung der OECD (Taxing Wages 2026) geprüft, Abweichungen sind im Logbuch erklärt."),
@@ -61,8 +61,8 @@ ERSATZ = {
    "under the same rule in every country. They pay out the top-up and hardship support locally, on application; anyone whose tax and wage data "
    "suggest an entitlement receives a pre-filled application. The country sets the amounts and how income is counted."),
   ("bess_r4b", "top-up at one local office", "top-up on a pre-filled application at one local office"),
-  ("sich4_p", "are reduced by 15% on the part above basic needs;",
-   "are reduced from the start date by 15% on the part above basic needs, whenever the pension began;"),
+  ("sich4_p", "above that they are reduced in steps, by 27.5% and 55.1%.",
+   "above that they are reduced in steps from the start date, by 27.5% and 55.1%, whenever the pension began."),
   ("fuss_meth_p", "checks the distribution across all households.",
    "checks the distribution across all households; the countries' tax and contribution models are checked against the OECD's comparative "
    "calculation (Taxing Wages 2026), and deviations are explained in the log."),
@@ -87,9 +87,8 @@ ERSATZ = {
    "avoir droit d'après ses données fiscales et salariales reçoit d'office une demande pré-remplie. Le montant et la prise en compte des revenus "
    "sont fixés par l'État."),
   ("bess_r4b", "complément à un seul guichet local", "complément sur demande pré-remplie à un seul guichet local"),
-  ("sich4_p", "sont réduites de 15 % sur la part au-dessus du besoin de base ;",
-   "sont réduites, à partir de la date d'entrée en vigueur, de 15 % sur la part au-dessus du besoin de base, quelle que soit la date de départ à "
-   "la retraite ;"),
+  ("sich4_p", "elles sont réduites par paliers, de 27,5 % puis de 55,1 %.",
+   "elles sont réduites par paliers à partir de la date d'entrée en vigueur, de 27,5 % puis de 55,1 %, quelle que soit la date de départ à la retraite."),
   ("fuss_meth_p", "vérifie la répartition sur l'ensemble des ménages.",
    "vérifie la répartition sur l'ensemble des ménages ; les modèles d'impôts et de cotisations des pays sont vérifiés par rapport au calcul "
    "comparatif de l'OCDE (Taxing Wages 2026), les écarts sont expliqués dans le journal."),
@@ -113,9 +112,8 @@ ERSATZ = {
    "con la stessa regola in ogni paese. Erogano sul posto, su domanda, l'integrazione e l'aiuto nei casi di disagio; chi in base ai dati "
    "fiscali e salariali sembra averne diritto riceve d'ufficio una domanda precompilata. Importo e computo dei redditi li stabilisce lo Stato."),
   ("bess_r4b", "integrazione a un unico sportello locale", "integrazione su domanda precompilata a un unico sportello locale"),
-  ("sich4_p", "sono ridotte del 15% sulla parte sopra il fabbisogno di base;",
-   "sono ridotte, dalla data di introduzione, del 15% sulla parte sopra il fabbisogno di base, indipendentemente da quando è iniziata la "
-   "pensione;"),
+  ("sich4_p", "sono ridotte a scaglioni, del 27,5% e poi del 55,1%.",
+   "sono ridotte a scaglioni dalla data di introduzione, del 27,5% e poi del 55,1%, indipendentemente da quando è iniziata la pensione."),
   ("fuss_meth_p", "verifica la distribuzione su tutte le famiglie.",
    "verifica la distribuzione su tutte le famiglie; i modelli fiscali e contributivi dei paesi sono verificati rispetto al calcolo comparativo "
    "dell'OCSE (Taxing Wages 2026), gli scostamenti sono spiegati nel registro."),
@@ -140,9 +138,8 @@ ERSATZ = {
    "fiscales y salariales pueda tener derecho recibe de oficio una solicitud prerrellenada. La cuantía y el cómputo de ingresos los fija el "
    "Estado."),
   ("bess_r4b", "complemento en una sola ventanilla local", "complemento con solicitud prerrellenada en una sola ventanilla local"),
-  ("sich4_p", "se reducen un 15 % en la parte por encima de la necesidad básica;",
-   "se reducen, desde la fecha de entrada en vigor, un 15 % en la parte por encima de la necesidad básica, sea cual sea la fecha de inicio de "
-   "la pensión;"),
+  ("sich4_p", "se reducen por tramos, un 27,5 % y luego un 55,1 %.",
+   "se reducen por tramos desde la fecha de entrada en vigor, un 27,5 % y luego un 55,1 %, sea cual sea la fecha de inicio de la pensión."),
   ("fuss_meth_p", "comprueba la distribución en todos los hogares.",
    "comprueba la distribución en todos los hogares; los modelos de impuestos y cotizaciones de los países se contrastan con el cálculo "
    "comparativo de la OCDE (Taxing Wages 2026) y las desviaciones se explican en el diario."),
@@ -166,8 +163,8 @@ ERSATZ = {
    "Na miejscu, na wniosek, wypłacają dopłatę i pomoc w trudnych przypadkach; kto według danych podatkowych i płacowych może mieć do nich "
    "prawo, otrzymuje z urzędu wstępnie wypełniony wniosek. Wysokość i zasadę zaliczania ustala państwo."),
   ("bess_r4b", "dopłata w jednym okienku na miejscu", "dopłata na wstępnie wypełniony wniosek w jednym okienku na miejscu"),
-  ("sich4_p", "są obniżane o 15% w części powyżej potrzeb podstawowych;",
-   "są od dnia wprowadzenia obniżane o 15% w części powyżej potrzeb podstawowych, niezależnie od tego, kiedy emerytura się rozpoczęła;"),
+  ("sich4_p", "są obniżane stopniowo, o 27,5%, a następnie o 55,1%.",
+   "są od dnia wprowadzenia obniżane stopniowo, o 27,5%, a następnie o 55,1%, niezależnie od tego, kiedy emerytura się rozpoczęła."),
   ("fuss_meth_p", "sprawdza rozkład we wszystkich gospodarstwach domowych.",
    "sprawdza rozkład we wszystkich gospodarstwach domowych; modele podatków i składek poszczególnych krajów są sprawdzane względem "
    "porównawczego rachunku OECD (Taxing Wages 2026), a odchylenia wyjaśnia dziennik."),

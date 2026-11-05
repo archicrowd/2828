@@ -1,7 +1,17 @@
 {
- "version": "v4.37",
- "status": "Prüfrechnung (R6)",
- "satz_regel": 0.15,
+ "version": "v4.72",
+ "status": "Prüfrechnung (R6), Regel BS35",
+ "regel": {
+  "art": "BS35",
+  "freibetrag_monat": 1029,
+  "voll_jahre": 35,
+  "faktor": 2.0,
+  "sockel": 1.0,
+  "breite": 1.0,
+  "satz": 0.275,
+  "satz_oben": 0.551,
+  "jahre_standard": 45
+ },
  "kuerzung_de": 0.0695,
  "je_staat_aktiv": true,
  "laender": {
@@ -10,42 +20,42 @@
    "grundbedarf_monat": 1058,
    "r_makro": 0.294,
    "r": 0.38,
-   "satz": 0.0939
+   "satz": 0.1423
   },
   "BE": {
    "zusage_monat": 2640,
    "grundbedarf_monat": 1015,
    "r_makro": 0.385,
    "r": 0.497,
-   "satz": 0.0778
+   "satz": 0.0896
   },
   "BG": {
    "zusage_monat": 632,
    "grundbedarf_monat": 555,
    "r_makro": 0.879,
    "r": 1.136,
-   "satz": 0.0264
+   "satz": 0.0096
   },
   "CH": {
    "zusage_monat": 3101,
    "grundbedarf_monat": 1485,
    "r_makro": 0.479,
    "r": 0.619,
-   "satz": 0.0633
+   "satz": 0.0566
   },
   "CY": {
    "zusage_monat": 2007,
    "grundbedarf_monat": 846,
    "r_makro": 0.421,
    "r": 0.545,
-   "satz": 0.0719
+   "satz": 0.0749
   },
   "CZ": {
    "zusage_monat": 1109,
    "grundbedarf_monat": 729,
    "r_makro": 0.657,
    "r": 0.85,
-   "satz": 0.0427
+   "satz": 0.0249
   },
   "DE": {
    "zusage_monat": 2357,
@@ -59,161 +69,161 @@
    "grundbedarf_monat": 1179,
    "r_makro": 0.572,
    "r": 0.74,
-   "satz": 0.0515
+   "satz": 0.0366
   },
   "EE": {
    "zusage_monat": 967,
    "grundbedarf_monat": 829,
    "r_makro": 0.857,
    "r": 1.109,
-   "satz": 0.0276
+   "satz": 0.0105
   },
   "EL": {
    "zusage_monat": 1251,
    "grundbedarf_monat": 734,
    "r_makro": 0.587,
    "r": 0.759,
-   "satz": 0.0499
+   "satz": 0.0342
   },
   "ES": {
    "zusage_monat": 1784,
    "grundbedarf_monat": 801,
    "r_makro": 0.449,
    "r": 0.581,
-   "satz": 0.0676
+   "satz": 0.0654
   },
   "FI": {
    "zusage_monat": 2921,
    "grundbedarf_monat": 1075,
    "r_makro": 0.368,
    "r": 0.476,
-   "satz": 0.0806
+   "satz": 0.0972
   },
   "FR": {
    "zusage_monat": 2583,
    "grundbedarf_monat": 971,
    "r_makro": 0.376,
    "r": 0.486,
-   "satz": 0.0793
+   "satz": 0.0935
   },
   "HR": {
    "zusage_monat": 771,
    "grundbedarf_monat": 650,
    "r_makro": 0.843,
    "r": 1.09,
-   "satz": 0.0285
+   "satz": 0.0111
   },
   "HU": {
    "zusage_monat": 701,
    "grundbedarf_monat": 631,
    "r_makro": 0.9,
    "r": 1.164,
-   "satz": 0.0252
+   "satz": 0.0088
   },
   "IE": {
    "zusage_monat": 1990,
    "grundbedarf_monat": 1112,
    "r_makro": 0.559,
    "r": 0.723,
-   "satz": 0.053
+   "satz": 0.0388
   },
   "IS": {
    "zusage_monat": 1323,
    "grundbedarf_monat": 1353,
    "r_makro": 1.023,
    "r": 1.323,
-   "satz": 0.0193
+   "satz": 0.0052
   },
   "IT": {
    "zusage_monat": 2215,
    "grundbedarf_monat": 862,
    "r_makro": 0.389,
    "r": 0.503,
-   "satz": 0.0771
+   "satz": 0.0876
   },
   "LT": {
    "zusage_monat": 830,
    "grundbedarf_monat": 707,
    "r_makro": 0.851,
    "r": 1.101,
-   "satz": 0.028
+   "satz": 0.0108
   },
   "LU": {
    "zusage_monat": 7870,
    "grundbedarf_monat": 1201,
    "r_makro": 0.153,
    "r": 0.197,
-   "satz": 0.1206
+   "satz": 0.296
   },
   "LV": {
    "zusage_monat": 738,
    "grundbedarf_monat": 698,
    "r_makro": 0.946,
    "r": 1.224,
-   "satz": 0.0228
+   "satz": 0.0072
   },
   "MT": {
    "zusage_monat": 1345,
    "grundbedarf_monat": 839,
    "r_makro": 0.624,
    "r": 0.807,
-   "satz": 0.046
+   "satz": 0.029
   },
   "NL": {
    "zusage_monat": 1628,
    "grundbedarf_monat": 1027,
    "r_makro": 0.631,
    "r": 0.816,
-   "satz": 0.0452
+   "satz": 0.028
   },
   "NO": {
    "zusage_monat": 3149,
    "grundbedarf_monat": 1148,
    "r_makro": 0.365,
    "r": 0.472,
-   "satz": 0.0812
+   "satz": 0.0989
   },
   "PL": {
    "zusage_monat": 1204,
    "grundbedarf_monat": 665,
    "r_makro": 0.552,
    "r": 0.714,
-   "satz": 0.0538
+   "satz": 0.04
   },
   "PT": {
    "zusage_monat": 1161,
    "grundbedarf_monat": 708,
    "r_makro": 0.61,
    "r": 0.789,
-   "satz": 0.0474
+   "satz": 0.0308
   },
   "RO": {
    "zusage_monat": 761,
    "grundbedarf_monat": 539,
    "r_makro": 0.708,
    "r": 0.916,
-   "satz": 0.0382
+   "satz": 0.02
   },
   "SE": {
    "zusage_monat": 2508,
    "grundbedarf_monat": 1063,
    "r_makro": 0.424,
    "r": 0.548,
-   "satz": 0.0715
+   "satz": 0.074
   },
   "SI": {
    "zusage_monat": 1436,
    "grundbedarf_monat": 785,
    "r_makro": 0.547,
    "r": 0.707,
-   "satz": 0.0545
+   "satz": 0.0411
   },
   "SK": {
    "zusage_monat": 1136,
    "grundbedarf_monat": 721,
    "r_makro": 0.635,
    "r": 0.821,
-   "satz": 0.0449
+   "satz": 0.0276
   }
  },
  "hinweis": "Zusage je Person ab 65 aus COFOG GF1002+GF1003 (2024, % BIP) × BIP je Kopf (Kaufkraft 2026–2028, Rechengröße); Verteilungsform aus der deutschen Mikrosimulation (Annahme); Euro je Monat, Preise 2026."

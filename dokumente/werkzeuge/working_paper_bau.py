@@ -335,7 +335,8 @@ options and a default fund.</td></tr>
 <tr><td><b>VAT label</b></td><td>Rates 5 / 11 / 17 / 25 %, special rate 33 % only for harmful goods. Suppliers obtain lower rates through certification
 by supervised bodies.</td></tr>
 <tr><td><b>Legacy</b></td><td>Public debt and unfunded pension promises above the dividend move into a common fund of the participating states,
-financed by a surcharge on all taxes. Existing pension promises above basic need are reduced by 15 %; own savings are not reduced (pension rule E).
+financed by a surcharge on all taxes. Existing pension promises are protected up to an allowance of twice basic need after 35 insurance years
+(pro rata for shorter careers, never below basic need) and reduced in steps above it (27.5 %, then 55.1 %); own savings are not reduced (pension rule BS35).
 The effective reduction of pension payments differs by state, from {en(100 * KS[0][0], 1)} % to {en(100 * KS[-1][0], 1)} %
 ({en(100 * KL['kuerzung_de'], 2)} % in Germany).</td></tr>
 </tbody></table>
@@ -391,11 +392,11 @@ reform; the OECD apparently does not (to be checked).</p>
 {en(MB['status']['Hauptperson Vollzeit']['anteil_mehr_haushalte_pct'], 1)} %, part-time {en(MB['status']['Hauptperson Teilzeit']['anteil_mehr_haushalte_pct'], 1)} %,
 self-employed {en(MB['status']['Hauptperson selbständig']['anteil_mehr_haushalte_pct'], 1)} %, civil servants
 {en(MB['status']['Hauptperson Beamte']['anteil_mehr_haushalte_pct'], 1)} %, mini-job {en(MB['status']['Hauptperson Minijob']['anteil_mehr_haushalte_pct'], 1)} %,
-households without earnings {en(MB['status']['ohne Erwerb (Bürgergeld)']['anteil_mehr_haushalte_pct'], 1)} %. Under pension rule E,
+households without earnings {en(MB['status']['ohne Erwerb (Bürgergeld)']['anteil_mehr_haushalte_pct'], 1)} %. Under pension rule BS35,
 {en(RE['anteil_mehr_pct'], 1)} % of pensioner households are better off; the mean change is {en(RE['mittel_monat'])} € per month, from
-{pm(RE['fuenftel_monat'][0])} € in the lowest to {en(RE['fuenftel_monat'][4])} € in the highest fifth. Pensioners lose because their contributions to health
-and long-term care disappear while pension promises above basic need are reduced, and because the dividend does not fully replace these amounts in
-the upper part of the distribution.</p>
+{pm(RE['fuenftel_monat'][0])} € in the lowest to {en(RE['fuenftel_monat'][4])} € in the highest fifth. The rule asks the contribution to the legacy
+fund mainly from promises above twice basic need; long careers with modest promises keep their pension in full and gain from the removal of health
+and care contributions. Insurance years are imputed from the pension amount (assumption), as the survey data do not record them.</p>
 
 <h3>5.3 Public finances</h3>
 <p>Table 4 shows the strong net and the dividend for Germany. The dividend amounts to {en(F.DIV_ERW)} € per adult and {en(F.DIV_ERW * 0.8)} € per child and
@@ -514,7 +515,7 @@ Chetty et al. 2014).</li>
 <li><b>VAT label:</b> cuts reach consumers less than increases (Benzarti et al. 2020); consumers respond more strongly to taxes that are
 visible at the point of purchase (Chetty, Looney and Kroft 2009), which may strengthen the steering effect of a label (not tested).</li>
 <li><b>Carbon price with rebate:</b> rebates are underestimated and do not reliably raise support (Douenne and Fabre 2022; Mildenberger et al. 2022).</li>
-<li><b>Pension rule E:</b> loss aversion and resistance in the largest group of voters are an acceptance risk not captured by the model.</li>
+<li><b>Pension rule BS35:</b> loss aversion among pensioners with high promises (marginal cut 55.1 %) is an acceptance and legal risk not captured by the model.</li>
 </ul>
 <p>None of these findings questions the calculation as such; several show that outcomes depend on design details that are not yet fixed. A
 quantitative stage is open.</p>

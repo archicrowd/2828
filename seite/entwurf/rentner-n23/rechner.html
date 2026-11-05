@@ -77,11 +77,12 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
 
 <div class="wrap">
   <header class="head">
-    <div class="kicker">Initiative 28:28 · Entwicklungsmodus · Modellstand v4.71 · vorläufig, kein Beschluss</div>
+    <div class="kicker">Initiative 28:28 · Grundversion BS35 (Beschluss 5.11.2026) · Modellstand v4.72</div>
     <h1>Ein Arbeitsleben schützt den doppelten Grundbedarf</h1>
-    <p class="lead">Beispielrechner für die Variante N2/3: Die Rentenzusage bleibt bis zum doppelten Grundbedarf ungekürzt. Darüber trägt sie gestuft
-      zum Altlastenfonds bei, 27,7 % auf den nächsten Grundbedarf und 55,4 % auf alles darüber. Die Stufen sind in Vielfachen des Grundbedarfs G
-      des jeweiligen Staates angegeben und gelten so in jedem Staat.</p>
+    <p class="lead">Beispielrechner für die Rentenregel BS35: Jedes Versicherungsjahr schützt einen festen Teil der Zusage. Nach 35 Jahren ist der
+      doppelte Grundbedarf geschützt, bei kürzerer Laufbahn anteilig, nie weniger als der einfache Grundbedarf. Darüber trägt die Zusage gestuft zum
+      Altlastenfonds bei, 27,5 % auf den nächsten Grundbedarf und 55,1 % auf alles darüber. Alle Grenzen sind Vielfache des Grundbedarfs G des
+      jeweiligen Staates und gelten so in jedem Staat.</p>
   </header>
 
   <section class="tool" aria-label="Rechner">
@@ -100,7 +101,7 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
           <input type="range" id="jr" min="0" max="50" step="1" value="45" aria-label="Versicherungsjahre">
           <input type="number" id="j" min="0" max="50" step="1" value="45"><span class="unit">Jahre</span>
         </div>
-        <p class="hint">Nur für den Vergleich mit der Option ab 35. N2/3 braucht die Jahre nicht.</p>
+        <p class="hint">Einschließlich angerechneter Erziehungs-, Pflege- und Ausbildungszeiten und der Jahre in anderen Staaten.</p>
       </div>
       <div class="field">
         <label for="g">Grundbedarf G des Staates</label>
@@ -117,19 +118,20 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
 
     <div class="panel" aria-live="polite">
       <div class="row" style="justify-content:space-between">
-        <span class="tag">Kürzung unter N2/3</span>
+        <span class="tag">Kürzung unter BS35</span>
         <span class="state" id="state"></span>
       </div>
       <div class="big" id="cut">0 € <small>im Monat</small></div>
       <dl>
         <dt>Zusage in Vielfachen von G</dt><dd id="mult"></dd>
+        <dt>Freibetrag</dt><dd id="frei"></dd>
         <dt>Zusage nach Kürzung</dt><dd id="rest"></dd>
         <dt>Durchschnittlicher Kürzungssatz</dt><dd id="avg"></dd>
         <dt>Satz auf den letzten Euro</dt><dd id="marg"></dd>
       </dl>
       <div class="band">
         <div class="bar" id="bar">
-          <div class="seg f" id="s1">frei</div><div class="seg m" id="s2">27,7 %</div><div class="seg t" id="s3">55,4 %</div>
+          <div class="seg f" id="s1">frei</div><div class="seg m" id="s2">27,5 %</div><div class="seg t" id="s3">55,1 %</div>
           <div class="marker" id="mk"></div>
         </div>
         <div class="ticks" id="ticks"></div>
@@ -148,24 +150,24 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
     <h2>Vier Erzählungen nebeneinander</h2>
     <div class="narr">
       <article class="card">
-        <span class="tag">E · geltend</span>
+        <span class="tag">E · bis v4.71</span>
         <h3>Alle über dem Grundbedarf tragen ein wenig</h3>
         <p class="quote">„Jeder Euro über dem Grundbedarf trägt 15 %.“</p>
         <p class="kv">Rechnung: <b>15 % ab 1 G</b> · im Plus: <b>32 %</b> der Rentnerhaushalte</p>
         <p class="kv">Schwäche: trifft die typische Rente nach langer Erwerbszeit (1,5–2 G: niemand im Plus).</p>
       </article>
-      <article class="card pick">
-        <span class="tag">N2/3 · Vorzug</span>
+      <article class="card">
+        <span class="tag">N2/3 · Variante ohne Jahre</span>
         <h3>Ein Arbeitsleben schützt den doppelten Grundbedarf</h3>
         <p class="quote">„Was ein volles Arbeitsleben einbringt, bleibt. Was darüber hinaus versprochen wurde, trägt gestuft bei.“</p>
         <p class="kv">Rechnung: <b>0 % bis 2 G, 27,7 % bis 3 G, 55,4 % darüber</b> · im Plus: <b>65 %</b>; Zusagen bis 2 G zu 100 %</p>
         <p class="kv">Schwäche: Satz 55 % in der obersten Stufe (Eigentumsschutz, P1); über 3 G im Mittel −1.042 € im Monat.</p>
       </article>
-      <article class="card">
-        <span class="tag">BS35 · international</span>
+      <article class="card pick">
+        <span class="tag">BS35 · Grundversion</span>
         <h3>Jedes Jahr schützt, der Grundbedarf ist sicher</h3>
         <p class="quote">„Ein Arbeitsleben schützt den doppelten Grundbedarf, und niemandem wird der Grundbedarf genommen.“</p>
-        <p class="kv">Rechnung: <b>Freibetrag max(1 G; min(J,35)/35 × 2 G), darüber 27,5 / 55,1 %</b> · im Plus: <b>64 %</b></p>
+        <p class="kv">Rechnung: <b>Freibetrag max(1 G; min(J,35)/35 × 2 G), darüber 27,5 / 55,1 %</b> · im Plus: <b>64,5 %</b>; lange Laufbahn bis 2 G zu 98 %</p>
         <p class="kv">Stärke: trifft hohe Zusagen nach kurzer Laufbahn (Sonderregime, Endgehaltsformeln). Schwäche: kürzt bei gleichen Beiträgen
           die kürzere Laufbahn über 1 G; braucht die Versicherungsjahre je Person, auch aus anderen Staaten.</p>
       </article>
@@ -181,8 +183,8 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
 
   <footer class="foot">
     <p>Alle Anteile: Rentnerhaushalte in Deutschland 2028, Kaufkraft 2026, gleiche Entlastung des Fonds wie Regel E (25,1 Mrd. €), außer T.
-      Rechnung: <code>modell/rentner_varianten.py</code> und <code>modell/rentner_beitragsjahre.py</code> (v4.71) (EU-SILC 2025, ASID 2023;
-      Versicherungsjahre zugeschätzt, Annahme).</p>
+      Rechnung: <code>modell/rentner_kombi.py</code>, <code>modell/rentner_varianten.py</code> und <code>modell/rentner_beitragsjahre.py</code>
+      (v4.72; EU-SILC 2025, ASID 2023; Versicherungsjahre zugeschätzt, Annahme).</p>
     <p>Der Rechner zeigt nur die Kürzung der Zusage, nicht die Änderung des Haushaltsnettos. Dazu kommen Dividende, Steuer, Label und der Boden
       (heutige Grundsicherung 1.083 € allein, 1.632 € als Paar). Die Modellwerte je Gruppe stehen unter dem Vergleich.</p>
     <p>Beispielfälle: Rentenwert 40,79 € je Entgeltpunkt; Ruhegehalt 1,79375 % je Dienstjahr (§ 14 BeamtVG), Bezüge 5.000 € angenommen.
@@ -202,8 +204,8 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
     {k:"20 J., Durchschnitt",z:20*RW,j:20},
     {k:"10 J., Rente = Grundbedarf",z:1029,j:10}
   ];
-  // Modellmittel N2/3 je Gruppe nach Zusage (Deutschland, Änderung Haushaltsnetto je Monat; rentner_varianten.json v4.68/v4.69)
-  var MODEL=[[1,64,71],[1.5,51,100],[2,24,100],[3,-162,5],[Infinity,-1042,0]];
+  // Modellmittel BS35 je Gruppe nach Zusage (Deutschland, Änderung Haushaltsnetto je Monat; rentner_beitragsjahre.json v4.72)
+  var MODEL=[[1,64,71],[1.5,51,100],[2,23,98],[3,-163,5],[Infinity,-1037,0]];
   var $=function(id){return document.getElementById(id)};
   var fmt=new Intl.NumberFormat("de-DE",{maximumFractionDigits:0});
   var pct=new Intl.NumberFormat("de-DE",{maximumFractionDigits:1});
@@ -211,7 +213,8 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
   function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
   function cutN23(z,G){return 0.277*clamp(z-2*G,0,G)+0.554*Math.max(0,z-3*G)}
   function cutE(z,G){return 0.15*Math.max(0,z-G)}
-  function cutB(z,j,G){var F=Math.max(G,Math.min(j,35)/35*2*G);return 0.275*clamp(z-F,0,G)+0.551*Math.max(0,z-F-G)}
+  function frei(j,G){return Math.max(G,Math.min(j,35)/35*2*G)}
+  function cutB(z,j,G){var F=frei(j,G);return 0.275*clamp(z-F,0,G)+0.551*Math.max(0,z-F-G)}
   function num(id,def){var v=parseFloat($(id).value);return isFinite(v)&&v>=0?v:def}
 
   var pre=$("presets");
@@ -227,27 +230,28 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
   function render(sel){
     var z=num("z",0),j=num("j",0),G=Math.max(1,num("g",1029));
     Array.prototype.forEach.call(pre.children,function(b,i){b.setAttribute("aria-pressed",i===sel?"true":"false")});
-    var c=cutN23(z,G);
+    var F=frei(j,G),c=cutB(z,j,G);
     $("cut").innerHTML=eur(c)+" <small>im Monat</small>";
     var st=$("state");
     if(c<=0){st.textContent="ungekürzt";st.className="state"}else{st.textContent="gekürzt";st.className="state cut"}
     $("mult").textContent=pct.format(z/G)+" G";
     $("rest").textContent=eur(z-c);
     $("avg").textContent=z>0?pct.format(c/z*100)+" %":"–";
-    $("marg").textContent=z>3*G?"55,4 %":z>2*G?"27,7 %":"0 %";
+    $("frei").textContent=eur(F)+" ("+pct.format(F/G)+" G)";
+    $("marg").textContent=z>F+G?"55,1 %":z>F?"27,5 %":"0 %";
 
     var max=Math.max(4*G,z*1.08);
-    $("s1").style.width=(2*G/max*100)+"%";
+    $("s1").style.width=(F/max*100)+"%";
     $("s2").style.width=(G/max*100)+"%";
-    $("s3").style.width=((max-3*G)/max*100)+"%";
+    $("s3").style.width=((max-F-G)/max*100)+"%";
     $("mk").style.left="calc("+clamp(z/max*100,0,100)+"% - 1px)";
-    var t="";[0,G,2*G,3*G].forEach(function(v,i){t+='<span style="left:'+(v/max*100)+'%">'+(i===0?"0":i+" G")+"</span>"});
+    var t="";[[0,"0"],[G,"1 G"],[F,"F"],[F+G,"F + 1 G"]].forEach(function(v){if(v[1]==="1 G"&&Math.abs(F-G)<0.05*G)return;t+='<span style="left:'+(v[0]/max*100)+'%">'+v[1]+"</span>"});
     $("ticks").innerHTML=t;
 
     var rows=[
-      ["N2/3 (Vorzug)",c,true],
-      ["E (geltend)",cutE(z,G),false],
-      ["Option ab 35 mit Sockel ("+fmt.format(j)+" J.)",cutB(z,j,G),false]
+      ["BS35, Grundversion ("+fmt.format(j)+" J.)",c,true],
+      ["N2/3, ohne Jahre",cutN23(z,G),false],
+      ["E, bis v4.71",cutE(z,G),false]
     ];
     $("cmp").innerHTML=rows.map(function(r){
       return '<tr class="'+(r[2]?"pick":"")+'"><td>'+r[0]+'</td><td class="n">'+eur(r[1])+'</td><td class="n">'+eur(z-r[1])+"</td></tr>";
@@ -258,7 +262,7 @@ dt{color:var(--muted)} dd{margin:0;text-align:right;font-family:var(--mono)}
       var x=z/G,g=MODEL.find(function(r){return x<=r[0]});
       var lab=x<=1?"bis 1 G":x<=1.5?"1–1,5 G":x<=2?"1,5–2 G":x<=3?"2–3 G":"über 3 G";
       m.textContent="Im Modell (Deutschland 2028) ändert sich das Haushaltsnetto der Rentnerhaushalte mit einer Zusage von "+lab+
-        " unter N2/3 im Mittel um "+(g[1]>0?"+":"")+fmt.format(g[1])+" € im Monat; "+g[2]+" % von ihnen haben mehr.";
+        " unter BS35 im Mittel um "+(g[1]>0?"+":"")+fmt.format(g[1])+" € im Monat; "+g[2]+" % von ihnen haben mehr.";
       m.hidden=false;
     }else{m.hidden=true}
   }

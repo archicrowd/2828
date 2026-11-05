@@ -1,7 +1,7 @@
 # Rentner: Kombination „Grundbedarf garantiert, Zusagen darüber gekürzt“ (modell/rentner_kombi.py, Logbuch v4.24). Vorschlag, Prüfrechnung.
 # Logik der Initiative (22.10.2026): Die finanzielle Last aller neuen Ansätze kommt aus ungedeckten Rentenzusagen; Einbußen treffen die Zusage,
 # nicht die eigene Vorsorge. Boden auf dem Niveau der heutigen Grundsicherung.
-version = "v4.26"   # v4.26: E beschlossen (22.10.2026); A = bisheriger Beschluss
+version = "v4.72"   # v4.72: BS35 beschlossen (5.11.2026), ersetzt E; v4.26: E beschlossen (22.10.2026); A = Beschluss v4.11
 weitergabe = 0.8
 bip_2028_mrd = 4915            # wie rentnerausgleich.toml
 stichprobe = 8000
@@ -28,7 +28,13 @@ satz = 0.10
 boden = [1083, 1632]
 ueber_grundbedarf = true
 [[variante]]
-name = "E Beschluss v4.26: Boden 1.083 / 1.632 €, 15 % über dem Grundbedarf"
+name = "E Beschluss v4.26 bis v4.71: Boden 1.083 / 1.632 €, 15 % über dem Grundbedarf"
 satz = 0.15
+boden = [1083, 1632]
+ueber_grundbedarf = true
+[[variante]]
+name = "BS35 Beschluss v4.72: Boden 1.083 / 1.632 €, Freibetrag max(1 G; min(J,35)/35 × 2 G), 27,5 % / 55,1 % darüber"
+regel = "BS35"            # haushalte33.rente_regel; Versicherungsjahre zugeschätzt (haushalte33.rente_jahre, Annahme)
+satz = 0.0
 boden = [1083, 1632]
 ueber_grundbedarf = true

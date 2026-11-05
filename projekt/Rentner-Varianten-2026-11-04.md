@@ -1,6 +1,10 @@
 # Rentner: Varianten zur Regel E (Entwicklungsmodus)
 
-Initiative 28:28 · 4. November 2026 · Modellstand v4.71 · vorläufig, kein Beschluss · Rechnung: `modell/rentner_varianten.py`, `modell/rentner_beitragsjahre.py`
+Initiative 28:28 · 4. November 2026 · Modellstand v4.72 · **Beschluss 5.11.2026: BS35 ist Grundversion** (Logbuch v4.72) · Rechnung: `modell/rentner_varianten.py`, `modell/rentner_beitragsjahre.py`
+
+**Beschluss (5.11.2026, v4.72):** Die Initiative führt BS35 als internationale Grundversion ein; Regel E gilt nicht mehr. Die Durchrechnung aller
+Stufen steht im Logbuch v4.72: Rentnerhaushalte mit mehr 64,5 % (E: 32,2 %), alle Personen mit mehr 83,6 % (76,7 %), Fonds 5,15 % BIP (5,17 %),
+Kürzungssatz je Staat neu (FR 9,35 %, IT 8,76 %, PL 4,00 %, LU 29,6 % als Grenzfall). Offen: Obergrenze des oberen Satzes; Boden mit Blick auf SDG 1.2.
 
 ## Auftrag
 

@@ -479,6 +479,25 @@ def auswerten(zeilen, wg):
     dez = np.empty(len(zeilen), int)
     dez[o] = np.minimum((cum * 10).astype(int), 9)
     out["dezile"] = [dict(dezil=i + 1, obergrenze_aequiv_monat_eur=round(float(aeq[dez == i].max() / 12)), **anteil(dez == i)) for i in range(10)]
+    # v4.72: Armutsgefährdung (SDG 1.2, 60 % des Medians, Personen gewichtet) und untere 40 % (SDG 10.1) mit Rentnerhaushalten
+    y0 = np.array([z["heute"] for z in zeilen])
+    y1 = np.array([z["neu"][wg][0] for z in zeilen])
+    aeq1 = aeq * np.where(y0 > 0, y1 / np.where(y0 > 0, y0, 1), 1.0)
+    rent = np.array([z["status"] == "Rentner" for z in zeilen])
+    m0, m1 = gew_median(aeq, wp), gew_median(aeq1, wp)
+
+    def quote(x, grenze, mask=None):
+        mk = np.ones(len(x), bool) if mask is None else mask
+        return round(float(wp[mk & (x < grenze)].sum() / wp[mk].sum() * 100), 1)
+    u40 = dez < 4
+    out["armut"] = dict(median_aequiv_monat_heute=round(m0 / 12), median_aequiv_monat_neu=round(m1 / 12),
+                        quote_heute_pct=quote(aeq, 0.6 * m0), quote_neu_relativ_pct=quote(aeq1, 0.6 * m1), quote_neu_verankert_pct=quote(aeq1, 0.6 * m0),
+                        rentner=dict(heute_pct=quote(aeq, 0.6 * m0, rent), neu_relativ_pct=quote(aeq1, 0.6 * m1, rent), neu_verankert_pct=quote(aeq1, 0.6 * m0, rent)),
+                        erwerbsfaehige=dict(heute_pct=quote(aeq, 0.6 * m0, ~rent), neu_relativ_pct=quote(aeq1, 0.6 * m1, ~rent), neu_verankert_pct=quote(aeq1, 0.6 * m0, ~rent)),
+                        untere40_zuwachs_pct=round(float((wp[u40] * aeq1[u40]).sum() / (wp[u40] * aeq[u40]).sum() * 100 - 100), 1),
+                        alle_zuwachs_pct=round(float((wp * aeq1).sum() / (wp * aeq).sum() * 100 - 100), 1),
+                        hinweis="Modellpopulation (synthetisch, 2028, Kaufkraft 2026); Äquivalenzeinkommen neu = heute × neu/heute je Haushalt; "
+                                "Quote heute ist die des Modells, nicht die amtliche (16,1 %, EU-SILC 2025); statisch, ohne Preisniveauschub")
     auf = np.array([z["neu"][wg][1] for z in zeilen])
     bg = np.array([z["bg_heute"] for z in zeilen])
     ren = np.array([z["status"] == "Rentner" for z in zeilen])

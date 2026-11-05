@@ -24,7 +24,14 @@ jahre = [2028, 2035]
 renten_monat = [900, 1200, 1600, 2200]
 # v3.48 (Beschluss): Renten werden um die eingesparten Sozialbeiträge gekürzt (Bruttorente × (1 − Satz der Rentner)); Satz wie oben 12,35 %.
 rente_kuerzung = 0.075       # v4.11: Rentnerausgleich A (vorher 0,1235); seit v4.26 nur noch Vergleich
-rente_regel = { satz = 0.15, freibetrag_monat = 1029 }   # v4.26 Beschluss 22.10.2026 (Regel E): 15 % auf den Teil der Zusage über dem Grundbedarf (12.348 € / 12)
+# v4.72 Beschluss 5.11.2026 (Regel BS35, internationale Grundversion; ersetzt Regel E v4.26: 15 % über 1.029 €):
+# Freibetrag F = max(sockel × G; min(Jahre, voll_jahre)/voll_jahre × faktor × G), G = freibetrag_monat (Grundbedarf 12.348 € / 12);
+# Kürzung satz von F bis F + breite × G, satz_oben darüber. Sätze neutral zur Entlastung des Fonds unter E (rentner_beitragsjahre.json BS35).
+rente_regel = { art = "BS35", freibetrag_monat = 1029, voll_jahre = 35, faktor = 2.0, sockel = 1.0, breite = 1.0, satz = 0.275, satz_oben = 0.551, jahre_standard = 45 }
+rente_regel_e = { satz = 0.15, freibetrag_monat = 1029 }   # bis v4.71 (Regel E), nur Vergleich
+# Versicherungsjahre zugeschätzt (Annahme, v4.69): J = a + b · ln(Zusage/z_mittel) + c · ε, begrenzt 0–50; kalibriert in rentner_beitragsjahre.py
+# an Rentenversicherungsbericht 2025 (Übersichten A 3.1/A 3.2); z_mittel = mittlere Zusage je Person (rentner_kombi.json, € je Jahr, Kaufkraft 2026)
+rente_jahre = { a = 44.0, b = 11.5, c = 7.0, seed = 7, z_mittel_jahr = 21865 }
 rentner_kv_pv = 0.1235
 besteuerungsanteil = 0.83
 grundauskommen_rentner = { heute_monat = 1083, neu_monat = 1083 }   # v4.26: neu = heutige Grundsicherung (Regel E; vorher 1.029). v4.11 B1: heute Grundsicherung im Alter (563 € + KdU 520 €, Annahme wie sozial_laender.toml); neu Grundbedarf 12.348 € / 12

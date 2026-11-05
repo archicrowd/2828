@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.71**
+Stand: 24. Oktober 2026 · Modellstand **v4.72**
 
 ---
 
@@ -4753,6 +4753,61 @@ Rechner `seite/entwurf/rentner-n23/rechner.html`: Vergleichszeile und Erzählkar
 
 ---
 
+### v4.72 — Rentnerregel BS35 als internationale Grundversion beschlossen (ersetzt Regel E); alles durchgerechnet; Armutsquote aus der Mikrosimulation
+
+**Art der Änderung: MINOR (Beschluss, geltende Zahlen bewegt).** 5. November 2026.
+
+**Beschluss der Initiative (5.11.2026):** Die Option ab 35 mit Sockel (BS35, v4.71) wird Grundversion und ersetzt Regel E (v4.26). Regel: Freibetrag
+F = max(1 G; min(Versicherungsjahre, 35)/35 × 2 G), G = Grundbedarf des Staates (DE 1.029 € je Person und Monat, Kaufkraft 2026); Kürzung 27,5 %
+von F bis F + 1 G, 55,1 % darüber; eigene Vorsorge ungekürzt; Boden heutige Grundsicherung (1.083 / 1.632 €) wie bisher. Die Sätze sind die
+neutralen aus v4.71 (gleiche Entlastung des Fonds in Deutschland wie E); eine Obergrenze des oberen Satzes ist nicht beschlossen (offen, R15).
+
+**Umsetzung:**
+- `haushalte33.toml`: `rente_regel` = BS35, `rente_regel_e` zum Vergleich, `rente_jahre` (Zuschätzung der Versicherungsjahre, Annahme, v4.69:
+  J = 44 + 11,5 · ln(Zusage/21.865 €) + 7 · ε, begrenzt 0–50). `haushalte33.py`: `kuerzung_bs35`, `jahre_zu`; Fallrechnungen mit 45 Jahren.
+- `mikro_rentner_de.py`: eigener Zufallsstrom ε je Rentnerhaushalt (Seed 7; Ziehung sonst unverändert), Kürzung mit zugeschätzten Jahren.
+- `rentner_kombi.py`: Variante BS35 als geltende (letzte) Variante; Übertrag in den Fonds geprüft (effektiver Satz 6,95 % wie E, Boden unverändert);
+  neu 400 Paare (Zusage relativ, Jahre) für die Staaten. `rentner_beitragsjahre.py` prüft, dass Sätze und Kalibrierung in `haushalte33.toml` stimmen.
+- `kuerzung_laender.py`: Kürzungssatz je Staat mit BS35 aus den 400 Paaren (Annahme: Verteilung von Zusagen und Jahren wie DE);
+  `altlasten.toml [kuerzung_staat]` übertragen.
+- `mikro_de.py`: neu Block `armut` (SDG 1.2 relativ und verankert, getrennt nach Rentnern und Erwerbsfähigen; SDG 10.1).
+- Texte: KENNZAHLEN.md, Konzept (`konzept33-bau.js`, neu gebaut, `pruefe_konzept.py` 0 Fehler), Webseite in sechs Sprachen (`v48_texte.py`,
+  `stand_texte.py`), Forschungsseite DE/EN, Working Paper, Beispielrechner (BS35 als Grundversion).
+
+**Bewegte Zahlen (2028, Kaufkraft 2026):**
+
+| Größe | bis v4.71 (E) | v4.72 (BS35) |
+|---|---|---|
+| Rentnerhaushalte mit mehr (`rentner_kombi`) | 32,2 % | **64,5 %** |
+| Rentnerhaushalte, Mittel; Fünftel | −121 €; +24 / +3 / −30 / −131 / −478 | −116 €; +30 / +46 / +14 / −76 / −599 |
+| Mikrosimulation: alle Haushalte / Personen mit mehr | 69,3 / 76,7 % | **78,6 / 83,6 %** |
+| Mikrosimulation: Rentnerhaushalte mit mehr (Mittel) | 31,5 % (−127 €) | 62,9 % (−125 €) |
+| Kürzungssatz je Staat (Auswahl) | DE 6,95 · FR 7,93 · IT 7,71 · ES 6,76 · PL 5,38 · AT 9,39 · LU 12,06 · BG 2,64 % | DE 6,95 · FR 9,35 · IT 8,76 · ES 6,54 · PL 4,00 · AT 14,23 · LU 29,60 · BG 0,96 % |
+| Fonds der 30: Beitrag / Zuschlag / Spitze | 5,17 % BIP / 15,5 % / 148,1 % | 5,15 % / 15,4 % / 147,5 % |
+| Z 2028 (Klubschnitt) | 9,42 % BIP | 9,35 % BIP |
+| Zuschlag 2028 nach Verrechnung DE / FR / IT / ES / PL | 15,0 / 21,3 / 22,3 / 18,3 / 13,5 % | 15,0 / 21,0 / 22,0 / 18,4 / 13,7 % |
+| Gesamtlast A / B | 38,70 / 42,80 % BIP | 38,68 / 42,78 % BIP |
+| Armutsquote DE (Mikrosimulation, Modell heute 18,3 %) relativ / verankert | 18,1 / 12,6 % | 18,1 / 12,5 % |
+| davon Rentner (heute 22,3 %) relativ / verankert | 30,8 / 20,8 % | 30,3 / 20,3 % |
+| untere 40 % gegen alle (Äquivalenzeinkommen) | +13,2 / +10,8 % | +13,6 / +10,8 % |
+
+Die Spalte E der Armutsquote ist mit dem Fonds von v4.72 gerechnet (Lauf mit `rente_regel_e`, nicht abgelegt).
+
+**Befunde:**
+1. In Deutschland wechselt die Last innerhalb der Rentner nach oben (oberes Fünftel −599 statt −478 €); der Fonds erhält gleich viel.
+2. Zwischen den Staaten verschiebt BS35 die Last zu Staaten mit hohen Zusagen gegenüber ihrem Grundbedarf (LU, AT, FR, IT, FI, NO) und entlastet
+   Staaten mit niedrigen (BG, LV, HU, RO, PL). Mit der Verrechnung steigt deshalb der Zuschlag in ES und PL leicht. LU 29,6 % aller Zusagen ist ein
+   Grenzfall (mittlere Zusage fast fünffacher Grundbedarf; COFOG-Mittel, Annahme); die Annahme gleicher Verteilung wie DE trägt dort nicht.
+3. **SDG 1.2:** Die relative Armutsquote der Rentner steigt auch unter BS35 (22,3 → 30,3 %), weil der Median mit den Erwerbseinkommen steigt und der
+   Boden der Rentner (Grundsicherung) unter der neuen Schwelle liegt. Die Kürzungsregel trifft die Mitte und die Spitze, nicht die Schwelle; der
+   Hebel für SDG 1.2 ist der Boden (offen, Variante „Boden nach der allgemeinen Regel“). Verankert sinkt die Quote.
+4. Die Rentner anderer Staaten sind nicht als Haushalte gerechnet; ihre Wirkung ist nur über den Kürzungssatz je Staat erfasst.
+
+**Datenquelle:** wie v4.69 (EU-SILC 2025, ASID 2023, Rentenversicherungsbericht 2025, Zuschätzung Annahme); COFOG wie v4.37.
+**Wodurch aufgefallen:** Beschluss der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4827,7 +4882,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.71
+## 7 | Offene Punkte, Stand v4.72
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4851,6 +4906,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R13 | **Abgrenzung erledigt v4.52 (E16); offen: Gesundheitsbeitrag PL bei der OECD, Paar mit zwei Einkommen, Alleinerziehende FR, Sätze AT/EP ES und AGS FR belegen** – **Abgrenzung der wegfallenden Arbeitgeberabgaben je Staat (v4.51):** welche Abgaben im neuen System entfallen und der Weitergabe unterliegen (Unfallversicherung, Fonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben); DE nur KV/PV/RV/AV, IT an der OECD geeicht, FR und PL mit allen Abgaben. Dazu: Gesundheitsbeitrag PL bei der OECD; Paar mit zwei Einkommen (OECD Tab. 1.5) im Modell nicht abbildbar; Alleinerziehende FR gegen Ministerium (+200 bis +400 €) | Weitergabe je Staat; PL ohne Wirkung auf die Anteile | v4.51 |
 | R14 | **erledigt v4.53** (`modell/pruefe_kennzahlen.py`, 40 Werte; Korrektur 81) – **Kennzahlen maschinell prüfen (v4.52):** Werte in `KENNZAHLEN.md` mit Status „geltend“ gegen die Ergebnisdateien abgleichen (Korrekturen 74, 79, 80) | keine; Verlässlichkeit der Angaben | v4.52 |
 | R12 | **Verhaltenswirkungen, Stufe 2 (v4.48):** V1 Grenzbelastung 0–30.000 € mit Aufstockung je Haushaltstyp; V2 Arbeitsangebot als Band (Elastizitäten mit Quelle) in der Mikrosimulation; V3 asymmetrische Überwälzung der Mehrwertsteuer im Preisniveau; V4 Ausweichband Vermögen gegen Jakobsen u. a. 2020; V5 Länderwerte (Nicht-Inanspruchnahme, nicht erklärte Arbeit, Vertrauen; zu R5); V6 Akzeptanzbefragung | Aufkommen und Dividende (V2–V4), Darstellung (V6) | v4.48, `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md` |
+| R15 | **Rentnerregel BS35 je Staat (v4.72):** Verteilung von Zusagen und Versicherungsjahren außerhalb Deutschlands (bisher DE-Form, Annahme; LU 29,6 % als Grenzfall); Versicherungsjahre in DE aus Daten statt Zuschätzung (DRV-Statistik, Anhang A 3.1 des Rentenversicherungsberichts); Rentnerhaushalte FR/IT/ES/PL; Boden und SDG 1.2 | Rentner aller Staaten; Zuschlag über die Verrechnung | v4.69–v4.72 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 
@@ -4872,6 +4928,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E14 | **entschieden v4.49:** Rentenkürzung pauschal auf alle Rentenzahlungen aus dem alten System, unabhängig vom Rentenbeginn |
 | E15 | **entschieden v4.49:** Dividende beteiligt an Lenkung und Digitalisierungsgewinnen (Plattformen); Label mit Zertifizierung durch zugelassene, staatlich überwachte Stellen |
 | E16 | **entschieden v4.52:** Weitergabe nur aus den entfallenden Beiträgen zur sozialen Sicherung, in allen Staaten wie DE (Unfallversicherung, Garantiefonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben) |
+| E17 | **entschieden v4.72 (5.11.2026):** Rentnerregel BS35 als internationale Grundversion statt Regel E; offen: Obergrenze des oberen Satzes (55,1 %), Boden mit Blick auf SDG 1.2 |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

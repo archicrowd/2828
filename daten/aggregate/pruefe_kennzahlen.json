@@ -15,21 +15,21 @@
    "zeile": "| **Fondsbeitrag",
    "datei": "fonds_geltend.json",
    "pfad": "beitrag_pct_bip",
-   "wert": 5.17,
+   "wert": 5.15,
    "status": "ok"
   },
   {
    "zeile": "| **Fondsbeitrag",
    "datei": "fonds_geltend.json",
    "pfad": "zuschlag_auf_alle_steuern_pct",
-   "wert": 15.5,
+   "wert": 15.4,
    "status": "ok"
   },
   {
    "zeile": "| **Fondsbeitrag",
    "datei": "fonds_geltend.json",
    "pfad": "schuldenquote_spitze",
-   "wert": 148.1,
+   "wert": 147.5,
    "status": "ok"
   },
   {
@@ -47,24 +47,24 @@
    "status": "ok"
   },
   {
-   "zeile": "| Z 2028 = 9,42",
+   "zeile": "| Z 2028 = 9,35",
    "datei": "altlasten.json",
    "pfad": "beschluss/verhandlungsmasse_z_2028_pct_bip",
-   "wert": 9.42,
+   "wert": 9.35,
    "status": "ok"
   },
   {
-   "zeile": "| **38,70**",
+   "zeile": "| **38,68**",
    "datei": "gesamtlast33.json",
    "pfad": "reihe/0/a_steuern_und_fonds",
-   "wert": 38.7,
+   "wert": 38.68,
    "status": "ok"
   },
   {
-   "zeile": "| **42,80**",
+   "zeile": "| **42,78**",
    "datei": "gesamtlast33.json",
    "pfad": "reihe/0/b_mit_pflichtvorsorge",
-   "wert": 42.8,
+   "wert": 42.78,
    "status": "ok"
   },
   {
@@ -113,7 +113,7 @@
    "zeile": "| Vorteil alleinstehend, 42.000 €",
    "datei": "fondszins.json",
    "pfad": "varianten/3/haushalt_de/mehr_monat_42000/alleinstehend",
-   "wert": 548,
+   "wert": 547,
    "status": "ok"
   },
   {
@@ -155,14 +155,14 @@
    "zeile": "| Eigene Population: Bürgergeld ohne Erwerb",
    "datei": "mikro_de.json",
    "pfad": "basis/ergebnis/0.8/status/Rentner/anteil_mehr_haushalte_pct",
-   "wert": 31.5,
+   "wert": 62.9,
    "status": "ok"
   },
   {
    "zeile": "| Eigene Population: Bürgergeld ohne Erwerb",
    "datei": "mikro_de.json",
    "pfad": "basis/ergebnis/0.8/status/Rentner/mittel_mehr_monat_eur",
-   "wert": -127,
+   "wert": -125,
    "status": "ok"
   },
   {
@@ -176,14 +176,14 @@
    "zeile": "| Eigene Population: erwerbsfähige Haushalte",
    "datei": "mikro_de.json",
    "pfad": "basis/ergebnis/0.8/gesamt/anteil_mehr_haushalte_pct",
-   "wert": 69.3,
+   "wert": 78.6,
    "status": "ok"
   },
   {
    "zeile": "| Eigene Population: erwerbsfähige Haushalte",
    "datei": "mikro_de.json",
    "pfad": "basis/ergebnis/0.8/gesamt/anteil_mehr_personen_pct",
-   "wert": 76.7,
+   "wert": 83.6,
    "status": "ok"
   },
   {
@@ -201,24 +201,24 @@
    "status": "ok"
   },
   {
-   "zeile": "| Rentnerregel E",
+   "zeile": "| Rentnerregel BS35",
    "datei": "rentner_kombi.json",
-   "pfad": "varianten/4/anteil_mehr_pct",
-   "wert": 32.2,
+   "pfad": "varianten/5/anteil_mehr_pct",
+   "wert": 64.5,
    "status": "ok"
   },
   {
-   "zeile": "| Rentnerregel E",
+   "zeile": "| Rentnerregel BS35",
    "datei": "rentner_kombi.json",
-   "pfad": "varianten/4/mittel_monat",
-   "wert": -121,
+   "pfad": "varianten/5/mittel_monat",
+   "wert": -116,
    "status": "ok"
   },
   {
-   "zeile": "| Rentnerregel E",
+   "zeile": "| Rentnerregel BS35",
    "datei": "rentner_kombi.json",
-   "pfad": "varianten/4/fuenftel_monat/4",
-   "wert": -478,
+   "pfad": "varianten/5/fuenftel_monat/4",
+   "wert": -599,
    "status": "ok"
   },
   {
@@ -232,14 +232,14 @@
    "zeile": "| Deckel der Weitergabe, einheitlich",
    "datei": "deckel_einheitlich.json",
    "pfad": "geltend/FR/mehr_monat/2",
-   "wert": 459,
+   "wert": 469,
    "status": "ok"
   },
   {
    "zeile": "| Deckel der Weitergabe, einheitlich",
    "datei": "deckel_einheitlich.json",
    "pfad": "geltend/IT/mehr_monat/3",
-   "wert": 749,
+   "wert": 760,
    "status": "ok"
   },
   {
@@ -267,7 +267,7 @@
    "zeile": "| Verrechnung je Staat im Fonds der 30",
    "datei": "verrechnung_haushalte.json",
    "pfad": "laender/FR/verrechnung_2028/mehr_monat/1",
-   "wert": 276,
+   "wert": 281,
    "status": "ok"
   },
   {

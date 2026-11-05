@@ -32,7 +32,7 @@ kv_erwerb = 0.09                  # AN-Anteil KV/PV bei Rentnern mit Beschäftig
 bedarf_allein_monat = 1083        # Grundsicherung im Alter: Regelbedarf 563 € + KdU 520 € (sozial_laender.toml, Annahme)
 bedarf_paar_monat = 1632          # 1.012 € + KdU 620 € (sozial_laender.toml, Annahme)
 
-[neu]  # v4.26 Beschluss 22.10.2026 (Regel E): Kürzung über haushalte33.rente_regel (15 % auf den Teil der Zusagen über 1.029 € je Person)
+[neu]  # v4.72 Beschluss 5.11.2026 (Regel BS35, vorher v4.26 Regel E): Kürzung über haushalte33.rente_regel, Versicherungsjahre zugeschätzt (haushalte33.rente_jahre)
 boden_monat = [1083, 1632]        # Grundauskommen der Rentnerhaushalte = heutige Grundsicherung (allein, Paar); vorher Grundbedarf × 1 / 1,5
 kuerzung_systeme = 0.075          # bis v4.25 (flach auf GRV und andere Systeme), nur noch Vergleich
 

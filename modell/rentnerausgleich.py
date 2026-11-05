@@ -54,7 +54,7 @@ def neu(r_monat, kuerzung=None, steueranteil=1.0, pauschale=0.0, zuschlag=None, 
 
 
 def varianten():
-    v = {"Beschluss v4.26 (Regel E: 15 % über dem Grundbedarf, Boden 1.083 €)": {r: neu(r) for r in P["renten_monat"]}}
+    v = {"Beschluss v4.72 (Regel BS35, 45 Versicherungsjahre, Boden 1.083 €)": {r: neu(r) for r in P["renten_monat"]}}
     for k in P["varianten_kuerzung"]:
         v[f"Kürzung {k * 100:.1f} %".replace(".", ",")] = {r: neu(r, kuerzung=k) for r in P["renten_monat"]}
     v["Besteuerungsanteil 83 % wie heute"] = {r: neu(r, steueranteil=0.83) for r in P["renten_monat"]}

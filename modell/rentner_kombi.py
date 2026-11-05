@@ -20,10 +20,13 @@ with contextlib.redirect_stdout(io.StringIO()):
 A, DE, HL, H = M.ANTEILE, M.DE, M.HL, M.H
 
 
-def neu(g, n, satz, boden, ueber):
+def neu(g, n, satz, boden, ueber, regel=None, eps=0.0):
     p, an, b, v, e = (g * A[x] for x in ("grv", "andere", "bav", "privat", "erwerb"))
     zusage = p + an
-    kb = max(0.0, zusage - M.GB) * satz if ueber else zusage * satz
+    if regel == "BS35":                                   # v4.72: Regel BS35 mit zugeschätzten Versicherungsjahren
+        kb = H.kuerzung_bs35(zusage, H.jahre_zu(zusage, eps))
+    else:
+        kb = max(0.0, zusage - M.GB) * satz if ueber else zusage * satz
     eink = zusage - kb + b + v + e + P["weitergabe"] * H.ag(e)
     st = HL.stufen(eink, DE["tarif_stufen"], [0.0, 11.0, 19.0, 25.0, 33.0]) * n
     y = eink * n - st
@@ -40,12 +43,13 @@ def main():
     for r in R:
         nh = r["netto_2024"] * 1.06
         pre.append((M.brutto_aus_netto(nh / r["n"], A), max(nh, M.bedarf_heute(r["n"])), r["n"]))
+    eps = [r["eps"] for r in R]
     hs = np.array([h for _, h, _ in pre])
     grp = np.searchsorted(np.quantile(hs, [.2, .4, .6, .8]), hs)
     sing = np.array([n == 1 for _, _, n in pre])
     erg, basis = [], None
     for v in P["variante"]:
-        d, auf, kb = (np.array(x) for x in zip(*[((y - h) / 12, a, c) for (g, h, n) in pre for y, a, c in [neu(g, n, v["satz"], v["boden"], v["ueber_grundbedarf"])]]))
+        d, auf, kb = (np.array(x) for x in zip(*[((y - h) / 12, a, c) for (g, h, n), ep in zip(pre, eps) for y, a, c in [neu(g, n, v["satz"], v["boden"], v["ueber_grundbedarf"], v.get("regel"), ep)]]))
         zus = float(sum(w * g * (A["grv"] + A["andere"]) * n for w, (g, h, n) in zip(gw, pre)))
         netto = float((gw * (kb - auf)).sum())
         basis = netto if basis is None else basis
@@ -57,7 +61,7 @@ def main():
                         kuerzung_mrd=round(float((gw * kb).sum() / 1e9), 1), boden_mrd=round(float((gw * auf).sum() / 1e9), 1),
                         zusagen_mrd=round(zus / 1e9, 1), effektiver_satz=round(float((gw * kb).sum()) / zus, 4), boden_mrd_genau=round(float((gw * auf).sum() / 1e9), 3),
                         gegen_bisher_mrd=round((netto - basis) / 1e9, 1), gegen_bisher_pct_bip=round((netto - basis) / 1e9 / P["bip_2028_mrd"] * 100, 2)))
-    # v4.26: Übertrag in den Fonds prüfen (altlasten.toml: effektiver Kürzungssatz; sozialschutz.toml: B1 × Boden E / A)
+    # v4.26/v4.72: Übertrag der geltenden Regel (letzte Variante, seit v4.72 BS35) in den Fonds prüfen (altlasten.toml: effektiver Kürzungssatz; sozialschutz.toml: B1 × Boden E / A)
     e, a = erg[-1], erg[0]
     k_al = tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8"))["kuerzung"]
     b1 = tomllib.loads((W / "modell" / "sozialschutz.toml").read_text(encoding="utf-8"))["rentner"]["grundauskommen_bestand_pct_bip"]
@@ -74,8 +78,13 @@ def main():
     mz = float(np.average(zp, weights=wp))
     verteilung = dict(mittel_jahr=round(mz), grundbedarf_jahr=round(M.GB), r_grundbedarf_zu_mittel=round(M.GB / mz, 4),
                       quantile_rel=[round(float(zp[o][min(np.searchsorted(cw, (i + 0.5) / 200), len(o) - 1)] / mz), 4) for i in range(200)],
-                      hinweis="200 Quantile der Zusage je Person (Rentnerhaushalte, Personen gewichtet) relativ zum Mittel; Kaufkraft 2026")
-    E = dict(version=P["version"], status="Beschluss E (22.10.2026), Prüfrechnung (2028, Kaufkraft 2026)", varianten=erg, uebertrag_fonds=uebertrag,
+                      paare_rel_jahre=[[round(float(zp[o][k] / mz), 4), round(H.jahre_zu(float(zp[o][k]), eps[o[k]]), 1)]
+                                       for k in [min(int(np.searchsorted(cw, (i + 0.5) / 400)), len(o) - 1) for i in range(400)]],
+                      hinweis="200 Quantile der Zusage je Person (Rentnerhaushalte, Personen gewichtet) relativ zum Mittel; Kaufkraft 2026. "
+                              "v4.72: 400 Personen in gleichen Gewichtsabständen mit Zusage relativ zum Mittel und zugeschätzten Versicherungsjahren")
+    if abs(mz - H.P["rente_jahre"]["z_mittel_jahr"]) > 5:
+        raise SystemExit(f"haushalte33.rente_jahre.z_mittel_jahr veraltet: {round(mz)}")
+    E = dict(version=P["version"], status="Beschluss BS35 (5.11.2026, ersetzt E vom 22.10.2026), Prüfrechnung (2028, Kaufkraft 2026)", varianten=erg, uebertrag_fonds=uebertrag,
              verteilung_zusage=verteilung,
              hinweis="Fünftel nach heutigem Haushaltsnetto der Rentnerhaushalte. Zusammensetzung der Alterseinkommen gleich über alle Einkommen "
                      "(ASID, Annahme); Beamtenversorgung als Zusage behandelt (Annahme). Kosten nur für 2028; der Bestand sinkt mit der Zeit.")

@@ -5,7 +5,7 @@
   "unten": 7.9,
   "oben": 9.36
  },
- "fondsbeitrag_pct_bip": 5.17,
+ "fondsbeitrag_pct_bip": 5.15,
  "reihe": [
   {
    "weitergabe": 0.0,
@@ -18,7 +18,7 @@
     367
    ],
    "anteil_am_fondsbeitrag_pct": [
-    122,
+    123,
     145
    ],
    "mehr_monat_alleinstehend_42000": 258
@@ -35,7 +35,7 @@
    ],
    "anteil_am_fondsbeitrag_pct": [
     46,
-    54
+    55
    ],
    "mehr_monat_alleinstehend_42000": 479
   },

@@ -125,13 +125,30 @@ def heute(b, kinder, partner):
     return K.netto_heute(b, kinder, partner)["netto"]
 
 
-def kuerze(r, satz=None):
-    """Bestandsrente nach der Kürzung (Jahresbetrag). v4.26 (Regel E): satz auf den Teil über dem Grundbedarf; mit satz: flach (Vergleich)."""
+def kuerzung_bs35(r, jahre, g=None):
+    """Kürzungsbetrag (Jahr) nach Regel BS35 (v4.72): Freibetrag max(Sockel; Jahresschutz), darüber satz bis F + breite·G, satz_oben darüber."""
+    g = g or P["rente_regel"]
+    G = 12 * g["freibetrag_monat"]
+    F = max(g["sockel"] * G, min(jahre, g["voll_jahre"]) / g["voll_jahre"] * g["faktor"] * G)
+    return g["satz"] * max(0.0, min(r, F + g["breite"] * G) - F) + g["satz_oben"] * max(0.0, r - F - g["breite"] * G)
+
+
+def jahre_zu(z, eps):
+    """Zugeschätzte Versicherungsjahre (Annahme, v4.69/v4.72) aus der Zusage je Person (Jahr) und einer Standardnormalzahl eps."""
+    j = P["rente_jahre"]
+    return min(50.0, max(0.0, j["a"] + j["b"] * __import__("math").log(max(z, 1.0) / j["z_mittel_jahr"]) + j["c"] * eps))
+
+
+def kuerze(r, satz=None, jahre=None):
+    """Bestandsrente nach der Kürzung (Jahresbetrag). v4.72 Regel BS35 (jahre fehlt: jahre_standard); mit satz: flach (Vergleich);
+    rente_regel ohne art: Regel E (v4.26, satz auf den Teil über dem Grundbedarf)."""
     if satz is not None:
         return r * (1 - satz)
     g = P.get("rente_regel")
     if not g:
         return r * (1 - P.get("rente_kuerzung", 0.0))
+    if g.get("art") == "BS35":
+        return r - kuerzung_bs35(r, g["jahre_standard"] if jahre is None else jahre, g)
     return r - g["satz"] * max(0.0, r - 12 * g["freibetrag_monat"])
 
 
@@ -142,7 +159,7 @@ def rentner(r_monat, zu, j):
     h = r - kvpv - K.est_2026(zve) - K.soli_2026(K.est_2026(zve))
     EFF = eff_jahr(j)
     zu = zu * zu_faktor(j)                             # v4.38 (E11)
-    r = kuerze(r)                                      # v4.26 Regel E (vorher v3.48/v4.11: r × (1 − rente_kuerzung))
+    r = kuerze(r)                                      # v4.72 Regel BS35, Standardlaufbahn 45 Jahre (v4.26–v4.71 Regel E; vorher v3.48/v4.11 flach)
     st = est(r)                                        # Dividende + Altrente zusammen r, ganz steuerpflichtig
     konsum = kq(r - st) * (r - st)
     fm, fb = MV.faktoren(r - st)                       # v4.29

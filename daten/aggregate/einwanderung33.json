@@ -94,11 +94,11 @@
      "dividende_basis_eur2026": 239
     }
    },
-   "fonds_beitrag_pct_bip": 4.79,
-   "fonds_zuschlag_pct": 14.3,
-   "fonds_spitze": 141.8,
+   "fonds_beitrag_pct_bip": 4.76,
+   "fonds_zuschlag_pct": 14.2,
+   "fonds_spitze": 141.4,
    "fonds_spitzenjahr": 2053,
-   "fonds_beitrag_zehn_pct_bip": 4.86
+   "fonds_beitrag_zehn_pct_bip": 4.83
   },
   {
    "zusatz_pct": 0.2,
@@ -139,11 +139,11 @@
      "dividende_basis_eur2026": 239
     }
    },
-   "fonds_beitrag_pct_bip": 4.9,
-   "fonds_zuschlag_pct": 14.7,
-   "fonds_spitze": 143.8,
+   "fonds_beitrag_pct_bip": 4.88,
+   "fonds_zuschlag_pct": 14.6,
+   "fonds_spitze": 143.2,
    "fonds_spitzenjahr": 2054,
-   "fonds_beitrag_zehn_pct_bip": 4.98
+   "fonds_beitrag_zehn_pct_bip": 4.95
   },
   {
    "zusatz_pct": 0.4,
@@ -184,11 +184,11 @@
      "dividende_basis_eur2026": 239
     }
    },
-   "fonds_beitrag_pct_bip": 4.45,
-   "fonds_zuschlag_pct": 13.3,
-   "fonds_spitze": 136.6,
+   "fonds_beitrag_pct_bip": 4.43,
+   "fonds_zuschlag_pct": 13.2,
+   "fonds_spitze": 136.1,
    "fonds_spitzenjahr": 2052,
-   "fonds_beitrag_zehn_pct_bip": 4.52
+   "fonds_beitrag_zehn_pct_bip": 4.49
   },
   {
    "zusatz_pct": 0.4,
@@ -229,21 +229,21 @@
      "dividende_basis_eur2026": 239
     }
    },
-   "fonds_beitrag_pct_bip": 4.66,
-   "fonds_zuschlag_pct": 14.0,
-   "fonds_spitze": 140.0,
+   "fonds_beitrag_pct_bip": 4.65,
+   "fonds_zuschlag_pct": 13.9,
+   "fonds_spitze": 139.5,
    "fonds_spitzenjahr": 2053,
-   "fonds_beitrag_zehn_pct_bip": 4.73
+   "fonds_beitrag_zehn_pct_bip": 4.71
   }
  ],
  "grundpfad_fonds": {
-  "beitrag_pct_bip": 5.17,
-  "zuschlag_pct": 15.5,
-  "spitze": 148.1,
+  "beitrag_pct_bip": 5.15,
+  "zuschlag_pct": 15.4,
+  "spitze": 147.5,
   "spitzenjahr": 2055,
   "zehn": {
-   "beitrag_pct_bip": 5.25,
-   "spitze": 149.9
+   "beitrag_pct_bip": 5.22,
+   "spitze": 149.1
   }
  },
  "hinweis": "v4.41: Grundpfad Dividende netz33.json (Netz-Beschluss), Fonds der 30 (Beschluss der zehn mit Wirtschaftszuwachs gelöst, Verhältnis 30/10); Einwanderung zusätzlich zu den amtlichen Annahmen"

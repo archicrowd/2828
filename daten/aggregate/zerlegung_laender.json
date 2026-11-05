@@ -5,18 +5,18 @@
   "FR": {
    "zerlegung_monat": {
     "20000|1|0": {
-     "gesamt": -122,
-     "altlastenzuschlag": -80,
+     "gesamt": -121,
+     "altlastenzuschlag": -78,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -105,
      "prime_activite": -261,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 491
+     "rest": 490
     },
     "20000|1|1": {
-     "gesamt": -345,
-     "altlastenzuschlag": -82,
+     "gesamt": -344,
+     "altlastenzuschlag": -81,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -179,
      "prime_activite": -580,
@@ -25,18 +25,18 @@
      "rest": 663
     },
     "30000|2|2": {
-     "gesamt": -245,
-     "altlastenzuschlag": -172,
+     "gesamt": -243,
+     "altlastenzuschlag": -170,
      "pflichtvorsorge": -250,
-     "dividende_unter_de_niveau": -380,
+     "dividende_unter_de_niveau": -381,
      "prime_activite": -634,
      "allocations_familiales": 0,
      "quotient_familial": 0,
-     "rest": 1191
+     "rest": 1192
     },
     "45000|1|0": {
-     "gesamt": 282,
-     "altlastenzuschlag": -320,
+     "gesamt": 287,
+     "altlastenzuschlag": -315,
      "pflichtvorsorge": -375,
      "dividende_unter_de_niveau": -87,
      "prime_activite": 0,
@@ -45,18 +45,18 @@
      "rest": 1064
     },
     "45000|2|2": {
-     "gesamt": 40,
-     "altlastenzuschlag": -322,
+     "gesamt": 45,
+     "altlastenzuschlag": -317,
      "pflichtvorsorge": -375,
-     "dividende_unter_de_niveau": -378,
+     "dividende_unter_de_niveau": -379,
      "prime_activite": -236,
      "allocations_familiales": 0,
      "quotient_familial": -10,
-     "rest": 1361
+     "rest": 1362
     }
    },
-   "zuschlag": 21.3,
-   "zuschlag_neustart": 17.9,
+   "zuschlag": 21.0,
+   "zuschlag_neustart": 17.8,
    "anteil_basis": {
     "alleinstehend": 36,
     "alleinerziehend, 1 Kind": 18,
@@ -85,9 +85,9 @@
    "dividende_2028": 200.0,
    "dividende_de_kaufkraftgleich": 352,
    "zuschlag_nach_zins": {
-    "2.5": 20.2,
-    "3.5": 24.5,
-    "4.5": 29.1
+    "2.5": 20.0,
+    "3.5": 24.2,
+    "4.5": 28.8
    },
    "netz_pct_bip_2028": {
     "Gesundheit": 8.36,
@@ -103,32 +103,32 @@
   "IT": {
    "zerlegung_monat": {
     "20000|1|0": {
-     "gesamt": 332,
-     "altlastenzuschlag": -129,
+     "gesamt": 333,
+     "altlastenzuschlag": -127,
      "pflichtvorsorge": -167,
      "dividende_unter_de_niveau": -24,
      "assegno_unico": 0,
-     "rest": 652
+     "rest": 651
     },
     "24000|2|2": {
-     "gesamt": 439,
-     "altlastenzuschlag": -178,
+     "gesamt": 441,
+     "altlastenzuschlag": -175,
      "pflichtvorsorge": -200,
      "dividende_unter_de_niveau": -92,
      "assegno_unico": -402,
-     "rest": 1311
+     "rest": 1310
     },
     "36000|1|0": {
-     "gesamt": 427,
-     "altlastenzuschlag": -277,
+     "gesamt": 431,
+     "altlastenzuschlag": -273,
      "pflichtvorsorge": -300,
      "dividende_unter_de_niveau": -21,
      "assegno_unico": 0,
      "rest": 1025
     }
    },
-   "zuschlag": 22.3,
-   "zuschlag_neustart": 18.6,
+   "zuschlag": 22.0,
+   "zuschlag_neustart": 18.3,
    "anteil_basis": {
     "alleinstehend": 100,
     "alleinerziehend, 1 Kind": 100,
@@ -157,9 +157,9 @@
    "dividende_2028": 276.3,
    "dividende_de_kaufkraftgleich": 312,
    "zuschlag_nach_zins": {
-    "2.5": 20.7,
-    "3.5": 25.2,
-    "4.5": 30.1
+    "2.5": 20.5,
+    "3.5": 25.0,
+    "4.5": 29.8
    },
    "netz_pct_bip_2028": {
     "Gesundheit": 6.17,

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Effektiver Kürzungssatz der Rentenzusagen je Staat unter Regel E (Logbuch v4.37, R6). Prüfrechnung.
+"""Effektiver Kürzungssatz der Rentenzusagen je Staat (Logbuch v4.37, R6; seit v4.72 Regel BS35). Prüfrechnung.
+
+v4.72: Regel BS35 (Beschluss 5.11.2026) statt E. s(r) wird aus 400 Personen der deutschen Mikrosimulation mit Zusage relativ zum Mittel und
+zugeschätzten Versicherungsjahren gerechnet (rentner_kombi.json, paare_rel_jahre): s(r) = E[Kürzung_BS35(X, J; G = r)] / E[X]. Annahme: gleiche
+Verteilung von Zusagen und Jahren in allen Staaten (offen; in Staaten mit kürzeren Laufbahnen wirkt der Sockel stärker).
+Bis v4.71:
 
 Regel E (Beschluss 22.10.2026): 15 % auf den Teil der Zusage (staatliche Rente, Beamtenversorgung) über dem Grundbedarf je Person. In Deutschland
 ergibt das effektiv 6,95 % aller Zusagen (rentner_kombi.py, Mikrosimulation). Bis v4.36 galt dieser Satz für alle 30 Staaten (Annahme).
@@ -25,11 +30,19 @@ with contextlib.redirect_stdout(io.StringIO()):
 MRJ = json.loads((AGG / "moeglichkeitsraum33.json").read_text(encoding="utf-8"))["laender"]
 V = json.loads((AGG / "rentner_kombi.json").read_text(encoding="utf-8"))["verteilung_zusage"]
 Q = np.array(V["quantile_rel"])
-SATZ = 0.15
+PAARE = np.array(V["paare_rel_jahre"])
+spec = importlib.util.spec_from_file_location("h33", W / "modell" / "haushalte33.py")
+H = importlib.util.module_from_spec(spec)
+with contextlib.redirect_stdout(io.StringIO()):
+    spec.loader.exec_module(H)
+REGEL = H.P["rente_regel"]
+SATZ = REGEL.get("satz", 0.15)
 
 
 def s(r):
-    return SATZ * np.maximum(Q - r, 0.0).mean() / Q.mean()
+    """Anteil der Kürzung an allen Zusagen bei Grundbedarf r (in Vielfachen der mittleren Zusage), Regel BS35 (v4.72)."""
+    g = dict(REGEL, freibetrag_monat=r / 12)
+    return float(np.mean([H.kuerzung_bs35(x, j, g) for x, j in PAARE]) / PAARE[:, 0].mean())
 
 
 def rechne():
@@ -51,7 +64,7 @@ def main():
     L = rechne()
     toml = AL.get("kuerzung_staat", {})
     abw = {c: (x["satz"], toml.get(c)) for c, x in L.items() if toml.get(c) is None or abs(toml[c] - x["satz"]) > 0.0005}
-    E = dict(version="v4.37", status="Prüfrechnung (R6)", satz_regel=SATZ, kuerzung_de=AL["kuerzung"], je_staat_aktiv=AL.get("kuerzung_je_staat", False),
+    E = dict(version="v4.72", status="Prüfrechnung (R6), Regel BS35", regel=REGEL, kuerzung_de=AL["kuerzung"], je_staat_aktiv=AL.get("kuerzung_je_staat", False),
              laender=L, hinweis="Zusage je Person ab 65 aus COFOG GF1002+GF1003 (2024, % BIP) × BIP je Kopf (Kaufkraft 2026–2028, Rechengröße); "
                                  "Verteilungsform aus der deutschen Mikrosimulation (Annahme); Euro je Monat, Preise 2026.")
     (AGG / "kuerzung_laender.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")

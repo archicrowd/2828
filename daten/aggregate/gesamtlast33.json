@@ -7,30 +7,30 @@
   {
    "jahr": 2028,
    "steuern": 33.53,
-   "fonds": 5.17,
-   "a_steuern_und_fonds": 38.7,
-   "b_mit_pflichtvorsorge": 42.8
+   "fonds": 5.15,
+   "a_steuern_und_fonds": 38.68,
+   "b_mit_pflichtvorsorge": 42.78
   },
   {
    "jahr": 2035,
    "steuern": 33.03,
-   "fonds": 5.17,
-   "a_steuern_und_fonds": 38.2,
-   "b_mit_pflichtvorsorge": 42.3
+   "fonds": 5.15,
+   "a_steuern_und_fonds": 38.18,
+   "b_mit_pflichtvorsorge": 42.28
   },
   {
    "jahr": 2045,
    "steuern": 32.18,
-   "fonds": 5.17,
-   "a_steuern_und_fonds": 37.35,
-   "b_mit_pflichtvorsorge": 41.45
+   "fonds": 5.15,
+   "a_steuern_und_fonds": 37.33,
+   "b_mit_pflichtvorsorge": 41.43
   },
   {
    "jahr": 2060,
    "steuern": 32.13,
-   "fonds": 5.17,
-   "a_steuern_und_fonds": 37.3,
-   "b_mit_pflichtvorsorge": 41.4
+   "fonds": 5.15,
+   "a_steuern_und_fonds": 37.28,
+   "b_mit_pflichtvorsorge": 41.38
   }
  ],
  "c_ohne_fonds_2028": {
@@ -45,9 +45,9 @@
   }
  },
  "fonds": {
-  "beitrag_pct_bip": 5.17,
-  "zuschlag_pct": 15.5,
-  "schuldenquote_spitze": 148.1,
+  "beitrag_pct_bip": 5.15,
+  "zuschlag_pct": 15.4,
+  "schuldenquote_spitze": 147.5,
   "spitzenjahr": 2055,
   "zieljahr": 2098
  },
