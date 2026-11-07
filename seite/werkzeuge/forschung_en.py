@@ -41,6 +41,7 @@ SINCE_REVIEW = [
  ("v4.72", "Pension rule BS35 replaces rule E (decision); poverty rate from the microsimulation", "fund 5.15 % of GDP, surcharge 15.4 %, pensioners better off 64.5 %, cut rate per state"),
  ("v4.73", "Selection of states by rule of law and UN foundations: first screening (preparation)", "no adopted figure"),
  ("v4.74", "Ground rules: country-level rules, participation by UN foundations and rule of law, fund 50/50 (preliminary)", "no adopted figure"),
+ ("v4.75", "Ground rules adopted; website draft; derivation from UN treaties", "no figure"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]

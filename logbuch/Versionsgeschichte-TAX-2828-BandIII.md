@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.74**
+Stand: 24. Oktober 2026 · Modellstand **v4.75**
 
 ---
 
@@ -4854,6 +4854,28 @@ abrufbar. **Wodurch aufgefallen:** Auftrag der Initiative.
 
 ---
 
+### v4.75 — Spielregeln beschlossen; Entwurf der deutschen Webseite (Kontrollfassung); Herleitung aus den Verträgen der Vereinten Nationen
+
+**Art der Änderung: PATCH (Darstellung, Quellenprüfung), keine Zahl bewegt.** 7. November 2026.
+
+**Beschluss der Initiative (7.11.2026):** Sie folgt den Empfehlungen in `projekt/Spielregeln-Staaten-und-Fonds-2026-11-07.md` (E19): fünf
+Spielregeln, Schwelle 0,66, Fonds 50/50, Wegfall des Dachs. Eigene Entwicklungen bleiben zentral: gleiche Sätze für Kapital und Arbeit,
+Mehrwertsteuer als Label. Zur Bestätigung offen: Partner tragen ganz selbst; Obergrenze 32 % je Staat.
+
+**Neu:**
+- `seite/entwurf/spielregeln/bau.py` → `de.html` (Entwurf) und `de-kontrolle.html` (Ergänzungen grün, Streichungen rot) aus der geltenden
+  Seite: Staat statt Dach (Ebenen, Gemeinde, Forschung, Fluss), fünf Spielregeln statt „Warum das Dach Stabilität gibt“, offene Gemeinschaft
+  mit Staatenliste und Herleitung aus den UN-Verträgen statt „Ein Klub“, CO₂-Preis nach dem Pariser Abkommen. Fondszahlen aus `fonds_5050.json`
+  (vorläufig). Die geltende Seite bleibt unverändert.
+- `projekt/Logik-UN-Grundlagen-2026-11-07.md`: Logik in drei Sätzen, Herleitung je Regel, Recherchebedarf R1–R8.
+- `staatenauswahl.toml`: Pariser Abkommen an MTDSG XXVII-7-d geprüft (alle 30 des Fonds und 12 Staaten außerhalb Europas Vertragsstaaten; US
+  ausgetreten).
+
+**Datenquelle:** UN Treaty Collection MTDSG XXVII-7-d; EY Tax News 28.08.2026 zur UN-Steuerkonvention (Sekundärquelle).
+**Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4928,7 +4950,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.74
+## 7 | Offene Punkte, Stand v4.75
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4976,7 +4998,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E16 | **entschieden v4.52:** Weitergabe nur aus den entfallenden Beiträgen zur sozialen Sicherung, in allen Staaten wie DE (Unfallversicherung, Garantiefonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben) |
 | E17 | **entschieden v4.72 (5.11.2026):** Rentnerregel BS35 als internationale Grundversion statt Regel E; offen: Obergrenze des oberen Satzes (55,1 %), Boden mit Blick auf SDG 1.2 |
 | E18 | Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (v4.73): Leitbild, Kriterien, Schwellen, Umgang mit SK, HR, RO, EL, BG, HU, Fonds je Währungsraum, Verfahren (EV1–EV9, `projekt/Entscheidungsvorlage-Staatenauswahl-2026-11-07.md`) |
-| E19 | Spielregeln (v4.74): fünf Regeln, Schwelle 0,66, Fonds 50/50, Partner ganz selbst oder Brücke 25 %, Wegfall des Dachs (gemeinsame Kasse, Sicherheitsunion, Einzug durch das Dach) (`projekt/Spielregeln-Staaten-und-Fonds-2026-11-07.md`) |
+| E19 | **entschieden v4.75 (7.11.2026), Bestätigung offen: Partner ganz selbst, Obergrenze 32 % je Staat.** Spielregeln (v4.74): fünf Regeln, Schwelle 0,66, Fonds 50/50, Partner ganz selbst oder Brücke 25 %, Wegfall des Dachs (gemeinsame Kasse, Sicherheitsunion, Einzug durch das Dach) (`projekt/Spielregeln-Staaten-und-Fonds-2026-11-07.md`) |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

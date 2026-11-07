@@ -1,5 +1,5 @@
 # Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (modell/staatenauswahl.py, Logbuch v4.73). Vorbereitung, kein Beschluss.
-version = "v4.74"
+version = "v4.75"
 
 # Quellen (alle maschinell aus Webseiten/PDF gelesen, an der Quelle zu prüfen):
 #  wjp:   World Justice Project, Rule of Law Index 2025 (WJPIndex2025.pdf), Gesamtwert 0–1; 143 Staaten; CH und IS nicht erfasst. Nichtstaatliche Quelle (NGO).
@@ -10,7 +10,8 @@ version = "v4.74"
 #         CR, BB, MU Vertragsstaaten; US nur gezeichnet; SG und BW ohne Eintrag. Übrige Abkommen: eigene Kenntnis, zu prüfen. -1 = unbekannt.
 #  pakte: beide Menschenrechtspakte ratifiziert (ICCPR, ICESCR), 0–2; geprüft an der UN Treaty Collection (MTDSG IV-3, IV-4, maschinell gelesen):
 #         ICCPR alle außer SG; ICESCR alle außer US (nur gezeichnet), SG, BW.
-#  paris: Vertragsstaat des Pariser Abkommens (1/0); US ausgetreten mit Wirkung 27.1.2026 (UN-Verwahrer C.N.71.2025); übrige eigene Kenntnis, zu prüfen.
+#  paris: Vertragsstaat des Pariser Abkommens (1/0); US ausgetreten mit Wirkung 27.1.2026 (C.N.71.2025). v4.75: geprüft an MTDSG XXVII-7-d
+#         (maschinell gelesen) für EU27, NO, IS, CH, UK, CA, AU, NZ, JP, KR, UY, CL, CR, BB, MU; SG, BW nicht geprüft.
 # Spalten: [wjp, sdg, unmi, kern7, pakte, paris]
 [staaten]
 DK = [0.90, 85.7, 60.6, 7, 2, 1]
