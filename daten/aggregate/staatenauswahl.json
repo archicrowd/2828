@@ -1,0 +1,171 @@
+{
+ "version": "v4.73",
+ "status": "Vorbereitung (Entscheidungsvorlagen), kein Beschluss; Daten maschinell gelesen, an der Quelle zu prüfen",
+ "schwellen": {
+  "kern_wjp": 0.75,
+  "teilnahme_wjp": 0.66,
+  "partner_wjp": 0.55,
+  "sdg": 75.0,
+  "kern7": 7
+ },
+ "stufen": {
+  "DK": "Kern",
+  "NO": "Kern",
+  "FI": "Kern",
+  "SE": "Kern",
+  "DE": "Kern",
+  "LU": "Kern",
+  "IE": "Kern",
+  "NL": "Kern",
+  "EE": "Kern",
+  "AT": "Kern",
+  "BE": "Kern",
+  "LT": "Kern",
+  "CZ": "Teilnahme",
+  "LV": "Teilnahme",
+  "FR": "Teilnahme",
+  "ES": "Teilnahme",
+  "SI": "Teilnahme",
+  "PT": "Teilnahme",
+  "CY": "Teilnahme",
+  "MT": "Teilnahme",
+  "PL": "Teilnahme",
+  "IT": "Teilnahme",
+  "SK": "Partner",
+  "HR": "Partner",
+  "RO": "Partner",
+  "EL": "Partner",
+  "BG": "Partner",
+  "HU": "unter Partnerschwelle",
+  "CH": "ohne WJP-Wert (zweite Quelle nötig)",
+  "IS": "ohne WJP-Wert (zweite Quelle nötig)",
+  "NZ": "Kern",
+  "AU": "Kern",
+  "CA": "Kern",
+  "UK": "Kern",
+  "JP": "Kern",
+  "SG": "nicht erfüllt (Kernabkommen)",
+  "KR": "Teilnahme",
+  "UY": "Teilnahme",
+  "CR": "Teilnahme",
+  "US": "nicht erfüllt (Kernabkommen)",
+  "CL": "Teilnahme",
+  "BB": "Teilnahme",
+  "MU": "Partner",
+  "BW": "nicht erfüllt (Kernabkommen)"
+ },
+ "zaehlung": {
+  "Kern": [
+   "AT",
+   "AU",
+   "BE",
+   "CA",
+   "DE",
+   "DK",
+   "EE",
+   "FI",
+   "IE",
+   "JP",
+   "LT",
+   "LU",
+   "NL",
+   "NO",
+   "NZ",
+   "SE",
+   "UK"
+  ],
+  "Partner": [
+   "BG",
+   "EL",
+   "HR",
+   "MU",
+   "RO",
+   "SK"
+  ],
+  "Teilnahme": [
+   "BB",
+   "CL",
+   "CR",
+   "CY",
+   "CZ",
+   "ES",
+   "FR",
+   "IT",
+   "KR",
+   "LV",
+   "MT",
+   "PL",
+   "PT",
+   "SI",
+   "UY"
+  ],
+  "nicht erfüllt (Kernabkommen)": [
+   "BW",
+   "SG",
+   "US"
+  ],
+  "ohne WJP-Wert (zweite Quelle nötig)": [
+   "CH",
+   "IS"
+  ],
+  "unter Partnerschwelle": [
+   "HU"
+  ]
+ },
+ "unter_sdg_schwelle": [
+  "BB",
+  "BW",
+  "CR",
+  "MU",
+  "SG"
+ ],
+ "fonds_varianten": {
+  "alle 30 (geltend)": {
+   "staaten": 30,
+   "beitrag_pct_bip": 5.15,
+   "zuschlag_pct": 15.4
+  },
+  "Kern und Teilnahme (WJP ≥ 0,66), CH und IS eingeschlossen": {
+   "staaten": 24,
+   "beitrag_pct_bip": 5.19,
+   "zuschlag_pct": 15.5
+  },
+  "nur Kern (WJP ≥ 0,75), CH und IS eingeschlossen": {
+   "staaten": 14,
+   "beitrag_pct_bip": 4.09,
+   "zuschlag_pct": 12.3
+  }
+ },
+ "staaten_unter_0_66": {
+  "BG": {
+   "beitrag_eigen_mr_pct_bip": 2.24,
+   "schuld_2024_pct_bip": 23.8
+  },
+  "EL": {
+   "beitrag_eigen_mr_pct_bip": 6.81,
+   "schuld_2024_pct_bip": 154.2
+  },
+  "HR": {
+   "beitrag_eigen_mr_pct_bip": 3.91,
+   "schuld_2024_pct_bip": 57.4
+  },
+  "HU": {
+   "beitrag_eigen_mr_pct_bip": 3.41,
+   "schuld_2024_pct_bip": 73.5
+  },
+  "RO": {
+   "beitrag_eigen_mr_pct_bip": 3.59,
+   "schuld_2024_pct_bip": 54.8
+  },
+  "SK": {
+   "beitrag_eigen_mr_pct_bip": 3.43,
+   "schuld_2024_pct_bip": 59.7
+  }
+ },
+ "anteil_bip_unter_0_66_pct": 5.7,
+ "geltend_kontrolle": {
+  "beitrag_pct_bip": 5.15,
+  "zuschlag_pct": 15.4
+ },
+ "hinweis": "Stufen nach WJP 2025 (Kern ≥ 0,75, Teilnahme ≥ 0,66, Partner ≥ 0,55) und sieben Kernabkommen; SDG Index und UN-Mi nur ausgewiesen. Fonds: Abgrenzung des Möglichkeitsraums, skaliert mit dem Beschluss (wie fonds_klub.py); nur Staaten des Fonds der 30."
+}

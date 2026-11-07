@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.72**
+Stand: 24. Oktober 2026 · Modellstand **v4.73**
 
 ---
 
@@ -4808,6 +4808,28 @@ Die Spalte E der Armutsquote ist mit dem Fonds von v4.72 gerechnet (Lauf mit `re
 
 ---
 
+### v4.73 — Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen: erste Durchsicht und Entscheidungsvorlagen (Vorbereitung)
+
+**Art der Änderung: MINOR (neue Prüfrechnung), keine geltende Zahl bewegt.** 7. November 2026.
+
+**Anlass:** Auftrag der Initiative (7.11.2026): Umstrukturierung der Staatenauswahl anhand von Rechtsstaatlichkeit, Ausrichtung an den
+UN-Übereinkommen, der UN-Charta und den Nachhaltigkeitszielen; Vorbereitungen und Entscheidungsvorlagen.
+
+**Neu `modell/staatenauswahl.py` (+ `.toml`) → `daten/aggregate/staatenauswahl.json`:** 44 Staaten (30 des Fonds, 14 außerhalb Europas) mit WJP
+Rule of Law Index 2025, SDG Index 2026, UN-Mi 2026 (SDSN) und Zahl der ratifizierten sieben Kernabkommen (ICESCR an der UN Treaty Collection
+geprüft, übrige eigene Kenntnis); alles maschinell gelesen, an der Quelle zu prüfen. Stufen nach Vorschlagsschwellen 0,75 / 0,66 / 0,55; Fonds
+für Auswahlen aus den 30 nach dem Verfahren von `fonds_klub.py` (Kontrolle: alle 30 = geltender Fonds).
+
+**Bewegte Zahl (vorläufig, kein Beschluss):** Kern 17 (12 des Fonds, dazu AU, CA, JP, NZ, UK), Teilnahme 15, Partner 6, unter Partnerschwelle 1 (HU),
+ohne WJP-Wert CH, IS, Kernabkommen nicht erfüllt BW, SG, US. Fonds ohne die sechs Staaten unter 0,66 (5,7 % des BIP der 30): 5,19 % BIP /
+Zuschlag 15,5 % (geltend 5,15 / 15,4); nur Kern mit CH, IS (14 Staaten): 4,09 % / 12,3 %. Befund: Eine Fondsauswahl nach Rechtsstaat wäre
+zugleich eine nach Schulden (Fehlanreiz). Entscheidungsvorlagen EV1–EV9 in `projekt/Entscheidungsvorlage-Staatenauswahl-2026-11-07.md`.
+
+**Datenquelle:** World Justice Project, Rule of Law Index 2025; SDSN, Sustainable Development Report 2026 (Teile 2 und 3); UN Treaty Collection
+MTDSG IV-3, IV-13, IV-16. WGI (Weltbank) nicht erreichbar, offen. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4882,7 +4904,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.72
+## 7 | Offene Punkte, Stand v4.73
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4929,6 +4951,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E15 | **entschieden v4.49:** Dividende beteiligt an Lenkung und Digitalisierungsgewinnen (Plattformen); Label mit Zertifizierung durch zugelassene, staatlich überwachte Stellen |
 | E16 | **entschieden v4.52:** Weitergabe nur aus den entfallenden Beiträgen zur sozialen Sicherung, in allen Staaten wie DE (Unfallversicherung, Garantiefonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben) |
 | E17 | **entschieden v4.72 (5.11.2026):** Rentnerregel BS35 als internationale Grundversion statt Regel E; offen: Obergrenze des oberen Satzes (55,1 %), Boden mit Blick auf SDG 1.2 |
+| E18 | Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (v4.73): Leitbild, Kriterien, Schwellen, Umgang mit SK, HR, RO, EL, BG, HU, Fonds je Währungsraum, Verfahren (EV1–EV9, `projekt/Entscheidungsvorlage-Staatenauswahl-2026-11-07.md`) |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

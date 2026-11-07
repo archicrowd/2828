@@ -1,0 +1,65 @@
+# Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (modell/staatenauswahl.py, Logbuch v4.73). Vorbereitung, kein Beschluss.
+version = "v4.73"
+
+# Quellen (alle maschinell aus Webseiten/PDF gelesen, an der Quelle zu prüfen):
+#  wjp:   World Justice Project, Rule of Law Index 2025 (WJPIndex2025.pdf), Gesamtwert 0–1; 143 Staaten; CH und IS nicht erfasst. Nichtstaatliche Quelle (NGO).
+#  sdg:   SDSN, Sustainable Development Report 2026, SDG Index (dashboards.sdgindex.org/rankings; Bericht Teil 2, Abb. 2.3), 0–100, 193 Staaten.
+#  unmi:  SDSN, SDR 2026 Teil 3, Index of Countries' Support for UN-based Multilateralism (Abb. 3.2), 0–100.
+#  kern7: Zahl der ratifizierten sieben Kernabkommen der Menschenrechte (ICERD, ICCPR, ICESCR, CEDAW, CAT, CRC, CRPD).
+#         ICESCR geprüft an der UN Treaty Collection (MTDSG IV-3, maschinell gelesen): alle EU-Staaten, NO, IS, CH, UK, CA, AU, NZ, JP, KR, UY, CL,
+#         CR, BB, MU Vertragsstaaten; US nur gezeichnet; SG und BW ohne Eintrag. Übrige Abkommen: eigene Kenntnis, zu prüfen. -1 = unbekannt.
+# Spalten: [wjp, sdg, unmi, kern7]
+[staaten]
+DK = [0.90, 85.7, 60.6, 7]
+NO = [0.89, 84.1, 61.1, 7]
+FI = [0.87, 87.4, 59.7, 7]
+SE = [0.85, 86.3, 57.5, 7]
+DE = [0.83, 84.0, 68.1, 7]
+LU = [0.83, 77.5, 74.8, 7]
+IE = [0.82, 80.0, 72.3, 7]
+NL = [0.82, 81.0, 67.6, 7]
+EE = [0.82, 81.8, 45.7, 7]
+AT = [0.79, 83.9, 74.5, 7]
+BE = [0.78, 81.1, 62.6, 7]
+LT = [0.77, 80.0, 49.0, 7]
+CZ = [0.74, 82.2, 59.4, 7]
+LV = [0.73, 81.7, 47.5, 7]
+FR = [0.72, 83.4, 48.5, 7]
+ES = [0.71, 81.2, 65.8, 7]
+SI = [0.68, 81.7, 63.1, 7]
+PT = [0.67, 81.1, 65.4, 7]
+CY = [0.67, 75.3, 60.5, 7]
+MT = [0.67, 78.9, 75.5, 7]
+PL = [0.66, 82.1, 56.5, 7]
+IT = [0.66, 79.9, 63.7, 7]
+SK = [0.64, 80.9, 54.6, 7]
+HR = [0.61, 81.8, 63.9, 7]
+RO = [0.61, 78.1, 53.5, 7]
+EL = [0.60, 78.6, 54.1, 7]
+BG = [0.55, 76.2, 60.1, 7]
+HU = [0.50, 80.0, 65.9, 7]
+CH = [-1, 80.3, 77.7, 7]
+IS = [-1, 82.3, 71.6, 7]
+# außerhalb Europas (Auswahl: Staaten mit WJP ≥ 0,60 aus der ersten Durchsicht)
+NZ = [0.83, 79.5, 73.8, 7]
+AU = [0.80, 79.0, 59.8, 7]
+CA = [0.79, 79.1, 59.5, 7]
+UK = [0.78, 82.5, 54.9, 7]
+JP = [0.78, 81.0, 67.8, 7]
+SG = [0.78, 73.8, 68.3, 4]
+KR = [0.74, 78.4, 59.9, 7]
+UY = [0.72, 77.9, 87.4, 7]
+CR = [0.68, 73.6, 82.1, 7]
+US = [0.68, 75.3, 1.7, 3]
+CL = [0.66, 78.5, 85.0, 7]
+BB = [0.66, 69.0, 90.7, -1]
+MU = [0.60, 68.0, 85.3, 7]
+BW = [0.60, 64.6, 75.6, 6]
+
+# Schwellen der ersten Durchsicht (Vorschläge zur Entscheidung, Vorlage EV3–EV5)
+[schwellen]
+kern_wjp = 0.75
+teilnahme_wjp = 0.66
+partner_wjp = 0.55
+sdg = 75.0
+kern7 = 7
