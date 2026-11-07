@@ -67,6 +67,7 @@ SEIT_PRUEFUNG = [
  ("v4.73", "Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen: erste Durchsicht (Vorbereitung)", "keine geltende Zahl"),
  ("v4.74", "Spielregeln: länderweise Regeln, Teilnahme nach UN-Grundlagen und Rechtsstaat, Fonds 50/50 (vorläufig)", "keine geltende Zahl"),
  ("v4.75", "Spielregeln beschlossen; Entwurf der Webseite; Herleitung aus den UN-Verträgen", "keine Zahl"),
+ ("v4.76", "Gemeinschaft der Staaten statt Dach; sechs Spielregeln; gemeinsame Kasse (vorläufig)", "keine geltende Zahl"),
 ]
 
 

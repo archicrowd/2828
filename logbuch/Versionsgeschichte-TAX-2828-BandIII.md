@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.75**
+Stand: 24. Oktober 2026 · Modellstand **v4.76**
 
 ---
 
@@ -4876,6 +4876,27 @@ Mehrwertsteuer als Label. Zur Bestätigung offen: Partner tragen ganz selbst; Ob
 
 ---
 
+### v4.76 — Gemeinschaft der Staaten statt Auflösung des Dachs; sechs Spielregeln; Kasse G1–G3; Webseitenentwurf überarbeitet
+
+**Art der Änderung: MINOR (neue vorläufige Prüfrechnung), keine geltende Zahl bewegt.** 7. November 2026.
+
+**Anlass:** Einwand der Initiative (7.11.2026): Die Auflösung des Dachs (v4.74/v4.75) geht zu weit. Synergien der Teilnehmerstaaten nutzen,
+Bezeichnung „Gemeinschaft der Staaten“, Pflichten zur Zusammenarbeit (Forschung, Freizügigkeit, übergeordnete Gerichtsbarkeit, Marktfreiheiten).
+
+**Neu `modell/gemeinschaft_kasse.py` (+ `.toml`) → `daten/aggregate/gemeinschaft_kasse.json`:** Kasse aus der Aufgabenliste von
+`dach_beitrag.py` (Kassenanteile Annahmen, Ziel 2035): G1 (Forschung 50 %, Standards, Gericht/Polizei) 0,97 % BIP, DE rund 48 € je Einwohner und
+Monat; G2 (dazu Netze 25 %, Außenbeziehungen, Umwelt) 2,09 %; G3 (dazu Verteidigung 40 %, bisheriges Dach) 3,09 %. Keine Änderung der Gesamtlast.
+
+**Überarbeitet:** sechs Spielregeln (neu Regel 3 „Was nur gemeinsam geht“); Obergrenze 32 % für Staat und Gemeinschaft zusammen; Webseitenentwurf
+`seite/entwurf/spielregeln/` (Gemeinschaft der Staaten in Ebenen, Grafiken, Forschung, Klima; Block „Was die Gemeinschaft verbindet“;
+Herleitung um UN-Charta Art. 1, 33, 55, 56 und Sozialpakt Art. 15 ergänzt). Arbeitspapier `projekt/Gemeinschaft-der-Staaten-2026-11-07.md`
+(Alternativen A–C, Empfehlung B mit G1).
+
+**Bewegte Zahl (vorläufig):** Kasse G1 0,97 % BIP. **Datenquelle:** `dach_beitrag.json` (v4.16); EU-Eigenmittelobergrenze 1,40 % BNE (v4.15).
+**Wodurch aufgefallen:** Einwand der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4950,7 +4971,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.75
+## 7 | Offene Punkte, Stand v4.76
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4999,6 +5020,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E17 | **entschieden v4.72 (5.11.2026):** Rentnerregel BS35 als internationale Grundversion statt Regel E; offen: Obergrenze des oberen Satzes (55,1 %), Boden mit Blick auf SDG 1.2 |
 | E18 | Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (v4.73): Leitbild, Kriterien, Schwellen, Umgang mit SK, HR, RO, EL, BG, HU, Fonds je Währungsraum, Verfahren (EV1–EV9, `projekt/Entscheidungsvorlage-Staatenauswahl-2026-11-07.md`) |
 | E19 | **entschieden v4.75 (7.11.2026), Bestätigung offen: Partner ganz selbst, Obergrenze 32 % je Staat.** Spielregeln (v4.74): fünf Regeln, Schwelle 0,66, Fonds 50/50, Partner ganz selbst oder Brücke 25 %, Wegfall des Dachs (gemeinsame Kasse, Sicherheitsunion, Einzug durch das Dach) (`projekt/Spielregeln-Staaten-und-Fonds-2026-11-07.md`) |
+| E20 | Gemeinschaft der Staaten (v4.76): Variante B, Kasse G1 mit Erweiterung zu G2, Gericht (eigenes oder Anbindung), Freizügigkeit ohne Wartezeit, Sicherheit als Angebot (`projekt/Gemeinschaft-der-Staaten-2026-11-07.md`) |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

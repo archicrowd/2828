@@ -1,0 +1,50 @@
+{
+ "version": "v4.76",
+ "status": "Entwicklungsmodus: vorläufig, kein Beschluss",
+ "varianten": {
+  "G1": {
+   "name": "G1 schlank: Forschung, Standards und Label, Gericht und übergeordnete Polizei",
+   "aufgaben": {
+    "Grundlagenforschung": 0.385,
+    "Bildungs-, Markt- und Produktstandards": 0.3,
+    "Übergeordnete Polizei": 0.29
+   },
+   "kasse_pct_bip": 0.97,
+   "zu_eu_obergrenze": 0.7,
+   "de_2028_mrd": 47.9,
+   "de_2028_eur_kopf_monat": 48
+  },
+  "G2": {
+   "name": "G2 Gemeinschaft: G1 und Binnenmarkt (grenzüberschreitende Netze), Außenbeziehungen, Umwelt grenzüberschreitend",
+   "aufgaben": {
+    "Grundlagenforschung": 0.385,
+    "Bildungs-, Markt- und Produktstandards": 0.3,
+    "Übergeordnete Polizei": 0.29,
+    "Wirtschaftsraum, Agrar, Energie, Netze": 0.525,
+    "Außenbeziehungen": 0.3,
+    "Umwelt, grenzüberschreitend": 0.29
+   },
+   "kasse_pct_bip": 2.09,
+   "zu_eu_obergrenze": 1.49,
+   "de_2028_mrd": 102.7,
+   "de_2028_eur_kopf_monat": 103
+  },
+  "G3": {
+   "name": "G3 bisheriges Dach (v4.15): G2 und Verteidigung und digitale Souveränität (Anteil 40 %)",
+   "aufgaben": {
+    "Grundlagenforschung": 0.385,
+    "Bildungs-, Markt- und Produktstandards": 0.3,
+    "Übergeordnete Polizei": 0.29,
+    "Wirtschaftsraum, Agrar, Energie, Netze": 0.525,
+    "Außenbeziehungen": 0.3,
+    "Umwelt, grenzüberschreitend": 0.29,
+    "Verteidigung und digitale Souveränität": 1.0
+   },
+   "kasse_pct_bip": 3.09,
+   "zu_eu_obergrenze": 2.21,
+   "de_2028_mrd": 151.9,
+   "de_2028_eur_kopf_monat": 152
+  }
+ },
+ "hinweis": "Kasse in % des BIP, Ziel 2035 (Verteidigung 2,5 %); Kassenanteile je Aufgabe Annahmen (dach_beitrag.toml). DE: BIP 2028 nominal × Kassensatz (Größenordnung; mischt Zielsätze 2035 mit BIP 2028). Keine Änderung der Gesamtlast."
+}

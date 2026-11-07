@@ -65,6 +65,7 @@ STUFEN = [
     ("Rentner: Kürzung nach Zusage je Versicherungsjahr (Entwicklungsmodus)", ["modell/rentner_beitragsjahre.py"]),
     ("Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (Vorbereitung)", ["modell/staatenauswahl.py"]),
     ("Altlastenfonds mit geteilter Verantwortung 50/50 (Entwicklungsmodus)", ["modell/fonds_5050.py"]),
+    ("Gemeinschaft der Staaten: gemeinsame Kasse in drei Varianten (Entwicklungsmodus)", ["modell/gemeinschaft_kasse.py"]),
     ("Gini Frankreich und Polen: Zerlegung, Gegenproben", ["modell/gini_frankreich.py"]),
     ("Validierung der Ländermodelle gegen OECD Taxing Wages 2026 und Ministerium (FR)", ["modell/validierung_laender.py"]),
     ("Rentnerausgleich und Lebensarbeitszeit", ["modell/rentnerausgleich.py"]),

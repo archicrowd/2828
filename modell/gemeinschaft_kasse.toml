@@ -1,0 +1,12 @@
+# Gemeinschaft der Staaten: gemeinsame Kasse in drei Varianten (modell/gemeinschaft_kasse.py, Logbuch v4.76). Entwicklungsmodus, vorläufig.
+version = "v4.76"
+# Aufgaben und Kassenanteile aus dach_beitrag.json (v4.15/v4.16; Kassenanteile sind Annahmen der Initiative). Je Variante: welche Aufgaben in die Kasse.
+[variante.G1]
+name = "G1 schlank: Forschung, Standards und Label, Gericht und übergeordnete Polizei"
+aufgaben = ["Grundlagenforschung", "Bildungs-, Markt- und Produktstandards", "Übergeordnete Polizei"]
+[variante.G2]
+name = "G2 Gemeinschaft: G1 und Binnenmarkt (grenzüberschreitende Netze), Außenbeziehungen, Umwelt grenzüberschreitend"
+aufgaben = ["Grundlagenforschung", "Bildungs-, Markt- und Produktstandards", "Übergeordnete Polizei", "Wirtschaftsraum, Agrar, Energie, Netze", "Außenbeziehungen", "Umwelt, grenzüberschreitend"]
+[variante.G3]
+name = "G3 bisheriges Dach (v4.15): G2 und Verteidigung und digitale Souveränität (Anteil 40 %)"
+aufgaben = ["Grundlagenforschung", "Bildungs-, Markt- und Produktstandards", "Übergeordnete Polizei", "Wirtschaftsraum, Agrar, Energie, Netze", "Außenbeziehungen", "Umwelt, grenzüberschreitend", "Verteidigung und digitale Souveränität"]

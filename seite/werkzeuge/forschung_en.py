@@ -42,6 +42,7 @@ SINCE_REVIEW = [
  ("v4.73", "Selection of states by rule of law and UN foundations: first screening (preparation)", "no adopted figure"),
  ("v4.74", "Ground rules: country-level rules, participation by UN foundations and rule of law, fund 50/50 (preliminary)", "no adopted figure"),
  ("v4.75", "Ground rules adopted; website draft; derivation from UN treaties", "no figure"),
+ ("v4.76", "Community of states instead of a roof; six ground rules; common budget (preliminary)", "no adopted figure"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
