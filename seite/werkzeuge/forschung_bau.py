@@ -65,6 +65,7 @@ SEIT_PRUEFUNG = [
  ("v4.71", "Rentner: Option ab 35 mit Sockel (vorläufige Prüfrechnung)", "keine geltende Zahl"),
  ("v4.72", "Rentnerregel BS35 ersetzt Regel E (Beschluss); Armutsquote aus der Mikrosimulation", "Fonds 5,15 % BIP, Zuschlag 15,4 %, Rentner mit mehr 64,5 %, Kürzungssatz je Staat"),
  ("v4.73", "Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen: erste Durchsicht (Vorbereitung)", "keine geltende Zahl"),
+ ("v4.74", "Spielregeln: länderweise Regeln, Teilnahme nach UN-Grundlagen und Rechtsstaat, Fonds 50/50 (vorläufig)", "keine geltende Zahl"),
 ]
 
 

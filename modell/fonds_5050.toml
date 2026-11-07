@@ -1,0 +1,6 @@
+# Fonds mit geteilter Verantwortung 50/50 (modell/fonds_5050.py, Logbuch v4.74). Entwicklungsmodus, vorläufig, kein Beschluss.
+version = "v4.74"
+anteil_gemeinsam = 0.5      # Anteil der Altlast, der zum gemeinsamen Satz getragen wird; Rest trägt jeder Staat selbst (eigener Satz)
+# Teilnahme am gemeinsamen Teil: Staaten mit Rechtsstaat ≥ Schwelle (staatenauswahl.toml); darunter Partner, die ihre Altlast ganz selbst tragen
+schwelle_wjp = 0.66
+ohne_wert_teilnahme = ["CH", "IS"]   # ohne WJP-Wert; Annahme: über der Schwelle (WGI nicht beschafft)

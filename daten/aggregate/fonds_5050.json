@@ -1,0 +1,736 @@
+{
+ "version": "v4.74",
+ "status": "Entwicklungsmodus: vorläufige Prüfrechnung, kein Beschluss",
+ "anteil_gemeinsam": 0.5,
+ "teilnehmer": [
+  "AT",
+  "BE",
+  "CH",
+  "CY",
+  "CZ",
+  "DE",
+  "DK",
+  "EE",
+  "ES",
+  "FI",
+  "FR",
+  "IE",
+  "IS",
+  "IT",
+  "LT",
+  "LU",
+  "LV",
+  "MT",
+  "NL",
+  "NO",
+  "PL",
+  "PT",
+  "SE",
+  "SI"
+ ],
+ "partner": [
+  "BG",
+  "EL",
+  "HR",
+  "HU",
+  "RO",
+  "SK"
+ ],
+ "gemeinsamer_satz_teilnehmer": {
+  "beitrag_pct_bip": 5.19,
+  "zuschlag_pct": 15.5
+ },
+ "laender": {
+  "AT": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 6.61,
+    "zuschlag_pct": 19.9
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 6.64,
+    "zuschlag_pct": 19.8
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 5.9,
+    "zuschlag_pct": 17.7
+   }
+  },
+  "BE": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 5.6,
+    "zuschlag_pct": 16.7
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 5.59,
+    "zuschlag_pct": 16.7
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 5.4,
+    "zuschlag_pct": 16.1
+   }
+  },
+  "BG": {
+   "stufe": "Partner (trägt ganz selbst)",
+   "eigen": {
+    "beitrag_pct_bip": 2.48,
+    "zuschlag_pct": 7.3
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 2.5,
+    "zuschlag_pct": 7.5
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 2.48,
+    "zuschlag_pct": 7.3
+   }
+  },
+  "CH": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 2.73,
+    "zuschlag_pct": 7.9
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 2.73,
+    "zuschlag_pct": 8.2
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 3.96,
+    "zuschlag_pct": 11.7
+   }
+  },
+  "CY": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 4.57,
+    "zuschlag_pct": 13.4
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 4.57,
+    "zuschlag_pct": 13.6
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.88,
+    "zuschlag_pct": 14.5
+   }
+  },
+  "CZ": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 4.13,
+    "zuschlag_pct": 12.6
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 4.16,
+    "zuschlag_pct": 12.4
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.66,
+    "zuschlag_pct": 14.0
+   }
+  },
+  "DE": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 4.99,
+    "zuschlag_pct": 14.6
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 5.01,
+    "zuschlag_pct": 15.0
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 5.09,
+    "zuschlag_pct": 15.1
+   }
+  },
+  "DK": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 0.48,
+    "zuschlag_pct": 1.5
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 0.44,
+    "zuschlag_pct": 1.3
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 2.83,
+    "zuschlag_pct": 8.5
+   }
+  },
+  "EE": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 3.17,
+    "zuschlag_pct": 9.4
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.2,
+    "zuschlag_pct": 9.6
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.18,
+    "zuschlag_pct": 12.5
+   }
+  },
+  "EL": {
+   "stufe": "Partner (trägt ganz selbst)",
+   "eigen": {
+    "beitrag_pct_bip": 7.53,
+    "zuschlag_pct": 21.5
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 7.48,
+    "zuschlag_pct": 22.4
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 7.53,
+    "zuschlag_pct": 21.5
+   }
+  },
+  "ES": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 6.17,
+    "zuschlag_pct": 18.1
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 6.16,
+    "zuschlag_pct": 18.4
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 5.68,
+    "zuschlag_pct": 16.8
+   }
+  },
+  "FI": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 5.52,
+    "zuschlag_pct": 16.7
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 5.51,
+    "zuschlag_pct": 16.5
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 5.35,
+    "zuschlag_pct": 16.1
+   }
+  },
+  "FR": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 7.03,
+    "zuschlag_pct": 21.0
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 7.03,
+    "zuschlag_pct": 21.0
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 6.11,
+    "zuschlag_pct": 18.3
+   }
+  },
+  "HR": {
+   "stufe": "Partner (trägt ganz selbst)",
+   "eigen": {
+    "beitrag_pct_bip": 4.32,
+    "zuschlag_pct": 13.0
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 4.33,
+    "zuschlag_pct": 12.9
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.32,
+    "zuschlag_pct": 13.0
+   }
+  },
+  "HU": {
+   "stufe": "Partner (trägt ganz selbst)",
+   "eigen": {
+    "beitrag_pct_bip": 3.77,
+    "zuschlag_pct": 11.8
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.74,
+    "zuschlag_pct": 11.2
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 3.77,
+    "zuschlag_pct": 11.8
+   }
+  },
+  "IE": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 1.66,
+    "zuschlag_pct": 5.6
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 1.64,
+    "zuschlag_pct": 4.9
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 3.42,
+    "zuschlag_pct": 10.6
+   }
+  },
+  "IS": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 1.79,
+    "zuschlag_pct": 5.5
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 1.75,
+    "zuschlag_pct": 5.2
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 3.49,
+    "zuschlag_pct": 10.5
+   }
+  },
+  "IT": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 7.41,
+    "zuschlag_pct": 21.9
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 7.38,
+    "zuschlag_pct": 22.0
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 6.3,
+    "zuschlag_pct": 18.7
+   }
+  },
+  "LT": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 2.85,
+    "zuschlag_pct": 8.3
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 2.85,
+    "zuschlag_pct": 8.5
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.02,
+    "zuschlag_pct": 11.9
+   }
+  },
+  "LU": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 3.39,
+    "zuschlag_pct": 11.2
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.42,
+    "zuschlag_pct": 10.2
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.29,
+    "zuschlag_pct": 13.3
+   }
+  },
+  "LV": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 3.46,
+    "zuschlag_pct": 10.0
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.47,
+    "zuschlag_pct": 10.4
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.32,
+    "zuschlag_pct": 12.7
+   }
+  },
+  "MT": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 3.0,
+    "zuschlag_pct": 9.2
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.0,
+    "zuschlag_pct": 9.0
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.09,
+    "zuschlag_pct": 12.4
+   }
+  },
+  "NL": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 2.79,
+    "zuschlag_pct": 8.6
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 2.78,
+    "zuschlag_pct": 8.3
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 3.99,
+    "zuschlag_pct": 12.0
+   }
+  },
+  "NO": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 3.56,
+    "zuschlag_pct": 11.4
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.57,
+    "zuschlag_pct": 10.7
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.37,
+    "zuschlag_pct": 13.5
+   }
+  },
+  "PL": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 4.55,
+    "zuschlag_pct": 13.4
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 4.57,
+    "zuschlag_pct": 13.7
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.87,
+    "zuschlag_pct": 14.5
+   }
+  },
+  "PT": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 5.87,
+    "zuschlag_pct": 17.0
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 5.87,
+    "zuschlag_pct": 17.5
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 5.53,
+    "zuschlag_pct": 16.3
+   }
+  },
+  "RO": {
+   "stufe": "Partner (trägt ganz selbst)",
+   "eigen": {
+    "beitrag_pct_bip": 3.97,
+    "zuschlag_pct": 11.4
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.97,
+    "zuschlag_pct": 11.9
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 3.97,
+    "zuschlag_pct": 11.4
+   }
+  },
+  "SE": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 3.1,
+    "zuschlag_pct": 10.0
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.11,
+    "zuschlag_pct": 9.3
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 4.14,
+    "zuschlag_pct": 12.7
+   }
+  },
+  "SI": {
+   "stufe": "Teilnahme",
+   "eigen": {
+    "beitrag_pct_bip": 5.22,
+    "zuschlag_pct": 15.6
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 5.24,
+    "zuschlag_pct": 15.7
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 5.2,
+    "zuschlag_pct": 15.6
+   }
+  },
+  "SK": {
+   "stufe": "Partner (trägt ganz selbst)",
+   "eigen": {
+    "beitrag_pct_bip": 3.79,
+    "zuschlag_pct": 10.9
+   },
+   "gemeinsam_alle_30": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geltend_verrechnung_2028": {
+    "beitrag_pct_bip": 3.79,
+    "zuschlag_pct": 11.3
+   },
+   "geltend_ab_2058": {
+    "beitrag_pct_bip": 5.15,
+    "zuschlag_pct": 15.4
+   },
+   "geteilt_5050": {
+    "beitrag_pct_bip": 3.79,
+    "zuschlag_pct": 10.9
+   }
+  }
+ },
+ "hinweis": "Beitrag in % des eigenen BIP und Zuschlag auf alle Steuern des Staates, dauerhaft. Eigener Satz = eigener Fonds (Tilgung bis 2098) in der Abgrenzung des Möglichkeitsraums, skaliert mit dem Beschluss (Annahme). Geltend: Verrechnung 2028 und gemeinsamer Satz ab 2058."
+}

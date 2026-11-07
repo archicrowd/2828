@@ -1,5 +1,5 @@
 {
- "version": "v4.73",
+ "version": "v4.74",
  "status": "Vorbereitung (Entscheidungsvorlagen), kein Beschluss; Daten maschinell gelesen, an der Quelle zu prüfen",
  "schwellen": {
   "kern_wjp": 0.75,
@@ -9,18 +9,18 @@
   "kern7": 7
  },
  "stufen": {
-  "DK": "Kern",
-  "NO": "Kern",
-  "FI": "Kern",
-  "SE": "Kern",
-  "DE": "Kern",
-  "LU": "Kern",
-  "IE": "Kern",
-  "NL": "Kern",
-  "EE": "Kern",
-  "AT": "Kern",
-  "BE": "Kern",
-  "LT": "Kern",
+  "DK": "Teilnahme",
+  "NO": "Teilnahme",
+  "FI": "Teilnahme",
+  "SE": "Teilnahme",
+  "DE": "Teilnahme",
+  "LU": "Teilnahme",
+  "IE": "Teilnahme",
+  "NL": "Teilnahme",
+  "EE": "Teilnahme",
+  "AT": "Teilnahme",
+  "BE": "Teilnahme",
+  "LT": "Teilnahme",
   "CZ": "Teilnahme",
   "LV": "Teilnahme",
   "FR": "Teilnahme",
@@ -36,70 +36,69 @@
   "RO": "Partner",
   "EL": "Partner",
   "BG": "Partner",
-  "HU": "unter Partnerschwelle",
+  "HU": "Partner",
   "CH": "ohne WJP-Wert (zweite Quelle nötig)",
   "IS": "ohne WJP-Wert (zweite Quelle nötig)",
-  "NZ": "Kern",
-  "AU": "Kern",
-  "CA": "Kern",
-  "UK": "Kern",
-  "JP": "Kern",
-  "SG": "nicht erfüllt (Kernabkommen)",
+  "NZ": "Teilnahme",
+  "AU": "Teilnahme",
+  "CA": "Teilnahme",
+  "UK": "Teilnahme",
+  "JP": "Teilnahme",
+  "SG": "nicht erfüllt (Grundlagen)",
   "KR": "Teilnahme",
   "UY": "Teilnahme",
   "CR": "Teilnahme",
-  "US": "nicht erfüllt (Kernabkommen)",
+  "US": "nicht erfüllt (Grundlagen)",
   "CL": "Teilnahme",
   "BB": "Teilnahme",
   "MU": "Partner",
-  "BW": "nicht erfüllt (Kernabkommen)"
+  "BW": "nicht erfüllt (Grundlagen)"
  },
  "zaehlung": {
-  "Kern": [
-   "AT",
-   "AU",
-   "BE",
-   "CA",
-   "DE",
-   "DK",
-   "EE",
-   "FI",
-   "IE",
-   "JP",
-   "LT",
-   "LU",
-   "NL",
-   "NO",
-   "NZ",
-   "SE",
-   "UK"
-  ],
   "Partner": [
    "BG",
    "EL",
    "HR",
+   "HU",
    "MU",
    "RO",
    "SK"
   ],
   "Teilnahme": [
+   "AT",
+   "AU",
    "BB",
+   "BE",
+   "CA",
    "CL",
    "CR",
    "CY",
    "CZ",
+   "DE",
+   "DK",
+   "EE",
    "ES",
+   "FI",
    "FR",
+   "IE",
    "IT",
+   "JP",
    "KR",
+   "LT",
+   "LU",
    "LV",
    "MT",
+   "NL",
+   "NO",
+   "NZ",
    "PL",
    "PT",
+   "SE",
    "SI",
+   "UK",
    "UY"
   ],
-  "nicht erfüllt (Kernabkommen)": [
+  "nicht erfüllt (Grundlagen)": [
    "BW",
    "SG",
    "US"
@@ -107,9 +106,6 @@
   "ohne WJP-Wert (zweite Quelle nötig)": [
    "CH",
    "IS"
-  ],
-  "unter Partnerschwelle": [
-   "HU"
   ]
  },
  "unter_sdg_schwelle": [
@@ -125,12 +121,12 @@
    "beitrag_pct_bip": 5.15,
    "zuschlag_pct": 15.4
   },
-  "Kern und Teilnahme (WJP ≥ 0,66), CH und IS eingeschlossen": {
+  "Teilnahme (WJP ≥ 0,66), CH und IS eingeschlossen": {
    "staaten": 24,
    "beitrag_pct_bip": 5.19,
    "zuschlag_pct": 15.5
   },
-  "nur Kern (WJP ≥ 0,75), CH und IS eingeschlossen": {
+  "nur WJP ≥ 0,75 (Information), CH und IS eingeschlossen": {
    "staaten": 14,
    "beitrag_pct_bip": 4.09,
    "zuschlag_pct": 12.3
@@ -167,5 +163,5 @@
   "beitrag_pct_bip": 5.15,
   "zuschlag_pct": 15.4
  },
- "hinweis": "Stufen nach WJP 2025 (Kern ≥ 0,75, Teilnahme ≥ 0,66, Partner ≥ 0,55) und sieben Kernabkommen; SDG Index und UN-Mi nur ausgewiesen. Fonds: Abgrenzung des Möglichkeitsraums, skaliert mit dem Beschluss (wie fonds_klub.py); nur Staaten des Fonds der 30."
+ "hinweis": "v4.74 Spielregel 1: Grundlagen (beide Menschenrechtspakte, Pariser Abkommen) und WJP 2025 ≥ 0,66 = Teilnahme, sonst Partner; SDG Index, UN-Mi und Zahl der sieben Kernabkommen nur ausgewiesen. Fonds: Abgrenzung des Möglichkeitsraums, skaliert mit dem Beschluss (wie fonds_klub.py); nur Staaten des Fonds der 30."
 }

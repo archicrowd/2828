@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.73**
+Stand: 24. Oktober 2026 · Modellstand **v4.74**
 
 ---
 
@@ -4830,6 +4830,30 @@ MTDSG IV-3, IV-13, IV-16. WGI (Weltbank) nicht erreichbar, offen. **Wodurch aufg
 
 ---
 
+### v4.74 — Spielregeln für Staaten und Fonds: länderweise Regeln, Teilnahme nach UN-Grundlagen und Rechtsstaat, Fonds 50/50 (Entwicklungsmodus)
+
+**Art der Änderung: MINOR (neue vorläufige Prüfrechnung), keine geltende Zahl bewegt.** 7. November 2026.
+
+**Anlass:** Auftrag der Initiative (7.11.2026): sehr einfache Spielregeln, klare Absicht, erkennbare Mechanismen; Kontrollen jetzt nicht regeln;
+Themen des Dachs verlassen, länderweise Betrachtung; Fonds mit geteilter Verantwortung 50/50.
+
+**Änderungen:**
+- `staatenauswahl.py/.toml`: Regel 1 vereinfacht: Grundlagen (beide Menschenrechtspakte, Pariser Abkommen) und WJP ≥ 0,66 = Teilnahme, sonst
+  Partner. Neue Spalten `pakte`, `paris`. ICCPR an der UN Treaty Collection geprüft (MTDSG IV-4, maschinell gelesen; alle außer SG); Austritt der
+  USA aus dem Pariser Abkommen mit Wirkung 27.1.2026 (C.N.71.2025).
+- Neu `modell/fonds_5050.py` (+ `.toml`) → `daten/aggregate/fonds_5050.json`: Beitrag = ½ eigener Satz + ½ gemeinsamer Satz der Teilnehmer,
+  dauerhaft; Partner tragen ganz selbst; Summenkontrolle (Mittel = gemeinsamer Satz).
+- Arbeitspapier `projekt/Spielregeln-Staaten-und-Fonds-2026-11-07.md` (fünf Spielregeln, Wegfall des Dachs, Fonds, Entscheidungen).
+
+**Bewegte Zahl (vorläufig):** Teilnahme 34 Staaten einschließlich CH und IS, Partner 7, Grundlagen nicht erfüllt 3 (US, SG, BW). Gemeinsamer
+Satz der 24 Teilnehmer des Fonds 5,19 % BIP / Zuschlag 15,5 %. Zuschlag 50/50: IT 18,7, FR 18,3, ES 16,8, DE 15,1, PL 14,5, NL 12,0, DK 8,5 %;
+Partner eigen: EL 21,5, HU 11,8, BG 7,3 %. Bisher 2028: IT 22,0, FR 21,0, DE 15,0, DK 1,3 %, ab 2058 alle 15,4 %.
+
+**Datenquelle:** UN Treaty Collection (MTDSG IV-3, IV-4; C.N.71.2025); WJP 2025; Möglichkeitsraum und Fonds wie v4.37. WGI weiter nicht
+abrufbar. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4904,7 +4928,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.73
+## 7 | Offene Punkte, Stand v4.74
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -4952,6 +4976,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E16 | **entschieden v4.52:** Weitergabe nur aus den entfallenden Beiträgen zur sozialen Sicherung, in allen Staaten wie DE (Unfallversicherung, Garantiefonds, Ausbildungs-, Wohnungs- und Verkehrsabgaben bleiben) |
 | E17 | **entschieden v4.72 (5.11.2026):** Rentnerregel BS35 als internationale Grundversion statt Regel E; offen: Obergrenze des oberen Satzes (55,1 %), Boden mit Blick auf SDG 1.2 |
 | E18 | Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (v4.73): Leitbild, Kriterien, Schwellen, Umgang mit SK, HR, RO, EL, BG, HU, Fonds je Währungsraum, Verfahren (EV1–EV9, `projekt/Entscheidungsvorlage-Staatenauswahl-2026-11-07.md`) |
+| E19 | Spielregeln (v4.74): fünf Regeln, Schwelle 0,66, Fonds 50/50, Partner ganz selbst oder Brücke 25 %, Wegfall des Dachs (gemeinsame Kasse, Sicherheitsunion, Einzug durch das Dach) (`projekt/Spielregeln-Staaten-und-Fonds-2026-11-07.md`) |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 
