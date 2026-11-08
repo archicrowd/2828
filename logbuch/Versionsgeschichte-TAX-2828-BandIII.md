@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.76**
+Stand: 24. Oktober 2026 · Modellstand **v4.78**
 
 ---
 
@@ -4897,6 +4897,46 @@ Herleitung um UN-Charta Art. 1, 33, 55, 56 und Sozialpakt Art. 15 ergänzt). Arb
 
 ---
 
+### v4.77 — Webseitenentwurf: Änderungen der Initiative vom 8.11.2026 eingearbeitet; Rechenspiel „Bauen Sie die Gemeinschaft“ (nachgetragen, Korrektur 86)
+
+**Art der Änderung: PATCH (Darstellung), keine Zahl bewegt.** 8. November 2026. Commit `d176729`.
+
+**Änderungen in `seite/entwurf/spielregeln/bau.py`** (Vorgaben der Initiative, Wortlaut übernommen, Tippfehler berichtigt):
+1. Einleitung „Steuern können die Welt verändern …“ (zwei Absätze) statt des bisherigen Untertitels.
+2. Ebenen: feste Formel, freiere Entscheidung über lokale Aufgaben; Staat und Gemeinschaft behalten höchstens ein Drittel.
+3. „Warum eine Transformationsdividende?“ neu gefasst.
+4. „Der Gemeinschaft der Staaten wird zugetraut“: Mehrheiten wie Regel 3 (einfache Mehrheit in den Aufgaben, Zweidrittelmehrheit für die
+   Spielregeln); die Vorgabe nannte allgemein die Zweidrittelmehrheit.
+5. Gini-Text: Vorgabe gleich dem bestehenden Text, keine Änderung.
+6. Dividendengrafik geöffnet, mittlerer Pfad vorgewählt; Text um den Wert 2060 dieses Pfads (271 €) ergänzt.
+7. Sechs Spielregeln im Wortlaut der Initiative (Regel 5 ohne 0,7 %; Herleitung ohne Ziel 17.2).
+8. Rechenspiel „Bauen Sie die Gemeinschaft“: 41 Staaten, Voreinstellungen, Menschen, Staaten, Anteil an der Weltbevölkerung, Marken USA und EU.
+   Einwohner außerhalb Europas: UN World Population Prospects 2024, Stand 2023 (Kopie der Wikipedia-Liste, Sekundärquelle).
+
+**Datenquelle:** UN WPP 2024 (Sekundärquelle), `moeglichkeitsraum.csv`. **Wodurch aufgefallen:** Vorgaben der Initiative.
+
+---
+
+### v4.78 — Webseitenentwurf: Obergrenze ein Drittel, Klage Einzelner, „Wohin die Reise geht“ mit drei Karten bis 2040
+
+**Art der Änderung: PATCH (Darstellung), keine Zahl der Haushalte bewegt.** 8. November 2026.
+
+**Entscheidungen der Initiative (8.11.2026):**
+1. Obergrenze nach Empfehlung: Staat und Gemeinschaft behalten höchstens **ein Drittel** des Aufkommens (Setzung). Bisher 32 % als aufgerundeter
+   Höchstbedarf (Gesamtrechnung, `obergrenze_regel_rundung`); der Höchstbedarf bleibt Rechengrundlage, die Regel setzt die Grenze darüber. Im
+   Entwurf: Fluss-Grafik mit 33,3 % (erlaubt 2033: 32 € von 100 €), Ebenen-Grafik „mindestens zwei Drittel an Kommunen und Regionen“.
+2. Gericht: Klage Einzelner bleibt; in Regel 3 wieder aufgenommen.
+3. „Wohin die Reise geht“: Karten Ungleichheit (Gini DE, amtlich 2025 und Modell bis 2040, `gini.json`), CO₂-Emissionen (bis 2040), verfügbares
+   Einkommen (42.000 € brutto, alleinstehend, heutiges System gegen Goldenes Drittel 2028–2040, aus den Rechnerdaten der Seite). Zeitleiste
+   2026–2029 entfällt.
+
+**Korrektur 86:** Der Eintrag v4.77 fehlte im Commit und ist nachgetragen (Abschnitt 4).
+
+**Hinweis:** Der Rechner ergibt bei 42.000 € für 2028 +613 €, die Einleitung nennt +611 € (`haushalte33.json`); Abweichung aus zwei Rechenwegen,
+zu klären vor der Übernahme. **Datenquelle:** `gini.json`, Zeitreihen und Rechnerdaten der Seite. **Wodurch aufgefallen:** Vorgaben der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -4932,6 +4972,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 74 | `KENNZAHLEN.md` und Prüfmappe: Z 2028 = 9,45 % BIP, obwohl `altlasten.json` seit v4.37 (Kürzungssatz je Staat) 9,42 enthält | 9,42 (v4.46) | Dritte Prüfung, Befund B18 |
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
 | 85 | Working Paper v4.62–v4.66, Abschnitt 7: Sonderstufe „im Modell Verbrenner-Fahrzeuge, Tabak, Alkohol“ (Kraftstoffe beim Gegenlesen v4.62 irrtümlich gestrichen) | Kraftstoffe gehören dazu (`projektion33.py`, Konzept) | Beschluss Pestizide/Dünger (v4.67), Nachsehen der Sonderstufe im Modell |
+| 86 | Logbuch v4.77: Eintrag, Versionsstand der Register und Forschungsseite fehlten im Commit `d176729` (verkettete Befehle: die Logbuchstufe lief nach einem Fehler des Entwurfsbaus nicht) | Eintrag v4.77 nachgetragen, Stände mit v4.78 nachgeführt | eigene Durchsicht beim Eintrag v4.78 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -4971,7 +5012,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.76
+## 7 | Offene Punkte, Stand v4.78
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

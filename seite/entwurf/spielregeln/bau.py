@@ -40,6 +40,8 @@ partner = st["Partner"]
 de = F55["laender"]["DE"]
 gem = F55["gemeinsamer_satz_teilnehmer"]
 
+_i = ALT.index('<div class="timeline" style="margin-top:34px">')
+ZEITLEISTE = ALT[_i:ALT.index("</div>\n  </div>\n</section>", _i) + len("</div>")]
 STEMPEL = re.search(r"Modellstand <b>v[0-9.]+ · [^<]+</b>", ALT).group(0)
 R = []   # (alt, neu): jede alte Stelle muss genau einmal vorkommen
 
@@ -88,7 +90,7 @@ neu_sich = f'''<section id="sicherungen">
     <div class="sich">
       <div><span><b>1 · Wer mitmacht</b><p>Jeder Staat, der Mitglied der Vereinten Nationen ist, beide Menschenrechtspakte von 1966 und das Pariser Klimaabkommen ratifiziert hat und rechtsstaatlich handelt (Rule of Law Index ab 0,66), kann mitmachen. Wer die Schwelle noch nicht erreicht, kann die gemeinsamen Regeln als „Partner“ anwenden.</p></span></div>
       <div><span><b>2 · Dieselben Regeln in jedem Land</b><p>Jeder Staat misst alles an seinem eigenen Grundbedarf: Tarif, Label, Dividende, starkes Netz und die festen Beträge für Kommunen und Regionen. Staat und Gemeinschaft behalten zusammen höchstens ein Drittel der Einnahmen. Die feste Formel ersetzt ewige Verhandlungen. Niemand muss bitten, niemand kann kürzen.</p></span></div>
-      <div><span><b>3 · Was nur gemeinsam geht</b><p>Die Gemeinschaft der Staaten sichert Freizügigkeit für alle Bürgerinnen und Bürger, einen Markt ohne Grenzen für Waren, Dienste und Kapital, einen gemeinsamen Forschungsraum und ein gemeinsames Gericht. Steuerregeln und Konsumlabel gelten überall gleich; Versicherungsjahre zählen in jedem Staat. Für Forschung, Standards und Gericht zahlt jeder Staat denselben Anteil seiner Wirtschaftsleistung in eine gemeinsame Kasse. In diesen Aufgaben entscheidet die Gemeinschaft mit einfacher Mehrheit; die Spielregeln selbst ändern die Staaten mit Zweidrittelmehrheit.</p></span></div>
+      <div><span><b>3 · Was nur gemeinsam geht</b><p>Die Gemeinschaft der Staaten sichert Freizügigkeit für alle Bürgerinnen und Bürger, einen Markt ohne Grenzen für Waren, Dienste und Kapital, einen gemeinsamen Forschungsraum und ein gemeinsames Gericht, an das sich auch jeder Einzelne wenden kann. Steuerregeln und Konsumlabel gelten überall gleich; Versicherungsjahre zählen in jedem Staat. Für Forschung, Standards und Gericht zahlt jeder Staat denselben Anteil seiner Wirtschaftsleistung in eine gemeinsame Kasse. In diesen Aufgaben entscheidet die Gemeinschaft mit einfacher Mehrheit; die Spielregeln selbst ändern die Staaten mit Zweidrittelmehrheit.</p></span></div>
       <div><span><b>4 · Altlasten: halb selbst, halb gemeinsam</b><p>Alte Schulden und Rentenzusagen trägt jeder Staat zur Hälfte selbst; die andere Hälfte tragen alle Teilnehmer, um gemeinsam stark zu sein. Alles ist 2098 getilgt. Partner tragen ihre Altlast so lange selbst, bis sie die gemeinsamen Standards voll erreicht haben. Für überschuldete Staaten gibt es ein geordnetes Neustartverfahren. Bestehende Renten laufen weiter. Alte Zusagen ohne eigene Deckung (z. B. aus der gesetzlichen Rente, Pensionen) bleiben nach 35 Versicherungsjahren bis zum doppelten Grundbedarf ungekürzt (bei kürzerer Laufbahn anteilig, nie unter dem Grundbedarf); darüber werden sie ab dem Stichtag gestuft gekürzt. Die eigene Vorsorge bleibt immer ungekürzt, und die Kranken- und Pflegebeiträge der Rentner entfallen. Kein Rentnerhaushalt fällt unter die heutige Grundsicherung.</p></span></div>
       <div><span><b>5 · Nachhaltig berichten</b><p>Jeder Staat berichtet regelmäßig an die Vereinten Nationen über die 17 Ziele für nachhaltige Entwicklung.</p></span></div>
       <div><span><b>6 · Offen und freiwillig</b><p>Wer die erste Regel erfüllt, kann beitreten; wer austritt, nimmt seine Altlast mit. Alle Werte stehen öffentlich in einem Register und werden alle zwei Jahre neu festgestellt.</p></span></div>
@@ -176,11 +178,13 @@ neu_klub = f'''<h2>Eine offene Gemeinschaft der Staaten auf dem Boden der Verein
 R.append((alt_klub, neu_klub, "block"))
 R += [("<p class=\"sub\">Alle Steuern und Abgaben werden gerecht auf Arbeit, Kapital und Automation verteilt – höchstens ein Drittel auf jedes Einkommen. Arbeit lohnt sich, und das starke soziale Netz und die Transformationsdividende sorgen für sozialen Frieden. Die Kommunen und Regionen entscheiden eigenständiger, ein europäisches Dach sichert die gemeinsamen Interessen mit Mehrheitsentscheid.</p>",
        "<p class=\"sub\">Steuern können die Welt verändern! Sie können lenken, dass Menschen sich nach gemeinsamen Zielen verhalten, einfach weil es sich für sie lohnt. Und weil Regeln akzeptiert werden, wenn sie fair sind. Niemand versteht, warum eine Pflegerin mehr auf ihr Einkommen bezahlen soll als ein Plattformanbieter im Internet oder ein Anlageprofi auf seinen Profit. Darum verteilt das „Goldene Drittel“ alle Steuern und Abgaben gleichmäßig auf Arbeit, Kapital und Automation.</p><p class=\"sub\">Das Konzept entwickelt und rechnet international anwendbare Regeln: nach den Grundsätzen der Vereinten Nationen und dem Pariser Abkommen, fair für die junge Generation und auf breiten, nachhaltigen Wohlstand zielend.</p>"),
-      ("<div class=\"y\">2027 · Gemeinschaften bilden</div><div class=\"t\">Kommunen und Regionen finden Partner, Länder prüfen den Beitritt.</div>",
-       "<div class=\"y\">2027 · Teilnahme prüfen</div><div class=\"t\">Staaten prüfen die erste Spielregel; die Werte stehen in einem öffentlichen Register.</div>"),
-      ("<div class=\"y\">Ab 2028 · In kleinen Verbünden beginnen</div>", "<div class=\"y\">Ab 2028 · Mit den ersten Staaten beginnen</div>"),
-      ("Jedes weitere Land stärkt den Klub – vor allem bei der Besteuerung am Ort der Kunden.",
-       "Jeder weitere Staat stärkt die Gemeinschaft – vor allem bei der Besteuerung am Ort der Kunden."),
+      (ZEITLEISTE, "", "block"),
+      ('<div class="tabs" id="ztabs"><button type="button" aria-pressed="true" data-v="co2">CO₂-Emissionen</button></div>',
+       '<div class="tabs" id="ztabs"><button type="button" aria-pressed="true" data-v="gini">Ungleichheit</button><button type="button" aria-pressed="false" data-v="co2">CO₂-Emissionen</button><button type="button" aria-pressed="false" data-v="eink">Verfügbares Einkommen</button></div>'),
+      ("seg('ztabs',chart2);chart2('co2');", "REISEJS", "roh"),
+      ('y="72" text-anchor="middle">mindestens 68\u00a0% an Kommunen und Regionen</text>', 'y="72" text-anchor="middle">mindestens zwei Drittel an Kommunen und Regionen</text>', "roh"),
+      ('style="font-size:10px">mindestens 68\u00a0% an Kommunen und Regionen</text>', 'style="font-size:10px">mindestens zwei Drittel an Kommunen und Regionen</text>', "roh"),
+      ('"og": 32.0,', '"og": 33.3,', "roh"),
       ("So sinkt die Dividende von 354\u00a0€ (2028) und hält sich um 227\u00a0€ (2060). Mehr Arbeit und Automatisierung heben sie wieder an.",
        "Im Grundpfad sinkt die Dividende von 354\u00a0€ (2028) und hält sich um 227\u00a0€ (2060). Mehr Arbeit und Automatisierung heben sie wieder an: Im mittleren Pfad (mehr Arbeit, KI mittel) liegt sie 2060 bei 271\u00a0€."),
       ('<details class="mehr"><summary>Verlauf der Dividende bis 2060 anzeigen</summary>', '<details class="mehr" open><summary>Verlauf der Dividende bis 2060</summary>'),
@@ -218,16 +222,45 @@ for eintrag in R:
     else:
         K = K.replace(a, rot(a) + gruen(b))
     n += 1
+GI = json.loads((W / "daten" / "aggregate" / "gini.json").read_text(encoding="utf-8"))["staaten"]["DE"]
+GINI = dict(heute=GI["gini_amtlich_2025"], j=[r["jahr"] for r in GI["reihe"] if r["jahr"] <= 2040], v=[r["mitte"] for r in GI["reihe"] if r["jahr"] <= 2040])
+REISE = """
+// Wohin die Reise geht (Entwurf v4.78): drei Karten bis 2040
+const GINI=__G__;
+function reise(t){const W=900,H=360,L=60,RR=30,TP=20,B=40,x1=2040;let ser,lo=0,hi,step,x0,fy=x=>zahl(x),fl=null,txt;
+  if(t==='gini'){x0=2025;lo=20;hi=32;step=2;fy=x=>zahl(x);fl=x=>zahl(x,1);
+    ser=[['ohne',[2025,2040],[GINI.heute,GINI.heute]],['mit',[2025].concat(GINI.j),[GINI.heute].concat(GINI.v)]];
+    $('zunit').textContent='Gini-Koeffizient des verfügbaren Einkommens in Deutschland (0 = alle gleich, 100 = einer hat alles)';
+    $('zleg').innerHTML='<span class="l-ohne"><i></i>heute (2025, amtlich; gleichbleibend angenommen)</span><span class="l-mit"><i></i>Goldenes Drittel (Modell)</span>';
+    txt='Die Ungleichheit sinkt: Der Gini-Koeffizient fällt von '+zahl(GINI.heute,1)+' (2025) auf '+zahl(GINI.v[0],1)+' (2028) und liegt 2040 bei '+zahl(GINI.v[GINI.v.length-1],1)+'. Statische Modellrechnung ohne Verhaltensänderung.';}
+  else if(t==='co2'){const Z=D.zeit;x0=2010;const zj=[],zv=[];Z.co2_ziel_jahre.forEach((j,k)=>{if(j<=x1){zj.push(j);zv.push(Z.co2_ziel[k]);}});
+    ser=[['hist',Z.co2_hist_jahre,Z.co2_hist],['ohne',zj,zv]];[hi,step]=nice(Math.max(...Z.co2_hist));
+    $('zunit').textContent=T.js_co2_unit;
+    $('zleg').innerHTML='<span class="l-hist"><i></i>'+T.js_co2_l1+'</span><span class="l-ohne"><i></i>'+T.js_co2_l2+'</span>';txt=T.js_co2_text;}
+  else{x0=2028;const rr=D.rr,i=rr.brutto.indexOf(42000),cur=R;R=rr;const js=[],h=[],n=[];
+    for(let j=2028;j<=x1;j++){js.push(j);h.push(rr.heute[(j>=2035?'2035':'2028')+'|1|0'][i]/12);n.push(neuR(i,42000,1,0,j).netto/12);}R=cur;
+    ser=[['hist',js,h],['mit',js,n]];[hi,step]=nice(Math.max(...h,...n));fy=x=>eur(x);
+    $('zunit').textContent='Verfügbares Einkommen im Monat bei 42.000 € Jahresbrutto, alleinstehend, Euro in heutiger Kaufkraft';
+    $('zleg').innerHTML='<span class="l-hist"><i></i>heutiges System</span><span class="l-mit"><i></i>Goldenes Drittel</span>';
+    txt='Bei 42.000 € Jahresbrutto bleiben 2028 '+eur(n[0])+' statt '+eur(h[0])+' im Monat ('+(n[0]>=h[0]?'+':'−')+eur(Math.abs(n[0]-h[0]))+'); 2040 sind es '+eur(n[n.length-1])+' statt '+eur(h[h.length-1])+'. Die Dividende sinkt mit den Emissionen, die Beiträge im heutigen System steigen mit der Alterung. Nach Pflichtvorsorge und Altlastenzuschlag; ohne Lohnwachstum.';}
+  const X=x=>L+(x-x0)/(x1-x0)*(W-L-RR),Y=y=>TP+(hi-y)/(hi-lo)*(H-TP-B);let g='';
+  for(let y=lo;y<=hi+1e-9;y+=step)g+=`<line class="grid" x1="${L}" x2="${W-RR}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${fy(y)}</text>`;
+  const ticks=t==='co2'?[2010,2015,2020,2025,2030,2035,2040]:t==='gini'?[2025,2028,2030,2035,2040]:[2028,2030,2035,2040];
+  ticks.forEach(x=>{g+=`<text class="axis" x="${X(x)}" y="${H-12}" text-anchor="middle">${x}</text>`;});
+  ser.forEach(([c,xs,ys])=>{g+=`<path class="${c}" d="${xs.map((x,k)=>(k?'L':'M')+X(x)+','+Y(ys[k])).join(' ')}"/>`;
+    const k=ys.length-1;g+=`<text class="axis" x="${X(xs[k])}" y="${Y(ys[k])-8}" text-anchor="end">${(fl||fy)(ys[k])}</text>`;});
+  $('chart2').innerHTML=g;$('ztext').textContent=txt;}
+seg('ztabs',reise);reise('gini');""".replace("__G__", json.dumps(GINI))
 CSS_SPIEL = ("<style>.raum button.partner{border-style:dashed}.schwelle #gseu{border-left-color:var(--accent)}"
              ".schwelle #gseu span{top:-22px}</style>")
-NEU = NEU.replace("SPIELJS", spiel_js).replace("</head>", CSS_SPIEL + "</head>", 1)
-K = K.replace("SPIELJS", spiel_js).replace("</head>", CSS_SPIEL + "</head>", 1)
+NEU = NEU.replace("REISEJS", REISE).replace("SPIELJS", spiel_js).replace("</head>", CSS_SPIEL + "</head>", 1)
+K = K.replace("REISEJS", REISE).replace("SPIELJS", spiel_js).replace("</head>", CSS_SPIEL + "</head>", 1)
 (HIER / "de.html").write_text(NEU, encoding="utf-8")
 css = ("<style>ins.k-neu{background:#c8ecc9;color:#0b3d12;text-decoration:none}del.k-weg{background:#f6c6c0;color:#5a1a12}"
        ".k-block-weg{outline:3px solid #e8a39a;margin-bottom:28px;opacity:.85}"
        "#k-hinweis{position:sticky;top:0;z-index:9999;background:#0F3B5C;color:#fff;font:14px/1.45 system-ui,sans-serif;padding:8px 16px}"
        "#k-hinweis ins{background:#c8ecc9;color:#0b3d12;text-decoration:none}#k-hinweis del{background:#f6c6c0;color:#5a1a12}</style>")
-hinweis = ('<div id="k-hinweis">Kontrollfassung (v4.77): künftige deutsche Seite mit den Änderungen der Initiative vom 8.11.2026 gegen die geltende Seite. '
+hinweis = ('<div id="k-hinweis">Kontrollfassung (v4.78): künftige deutsche Seite mit den Änderungen der Initiative vom 8.11.2026 gegen die geltende Seite. '
            '<ins>grün = neu</ins> · <del>rot = entfällt</del>. Fonds- und Kassenzahlen vorläufig (noch nicht in den Haushaltsrechnungen). Nur zur Durchsicht.</div>')
 K = K.replace("</head>", css + "</head>", 1)
 K = re.sub(r"(<body[^>]*>)", r"\1" + hinweis, K, count=1)
