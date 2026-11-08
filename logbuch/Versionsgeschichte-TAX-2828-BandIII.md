@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.79**
+Stand: 24. Oktober 2026 · Modellstand **v4.80**
 
 ---
 
@@ -4954,6 +4954,42 @@ abgeleitet aus Natural Earth, gemeinfrei; Sekundärquelle, Herkunft im Datensatz
 
 **Datenquelle:** wie v4.77; Kartengeometrie wie oben. **Wodurch aufgefallen:** Vorgaben der Initiative.
 
+### v4.80 — Webseite nach den Spielregeln in sechs Sprachen; Rechenspiel hinter die Spielregeln
+
+**Art der Änderung: MINOR (Webseite, sechs Sprachen), keine Rechnung bewegt.** 8. November 2026.
+
+**Vorgaben der Initiative (8.11.2026):** Die Weltkarte („alles top“) steht hinter den Spielregeln. Zwei Ansichten: „Staaten, die heute bereits
+die Regeln erfüllen“ und „Partner auf dem richtigen Weg“; „Nur Europa“ und „Die 30 gerechneten“ entfallen (damit auch der Zoom auf Europa).
+Überschrift „Sechs Spielregeln für die Teilnahme“. Durchkonstruieren und das Paket übersetzen.
+
+**Umsetzung:**
+- Neu `seite/werkzeuge/gemeinschaft_bau.py` (Stufe in `modell/alles.py` direkt nach `drittel_bau.py`): formt `seite/stand-c/{de,en,fr,it,es,pl}.html`
+  an 29 Stellen um. Fundstellen nach dem Aufbau der Vorlage, nicht nach dem Wortlaut; jede muss genau einmal vorkommen, sonst Abbruch. Läuft das
+  Skript erneut, baut es zuerst `drittel_bau.py` neu (Marke im Kopf der Seiten).
+- Texte `seite/werkzeuge/gemeinschaft_texte.py`. Deutsch: Wortlaut der Initiative und Entwurf v4.75–v4.79. Englisch, Französisch, Italienisch,
+  Spanisch, Polnisch: **Übersetzung durch KI, gegenzulesen.**
+- Umfang wie im deutschen Entwurf: Kopf, Ebenen (Gemeinschaft der Staaten statt Dach, „höchstens ein Drittel“, Obergrenze im Flussbild 33,3 statt
+  32), Formel, Forschungsraum, Preispfad nach dem Pariser Abkommen, Dividendenkasten, Zeitpfad, sechs Spielregeln mit Weltkarte, offene
+  Gemeinschaft, „Was die Gemeinschaft verbindet“, Herleitung aus den Verträgen der Vereinten Nationen; „Wohin die Reise geht“ entfällt. Dazu
+  Seitenbeschreibung (meta), Bildbeschreibungen der Ebenengrafiken und der Text der entfallenen CO₂-Grafik.
+- Zeitpfad je Sprachfassung mit dem Betrag des Referenzlands, gelesen aus den Daten der Seite (Dividende 2060 im mittleren Pfad „mehr Arbeit,
+  KI mittel“, je Erwachsenem und Monat, Kaufkraft heute): DE 271 €, Schnitt der 30 (en) 172 €, FR 65 €, IT 202 €, ES 159 €, PL 643 zł.
+  Der Wert stand bisher nur im deutschen Entwurf; die Sprachfassungen nannten Grund- und Endwert des Grundpfads.
+- Weltkarte: Dateien von `seite/entwurf/spielregeln/` nach `seite/werkzeuge/karte/` verschoben. Ländernamen je Sprache neu aus Unicode CLDR
+  (`karte/namen_bau.js` → `namen.json`, ICU 78.3 in Node 22); dadurch heißt „Republik Korea“ jetzt „Südkorea“. Legende nur noch mit den zwei
+  Ansichten; Europarat (halbgrün) und übrige Welt erklären die Kurztexte an der Karte. Regelnummern setzt das Stylesheet (doppelte Nummer
+  „1 · …“ des Entwurfs entfernt). Start in der Ansicht mit Partnern: 41 Staaten, 814,5 Mio. Menschen; nur Teilnahme: 34 Staaten, 758,4 Mio.
+- Entwurfsordner `seite/entwurf/spielregeln/` aufgelöst (`bau.py` setzte die alte Seite voraus). Kontrollfassung jetzt
+  `seite/entwurf/gemeinschaft/de-kontrolle.html` (gegen die Ausgabe von `drittel_bau.py`, v4.79).
+- Geprüft im Browser (Chromium, 1280 und 375 px): keine Skriptfehler, kein seitliches Scrollen, Karte hinter den Regeln in allen sechs Sprachen.
+
+**Bleibt offen:** Die Schuldengrafik nennt weiter den „Klub der zehn“ (Altlasten der zehn Gründungsstaaten, eigene Rechnung, nicht Teil dieses
+Auftrags). Abweichung Rechner +613 € gegen Kopf +611 € (42.000 €, 2028) weiter offen.
+
+**Datenquelle:** `daten/aggregate/staatenauswahl.json`, `fonds_5050.json`, `moeglichkeitsraum.csv`; Einwohner außerhalb Europas UN WPP 2024
+(Sekundärquelle, zu prüfen); Kartengeometrie Natural Earth über world.geo.json (Sekundärquelle). **Bewegte Zahl:** keine Rechnung; neu auf der
+Seite die Dividende 2060 im mittleren Pfad je Sprachfassung. **Wodurch aufgefallen:** Vorgaben der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5031,7 +5067,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.79
+## 7 | Offene Punkte, Stand v4.80
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

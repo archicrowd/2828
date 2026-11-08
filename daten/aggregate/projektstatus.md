@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.79 · höchste Korrekturnummer 86 · 590 Dateien im Repository
+Modellstand v4.80 · höchste Korrekturnummer 86 · 592 Dateien im Repository
 
 ## Bausteine
 
@@ -88,6 +88,7 @@ Modellstand v4.79 · höchste Korrekturnummer 86 · 590 Dateien im Repository
 | N43 | B31 Drittel-System | B01 Logbuch | offen |
 | N44 | B31 Drittel-System | B01 Logbuch | offen |
 | N45 | B32 Länderseiten | B31 Drittel-System | offen |
+| N46 | B31 Drittel-System | B32 Länderseiten | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -110,3 +111,4 @@ Modellstand v4.79 · höchste Korrekturnummer 86 · 590 Dateien im Repository
 - Hinweis: Naht N43 offen: B31 Drittel-System -> B01 Logbuch: v4.58: geprüft bis v4.42; Nachprüfung nach projekt/Pruefprogramm-Delta-v4.42-v4.63.md; Zahl der Korrekturen und Stufen aus Logbuch und Kette gelesen (Korrektur 83) v4.64: Prüfprogramm bis v4.63 (D9 Working Paper) v4.65: D1, D2 bestanden; B25–B29 beantwortet v4.66: Bezeichnung interne Prüfung festgelegt
 - Hinweis: Naht N44 offen: B31 Drittel-System -> B01 Logbuch: v4.60: Prüfsumme dokumente/working-paper/quellen.sha256, Stufe schlägt fehl bis --pdf; Entwurf zur Durchsicht v4.61: Ziele und Zielkonflikte im Text v4.62: Label und Rechtsrahmen im Text v4.63: veröffentlicht; Seite prüft die Text-Prüfsumme des Papiers mit
 - Hinweis: Naht N45 offen: B32 Länderseiten -> B31 Drittel-System: v4.67: SDG 1.2/10.1 aus der Dezil-Rekonstruktion (Sekundärquelle für amtliche Quoten); Arbeitspapier projekt/Nachhaltigkeitsziele-und-internationales-Modell-2026-11-04.md v4.68: Rentnervarianten N2/3 u. a. (projekt/Rentner-Varianten-2026-11-04.md) v4.69: Freibetrag je Versicherungsjahr gerechnet, kein Vorteil gegen N2/3 in DE v4.70: Beispielrechner N2/3 (seite/entwurf/rentner-n23/rechner.html) v4.71: BS35 (Sockel 1 G) als internationale Fassung v4.72: BS35 geltend; Armutsquote DE aus der Mikrosimulation (Rentner relativ 30,3 %, Boden als Hebel) v4.73: Staatenauswahl liest fonds_klub (Auswahl aus den 30) v4.74: fonds_5050 liest fonds_klub, fonds_geltend und staatenauswahl.toml v4.76: gemeinschaft_kasse liest dach_beitrag
+- Hinweis: Naht N46 offen: B31 Drittel-System -> B32 Länderseiten: v4.80: Übersetzungen en/fr/it/es/pl durch KI, gegenzulesen; Dividende 2060 im mittleren Pfad je Referenzland aus den Seitendaten; Kontrollfassung seite/entwurf/gemeinschaft/de-kontrolle.html

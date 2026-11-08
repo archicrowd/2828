@@ -1,9 +1,9 @@
-// Weltkarte für das Rechenspiel „Bauen Sie die Gemeinschaft“ (Logbuch v4.79). Entwurf.
+// Weltkarte für das Rechenspiel „Bauen Sie die Gemeinschaft“ (Logbuch v4.79, v4.80 in die Seite übernommen).
 // Eingabe: countries.geo.json aus github.com/johan/world.geo.json (Unlicense; abgeleitet aus Natural Earth, gemeinfrei; Sekundärquelle,
 // Herkunft laut README des Datensatzes nicht vollständig belegt). Nicht im Repository (Rohdaten); Pfad als Argument.
 // Ausgabe: karte.json im Ordner dieses Skripts: Pfade je ISO-3-Code (Projektion Natural Earth 1, 960 × 500, ohne Antarktis), Schwerpunkte,
 // Kreise für Kleinstaaten, die im Datensatz fehlen oder zu klein sind.
-// Aufruf: NODE_PATH=/opt/npm-tools/node_modules node karte_bau.js <countries.geo.json>
+// Aufruf: NODE_PATH=/opt/npm-tools/node_modules node seite/werkzeuge/karte/karte_bau.js <countries.geo.json>
 const fs = require("fs"), path = require("path"), d3 = require("d3-geo");
 const geo = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 geo.features = geo.features.filter(f => f.id !== "ATA" && f.id !== "-99");
