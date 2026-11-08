@@ -40,8 +40,9 @@ partner = st["Partner"]
 de = F55["laender"]["DE"]
 gem = F55["gemeinsamer_satz_teilnehmer"]
 
-_i = ALT.index('<div class="timeline" style="margin-top:34px">')
-ZEITLEISTE = ALT[_i:ALT.index("</div>\n  </div>\n</section>", _i) + len("</div>")]
+_i = ALT.index('<h3 class="sub-h">Wohin die Reise geht</h3>')
+_t = ALT.index('<div class="timeline" style="margin-top:34px">', _i)
+WOHIN = ALT[_i:ALT.index("</div>\n  </div>\n</section>", _t) + len("</div>")]   # v4.79: ganze Rubrik entfällt
 STEMPEL = re.search(r"Modellstand <b>v[0-9.]+ · [^<]+</b>", ALT).group(0)
 R = []   # (alt, neu): jede alte Stelle muss genau einmal vorkommen
 
@@ -130,33 +131,68 @@ WELT = 8091.734930
 EU27 = [c for c in EUROPA if c not in ("NO", "IS", "CH")]
 GS = {c: [NAME[c], round(MIO[c], 1), "e" if c in teil_eu else "w" if c in teil_welt else "p"] for c in teil + partner}
 spiel_daten = json.dumps(dict(gs=GS, us=round(MIO["US"], 1), eu=round(sum(MIO[c] for c in EU27), 1), welt=WELT,
-                              vor=dict(regel=sorted(teil), dreissig=sorted(EUROPA), alle=sorted(teil + partner), europa=sorted(teil_eu))), ensure_ascii=False)
-knoepfe = "".join(f'<button type="button" aria-pressed="false" data-k="{c}" class="{dict(e="", w="neu", p="partner")[GS[c][2]]}">'
-                  f'<span class="nm">{GS[c][0]}</span><span>{z(GS[c][1])} Mio.</span></button>'
-                  for c in sorted(GS, key=lambda x: -GS[x][1]))
+                              vor=dict(regel=sorted(teil), dreissig=sorted(EUROPA), alle=sorted(teil + partner), europa=sorted(teil_eu)),
+                              w=960, h=500, eu_box=[431 - 34, 69, 233, 121]), ensure_ascii=False)
+KARTE = json.loads((HIER / "karte.json").read_text(encoding="utf-8"))
+ISO3 = dict(AT="AUT", BE="BEL", BG="BGR", CH="CHE", CY="CYP", CZ="CZE", DE="DEU", DK="DNK", EE="EST", EL="GRC", ES="ESP", FI="FIN", FR="FRA",
+            HR="HRV", HU="HUN", IE="IRL", IS="ISL", IT="ITA", LT="LTU", LU="LUX", LV="LVA", MT="MLT", NL="NLD", NO="NOR", PL="POL", PT="PRT",
+            RO="ROU", SE="SWE", SI="SVN", SK="SVK", AU="AUS", BB="BRB", CA="CAN", CL="CHL", CR="CRI", JP="JPN", KR="KOR", NZ="NZL", UK="GBR",
+            UY="URY", MU="MUS")
+# übrige Mitglieder des Europarats (eigene Kenntnis, Stand 2026, zu prüfen): halbgrün, nicht wählbar
+EUROPARAT = dict(ALB="Albanien", AND="Andorra", ARM="Armenien", AZE="Aserbaidschan", BIH="Bosnien und Herzegowina", GEO="Georgien",
+                 LIE="Liechtenstein", MDA="Moldau", MCO="Monaco", MNE="Montenegro", MKD="Nordmazedonien", SMR="San Marino", SRB="Serbien",
+                 TUR="Türkei", UKR="Ukraine")
+kat = {ISO3[c]: ("t" if GS[c][2] in ("e", "w") else "p") for c in GS}
+kat.update({k: "e" for k in EUROPARAT})
+pfade, kreise = [], []
+for k, v in KARTE["laender"].items():
+    if k in kat and k in [ISO3[c] for c in GS]:
+        c = next(c for c in GS if ISO3[c] == k)
+        pfade.append(f'<path class="k-{kat[k]}" data-k="{c}" data-x="{v["x"]}" d="{v["d"]}"><title>{GS[c][0]} · {z(GS[c][1])} Mio.</title></path>')
+    elif k in EUROPARAT:
+        pfade.append(f'<path class="k-e" data-x="{v["x"]}" d="{v["d"]}"><title>{EUROPARAT[k]} · Europarat, nicht geprüft</title></path>')
+    else:
+        pfade.append(f'<path class="k-r" d="{v["d"]}"/>')
+for k, (x, y) in KARTE["kreise"].items():
+    if k in [ISO3[c] for c in GS]:
+        c = next(c for c in GS if ISO3[c] == k)
+        kreise.append(f'<circle class="k-{kat[k]}" data-k="{c}" data-x="{int(x)}" cx="{x}" cy="{y}" r="3.2" data-r="3.2"><title>{GS[c][0]} · {z(GS[c][1])} Mio.</title></circle>')
+    elif k in EUROPARAT:
+        kreise.append(f'<circle class="k-e" cx="{x}" cy="{y}" r="2.2" data-r="2.2"><title>{EUROPARAT[k]} · Europarat, nicht geprüft</title></circle>')
+karte_svg = (f'<svg id="gskarte" viewBox="0 0 {KARTE["breite"]} {KARTE["hoehe"]}" role="img" aria-label="Weltkarte der Gemeinschaft der Staaten">'
+             + "".join(pfade) + "".join(kreise) + "</svg>")
 spiel = f'''<h3 class="sub-h">Bauen Sie die Gemeinschaft</h3>
-    <p class="lede">Wählen Sie aus, wer mitmacht. Schwarz: Teilnahme in Europa · grün umrandet: Teilnahme weltweit · gestrichelt: Partner.</p>
+    <p class="lede">Klicken Sie auf einen Staat, um ihn hinzuzunehmen oder herauszunehmen, oder wählen Sie eine Voreinstellung.</p>
     <div class="flow">
-      <div class="tabs" id="gsvor"><button type="button" aria-pressed="true" data-v="regel">Alle, die die erste Regel erfüllen</button><button type="button" aria-pressed="false" data-v="alle">Mit Partnern</button><button type="button" aria-pressed="false" data-v="europa">Nur Europa</button><button type="button" aria-pressed="false" data-v="dreissig">Die 30 gerechneten</button></div>
-      <div class="raum" id="gsraum">{knoepfe}</div>
+      <div class="tabs" id="gsvor"><button type="button" aria-pressed="false" data-v="regel">Alle, die die erste Regel erfüllen</button><button type="button" aria-pressed="true" data-v="alle">Mit Partnern</button><button type="button" aria-pressed="false" data-v="europa">Nur Europa</button><button type="button" aria-pressed="false" data-v="dreissig">Die 30 gerechneten</button></div>
+      <div class="gs-karte">{karte_svg}</div>
+      <div class="legend gs-leg"><span><i class="k-t"></i>erfüllt die erste Regel</span><span><i class="k-p"></i>Partner</span><span><i class="k-e"></i>übrige Staaten des Europarats (nicht geprüft)</span><span><i class="k-r"></i>übrige Welt</span></div>
       <div class="row"><div class="res-row" style="flex:1;border:none"><span class="k">Menschen in der Gemeinschaft</span><span class="v new" id="gssum"></span></div><div class="res-row" style="flex:1;border:none"><span class="k">Staaten</span><span class="v" id="gsn"></span></div><div class="res-row" style="flex:1;border:none"><span class="k">Anteil an der Weltbevölkerung</span><span class="v" id="gswelt"></span></div></div>
       <div class="schwelle"><i id="gsbar"></i><span class="us" id="gsus"><span>USA</span></span><span class="us" id="gseu"><span>EU</span></span></div>
       <p class="fineprint" id="gstext" style="margin-top:0"></p>
     </div>
-    <p class="fineprint">Einwohner: Eurostat 2024, Statistics Canada 2025, US Census Bureau 2025, sonst Vereinte Nationen (World Population Prospects 2024, Stand 2023). Gerechnet sind bisher nur die 30 Staaten Europas. Die Vereinigten Staaten, Singapur und Botswana erfüllen die Grundlagen der ersten Regel nicht.</p>'''
-spiel_js = """<script>(function(){const D=__D__;const $=id=>document.getElementById(id);
-const f=(x,d)=>x.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});const SK=1000;
-function lauf(){const on=[...document.querySelectorAll('#gsraum button[aria-pressed=true]')].map(b=>b.dataset.k);
- const sum=on.reduce((a,k)=>a+D.gs[k][1],0),p=on.filter(k=>D.gs[k][2]==='p').length;
+    <p class="fineprint">Karte: Natural Earth (gemeinfrei), über den Datensatz world.geo.json (Unlicense). Einwohner: Eurostat 2024, Statistics Canada 2025, US Census Bureau 2025, sonst Vereinte Nationen (World Population Prospects 2024, Stand 2023). Gerechnet sind bisher nur die 30 Staaten Europas. Die Vereinigten Staaten, Singapur und Botswana erfüllen die Grundlagen der ersten Regel nicht.</p>'''
+spiel_js = """<script>(function(){const D=__D__;const $=id=>document.getElementById(id);const S=$('gskarte');
+const ruhig=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+const f=(x,d)=>x.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});const SK=1000;const auf=new Set();
+const el=k=>S.querySelectorAll('[data-k="'+k+'"]');
+function lauf(){const on=[...auf];const sum=on.reduce((a,k)=>a+D.gs[k][1],0),p=on.filter(k=>D.gs[k][2]==='p').length;
  $('gssum').textContent=f(sum,1)+' Mio.';$('gsn').textContent=on.length+(p?' (davon '+p+' Partner)':'');$('gswelt').textContent=f(sum/D.welt*100,1)+' %';
  $('gsbar').style.width=Math.min(sum/SK*100,100)+'%';$('gsus').style.left=(D.us/SK*100)+'%';$('gseu').style.left=(D.eu/SK*100)+'%';
  const v=sum>=D.us?f(sum-D.us,1)+' Mio. mehr als die USA':f(D.us-sum,1)+' Mio. weniger als die USA';
  $('gstext').textContent='Die Gemeinschaft hätte '+f(sum,1)+' Mio. Menschen in '+on.length+' Staaten – '+v+'. Jeder weitere Staat stärkt die gemeinsamen Regeln, vor allem die Besteuerung am Ort der Kunden.';}
-function vor(v){const s=new Set(D.vor[v]);document.querySelectorAll('#gsraum button').forEach(b=>b.setAttribute('aria-pressed',s.has(b.dataset.k)?'true':'false'));
- document.querySelectorAll('#gsvor button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v?'true':'false'));lauf();}
-$('gsraum').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
+function setze(k,an,verz){el(k).forEach(n=>{n.style.transitionDelay=ruhig?'0ms':verz+'ms';n.classList.toggle('aus',!an);});an?auf.add(k):auf.delete(k);}
+let vb=[0,0,D.w,D.h],ziel=vb,anim=null;const kr=[...S.querySelectorAll('circle')];
+function setVB(z){S.setAttribute('viewBox',z.join(' '));const q=Math.pow(z[2]/D.w,.75);kr.forEach(c=>c.setAttribute('r',(+c.dataset.r*q).toFixed(2)));}
+function zoom(z){ziel=z;if(ruhig){vb=z;setVB(z);return;}const st=vb.slice(),t0=performance.now();cancelAnimationFrame(anim);
+ const sch=t=>{const u=Math.min((t-t0)/900,1),e=u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;vb=st.map((a,i)=>a+(ziel[i]-a)*e);setVB(vb);if(u<1)anim=requestAnimationFrame(sch);};anim=requestAnimationFrame(sch);}
+function vor(v){const s=new Set(D.vor[v]);Object.keys(D.gs).forEach(k=>{const x=+(el(k)[0]||{dataset:{x:0}}).dataset.x;setze(k,s.has(k),x/D.w*700);});
+ document.querySelectorAll('#gsvor button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v?'true':'false'));
+ zoom(v==='europa'||v==='dreissig'?D.eu_box:[0,0,D.w,D.h]);lauf();}
+S.addEventListener('click',e=>{const n=e.target.closest('[data-k]');if(!n)return;const k=n.dataset.k;setze(k,!auf.has(k),0);
  document.querySelectorAll('#gsvor button').forEach(x=>x.setAttribute('aria-pressed','false'));lauf();});
-$('gsvor').addEventListener('click',e=>{const b=e.target.closest('button');if(b)vor(b.dataset.v);});vor('regel');})();</script>""".replace("__D__", spiel_daten)
+$('gsvor').addEventListener('click',e=>{const b=e.target.closest('button');if(b)vor(b.dataset.v);});
+Object.keys(D.gs).forEach(k=>setze(k,false,0));lauf();setTimeout(()=>vor('alle'),ruhig?0:350);})();</script>""".replace("__D__", spiel_daten)
 neu_klub = f'''<h2>Eine offene Gemeinschaft der Staaten auf dem Boden der Vereinten Nationen</h2>
     <p class="lede">Die Gemeinschaft der Staaten ist kein fester Kreis, sondern ein Angebot. Mitmachen kann jeder Staat, der die erste Spielregel erfüllt – gleich, wo er auf der Landkarte liegt. Gerechnet ist bisher der Bauplan für 30 Staaten Europas (EU, Norwegen, Island, Schweiz) mit 465,6 Mio. Menschen. Nach einer ersten Durchsicht erfüllen {len(teil)} Staaten die Regel; {len(partner)} weitere können als Partner beginnen.</p>
     {stub}
@@ -178,10 +214,8 @@ neu_klub = f'''<h2>Eine offene Gemeinschaft der Staaten auf dem Boden der Verein
 R.append((alt_klub, neu_klub, "block"))
 R += [("<p class=\"sub\">Alle Steuern und Abgaben werden gerecht auf Arbeit, Kapital und Automation verteilt – höchstens ein Drittel auf jedes Einkommen. Arbeit lohnt sich, und das starke soziale Netz und die Transformationsdividende sorgen für sozialen Frieden. Die Kommunen und Regionen entscheiden eigenständiger, ein europäisches Dach sichert die gemeinsamen Interessen mit Mehrheitsentscheid.</p>",
        "<p class=\"sub\">Steuern können die Welt verändern! Sie können lenken, dass Menschen sich nach gemeinsamen Zielen verhalten, einfach weil es sich für sie lohnt. Und weil Regeln akzeptiert werden, wenn sie fair sind. Niemand versteht, warum eine Pflegerin mehr auf ihr Einkommen bezahlen soll als ein Plattformanbieter im Internet oder ein Anlageprofi auf seinen Profit. Darum verteilt das „Goldene Drittel“ alle Steuern und Abgaben gleichmäßig auf Arbeit, Kapital und Automation.</p><p class=\"sub\">Das Konzept entwickelt und rechnet international anwendbare Regeln: nach den Grundsätzen der Vereinten Nationen und dem Pariser Abkommen, fair für die junge Generation und auf breiten, nachhaltigen Wohlstand zielend.</p>"),
-      (ZEITLEISTE, "", "block"),
-      ('<div class="tabs" id="ztabs"><button type="button" aria-pressed="true" data-v="co2">CO₂-Emissionen</button></div>',
-       '<div class="tabs" id="ztabs"><button type="button" aria-pressed="true" data-v="gini">Ungleichheit</button><button type="button" aria-pressed="false" data-v="co2">CO₂-Emissionen</button><button type="button" aria-pressed="false" data-v="eink">Verfügbares Einkommen</button></div>'),
-      ("seg('ztabs',chart2);chart2('co2');", "REISEJS", "roh"),
+      (WOHIN, "", "block"),
+      ("seg('ztabs',chart2);chart2('co2');", "", "roh"),
       ('y="72" text-anchor="middle">mindestens 68\u00a0% an Kommunen und Regionen</text>', 'y="72" text-anchor="middle">mindestens zwei Drittel an Kommunen und Regionen</text>', "roh"),
       ('style="font-size:10px">mindestens 68\u00a0% an Kommunen und Regionen</text>', 'style="font-size:10px">mindestens zwei Drittel an Kommunen und Regionen</text>', "roh"),
       ('"og": 32.0,', '"og": 33.3,', "roh"),
@@ -222,45 +256,23 @@ for eintrag in R:
     else:
         K = K.replace(a, rot(a) + gruen(b))
     n += 1
-GI = json.loads((W / "daten" / "aggregate" / "gini.json").read_text(encoding="utf-8"))["staaten"]["DE"]
-GINI = dict(heute=GI["gini_amtlich_2025"], j=[r["jahr"] for r in GI["reihe"] if r["jahr"] <= 2040], v=[r["mitte"] for r in GI["reihe"] if r["jahr"] <= 2040])
-REISE = """
-// Wohin die Reise geht (Entwurf v4.78): drei Karten bis 2040
-const GINI=__G__;
-function reise(t){const W=900,H=360,L=60,RR=30,TP=20,B=40,x1=2040;let ser,lo=0,hi,step,x0,fy=x=>zahl(x),fl=null,txt;
-  if(t==='gini'){x0=2025;lo=20;hi=32;step=2;fy=x=>zahl(x);fl=x=>zahl(x,1);
-    ser=[['ohne',[2025,2040],[GINI.heute,GINI.heute]],['mit',[2025].concat(GINI.j),[GINI.heute].concat(GINI.v)]];
-    $('zunit').textContent='Gini-Koeffizient des verfügbaren Einkommens in Deutschland (0 = alle gleich, 100 = einer hat alles)';
-    $('zleg').innerHTML='<span class="l-ohne"><i></i>heute (2025, amtlich; gleichbleibend angenommen)</span><span class="l-mit"><i></i>Goldenes Drittel (Modell)</span>';
-    txt='Die Ungleichheit sinkt: Der Gini-Koeffizient fällt von '+zahl(GINI.heute,1)+' (2025) auf '+zahl(GINI.v[0],1)+' (2028) und liegt 2040 bei '+zahl(GINI.v[GINI.v.length-1],1)+'. Statische Modellrechnung ohne Verhaltensänderung.';}
-  else if(t==='co2'){const Z=D.zeit;x0=2010;const zj=[],zv=[];Z.co2_ziel_jahre.forEach((j,k)=>{if(j<=x1){zj.push(j);zv.push(Z.co2_ziel[k]);}});
-    ser=[['hist',Z.co2_hist_jahre,Z.co2_hist],['ohne',zj,zv]];[hi,step]=nice(Math.max(...Z.co2_hist));
-    $('zunit').textContent=T.js_co2_unit;
-    $('zleg').innerHTML='<span class="l-hist"><i></i>'+T.js_co2_l1+'</span><span class="l-ohne"><i></i>'+T.js_co2_l2+'</span>';txt=T.js_co2_text;}
-  else{x0=2028;const rr=D.rr,i=rr.brutto.indexOf(42000),cur=R;R=rr;const js=[],h=[],n=[];
-    for(let j=2028;j<=x1;j++){js.push(j);h.push(rr.heute[(j>=2035?'2035':'2028')+'|1|0'][i]/12);n.push(neuR(i,42000,1,0,j).netto/12);}R=cur;
-    ser=[['hist',js,h],['mit',js,n]];[hi,step]=nice(Math.max(...h,...n));fy=x=>eur(x);
-    $('zunit').textContent='Verfügbares Einkommen im Monat bei 42.000 € Jahresbrutto, alleinstehend, Euro in heutiger Kaufkraft';
-    $('zleg').innerHTML='<span class="l-hist"><i></i>heutiges System</span><span class="l-mit"><i></i>Goldenes Drittel</span>';
-    txt='Bei 42.000 € Jahresbrutto bleiben 2028 '+eur(n[0])+' statt '+eur(h[0])+' im Monat ('+(n[0]>=h[0]?'+':'−')+eur(Math.abs(n[0]-h[0]))+'); 2040 sind es '+eur(n[n.length-1])+' statt '+eur(h[h.length-1])+'. Die Dividende sinkt mit den Emissionen, die Beiträge im heutigen System steigen mit der Alterung. Nach Pflichtvorsorge und Altlastenzuschlag; ohne Lohnwachstum.';}
-  const X=x=>L+(x-x0)/(x1-x0)*(W-L-RR),Y=y=>TP+(hi-y)/(hi-lo)*(H-TP-B);let g='';
-  for(let y=lo;y<=hi+1e-9;y+=step)g+=`<line class="grid" x1="${L}" x2="${W-RR}" y1="${Y(y)}" y2="${Y(y)}"/><text class="axis" x="${L-8}" y="${Y(y)+4}" text-anchor="end">${fy(y)}</text>`;
-  const ticks=t==='co2'?[2010,2015,2020,2025,2030,2035,2040]:t==='gini'?[2025,2028,2030,2035,2040]:[2028,2030,2035,2040];
-  ticks.forEach(x=>{g+=`<text class="axis" x="${X(x)}" y="${H-12}" text-anchor="middle">${x}</text>`;});
-  ser.forEach(([c,xs,ys])=>{g+=`<path class="${c}" d="${xs.map((x,k)=>(k?'L':'M')+X(x)+','+Y(ys[k])).join(' ')}"/>`;
-    const k=ys.length-1;g+=`<text class="axis" x="${X(xs[k])}" y="${Y(ys[k])-8}" text-anchor="end">${(fl||fy)(ys[k])}</text>`;});
-  $('chart2').innerHTML=g;$('ztext').textContent=txt;}
-seg('ztabs',reise);reise('gini');""".replace("__G__", json.dumps(GINI))
-CSS_SPIEL = ("<style>.raum button.partner{border-style:dashed}.schwelle #gseu{border-left-color:var(--accent)}"
+CSS_SPIEL = ("<style>.gs-karte{background:#f3f7f4;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:14px 0}"
+             "#gskarte{width:100%;height:auto;display:block}#gskarte path,#gskarte circle{stroke:#fff;stroke-width:.4;transition:fill .5s ease}"
+             "#gskarte .k-t{fill:#1d6b3a}#gskarte .k-p{fill:#4c9a5f}#gskarte .k-e{fill:#9fcca9}#gskarte .k-r{fill:#dcebdf}"
+             "#gskarte .aus{fill:#dcebdf}#gskarte [data-k]{cursor:pointer}#gskarte [data-k]:hover{stroke:#0F3B5C;stroke-width:1}"
+             ".gs-leg i{display:inline-block;width:14px;height:10px;margin-right:6px;border-radius:2px;vertical-align:middle}"
+             ".gs-leg .k-t{background:#1d6b3a}.gs-leg .k-p{background:#4c9a5f}.gs-leg .k-e{background:#9fcca9}.gs-leg .k-r{background:#dcebdf;border:1px solid #c8d8cc}"
+             "@media (prefers-reduced-motion:reduce){#gskarte path,#gskarte circle{transition:none}}"
+             ".schwelle #gseu{border-left-color:var(--accent)}"
              ".schwelle #gseu span{top:-22px}</style>")
-NEU = NEU.replace("REISEJS", REISE).replace("SPIELJS", spiel_js).replace("</head>", CSS_SPIEL + "</head>", 1)
-K = K.replace("REISEJS", REISE).replace("SPIELJS", spiel_js).replace("</head>", CSS_SPIEL + "</head>", 1)
+NEU = NEU.replace("SPIELJS", spiel_js).replace("</head>", CSS_SPIEL + "</head>", 1)
+K = K.replace("SPIELJS", spiel_js).replace("</head>", CSS_SPIEL + "</head>", 1)
 (HIER / "de.html").write_text(NEU, encoding="utf-8")
 css = ("<style>ins.k-neu{background:#c8ecc9;color:#0b3d12;text-decoration:none}del.k-weg{background:#f6c6c0;color:#5a1a12}"
        ".k-block-weg{outline:3px solid #e8a39a;margin-bottom:28px;opacity:.85}"
        "#k-hinweis{position:sticky;top:0;z-index:9999;background:#0F3B5C;color:#fff;font:14px/1.45 system-ui,sans-serif;padding:8px 16px}"
        "#k-hinweis ins{background:#c8ecc9;color:#0b3d12;text-decoration:none}#k-hinweis del{background:#f6c6c0;color:#5a1a12}</style>")
-hinweis = ('<div id="k-hinweis">Kontrollfassung (v4.78): künftige deutsche Seite mit den Änderungen der Initiative vom 8.11.2026 gegen die geltende Seite. '
+hinweis = ('<div id="k-hinweis">Kontrollfassung (v4.79): künftige deutsche Seite mit den Änderungen der Initiative vom 8.11.2026 gegen die geltende Seite. '
            '<ins>grün = neu</ins> · <del>rot = entfällt</del>. Fonds- und Kassenzahlen vorläufig (noch nicht in den Haushaltsrechnungen). Nur zur Durchsicht.</div>')
 K = K.replace("</head>", css + "</head>", 1)
 K = re.sub(r"(<body[^>]*>)", r"\1" + hinweis, K, count=1)

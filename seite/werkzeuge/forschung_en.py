@@ -45,6 +45,7 @@ SINCE_REVIEW = [
  ("v4.76", "Community of states instead of a roof; six ground rules; common budget (preliminary)", "no adopted figure"),
  ("v4.77", "Website draft revised; community of states game", "no figure"),
  ("v4.78", "Website draft: cap one third, three charts to 2040; correction 86", "no figure"),
+ ("v4.79", "Website draft: community game as world map; roadmap section removed", "no figure"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]

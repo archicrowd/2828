@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.78**
+Stand: 24. Oktober 2026 · Modellstand **v4.79**
 
 ---
 
@@ -4937,6 +4937,25 @@ zu klären vor der Übernahme. **Datenquelle:** `gini.json`, Zeitreihen und Rech
 
 ---
 
+### v4.79 — Webseitenentwurf: Rechenspiel als animierte Weltkarte; Rubrik „Wohin die Reise geht“ entfällt
+
+**Art der Änderung: PATCH (Darstellung), keine Zahl bewegt.** 8. November 2026.
+
+**Vorgaben der Initiative (8.11.2026):**
+- „Bauen Sie die Gemeinschaft“ als Weltkarte statt Kacheln: erfüllt Regel 1 tiefgrün, Partner grün, „Euroländer“ halbgrün, übrige Staaten
+  schwachgrün. „Euroländer“ ist gelesen als **übrige Mitgliedstaaten des Europarats** (15 Staaten, nicht geprüft, nicht wählbar; Mitgliederliste
+  eigene Kenntnis, zu prüfen), weil alle 30 Staaten Europas schon Teilnahme oder Partner sind. Abgewählte Staaten werden schwachgrün.
+  Animation: Einfärben als Welle von West nach Ost; Voreinstellungen „Nur Europa“ und „Die 30 gerechneten“ zoomen auf Europa; ohne Bewegung
+  bei `prefers-reduced-motion`. Kleinstaaten als Kreise (BB, MU, MT, LU; AD, LI, MC, SM).
+- Rubrik „Wohin die Reise geht“ samt Grafiken (v4.78) und Zeitleiste entfällt.
+
+**Neu:** `seite/entwurf/spielregeln/karte_bau.js` → `karte.json` (177 Länder, Natural Earth 1, 119 kB). Quelle: world.geo.json (Unlicense,
+abgeleitet aus Natural Earth, gemeinfrei; Sekundärquelle, Herkunft im Datensatz nicht vollständig belegt); Rohdatei nicht im Repository.
+
+**Datenquelle:** wie v4.77; Kartengeometrie wie oben. **Wodurch aufgefallen:** Vorgaben der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5012,7 +5031,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.78
+## 7 | Offene Punkte, Stand v4.79
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
