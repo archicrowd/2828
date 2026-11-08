@@ -72,6 +72,7 @@ SEIT_PRUEFUNG = [
  ("v4.78", "Webseitenentwurf: Obergrenze ein Drittel, drei Karten bis 2040; Korrektur 86", "keine Zahl"),
  ("v4.79", "Webseitenentwurf: Rechenspiel als Weltkarte; „Wohin die Reise geht“ entfällt", "keine Zahl"),
  ("v4.80", "Webseite nach den Spielregeln in sechs Sprachen: Gemeinschaft der Staaten statt Dach, Weltkarte hinter den Regeln", "keine Zahl (Obergrenze im Flussbild 33,3 statt 32 %)"),
+ ("v4.81", "Weltkarte: Mitgliedstaaten der Vereinten Nationen hellgrün, übrige Gebiete grau", "keine Zahl"),
 ]
 
 

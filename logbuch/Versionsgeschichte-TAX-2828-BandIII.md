@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.80**
+Stand: 24. Oktober 2026 · Modellstand **v4.81**
 
 ---
 
@@ -4990,6 +4990,28 @@ Auftrags). Abweichung Rechner +613 € gegen Kopf +611 € (42.000 €, 2028) we
 (Sekundärquelle, zu prüfen); Kartengeometrie Natural Earth über world.geo.json (Sekundärquelle). **Bewegte Zahl:** keine Rechnung; neu auf der
 Seite die Dividende 2060 im mittleren Pfad je Sprachfassung. **Wodurch aufgefallen:** Vorgaben der Initiative.
 
+### v4.81 — Weltkarte: Mitgliedstaaten der Vereinten Nationen hellgrün
+
+**Art der Änderung: PATCH (Darstellung), keine Zahl bewegt.** 8. November 2026.
+
+**Vorgabe der Initiative (8.11.2026):** Mitgliedstaaten der Vereinten Nationen in der Grafik ganz hellgrün, nach dem Vorschlag: als Legende und
+Hintergrund, nicht als eigene Ansicht (eine Ansicht „alle 193“ hätte fast die ganze Karte und knapp 100 % der Weltbevölkerung gezeigt; Einwohner
+liegen nur für 45 Staaten vor).
+
+**Umsetzung (`gemeinschaft_bau.py`, `gemeinschaft_texte.py`, sechs Sprachen):**
+- Alle Flächen ohne andere Einstufung sind Mitgliedstaaten (hellgrün, bisher „übrige Welt“). Legende: „Mitglieder der Vereinten Nationen: können
+  beitreten, wenn sie die erste Regel erfüllen“. Auch die Vereinigten Staaten, China und Russland sind hellgrün; das folgt aus Regel 1.
+- Grau („kein Mitglied der Vereinten Nationen“): Kosovo, Palästina (Beobachterstaat), Taiwan, Westsahara. Der Heilige Stuhl (Beobachterstaat) ist
+  auf der Karte nicht darstellbar. Mitgliederliste aus eigener Kenntnis, **an der Mitgliederliste der Vereinten Nationen zu prüfen**.
+- Abhängige Gebiete hellgrün mit Hinweis auf ihren Staat: Grönland (DK), Puerto Rico (US), Neukaledonien und Französische Süd- und
+  Antarktisgebiete (FR), Falklandinseln und Bermuda (GB). Französisch-Guayana ist Teil Frankreichs und wird jetzt mit Frankreich eingefärbt und
+  gewählt (bisher „übrige Welt“); die Zählung ändert sich nicht (je Staat einmal).
+- Namen nach Unicode CLDR (`karte/namen.json` um zehn Gebiete ergänzt); für Palästina der Kurzname nach der Benennung der Vereinten Nationen statt
+  „Palästinensische Autonomiegebiete“.
+- Geprüft im Browser (sechs Sprachen): keine Skriptfehler; Zahlen unverändert (41 Staaten, 814,5 Mio. mit Partnern).
+
+**Datenquelle:** wie v4.80; Mitgliedschaft eigene Kenntnis (Stand 2026). **Bewegte Zahl:** keine. **Wodurch aufgefallen:** Vorgabe der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5067,7 +5089,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.80
+## 7 | Offene Punkte, Stand v4.81
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

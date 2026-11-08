@@ -371,3 +371,21 @@ CO2 = dict(de=("einen gemeinsamen europäischen CO₂-Preis", "einen gemeinsamen
            it=("un prezzo europeo comune della CO₂", "un percorso comune del prezzo della CO₂ secondo l'Accordo di Parigi"),
            es=("un precio europeo común del CO₂", "una senda común del precio del CO₂ según el Acuerdo de París"),
            pl=("wspólną europejską cenę CO₂", "wspólną ścieżkę cen CO₂ zgodną z porozumieniem paryskim"))
+
+# v4.81: Mitgliedstaaten der Vereinten Nationen als Hintergrund der Weltkarte (hellgrün), übrige Gebiete grau
+UN = dict(
+    de=("Mitglieder der Vereinten Nationen: können beitreten, wenn sie die erste Regel erfüllen", "kein Mitglied der Vereinten Nationen",
+        "Gebiet von {staat}", "Die Vereinten Nationen haben 193 Mitgliedstaaten (Liste eigene Kenntnis, an der Mitgliederliste der Vereinten Nationen zu prüfen). Abhängige Gebiete sind wie ihr Staat eingefärbt; Französisch-Guayana gehört zu Frankreich."),
+    en=("Members of the United Nations: can join once they meet the first rule", "not a member of the United Nations",
+        "territory of {staat}", "The United Nations has 193 member states. Dependent territories are coloured like their state; French Guiana is part of France."),
+    fr=("Membres des Nations unies : peuvent adhérer dès qu'ils remplissent la première règle", "non membre des Nations unies",
+        "territoire relevant de : {staat}", "Les Nations unies comptent 193 États membres. Les territoires dépendants sont colorés comme leur État ; la Guyane fait partie de la France."),
+    it=("Membri delle Nazioni Unite: possono aderire quando soddisfano la prima regola", "non membro delle Nazioni Unite",
+        "territorio di: {staat}", "Le Nazioni Unite contano 193 Stati membri. I territori dipendenti sono colorati come il loro Stato; la Guyana francese fa parte della Francia."),
+    es=("Miembros de las Naciones Unidas: pueden adherirse cuando cumplan la primera regla", "no es miembro de las Naciones Unidas",
+        "territorio de: {staat}", "Las Naciones Unidas tienen 193 Estados miembros. Los territorios dependientes se colorean como su Estado; la Guayana Francesa forma parte de Francia."),
+    pl=("Członkowie Narodów Zjednoczonych: mogą przystąpić, gdy spełnią pierwszą zasadę", "nie jest członkiem Narodów Zjednoczonych",
+        "terytorium państwa: {staat}", "Narody Zjednoczone mają 193 państwa członkowskie. Terytoria zależne mają kolor swojego państwa; Gujana Francuska jest częścią Francji."),
+)
+for _l, (_a, _b, _c, _d) in UN.items():
+    T[_l].update(un_leg=_a, un_nicht=_b, un_gebiet=_c, un_fine=_d)

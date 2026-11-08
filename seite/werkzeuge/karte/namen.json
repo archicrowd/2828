@@ -59,7 +59,17 @@
   "SM": "San Marino",
   "RS": "Serbien",
   "TR": "Türkei",
-  "UA": "Ukraine"
+  "UA": "Ukraine",
+  "XK": "Kosovo",
+  "PS": "Palästinensische Autonomiegebiete",
+  "TW": "Taiwan",
+  "EH": "Westsahara",
+  "GL": "Grönland",
+  "PR": "Puerto Rico",
+  "NC": "Neukaledonien",
+  "TF": "Französische Süd- und Antarktisgebiete",
+  "FK": "Falklandinseln",
+  "BM": "Bermuda"
  },
  "en": {
   "AT": "Austria",
@@ -120,7 +130,17 @@
   "SM": "San Marino",
   "RS": "Serbia",
   "TR": "Türkiye",
-  "UA": "Ukraine"
+  "UA": "Ukraine",
+  "XK": "Kosovo",
+  "PS": "Palestinian Territories",
+  "TW": "Taiwan",
+  "EH": "Western Sahara",
+  "GL": "Greenland",
+  "PR": "Puerto Rico",
+  "NC": "New Caledonia",
+  "TF": "French Southern Territories",
+  "FK": "Falkland Islands",
+  "BM": "Bermuda"
  },
  "fr": {
   "AT": "Autriche",
@@ -181,7 +201,17 @@
   "SM": "Saint-Marin",
   "RS": "Serbie",
   "TR": "Turquie",
-  "UA": "Ukraine"
+  "UA": "Ukraine",
+  "XK": "Kosovo",
+  "PS": "Territoires palestiniens",
+  "TW": "Taïwan",
+  "EH": "Sahara occidental",
+  "GL": "Groenland",
+  "PR": "Porto Rico",
+  "NC": "Nouvelle-Calédonie",
+  "TF": "Terres australes françaises",
+  "FK": "Îles Malouines",
+  "BM": "Bermudes"
  },
  "it": {
   "AT": "Austria",
@@ -242,7 +272,17 @@
   "SM": "San Marino",
   "RS": "Serbia",
   "TR": "Turchia",
-  "UA": "Ucraina"
+  "UA": "Ucraina",
+  "XK": "Kosovo",
+  "PS": "Territori Palestinesi",
+  "TW": "Taiwan",
+  "EH": "Sahara Occidentale",
+  "GL": "Groenlandia",
+  "PR": "Portorico",
+  "NC": "Nuova Caledonia",
+  "TF": "Terre Australi Francesi",
+  "FK": "Isole Falkland",
+  "BM": "Bermuda"
  },
  "es": {
   "AT": "Austria",
@@ -303,7 +343,17 @@
   "SM": "San Marino",
   "RS": "Serbia",
   "TR": "Turquía",
-  "UA": "Ucrania"
+  "UA": "Ucrania",
+  "XK": "Kosovo",
+  "PS": "Territorios Palestinos",
+  "TW": "Taiwán",
+  "EH": "Sáhara Occidental",
+  "GL": "Groenlandia",
+  "PR": "Puerto Rico",
+  "NC": "Nueva Caledonia",
+  "TF": "Territorios Australes Franceses",
+  "FK": "Islas Malvinas",
+  "BM": "Bermudas"
  },
  "pl": {
   "AT": "Austria",
@@ -364,6 +414,16 @@
   "SM": "San Marino",
   "RS": "Serbia",
   "TR": "Turcja",
-  "UA": "Ukraina"
+  "UA": "Ukraina",
+  "XK": "Kosowo",
+  "PS": "Terytoria Palestyńskie",
+  "TW": "Tajwan",
+  "EH": "Sahara Zachodnia",
+  "GL": "Grenlandia",
+  "PR": "Portoryko",
+  "NC": "Nowa Kaledonia",
+  "TF": "Francuskie Terytoria Południowe i Antarktyczne",
+  "FK": "Falklandy",
+  "BM": "Bermudy"
  }
 }

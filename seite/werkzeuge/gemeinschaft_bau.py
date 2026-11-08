@@ -8,6 +8,7 @@ nicht nach Wortlaut). Jede Fundstelle muss genau einmal vorkommen, sonst bricht 
   - Abschnitt „sicherungen“: sechs Spielregeln für die Teilnahme, danach das Rechenspiel auf der Weltkarte (v4.80: hinter die Regeln gesetzt,
     zwei Ansichten statt vier)
   - Abschnitt „klub“: offene Gemeinschaft, was sie verbindet, Herleitung aus den Verträgen der Vereinten Nationen; Rubrik „Wohin die Reise geht“ entfällt
+v4.81: Mitgliedstaaten der Vereinten Nationen hellgrün, übrige Gebiete grau (Legende, keine eigene Ansicht).
 Karte: seite/werkzeuge/karte/karte.json (karte_bau.js), Ländernamen karte/namen.json (CLDR, namen_bau.js).
 Zahlen: daten/aggregate/staatenauswahl.json, fonds_5050.json, moeglichkeitsraum.csv; Dividende 2060 im mittleren Pfad aus den Daten der Seite.
 Zusätzlich: seite/entwurf/gemeinschaft/de-kontrolle.html (Ergänzungen grün, Streichungen rot, gegen die Ausgabe von drittel_bau.py).
@@ -25,7 +26,7 @@ HIER = Path(__file__).resolve().parent
 W = HIER.parents[1]
 ZIEL = W / "seite" / "stand-c"
 AGG = W / "daten" / "aggregate"
-MARKE = "<!-- gemeinschaft_bau v4.80 -->"
+MARKE = "<!-- gemeinschaft_bau -->"
 SPRACHEN = ["de", "en", "fr", "it", "es", "pl"]
 
 spec = importlib.util.spec_from_file_location("gemeinschaft_texte", HIER / "gemeinschaft_texte.py")
@@ -60,6 +61,15 @@ ISO3 = dict(AT="AUT", BE="BEL", BG="BGR", CH="CHE", CY="CYP", CZ="CZE", DE="DEU"
 EUROPARAT = dict(ALB="AL", AND="AD", ARM="AM", AZE="AZ", BIH="BA", GEO="GE", LIE="LI", MDA="MD", MCO="MC", MNE="ME", MKD="MK", SMR="SM",
                  SRB="RS", TUR="TR", UKR="UA")
 VON3 = {v: k for k, v in ISO3.items() if k in TEIL + PARTNER}
+# v4.81: Vereinte Nationen. Alle übrigen Flächen der Karte sind Mitgliedstaaten (193 Mitglieder; eigene Kenntnis, an der Mitgliederliste der
+# Vereinten Nationen zu prüfen). Nicht Mitglied: Kosovo, Palästina (Beobachterstaat), Taiwan, Westsahara (Gebiet ohne geklärten Status).
+NICHT_UN = {"CS-KM": "XK", "PSE": "PS", "TWN": "TW", "ESH": "EH"}
+# abhängige Gebiete: hellgrün mit dem Staat, zu dem sie gehören; Französisch-Guayana ist Teil Frankreichs (Überseedepartement) und wird mit ihm gewählt
+GEBIET = {"GRL": ("GL", "DK"), "PRI": ("PR", "US"), "NCL": ("NC", "FR"), "ATF": ("TF", "FR"), "FLK": ("FK", "GB"), "BMU": ("BM", "GB")}
+TEIL_VON = {"GUF": "FR"}
+# Kurzname wie in der Benennung der Vereinten Nationen (Beobachterstaat „State of Palestine“) statt des CLDR-Namens „Palästinensische Autonomiegebiete“
+for _l, _n in dict(de="Palästina", en="Palestine", fr="Palestine", it="Palestina", es="Palestina", pl="Palestyna").items():
+    NAMEN[_l]["PS"] = _n
 spec = importlib.util.spec_from_file_location("seite_bau", HIER / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -197,8 +207,16 @@ def spiel(L):
         if k in VON3:
             c = VON3[k]
             pf.append(f'<path class="k-{kat[k]}" data-k="{c}" data-x="{v["x"]}" d="{v["d"]}"><title>{titel(c)}</title></path>')
+        elif k in TEIL_VON and TEIL_VON[k] in TEIL + PARTNER:
+            c = TEIL_VON[k]
+            pf.append(f'<path class="k-{kat[ISO3[c]]}" data-k="{c}" data-x="{v["x"]}" d="{v["d"]}"><title>{titel(c)}</title></path>')
         elif k in EUROPARAT:
             pf.append(f'<path class="k-e" d="{v["d"]}"><title>{esc(nm[EUROPARAT[k]])} · {t["eur_tip"]}</title></path>')
+        elif k in NICHT_UN:
+            pf.append(f'<path class="k-n" d="{v["d"]}"><title>{esc(nm[NICHT_UN[k]])} · {t["un_nicht"]}</title></path>')
+        elif k in GEBIET:
+            g, s = GEBIET[k]
+            pf.append(f'<path class="k-r" d="{v["d"]}"><title>{esc(nm[g])} · {esc(fertig(t["un_gebiet"], staat=nm[s]))}</title></path>')
         else:
             pf.append(f'<path class="k-r" d="{v["d"]}"/>')
     for k, (x, y) in KARTE["kreise"].items():
@@ -215,12 +233,12 @@ def spiel(L):
     <div class="flow">
       <div class="tabs" id="gsvor"><button type="button" aria-pressed="false" data-v="regel">{t["tab_regel"]}</button><button type="button" aria-pressed="true" data-v="alle">{t["tab_partner"]}</button></div>
       <div class="gs-karte">{svg}</div>
-      <div class="legend gs-leg"><span><i class="k-t"></i>{t["tab_regel"]}</span><span><i class="k-p"></i>{t["tab_partner"]}</span></div>
+      <div class="legend gs-leg"><span><i class="k-t"></i>{t["tab_regel"]}</span><span><i class="k-p"></i>{t["tab_partner"]}</span><span><i class="k-r"></i>{t["un_leg"]}</span><span><i class="k-n"></i>{t["un_nicht"][:1].upper() + t["un_nicht"][1:]}</span></div>
       <div class="row">{kz("k_menschen", "gssum", "v new")}{kz("k_staaten", "gsn")}{kz("k_welt", "gswelt")}</div>
       <div class="schwelle"><i id="gsbar"></i><span class="us" id="gsus"><span>{t["us"]}</span></span><span class="us" id="gseu"><span>{t["eu"]}</span></span></div>
       <p class="fineprint" id="gstext" style="margin-top:0"></p>
     </div>
-    <p class="fineprint">{t["fine_karte"]}</p>'''
+    <p class="fineprint">{t["fine_karte"]} {t["un_fine"]}</p>'''
 
 
 def spiel_js(L):
@@ -251,10 +269,10 @@ Object.keys(D.gs).forEach(k=>setze(k,false,0));lauf();setTimeout(()=>vor('alle')
 
 CSS_SPIEL = ("<style>.gs-karte{background:#f3f7f4;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:14px 0}"
              "#gskarte{width:100%;height:auto;display:block}#gskarte path,#gskarte circle{stroke:#fff;stroke-width:.4;transition:fill .5s ease}"
-             "#gskarte .k-t{fill:#1d6b3a}#gskarte .k-p{fill:#4c9a5f}#gskarte .k-e{fill:#9fcca9}#gskarte .k-r{fill:#dcebdf}"
+             "#gskarte .k-t{fill:#1d6b3a}#gskarte .k-p{fill:#4c9a5f}#gskarte .k-e{fill:#9fcca9}#gskarte .k-r{fill:#dcebdf}#gskarte .k-n{fill:#c4c7c5}"
              "#gskarte .aus{fill:#dcebdf}#gskarte [data-k]{cursor:pointer}#gskarte [data-k]:hover{stroke:#0F3B5C;stroke-width:1}"
              ".gs-leg i{display:inline-block;width:14px;height:10px;margin-right:6px;border-radius:2px;vertical-align:middle}"
-             ".gs-leg .k-t{background:#1d6b3a}.gs-leg .k-p{background:#4c9a5f}"
+             ".gs-leg .k-t{background:#1d6b3a}.gs-leg .k-p{background:#4c9a5f}.gs-leg .k-r{background:#dcebdf;border:1px solid #c8d8cc}.gs-leg .k-n{background:#c4c7c5}"
              "@media (prefers-reduced-motion:reduce){#gskarte path,#gskarte circle{transition:none}}"
              ".schwelle #gseu{border-left-color:var(--accent)}.schwelle #gseu span{top:-22px}</style>")
 TOK = re.compile(r"<script\b.*?</script>|<style\b.*?</style>|<svg\b.*?</svg>|<[^>]+>|[^<]+", re.S)
@@ -292,7 +310,7 @@ for L in SPRACHEN:
                ".k-block-weg{outline:3px solid #e8a39a;margin-bottom:28px;opacity:.85}"
                "#k-hinweis{position:sticky;top:0;z-index:9999;background:#0F3B5C;color:#fff;font:14px/1.45 system-ui,sans-serif;padding:8px 16px}"
                "#k-hinweis ins{background:#c8ecc9;color:#0b3d12;text-decoration:none}#k-hinweis del{background:#f6c6c0;color:#5a1a12}</style>")
-        hinweis = ('<div id="k-hinweis">Kontrollfassung (v4.80): deutsche Seite nach den Spielregeln gegen die Fassung v4.79. '
+        hinweis = ('<div id="k-hinweis">Kontrollfassung (v4.81): deutsche Seite nach den Spielregeln gegen die Fassung v4.79 (ohne Gemeinschaft der Staaten). '
                    '<ins>grün = neu</ins> · <del>rot = entfällt</del>. Fonds- und Kassenzahlen vorläufig (noch nicht in den Haushaltsrechnungen).</div>')
         K = re.sub(r"(<body[^>]*>)", r"\1" + hinweis, K.replace("</head>", css + "</head>", 1), count=1)
         ziel = W / "seite" / "entwurf" / "gemeinschaft"
