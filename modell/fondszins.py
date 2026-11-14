@@ -24,6 +24,8 @@ G, SV = AL.G, AL.SV
 B = AL.P["beschluss"]
 BJ = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]
 FGV = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))["grundlage"]   # v4.20
+_fg = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))
+DVF = _fg.get("dynamik", {}).get("verhaeltnis_beitrag", 1.0)   # v4.85: erwartete Dynamik (Näherung: gleiches Verhältnis für alle Zinsfälle)
 spec_rb = importlib.util.spec_from_file_location("rb", W / "modell" / "regel_boden.py")
 RB = importlib.util.module_from_spec(spec_rb)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -78,8 +80,8 @@ def main():
         zi = [x / 100 for x in zinsen_pct]
         c = loese(z, zi, d0, n)
         p = pfad(c, z, zi, d0, n)
-        zu = round(c / quote * 100 * FGV["verhaeltnis_zuschlag_30_zu_10"], 1)            # v4.20: auf den Fonds der 30 übertragen
-        varianten.append(dict(fall=name, beitrag_pct_bip=round(c * FGV["verhaeltnis_beitrag_30_zu_10"], 2), zuschlag_pct=zu, spitze_zehn=round(max(p), 1),
+        zu = round(c / quote * 100 * FGV["verhaeltnis_zuschlag_30_zu_10"] * DVF, 1)            # v4.20: auf den Fonds der 30 übertragen
+        varianten.append(dict(fall=name, beitrag_pct_bip=round(c * FGV["verhaeltnis_beitrag_30_zu_10"] * DVF, 2), zuschlag_pct=zu, spitze_zehn=round(max(p), 1),
                               spitzenjahr_zehn=2029 + p.index(max(p)), zins_2028=round(zinsen_pct[0], 2), zins_ab_2036=round(zinsen_pct[min(8, n - 1)], 2),
                               beitrag_zehn_pct_bip=round(c, 2), haushalt_de=haushalt_de(zu)))
 
@@ -98,8 +100,8 @@ def main():
             c = loese(z, zi, d0, n, g / 100)
             p = pfad(c, z, zi, d0, n, g / 100)
             pf = pfad(c_fest, z, zi, d0, n, g / 100)
-            raster.append(dict(wachstum=g, zins=i, beitrag_pct_bip=round(c * FGV["verhaeltnis_beitrag_30_zu_10"], 2),
-                               zuschlag_pct=round(c / quote * 100 * FGV["verhaeltnis_zuschlag_30_zu_10"], 1),
+            raster.append(dict(wachstum=g, zins=i, beitrag_pct_bip=round(c * FGV["verhaeltnis_beitrag_30_zu_10"] * DVF, 2),
+                               zuschlag_pct=round(c / quote * 100 * FGV["verhaeltnis_zuschlag_30_zu_10"] * DVF, 1),
                                spitze_zehn=round(max(p), 1), spitzenjahr_zehn=2029 + p.index(max(p)),
                                beschlussbeitrag_fest=dict(restschuld_2098_zehn=round(pf[-1], 1), spitze_zehn=round(max(pf), 1),
                                                           spitzenjahr_zehn=2029 + pf.index(max(pf)))))

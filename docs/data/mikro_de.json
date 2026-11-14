@@ -20,65 +20,65 @@
   "varianten": {
    "ohne": {
     "beamte": {
-     "anteil_mehr_haushalte_pct": 53.4,
-     "anteil_mehr_personen_pct": 66.6,
-     "mittel_mehr_monat_eur": 65,
-     "median_mehr_monat_eur": 54,
+     "anteil_mehr_haushalte_pct": 55.1,
+     "anteil_mehr_personen_pct": 68.5,
+     "mittel_mehr_monat_eur": 97,
+     "median_mehr_monat_eur": 87,
      "haushalte_mio": 1.96
     },
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.4,
-     "anteil_mehr_personen_pct": 83.5,
-     "mittel_mehr_monat_eur": 439,
-     "median_mehr_monat_eur": 471,
+     "anteil_mehr_haushalte_pct": 79.4,
+     "anteil_mehr_personen_pct": 84.6,
+     "mittel_mehr_monat_eur": 462,
+     "median_mehr_monat_eur": 500,
      "haushalte_mio": 41.1
     }
    },
    "vorsorge": {
     "beamte": {
-     "anteil_mehr_haushalte_pct": 77.8,
-     "anteil_mehr_personen_pct": 85.9,
-     "mittel_mehr_monat_eur": 359,
-     "median_mehr_monat_eur": 338,
+     "anteil_mehr_haushalte_pct": 81.7,
+     "anteil_mehr_personen_pct": 88.6,
+     "mittel_mehr_monat_eur": 391,
+     "median_mehr_monat_eur": 381,
      "haushalte_mio": 1.96
     },
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 79.6,
-     "anteil_mehr_personen_pct": 84.5,
-     "mittel_mehr_monat_eur": 453,
-     "median_mehr_monat_eur": 529,
+     "anteil_mehr_haushalte_pct": 80.6,
+     "anteil_mehr_personen_pct": 85.7,
+     "mittel_mehr_monat_eur": 476,
+     "median_mehr_monat_eur": 556,
      "haushalte_mio": 41.1
     }
    },
    "vorsorge_gesundheit": {
     "beamte": {
-     "anteil_mehr_haushalte_pct": 82.8,
-     "anteil_mehr_personen_pct": 88.8,
-     "mittel_mehr_monat_eur": 389,
-     "median_mehr_monat_eur": 368,
+     "anteil_mehr_haushalte_pct": 86.8,
+     "anteil_mehr_personen_pct": 91.3,
+     "mittel_mehr_monat_eur": 421,
+     "median_mehr_monat_eur": 411,
      "haushalte_mio": 1.96
     },
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 79.8,
-     "anteil_mehr_personen_pct": 84.7,
-     "mittel_mehr_monat_eur": 455,
-     "median_mehr_monat_eur": 533,
+     "anteil_mehr_haushalte_pct": 80.9,
+     "anteil_mehr_personen_pct": 85.8,
+     "mittel_mehr_monat_eur": 478,
+     "median_mehr_monat_eur": 559,
      "haushalte_mio": 41.1
     }
    },
    "weitergabe_20": {
     "beamte": {
-     "anteil_mehr_haushalte_pct": 56.4,
-     "anteil_mehr_personen_pct": 69.2,
-     "mittel_mehr_monat_eur": 112,
-     "median_mehr_monat_eur": 101,
+     "anteil_mehr_haushalte_pct": 58.1,
+     "anteil_mehr_personen_pct": 71.1,
+     "mittel_mehr_monat_eur": 144,
+     "median_mehr_monat_eur": 135,
      "haushalte_mio": 1.96
     },
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.6,
-     "anteil_mehr_personen_pct": 83.6,
-     "mittel_mehr_monat_eur": 442,
-     "median_mehr_monat_eur": 480,
+     "anteil_mehr_haushalte_pct": 79.5,
+     "anteil_mehr_personen_pct": 84.8,
+     "mittel_mehr_monat_eur": 464,
+     "median_mehr_monat_eur": 511,
      "haushalte_mio": 41.1
     }
    }
@@ -92,82 +92,82 @@
   "skalierung": {
    "1.0": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.6,
-     "anteil_mehr_personen_pct": 83.6,
-     "mittel_mehr_monat_eur": 442,
-     "median_mehr_monat_eur": 480,
+     "anteil_mehr_haushalte_pct": 79.5,
+     "anteil_mehr_personen_pct": 84.8,
+     "mittel_mehr_monat_eur": 464,
+     "median_mehr_monat_eur": 511,
      "haushalte_mio": 41.1
     },
     "dezil_10": {
      "dezil": 10,
      "obergrenze_aequiv_monat_eur": 51701,
-     "anteil_mehr_haushalte_pct": 64.1,
-     "anteil_mehr_personen_pct": 67.8,
-     "mittel_mehr_monat_eur": 233,
-     "median_mehr_monat_eur": 552,
+     "anteil_mehr_haushalte_pct": 65.1,
+     "anteil_mehr_personen_pct": 69.0,
+     "mittel_mehr_monat_eur": 274,
+     "median_mehr_monat_eur": 596,
      "haushalte_mio": 4.16
     },
     "dezil_9": {
      "dezil": 9,
      "obergrenze_aequiv_monat_eur": 4970,
-     "anteil_mehr_haushalte_pct": 72.6,
-     "anteil_mehr_personen_pct": 77.1,
-     "mittel_mehr_monat_eur": 594,
-     "median_mehr_monat_eur": 738,
+     "anteil_mehr_haushalte_pct": 73.9,
+     "anteil_mehr_personen_pct": 78.1,
+     "mittel_mehr_monat_eur": 626,
+     "median_mehr_monat_eur": 762,
      "haushalte_mio": 3.98
     }
    },
    "2.0": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.5,
-     "anteil_mehr_personen_pct": 83.5,
-     "mittel_mehr_monat_eur": 435,
-     "median_mehr_monat_eur": 466,
+     "anteil_mehr_haushalte_pct": 79.4,
+     "anteil_mehr_personen_pct": 84.6,
+     "mittel_mehr_monat_eur": 458,
+     "median_mehr_monat_eur": 497,
      "haushalte_mio": 41.1
     },
     "dezil_10": {
      "dezil": 10,
      "obergrenze_aequiv_monat_eur": 51701,
-     "anteil_mehr_haushalte_pct": 63.8,
-     "anteil_mehr_personen_pct": 67.2,
-     "mittel_mehr_monat_eur": 212,
-     "median_mehr_monat_eur": 522,
+     "anteil_mehr_haushalte_pct": 64.8,
+     "anteil_mehr_personen_pct": 68.4,
+     "mittel_mehr_monat_eur": 254,
+     "median_mehr_monat_eur": 567,
      "haushalte_mio": 4.13
     },
     "dezil_9": {
      "dezil": 9,
      "obergrenze_aequiv_monat_eur": 5018,
-     "anteil_mehr_haushalte_pct": 72.2,
-     "anteil_mehr_personen_pct": 76.7,
-     "mittel_mehr_monat_eur": 577,
-     "median_mehr_monat_eur": 737,
+     "anteil_mehr_haushalte_pct": 73.5,
+     "anteil_mehr_personen_pct": 77.8,
+     "mittel_mehr_monat_eur": 609,
+     "median_mehr_monat_eur": 760,
      "haushalte_mio": 3.98
     }
    },
    "4.0": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.3,
-     "anteil_mehr_personen_pct": 83.2,
-     "mittel_mehr_monat_eur": 424,
-     "median_mehr_monat_eur": 437,
+     "anteil_mehr_haushalte_pct": 79.2,
+     "anteil_mehr_personen_pct": 84.4,
+     "mittel_mehr_monat_eur": 447,
+     "median_mehr_monat_eur": 468,
      "haushalte_mio": 41.1
     },
     "dezil_10": {
      "dezil": 10,
      "obergrenze_aequiv_monat_eur": 57513,
-     "anteil_mehr_haushalte_pct": 62.4,
-     "anteil_mehr_personen_pct": 65.3,
-     "mittel_mehr_monat_eur": 149,
-     "median_mehr_monat_eur": 445,
+     "anteil_mehr_haushalte_pct": 63.5,
+     "anteil_mehr_personen_pct": 66.6,
+     "mittel_mehr_monat_eur": 192,
+     "median_mehr_monat_eur": 490,
      "haushalte_mio": 4.11
     },
     "dezil_9": {
      "dezil": 9,
      "obergrenze_aequiv_monat_eur": 5122,
-     "anteil_mehr_haushalte_pct": 72.0,
-     "anteil_mehr_personen_pct": 76.4,
-     "mittel_mehr_monat_eur": 556,
-     "median_mehr_monat_eur": 736,
+     "anteil_mehr_haushalte_pct": 73.2,
+     "anteil_mehr_personen_pct": 77.5,
+     "mittel_mehr_monat_eur": 589,
+     "median_mehr_monat_eur": 759,
      "haushalte_mio": 3.97
     }
    }
@@ -181,62 +181,62 @@
   "varianten": {
    "voll (geltend)": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.6,
-     "anteil_mehr_personen_pct": 83.6,
-     "mittel_mehr_monat_eur": 442,
-     "median_mehr_monat_eur": 480,
+     "anteil_mehr_haushalte_pct": 79.5,
+     "anteil_mehr_personen_pct": 84.8,
+     "mittel_mehr_monat_eur": 464,
+     "median_mehr_monat_eur": 511,
      "haushalte_mio": 41.1
     },
     "erwerbsfaehige": {
-     "anteil_mehr_haushalte_pct": 85.1,
-     "anteil_mehr_personen_pct": 89.1,
-     "mittel_mehr_monat_eur": 679,
-     "median_mehr_monat_eur": 680,
+     "anteil_mehr_haushalte_pct": 86.1,
+     "anteil_mehr_personen_pct": 90.3,
+     "mittel_mehr_monat_eur": 709,
+     "median_mehr_monat_eur": 708,
      "haushalte_mio": 28.95
     },
     "teilzeit": {
      "anteil_mehr_haushalte_pct": 99.9,
      "anteil_mehr_personen_pct": 99.9,
-     "mittel_mehr_monat_eur": 718,
-     "median_mehr_monat_eur": 634,
+     "mittel_mehr_monat_eur": 741,
+     "median_mehr_monat_eur": 654,
      "haushalte_mio": 4.6
     },
     "minijob": {
-     "anteil_mehr_haushalte_pct": 49.1,
-     "anteil_mehr_personen_pct": 69.5,
-     "mittel_mehr_monat_eur": 221,
-     "median_mehr_monat_eur": -1,
+     "anteil_mehr_haushalte_pct": 53.9,
+     "anteil_mehr_personen_pct": 72.3,
+     "mittel_mehr_monat_eur": 238,
+     "median_mehr_monat_eur": 5,
      "haushalte_mio": 0.87
     },
     "alleinerziehend": {
-     "anteil_mehr_haushalte_pct": 86.1,
-     "anteil_mehr_personen_pct": 88.7,
-     "mittel_mehr_monat_eur": 416,
-     "median_mehr_monat_eur": 489,
+     "anteil_mehr_haushalte_pct": 88.6,
+     "anteil_mehr_personen_pct": 91.6,
+     "mittel_mehr_monat_eur": 439,
+     "median_mehr_monat_eur": 512,
      "haushalte_mio": 1.62
     },
     "dezil_1": {
      "dezil": 1,
      "obergrenze_aequiv_monat_eur": 1386,
-     "anteil_mehr_haushalte_pct": 39.8,
-     "anteil_mehr_personen_pct": 46.1,
-     "mittel_mehr_monat_eur": 21,
+     "anteil_mehr_haushalte_pct": 42.9,
+     "anteil_mehr_personen_pct": 52.1,
+     "mittel_mehr_monat_eur": 27,
      "median_mehr_monat_eur": 0,
      "haushalte_mio": 5.25
     },
     "dezil_2": {
      "dezil": 2,
      "obergrenze_aequiv_monat_eur": 1677,
-     "anteil_mehr_haushalte_pct": 99.3,
+     "anteil_mehr_haushalte_pct": 99.5,
      "anteil_mehr_personen_pct": 99.7,
-     "mittel_mehr_monat_eur": 310,
-     "median_mehr_monat_eur": 201,
+     "mittel_mehr_monat_eur": 323,
+     "median_mehr_monat_eur": 213,
      "haushalte_mio": 4.04
     },
     "kosten_mrd": {
-     "grundauskommen_neu": 32.9,
-     "davon_ohne_erwerb": 23.7,
-     "davon_erwerbstaetige_haushalte": 7.2,
+     "grundauskommen_neu": 32.4,
+     "davon_ohne_erwerb": 23.4,
+     "davon_erwerbstaetige_haushalte": 7.0,
      "davon_rentner": 2.0,
      "buergergeld_naeherung_heute": 50.9,
      "grundsicherung_alter_heute": 2.7,
@@ -251,62 +251,62 @@
    },
    "beobachtet, neu ebenso": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.9,
-     "anteil_mehr_personen_pct": 83.8,
-     "mittel_mehr_monat_eur": 446,
-     "median_mehr_monat_eur": 496,
+     "anteil_mehr_haushalte_pct": 79.8,
+     "anteil_mehr_personen_pct": 85.0,
+     "mittel_mehr_monat_eur": 469,
+     "median_mehr_monat_eur": 526,
      "haushalte_mio": 41.1
     },
     "erwerbsfaehige": {
-     "anteil_mehr_haushalte_pct": 85.7,
-     "anteil_mehr_personen_pct": 89.4,
-     "mittel_mehr_monat_eur": 685,
-     "median_mehr_monat_eur": 682,
+     "anteil_mehr_haushalte_pct": 86.6,
+     "anteil_mehr_personen_pct": 90.6,
+     "mittel_mehr_monat_eur": 715,
+     "median_mehr_monat_eur": 711,
      "haushalte_mio": 28.95
     },
     "teilzeit": {
      "anteil_mehr_haushalte_pct": 99.9,
      "anteil_mehr_personen_pct": 99.9,
-     "mittel_mehr_monat_eur": 734,
-     "median_mehr_monat_eur": 646,
+     "mittel_mehr_monat_eur": 758,
+     "median_mehr_monat_eur": 668,
      "haushalte_mio": 4.6
     },
     "minijob": {
-     "anteil_mehr_haushalte_pct": 64.4,
-     "anteil_mehr_personen_pct": 78.3,
-     "mittel_mehr_monat_eur": 306,
-     "median_mehr_monat_eur": 344,
+     "anteil_mehr_haushalte_pct": 67.7,
+     "anteil_mehr_personen_pct": 80.3,
+     "mittel_mehr_monat_eur": 324,
+     "median_mehr_monat_eur": 354,
      "haushalte_mio": 0.87
     },
     "alleinerziehend": {
-     "anteil_mehr_haushalte_pct": 86.3,
-     "anteil_mehr_personen_pct": 88.8,
-     "mittel_mehr_monat_eur": 427,
-     "median_mehr_monat_eur": 525,
+     "anteil_mehr_haushalte_pct": 88.8,
+     "anteil_mehr_personen_pct": 91.7,
+     "mittel_mehr_monat_eur": 452,
+     "median_mehr_monat_eur": 553,
      "haushalte_mio": 1.62
     },
     "dezil_1": {
      "dezil": 1,
      "obergrenze_aequiv_monat_eur": 1353,
-     "anteil_mehr_haushalte_pct": 42.6,
-     "anteil_mehr_personen_pct": 48.2,
-     "mittel_mehr_monat_eur": 63,
+     "anteil_mehr_haushalte_pct": 45.5,
+     "anteil_mehr_personen_pct": 54.0,
+     "mittel_mehr_monat_eur": 70,
      "median_mehr_monat_eur": 0,
      "haushalte_mio": 5.25
     },
     "dezil_2": {
      "dezil": 2,
      "obergrenze_aequiv_monat_eur": 1677,
-     "anteil_mehr_haushalte_pct": 99.4,
+     "anteil_mehr_haushalte_pct": 99.5,
      "anteil_mehr_personen_pct": 99.7,
-     "mittel_mehr_monat_eur": 301,
-     "median_mehr_monat_eur": 140,
+     "mittel_mehr_monat_eur": 313,
+     "median_mehr_monat_eur": 154,
      "haushalte_mio": 4.04
     },
     "kosten_mrd": {
-     "grundauskommen_neu": 30.7,
-     "davon_ohne_erwerb": 23.7,
-     "davon_erwerbstaetige_haushalte": 5.1,
+     "grundauskommen_neu": 30.3,
+     "davon_ohne_erwerb": 23.4,
+     "davon_erwerbstaetige_haushalte": 4.9,
      "davon_rentner": 2.0,
      "buergergeld_naeherung_heute": 46.6,
      "grundsicherung_alter_heute": 2.7,
@@ -321,62 +321,62 @@
    },
    "beobachtet, neu voll": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.9,
-     "anteil_mehr_personen_pct": 83.8,
-     "mittel_mehr_monat_eur": 450,
-     "median_mehr_monat_eur": 523,
+     "anteil_mehr_haushalte_pct": 79.8,
+     "anteil_mehr_personen_pct": 85.0,
+     "mittel_mehr_monat_eur": 473,
+     "median_mehr_monat_eur": 550,
      "haushalte_mio": 41.1
     },
     "erwerbsfaehige": {
-     "anteil_mehr_haushalte_pct": 85.7,
-     "anteil_mehr_personen_pct": 89.4,
-     "mittel_mehr_monat_eur": 692,
-     "median_mehr_monat_eur": 688,
+     "anteil_mehr_haushalte_pct": 86.6,
+     "anteil_mehr_personen_pct": 90.6,
+     "mittel_mehr_monat_eur": 721,
+     "median_mehr_monat_eur": 717,
      "haushalte_mio": 28.95
     },
     "teilzeit": {
      "anteil_mehr_haushalte_pct": 99.9,
      "anteil_mehr_personen_pct": 99.9,
-     "mittel_mehr_monat_eur": 747,
-     "median_mehr_monat_eur": 659,
+     "mittel_mehr_monat_eur": 771,
+     "median_mehr_monat_eur": 683,
      "haushalte_mio": 4.6
     },
     "minijob": {
-     "anteil_mehr_haushalte_pct": 64.4,
-     "anteil_mehr_personen_pct": 78.3,
-     "mittel_mehr_monat_eur": 414,
-     "median_mehr_monat_eur": 538,
+     "anteil_mehr_haushalte_pct": 67.7,
+     "anteil_mehr_personen_pct": 80.3,
+     "mittel_mehr_monat_eur": 431,
+     "median_mehr_monat_eur": 569,
      "haushalte_mio": 0.87
     },
     "alleinerziehend": {
-     "anteil_mehr_haushalte_pct": 86.3,
-     "anteil_mehr_personen_pct": 88.8,
-     "mittel_mehr_monat_eur": 459,
-     "median_mehr_monat_eur": 586,
+     "anteil_mehr_haushalte_pct": 88.8,
+     "anteil_mehr_personen_pct": 91.7,
+     "mittel_mehr_monat_eur": 483,
+     "median_mehr_monat_eur": 609,
      "haushalte_mio": 1.62
     },
     "dezil_1": {
      "dezil": 1,
      "obergrenze_aequiv_monat_eur": 1353,
-     "anteil_mehr_haushalte_pct": 42.6,
-     "anteil_mehr_personen_pct": 48.2,
-     "mittel_mehr_monat_eur": 96,
+     "anteil_mehr_haushalte_pct": 45.5,
+     "anteil_mehr_personen_pct": 54.0,
+     "mittel_mehr_monat_eur": 103,
      "median_mehr_monat_eur": 0,
      "haushalte_mio": 5.25
     },
     "dezil_2": {
      "dezil": 2,
      "obergrenze_aequiv_monat_eur": 1677,
-     "anteil_mehr_haushalte_pct": 99.4,
+     "anteil_mehr_haushalte_pct": 99.5,
      "anteil_mehr_personen_pct": 99.7,
-     "mittel_mehr_monat_eur": 302,
-     "median_mehr_monat_eur": 140,
+     "mittel_mehr_monat_eur": 315,
+     "median_mehr_monat_eur": 154,
      "haushalte_mio": 4.04
     },
     "kosten_mrd": {
-     "grundauskommen_neu": 32.9,
-     "davon_ohne_erwerb": 23.7,
-     "davon_erwerbstaetige_haushalte": 7.2,
+     "grundauskommen_neu": 32.4,
+     "davon_ohne_erwerb": 23.4,
+     "davon_erwerbstaetige_haushalte": 7.0,
      "davon_rentner": 2.0,
      "buergergeld_naeherung_heute": 46.6,
      "grundsicherung_alter_heute": 2.7,
@@ -394,46 +394,46 @@
  "rentner_varianten": {
   "asid/voll": {
    "rentner": {
-    "anteil_mehr_haushalte_pct": 62.9,
-    "anteil_mehr_personen_pct": 64.4,
-    "mittel_mehr_monat_eur": -125,
-    "median_mehr_monat_eur": 27,
+    "anteil_mehr_haushalte_pct": 63.7,
+    "anteil_mehr_personen_pct": 65.2,
+    "mittel_mehr_monat_eur": -118,
+    "median_mehr_monat_eur": 32,
     "haushalte_mio": 12.15
    },
    "rentner_allein": {
-    "anteil_mehr_haushalte_pct": 58.7,
-    "anteil_mehr_personen_pct": 58.7,
-    "mittel_mehr_monat_eur": -100,
-    "median_mehr_monat_eur": 10,
+    "anteil_mehr_haushalte_pct": 59.4,
+    "anteil_mehr_personen_pct": 59.4,
+    "mittel_mehr_monat_eur": -95,
+    "median_mehr_monat_eur": 15,
     "haushalte_mio": 6.3
    },
    "rentner_paar": {
-    "anteil_mehr_haushalte_pct": 67.4,
-    "anteil_mehr_personen_pct": 67.4,
-    "mittel_mehr_monat_eur": -151,
-    "median_mehr_monat_eur": 50,
+    "anteil_mehr_haushalte_pct": 68.3,
+    "anteil_mehr_personen_pct": 68.3,
+    "mittel_mehr_monat_eur": -142,
+    "median_mehr_monat_eur": 59,
     "haushalte_mio": 5.85
    },
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 78.6,
-    "anteil_mehr_personen_pct": 83.6,
-    "mittel_mehr_monat_eur": 442,
-    "median_mehr_monat_eur": 480,
+    "anteil_mehr_haushalte_pct": 79.5,
+    "anteil_mehr_personen_pct": 84.8,
+    "mittel_mehr_monat_eur": 464,
+    "median_mehr_monat_eur": 511,
     "haushalte_mio": 41.1
    },
    "dezil_1": {
     "dezil": 1,
     "obergrenze_aequiv_monat_eur": 1386,
-    "anteil_mehr_haushalte_pct": 39.8,
-    "anteil_mehr_personen_pct": 46.1,
-    "mittel_mehr_monat_eur": 21,
+    "anteil_mehr_haushalte_pct": 42.9,
+    "anteil_mehr_personen_pct": 52.1,
+    "mittel_mehr_monat_eur": 27,
     "median_mehr_monat_eur": 0,
     "haushalte_mio": 5.25
    },
    "kosten_mrd": {
-    "grundauskommen_neu": 32.9,
-    "davon_ohne_erwerb": 23.7,
-    "davon_erwerbstaetige_haushalte": 7.2,
+    "grundauskommen_neu": 32.4,
+    "davon_ohne_erwerb": 23.4,
+    "davon_erwerbstaetige_haushalte": 7.0,
     "davon_rentner": 2.0,
     "buergergeld_naeherung_heute": 50.9,
     "grundsicherung_alter_heute": 2.7,
@@ -448,46 +448,46 @@
   },
   "asid/beobachtet": {
    "rentner": {
-    "anteil_mehr_haushalte_pct": 68.7,
-    "anteil_mehr_personen_pct": 69.2,
-    "mittel_mehr_monat_eur": -106,
-    "median_mehr_monat_eur": 29,
+    "anteil_mehr_haushalte_pct": 69.5,
+    "anteil_mehr_personen_pct": 70.0,
+    "mittel_mehr_monat_eur": -99,
+    "median_mehr_monat_eur": 33,
     "haushalte_mio": 12.15
    },
    "rentner_allein": {
-    "anteil_mehr_haushalte_pct": 67.3,
-    "anteil_mehr_personen_pct": 67.3,
-    "mittel_mehr_monat_eur": -76,
-    "median_mehr_monat_eur": 22,
+    "anteil_mehr_haushalte_pct": 67.9,
+    "anteil_mehr_personen_pct": 67.9,
+    "mittel_mehr_monat_eur": -71,
+    "median_mehr_monat_eur": 26,
     "haushalte_mio": 6.3
    },
    "rentner_paar": {
-    "anteil_mehr_haushalte_pct": 70.2,
-    "anteil_mehr_personen_pct": 70.2,
-    "mittel_mehr_monat_eur": -139,
-    "median_mehr_monat_eur": 56,
+    "anteil_mehr_haushalte_pct": 71.1,
+    "anteil_mehr_personen_pct": 71.1,
+    "mittel_mehr_monat_eur": -130,
+    "median_mehr_monat_eur": 64,
     "haushalte_mio": 5.85
    },
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 80.3,
-    "anteil_mehr_personen_pct": 84.7,
-    "mittel_mehr_monat_eur": 447,
-    "median_mehr_monat_eur": 499,
+    "anteil_mehr_haushalte_pct": 81.2,
+    "anteil_mehr_personen_pct": 85.8,
+    "mittel_mehr_monat_eur": 470,
+    "median_mehr_monat_eur": 524,
     "haushalte_mio": 41.1
    },
    "dezil_1": {
     "dezil": 1,
     "obergrenze_aequiv_monat_eur": 1386,
-    "anteil_mehr_haushalte_pct": 53.2,
-    "anteil_mehr_personen_pct": 56.8,
-    "mittel_mehr_monat_eur": 64,
-    "median_mehr_monat_eur": 37,
+    "anteil_mehr_haushalte_pct": 56.2,
+    "anteil_mehr_personen_pct": 62.7,
+    "mittel_mehr_monat_eur": 70,
+    "median_mehr_monat_eur": 45,
     "haushalte_mio": 5.25
    },
    "kosten_mrd": {
-    "grundauskommen_neu": 32.9,
-    "davon_ohne_erwerb": 23.7,
-    "davon_erwerbstaetige_haushalte": 7.2,
+    "grundauskommen_neu": 32.4,
+    "davon_ohne_erwerb": 23.4,
+    "davon_erwerbstaetige_haushalte": 7.0,
     "davon_rentner": 2.0,
     "buergergeld_naeherung_heute": 50.9,
     "grundsicherung_alter_heute": 0.0,
@@ -502,46 +502,46 @@
   },
   "nur_grv/voll": {
    "rentner": {
-    "anteil_mehr_haushalte_pct": 48.0,
-    "anteil_mehr_personen_pct": 49.2,
-    "mittel_mehr_monat_eur": -302,
+    "anteil_mehr_haushalte_pct": 48.6,
+    "anteil_mehr_personen_pct": 49.8,
+    "mittel_mehr_monat_eur": -296,
     "median_mehr_monat_eur": 0,
     "haushalte_mio": 12.15
    },
    "rentner_allein": {
-    "anteil_mehr_haushalte_pct": 44.6,
-    "anteil_mehr_personen_pct": 44.6,
-    "mittel_mehr_monat_eur": -224,
+    "anteil_mehr_haushalte_pct": 45.3,
+    "anteil_mehr_personen_pct": 45.3,
+    "mittel_mehr_monat_eur": -220,
     "median_mehr_monat_eur": 0,
     "haushalte_mio": 6.3
    },
    "rentner_paar": {
-    "anteil_mehr_haushalte_pct": 51.6,
-    "anteil_mehr_personen_pct": 51.6,
-    "mittel_mehr_monat_eur": -386,
-    "median_mehr_monat_eur": 21,
+    "anteil_mehr_haushalte_pct": 52.2,
+    "anteil_mehr_personen_pct": 52.2,
+    "mittel_mehr_monat_eur": -377,
+    "median_mehr_monat_eur": 28,
     "haushalte_mio": 5.85
    },
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 74.2,
-    "anteil_mehr_personen_pct": 80.3,
-    "mittel_mehr_monat_eur": 389,
-    "median_mehr_monat_eur": 480,
+    "anteil_mehr_haushalte_pct": 75.1,
+    "anteil_mehr_personen_pct": 81.3,
+    "mittel_mehr_monat_eur": 412,
+    "median_mehr_monat_eur": 511,
     "haushalte_mio": 41.1
    },
    "dezil_1": {
     "dezil": 1,
     "obergrenze_aequiv_monat_eur": 1386,
-    "anteil_mehr_haushalte_pct": 40.4,
-    "anteil_mehr_personen_pct": 46.5,
-    "mittel_mehr_monat_eur": 26,
+    "anteil_mehr_haushalte_pct": 43.5,
+    "anteil_mehr_personen_pct": 52.6,
+    "mittel_mehr_monat_eur": 32,
     "median_mehr_monat_eur": 0,
     "haushalte_mio": 5.25
    },
    "kosten_mrd": {
-    "grundauskommen_neu": 32.8,
-    "davon_ohne_erwerb": 23.7,
-    "davon_erwerbstaetige_haushalte": 7.2,
+    "grundauskommen_neu": 32.3,
+    "davon_ohne_erwerb": 23.4,
+    "davon_erwerbstaetige_haushalte": 7.0,
     "davon_rentner": 1.9,
     "buergergeld_naeherung_heute": 50.9,
     "grundsicherung_alter_heute": 2.7,
@@ -621,244 +621,244 @@
   "ergebnis": {
    "0.0": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 65.2,
-     "anteil_mehr_personen_pct": 71.3,
-     "mittel_mehr_monat_eur": 86,
-     "median_mehr_monat_eur": 100,
+     "anteil_mehr_haushalte_pct": 67.5,
+     "anteil_mehr_personen_pct": 73.8,
+     "mittel_mehr_monat_eur": 107,
+     "median_mehr_monat_eur": 127,
      "haushalte_mio": 41.1
     },
     "haushaltstyp": {
      "allein": {
-      "anteil_mehr_haushalte_pct": 70.6,
-      "anteil_mehr_personen_pct": 70.6,
-      "mittel_mehr_monat_eur": 104,
-      "median_mehr_monat_eur": 165,
+      "anteil_mehr_haushalte_pct": 71.5,
+      "anteil_mehr_personen_pct": 71.5,
+      "mittel_mehr_monat_eur": 119,
+      "median_mehr_monat_eur": 182,
       "haushalte_mio": 10.7
      },
      "alleinerziehend": {
-      "anteil_mehr_haushalte_pct": 83.4,
-      "anteil_mehr_personen_pct": 86.1,
-      "mittel_mehr_monat_eur": 169,
-      "median_mehr_monat_eur": 171,
+      "anteil_mehr_haushalte_pct": 86.0,
+      "anteil_mehr_personen_pct": 89.1,
+      "mittel_mehr_monat_eur": 190,
+      "median_mehr_monat_eur": 200,
       "haushalte_mio": 1.62
      },
      "paar_ohne": {
-      "anteil_mehr_haushalte_pct": 83.4,
-      "anteil_mehr_personen_pct": 84.0,
-      "mittel_mehr_monat_eur": 268,
-      "median_mehr_monat_eur": 365,
+      "anteil_mehr_haushalte_pct": 84.9,
+      "anteil_mehr_personen_pct": 85.5,
+      "mittel_mehr_monat_eur": 302,
+      "median_mehr_monat_eur": 399,
       "haushalte_mio": 9.83
      },
      "paar_mit": {
-      "anteil_mehr_haushalte_pct": 81.2,
-      "anteil_mehr_personen_pct": 81.8,
-      "mittel_mehr_monat_eur": 251,
-      "median_mehr_monat_eur": 342,
+      "anteil_mehr_haushalte_pct": 84.4,
+      "anteil_mehr_personen_pct": 85.0,
+      "mittel_mehr_monat_eur": 294,
+      "median_mehr_monat_eur": 385,
       "haushalte_mio": 6.8
      },
      "rentner_allein": {
-      "anteil_mehr_haushalte_pct": 25.4,
-      "anteil_mehr_personen_pct": 25.4,
-      "mittel_mehr_monat_eur": -138,
-      "median_mehr_monat_eur": -11,
+      "anteil_mehr_haushalte_pct": 30.5,
+      "anteil_mehr_personen_pct": 30.5,
+      "mittel_mehr_monat_eur": -133,
+      "median_mehr_monat_eur": -7,
       "haushalte_mio": 6.3
      },
      "rentner_paar": {
-      "anteil_mehr_haushalte_pct": 43.9,
-      "anteil_mehr_personen_pct": 43.9,
-      "mittel_mehr_monat_eur": -229,
-      "median_mehr_monat_eur": -10,
+      "anteil_mehr_haushalte_pct": 46.1,
+      "anteil_mehr_personen_pct": 46.1,
+      "mittel_mehr_monat_eur": -220,
+      "median_mehr_monat_eur": -2,
       "haushalte_mio": 5.85
      }
     },
     "status": {
      "Hauptperson Beamte": {
-      "anteil_mehr_haushalte_pct": 34.6,
-      "anteil_mehr_personen_pct": 42.9,
-      "mittel_mehr_monat_eur": -103,
-      "median_mehr_monat_eur": -103,
+      "anteil_mehr_haushalte_pct": 39.1,
+      "anteil_mehr_personen_pct": 48.6,
+      "mittel_mehr_monat_eur": -72,
+      "median_mehr_monat_eur": -73,
       "haushalte_mio": 1.96
      },
      "Hauptperson Minijob": {
-      "anteil_mehr_haushalte_pct": 40.0,
-      "anteil_mehr_personen_pct": 58.7,
-      "mittel_mehr_monat_eur": 29,
-      "median_mehr_monat_eur": -48,
+      "anteil_mehr_haushalte_pct": 41.6,
+      "anteil_mehr_personen_pct": 60.8,
+      "mittel_mehr_monat_eur": 45,
+      "median_mehr_monat_eur": -41,
       "haushalte_mio": 0.87
      },
      "Hauptperson Teilzeit": {
-      "anteil_mehr_haushalte_pct": 94.5,
-      "anteil_mehr_personen_pct": 95.8,
-      "mittel_mehr_monat_eur": 294,
-      "median_mehr_monat_eur": 294,
+      "anteil_mehr_haushalte_pct": 95.2,
+      "anteil_mehr_personen_pct": 96.4,
+      "mittel_mehr_monat_eur": 316,
+      "median_mehr_monat_eur": 311,
       "haushalte_mio": 4.6
      },
      "Hauptperson Vollzeit": {
-      "anteil_mehr_haushalte_pct": 92.9,
-      "anteil_mehr_personen_pct": 92.0,
-      "mittel_mehr_monat_eur": 280,
-      "median_mehr_monat_eur": 287,
+      "anteil_mehr_haushalte_pct": 94.0,
+      "anteil_mehr_personen_pct": 93.3,
+      "mittel_mehr_monat_eur": 313,
+      "median_mehr_monat_eur": 314,
       "haushalte_mio": 15.2
      },
      "Hauptperson selbständig": {
-      "anteil_mehr_haushalte_pct": 69.7,
-      "anteil_mehr_personen_pct": 70.8,
-      "mittel_mehr_monat_eur": 100,
-      "median_mehr_monat_eur": 179,
+      "anteil_mehr_haushalte_pct": 72.4,
+      "anteil_mehr_personen_pct": 73.4,
+      "mittel_mehr_monat_eur": 133,
+      "median_mehr_monat_eur": 202,
       "haushalte_mio": 3.9
      },
      "Rentner": {
-      "anteil_mehr_haushalte_pct": 34.3,
-      "anteil_mehr_personen_pct": 37.4,
-      "mittel_mehr_monat_eur": -182,
-      "median_mehr_monat_eur": -11,
+      "anteil_mehr_haushalte_pct": 38.0,
+      "anteil_mehr_personen_pct": 40.6,
+      "mittel_mehr_monat_eur": -175,
+      "median_mehr_monat_eur": -5,
       "haushalte_mio": 12.15
      },
      "ohne Erwerb (Bürgergeld)": {
-      "anteil_mehr_haushalte_pct": 16.8,
-      "anteil_mehr_personen_pct": 31.0,
-      "mittel_mehr_monat_eur": -41,
-      "median_mehr_monat_eur": -69,
+      "anteil_mehr_haushalte_pct": 20.9,
+      "anteil_mehr_personen_pct": 39.6,
+      "mittel_mehr_monat_eur": -33,
+      "median_mehr_monat_eur": -63,
       "haushalte_mio": 2.42
      }
     },
     "erwerbsfaehige_haushalte": {
-     "anteil_mehr_haushalte_pct": 78.1,
-     "anteil_mehr_personen_pct": 81.0,
-     "mittel_mehr_monat_eur": 198,
-     "median_mehr_monat_eur": 231,
+     "anteil_mehr_haushalte_pct": 79.9,
+     "anteil_mehr_personen_pct": 83.2,
+     "mittel_mehr_monat_eur": 226,
+     "median_mehr_monat_eur": 254,
      "haushalte_mio": 28.95
     },
     "mit_teilzeit": {
-     "anteil_mehr_haushalte_pct": 90.4,
-     "anteil_mehr_personen_pct": 90.5,
-     "mittel_mehr_monat_eur": 306,
-     "median_mehr_monat_eur": 328,
+     "anteil_mehr_haushalte_pct": 91.5,
+     "anteil_mehr_personen_pct": 91.7,
+     "mittel_mehr_monat_eur": 337,
+     "median_mehr_monat_eur": 364,
      "haushalte_mio": 9.83
     },
     "mit_kindern": {
-     "anteil_mehr_haushalte_pct": 81.6,
-     "anteil_mehr_personen_pct": 82.5,
-     "mittel_mehr_monat_eur": 235,
-     "median_mehr_monat_eur": 288,
+     "anteil_mehr_haushalte_pct": 84.7,
+     "anteil_mehr_personen_pct": 85.7,
+     "mittel_mehr_monat_eur": 274,
+     "median_mehr_monat_eur": 327,
      "haushalte_mio": 8.42
     },
     "dezile": [
      {
       "dezil": 1,
       "obergrenze_aequiv_monat_eur": 1386,
-      "anteil_mehr_haushalte_pct": 35.8,
-      "anteil_mehr_personen_pct": 41.6,
-      "mittel_mehr_monat_eur": -2,
+      "anteil_mehr_haushalte_pct": 38.0,
+      "anteil_mehr_personen_pct": 46.8,
+      "mittel_mehr_monat_eur": 4,
       "median_mehr_monat_eur": 0,
       "haushalte_mio": 5.25
      },
      {
       "dezil": 2,
       "obergrenze_aequiv_monat_eur": 1677,
-      "anteil_mehr_haushalte_pct": 91.0,
-      "anteil_mehr_personen_pct": 95.5,
-      "mittel_mehr_monat_eur": 189,
-      "median_mehr_monat_eur": 102,
+      "anteil_mehr_haushalte_pct": 97.6,
+      "anteil_mehr_personen_pct": 98.8,
+      "mittel_mehr_monat_eur": 200,
+      "median_mehr_monat_eur": 111,
       "haushalte_mio": 4.04
      },
      {
       "dezil": 3,
       "obergrenze_aequiv_monat_eur": 2022,
-      "anteil_mehr_haushalte_pct": 74.2,
-      "anteil_mehr_personen_pct": 86.5,
-      "mittel_mehr_monat_eur": 201,
-      "median_mehr_monat_eur": 239,
+      "anteil_mehr_haushalte_pct": 76.0,
+      "anteil_mehr_personen_pct": 87.6,
+      "mittel_mehr_monat_eur": 217,
+      "median_mehr_monat_eur": 275,
       "haushalte_mio": 4.13
      },
      {
       "dezil": 4,
       "obergrenze_aequiv_monat_eur": 2347,
-      "anteil_mehr_haushalte_pct": 82.7,
-      "anteil_mehr_personen_pct": 90.3,
-      "mittel_mehr_monat_eur": 212,
-      "median_mehr_monat_eur": 230,
+      "anteil_mehr_haushalte_pct": 82.9,
+      "anteil_mehr_personen_pct": 90.7,
+      "mittel_mehr_monat_eur": 232,
+      "median_mehr_monat_eur": 255,
       "haushalte_mio": 3.91
      },
      {
       "dezil": 5,
       "obergrenze_aequiv_monat_eur": 2673,
-      "anteil_mehr_haushalte_pct": 70.0,
-      "anteil_mehr_personen_pct": 76.3,
-      "mittel_mehr_monat_eur": 218,
-      "median_mehr_monat_eur": 229,
+      "anteil_mehr_haushalte_pct": 74.0,
+      "anteil_mehr_personen_pct": 80.6,
+      "mittel_mehr_monat_eur": 240,
+      "median_mehr_monat_eur": 245,
       "haushalte_mio": 3.93
      },
      {
       "dezil": 6,
       "obergrenze_aequiv_monat_eur": 3029,
-      "anteil_mehr_haushalte_pct": 67.6,
-      "anteil_mehr_personen_pct": 73.1,
-      "mittel_mehr_monat_eur": 202,
-      "median_mehr_monat_eur": 208,
+      "anteil_mehr_haushalte_pct": 68.2,
+      "anteil_mehr_personen_pct": 73.9,
+      "mittel_mehr_monat_eur": 226,
+      "median_mehr_monat_eur": 225,
       "haushalte_mio": 3.93
      },
      {
       "dezil": 7,
       "obergrenze_aequiv_monat_eur": 3442,
-      "anteil_mehr_haushalte_pct": 68.8,
-      "anteil_mehr_personen_pct": 73.7,
-      "mittel_mehr_monat_eur": 181,
-      "median_mehr_monat_eur": 193,
+      "anteil_mehr_haushalte_pct": 69.6,
+      "anteil_mehr_personen_pct": 74.8,
+      "mittel_mehr_monat_eur": 208,
+      "median_mehr_monat_eur": 211,
       "haushalte_mio": 3.89
      },
      {
       "dezil": 8,
       "obergrenze_aequiv_monat_eur": 4003,
-      "anteil_mehr_haushalte_pct": 66.9,
-      "anteil_mehr_personen_pct": 70.6,
-      "mittel_mehr_monat_eur": 108,
-      "median_mehr_monat_eur": 172,
+      "anteil_mehr_haushalte_pct": 67.7,
+      "anteil_mehr_personen_pct": 71.9,
+      "mittel_mehr_monat_eur": 137,
+      "median_mehr_monat_eur": 194,
       "haushalte_mio": 3.89
      },
      {
       "dezil": 9,
       "obergrenze_aequiv_monat_eur": 4970,
-      "anteil_mehr_haushalte_pct": 63.6,
-      "anteil_mehr_personen_pct": 64.5,
-      "mittel_mehr_monat_eur": -11,
-      "median_mehr_monat_eur": 123,
+      "anteil_mehr_haushalte_pct": 66.3,
+      "anteil_mehr_personen_pct": 67.5,
+      "mittel_mehr_monat_eur": 20,
+      "median_mehr_monat_eur": 145,
       "haushalte_mio": 3.98
      },
      {
       "dezil": 10,
       "obergrenze_aequiv_monat_eur": 51701,
-      "anteil_mehr_haushalte_pct": 41.4,
-      "anteil_mehr_personen_pct": 41.2,
-      "mittel_mehr_monat_eur": -391,
-      "median_mehr_monat_eur": -88,
+      "anteil_mehr_haushalte_pct": 44.7,
+      "anteil_mehr_personen_pct": 45.0,
+      "mittel_mehr_monat_eur": -352,
+      "median_mehr_monat_eur": -51,
       "haushalte_mio": 4.16
      }
     ],
     "armut": {
      "median_aequiv_monat_heute": 2673,
-     "median_aequiv_monat_neu": 2820,
+     "median_aequiv_monat_neu": 2835,
      "quote_heute_pct": 18.3,
      "quote_neu_relativ_pct": 16.1,
-     "quote_neu_verankert_pct": 13.8,
+     "quote_neu_verankert_pct": 13.7,
      "rentner": {
       "heute_pct": 22.3,
-      "neu_relativ_pct": 25.0,
-      "neu_verankert_pct": 21.5
+      "neu_relativ_pct": 25.2,
+      "neu_verankert_pct": 21.4
      },
      "erwerbsfaehige": {
       "heute_pct": 17.1,
-      "neu_relativ_pct": 13.6,
-      "neu_verankert_pct": 11.6
+      "neu_relativ_pct": 13.5,
+      "neu_verankert_pct": 11.4
      },
-     "untere40_zuwachs_pct": 6.7,
-     "alle_zuwachs_pct": 2.3,
+     "untere40_zuwachs_pct": 7.3,
+     "alle_zuwachs_pct": 2.9,
      "hinweis": "Modellpopulation (synthetisch, 2028, Kaufkraft 2026); Äquivalenzeinkommen neu = heute × neu/heute je Haushalt; Quote heute ist die des Modells, nicht die amtliche (16,1 %, EU-SILC 2025); statisch, ohne Preisniveauschub"
     },
     "kosten_mrd": {
-     "grundauskommen_neu": 35.0,
-     "davon_ohne_erwerb": 23.8,
-     "davon_erwerbstaetige_haushalte": 9.0,
+     "grundauskommen_neu": 34.4,
+     "davon_ohne_erwerb": 23.6,
+     "davon_erwerbstaetige_haushalte": 8.6,
      "davon_rentner": 2.2,
      "buergergeld_naeherung_heute": 50.9,
      "grundsicherung_alter_heute": 2.7,
@@ -873,244 +873,244 @@
    },
    "0.5": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 75.2,
-     "anteil_mehr_personen_pct": 80.9,
-     "mittel_mehr_monat_eur": 308,
-     "median_mehr_monat_eur": 338,
+     "anteil_mehr_haushalte_pct": 77.0,
+     "anteil_mehr_personen_pct": 82.7,
+     "mittel_mehr_monat_eur": 331,
+     "median_mehr_monat_eur": 370,
      "haushalte_mio": 41.1
     },
     "haushaltstyp": {
      "allein": {
-      "anteil_mehr_haushalte_pct": 73.0,
-      "anteil_mehr_personen_pct": 73.0,
-      "mittel_mehr_monat_eur": 270,
-      "median_mehr_monat_eur": 462,
+      "anteil_mehr_haushalte_pct": 73.8,
+      "anteil_mehr_personen_pct": 73.8,
+      "mittel_mehr_monat_eur": 286,
+      "median_mehr_monat_eur": 478,
       "haushalte_mio": 10.7
      },
      "alleinerziehend": {
-      "anteil_mehr_haushalte_pct": 85.1,
-      "anteil_mehr_personen_pct": 87.7,
-      "mittel_mehr_monat_eur": 322,
-      "median_mehr_monat_eur": 401,
+      "anteil_mehr_haushalte_pct": 87.8,
+      "anteil_mehr_personen_pct": 90.8,
+      "mittel_mehr_monat_eur": 345,
+      "median_mehr_monat_eur": 427,
       "haushalte_mio": 1.62
      },
      "paar_ohne": {
-      "anteil_mehr_haushalte_pct": 91.5,
-      "anteil_mehr_personen_pct": 91.9,
-      "mittel_mehr_monat_eur": 695,
-      "median_mehr_monat_eur": 835,
+      "anteil_mehr_haushalte_pct": 92.0,
+      "anteil_mehr_personen_pct": 92.4,
+      "mittel_mehr_monat_eur": 729,
+      "median_mehr_monat_eur": 869,
       "haushalte_mio": 9.83
      },
      "paar_mit": {
-      "anteil_mehr_haushalte_pct": 90.1,
-      "anteil_mehr_personen_pct": 90.6,
-      "mittel_mehr_monat_eur": 617,
-      "median_mehr_monat_eur": 726,
+      "anteil_mehr_haushalte_pct": 91.8,
+      "anteil_mehr_personen_pct": 92.3,
+      "mittel_mehr_monat_eur": 662,
+      "median_mehr_monat_eur": 770,
       "haushalte_mio": 6.8
      },
      "rentner_allein": {
-      "anteil_mehr_haushalte_pct": 47.5,
-      "anteil_mehr_personen_pct": 47.5,
-      "mittel_mehr_monat_eur": -114,
-      "median_mehr_monat_eur": 0,
+      "anteil_mehr_haushalte_pct": 50.9,
+      "anteil_mehr_personen_pct": 50.9,
+      "mittel_mehr_monat_eur": -110,
+      "median_mehr_monat_eur": 1,
       "haushalte_mio": 6.3
      },
      "rentner_paar": {
-      "anteil_mehr_haushalte_pct": 61.6,
-      "anteil_mehr_personen_pct": 61.6,
-      "mittel_mehr_monat_eur": -180,
-      "median_mehr_monat_eur": 25,
+      "anteil_mehr_haushalte_pct": 65.5,
+      "anteil_mehr_personen_pct": 65.5,
+      "mittel_mehr_monat_eur": -171,
+      "median_mehr_monat_eur": 33,
       "haushalte_mio": 5.85
      }
     },
     "status": {
      "Hauptperson Beamte": {
-      "anteil_mehr_haushalte_pct": 52.7,
-      "anteil_mehr_personen_pct": 64.8,
-      "mittel_mehr_monat_eur": 32,
-      "median_mehr_monat_eur": 34,
+      "anteil_mehr_haushalte_pct": 55.0,
+      "anteil_mehr_personen_pct": 67.4,
+      "mittel_mehr_monat_eur": 64,
+      "median_mehr_monat_eur": 64,
       "haushalte_mio": 1.96
      },
      "Hauptperson Minijob": {
-      "anteil_mehr_haushalte_pct": 46.0,
-      "anteil_mehr_personen_pct": 66.4,
-      "mittel_mehr_monat_eur": 149,
-      "median_mehr_monat_eur": -18,
+      "anteil_mehr_haushalte_pct": 47.1,
+      "anteil_mehr_personen_pct": 67.7,
+      "mittel_mehr_monat_eur": 165,
+      "median_mehr_monat_eur": -12,
       "haushalte_mio": 0.87
      },
      "Hauptperson Teilzeit": {
-      "anteil_mehr_haushalte_pct": 98.9,
-      "anteil_mehr_personen_pct": 99.2,
-      "mittel_mehr_monat_eur": 559,
-      "median_mehr_monat_eur": 489,
+      "anteil_mehr_haushalte_pct": 99.4,
+      "anteil_mehr_personen_pct": 99.5,
+      "mittel_mehr_monat_eur": 582,
+      "median_mehr_monat_eur": 504,
       "haushalte_mio": 4.6
      },
      "Hauptperson Vollzeit": {
-      "anteil_mehr_haushalte_pct": 98.4,
-      "anteil_mehr_personen_pct": 98.2,
-      "mittel_mehr_monat_eur": 714,
-      "median_mehr_monat_eur": 685,
+      "anteil_mehr_haushalte_pct": 98.5,
+      "anteil_mehr_personen_pct": 98.4,
+      "mittel_mehr_monat_eur": 748,
+      "median_mehr_monat_eur": 724,
       "haushalte_mio": 15.2
      },
      "Hauptperson selbständig": {
-      "anteil_mehr_haushalte_pct": 75.7,
-      "anteil_mehr_personen_pct": 78.4,
-      "mittel_mehr_monat_eur": 234,
-      "median_mehr_monat_eur": 259,
+      "anteil_mehr_haushalte_pct": 78.0,
+      "anteil_mehr_personen_pct": 80.5,
+      "mittel_mehr_monat_eur": 268,
+      "median_mehr_monat_eur": 284,
       "haushalte_mio": 3.9
      },
      "Rentner": {
-      "anteil_mehr_haushalte_pct": 54.3,
-      "anteil_mehr_personen_pct": 56.7,
-      "mittel_mehr_monat_eur": -146,
-      "median_mehr_monat_eur": 7,
+      "anteil_mehr_haushalte_pct": 57.9,
+      "anteil_mehr_personen_pct": 60.4,
+      "mittel_mehr_monat_eur": -139,
+      "median_mehr_monat_eur": 13,
       "haushalte_mio": 12.15
      },
      "ohne Erwerb (Bürgergeld)": {
-      "anteil_mehr_haushalte_pct": 17.6,
-      "anteil_mehr_personen_pct": 32.7,
-      "mittel_mehr_monat_eur": -36,
-      "median_mehr_monat_eur": -69,
+      "anteil_mehr_haushalte_pct": 21.8,
+      "anteil_mehr_personen_pct": 41.3,
+      "mittel_mehr_monat_eur": -28,
+      "median_mehr_monat_eur": -63,
       "haushalte_mio": 2.42
      }
     },
     "erwerbsfaehige_haushalte": {
-     "anteil_mehr_haushalte_pct": 84.0,
-     "anteil_mehr_personen_pct": 87.8,
-     "mittel_mehr_monat_eur": 499,
-     "median_mehr_monat_eur": 497,
+     "anteil_mehr_haushalte_pct": 85.0,
+     "anteil_mehr_personen_pct": 89.1,
+     "mittel_mehr_monat_eur": 528,
+     "median_mehr_monat_eur": 523,
      "haushalte_mio": 28.95
     },
     "mit_teilzeit": {
-     "anteil_mehr_haushalte_pct": 96.1,
-     "anteil_mehr_personen_pct": 96.0,
-     "mittel_mehr_monat_eur": 642,
-     "median_mehr_monat_eur": 696,
+     "anteil_mehr_haushalte_pct": 96.7,
+     "anteil_mehr_personen_pct": 96.5,
+     "mittel_mehr_monat_eur": 674,
+     "median_mehr_monat_eur": 730,
      "haushalte_mio": 9.83
     },
     "mit_kindern": {
-     "anteil_mehr_haushalte_pct": 89.1,
-     "anteil_mehr_personen_pct": 90.1,
-     "mittel_mehr_monat_eur": 560,
-     "median_mehr_monat_eur": 597,
+     "anteil_mehr_haushalte_pct": 91.0,
+     "anteil_mehr_personen_pct": 92.1,
+     "mittel_mehr_monat_eur": 601,
+     "median_mehr_monat_eur": 639,
      "haushalte_mio": 8.42
     },
     "dezile": [
      {
       "dezil": 1,
       "obergrenze_aequiv_monat_eur": 1386,
-      "anteil_mehr_haushalte_pct": 38.0,
-      "anteil_mehr_personen_pct": 44.4,
-      "mittel_mehr_monat_eur": 13,
+      "anteil_mehr_haushalte_pct": 40.7,
+      "anteil_mehr_personen_pct": 49.8,
+      "mittel_mehr_monat_eur": 19,
       "median_mehr_monat_eur": 0,
       "haushalte_mio": 5.25
      },
      {
       "dezil": 2,
       "obergrenze_aequiv_monat_eur": 1677,
-      "anteil_mehr_haushalte_pct": 99.3,
+      "anteil_mehr_haushalte_pct": 99.5,
       "anteil_mehr_personen_pct": 99.7,
-      "mittel_mehr_monat_eur": 264,
-      "median_mehr_monat_eur": 161,
+      "mittel_mehr_monat_eur": 276,
+      "median_mehr_monat_eur": 172,
       "haushalte_mio": 4.04
      },
      {
       "dezil": 3,
       "obergrenze_aequiv_monat_eur": 2022,
-      "anteil_mehr_haushalte_pct": 99.7,
-      "anteil_mehr_personen_pct": 99.6,
-      "mittel_mehr_monat_eur": 333,
-      "median_mehr_monat_eur": 459,
+      "anteil_mehr_haushalte_pct": 99.8,
+      "anteil_mehr_personen_pct": 99.7,
+      "mittel_mehr_monat_eur": 350,
+      "median_mehr_monat_eur": 478,
       "haushalte_mio": 4.13
      },
      {
       "dezil": 4,
       "obergrenze_aequiv_monat_eur": 2347,
-      "anteil_mehr_haushalte_pct": 84.8,
-      "anteil_mehr_personen_pct": 91.6,
-      "mittel_mehr_monat_eur": 389,
-      "median_mehr_monat_eur": 478,
+      "anteil_mehr_haushalte_pct": 90.1,
+      "anteil_mehr_personen_pct": 94.3,
+      "mittel_mehr_monat_eur": 409,
+      "median_mehr_monat_eur": 493,
       "haushalte_mio": 3.91
      },
      {
       "dezil": 5,
       "obergrenze_aequiv_monat_eur": 2673,
-      "anteil_mehr_haushalte_pct": 83.5,
-      "anteil_mehr_personen_pct": 90.4,
-      "mittel_mehr_monat_eur": 438,
-      "median_mehr_monat_eur": 479,
+      "anteil_mehr_haushalte_pct": 83.8,
+      "anteil_mehr_personen_pct": 90.8,
+      "mittel_mehr_monat_eur": 461,
+      "median_mehr_monat_eur": 495,
       "haushalte_mio": 3.93
      },
      {
       "dezil": 6,
       "obergrenze_aequiv_monat_eur": 3029,
-      "anteil_mehr_haushalte_pct": 83.1,
-      "anteil_mehr_personen_pct": 89.8,
-      "mittel_mehr_monat_eur": 462,
-      "median_mehr_monat_eur": 489,
+      "anteil_mehr_haushalte_pct": 83.3,
+      "anteil_mehr_personen_pct": 90.0,
+      "mittel_mehr_monat_eur": 487,
+      "median_mehr_monat_eur": 506,
       "haushalte_mio": 3.93
      },
      {
       "dezil": 7,
       "obergrenze_aequiv_monat_eur": 3442,
-      "anteil_mehr_haushalte_pct": 72.5,
-      "anteil_mehr_personen_pct": 78.8,
-      "mittel_mehr_monat_eur": 487,
-      "median_mehr_monat_eur": 518,
+      "anteil_mehr_haushalte_pct": 78.5,
+      "anteil_mehr_personen_pct": 84.8,
+      "mittel_mehr_monat_eur": 514,
+      "median_mehr_monat_eur": 536,
       "haushalte_mio": 3.89
      },
      {
       "dezil": 8,
       "obergrenze_aequiv_monat_eur": 4003,
-      "anteil_mehr_haushalte_pct": 71.1,
-      "anteil_mehr_personen_pct": 76.4,
-      "mittel_mehr_monat_eur": 451,
-      "median_mehr_monat_eur": 544,
+      "anteil_mehr_haushalte_pct": 71.5,
+      "anteil_mehr_personen_pct": 77.1,
+      "mittel_mehr_monat_eur": 480,
+      "median_mehr_monat_eur": 565,
       "haushalte_mio": 3.89
      },
      {
       "dezil": 9,
       "obergrenze_aequiv_monat_eur": 4970,
-      "anteil_mehr_haushalte_pct": 70.9,
-      "anteil_mehr_personen_pct": 74.8,
-      "mittel_mehr_monat_eur": 367,
-      "median_mehr_monat_eur": 508,
+      "anteil_mehr_haushalte_pct": 72.4,
+      "anteil_mehr_personen_pct": 76.1,
+      "mittel_mehr_monat_eur": 399,
+      "median_mehr_monat_eur": 531,
       "haushalte_mio": 3.98
      },
      {
       "dezil": 10,
       "obergrenze_aequiv_monat_eur": 51701,
-      "anteil_mehr_haushalte_pct": 60.6,
-      "anteil_mehr_personen_pct": 63.4,
-      "mittel_mehr_monat_eur": -1,
-      "median_mehr_monat_eur": 300,
+      "anteil_mehr_haushalte_pct": 61.6,
+      "anteil_mehr_personen_pct": 64.8,
+      "mittel_mehr_monat_eur": 40,
+      "median_mehr_monat_eur": 345,
       "haushalte_mio": 4.16
      }
     ],
     "armut": {
      "median_aequiv_monat_heute": 2673,
-     "median_aequiv_monat_neu": 2979,
+     "median_aequiv_monat_neu": 2997,
      "quote_heute_pct": 18.3,
      "quote_neu_relativ_pct": 17.5,
-     "quote_neu_verankert_pct": 12.9,
+     "quote_neu_verankert_pct": 12.8,
      "rentner": {
       "heute_pct": 22.3,
-      "neu_relativ_pct": 28.2,
-      "neu_verankert_pct": 20.8
+      "neu_relativ_pct": 28.6,
+      "neu_verankert_pct": 20.7
      },
      "erwerbsfaehige": {
       "heute_pct": 17.1,
-      "neu_relativ_pct": 14.4,
-      "neu_verankert_pct": 10.7
+      "neu_relativ_pct": 14.3,
+      "neu_verankert_pct": 10.6
      },
-     "untere40_zuwachs_pct": 11.0,
-     "alle_zuwachs_pct": 7.6,
+     "untere40_zuwachs_pct": 11.6,
+     "alle_zuwachs_pct": 8.2,
      "hinweis": "Modellpopulation (synthetisch, 2028, Kaufkraft 2026); Äquivalenzeinkommen neu = heute × neu/heute je Haushalt; Quote heute ist die des Modells, nicht die amtliche (16,1 %, EU-SILC 2025); statisch, ohne Preisniveauschub"
     },
     "kosten_mrd": {
-     "grundauskommen_neu": 33.6,
-     "davon_ohne_erwerb": 23.7,
-     "davon_erwerbstaetige_haushalte": 7.8,
+     "grundauskommen_neu": 33.1,
+     "davon_ohne_erwerb": 23.4,
+     "davon_erwerbstaetige_haushalte": 7.5,
      "davon_rentner": 2.1,
      "buergergeld_naeherung_heute": 50.9,
      "grundsicherung_alter_heute": 2.7,
@@ -1125,244 +1125,244 @@
    },
    "0.8": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 78.6,
-     "anteil_mehr_personen_pct": 83.6,
-     "mittel_mehr_monat_eur": 442,
-     "median_mehr_monat_eur": 480,
+     "anteil_mehr_haushalte_pct": 79.5,
+     "anteil_mehr_personen_pct": 84.8,
+     "mittel_mehr_monat_eur": 464,
+     "median_mehr_monat_eur": 511,
      "haushalte_mio": 41.1
     },
     "haushaltstyp": {
      "allein": {
-      "anteil_mehr_haushalte_pct": 73.7,
-      "anteil_mehr_personen_pct": 73.7,
-      "mittel_mehr_monat_eur": 370,
-      "median_mehr_monat_eur": 583,
+      "anteil_mehr_haushalte_pct": 74.6,
+      "anteil_mehr_personen_pct": 74.6,
+      "mittel_mehr_monat_eur": 386,
+      "median_mehr_monat_eur": 596,
       "haushalte_mio": 10.7
      },
      "alleinerziehend": {
-      "anteil_mehr_haushalte_pct": 86.1,
-      "anteil_mehr_personen_pct": 88.7,
-      "mittel_mehr_monat_eur": 416,
-      "median_mehr_monat_eur": 489,
+      "anteil_mehr_haushalte_pct": 88.6,
+      "anteil_mehr_personen_pct": 91.6,
+      "mittel_mehr_monat_eur": 439,
+      "median_mehr_monat_eur": 512,
       "haushalte_mio": 1.62
      },
      "paar_ohne": {
-      "anteil_mehr_haushalte_pct": 92.9,
-      "anteil_mehr_personen_pct": 93.3,
-      "mittel_mehr_monat_eur": 950,
-      "median_mehr_monat_eur": 1122,
+      "anteil_mehr_haushalte_pct": 93.4,
+      "anteil_mehr_personen_pct": 93.8,
+      "mittel_mehr_monat_eur": 985,
+      "median_mehr_monat_eur": 1157,
       "haushalte_mio": 9.83
      },
      "paar_mit": {
-      "anteil_mehr_haushalte_pct": 91.7,
-      "anteil_mehr_personen_pct": 92.1,
-      "mittel_mehr_monat_eur": 837,
-      "median_mehr_monat_eur": 921,
+      "anteil_mehr_haushalte_pct": 93.2,
+      "anteil_mehr_personen_pct": 93.7,
+      "mittel_mehr_monat_eur": 882,
+      "median_mehr_monat_eur": 963,
       "haushalte_mio": 6.8
      },
      "rentner_allein": {
-      "anteil_mehr_haushalte_pct": 58.7,
-      "anteil_mehr_personen_pct": 58.7,
-      "mittel_mehr_monat_eur": -100,
-      "median_mehr_monat_eur": 10,
+      "anteil_mehr_haushalte_pct": 59.4,
+      "anteil_mehr_personen_pct": 59.4,
+      "mittel_mehr_monat_eur": -95,
+      "median_mehr_monat_eur": 15,
       "haushalte_mio": 6.3
      },
      "rentner_paar": {
-      "anteil_mehr_haushalte_pct": 67.4,
-      "anteil_mehr_personen_pct": 67.4,
-      "mittel_mehr_monat_eur": -151,
-      "median_mehr_monat_eur": 50,
+      "anteil_mehr_haushalte_pct": 68.3,
+      "anteil_mehr_personen_pct": 68.3,
+      "mittel_mehr_monat_eur": -142,
+      "median_mehr_monat_eur": 59,
       "haushalte_mio": 5.85
      }
     },
     "status": {
      "Hauptperson Beamte": {
-      "anteil_mehr_haushalte_pct": 56.4,
-      "anteil_mehr_personen_pct": 69.2,
-      "mittel_mehr_monat_eur": 112,
-      "median_mehr_monat_eur": 101,
+      "anteil_mehr_haushalte_pct": 58.1,
+      "anteil_mehr_personen_pct": 71.1,
+      "mittel_mehr_monat_eur": 144,
+      "median_mehr_monat_eur": 135,
       "haushalte_mio": 1.96
      },
      "Hauptperson Minijob": {
-      "anteil_mehr_haushalte_pct": 49.1,
-      "anteil_mehr_personen_pct": 69.5,
-      "mittel_mehr_monat_eur": 221,
-      "median_mehr_monat_eur": -1,
+      "anteil_mehr_haushalte_pct": 53.9,
+      "anteil_mehr_personen_pct": 72.3,
+      "mittel_mehr_monat_eur": 238,
+      "median_mehr_monat_eur": 5,
       "haushalte_mio": 0.87
      },
      "Hauptperson Teilzeit": {
       "anteil_mehr_haushalte_pct": 99.9,
       "anteil_mehr_personen_pct": 99.9,
-      "mittel_mehr_monat_eur": 718,
-      "median_mehr_monat_eur": 634,
+      "mittel_mehr_monat_eur": 741,
+      "median_mehr_monat_eur": 654,
       "haushalte_mio": 4.6
      },
      "Hauptperson Vollzeit": {
-      "anteil_mehr_haushalte_pct": 99.1,
-      "anteil_mehr_personen_pct": 99.0,
-      "mittel_mehr_monat_eur": 974,
-      "median_mehr_monat_eur": 930,
+      "anteil_mehr_haushalte_pct": 99.2,
+      "anteil_mehr_personen_pct": 99.1,
+      "mittel_mehr_monat_eur": 1008,
+      "median_mehr_monat_eur": 968,
       "haushalte_mio": 15.2
      },
      "Hauptperson selbständig": {
-      "anteil_mehr_haushalte_pct": 77.7,
-      "anteil_mehr_personen_pct": 81.0,
-      "mittel_mehr_monat_eur": 315,
-      "median_mehr_monat_eur": 294,
+      "anteil_mehr_haushalte_pct": 79.7,
+      "anteil_mehr_personen_pct": 82.7,
+      "mittel_mehr_monat_eur": 349,
+      "median_mehr_monat_eur": 309,
       "haushalte_mio": 3.9
      },
      "Rentner": {
-      "anteil_mehr_haushalte_pct": 62.9,
-      "anteil_mehr_personen_pct": 64.4,
-      "mittel_mehr_monat_eur": -125,
-      "median_mehr_monat_eur": 27,
+      "anteil_mehr_haushalte_pct": 63.7,
+      "anteil_mehr_personen_pct": 65.2,
+      "mittel_mehr_monat_eur": -118,
+      "median_mehr_monat_eur": 32,
       "haushalte_mio": 12.15
      },
      "ohne Erwerb (Bürgergeld)": {
-      "anteil_mehr_haushalte_pct": 18.0,
-      "anteil_mehr_personen_pct": 33.2,
-      "mittel_mehr_monat_eur": -34,
-      "median_mehr_monat_eur": -69,
+      "anteil_mehr_haushalte_pct": 22.7,
+      "anteil_mehr_personen_pct": 42.9,
+      "mittel_mehr_monat_eur": -25,
+      "median_mehr_monat_eur": -63,
       "haushalte_mio": 2.42
      }
     },
     "erwerbsfaehige_haushalte": {
-     "anteil_mehr_haushalte_pct": 85.1,
-     "anteil_mehr_personen_pct": 89.1,
-     "mittel_mehr_monat_eur": 679,
-     "median_mehr_monat_eur": 680,
+     "anteil_mehr_haushalte_pct": 86.1,
+     "anteil_mehr_personen_pct": 90.3,
+     "mittel_mehr_monat_eur": 709,
+     "median_mehr_monat_eur": 708,
      "haushalte_mio": 28.95
     },
     "mit_teilzeit": {
-     "anteil_mehr_haushalte_pct": 97.4,
-     "anteil_mehr_personen_pct": 97.2,
-     "mittel_mehr_monat_eur": 842,
-     "median_mehr_monat_eur": 891,
+     "anteil_mehr_haushalte_pct": 97.7,
+     "anteil_mehr_personen_pct": 97.5,
+     "mittel_mehr_monat_eur": 875,
+     "median_mehr_monat_eur": 926,
      "haushalte_mio": 9.83
     },
     "mit_kindern": {
-     "anteil_mehr_haushalte_pct": 90.6,
-     "anteil_mehr_personen_pct": 91.6,
-     "mittel_mehr_monat_eur": 756,
-     "median_mehr_monat_eur": 786,
+     "anteil_mehr_haushalte_pct": 92.3,
+     "anteil_mehr_personen_pct": 93.4,
+     "mittel_mehr_monat_eur": 797,
+     "median_mehr_monat_eur": 832,
      "haushalte_mio": 8.42
     },
     "dezile": [
      {
       "dezil": 1,
       "obergrenze_aequiv_monat_eur": 1386,
-      "anteil_mehr_haushalte_pct": 39.8,
-      "anteil_mehr_personen_pct": 46.1,
-      "mittel_mehr_monat_eur": 21,
+      "anteil_mehr_haushalte_pct": 42.9,
+      "anteil_mehr_personen_pct": 52.1,
+      "mittel_mehr_monat_eur": 27,
       "median_mehr_monat_eur": 0,
       "haushalte_mio": 5.25
      },
      {
       "dezil": 2,
       "obergrenze_aequiv_monat_eur": 1677,
-      "anteil_mehr_haushalte_pct": 99.3,
+      "anteil_mehr_haushalte_pct": 99.5,
       "anteil_mehr_personen_pct": 99.7,
-      "mittel_mehr_monat_eur": 310,
-      "median_mehr_monat_eur": 201,
+      "mittel_mehr_monat_eur": 323,
+      "median_mehr_monat_eur": 213,
       "haushalte_mio": 4.04
      },
      {
       "dezil": 3,
       "obergrenze_aequiv_monat_eur": 2022,
-      "anteil_mehr_haushalte_pct": 99.7,
-      "anteil_mehr_personen_pct": 99.6,
-      "mittel_mehr_monat_eur": 411,
-      "median_mehr_monat_eur": 554,
+      "anteil_mehr_haushalte_pct": 99.8,
+      "anteil_mehr_personen_pct": 99.7,
+      "mittel_mehr_monat_eur": 428,
+      "median_mehr_monat_eur": 574,
       "haushalte_mio": 4.13
      },
      {
       "dezil": 4,
       "obergrenze_aequiv_monat_eur": 2347,
-      "anteil_mehr_haushalte_pct": 98.6,
-      "anteil_mehr_personen_pct": 98.3,
-      "mittel_mehr_monat_eur": 495,
-      "median_mehr_monat_eur": 595,
+      "anteil_mehr_haushalte_pct": 98.8,
+      "anteil_mehr_personen_pct": 98.6,
+      "mittel_mehr_monat_eur": 515,
+      "median_mehr_monat_eur": 610,
       "haushalte_mio": 3.91
      },
      {
       "dezil": 5,
       "obergrenze_aequiv_monat_eur": 2673,
-      "anteil_mehr_haushalte_pct": 87.4,
-      "anteil_mehr_personen_pct": 92.4,
-      "mittel_mehr_monat_eur": 569,
-      "median_mehr_monat_eur": 621,
+      "anteil_mehr_haushalte_pct": 88.7,
+      "anteil_mehr_personen_pct": 93.2,
+      "mittel_mehr_monat_eur": 592,
+      "median_mehr_monat_eur": 638,
       "haushalte_mio": 3.93
      },
      {
       "dezil": 6,
       "obergrenze_aequiv_monat_eur": 3029,
-      "anteil_mehr_haushalte_pct": 83.3,
-      "anteil_mehr_personen_pct": 90.0,
-      "mittel_mehr_monat_eur": 618,
-      "median_mehr_monat_eur": 658,
+      "anteil_mehr_haushalte_pct": 83.5,
+      "anteil_mehr_personen_pct": 90.2,
+      "mittel_mehr_monat_eur": 643,
+      "median_mehr_monat_eur": 677,
       "haushalte_mio": 3.93
      },
      {
       "dezil": 7,
       "obergrenze_aequiv_monat_eur": 3442,
-      "anteil_mehr_haushalte_pct": 81.2,
-      "anteil_mehr_personen_pct": 87.5,
-      "mittel_mehr_monat_eur": 669,
-      "median_mehr_monat_eur": 713,
+      "anteil_mehr_haushalte_pct": 82.6,
+      "anteil_mehr_personen_pct": 88.9,
+      "mittel_mehr_monat_eur": 697,
+      "median_mehr_monat_eur": 732,
       "haushalte_mio": 3.89
      },
      {
       "dezil": 8,
       "obergrenze_aequiv_monat_eur": 4003,
-      "anteil_mehr_haushalte_pct": 71.9,
-      "anteil_mehr_personen_pct": 77.8,
-      "mittel_mehr_monat_eur": 655,
-      "median_mehr_monat_eur": 766,
+      "anteil_mehr_haushalte_pct": 72.1,
+      "anteil_mehr_personen_pct": 78.0,
+      "mittel_mehr_monat_eur": 685,
+      "median_mehr_monat_eur": 787,
       "haushalte_mio": 3.89
      },
      {
       "dezil": 9,
       "obergrenze_aequiv_monat_eur": 4970,
-      "anteil_mehr_haushalte_pct": 72.6,
-      "anteil_mehr_personen_pct": 77.1,
-      "mittel_mehr_monat_eur": 594,
-      "median_mehr_monat_eur": 738,
+      "anteil_mehr_haushalte_pct": 73.9,
+      "anteil_mehr_personen_pct": 78.1,
+      "mittel_mehr_monat_eur": 626,
+      "median_mehr_monat_eur": 762,
       "haushalte_mio": 3.98
      },
      {
       "dezil": 10,
       "obergrenze_aequiv_monat_eur": 51701,
-      "anteil_mehr_haushalte_pct": 64.1,
-      "anteil_mehr_personen_pct": 67.8,
-      "mittel_mehr_monat_eur": 233,
-      "median_mehr_monat_eur": 552,
+      "anteil_mehr_haushalte_pct": 65.1,
+      "anteil_mehr_personen_pct": 69.0,
+      "mittel_mehr_monat_eur": 274,
+      "median_mehr_monat_eur": 596,
       "haushalte_mio": 4.16
      }
     ],
     "armut": {
      "median_aequiv_monat_heute": 2673,
-     "median_aequiv_monat_neu": 3074,
+     "median_aequiv_monat_neu": 3090,
      "quote_heute_pct": 18.3,
      "quote_neu_relativ_pct": 18.1,
-     "quote_neu_verankert_pct": 12.5,
+     "quote_neu_verankert_pct": 12.4,
      "rentner": {
       "heute_pct": 22.3,
-      "neu_relativ_pct": 30.3,
-      "neu_verankert_pct": 20.3
+      "neu_relativ_pct": 30.6,
+      "neu_verankert_pct": 20.2
      },
      "erwerbsfaehige": {
       "heute_pct": 17.1,
-      "neu_relativ_pct": 14.7,
-      "neu_verankert_pct": 10.3
+      "neu_relativ_pct": 14.6,
+      "neu_verankert_pct": 10.2
      },
-     "untere40_zuwachs_pct": 13.6,
-     "alle_zuwachs_pct": 10.8,
+     "untere40_zuwachs_pct": 14.2,
+     "alle_zuwachs_pct": 11.4,
      "hinweis": "Modellpopulation (synthetisch, 2028, Kaufkraft 2026); Äquivalenzeinkommen neu = heute × neu/heute je Haushalt; Quote heute ist die des Modells, nicht die amtliche (16,1 %, EU-SILC 2025); statisch, ohne Preisniveauschub"
     },
     "kosten_mrd": {
-     "grundauskommen_neu": 32.9,
-     "davon_ohne_erwerb": 23.7,
-     "davon_erwerbstaetige_haushalte": 7.2,
+     "grundauskommen_neu": 32.4,
+     "davon_ohne_erwerb": 23.4,
+     "davon_erwerbstaetige_haushalte": 7.0,
      "davon_rentner": 2.0,
      "buergergeld_naeherung_heute": 50.9,
      "grundsicherung_alter_heute": 2.7,
@@ -1377,244 +1377,244 @@
    },
    "1.0": {
     "gesamt": {
-     "anteil_mehr_haushalte_pct": 79.5,
-     "anteil_mehr_personen_pct": 84.5,
-     "mittel_mehr_monat_eur": 530,
-     "median_mehr_monat_eur": 570,
+     "anteil_mehr_haushalte_pct": 80.3,
+     "anteil_mehr_personen_pct": 85.5,
+     "mittel_mehr_monat_eur": 553,
+     "median_mehr_monat_eur": 598,
      "haushalte_mio": 41.1
     },
     "haushaltstyp": {
      "allein": {
-      "anteil_mehr_haushalte_pct": 74.3,
-      "anteil_mehr_personen_pct": 74.3,
-      "mittel_mehr_monat_eur": 437,
-      "median_mehr_monat_eur": 647,
+      "anteil_mehr_haushalte_pct": 75.0,
+      "anteil_mehr_personen_pct": 75.0,
+      "mittel_mehr_monat_eur": 452,
+      "median_mehr_monat_eur": 661,
       "haushalte_mio": 10.7
      },
      "alleinerziehend": {
-      "anteil_mehr_haushalte_pct": 86.5,
-      "anteil_mehr_personen_pct": 89.0,
-      "mittel_mehr_monat_eur": 479,
-      "median_mehr_monat_eur": 545,
+      "anteil_mehr_haushalte_pct": 88.9,
+      "anteil_mehr_personen_pct": 91.9,
+      "mittel_mehr_monat_eur": 502,
+      "median_mehr_monat_eur": 568,
       "haushalte_mio": 1.62
      },
      "paar_ohne": {
-      "anteil_mehr_haushalte_pct": 93.7,
-      "anteil_mehr_personen_pct": 94.0,
-      "mittel_mehr_monat_eur": 1119,
-      "median_mehr_monat_eur": 1306,
+      "anteil_mehr_haushalte_pct": 94.0,
+      "anteil_mehr_personen_pct": 94.4,
+      "mittel_mehr_monat_eur": 1155,
+      "median_mehr_monat_eur": 1337,
       "haushalte_mio": 9.83
      },
      "paar_mit": {
-      "anteil_mehr_haushalte_pct": 92.5,
-      "anteil_mehr_personen_pct": 93.0,
-      "mittel_mehr_monat_eur": 983,
-      "median_mehr_monat_eur": 1048,
+      "anteil_mehr_haushalte_pct": 93.9,
+      "anteil_mehr_personen_pct": 94.4,
+      "mittel_mehr_monat_eur": 1029,
+      "median_mehr_monat_eur": 1094,
       "haushalte_mio": 6.8
      },
      "rentner_allein": {
-      "anteil_mehr_haushalte_pct": 60.3,
-      "anteil_mehr_personen_pct": 60.3,
-      "mittel_mehr_monat_eur": -91,
-      "median_mehr_monat_eur": 20,
+      "anteil_mehr_haushalte_pct": 61.1,
+      "anteil_mehr_personen_pct": 61.1,
+      "mittel_mehr_monat_eur": -86,
+      "median_mehr_monat_eur": 25,
       "haushalte_mio": 6.3
      },
      "rentner_paar": {
-      "anteil_mehr_haushalte_pct": 68.9,
-      "anteil_mehr_personen_pct": 68.9,
-      "mittel_mehr_monat_eur": -132,
-      "median_mehr_monat_eur": 68,
+      "anteil_mehr_haushalte_pct": 69.4,
+      "anteil_mehr_personen_pct": 69.4,
+      "mittel_mehr_monat_eur": -123,
+      "median_mehr_monat_eur": 76,
       "haushalte_mio": 5.85
      }
     },
     "status": {
      "Hauptperson Beamte": {
-      "anteil_mehr_haushalte_pct": 58.0,
-      "anteil_mehr_personen_pct": 71.1,
-      "mittel_mehr_monat_eur": 166,
-      "median_mehr_monat_eur": 143,
+      "anteil_mehr_haushalte_pct": 59.6,
+      "anteil_mehr_personen_pct": 73.0,
+      "mittel_mehr_monat_eur": 198,
+      "median_mehr_monat_eur": 172,
       "haushalte_mio": 1.96
      },
      "Hauptperson Minijob": {
-      "anteil_mehr_haushalte_pct": 56.0,
-      "anteil_mehr_personen_pct": 73.8,
-      "mittel_mehr_monat_eur": 269,
-      "median_mehr_monat_eur": 10,
+      "anteil_mehr_haushalte_pct": 58.0,
+      "anteil_mehr_personen_pct": 74.9,
+      "mittel_mehr_monat_eur": 286,
+      "median_mehr_monat_eur": 17,
       "haushalte_mio": 0.87
      },
      "Hauptperson Teilzeit": {
       "anteil_mehr_haushalte_pct": 99.9,
       "anteil_mehr_personen_pct": 99.9,
-      "mittel_mehr_monat_eur": 824,
-      "median_mehr_monat_eur": 733,
+      "mittel_mehr_monat_eur": 848,
+      "median_mehr_monat_eur": 755,
       "haushalte_mio": 4.6
      },
      "Hauptperson Vollzeit": {
-      "anteil_mehr_haushalte_pct": 99.4,
-      "anteil_mehr_personen_pct": 99.3,
-      "mittel_mehr_monat_eur": 1147,
-      "median_mehr_monat_eur": 1092,
+      "anteil_mehr_haushalte_pct": 99.5,
+      "anteil_mehr_personen_pct": 99.4,
+      "mittel_mehr_monat_eur": 1182,
+      "median_mehr_monat_eur": 1133,
       "haushalte_mio": 15.2
      },
      "Hauptperson selbständig": {
-      "anteil_mehr_haushalte_pct": 78.7,
-      "anteil_mehr_personen_pct": 82.3,
-      "mittel_mehr_monat_eur": 368,
-      "median_mehr_monat_eur": 300,
+      "anteil_mehr_haushalte_pct": 80.7,
+      "anteil_mehr_personen_pct": 83.9,
+      "mittel_mehr_monat_eur": 402,
+      "median_mehr_monat_eur": 315,
       "haushalte_mio": 3.9
      },
      "Rentner": {
-      "anteil_mehr_haushalte_pct": 64.5,
-      "anteil_mehr_personen_pct": 65.9,
-      "mittel_mehr_monat_eur": -110,
-      "median_mehr_monat_eur": 36,
+      "anteil_mehr_haushalte_pct": 65.1,
+      "anteil_mehr_personen_pct": 66.5,
+      "mittel_mehr_monat_eur": -104,
+      "median_mehr_monat_eur": 40,
       "haushalte_mio": 12.15
      },
      "ohne Erwerb (Bürgergeld)": {
-      "anteil_mehr_haushalte_pct": 18.8,
-      "anteil_mehr_personen_pct": 34.7,
-      "mittel_mehr_monat_eur": -32,
-      "median_mehr_monat_eur": -69,
+      "anteil_mehr_haushalte_pct": 22.9,
+      "anteil_mehr_personen_pct": 43.2,
+      "mittel_mehr_monat_eur": -24,
+      "median_mehr_monat_eur": -63,
       "haushalte_mio": 2.42
      }
     },
     "erwerbsfaehige_haushalte": {
-     "anteil_mehr_haushalte_pct": 85.8,
-     "anteil_mehr_personen_pct": 89.9,
-     "mittel_mehr_monat_eur": 799,
-     "median_mehr_monat_eur": 799,
+     "anteil_mehr_haushalte_pct": 86.7,
+     "anteil_mehr_personen_pct": 90.9,
+     "mittel_mehr_monat_eur": 829,
+     "median_mehr_monat_eur": 828,
      "haushalte_mio": 28.95
     },
     "mit_teilzeit": {
-     "anteil_mehr_haushalte_pct": 97.8,
-     "anteil_mehr_personen_pct": 97.6,
-     "mittel_mehr_monat_eur": 976,
-     "median_mehr_monat_eur": 1011,
+     "anteil_mehr_haushalte_pct": 98.1,
+     "anteil_mehr_personen_pct": 97.9,
+     "mittel_mehr_monat_eur": 1009,
+     "median_mehr_monat_eur": 1047,
      "haushalte_mio": 9.83
     },
     "mit_kindern": {
-     "anteil_mehr_haushalte_pct": 91.4,
-     "anteil_mehr_personen_pct": 92.3,
-     "mittel_mehr_monat_eur": 886,
-     "median_mehr_monat_eur": 914,
+     "anteil_mehr_haushalte_pct": 93.0,
+     "anteil_mehr_personen_pct": 94.0,
+     "mittel_mehr_monat_eur": 928,
+     "median_mehr_monat_eur": 958,
      "haushalte_mio": 8.42
     },
     "dezile": [
      {
       "dezil": 1,
       "obergrenze_aequiv_monat_eur": 1386,
-      "anteil_mehr_haushalte_pct": 41.7,
-      "anteil_mehr_personen_pct": 48.0,
-      "mittel_mehr_monat_eur": 27,
+      "anteil_mehr_haushalte_pct": 44.0,
+      "anteil_mehr_personen_pct": 52.9,
+      "mittel_mehr_monat_eur": 33,
       "median_mehr_monat_eur": 0,
       "haushalte_mio": 5.25
      },
      {
       "dezil": 2,
       "obergrenze_aequiv_monat_eur": 1677,
-      "anteil_mehr_haushalte_pct": 99.3,
+      "anteil_mehr_haushalte_pct": 99.5,
       "anteil_mehr_personen_pct": 99.7,
-      "mittel_mehr_monat_eur": 342,
-      "median_mehr_monat_eur": 229,
+      "mittel_mehr_monat_eur": 355,
+      "median_mehr_monat_eur": 241,
       "haushalte_mio": 4.04
      },
      {
       "dezil": 3,
       "obergrenze_aequiv_monat_eur": 2022,
-      "anteil_mehr_haushalte_pct": 99.7,
-      "anteil_mehr_personen_pct": 99.6,
-      "mittel_mehr_monat_eur": 463,
-      "median_mehr_monat_eur": 616,
+      "anteil_mehr_haushalte_pct": 99.8,
+      "anteil_mehr_personen_pct": 99.7,
+      "mittel_mehr_monat_eur": 480,
+      "median_mehr_monat_eur": 635,
       "haushalte_mio": 4.13
      },
      {
       "dezil": 4,
       "obergrenze_aequiv_monat_eur": 2347,
-      "anteil_mehr_haushalte_pct": 98.8,
-      "anteil_mehr_personen_pct": 98.5,
-      "mittel_mehr_monat_eur": 565,
-      "median_mehr_monat_eur": 672,
+      "anteil_mehr_haushalte_pct": 99.0,
+      "anteil_mehr_personen_pct": 98.8,
+      "mittel_mehr_monat_eur": 585,
+      "median_mehr_monat_eur": 687,
       "haushalte_mio": 3.91
      },
      {
       "dezil": 5,
       "obergrenze_aequiv_monat_eur": 2673,
-      "anteil_mehr_haushalte_pct": 89.5,
-      "anteil_mehr_personen_pct": 93.5,
-      "mittel_mehr_monat_eur": 656,
-      "median_mehr_monat_eur": 716,
+      "anteil_mehr_haushalte_pct": 91.1,
+      "anteil_mehr_personen_pct": 94.4,
+      "mittel_mehr_monat_eur": 680,
+      "median_mehr_monat_eur": 733,
       "haushalte_mio": 3.93
      },
      {
       "dezil": 6,
       "obergrenze_aequiv_monat_eur": 3029,
-      "anteil_mehr_haushalte_pct": 83.5,
-      "anteil_mehr_personen_pct": 90.3,
-      "mittel_mehr_monat_eur": 721,
-      "median_mehr_monat_eur": 771,
+      "anteil_mehr_haushalte_pct": 83.7,
+      "anteil_mehr_personen_pct": 90.5,
+      "mittel_mehr_monat_eur": 746,
+      "median_mehr_monat_eur": 790,
       "haushalte_mio": 3.93
      },
      {
       "dezil": 7,
       "obergrenze_aequiv_monat_eur": 3442,
-      "anteil_mehr_haushalte_pct": 83.3,
-      "anteil_mehr_personen_pct": 89.6,
-      "mittel_mehr_monat_eur": 791,
-      "median_mehr_monat_eur": 843,
+      "anteil_mehr_haushalte_pct": 84.1,
+      "anteil_mehr_personen_pct": 90.5,
+      "mittel_mehr_monat_eur": 818,
+      "median_mehr_monat_eur": 863,
       "haushalte_mio": 3.89
      },
      {
       "dezil": 8,
       "obergrenze_aequiv_monat_eur": 4003,
-      "anteil_mehr_haushalte_pct": 72.2,
-      "anteil_mehr_personen_pct": 78.2,
-      "mittel_mehr_monat_eur": 792,
-      "median_mehr_monat_eur": 915,
+      "anteil_mehr_haushalte_pct": 72.3,
+      "anteil_mehr_personen_pct": 78.4,
+      "mittel_mehr_monat_eur": 822,
+      "median_mehr_monat_eur": 937,
       "haushalte_mio": 3.89
      },
      {
       "dezil": 9,
       "obergrenze_aequiv_monat_eur": 4970,
-      "anteil_mehr_haushalte_pct": 73.3,
-      "anteil_mehr_personen_pct": 78.2,
-      "mittel_mehr_monat_eur": 745,
-      "median_mehr_monat_eur": 892,
+      "anteil_mehr_haushalte_pct": 74.5,
+      "anteil_mehr_personen_pct": 79.0,
+      "mittel_mehr_monat_eur": 778,
+      "median_mehr_monat_eur": 916,
       "haushalte_mio": 3.98
      },
      {
       "dezil": 10,
       "obergrenze_aequiv_monat_eur": 51701,
-      "anteil_mehr_haushalte_pct": 65.9,
-      "anteil_mehr_personen_pct": 70.0,
-      "mittel_mehr_monat_eur": 389,
-      "median_mehr_monat_eur": 716,
+      "anteil_mehr_haushalte_pct": 66.7,
+      "anteil_mehr_personen_pct": 70.9,
+      "mittel_mehr_monat_eur": 431,
+      "median_mehr_monat_eur": 757,
       "haushalte_mio": 4.16
      }
     ],
     "armut": {
      "median_aequiv_monat_heute": 2673,
-     "median_aequiv_monat_neu": 3135,
+     "median_aequiv_monat_neu": 3154,
      "quote_heute_pct": 18.3,
      "quote_neu_relativ_pct": 18.5,
-     "quote_neu_verankert_pct": 12.3,
+     "quote_neu_verankert_pct": 12.2,
      "rentner": {
       "heute_pct": 22.3,
-      "neu_relativ_pct": 31.6,
-      "neu_verankert_pct": 20.1
+      "neu_relativ_pct": 32.0,
+      "neu_verankert_pct": 20.0
      },
      "erwerbsfaehige": {
       "heute_pct": 17.1,
-      "neu_relativ_pct": 14.8,
-      "neu_verankert_pct": 10.1
+      "neu_relativ_pct": 14.7,
+      "neu_verankert_pct": 10.0
      },
-     "untere40_zuwachs_pct": 15.3,
-     "alle_zuwachs_pct": 12.9,
+     "untere40_zuwachs_pct": 16.0,
+     "alle_zuwachs_pct": 13.5,
      "hinweis": "Modellpopulation (synthetisch, 2028, Kaufkraft 2026); Äquivalenzeinkommen neu = heute × neu/heute je Haushalt; Quote heute ist die des Modells, nicht die amtliche (16,1 %, EU-SILC 2025); statisch, ohne Preisniveauschub"
     },
     "kosten_mrd": {
-     "grundauskommen_neu": 32.5,
-     "davon_ohne_erwerb": 23.6,
-     "davon_erwerbstaetige_haushalte": 6.9,
+     "grundauskommen_neu": 32.0,
+     "davon_ohne_erwerb": 23.3,
+     "davon_erwerbstaetige_haushalte": 6.7,
      "davon_rentner": 2.0,
      "buergergeld_naeherung_heute": 50.9,
      "grundsicherung_alter_heute": 2.7,
@@ -1632,160 +1632,160 @@
  "ziehungen": {
   "0.0": {
    "gesamt_haushalte": [
-    64.8,
-    65.2
+    67.1,
+    67.5
    ],
    "vollzeit": [
-    92.5,
-    92.9
+    93.6,
+    94.0
    ],
    "teilzeit": [
-    93.6,
-    94.5
+    94.4,
+    95.2
    ],
    "rentner": [
-    33.8,
-    34.8
+    37.7,
+    38.7
    ],
    "grundauskommen_mrd": [
-    35.0,
-    35.7
+    34.4,
+    35.1
    ]
   },
   "0.5": {
    "gesamt_haushalte": [
-    75.1,
-    75.4
+    77.0,
+    77.2
    ],
    "vollzeit": [
-    98.3,
-    98.4
+    98.5,
+    98.6
    ],
    "teilzeit": [
-    98.5,
-    98.9
+    99.0,
+    99.4
    ],
    "rentner": [
-    54.3,
-    55.2
+    57.9,
+    58.8
    ],
    "grundauskommen_mrd": [
-    33.6,
-    34.3
+    33.0,
+    33.8
    ]
   },
   "0.8": {
    "gesamt_haushalte": [
-    78.5,
-    78.9
+    79.5,
+    79.8
    ],
    "vollzeit": [
-    99.0,
-    99.1
+    99.2,
+    99.2
    ],
    "teilzeit": [
-    99.7,
+    99.8,
     99.9
    ],
    "rentner": [
-    62.9,
-    64.0
+    63.7,
+    64.7
    ],
    "grundauskommen_mrd": [
-    32.9,
-    33.6
+    32.4,
+    33.1
    ]
   },
   "1.0": {
    "gesamt_haushalte": [
-    79.4,
-    79.8
+    80.3,
+    80.6
    ],
    "vollzeit": [
-    99.4,
-    99.4
+    99.5,
+    99.5
    ],
    "teilzeit": [
     99.9,
     99.9
    ],
    "rentner": [
-    64.5,
-    65.3
+    65.1,
+    66.0
    ],
    "grundauskommen_mrd": [
-    32.5,
-    33.2
+    32.0,
+    32.7
    ]
   }
  },
  "partnerkorrelation": {
   "0.0": {
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 78.5,
-    "anteil_mehr_personen_pct": 83.6,
-    "mittel_mehr_monat_eur": 438,
-    "median_mehr_monat_eur": 476,
+    "anteil_mehr_haushalte_pct": 79.5,
+    "anteil_mehr_personen_pct": 84.7,
+    "mittel_mehr_monat_eur": 461,
+    "median_mehr_monat_eur": 507,
     "haushalte_mio": 41.1
    },
    "paar_ohne": {
-    "anteil_mehr_haushalte_pct": 92.9,
-    "anteil_mehr_personen_pct": 93.2,
-    "mittel_mehr_monat_eur": 941,
-    "median_mehr_monat_eur": 1102,
+    "anteil_mehr_haushalte_pct": 93.4,
+    "anteil_mehr_personen_pct": 93.8,
+    "mittel_mehr_monat_eur": 976,
+    "median_mehr_monat_eur": 1137,
     "haushalte_mio": 9.83
    },
    "paar_mit": {
-    "anteil_mehr_haushalte_pct": 91.7,
-    "anteil_mehr_personen_pct": 92.1,
-    "mittel_mehr_monat_eur": 829,
-    "median_mehr_monat_eur": 914,
+    "anteil_mehr_haushalte_pct": 93.2,
+    "anteil_mehr_personen_pct": 93.7,
+    "mittel_mehr_monat_eur": 875,
+    "median_mehr_monat_eur": 956,
     "haushalte_mio": 6.8
    }
   },
   "0.3": {
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 78.6,
-    "anteil_mehr_personen_pct": 83.6,
-    "mittel_mehr_monat_eur": 442,
-    "median_mehr_monat_eur": 480,
+    "anteil_mehr_haushalte_pct": 79.5,
+    "anteil_mehr_personen_pct": 84.8,
+    "mittel_mehr_monat_eur": 464,
+    "median_mehr_monat_eur": 511,
     "haushalte_mio": 41.1
    },
    "paar_ohne": {
-    "anteil_mehr_haushalte_pct": 92.9,
-    "anteil_mehr_personen_pct": 93.3,
-    "mittel_mehr_monat_eur": 950,
-    "median_mehr_monat_eur": 1122,
+    "anteil_mehr_haushalte_pct": 93.4,
+    "anteil_mehr_personen_pct": 93.8,
+    "mittel_mehr_monat_eur": 985,
+    "median_mehr_monat_eur": 1157,
     "haushalte_mio": 9.83
    },
    "paar_mit": {
-    "anteil_mehr_haushalte_pct": 91.7,
-    "anteil_mehr_personen_pct": 92.1,
-    "mittel_mehr_monat_eur": 837,
-    "median_mehr_monat_eur": 921,
+    "anteil_mehr_haushalte_pct": 93.2,
+    "anteil_mehr_personen_pct": 93.7,
+    "mittel_mehr_monat_eur": 882,
+    "median_mehr_monat_eur": 963,
     "haushalte_mio": 6.8
    }
   },
   "0.5": {
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 78.6,
-    "anteil_mehr_personen_pct": 83.6,
-    "mittel_mehr_monat_eur": 444,
-    "median_mehr_monat_eur": 483,
+    "anteil_mehr_haushalte_pct": 79.5,
+    "anteil_mehr_personen_pct": 84.8,
+    "mittel_mehr_monat_eur": 467,
+    "median_mehr_monat_eur": 513,
     "haushalte_mio": 41.1
    },
    "paar_ohne": {
-    "anteil_mehr_haushalte_pct": 92.9,
-    "anteil_mehr_personen_pct": 93.2,
-    "mittel_mehr_monat_eur": 956,
-    "median_mehr_monat_eur": 1132,
+    "anteil_mehr_haushalte_pct": 93.4,
+    "anteil_mehr_personen_pct": 93.8,
+    "mittel_mehr_monat_eur": 991,
+    "median_mehr_monat_eur": 1169,
     "haushalte_mio": 9.83
    },
    "paar_mit": {
-    "anteil_mehr_haushalte_pct": 91.7,
-    "anteil_mehr_personen_pct": 92.2,
-    "mittel_mehr_monat_eur": 841,
-    "median_mehr_monat_eur": 927,
+    "anteil_mehr_haushalte_pct": 93.2,
+    "anteil_mehr_personen_pct": 93.7,
+    "mittel_mehr_monat_eur": 887,
+    "median_mehr_monat_eur": 970,
     "haushalte_mio": 6.8
    }
   }
@@ -1794,16 +1794,16 @@
   "basis": {
    "faktor_allein": 1.0,
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 78.6,
-    "anteil_mehr_personen_pct": 83.6,
-    "mittel_mehr_monat_eur": 442,
-    "median_mehr_monat_eur": 480,
+    "anteil_mehr_haushalte_pct": 79.5,
+    "anteil_mehr_personen_pct": 84.8,
+    "mittel_mehr_monat_eur": 464,
+    "median_mehr_monat_eur": 511,
     "haushalte_mio": 41.1
    },
    "kosten_mrd": {
-    "grundauskommen_neu": 32.9,
-    "davon_ohne_erwerb": 23.7,
-    "davon_erwerbstaetige_haushalte": 7.2,
+    "grundauskommen_neu": 32.4,
+    "davon_ohne_erwerb": 23.4,
+    "davon_erwerbstaetige_haushalte": 7.0,
     "davon_rentner": 2.0,
     "buergergeld_naeherung_heute": 50.9,
     "grundsicherung_alter_heute": 2.7,
@@ -1819,16 +1819,16 @@
   "mehr_allein": {
    "faktor_allein": 1.15,
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 78.9,
-    "anteil_mehr_personen_pct": 84.4,
-    "mittel_mehr_monat_eur": 439,
-    "median_mehr_monat_eur": 492,
+    "anteil_mehr_haushalte_pct": 79.8,
+    "anteil_mehr_personen_pct": 85.3,
+    "mittel_mehr_monat_eur": 461,
+    "median_mehr_monat_eur": 520,
     "haushalte_mio": 41.1
    },
    "kosten_mrd": {
-    "grundauskommen_neu": 32.6,
-    "davon_ohne_erwerb": 23.1,
-    "davon_erwerbstaetige_haushalte": 7.5,
+    "grundauskommen_neu": 32.1,
+    "davon_ohne_erwerb": 22.8,
+    "davon_erwerbstaetige_haushalte": 7.2,
     "davon_rentner": 2.1,
     "buergergeld_naeherung_heute": 49.1,
     "grundsicherung_alter_heute": 2.7,
@@ -1844,16 +1844,16 @@
   "weniger_allein": {
    "faktor_allein": 0.85,
    "gesamt": {
-    "anteil_mehr_haushalte_pct": 78.3,
-    "anteil_mehr_personen_pct": 83.2,
-    "mittel_mehr_monat_eur": 442,
-    "median_mehr_monat_eur": 449,
+    "anteil_mehr_haushalte_pct": 79.3,
+    "anteil_mehr_personen_pct": 84.4,
+    "mittel_mehr_monat_eur": 465,
+    "median_mehr_monat_eur": 483,
     "haushalte_mio": 41.1
    },
    "kosten_mrd": {
-    "grundauskommen_neu": 33.8,
-    "davon_ohne_erwerb": 24.2,
-    "davon_erwerbstaetige_haushalte": 7.5,
+    "grundauskommen_neu": 33.2,
+    "davon_ohne_erwerb": 23.9,
+    "davon_erwerbstaetige_haushalte": 7.3,
     "davon_rentner": 2.1,
     "buergergeld_naeherung_heute": 53.4,
     "grundsicherung_alter_heute": 2.8,

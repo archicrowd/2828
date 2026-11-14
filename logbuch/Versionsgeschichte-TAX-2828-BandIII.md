@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.84**
+Stand: 24. Oktober 2026 · Modellstand **v4.85**
 
 ---
 
@@ -5081,6 +5081,51 @@ Rang 15 von 38); ein gemeinsames Fachkräftevisum der Gemeinschaft ist als Vorsc
 (Sekundärquelle für OECD); `regel_boden.json`, `einwanderung33`. **Bewegte Zahl:** keine geltende; ausgewiesen die erwartete Dynamik.
 **Wodurch aufgefallen:** Beschluss und Vorschlag der Initiative.
 
+### v4.85 — Erwartete Dynamik in der geltenden Rechnung; Variante Fachkräftevisum; Webseite deutsch als Word mit Änderungsverfolgung
+
+**Art der Änderung: MINOR (geltende Zahlen bewegt).** 14. November 2026.
+
+**Beschlüsse der Initiative (14.11.2026):** Der mittlere Fall aller sieben Kanäle einschließlich der Nachfrage geht in die geltende Rechnung. Das
+gemeinsame Fachkräftevisum wird als Variante gerechnet. Die Webseite wird angepasst, zunächst deutsch als Word-Fließtext mit nachverfolgten
+Änderungen zur Korrektur.
+
+**Umsetzung:**
+- Neu `modell/dynamik_geltend.py` (Stufe nach `altlasten.py`): BIP- und Bevölkerungspfad 2028–2098 (mittlerer Fall), Verhältnis des
+  Fondsbeitrags mit und ohne Dynamik (0,9785, Spitze 0,9795). Eingangswerte Impuls (5,08 % BIP) und Netto-Anreiz der Fachkräfte (0,184) fest aus
+  der statischen Rechnung v4.84, damit die Kette nicht zirkulär wird.
+- `projektion33.py`: Wachstum je Kopf × Faktor BIP je Einwohner (Dividende in Euro, Progression, Grundbedarf, Netz je Kopf folgen);
+  `reihe_statisch` ohne. `netz33.py`: `beschluss.reihe` mit, `reihe_statisch` ohne Dynamik. `fonds_klub.py`: Beitrag, Zuschlag und Schuldenpfad ×
+  Verhältnis; `ohne_dynamik` daneben. Ebenso in `staatenauswahl.py`, `fonds_5050.py`, `fondszins.py` (Näherung: gleiches Verhältnis für alle
+  Zinsfälle). `gesamtlast33.py`: Vergleich ohne Streckung mit Dynamik (`c_ohne_fonds_2028_dynamisch`).
+- Prüfrechnungen `dynamik33.py`, `einwanderung33.py`, `wirtschaftsdynamik.py` rechnen auf dem statischen Pfad (keine Doppelzählung).
+- Dieselbe Dynamik für alle 30 Staaten (Annahme; Länderseiten übernehmen das Verhältnis zum deutschen Pfad).
+- Regel BS35: Beschlossene Sätze 27,5 / 55,1 % bleiben. Fondsneutral wären mit Dynamik 27,7 / 55,4 %; die Prüfung in `rentner_beitragsjahre.py`
+  hat jetzt eine Toleranz von 0,5 Punkten. `altlasten.toml [kuerzung_staat]`: AT 0,1428, LU 0,2984 (Grundbedarf 2028 mit Dynamik).
+- Webseite: Zeitpfad mit drei Registerkarten „Mit erwarteter Dynamik“ (geltend, Rechner), „Ohne Dynamik“, „Dynamik und KI“ (KI mittel aus
+  `dynamik33` auf dem statischen Pfad, zum geltenden addiert); vorher „Grundpfad“, „Mehr Arbeit, KI mittel“, „Kräftig“ (die mittlere Karte
+  enthielt mehr Arbeit und hätte jetzt doppelt gezählt). Deutsche Einleitung des Zeitpfads um die Dynamik ergänzt. Registerkarten in sechs
+  Sprachen übersetzt (KI, gegenzulesen); die übrigen Texte der fünf anderen Sprachen folgen nach der Korrektur.
+- Word: `seite/werkzeuge/word_korrektur.py` (Absatz- und Satzvergleich, w:ins/w:del, Überarbeitung eingeschaltet) →
+  `seite/entwurf/korrektur/Webseite-de-v4.85-Korrektur.docx` (gegen v4.84; ohne Navigation und Impressum).
+- Variante Fachkräftevisum (`wirtschaftsdynamik.toml [visum]`): mittel 70.000 je Jahr in DE, Fondsbeitrag 4,81 % BIP.
+
+**Bewegte Zahlen (v4.84 → v4.85):**
+
+| Größe | v4.84 | v4.85 |
+|---|---|---|
+| Dividende 2028 je Erwachsenem (mit Kinderanteil) | 354 € | 364 € |
+| Dividende 2060 | 227 € | 243 € |
+| Fondsbeitrag | 5,15 % BIP | 5,04 % BIP |
+| Zuschlag | 15,4 % | 15,1 % |
+| Spitze | 147,5 % | 144,4 % |
+| Alleinstehend 42.000 € | +611 € | +627 € |
+| Gesamtlast | 38,68 % | 38,64 % |
+| Haushalte mit mehr | 78,6 % | 79,5 % |
+| Rentner relative Armut | 30,3 % | 30,6 % |
+
+**Datenquelle:** wie v4.83/v4.84; Visum: AZR nach Bertelsmann Stiftung (2024), ZDF 4.11.2026 (Sekundärquelle).
+**Wodurch aufgefallen:** Beschluss der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5160,7 +5205,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.84
+## 7 | Offene Punkte, Stand v4.85
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

@@ -11,8 +11,8 @@
    "kasse": 2.65,
    "angerechnet": 3.54,
    "kasse_anteil_pct": 42.8,
-   "steuern": 33.53,
-   "obergrenze": 10.73,
+   "steuern": 33.6,
+   "obergrenze": 10.75,
    "unter_obergrenze": true,
    "kasse_zu_eu_obergrenze": 1.89
   },
@@ -23,8 +23,8 @@
    "kasse": 2.77,
    "angerechnet": 3.73,
    "kasse_anteil_pct": 42.7,
-   "steuern": 33.42,
-   "obergrenze": 10.69,
+   "steuern": 33.52,
+   "obergrenze": 10.73,
    "unter_obergrenze": true,
    "kasse_zu_eu_obergrenze": 1.98
   },
@@ -35,8 +35,8 @@
    "kasse": 3.09,
    "angerechnet": 4.2,
    "kasse_anteil_pct": 42.4,
-   "steuern": 33.03,
-   "obergrenze": 10.57,
+   "steuern": 33.12,
+   "obergrenze": 10.6,
    "unter_obergrenze": true,
    "kasse_zu_eu_obergrenze": 2.21
   },
@@ -47,8 +47,8 @@
    "kasse": 3.09,
    "angerechnet": 4.2,
    "kasse_anteil_pct": 42.4,
-   "steuern": 32.13,
-   "obergrenze": 10.28,
+   "steuern": 32.22,
+   "obergrenze": 10.31,
    "unter_obergrenze": true,
    "kasse_zu_eu_obergrenze": 2.21
   }

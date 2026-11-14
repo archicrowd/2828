@@ -14,37 +14,37 @@
   "G5 Rechtsschutz: Widerspruch bei der Gemeinde, danach unabhängige Landesstelle oder Gericht"
  ],
  "h1_mietdaten_de": {
-  "je_aequivalent_monat": 37.76,
-  "anteil_bg_ueber": 0.369,
+  "je_aequivalent_monat": 36.89,
+  "anteil_bg_ueber": 0.362,
   "typen": {
    "allein": {
     "kdu": 461,
-    "wohnanteil": 454,
-    "ueberhang_mittel": 58.5,
-    "anteil_ueber": 0.462
+    "wohnanteil": 456,
+    "ueberhang_mittel": 57.3,
+    "anteil_ueber": 0.455
    },
    "alleinerziehend": {
     "kdu": 745,
-    "wohnanteil": 853,
-    "ueberhang_mittel": 50.6,
-    "anteil_ueber": 0.273
+    "wohnanteil": 858,
+    "ueberhang_mittel": 49.2,
+    "anteil_ueber": 0.267
    },
    "paar_ohne": {
     "kdu": 649,
-    "wohnanteil": 681,
-    "ueberhang_mittel": 64.4,
-    "anteil_ueber": 0.379
+    "wohnanteil": 685,
+    "ueberhang_mittel": 62.9,
+    "anteil_ueber": 0.371
    },
    "paar_mit": {
     "kdu": 953,
-    "wohnanteil": 1205,
-    "ueberhang_mittel": 39.6,
-    "anteil_ueber": 0.176
+    "wohnanteil": 1212,
+    "ueberhang_mittel": 38.4,
+    "anteil_ueber": 0.171
    }
   },
   "band": {
-   "0.2": 22.79,
-   "0.4": 53.6
+   "0.2": 21.98,
+   "0.4": 52.71
   },
   "bis_v438_je_aequivalent_monat": 75.0
  },
@@ -53,21 +53,21 @@
    "budget_pct_bip": 1.17,
    "band": {
     "untere": {
-     "boden": 0.21,
+     "boden": 0.2,
      "h1": 0.04,
      "h2": 0.03,
      "h3": 0.027,
-     "summe": 0.31,
-     "reserve": 0.86,
+     "summe": 0.3,
+     "reserve": 0.87,
      "dividende_minus_monat": 0.0
     },
     "obere": {
-     "boden": 0.77,
+     "boden": 0.75,
      "h1": 0.09,
      "h2": 0.03,
      "h3": 0.027,
-     "summe": 0.91,
-     "reserve": 0.26,
+     "summe": 0.89,
+     "reserve": 0.28,
      "dividende_minus_monat": 0.0
     }
    }
@@ -76,21 +76,21 @@
    "budget_pct_bip": 1.74,
    "band": {
     "untere": {
-     "boden": 0.69,
-     "h1": 0.11,
+     "boden": 0.68,
+     "h1": 0.1,
      "h2": 0.03,
      "h3": 0.031,
-     "summe": 0.86,
-     "reserve": 0.88,
+     "summe": 0.85,
+     "reserve": 0.89,
      "dividende_minus_monat": 0.0
     },
     "obere": {
-     "boden": 1.47,
-     "h1": 0.11,
+     "boden": 1.46,
+     "h1": 0.1,
      "h2": 0.03,
      "h3": 0.031,
-     "summe": 1.64,
-     "reserve": 0.1,
+     "summe": 1.63,
+     "reserve": 0.11,
      "dividende_minus_monat": 0.0
     }
    }
@@ -99,21 +99,21 @@
    "budget_pct_bip": 1.37,
    "band": {
     "untere": {
-     "boden": 0.5,
+     "boden": 0.48,
      "h1": 0.09,
      "h2": 0.03,
      "h3": 0.032,
-     "summe": 0.65,
-     "reserve": 0.72,
+     "summe": 0.63,
+     "reserve": 0.74,
      "dividende_minus_monat": 0.0
     },
     "obere": {
-     "boden": 1.18,
+     "boden": 1.16,
      "h1": 0.1,
      "h2": 0.03,
      "h3": 0.032,
-     "summe": 1.34,
-     "reserve": 0.03,
+     "summe": 1.32,
+     "reserve": 0.05,
      "dividende_minus_monat": 0.0
     }
    }
@@ -122,21 +122,21 @@
    "budget_pct_bip": 2.05,
    "band": {
     "untere": {
-     "boden": 0.73,
+     "boden": 0.71,
      "h1": 0.12,
      "h2": 0.03,
      "h3": 0.034,
-     "summe": 0.91,
-     "reserve": 1.14,
+     "summe": 0.89,
+     "reserve": 1.16,
      "dividende_minus_monat": 0.0
     },
     "obere": {
-     "boden": 1.43,
+     "boden": 1.41,
      "h1": 0.12,
      "h2": 0.03,
      "h3": 0.034,
-     "summe": 1.61,
-     "reserve": 0.44,
+     "summe": 1.59,
+     "reserve": 0.46,
      "dividende_minus_monat": 0.0
     }
    }
@@ -145,22 +145,22 @@
    "budget_pct_bip": 1.23,
    "band": {
     "untere": {
-     "boden": 0.66,
-     "h1": 0.13,
+     "boden": 0.65,
+     "h1": 0.12,
      "h2": 0.03,
      "h3": 0.039,
-     "summe": 0.86,
-     "reserve": 0.37,
+     "summe": 0.84,
+     "reserve": 0.39,
      "dividende_minus_monat": 0.0
     },
     "obere": {
-     "boden": 1.56,
-     "h1": 0.13,
+     "boden": 1.54,
+     "h1": 0.12,
      "h2": 0.03,
      "h3": 0.039,
-     "summe": 1.76,
-     "reserve": -0.53,
-     "dividende_minus_monat": 50.5
+     "summe": 1.73,
+     "reserve": -0.5,
+     "dividende_minus_monat": 49.0
     }
    }
   }

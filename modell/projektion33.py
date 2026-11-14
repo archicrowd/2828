@@ -17,6 +17,9 @@ from pathlib import Path
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "projektion33.toml").read_text(encoding="utf-8"))
+# v4.85: erwartete Dynamik (Beschluss 14.11.2026); fehlt die Datei, rechnet das Skript statisch
+_dg = AGG / "dynamik_geltend.json"
+DG = {int(j): r["kopf"] for j, r in json.loads(_dg.read_text(encoding="utf-8"))["reihe"].items()} if _dg.exists() else {}
 spec = importlib.util.spec_from_file_location("sv", W / "modell" / "systemvarianten.py")
 SVM = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -127,34 +130,40 @@ def main():
     # Grundpfad der Gesamtrechnung mit der Quote von 33F (Dach mit Verteidigungspfad, Zinsen außerhalb, Wachstum je Kopf der Gesamtrechnung)
     basis = {r["jahr"]: r for r in SVM.GR.pfad(v["quote_kern"], i_alt=0.0, i_ziel=0.0)}
     f_erw = SVM.GR.F_DE / (1 - k / 2) / f                          # Klub je Einwohner (Preise 2028) -> DE je Erwachsenem (Euro 2026)
-    reihe = []
-    for j in range(P["jahre"][0], P["jahre"][1] + 1):
-        eff = label(j)
-        konsum = SVM.konsum(eff) * KONSUM_EICH                           # auf den Ausgangswert geeicht
-        co2 = pos["CO₂-Preis"] * lin("co2_index", j)
-        verbr = (P["energiesteuer_kraftstoffe_pct_bip"] * (1 - lin("kraftstoffe", j))
-                 + P["tabak_alkohol_steuer_pct_bip"] * (1 - lin("alkohol_tabak", j)))   # Rückgang gegen 2028
-        deck = deck0 - pos["Konsum (Label)"] - pos["CO₂-Preis"] + konsum + co2 - verbr
-        gp = lin("gesundheit_pflege_plus", j)
-        erosion = deck0 - deck
-        b = basis[j]
-        # v3.49 (Korrektur 61): reales Wachstum je Kopf gegen die Stufen; Stufen folgen zu einem Teil den Löhnen (Mischindex), Rest Preise
-        f_real = (b["kl_real"] / b["div"]) / (basis[2028]["kl_real"] / basis[2028]["div"])
-        prog = pos["Einkommen"] * (progression(f_real ** (1 - P["stufen_lohnanteil"])) - 1)
-        div = b["div"] - erosion - gp + prog
-        eur_basis = b["kl_real"] * f_erw
-        eur = eur_basis * div / b["div"]
-        mind_j = mind * f_real ** P["stufen_lohnanteil"]                # Grundbedarf folgt zu 30 % den Löhnen (v3.49)
-        mind_pct = mind_j / eur_basis * b["div"]                       # Mindestniveau in % des BIP im Jahr j
-        lenk = co2 + konsum - konsum_ohne_sonder(j) + P["energiesteuer_kraftstoffe_pct_bip"] * lin("kraftstoffe", j) \
-            + P["tabak_alkohol_steuer_pct_bip"] * lin("alkohol_tabak", j)
-        # Leistungspaket (v3.49): Netz = Gesundheit/Pflege + Seil + Härtefall, Wert je Einwohner und Monat (Durchschnitt), Kaufkraft 2026, Deutschland
-        netz_pct = SVM.G["gesundheit"] + SVM.S["ausserhalb_quote"]["seil"] + SVM.P["annahmen"]["haertefall_pct_bip"] + gp
-        netz_eur = netz_pct / 100 * SVM.GR.KOPF_DE * f_real / 12 / f
-        reihe.append(dict(jahr=j, netz_pct_bip=round(netz_pct, 2), netz_eur_kopf_monat=round(netz_eur), lenkung_pct_bip=round(lenk, 2), luecke_mindestniveau_pct_bip=round(max(0.0, mind_pct - div), 2), label_effektiv=round(eff, 2), konsum=round(konsum, 2), co2=round(co2, 2), verbrauchsteuern_minus=round(verbr, 2), deckung=round(deck, 2),
-                          gesundheit_plus=round(gp, 2), progression=round(prog, 2), wachstum_je_kopf_faktor=round(f_real, 3), dach_ohne_zins=round(b['a'], 2), dividende_ohne_trends_pct_bip=round(b['div'], 2),
-                          dividende_ohne_trends_eur2026=round(eur_basis), erosion=round(erosion, 2), dividende_pct_bip=round(div, 2), dividende_erw_eur2026=round(eur),
-                          mindestniveau_eur2026=round(mind_j), ueber_mindestniveau=eur >= mind_j))
+    def pfad(dyn):
+        """v4.85: dyn = True mit der erwarteten Dynamik (dynamik_geltend.json, Faktor BIP je Einwohner), False statisch."""
+        reihe = []
+        for j in range(P["jahre"][0], P["jahre"][1] + 1):
+            eff = label(j)
+            konsum = SVM.konsum(eff) * KONSUM_EICH                           # auf den Ausgangswert geeicht
+            co2 = pos["CO₂-Preis"] * lin("co2_index", j)
+            verbr = (P["energiesteuer_kraftstoffe_pct_bip"] * (1 - lin("kraftstoffe", j))
+                     + P["tabak_alkohol_steuer_pct_bip"] * (1 - lin("alkohol_tabak", j)))   # Rückgang gegen 2028
+            deck = deck0 - pos["Konsum (Label)"] - pos["CO₂-Preis"] + konsum + co2 - verbr
+            gp = lin("gesundheit_pflege_plus", j)
+            erosion = deck0 - deck
+            b = basis[j]
+            # v3.49 (Korrektur 61): reales Wachstum je Kopf gegen die Stufen; Stufen folgen zu einem Teil den Löhnen (Mischindex), Rest Preise
+            kopf = DG.get(j, 1.0) if dyn else 1.0                               # v4.85: erwartete Dynamik (BIP je Einwohner)
+            f_real = (b["kl_real"] / b["div"]) / (basis[2028]["kl_real"] / basis[2028]["div"]) * kopf
+            prog = pos["Einkommen"] * (progression(f_real ** (1 - P["stufen_lohnanteil"])) - 1)
+            div = b["div"] - erosion - gp + prog
+            eur_basis = b["kl_real"] * f_erw * kopf
+            eur = eur_basis * div / b["div"]
+            mind_j = mind * f_real ** P["stufen_lohnanteil"]                # Grundbedarf folgt zu 30 % den Löhnen (v3.49)
+            mind_pct = mind_j / eur_basis * b["div"]                       # Mindestniveau in % des BIP im Jahr j
+            lenk = co2 + konsum - konsum_ohne_sonder(j) + P["energiesteuer_kraftstoffe_pct_bip"] * lin("kraftstoffe", j) \
+                + P["tabak_alkohol_steuer_pct_bip"] * lin("alkohol_tabak", j)
+            # Leistungspaket (v3.49): Netz = Gesundheit/Pflege + Seil + Härtefall, Wert je Einwohner und Monat (Durchschnitt), Kaufkraft 2026, Deutschland
+            netz_pct = SVM.G["gesundheit"] + SVM.S["ausserhalb_quote"]["seil"] + SVM.P["annahmen"]["haertefall_pct_bip"] + gp
+            netz_eur = netz_pct / 100 * SVM.GR.KOPF_DE * f_real / 12 / f
+            reihe.append(dict(jahr=j, netz_pct_bip=round(netz_pct, 2), netz_eur_kopf_monat=round(netz_eur), lenkung_pct_bip=round(lenk, 2), luecke_mindestniveau_pct_bip=round(max(0.0, mind_pct - div), 2), label_effektiv=round(eff, 2), konsum=round(konsum, 2), co2=round(co2, 2), verbrauchsteuern_minus=round(verbr, 2), deckung=round(deck, 2),
+                              gesundheit_plus=round(gp, 2), progression=round(prog, 2), wachstum_je_kopf_faktor=round(f_real, 3), dach_ohne_zins=round(b['a'], 2), dividende_ohne_trends_pct_bip=round(b['div'], 2),
+                              dividende_ohne_trends_eur2026=round(eur_basis), erosion=round(erosion, 2), dividende_pct_bip=round(div, 2), dividende_erw_eur2026=round(eur),
+                              mindestniveau_eur2026=round(mind_j), ueber_mindestniveau=eur >= mind_j))
+        return reihe
+    reihe = pfad(True)
+    reihe_statisch = pfad(False)
     # Variante Bürgerfonds: ein Teil der Lenkungseinnahmen wird angelegt, 3 % des Vermögens fließen in die Dividende
     fonds = []
     for phi in P["fonds_anteil"]:
@@ -170,7 +179,8 @@ def main():
     E = dict(status_dividende="Vorstufe (v3.47/v3.48) vor dem Netz-Beschluss; geltender Dividendenpfad: netz33.json beschluss.reihe (KENNZAHLEN.md). Das Mindestniveau ist in Stand C keine Zusage.",
              version=P["version"], system=P["system"], preisbasis="Euro 2026; Dividende je Erwachsenem und Monat, Deutschland",
              ausgang=dict(deckung=round(deck0, 2), label_effektiv=round(eff0, 2), dividende_pct_bip=div0, dividende_erw_eur2026=round(eur0)),
-             reihe=reihe, buergerfonds=fonds, texte=TEXTE, annahmen={k_: P["pfad"][k_]["stuetz"] for k_ in P["pfad"]},
+             reihe=reihe, reihe_statisch=reihe_statisch, dynamik="v4.85: reihe mit erwarteter Dynamik (mittlerer Fall, dynamik_geltend.json); reihe_statisch ohne",
+             buergerfonds=fonds, texte=TEXTE, annahmen={k_: P["pfad"][k_]["stuetz"] for k_ in P["pfad"]},
              wachstum_real_kopf=round(SVM.GR.G_REAL * 100, 2) if hasattr(SVM.GR, 'G_REAL') else None, fahrstrom_anteil=P["fahrstrom_anteil"],
              hinweis="Prüfrechnung: Pfade aus Quellen gesetzt (siehe Logbuch v3.47), keine Rückwirkung auf Wachstum und Arbeitsangebot")
     (AGG / "projektion33.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")

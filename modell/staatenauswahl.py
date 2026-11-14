@@ -37,8 +37,9 @@ def main():
     stufen = {c: stufe(c) for c in S}
     def fonds(lst):
         b, z, _ = FK.klub(lst)
-        return dict(staaten=len(lst), beitrag_pct_bip=round(FK.BU["beitrag_pct_bip"] * b / b10, 2),
-                    zuschlag_pct=round(FK.BU["zuschlag_auf_alle_steuern_pct"] * z / z10, 1))
+        dv = FK.DV["verhaeltnis_beitrag"]                               # v4.85: erwartete Dynamik wie im geltenden Fonds
+        return dict(staaten=len(lst), beitrag_pct_bip=round(FK.BU["beitrag_pct_bip"] * b / b10 * dv, 2),
+                    zuschlag_pct=round(FK.BU["zuschlag_auf_alle_steuern_pct"] * z / z10 * dv, 1))
     kern = [c for c in dreissig if S[c][0] >= T["kern_wjp"]]          # nur zur Information (v4.73)
     teil = [c for c in dreissig if stufen[c] == "Teilnahme"]
     ohne = [c for c in dreissig if stufen[c] != "Teilnahme" and S[c][0] != -1]

@@ -110,22 +110,34 @@ def main():
     # Beschluss v3.51: Katalog −5 %, Mindestrente mit Pflichtvorsorge (Satz pflicht_satz): Jahresreihe für Rechner und Zeitpfad
     gr_b = f"mindestrente_{P['pflicht_satz']}"
     k_b = P["gesundheit_kuerzung_basis"]
-    jahre = []
-    for j in range(2028, 2061):
-        r = R[j]
-        bisher = bisher0 + r["gesundheit_plus"]
-        eur = r["dividende_erw_eur2026"]
-        for _ in range(20):
-            alt = R[j]
-            R[j] = dict(r, dividende_erw_eur2026=eur)
-            pos, gb = netz(j, k_b, False, gr_b)
-            R[j] = alt
-            dpct = r["dividende_pct_bip"] + (bisher - sum(pos.values()))
-            eur = r["dividende_erw_eur2026"] / r["dividende_pct_bip"] * dpct
-        jahre.append(dict(jahr=j, netz_pct_bip=round(sum(pos.values()), 2), dividende_pct_bip=round(dpct, 2), dividende_erw_eur2026=round(eur),
-                          lenkung_pct_bip=r["lenkung_pct_bip"], netz_eur_kopf_monat=round(sum(pos.values()) / 100 * KOPF26 * r["wachstum_je_kopf_faktor"] / 12),
-                          positionen={n: round(v, 2) for n, v in pos.items()}))
-    E = dict(beschluss=dict(gesundheit_kuerzung=k_b, grundrente=gr_b, pflicht_satz=P["pflicht_satz"], reihe=jahre),
+    def beschluss_reihe():
+        """Jahresreihe des Beschlusses auf dem Pfad R (v4.85: einmal mit Dynamik, einmal statisch)."""
+        jahre = []
+        for j in range(2028, 2061):
+            r = R[j]
+            bisher = bisher0 + r["gesundheit_plus"]
+            eur = r["dividende_erw_eur2026"]
+            for _ in range(20):
+                alt = R[j]
+                R[j] = dict(r, dividende_erw_eur2026=eur)
+                pos, gb = netz(j, k_b, False, gr_b)
+                R[j] = alt
+                dpct = r["dividende_pct_bip"] + (bisher - sum(pos.values()))
+                eur = r["dividende_erw_eur2026"] / r["dividende_pct_bip"] * dpct
+            jahre.append(dict(jahr=j, netz_pct_bip=round(sum(pos.values()), 2), dividende_pct_bip=round(dpct, 2), dividende_erw_eur2026=round(eur),
+                              lenkung_pct_bip=r["lenkung_pct_bip"], netz_eur_kopf_monat=round(sum(pos.values()) / 100 * KOPF26 * r["wachstum_je_kopf_faktor"] / 12),
+                              positionen={n: round(v, 2) for n, v in pos.items()}))
+        return jahre
+
+    jahre = beschluss_reihe()
+    R_dyn = dict(R)
+    R.clear()
+    R.update({r["jahr"]: r for r in PJ.get("reihe_statisch", PJ["reihe"])})
+    jahre_statisch = beschluss_reihe()
+    R.clear()
+    R.update(R_dyn)
+    E = dict(beschluss=dict(gesundheit_kuerzung=k_b, grundrente=gr_b, pflicht_satz=P["pflicht_satz"], reihe=jahre, reihe_statisch=jahre_statisch,
+                           dynamik="v4.85: reihe mit erwarteter Dynamik (mittlerer Fall), reihe_statisch ohne"),
              mindestrente_faktoren={f"{k[0]}|{k[1]}": round(v, 3) for k, v in _MF.items()}, version=P["version"], status="Prüfrechnung", system="33R", bisher_finanziert_2028=round(bisher0, 2), varianten=erg,
              hinweis="Mengen (Rentner, Invalidität, Arbeitslose) und Kürzung des Leistungskatalogs sind Annahmen; Euro je Erwachsenem, Kaufkraft 2026, Deutschland")
     (AGG / "netz33.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")

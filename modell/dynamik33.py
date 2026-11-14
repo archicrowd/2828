@@ -19,8 +19,9 @@ AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "dynamik33.toml").read_text(encoding="utf-8"))
 PJ = json.loads((AGG / "projektion33.json").read_text(encoding="utf-8"))
 AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))
-R = {r["jahr"]: r for r in PJ["reihe"]}
-NZ = {r["jahr"]: r for r in json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))["beschluss"]["reihe"]}   # v4.41 (R9): Netz-Beschluss
+R = {r["jahr"]: r for r in PJ.get("reihe_statisch", PJ["reihe"])}   # v4.85: Szenarien auf dem statischen Pfad (keine Doppelzählung)
+_nb = json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))["beschluss"]
+NZ = {r["jahr"]: r for r in _nb.get("reihe_statisch", _nb["reihe"])}   # v4.85: statisch   # v4.41 (R9): Netz-Beschluss
 FG = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))                                            # v4.41: Fonds der 30
 _s = importlib.util.spec_from_file_location("pj", W / "modell" / "projektion33.py")
 PJM = importlib.util.module_from_spec(_s)
@@ -61,7 +62,7 @@ def main():
                                  dividende_pct_bip=round(div_pct, 2), dividende_erw_eur2026=round(eur))
         fy60 = reihe["2060"]["bip_faktor"]
         erg.append(dict(beschaeftigung_pct=b, ki_pp=ki, kapital_verschiebung_pp=kv, reihe=reihe,
-                        fondsbeitrag_naeherung_pct_bip=round(FG["beitrag_pct_bip"] / ((1 + fy60) / 2), 2),   # v4.41: Fonds der 30
+                        fondsbeitrag_naeherung_pct_bip=round(FG.get("ohne_dynamik", FG)["beitrag_pct_bip"] / ((1 + fy60) / 2), 2),   # v4.41: Fonds der 30
                         heute_aufkommen_aenderung_2060_pct_bip=round(kv * (P["belastung_kapital_heute"] - P["belastung_arbeit_heute"]), 2)))
     E = dict(version="v4.41", status="Prüfrechnung", grundpfad="netz33.json beschluss.reihe (Netz-Beschluss); Fonds der 30 (fonds_geltend.json)", szenarien=erg,
              hinweis="Szenarien mit Annahmen; KI-Spanne Acemoglu 2024 bis OECD 2024; Fondsbeitrag nur als Näherung (Mittel des BIP-Faktors)")

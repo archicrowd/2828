@@ -2,7 +2,7 @@
  "version": "v3.48",
  "status": "Prüfrechnung",
  "kuerzung_renten": {
-  "AT": 0.1423,
+  "AT": 0.1428,
   "BE": 0.0896,
   "BG": 0.0096,
   "CH": 0.0566,
@@ -21,7 +21,7 @@
   "IS": 0.0052,
   "IT": 0.0876,
   "LT": 0.0108,
-  "LU": 0.296,
+  "LU": 0.2984,
   "LV": 0.0072,
   "MT": 0.029,
   "NL": 0.028,
@@ -62,7 +62,7 @@
      "beitrag_pct_bip": 4.2,
      "zuschlag_auf_alle_steuern_pct": 12.6,
      "je_einwohner_monat_eur": 189,
-     "schuldenquote_spitze": 177.5,
+     "schuldenquote_spitze": 177.4,
      "spitzenjahr": 2060,
      "schuldenquote_2050": 167.0
     },
@@ -339,7 +339,7 @@
    "2070": 128.7,
    "2080": 91.8,
    "2090": 42.3,
-   "2098": -0.0
+   "2098": 0.0
   },
   "verhandlungsmasse_z_2028_pct_bip": 9.35,
   "laender": {
@@ -519,10 +519,10 @@
     }
    },
    "Österreich": {
-    "altlast_2028_pct_bip": 14.98,
+    "altlast_2028_pct_bip": 14.97,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 7.06,
+      "beitrag_pct_bip": 7.05,
       "zuschlag_pct": 21.1
      },
      "2035": {
@@ -595,8 +595,8 @@
    }
   },
   "ungerundet": {
-   "beitrag_pct_bip": 5.223438284357064,
-   "zuschlag_auf_alle_steuern_pct": 15.629677691074399
+   "beitrag_pct_bip": 5.223282245178169,
+   "zuschlag_auf_alle_steuern_pct": 15.629210787487038
   },
   "altlast_schnitt_2028": 11.09,
   "hinweis": "Beitrag je Staat = gemeinsamer Beitrag × (Anteil nach eigener Altlast, linear in 30 Jahren abschmelzend auf gleichen Satz); Zuschlag bezogen auf die Steuerquote der Variante (vereinfachend für alle Staaten gleich)"
@@ -634,8 +634,8 @@
     "gegen_schnitt": -4.88
    },
    "Österreich": {
-    "altlast_2028_pct_bip": 14.98,
-    "gegen_schnitt": 3.89
+    "altlast_2028_pct_bip": 14.97,
+    "gegen_schnitt": 3.88
    },
    "Slowenien": {
     "altlast_2028_pct_bip": 11.93,

@@ -344,13 +344,13 @@ T["pl"] = dict(
 )
 
 # Zeitpfad: letzter Satz der Einleitung je Sprache; {m} = Dividende 2060 im mittleren Pfad (Referenzland der Sprachfassung), {lab} = Name des Pfads
-ZEIT_MEHR = dict(
-    de="Mehr Arbeit und Automatisierung heben sie wieder an: Im mittleren Pfad ({lab}) liegt sie 2060 bei {m}.",
-    en="More work and automation raise it again: in the middle path ({lab}) it is {m} in 2060.",
-    fr="Plus de travail et d'automatisation le relèvent : dans la trajectoire médiane ({lab}), il atteint {m} en 2060.",
-    it="Più lavoro e automazione lo rialzano: nel percorso intermedio ({lab}) è di {m} nel 2060.",
-    es="Más trabajo y automatización lo vuelven a subir: en la senda intermedia ({lab}) alcanza {m} en 2060.",
-    pl="Więcej pracy i automatyzacji znów ją podnosi: w ścieżce pośredniej ({lab}) wynosi w 2060 roku {m}.",
+ZEIT_MEHR = dict(   # v4.85: {m} Dividende 2060 mit Dynamik und KI; {s28}/{s60} ohne Dynamik (nur de)
+    de="Ohne diese Dynamik wären es {s28} und {s60}. Mit mehr Automatisierung (KI mittel) liegt sie 2060 bei {m}.",
+    en="With more automation (medium AI) it is {m} in 2060.",
+    fr="Avec davantage d'automatisation (IA moyenne), il atteint {m} en 2060.",
+    it="Con più automazione (IA media) è di {m} nel 2060.",
+    es="Con más automatización (IA media) alcanza {m} en 2060.",
+    pl="Przy większej automatyzacji (średnia AI) wynosi w 2060 roku {m}.",
 )
 for _l, _s in ZEIT_MEHR.items():
     T[_l]["zeit_mehr"] = _s

@@ -12,33 +12,33 @@
    "untere": {
     "alle": {
      "armutsquote_relativ": 13.5,
-     "armutsquote_verankert": 8.6,
-     "einkommen_untere_40_pct": 37.9,
-     "einkommen_alle_pct": 24.4,
-     "median_neu_zu_heute": 1.295
+     "armutsquote_verankert": 8.3,
+     "einkommen_untere_40_pct": 38.7,
+     "einkommen_alle_pct": 25.1,
+     "median_neu_zu_heute": 1.303
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 16.7,
-     "armutsquote_verankert": 10.5,
-     "einkommen_untere_40_pct": 28.4,
-     "einkommen_alle_pct": 18.3,
-     "median_neu_zu_heute": 1.227
+     "armutsquote_relativ": 16.8,
+     "armutsquote_verankert": 10.2,
+     "einkommen_untere_40_pct": 29.1,
+     "einkommen_alle_pct": 18.8,
+     "median_neu_zu_heute": 1.233
     }
    },
    "obere": {
     "alle": {
      "armutsquote_relativ": 13.5,
-     "armutsquote_verankert": 12.1,
-     "einkommen_untere_40_pct": 35.5,
-     "einkommen_alle_pct": 23.9,
-     "median_neu_zu_heute": 1.295
+     "armutsquote_verankert": 12.0,
+     "einkommen_untere_40_pct": 36.4,
+     "einkommen_alle_pct": 24.6,
+     "median_neu_zu_heute": 1.303
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 16.7,
-     "armutsquote_verankert": 13.1,
-     "einkommen_untere_40_pct": 26.6,
-     "einkommen_alle_pct": 17.9,
-     "median_neu_zu_heute": 1.227
+     "armutsquote_relativ": 16.8,
+     "armutsquote_verankert": 13.0,
+     "einkommen_untere_40_pct": 27.3,
+     "einkommen_alle_pct": 18.4,
+     "median_neu_zu_heute": 1.233
     }
    }
   },
@@ -49,34 +49,34 @@
    "jahr": 2028,
    "untere": {
     "alle": {
-     "armutsquote_relativ": 14.8,
-     "armutsquote_verankert": 7.3,
-     "einkommen_untere_40_pct": 15.0,
-     "einkommen_alle_pct": 12.9,
-     "median_neu_zu_heute": 1.129
+     "armutsquote_relativ": 15.0,
+     "armutsquote_verankert": 7.0,
+     "einkommen_untere_40_pct": 15.5,
+     "einkommen_alle_pct": 13.5,
+     "median_neu_zu_heute": 1.135
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 14.8,
-     "armutsquote_verankert": 9.5,
-     "einkommen_untere_40_pct": 11.2,
-     "einkommen_alle_pct": 9.7,
-     "median_neu_zu_heute": 1.097
+     "armutsquote_relativ": 14.9,
+     "armutsquote_verankert": 9.3,
+     "einkommen_untere_40_pct": 11.6,
+     "einkommen_alle_pct": 10.1,
+     "median_neu_zu_heute": 1.101
     }
    },
    "obere": {
     "alle": {
-     "armutsquote_relativ": 14.8,
-     "armutsquote_verankert": 9.0,
-     "einkommen_untere_40_pct": 13.6,
-     "einkommen_alle_pct": 12.6,
-     "median_neu_zu_heute": 1.129
+     "armutsquote_relativ": 15.0,
+     "armutsquote_verankert": 8.9,
+     "einkommen_untere_40_pct": 14.1,
+     "einkommen_alle_pct": 13.2,
+     "median_neu_zu_heute": 1.135
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 14.8,
-     "armutsquote_verankert": 10.9,
-     "einkommen_untere_40_pct": 10.2,
-     "einkommen_alle_pct": 9.5,
-     "median_neu_zu_heute": 1.097
+     "armutsquote_relativ": 14.9,
+     "armutsquote_verankert": 10.8,
+     "einkommen_untere_40_pct": 10.5,
+     "einkommen_alle_pct": 9.9,
+     "median_neu_zu_heute": 1.101
     }
    }
   },
@@ -87,34 +87,34 @@
    "jahr": 2028,
    "untere": {
     "alle": {
-     "armutsquote_relativ": 13.8,
-     "armutsquote_verankert": 2.1,
-     "einkommen_untere_40_pct": 42.2,
-     "einkommen_alle_pct": 26.6,
-     "median_neu_zu_heute": 1.233
+     "armutsquote_relativ": 14.0,
+     "armutsquote_verankert": 1.9,
+     "einkommen_untere_40_pct": 43.1,
+     "einkommen_alle_pct": 27.3,
+     "median_neu_zu_heute": 1.241
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 14.4,
-     "armutsquote_verankert": 6.2,
-     "einkommen_untere_40_pct": 31.7,
-     "einkommen_alle_pct": 19.9,
-     "median_neu_zu_heute": 1.179
+     "armutsquote_relativ": 14.5,
+     "armutsquote_verankert": 6.1,
+     "einkommen_untere_40_pct": 32.3,
+     "einkommen_alle_pct": 20.5,
+     "median_neu_zu_heute": 1.186
     }
    },
    "obere": {
     "alle": {
-     "armutsquote_relativ": 13.8,
-     "armutsquote_verankert": 2.1,
-     "einkommen_untere_40_pct": 42.2,
-     "einkommen_alle_pct": 26.6,
-     "median_neu_zu_heute": 1.233
+     "armutsquote_relativ": 14.0,
+     "armutsquote_verankert": 1.9,
+     "einkommen_untere_40_pct": 43.1,
+     "einkommen_alle_pct": 27.3,
+     "median_neu_zu_heute": 1.241
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 14.4,
-     "armutsquote_verankert": 6.2,
-     "einkommen_untere_40_pct": 31.7,
-     "einkommen_alle_pct": 19.9,
-     "median_neu_zu_heute": 1.179
+     "armutsquote_relativ": 14.5,
+     "armutsquote_verankert": 6.1,
+     "einkommen_untere_40_pct": 32.3,
+     "einkommen_alle_pct": 20.5,
+     "median_neu_zu_heute": 1.186
     }
    }
   },
@@ -125,34 +125,34 @@
    "jahr": 2028,
    "untere": {
     "alle": {
-     "armutsquote_relativ": 11.7,
-     "armutsquote_verankert": 3.7,
-     "einkommen_untere_40_pct": 41.0,
-     "einkommen_alle_pct": 19.8,
-     "median_neu_zu_heute": 1.224
+     "armutsquote_relativ": 12.0,
+     "armutsquote_verankert": 3.6,
+     "einkommen_untere_40_pct": 41.7,
+     "einkommen_alle_pct": 20.4,
+     "median_neu_zu_heute": 1.231
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 13.4,
-     "armutsquote_verankert": 7.7,
-     "einkommen_untere_40_pct": 30.7,
-     "einkommen_alle_pct": 14.8,
-     "median_neu_zu_heute": 1.175
+     "armutsquote_relativ": 13.6,
+     "armutsquote_verankert": 7.6,
+     "einkommen_untere_40_pct": 31.3,
+     "einkommen_alle_pct": 15.3,
+     "median_neu_zu_heute": 1.181
     }
    },
    "obere": {
     "alle": {
-     "armutsquote_relativ": 11.7,
+     "armutsquote_relativ": 12.0,
      "armutsquote_verankert": 6.6,
-     "einkommen_untere_40_pct": 39.3,
-     "einkommen_alle_pct": 19.5,
-     "median_neu_zu_heute": 1.224
+     "einkommen_untere_40_pct": 40.1,
+     "einkommen_alle_pct": 20.1,
+     "median_neu_zu_heute": 1.231
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 13.4,
+     "armutsquote_relativ": 13.6,
      "armutsquote_verankert": 9.8,
-     "einkommen_untere_40_pct": 29.5,
-     "einkommen_alle_pct": 14.6,
-     "median_neu_zu_heute": 1.175
+     "einkommen_untere_40_pct": 30.1,
+     "einkommen_alle_pct": 15.1,
+     "median_neu_zu_heute": 1.181
     }
    }
   },
@@ -163,34 +163,34 @@
    "jahr": 2028,
    "untere": {
     "alle": {
-     "armutsquote_relativ": 5.0,
+     "armutsquote_relativ": 5.1,
      "armutsquote_verankert": 0.0,
-     "einkommen_untere_40_pct": 48.1,
-     "einkommen_alle_pct": 26.8,
-     "median_neu_zu_heute": 1.285
+     "einkommen_untere_40_pct": 48.9,
+     "einkommen_alle_pct": 27.4,
+     "median_neu_zu_heute": 1.292
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 8.0,
+     "armutsquote_relativ": 8.1,
      "armutsquote_verankert": 3.3,
-     "einkommen_untere_40_pct": 36.1,
-     "einkommen_alle_pct": 20.1,
-     "median_neu_zu_heute": 1.227
+     "einkommen_untere_40_pct": 36.6,
+     "einkommen_alle_pct": 20.5,
+     "median_neu_zu_heute": 1.233
     }
    },
    "obere": {
     "alle": {
-     "armutsquote_relativ": 5.0,
+     "armutsquote_relativ": 5.1,
      "armutsquote_verankert": 0.0,
-     "einkommen_untere_40_pct": 48.1,
-     "einkommen_alle_pct": 26.8,
-     "median_neu_zu_heute": 1.285
+     "einkommen_untere_40_pct": 48.9,
+     "einkommen_alle_pct": 27.4,
+     "median_neu_zu_heute": 1.292
     },
     "rentner_unveraendert": {
-     "armutsquote_relativ": 8.0,
+     "armutsquote_relativ": 8.1,
      "armutsquote_verankert": 3.3,
-     "einkommen_untere_40_pct": 36.1,
-     "einkommen_alle_pct": 20.1,
-     "median_neu_zu_heute": 1.227
+     "einkommen_untere_40_pct": 36.6,
+     "einkommen_alle_pct": 20.5,
+     "median_neu_zu_heute": 1.233
     }
    }
   }

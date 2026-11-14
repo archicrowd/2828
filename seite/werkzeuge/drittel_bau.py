@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.84"
+VERSION = "v4.85"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -32,6 +32,7 @@ SV, PJ, NZ, DY, AL, MR, H = (lade(n) for n in ("systemvarianten.json", "projekti
 V = next(x for x in SV["varianten"] if x["id"] == PJ["system"])
 PR = {r["jahr"]: r for r in PJ["reihe"]}
 NB = {r["jahr"]: r for r in NZ["beschluss"]["reihe"]}
+NBS = {r["jahr"]: r for r in NZ["beschluss"].get("reihe_statisch", NZ["beschluss"]["reihe"])}   # v4.85: ohne Dynamik
 JAHRE = list(range(2028, 2061))
 G26 = 12348
 de = lambda x, nk=0: SB.zahl(x, nk, "de")
@@ -69,7 +70,10 @@ spec_vt.loader.exec_module(VT)
 J = dict(SB.J)
 basis = [NB[j]["dividende_erw_eur2026"] * VB.TOPF for j in JAHRE]   # v4.8: Topf bei Kinderanteil 0,8 (R1)
 J["reihe_jahre"] = JAHRE
-J["reihe_erw"] = {"1,0": basis, "0,5": dyn_reihe(2.8, 0.3, 0.0), "1,5": dyn_reihe(4.6, 0.6, 3.0)}   # Schlüssel der Vorlage: 1,0 = Grundpfad (Rechner, Spark)
+# v4.85: 1,0 = geltender Pfad mit erwarteter Dynamik (Rechner, Spark); 0,5 = ohne Dynamik (netz33 reihe_statisch); 1,5 = Dynamik und KI mittel
+# (Differenz des KI-Szenarios aus dynamik33, auf dem statischen Pfad gerechnet, zum geltenden Pfad addiert)
+statisch = [NBS[j]["dividende_erw_eur2026"] * VB.TOPF for j in JAHRE]
+J["reihe_erw"] = {"1,0": basis, "0,5": statisch, "1,5": dyn_reihe(0.0, 0.3, 0.0)}
 J["erw_de_2028"], J["erw_de_2060"], J["kind_de_2028"] = basis[0], basis[-1], basis[0] * VB.S_KIND
 deck = {j: PR[j]["deckung"] + PR[j]["progression"] for j in JAHRE}
 gem = {j: V["quote_kern"] - PR[j]["dach_ohne_zins"] - PR[j]["dividende_ohne_trends_pct_bip"] for j in JAHRE}

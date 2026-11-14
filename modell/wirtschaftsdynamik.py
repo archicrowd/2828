@@ -10,6 +10,7 @@ Je Kanal drei Fälle (vorsichtig, mittel, hoch); die Fälle werden kanalweise ad
 Wirkung auf die Dividende wie dynamik33.py: Steuern als Anteile am BIP, Dividende in Euro wächst mit dem BIP-Faktor, dazu Progression.
 Vergleich: Mehr der Haushalte 2028 (Mikrosimulation) gegen die Neuaufnahme des Fonds 2028 (gesamtlast33.json).
 Nicht enthalten: Preise, Zinsen, Löhne als Rückwirkung; Verteilung; Wechselwirkungen zwischen den Kanälen; Tilgungsphase des Fonds als Nachfrageentzug.
+Seit v4.85 rechnet die Kette mit dem mittleren Fall (dynamik_geltend.py); diese Prüfrechnung zeigt die Spannen auf dem statischen Pfad.
 Ausgabe: daten/aggregate/wirtschaftsdynamik.json
 """
 import contextlib
@@ -28,6 +29,7 @@ PAR = {p["name"]: p["wert"] for p in tomllib.loads((W / "modell" / "parameter.to
 MK = json.loads((AGG / "mikro_de.json").read_text(encoding="utf-8"))["basis"]["ergebnis"]["0.8"]["gesamt"]
 AW = json.loads((AGG / "ausweichen33.json").read_text(encoding="utf-8"))
 GL = json.loads((AGG / "gesamtlast33.json").read_text(encoding="utf-8"))
+FGW = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))
 _s = importlib.util.spec_from_file_location("dyn", W / "modell" / "dynamik33.py")
 DY = importlib.util.module_from_spec(_s)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -56,7 +58,7 @@ def nachfrage_anteil(j):
 def fachkraefte(eps):
     """Zuzug von Fachkräften: Bestand in % der Bevölkerung, Erwerbstätige, BIP-Faktor dy je Jahr (Rechenweg einwanderung33.szenario)."""
     F = P["fachkraefte"]
-    dln = math.log(RB[F["brutto_beispiel"]]["neu"] / RB[F["brutto_beispiel"]]["heute"])
+    dln = P["geltend"]["dln_netto_fachkraefte"]   # v4.85: fester Eingangswert (statische Rechnung v4.84); regel_boden ist jetzt dynamisch
     s = eps * dln * F["bestand_mio_de"] / PAR["de_einwohner_2024"] * 100      # Zuwachs des Bestands in % der Bevölkerung
     out = {}
     for j in range(2028, 2099):
@@ -77,15 +79,18 @@ def main():
     # Impuls N1: Mehr der Haushalte 2028 in % des BIP
     erw_mio = PAR["de_einwohner_2024"] * (1 - P["nachfrage"]["minderjaehrige_anteil"])
     eur_bip = AW["eur_je_bip_punkt"]["j2028"]                                  # Euro je Erwachsenem und Monat je BIP-Punkt (Kaufkraft 2026)
-    mehr_mrd = MK["mittel_mehr_monat_eur"] * MK["haushalte_mio"] * 12 / 1000
-    impuls = MK["mittel_mehr_monat_eur"] * MK["haushalte_mio"] / erw_mio / eur_bip
-    fonds_neu = GL["c_ohne_fonds_2028"]["altlasten_im_jahr"] - GL["reihe"][0]["fonds"]
+    impuls = P["geltend"]["impuls_pct_bip"]                                    # v4.85: fester Eingangswert (statische Rechnung v4.84)
+    mehr_mrd = impuls * erw_mio * eur_bip * 12 / 1000
+    fonds_neu = GL["c_ohne_fonds_2028"]["altlasten_im_jahr"] - FGW.get("ohne_dynamik", FGW)["beitrag_pct_bip"]
     b = P["buerokratie"]
     bk_pct = b["ifo_mrd"] / b["bip_2024_mrd"] * 100
     global C0
     C0 = EIN.fonds({j: 0.0 for j in range(2028, 2099)})[0]
-    faelle = {}
-    for i, fall in enumerate(P["faelle"]):
+    V = P["visum"]
+
+    def rechne(i, vm=0.0):
+        """Ein Fall i (0 vorsichtig, 1 mittel, 2 hoch); vm = Zuzug über das gemeinsame Fachkräftevisum in % der Bevölkerung je Jahr."""
+        vs = EIN.szenario(vm, V["erwerb"], V["produktivitaet"]) if vm else {j: dict(dy=0.0, dp=0.0) for j in range(2028, 2099)}
         A, M, I, Z = P["beschaeftigung"], P["markt"], P["investition"], P["zuversicht"]
         dauer = dict(A1=(A["arbeitsvolumen_pct"][i] + A["einkommenseffekt_dividende_pct"]) * A["lohnanteil_bip"],
                      B1=bk_pct * b["anteil_abgebaut"][i], M1=M["iwf_bip_je_10pct"] * M["abbau_hemmnisse_pct"][i] / 10,
@@ -96,13 +101,15 @@ def main():
         for j in range(2028, 2099):                                            # BIP-Pfad für den Fonds
             k = {c: v * aufbau(j, bis[c]) for c, v in dauer.items()}
             k["N1"] = impuls * P["nachfrage"]["multiplikator"][i] * nachfrage_anteil(j)
-            dy_pfad[j] = sum(k.values()) / 100 + fk[j]["dy"]
+            dy_pfad[j] = sum(k.values()) / 100 + fk[j]["dy"] + vs[j]["dy"]
         for j in JAHRE:
             k = {c: v * aufbau(j, bis[c]) for c, v in dauer.items()}
             k["N1"] = impuls * P["nachfrage"]["multiplikator"][i] * nachfrage_anteil(j)
             k["F1"] = fk[j]["dy"] * 100
+            if vm:
+                k["V1"] = vs[j]["dy"] * 100
             summe = sum(k.values())
-            fy = (1 + summe / 100) / (1 + fk[j]["dp"])                         # Dividende folgt dem BIP je Einwohner
+            fy = (1 + summe / 100) / (1 + fk[j]["dp"] + vs[j]["dp"])                         # Dividende folgt dem BIP je Einwohner
             jj = min(DY.NZ, key=lambda x: abs(x - j))                             # Netz-Beschluss liegt für 2028/2035/2045/2060 vor
             n, fr = DY.NZ[jj], DY.R[jj]["wachstum_je_kopf_faktor"]
             prog = DY.E0 * (DY.PJM.progression((fr * fy) ** (1 - DY.LA)) - DY.PJM.progression(fr ** (1 - DY.LA)))
@@ -113,13 +120,21 @@ def main():
                                  dividende_erw_eur2026=round(eur), dividende_grundpfad_eur2026=n["dividende_erw_eur2026"],
                                  dividende_mehr_eur=round(eur - n["dividende_erw_eur2026"]), grundpfad_jahr=jj)
         c, spitze, sj = EIN.fonds(dy_pfad)
-        faelle[fall] = dict(dauerhaft_voll_bip_pct={c_: round(v, 2) for c_, v in dauer.items()}, reihe=reihe,
+        return dict(dauerhaft_voll_bip_pct={c_: round(v, 2) for c_, v in dauer.items()}, reihe=reihe,
                             arbeitsvolumen_pct=round(A["arbeitsvolumen_pct"][i] + A["einkommenseffekt_dividende_pct"], 2),
                             fachkraefte=dict(bestand_plus_pct_bev=round(s_fk, 3), de_tausend=round(s_fk / 100 * PAR["de_einwohner_2024"] * 1000),
                                              zone_30_tausend=round(s_fk / 100 * ZONE_MIO * 1000), dln_netto=round(dln, 3)),
                             fonds=dict(beitrag_pct_bip=round(c * EIN.V30, 2), beitrag_ohne_dynamik_pct_bip=round(C0 * EIN.V30, 2),
                                        spitze_zehn=spitze, spitzenjahr=sj))
-    E = dict(version=P["version"], status="Prüfrechnung, Thesen mit Werten; nicht in der geltenden Rechnung",
+
+    faelle = {fall: rechne(i) for i, fall in enumerate(P["faelle"])}
+    # Variante Fachkräftevisum: mittlerer Fall der übrigen Kanäle + Visum in drei Größen
+    visum = {}
+    for fall, vm in zip(P["faelle"], V["zuzug_pct_bev_je_jahr"]):
+        r = rechne(1, vm)
+        visum[fall] = dict(zuzug_pct_bev_je_jahr=vm, zuzug_de_tausend_je_jahr=round(vm / 100 * PAR["de_einwohner_2024"] * 1000),
+                           zuzug_zone_tausend_je_jahr=round(vm / 100 * ZONE_MIO * 1000), reihe=r["reihe"], fonds=r["fonds"])
+    E = dict(version=P["version"], status="Prüfrechnung auf dem statischen Pfad (Spannen); der mittlere Fall ist seit v4.85 geltend (dynamik_geltend.py)",
              nachfrage=dict(mehr_haushalte_mrd_jahr_eur2026=round(mehr_mrd, 1), impuls_pct_bip=round(impuls, 2),
                             fonds_neuaufnahme_2028_pct_bip=round(fonds_neu, 2), erwachsene_mio=round(erw_mio, 1),
                             hinweis="Mehr der Haushalte 2028 (Mittel 442 € je Haushalt und Monat, 41,1 Mio. Haushalte, 80 % Weitergabe) in % des BIP über "
@@ -127,7 +142,10 @@ def main():
                                     "Teil über die Streckung der Altlasten finanziert und kehrt sich in der Tilgungsphase um (nicht gerechnet)."),
              buerokratie_ifo_pct_bip_2024=round(bk_pct, 2), belege={k: P[k]["beleg"] for k in ("nachfrage", "beschaeftigung", "buerokratie", "markt", "investition", "zuversicht", "fachkraefte")},
              erwartet="mittel (Entscheidung der Initiative 14.11.2026)",
-             faelle=faelle,
+             faelle=faelle, visum_mittel_plus=visum,
+             visum_hinweis="Gemeinsames Fachkräftevisum der Gemeinschaft (Variante): zusätzlicher Zuzug je Jahr ab 2028 als Anteil an der heutigen "
+                           "Erwerbsmigration aus Drittstaaten (DE 2023: 70.459, AZR nach Bertelsmann Stiftung); Rechenweg einwanderung33.szenario; "
+                           "zusammen mit dem mittleren Fall der übrigen Kanäle.",
              hinweis="Niveau des BIP gegen den Grundpfad in %; Dividende je Erwachsenem und Monat, Kaufkraft 2026, Grundpfad Netz-Beschluss (nächstliegendes "
                      "Jahr). Fälle kanalweise addiert. Keine Rückwirkung auf Preise, Zinsen und Löhne.")
     (AGG / "wirtschaftsdynamik.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -135,6 +153,9 @@ def main():
     for f, d in faelle.items():
         print(f"{f:>10}: dauerhaft {d['dauerhaft_voll_bip_pct']} | Fachkräfte {d['fachkraefte']} | Fonds {d['fonds']}")
         print("            " + " | ".join(f"{j}: BIP {x['bip_pct']:+.1f} %, Div {x['dividende_mehr_eur']:+d} €" for j, x in d["reihe"].items()))
+    for f, d in visum.items():
+        print(f"Visum {f:>10}: {d['zuzug_de_tausend_je_jahr']} Tsd. DE/Jahr, {d['zuzug_zone_tausend_je_jahr']} Tsd. Zone | Fonds {d['fonds']}")
+        print("            " + " | ".join(f"{j}: BIP {x['bip_pct']:+.1f} % (je Einw. {x['bip_je_einwohner_pct']:+.1f}), Div {x['dividende_mehr_eur']:+d} €" for j, x in d["reihe"].items() if j in ("2035", "2045", "2060")))
     return 0
 
 

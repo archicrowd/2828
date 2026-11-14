@@ -118,18 +118,18 @@
  "fonds_varianten": {
   "alle 30 (geltend)": {
    "staaten": 30,
-   "beitrag_pct_bip": 5.15,
-   "zuschlag_pct": 15.4
+   "beitrag_pct_bip": 5.04,
+   "zuschlag_pct": 15.1
   },
   "Teilnahme (WJP ≥ 0,66), CH und IS eingeschlossen": {
    "staaten": 24,
-   "beitrag_pct_bip": 5.19,
-   "zuschlag_pct": 15.5
+   "beitrag_pct_bip": 5.08,
+   "zuschlag_pct": 15.2
   },
   "nur WJP ≥ 0,75 (Information), CH und IS eingeschlossen": {
    "staaten": 14,
-   "beitrag_pct_bip": 4.09,
-   "zuschlag_pct": 12.3
+   "beitrag_pct_bip": 4.0,
+   "zuschlag_pct": 12.1
   }
  },
  "staaten_unter_0_66": {
@@ -160,8 +160,8 @@
  },
  "anteil_bip_unter_0_66_pct": 5.7,
  "geltend_kontrolle": {
-  "beitrag_pct_bip": 5.15,
-  "zuschlag_pct": 15.4
+  "beitrag_pct_bip": 5.04,
+  "zuschlag_pct": 15.1
  },
  "hinweis": "v4.74 Spielregel 1: Grundlagen (beide Menschenrechtspakte, Pariser Abkommen) und WJP 2025 ≥ 0,66 = Teilnahme, sonst Partner; SDG Index, UN-Mi und Zahl der sieben Kernabkommen nur ausgewiesen. Fonds: Abgrenzung des Möglichkeitsraums, skaliert mit dem Beschluss (wie fonds_klub.py); nur Staaten des Fonds der 30."
 }

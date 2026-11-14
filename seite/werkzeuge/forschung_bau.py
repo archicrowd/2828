@@ -76,6 +76,7 @@ SEIT_PRUEFUNG = [
  ("v4.82", "Dokumentenprüfung 14.11.: Geltungsbereich der Kernaussagen, Gesamtlast als Kassenvergleich, Erbschaftsbasis offen (Korrekturen 87, 88)", "keine Zahl der Rechnung"),
  ("v4.83", "Wirtschaftsdynamik: sechs Kanäle als Thesen mit Werten (Prüfrechnung)", "keine geltende Zahl; BIP-Niveau mittel +2,5 % ab 2045"),
  ("v4.84", "Erwartete Dynamik (mittlerer Fall) ausgewiesen; Kanal Fachkräfte aus dem Ausland", "keine geltende Zahl; BIP mittel +2,7 % (2045), Fondsbeitrag 5,04 % BIP"),
+ ("v4.85", "Erwartete Dynamik (mittel, mit Nachfrage) in der geltenden Rechnung; Variante Fachkräftevisum", "Dividende 2028 364 € (354), Fonds 5,04 % BIP (5,15), 42.000 €: +627 € (+611)"),
 ]
 
 

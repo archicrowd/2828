@@ -155,19 +155,15 @@ def paare(H, L):
     m28 = re.search(r"(\S*?)(\d[\d., ]*\d|\d)([  ]?[^\s(\d]*) \(2028\)", satz28)
     erw = json.loads(re.search(r'"erw": (\{.*?\})', H).group(1))
     jahre = json.loads(re.search(r'"jahre": (\[.*?\])', H).group(1))
-    m60 = m28.group(1) + zahl(erw["0,5"][jahre.index(2060)], 0, L) + m28.group(3)
-    lab = re.search(r'data-v="0,5">([^<]*)</button>', H).group(1)
-    neu = fertig(t["zeit_mehr"], m=m60, lab=lab[:1].lower() + lab[1:])
+    # v4.85: Pfade 1,0 = mit erwarteter Dynamik (geltend), 0,5 = ohne Dynamik, 1,5 = Dynamik und KI
+    geld = lambda x: m28.group(1) + zahl(x, 0, L) + m28.group(3)
+    neu = fertig(t["zeit_mehr"], m=geld(erw["1,5"][jahre.index(2060)]), s28=geld(erw["0,5"][0]), s60=geld(erw["0,5"][jahre.index(2060)]))
     if L == "de":
-        R.append((satz28 + " " + letzt, satz28.replace("So sinkt", "Im Grundpfad sinkt") + " " + neu, "text"))
+        R.append((satz28 + " " + letzt, satz28.replace("So sinkt", "Mit der erwarteten Dynamik sinkt") + " " + neu, "text"))
     else:
         R.append((letzt + "</p>", neu + "</p>", "text"))
     alt = einmal(H, r'<details class="mehr"><summary>[^<]*</summary>')
     R.append((alt, f'<details class="mehr" open><summary>{t["summary"]}</summary>', "text"))
-    alt = einmal(H, r'<div class="tabs" id="gtabs">.*?</div>', re.S)
-    R.append((alt, alt.replace('aria-pressed="true"', 'aria-pressed="X"').replace('aria-pressed="false" data-v="0,5"', 'aria-pressed="true" data-v="0,5"')
-              .replace('aria-pressed="X"', 'aria-pressed="false"'), "roh"))
-    R.append((einmal(H, re.escape("seg('gtabs',chart);chart('1,0');")), "seg('gtabs',chart);chart('0,5');", "roh"))
     # Sicherungen → sechs Spielregeln für die Teilnahme, dahinter das Rechenspiel
     a, b = abschnitt(H, "sicherungen")
     regeln = "".join(f"<div><span><b>{k.split(' · ', 1)[1]}</b><p>{p}</p></span></div>" for k, p in t["regeln"])   # Nummer setzt das Stylesheet

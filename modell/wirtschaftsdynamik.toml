@@ -2,7 +2,7 @@
 # Frage der Initiative (14.11.2026): Welche Dynamik entsteht aus höherem verfügbarem Einkommen, Deregulierung, Markterleichterung,
 # Entbürokratisierung und größerer Zuversicht? Jeder Kanal hat drei Werte (vorsichtig, mittel, hoch), eine Belegstufe (A/B/C wie in der
 # Voruntersuchung Verhaltenswirkungen) und eine Aufbauzeit. Werte = Niveau des BIP gegen den Grundpfad in %, außer wo anders vermerkt.
-version = "v4.83"
+version = "v4.85"
 start = 2028
 faelle = ["vorsichtig", "mittel", "hoch"]
 
@@ -77,3 +77,23 @@ erwerb = 0.88                     # Erwerbstätigenquote der Fachkräfte (Annahm
 produktivitaet = 1.2              # Wertschöpfung je Fachkraft relativ zum Durchschnitt (Annahme; einwanderung33: 0,85 für alle Zuwandernden)
 mitkommende_kinder = 0.3          # wie einwanderung33.toml
 beleg = "C"
+
+[visum]   # V1 – Variante: gemeinsames Fachkräftevisum der Gemeinschaft (Vorschlag v4.84, Rechnung v4.85)
+# Ein Visum für alle 30 Staaten, schnelles Verfahren, Anerkennung der Abschlüsse. Größe als Anteil an der heutigen Erwerbsmigration aus Drittstaaten:
+# DE 2023 70.459 Einreisen zur Erwerbsarbeit (= 0,084 % der Bevölkerung; AZR nach Bertelsmann Stiftung, Fachkräftemigrationsmonitor 2024).
+# Beleg für die Richtung: Westbalkanregelung, Kontingent 2024 von 25.000 auf 50.000 verdoppelt und wieder ausgeschöpft; 98 % der so Eingewanderten
+# beschäftigt (BA/IAB nach ZDF, 04.11.2026; Sekundärquelle). Größe: Annahme (+50 / +100 / +200 % der heutigen Erwerbsmigration), übertragen auf
+# die 30 Staaten im selben Anteil an der Bevölkerung.
+zuzug_pct_bev_je_jahr = [0.042, 0.084, 0.168]
+erwerb = [[0, 0.80], [5, 0.88]]   # Erwerbstätigenquote nach Jahren seit Ankunft (Annahme; Westbalkan 98 % beschäftigt, Familien nicht erwerbstätig)
+produktivitaet = 1.0              # Wertschöpfung relativ zum Durchschnitt (Annahme; mehr als die Hälfte mindestens auf Fachkraftniveau)
+beleg = "C"
+
+[geltend]   # v4.85: Beschluss der Initiative (14.11.2026): mittlerer Fall aller sieben Kanäle einschließlich Nachfrage geht in die geltende Rechnung
+fall = 1                          # 0 vorsichtig, 1 mittel, 2 hoch
+mit_nachfrage = true
+mit_visum = false                 # Fachkräftevisum bleibt Variante (nicht beschlossen)
+# Eingangswerte aus der statischen Rechnung v4.84 (fest, damit die Kette nicht zirkulär wird; Herkunft im Logbuch v4.85):
+impuls_pct_bip = 5.08             # Mehr der Haushalte 2028 (mikro_de.json, 442 € × 41,1 Mio. Haushalte) in % BIP
+dln_netto_fachkraefte = 0.184     # ln(4.588 / 3.817), regel_boden.json, alleinstehend 75.000 €
+gilt_fuer_alle_staaten = true     # Annahme: dieselbe Dynamik in % des BIP je Einwohner in allen 30 Staaten (über projektion33/netz33/laenderseiten)

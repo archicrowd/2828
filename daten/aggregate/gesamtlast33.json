@@ -6,31 +6,31 @@
  "reihe": [
   {
    "jahr": 2028,
-   "steuern": 33.53,
-   "fonds": 5.15,
-   "a_steuern_und_fonds": 38.68,
-   "b_mit_pflichtvorsorge": 42.78
+   "steuern": 33.6,
+   "fonds": 5.04,
+   "a_steuern_und_fonds": 38.64,
+   "b_mit_pflichtvorsorge": 42.74
   },
   {
    "jahr": 2035,
-   "steuern": 33.03,
-   "fonds": 5.15,
-   "a_steuern_und_fonds": 38.18,
-   "b_mit_pflichtvorsorge": 42.28
+   "steuern": 33.12,
+   "fonds": 5.04,
+   "a_steuern_und_fonds": 38.16,
+   "b_mit_pflichtvorsorge": 42.26
   },
   {
    "jahr": 2045,
-   "steuern": 32.18,
-   "fonds": 5.15,
-   "a_steuern_und_fonds": 37.33,
-   "b_mit_pflichtvorsorge": 41.43
+   "steuern": 32.28,
+   "fonds": 5.04,
+   "a_steuern_und_fonds": 37.32,
+   "b_mit_pflichtvorsorge": 41.42
   },
   {
    "jahr": 2060,
-   "steuern": 32.13,
-   "fonds": 5.15,
-   "a_steuern_und_fonds": 37.28,
-   "b_mit_pflichtvorsorge": 41.38
+   "steuern": 32.22,
+   "fonds": 5.04,
+   "a_steuern_und_fonds": 37.26,
+   "b_mit_pflichtvorsorge": 41.36
   }
  ],
  "c_ohne_fonds_2028": {
@@ -44,10 +44,16 @@
    "mit_route": 49.57
   }
  },
+ "c_ohne_fonds_2028_dynamisch": {
+  "steuern": 33.6,
+  "altlasten_im_jahr": 11.84,
+  "summe": 45.44,
+  "fonds_neuaufnahme": 6.8
+ },
  "fonds": {
-  "beitrag_pct_bip": 5.15,
-  "zuschlag_pct": 15.4,
-  "schuldenquote_spitze": 147.5,
+  "beitrag_pct_bip": 5.04,
+  "zuschlag_pct": 15.1,
+  "schuldenquote_spitze": 144.4,
   "spitzenjahr": 2055,
   "zieljahr": 2098
  },

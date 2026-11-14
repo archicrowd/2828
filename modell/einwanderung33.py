@@ -22,9 +22,11 @@ P = tomllib.loads((W / "modell" / "einwanderung33.toml").read_text(encoding="utf
 PJ = json.loads((AGG / "projektion33.json").read_text(encoding="utf-8"))
 AL = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))
 # v4.41 (R9): Dividende nach dem Netz-Beschluss (netz33.json, geltend) statt projektion33 (Vorstufe); Fonds der 30 (fonds_geltend.json)
-NZ = {r["jahr"]: r for r in json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))["beschluss"]["reihe"]}
+_nb = json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))["beschluss"]
+NZ = {r["jahr"]: r for r in _nb.get("reihe_statisch", _nb["reihe"])}   # v4.85: statischer Pfad (Szenario zusätzlich zur geltenden Dynamik)
 FG = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))
 V30 = FG["grundlage"]["verhaeltnis_beitrag_30_zu_10"]
+FGS = dict(FG, **FG.get("ohne_dynamik", {}))   # v4.85: Fonds ohne Dynamik als Vergleich
 spec = importlib.util.spec_from_file_location("al", W / "modell" / "altlasten.py")
 ALM = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -88,7 +90,7 @@ def fonds(dy):
 
 
 def main():
-    R = {r["jahr"]: r for r in PJ["reihe"]}
+    R = {r["jahr"]: r for r in PJ.get("reihe_statisch", PJ["reihe"])}
     gs0 = P["gesundheit_pct_bip_2028"]
     erg = []
     for m, art in [(m_, a_) for m_ in P["zusatz_pct"] for a_ in ("kontrolliert", "schwierig")]:
@@ -113,12 +115,12 @@ def main():
         # v4.41: auf den Fonds der 30 übertragen (Verhältnis wie fonds_klub.py; Spitze mit Spitze 30 / Spitze zehn skaliert, Annahme)
         c30 = c * V30
         erg.append(dict(zusatz_pct=m, integration=art, zusatz_mio_je_jahr_klub=round(m / 100 * 255.06, 2), reihe=reihe,
-                        fonds_beitrag_pct_bip=round(c30, 2), fonds_zuschlag_pct=round(c30 / FG["beitrag_pct_bip"] * FG["zuschlag_auf_alle_steuern_pct"], 1),
-                        fonds_spitze=round(spitze * FG["schuldenquote_spitze"] / AL["beschluss"]["schuldenquote_spitze"], 1), fonds_spitzenjahr=sj,
+                        fonds_beitrag_pct_bip=round(c30, 2), fonds_zuschlag_pct=round(c30 / FGS["beitrag_pct_bip"] * FGS["zuschlag_auf_alle_steuern_pct"], 1),
+                        fonds_spitze=round(spitze * FGS["schuldenquote_spitze"] / AL["beschluss"]["schuldenquote_spitze"], 1), fonds_spitzenjahr=sj,
                         fonds_beitrag_zehn_pct_bip=c))
     B = AL["beschluss"]
     E = dict(version=P["version"], status="Prüfrechnung", annahmen={k: P[k] for k in P if k != "version"}, szenarien=erg,
-             grundpfad_fonds=dict(beitrag_pct_bip=FG["beitrag_pct_bip"], zuschlag_pct=FG["zuschlag_auf_alle_steuern_pct"], spitze=FG["schuldenquote_spitze"],
+             grundpfad_fonds=dict(beitrag_pct_bip=FGS["beitrag_pct_bip"], zuschlag_pct=FGS["zuschlag_auf_alle_steuern_pct"], spitze=FGS["schuldenquote_spitze"],
                                   spitzenjahr=FG["spitzenjahr"], zehn=dict(beitrag_pct_bip=B["beitrag_pct_bip"], spitze=B["schuldenquote_spitze"])),
              hinweis="v4.41: Grundpfad Dividende netz33.json (Netz-Beschluss), Fonds der 30 (Beschluss der zehn mit Wirtschaftszuwachs gelöst, Verhältnis 30/10); "
                      "Einwanderung zusätzlich zu den amtlichen Annahmen")

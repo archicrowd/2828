@@ -21,6 +21,8 @@ SV = json.loads((AGG / "systemvarianten.json").read_text(encoding="utf-8"))
 AL = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))   # v4.20: geltender Fonds der 30 Staaten
 SZ = json.loads((AGG / "sozialschutz.json").read_text(encoding="utf-8"))
 PJ = json.loads((AGG / "projektion33.json").read_text(encoding="utf-8"))
+_dg = AGG / "dynamik_geltend.json"
+DY28 = json.loads(_dg.read_text(encoding="utf-8"))["reihe"]["2028"]["dy"] if _dg.exists() else 0.0   # v4.85
 
 
 def main():
@@ -41,6 +43,11 @@ def main():
                                     mit_route=round(p28["deckung"] + p28["altlastenbeitrag"] + route, 2),
                                     systemvarianten_mit_steuerbedarf=dict(steuerbedarf=p28["steuerbedarf"], summe=p28["gesamtlast_ohne_route"],
                                                                           mit_route=p28["gesamtlast_mit_route"])),
+             # v4.85: mit erwarteter Dynamik (BIP 2028 höher, Altlasten als feste Beträge kleiner im Anteil; Steuern mit Progression)
+             c_ohne_fonds_2028_dynamisch=dict(steuern=round(deck.get(2028, p28["deckung"]), 2),
+                                              altlasten_im_jahr=round(p28["altlastenbeitrag"] / (1 + DY28), 2),
+                                              summe=round(deck.get(2028, p28["deckung"]) + p28["altlastenbeitrag"] / (1 + DY28), 2),
+                                              fonds_neuaufnahme=round(p28["altlastenbeitrag"] / (1 + DY28) - AL["beitrag_pct_bip"], 2)),
              fonds=dict(beitrag_pct_bip=AL["beitrag_pct_bip"], zuschlag_pct=AL["zuschlag_auf_alle_steuern_pct"], schuldenquote_spitze=AL["schuldenquote_spitze"],
                         spitzenjahr=AL["spitzenjahr"], zieljahr=AL["zieljahr"]),
              hinweis="% des BIP; Fonds: gemeinsamer Fonds der 30 Staaten (fonds_geltend.json; v4.46, Prüfbefund B20 – vorher stand hier „Klub der zehn“). Steuern: Deckung 33R einschließlich Progression (projektion33). "

@@ -406,9 +406,9 @@ and care contributions. Insurance years are imputed from the pension amount (ass
 month in 2028 (Table 4 shows the dividend in per cent of GDP). Its share of GDP falls from {en(NZ0['dividende_pct_bip'], 2)} % in 2028 to {en(NZ60['dividende_pct_bip'], 2)} % in 2060 because
 steering revenue falls with emissions. The total burden of taxes and fund is {en(F.ZR['a_steuern_und_fonds'], 1)} % of GDP in 2028 against
 {en(F.GL['heute'], 2)} % today (Eurostat 2024); including compulsory saving, which goes to an own account, it is {en(F.ZR['b_mit_pflichtvorsorge'], 1)} %.
-This is a cash comparison: in 2028 legacy costs are {en(F.GL['c_ohne_fonds_2028']['altlasten_im_jahr'], 2)} % of GDP, of which the fund collects
-{en(F.ZR['fonds'], 2)} % and borrows {en(F.GL['c_ohne_fonds_2028']['altlasten_im_jahr'] - F.ZR['fonds'], 2)} %; without this stretching the burden is
-{en(F.GL['c_ohne_fonds_2028']['summe'], 2)} % of GDP. The top tax rate is one third; with the fund surcharge the marginal burden on an additional euro of
+This is a cash comparison: in 2028 legacy costs are {en(F.GL['c_ohne_fonds_2028_dynamisch']['altlasten_im_jahr'], 2)} % of GDP, of which the fund collects
+{en(F.ZR['fonds'], 2)} % and borrows {en(F.GL['c_ohne_fonds_2028_dynamisch']['fonds_neuaufnahme'], 2)} %; without this stretching the burden is
+{en(F.GL['c_ohne_fonds_2028_dynamisch']['summe'], 2)} % of GDP. The top tax rate is one third; with the fund surcharge the marginal burden on an additional euro of
 gross wage is about 40 % in 2028 and about 34 % after repayment (Table 7).</p>
 <p class="cap">Table 4: Strong net and dividend, Germany</p>
 {t_net()}
@@ -465,8 +465,8 @@ positions are still to be checked against cash statistics.</p>
 Eurofound 2015); a payment without application and a pre-filled top-up are designed to reduce it, which raises costs that are already fully counted.</p>
 
 <h3>Expected dynamics (middle case)</h3>
-<p>The model is static; dividend and household figures contain no behavioural growth. A separate check calculation
-(<code>wirtschaftsdynamik.py</code>) adds seven channels – demand from higher disposable income (temporary), employment, less bureaucracy,
+<p>Since version 4.85 all figures include the expected dynamics (middle case, decision of 14 November 2026; <code>dynamik_geltend.py</code>).
+A separate check calculation on the static path (<code>wirtschaftsdynamik.py</code>) gives the range across seven channels – demand from higher disposable income (temporary), employment, less bureaucracy,
 a market without borders, investment (negative, higher taxation of capital and profits), confidence and skilled immigration – with values from
 the literature and marked assumptions. In the middle case GDP is {en(J('wirtschaftsdynamik.json')['faelle']['mittel']['reihe']['2035']['bip_pct'], 1)} % above
 the baseline in 2035 and {en(J('wirtschaftsdynamik.json')['faelle']['mittel']['reihe']['2045']['bip_pct'], 1)} % in 2045 (range

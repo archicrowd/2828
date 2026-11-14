@@ -37,6 +37,7 @@ STUFEN = [
     ("Sozialschutz und Übergang (Vorbereitung)", ["modell/sozialschutz.py"]),
     ("Systemvarianten 25:25 und 33:33", ["modell/systemvarianten.py"]),
     ("Altlastenfonds (Streckung)", ["modell/altlasten.py"]),
+    ("Erwartete Dynamik in der geltenden Rechnung (mittlerer Fall, v4.85)", ["modell/dynamik_geltend.py"]),
     ("Drittel-System: Zeitpfad mit Trends", ["modell/projektion33.py"]),
     ("Mehrwertsteuer nach Einkommen (EVS 2023)", ["modell/mwst_verteilung.py"]),
     ("Mehrwertsteuer nach Einkommen je Staat (HBS 2020)", ["modell/mwst_laender.py"]),

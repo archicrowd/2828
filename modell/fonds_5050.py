@@ -23,7 +23,7 @@ FG = json.loads((W / "daten" / "aggregate" / "fonds_geltend.json").read_text(enc
 
 def main():
     b10, z10, _ = FK.klub(FK.ZEHN)
-    fb, fz = FK.BU["beitrag_pct_bip"] / b10, FK.BU["zuschlag_auf_alle_steuern_pct"] / z10
+    fb, fz = FK.BU["beitrag_pct_bip"] / b10 * FK.DV["verhaeltnis_beitrag"], FK.BU["zuschlag_auf_alle_steuern_pct"] / z10 * FK.DV["verhaeltnis_beitrag"]   # v4.85: Dynamik
     alle = list(FK.MRJ)
     a = P["anteil_gemeinsam"]
     teil = [c for c in alle if SA[c][0] >= P["schwelle_wjp"] or c in P["ohne_wert_teilnahme"]]

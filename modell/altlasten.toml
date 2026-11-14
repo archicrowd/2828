@@ -24,8 +24,8 @@ kuerzung = 0.0695           # v4.72 Regel BS35 (Beschluss 5.11.2026) effektiv eb
                             # Zusagen (rentner_kombi.json, DE-Verteilung, für alle Staaten übernommen: Annahme); vorher 7,5 % (v4.11), 12,35 % (v3.48)
 kuerzung_je_staat = true    # v4.37 (R6): Satz je Staat nach Lage der Zusagen zum Grundbedarf (modell/kuerzung_laender.py, prüft die Tabelle unten); false = kuerzung für alle
 
-[kuerzung_staat]   # v4.72: Regel BS35 (Beschluss 5.11.2026), aus daten/aggregate/kuerzung_laender.json übertragen (Verteilung von Zusagen und Versicherungsjahren DE, Mittel aus COFOG GF1002+GF1003 je Person ab 65: Annahmen); v4.37–v4.71 Regel E
-AT = 0.1423
+[kuerzung_staat]   # v4.85: AT, LU nach der erwarteten Dynamik nachgeführt (Grundbedarf 2028); v4.72: Regel BS35 (Beschluss 5.11.2026), aus daten/aggregate/kuerzung_laender.json übertragen (Verteilung von Zusagen und Versicherungsjahren DE, Mittel aus COFOG GF1002+GF1003 je Person ab 65: Annahmen); v4.37–v4.71 Regel E
+AT = 0.1428
 BE = 0.0896
 BG = 0.0096
 CH = 0.0566
@@ -44,7 +44,7 @@ IE = 0.0388
 IS = 0.0052
 IT = 0.0876
 LT = 0.0108
-LU = 0.296
+LU = 0.2984
 LV = 0.0072
 MT = 0.029
 NL = 0.028

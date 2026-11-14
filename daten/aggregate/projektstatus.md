@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.84 · höchste Korrekturnummer 88 · 597 Dateien im Repository
+Modellstand v4.85 · höchste Korrekturnummer 88 · 601 Dateien im Repository
 
 ## Bausteine
 
@@ -91,6 +91,7 @@ Modellstand v4.84 · höchste Korrekturnummer 88 · 597 Dateien im Repository
 | N46 | B31 Drittel-System | B32 Länderseiten | offen |
 | N47 | B32 Länderseiten | B31 Drittel-System | offen |
 | N48 | B31 Drittel-System | B32 Länderseiten | offen |
+| N49 | B31 Drittel-System | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -116,3 +117,4 @@ Modellstand v4.84 · höchste Korrekturnummer 88 · 597 Dateien im Repository
 - Hinweis: Naht N46 offen: B31 Drittel-System -> B32 Länderseiten: v4.80: Übersetzungen en/fr/it/es/pl durch KI, gegenzulesen; Dividende 2060 im mittleren Pfad je Referenzland aus den Seitendaten; Kontrollfassung seite/entwurf/gemeinschaft/de-kontrolle.html
 - Hinweis: Naht N47 offen: B32 Länderseiten -> B31 Drittel-System: v4.82: Belege der vier Deckungspositionen (B-1) und Mehrjahresmittel Erbschaft (B-2) stehen aus
 - Hinweis: Naht N48 offen: B31 Drittel-System -> B32 Länderseiten: v4.84: entschieden 14.11.2026, mittlerer Fall ausgewiesen in Kennzahlen, Konzept 6.5 und Working Paper; Webseite unverändert; nutzt einwanderung33.fonds
+- Hinweis: Naht N49 offen: B31 Drittel-System -> B31 Drittel-System: v4.85: Eingangswerte Impuls 5,08 % BIP und Netto-Anreiz 0,184 fest aus v4.84 (Zirkularität vermieden); BS35-Sätze beschlossen 27,5/55,1, fondsneutral mit Dynamik 27,7/55,4 (Toleranz)

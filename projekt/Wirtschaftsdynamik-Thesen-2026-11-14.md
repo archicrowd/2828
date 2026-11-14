@@ -1,10 +1,18 @@
 # Wirtschaftliche Dynamik des Goldenen Drittels: Thesen und Werte
 
-Initiative 28:28 · 14. November 2026 · Modellstand v4.84 (T7 und Beschluss ergänzt) · Rechnung: `modell/wirtschaftsdynamik.py` (+ `.toml`) → `daten/aggregate/wirtschaftsdynamik.json`
+Initiative 28:28 · 14. November 2026 · Modellstand v4.85 (T7, Beschlüsse, Variante Fachkräftevisum) · Rechnung: `modell/wirtschaftsdynamik.py` (+ `.toml`) → `daten/aggregate/wirtschaftsdynamik.json`
 Status: **Prüfrechnung.** Nicht in der geltenden Rechnung; der Grundpfad bleibt statisch.
 
-**Beschluss der Initiative (14.11.2026):** Der mittlere Fall wird gerechnet und als erwartete Dynamik ausgewiesen (Kennzahlen, Konzept 6.5,
-Working Paper). Neu aufgenommen ist der Kanal Fachkräfte aus dem Ausland (T7).
+**Beschlüsse der Initiative (14.11.2026):**
+1. Der mittlere Fall wird gerechnet und als erwartete Dynamik ausgewiesen (v4.84). Neu aufgenommen ist der Kanal Fachkräfte aus dem Ausland (T7).
+2. **Der mittlere Fall aller Kanäle einschließlich Nachfrage geht in die geltende Rechnung (v4.85).** Dividende, Fonds, Haushalte, Konzept und
+   Webseite rechnen seither mit Dynamik (`modell/dynamik_geltend.py`). Das gemeinsame Fachkräftevisum ist als Variante gerechnet, nicht geltend.
+
+**Geltende Werte mit Dynamik (v4.85):**
+- Dividende 2028 364 € je Erwachsenem (bis v4.84: 354 €), 2060 243 € (227 €).
+- Fondsbeitrag 5,04 % BIP, Zuschlag 15,1 % (5,15 / 15,4 %).
+- Alleinstehend 42.000 €: +627 € im Monat (+611 €).
+- Gesamtlast 2028 38,64 % (38,68 %).
 
 ## 0 Frage und Vorgehen
 
@@ -123,6 +131,33 @@ Pflichtvorsorge auf. Die Richtung stimmt also. **Die Größe ist bei rein steuer
 **Zum Vergleich:** Eine aktiv gesteuerte Zuwanderung von 0,2 % der Bevölkerung je Jahr senkt den Fondsbeitrag auf 4,76 % (`einwanderung33`).
 **Folgerung:** Der Hebel liegt bei schnellen Visa, Anerkennung der Abschlüsse und Sprache. Ein gemeinsames Fachkräftevisum der Gemeinschaft
 wäre zu prüfen (Vorschlag, nicht gerechnet).
+
+### Variante: gemeinsames Fachkräftevisum der Gemeinschaft (v4.85, nicht geltend)
+
+**Idee:** ein Visum für alle 30 Staaten, schnelles Verfahren, Anerkennung der Abschlüsse.
+
+**Größe:** zusätzlicher Zuzug als Anteil an der heutigen Erwerbsmigration aus Drittstaaten.
+- **Ausgangszahl:** Deutschland 2023 70.459 Einreisen zur Erwerbsarbeit (AZR, nach Bertelsmann Stiftung, Fachkräftemigrationsmonitor 2024).
+- **Fälle:** +50 / +100 / +200 % davon (Annahme).
+- **Beleg für die Richtung:** Die Westbalkanregelung wurde 2024 von 25.000 auf 50.000 Zustimmungen im Jahr verdoppelt und wieder ausgeschöpft;
+  rund 98 % der so Eingewanderten sind beschäftigt (BA und IAB nach ZDF, 4.11.2026, Sekundärquelle).
+- **Rechenweg:** wie `einwanderung33`, mit Erwerbstätigenquote 0,80 auf 0,88 und Produktivität 1,0 (Annahmen).
+
+| Fall | Zuzug DE / 30 Staaten je Jahr | BIP 2045 (je Einwohner) | Fondsbeitrag | Dividende 2045 |
+|---|---|---|---|---|
+| vorsichtig | 35.000 / 196.000 | +4,2 % (+3,1 %) | 4,92 % BIP | 262 € |
+| **mittel** | **70.000 / 391.000** | **+5,7 % (+3,6 %)** | **4,81 % BIP** | **264 €** |
+| hoch | 140.000 / 782.000 | +8,8 % (+4,6 %) | 4,61 % BIP | 269 € |
+
+Werte zusammen mit dem mittleren Fall der übrigen Kanäle, gerechnet auf dem statischen Pfad.
+
+**Lesart:** Gegen den geltenden Fondsbeitrag (5,04 %) entlastet das Visum im mittleren Fall um rund 0,2 Punkte des BIP. Zum Vergleich: Der rein
+steuerliche Anreiz allein (T7) entlastet um weniger als 0,01 Punkte. Die Wirkung wächst mit der Zeit, weil jedes Jahr neue Fachkräfte
+hinzukommen.
+
+**Grenzen:**
+- Die Rechnung lässt die Zugewanderten mit 65 aus der Bevölkerung fallen; sie erhalten aber Dividende wie alle. Bis 2063 betrifft das niemanden.
+- Integration, Wohnen und Anerkennungskosten sind nicht gerechnet.
 
 ## 2 Werte zusammen
 

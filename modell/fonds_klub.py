@@ -18,6 +18,8 @@ from pathlib import Path
 
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
+_dg = AGG / "dynamik_geltend.json"   # v4.85
+DV = json.loads(_dg.read_text(encoding="utf-8"))["fonds"] if _dg.exists() else dict(verhaeltnis_beitrag=1.0, verhaeltnis_spitze=1.0)
 MRJ = json.loads((AGG / "moeglichkeitsraum33.json").read_text(encoding="utf-8"))["laender"]
 BJ = json.loads((AGG / "altlasten.json").read_text(encoding="utf-8"))["beschluss"]
 BU = BJ.get("ungerundet", dict(beitrag_pct_bip=BJ["beitrag_pct_bip"], zuschlag_auf_alle_steuern_pct=BJ["zuschlag_auf_alle_steuern_pct"]))   # v4.26, Korrektur 70
@@ -69,11 +71,15 @@ def main():
     (AGG / "fonds_klub.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     # v4.20: geltender gemeinsamer Fonds der 30 Staaten
     b30, z30, p30 = klub(list(MRJ), pfade)
-    f_niveau = BJ["schuldenquote_spitze"] / max(p10)
+    f_niveau = BJ["schuldenquote_spitze"] / max(p10) * DV["verhaeltnis_spitze"]   # v4.85: erwartete Dynamik
     pf = [x * f_niveau for x in p30]
     sp = max(pf)
     G = dict(version="v4.37", status="geltend (Beschluss 21.10.2026: 30 Staaten, Zins = Mittel 2006–2025)", staaten=len(MRJ), zins=MR.P["zins"],
-             beitrag_pct_bip=round(BU["beitrag_pct_bip"] * b30 / b10, 2), zuschlag_auf_alle_steuern_pct=round(BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10, 1),
+             beitrag_pct_bip=round(BU["beitrag_pct_bip"] * b30 / b10 * DV["verhaeltnis_beitrag"], 2),
+             zuschlag_auf_alle_steuern_pct=round(BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10 * DV["verhaeltnis_beitrag"], 1),
+             ohne_dynamik=dict(beitrag_pct_bip=round(BU["beitrag_pct_bip"] * b30 / b10, 2), zuschlag_auf_alle_steuern_pct=round(BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10, 1),
+                               schuldenquote_spitze=round(sp / DV["verhaeltnis_spitze"], 1)),
+             dynamik=dict(DV, hinweis="v4.85: erwartete Dynamik (mittlerer Fall, dynamik_geltend.json); Beitrag, Zuschlag und Schuldenpfad × Verhältnis"),
              schuldenquote_spitze=round(sp, 1), spitzenjahr=JAHRE[pf.index(sp)], zieljahr=BJ["zieljahr"],
              schuldenquote={str(j): round(pf[j - 2029], 1) for j in (2030, 2040, 2050, 2060, 2070, 2080, 2090, 2098)},
              grundlage=dict(beschluss_zehn=dict(beitrag_pct_bip=BJ["beitrag_pct_bip"], zuschlag_pct=BJ["zuschlag_auf_alle_steuern_pct"],
@@ -87,8 +93,8 @@ def main():
     bip = {c: MRJ[c]["bip_kopf_eur_2024"] * MRJ[c]["einwohner_mio"] for c in MRJ}
     alt = {c: MRJ[c]["altlasten"]["z_2028"] + MR.D["schuld"][c] * MR.P["zins"] / 100 for c in MRJ}
     alt_s = sum(bip[c] * alt[c] for c in MRJ) / sum(bip.values())
-    c30 = BU["beitrag_pct_bip"] * b30 / b10
-    z_je_b = BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10 / c30
+    c30 = BU["beitrag_pct_bip"] * b30 / b10 * DV["verhaeltnis_beitrag"]
+    z_je_b = BU["zuschlag_auf_alle_steuern_pct"] * z30 / z10 * DV["verhaeltnis_beitrag"] / c30
     BT = tomllib.loads((W / "modell" / "altlasten.toml").read_text(encoding="utf-8"))["beschluss"]
     vj = BT["verrechnung_jahre"]
     verr = {}
