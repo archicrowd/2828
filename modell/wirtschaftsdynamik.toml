@@ -1,0 +1,62 @@
+# Wirtschaftliche Dynamik des Goldenen Drittels: Thesen und Werte (modell/wirtschaftsdynamik.py, Logbuch v4.83). Prüfrechnung, keine Prognose.
+# Frage der Initiative (14.11.2026): Welche Dynamik entsteht aus höherem verfügbarem Einkommen, Deregulierung, Markterleichterung,
+# Entbürokratisierung und größerer Zuversicht? Jeder Kanal hat drei Werte (vorsichtig, mittel, hoch), eine Belegstufe (A/B/C wie in der
+# Voruntersuchung Verhaltenswirkungen) und eine Aufbauzeit. Werte = Niveau des BIP gegen den Grundpfad in %, außer wo anders vermerkt.
+version = "v4.83"
+start = 2028
+faelle = ["vorsichtig", "mittel", "hoch"]
+
+[nachfrage]   # N1 – mehr verfügbares Einkommen; vorübergehend
+# Impuls: mittleres Mehr der Haushalte 2028 aus der eigenen Mikrosimulation (mikro_de.json, 80 % Weitergabe, Kaufkraft 2026), umgerechnet
+# über Euro je BIP-Punkt der Dividende (ausweichen33.json) und Erwachsene = Einwohner 2024 × (1 − Minderjährigenanteil).
+minderjaehrige_anteil = 0.167     # Annahme wie boden_kosten.toml (Minderjährige 16,7 %)
+# Multiplikator für Steuer- und Transferimpulse: im Mittel der Studien etwa 0,3–0,4 unter dem Ausgabenmultiplikator (~1); Steuermultiplikatoren
+# hängen nicht von der Konjunkturlage ab (Gechert 2015, Oxford Economic Papers 67(3); Gechert/Rannenberg 2018, Journal of Economic Surveys 32(4);
+# Werte aus den Zusammenfassungen, Ableitung 0,6–0,7 eigene). Abschläge: Vollauslastung, Reaktion der EZB, Importe (Annahme).
+multiplikator = [0.15, 0.35, 0.6]
+voll_bis = 2030                   # volle Wirkung 2028–2030, danach linear auslaufend (Annahme: Kapazitätsgrenze, Geldpolitik)
+null_ab = 2033
+beleg = "B"
+
+[beschaeftigung]   # A1 – Arbeit lohnt sich mehr, Arbeit wird billiger; dauerhaft
+# Arbeitsvolumen in % aus dynamik33.toml (v3.49): nur Arbeitsnachfrage (0,9), vorsichtig (2,8), mittel (4,6); dazu Einkommenseffekt der
+# Dividende (zwischen Alaska 0 und OpenResearch −1 bis −2 Stunden je Woche bei Geringverdienern; Annahme −0,3 % Arbeitsvolumen).
+arbeitsvolumen_pct = [0.9, 2.8, 4.6]
+einkommenseffekt_dividende_pct = -0.3
+lohnanteil_bip = 0.66             # wie dynamik33.toml
+aufbau_bis = 2035
+beleg = "B"
+
+[buerokratie]   # B1 – Entbürokratisierung durch das einfache System; dauerhaft
+# ifo (Falck/Guo/Pfaffl, ifo Studie für die IHK München und Oberbayern, Pressemitteilung 14.11.2024): Bürokratie kostet „bis zu“ 146 Mrd. € an
+# Wirtschaftsleistung im Jahr (Simulation: Deutschland auf dem Bürokratieniveau Schwedens); eine Studie, Auftraggeber Interessenvertretung.
+# Anteil, den das Goldene Drittel abbaut (Steuer, Sozialbeiträge, Lohnabrechnung, Leistungen aus einer Hand): Annahme.
+ifo_mrd = 146.0
+bip_2024_mrd = 4328.97            # laender_2024.csv (Eurostat, Sekundärquelle)
+anteil_abgebaut = [0.10, 0.20, 0.30]
+aufbau_bis = 2035
+beleg = "C"
+
+[markt]   # M1 – Markt ohne Grenzen in der Gemeinschaft der Staaten; dauerhaft
+# IWF (Kammer, Finance & Development, Juni 2025, nach IWF-Forschung 2024): Binnenhemmnisse wirken wie ein Zoll von 44 % auf Waren und 110 % auf
+# Dienstleistungen; 10 % weniger Hemmnisse ⇒ BIP +7 % (Zeitraum und Methode im Artikel nicht genannt; Sekundärquelle). Lineare Übertragung und
+# Anteil, den gemeinsame Steuerregeln, Label, Register und Gericht abbauen: Annahme.
+iwf_bip_je_10pct = 7.0
+abbau_hemmnisse_pct = [0.0, 1.0, 2.5]
+aufbau_bis = 2045
+beleg = "C"
+
+[investition]   # I1 – Gegenrichtung: höhere Belastung von Kapital und Gewinnen; dauerhaft
+# Rangfolge der Wachstumsschädlichkeit: Unternehmensteuern > Einkommensteuern > Verbrauchsteuern > wiederkehrende Grundsteuern
+# (Heady/Johansson/Arnold/Brys/Vartia 2009, Kent DP 0925, Abschnitt 2; OECD). Das Drittel verschiebt von Arbeit zu Konsum und Boden (günstig)
+# und zu Kapital und Gewinnen (ungünstig): Kapitalerträge 33 % statt 26,4 %, Gewinne 33 % statt rund 30 %. Wert: Annahme.
+bip_pct = [-1.0, -0.5, 0.0]
+aufbau_bis = 2040
+beleg = "C"
+
+[zuversicht]   # Z1 – größere Zuversicht; kein eigener Kanal im Grundpfad
+# Vertrauensschocks spiegeln vor allem Nachrichten über die künftige Produktivität, kaum eigenständige Stimmung (Barsky/Sims 2012, AER 102(4)).
+# Höchstens: weniger Vorsichtssparen bei unteren Einkommen durch Boden und Dividende (Annahme).
+bip_pct = [0.0, 0.0, 0.3]
+aufbau_bis = 2032
+beleg = "C"

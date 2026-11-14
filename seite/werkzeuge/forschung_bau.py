@@ -74,6 +74,7 @@ SEIT_PRUEFUNG = [
  ("v4.80", "Webseite nach den Spielregeln in sechs Sprachen: Gemeinschaft der Staaten statt Dach, Weltkarte hinter den Regeln", "keine Zahl (Obergrenze im Flussbild 33,3 statt 32 %)"),
  ("v4.81", "Weltkarte: Mitgliedstaaten der Vereinten Nationen hellgrün, übrige Gebiete grau", "keine Zahl"),
  ("v4.82", "Dokumentenprüfung 14.11.: Geltungsbereich der Kernaussagen, Gesamtlast als Kassenvergleich, Erbschaftsbasis offen (Korrekturen 87, 88)", "keine Zahl der Rechnung"),
+ ("v4.83", "Wirtschaftsdynamik: sechs Kanäle als Thesen mit Werten (Prüfrechnung)", "keine geltende Zahl; BIP-Niveau mittel +2,5 % ab 2045"),
 ]
 
 

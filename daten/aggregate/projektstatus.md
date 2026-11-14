@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.82 · höchste Korrekturnummer 88 · 593 Dateien im Repository
+Modellstand v4.83 · höchste Korrekturnummer 88 · 597 Dateien im Repository
 
 ## Bausteine
 
@@ -90,6 +90,7 @@ Modellstand v4.82 · höchste Korrekturnummer 88 · 593 Dateien im Repository
 | N45 | B32 Länderseiten | B31 Drittel-System | offen |
 | N46 | B31 Drittel-System | B32 Länderseiten | offen |
 | N47 | B32 Länderseiten | B31 Drittel-System | offen |
+| N48 | B31 Drittel-System | B32 Länderseiten | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -114,3 +115,4 @@ Modellstand v4.82 · höchste Korrekturnummer 88 · 593 Dateien im Repository
 - Hinweis: Naht N45 offen: B32 Länderseiten -> B31 Drittel-System: v4.67: SDG 1.2/10.1 aus der Dezil-Rekonstruktion (Sekundärquelle für amtliche Quoten); Arbeitspapier projekt/Nachhaltigkeitsziele-und-internationales-Modell-2026-11-04.md v4.68: Rentnervarianten N2/3 u. a. (projekt/Rentner-Varianten-2026-11-04.md) v4.69: Freibetrag je Versicherungsjahr gerechnet, kein Vorteil gegen N2/3 in DE v4.70: Beispielrechner N2/3 (seite/entwurf/rentner-n23/rechner.html) v4.71: BS35 (Sockel 1 G) als internationale Fassung v4.72: BS35 geltend; Armutsquote DE aus der Mikrosimulation (Rentner relativ 30,3 %, Boden als Hebel) v4.73: Staatenauswahl liest fonds_klub (Auswahl aus den 30) v4.74: fonds_5050 liest fonds_klub, fonds_geltend und staatenauswahl.toml v4.76: gemeinschaft_kasse liest dach_beitrag
 - Hinweis: Naht N46 offen: B31 Drittel-System -> B32 Länderseiten: v4.80: Übersetzungen en/fr/it/es/pl durch KI, gegenzulesen; Dividende 2060 im mittleren Pfad je Referenzland aus den Seitendaten; Kontrollfassung seite/entwurf/gemeinschaft/de-kontrolle.html
 - Hinweis: Naht N47 offen: B32 Länderseiten -> B31 Drittel-System: v4.82: Belege der vier Deckungspositionen (B-1) und Mehrjahresmittel Erbschaft (B-2) stehen aus
+- Hinweis: Naht N48 offen: B31 Drittel-System -> B32 Länderseiten: v4.83: Entscheidung der Initiative zur Verwendung (Vorschlag: mittlerer Fall in Konzept und Working Paper, Webseite ohne Zahl)

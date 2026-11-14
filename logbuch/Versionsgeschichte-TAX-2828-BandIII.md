@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.82**
+Stand: 24. Oktober 2026 · Modellstand **v4.83**
 
 ---
 
@@ -5036,6 +5036,28 @@ nicht übernommen). Präzisierungen gehören in die ausführlichen Papiere; die 
 **Bewegte Zahl:** keine Rechnung; neu ausgewiesen die Erbschaftsbasis 2028 aus 2024 (127 Mrd. €). **Wodurch aufgefallen:** Prüfbericht vom 14.11.2026
 (B-2, B-3).
 
+### v4.83 — Wirtschaftliche Dynamik: sechs Kanäle als Thesen mit Werten (Prüfrechnung)
+
+**Art der Änderung: MINOR (neue Prüfrechnung), geltende Zahlen unverändert.** 14. November 2026.
+
+**Frage der Initiative (14.11.2026):** Dynamik aus höherem verfügbarem Einkommen, Deregulierung, Markterleichterung, Entbürokratisierung und
+größerer Zuversicht; nachvollziehbare Thesen und Werte.
+
+**Rechnung:** `modell/wirtschaftsdynamik.py` (+ `.toml`) → `daten/aggregate/wirtschaftsdynamik.json`; Dokument
+`projekt/Wirtschaftsdynamik-Thesen-2026-11-14.md`. Kanäle N1 Nachfrage (vorübergehend), A1 Beschäftigung, B1 Bürokratie, M1 Markt ohne Grenzen,
+I1 Investitionen (Gegenrichtung), Z1 Zuversicht; drei Fälle, kanalweise addiert; Dividende nach der Methode von `dynamik33.py`.
+
+**Ergebnis (BIP-Niveau gegen Grundpfad):** 2030 +0,8 / +2,4 / +4,5 %; ab 2045 −0,3 / +2,5 / +5,9 %; Dividende 2045 −1 / +12 / +29 € je
+Erwachsenem und Monat (Kaufkraft 2026). Mehr der Haushalte 2028 rund 218 Mrd. € = 5,1 % BIP, in der Größenordnung der Neuaufnahme des Fonds
+(6,9 % BIP): Der Nachfrageschub ist zu einem großen Teil über die Streckung finanziert.
+
+**Kritisch:** Bürokratie und Binnenmarkt beruhen auf je einer Schätzung (ifo „bis zu“ 146 Mrd. €, Auftraggeber IHK; IWF über F&D, Sekundärquelle) und
+auf Annahmen zum Anteil, den das Konzept abbaut (Belegstufe C). Zuversicht ohne eigenen Kanal (Barsky/Sims 2012). Keine Rückwirkung auf Preise,
+Zinsen und Löhne; Tilgungsphase als Nachfrageentzug nicht gerechnet. Allgemeine Deregulierung regelt das Konzept nicht; dafür kein Wert.
+
+**Datenquelle:** wie im Dokument, Abschnitt 4 (abgerufen 14.11.2026). **Bewegte Zahl:** keine geltende; neu die Spanne der Dynamik.
+**Wodurch aufgefallen:** Frage der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5115,7 +5137,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.82
+## 7 | Offene Punkte, Stand v4.83
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

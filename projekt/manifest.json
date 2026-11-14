@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v4.82",
+ "modellstand": "v4.83",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -331,11 +331,11 @@
   {
    "id": "B31",
    "name": "Drittel-System: Zeitpfad, Haushalte, Webseitenentwurf",
-   "pfad": "modell/projektion33.py;modell/projektion33.toml;daten/aggregate/projektion33.json;modell/haushalte33.py;modell/haushalte33.toml;daten/aggregate/haushalte33.json;daten/aggregate/haushalte33_raster.json;seite/werkzeuge/entwurf33_bau.py;seite/entwurf/konzept33/de.html;seite/entwurf/QUELLEN-33.md;projekt/Drittel-Erzaehlung-Trends-2026-10-17.md;modell/einwanderung33.py;modell/einwanderung33.toml;daten/aggregate/einwanderung33.json;modell/dynamik33.py;modell/dynamik33.toml;daten/aggregate/dynamik33.json;modell/netz33.py;modell/netz33.toml;daten/aggregate/netz33.json;dokumente/werkzeuge/konzept33-bau.js;dokumente/entwurf/TAX-Drittel-Konzept.docx;dokumente/entwurf/TAX-Drittel-Konzept.pdf;dokumente/entwurf/TAX-Drittel-Kurzfassung.docx;dokumente/entwurf/TAX-Drittel-Kurzfassung.pdf;modell/moeglichkeitsraum33.py;modell/moeglichkeitsraum33.toml;daten/aggregate/moeglichkeitsraum_2024.json;daten/aggregate/moeglichkeitsraum33.json;modell/neustart33.py;modell/neustart33.toml;daten/aggregate/neustart33.json;projekt/Neustartverfahren-2026-10-17.md;seite/werkzeuge/drittel_bau.py;seite/werkzeuge/drittel_texte.py;seite/werkzeuge/kommunen_texte.py;seite/werkzeuge/stand_texte.py;seite/werkzeuge/forschung_bau.py;seite/werkzeuge/forschung_en.py;dokumente/werkzeuge/working_paper_bau.py;dokumente/working-paper/Golden-Third-Working-Paper.pdf;projekt/Pruefprogramm-Delta-v4.42-v4.63.md;projekt/Stellungnahme-Nachpruefung-2026-11-02.md;beitraege/kvribbeck-2028/pruefung4/PRUEFBERICHT-2026-11-02.md;seite/werkzeuge/schrift/SpaceGrotesk-Bold.ttf;seite/stand-c/de.html;seite/stand-c/en.html;seite/stand-c/fr.html;seite/stand-c/it.html;seite/stand-c/es.html;seite/stand-c/pl.html",
+   "pfad": "modell/projektion33.py;modell/projektion33.toml;daten/aggregate/projektion33.json;modell/haushalte33.py;modell/haushalte33.toml;daten/aggregate/haushalte33.json;daten/aggregate/haushalte33_raster.json;seite/werkzeuge/entwurf33_bau.py;seite/entwurf/konzept33/de.html;seite/entwurf/QUELLEN-33.md;projekt/Drittel-Erzaehlung-Trends-2026-10-17.md;modell/einwanderung33.py;modell/einwanderung33.toml;daten/aggregate/einwanderung33.json;modell/dynamik33.py;modell/dynamik33.toml;daten/aggregate/dynamik33.json;modell/netz33.py;modell/netz33.toml;daten/aggregate/netz33.json;dokumente/werkzeuge/konzept33-bau.js;dokumente/entwurf/TAX-Drittel-Konzept.docx;dokumente/entwurf/TAX-Drittel-Konzept.pdf;dokumente/entwurf/TAX-Drittel-Kurzfassung.docx;dokumente/entwurf/TAX-Drittel-Kurzfassung.pdf;modell/moeglichkeitsraum33.py;modell/moeglichkeitsraum33.toml;daten/aggregate/moeglichkeitsraum_2024.json;daten/aggregate/moeglichkeitsraum33.json;modell/neustart33.py;modell/neustart33.toml;daten/aggregate/neustart33.json;projekt/Neustartverfahren-2026-10-17.md;seite/werkzeuge/drittel_bau.py;seite/werkzeuge/drittel_texte.py;seite/werkzeuge/kommunen_texte.py;seite/werkzeuge/stand_texte.py;seite/werkzeuge/forschung_bau.py;seite/werkzeuge/forschung_en.py;dokumente/werkzeuge/working_paper_bau.py;dokumente/working-paper/Golden-Third-Working-Paper.pdf;projekt/Pruefprogramm-Delta-v4.42-v4.63.md;projekt/Stellungnahme-Nachpruefung-2026-11-02.md;beitraege/kvribbeck-2028/pruefung4/PRUEFBERICHT-2026-11-02.md;seite/werkzeuge/schrift/SpaceGrotesk-Bold.ttf;seite/stand-c/de.html;seite/stand-c/en.html;seite/stand-c/fr.html;seite/stand-c/it.html;seite/stand-c/es.html;seite/stand-c/pl.html;modell/wirtschaftsdynamik.py;modell/wirtschaftsdynamik.toml;daten/aggregate/wirtschaftsdynamik.json;projekt/Wirtschaftsdynamik-Thesen-2026-11-14.md",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/projektion33.py;modell/haushalte33.py",
-   "anmerkung": "v3.47: Trends 2028–2060 (Verkehr, CO₂, Verbrauchsteuern, Gesundheit), Haushalte heute gegen 33F (2028/2035), deutscher Webseitenentwurf zur Prüfung v3.48: System 33R (Label 5/11/17/25), Weitergabe ≥ 80 %, Rentenkürzung um Beiträge, Einwanderung v3.49: Progression an den Stufen (Korrektur 61), Beschäftigung/KI/Kapitalverschiebung, Leistungspaket und Namen v3.50: Starkes Netz als Grundversorgung (Gesundheit, Pflege, Mindestrente/Volksrente, Invalidität, Arbeitslosigkeit) v3.51: Beschluss Mindestrente mit Pflichtvorsorge 10 %, Netz als Grundversorgung geltend für den Entwurf; Konzept als Word-Datei v3.52: Möglichkeitsraum (30 Staaten) v3.54: Neustartverfahren v3.55: Webseitenentwurf nach Vorbild der veröffentlichten Seite (seite/entwurf/drittel), Neuseeland gestrichen v3.56: Wortmarke Das Goldene Drittel, Rechner mehr im Geldbeutel mit Zeitstrahl v3.57: Textänderungen der Initiative, Kontakt tax.better@archicrowd.de v3.58: Sie-Form, Einleitung, 9 von 10 Beschäftigten (Gegenprobe haushalte33) v4.0: Fassung 4.0 in sechs Sprachen (seite/stand-c), Kurzfassung, Upload-Paket"
+   "anmerkung": "v3.47: Trends 2028–2060 (Verkehr, CO₂, Verbrauchsteuern, Gesundheit), Haushalte heute gegen 33F (2028/2035), deutscher Webseitenentwurf zur Prüfung v3.48: System 33R (Label 5/11/17/25), Weitergabe ≥ 80 %, Rentenkürzung um Beiträge, Einwanderung v3.49: Progression an den Stufen (Korrektur 61), Beschäftigung/KI/Kapitalverschiebung, Leistungspaket und Namen v3.50: Starkes Netz als Grundversorgung (Gesundheit, Pflege, Mindestrente/Volksrente, Invalidität, Arbeitslosigkeit) v3.51: Beschluss Mindestrente mit Pflichtvorsorge 10 %, Netz als Grundversorgung geltend für den Entwurf; Konzept als Word-Datei v3.52: Möglichkeitsraum (30 Staaten) v3.54: Neustartverfahren v3.55: Webseitenentwurf nach Vorbild der veröffentlichten Seite (seite/entwurf/drittel), Neuseeland gestrichen v3.56: Wortmarke Das Goldene Drittel, Rechner mehr im Geldbeutel mit Zeitstrahl v3.57: Textänderungen der Initiative, Kontakt tax.better@archicrowd.de v3.58: Sie-Form, Einleitung, 9 von 10 Beschäftigten (Gegenprobe haushalte33) v4.0: Fassung 4.0 in sechs Sprachen (seite/stand-c), Kurzfassung, Upload-Paket v4.83: Wirtschaftsdynamik, sechs Kanäle als Thesen mit Werten (Prüfrechnung)"
   },
   {
    "id": "B32",
@@ -726,6 +726,14 @@
    "was": "Kennzahlen und Papiere: Zitierregel Gesamtlast (Kassenvergleich mit Neuaufnahme des Fonds), Geltungsbereich der Kernaussagen; Webseite ohne diese Einzelheiten (Entscheidung 14.11.2026)",
    "status": "offen",
    "beleg_oder_offener_punkt": "v4.82: Belege der vier Deckungspositionen (B-1) und Mehrjahresmittel Erbschaft (B-2) stehen aus"
+  },
+  {
+   "id": "N48",
+   "von": "B31 Drittel-System",
+   "nach": "B32 Länderseiten",
+   "was": "Wirtschaftsdynamik: BIP-Niveau aus sechs Kanälen auf die Dividende (Methode dynamik33); nicht in der geltenden Rechnung",
+   "status": "offen",
+   "beleg_oder_offener_punkt": "v4.83: Entscheidung der Initiative zur Verwendung (Vorschlag: mittlerer Fall in Konzept und Working Paper, Webseite ohne Zahl)"
   }
  ],
  "quellen": [
