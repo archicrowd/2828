@@ -17,7 +17,11 @@ anteil_top1 = 0.35
 anteil_top10 = 0.67
 mittel_vgr = 408000             # Reinvermögen der privaten Haushalte 2021 laut VGR 16,605 Bio. € (Bundesbank-Präsentation) / 40,7 Mio. Haushalte
 
-[erbschaft]   # Destatis, PM 306 vom August 2026: Erbschaft- und Schenkungsteuerstatistik 2025 (amtlich)
-steuerpflichtiger_erwerb_2025_mrd = 150.5
+[erbschaft]   # Destatis, PM 306 vom 26.08.2026: Erbschaft- und Schenkungsteuerstatistik 2025 (amtlich, am 14.11.2026 nachgelesen)
+# v4.82 (Prüfung 14.11.2026, B-2): 150,5 Mrd. € ist das steuerlich berücksichtigte Vermögen (übertragenes Vermögen abzüglich
+# Nachlassverbindlichkeiten, zuzüglich sonstigen Erwerbs), vor Freibeträgen; nur Fälle mit festgesetzter Steuer, Erbschaften und
+# Schenkungen. Bis v4.81 hier fälschlich „steuerpflichtiger Erwerb“.
+steuerlich_beruecksichtigt_2025_mrd = 150.5
+steuerlich_beruecksichtigt_2024_mrd = 113.2   # rechnerisch aus +32,9 % gegen das Vorjahr (PM 306)
 festgesetzt_2025_mrd = 21.4
 satz_neu = 0.33

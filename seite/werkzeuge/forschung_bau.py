@@ -73,6 +73,7 @@ SEIT_PRUEFUNG = [
  ("v4.79", "Webseitenentwurf: Rechenspiel als Weltkarte; „Wohin die Reise geht“ entfällt", "keine Zahl"),
  ("v4.80", "Webseite nach den Spielregeln in sechs Sprachen: Gemeinschaft der Staaten statt Dach, Weltkarte hinter den Regeln", "keine Zahl (Obergrenze im Flussbild 33,3 statt 32 %)"),
  ("v4.81", "Weltkarte: Mitgliedstaaten der Vereinten Nationen hellgrün, übrige Gebiete grau", "keine Zahl"),
+ ("v4.82", "Dokumentenprüfung 14.11.: Geltungsbereich der Kernaussagen, Gesamtlast als Kassenvergleich, Erbschaftsbasis offen (Korrekturen 87, 88)", "keine Zahl der Rechnung"),
 ]
 
 

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.81**
+Stand: 24. Oktober 2026 · Modellstand **v4.82**
 
 ---
 
@@ -5012,6 +5012,30 @@ liegen nur für 45 Staaten vor).
 
 **Datenquelle:** wie v4.80; Mitgliedschaft eigene Kenntnis (Stand 2026). **Bewegte Zahl:** keine. **Wodurch aufgefallen:** Vorgabe der Initiative.
 
+### v4.82 — Dokumentenprüfung vom 14.11.2026: Präzisierungen in den ausführlichen Papieren; Korrekturen 87 und 88
+
+**Art der Änderung: PATCH (Dokumentation, Bezeichnung), keine Zahl der Rechnung bewegt.** 14. November 2026.
+
+**Anlass:** Prüfbericht `Pruefbericht-Dokumentenpruefung-2026-11-14.md` (KI-Prüfung im Projektraum, Gegenstand v4.72, interne Prüfung).
+Stellungnahme: `projekt/Stellungnahme-Pruefung5-2026-11-14.md`.
+
+**Entscheidungen der Initiative (14.11.2026):** Der Fondszins bleibt 2,45 % (Mittel 2006–2025), der Marktzins wird nicht Grundpfad (Empfehlung 2
+nicht übernommen). Präzisierungen gehören in die ausführlichen Papiere; die Webseite bleibt Erstinformation und unverändert.
+
+**Umsetzung:**
+- `KENNZAHLEN.md`: Zitierregel zur Gesamtlast (38,68 % ist Kassenvergleich; Fonds nimmt 2028 6,90 % BIP neu auf; ohne Streckung 45,58 %);
+  Fondszins-Grundpfad mit Begründung; Herleitung der Deckungspositionen in zwei Schritten (Korrektur 87); Erbschaftsbasis richtig bezeichnet und
+  „offen“ (Korrektur 88); übrige Steuern und CO₂-Preis „Beleg offen“; neue Tabelle „Geltungsbereich der Kernaussagen“ (ein Drittel, 9 von 10, Armut).
+- `modell/vermoegensbasis33.py/.toml`: Bezeichnung „steuerlich berücksichtigtes Vermögen“, dazu 2024 (113,2 Mrd. €, rechnerisch aus +32,9 %),
+  fortgeschrieben 2028 aus 2024: 127 Mrd. € (aus 2025: 164; nötig 173). Status offen. Quelle an Destatis PM 306 vom 26.08.2026 nachgelesen.
+- Konzept (`konzept33-bau.js`): Geltungsbereich unter der Kennzahlentabelle der Kurzfassung; in Abschnitt 8 Armut der Rentner und Eingangswerte
+  der Deckung. Working Paper: Kassenvergleich und Grenzbelastung (5.3), Armutsquote (5.2), Erbschaftsbasis und Befund B-1 (6).
+- Webseite: unverändert.
+
+**Datenquelle:** Destatis, Pressemitteilung Nr. 306 vom 26.08.2026 (amtlich); `mikro_de.json`, `grenzbelastung33.json`, `gesamtlast33.json`.
+**Bewegte Zahl:** keine Rechnung; neu ausgewiesen die Erbschaftsbasis 2028 aus 2024 (127 Mrd. €). **Wodurch aufgefallen:** Prüfbericht vom 14.11.2026
+(B-2, B-3).
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5050,6 +5074,8 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 75 | Prüfmappe v4.42: Zinsband „Zuschlag 17,1 / 18,7 / 20,4 %; 42.000 € +590 / +570 / +548 €“ – gemeinsame Sätze neben Werten, die mit dem deutschen Satz nach Verrechnung (16,5 / 18,1 / 19,7 %) gerechnet sind | beide Sätze benannt (v4.46); Rechnung unverändert | Dritte Prüfung, Befund B24 (Nachrechnung mit den gemeinsamen Sätzen: 604/583/562 €) |
 | 85 | Working Paper v4.62–v4.66, Abschnitt 7: Sonderstufe „im Modell Verbrenner-Fahrzeuge, Tabak, Alkohol“ (Kraftstoffe beim Gegenlesen v4.62 irrtümlich gestrichen) | Kraftstoffe gehören dazu (`projektion33.py`, Konzept) | Beschluss Pestizide/Dünger (v4.67), Nachsehen der Sonderstufe im Modell |
 | 86 | Logbuch v4.77: Eintrag, Versionsstand der Register und Forschungsseite fehlten im Commit `d176729` (verkettete Befehle: die Logbuchstufe lief nach einem Fehler des Entwurfsbaus nicht) | Eintrag v4.77 nachgetragen, Stände mit v4.78 nachgeführt | eigene Durchsicht beim Eintrag v4.78 |
+| 87 | `KENNZAHLEN.md`, Deckungspositionen (v4.46–v4.81): Herkunft „Kernmodell 45 / 145 / 33 Mrd. € bei 25 %, Konsum 350 Mrd. € bei 18 %“, Umrechnung „Faktor 33/28“ ohne den ersten Schritt | Rechnung nutzt 48,8 / 157,6 / 35,9 Mrd. € bei 28 % und 375,9 Mrd. € bei 20 % brutto (`gesamtrechnung.py`, `systemvarianten.py`); Zahlen der Deckung unverändert | Prüfbericht 14.11.2026, B-3 |
+| 88 | Erbschaftsbasis (v4.32–v4.81, `vermoegensbasis33`, Kennzahlen): 150,5 Mrd. € als „steuerpflichtiger Erwerb“ bezeichnet, Status „Basis im Bereich der Daten“ | steuerlich berücksichtigtes Vermögen vor Freibeträgen (Destatis); Status offen, 2024 ergänzt | Prüfbericht 14.11.2026, B-2 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5089,7 +5115,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.81
+## 7 | Offene Punkte, Stand v4.82
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

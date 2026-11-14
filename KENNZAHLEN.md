@@ -1,6 +1,6 @@
 # Kennzahlen Stand C – welche Zahl gilt, und was sie bedeutet
 
-Angelegt mit v4.21 (21. Oktober 2026), fortgeschrieben bis v4.54 (24. Oktober 2026); tragende Werte seit v4.53 maschinell geprüft (`modell/pruefe_kennzahlen.py`). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
+Angelegt mit v4.21 (21. Oktober 2026), fortgeschrieben bis v4.82 (14. November 2026); tragende Werte seit v4.53 maschinell geprüft (`modell/pruefe_kennzahlen.py`). Anlass: Prüfbericht vom 20.10.2026, Befunde B11, B12, B15 und B16. Dieselbe Größe erscheint in mehreren Dateien
 mit verschiedenen Werten, weil die Abgrenzungen verschieden sind. Hier steht je Größe, **welcher Wert gilt** und wie die anderen zu lesen sind.
 Wer eine Zahl zitiert, nennt die Zeile dieser Tabelle.
 
@@ -38,6 +38,11 @@ Zehntelpunkt BIP mehr oder weniger Netz ändert sich die Dividende 2060 um rund 
 
 Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondsschuld bis 148,1 % BIP (2055).
 
+**Zitierregel (v4.82, Prüfung vom 14.11.2026, Befund B-4):** 38,68 % gegen heute 40,76 % ist ein Kassenvergleich. 2028 fallen Altlasten von
+12,05 % des BIP an; der Fonds erhebt 5,15 % und nimmt rund 6,90 % des BIP neu auf. Wer 38,68 % nennt, nennt diese Neuaufnahme mit; ohne
+Streckung lautet der Vergleichswert 45,58 %. Gilt für Konzept, Working Paper und Prüfunterlagen; die Webseite nennt keine Gesamtlast in % des BIP
+(Entscheidung der Initiative vom 14.11.2026: Erstinformation ohne diese Einzelheiten).
+
 ## Haushalte
 
 | Größe | Basis |
@@ -66,6 +71,7 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 | Gemeinsamer Satz mit Italien und Polen / alle 30 Staaten | 16,6 % / 15,5 % | `fonds_klub.json` | skaliert auf den Beschluss (Annahme) |
 
 | Zins × nominales Wachstum (v4.46, Prüfbefund B21): Beitrag / Zuschlag bei Zins 2,45 % und Wachstum 3,0 / 2,5 / 2,0 % | 5,17 / 5,68 / 6,22 % BIP; 15,5 / 17,0 / 18,6 %; Spitze (zehn) 149,9 / 152,2 / 154,1 %. Bei festem Beschlussbeitrag und 2,0 % Wachstum Restschuld 2098 rund 87 % BIP (zehn), Spitze 191 % (2064) | `fondszins.json → zins_wachstum` | Empfindlichkeit; Z in % BIP unverändert (Annahme) |
+| **Grundpfad bestätigt (14.11.2026)** | 2,45 % bleibt Grundpfad: Mittel 2006–2025 (`zins_reihe_ea`), langfristig hergeleitet; ein Tageswert gibt den Zins über 70 Jahre nicht besser wieder (Entscheidung der Initiative zum Prüfbefund B-5, der den Marktzins als Grundpfad empfahl) | `altlasten.toml` | **geltend**; 3,0 / 3,5 / 4,0 % bleiben als Empfindlichkeit ausgewiesen. Lesart: Bei Zins unter dem Wachstum entlastet die Streckung; bei Zins gleich oder über dem Wachstum verschiebt sie Last in die Zukunft |
 | Zinsband 42.000 € DE (v4.38 mit Verrechnung) | Zuschlag gemeinsam 15,5 / 17,1 / 18,7 / 20,4 % = für Deutschland 2028 15,0 / 16,5 / 18,1 / 19,7 %; +611 / +590 / +570 / +548 € | `fondszins.json → varianten` | Lesart geklärt v4.46 (Prüfbefund B24, Korrektur 75) |
 
 ## Mikrosimulation (interne Prüfung, v4.21; eigene, v4.22)
@@ -92,20 +98,36 @@ Die Streckung über den Fonds senkt die laufende Last; ihr Preis ist die Fondssc
 
 Summe 33,53 % BIP (`systemvarianten.json`, Variante 33R, `deckung_positionen`). Die Positionen stammen aus dem nationalen Modell (Stand A,
 `modell/kern/modell-2828.py`, Modellbasis 4.200 Mrd. € BIP) und dem Rahmen der Gesamtrechnung (`modell/gesamtrechnung.py`, Zeilen 01–07),
-umgerechnet vom Satz 28 % auf 33 % (Faktor 33/28) bzw. auf den Tarif am Grundbedarf.
+in zwei Schritten umgerechnet (v4.82, Prüfbefund B-3, Korrektur 87): (1) Das Kernmodell weist die Positionen in der Stufe 50 % beim Satz 28 % aus
+(`modell/kern/modell-2828-ergebnisse.txt`, Abschnitt B; Mehrwertsteuer beim Einheitssatz 20 %); `gesamtrechnung.py` übernimmt sie in Mrd. € und
+teilt durch 4.200 Mrd. €. (2) `systemvarianten.py` (`deckung`) hebt Kapital, Unternehmen und Erbschaft mit 33/28 auf den Satz 33 % und rechnet
+die Mehrwertsteuer über den Bruttopreis vom Einheitssatz 20 % auf den effektiven Labelsatz um: Konsum = 375,9 × (18,84 / 118,84) / (20 / 120).
+Bis v4.81 nannte diese Tabelle ältere Werte des Kernmodells (45 / 145 / 33 Mrd. € bei 25 %, Konsum 350 Mrd. € bei 18 %); die Rechnung nutzte
+sie nicht. Einkommen: Tarif am Grundbedarf.
 
 | Position | % BIP | Herkunft | Basis und Satz | Status |
 |---|---|---|---|---|
 | Einkommen | 10,21 | Tarifrechnung am Grundbedarf (`tarif_grundbedarf.py`, Einkommensverteilung des Kernmodells) | alle Einkommen einschließlich Dividende, Tarif 0/11/19/25/33 % | geltend; Eichung gegen Lohn- und Einkommensteuerstatistik offen (dritte Prüfung) |
-| Kapitalerträge | 1,37 | Kernmodell: 45 Mrd. € bei 25 % | Basis rund 180 Mrd. € Kapitalerträge (Modellbasis), Satz 33 % | Basis im Kernmodell gesetzt; extern plausibel (dritte Prüfung: Ist ≈ 1,26 % BIP) |
-| Konsum (Label) | 8,51 | MwSt-Basis des Kernmodells (350 Mrd. € bei 18 %), effektiver Labelsatz 18,84 % | steuerpflichtiger Konsum, Labels 5/11/17/25 % + Sonderstufe | geltend; Basis +5 % gegen heutige USt-Basis (dritte Prüfung) |
-| Unternehmen und Plattformen | 4,42 | Kernmodell: 145 Mrd. € bei 25 % | implizite Basis rund 580 Mrd. € (13,8 % der Modellbasis), Satz 33 %; ersetzt Körperschaft- und Gewerbesteuer (Annahme) | **Basis nicht belegt** (B23): heute alle gewinnabhängigen Steuern ≈ 3,8 % BIP; Definition (Gewinn, Kundenort, Plattformen) offen |
-| Erbschaften | 1,16 | Kernmodell 33 Mrd. € bei 25 % + Baustein Freibetrag 100.000 € | Erwerbe über 100.000 € ohne Verschonung, Satz 33 %; nötige Basis 2028 173 Mrd. € gegen steuerpflichtigen Erwerb 2025 150,5 Mrd. € (fortgeschrieben 164 Mrd. €; `vermoegensbasis33.json`) | Basis im Bereich der Daten (v4.32); Schenkungen gleich behandeln (Parität) und reale Übertragungen (Schätzung IMK rund 400 Mrd. €) als Obergrenze nennen – offen (B22) |
+| Kapitalerträge | 1,37 | Kernmodell: 48,8 Mrd. € bei 28 % (1,16 % von 4.200 Mrd. €) × 33/28 | Basis rund 174 Mrd. € Kapitalerträge (Modellbasis), Satz 33 % | Basis im Kernmodell gesetzt; extern plausibel (dritte Prüfung: Ist ≈ 1,26 % BIP) |
+| Konsum (Label) | 8,51 | Kernmodell: 375,9 Mrd. € beim Einheitssatz 20 % (8,95 % von 4.200 Mrd. €), über den Bruttopreis auf den effektiven Labelsatz 18,84 %: 357,5 Mrd. € | steuerpflichtiger Konsum, Labels 5/11/17/25 % + Sonderstufe | geltend; Basis +5 % gegen heutige USt-Basis (dritte Prüfung) |
+| Unternehmen und Plattformen | 4,42 | Kernmodell: 157,6 Mrd. € bei 28 % (3,75 % von 4.200 Mrd. €) × 33/28 | implizite Basis rund 563 Mrd. € (13,4 % der Modellbasis), Satz 33 %; ersetzt Körperschaft- und Gewerbesteuer (Annahme) | **Basis nicht belegt** (B23): heute alle gewinnabhängigen Steuern ≈ 3,8 % BIP; Definition (Gewinn, Kundenort, Plattformen) offen |
+| Erbschaften | 1,16 | Kernmodell: 35,9 Mrd. € bei 28 % × 33/28 (1,01 % BIP) + Baustein Freibetrag 100.000 € | Erwerbe über 100.000 € ohne Verschonung, Satz 33 %; nötige Basis 2028 173 Mrd. € gegen das steuerlich berücksichtigte Vermögen 2025 von 150,5 Mrd. € (Destatis PM 306/2026: nach Abzug der Nachlassverbindlichkeiten, vor Freibeträgen, nur Fälle mit festgesetzter Steuer, Erbschaften und Schenkungen; bis v4.81 hier „steuerpflichtiger Erwerb“); fortgeschrieben 164 Mrd. €, aus 2024 (113,2 Mrd. €, rechnerisch) nur 127 Mrd. € (`vermoegensbasis33.json`) | **offen** (v4.82, Prüfbefund B-2; v4.32: „Basis im Bereich der Daten“): 2025 ist ein Ausreißer (Übertragungen ab 20 Mio. €), Mehrjahresmittel steht aus; Schenkungen gleich behandeln (Parität) und reale Übertragungen (Schätzung IMK rund 400 Mrd. €) als Obergrenze nennen – offen (B22) |
 | Große Vermögen | 0,97 | Mindeststeuer (anrechenbar) + Vermögensteuer 1 % ab 2 Mio. € | statisch 1,94 % BIP mit DIW-Spitze, 0,79 % nach Bundesbank-Befragung (`vermoegensbasis33.json`) | Ausweichen als Empfindlichkeit (`ausweichen33.json`); oberer Rand der Literatur nicht gedeckt (dritte Prüfung, M3) |
-| CO₂-Preis | 1,67 | 100 €/t netto + Pfad bis 150 €/t | Emissionspfad der Gesamtrechnung | geltend |
+| CO₂-Preis | 1,67 | 100 €/t netto + Pfad bis 150 €/t | Emissionspfad der Gesamtrechnung | geltend; **Beleg offen** (Prüfbefund B-1: Emissionen und Preis 2028 ausweisen; Überschlag des Prüfers 1,2–1,5 % BIP) |
 | Subventionsabbau | 0,48 | Abbau klimaschädlicher Subventionen (20 Mrd. €) | UBA-Liste (Annahme zur Abbauquote) | geltend |
-| Übrige Steuern | 3,93 | Energie, Tabak, Alkohol u. a. (165 Mrd. €) | heutige Verbrauchsteuern | geltend |
+| Übrige Steuern | 3,93 | Energie, Tabak, Alkohol u. a. (165 Mrd. €) | heutige Verbrauchsteuern | geltend; **Beleg offen** (Prüfbefund B-1 vom 14.11.2026: Kassenstatistik 2024 ergibt nach Überschlag des Prüfers rund 100–110 Mrd. €; Abgrenzung VGR gegen Kasse und Überschneidung mit CO₂-Preis und Sonderstufe klären) |
 | Grundstücksabgabe | 0,82 | Bodenwertabgabe (Ebene B, Satz bis 1 %) | Bodenwert | geltend |
+
+## Geltungsbereich der Kernaussagen (v4.82, Prüfung vom 14.11.2026, Befund B-6)
+
+Die Webseite nennt die Kernaussagen ohne diese Einschränkungen (Erstinformation, Entscheidung der Initiative vom 14.11.2026). In Konzept, Working
+Paper und Prüfunterlagen stehen sie mit dem Geltungsbereich:
+
+| Aussage | Geltungsbereich | Datei |
+|---|---|---|
+| „Höchstens ein Drittel“ | 33 % ist der höchste Steuersatz auf jeden Euro. Mit dem Altlastenzuschlag liegt die Grenzbelastung je Euro Bruttolohn 2028 bei rund 40 %, nach der Tilgung (2098) bei rund 34 %; mit Pflichtvorsorge (eigenes Konto) jeweils 9–10 Punkte mehr. In den Spielregeln (v4.80) meint „ein Drittel“ zudem den Anteil des Aufkommens, den Staat und Gemeinschaft höchstens behalten | `grenzbelastung33.json` |
+| „9 von 10 haben mehr“ | Haushalte mit Vollzeit- oder Teilzeit-Hauptverdiener bei 80 % Weitergabe (99,1 / 99,9 %). Alle Haushalte 78,6 %; Hauptperson Minijob 49,1 %, Beamte 56,4 %, Selbständige 77,7 %, ohne Erwerb (Bürgergeld) 18,0 %; Rentnerhaushalte 62,9 %, im Mittel −125 € im Monat (eigene Population; Rechnung der Rentnerregel `rentner_kombi.json`: 64,5 %, −116 €) | `mikro_de.json → basis.ergebnis.0.8` |
+| Armut | Relative Armutsquote (Modell, 60 % des neuen Medians) insgesamt 18,3 → 18,1 %, bei Rentnern 22,3 → 30,3 %; am heutigen Median verankert 12,5 % bzw. 20,3 %. Synthetische Modellpopulation, statisch | `mikro_de.json → armut` |
 
 ## Archivierte Dateien in `daten/aggregate/` (v4.46, Prüfbefund B19)
 

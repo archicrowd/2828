@@ -28,9 +28,12 @@
  "erbschaften": {
   "position_pct_bip": 1.16,
   "noetige_basis_ueber_100k_mrd_2028": 173,
-  "steuerpflichtiger_erwerb_2025_mrd": 150.5,
+  "steuerlich_beruecksichtigt_2025_mrd": 150.5,
+  "steuerlich_beruecksichtigt_2024_mrd": 113.2,
   "fortgeschrieben_2028_mrd": 164,
-  "hinweis": "Der steuerpflichtige Erwerb 2025 gilt nach heutigem Recht (Freibeträge bis 500.000 €, Verschonung des Betriebsvermögens, Erlass nach § 28a); die Basis über 100.000 € ohne Verschonung ist größer. Die nötige Basis liegt damit im Bereich der Daten, eher vorsichtig. 2025 war ein Rekordjahr (+32,9 %), getrieben von Erwerben über 20 Mio. €: schwankend und ausweichanfällig."
+  "fortgeschrieben_2028_aus_2024_mrd": 127,
+  "status": "offen (v4.82, Prüfung 14.11.2026, B-2): Basisjahr 2025 ist ein Ausreißer; Mehrjahresmittel steht aus",
+  "hinweis": "Das steuerlich berücksichtigte Vermögen ist vor Freibeträgen gemessen, erfasst aber nur Fälle mit festgesetzter Steuer; Übertragungen innerhalb der heutigen Freibeträge fehlen, die Basis über 100.000 € kann deshalb größer sein. 2025 war ein Rekordjahr (+32,9 %), getrieben von Übertragungen ab 20 Mio. € (festgesetzte Steuer dort +146,8 %); aus 2024 fortgeschrieben liegt die Basis deutlich unter der nötigen. Ob die Basis gedeckt ist, ist offen (bis v4.81: „im Bereich der Daten“)."
  },
  "bewertung": "Die statische Position der Deckung (1,94 % BIP) entspricht der Verteilung mit korrigierter Spitze (DIW); nach der Befragung allein läge sie bei rund 40 % davon (0,79 % BIP). Bei 50 % Ausweichen kostet das die Dividende bis zu rund 30 € im Monat (2028).",
  "hinweis": "Haushalt statt Person als Einheit der Schwelle, Pareto über P90, Fortschreibung 3 % je Jahr: Annahmen. Anrechnung auf die Einkommensteuer (Mindeststeuer) nicht abgezogen."

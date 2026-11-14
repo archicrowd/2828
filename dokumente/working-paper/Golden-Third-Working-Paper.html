@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Golden Third – working paper (v4.81)</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Golden Third – working paper (v4.82)</title><style>
 @page{size:A4;margin:22mm 20mm 20mm 20mm}
 body{font:10.3pt/1.5 Georgia,'Times New Roman',serif;color:#1d2a33;margin:0}
 h1{font:700 24pt/1.15 Arial,Helvetica,sans-serif;color:#0f3b5c;margin:0 0 4pt}
@@ -29,7 +29,7 @@ ul{margin:0 0 7pt;padding-left:15pt}li{margin:0 0 3pt}
 <h1>The Golden Third</h1>
 <p class="sub">A static costing and distributional model of a shared tax and social-protection framework for a group of European states</p>
 <p class="autor">Initiative 28:28</p>
-<p class="meta">Model version v4.81 · 1 November 2026 · Licence CC BY 4.0 · Research kit and figures to cite: <a href="https://doi.org/10.5281/zenodo.23855733">doi.org/10.5281/zenodo.23855733</a>
+<p class="meta">Model version v4.82 · 1 November 2026 · Licence CC BY 4.0 · Research kit and figures to cite: <a href="https://doi.org/10.5281/zenodo.23855733">doi.org/10.5281/zenodo.23855733</a>
 · Website: <a href="https://archicrowd.github.io/goldenes-drittel/">archicrowd.github.io/goldenes-drittel/</a> · Contact: tax.better@archicrowd.de</p>
 </header>
 
@@ -63,7 +63,7 @@ could adopt jointly.</p>
 <p>This paper does not derive an optimal tax system. It is a costing and distributional accounting exercise: given the rules, what does the
 system cost, who gains and who loses compared with the law of 2026, and how sensitive are these results to the main assumptions? All figures come
 from one calculation chain of 77 stages based on official statistics. Every change to the model is recorded in a log, and every error found is
-numbered as a correction (86 so far). The chain was recalculated in three internal reviews, carried out with a different AI model from the one used to build the calculation; the last review covered
+numbered as a correction (88 so far). The chain was recalculated in three internal reviews, carried out with a different AI model from the one used to build the calculation; the last review covered
 model version v4.42 (section 10).</p>
 <p>Section 2 states the objectives, section 3 the rules, section 4 the model and data, section 5 the results, section 6 the sensitivity to key
 assumptions. Section 7 assesses the results against the objectives, including the tensions between them. Section 8 summarises behavioural evidence
@@ -169,7 +169,10 @@ reform; the OECD apparently does not (to be checked).</p>
 99.1 %, part-time 99.9 %,
 self-employed 77.7 %, civil servants
 56.4 %, mini-job 49.1 %,
-households without earnings 18.0 %. Under pension rule BS35,
+households without earnings 18.0 %. The relative at-risk-of-poverty rate
+(60 % of the new median, model population) moves from 18.3 to 18.1 % overall,
+but rises from 22.3 to 30.3 % among pensioners
+(20.3 % anchored at today's median). Under pension rule BS35,
 64.5 % of pensioner households are better off; the mean change is −116 € per month, from
 +30 € in the lowest to −599 € in the highest fifth. The rule asks the contribution to the legacy
 fund mainly from promises above twice basic need; long careers with modest promises keep their pension in full and gain from the removal of health
@@ -179,7 +182,11 @@ and care contributions. Insurance years are imputed from the pension amount (ass
 <p>Table 4 shows the strong net and the dividend for Germany. The dividend amounts to 354 € per adult and 283 € per child and
 month in 2028 (Table 4 shows the dividend in per cent of GDP). Its share of GDP falls from 7.25 % in 2028 to 3.40 % in 2060 because
 steering revenue falls with emissions. The total burden of taxes and fund is 38.7 % of GDP in 2028 against
-40.76 % today (Eurostat 2024); including compulsory saving, which goes to an own account, it is 42.8 %.</p>
+40.76 % today (Eurostat 2024); including compulsory saving, which goes to an own account, it is 42.8 %.
+This is a cash comparison: in 2028 legacy costs are 12.05 % of GDP, of which the fund collects
+5.15 % and borrows 6.90 %; without this stretching the burden is
+45.58 % of GDP. The top tax rate is one third; with the fund surcharge the marginal burden on an additional euro of
+gross wage is about 40 % in 2028 and about 34 % after repayment (Table 7).</p>
 <p class="cap">Table 4: Strong net and dividend, Germany</p>
 <table><thead><tr><th>Germany, % of GDP</th><th class=z>2028</th><th class=z>2060</th></tr></thead><tbody><tr><td>Health care (basic coverage)</td><td class=z>7.36</td><td class=z>7.63</td></tr><tr><td>Long-term care (partial)</td><td class=z>0.85</td><td class=z>1.41</td></tr><tr><td>Minimum pension (67+)</td><td class=z>0.00</td><td class=z>0.53</td></tr><tr><td>Disability (basic need)</td><td class=z>0.30</td><td class=z>0.30</td></tr><tr><td>Unemployment (basic need)</td><td class=z>0.42</td><td class=z>0.42</td></tr><tr><td>Orphans</td><td class=z>0.05</td><td class=z>0.05</td></tr><tr><td>Hardship (housing, special needs)</td><td class=z>0.65</td><td class=z>0.65</td></tr><tr><td><b>Strong net, total</b></td><td class=z><b>9.63</b></td><td class=z><b>10.98</b></td></tr><tr><td>Transformation dividend</td><td class=z>7.25</td><td class=z>3.40</td></tr><tr><td>of which financed by steering taxes</td><td class=z>3.14</td><td class=z>0.67</td></tr></tbody></table><p class="note">netz33.json (decision path). Quantities (pensioners, disabled, unemployed) and the reduction of the benefit catalogue are assumptions.</p>
 <p>The common fund takes over public debt and pension claims above the dividend (on average 9.35 % of
@@ -224,7 +231,13 @@ value, debt would not be repaid by 2098 (Table 10). Holding the pension claims Z
 <p><b>Avoidance at the top.</b> Revenue from inheritance (1.16 % of GDP) and large wealth
 (0.97 % of GDP after avoidance) depends on behaviour at the top of the distribution, where
 responses are strong (Jakobsen et al. 2020; Kleven et al. 2014). Across the avoidance band the German dividend changes by
-−55 to +25 € per adult and month in 2028.</p>
+−55 to +25 € per adult and month in 2028. The inheritance base is not yet secured: the base
+required in 2028 (173 bn €) exceeds the taxable-relevant assets recorded
+in 2025, a record year, projected to 2028 (164 bn €), and clearly exceeds the value
+projected from 2024 (127 bn €; Destatis 2026). An internal review of
+14 November 2026 estimates that the revenue of four positions (company profits, other taxes, inheritance, carbon price) may be 1 to 2 points of GDP
+lower than assumed, each point being worth about 51 € of dividend per adult and month; these
+positions are still to be checked against cash statistics.</p>
 <p><b>Take-up.</b> The model assumes complete take-up of the floor. Today, non-take-up of minimum income is high in Germany and France (DREES 2022;
 Eurofound 2015); a payment without application and a pre-filled top-up are designed to reduce it, which raises costs that are already fully counted.</p>
 
@@ -316,9 +329,9 @@ Law Index (2025) is one possible criterion. States outside Europe are not calcul
 <h2>10 Reviews, corrections and access</h2>
 <p>The calculation chain was recalculated in three internal reviews in October 2026, initiated by the initiative and carried out with a different AI model from the one used to build the calculation; they are not independent reviews. The second and third reviews re-implemented
 the core in their own code and confirmed it at rounding level; their findings and the responses are documented. The last review covered model version
-v4.42; the changes since then (up to v4.81) are listed on the website; a follow-up review of them is under way, in which the fund grid (D1) and the marginal burden (D2) have been reproduced in full so far.
+v4.42; the changes since then (up to v4.82) are listed on the website; a follow-up review of them is under way, in which the fund grid (D1) and the marginal burden (D2) have been reproduced in full so far.
 Independent review is invited.</p>
-<p>The log records every version with date, change, data source, moved figure and how it was noticed; 86 corrections have been numbered
+<p>The log records every version with date, change, data source, moved figure and how it was noticed; 88 corrections have been numbered
 so far. The research kit with all figures to cite, the result files and the review documents is archived at
 <a href="https://doi.org/10.5281/zenodo.23855733">doi.org/10.5281/zenodo.23855733</a>. Scripts, parameters and the full log are public at <a href="https://github.com/archicrowd/2828">github.com/archicrowd/2828</a>.</p>
 

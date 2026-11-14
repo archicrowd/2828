@@ -392,7 +392,10 @@ reform; the OECD apparently does not (to be checked).</p>
 {en(MB['status']['Hauptperson Vollzeit']['anteil_mehr_haushalte_pct'], 1)} %, part-time {en(MB['status']['Hauptperson Teilzeit']['anteil_mehr_haushalte_pct'], 1)} %,
 self-employed {en(MB['status']['Hauptperson selbständig']['anteil_mehr_haushalte_pct'], 1)} %, civil servants
 {en(MB['status']['Hauptperson Beamte']['anteil_mehr_haushalte_pct'], 1)} %, mini-job {en(MB['status']['Hauptperson Minijob']['anteil_mehr_haushalte_pct'], 1)} %,
-households without earnings {en(MB['status']['ohne Erwerb (Bürgergeld)']['anteil_mehr_haushalte_pct'], 1)} %. Under pension rule BS35,
+households without earnings {en(MB['status']['ohne Erwerb (Bürgergeld)']['anteil_mehr_haushalte_pct'], 1)} %. The relative at-risk-of-poverty rate
+(60 % of the new median, model population) moves from {en(MB['armut']['quote_heute_pct'], 1)} to {en(MB['armut']['quote_neu_relativ_pct'], 1)} % overall,
+but rises from {en(MB['armut']['rentner']['heute_pct'], 1)} to {en(MB['armut']['rentner']['neu_relativ_pct'], 1)} % among pensioners
+({en(MB['armut']['rentner']['neu_verankert_pct'], 1)} % anchored at today's median). Under pension rule BS35,
 {en(RE['anteil_mehr_pct'], 1)} % of pensioner households are better off; the mean change is {en(RE['mittel_monat'])} € per month, from
 {pm(RE['fuenftel_monat'][0])} € in the lowest to {en(RE['fuenftel_monat'][4])} € in the highest fifth. The rule asks the contribution to the legacy
 fund mainly from promises above twice basic need; long careers with modest promises keep their pension in full and gain from the removal of health
@@ -402,7 +405,11 @@ and care contributions. Insurance years are imputed from the pension amount (ass
 <p>Table 4 shows the strong net and the dividend for Germany. The dividend amounts to {en(F.DIV_ERW)} € per adult and {en(F.DIV_ERW * 0.8)} € per child and
 month in 2028 (Table 4 shows the dividend in per cent of GDP). Its share of GDP falls from {en(NZ0['dividende_pct_bip'], 2)} % in 2028 to {en(NZ60['dividende_pct_bip'], 2)} % in 2060 because
 steering revenue falls with emissions. The total burden of taxes and fund is {en(F.ZR['a_steuern_und_fonds'], 1)} % of GDP in 2028 against
-{en(F.GL['heute'], 2)} % today (Eurostat 2024); including compulsory saving, which goes to an own account, it is {en(F.ZR['b_mit_pflichtvorsorge'], 1)} %.</p>
+{en(F.GL['heute'], 2)} % today (Eurostat 2024); including compulsory saving, which goes to an own account, it is {en(F.ZR['b_mit_pflichtvorsorge'], 1)} %.
+This is a cash comparison: in 2028 legacy costs are {en(F.GL['c_ohne_fonds_2028']['altlasten_im_jahr'], 2)} % of GDP, of which the fund collects
+{en(F.ZR['fonds'], 2)} % and borrows {en(F.GL['c_ohne_fonds_2028']['altlasten_im_jahr'] - F.ZR['fonds'], 2)} %; without this stretching the burden is
+{en(F.GL['c_ohne_fonds_2028']['summe'], 2)} % of GDP. The top tax rate is one third; with the fund surcharge the marginal burden on an additional euro of
+gross wage is about 40 % in 2028 and about 34 % after repayment (Table 7).</p>
 <p class="cap">Table 4: Strong net and dividend, Germany</p>
 {t_net()}
 <p>The common fund takes over public debt and pension claims above the dividend (on average {en(F.AL['beschluss']['verhandlungsmasse_z_2028_pct_bip'], 2)} % of
@@ -447,7 +454,13 @@ value, debt would not be repaid by 2098 (Table 10). Holding the pension claims Z
 <p><b>Avoidance at the top.</b> Revenue from inheritance ({en(J('ausweichen33.json')['positionen_pct_bip']['erbschaften'], 2)} % of GDP) and large wealth
 ({en(J('ausweichen33.json')['positionen_pct_bip']['grosse_vermoegen'], 2)} % of GDP after avoidance) depends on behaviour at the top of the distribution, where
 responses are strong (Jakobsen et al. 2020; Kleven et al. 2014). Across the avoidance band the German dividend changes by
-{pm(worst['dividende_2028_eur'])} to {pm(best['dividende_2028_eur'])} € per adult and month in 2028.</p>
+{pm(worst['dividende_2028_eur'])} to {pm(best['dividende_2028_eur'])} € per adult and month in 2028. The inheritance base is not yet secured: the base
+required in 2028 ({en(J('vermoegensbasis33.json')['erbschaften']['noetige_basis_ueber_100k_mrd_2028'])} bn €) exceeds the taxable-relevant assets recorded
+in 2025, a record year, projected to 2028 ({en(J('vermoegensbasis33.json')['erbschaften']['fortgeschrieben_2028_mrd'])} bn €), and clearly exceeds the value
+projected from 2024 ({en(J('vermoegensbasis33.json')['erbschaften']['fortgeschrieben_2028_aus_2024_mrd'])} bn €; Destatis 2026). An internal review of
+14 November 2026 estimates that the revenue of four positions (company profits, other taxes, inheritance, carbon price) may be 1 to 2 points of GDP
+lower than assumed, each point being worth about {en(J('vermoegensbasis33.json')['eur_je_bip_punkt_2028'])} € of dividend per adult and month; these
+positions are still to be checked against cash statistics.</p>
 <p><b>Take-up.</b> The model assumes complete take-up of the floor. Today, non-take-up of minimum income is high in Germany and France (DREES 2022;
 Eurofound 2015); a payment without application and a pre-filled top-up are designed to reduce it, which raises costs that are already fully counted.</p>
 

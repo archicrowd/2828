@@ -48,6 +48,7 @@ SINCE_REVIEW = [
  ("v4.79", "Website draft: community game as world map; roadmap section removed", "no figure"),
  ("v4.80", "Website follows the ground rules in six languages: community of states instead of roof, world map after the rules", "no figure (cap in flow chart 33.3 instead of 32%)"),
  ("v4.81", "World map: United Nations member states light green, other territories grey", "no figure"),
+ ("v4.82", "Document review 14 Nov: scope of key statements, total burden as cash comparison, inheritance base open (corrections 87, 88)", "no model figure"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]

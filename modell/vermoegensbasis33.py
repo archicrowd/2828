@@ -4,8 +4,8 @@
 Große Vermögen: Pareto-Verteilung über P90, geeicht (a) auf die Bundesbank-Befragung 2021 (P90, Anteil der oberen 10 %; Umfrage untererfasst die
 Spitze) und (b) auf die DIW-Schätzung mit Millionärsstichprobe (Anteile der oberen 1 % und 10 %). Statisches Aufkommen = Satz × Vermögen über der
 Schwelle, fortgeschrieben auf 2028, in % des deutschen BIP 2028. Vergleich: statische Position der Deckung (ausweichen33.json, Klub-% BIP).
-Erbschaften: Basis über 100.000 € je Erwerb, die die Position der Deckung voraussetzt, gegen den steuerpflichtigen Erwerb 2025 (geltendes Recht,
-höhere Freibeträge, Verschonungen). Wirkung auf die Dividende: Euro je BIP-Punkt aus ausweichen33.json.
+Erbschaften: Basis über 100.000 € je Erwerb, die die Position der Deckung voraussetzt, gegen das steuerlich berücksichtigte Vermögen 2025
+(Destatis; vor Freibeträgen, nur Fälle mit festgesetzter Steuer; v4.82, bis v4.81 als „steuerpflichtiger Erwerb“ bezeichnet). Wirkung auf die Dividende: Euro je BIP-Punkt aus ausweichen33.json.
 Ausgabe: daten/aggregate/vermoegensbasis33.json
 """
 import json
@@ -53,11 +53,15 @@ def main():
     E_ = P["erbschaft"]
     erb_pos = AW["positionen_pct_bip"]["erbschaften"]
     basis_noetig = erb_pos / 100 * P["bip_de_2028_mrd"] / E_["satz_neu"]
-    erb = dict(position_pct_bip=erb_pos, noetige_basis_ueber_100k_mrd_2028=round(basis_noetig), steuerpflichtiger_erwerb_2025_mrd=E_["steuerpflichtiger_erwerb_2025_mrd"],
-               fortgeschrieben_2028_mrd=round(E_["steuerpflichtiger_erwerb_2025_mrd"] * 1.03 ** 3),
-               hinweis="Der steuerpflichtige Erwerb 2025 gilt nach heutigem Recht (Freibeträge bis 500.000 €, Verschonung des Betriebsvermögens, "
-                       "Erlass nach § 28a); die Basis über 100.000 € ohne Verschonung ist größer. Die nötige Basis liegt damit im Bereich der Daten, "
-                       "eher vorsichtig. 2025 war ein Rekordjahr (+32,9 %), getrieben von Erwerben über 20 Mio. €: schwankend und ausweichanfällig.")
+    erb = dict(position_pct_bip=erb_pos, noetige_basis_ueber_100k_mrd_2028=round(basis_noetig), steuerlich_beruecksichtigt_2025_mrd=E_["steuerlich_beruecksichtigt_2025_mrd"],
+               steuerlich_beruecksichtigt_2024_mrd=E_["steuerlich_beruecksichtigt_2024_mrd"],
+               fortgeschrieben_2028_mrd=round(E_["steuerlich_beruecksichtigt_2025_mrd"] * 1.03 ** 3),
+               fortgeschrieben_2028_aus_2024_mrd=round(E_["steuerlich_beruecksichtigt_2024_mrd"] * 1.03 ** 4),
+               status="offen (v4.82, Prüfung 14.11.2026, B-2): Basisjahr 2025 ist ein Ausreißer; Mehrjahresmittel steht aus",
+               hinweis="Das steuerlich berücksichtigte Vermögen ist vor Freibeträgen gemessen, erfasst aber nur Fälle mit festgesetzter Steuer; "
+                       "Übertragungen innerhalb der heutigen Freibeträge fehlen, die Basis über 100.000 € kann deshalb größer sein. 2025 war ein "
+                       "Rekordjahr (+32,9 %), getrieben von Übertragungen ab 20 Mio. € (festgesetzte Steuer dort +146,8 %); aus 2024 fortgeschrieben "
+                       "liegt die Basis deutlich unter der nötigen. Ob die Basis gedeckt ist, ist offen (bis v4.81: „im Bereich der Daten“).")
     E = dict(version=P["version"], status="Prüfrechnung", grosse_vermoegen=erg, deckung_statisch_pct_bip=stat_modell, eur_je_bip_punkt_2028=eur,
              erbschaften=erb,
              bewertung="Die statische Position der Deckung (1,94 % BIP) entspricht der Verteilung mit korrigierter Spitze (DIW); nach der Befragung "
