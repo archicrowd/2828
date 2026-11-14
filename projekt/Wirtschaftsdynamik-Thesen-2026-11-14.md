@@ -1,7 +1,10 @@
 # Wirtschaftliche Dynamik des Goldenen Drittels: Thesen und Werte
 
-Initiative 28:28 · 14. November 2026 · Modellstand v4.83 · Rechnung: `modell/wirtschaftsdynamik.py` (+ `.toml`) → `daten/aggregate/wirtschaftsdynamik.json`
-Status: **Prüfrechnung, Vorschlag zur Entscheidung.** Nicht in der geltenden Rechnung; der Grundpfad bleibt statisch.
+Initiative 28:28 · 14. November 2026 · Modellstand v4.84 (T7 und Beschluss ergänzt) · Rechnung: `modell/wirtschaftsdynamik.py` (+ `.toml`) → `daten/aggregate/wirtschaftsdynamik.json`
+Status: **Prüfrechnung.** Nicht in der geltenden Rechnung; der Grundpfad bleibt statisch.
+
+**Beschluss der Initiative (14.11.2026):** Der mittlere Fall wird gerechnet und als erwartete Dynamik ausgewiesen (Kennzahlen, Konzept 6.5,
+Working Paper). Neu aufgenommen ist der Kanal Fachkräfte aus dem Ausland (T7).
 
 ## 0 Frage und Vorgehen
 
@@ -96,15 +99,44 @@ Deregulierung von Produkt- oder Arbeitsmärkten enthält es nicht; dafür wird h
   T2 bis T4 eintreten, und darf nicht zusätzlich gezählt werden.
 - **Höchstens:** weniger Vorsichtssparen bei unteren Einkommen durch Boden und Dividende (Annahme).
 
+### T7 Fachkräfte kommen wegen des höheren Netto, aber in kleiner Zahl (Belegstufe C)
+
+**These der Initiative:** Die Zone wird für Fachkräfte aus dem Ausland attraktiv. Sie bringen Leistung ein und entlasten die Alterssicherung.
+
+**Rechnung:**
+- **Bestand als Ausgangsgröße:** 1,3 Mio. Beschäftigte mit ausländischer Staatsangehörigkeit in Engpassberufen (Juni 2025, BA, nach hib 641/2026).
+- **Anreiz:** Bei 75.000 € brutto steigt das Netto um rund 20 % (3.817 → 4.588 € im Monat, alleinstehend).
+- **Elastizität des Bestands:** 0,1 / 0,25 / 0,5 (Annahme). Für ausländische Erfinder liegt sie bei rund 1 (Akcigit u. a. 2016), für ausländische
+  Spitzenverdiener mit Vorzugstarif bei 1,5 bis 2 (Kleven u. a. 2014). Für breite Fachkräfte ist sie kleiner anzusetzen, weil Sprache,
+  Anerkennung, Visa und Wohnen stärker wirken. Im OECD-Vergleich liegt Deutschland für Hochqualifizierte auf Rang 15 von 38 (2023), mit
+  Schwächen bei Visa, Digitalisierung und Anerkennung (Bertelsmann Stiftung).
+
+**Ergebnis (mittel):**
+- rund 60.000 zusätzliche Fachkräfte in Deutschland, rund 333.000 in den 30 Staaten, aufgebaut 2028–2037;
+- BIP +0,18 %.
+
+**„Rentenkassen entlasten“ im Goldenen Drittel:** Eine Rentenkasse im heutigen Sinn gibt es nicht mehr; die alten Zusagen trägt der Fonds aus allen
+Steuern. Zugewanderte tragen den Altlastenzuschlag mit, ohne Ansprüche aus dem alten System zu erwerben; ihre eigene Rente bauen sie über die
+Pflichtvorsorge auf. Die Richtung stimmt also. **Die Größe ist bei rein steuerlichem Anreiz aber klein:** Die Entlastung des Fonds liegt unter
+0,01 % des BIP.
+
+**Zum Vergleich:** Eine aktiv gesteuerte Zuwanderung von 0,2 % der Bevölkerung je Jahr senkt den Fondsbeitrag auf 4,76 % (`einwanderung33`).
+**Folgerung:** Der Hebel liegt bei schnellen Visa, Anerkennung der Abschlüsse und Sprache. Ein gemeinsames Fachkräftevisum der Gemeinschaft
+wäre zu prüfen (Vorschlag, nicht gerechnet).
+
 ## 2 Werte zusammen
 
 Niveau des BIP gegen den Grundpfad; Dividende je Erwachsenem und Monat, Kaufkraft 2026.
 
-| Fall | 2028 | 2030 | 2035 | 2045 und später | Dividende 2035 / 2045 |
-|---|---|---|---|---|---|
-| vorsichtig | +0,8 % | +0,8 % | +0,1 % | −0,3 % | +1 € / −1 € |
-| **mittel** | **+1,8 %** | **+2,4 %** | **+2,3 %** | **+2,5 %** | **+12 € / +12 €** |
-| hoch | +3,0 % | +4,5 % | +4,9 % | +5,9 % | +26 € / +29 € |
+Seit v4.84 mit T7:
+
+| Fall | 2028 | 2030 | 2035 | 2045 und später | Dividende 2035 / 2045 | Fondsbeitrag |
+|---|---|---|---|---|---|---|
+| vorsichtig | +0,8 % | +0,8 % | +0,2 % | −0,2 % | +1 € / −1 € | 5,17 % BIP |
+| **mittel (erwartet)** | **+1,8 %** | **+2,5 %** | **+2,5 %** | **+2,7 %** | **+13 € / +12 €** | **5,04 % BIP** |
+| hoch | +3,1 % | +4,6 % | +5,1 % | +6,3 % | +26 € / +29 € | 4,90 % BIP |
+
+Ohne Dynamik beträgt der Fondsbeitrag 5,15 % des BIP.
 
 **Lesart:**
 - **Für die Menschen** wirkt die Dynamik vor allem über mehr Beschäftigung und höhere Löhne.
@@ -131,7 +163,11 @@ Niveau des BIP gegen den Grundpfad; Dividende je Erwachsenem und Monat, Kaufkraf
 - Gechert, S. (2015): What fiscal policy is most effective? A meta-regression analysis. Oxford Economic Papers 67(3). [RePEc](https://econpapers.repec.org/RePEc:oup:oxecpp:v:67:y:2015:i:3:p:553-580.) (Zusammenfassung)
 - Gechert, S., Rannenberg, A. (2018): Which Fiscal Multipliers Are Regime-Dependent? Journal of Economic Surveys 32(4). [RePEc](https://econpapers.repec.org/RePEc:bla:jecsur:v:32:y:2018:i:4:p:1160-1182) (Zusammenfassung)
 - Heady, C., Johansson, Å., Arnold, J., Brys, B., Vartia, L. (2009): Tax Policy for Economic Recovery and Growth. Kent DP 0925. [PDF](https://www.kent.ac.uk/economics/repec/0925.pdf) (Abschnitt 2)
+- Akcigit, U., Baslandze, S., Stantcheva, S. (2016): Taxation and the International Mobility of Inventors. AER 106(10). [RePEc](https://econpapers.repec.org/RePEc:aea:aecrev:v:106:y:2016:i:10:p:2930-81) (Zusammenfassung: Elastizität ausländischer Spitzenerfinder rund 1, einheimischer 0,03)
+- Bertelsmann Stiftung (2023): Deutschland fällt zurück im internationalen Wettbewerb um Top-Talente (OECD Indicators of Talent Attractiveness 2023). [Bertelsmann](https://www.bertelsmann-stiftung.de/en/topics/latest-news/2023/march/germany-falls-behind-in-international-competition-for-top-talent)
+- Deutscher Bundestag, hib 641/2026 vom 14.08.2026 (Antwort der Bundesregierung; ausländische Beschäftigte in Engpassberufen, Juni 2025). [Bundestag](https://www.bundestag.de/presse/hib/kurzmeldungen-1205074)
 - ifo Institut (2024): Bürokratie in Deutschland kostet jährlich 146 Milliarden Euro an Wirtschaftsleistung. Pressemitteilung vom 14.11.2024 (Studie für die IHK München und Oberbayern). [ifo](https://www.ifo.de/pressemitteilung/2024-11-14/buerokratie-deutschland-kostet-jaehrlich-146-milliarden-euro)
+- Kleven, H., Landais, C., Saez, E., Schultz, E. (2014): Migration and Wage Effects of Taxing Top Earners. QJE 129(1) (aus der Voruntersuchung)
 - Kammer, A. (2025): Europe's Integration Imperative. Finance & Development, Juni 2025 (IWF). [IMF](https://www.imf.org/en/publications/fandd/issues/2025/06/europes-integration-imperative-alfred-kammer) (Sekundärquelle für die IWF-Forschung 2024)
 - Eigene Dateien: `mikro_de.json`, `dynamik33.json`, `gesamtlast33.json`, `ausweichen33.json`, Voruntersuchung Verhaltenswirkungen (24.10.2026)
 

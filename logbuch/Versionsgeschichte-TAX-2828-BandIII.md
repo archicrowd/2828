@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.83**
+Stand: 24. Oktober 2026 · Modellstand **v4.84**
 
 ---
 
@@ -5058,6 +5058,29 @@ Zinsen und Löhne; Tilgungsphase als Nachfrageentzug nicht gerechnet. Allgemeine
 **Datenquelle:** wie im Dokument, Abschnitt 4 (abgerufen 14.11.2026). **Bewegte Zahl:** keine geltende; neu die Spanne der Dynamik.
 **Wodurch aufgefallen:** Frage der Initiative.
 
+### v4.84 — Erwartete Dynamik (mittlerer Fall) ausgewiesen; Kanal Fachkräfte aus dem Ausland
+
+**Art der Änderung: MINOR (Prüfrechnung erweitert, Ausweis in den Papieren), geltende Zahlen unverändert.** 14. November 2026.
+
+**Beschluss der Initiative (14.11.2026):** Die mittlere Dynamik wird gerechnet und als erwartete Wirkung ausgewiesen. Neuer Kanal: Die Zone wird
+für Fachkräfte aus dem Ausland attraktiv; sie bringen Leistung ein und entlasten die Alterssicherung.
+
+**Umsetzung:**
+- `wirtschaftsdynamik.py/.toml`: Kanal F1 (Bestand 1,3 Mio. ausländische Beschäftigte in Engpassberufen, Juni 2025, BA nach hib 641/2026; Netto
+  bei 75.000 € +20 %; Elastizität 0,1 / 0,25 / 0,5, Annahme; Erwerb 0,88, Produktivität 1,2; Rechenweg wie `einwanderung33.szenario`). Dividende
+  folgt jetzt dem BIP je Einwohner. Beitrag des Fonds je Fall gelöst mit `einwanderung33.fonds`.
+- Ausweis: Kennzahlen (neuer Abschnitt), Konzept 6.5 (Tabelle der sieben Kanäle), Working Paper (Abschnitt 6), Thesenpapier (T7, Beschluss).
+  Webseite unverändert.
+
+**Ergebnis (mittel):** BIP +2,5 % (2035), +2,7 % (2045); Arbeitsvolumen +2,5 %; Dividende 2045 259 statt 247 € je Erwachsenem (ohne
+Kinderanteil, Kaufkraft 2026); Fondsbeitrag 5,04 statt 5,15 % BIP. Fachkräfte: 60.000 in DE, 333.000 in den 30 Staaten; BIP +0,18 %; Entlastung des
+Fonds allein daraus < 0,01 % BIP. Der Hebel für mehr Fachkräfte liegt bei Visa, Anerkennung und Sprache (OECD Talent Attractiveness 2023, DE
+Rang 15 von 38); ein gemeinsames Fachkräftevisum der Gemeinschaft ist als Vorschlag notiert.
+
+**Datenquelle:** Bundestag hib 641/2026 (Antwort der Bundesregierung, amtlich über BA); Akcigit u. a. 2016 (Zusammenfassung); Bertelsmann Stiftung 2023
+(Sekundärquelle für OECD); `regel_boden.json`, `einwanderung33`. **Bewegte Zahl:** keine geltende; ausgewiesen die erwartete Dynamik.
+**Wodurch aufgefallen:** Beschluss und Vorschlag der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5137,7 +5160,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.83
+## 7 | Offene Punkte, Stand v4.84
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

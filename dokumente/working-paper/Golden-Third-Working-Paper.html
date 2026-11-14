@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Golden Third – working paper (v4.83)</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Golden Third – working paper (v4.84)</title><style>
 @page{size:A4;margin:22mm 20mm 20mm 20mm}
 body{font:10.3pt/1.5 Georgia,'Times New Roman',serif;color:#1d2a33;margin:0}
 h1{font:700 24pt/1.15 Arial,Helvetica,sans-serif;color:#0f3b5c;margin:0 0 4pt}
@@ -29,7 +29,7 @@ ul{margin:0 0 7pt;padding-left:15pt}li{margin:0 0 3pt}
 <h1>The Golden Third</h1>
 <p class="sub">A static costing and distributional model of a shared tax and social-protection framework for a group of European states</p>
 <p class="autor">Initiative 28:28</p>
-<p class="meta">Model version v4.83 · 1 November 2026 · Licence CC BY 4.0 · Research kit and figures to cite: <a href="https://doi.org/10.5281/zenodo.23855733">doi.org/10.5281/zenodo.23855733</a>
+<p class="meta">Model version v4.84 · 1 November 2026 · Licence CC BY 4.0 · Research kit and figures to cite: <a href="https://doi.org/10.5281/zenodo.23855733">doi.org/10.5281/zenodo.23855733</a>
 · Website: <a href="https://archicrowd.github.io/goldenes-drittel/">archicrowd.github.io/goldenes-drittel/</a> · Contact: tax.better@archicrowd.de</p>
 </header>
 
@@ -241,6 +241,20 @@ positions are still to be checked against cash statistics.</p>
 <p><b>Take-up.</b> The model assumes complete take-up of the floor. Today, non-take-up of minimum income is high in Germany and France (DREES 2022;
 Eurofound 2015); a payment without application and a pre-filled top-up are designed to reduce it, which raises costs that are already fully counted.</p>
 
+<h3>Expected dynamics (middle case)</h3>
+<p>The model is static; dividend and household figures contain no behavioural growth. A separate check calculation
+(<code>wirtschaftsdynamik.py</code>) adds seven channels – demand from higher disposable income (temporary), employment, less bureaucracy,
+a market without borders, investment (negative, higher taxation of capital and profits), confidence and skilled immigration – with values from
+the literature and marked assumptions. In the middle case GDP is 2.5 % above
+the baseline in 2035 and 2.7 % in 2045 (range
+−0.2 to 6.3 %);
+the dividend rises by 12 € per adult and month and the fund contribution falls from
+5.15 to 5.04 % of GDP.
+Higher net pay attracts about 60 thousand additional skilled workers to Germany
+(elasticity 0.25, assumption; estimates for foreign top earners and inventors are 1 to 2: Akcigit et al. 2016, Kleven et al. 2014). The early demand
+impulse is largely financed by stretching legacy costs through the fund and reverses during repayment; channels are added without feedback on prices,
+interest rates and wages.</p>
+
 <h2>7 Assessment against the objectives</h2>
 <p>Table 11 relates each objective to the rules that serve it, to an indicator the model computes, and to what the model does not cover.</p>
 <p class="cap">Table 11: Objectives, indicators and gaps</p>
@@ -329,7 +343,7 @@ Law Index (2025) is one possible criterion. States outside Europe are not calcul
 <h2>10 Reviews, corrections and access</h2>
 <p>The calculation chain was recalculated in three internal reviews in October 2026, initiated by the initiative and carried out with a different AI model from the one used to build the calculation; they are not independent reviews. The second and third reviews re-implemented
 the core in their own code and confirmed it at rounding level; their findings and the responses are documented. The last review covered model version
-v4.42; the changes since then (up to v4.83) are listed on the website; a follow-up review of them is under way, in which the fund grid (D1) and the marginal burden (D2) have been reproduced in full so far.
+v4.42; the changes since then (up to v4.84) are listed on the website; a follow-up review of them is under way, in which the fund grid (D1) and the marginal burden (D2) have been reproduced in full so far.
 Independent review is invited.</p>
 <p>The log records every version with date, change, data source, moved figure and how it was noticed; 88 corrections have been numbered
 so far. The research kit with all figures to cite, the result files and the review documents is archived at

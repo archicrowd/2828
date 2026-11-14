@@ -464,6 +464,20 @@ positions are still to be checked against cash statistics.</p>
 <p><b>Take-up.</b> The model assumes complete take-up of the floor. Today, non-take-up of minimum income is high in Germany and France (DREES 2022;
 Eurofound 2015); a payment without application and a pre-filled top-up are designed to reduce it, which raises costs that are already fully counted.</p>
 
+<h3>Expected dynamics (middle case)</h3>
+<p>The model is static; dividend and household figures contain no behavioural growth. A separate check calculation
+(<code>wirtschaftsdynamik.py</code>) adds seven channels – demand from higher disposable income (temporary), employment, less bureaucracy,
+a market without borders, investment (negative, higher taxation of capital and profits), confidence and skilled immigration – with values from
+the literature and marked assumptions. In the middle case GDP is {en(J('wirtschaftsdynamik.json')['faelle']['mittel']['reihe']['2035']['bip_pct'], 1)} % above
+the baseline in 2035 and {en(J('wirtschaftsdynamik.json')['faelle']['mittel']['reihe']['2045']['bip_pct'], 1)} % in 2045 (range
+{en(J('wirtschaftsdynamik.json')['faelle']['vorsichtig']['reihe']['2045']['bip_pct'], 1)} to {en(J('wirtschaftsdynamik.json')['faelle']['hoch']['reihe']['2045']['bip_pct'] + 1e-9, 1)} %);
+the dividend rises by {en(J('wirtschaftsdynamik.json')['faelle']['mittel']['reihe']['2045']['dividende_mehr_eur'])} € per adult and month and the fund contribution falls from
+{en(J('wirtschaftsdynamik.json')['faelle']['mittel']['fonds']['beitrag_ohne_dynamik_pct_bip'], 2)} to {en(J('wirtschaftsdynamik.json')['faelle']['mittel']['fonds']['beitrag_pct_bip'], 2)} % of GDP.
+Higher net pay attracts about {en(J('wirtschaftsdynamik.json')['faelle']['mittel']['fachkraefte']['de_tausend'])} thousand additional skilled workers to Germany
+(elasticity 0.25, assumption; estimates for foreign top earners and inventors are 1 to 2: Akcigit et al. 2016, Kleven et al. 2014). The early demand
+impulse is largely financed by stretching legacy costs through the fund and reverses during repayment; channels are added without feedback on prices,
+interest rates and wages.</p>
+
 <h2>7 Assessment against the objectives</h2>
 <p>Table 11 relates each objective to the rules that serve it, to an indicator the model computes, and to what the model does not cover.</p>
 <p class="cap">Table 11: Objectives, indicators and gaps</p>

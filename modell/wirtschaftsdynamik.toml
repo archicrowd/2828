@@ -60,3 +60,20 @@ beleg = "C"
 bip_pct = [0.0, 0.0, 0.3]
 aufbau_bis = 2032
 beleg = "C"
+
+[fachkraefte]   # F1 – die Zone wird für Fachkräfte aus dem Ausland attraktiver; dauerhaft (v4.83, Vorschlag der Initiative 14.11.2026)
+# Bestand: 1,3 Mio. Beschäftigte mit ausländischer Staatsangehörigkeit in Engpassberufen, 14,6 % von 8,8 Mio. (Juni 2025; BA, nach Antwort der
+# Bundesregierung, hib 641/2026). Übertragen auf die 30 Staaten im selben Anteil an der Bevölkerung (Annahme).
+bestand_mio_de = 1.3
+# Anreiz: Netto alleinstehend 75.000 € brutto heute 3.817 €, neu 4.588 € im Monat (regel_boden.json, mit Dividende, nach Pflichtvorsorge).
+brutto_beispiel = "75000"
+# Elastizität des Bestands ausländischer Fachkräfte bezüglich des Nettoanteils. Literatur nur für Spitzenverdiener: ausländische Erfinder rund 1
+# (Akcigit/Baslandze/Stantcheva, AER 2016), ausländische Spitzenverdiener mit Vorzugstarif 1,5–2 (Kleven u. a., QJE 2014). Für breite Fachkräfte
+# kleiner, weil Sprache, Anerkennung, Visa und Wohnen stärker wirken (OECD Talent Attractiveness 2023: DE Rang 15 von 38); Werte: Annahme.
+elastizitaet = [0.1, 0.25, 0.5]
+aufbau_jahre = 10                 # Zuzug verteilt auf 2028–2037 (Annahme)
+alter_bei_ankunft = 30            # wie einwanderung33.toml
+erwerb = 0.88                     # Erwerbstätigenquote der Fachkräfte (Annahme, über Einheimischen 0,758)
+produktivitaet = 1.2              # Wertschöpfung je Fachkraft relativ zum Durchschnitt (Annahme; einwanderung33: 0,85 für alle Zuwandernden)
+mitkommende_kinder = 0.3          # wie einwanderung33.toml
+beleg = "C"

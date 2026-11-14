@@ -50,6 +50,7 @@ SINCE_REVIEW = [
  ("v4.81", "World map: United Nations member states light green, other territories grey", "no figure"),
  ("v4.82", "Document review 14 Nov: scope of key statements, total burden as cash comparison, inheritance base open (corrections 87, 88)", "no model figure"),
  ("v4.83", "Economic dynamics: six channels as theses with values (check calculation)", "no current figure; GDP level middle case +2.5% from 2045"),
+ ("v4.84", "Expected dynamics (middle case) reported; channel skilled immigration", "no current figure; GDP middle +2.7% (2045), fund contribution 5.04% of GDP"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]

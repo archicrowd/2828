@@ -118,6 +118,19 @@ sie nicht. Einkommen: Tarif am Grundbedarf.
 | Übrige Steuern | 3,93 | Energie, Tabak, Alkohol u. a. (165 Mrd. €) | heutige Verbrauchsteuern | geltend; **Beleg offen** (Prüfbefund B-1 vom 14.11.2026: Kassenstatistik 2024 ergibt nach Überschlag des Prüfers rund 100–110 Mrd. €; Abgrenzung VGR gegen Kasse und Überschneidung mit CO₂-Preis und Sonderstufe klären) |
 | Grundstücksabgabe | 0,82 | Bodenwertabgabe (Ebene B, Satz bis 1 %) | Bodenwert | geltend |
 
+## Erwartete Dynamik, mittlerer Fall (v4.84, Entscheidung der Initiative vom 14.11.2026)
+
+Nicht in der geltenden Rechnung: Dividende und Haushaltszahlen bleiben statisch. Ausgewiesen als erwartete Wirkung, mit Spanne.
+
+| Größe | mittel (vorsichtig – hoch) | Datei | Status |
+|---|---|---|---|
+| BIP-Niveau gegen Grundpfad 2030 / 2035 / 2045 | +2,5 / +2,5 / +2,7 % (+0,8 bis +4,6 / +0,2 bis +5,1 / −0,2 bis +6,3 %) | `wirtschaftsdynamik.json → faelle` | erwartet (mittel); sieben Kanäle addiert |
+| Arbeitsvolumen, dauerhaft ab 2035 | +2,5 % (+0,6 bis +4,3 %) | ebenda | Belegstufe B |
+| Dividende je Erwachsenem 2035 / 2045 (ohne Kinderanteil, Kaufkraft 2026) | 307 / 259 € statt 294 / 247 € (+13 / +12 €) | ebenda | erwartet |
+| Beitrag des Altlastenfonds | 5,04 statt 5,15 % BIP (vorsichtig 5,17, hoch 4,90) | ebenda, `fonds` | Lösung wie `einwanderung33.fonds` |
+| Zusätzliche Fachkräfte aus dem Ausland (Bestand ab 2037) | DE 60.000, 30 Staaten 333.000 (DE 24.000 bis 120.000) | ebenda, `fachkraefte` | Elastizität 0,25 (Annahme), Belegstufe C; Entlastung des Fonds < 0,01 % BIP |
+| Nachfrageimpuls 2028 | 218 Mrd. € = 5,1 % BIP (Fonds-Neuaufnahme 6,9 %) | ebenda, `nachfrage` | vorübergehend, bis 2033 auslaufend |
+
 ## Geltungsbereich der Kernaussagen (v4.82, Prüfung vom 14.11.2026, Befund B-6)
 
 Die Webseite nennt die Kernaussagen ohne diese Einschränkungen (Erstinformation, Entscheidung der Initiative vom 14.11.2026). In Konzept, Working
