@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.90**
+Stand: 24. Oktober 2026 · Modellstand **v4.91**
 
 ---
 
@@ -5288,6 +5288,26 @@ beschlossen. Unternehmen intern 2,37 → 2,32 % BIP (2,05 bis 2,71); Lücke B-1 
 
 **Bewegte Zahl:** keine geltende; intern Unternehmen +0,05. **Wodurch aufgefallen:** Beschlüsse der Initiative, Arbeit an E1.
 
+### v4.91 — Brücke für Partner: Solidaritätspfad 25 / 33 / 50 % (Entwicklungsmodus)
+
+**Art der Änderung: MINOR (neue Prüfrechnung), geltende Zahlen unverändert.** 15. November 2026.
+
+**Frage der Initiative (15.11.2026):** Die Brücke ist als Solidaritätspfad vorgesehen; wie stark, 25 % oder 33 % gemeinsame Last?
+
+**Rechnung:** `modell/bruecke.py` (+ `.toml`) → `daten/aggregate/bruecke.json`; Vorlage `projekt/Bruecke-Partner-2026-11-15.md`.
+Der gemeinsame Satz ist das BIP-gewichtete Mittel aller Anteile im Topf; im Skript läuft eine Summenkontrolle.
+
+**Ergebnis:**
+- **Brücke für alle Partner:** Sie belastet fünf von sechs Partnern (z. B. Bulgarien 2,42 → 3,08 % BIP), weil deren eigener Satz unter dem
+  gemeinsamen liegt.
+- **Brücke wahlweise:** Sie wirkt nur für Griechenland (7,37 → 6,80 bei 25 %, 6,62 bei 33 %); Entlastung 1,35 bzw. 1,77 Mrd. € je Jahr.
+  Die Teilnehmer tragen +0,007 bzw. +0,010 % BIP.
+- **Empfehlung:** wahlweise, als Pfad 25 % → 33 % bei belegtem Fortschritt → 50 % ab Schwelle.
+
+**Datenquelle:** wie `fonds_5050` (Möglichkeitsraum, WJP Rule of Law Index 2025). Weltbank-Indikatoren (WGI) als zweite Quelle angefragt.
+
+**Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Frage der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5368,7 +5388,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.90
+## 7 | Offene Punkte, Stand v4.91
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

@@ -1,0 +1,7 @@
+# Brücke (Solidaritätspfad) für Partner unter der Rechtsstaatsschwelle (modell/bruecke.py, Logbuch v4.91). Entwicklungsmodus, kein Beschluss.
+# Frage der Initiative (15.11.2026): Wie stark soll der gemeinsame Anteil der Partner sein, 25 % oder 33 %?
+version = "v4.91"
+anteile = [0.25, 0.33]          # gemeinsamer Anteil der Partner (Teilnehmer: anteil_gemeinsam aus fonds_5050.toml, 50 %)
+# Formen: "alle" = jeder Partner trägt den Anteil zum gemeinsamen Satz; "wahl" = nur Partner, deren eigener Satz über dem gemeinsamen liegt
+# (die Brücke entlastet, sie belastet nie mehr als der eigene Fonds)
+formen = ["alle", "wahl"]

@@ -1,0 +1,51 @@
+# Brücke für Partner: Solidaritätspfad 25 % → 33 % → 50 %
+
+Initiative 28:28 · 15. November 2026 · Modellstand v4.91 · Rechnung: `modell/bruecke.py` (+ `.toml`) → `daten/aggregate/bruecke.json`
+Status: **Entwicklungsmodus, Prüfrechnung, kein Beschluss.** Grundlage: Fonds mit geteilter Verantwortung 50/50 (`fonds_5050.py`).
+Schwelle Rechtsstaat 0,66 (World Justice Project). Partner: Bulgarien, Griechenland, Kroatien, Ungarn, Rumänien, Slowakei.
+
+## 1 Befund
+
+**Eine Brücke für alle Partner wirkt verkehrt herum.**
+- Der eigene Satz der Partner liegt bei Bulgarien, Kroatien, Ungarn, Rumänien und der Slowakei unter dem gemeinsamen Satz: 2,4 bis 4,2 %
+  gegen 5,08 % des BIP.
+- Mit einem gemeinsamen Anteil würden sie mehr zahlen und die Teilnehmer entlasten.
+- Nur Griechenland liegt darüber (eigener Satz 7,37 %).
+
+| Variante (Beitrag in % des eigenen BIP je Jahr) | BG | EL | HR | HU | RO | SK | Teilnehmer | Entlastung der Partner |
+|---|---|---|---|---|---|---|---|---|
+| ohne Brücke (eigener Satz) | 2,42 | 7,37 | 4,23 | 3,69 | 3,88 | 3,71 | – | – |
+| 25 % für alle | 3,08 | 6,79 | 4,44 | 4,03 | 4,18 | 4,05 | −0,009 | −1,7 Mrd. € (Belastung) |
+| 33 % für alle | 3,29 | 6,61 | 4,50 | 4,14 | 4,27 | 4,15 | −0,012 | −2,2 Mrd. € (Belastung) |
+| **25 % wahlweise** | 2,42 | **6,80** | 4,23 | 3,69 | 3,88 | 3,71 | +0,007 | +1,35 Mrd. € |
+| **33 % wahlweise** | 2,42 | **6,62** | 4,23 | 3,69 | 3,88 | 3,71 | +0,010 | +1,77 Mrd. € |
+
+Euro je Jahr: BIP 2024, nominal.
+- **Für die Teilnehmer** ist die Brücke kaum spürbar: höchstens 0,01 % ihres BIP.
+- **Für Griechenland** bringt sie 0,57 % (25 %) oder 0,75 % (33 %) des eigenen BIP je Jahr. Als Teilnehmer (50 %) trüge Griechenland 6,22 %.
+
+**Nebenbefund:** Für fünf der sechs Partner ist der Fonds kein Anreiz, die Schwelle zu erreichen. Als Teilnehmer zahlten sie mehr. Der Anreiz
+liegt in den übrigen Regeln, etwa dem Markt ohne Grenzen und der Freizügigkeit der Fachkräfte.
+
+## 2 Empfehlung
+
+**Die Brücke wahlweise gestalten:** Ein Partner kann den gemeinsamen Anteil wählen. Die Brücke darf nie mehr kosten als der eigene Fonds.
+
+**Die Stärke als Pfad fassen, nicht als einen Wert.**
+1. **25 % ab Beitritt als Partner.**
+2. **33 %, wenn der Fortschritt belegt ist:** etwa ein höherer Rechtsstaatswert in zwei aufeinanderfolgenden Ausgaben oder ein Abstand von
+   höchstens 0,03 zur Schwelle (Annahme, zu beschließen). Ein Drittel gemeinsam passt zur Erzählung.
+3. **50 % mit Erreichen der Schwelle,** also die volle Teilnahme.
+4. **Rückfall:** Sinkt der Wert unter die Schwelle oder bleibt der Fortschritt aus, gilt die Stufe davor.
+
+**Begründung.** Die Kosten sind in jeder Stufe gering. Der Unterschied zwischen 25 % und 33 % liegt vor allem im Signal. Ein Pfad belohnt
+Fortschritt und hält den Abstand zur vollen Teilnahme.
+
+**Zweite Quelle für die Schwelle:** Die Weltbank-Indikatoren (Worldwide Governance Indicators, „Rule of Law“) sollen den Index des World Justice
+Project absichern. Sie liefern auch die fehlenden Werte für die Schweiz und Island. Datei angefragt (15.11.2026).
+
+## 3 Grenzen
+
+- Die eigenen Sätze stammen aus der Abgrenzung des Möglichkeitsraums, skaliert mit dem Beschluss (wie `fonds_5050`, Annahme).
+- Die Rechnung ist statisch und dauerhaft gerechnet; die Wirkung eines Stufenwechsels über die Zeit ist nicht gerechnet.
+- Der WJP-Index ist eine nichtstaatliche Quelle (NGO); die Werte sind maschinell aus dem PDF gelesen und an der Quelle zu prüfen.
