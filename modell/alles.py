@@ -48,6 +48,7 @@ STUFEN = [
     ("Drittel-System: Beschäftigung und Automatisierung", ["modell/dynamik33.py"]),
     ("Wirtschaftliche Dynamik: Thesen und Werte (Prüfrechnung)", ["modell/wirtschaftsdynamik.py"]),
     ("Plattformen am Ort der Nutzung mit Untergrenze (Variante)", ["modell/plattformen33.py"]),
+    ("Unternehmensbasis nach Rechtsform und Hebeln (Option C, intern)", ["modell/unternehmensbasis.py"]),
     ("Beleg der vier Einnahmepositionen (Prüfbefund B-1, Prüfrechnung)", ["modell/einnahmen_belege.py"]),
     ("Drittel-System: Haushalte gegen heute", ["modell/haushalte33.py"]),
     ("Drittel-System: Neustartverfahren", ["modell/neustart33.py"]),

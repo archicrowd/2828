@@ -1,7 +1,9 @@
 # Beleg der vier Einnahmepositionen (Prüfbefund B-1): Ergebnis und Entscheidungsvorlage
 
 Initiative 28:28 · 15. November 2026 · Modellstand v4.87 · Rechnung: `modell/einnahmen_belege.py` (+ `.toml`) → `daten/aggregate/einnahmen_belege.json`
-Status: **Prüfrechnung; die geltende Deckung ist unverändert. Entscheidung der Initiative offen.**
+Status: **interne Prüfrechnung; die geltende Deckung ist unverändert.** Beschluss 15.11.2026: Weg C, Rechnungen bis zur Entscheidung intern.
+
+> **Korrektur 89 (v4.88):** Die Unternehmenszeile unten (v4.87) war zu hoch. Das VGR-Aufkommen der Kapitalgesellschaften enthält die ganze Gewerbesteuer, auch die der Personengesellschaften. Neu: Unternehmen 2,37 % BIP (2,08–2,80), Lücke −2,05; alle vier Positionen −3,10 % BIP (−2,45 bis −3,59), Dividende 2028 rund 211 € statt 364 €. Herleitung und Entscheidungen: `Unternehmensbasis-Entscheidungen-2026-11-15.md`.
 
 ## 1 Ergebnis in einem Satz
 

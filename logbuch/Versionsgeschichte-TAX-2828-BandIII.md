@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.87**
+Stand: 24. Oktober 2026 · Modellstand **v4.88**
 
 ---
 
@@ -5180,6 +5180,42 @@ Datum stehen in `eingangswerte.csv` und `quellen.csv`, Drittdateien mit Prüfsum
 **Datenquelle:** Eurostat gov_10a_taxag 2024; UBA/DEHSt 2026; Destatis PM 306/2026; Sekundärquellen gekennzeichnet. **Bewegte Zahl:** keine
 geltende. **Wodurch aufgefallen:** Prüfbefund B-1 vom 14.11.2026.
 
+### v4.88 — Unternehmensbasis für Option C (intern); Korrektur 89
+
+**Art der Änderung: MINOR (neue interne Prüfrechnung), geltende Zahlen unverändert.** 15. November 2026.
+
+**Beschluss der Initiative (15.11.2026):** Weg C (Unternehmensbasis per Regel verbreitern und belegen). Die Rechnungen bleiben bis zur
+Entscheidung intern: nicht auf Webseite, Forschungsseite, im Konzept oder im Working Paper. Die Zahl „−2,06 % BIP“ aus v4.87 ist aus der
+Forschungsseite und aus `KENNZAHLEN.md` wieder entfernt.
+
+**Rechnung:** `modell/unternehmensbasis.py` (+ `.toml`) → `daten/aggregate/unternehmensbasis.json`; `einnahmen_belege.py` liest die
+Unternehmenszeile von dort. Entscheidungsvorlage `projekt/Unternehmensbasis-Entscheidungen-2026-11-15.md`.
+
+**Ergebnis (2025):**
+- Die heutige Basis der Kapitalgesellschaften beträgt 260 Mrd. € (aus KSt) bis 283 Mrd. € (aus dem Gewerbesteuer-Anteil) = 6,0 % BIP.
+  Die Modellbasis beträgt 607 Mrd. € = 13,4 % BIP.
+- Mit den Hebeln H1 bis H3 ergibt sich eine Unternehmensposition von 2,37 % BIP (2,08 bis 2,80) statt 4,42 %.
+- Personengesellschaften: Umbuchung von +0,98 aus der Position Einkommen (H4).
+- Einmalbesteuerung der Dividenden: Kapitalerträge −0,39 bis −0,78 (H5).
+- Die Regel „kein Euro mehr als ein Drittel“ und die Deckung (33 % + 33 % = 55 % auf ausgeschüttete Gewinne) widersprechen sich (E3).
+
+**Korrektur 89 (eigener Fehler, v4.87):** Das VGR-Aufkommen der Kapitalgesellschaften (D51B, 125,1 Mrd. € 2024) war als Aufkommen nur der
+Kapitalgesellschaften gelesen und durch 30 % geteilt worden (Basis 417 Mrd. €). Es enthält aber die ganze Gewerbesteuer, auch die der
+Personengesellschaften (Quasi-Kapitalgesellschaften in S.11; eigene Kenntnis, an der Quelle zu prüfen). Gegenprobe 2023: KSt 45,9 + Soli
+rund 2,5 + Gewerbesteuer 75,7 Mrd. € gegen VGR S.11 + S.12 128,4 Mrd. €.
+- Unternehmen belegt: 3,41 → 2,37 % BIP.
+- Lücke der vier Positionen: −2,06 → −3,10 % BIP (−108 → −162 € je Erwachsenem und Monat 2028).
+- Dividende 2028 mit Kinderanteil: rund 262 → 211 €.
+- Aufgefallen beim Abgleich mit der Gewerbesteuerstatistik (Anteil der Kapitalgesellschaften am Messbetrag 57 %).
+
+**Datenquelle:**
+- Destatis: Körperschaftsteuerstatistik 2017, Gewerbesteuerstatistik 2018, VGR Fachserie 18 Reihe 1.4.
+- Eurostat nasa_10_nf_tr 2024.
+- BMF nach sozialpolitik-aktuell (Sekundärquelle).
+- ifo 2021; WD 4 - 3000 - 085/24.
+
+**Bewegte Zahl:** keine geltende; intern −1,04 Punkte in der Unternehmenszeile. **Wodurch aufgefallen:** Arbeit an Option C.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5220,6 +5256,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 86 | Logbuch v4.77: Eintrag, Versionsstand der Register und Forschungsseite fehlten im Commit `d176729` (verkettete Befehle: die Logbuchstufe lief nach einem Fehler des Entwurfsbaus nicht) | Eintrag v4.77 nachgetragen, Stände mit v4.78 nachgeführt | eigene Durchsicht beim Eintrag v4.78 |
 | 87 | `KENNZAHLEN.md`, Deckungspositionen (v4.46–v4.81): Herkunft „Kernmodell 45 / 145 / 33 Mrd. € bei 25 %, Konsum 350 Mrd. € bei 18 %“, Umrechnung „Faktor 33/28“ ohne den ersten Schritt | Rechnung nutzt 48,8 / 157,6 / 35,9 Mrd. € bei 28 % und 375,9 Mrd. € bei 20 % brutto (`gesamtrechnung.py`, `systemvarianten.py`); Zahlen der Deckung unverändert | Prüfbericht 14.11.2026, B-3 |
 | 88 | Erbschaftsbasis (v4.32–v4.81, `vermoegensbasis33`, Kennzahlen): 150,5 Mrd. € als „steuerpflichtiger Erwerb“ bezeichnet, Status „Basis im Bereich der Daten“ | steuerlich berücksichtigtes Vermögen vor Freibeträgen (Destatis); Status offen, 2024 ergänzt | Prüfbericht 14.11.2026, B-2 |
+| 89 | Unternehmenszeile der Prüfrechnung B-1 (v4.87, `einnahmen_belege`, intern): VGR-Aufkommen D51B (125,1 Mrd. €) als Aufkommen nur der Kapitalgesellschaften gelesen, Basis 417 Mrd. €, belegt 3,41 % BIP | D51B enthält die ganze Gewerbesteuer (Personengesellschaften in S.11); Basis aus KSt und Gewerbesteuer-Anteil 260–283 Mrd. € (2025), belegt 2,37 % BIP, Lücke der vier Positionen −3,10 statt −2,06 % BIP | Abgleich mit der Gewerbesteuerstatistik, v4.88 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5259,7 +5296,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.87
+## 7 | Offene Punkte, Stand v4.88
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

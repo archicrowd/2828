@@ -1,6 +1,6 @@
 # Beleg der vier Einnahmepositionen aus Prüfbefund B-1 (14.11.2026): modell/einnahmen_belege.py (Logbuch v4.87). Prüfrechnung, ändert die Deckung nicht.
 # Alle Werte mit Quelle und Abrufdatum 15.11.2026. Fälle vorsichtig / mittel / hoch.
-version = "v4.87"
+version = "v4.88"
 satz = 0.33
 bip_2024_mio = 4386940.0          # Eurostat nama_10_gdp, Stand 10/2026 (laender_2024.csv, Spalte eurostat_2026_10); gleicher Stand wie gov_10a_taxag
 bip_2028_mrd = 4914.9             # parameter.toml de_bip_2028
@@ -20,16 +20,12 @@ D212 = 34266                      # Einfuhrabgaben ohne MwSt (Zölle 5.517, Verb
 D214 = 74502                      # Produktsteuern ohne MwSt: Verbrauchsteuern 36.022, Stempel (Grunderwerb) 12.750, Versicherung 19.042, Lotterie 3.094, übrige
 D29 = 41688                       # sonstige Produktionsabgaben: Grund 16.222, Anlagen 2.310, Umwelt (Emissionshandel) 18.628, übrige
 D29F = 18628                      # Abgaben auf Verschmutzung: Erlöse aus EU-ETS und nationalem Emissionshandel
-D51B_C2 = 125073                  # Steuern auf Einkommen und Gewinne von Kapitalgesellschaften (KSt, Soli darauf, Gewerbesteuer der Kapitalgesellschaften)
+D51B_C2 = 125073                  # Steuern auf Einkommen und Gewinne von Kapitalgesellschaften: KSt, Soli darauf und die ganze Gewerbesteuer (Korrektur 89)
 D59 = 16675                       # sonstige laufende Steuern (Kfz der Haushalte 7.795, übrige 8.880)
 D91 = 9991                        # Vermögensübertragungssteuern (Erbschaft- und Schenkungsteuer)
 
-[unternehmen]
-# Grundlage: heutiges Aufkommen der Kapitalgesellschaften (VGR) geteilt durch den heutigen Satz (KSt 15 % + Soli + Gewerbesteuer, rund 30 %; eigene Kenntnis);
-# dann 33 %. Dazu Kundenort aus R6 (OECD-Länderberichte, DE Median +8, Spanne +5 bis +14 Mrd. € bei 28 %) und Plattformen (plattformen33.json).
-satz_heute = [0.31, 0.30, 0.29]
-r6_mrd_28 = [5.0, 8.0, 14.0]
-plattformen_pct_bip = [0.025, 0.059, 0.144]
+# Unternehmen: seit v4.88 aus modell/unternehmensbasis.py (Korrektur 89). Bis v4.87: D51B_C2 / heutiger Satz 29–31 %; D51B enthält die ganze
+# Gewerbesteuer (Personengesellschaften als Quasi-Kapitalgesellschaften in S.11), die Basis von 417 Mrd. € war daher zu hoch.
 
 [co2]
 # Bepreiste Emissionen 2025: EU-ETS 1 ortsfeste Anlagen rund 264 Mt, Luftverkehr 8,8 Mt (DEHSt nach Solarserver 8.7.2026), Seeverkehr rund 11 Mt (2024);

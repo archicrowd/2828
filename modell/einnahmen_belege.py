@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Beleg der vier Einnahmepositionen (Prüfbefund B-1 vom 14.11.2026; Logbuch v4.87). Prüfrechnung, ändert die Deckung nicht.
 
-Unternehmen  VGR-Aufkommen der Kapitalgesellschaften 2024 / heutiger Satz × 33 % + Kundenort (R6) + Plattformen (plattformen33)
+Unternehmen  aus unternehmensbasis.json (seit v4.88, Korrektur 89): Basis der Kapitalgesellschaften aus KSt und Gewerbesteuer-Anteil,
+             mit Kundenort, Plattformen, Gewinnverlagerung und Verlustverrechnung (bis v4.87: ganzes VGR-Aufkommen D51B / 30 %, enthielt die
+             Gewerbesteuer der Personengesellschaften und Einzelunternehmen)
 Übrige       VGR 2024: Einfuhrabgaben ohne MwSt + Produktsteuern ohne MwSt + sonstige Produktionsabgaben + sonstige laufende Steuern,
              ohne die Erlöse aus dem Emissionshandel (D29F), die im CO₂-Preis stehen
 CO₂          bepreiste Emissionen 2028 × 100 €/t, in % BIP 2028 (gegen den Modellwert 2028)
@@ -19,6 +21,7 @@ AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "einnahmen_belege.toml").read_text(encoding="utf-8"))
 PF = json.loads((AGG / "plattformen33.json").read_text(encoding="utf-8"))
 EUR = json.loads((AGG / "ausweichen33.json").read_text(encoding="utf-8"))["eur_je_bip_punkt"]["j2028"]
+UB = json.loads((AGG / "unternehmensbasis.json").read_text(encoding="utf-8"))
 NB = json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))["beschluss"]["reihe"][0]
 
 
@@ -27,9 +30,8 @@ def main():
     pct = lambda mio: mio / B24 * 100
     faelle = {}
     for i, fall in enumerate(["vorsichtig", "mittel", "hoch"]):
-        U = P["unternehmen"]
-        u_basis = V["D51B_C2"] / U["satz_heute"][i]
-        unternehmen = pct(u_basis * s) + U["r6_mrd_28"][i] * 1000 * s / 0.28 / B24 * 100 + U["plattformen_pct_bip"][i]
+        unternehmen = UB["faelle"][fall]["unternehmen_pct_bip"]
+        u_basis = UB["faelle"][fall]["basis_mrd"]["zusammen"] * 1000
         uebrige = pct(V["D212"] + V["D214"] + V["D29"] + V["D59"] - V["D29F"])
         C = P["co2"]
         mt28 = C["mt_2025"] * (1 - C["rueckgang_je_jahr"][i]) ** 3
@@ -46,9 +48,9 @@ def main():
         faelle[fall] = dict(positionen={k: dict(belegt_pct_bip=round(b, 2), modell_pct_bip=m, luecke_pct_bip=round(b - m, 2)) for k, (b, m) in pos.items()},
                             luecke_pct_bip=round(luecke, 2), dividende_eur_erw_monat=round(luecke * EUR),
                             dividende_2028_mit_kinderanteil_eur=round((NB["dividende_erw_eur2026"] + luecke * EUR) * 0.948),
-                            hilfsgroessen=dict(unternehmen_basis_mrd_2024=round(u_basis / 1000), co2_mt_2028=round(mt28),
+                            hilfsgroessen=dict(unternehmen_basis_mrd_2025=round(u_basis / 1000), co2_mt_2028=round(mt28),
                                                erbschaft_basis_2028_mrd=round(b28)))
-    E = dict(version=P["version"], status="Prüfrechnung zu Befund B-1; Deckung unverändert, Entscheidung offen",
+    E = dict(version=P["version"], status="interne Prüfrechnung zu Befund B-1; Deckung unverändert, nicht veröffentlichen bis zur Entscheidung (Option C, E1–E5)",
              vgr_2024_anteile_pct_bip={k: round(pct(v), 2) for k, v in V.items() if k.startswith("D")},
              befund_doppelzaehlung_co2=dict(d29f_pct_bip=round(pct(V["D29F"]), 2),
                                             hinweis="Die Position Übrige (165 Modell-Mrd., 3,93 % BIP) entspricht der VGR-Summe D212+D214+D29+D59 (3,81 % BIP 2024) "

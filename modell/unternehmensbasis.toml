@@ -1,0 +1,56 @@
+# Unternehmensbasis für Option C (Logbuch v4.88, Korrektur 89). Interne Prüfrechnung: ändert die Deckung nicht, erscheint nicht auf Webseite,
+# Forschungsseite oder im Working Paper, bis die Initiative die Entscheidungen E1–E5 getroffen hat (Beschluss 15.11.2026).
+version = "v4.88"
+satz = 0.33
+faelle = ["vorsichtig", "mittel", "hoch"]
+modell_unternehmen_pct_bip = 4.42       # systemvarianten.deckung (geltend)
+modell_kapitalertraege_pct_bip = 1.37   # KENNZAHLEN.md, Definitionstabelle
+
+[kasse_2025]   # BMF-Datensammlung zur Steuerpolitik 2026 nach sozialpolitik-aktuell Tab. II.8 (Sekundärquelle; 2025 laut Fußnote geschätzt), Mrd. €
+kst = 39.0
+gewst = 75.3
+nve = 31.9                     # nicht veranlagte Steuern vom Ertrag (Kapitalertragsteuer v. a. auf Dividenden; enthält anrechenbare Beträge von Kapitalgesellschaften)
+abgeltung = 24.2               # Abgeltungsteuer auf Zinsen und Veräußerungserträge
+bip_mrd = 4531.7               # BIP 2025 nominal: 2024 4.386,9 Mrd. € (Eurostat) × 1,033 (Destatis, +3,3 % nominal)
+kst_satz = 0.15
+messzahl = 0.035
+hebesatz = 4.35                # gewogener Durchschnitt der Gemeinden rund 435 % (eigene Kenntnis, an der Quelle zu prüfen)
+
+[gewst_2018]   # Destatis, Gewerbesteuerstatistik 2018, Fachserie 14 Reihe 10.2, Tab. 1.3: positive Messbeträge nach Rechtsform, Mio. € (ohne Organgesellschaften)
+url = "https://www.statistischebibliothek.de/mir/servlets/MCRFileNodeServlet/DEHeft_derivate_00073476/2141020187004.pdf"
+messbetrag_kapg = 7677.1
+messbetrag_persg = 3639.4
+messbetrag_einzel = 1686.4
+messbetrag_uebrige = 391.1
+
+[kst_2017]   # Destatis, Körperschaftsteuerstatistik 2017, Fachserie 14 Reihe 7.2 (unbeschränkt Steuerpflichtige ohne Organgesellschaften), Mio. €
+url = "https://www.statistischebibliothek.de/mir/servlets/MCRFileNodeServlet/DEHeft_derivate_00072070/2140720177004.pdf"
+zve = 202102.4
+kst_festgesetzt = 36581.9
+verlustabzug_genutzt = 29358.9
+verlustvortrag_bestand = 701237.7     # verbleibender Verlustvortrag 31.12.2017, insgesamt
+beteiligungsertraege_8b_frei = 70769.0
+
+[vgr_2024]   # Eurostat nasa_10_nf_tr, DE 2024, vorläufig, Mio. € (abgerufen 15.11.2026)
+url = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nasa_10_nf_tr?format=JSON&geo=DE&time=2024&unit=CP_MEUR&na_item=B4N"
+b4n_s11 = 629174              # Unternehmensgewinn netto, nichtfinanzielle Kapitalgesellschaften (mit Personengesellschaften als Quasi-Kapitalgesellschaften;
+b4n_s12 = 47323               #   Zuordnung nach ESVG 2010, eigene Kenntnis, an der Quelle zu prüfen), finanzielle Kapitalgesellschaften
+b2n_s11 = 453657              # Betriebsüberschuss netto
+b2n_s12 = 29806
+bip_mio = 4386940
+
+[hebel]   # Stellhebel der Verbreiterung, Basis in Mrd. € (2025); alle Anteile Annahme, soweit nicht anders vermerkt
+# H1 Kundenort und Plattformen: wie einnahmen_belege (R6 5/8/14 Mrd. € bei 28 %; plattformen33.json)
+r6_mrd_28 = [5.0, 8.0, 14.0]
+plattformen_pct_bip = [0.025, 0.059, 0.144]
+# H2 Gewinnverlagerung: ifo (Fuest u. a., ifo Schnelldienst 74(1), 2021): 5,7 Mrd. € Steuerausfall je Jahr, bei rund 30 % ⇒ rund 19 Mrd. € Basis.
+# Überschneidet sich mit H1 (Zuordnung nach Kundenumsatz); angerechnet wird nur der nicht überschneidende Teil (Annahme).
+verlagerung_steuer_mrd = 5.7
+verlagerung_anrechnung = [0.0, 0.5, 1.0]
+# H3 Verlustverrechnung: genutzter Verlustvortrag 2017 14,5 % des zvE; strengere Mindestbesteuerung bringt einen Teil davon (Annahme)
+verlust_anteil = [0.10, 0.20, 0.30]
+# H4 Personengesellschaften in die Unternehmensposition (E2): Gewerbeertrag aus dem Messbetragsanteil; Umbuchung aus der Position Einkommen
+#    (gleicher Satz 33 %), deshalb ohne Wirkung auf die Summe.
+# H5 Einmalbesteuerung (E3): Dividenden beim Anteilseigner frei oder angerechnet; Anteil der Dividenden an der Kapitalertragsbesteuerung aus
+#    nve/(nve+abgeltung), davon wirksam (nve enthält anrechenbare Beträge von Kapitalgesellschaften und Ausländern; Annahme):
+dividende_wirksam = [1.0, 0.75, 0.5]
