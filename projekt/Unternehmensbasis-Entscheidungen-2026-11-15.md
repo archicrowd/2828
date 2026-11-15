@@ -1,6 +1,6 @@
 # Option C: Unternehmensbasis verbreitern – Befund und Entscheidungen E1 bis E5
 
-Initiative 28:28 · 15. November 2026 · Modellstand v4.88 · Rechnung: `modell/unternehmensbasis.py` (+ `.toml`) → `daten/aggregate/unternehmensbasis.json`
+Initiative 28:28 · 15. November 2026 · Modellstand v4.89 (Stand der Entscheidungen: E4 beschlossen, E3 zur Entscheidung) · Rechnung: `modell/unternehmensbasis.py` (+ `.toml`) → `daten/aggregate/unternehmensbasis.json`
 Status: **interne Prüfrechnung.** Beschluss der Initiative vom 15.11.2026: Weg C verfolgen, Rechnungen bis zur Entscheidung nicht auf Webseite,
 Forschungsseite oder im Working Paper. Hinweis: Das Repository ist öffentlich; Logbuch und diese Vorlage sind dort einsehbar.
 
@@ -33,9 +33,9 @@ Forschungsseite oder im Working Paper. Hinweis: Das Repository ist öffentlich; 
 | Kapitalgesellschaften heute | 260 (aus KSt) | 272 | 283 (aus Gewerbesteuer) | Kasse 2025; Messbetragsanteil 57 % (2018) |
 | H1 Kundenort und Plattformen | +21 | +37 | +70 | R6 (OECD-Länderberichte), `plattformen33.json` |
 | H2 Gewinnverlagerung (ohne Überschneidung mit H1) | 0 | +10 | +19 | ifo 2021: 5,7 Mrd. € Steuerausfall je Jahr |
-| H3 strengere Verlustverrechnung | +4 | +8 | +12 | genutzter Verlustvortrag 14,5 % des zvE (2017) |
-| **Basis zusammen** | **285** | **326** | **385** | |
-| **Unternehmen bei 33 %** | **2,08 %** | **2,37 %** | **2,80 %** | Modell 4,42 % |
+| H3 dauerhaft strengere Verlustverrechnung (seit v4.89 0: nicht beschlossen) | 0 | 0 | 0 | bis v4.88: +4 / +8 / +12 |
+| **Basis zusammen** | **281** | **318** | **372** | |
+| **Unternehmen bei 33 %** | **2,05 %** | **2,32 %** | **2,71 %** | Modell 4,42 % |
 | H4 Personengesellschaften (Umbuchung aus Einkommen) | +0,98 | +0,98 | +0,98 | Gewerbeertrag rund 134 Mrd. €; Summe unverändert |
 | H5 Einmalbesteuerung der Dividenden (Kapitalerträge) | −0,78 | −0,58 | −0,39 | Dividendenanteil 57 % der Kapitalertragsteuern |
 
@@ -63,7 +63,18 @@ Forschungsseite oder im Working Paper. Hinweis: Das Repository ist öffentlich; 
 - Die Position Einkommen ist auf die gesamte Einkommensteuer geeicht (Kernmodell: 284 Mrd. €), enthält die Gewinne der Personengesellschaften
   also schon. Prüfpunkt offen.
 
-**E3 Einmalbesteuerung – die Entscheidung mit der größten Tragweite.**
+**E3 Einmalbesteuerung – die Entscheidung mit der größten Tragweite (zur Entscheidung, Stand v4.89).**
+
+| Option | Wirkung | Aufkommen (Kapitalerträge, % BIP; mittel) | Bewertung |
+|---|---|---|---|
+| (a) Dividende beim Empfänger frei, die Unternehmensteuer ist abgeltend | jeder ausgeschüttete Euro trägt genau 33 % | −0,58 (−0,39 bis −0,78) ≈ −30 € je Erwachsenem und Monat 2028 | hält die Regel wörtlich, einfach; Vorbild: Estland und Lettland besteuern Gewinne bei der Ausschüttung, nicht beim Empfänger (eigene Kenntnis, an der Quelle zu prüfen). Dividenden aus Staaten mit niedriger Steuer außerhalb der Gemeinschaft nur frei, wenn dort mindestens 15 % gezahlt wurden (globale Mindeststeuer), sonst 33 % mit Anrechnung |
+| (b) Anrechnung der Unternehmensteuer auf die Steuer des Empfängers (wie 1977–2000) | ausgeschüttete Gewinne tragen den persönlichen Satz (0 bis 33 %) | mehr als −0,58: Empfänger unter 33 % erhalten Erstattungen | progressiv, aber aufwendig; muss nach EuGH (Manninen, C-319/02, 2004) auch für ausländische Körperschaftsteuer gelten – einer der Gründe für die Abschaffung 2001 |
+| (c) Regeltext präzisieren: „ein Drittel je Steuer“ | ausgeschüttete Gewinne tragen 55 % (heute rund 48 %) | 0 | Aufkommen bleibt, das Versprechen wird schwächer und muss offen gesagt werden |
+
+Folgefrage zu (a): Kursgewinne aus Aktien enthalten einbehaltene Gewinne, die schon mit 33 % belastet sind. Ob sie beim Empfänger
+steuerpflichtig bleiben, ist offen (Anteil an der Abgeltungsteuer nicht belegt).
+
+Vorher stand hier:
 - **Was die Regel verspricht:** „Kein Euro wird mit mehr als einem Drittel besteuert – Einkommen, Kapitalerträge, Unternehmensgewinne".
 - **Was die Deckung rechnet:** 33 % beim Unternehmen und noch einmal 33 % auf die Dividende. Ein ausgeschütteter Gewinn trägt damit
   1 − 0,67 × 0,67 = **55 %**. Heute sind es rund 48 %: 29,9 % + 26,375 % × 70,1 %.
@@ -74,7 +85,27 @@ Forschungsseite oder im Working Paper. Hinweis: Das Repository ist öffentlich; 
   - **(c) Regel präzisieren** („je Steuer ein Drittel"): Das Aufkommen bleibt, das Versprechen wird schwächer und ist offen zu kommunizieren.
 - Diese Frage betrifft den Kern der Erzählung und sollte vor E1 entschieden werden.
 
-**E4 Verluste.**
+**E4 Verluste – beschlossen am 15.11.2026: beim Systemwechsel befristen.** Regel (Vorschlag zur Bestätigung):
+- **Altverluste:** Verlustvorträge, die Ende 2027 bestehen, sind fünf Jahre nutzbar (2028–2032), unter der heutigen Mindestbesteuerung. Danach
+  verfallen sie.
+- **Neue Verluste:** unbefristet vortragbar, mit derselben Mindestbesteuerung.
+- **Vorbild:** Die Frist von fünf Jahren gilt in neun EU-Staaten (Tax Foundation 2024).
+- **Verfassung:** Das BVerfG hat die Mindestbesteuerung auch mit Definitiveffekt bestätigt (2 BvL 19/14, 23.7.2025) und dem Gesetzgeber beim
+  Systemwechsel Spielraum zuerkannt (Rn. 79). Ein rein fiskalischer Zweck rechtfertigt aber keine Abweichung (Rn. 81). Die Befristung ist
+  deshalb mit dem Systemwechsel zu begründen, nicht mit dem Aufkommen. Die Teile zum Vertrauensschutz sind nicht gelesen; eine rechtliche
+  Prüfung steht aus.
+
+Ergebnis der Rechnung (% BIP je Jahr, mittel):
+- 2028–2032: −0,04, weil Altverluste vorgezogen genutzt werden.
+- 2033: +0,10, 2035: +0,03, ab 2038: 0.
+- Summe 2028–2045 rund 0 (Spanne −0,4 bis +0,5 Punkt-Jahre).
+
+**Die Befristung schließt die Lücke nicht.** Sie zieht einen klaren Schnitt, statt die neue Basis über Jahrzehnte mit Altverlusten zu belasten.
+- Der Bestand ist groß: 667 Mrd. € (2017).
+- Davon liegen 400 Mrd. € bei Unternehmen ohne Gewinn und werden zum großen Teil nie genutzt.
+- Dauerhaft mehr brächte nur eine strengere Verrechnung auch neuer Verluste. Die ist nicht beschlossen.
+
+Vorher stand hier:
 - Der Bestand an Verlustvorträgen betrug Ende 2017 rund 701 Mrd. €.
 - Zu entscheiden ist, ob die Vorträge beim Systemwechsel übernommen, gekappt oder zeitlich begrenzt werden. Dabei sind Vertrauensschutz und
   Rechtsprechung zu beachten; eine rechtliche Prüfung steht aus.
@@ -85,7 +116,7 @@ eine andere Position oder ein anderer Satz; beides berührt das Drittel.
 
 ## 4 Vorschlag zum Vorgehen
 
-1. Zuerst E3 entscheiden (Regeltext), dann E2.
+1. E4 ist beschlossen (Befristung, Regel oben). Als Nächstes E3 entscheiden (Regeltext), dann E2.
 2. Für E1 (b) Daten suchen: Säule 2, BEFIT, Konzernabschlüsse.
 3. Erst danach die Deckung neu rechnen und Webseite, Konzept und Working Paper anpassen.
 
@@ -97,4 +128,7 @@ eine andere Position oder ein anderer Satz; beides berührt das Drittel.
 - Eurostat, nasa_10_nf_tr, DE 2024 (B4N, B2A3N; vorläufig). [API](https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nasa_10_nf_tr?format=JSON&geo=DE&time=2024&unit=CP_MEUR&na_item=B4N)
 - sozialpolitik-aktuell, Tab. II.8, nach BMF-Datensammlung 2026 (Sekundärquelle; Spaltenköpfe im PDF verschoben, Jahreszuordnung aus der Reihenfolge erschlossen). [PDF](https://www.sozialpolitik-aktuell.de/files/sozialpolitik-aktuell/_Politikfelder/Finanzierung/Datensammlung/PDF-Dateien/tabII8.pdf)
 - ifo Institut (2021): Gewinnverlagerung großer deutscher Unternehmen in Niedrigsteuerländer, ifo Schnelldienst 74(1), 38–42. [ifo](https://ifo.de/en/node/61139); dazu EU Tax Observatory (1,6 Mrd. € nur große deutsche Konzerne). [Observatory](https://taxobservatory.eu/?p=440)
+- Tax Foundation (Mengden, 2024, aktualisiert 13.11.2025): Net Operating Loss Carryforward and Carryback Provisions in Europe. [Tax Foundation](https://taxfoundation.org/data/all/eu/net-operating-loss-tax-europe-2024/)
+- BVerfG, Beschluss vom 23.7.2025, 2 BvL 19/14 (Mindestgewinnbesteuerung). [BVerfG](https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2025/07/ls20250723_2bvl001914.html)
+- EuGH, Urteil vom 7.9.2004, C-319/02 (Manninen). [Urteil](https://lexetius.com/2004,1970)
 - Wissenschaftliche Dienste des Bundestags, WD 4 - 3000 - 085/24 (Dezember 2024), § 8b Abs. 2 KStG. [PDF](https://bundestag.de/resource/blob/1038786/7028aaf9b974b2904f52d4de729c04d0/WD-4-085-24-pdf.pdf)

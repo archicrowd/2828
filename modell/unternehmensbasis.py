@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Unternehmensbasis nach Rechtsform und Stellhebel für Option C (Logbuch v4.88, Korrektur 89). Interne Prüfrechnung.
+"""Unternehmensbasis nach Rechtsform und Stellhebel für Option C (Logbuch v4.88, Korrektur 89; v4.89 Befristung der Altverluste E4). Interne Prüfrechnung.
 
 1 Heutige Basis der Kapitalgesellschaften 2025 aus der Kasse: KSt / 15 % (vorsichtig), Gewerbesteuer-Anteil der Kapitalgesellschaften
   (Messbetragsanteil 2018) / (3,5 % × Hebesatz) (hoch), mittel = Mittel beider.
@@ -35,6 +35,18 @@ def main():
     verlust_quote = S["verlustabzug_genutzt"] / S["zve"]
     div_anteil = K["nve"] / (K["nve"] + K["abgeltung"])
     faelle = {}
+    VL = P["verluste"]
+    ende = VL["wechsel"] + VL["frist_jahre"]          # erstes Jahr ohne Altverluste
+    def verlustpfad(i, basis_pct):
+        """Mehr- oder Minderaufkommen der Befristung je Jahr in % BIP (bezogen auf die Basis der Kapitalgesellschaften in % BIP)."""
+        out = {}
+        for j in range(VL["wechsel"], VL["pfad_bis"] + 1):
+            if j < ende:
+                nutzung = verlust_quote * (1 + VL["vorziehen"][i])
+            else:
+                nutzung = verlust_quote * min(1.0, (j - VL["wechsel"] + 1) / VL["aufbau_jahre"][i])
+            out[str(j)] = round((verlust_quote - nutzung) * basis_pct * s, 3)
+        return out
     for i, fall in enumerate(P["faelle"]):
         h1 = H["r6_mrd_28"][i] / 0.28 + H["plattformen_pct_bip"][i] / 100 * bip / s
         h2 = H["verlagerung_steuer_mrd"] / 0.30 * H["verlagerung_anrechnung"][i]
@@ -47,7 +59,8 @@ def main():
                            h3_verlustverrechnung=round(h3), zusammen=round(basis)),
             unternehmen_pct_bip=round(position, 2), luecke_zum_modell_pct_bip=round(position - P["modell_unternehmen_pct_bip"], 2),
             h4_personengesellschaften_umbuchung_pct_bip=round(pct(persg) * s, 2),
-            h5_einmalbesteuerung_kapitalertraege_pct_bip=round(h5, 2))
+            h5_einmalbesteuerung_kapitalertraege_pct_bip=round(h5, 2),
+            e4_befristung_altverluste_pct_bip=verlustpfad(i, pct(kapg[i])))
     E = dict(version=P["version"], status="interne Prüfrechnung zu Option C; nicht veröffentlichen bis zur Entscheidung E1–E5",
              basis_2025_mrd=dict(kapitalgesellschaften_kst=round(kapg_kst), kapitalgesellschaften_gewst=round(kapg_gew),
                                  personengesellschaften_gewst=round(persg), einzelunternehmen_gewst=round(einzel), modell=round(modell_basis)),
@@ -56,12 +69,18 @@ def main():
              messbetrag_anteile_2018={k: round(v, 3) for k, v in anteil.items()}, vgr_2024=vgr,
              kst_2017=dict(verlustabzug_quote_zve=round(verlust_quote, 3), verlustvortrag_bestand_mrd=round(S["verlustvortrag_bestand"] / 1000),
                            beteiligungsertraege_8b_frei_mrd=round(S["beteiligungsertraege_8b_frei"] / 1000)),
-             dividendenanteil_kapitalertragsteuern=round(div_anteil, 3), faelle=faelle)
+             dividendenanteil_kapitalertragsteuern=round(div_anteil, 3),
+             e4_regel=dict(text=f"Altverluste (Bestand Ende {VL['wechsel'] - 1}) bis {ende - 1} nutzbar unter der heutigen Mindestbesteuerung, danach verfallen; "
+                                "neue Verluste unbefristet mit derselben Mindestbesteuerung",
+                           bestand_2017_gewinnfaelle_mrd=VL["bestand_gewinnfaelle_mrd_2017"], bestand_2017_verlustfaelle_mrd=VL["bestand_verlustfaelle_mrd_2017"]),
+             faelle=faelle)
     (AGG / "unternehmensbasis.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print("Basis 2025 Mrd. €:", E["basis_2025_mrd"], "| % BIP:", E["basis_2025_pct_bip"], "| VGR:", vgr)
     for f, d in faelle.items():
         print(f"{f:>10}: {d['basis_mrd']} → {d['unternehmen_pct_bip']:.2f} % BIP (Lücke {d['luecke_zum_modell_pct_bip']:+.2f}); "
               f"H4 {d['h4_personengesellschaften_umbuchung_pct_bip']:+.2f}; H5 {d['h5_einmalbesteuerung_kapitalertraege_pct_bip']:+.2f}")
+        v = d["e4_befristung_altverluste_pct_bip"]
+        print("            E4 Befristung % BIP: " + " ".join(f"{j}:{v[j]:+.2f}" for j in ("2028", "2032", "2033", "2035", "2038", "2040", "2045")))
     return 0
 
 

@@ -78,7 +78,7 @@ SEIT_PRUEFUNG = [
  ("v4.84", "Erwartete Dynamik (mittlerer Fall) ausgewiesen; Kanal Fachkräfte aus dem Ausland", "keine geltende Zahl; BIP mittel +2,7 % (2045), Fondsbeitrag 5,04 % BIP"),
  ("v4.85", "Erwartete Dynamik (mittel, mit Nachfrage) in der geltenden Rechnung; Variante Fachkräftevisum", "Dividende 2028 364 € (354), Fonds 5,04 % BIP (5,15), 42.000 €: +627 € (+611)"),
  ("v4.86", "Plattformen am Ort der Nutzung: Gewinnweg mit Untergrenze (Variante)", "keine geltende Zahl; Variante DE 2028 2,9 Mrd. € (1,2 bis 7,1)"),
- ("v4.87–v4.88", "Beleg der vier Einnahmepositionen (Prüfbefund B-1) und Unternehmensbasis", "keine geltende Zahl; interne Prüfrechnung, Ergebnis nach Entscheidung der Initiative"),
+ ("v4.87–v4.89", "Beleg der vier Einnahmepositionen (Prüfbefund B-1) und Unternehmensbasis", "keine geltende Zahl; interne Prüfrechnung, Ergebnis nach Entscheidung der Initiative"),
 ]
 
 

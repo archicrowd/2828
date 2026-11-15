@@ -1,6 +1,6 @@
 # Beleg der vier Einnahmepositionen aus Prüfbefund B-1 (14.11.2026): modell/einnahmen_belege.py (Logbuch v4.87). Prüfrechnung, ändert die Deckung nicht.
 # Alle Werte mit Quelle und Abrufdatum 15.11.2026. Fälle vorsichtig / mittel / hoch.
-version = "v4.88"
+version = "v4.89"
 satz = 0.33
 bip_2024_mio = 4386940.0          # Eurostat nama_10_gdp, Stand 10/2026 (laender_2024.csv, Spalte eurostat_2026_10); gleicher Stand wie gov_10a_taxag
 bip_2028_mrd = 4914.9             # parameter.toml de_bip_2028

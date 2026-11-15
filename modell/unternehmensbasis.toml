@@ -1,6 +1,6 @@
 # Unternehmensbasis für Option C (Logbuch v4.88, Korrektur 89). Interne Prüfrechnung: ändert die Deckung nicht, erscheint nicht auf Webseite,
 # Forschungsseite oder im Working Paper, bis die Initiative die Entscheidungen E1–E5 getroffen hat (Beschluss 15.11.2026).
-version = "v4.88"
+version = "v4.89"
 satz = 0.33
 faelle = ["vorsichtig", "mittel", "hoch"]
 modell_unternehmen_pct_bip = 4.42       # systemvarianten.deckung (geltend)
@@ -47,10 +47,27 @@ plattformen_pct_bip = [0.025, 0.059, 0.144]
 # Überschneidet sich mit H1 (Zuordnung nach Kundenumsatz); angerechnet wird nur der nicht überschneidende Teil (Annahme).
 verlagerung_steuer_mrd = 5.7
 verlagerung_anrechnung = [0.0, 0.5, 1.0]
-# H3 Verlustverrechnung: genutzter Verlustvortrag 2017 14,5 % des zvE; strengere Mindestbesteuerung bringt einen Teil davon (Annahme)
-verlust_anteil = [0.10, 0.20, 0.30]
+# H3 Verlustverrechnung: seit v4.89 nur noch die beschlossene Befristung der Altverluste (Abschnitt [verluste]); eine dauerhaft strengere
+#    Mindestbesteuerung ist nicht beschlossen und daher 0 (bis v4.88: 10/20/30 % des genutzten Verlustvortrags, Annahme).
+verlust_anteil = [0.0, 0.0, 0.0]
 # H4 Personengesellschaften in die Unternehmensposition (E2): Gewerbeertrag aus dem Messbetragsanteil; Umbuchung aus der Position Einkommen
 #    (gleicher Satz 33 %), deshalb ohne Wirkung auf die Summe.
 # H5 Einmalbesteuerung (E3): Dividenden beim Anteilseigner frei oder angerechnet; Anteil der Dividenden an der Kapitalertragsbesteuerung aus
 #    nve/(nve+abgeltung), davon wirksam (nve enthält anrechenbare Beträge von Kapitalgesellschaften und Ausländern; Annahme):
 dividende_wirksam = [1.0, 0.75, 0.5]
+
+[verluste]   # E4, Beschluss der Initiative 15.11.2026: Verlustvorträge beim Systemwechsel befristen (v4.89)
+# Regel (Vorschlag): Verlustvorträge, die Ende 2027 bestehen, sind fünf Jahre nutzbar (2028–2032), unter der heutigen Mindestbesteuerung
+# (1 Mio. € voll, darüber 70 % bzw. 60 % ab 2028); danach verfallen sie. Verluste aus dem neuen System: unbefristet vortragbar mit derselben
+# Mindestbesteuerung. Vorbild für die Frist: fünf Jahre in BG, HR, CY, CZ, GR, HU, PL, RO, SK (Tax Foundation 2024).
+wechsel = 2028
+frist_jahre = 5
+# Bestand 31.12.2017 (KSt-Statistik, unbeschränkt Stpfl.): 667 Mrd. €, davon 267 Mrd. € bei Steuerpflichtigen mit positivem, 400 Mrd. € bei
+# Steuerpflichtigen mit negativem Gesamtbetrag der Einkünfte (Tab. 2.4.1/2.4.2).
+bestand_gewinnfaelle_mrd_2017 = 266.5
+bestand_verlustfaelle_mrd_2017 = 400.0
+# Vorzieheffekt: In der Frist nutzen Unternehmen Altverluste stärker (Aufdecken stiller Reserven, Gestaltung); Aufschlag auf die heutige Nutzung (Annahme)
+vorziehen = [0.30, 0.15, 0.0]
+# Aufbau der neuen Verlustvorträge bis zur heutigen Nutzungsquote, Jahre ab Wechsel (Annahme)
+aufbau_jahre = [6, 9, 12]
+pfad_bis = 2045

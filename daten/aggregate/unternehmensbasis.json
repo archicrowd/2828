@@ -1,5 +1,5 @@
 {
- "version": "v4.88",
+ "version": "v4.89",
  "status": "interne Prüfrechnung zu Option C; nicht veröffentlichen bis zur Entscheidung E1–E5",
  "basis_2025_mrd": {
   "kapitalgesellschaften_kst": 260,
@@ -29,45 +29,110 @@
   "beteiligungsertraege_8b_frei_mrd": 71
  },
  "dividendenanteil_kapitalertragsteuern": 0.569,
+ "e4_regel": {
+  "text": "Altverluste (Bestand Ende 2027) bis 2032 nutzbar unter der heutigen Mindestbesteuerung, danach verfallen; neue Verluste unbefristet mit derselben Mindestbesteuerung",
+  "bestand_2017_gewinnfaelle_mrd": 266.5,
+  "bestand_2017_verlustfaelle_mrd": 400.0
+ },
  "faelle": {
   "vorsichtig": {
    "basis_mrd": {
     "kapitalgesellschaften_heute": 260,
     "h1_kundenort_plattformen": 21,
     "h2_gewinnverlagerung": 0,
-    "h3_verlustverrechnung": 4,
-    "zusammen": 285
+    "h3_verlustverrechnung": 0,
+    "zusammen": 281
    },
-   "unternehmen_pct_bip": 2.08,
-   "luecke_zum_modell_pct_bip": -2.34,
+   "unternehmen_pct_bip": 2.05,
+   "luecke_zum_modell_pct_bip": -2.37,
    "h4_personengesellschaften_umbuchung_pct_bip": 0.98,
-   "h5_einmalbesteuerung_kapitalertraege_pct_bip": -0.78
+   "h5_einmalbesteuerung_kapitalertraege_pct_bip": -0.78,
+   "e4_befristung_altverluste_pct_bip": {
+    "2028": -0.083,
+    "2029": -0.083,
+    "2030": -0.083,
+    "2031": -0.083,
+    "2032": -0.083,
+    "2033": 0.0,
+    "2034": 0.0,
+    "2035": 0.0,
+    "2036": 0.0,
+    "2037": 0.0,
+    "2038": 0.0,
+    "2039": 0.0,
+    "2040": 0.0,
+    "2041": 0.0,
+    "2042": 0.0,
+    "2043": 0.0,
+    "2044": 0.0,
+    "2045": 0.0
+   }
   },
   "mittel": {
    "basis_mrd": {
     "kapitalgesellschaften_heute": 272,
     "h1_kundenort_plattformen": 37,
     "h2_gewinnverlagerung": 10,
-    "h3_verlustverrechnung": 8,
-    "zusammen": 326
+    "h3_verlustverrechnung": 0,
+    "zusammen": 318
    },
-   "unternehmen_pct_bip": 2.37,
-   "luecke_zum_modell_pct_bip": -2.05,
+   "unternehmen_pct_bip": 2.32,
+   "luecke_zum_modell_pct_bip": -2.1,
    "h4_personengesellschaften_umbuchung_pct_bip": 0.98,
-   "h5_einmalbesteuerung_kapitalertraege_pct_bip": -0.58
+   "h5_einmalbesteuerung_kapitalertraege_pct_bip": -0.58,
+   "e4_befristung_altverluste_pct_bip": {
+    "2028": -0.043,
+    "2029": -0.043,
+    "2030": -0.043,
+    "2031": -0.043,
+    "2032": -0.043,
+    "2033": 0.096,
+    "2034": 0.064,
+    "2035": 0.032,
+    "2036": 0.0,
+    "2037": 0.0,
+    "2038": 0.0,
+    "2039": 0.0,
+    "2040": 0.0,
+    "2041": 0.0,
+    "2042": 0.0,
+    "2043": 0.0,
+    "2044": 0.0,
+    "2045": 0.0
+   }
   },
   "hoch": {
    "basis_mrd": {
     "kapitalgesellschaften_heute": 283,
     "h1_kundenort_plattformen": 70,
     "h2_gewinnverlagerung": 19,
-    "h3_verlustverrechnung": 12,
-    "zusammen": 385
+    "h3_verlustverrechnung": 0,
+    "zusammen": 372
    },
-   "unternehmen_pct_bip": 2.8,
-   "luecke_zum_modell_pct_bip": -1.62,
+   "unternehmen_pct_bip": 2.71,
+   "luecke_zum_modell_pct_bip": -1.71,
    "h4_personengesellschaften_umbuchung_pct_bip": 0.98,
-   "h5_einmalbesteuerung_kapitalertraege_pct_bip": -0.39
+   "h5_einmalbesteuerung_kapitalertraege_pct_bip": -0.39,
+   "e4_befristung_altverluste_pct_bip": {
+    "2028": 0.0,
+    "2029": 0.0,
+    "2030": 0.0,
+    "2031": 0.0,
+    "2032": 0.0,
+    "2033": 0.15,
+    "2034": 0.125,
+    "2035": 0.1,
+    "2036": 0.075,
+    "2037": 0.05,
+    "2038": 0.025,
+    "2039": 0.0,
+    "2040": 0.0,
+    "2041": 0.0,
+    "2042": 0.0,
+    "2043": 0.0,
+    "2044": 0.0,
+    "2045": 0.0
+   }
   }
  }
 }

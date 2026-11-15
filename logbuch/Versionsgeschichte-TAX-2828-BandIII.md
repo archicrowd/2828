@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.88**
+Stand: 24. Oktober 2026 · Modellstand **v4.89**
 
 ---
 
@@ -5216,6 +5216,33 @@ rund 2,5 + Gewerbesteuer 75,7 Mrd. € gegen VGR S.11 + S.12 128,4 Mrd. €.
 
 **Bewegte Zahl:** keine geltende; intern −1,04 Punkte in der Unternehmenszeile. **Wodurch aufgefallen:** Arbeit an Option C.
 
+### v4.89 — Befristung der Verlustvorträge beim Systemwechsel (E4, intern)
+
+**Art der Änderung: PATCH (interne Prüfrechnung erweitert), geltende Zahlen unverändert.** 15. November 2026.
+
+**Beschluss der Initiative (15.11.2026):** schrittweise nach Empfehlung vorgehen (E3, dann E2, dann E1); Verlustvorträge beim Systemwechsel
+sinnvoll befristen.
+
+**Regel (Vorschlag):** Altverluste (Bestand Ende 2027) sind 2028–2032 unter der heutigen Mindestbesteuerung nutzbar und verfallen danach.
+Neue Verluste sind unbefristet vortragbar, mit derselben Mindestbesteuerung.
+
+**Rechnung:** Abschnitt `[verluste]` in `modell/unternehmensbasis.toml` erzeugt den Jahrespfad `e4_befristung_altverluste_pct_bip` in
+`unternehmensbasis.json`. Annahmen: Vorzieheffekt in der Frist 30/15/0 %, Aufbau der neuen Verlustvorträge 6/9/12 Jahre.
+
+**Ergebnis (mittel):** −0,04 % BIP je Jahr 2028–2032, +0,10 (2033), 0 ab 2038; Summe 2028–2045 rund 0 (−0,42 bis +0,53 Punkt-Jahre).
+Die Befristung ist ein Schnitt für das neue System, keine Deckung.
+
+**Zugleich:** Hebel H3 (dauerhaft strengere Mindestbesteuerung, 10/20/30 % des genutzten Verlustvortrags) auf 0 gesetzt, weil nicht
+beschlossen. Unternehmen intern 2,37 → 2,32 % BIP (2,05 bis 2,71); Lücke B-1 −3,10 → −3,15 % BIP.
+
+**Datenquelle:**
+- Destatis, KSt-Statistik 2017 (Tab. 2.4.1/2.4.2): Bestand 267 Mrd. € bei Gewinnfällen, 400 Mrd. € bei Verlustfällen.
+- Tax Foundation 2024 (Fristen in Europa).
+- BVerfG 2 BvL 19/14 (23.7.2025).
+- EuGH C-319/02 für E3.
+
+**Bewegte Zahl:** keine geltende; intern Unternehmen −0,05. **Wodurch aufgefallen:** Beschluss der Initiative zu E4.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5296,7 +5323,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.88
+## 7 | Offene Punkte, Stand v4.89
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
