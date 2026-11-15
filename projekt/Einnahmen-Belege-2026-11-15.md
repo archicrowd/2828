@@ -61,7 +61,7 @@ Abgaben mit. Wird die Doppelzählung bestätigt, ist sie ein eigener Fehler (Kor
 | Option | Was sie bedeutet | Dividende 2028 (mit Kinderanteil) |
 |---|---|---|
 | **A Belegte Werte übernehmen (Empfehlung)** | mittlerer Fall in die Deckung; Doppelzählung CO₂ korrigiert; Spanne ausgewiesen | rund 262 € statt 364 € |
-| B Teilweise übernehmen | nur Doppelzählung CO₂ (−0,42) und CO₂-Menge (−0,31) korrigieren; Unternehmen und Erbschaft bis zur Definition als Spanne | rund 326 € |
+| B Teilweise übernehmen | nur Doppelzählung CO₂ (−0,42) und CO₂-Menge (−0,31) korrigieren; Unternehmen und Erbschaft bis zur Definition als Spanne | rund 328 € (0,73 Punkte zu je rund 50 €) |
 | C Lücke durch Regeln schließen | Unternehmensbasis verbreitern (Definition beschließen, Position Einkommen bereinigen) und belegen | offen, erst nach Rechnung |
 
 **Empfehlung: A, verbunden mit dem Auftrag C.** Ein Wert, der sich nicht belegen lässt, sollte nicht in der Deckung stehen. Wird die
