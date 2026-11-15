@@ -1,5 +1,5 @@
 # Zweite Quelle für die Rechtsstaatsschwelle (modell/rechtsstaat_zweitquelle.py, Logbuch v4.92). Prüfrechnung.
-version = "v4.92"
+version = "v4.93"
 # Datei: Weltbank Data360, Datenbank WEF Travel & Tourism Development Index (TTDI) 2024, Indikator WEF_TTDI_RULELAWIEF „Rule of law, 0-100 (best)“,
 # Typ Value, Jahr 2024. Hochgeladen von der Initiative 15.11.2026, Rohdatei daten/roh/data360_ttdi/WEF_TTDI_RULELAWIEF.csv (nicht im Repository).
 # Herkunft des Werts nach dem Kürzel „IEF“ vermutlich Heritage Foundation, Index of Economic Freedom (Teilindex Rule of law), an der Quelle zu
@@ -10,3 +10,13 @@ jahr = "2024"
 iso3 = {DNK="DK", NOR="NO", FIN="FI", SWE="SE", DEU="DE", LUX="LU", IRL="IE", NLD="NL", EST="EE", AUT="AT", BEL="BE", LTU="LT", CZE="CZ", LVA="LV", FRA="FR", ESP="ES", SVN="SI", PRT="PT", CYP="CY", MLT="MT", POL="PL", ITA="IT", SVK="SK", HRV="HR", ROU="RO", GRC="EL", BGR="BG", HUN="HU", CHE="CH", ISL="IS"}
 # Werte 2024 (aus der Datei, damit die Rechnung ohne Rohdatei läuft; Prüfung gegen die Datei, wenn vorhanden)
 werte = {DK=95.3, FI=98.3, SE=96.0, DE=92.4, LU=94.3, IE=89.9, NL=94.4, EE=89.4, AT=91.0, BE=88.2, LT=76.8, CZ=76.9, LV=75.0, FR=84.1, ES=75.7, SI=78.8, PT=82.5, CY=77.2, MT=78.4, PL=61.9, IT=73.4, SK=70.5, HR=66.7, RO=64.4, EL=66.5, BG=58.8, HU=58.9, CH=94.8, IS=91.6}
+
+[wgi]   # v4.93: Weltbank, Worldwide Governance Indicators, „Rule of Law: Estimate“ (etwa −2,5 bis +2,5), über Data360 aus den World Development
+# Indicators (WB_WDI_GOV_WGI_RL_EST), jüngstes Jahr 2025. Hochgeladen von der Initiative 15.11.2026. Amtliche Quelle (internationale Organisation);
+# die Werte beruhen auf Einschätzungen aus vielen Erhebungen (Wahrnehmung), nicht auf Messungen.
+# Zweite Datei (WB_ESG_RL_EST, ESG-Datenbank, bis 2023) ist ein älterer Stand derselben Reihe; Werte weichen ab (z. B. Italien 2023 0,39 gegen 0,61),
+# vermutlich wegen der Überarbeitung der Methode; nicht verwendet.
+datei = "daten/roh/data360_wgi/WB_WDI_GOV_WGI_RL_EST.csv"
+sha256 = "ca0966dda79e591a993bd1a5f8d4ae289d174f78144e04e7b91e523e53269f20"
+jahr = "2025"
+werte = {AT=1.651, BE=1.266, BG=-0.046, CH=1.738, CY=0.739, CZ=1.17, DE=1.604, DK=2.01, EE=1.434, EL=0.285, ES=0.869, FI=2.012, FR=0.97, HR=0.421, HU=0.216, IE=1.549, IS=1.611, IT=0.585, LT=1.371, LU=1.708, LV=1.073, MT=0.666, NL=1.673, NO=1.941, PL=0.569, PT=1.046, RO=0.297, SE=1.739, SI=0.922, SK=0.45}

@@ -93,6 +93,11 @@ def deckung(sy):
         "Übrige Steuern": zeile("Sonstige"),
         "Grundstücksabgabe": zeile("04a"),
     }
+    # v4.93: Abweichende Deckung nur für Variantenrechnungen in einer Arbeitskopie (modell/e5_varianten.py); im Repository liegt die Datei nie.
+    ueber = W / "modell" / "deckung_varianten.toml"
+    if ueber.exists():
+        for k, v in tomllib.loads(ueber.read_text(encoding="utf-8")).get("aenderung_pct_bip", {}).items():
+            pos[k] += v
     return pos, eff
 
 

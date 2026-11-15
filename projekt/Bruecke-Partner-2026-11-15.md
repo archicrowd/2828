@@ -79,4 +79,12 @@ Weltbank-Plattform Data360. Es sind nicht die Weltbank-Indikatoren WGI.
 - **Polen ist die einzige Abweichung:** Im WJP-Index liegt es genau auf der Schwelle (0,66), in der zweiten Quelle mit 61,9 unter
   Slowakei, Kroatien, Griechenland und Rumänien. Die Einstufung Polens hängt damit an einer Quelle.
 
-Für eine amtliche Absicherung bleiben die Weltbank-Indikatoren (WGI, „Rule of Law: Estimate“) erwünscht.
+**Weltbank-Indikatoren (v4.93, amtlich):** „Rule of Law: Estimate“ (WGI), jüngstes Jahr 2025. Die Werte kommen aus der Datei der World
+Development Indicators über Data360, hochgeladen am 15.11.2026.
+- **Rangfolge:** Spearman mit dem WJP-Index 0,98 über 28 Staaten.
+- **Schwelle:** Die Indikatoren trennen sauber. Der kleinste Teilnehmer ist Polen mit 0,57, der größte Partner die Slowakei mit 0,45.
+  Polens Teilnahme ist damit gestützt; die Abweichung in der Tourismus-Quelle steht allein.
+- **Schweiz und Island:** 1,74 und 1,61, also klar über der Schwelle.
+- **Zweite Datei:** Die Datei aus der ESG-Datenbank ist ein älterer Stand derselben Reihe (bis 2023, Werte nach alter Methode, z. B.
+  Italien 0,39 gegen 0,61). Sie ist nicht verwendet.
+- **Einordnung:** Auch die WGI beruhen auf Einschätzungen aus vielen Erhebungen, nicht auf Messungen.

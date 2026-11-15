@@ -11,3 +11,5 @@ datei,groesse_byte,sha256,hinweis
 "data360_ttdi/WEF_TTDI_EOSQ434.csv",434434,431bd582c09472559d7a4c6cf8298063495d77640d3554685fb07f2d4a32ec0a,"Weltbank Data360, WEF TTDI 2024; hochgeladen 15.11.2026; nicht verwendet; nicht im Repository"
 "data360_ttdi/WEF_TTDI_FINGLOBEKOFGI.csv",443308,996fcf77755ff5fcab87cc95f4baa6e0f7450e4b10d087706da22bb302a74cda,"Weltbank Data360, WEF TTDI 2024; hochgeladen 15.11.2026; nicht verwendet; nicht im Repository"
 "data360_ttdi/WEF_TTDI_TRADEGLOBEKOFGI.csv",441071,18f25fbe1f8b4f016e829305827a667622532bbf6f6b72e23de9bd536ad2edd2,"Weltbank Data360, WEF TTDI 2024; hochgeladen 15.11.2026; nicht verwendet; nicht im Repository"
+"data360_wgi/WB_WDI_GOV_WGI_RL_EST.csv",2212422,ca0966dda79e591a993bd1a5f8d4ae289d174f78144e04e7b91e523e53269f20,"Weltbank Data360, WGI Rule of Law Estimate; hochgeladen 15.11.2026; verwendet; nicht im Repository"
+"data360_wgi/WB_ESG_RL_EST.csv",1666326,deb47dd2e76083504983c0dc93f9c3b3788e3f3f29f81f78194eef8b19b383c1,"Weltbank Data360, WGI Rule of Law Estimate; hochgeladen 15.11.2026; älterer Stand, nicht verwendet; nicht im Repository"

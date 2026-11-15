@@ -68,14 +68,14 @@ Unternehmensposition steigt dadurch von −1,01 auf −2,05 Punkte.
 - Ausschüttungen innerhalb des Konzerns (heute § 8b KStG) und Verluste im Konzern gleichen sich darin von selbst aus.
 - Aufkommen: rund wie heute (Abschnitt 1). Die Entscheidung ist eine Frage der Einfachheit, nicht der Deckung.
 
-**E5 Was die Lücke trägt – jetzt die eigentliche Entscheidung.** Rund 2 Punkte der Unternehmensposition und gut 1 Punkt der übrigen drei
+**E5 Was die Lücke trägt – eigene Vorlage seit v4.93: `Entscheidungsvorlage-E5-Luecke-2026-11-15.md`.** Rund 2 Punkte der Unternehmensposition und gut 1 Punkt der übrigen drei
 Positionen lassen sich nicht belegen.
 
 | Option | Wirkung |
 |---|---|
 | A Belegte Werte in die Deckung | Dividende 2028 rund 211 € statt 364 € (mittel; 186 bis 243 €). Im Stand C ist die Dividende der Rest; die übrigen Bausteine bleiben |
 | B Unternehmenssatz über 33 % | widerspricht E3 |
-| C Weitere Einnahmen (Bausteine aus dem Kernmodell, z. B. Bodenwertabgabe, Abbau klimaschädlicher Subventionen) | jeweils eigene Prüfung |
+| C Weitere Einnahmen innerhalb des Drittels (Tarif, Label, Erbschaftsfreibetrag) | jeweils eigene Rechnung. Korrektur 90: Bodenwertabgabe und Subventionsabbau stehen schon in der Deckung (bis v4.90 hier fälschlich als zusätzliche Einnahmen genannt) |
 | D Ausgaben senken (Netz, Gemeinden, Fonds) | berührt beschlossene Bausteine |
 
 Empfehlung: A. Wer weitere Einnahmen will (C), rechnet sie einzeln und belegt.

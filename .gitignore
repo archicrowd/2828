@@ -26,3 +26,4 @@ node_modules/
 
 # Upload-Paket der Webseite (gebaut mit seite/werkzeuge/paket_bau.py)
 seite/paket/
+modell/deckung_varianten.toml

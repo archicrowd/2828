@@ -1,0 +1,26 @@
+# Varianten zu E5 (modell/e5_varianten.py, Logbuch v4.93): Wie wirkt die belegte Deckung auf Dividende, Fonds und Netz, mit allen Rückwirkungen
+# der Kette (Altrenten über der Dividende, Aufstockung, Dynamik)? Rechnet in einer Arbeitskopie; die geltende Rechnung bleibt unverändert.
+version = "v4.93"
+stufen = ["modell/systemvarianten.py", "modell/altlasten.py", "modell/dynamik_geltend.py", "modell/projektion33.py", "modell/mwst_verteilung.py",
+          "modell/mwst_laender.py", "modell/netz33.py", "modell/moeglichkeitsraum33.py", "modell/fonds_klub.py"]
+jahre = [2028, 2035, 2045, 2060]
+# Die Lösungen (Mindestniveau, Quote Kern) suchen in festen Bereichen; mit der belegten Deckung liegen sie darunter. In der Kopie erweitert:
+loeserbereich = [["modell/systemvarianten.py", "    lo, hi = 0.05, 0.6", "    lo, hi = 0.0, 0.6"],
+                 ["modell/gesamtrechnung.py", "    lo, hi = 20.0, 45.0", "    lo, hi = 5.0, 45.0"]]
+
+# Änderung der Deckungspositionen in % BIP gegen geltend (einnahmen_belege.json, Stand v4.92; CO₂ als gleichbleibende Verschiebung des Pfads, Annahme)
+[varianten.A_mittel]
+"Unternehmen und Plattformen" = -2.05
+"Übrige Steuern" = -0.54
+"CO₂-Preis" = -0.31
+"Erbschaften" = -0.19
+[varianten.A_vorsichtig]
+"Unternehmen und Plattformen" = -2.34
+"Übrige Steuern" = -0.54
+"CO₂-Preis" = -0.34
+"Erbschaften" = -0.37
+[varianten.A_hoch]
+"Unternehmen und Plattformen" = -1.62
+"Übrige Steuern" = -0.54
+"CO₂-Preis" = -0.27
+"Erbschaften" = -0.01

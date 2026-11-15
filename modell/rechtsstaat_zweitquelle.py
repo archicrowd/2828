@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Zweite Quelle für die Rechtsstaatsschwelle (Logbuch v4.92): Rule of law (TTDI 2024, Data360) gegen den WJP-Index (staatenauswahl.toml).
+"""Zweite Quelle für die Rechtsstaatsschwelle (Logbuch v4.92, v4.93): Rule of law (TTDI 2024) und Weltbank WGI 2025 gegen den WJP-Index.
 
 Ausgabe: daten/aggregate/rechtsstaat_zweitquelle.json – Rangkorrelation (Spearman) über die Staaten mit beiden Werten, Werte für Schweiz und
 Island (ohne WJP), Reihenfolge um die Schwelle 0,66.
@@ -60,6 +60,29 @@ def main():
              ohne_wjp={c: werte[c] for c in ("CH", "IS")}, kleinster_wert_teilnehmer=min(t[c] for c in beide if w[c] >= s),
              groesster_wert_partner=max(t[c] for c in beide if w[c] < s),
              reihenfolge_um_schwelle=[dict(staat=c, wjp=w[c], ttdi=t[c], stufe="Teilnahme" if w[c] >= s else "Partner") for c in um])
+    # v4.93: Weltbank WGI als amtliche zweite Quelle
+    G = P["wgi"]
+    gw = dict(G["werte"])
+    rohg = W / G["datei"]
+    if rohg.exists():
+        if hashlib.sha256(rohg.read_bytes()).hexdigest() != G["sha256"]:
+            raise SystemExit("WGI-Rohdatei weicht von der Prüfsumme ab")
+        for r in csv.DictReader(rohg.open(encoding="utf-8")):
+            c = P["iso3"].get(r["REF_AREA"])
+            if c and r["TIME_PERIOD"] == G["jahr"] and r["OBS_VALUE"] and abs(float(r["OBS_VALUE"]) - gw[c]) > 0.0006:
+                raise SystemExit(f"WGI-Wert {c} weicht von der Datei ab")
+    b2 = [c for c in gw if c in SA and SA[c][0] >= 0]
+    r1, r2 = raenge({c: SA[c][0] for c in b2}), raenge({c: gw[c] for c in b2})
+    m1, m2 = sum(r1.values()) / len(b2), sum(r2.values()) / len(b2)
+    sp2 = sum((r1[c] - m1) * (r2[c] - m2) for c in b2) / (sum((r1[c] - m1) ** 2 for c in b2) * sum((r2[c] - m2) ** 2 for c in b2)) ** 0.5
+    teil = [c for c in gw if c in SA and (SA[c][0] >= s or c in F5["ohne_wert_teilnahme"])]
+    part = [c for c in gw if c in SA and 0 <= SA[c][0] < s]
+    E["wgi"] = dict(quelle="Weltbank, Worldwide Governance Indicators, Rule of Law: Estimate (WDI über Data360)", jahr=G["jahr"],
+                    rohdatei_geprueft=rohg.exists(), staaten_mit_beiden_werten=len(b2), spearman=round(sp2, 3),
+                    ohne_wjp={c: gw[c] for c in ("CH", "IS")}, kleinster_teilnehmer=min((gw[c], c) for c in teil),
+                    groesster_partner=max((gw[c], c) for c in part),
+                    trennt_sauber=min(gw[c] for c in teil) > max(gw[c] for c in part))
+    print("WGI:", E["wgi"])
     (W / "daten" / "aggregate" / "rechtsstaat_zweitquelle.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"Spearman {sp:.3f} (n = {n}), CH/IS {E['ohne_wjp']}, kleinster Teilnehmer {E['kleinster_wert_teilnehmer']}, größter Partner {E['groesster_wert_partner']}")
     for r in E["reihenfolge_um_schwelle"]:

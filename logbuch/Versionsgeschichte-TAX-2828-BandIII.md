@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.92**
+Stand: 24. Oktober 2026 · Modellstand **v4.93**
 
 ---
 
@@ -5332,6 +5332,31 @@ Rechtsstaatlichkeit (Weltbank Data360).
 
 **Bewegte Zahl:** keine. **Wodurch aufgefallen:** Auftrag und Dateien der Initiative.
 
+### v4.93 — Entscheidungsvorlage E5 mit Rechnung durch die Kette; Weltbank-WGI als amtliche zweite Quelle; Korrektur 90
+
+**Art der Änderung: MINOR (neue Variantenrechnung, Prüfrechnung erweitert), geltende Zahlen unverändert.** 15. November 2026.
+
+**Auftrag der Initiative (15.11.2026):** Entscheidungsvorlage zu E5; dazu Dateien „Rule of Law“ der Weltbank.
+
+**E5:** `modell/e5_varianten.py` (+ `.toml`) → `e5_varianten.json`; Vorlage `projekt/Entscheidungsvorlage-E5-Luecke-2026-11-15.md`.
+- Die belegten Werte laufen in einer Arbeitskopie durch die Kette (systemvarianten bis fonds_klub). Haken: `systemvarianten.deckung` liest
+  `modell/deckung_varianten.toml`, falls vorhanden; die Datei liegt nie im Repository (`.gitignore`).
+- Der Lösungsbereich ist in der Kopie erweitert (Mindestniveau ab 0, Quote Kern ab 5 %); sonst endet die Lösung am Rand, und die Varianten
+  zeigen ein Defizit statt einer kleineren Dividende.
+- **Ergebnis (mittel):** Dividende 212 / 126 / 50 / 19 € (2028/2035/2045/2060) statt 384 / 309 / 261 / 256 €; Fondsbeitrag 5,04 → 5,38 % BIP.
+  Im vorsichtigen Fall 2060 negativ.
+- Ein Punkt Deckung kostet rund 1,08 Punkte Dividende, weil die alten Rentenzusagen über der Dividende steigen.
+- **Empfehlung A+:** belegte Werte und rund 1,2 Punkte Ergänzung aus Tarif und Label (Ziel ≥ 100 € im Jahr 2060).
+
+**Rechtsstaat:** Weltbank WGI „Rule of Law: Estimate“ 2025 (WDI über Data360) in `rechtsstaat_zweitquelle`.
+- Spearman mit WJP 0,98 (28 Staaten); trennt Teilnehmer und Partner sauber (Polen 0,57 > Slowakei 0,45); Schweiz 1,74, Island 1,61.
+- Die ESG-Datei (älterer Stand bis 2023) ist nicht verwendet. Quelle Q30; Rohdateien `daten/roh/data360_wgi/`, Prüfsummen im Manifest.
+
+**Korrektur 90:** siehe Tabelle; Bodenwertabgabe und Subventionsabbau waren als zusätzliche Einnahmen genannt, stehen aber schon in der Deckung.
+
+**Datenquelle:** eigene Kette; Weltbank WGI 2025. **Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Auftrag E5; Korrektur 90 beim
+Abgleich mit `KENNZAHLEN.md`.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5373,6 +5398,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 87 | `KENNZAHLEN.md`, Deckungspositionen (v4.46–v4.81): Herkunft „Kernmodell 45 / 145 / 33 Mrd. € bei 25 %, Konsum 350 Mrd. € bei 18 %“, Umrechnung „Faktor 33/28“ ohne den ersten Schritt | Rechnung nutzt 48,8 / 157,6 / 35,9 Mrd. € bei 28 % und 375,9 Mrd. € bei 20 % brutto (`gesamtrechnung.py`, `systemvarianten.py`); Zahlen der Deckung unverändert | Prüfbericht 14.11.2026, B-3 |
 | 88 | Erbschaftsbasis (v4.32–v4.81, `vermoegensbasis33`, Kennzahlen): 150,5 Mrd. € als „steuerpflichtiger Erwerb“ bezeichnet, Status „Basis im Bereich der Daten“ | steuerlich berücksichtigtes Vermögen vor Freibeträgen (Destatis); Status offen, 2024 ergänzt | Prüfbericht 14.11.2026, B-2 |
 | 89 | Unternehmenszeile der Prüfrechnung B-1 (v4.87, `einnahmen_belege`, intern): VGR-Aufkommen D51B (125,1 Mrd. €) als Aufkommen nur der Kapitalgesellschaften gelesen, Basis 417 Mrd. €, belegt 3,41 % BIP | D51B enthält die ganze Gewerbesteuer (Personengesellschaften in S.11); Basis aus KSt und Gewerbesteuer-Anteil 260–283 Mrd. € (2025), belegt 2,37 % BIP, Lücke der vier Positionen −3,10 statt −2,06 % BIP | Abgleich mit der Gewerbesteuerstatistik, v4.88 |
+| 90 | Vorlage Unternehmensbasis (v4.88–v4.90, Option C zu E5): „weitere Einnahmen, z. B. Bodenwertabgabe, Abbau klimaschädlicher Subventionen“ | beide stehen schon in der Deckung (0,82 / 0,48 % BIP); weitere Einnahmen nur über Tarif, Label, Erbschaftsfreibetrag | Arbeit an der Vorlage E5, v4.93 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5412,7 +5438,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.92
+## 7 | Offene Punkte, Stand v4.93
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
