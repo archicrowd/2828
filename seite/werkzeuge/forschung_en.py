@@ -53,7 +53,7 @@ SINCE_REVIEW = [
  ("v4.84", "Expected dynamics (middle case) reported; channel skilled immigration", "no current figure; GDP middle +2.7% (2045), fund contribution 5.04% of GDP"),
  ("v4.85", "Expected dynamics (middle, with demand) in the current calculation; variant common skilled-worker visa", "dividend 2028 €364 (354), fund 5.04% of GDP (5.15), €42,000: +€627 (+611)"),
  ("v4.86", "Platforms taxed where used: profit route with a minimum (variant)", "no current figure; variant DE 2028 €2.9bn (1.2 to 7.1)"),
- ("v4.87–v4.89", "Evidence for the four revenue positions (review finding B-1) and corporate base", "no current figure; internal check, result after the initiative's decision"),
+ ("v4.87–v4.90", "Evidence for the four revenue positions (review finding B-1) and corporate base", "no current figure; internal check, result after the initiative's decision"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
@@ -179,7 +179,7 @@ def p_index():
     n_ok = VL["bestanden"].split(" ")[0]
     inhalt = f"""
 <h1>The Golden Third – calculations, reviews and data</h1>
-<p class="lede">A proposal for taxation and social protection shared by a group of states: no euro of income taxed at more than one third,
+<p class="lede">A proposal for taxation and social protection shared by a group of states: no tax rate above one third,
 social contributions replaced by a strong safety net without premiums, a monthly transformation dividend for every adult, a funded
 pension account of one's own, and a common fund for legacy debt and pension promises. These pages are written for research and review:
 they show the core calculations with their assumptions, the reviews so far, and the figures in citable form.</p>
@@ -471,7 +471,7 @@ th{{color:#5a7186}}td.z{{text-align:right;white-space:nowrap}}ul{{margin:4pt 0}}
 <h1>The Golden Third – research kit</h1>
 <p class="meta">Initiative 28:28 · model version {VERSION} · {DATUM} · CC BY 4.0 · contact {KONTAKT}</p>
 <h2>The proposal</h2>
-<p>Taxation and social protection shared by a group of states: no euro of income taxed at more than one third (0/11/19/25/33 % in steps tied to basic
+<p>Taxation and social protection shared by a group of states: no tax rate above one third, with income, capital income, company profits and inheritances each taxed at no more than one third (0/11/19/25/33 % in steps tied to basic
 needs); social contributions abolished, employers pass at least 80 % of the contributions that disappear into wages; a strong safety net (health,
 long-term care, minimum pension, basic needs) without premiums; a monthly transformation dividend for every adult; compulsory saving of 10 % into a
 personal account locked until retirement; VAT as a label; legacy debt and pension promises in a common fund.</p>

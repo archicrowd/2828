@@ -1,6 +1,6 @@
 # Unternehmensbasis für Option C (Logbuch v4.88, Korrektur 89). Interne Prüfrechnung: ändert die Deckung nicht, erscheint nicht auf Webseite,
 # Forschungsseite oder im Working Paper, bis die Initiative die Entscheidungen E1–E5 getroffen hat (Beschluss 15.11.2026).
-version = "v4.89"
+version = "v4.90"
 satz = 0.33
 faelle = ["vorsichtig", "mittel", "hoch"]
 modell_unternehmen_pct_bip = 4.42       # systemvarianten.deckung (geltend)
@@ -47,9 +47,10 @@ plattformen_pct_bip = [0.025, 0.059, 0.144]
 # Überschneidet sich mit H1 (Zuordnung nach Kundenumsatz); angerechnet wird nur der nicht überschneidende Teil (Annahme).
 verlagerung_steuer_mrd = 5.7
 verlagerung_anrechnung = [0.0, 0.5, 1.0]
-# H3 Verlustverrechnung: seit v4.89 nur noch die beschlossene Befristung der Altverluste (Abschnitt [verluste]); eine dauerhaft strengere
-#    Mindestbesteuerung ist nicht beschlossen und daher 0 (bis v4.88: 10/20/30 % des genutzten Verlustvortrags, Annahme).
-verlust_anteil = [0.0, 0.0, 0.0]
+# H3 Verlustverrechnung, beschlossen 15.11.2026 (v4.90): Verlustvortrag bis 1 Mio. € voll, darüber höchstens mit 50 % des Gewinns (heute 70 %,
+#    ab 2028 60 %; Vorbild FR, NL, Vereinigtes Königreich nach Tax Foundation 2024). Wirkung: 10/20/30 % weniger genutzter Verlustvortrag
+#    (Annahme, nicht aus Daten abgeleitet: Verteilung der Verlustnutzung nach Größe fehlt). In v4.89 vorübergehend 0.
+verlust_anteil = [0.10, 0.20, 0.30]
 # H4 Personengesellschaften in die Unternehmensposition (E2): Gewerbeertrag aus dem Messbetragsanteil; Umbuchung aus der Position Einkommen
 #    (gleicher Satz 33 %), deshalb ohne Wirkung auf die Summe.
 # H5 Einmalbesteuerung (E3): Dividenden beim Anteilseigner frei oder angerechnet; Anteil der Dividenden an der Kapitalertragsbesteuerung aus
@@ -57,9 +58,9 @@ verlust_anteil = [0.0, 0.0, 0.0]
 dividende_wirksam = [1.0, 0.75, 0.5]
 
 [verluste]   # E4, Beschluss der Initiative 15.11.2026: Verlustvorträge beim Systemwechsel befristen (v4.89)
-# Regel (Vorschlag): Verlustvorträge, die Ende 2027 bestehen, sind fünf Jahre nutzbar (2028–2032), unter der heutigen Mindestbesteuerung
-# (1 Mio. € voll, darüber 70 % bzw. 60 % ab 2028); danach verfallen sie. Verluste aus dem neuen System: unbefristet vortragbar mit derselben
-# Mindestbesteuerung. Vorbild für die Frist: fünf Jahre in BG, HR, CY, CZ, GR, HU, PL, RO, SK (Tax Foundation 2024).
+# Regel: Verlustvorträge, die Ende 2027 bestehen, sind fünf Jahre nutzbar (2028–2032), unter der neuen Mindestbesteuerung (H3: 1 Mio. € voll,
+# darüber 50 %); danach verfallen sie. Verluste aus dem neuen System: unbefristet vortragbar mit derselben Mindestbesteuerung. Der Pfad
+# misst gegen die Nutzung nach H3, damit H3 nicht doppelt zählt. Vorbild für die Frist: fünf Jahre in BG, HR, CY, CZ, GR, HU, PL, RO, SK (Tax Foundation 2024).
 wechsel = 2028
 frist_jahre = 5
 # Bestand 31.12.2017 (KSt-Statistik, unbeschränkt Stpfl.): 667 Mrd. €, davon 267 Mrd. € bei Steuerpflichtigen mit positivem, 400 Mrd. € bei
@@ -71,3 +72,23 @@ vorziehen = [0.30, 0.15, 0.0]
 # Aufbau der neuen Verlustvorträge bis zur heutigen Nutzungsquote, Jahre ab Wechsel (Annahme)
 aufbau_jahre = [6, 9, 12]
 pfad_bis = 2045
+
+[buchgewinn_2023]   # E1 (b): Größe eines Gewinns aus dem Abschluss gegen die steuerliche Basis, Jahr 2023 (v4.90)
+# Deutsche Bundesbank, Jahresabschlussstatistik (hochgerechnete Angaben), nichtfinanzielle Unternehmen, Mrd. €:
+# alle Unternehmen 2023 Jahresergebnis vor Gewinnsteuern 449,1 (Monatsbericht Dezember 2025, Tab. 4.1); Nichtkapitalgesellschaften 153,2,
+# darin Erträge aus Beteiligungen 10,8 (Tab. III/2). Erträge aus Beteiligungen aller Unternehmen 2024: 85,3 (2023 nicht gelesen; Annahme gleich).
+url_bbk = "https://bundesbank.de/resource/blob/827826/5339ba185ff3e7ba37087b692a65ef74/472B63F073F071307366337C94F8C870/1-0-jahresabschlussstatistik-hochgerechnete-angaben-data.pdf"
+alle_vor_steuern = 449.1
+nichtkapg_vor_steuern = 153.2
+beteiligung_alle = 85.3
+beteiligung_nichtkapg = 10.8
+# Kreditinstitute 2023 Jahresüberschuss vor Steuern rund 48,6 (Bundesbank, Monatsbericht September 2025: 2024 51,2, +2,6; abgeleitet).
+# Versicherer nicht gelesen (fehlt).
+banken_vor_steuern = 48.6
+# Steuerliche Basis 2023 zum Vergleich: KSt 2023 kassenmäßig 45,9 Mrd. € / 15 % (VGR-Abgleich in v4.88)
+kst_2023 = 45.9
+# Konzerne mit Sitz in Deutschland 2023 (Destatis, länderbezogene Berichte): Gewinn vor Steuern weltweit gut 271, in Deutschland rund 103 Mrd. €,
+# Steuern in Deutschland rund 32 Mrd. €.
+cbcr_weltweit = 271.0
+cbcr_inland = 103.0
+cbcr_steuer_inland = 32.0

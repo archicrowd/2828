@@ -32,14 +32,15 @@ def main():
     modell_basis = P["modell_unternehmen_pct_bip"] / s / 100 * bip
     vgr = dict(unternehmensgewinn_kapg_pct_bip=round((V["b4n_s11"] + V["b4n_s12"]) / V["bip_mio"] * 100, 2),
                betriebsueberschuss_kapg_pct_bip=round((V["b2n_s11"] + V["b2n_s12"]) / V["bip_mio"] * 100, 2))
-    verlust_quote = S["verlustabzug_genutzt"] / S["zve"]
+    verlust_quote = verlust_quote0 = S["verlustabzug_genutzt"] / S["zve"]
     div_anteil = K["nve"] / (K["nve"] + K["abgeltung"])
     faelle = {}
     VL = P["verluste"]
     ende = VL["wechsel"] + VL["frist_jahre"]          # erstes Jahr ohne Altverluste
     def verlustpfad(i, basis_pct):
-        """Mehr- oder Minderaufkommen der Befristung je Jahr in % BIP (bezogen auf die Basis der Kapitalgesellschaften in % BIP)."""
+        """Mehr- oder Minderaufkommen der Befristung je Jahr in % BIP, gegen die dauerhafte Nutzung nach H3 (Mindestbesteuerung 50 %)."""
         out = {}
+        verlust_quote = verlust_quote0 * (1 - H["verlust_anteil"][i])
         for j in range(VL["wechsel"], VL["pfad_bis"] + 1):
             if j < ende:
                 nutzung = verlust_quote * (1 + VL["vorziehen"][i])
@@ -61,7 +62,20 @@ def main():
             h4_personengesellschaften_umbuchung_pct_bip=round(pct(persg) * s, 2),
             h5_einmalbesteuerung_kapitalertraege_pct_bip=round(h5, 2),
             e4_befristung_altverluste_pct_bip=verlustpfad(i, pct(kapg[i])))
-    E = dict(version=P["version"], status="interne Prüfrechnung zu Option C; nicht veröffentlichen bis zur Entscheidung E1–E5",
+    BG = P["buchgewinn_2023"]
+    buch_kapg = BG["alle_vor_steuern"] - BG["nichtkapg_vor_steuern"] - (BG["beteiligung_alle"] - BG["beteiligung_nichtkapg"]) + BG["banken_vor_steuern"]
+    steuer_basis_2023 = BG["kst_2023"] / K["kst_satz"]
+    e1 = dict(buchgewinn_kapg_ohne_beteiligungsertraege_mrd_2023=round(buch_kapg), steuerliche_basis_kapg_mrd_2023=round(steuer_basis_2023),
+              verhaeltnis=round(buch_kapg / steuer_basis_2023, 2),
+              cbcr_2023=dict(weltweit_mrd=BG["cbcr_weltweit"], inland_mrd=BG["cbcr_inland"], steuer_inland_mrd=BG["cbcr_steuer_inland"],
+                             inland_satz=round(BG["cbcr_steuer_inland"] / BG["cbcr_inland"], 3)),
+              hinweis="Gewinn aus dem Abschluss der Kapitalgesellschaften (ohne Erträge aus Beteiligungen, mit Banken, ohne Versicherer) liegt in der "
+                      "Größe der steuerlichen Basis; E1 (b) verbreitert die Basis nicht wesentlich, sie ordnet sie neu (Konsolidierung, Kundenort).")
+    E = dict(version=P["version"],
+             beschluesse=dict(E2="Personengesellschaften bleiben in der Position Einkommen (H4 = 0)",
+                              E3="höchstens ein Drittel je Einkommensart (H5 = 0)",
+                              E4="Altverluste fünf Jahre nutzbar, dann Verfall; Verrechnung über 1 Mio. € höchstens 50 % des Gewinns (H3)"),
+             e1_buchgewinn_vergleich=e1, status="interne Prüfrechnung zu Option C; nicht veröffentlichen bis zur Entscheidung E1–E5",
              basis_2025_mrd=dict(kapitalgesellschaften_kst=round(kapg_kst), kapitalgesellschaften_gewst=round(kapg_gew),
                                  personengesellschaften_gewst=round(persg), einzelunternehmen_gewst=round(einzel), modell=round(modell_basis)),
              basis_2025_pct_bip=dict(kapitalgesellschaften_mittel=round(pct(kapg[1]), 2), personengesellschaften=round(pct(persg), 2),
@@ -70,11 +84,12 @@ def main():
              kst_2017=dict(verlustabzug_quote_zve=round(verlust_quote, 3), verlustvortrag_bestand_mrd=round(S["verlustvortrag_bestand"] / 1000),
                            beteiligungsertraege_8b_frei_mrd=round(S["beteiligungsertraege_8b_frei"] / 1000)),
              dividendenanteil_kapitalertragsteuern=round(div_anteil, 3),
-             e4_regel=dict(text=f"Altverluste (Bestand Ende {VL['wechsel'] - 1}) bis {ende - 1} nutzbar unter der heutigen Mindestbesteuerung, danach verfallen; "
-                                "neue Verluste unbefristet mit derselben Mindestbesteuerung",
+             e4_regel=dict(text=f"Altverluste (Bestand Ende {VL['wechsel'] - 1}) bis {ende - 1} nutzbar, danach verfallen; neue Verluste unbefristet; "
+                                "Verrechnung bis 1 Mio. € voll, darüber höchstens 50 % des Gewinns",
                            bestand_2017_gewinnfaelle_mrd=VL["bestand_gewinnfaelle_mrd_2017"], bestand_2017_verlustfaelle_mrd=VL["bestand_verlustfaelle_mrd_2017"]),
              faelle=faelle)
     (AGG / "unternehmensbasis.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("E1 Vergleich 2023:", e1)
     print("Basis 2025 Mrd. €:", E["basis_2025_mrd"], "| % BIP:", E["basis_2025_pct_bip"], "| VGR:", vgr)
     for f, d in faelle.items():
         print(f"{f:>10}: {d['basis_mrd']} → {d['unternehmen_pct_bip']:.2f} % BIP (Lücke {d['luecke_zum_modell_pct_bip']:+.2f}); "

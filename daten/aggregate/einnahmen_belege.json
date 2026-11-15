@@ -1,5 +1,5 @@
 {
- "version": "v4.89",
+ "version": "v4.90",
  "status": "interne Prüfrechnung zu Befund B-1; Deckung unverändert, nicht veröffentlichen bis zur Entscheidung (Option C, E1–E5)",
  "vgr_2024_anteile_pct_bip": {
   "D2_D5_D91": 23.08,
@@ -20,9 +20,9 @@
   "vorsichtig": {
    "positionen": {
     "unternehmen": {
-     "belegt_pct_bip": 2.05,
+     "belegt_pct_bip": 2.08,
      "modell_pct_bip": 4.42,
-     "luecke_pct_bip": -2.37
+     "luecke_pct_bip": -2.34
     },
     "uebrige": {
      "belegt_pct_bip": 3.39,
@@ -40,11 +40,11 @@
      "luecke_pct_bip": -0.37
     }
    },
-   "luecke_pct_bip": -3.62,
-   "dividende_eur_erw_monat": -189,
-   "dividende_2028_mit_kinderanteil_eur": 184,
+   "luecke_pct_bip": -3.59,
+   "dividende_eur_erw_monat": -188,
+   "dividende_2028_mit_kinderanteil_eur": 186,
    "hilfsgroessen": {
-    "unternehmen_basis_mrd_2025": 281,
+    "unternehmen_basis_mrd_2025": 285,
     "co2_mt_2028": 511,
     "erbschaft_basis_2028_mrd": 139
    }
@@ -52,9 +52,9 @@
   "mittel": {
    "positionen": {
     "unternehmen": {
-     "belegt_pct_bip": 2.32,
+     "belegt_pct_bip": 2.37,
      "modell_pct_bip": 4.42,
-     "luecke_pct_bip": -2.1
+     "luecke_pct_bip": -2.05
     },
     "uebrige": {
      "belegt_pct_bip": 3.39,
@@ -72,11 +72,11 @@
      "luecke_pct_bip": -0.19
     }
    },
-   "luecke_pct_bip": -3.15,
-   "dividende_eur_erw_monat": -165,
-   "dividende_2028_mit_kinderanteil_eur": 208,
+   "luecke_pct_bip": -3.1,
+   "dividende_eur_erw_monat": -162,
+   "dividende_2028_mit_kinderanteil_eur": 211,
    "hilfsgroessen": {
-    "unternehmen_basis_mrd_2025": 318,
+    "unternehmen_basis_mrd_2025": 326,
     "co2_mt_2028": 528,
     "erbschaft_basis_2028_mrd": 139
    }
@@ -84,9 +84,9 @@
   "hoch": {
    "positionen": {
     "unternehmen": {
-     "belegt_pct_bip": 2.71,
+     "belegt_pct_bip": 2.8,
      "modell_pct_bip": 4.42,
-     "luecke_pct_bip": -1.71
+     "luecke_pct_bip": -1.62
     },
     "uebrige": {
      "belegt_pct_bip": 3.39,
@@ -104,11 +104,11 @@
      "luecke_pct_bip": -0.01
     }
    },
-   "luecke_pct_bip": -2.54,
-   "dividende_eur_erw_monat": -133,
-   "dividende_2028_mit_kinderanteil_eur": 238,
+   "luecke_pct_bip": -2.45,
+   "dividende_eur_erw_monat": -128,
+   "dividende_2028_mit_kinderanteil_eur": 243,
    "hilfsgroessen": {
-    "unternehmen_basis_mrd_2025": 372,
+    "unternehmen_basis_mrd_2025": 385,
     "co2_mt_2028": 544,
     "erbschaft_basis_2028_mrd": 139
    }

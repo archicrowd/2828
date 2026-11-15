@@ -78,7 +78,7 @@ SEIT_PRUEFUNG = [
  ("v4.84", "Erwartete Dynamik (mittlerer Fall) ausgewiesen; Kanal Fachkräfte aus dem Ausland", "keine geltende Zahl; BIP mittel +2,7 % (2045), Fondsbeitrag 5,04 % BIP"),
  ("v4.85", "Erwartete Dynamik (mittel, mit Nachfrage) in der geltenden Rechnung; Variante Fachkräftevisum", "Dividende 2028 364 € (354), Fonds 5,04 % BIP (5,15), 42.000 €: +627 € (+611)"),
  ("v4.86", "Plattformen am Ort der Nutzung: Gewinnweg mit Untergrenze (Variante)", "keine geltende Zahl; Variante DE 2028 2,9 Mrd. € (1,2 bis 7,1)"),
- ("v4.87–v4.89", "Beleg der vier Einnahmepositionen (Prüfbefund B-1) und Unternehmensbasis", "keine geltende Zahl; interne Prüfrechnung, Ergebnis nach Entscheidung der Initiative"),
+ ("v4.87–v4.90", "Beleg der vier Einnahmepositionen (Prüfbefund B-1) und Unternehmensbasis", "keine geltende Zahl; interne Prüfrechnung, Ergebnis nach Entscheidung der Initiative"),
 ]
 
 
@@ -256,7 +256,7 @@ def p_index():
     karten = "".join(f'<a class="karte" href="{h}"><b>{t}</b><span class="wert">{w}</span>{x}</a>' for h, t, w, x in k)
     inhalt = f"""
 <h1>Das Goldene Drittel – Rechnung, Prüfungen, Daten</h1>
-<p class="lede">Ein Vorschlag für Steuern und soziale Sicherung in Europa: höchstens ein Drittel Steuer auf jeden Euro Einkommen, ein starkes Netz
+<p class="lede">Ein Vorschlag für Steuern und soziale Sicherung in Europa: kein Steuersatz über einem Drittel, ein starkes Netz
 ohne Prämien, eine monatliche Transformationsdividende. Diese Seiten sind für die wissenschaftliche Diskussion gedacht: Sie zeigen die
 tragenden Rechnungen mit ihren Annahmen, die bisherigen Prüfungen und die Zahlen in zitierfähiger Form.</p>
 <p class="meta">Die allgemeine Seite in sechs Sprachen: <a href="{SEITE}">{SEITE.replace("https://", "")}</a>. Modellstand {VERSION}, {DATUM}.</p>
@@ -484,7 +484,7 @@ th{{color:#5a7186}}td.z{{text-align:right;white-space:nowrap}}ul{{margin:4pt 0}}
 <h1>Das Goldene Drittel – Forschungs-Kit</h1>
 <p class="meta">Initiative 28:28 · Modellstand {VERSION} · {DATUM} · CC BY 4.0 · Kontakt {KONTAKT}</p>
 <h2>Worum es geht</h2>
-<p>Ein Vorschlag für Steuern und soziale Sicherung in Europa: kein Euro wird mit mehr als einem Drittel besteuert (Tarif 0/11/19/25/33 % am
+<p>Ein Vorschlag für Steuern und soziale Sicherung in Europa: kein Steuersatz liegt über einem Drittel, Einkommen, Kapitalerträge, Unternehmensgewinne und Erbschaften je für sich (Tarif 0/11/19/25/33 % am
 Grundbedarf); Sozialbeiträge entfallen, Betriebe geben mindestens 80 % der wegfallenden Arbeitgeberbeiträge in den Lohn; ein starkes Netz
 (Gesundheit, Pflege, Mindestrente, Grundbedarf) ohne Prämien; eine monatliche Transformationsdividende für jeden Erwachsenen; Pflichtvorsorge
 10 % auf ein eigenes, bis zur Altersgrenze gesperrtes Konto; Mehrwertsteuer als Label; Altlasten in einem gemeinsamen Fonds.</p>

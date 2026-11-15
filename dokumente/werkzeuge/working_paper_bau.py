@@ -298,8 +298,10 @@ are consistent with them and what the model can show.</p>
 <p><b>Tax fairness.</b> Today labour carries most of the burden: in Germany the tax wedge on an average wage is about
 {en(F.VL['keil']['DE']['allein_100']['oecd_keil'], 1)} % of labour costs (OECD 2026), while capital income is taxed at a flat rate of about 26 %. Social
 contributions fall on human work only, so replacing work by machines saves contributions. The proposal treats labour, capital and automation alike:
-no income is taxed at more than one third, without deductions, and company profits – explicitly including digital platforms – are taxed where the
-customers are, because profits can be shifted but customers cannot. Fairness is also vertical: a floor at basic need and a dividend for everyone.</p>
+no tax rate exceeds one third – income, capital income, company profits and inheritances are each taxed at no more than one third –, without
+deductions, and company profits – explicitly including digital platforms – are taxed where the customers are, because profits can be shifted but
+customers cannot. Partnerships are taxed through their owners' income tax. Losses carried forward from before the switch can be used for five years
+and then lapse; above €1 million, a loss carried forward offsets at most half of the profit. Fairness is also vertical: a floor at basic need and a dividend for everyone.</p>
 <p><b>Intergenerational fairness.</b> Public debt and unfunded pension promises are commitments made by earlier generations that today's
 systems pass on to later ones. The proposal makes them explicit, moves them into a common fund and repays them by 2098. Pension promises above
 basic need are reduced, so that today's pensioners carry a share; basic need is guaranteed. New saving for old age is funded on an own account

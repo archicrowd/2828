@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.89.1**
+Stand: 24. Oktober 2026 · Modellstand **v4.90**
 
 ---
 
@@ -5256,6 +5256,38 @@ beschlossen. Unternehmen intern 2,37 → 2,32 % BIP (2,05 bis 2,71); Lücke B-1 
 
 **Datenquelle:** keine neue. **Bewegte Zahl:** keine. **Wodurch aufgefallen:** Rückfrage der Initiative zu E3.
 
+### v4.90 — Regeltext je Einkommensart, Verlustregel und Rechtsformen (E2 bis E4); Vergleich mit dem Gewinn aus dem Abschluss (E1)
+
+**Art der Änderung: MINOR (Regeltexte in Konzept, Forschungsseite und Working Paper; interne Prüfrechnung erweitert), geltende Zahlen unverändert.** 15. November 2026.
+
+**Beschlüsse der Initiative (15.11.2026):**
+- **Regeltext umsetzen:** „Kein Satz liegt über einem Drittel: Einkommen, Kapitalerträge, Unternehmensgewinne und Erbschaften werden je
+  für sich mit höchstens einem Drittel besteuert.“ Ein gesonderter Hinweis auf die Gesamtbelastung ausgeschütteter Gewinne entfällt.
+- **Verlustverrechnung:** Die dauerhaft strengere Verrechnung gilt als beschlossen und ist in den ausführlichen Texten klar zu beschreiben.
+- **Personengesellschaften:** Sie bleiben in der Position Einkommen.
+- **Weiter mit E1.**
+
+**Texte:**
+- `konzept33-bau.js`: Einnahmeregel, Untertitel („kein Steuersatz über einem Drittel“), neue Regeln „Verluste“ und „Personengesellschaften“.
+- `forschung_bau.py` / `forschung_en.py`: Einnahmeregel je Einkommensart.
+- `working_paper_bau.py`: Regel je Einkommensart, Personengesellschaften, Verluste.
+- Webseite (`drittel_texte.py`, „höchstens ein Drittel auf jedes Einkommen“) passt bereits; ältere Entwürfe (Stand B, v4.8) bleiben unverändert.
+
+**Rechnung:**
+- **H3:** wieder 10/20/30 % weniger genutzter Verlustvortrag (Annahme). Neu als Regel: bis 1 Mio. € voll, darüber 50 % des Gewinns.
+- **E4-Pfad:** misst jetzt gegen die Nutzung nach H3.
+- **E1 (Abschnitt `[buchgewinn_2023]`):** Gewinn der Kapitalgesellschaften aus dem Abschluss 2023, ohne Beteiligungserträge, mit Banken,
+  rund 270 Mrd. € gegen eine steuerliche Basis von rund 306 Mrd. € (0,88). Der Abschlussgewinn verbreitert die Basis nicht.
+- **Ergebnis:** Unternehmen intern 2,32 → 2,37 % BIP (2,08 bis 2,80); B-1-Lücke −3,10 % BIP. Weg C kann die Lücke nicht schließen; offen ist E5.
+
+**Datenquelle:**
+- Deutsche Bundesbank: Jahresabschlussstatistik (hochgerechnet; Tab. III/2 maschinell gelesen, an der Quelle zu prüfen),
+  Monatsberichte Dezember und September 2025.
+- Destatis: länderbezogene Berichte 2023.
+- Tax Foundation 2024.
+
+**Bewegte Zahl:** keine geltende; intern Unternehmen +0,05. **Wodurch aufgefallen:** Beschlüsse der Initiative, Arbeit an E1.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5336,7 +5368,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.89.1
+## 7 | Offene Punkte, Stand v4.90
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
