@@ -14,6 +14,7 @@ const SV=lies('systemvarianten.json'), PJ=lies('projektion33.json'), NZ=lies('ne
 // v4.8/v4.11: Grundauskommen (vorher „Boden“), Kinderanteil 0,8, Kindergewicht, Härtefall, Gini
 const GL=lies('gesamtlast33.json'), RBJ=lies('regel_boden.json'), HF=lies('haertefall.json'), GI=lies('gini.json'), KG=lies('kindergewicht.json'), GF=lies('gini_frankreich.json'), RK=lies('rentner_kombi.json');
 // v4.82: Geltungsbereich der Kernaussagen (Prüfung vom 14.11.2026, B-4/B-6), Erbschaftsbasis (B-2)
+const PF=lies('plattformen33.json');   // v4.86: Plattformen am Nutzungsort
 const MK=lies('mikro_de.json').basis.ergebnis['0.8'], GB=lies('grenzbelastung33.json').zeilen, VB=lies('vermoegensbasis33.json').erbschaften;
 const WS=lies('weitergabe_sensitivitaet.json'), FZ=lies('fondszins.json'), FK=lies('fonds_klub.json'), PN=lies('preisniveau33.json'), AW=lies('ausweichen33.json'), WR=lies('weitergabe_rueckfall.json');   // v4.18
 const TOPF=RBJ.topf, SK=RBJ.regel.kinderanteil, KW=RBJ.regel.skala.kind;
@@ -134,7 +135,7 @@ add(H1("3  Die Regeln"),
   P("",{sp:80}),
   L([["Einkommen: ",true],["Besteuert wird das Brutto ohne Abzüge und ohne Splitting; die Dividende zählt mit. Die Stufen hängen am Grundbedarf."]]),
   L([["Kapital: ",true],["alle Erträge einschließlich Veräußerungsgewinnen höchstens 33 %."]]),
-  L([["Unternehmen und Plattformen: ",true],["33 % am Ort der Kunden."]]),
+  L([["Unternehmen und Plattformen: ",true],["33 % am Ort der Kunden. Umsätze mit Endkunden zählen dort, wo die Leistung genutzt wird (Gerät, Rechnungsadresse); der Gewinn des Konzerns wird nach diesem Umsatzanteil auf die Staaten verteilt, gleich wo er gebucht ist. Untergrenze: 33 % auf eine pauschale Gewinnquote von "+pr(PF.regel.untergrenze_gewinnquote*100,0)+" des Umsatzes am Nutzungsort ("+pr(PF.regel.untergrenze_pct_umsatz,1)+" des Umsatzes), angerechnet auf die Gewinnsteuer. Die Mehrwertsteuer gilt für elektronische Leistungen schon heute am Ort der Kunden und bleibt unverändert."]]),
   L([["Erbschaft: ",true],["33 % über 100.000 € je Erwerb, ohne Verschonungsausnahmen, mit Stundung."]]),
   L([["Große Vermögen: ",true],["1,5 % ab 2 Mio. €, anrechenbar auf die Einkommensteuer."]]),
   L([["Boden: ",true],["Die Gemeinde erhebt 0,1 bis 1 % auf den Bodenwert, nicht auf das Gebäude."]]),
@@ -179,7 +180,7 @@ add(H1("3  Die Regeln"),
   P("Die Mindestrente ist die einzige gerechnete Variante, die dauerhaft eine spürbare Dividende lässt. Sie verbindet Sicherheit (niemand liegt im Alter unter dem Grundbedarf) mit Eigenverantwortung (das Konto gehört dem Sparer und ist vererbbar). Die halbe Anrechnung der eigenen Rente sorgt dafür, dass sich Sparen auch bei kleinen Einkommen lohnt; sie wirkt dort aber wie eine Belastung von 50 % auf die eigene Rente."),
 
   H2("3.4  Die Transformationsdividende"),
-  P("Jeder Erwachsene erhält jeden Monat denselben Betrag, Kinder "+pr(SK*100,0)+" davon, ohne Antrag; die Dividende ist steuerpflichtig wie jedes Einkommen. Sie ist der Rest nach Dach, Gemeinden und Netz. Rund "+pr(PR[2028].lenkung_pct_bip/V.dividende_pct_bip_2028*100,0)+" ihres Ausgangswerts stammen aus Lenkungseinnahmen; sie wird kleiner, wenn Verbrenner und Emissionen verschwinden – das ist gewollt. Dazu trägt die Besteuerung digitaler Plattformen am Ort der Kunden bei; ihr Anteil ist nicht gesondert beziffert, weil die Basis der Unternehmensposition noch zu belegen ist."),
+  P("Jeder Erwachsene erhält jeden Monat denselben Betrag, Kinder "+pr(SK*100,0)+" davon, ohne Antrag; die Dividende ist steuerpflichtig wie jedes Einkommen. Sie ist der Rest nach Dach, Gemeinden und Netz. Rund "+pr(PR[2028].lenkung_pct_bip/V.dividende_pct_bip_2028*100,0)+" ihres Ausgangswerts stammen aus Lenkungseinnahmen; sie wird kleiner, wenn Verbrenner und Emissionen verschwinden – das ist gewollt. Dazu trägt die Besteuerung digitaler Plattformen am Ort der Kunden bei: nach einer ersten Schätzung aus dem Aufkommen der Digitalsteuern in Frankreich, Italien und dem Vereinigten Königreich rund "+de(PF.faelle.mittel.de_2028_mrd_nominal,1)+" Mrd. € im Jahr in Deutschland (Spanne "+de(PF.faelle.vorsichtig.de_2028_mrd_nominal,1)+" bis "+de(PF.faelle.hoch.de_2028_mrd_nominal,1)+"), etwa "+de(PF.faelle.mittel.dividende_eur_erw_monat,0)+" € Dividende je Erwachsenem und Monat. Der Betrag ist als Variante gerechnet und nicht in der Deckung, weil die Basis der Unternehmensposition noch zu belegen ist."),
   tab([{t:"Jahr",w:2000},{t:"je Erwachsenem",w:2400,al:RT},{t:"je Kind",w:2200,al:RT},{t:"% des BIP",w:2426,al:RT}],
     ['2028','2035','2045','2060','dauer'].map(j=>[j==='dauer'?'Dauerzustand':j,eu(dv(NB[j].dividende_erw_eur2026)),eu(dv(NB[j].dividende_erw_eur2026)*SK),de(NB[j].dividende_pct_bip,2)])),
   Q("Kaufkraft 2026, Deutschland. Die Kinderdividende ("+eu(kind28)+" im Jahr 2028) liegt über dem heutigen Kindergeld (259 €). Kinderanteil 80 % (Beschluss R1, 18.10.2026): Existenzminimum eines Kindes einschließlich Betreuung, Erziehung, Ausbildung im Verhältnis zu dem eines Erwachsenen (0,79); aus demselben Topf, die Erwachsenendividende sinkt dadurch um "+pr((1-TOPF)*100,1)+"."),

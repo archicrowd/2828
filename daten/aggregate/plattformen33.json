@@ -1,0 +1,76 @@
+{
+ "version": "v4.86",
+ "status": "Variante, nicht in der Deckung (Position Unternehmen und Plattformen bleibt 4,42 % BIP, Basis offen)",
+ "laender": [
+  {
+   "land": "UK",
+   "jahr": "2024/25",
+   "umsatz_mio": 40400,
+   "umsatz_pct_bip": 1.418,
+   "umfang": "soziale Medien, Suchmaschinen, Online-Marktplätze (Vermittlungsentgelte)",
+   "quelle": "amtlich (Aufkommen); BIP eigene Kenntnis"
+  },
+  {
+   "land": "FR",
+   "jahr": "2024",
+   "umsatz_mio": 26667,
+   "umsatz_pct_bip": 0.909,
+   "umfang": "gezielte Werbung, Vermittlung, Datenverkauf",
+   "quelle": "Sekundärquelle (Erwartung, nicht Ist)"
+  },
+  {
+   "land": "IT",
+   "jahr": "2024",
+   "umsatz_mio": 15157,
+   "umsatz_pct_bip": 0.691,
+   "umfang": "gezielte Werbung, Vermittlung, Datenübermittlung",
+   "quelle": "Sekundärquelle"
+  },
+  {
+   "land": "AT",
+   "jahr": "2023",
+   "umsatz_mio": 2060,
+   "umsatz_pct_bip": 0.417,
+   "umfang": "nur Onlinewerbung",
+   "quelle": "amtlich; nur Werbung, Untergrenze"
+  }
+ ],
+ "faelle": {
+  "vorsichtig": {
+   "umsatz_pct_bip": 0.691,
+   "gewinnweg_pct_bip": 0.026,
+   "untergrenze_pct_bip": 0.0228,
+   "aufstockung_untergrenze_pct_bip": 0.0048,
+   "mehraufkommen_pct_bip": 0.0246,
+   "de_2028_mrd_nominal": 1.2,
+   "dividende_eur_erw_monat": 1.3,
+   "effektiv_pct_umsatz": 4.46
+  },
+  "mittel": {
+   "umsatz_pct_bip": 0.909,
+   "gewinnweg_pct_bip": 0.0618,
+   "untergrenze_pct_bip": 0.03,
+   "aufstockung_untergrenze_pct_bip": 0.0042,
+   "mehraufkommen_pct_bip": 0.0594,
+   "de_2028_mrd_nominal": 2.9,
+   "dividende_eur_erw_monat": 3.1,
+   "effektiv_pct_umsatz": 7.26
+  },
+  "hoch": {
+   "umsatz_pct_bip": 1.418,
+   "gewinnweg_pct_bip": 0.1488,
+   "untergrenze_pct_bip": 0.0468,
+   "aufstockung_untergrenze_pct_bip": 0.0033,
+   "mehraufkommen_pct_bip": 0.1445,
+   "de_2028_mrd_nominal": 7.1,
+   "dividende_eur_erw_monat": 7.6,
+   "effektiv_pct_umsatz": 10.73
+  }
+ },
+ "regel": {
+  "satz": 0.33,
+  "untergrenze_gewinnquote": 0.1,
+  "untergrenze_pct_umsatz": 3.3
+ },
+ "hinweis": "Grundlage aus Digitalsteuern zurückgerechnet (nur große Konzerne, Tatbestände je Land verschieden); Marge und Anteile Annahmen. Ergänzt R6 um Umsätze, die außerhalb des Nutzerlands gebucht werden; Teil-Doppelzählung möglich."
+}

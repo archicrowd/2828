@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.85**
+Stand: 24. Oktober 2026 · Modellstand **v4.86**
 
 ---
 
@@ -5126,6 +5126,30 @@ gemeinsame Fachkräftevisum wird als Variante gerechnet. Die Webseite wird angep
 **Datenquelle:** wie v4.83/v4.84; Visum: AZR nach Bertelsmann Stiftung (2024), ZDF 4.11.2026 (Sekundärquelle).
 **Wodurch aufgefallen:** Beschluss der Initiative.
 
+### v4.86 — Plattformen am Ort der Nutzung: Regel mit Untergrenze, Aufkommen als Variante
+
+**Art der Änderung: MINOR (Regel präzisiert, neue Variante), geltende Zahlen unverändert.** 15. November 2026.
+
+**Anlass und Beschluss (15.11.2026):** Frage der Initiative, wie die 33 % am Ort der Nutzung für Plattformen und die Vermeidung der
+Gewinnverschiebung gerechnet sind, auch über die Mehrwertsteuer. Befund: Die Position „Unternehmen und Plattformen“ (4,42 % BIP) stammt aus dem
+Kernmodell, eine Plattformrechnung gab es nicht; der Kundenort war nur über R6 (OECD-Länderberichte, Umsatz am Buchungsort) geprüft. Die
+Mehrwertsteuer gilt für elektronische Leistungen schon am Kundenort, trifft aber die Nutzer und läuft bei Werbung ins Leere. Die Initiative folgt
+den Empfehlungen: Gewinnweg am Nutzungsort für alle Unternehmen, Untergrenze 33 % × 10 % des Umsatzes mit Anrechnung, Mehrwertsteuer unverändert.
+
+**Rechnung:** `modell/plattformen33.py` (+ `.toml`) → `daten/aggregate/plattformen33.json`; Dokument
+`projekt/Plattformen-am-Nutzungsort-2026-11-15.md`. Grundlage aus dem Aufkommen der Digitalsteuern zurückgerechnet (UK 1,42 %, FR 0,91 %,
+IT 0,69 % BIP; AT nur Werbung 0,42 %). Ergebnis: Mehraufkommen 0,025 / 0,059 / 0,144 % BIP, Deutschland 2028 1,2 / 2,9 / 7,1 Mrd. € (nominal),
+Dividende 1 / 3 / 8 € je Erwachsenem; wirksam 4,5 / 7,3 / 10,7 % des Umsatzes; Aufstockung durch die Untergrenze rund 0,004 % BIP.
+
+**Konzept:** Regel unter „Unternehmen und Plattformen“ ausgeschrieben; Satz zum Plattformanteil der Dividende beziffert (Variante). Webseite
+unverändert (deutsche Korrekturfassung v4.85 liegt bei der Initiative).
+
+**Kritisch:** FR (Erwartung) und IT (Unimpresa) sind Sekundärquellen; UK-BIP und IT-BIP eigene Kenntnis. Margen und Anteile sind Annahmen. Nur
+große Konzerne erfasst. Teil-Doppelzählung mit R6 möglich. Nicht in der Deckung, bis die Unternehmensposition belegt ist (Prüfbefund B-1).
+
+**Datenquelle:** HM Treasury/HMRC DST Review 2025 (amtlich), BMF Österreich 2024 (amtlich), Club Patrimoine 2023, Corriere Comunicazioni 2026,
+UN-Musterartikel 12B. **Bewegte Zahl:** keine geltende; neu der Plattformanteil als Variante. **Wodurch aufgefallen:** Frage der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5205,7 +5229,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.85
+## 7 | Offene Punkte, Stand v4.86
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

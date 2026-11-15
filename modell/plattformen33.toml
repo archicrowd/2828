@@ -1,0 +1,61 @@
+# Plattformen am Ort der Nutzung: Gewinnweg mit Untergrenze (modell/plattformen33.py, Logbuch v4.86). Variante, nicht in der Deckung.
+# Beschluss der Initiative (15.11.2026): Empfehlungen übernommen. Mehrwertsteuer bleibt (Kundenort für elektronische Leistungen gilt schon);
+# Regel für alle Unternehmen: (1) Umsätze mit Endkunden zählen am Ort der Nutzung (Gerät, Rechnungsadresse); (2) Konzerngewinn nach diesem
+# Umsatzanteil verteilt, darauf 33 %; (3) Untergrenze 33 % auf eine pauschale Gewinnquote des Umsatzes am Nutzungsort, angerechnet auf (2).
+version = "v4.86"
+satz = 0.33
+untergrenze_gewinnquote = 0.10    # pauschale Gewinnquote der Untergrenze (Vorschlag; ergibt 3,3 % des Umsatzes, Spanne der Digitalsteuern 2–5 %, UN Art. 12B 3–4 %)
+
+# Grundlage: Umsatz großer Digitalkonzerne mit Nutzern im Land, zurückgerechnet aus dem Aufkommen der Digitalsteuern (Aufkommen / Satz), in % BIP.
+# Grenzen: Schwellen (nur Konzerne > 750 Mio. € bzw. 500 Mio. £ weltweit), verschiedene Tatbestände (Werbung, Vermittlung, Daten), UK mit
+# Ermäßigungen; deshalb nur Größenordnung.
+[[basis]]
+land = "UK"
+jahr = "2024/25"
+aufkommen_mio = 808               # £ Mio.; HM Treasury/HMRC, Digital Services Tax Review (Nov. 2025), Tabelle 4.A (amtlich)
+satz = 0.02
+bip_mio = 2850000                 # £ Mio. BIP 2024 (eigene Kenntnis, an ONS zu prüfen)
+umfang = "soziale Medien, Suchmaschinen, Online-Marktplätze (Vermittlungsentgelte)"
+quelle = "amtlich (Aufkommen); BIP eigene Kenntnis"
+
+[[basis]]
+land = "FR"
+jahr = "2024"
+aufkommen_mio = 800               # € Mio.; Erwartung des Wirtschaftsministeriums nach Club Patrimoine (9.10.2023), Sekundärquelle
+satz = 0.03
+bip_mio = 2935236.2               # laender_2024.csv
+umfang = "gezielte Werbung, Vermittlung, Datenverkauf"
+quelle = "Sekundärquelle (Erwartung, nicht Ist)"
+
+[[basis]]
+land = "IT"
+jahr = "2024"
+aufkommen_mio = 454.7             # € Mio.; Unimpresa nach Corriere Comunicazioni (2026), Sekundärquelle; 2025: 637 Mio. nach Wegfall der Inlandsschwelle
+satz = 0.03
+bip_mio = 2192000                 # € Mio. BIP 2024 (eigene Kenntnis, an Istat zu prüfen)
+umfang = "gezielte Werbung, Vermittlung, Datenübermittlung"
+quelle = "Sekundärquelle"
+
+[[basis]]
+land = "AT"
+jahr = "2023"
+aufkommen_mio = 103               # € Mio.; BMF Österreich, Pressemeldung 15.1.2024 (amtlich)
+satz = 0.05
+bip_mio = 494087.6                # laender_2024.csv (BIP 2024; Jahr weicht ab)
+umfang = "nur Onlinewerbung"
+quelle = "amtlich; nur Werbung, Untergrenze"
+
+[gewinn]
+# Konzernmarge (Gewinn vor Steuern / Umsatz) großer Digitalkonzerne: Annahme 15 / 25 / 35 %. Nach Geschäftsberichten 2024 liegen die
+# operativen Margen der größten Anbieter etwa zwischen 10 und 45 % (eigene Kenntnis, an den Berichten zu prüfen).
+marge = [0.15, 0.25, 0.35]
+# Anteil der Umsätze von Konzernen mit Marge unter der Untergrenze (Verluste, Handel, Streaming): Annahme 30 / 20 / 10 %, mittlere Marge dort 3 %.
+anteil_unter_untergrenze = [0.30, 0.20, 0.10]
+marge_unter_untergrenze = 0.03
+# Anteil der Steuer, der heute schon im Land gezahlt wird (lokale Gesellschaften, Kommissionäre): Annahme 20 / 10 / 5 %.
+heute_schon_gezahlt = [0.20, 0.10, 0.05]
+
+[abgrenzung]
+# Die Prüfrechnung R6 (OECD-Länderberichte) verteilt Gewinne nach Umsatz am Ort der buchenden Gesellschaft, nicht am Ort der Nutzer. Digitale Umsätze,
+# die in Irland oder den Niederlanden gebucht werden, zählen dort. Die Plattformvariante ergänzt R6 um diesen Teil; eine Doppelzählung bleibt möglich,
+# soweit lokale Vertriebsgesellschaften Umsätze schon im Land buchen (über heute_schon_gezahlt grob erfasst).

@@ -47,6 +47,7 @@ STUFEN = [
     ("Drittel-System: Einwanderung (v4.41 nach dem Fonds der 30)", ["modell/einwanderung33.py"]),
     ("Drittel-System: Beschäftigung und Automatisierung", ["modell/dynamik33.py"]),
     ("Wirtschaftliche Dynamik: Thesen und Werte (Prüfrechnung)", ["modell/wirtschaftsdynamik.py"]),
+    ("Plattformen am Ort der Nutzung mit Untergrenze (Variante)", ["modell/plattformen33.py"]),
     ("Drittel-System: Haushalte gegen heute", ["modell/haushalte33.py"]),
     ("Drittel-System: Neustartverfahren", ["modell/neustart33.py"]),
     ("Drittel-System: Webseitenentwurf (alt, eigene Gliederung)", ["seite/werkzeuge/entwurf33_bau.py"]),
