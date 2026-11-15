@@ -1,6 +1,6 @@
 # Option C: Unternehmensbasis verbreitern – Befund und Entscheidungen E1 bis E5
 
-Initiative 28:28 · 15. November 2026 · Modellstand v4.89 (Stand der Entscheidungen: E4 beschlossen, E3 zur Entscheidung) · Rechnung: `modell/unternehmensbasis.py` (+ `.toml`) → `daten/aggregate/unternehmensbasis.json`
+Initiative 28:28 · 15. November 2026 · Modellstand v4.89 (Stand der Entscheidungen: E3 und E4 beschlossen, E2 zur Entscheidung) · Rechnung: `modell/unternehmensbasis.py` (+ `.toml`) → `daten/aggregate/unternehmensbasis.json`
 Status: **interne Prüfrechnung.** Beschluss der Initiative vom 15.11.2026: Weg C verfolgen, Rechnungen bis zur Entscheidung nicht auf Webseite,
 Forschungsseite oder im Working Paper. Hinweis: Das Repository ist öffentlich; Logbuch und diese Vorlage sind dort einsehbar.
 
@@ -63,7 +63,20 @@ Forschungsseite oder im Working Paper. Hinweis: Das Repository ist öffentlich; 
 - Die Position Einkommen ist auf die gesamte Einkommensteuer geeicht (Kernmodell: 284 Mrd. €), enthält die Gewinne der Personengesellschaften
   also schon. Prüfpunkt offen.
 
-**E3 Einmalbesteuerung – die Entscheidung mit der größten Tragweite (zur Entscheidung, Stand v4.89).**
+**E3 Einmalbesteuerung – beschlossen am 15.11.2026: höchstens ein Drittel je Einkommensart (Option c).**
+- **Lesart:** Die Regel gilt je Einkommensart. Unternehmensgewinne, Dividenden und Kapitalerträge, Arbeitseinkommen und Erbschaften werden
+  je für sich mit höchstens einem Drittel besteuert.
+- **Warum diese Lesart folgerichtig ist:** Auch sonst gilt die Regel je Steuer. Ein Arbeitseinkommen trägt bis zu 33 % und beim Konsum
+  zusätzlich Mehrwertsteuer. Ein vererbtes Vermögen ist meist aus versteuertem Einkommen entstanden. Zusammengezählt („kein Euro“) ließe sich
+  die Regel nirgends einhalten.
+- **Folge für die Rechnung:** H5 = 0, die Deckung behält die Kapitalerträge. Ein ausgeschütteter Gewinn trägt zusammen 55 % (heute rund 48 %);
+  das ist offen zu sagen.
+- **Folge für den Text:** Der Regeltext „Kein Euro wird mit mehr als einem Drittel besteuert“ (Konzept, Webseite) ist bei der nächsten
+  Veröffentlichung anzupassen. Vorschlag: „Kein Satz liegt über einem Drittel: Einkommen, Kapitalerträge, Unternehmensgewinne und
+  Erbschaften werden je für sich mit höchstens einem Drittel besteuert.“
+- **Kursgewinne aus Aktien:** Die Klärung ist zurückgestellt. Nach dieser Lesart sind sie als Kapitalertrag mit 33 % folgerichtig.
+
+Entscheidungsgrundlage (Stand v4.89):
 
 | Option | Wirkung | Aufkommen (Kapitalerträge, % BIP; mittel) | Bewertung |
 |---|---|---|---|
@@ -116,7 +129,11 @@ eine andere Position oder ein anderer Satz; beides berührt das Drittel.
 
 ## 4 Vorschlag zum Vorgehen
 
-1. E4 ist beschlossen (Befristung, Regel oben). Als Nächstes E3 entscheiden (Regeltext), dann E2.
+1. E4 ist beschlossen (Befristung, Regel oben). E3 ist beschlossen (je Einkommensart).
+   Als Nächstes E2: Empfehlung, Personengesellschaften in der Position Einkommen zu belassen.
+   - Der höchste persönliche Satz (33 %) gleicht dem Unternehmenssatz; einbehaltene Gewinne tragen daher in beiden Rechtsformen dasselbe.
+   - Wer die Besteuerung als Kapitalgesellschaft will, hat die Option nach § 1a KStG (seit 2022; eigene Kenntnis, an der Quelle zu prüfen).
+   - Wirkung: keine Umbuchung, H4 = 0, Summe unverändert.
 2. Für E1 (b) Daten suchen: Säule 2, BEFIT, Konzernabschlüsse.
 3. Erst danach die Deckung neu rechnen und Webseite, Konzept und Working Paper anpassen.
 

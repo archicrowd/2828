@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.89**
+Stand: 24. Oktober 2026 · Modellstand **v4.89.1**
 
 ---
 
@@ -5243,6 +5243,19 @@ beschlossen. Unternehmen intern 2,37 → 2,32 % BIP (2,05 bis 2,71); Lücke B-1 
 
 **Bewegte Zahl:** keine geltende; intern Unternehmen −0,05. **Wodurch aufgefallen:** Beschluss der Initiative zu E4.
 
+### v4.89.1 — Beschluss E3: höchstens ein Drittel je Einkommensart (intern)
+
+**Art der Änderung: PATCH (Beschluss in der Entscheidungsvorlage), keine neue Rechnung, keine Zahl bewegt.** 15. November 2026.
+
+**Beschluss der Initiative (15.11.2026):** Die Regel gilt je Einkommensart („maximal ein Drittel je Einkommensart“).
+- Unternehmensgewinn und Dividende sind je für sich mit höchstens 33 % belastet; zusammen trägt ein ausgeschütteter Gewinn 55 % (heute rund 48 %).
+- Die Kapitalerträge bleiben in der Deckung (H5 = 0); die geltende Rechnung entsprach schon dieser Lesart.
+- Der Regeltext „Kein Euro …“ in Konzept und Webseite ist bei der nächsten Veröffentlichung anzupassen (Vorschlag in der Vorlage).
+- Kursgewinne aus Aktien: Klärung zurückgestellt.
+- Nächster Schritt E2 mit Empfehlung: Personengesellschaften bleiben in der Position Einkommen.
+
+**Datenquelle:** keine neue. **Bewegte Zahl:** keine. **Wodurch aufgefallen:** Rückfrage der Initiative zu E3.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5323,7 +5336,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.89
+## 7 | Offene Punkte, Stand v4.89.1
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
