@@ -79,6 +79,14 @@ def netz(j, kuerzung, dauer=False, gr="volksrente"):
     return pos, gb
 
 
+def eur_je_punkt(r):
+    """Euro (2026) je Punkt Dividende in % BIP. v4.94: ohne Division durch einen gerundeten Wert nahe null (Variantenrechnung E5);
+    für die geltende Rechnung unverändert, weil die Dividende dort weit von null liegt."""
+    if abs(r["dividende_pct_bip"]) >= 0.05:
+        return r["dividende_erw_eur2026"] / r["dividende_pct_bip"]
+    return r["dividende_ohne_trends_eur2026"] / r["dividende_ohne_trends_pct_bip"]
+
+
 def main():
     bisher0 = SV["gesundheit"] + SV["seil"] + P["haertefall_pct_bip"]
     erg = []
@@ -95,7 +103,7 @@ def main():
             for _ in range(20):
                 summe = sum(pos.values())
                 neu_div_pct = r["dividende_pct_bip"] + (bisher - summe)
-                eur = r["dividende_erw_eur2026"] / r["dividende_pct_bip"] * neu_div_pct
+                eur = eur_je_punkt(r) * neu_div_pct
                 R2 = dict(r, dividende_erw_eur2026=eur)
                 alt = R[j]
                 R[j] = R2
@@ -123,7 +131,7 @@ def main():
                 pos, gb = netz(j, k_b, False, gr_b)
                 R[j] = alt
                 dpct = r["dividende_pct_bip"] + (bisher - sum(pos.values()))
-                eur = r["dividende_erw_eur2026"] / r["dividende_pct_bip"] * dpct
+                eur = eur_je_punkt(r) * dpct
             jahre.append(dict(jahr=j, netz_pct_bip=round(sum(pos.values()), 2), dividende_pct_bip=round(dpct, 2), dividende_erw_eur2026=round(eur),
                               lenkung_pct_bip=r["lenkung_pct_bip"], netz_eur_kopf_monat=round(sum(pos.values()) / 100 * KOPF26 * r["wachstum_je_kopf_faktor"] / 12),
                               positionen={n: round(v, 2) for n, v in pos.items()}))

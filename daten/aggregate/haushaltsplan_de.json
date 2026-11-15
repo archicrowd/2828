@@ -1,0 +1,429 @@
+{
+ "version": "v4.94",
+ "status": "Prüfrechnung; Spalte belegt intern",
+ "einheit": "% BIP; Mrd. € nominal (vorher 2024, nachher 2028)",
+ "quellen": {
+  "steuern": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_taxag?format=JSON&geo=DE&time=2024&unit=MIO_EUR&sector=S13",
+  "ausgaben": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_exp?format=JSON&geo=DE&time=2024&unit=MIO_EUR&sector=S13&na_item=TE",
+  "haupt": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_main?format=JSON&geo=DE&time=2024&unit=MIO_EUR&sector=S13"
+ },
+ "einnahmen": [
+  {
+   "gruppe": "Steuern",
+   "position": "Lohn- und Einkommensteuer, Soli (Haushalte), sonstige Einkommensteuern",
+   "heute_mrd_2024": 411.7,
+   "heute_pct_bip": 9.38,
+   "nachher_position": "Einkommen",
+   "nachher_pct_bip": 10.21,
+   "nachher_mrd_2028": 501.8,
+   "belegt_pct_bip": null,
+   "einfluss": "Ein Tarif 0/11/19/25/33 % auf alle Einkommen einschließlich Dividende und Gewinnen der Personengesellschaften; Grundbedarf frei; keine Abzüge; Soli entfällt"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "darin heute: Kapitalertrag- und Abgeltungsteuer",
+   "heute_mrd_2024": null,
+   "heute_pct_bip": null,
+   "nachher_position": "Kapitalerträge",
+   "nachher_pct_bip": 1.37,
+   "nachher_mrd_2028": 67.3,
+   "belegt_pct_bip": null,
+   "einfluss": "Kapitalerträge einschließlich Kursgewinnen höchstens 33 % (heute 26,375 %); je Einkommensart ein Drittel"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Körperschaft- und Gewerbesteuer (Kapitalgesellschaften)",
+   "heute_mrd_2024": 125.1,
+   "heute_pct_bip": 2.85,
+   "nachher_position": "Unternehmen und Plattformen",
+   "nachher_pct_bip": 4.42,
+   "nachher_mrd_2028": 217.2,
+   "belegt_pct_bip": 2.37,
+   "einfluss": "Unternehmen 33 % auf den Konzerngewinn, verteilt nach Kundenumsatz; Plattformen mit Untergrenze; Gewerbesteuer entfällt (Gemeinden über feste Anteile); Altverluste 5 Jahre, Verrechnung über 1 Mio. € höchstens 50 %"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Mehrwertsteuer",
+   "heute_mrd_2024": 298.8,
+   "heute_pct_bip": 6.81,
+   "nachher_position": "Konsum (Label)",
+   "nachher_pct_bip": 8.51,
+   "nachher_mrd_2028": 418.3,
+   "belegt_pct_bip": null,
+   "einfluss": "Label 5/11/17/25 % nach Wirkung auf Gesundheit und Umwelt, Sonderstufe 33 % (Alkohol, Tabak, Kraftstoffe, Fahrzeuge 31 %); effektiv 18,8 % (heute 19/7 %)"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Verbrauchsteuern (Energie, Strom, Tabak, Alkohol, Kaffee), Versicherung-, Grunderwerb- und Verkehrsteuern, Kfz-Steuer, übrige",
+   "heute_mrd_2024": 126.8,
+   "heute_pct_bip": 2.89,
+   "nachher_position": "Übrige Steuern",
+   "nachher_pct_bip": 3.93,
+   "nachher_mrd_2028": 193.2,
+   "belegt_pct_bip": 3.26,
+   "einfluss": "Weitgehend wie heute (Annahme der Gesamtrechnung); Lenkung über die Sonderstufe im Label. Im Modellwert steckt der Emissionshandel ein zweites Mal (Prüfbefund B-1)"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Emissionshandel (Abgaben auf Verschmutzung)",
+   "heute_mrd_2024": 18.6,
+   "heute_pct_bip": 0.42,
+   "nachher_position": "CO₂-Preis",
+   "nachher_pct_bip": 1.67,
+   "nachher_mrd_2028": 82.1,
+   "belegt_pct_bip": 1.36,
+   "einfluss": "CO₂-Preis 100 €/t auf alle bepreisten Emissionen, Pfad bis 150 €/t; sinkt mit den Emissionen"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Grundsteuer",
+   "heute_mrd_2024": 16.2,
+   "heute_pct_bip": 0.37,
+   "nachher_position": "Grundstücksabgabe",
+   "nachher_pct_bip": 0.82,
+   "nachher_mrd_2028": 40.3,
+   "belegt_pct_bip": null,
+   "einfluss": "Bodenwertabgabe bis 1 % des Bodenwerts (Gemeinden)"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Erbschaft- und Schenkungsteuer",
+   "heute_mrd_2024": 10.0,
+   "heute_pct_bip": 0.23,
+   "nachher_position": "Erbschaften",
+   "nachher_pct_bip": 1.16,
+   "nachher_mrd_2028": 57.0,
+   "belegt_pct_bip": 0.97,
+   "einfluss": "33 % auf Erwerbe über 100.000 € je Erbe, ohne Verschonung von Betriebsvermögen (heute bis 50 %, viele Ausnahmen)"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Vermögensteuer (seit 1997 nicht erhoben)",
+   "heute_mrd_2024": 0.0,
+   "heute_pct_bip": 0.0,
+   "nachher_position": "Große Vermögen",
+   "nachher_pct_bip": 0.97,
+   "nachher_mrd_2028": 47.7,
+   "belegt_pct_bip": null,
+   "einfluss": "Mindeststeuer (anrechenbar) und 1 % ab 2 Mio. €"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Abbau klimaschädlicher Subventionen (heute Ausgabe oder Steuervergünstigung)",
+   "heute_mrd_2024": null,
+   "heute_pct_bip": null,
+   "nachher_position": "Subventionsabbau",
+   "nachher_pct_bip": 0.48,
+   "nachher_mrd_2028": 23.6,
+   "belegt_pct_bip": null,
+   "einfluss": "20 Mrd. € nach UBA-Liste; im Modell als Einnahme geführt"
+  },
+  {
+   "gruppe": "Steuern",
+   "position": "Progression und Dynamik (2028)",
+   "heute_mrd_2024": null,
+   "heute_pct_bip": null,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.07,
+   "nachher_mrd_2028": 3.4,
+   "belegt_pct_bip": null,
+   "einfluss": "Mehraufkommen aus dem Tarif bei wachsenden Einkommen und erwarteter Dynamik"
+  },
+  {
+   "gruppe": "Sozialbeiträge",
+   "position": "Beiträge der Arbeitgeber",
+   "heute_mrd_2024": 302.4,
+   "heute_pct_bip": 6.89,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.0,
+   "nachher_mrd_2028": 0.0,
+   "belegt_pct_bip": null,
+   "einfluss": "entfallen: Arbeit wird um diesen Betrag billiger"
+  },
+  {
+   "gruppe": "Sozialbeiträge",
+   "position": "Beiträge der Arbeitnehmer",
+   "heute_mrd_2024": 280.1,
+   "heute_pct_bip": 6.39,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.0,
+   "nachher_mrd_2028": 0.0,
+   "belegt_pct_bip": null,
+   "einfluss": "entfallen; Gesundheit und Netz aus Steuern"
+  },
+  {
+   "gruppe": "Sozialbeiträge",
+   "position": "Beiträge Nichterwerbstätiger, Selbständiger, freiwillige",
+   "heute_mrd_2024": 126.1,
+   "heute_pct_bip": 2.87,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.0,
+   "nachher_mrd_2028": 0.0,
+   "belegt_pct_bip": null,
+   "einfluss": "entfallen"
+  },
+  {
+   "gruppe": "Sozialbeiträge",
+   "position": "unterstellte Beiträge (Beamtenversorgung)",
+   "heute_mrd_2024": 48.2,
+   "heute_pct_bip": 1.1,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.0,
+   "nachher_mrd_2028": 0.0,
+   "belegt_pct_bip": null,
+   "einfluss": "entfallen; laufende Pensionen als Altlast über den Fonds"
+  },
+  {
+   "gruppe": "Fonds",
+   "position": "–",
+   "heute_mrd_2024": null,
+   "heute_pct_bip": null,
+   "nachher_position": "Fondsbeitrag",
+   "nachher_pct_bip": 4.9,
+   "nachher_mrd_2028": 240.8,
+   "belegt_pct_bip": null,
+   "einfluss": "Beitrag zum gemeinsamen Fonds für Altrenten und Altschulden (Zuschlag 14,6 % auf alle Steuern, DE 2028), bis 2098"
+  },
+  {
+   "gruppe": "Kredit",
+   "position": "Neue Schulden (Defizit)",
+   "heute_mrd_2024": 115.3,
+   "heute_pct_bip": 2.63,
+   "nachher_position": "Fondsanleihen",
+   "nachher_pct_bip": 5.29,
+   "nachher_mrd_2028": 260.0,
+   "belegt_pct_bip": null,
+   "einfluss": "Laufender Haushalt ausgeglichen (Saldo +0,11); Fondsanleihen für den Teil der Altlast über dem Beitrag, getilgt bis 2098"
+  },
+  {
+   "gruppe": "Übrige Einnahmen",
+   "position": "Verkäufe, Gebühren, Vermögenserträge, Transfers",
+   "heute_mrd_2024": 260.5,
+   "heute_pct_bip": 5.94,
+   "nachher_position": null,
+   "nachher_pct_bip": null,
+   "nachher_mrd_2028": null,
+   "belegt_pct_bip": null,
+   "einfluss": "im Modell nicht gesondert: Ausgaben der Gemeinden und des Dachs netto nach Gebühren (Annahme)"
+  }
+ ],
+ "ausgaben": [
+  {
+   "gruppe": "Verwaltung",
+   "position": "Allgemeine Verwaltung, Außenbeziehungen (COFOG 01 ohne Zinsen und Grundlagenforschung)",
+   "heute_mrd_2024": 185.5,
+   "heute_pct_bip": 4.23,
+   "nachher_position": null,
+   "nachher_pct_bip": 2.22,
+   "nachher_mrd_2028": 109.1,
+   "belegt_pct_bip": null,
+   "einfluss": "Kommunalverwaltung 1,62 + Außenbeziehungen 0,30 + Standards 0,30; einfaches System, Verwaltung der Sozialversicherung (heute rund 1,1 % BIP) entfällt"
+  },
+  {
+   "gruppe": "Verwaltung",
+   "position": "Zinsen auf Altschulden",
+   "heute_mrd_2024": 49.3,
+   "heute_pct_bip": 1.12,
+   "nachher_position": "Fonds: Zinsen",
+   "nachher_pct_bip": 1.04,
+   "nachher_mrd_2028": 51.1,
+   "belegt_pct_bip": null,
+   "einfluss": "über den Fonds (Altlast), nicht aus dem laufenden Haushalt"
+  },
+  {
+   "gruppe": "Sicherheit",
+   "position": "Verteidigung",
+   "heute_mrd_2024": 58.6,
+   "heute_pct_bip": 1.34,
+   "nachher_position": null,
+   "nachher_pct_bip": 1.4,
+   "nachher_mrd_2028": 68.8,
+   "belegt_pct_bip": null,
+   "einfluss": "Pfad bis 2,5 % BIP 2035 (Verteidigung und digitale Souveränität, gemeinsam)"
+  },
+  {
+   "gruppe": "Sicherheit",
+   "position": "Öffentliche Ordnung und Sicherheit",
+   "heute_mrd_2024": 70.7,
+   "heute_pct_bip": 1.61,
+   "nachher_position": null,
+   "nachher_pct_bip": 1.34,
+   "nachher_mrd_2028": 65.9,
+   "belegt_pct_bip": null,
+   "einfluss": "übergeordnete Polizei 0,29 + Ordnung, Feuerwehr, Rettung 0,05 + 1,0 (Gemeinden); Gerichte und Vollzug in der Zuordnung nicht getrennt (Annahme)"
+  },
+  {
+   "gruppe": "Wirtschaft",
+   "position": "Wirtschaft, Verkehr, Energie, Landwirtschaft",
+   "heute_mrd_2024": 234.6,
+   "heute_pct_bip": 5.35,
+   "nachher_position": null,
+   "nachher_pct_bip": 3.58,
+   "nachher_mrd_2028": 176.0,
+   "belegt_pct_bip": null,
+   "einfluss": "Wirtschaftsraum, Agrar, Energie, Netze 2,10 + Nahverkehr und Ortsstraßen 1,48; klimaschädliche Subventionen abgebaut"
+  },
+  {
+   "gruppe": "Umwelt",
+   "position": "Umweltschutz, Wasser, Abwasser, Abfall",
+   "heute_mrd_2024": 24.5,
+   "heute_pct_bip": 0.56,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.86,
+   "nachher_mrd_2028": 42.3,
+   "belegt_pct_bip": null,
+   "einfluss": "grenzüberschreitend 0,29 + Gemeinden 0,57 (netto nach Gebühren)"
+  },
+  {
+   "gruppe": "Gemeinwesen",
+   "position": "Wohnen und kommunale Einrichtungen",
+   "heute_mrd_2024": 20.5,
+   "heute_pct_bip": 0.47,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.71,
+   "nachher_mrd_2028": 34.9,
+   "belegt_pct_bip": null,
+   "einfluss": "Gemeinden"
+  },
+  {
+   "gruppe": "Gesundheit",
+   "position": "Gesundheit",
+   "heute_mrd_2024": 329.3,
+   "heute_pct_bip": 7.51,
+   "nachher_position": null,
+   "nachher_pct_bip": 7.36,
+   "nachher_mrd_2028": 361.7,
+   "belegt_pct_bip": null,
+   "einfluss": "Grundversorgung für alle aus Steuern; keine Krankenkassenbeiträge"
+  },
+  {
+   "gruppe": "Kultur",
+   "position": "Freizeit, Sport, Kultur, Religion",
+   "heute_mrd_2024": 46.0,
+   "heute_pct_bip": 1.05,
+   "nachher_position": null,
+   "nachher_pct_bip": 1.22,
+   "nachher_mrd_2028": 60.0,
+   "belegt_pct_bip": null,
+   "einfluss": "Gemeinden"
+  },
+  {
+   "gruppe": "Bildung",
+   "position": "Schulen (Vorschule bis Sekundarstufe)",
+   "heute_mrd_2024": 132.0,
+   "heute_pct_bip": 3.01,
+   "nachher_position": null,
+   "nachher_pct_bip": 3.7,
+   "nachher_mrd_2028": 181.9,
+   "belegt_pct_bip": null,
+   "einfluss": "Gemeinden, Schulen 3,70"
+  },
+  {
+   "gruppe": "Bildung",
+   "position": "Hochschulen, Grundlagenforschung, übrige Bildung",
+   "heute_mrd_2024": 105.8,
+   "heute_pct_bip": 2.41,
+   "nachher_position": null,
+   "nachher_pct_bip": 1.51,
+   "nachher_mrd_2028": 74.2,
+   "belegt_pct_bip": null,
+   "einfluss": "Hochschulen 0,74 + Grundlagenforschung 0,77 (Dach)"
+  },
+  {
+   "gruppe": "Soziale Sicherung",
+   "position": "Alter und Hinterbliebene (Renten, Pensionen)",
+   "heute_mrd_2024": 508.1,
+   "heute_pct_bip": 11.58,
+   "nachher_position": "Fonds: Altrenten über der Dividende",
+   "nachher_pct_bip": 9.15,
+   "nachher_mrd_2028": 449.7,
+   "belegt_pct_bip": null,
+   "einfluss": "Alte Ansprüche über der Dividende als Altlast über den Fonds; neue Ansprüche: Dividende und Pflichtvorsorge (eigenes Konto, 4,1 % BIP, privat)"
+  },
+  {
+   "gruppe": "Soziale Sicherung",
+   "position": "Krankheit und Invalidität (Krankengeld, Pflege, Erwerbsminderung)",
+   "heute_mrd_2024": 143.9,
+   "heute_pct_bip": 3.28,
+   "nachher_position": null,
+   "nachher_pct_bip": 1.14,
+   "nachher_mrd_2028": 56.0,
+   "belegt_pct_bip": null,
+   "einfluss": "Pflege (Teilkasko) 0,85 + Invalidität (Grundbedarf) 0,29"
+  },
+  {
+   "gruppe": "Soziale Sicherung",
+   "position": "Arbeitslosigkeit",
+   "heute_mrd_2024": 71.7,
+   "heute_pct_bip": 1.64,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.41,
+   "nachher_mrd_2028": 20.2,
+   "belegt_pct_bip": null,
+   "einfluss": "Grundbedarf; die Dividende trägt mit"
+  },
+  {
+   "gruppe": "Soziale Sicherung",
+   "position": "Familie und Kinder, Wohnen, Grundsicherung, übrige",
+   "heute_mrd_2024": 159.4,
+   "heute_pct_bip": 3.63,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.7,
+   "nachher_mrd_2028": 34.4,
+   "belegt_pct_bip": null,
+   "einfluss": "Waisen 0,05 + Härtefall 0,65; Kindergeld, Wohngeld und Grundsicherung gehen in der Dividende auf"
+  },
+  {
+   "gruppe": "Dividende",
+   "position": "– (neu)",
+   "heute_mrd_2024": null,
+   "heute_pct_bip": null,
+   "nachher_position": "Dividende",
+   "nachher_pct_bip": 7.34,
+   "nachher_mrd_2028": 360.8,
+   "belegt_pct_bip": 3.74,
+   "einfluss": "Transformationsdividende für alle Erwachsenen, halb für Kinder; DE 2028 384 € je Erwachsenem und Monat (Kaufkraft 2026)"
+  }
+ ],
+ "summen": {
+  "einnahmen_heute_pct": 48.77,
+  "ausgaben_heute_pct": 48.77,
+  "einnahmen_nachher_pct": 43.8,
+  "ausgaben_nachher_pct": 43.68,
+  "steuern_nachher_pct": 33.61,
+  "altlast_de_2028": 10.19
+ },
+ "dividendenpfad": {
+  "dividende_2028": 7.34,
+  "dividende_2060": 3.55,
+  "verteidigung": -1.1,
+  "lenkung_und_verbrauch": -2.64,
+  "darin_co2": -1.42,
+  "darin_verbrauchsteuern": -0.81,
+  "darin_label": -0.42,
+  "netz_alterung": -1.31,
+  "progression": 1.26,
+  "rest": 0.0
+ },
+ "dividende_eur": {
+  "geltend": {
+   "2028": 384,
+   "2035": 309,
+   "2045": 261,
+   "2060": 256
+  },
+  "belegt_mittel": {
+   "2028": 195,
+   "2035": 108,
+   "2045": 43,
+   "2060": -7
+  }
+ },
+ "dividende_pct_belegt_mittel": {
+  "2028": 3.74,
+  "2035": 1.91,
+  "2045": 0.69,
+  "2060": -0.1
+ },
+ "pflichtvorsorge_pct_bip": 4.1
+}

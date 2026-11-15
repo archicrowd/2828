@@ -1,5 +1,5 @@
 {
- "version": "v4.90",
+ "version": "v4.94",
  "status": "interne Prüfrechnung zu Befund B-1; Deckung unverändert, nicht veröffentlichen bis zur Entscheidung (Option C, E1–E5)",
  "vgr_2024_anteile_pct_bip": {
   "D2_D5_D91": 23.08,
@@ -25,9 +25,9 @@
      "luecke_pct_bip": -2.34
     },
     "uebrige": {
-     "belegt_pct_bip": 3.39,
+     "belegt_pct_bip": 3.26,
      "modell_pct_bip": 3.93,
-     "luecke_pct_bip": -0.54
+     "luecke_pct_bip": -0.67
     },
     "co2_2028": {
      "belegt_pct_bip": 1.04,
@@ -40,9 +40,9 @@
      "luecke_pct_bip": -0.37
     }
    },
-   "luecke_pct_bip": -3.59,
-   "dividende_eur_erw_monat": -188,
-   "dividende_2028_mit_kinderanteil_eur": 186,
+   "luecke_pct_bip": -3.72,
+   "dividende_eur_erw_monat": -194,
+   "dividende_2028_mit_kinderanteil_eur": 180,
    "hilfsgroessen": {
     "unternehmen_basis_mrd_2025": 285,
     "co2_mt_2028": 511,
@@ -57,9 +57,9 @@
      "luecke_pct_bip": -2.05
     },
     "uebrige": {
-     "belegt_pct_bip": 3.39,
+     "belegt_pct_bip": 3.26,
      "modell_pct_bip": 3.93,
-     "luecke_pct_bip": -0.54
+     "luecke_pct_bip": -0.67
     },
     "co2_2028": {
      "belegt_pct_bip": 1.07,
@@ -72,9 +72,9 @@
      "luecke_pct_bip": -0.19
     }
    },
-   "luecke_pct_bip": -3.1,
-   "dividende_eur_erw_monat": -162,
-   "dividende_2028_mit_kinderanteil_eur": 211,
+   "luecke_pct_bip": -3.22,
+   "dividende_eur_erw_monat": -168,
+   "dividende_2028_mit_kinderanteil_eur": 204,
    "hilfsgroessen": {
     "unternehmen_basis_mrd_2025": 326,
     "co2_mt_2028": 528,
@@ -89,9 +89,9 @@
      "luecke_pct_bip": -1.62
     },
     "uebrige": {
-     "belegt_pct_bip": 3.39,
+     "belegt_pct_bip": 3.26,
      "modell_pct_bip": 3.93,
-     "luecke_pct_bip": -0.54
+     "luecke_pct_bip": -0.67
     },
     "co2_2028": {
      "belegt_pct_bip": 1.11,
@@ -104,9 +104,9 @@
      "luecke_pct_bip": -0.01
     }
    },
-   "luecke_pct_bip": -2.45,
-   "dividende_eur_erw_monat": -128,
-   "dividende_2028_mit_kinderanteil_eur": 243,
+   "luecke_pct_bip": -2.57,
+   "dividende_eur_erw_monat": -134,
+   "dividende_2028_mit_kinderanteil_eur": 237,
    "hilfsgroessen": {
     "unternehmen_basis_mrd_2025": 385,
     "co2_mt_2028": 544,

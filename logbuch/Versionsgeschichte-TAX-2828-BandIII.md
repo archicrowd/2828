@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.93**
+Stand: 24. Oktober 2026 · Modellstand **v4.94**
 
 ---
 
@@ -5357,6 +5357,34 @@ Rechtsstaatlichkeit (Weltbank Data360).
 **Datenquelle:** eigene Kette; Weltbank WGI 2025. **Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Auftrag E5; Korrektur 90 beim
 Abgleich mit `KENNZAHLEN.md`.
 
+### v4.94 — Haushaltsplan Deutschland vorher – nachher; Korrektur 91
+
+**Art der Änderung: MINOR (neue Prüfrechnung und Darstellung), geltende Zahlen unverändert.** 15. November 2026.
+
+**Auftrag der Initiative (15.11.2026):** Wohin verschwinden die Budgets? Eine verschwindende Dividende ist nicht Ziel des Projekts; Gewinne aus
+Automatisierung und Erbe sollen einfließen. Haushaltsplan vorher – nachher für Deutschland mit Spalte für den Einfluss der Regeln, Einnahmen nach
+Steuer- und Abgabenart, Ausgaben nach Arten, Grafik mit Flusspfeilen.
+
+**Rechnung:** `modell/haushaltsplan_de.py` (+ `.toml`) → `haushaltsplan_de.json`; Seite `dokumente/werkzeuge/haushaltsplan_seite.py` (Artefakt,
+privat, mit interner Spalte); Vorlage `projekt/Haushaltsplan-Deutschland-2026-11-15.md`.
+- **Heute:** Eurostat 2024 (gov_10a_taxag, gov_10a_exp, gov_10a_main; neu abgerufen). Ausgaben 48,8 % BIP, Einnahmen 46,1 % + Defizit 2,6 %.
+- **Nachher 2028:** Steuern 33,6 % BIP und Fonds 10,19 % (Deutschland), zusammen 43,7 %; Sozialbeiträge (17,3 %) entfallen.
+- **Dividendenpfad (geltend) 7,34 → 3,55 % BIP 2028–2060:** Verteidigung −1,10; CO₂ −1,42; Verbrauchsteuern −0,81; Label −0,42;
+  Netz/Alterung −1,31; Progression +1,26.
+- **Automatisierung und Erbe:** stehen im Modell als feste Anteile am BIP. Erste Abschätzung rund +1 Punkt um 2045 (Annahmen, nicht durch die
+  Kette gerechnet).
+
+**Korrektur 91:** siehe Tabelle (Zölle in „Übrige“).
+- `e5_varianten` liest die Lücken jetzt aus `einnahmen_belege.json` und hält nicht tragfähige Varianten fest, statt abzubrechen.
+- `netz33.py`: Euro je Punkt Dividende ohne Division durch einen gerundeten Wert nahe null (`eur_je_punkt`); die geltenden Werte sind unverändert
+  (geprüft: `netz33.json` ohne Änderung).
+- Neu belegt (mittel): Dividende 195 / 108 / 43 / −7 € (2028 / 2035 / 2045 / 2060).
+
+**Prüfpunkt:** Grundsteuer möglicherweise zugleich in „Übrige“ (Kernmodell) und in der Grundstücksabgabe (bis 0,37 % BIP).
+
+**Datenquelle:** Eurostat 2024 (vorläufig); Böckler Impuls 12/2017 (DIW/WSI, Erbschaften); eigene Kette. **Bewegte Zahl:** keine geltende; intern
+Lücke B-1 −3,09 → −3,22 % BIP. **Wodurch aufgefallen:** neuer Eurostat-Stand beim Haushaltsplan (D2121 = 0).
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5399,6 +5427,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 88 | Erbschaftsbasis (v4.32–v4.81, `vermoegensbasis33`, Kennzahlen): 150,5 Mrd. € als „steuerpflichtiger Erwerb“ bezeichnet, Status „Basis im Bereich der Daten“ | steuerlich berücksichtigtes Vermögen vor Freibeträgen (Destatis); Status offen, 2024 ergänzt | Prüfbericht 14.11.2026, B-2 |
 | 89 | Unternehmenszeile der Prüfrechnung B-1 (v4.87, `einnahmen_belege`, intern): VGR-Aufkommen D51B (125,1 Mrd. €) als Aufkommen nur der Kapitalgesellschaften gelesen, Basis 417 Mrd. €, belegt 3,41 % BIP | D51B enthält die ganze Gewerbesteuer (Personengesellschaften in S.11); Basis aus KSt und Gewerbesteuer-Anteil 260–283 Mrd. € (2025), belegt 2,37 % BIP, Lücke der vier Positionen −3,10 statt −2,06 % BIP | Abgleich mit der Gewerbesteuerstatistik, v4.88 |
 | 90 | Vorlage Unternehmensbasis (v4.88–v4.90, Option C zu E5): „weitere Einnahmen, z. B. Bodenwertabgabe, Abbau klimaschädlicher Subventionen“ | beide stehen schon in der Deckung (0,82 / 0,48 % BIP); weitere Einnahmen nur über Tarif, Label, Erbschaftsfreibetrag | Arbeit an der Vorlage E5, v4.93 |
+| 91 | Belegrechnung B-1 (v4.87–v4.93, `einnahmen_belege`, intern): Position Übrige mit D212 einschließlich Zöllen (5,5 Mrd. €) | Zölle sind Eigenmittel der EU (neuerer Eurostat-Stand D2121 = 0); Übrige belegt 3,26 statt 3,39 % BIP, Lücke −3,22 statt −3,09; Dividende belegt 2028 195 statt 212 € | Haushaltsplan Deutschland, Abgleich mit dem neuen Eurostat-Stand, v4.94 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5438,7 +5467,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.93
+## 7 | Offene Punkte, Stand v4.94
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

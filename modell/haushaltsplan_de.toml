@@ -1,0 +1,60 @@
+# Haushaltsplan Deutschland vorher – nachher (modell/haushaltsplan_de.py, Logbuch v4.94). Prüfrechnung, Darstellung.
+# Vorher: Gesamtstaat (Bund, Länder, Gemeinden, Sozialversicherung) 2024, Eurostat, Mio. € nominal, vorläufig; abgerufen 15.11.2026.
+# Nachher: Stand C „Das Goldene Drittel“, geltende Rechnung 2028 (% BIP; Euro nominal 2028 mit BIP 2028 4.914,9 Mrd. €, parameter.toml).
+# Belegt: interne Prüfrechnung B-1 (einnahmen_belege.json, e5_varianten.json), mittlerer Fall; nicht veröffentlichen (Beschluss 15.11.2026).
+version = "v4.94"
+bip_2024_mio = 4386940.0
+bip_2028_mrd = 4914.9
+url_steuern = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_taxag?format=JSON&geo=DE&time=2024&unit=MIO_EUR&sector=S13"
+url_ausgaben = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_exp?format=JSON&geo=DE&time=2024&unit=MIO_EUR&sector=S13&na_item=TE"
+url_haupt = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_main?format=JSON&geo=DE&time=2024&unit=MIO_EUR&sector=S13"
+
+[eurostat_2024]   # Mio. €
+D51A_C1 = 396530    # Steuern auf Einkommen der privaten Haushalte (Lohnsteuer, veranlagte ESt, Soli, Kapitalertrag- und Abgeltungsteuer; Zuordnung eigene Kenntnis)
+D51E = 15174        # sonstige Einkommensteuern
+D51B_C2 = 125073    # Gewinnsteuern der Kapitalgesellschaften (KSt, Soli darauf, Gewerbesteuer; Korrektur 89)
+D211 = 298764       # Mehrwertsteuer
+D2122C = 28749      # Verbrauchsteuern auf Einfuhren
+D214A = 36022       # Verbrauchsteuern (Energie, Strom, Tabak, Alkohol, Kaffee)
+D214G = 19042       # Versicherungsteuer
+D214B = 12750       # Stempel- und Verkehrsteuern (v. a. Grunderwerbsteuer; eigene Kenntnis)
+D214_rest = 6688    # Vergnügung 900, Lotterie und Wetten 3.094, besondere Dienstleistungen 1.877 (Luftverkehr), Umsatz 248, sonstige 569
+D29A = 16222        # Grundsteuer
+D29F = 18628        # Abgaben auf Verschmutzung (Emissionshandel)
+D29_rest = 6837     # Nutzung von Anlagen 2.310, Lizenzen 218, MwSt-Pauschalausgleich 320, sonstige 3.989
+D59 = 16675         # sonstige laufende Steuern (Kfz-Steuer der Haushalte 7.795, sonstige 8.880)
+D91 = 9991          # Vermögensübertragungsteuern (Erbschaft- und Schenkungsteuer)
+D611 = 302350       # tatsächliche Sozialbeiträge der Arbeitgeber
+D613CE = 280150     # Pflichtbeiträge der Arbeitnehmer
+D613CN = 106054     # Pflichtbeiträge Nichterwerbstätiger (u. a. Rentner, für Arbeitslose)
+D613CS = 11809      # Pflichtbeiträge Selbständiger
+D613V = 8233        # freiwillige Beiträge
+D612 = 48153        # unterstellte Sozialbeiträge (Versorgung der Beamten)
+TR = 2024422        # Einnahmen insgesamt
+B9 = -115295        # Finanzierungssaldo
+D41PAY = 45828      # Zinsausgaben
+# Ausgaben nach Aufgaben (COFOG)
+GF01 = 277890
+GF0104 = 43152      # Grundlagenforschung
+GF0107 = 49280      # Schuldendienst
+GF02 = 58583
+GF03 = 70657
+GF04 = 234556
+GF0405 = 115692     # Verkehr
+GF05 = 24526
+GF06 = 20503
+GF07 = 329254
+GF08 = 45985
+GF09 = 194584
+GF0901 = 64651
+GF0902 = 67329
+GF0904 = 33864
+GF10 = 883179
+GF1001 = 143927
+GF1002 = 427228
+GF1003 = 80844
+GF1004 = 83763
+GF1005 = 71737
+GF1006 = 19210
+GF1007 = 26811
+TE = 2139717

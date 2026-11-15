@@ -33,7 +33,10 @@ def main():
     E = dict(version=P["version"], status="Variantenrechnung zu E5; geltende Rechnung unverändert", geltend=lies(W), varianten={},
              hinweis="Rückwirkung über die Altrenten über der Dividende (Z) enthalten; Lösungsbereich in der Kopie erweitert (loeserbereich); "
                      "CO₂-Änderung wirkt nur 2028, weil projektion33 den CO₂-Pfad selbst rechnet")
-    for name, aend in P["varianten"].items():
+    EB = json.loads((W / "daten" / "aggregate" / "einnahmen_belege.json").read_text(encoding="utf-8"))
+    namen = {"unternehmen": "Unternehmen und Plattformen", "uebrige": "Übrige Steuern", "co2_2028": "CO₂-Preis", "erbschaft": "Erbschaften"}
+    for name, fall in P["varianten"].items():
+        aend = {namen[k]: v["luecke_pct_bip"] for k, v in EB["faelle"][fall]["positionen"].items()}
         with tempfile.TemporaryDirectory() as t:
             k = Path(t) / "repo"
             shutil.copytree(W, k, ignore=shutil.ignore_patterns(".git", "roh", "*.pdf", "docs", "seite", "deckung_varianten.toml"))
@@ -45,15 +48,20 @@ def main():
                 f.write_text(s.replace(alt, neu), encoding="utf-8")
             (k / "modell" / "deckung_varianten.toml").write_text(
                 "[aenderung_pct_bip]\n" + "".join(f'"{a}" = {v}\n' for a, v in aend.items()), encoding="utf-8")
+            fehler = None
             for st in P["stufen"]:
                 r = subprocess.run([sys.executable, st], cwd=k, capture_output=True, text=True)
                 if r.returncode != 0:
-                    raise SystemExit(f"{name}: {st} fehlgeschlagen: {r.stderr[-600:]}")
-            E["varianten"][name] = dict(aenderung_pct_bip=aend, summe_pct_bip=round(sum(aend.values()), 2), **lies(k))
+                    fehler = f"{st}: {r.stderr.strip().splitlines()[-1][:200]}"
+                    break
+            if fehler:   # z. B. Dividende erreicht in einem Jahr null: Variante nicht tragfähig
+                E["varianten"][name] = dict(aenderung_pct_bip=aend, summe_pct_bip=round(sum(aend.values()), 2), tragfaehig=False, fehler=fehler)
+                continue
+            E["varianten"][name] = dict(aenderung_pct_bip=aend, summe_pct_bip=round(sum(aend.values()), 2), tragfaehig=True, **lies(k))
     (W / "daten" / "aggregate" / "e5_varianten.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print("geltend", E["geltend"])
     for n, v in E["varianten"].items():
-        print(n, v["summe_pct_bip"], v["dividende_erw_eur2026"], v["dividende_pct_bip"], "Fonds", v["fonds_beitrag_pct_bip"])
+        print(n, v["summe_pct_bip"], v.get("dividende_erw_eur2026", v.get("fehler")), v.get("dividende_pct_bip"), "Fonds", v.get("fonds_beitrag_pct_bip"))
     return 0
 
 
