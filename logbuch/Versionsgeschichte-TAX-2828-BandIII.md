@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.86**
+Stand: 24. Oktober 2026 · Modellstand **v4.87**
 
 ---
 
@@ -5150,6 +5150,36 @@ große Konzerne erfasst. Teil-Doppelzählung mit R6 möglich. Nicht in der Decku
 **Datenquelle:** HM Treasury/HMRC DST Review 2025 (amtlich), BMF Österreich 2024 (amtlich), Club Patrimoine 2023, Corriere Comunicazioni 2026,
 UN-Musterartikel 12B. **Bewegte Zahl:** keine geltende; neu der Plattformanteil als Variante. **Wodurch aufgefallen:** Frage der Initiative.
 
+### v4.87 — Beleg der vier Einnahmepositionen (Prüfbefund B-1): Lücke rund 2 Punkte des BIP
+
+**Art der Änderung: MINOR (neue Prüfrechnung), geltende Zahlen unverändert.** 15. November 2026.
+
+**Auftrag der Initiative (15.11.2026):** Befund B-1 und die vier Positionen weiter recherchieren; Freigabe für Downloads. Aus der Arbeitsumgebung
+sind Statistikportale weiter nicht erreichbar; gelesen wurde über den Abrufweg der Webseiten (Eurostat-API, UBA, Destatis, Sekundärquellen).
+
+**Rechnung:** `modell/einnahmen_belege.py` (+ `.toml`) → `daten/aggregate/einnahmen_belege.json`; Entscheidungsvorlage
+`projekt/Einnahmen-Belege-2026-11-15.md`. Quellen Q24–Q28 in `daten/quellen.csv`, Eurostat-Werte in `eingangswerte.csv`.
+
+**Ergebnis (% BIP, mittel; Spanne):**
+- Unternehmen 3,41 statt 4,42 (−1,01).
+- Übrige 3,39 statt 3,93 (−0,54).
+- CO₂ 2028 1,07 statt 1,38 (−0,31).
+- Erbschaft 0,97 statt 1,16 (−0,19).
+- Zusammen −2,06 (−1,48 bis −2,48) = −108 € je Erwachsenem und Monat 2028; Dividende mit Kinderanteil rund 262 statt 364 €.
+
+**Befunde:**
+- Die Position Übrige entspricht der VGR-Summe D212+D214+D29+D59 und enthält damit die Erlöse aus dem Emissionshandel (D29F, 0,42 % BIP);
+  der CO₂-Preis zählt sie ein zweites Mal. Das ist eine wahrscheinliche Doppelzählung, als Korrektur vorgemerkt bei Übernahme.
+- Die Unternehmensbasis des Modells (rund 563 Mrd. €) liegt gut ein Drittel über dem heute besteuerten Gewinnaufkommen der
+  Kapitalgesellschaften (rund 417 Mrd. €). Die Definition fehlt (B23).
+- Der Kassenvergleich des Prüfers für die übrigen Steuern war zu eng; die VGR deckt die 3,93 % fast.
+
+**Zur Ablage der Downloads:** Rohdateien bleiben nach `CLAUDE.md` außerhalb des Repositorys (`daten/roh/`, nicht versioniert); Werte mit Abruf-URL und
+Datum stehen in `eingangswerte.csv` und `quellen.csv`, Drittdateien mit Prüfsumme in `daten/herkunft/uploads-manifest.csv`.
+
+**Datenquelle:** Eurostat gov_10a_taxag 2024; UBA/DEHSt 2026; Destatis PM 306/2026; Sekundärquellen gekennzeichnet. **Bewegte Zahl:** keine
+geltende. **Wodurch aufgefallen:** Prüfbefund B-1 vom 14.11.2026.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5229,7 +5259,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.86
+## 7 | Offene Punkte, Stand v4.87
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).

@@ -1,0 +1,46 @@
+# Beleg der vier Einnahmepositionen aus Prüfbefund B-1 (14.11.2026): modell/einnahmen_belege.py (Logbuch v4.87). Prüfrechnung, ändert die Deckung nicht.
+# Alle Werte mit Quelle und Abrufdatum 15.11.2026. Fälle vorsichtig / mittel / hoch.
+version = "v4.87"
+satz = 0.33
+bip_2024_mio = 4386940.0          # Eurostat nama_10_gdp, Stand 10/2026 (laender_2024.csv, Spalte eurostat_2026_10); gleicher Stand wie gov_10a_taxag
+bip_2028_mrd = 4914.9             # parameter.toml de_bip_2028
+
+[modell]   # Werte der Gesamtrechnung in % BIP (KENNZAHLEN.md, Tabelle der Deckung; systemvarianten.deckung)
+unternehmen = 4.42
+uebrige = 3.93
+erbschaft = 1.16
+co2 = 1.67                        # 1,31 (100 €/t) + 0,36 (Pfad bis 150 €/t, voll ab Jahr 5)
+co2_2028 = 1.38                   # 1,31 + Pfadanteil 2028 (3 von 15 Modell-Mrd.; kern/modell-2828.py bausteine)
+
+[vgr_2024]   # Eurostat gov_10a_taxag, DE, 2024, S13_S212, Mio. € (vorläufig), abgerufen 15.11.2026 über die Eurostat-API
+url = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_taxag?format=JSON&geo=DE&time=2024&unit=MIO_EUR&sector=S13_S212"
+D2_D5_D91 = 1012663
+D211 = 298764                     # Mehrwertsteuer
+D212 = 34266                      # Einfuhrabgaben ohne MwSt (Zölle 5.517, Verbrauchsteuern auf Einfuhren 28.749)
+D214 = 74502                      # Produktsteuern ohne MwSt: Verbrauchsteuern 36.022, Stempel (Grunderwerb) 12.750, Versicherung 19.042, Lotterie 3.094, übrige
+D29 = 41688                       # sonstige Produktionsabgaben: Grund 16.222, Anlagen 2.310, Umwelt (Emissionshandel) 18.628, übrige
+D29F = 18628                      # Abgaben auf Verschmutzung: Erlöse aus EU-ETS und nationalem Emissionshandel
+D51B_C2 = 125073                  # Steuern auf Einkommen und Gewinne von Kapitalgesellschaften (KSt, Soli darauf, Gewerbesteuer der Kapitalgesellschaften)
+D59 = 16675                       # sonstige laufende Steuern (Kfz der Haushalte 7.795, übrige 8.880)
+D91 = 9991                        # Vermögensübertragungssteuern (Erbschaft- und Schenkungsteuer)
+
+[unternehmen]
+# Grundlage: heutiges Aufkommen der Kapitalgesellschaften (VGR) geteilt durch den heutigen Satz (KSt 15 % + Soli + Gewerbesteuer, rund 30 %; eigene Kenntnis);
+# dann 33 %. Dazu Kundenort aus R6 (OECD-Länderberichte, DE Median +8, Spanne +5 bis +14 Mrd. € bei 28 %) und Plattformen (plattformen33.json).
+satz_heute = [0.31, 0.30, 0.29]
+r6_mrd_28 = [5.0, 8.0, 14.0]
+plattformen_pct_bip = [0.025, 0.059, 0.144]
+
+[co2]
+# Bepreiste Emissionen 2025: EU-ETS 1 ortsfeste Anlagen rund 264 Mt, Luftverkehr 8,8 Mt (DEHSt nach Solarserver 8.7.2026), Seeverkehr rund 11 Mt (2024);
+# nationaler Emissionshandel rund 294 Mio. Zertifikate zu 55 € (UBA, PM Januar 2026). Erlöse 2025 zusammen 21,4 Mrd. € (UBA).
+mt_2025 = 578.0
+rueckgang_je_jahr = [0.04, 0.03, 0.02]   # Annahme; Gesamtemissionen 2025 −0,1 % (UBA 14.3.2026), Zielpfad verlangt rund −42 Mt je Jahr
+preis_2028 = 100.0                       # €/t, Regel des Konzepts (nominal angenommen)
+
+[erbschaft]
+# Steuerlich berücksichtigtes Vermögen (Destatis): 2022 101,4 (rechnerisch aus 2023 / 1,198), 2023 121,5, 2024 113,2 (rechnerisch), 2025 150,5 Mrd. €.
+werte_mrd = { 2022 = 101.4, 2023 = 121.5, 2024 = 113.2, 2025 = 150.5 }
+wachstum = 0.03                          # Fortschreibung nominal je Jahr (wie vermoegensbasis33)
+anteil_ueber_freibetrag = [0.85, 0.90, 0.95]   # Anteil des Werts über 100.000 € je Erwerb (Annahme; Fallzahlen nicht abgerufen)
+nicht_erfasst_zuschlag = [0.0, 0.15, 0.30]     # Erwerbe über 100.000 € innerhalb heutiger Freibeträge, die die Statistik nicht zeigt (Annahme)

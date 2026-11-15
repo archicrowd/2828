@@ -117,7 +117,7 @@ sie nicht. Einkommen: Tarif am Grundbedarf.
 | Große Vermögen | 0,97 | Mindeststeuer (anrechenbar) + Vermögensteuer 1 % ab 2 Mio. € | statisch 1,94 % BIP mit DIW-Spitze, 0,79 % nach Bundesbank-Befragung (`vermoegensbasis33.json`) | Ausweichen als Empfindlichkeit (`ausweichen33.json`); oberer Rand der Literatur nicht gedeckt (dritte Prüfung, M3) |
 | CO₂-Preis | 1,67 | 100 €/t netto + Pfad bis 150 €/t | Emissionspfad der Gesamtrechnung | geltend; **Beleg offen** (Prüfbefund B-1: Emissionen und Preis 2028 ausweisen; Überschlag des Prüfers 1,2–1,5 % BIP) |
 | Subventionsabbau | 0,48 | Abbau klimaschädlicher Subventionen (20 Mrd. €) | UBA-Liste (Annahme zur Abbauquote) | geltend |
-| Übrige Steuern | 3,93 | Energie, Tabak, Alkohol u. a. (165 Mrd. €) | heutige Verbrauchsteuern | geltend; **Beleg offen** (Prüfbefund B-1 vom 14.11.2026: Kassenstatistik 2024 ergibt nach Überschlag des Prüfers rund 100–110 Mrd. €; Abgrenzung VGR gegen Kasse und Überschneidung mit CO₂-Preis und Sonderstufe klären) |
+| Übrige Steuern | 3,93 | Energie, Tabak, Alkohol u. a. (165 Mrd. €) | heutige Verbrauchsteuern | geltend; v4.87: entspricht VGR 2024 D212+D214+D29+D59 = 3,81 % BIP, darin Emissionshandel 0,42 % (wahrscheinliche Doppelzählung mit dem CO₂-Preis; `einnahmen_belege.json`); **Beleg offen** (Prüfbefund B-1 vom 14.11.2026: Kassenstatistik 2024 ergibt nach Überschlag des Prüfers rund 100–110 Mrd. €; Abgrenzung VGR gegen Kasse und Überschneidung mit CO₂-Preis und Sonderstufe klären) |
 | Grundstücksabgabe | 0,82 | Bodenwertabgabe (Ebene B, Satz bis 1 %) | Bodenwert | geltend |
 
 ## Erwartete Dynamik, mittlerer Fall (v4.84; seit v4.85 in der geltenden Rechnung)

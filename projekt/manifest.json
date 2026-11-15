@@ -1,6 +1,6 @@
 {
  "projekt": "TAX 28:28",
- "modellstand": "v4.86",
+ "modellstand": "v4.87",
  "fassung_gesamtkonzept": "12. Oktober 2026",
  "autor": "Initiative 28:28",
  "kontakt": "2828@archicrowd.de",
@@ -331,11 +331,11 @@
   {
    "id": "B31",
    "name": "Drittel-System: Zeitpfad, Haushalte, Webseitenentwurf",
-   "pfad": "modell/projektion33.py;modell/projektion33.toml;daten/aggregate/projektion33.json;modell/haushalte33.py;modell/haushalte33.toml;daten/aggregate/haushalte33.json;daten/aggregate/haushalte33_raster.json;seite/werkzeuge/entwurf33_bau.py;seite/entwurf/konzept33/de.html;seite/entwurf/QUELLEN-33.md;projekt/Drittel-Erzaehlung-Trends-2026-10-17.md;modell/einwanderung33.py;modell/einwanderung33.toml;daten/aggregate/einwanderung33.json;modell/dynamik33.py;modell/dynamik33.toml;daten/aggregate/dynamik33.json;modell/netz33.py;modell/netz33.toml;daten/aggregate/netz33.json;dokumente/werkzeuge/konzept33-bau.js;dokumente/entwurf/TAX-Drittel-Konzept.docx;dokumente/entwurf/TAX-Drittel-Konzept.pdf;dokumente/entwurf/TAX-Drittel-Kurzfassung.docx;dokumente/entwurf/TAX-Drittel-Kurzfassung.pdf;modell/moeglichkeitsraum33.py;modell/moeglichkeitsraum33.toml;daten/aggregate/moeglichkeitsraum_2024.json;daten/aggregate/moeglichkeitsraum33.json;modell/neustart33.py;modell/neustart33.toml;daten/aggregate/neustart33.json;projekt/Neustartverfahren-2026-10-17.md;seite/werkzeuge/drittel_bau.py;seite/werkzeuge/drittel_texte.py;seite/werkzeuge/kommunen_texte.py;seite/werkzeuge/stand_texte.py;seite/werkzeuge/forschung_bau.py;seite/werkzeuge/forschung_en.py;dokumente/werkzeuge/working_paper_bau.py;dokumente/working-paper/Golden-Third-Working-Paper.pdf;projekt/Pruefprogramm-Delta-v4.42-v4.63.md;projekt/Stellungnahme-Nachpruefung-2026-11-02.md;beitraege/kvribbeck-2028/pruefung4/PRUEFBERICHT-2026-11-02.md;seite/werkzeuge/schrift/SpaceGrotesk-Bold.ttf;seite/stand-c/de.html;seite/stand-c/en.html;seite/stand-c/fr.html;seite/stand-c/it.html;seite/stand-c/es.html;seite/stand-c/pl.html;modell/wirtschaftsdynamik.py;modell/wirtschaftsdynamik.toml;daten/aggregate/wirtschaftsdynamik.json;projekt/Wirtschaftsdynamik-Thesen-2026-11-14.md;modell/dynamik_geltend.py;daten/aggregate/dynamik_geltend.json;modell/plattformen33.py;modell/plattformen33.toml;daten/aggregate/plattformen33.json;projekt/Plattformen-am-Nutzungsort-2026-11-15.md",
+   "pfad": "modell/projektion33.py;modell/projektion33.toml;daten/aggregate/projektion33.json;modell/haushalte33.py;modell/haushalte33.toml;daten/aggregate/haushalte33.json;daten/aggregate/haushalte33_raster.json;seite/werkzeuge/entwurf33_bau.py;seite/entwurf/konzept33/de.html;seite/entwurf/QUELLEN-33.md;projekt/Drittel-Erzaehlung-Trends-2026-10-17.md;modell/einwanderung33.py;modell/einwanderung33.toml;daten/aggregate/einwanderung33.json;modell/dynamik33.py;modell/dynamik33.toml;daten/aggregate/dynamik33.json;modell/netz33.py;modell/netz33.toml;daten/aggregate/netz33.json;dokumente/werkzeuge/konzept33-bau.js;dokumente/entwurf/TAX-Drittel-Konzept.docx;dokumente/entwurf/TAX-Drittel-Konzept.pdf;dokumente/entwurf/TAX-Drittel-Kurzfassung.docx;dokumente/entwurf/TAX-Drittel-Kurzfassung.pdf;modell/moeglichkeitsraum33.py;modell/moeglichkeitsraum33.toml;daten/aggregate/moeglichkeitsraum_2024.json;daten/aggregate/moeglichkeitsraum33.json;modell/neustart33.py;modell/neustart33.toml;daten/aggregate/neustart33.json;projekt/Neustartverfahren-2026-10-17.md;seite/werkzeuge/drittel_bau.py;seite/werkzeuge/drittel_texte.py;seite/werkzeuge/kommunen_texte.py;seite/werkzeuge/stand_texte.py;seite/werkzeuge/forschung_bau.py;seite/werkzeuge/forschung_en.py;dokumente/werkzeuge/working_paper_bau.py;dokumente/working-paper/Golden-Third-Working-Paper.pdf;projekt/Pruefprogramm-Delta-v4.42-v4.63.md;projekt/Stellungnahme-Nachpruefung-2026-11-02.md;beitraege/kvribbeck-2028/pruefung4/PRUEFBERICHT-2026-11-02.md;seite/werkzeuge/schrift/SpaceGrotesk-Bold.ttf;seite/stand-c/de.html;seite/stand-c/en.html;seite/stand-c/fr.html;seite/stand-c/it.html;seite/stand-c/es.html;seite/stand-c/pl.html;modell/wirtschaftsdynamik.py;modell/wirtschaftsdynamik.toml;daten/aggregate/wirtschaftsdynamik.json;projekt/Wirtschaftsdynamik-Thesen-2026-11-14.md;modell/dynamik_geltend.py;daten/aggregate/dynamik_geltend.json;modell/plattformen33.py;modell/plattformen33.toml;daten/aggregate/plattformen33.json;projekt/Plattformen-am-Nutzungsort-2026-11-15.md;modell/einnahmen_belege.py;modell/einnahmen_belege.toml;daten/aggregate/einnahmen_belege.json;projekt/Einnahmen-Belege-2026-11-15.md",
    "stand": "B",
    "status": "geprueft",
    "pruefung": "modell/projektion33.py;modell/haushalte33.py",
-   "anmerkung": "v3.47: Trends 2028–2060 (Verkehr, CO₂, Verbrauchsteuern, Gesundheit), Haushalte heute gegen 33F (2028/2035), deutscher Webseitenentwurf zur Prüfung v3.48: System 33R (Label 5/11/17/25), Weitergabe ≥ 80 %, Rentenkürzung um Beiträge, Einwanderung v3.49: Progression an den Stufen (Korrektur 61), Beschäftigung/KI/Kapitalverschiebung, Leistungspaket und Namen v3.50: Starkes Netz als Grundversorgung (Gesundheit, Pflege, Mindestrente/Volksrente, Invalidität, Arbeitslosigkeit) v3.51: Beschluss Mindestrente mit Pflichtvorsorge 10 %, Netz als Grundversorgung geltend für den Entwurf; Konzept als Word-Datei v3.52: Möglichkeitsraum (30 Staaten) v3.54: Neustartverfahren v3.55: Webseitenentwurf nach Vorbild der veröffentlichten Seite (seite/entwurf/drittel), Neuseeland gestrichen v3.56: Wortmarke Das Goldene Drittel, Rechner mehr im Geldbeutel mit Zeitstrahl v3.57: Textänderungen der Initiative, Kontakt tax.better@archicrowd.de v3.58: Sie-Form, Einleitung, 9 von 10 Beschäftigten (Gegenprobe haushalte33) v4.0: Fassung 4.0 in sechs Sprachen (seite/stand-c), Kurzfassung, Upload-Paket v4.83: Wirtschaftsdynamik, sechs Kanäle als Thesen mit Werten (Prüfrechnung) v4.84: mittlerer Fall als erwartete Dynamik ausgewiesen (Konzept 6.5, Kennzahlen, Working Paper); Kanal Fachkräfte v4.85: erwartete Dynamik (mittel, mit Nachfrage) in der geltenden Rechnung; Variante Fachkräftevisum v4.86: Plattformen am Nutzungsort mit Untergrenze (Variante)"
+   "anmerkung": "v3.47: Trends 2028–2060 (Verkehr, CO₂, Verbrauchsteuern, Gesundheit), Haushalte heute gegen 33F (2028/2035), deutscher Webseitenentwurf zur Prüfung v3.48: System 33R (Label 5/11/17/25), Weitergabe ≥ 80 %, Rentenkürzung um Beiträge, Einwanderung v3.49: Progression an den Stufen (Korrektur 61), Beschäftigung/KI/Kapitalverschiebung, Leistungspaket und Namen v3.50: Starkes Netz als Grundversorgung (Gesundheit, Pflege, Mindestrente/Volksrente, Invalidität, Arbeitslosigkeit) v3.51: Beschluss Mindestrente mit Pflichtvorsorge 10 %, Netz als Grundversorgung geltend für den Entwurf; Konzept als Word-Datei v3.52: Möglichkeitsraum (30 Staaten) v3.54: Neustartverfahren v3.55: Webseitenentwurf nach Vorbild der veröffentlichten Seite (seite/entwurf/drittel), Neuseeland gestrichen v3.56: Wortmarke Das Goldene Drittel, Rechner mehr im Geldbeutel mit Zeitstrahl v3.57: Textänderungen der Initiative, Kontakt tax.better@archicrowd.de v3.58: Sie-Form, Einleitung, 9 von 10 Beschäftigten (Gegenprobe haushalte33) v4.0: Fassung 4.0 in sechs Sprachen (seite/stand-c), Kurzfassung, Upload-Paket v4.83: Wirtschaftsdynamik, sechs Kanäle als Thesen mit Werten (Prüfrechnung) v4.84: mittlerer Fall als erwartete Dynamik ausgewiesen (Konzept 6.5, Kennzahlen, Working Paper); Kanal Fachkräfte v4.85: erwartete Dynamik (mittel, mit Nachfrage) in der geltenden Rechnung; Variante Fachkräftevisum v4.86: Plattformen am Nutzungsort mit Untergrenze (Variante) v4.87: Beleg der vier Einnahmepositionen (B-1), Lücke mittel −2,06 % BIP"
   },
   {
    "id": "B32",
@@ -750,6 +750,14 @@
    "was": "plattformen33 neben Position Unternehmen (systemvarianten) und R6 (OECD-Länderberichte): Variante, nicht in der Deckung; Abgrenzung zu R6 über Buchungsort",
    "status": "offen",
    "beleg_oder_offener_punkt": "v4.86: Entscheidung, ob der Plattformanteil in die Deckung geht, erst nach dem Beleg der Unternehmensposition (B-1)"
+  },
+  {
+   "id": "N51",
+   "von": "B31 Drittel-System",
+   "nach": "B31 Drittel-System",
+   "was": "einnahmen_belege gegen systemvarianten.deckung (Positionen Unternehmen, Übrige, CO₂, Erbschaft); Übrige enthält D29F (Emissionshandel), CO₂-Preis ebenfalls",
+   "status": "offen",
+   "beleg_oder_offener_punkt": "v4.87: Entscheidung A/B/C der Initiative; bei Übernahme Korrektur der Doppelzählung CO₂"
   }
  ],
  "quellen": [
@@ -1028,6 +1036,66 @@
    "status": "belegt",
    "zugang": "offen: gesetze-im-internet.de",
    "weitergabe": "amtliches Werk"
+  },
+  {
+   "id": "Q24",
+   "quelle": "Steuern nach Arten (VGR)",
+   "herausgeber": "Eurostat",
+   "datensatz_oder_fundstelle": "gov_10a_taxag (S13_S212, MIO_EUR)",
+   "bezugsjahr": "2024",
+   "verwendet_fuer": "Beleg der Positionen Unternehmen, Übrige, Erbschaft (B-1)",
+   "datei_im_repo": "modell/einnahmen_belege.toml",
+   "status": "abgerufen 15.11.2026 (über WebFetch gelesen, vorläufige Werte)",
+   "zugang": "offen: Eurostat-API ohne Anmeldung",
+   "weitergabe": "Eurostat-Bedingungen"
+  },
+  {
+   "id": "Q25",
+   "quelle": "Einnahmen Emissionshandel 2025",
+   "herausgeber": "Umweltbundesamt / DEHSt",
+   "datensatz_oder_fundstelle": "Pressemitteilung Januar 2026 (21,4 Mrd. €; nEHS rund 294 Mio. Zertifikate)",
+   "bezugsjahr": "2025",
+   "verwendet_fuer": "CO₂-Preis (B-1)",
+   "datei_im_repo": "modell/einnahmen_belege.toml",
+   "status": "abgerufen 15.11.2026",
+   "zugang": "offen",
+   "weitergabe": "amtliches Werk"
+  },
+  {
+   "id": "Q26",
+   "quelle": "Emissionen EU-ETS 1 Deutschland 2025",
+   "herausgeber": "DEHSt nach Solarserver (8.7.2026)",
+   "datensatz_oder_fundstelle": "ortsfeste Anlagen 264 Mt, Luftverkehr 8,8 Mt",
+   "bezugsjahr": "2025",
+   "verwendet_fuer": "CO₂-Preis (B-1)",
+   "datei_im_repo": "modell/einnahmen_belege.toml",
+   "status": "abgerufen 15.11.2026, Sekundärquelle",
+   "zugang": "offen",
+   "weitergabe": "Sekundärquelle"
+  },
+  {
+   "id": "Q27",
+   "quelle": "Erbschaft- und Schenkungsteuerstatistik 2022–2025",
+   "herausgeber": "Destatis (PM 306/2026; 2023 nach evangelisch.de, Sekundärquelle)",
+   "datensatz_oder_fundstelle": "steuerlich berücksichtigtes Vermögen",
+   "bezugsjahr": "2022-2025",
+   "verwendet_fuer": "Erbschaft (B-2, B-1)",
+   "datei_im_repo": "modell/einnahmen_belege.toml",
+   "status": "2025 amtlich; 2022 und 2024 rechnerisch",
+   "zugang": "offen",
+   "weitergabe": "amtliches Werk"
+  },
+  {
+   "id": "Q28",
+   "quelle": "Kassenmäßige Steuereinnahmen 2025 nach Arten",
+   "herausgeber": "BMF Datensammlung zur Steuerpolitik nach sozialpolitik-aktuell, Tab. II.8 (Stand 20.8.2026)",
+   "datensatz_oder_fundstelle": "Steuern nach Arten (geschätzt)",
+   "bezugsjahr": "2025",
+   "verwendet_fuer": "Gegenprobe Übrige, Unternehmen",
+   "datei_im_repo": "projekt/Einnahmen-Belege-2026-11-15.md",
+   "status": "abgerufen 15.11.2026, Sekundärquelle",
+   "zugang": "offen",
+   "weitergabe": "Sekundärquelle"
   }
  ],
  "nicht_im_repository": [

@@ -1,0 +1,119 @@
+{
+ "version": "v4.87",
+ "status": "Prüfrechnung zu Befund B-1; Deckung unverändert, Entscheidung offen",
+ "vgr_2024_anteile_pct_bip": {
+  "D2_D5_D91": 23.08,
+  "D211": 6.81,
+  "D212": 0.78,
+  "D214": 1.7,
+  "D29": 0.95,
+  "D29F": 0.42,
+  "D51B_C2": 2.85,
+  "D59": 0.38,
+  "D91": 0.23
+ },
+ "befund_doppelzaehlung_co2": {
+  "d29f_pct_bip": 0.42,
+  "hinweis": "Die Position Übrige (165 Modell-Mrd., 3,93 % BIP) entspricht der VGR-Summe D212+D214+D29+D59 (3,81 % BIP 2024) und enthält damit die heutigen Erlöse aus dem Emissionshandel (D29F); der CO₂-Preis (100 €/t auf die bepreisten Emissionen) enthält sie ein zweites Mal."
+ },
+ "faelle": {
+  "vorsichtig": {
+   "positionen": {
+    "unternehmen": {
+     "belegt_pct_bip": 3.19,
+     "modell_pct_bip": 4.42,
+     "luecke_pct_bip": -1.23
+    },
+    "uebrige": {
+     "belegt_pct_bip": 3.39,
+     "modell_pct_bip": 3.93,
+     "luecke_pct_bip": -0.54
+    },
+    "co2_2028": {
+     "belegt_pct_bip": 1.04,
+     "modell_pct_bip": 1.38,
+     "luecke_pct_bip": -0.34
+    },
+    "erbschaft": {
+     "belegt_pct_bip": 0.79,
+     "modell_pct_bip": 1.16,
+     "luecke_pct_bip": -0.37
+    }
+   },
+   "luecke_pct_bip": -2.48,
+   "dividende_eur_erw_monat": -130,
+   "dividende_2028_mit_kinderanteil_eur": 241,
+   "hilfsgroessen": {
+    "unternehmen_basis_mrd_2024": 403,
+    "co2_mt_2028": 511,
+    "erbschaft_basis_2028_mrd": 139
+   }
+  },
+  "mittel": {
+   "positionen": {
+    "unternehmen": {
+     "belegt_pct_bip": 3.41,
+     "modell_pct_bip": 4.42,
+     "luecke_pct_bip": -1.01
+    },
+    "uebrige": {
+     "belegt_pct_bip": 3.39,
+     "modell_pct_bip": 3.93,
+     "luecke_pct_bip": -0.54
+    },
+    "co2_2028": {
+     "belegt_pct_bip": 1.07,
+     "modell_pct_bip": 1.38,
+     "luecke_pct_bip": -0.31
+    },
+    "erbschaft": {
+     "belegt_pct_bip": 0.97,
+     "modell_pct_bip": 1.16,
+     "luecke_pct_bip": -0.19
+    }
+   },
+   "luecke_pct_bip": -2.06,
+   "dividende_eur_erw_monat": -108,
+   "dividende_2028_mit_kinderanteil_eur": 262,
+   "hilfsgroessen": {
+    "unternehmen_basis_mrd_2024": 417,
+    "co2_mt_2028": 528,
+    "erbschaft_basis_2028_mrd": 139
+   }
+  },
+  "hoch": {
+   "positionen": {
+    "unternehmen": {
+     "belegt_pct_bip": 3.76,
+     "modell_pct_bip": 4.42,
+     "luecke_pct_bip": -0.66
+    },
+    "uebrige": {
+     "belegt_pct_bip": 3.39,
+     "modell_pct_bip": 3.93,
+     "luecke_pct_bip": -0.54
+    },
+    "co2_2028": {
+     "belegt_pct_bip": 1.11,
+     "modell_pct_bip": 1.38,
+     "luecke_pct_bip": -0.27
+    },
+    "erbschaft": {
+     "belegt_pct_bip": 1.15,
+     "modell_pct_bip": 1.16,
+     "luecke_pct_bip": -0.01
+    }
+   },
+   "luecke_pct_bip": -1.48,
+   "dividende_eur_erw_monat": -77,
+   "dividende_2028_mit_kinderanteil_eur": 291,
+   "hilfsgroessen": {
+    "unternehmen_basis_mrd_2024": 431,
+    "co2_mt_2028": 544,
+    "erbschaft_basis_2028_mrd": 139
+   }
+  }
+ },
+ "eur_je_bip_punkt_2028": 52.3,
+ "dividende_2028_geltend_eur": 364
+}

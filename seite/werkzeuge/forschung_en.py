@@ -53,6 +53,7 @@ SINCE_REVIEW = [
  ("v4.84", "Expected dynamics (middle case) reported; channel skilled immigration", "no current figure; GDP middle +2.7% (2045), fund contribution 5.04% of GDP"),
  ("v4.85", "Expected dynamics (middle, with demand) in the current calculation; variant common skilled-worker visa", "dividend 2028 €364 (354), fund 5.04% of GDP (5.15), €42,000: +€627 (+611)"),
  ("v4.86", "Platforms taxed where used: profit route with a minimum (variant)", "no current figure; variant DE 2028 €2.9bn (1.2 to 7.1)"),
+ ("v4.87", "Evidence for the four revenue positions (review finding B-1)", "no current figure; gap middle −2.06% of GDP"),
 ]
 assert len(SINCE_REVIEW) == len(F.SEIT_PRUEFUNG), "englische und deutsche Liste seit der Prüfung gleich lang halten"
 LS = J("laenderseiten.json")["staaten"]
