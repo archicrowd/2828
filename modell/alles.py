@@ -71,6 +71,7 @@ STUFEN = [
     ("Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (Vorbereitung)", ["modell/staatenauswahl.py"]),
     ("Altlastenfonds mit geteilter Verantwortung 50/50 (Entwicklungsmodus)", ["modell/fonds_5050.py"]),
     ("Brücke für Partner 25 / 33 % (Entwicklungsmodus)", ["modell/bruecke.py"]),
+    ("Zweite Quelle Rechtsstaatsschwelle (TTDI 2024)", ["modell/rechtsstaat_zweitquelle.py"]),
     ("Gemeinschaft der Staaten: gemeinsame Kasse in drei Varianten (Entwicklungsmodus)", ["modell/gemeinschaft_kasse.py"]),
     ("Gini Frankreich und Polen: Zerlegung, Gegenproben", ["modell/gini_frankreich.py"]),
     ("Validierung der Ländermodelle gegen OECD Taxing Wages 2026 und Ministerium (FR)", ["modell/validierung_laender.py"]),

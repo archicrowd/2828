@@ -1,0 +1,12 @@
+# Zweite Quelle für die Rechtsstaatsschwelle (modell/rechtsstaat_zweitquelle.py, Logbuch v4.92). Prüfrechnung.
+version = "v4.92"
+# Datei: Weltbank Data360, Datenbank WEF Travel & Tourism Development Index (TTDI) 2024, Indikator WEF_TTDI_RULELAWIEF „Rule of law, 0-100 (best)“,
+# Typ Value, Jahr 2024. Hochgeladen von der Initiative 15.11.2026, Rohdatei daten/roh/data360_ttdi/WEF_TTDI_RULELAWIEF.csv (nicht im Repository).
+# Herkunft des Werts nach dem Kürzel „IEF“ vermutlich Heritage Foundation, Index of Economic Freedom (Teilindex Rule of law), an der Quelle zu
+# prüfen; nichtstaatliche Quelle (Denkfabrik), nicht die Weltbank-Indikatoren WGI.
+datei = "daten/roh/data360_ttdi/WEF_TTDI_RULELAWIEF.csv"
+sha256 = "979b270c1e93690ed160cbce64fd72df8a92294fa564a364bacad967e00119c6"
+jahr = "2024"
+iso3 = {DNK="DK", NOR="NO", FIN="FI", SWE="SE", DEU="DE", LUX="LU", IRL="IE", NLD="NL", EST="EE", AUT="AT", BEL="BE", LTU="LT", CZE="CZ", LVA="LV", FRA="FR", ESP="ES", SVN="SI", PRT="PT", CYP="CY", MLT="MT", POL="PL", ITA="IT", SVK="SK", HRV="HR", ROU="RO", GRC="EL", BGR="BG", HUN="HU", CHE="CH", ISL="IS"}
+# Werte 2024 (aus der Datei, damit die Rechnung ohne Rohdatei läuft; Prüfung gegen die Datei, wenn vorhanden)
+werte = {DK=95.3, FI=98.3, SE=96.0, DE=92.4, LU=94.3, IE=89.9, NL=94.4, EE=89.4, AT=91.0, BE=88.2, LT=76.8, CZ=76.9, LV=75.0, FR=84.1, ES=75.7, SI=78.8, PT=82.5, CY=77.2, MT=78.4, PL=61.9, IT=73.4, SK=70.5, HR=66.7, RO=64.4, EL=66.5, BG=58.8, HU=58.9, CH=94.8, IS=91.6}

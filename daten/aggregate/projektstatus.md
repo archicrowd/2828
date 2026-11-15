@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.91 · höchste Korrekturnummer 89 · 617 Dateien im Repository
+Modellstand v4.92 · höchste Korrekturnummer 89 · 620 Dateien im Repository
 
 ## Bausteine
 
@@ -125,4 +125,4 @@ Modellstand v4.91 · höchste Korrekturnummer 89 · 617 Dateien im Repository
 - Hinweis: Naht N50 offen: B31 Drittel-System -> B31 Drittel-System: v4.86: Entscheidung, ob der Plattformanteil in die Deckung geht, erst nach dem Beleg der Unternehmensposition (B-1)
 - Hinweis: Naht N51 offen: B31 Drittel-System -> B31 Drittel-System: v4.87: Entscheidung A/B/C der Initiative; bei Übernahme Korrektur der Doppelzählung CO₂
 - Hinweis: Naht N52 offen: B31 Drittel-System -> B31 Drittel-System: v4.88: Entscheidungen E1–E5; Rechnung intern; v4.90: E2, E3, E4 beschlossen; E1 und E5 offen
-- Hinweis: Naht N53 offen: Fonds -> Fonds: v4.91: Entwicklungsmodus, Beschluss zu Form und Stufen offen
+- Hinweis: Naht N53 offen: Fonds -> Fonds: v4.92: Brücke festgelegt (wahlweise, 25/33/50 %); Webseite Regel 4; Fortschrittskriterium offen; rechtsstaat_zweitquelle liest staatenauswahl.toml und fonds_5050.toml

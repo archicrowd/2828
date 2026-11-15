@@ -1,0 +1,88 @@
+{
+ "version": "v4.92",
+ "status": "Prüfrechnung; zweite, nichtstaatliche Quelle",
+ "quelle": "WEF TTDI 2024, Indikator WEF_TTDI_RULELAWIEF (Weltbank Data360)",
+ "rohdatei_geprueft": true,
+ "staaten_mit_beiden_werten": 27,
+ "spearman": 0.929,
+ "ohne_wjp": {
+  "CH": 94.8,
+  "IS": 91.6
+ },
+ "kleinster_wert_teilnehmer": 61.9,
+ "groesster_wert_partner": 70.5,
+ "reihenfolge_um_schwelle": [
+  {
+   "staat": "FR",
+   "wjp": 0.72,
+   "ttdi": 84.1,
+   "stufe": "Teilnahme"
+  },
+  {
+   "staat": "PT",
+   "wjp": 0.67,
+   "ttdi": 82.5,
+   "stufe": "Teilnahme"
+  },
+  {
+   "staat": "SI",
+   "wjp": 0.68,
+   "ttdi": 78.8,
+   "stufe": "Teilnahme"
+  },
+  {
+   "staat": "MT",
+   "wjp": 0.67,
+   "ttdi": 78.4,
+   "stufe": "Teilnahme"
+  },
+  {
+   "staat": "CY",
+   "wjp": 0.67,
+   "ttdi": 77.2,
+   "stufe": "Teilnahme"
+  },
+  {
+   "staat": "ES",
+   "wjp": 0.71,
+   "ttdi": 75.7,
+   "stufe": "Teilnahme"
+  },
+  {
+   "staat": "IT",
+   "wjp": 0.66,
+   "ttdi": 73.4,
+   "stufe": "Teilnahme"
+  },
+  {
+   "staat": "SK",
+   "wjp": 0.64,
+   "ttdi": 70.5,
+   "stufe": "Partner"
+  },
+  {
+   "staat": "HR",
+   "wjp": 0.61,
+   "ttdi": 66.7,
+   "stufe": "Partner"
+  },
+  {
+   "staat": "EL",
+   "wjp": 0.6,
+   "ttdi": 66.5,
+   "stufe": "Partner"
+  },
+  {
+   "staat": "RO",
+   "wjp": 0.61,
+   "ttdi": 64.4,
+   "stufe": "Partner"
+  },
+  {
+   "staat": "PL",
+   "wjp": 0.66,
+   "ttdi": 61.9,
+   "stufe": "Teilnahme"
+  }
+ ]
+}

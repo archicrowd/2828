@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.91**
+Stand: 24. Oktober 2026 · Modellstand **v4.92**
 
 ---
 
@@ -5308,6 +5308,30 @@ Der gemeinsame Satz ist das BIP-gewichtete Mittel aller Anteile im Topf; im Skri
 
 **Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Frage der Initiative.
 
+### v4.92 — Brücke festgelegt; zweite Quelle für die Rechtsstaatsschwelle
+
+**Art der Änderung: MINOR (Regeltext Webseite, neue Prüfrechnung), geltende Zahlen unverändert.** 15. November 2026.
+
+**Auftrag der Initiative (15.11.2026):** Die Brücke entfällt, wenn sie nichts Wichtiges bringt, sonst gilt die Empfehlung. Dazu Dateien zur
+Rechtsstaatlichkeit (Weltbank Data360).
+
+**Festlegung:** Die Brücke bleibt, wahlweise, als Pfad 25 % → 33 % bei nachgewiesenem Fortschritt → 50 % mit Erreichen der Standards.
+- Sie bringt Griechenland 0,57 bis 0,75 % seines BIP je Jahr.
+- Die Teilnehmer kostet sie höchstens 0,01 %.
+- Webseite „Gemeinschaft der Staaten“, Regel 4: in sechs Sprachen (`gemeinschaft_texte.py`), Seite neu gebaut.
+- Das Fortschrittskriterium ist offen.
+
+**Zweite Quelle:**
+- Die Dateien sind Indikatoren des WEF Travel & Tourism Development Index 2024, nicht die WGI.
+- Verwendet wird nur „Rule of law, 0–100“ (WEF_TTDI_RULELAWIEF; nach dem Kürzel vermutlich Heritage Foundation, Index of Economic Freedom,
+  zu prüfen).
+- `modell/rechtsstaat_zweitquelle.py` (+ `.toml`) → `rechtsstaat_zweitquelle.json`: Spearman mit WJP 0,93 (27 Staaten).
+- Schweiz 94,8 und Island 91,6 stützen deren Teilnahme (bisher Annahme).
+- Polen liegt im WJP-Index auf der Schwelle, in der zweiten Quelle unter vier Partnern.
+- Rohdateien unter `daten/roh/data360_ttdi/` (nicht im Repository), Prüfsummen in `daten/herkunft/uploads-manifest.csv`, Quelle Q29.
+
+**Bewegte Zahl:** keine. **Wodurch aufgefallen:** Auftrag und Dateien der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5388,7 +5412,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.91
+## 7 | Offene Punkte, Stand v4.92
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
