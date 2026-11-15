@@ -58,7 +58,7 @@ Unternehmensposition steigt dadurch von −1,01 auf −2,05 Punkte.
 - Recht: Das BVerfG hat die Mindestbesteuerung auch mit Definitiveffekt bestätigt (2 BvL 19/14, 23.7.2025) und dem Gesetzgeber beim
   Systemwechsel Spielraum zuerkannt (Rn. 79). Ein rein fiskalischer Zweck trägt nicht (Rn. 81); die Regel ist mit dem Systemwechsel zu
   begründen. Den Teil zum Vertrauensschutz habe ich nicht gelesen; eine rechtliche Prüfung steht aus.
-- Wirkung: dauerhaft +0,06 bis +0,09 % BIP. Die Befristung bringt einmalig wenig (2033 bis +0,10) und zieht einen klaren Schnitt.
+- Wirkung: dauerhaft +0,03 bis +0,09 % BIP (mittel +0,06). Die Befristung bringt einmalig wenig (2033 bis +0,10) und zieht einen klaren Schnitt.
 - Beschrieben in Konzept (Regel „Verluste“) und Working Paper (v4.90).
 
 ## 4 Offen
