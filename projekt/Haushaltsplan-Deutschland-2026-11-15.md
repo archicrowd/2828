@@ -2,6 +2,8 @@
 
 Initiative 28:28 · 16. November 2026 · Modellstand v4.95 · Rechnung: `modell/haushaltsplan_de.py` (+ `.toml`) → `daten/aggregate/haushaltsplan_de.json`;
 Seite mit Flussbildern: `dokumente/werkzeuge/haushaltsplan_seite.py` (Artefakt, privat).
+> **Überholt durch v4.97 (16.11.2026):** Die Zahlen dieses Papiers stehen auf Stand v4.95 (Modellwerte, alte Regeln). Geltend sind seit v4.97 die belegten Einnahmen und die Regeln vom 16.11.2026; maßgeblich ist `daten/aggregate/haushaltsplan_de.json` (Spalte „neu“) und der Abschnitt „Wohin das Geld fließt“ der Webseite. Dividende 2028 jetzt 245 € je Erwachsenem (Kaufkraft 2026). Die Fortschreibung dieses Papiers ist offen (Logbuch 7.1, R16).
+
 Status: **Prüfrechnung.** Die Spalte „belegt“ ist intern (Prüfbefund B-1, Beschluss 15.11.2026).
 Seit v4.95 sind Aufkommen, Ausgaben und Finanzierung getrennt; der Gemeinschaftsfonds hat ein eigenes Konto (Korrektur 93).
 

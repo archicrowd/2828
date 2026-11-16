@@ -5502,6 +5502,15 @@ geht zugleich in der Grundstücksabgabe auf.
 
 ---
 
+### v4.97.1 — Haushaltsplan-Papier als überholt gekennzeichnet
+
+**Art der Änderung: PATCH (Text).** 16. November 2026. `projekt/Haushaltsplan-Deutschland-2026-11-15.md` steht auf Stand v4.95; Hinweis am Anfang
+auf die geltenden Zahlen v4.97 (`haushaltsplan_de.json`, Webseite). Das private Artefakt der Haushaltsplanseite zeigt weiter Stand v4.96.
+Webseite: Hinweis „Grafik seitlich verschieben“ unter 760 px Breite im Abschnitt Geldfluss (sechs Sprachen), weil das Diagramm auf dem Telefon seitlich rollt.
+**Datenquelle:** keine neue. **Bewegte Zahl:** keine. **Wodurch aufgefallen:** Abgleich des Projektraums nach v4.97.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind

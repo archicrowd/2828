@@ -56,7 +56,7 @@ T = {
             rente="Renten und Pensionen", div="Transformationsdividende", ges="Gesundheit", netz="Pflege, Familie, Grundsicherung u. a.", bild="Bildung und Forschung",
             wirt="Wirtschaft, Verkehr, Umwelt", verw="Verwaltung", sich="Sicherheit und Verteidigung", komm="Wohnen, Kultur, Gemeinwesen", zins="Zinsen", plus="Überschuss",
             k1="Ausgaben in % der Wirtschaftsleistung", k2="davon aus Sozialbeiträgen", k3="Dividende je Erwachsenem und Monat",
-            fuss="Quellen: Eurostat (Staatsfinanzen 2024, vorläufig); Rechnung der Initiative 28:28 (geltende Rechnung 2028). Heute einschließlich Gebühren und Entgelte, "
+            wisch="Grafik seitlich verschieben ⇆", fuss="Quellen: Eurostat (Staatsfinanzen 2024, vorläufig); Rechnung der Initiative 28:28 (geltende Rechnung 2028). Heute einschließlich Gebühren und Entgelte, "
                  "im Goldenen Drittel sind Kommunen und Staat netto gerechnet; die private Pflichtvorsorge (eigenes Konto) ist nicht enthalten. Kredite sind keine Einnahme, "
                  "sondern Finanzierung; die Kredite des Fonds werden bis 2098 getilgt."),
  "en": dict(h2="Where the money flows", lede="Example Germany: the whole state with federal, regional and local government and social insurance – today and in the Golden Third. "
@@ -68,7 +68,7 @@ T = {
             rente="Pensions", div="Transformation dividend", ges="Health", netz="Care, family, basic support etc.", bild="Education and research",
             wirt="Economy, transport, environment", verw="Administration", sich="Security and defence", komm="Housing, culture, community", zins="Interest", plus="Surplus",
             k1="Spending as % of economic output", k2="of which from social contributions", k3="Dividend per adult per month",
-            fuss="Sources: Eurostat (government finance 2024, provisional); calculation of Initiative 28:28 (current model 2028). Today including fees and charges; "
+            wisch="Swipe the chart sideways ⇆", fuss="Sources: Eurostat (government finance 2024, provisional); calculation of Initiative 28:28 (current model 2028). Today including fees and charges; "
                  "in the Golden Third local and central government are net. Mandatory private pensions (own account) are not included. Borrowing is financing, not revenue; "
                  "the fund's loans are repaid by 2098."),
  "fr": dict(h2="Où va l'argent", lede="Exemple de l'Allemagne : l'ensemble de l'État avec la fédération, les Länder, les communes et la sécurité sociale – aujourd'hui et dans le Tiers d'or. "
@@ -80,7 +80,7 @@ T = {
             rente="Retraites et pensions", div="Dividende de transition", ges="Santé", netz="Dépendance, famille, minimum social…", bild="Éducation et recherche",
             wirt="Économie, transports, environnement", verw="Administration", sich="Sécurité et défense", komm="Logement, culture, vie locale", zins="Intérêts", plus="Excédent",
             k1="Dépenses en % de la production", k2="dont cotisations sociales", k3="Dividende par adulte et par mois",
-            fuss="Sources : Eurostat (finances publiques 2024, provisoire) ; calcul de l'Initiative 28:28 (modèle en vigueur 2028). Aujourd'hui y compris redevances ; "
+            wisch="Faire défiler le graphique ⇆", fuss="Sources : Eurostat (finances publiques 2024, provisoire) ; calcul de l'Initiative 28:28 (modèle en vigueur 2028). Aujourd'hui y compris redevances ; "
                  "dans le Tiers d'or, communes et État en net. La prévoyance obligatoire privée (compte propre) n'est pas incluse. L'emprunt est un financement, pas une recette ; "
                  "les emprunts du fonds sont remboursés d'ici 2098."),
  "it": dict(h2="Dove va il denaro", lede="Esempio Germania: tutto lo Stato con federazione, Länder, comuni e previdenza sociale – oggi e nel Terzo d'oro. "
@@ -92,7 +92,7 @@ T = {
             rente="Pensioni", div="Dividendo di transizione", ges="Sanità", netz="Assistenza, famiglia, reddito minimo…", bild="Istruzione e ricerca",
             wirt="Economia, trasporti, ambiente", verw="Amministrazione", sich="Sicurezza e difesa", komm="Abitazione, cultura, comunità", zins="Interessi", plus="Avanzo",
             k1="Spesa in % della produzione", k2="di cui da contributi sociali", k3="Dividendo per adulto al mese",
-            fuss="Fonti: Eurostat (finanza pubblica 2024, provvisoria); calcolo dell'Iniziativa 28:28 (modello vigente 2028). Oggi incluse tariffe; "
+            wisch="Scorrere il grafico ⇆", fuss="Fonti: Eurostat (finanza pubblica 2024, provvisoria); calcolo dell'Iniziativa 28:28 (modello vigente 2028). Oggi incluse tariffe; "
                  "nel Terzo d'oro comuni e Stato al netto. La previdenza privata obbligatoria (conto proprio) non è inclusa. Il debito è finanziamento, non entrata; "
                  "i prestiti del fondo sono rimborsati entro il 2098."),
  "es": dict(h2="Adónde va el dinero", lede="Ejemplo de Alemania: todo el Estado con federación, Länder, municipios y seguridad social – hoy y en el Tercio de oro. "
@@ -104,7 +104,7 @@ T = {
             rente="Pensiones", div="Dividendo de transformación", ges="Salud", netz="Dependencia, familia, ingreso mínimo…", bild="Educación e investigación",
             wirt="Economía, transporte, medio ambiente", verw="Administración", sich="Seguridad y defensa", komm="Vivienda, cultura, comunidad", zins="Intereses", plus="Superávit",
             k1="Gasto en % de la producción", k2="de ello, de cotizaciones sociales", k3="Dividendo por adulto y mes",
-            fuss="Fuentes: Eurostat (finanzas públicas 2024, provisional); cálculo de la Iniciativa 28:28 (modelo vigente 2028). Hoy incluidas tasas; "
+            wisch="Desplace el gráfico ⇆", fuss="Fuentes: Eurostat (finanzas públicas 2024, provisional); cálculo de la Iniciativa 28:28 (modelo vigente 2028). Hoy incluidas tasas; "
                  "en el Tercio de oro, municipios y Estado en neto. La previsión privada obligatoria (cuenta propia) no se incluye. La deuda es financiación, no ingreso; "
                  "los préstamos del fondo se amortizan hasta 2098."),
  "pl": dict(h2="Dokąd płyną pieniądze", lede="Przykład Niemiec: całe państwo – federacja, kraje związkowe, gminy i ubezpieczenia społeczne – dziś i w Złotej Trzeciej. "
@@ -116,7 +116,7 @@ T = {
             rente="Emerytury", div="Dywidenda transformacyjna", ges="Zdrowie", netz="Opieka, rodzina, minimum socjalne…", bild="Edukacja i badania",
             wirt="Gospodarka, transport, środowisko", verw="Administracja", sich="Bezpieczeństwo i obrona", komm="Mieszkalnictwo, kultura, wspólnota", zins="Odsetki", plus="Nadwyżka",
             k1="Wydatki w % produktu gospodarki", k2="w tym ze składek społecznych", k3="Dywidenda na dorosłego miesięcznie",
-            fuss="Źródła: Eurostat (finanse publiczne 2024, wstępne); obliczenia Inicjatywy 28:28 (obowiązujący model 2028). Dziś wraz z opłatami; "
+            wisch="Przewiń wykres w bok ⇆", fuss="Źródła: Eurostat (finanse publiczne 2024, wstępne); obliczenia Inicjatywy 28:28 (obowiązujący model 2028). Dziś wraz z opłatami; "
                  "w Złotej Trzeciej gminy i państwo netto. Obowiązkowa prywatna emerytura (własne konto) nie jest uwzględniona. Kredyt to finansowanie, nie dochód; "
                  "kredyty funduszu są spłacane do 2098."),
 }
@@ -128,6 +128,8 @@ CSS = """<style>
 #geldfluss .gf-knoepfe button[aria-pressed=true]{background:var(--ink);color:#fff}
 #geldfluss .gf-knoepfe .gf-auto{border-color:var(--line);color:var(--dim);font-weight:500}
 #geldfluss .gf-bild{position:relative;overflow-x:auto}
+#geldfluss .gf-wisch{display:none;font-family:var(--mono);font-size:12px;color:var(--dim);margin:0 0 6px}
+@media (max-width:760px){#geldfluss .gf-wisch{display:block}}
 #geldfluss .gf-bild svg{display:block;min-width:720px;width:100%;height:auto;transition:opacity .6s}
 #geldfluss .gf-bild svg+svg{position:absolute;inset:0 auto auto 0}
 #geldfluss .gf-bild text{font-family:var(--disp);font-size:12px;fill:var(--ink)}
@@ -213,7 +215,7 @@ def abschnitt(L):
     return (f'<section id="geldfluss">\n  <div class="wrap">\n    <h2>{t["h2"]}</h2>\n    <p class="lede">{t["lede"]}</p>\n'
             f'    <div class="gf-knoepfe"><button type="button" id="gf-b-heute" aria-pressed="true">{t["heute"]}</button>'
             f'<button type="button" id="gf-b-neu" aria-pressed="false">{t["neu"]}</button><button type="button" class="gf-auto" id="gf-auto">{t["auto"]}</button></div>\n'
-            f'    <div class="gf-bild" id="gf-bild"></div>\n    <div class="gf-kz" id="gf-kz"></div>\n    <p class="gf-fuss">{t["fuss"]}</p>\n'
+            f'    <p class="gf-wisch">{t["wisch"]}</p>\n    <div class="gf-bild" id="gf-bild"></div>\n    <div class="gf-kz" id="gf-kz"></div>\n    <p class="gf-fuss">{t["fuss"]}</p>\n'
             f'  </div>\n{CSS}\n{JS and js}\n</section>')
 
 
