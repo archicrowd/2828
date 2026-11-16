@@ -1,0 +1,151 @@
+{
+ "version": "v4.98",
+ "status": "Prüfrechnung (2028, Kaufkraft 2026); geltend bleibt BS35 bis zur Entscheidung",
+ "zerlegung_v496_v497": [
+  {
+   "schritt": "alles wie v4.96",
+   "anteil_mehr_pct": 64.1,
+   "mittel_monat": -117
+  },
+  {
+   "schritt": "+ Grundbedarf im Tarif 12.072 €",
+   "anteil_mehr_pct": 58.9,
+   "mittel_monat": -130,
+   "wirkung_mittel_monat": -13
+  },
+  {
+   "schritt": "+ Satz ein Drittel",
+   "anteil_mehr_pct": 58.9,
+   "mittel_monat": -132,
+   "wirkung_mittel_monat": -2
+  },
+  {
+   "schritt": "+ Label 7/13/19/27 (effektiv 20.61 %)",
+   "anteil_mehr_pct": 31.5,
+   "mittel_monat": -176,
+   "wirkung_mittel_monat": -44
+  },
+  {
+   "schritt": "+ Zuschlag DE 16.8 % (alles v4.97)",
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -187,
+   "wirkung_mittel_monat": -11
+  }
+ ],
+ "ziel_mittel_monat": -109,
+ "varianten": [
+  {
+   "id": "R0",
+   "name": "BS35 geltend: Freibetrag max(1 G; min(J,35)/35 × 2 G), 27,5 % / 55,1 % darüber",
+   "parameter": {},
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -187,
+   "fuenftel_monat": [
+    8,
+    0,
+    -49,
+    -162,
+    -739
+   ],
+   "kuerzung_mrd": 27.3,
+   "boden_mrd": 2.5,
+   "ausgleich_mrd": 0.0,
+   "kosten_gegen_r0_mrd": 0.0,
+   "kosten_gegen_r0_pct_bip": 0.0,
+   "dividende_erw_monat_eur": 0
+  },
+  {
+   "id": "R1",
+   "name": "Sätze senken (beide gleich), geeicht auf das Mittel v4.96",
+   "parameter": {
+    "faktor_saetze": 0.293,
+    "satz": 8.1,
+    "satz_oben": 16.1
+   },
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -109,
+   "fuenftel_monat": [
+    8,
+    0,
+    -36,
+    -110,
+    -412
+   ],
+   "kuerzung_mrd": 8.0,
+   "boden_mrd": 2.5,
+   "ausgleich_mrd": 0.0,
+   "kosten_gegen_r0_mrd": 19.3,
+   "kosten_gegen_r0_pct_bip": 0.39,
+   "dividende_erw_monat_eur": -21
+  },
+  {
+   "id": "R2",
+   "name": "Freibetrag erhöhen (Sockel und Jahresschutz gleich), geeicht auf das Mittel v4.96",
+   "parameter": {
+    "faktor_freibetrag": 1.69,
+    "sockel_monat": 1739,
+    "voll_monat": 3478
+   },
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -109,
+   "fuenftel_monat": [
+    8,
+    0,
+    -30,
+    -94,
+    -434
+   ],
+   "kuerzung_mrd": 8.0,
+   "boden_mrd": 2.5,
+   "ausgleich_mrd": 0.0,
+   "kosten_gegen_r0_mrd": 19.3,
+   "kosten_gegen_r0_pct_bip": 0.39,
+   "dividende_erw_monat_eur": -21
+  },
+  {
+   "id": "R3",
+   "name": "nur oberen Satz senken: 55,1 → 40 %",
+   "parameter": {
+    "satz_oben": 40.0
+   },
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -170,
+   "fuenftel_monat": [
+    8,
+    0,
+    -49,
+    -154,
+    -659
+   ],
+   "kuerzung_mrd": 23.1,
+   "boden_mrd": 2.5,
+   "ausgleich_mrd": 0.0,
+   "kosten_gegen_r0_mrd": 4.3,
+   "kosten_gegen_r0_pct_bip": 0.09,
+   "dividende_erw_monat_eur": -5
+  },
+  {
+   "id": "R4",
+   "name": "Altersausgleich je Person (fester Betrag, steuerfrei), geeicht auf das Mittel v4.96",
+   "parameter": {
+    "ausgleich_person_monat": 55
+   },
+   "anteil_mehr_pct": 64.5,
+   "mittel_monat": -109,
+   "fuenftel_monat": [
+    48,
+    68,
+    34,
+    -68,
+    -636
+   ],
+   "kuerzung_mrd": 27.3,
+   "boden_mrd": 1.8,
+   "ausgleich_mrd": 11.9,
+   "kosten_gegen_r0_mrd": 11.3,
+   "kosten_gegen_r0_pct_bip": 0.23,
+   "dividende_erw_monat_eur": -12
+  }
+ ],
+ "hinweis": "Rentner erhalten keine Dividende zusätzlich (Korrektur 65); deshalb wirken Label, Tarif und Zuschlag voll. Kosten nur 2028 und nur DE; Wirkung auf die Dividende als Näherung ohne Rückwirkung auf Zuschlag und Fonds der 30. Versicherungsjahre zugeschätzt (Annahme, v4.69)."
+}

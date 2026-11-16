@@ -88,6 +88,8 @@ STUFEN = [
     ("Mikrosimulation DE, synthetische Population (Stufe 1)", ["modell/mikro_de.py"]),
     ("Rentner: Grundbedarf garantiert, Zusagen darüber gekürzt (Vorschlag)", ["modell/rentner_kombi.py"]),
     ("Rentner: Kürzungssatz der Zusagen je Staat (R6)", ["modell/kuerzung_laender.py"]),
+    ("Rentnerregel nach der Umstellung neu eichen: Zerlegung und Varianten R0–R4 (Prüfrechnung)", ["modell/rentner_eichung.py"]),
+    ("CO₂-Position: bezahlte Mengen und strengere Bepreisung K0–K5 (Prüfrechnung)", ["modell/co2_varianten.py"]),
     ("Gesamtlast Stand C mit Fonds und Pflichtvorsorge", ["modell/gesamtlast33.py"]),
     ("Gemeinsame Aufgaben: Pflichtquote, Kasse und Anrechnung", ["modell/dach_beitrag.py"]),
     ("Gemeindeformel je Kreis (Deutschland), Strukturzuschlag", ["modell/regionen_de.py"]),

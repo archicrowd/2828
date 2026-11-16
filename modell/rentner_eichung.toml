@@ -1,0 +1,37 @@
+# Rentnerregel nach der Umstellung v4.97 neu eichen (modell/rentner_eichung.py, Logbuch v4.98). Prüfrechnung, ändert die geltende Rechnung nicht.
+# Anlass: Rentnerhaushalte mit mehr 65,2 % (v4.96) → 24,0 % (v4.97, BS35). Rentner erhalten keine Dividende zusätzlich (sie steckt in der
+# Bestandsrente, Korrektur 65); Label +2 Punkte, knapperer Grundbedarf im Tarif und höherer Zuschlag treffen sie ohne Ausgleich.
+version = "v4.98"
+ziel_mittel_monat = -109        # Mittel der Rentnerhaushalte unter BS35 in v4.96 (rentner_kombi.json, Stand v4.96): Rückeichung auf dieses Niveau
+eur_je_bip_punkt_2028 = 52.2     # Dividende je Erwachsenem und Monat je Punkt BIP (ausweichen33.json, j2028)
+
+# Zerlegung v4.96 → v4.97 (Rückstellung je Baustein): Tarifstufen 2028 alt [12420, 18630, 24840, 37260], Label effektiv 18,84 %, Zuschlag DE 15,6 %, Sätze 0/11/19/25/33
+[alt]
+tarif_stufen = [12420, 18630, 24840, 37260]
+label_eff = 18.84
+zuschlag = 15.6
+saetze = [0, 11, 19, 25, 33]
+
+# Varianten: art = "bs35" (geltend), "saetze" (beide Sätze × Faktor, geeicht), "freibetrag" (Sockel und Faktor × Faktor, geeicht),
+# "oben" (nur oberer Satz, fest), "ausgleich" (fester Altersausgleich je Person und Monat, steuerfrei, geeicht)
+[[variante]]
+id = "R0"
+name = "BS35 geltend: Freibetrag max(1 G; min(J,35)/35 × 2 G), 27,5 % / 55,1 % darüber"
+art = "bs35"
+[[variante]]
+id = "R1"
+name = "Sätze senken (beide gleich), geeicht auf das Mittel v4.96"
+art = "saetze"
+[[variante]]
+id = "R2"
+name = "Freibetrag erhöhen (Sockel und Jahresschutz gleich), geeicht auf das Mittel v4.96"
+art = "freibetrag"
+[[variante]]
+id = "R3"
+name = "nur oberen Satz senken: 55,1 → 40 %"
+art = "oben"
+satz_oben = 0.40
+[[variante]]
+id = "R4"
+name = "Altersausgleich je Person (fester Betrag, steuerfrei), geeicht auf das Mittel v4.96"
+art = "ausgleich"

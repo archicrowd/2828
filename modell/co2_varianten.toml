@@ -1,0 +1,56 @@
+# CO₂-Position prüfen und Varianten einer strengeren CO₂-Bepreisung (modell/co2_varianten.py, Logbuch v4.98). Prüfrechnung, ändert die Deckung nicht.
+version = "v4.98"
+bip_2028_mrd = 4914.9            # parameter.toml de_bip_2028
+bip_2025_mrd = 4531.7            # unternehmensbasis.toml (2024 Eurostat × 1,033)
+eur_je_bip_punkt_2028 = 52.2     # ausweichen33.json, j2028
+geltend_pct_bip = 1.07           # deckung_belegt.json: Modell 1,38 + CO₂-Abzug −0,31 (528 Mt × 100 €/t)
+rueckgang_je_jahr = 0.03         # einnahmen_belege.toml, Fall mittel (Annahme)
+preis_2028 = 100.0               # €/t, Regel des Konzepts (nominal, Annahme)
+
+[mengen_2025]   # Mt CO₂; einnahmen_belege.toml (DEHSt, UBA)
+ets1_anlagen = 264.0
+ets1_luftverkehr = 8.8
+ets1_seeverkehr = 11.0
+nehs = 294.0                     # nationaler Emissionshandel (BEHG), 294 Mio. Zertifikate verkauft (UBA/ZfK 2026)
+
+[erloese_2025]   # ZfK nach UBA/DEHSt, 2026 (Sekundärquelle der amtlichen Mitteilung): EU-ETS-Versteigerung DE 5,4 Mrd. € bei 73,86 €/t; nEHS 16 Mrd. € bei 55 €/t
+ets1_mrd = 5.4
+ets1_preis = 73.86
+nehs_mrd = 16.0
+nehs_preis = 55.0
+
+[annahmen]
+# Anteil der ETS1-Mengen, für die Deutschland 2028 Versteigerungserlöse erhält: 2025 rechnerisch 5,4 Mrd. € / 73,86 €/t = 73 Mt von 284 Mt = 26 %;
+# Abbau der freien Zuteilung in den CBAM-Sektoren ab 2026 (2028: 10 % weniger frei, VO (EU) 2023/956 Art. 36, eigene Kenntnis, an der Quelle zu prüfen).
+ets1_bezahlt_2028 = 0.28
+# Nationale Abgabe auf frei zugeteilte Mengen (Vorbild: CO₂-heffing industrie NL, Carbon Price Support UK): erfasster Anteil der freien Mengen
+# nach Ausnahmen für Wettbewerb und Abwanderung (Annahme)
+abgabe_erfasst = 0.75
+# Preiselastizität der Emissionen (Labandeira u. a. 2017, Energy Policy 102, Metaanalyse Energienachfrage: kurzfristig −0,2, langfristig −0,6; Mittel, Annahme)
+elastizitaet = -0.3
+# Landwirtschaft (Methan, Lachgas) heute nicht bepreist; rund 52 Mt CO₂-Äquivalente (UBA Treibhausgasinventar 2024, eigene Kenntnis, an der Quelle zu prüfen)
+landwirtschaft_mt = 52.0
+# Anteil der Last, den Rentnerhaushalte je 0,1 % BIP verbrauchsbezogener Abgabe tragen: aus rentner_eichung (Label +1,77 Punkte ≈ +0,65 % BIP → −44 €;
+# Ableitung, gleiche Inzidenz wie das Label angenommen)
+rentner_eur_je_0_1_pct = -6.8
+
+[[variante]]
+id = "K0"
+name = "geltend: alle bepreisten Mengen × 100 €/t"
+[[variante]]
+id = "K1"
+name = "berichtigt: nur bezahlte Mengen (freie Zuteilung im EU-ETS abgezogen)"
+[[variante]]
+id = "K2"
+name = "K1 + nationale Abgabe auf frei zugeteilte Mengen (100 €/t)"
+[[variante]]
+id = "K3"
+name = "K2 mit 150 €/t"
+preis = 150.0
+[[variante]]
+id = "K4"
+name = "K2 mit 200 €/t"
+preis = 200.0
+[[variante]]
+id = "K5"
+name = "K2 + Landwirtschaft (Methan, Lachgas) mit 100 €/t"

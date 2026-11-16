@@ -168,5 +168,6 @@ Fall sind es 81 €. Automatisierung und Erbschaftswelle sind darin noch nicht e
   - Die Werte liegen unter A+ aus Abschnitt 9 (262 / 194 / 150 / 131 €). Ursache ist der einheitlich durchgerechnete Tarif mit Grundbedarf 12.072 €
     in allen Haushaltsrechnungen und die vorsichtig angesetzte Stundung.
 - Fondsbeitrag 5,32 % BIP.
-- **Rentnerhaushalte mit mehr: 23,1 % (vorher 63,7 %), im Mittel −197 € im Monat.** Die Rentnerregel BS35 ist auf die frühere Dividende geeicht
-  und muss neu bewertet werden (Logbuch 7.1, R16).
+- **Rentnerhaushalte mit mehr: 23,1 % (vorher 63,7 %), im Mittel −197 € im Monat.** Die Rentnerregel BS35 muss neu bewertet werden (Logbuch 7.1, R16).
+  *Berichtigt in v4.98 (Korrektur 94):* Ursache ist nicht die Dividende (sie steckt bei Rentnern in der Bestandsrente), sondern vor allem das Label
+  (−44 €), dazu Tarif (−13 €) und Zuschlag (−11 €); Varianten in `projekt/Kurzdarstellung-Rentner-Unternehmen-CO2-2026-11-16.md`.

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 16. November 2026 · Modellstand **v4.97**
+Stand: 16. November 2026 · Modellstand **v4.98**
 
 ---
 
@@ -5511,6 +5511,43 @@ Webseite: Hinweis „Grafik seitlich verschieben“ unter 760 px Breite im Absch
 
 ---
 
+### v4.98 — Kurzdarstellung Rentner, Unternehmen, Plattformen, Importe und CO₂; Korrektur 94; zwei CO₂-Befunde
+
+**Art der Änderung: MINOR (neue Prüfrechnungen), geltende Zahlen unverändert.** 16. November 2026.
+
+**Auftrag der Initiative (16.11.2026):** Kurzdarstellung zur Rentnerregel mit Empfehlungen in Varianten; Unternehmenssteuern unplausibel gering;
+Fundort der Plattformsteuern; Behandlung der Importe; strengere CO₂-Besteuerung und heutige Abbildung.
+
+**Rechnung:**
+- `modell/rentner_eichung.py` (+ `.toml`) → `rentner_eichung.json`:
+  - Zerlegung v4.96 → v4.97 unter BS35: Tarif −13 €, Satz −2 €, Label −44 €, Zuschlag −11 € (Mittel der Rentnerhaushalte).
+  - Varianten R0–R4, geeicht auf das Mittel v4.96 (−109 €): R1 Sätze 8,1 / 16,1 % und R2 Freibetrag 1.739 bis 3.478 € kosten je 0,39 % BIP, der Anteil mit mehr bleibt bei 24,0 %. R3 (oberer Satz 40 %) kostet 0,09 %. R4 Altersausgleich 55 € je Person kostet 0,23 % BIP, Anteil mit mehr 64,5 %.
+- `modell/co2_varianten.py` (+ `.toml`) → `co2_varianten.json`: Varianten K0–K5.
+  - K1 (nur bezahlte Mengen) 0,69 % BIP gegen geltend 1,07 % (−0,38, −20 € Dividende).
+  - K2 (nationale Abgabe auf frei zugeteilte Mengen) 0,98 %.
+  - K3 (150 €/t) 1,30 %, K4 (200 €/t) 1,59 %.
+- Unternehmen: Abgleich heute gegen neu. Gewinnbezogene Steuern ohne Einkommensteuer 3,76 % BIP (2025: KSt, GewSt, nicht veranlagte Steuern vom Ertrag, Abgeltungsteuer) gegen 3,77 % BIP (2028: Unternehmen, Kapitalerträge).
+- Beide Stufen sind in `alles.py` aufgenommen.
+
+**Korrektur 94:** In v4.97 (Logbuch, Entscheidungsvorlage E5 Abschnitt 10, Antwort an die Initiative) stand als Ursache der Rentnerverluste „die
+Dividende sinkt, die Rentnerregel ist auf eine Dividende von rund 380 € geeicht“. Das ist falsch. Rentner erhalten keine Dividende zusätzlich, denn sie ist in der
+Bestandsrente enthalten (Korrektur 65). Die Ursache sind Label, Tarif und Zuschlag (Zerlegung oben). Aufgefallen beim Rechnen der Varianten.
+
+**Befunde (offen, nicht eingerechnet):**
+- **B-3 CO₂, freie Zuteilung:** Die belegte CO₂-Position setzt alle bepreisten Mengen an (528 Mt × 100 €/t). Im EU-ETS 1 erhielt Deutschland 2025 Erlöse für nur rund 26 % der Mengen (5,4 Mrd. € bei 73,86 €/t). Die Position ist um 0,38 % BIP zu hoch, wenn keine nationale Abgabe auf frei zugeteilte Mengen beschlossen wird (K2). Die Entscheidung liegt bei der Initiative (R17).
+- **B-4 CO₂ in den Haushalten:** Die Haushaltsrechnungen (haushalte33, mikro_de, Rentner) enthalten keine CO₂-Kosten. Die Mehrlast gegenüber 2025 beträgt 0,6 % BIP; grob −41 € je Rentnerhaushalt (Ableitung). Offen als R18.
+
+**Datenquelle:**
+- BMF-Datensammlung 2026 (Sekundärquelle).
+- OECD Revenue Statistics (Länderblatt DE, Anteile 2022).
+- ZfK nach UBA/DEHSt (Erlöse 2025).
+- UBA Methodenkonvention 3.2 (Klimakosten 300 €/t).
+- Labandeira u. a. 2017 (Elastizität, Annahme).
+
+**Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Auftrag der Initiative; Korrektur 94 und B-3 beim Rechnen der Varianten.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5554,6 +5591,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 91 | Belegrechnung B-1 (v4.87–v4.93, `einnahmen_belege`, intern): Position Übrige mit D212 einschließlich Zöllen (5,5 Mrd. €) | Zölle sind Eigenmittel der EU (neuerer Eurostat-Stand D2121 = 0); Übrige belegt 3,26 statt 3,39 % BIP, Lücke −3,22 statt −3,09; Dividende belegt 2028 195 statt 212 € | Haushaltsplan Deutschland, Abgleich mit dem neuen Eurostat-Stand, v4.94 |
 | 92 | Belegrechnung B-1 (v4.87–v4.94): „Übrige“ belegt einschließlich Grundsteuer (0,37 % BIP), obwohl sie in der Grundstücksabgabe (0,82, Gesamtbetrag; Kernmodell „Bodenwertabgabe statt Grundsteuer“) aufgeht | Übrige belegt 2,89 statt 3,26; Lücke B-1 −3,59 statt −3,22 % BIP; Dividende belegt 2028 185 statt 195 € | Prüfung jeder Position im Haushaltsplan, v4.95 |
 | 93 | Haushaltsplan Deutschland v4.94: neue Kredite (heute) und Fondsanleihen unter den Einnahmen, Fondsbeitrag als Einnahme ohne Gegenbuchung, Altrenten und Zinsen im Landeshaushalt | Kredite als Finanzierung; Altlastenzuschlag als Aufkommen, Beitrag an den Fonds als Ausgabe; Altrenten, Zinsen und Fondskredite im eigenen Konto des Fonds; Aufkommen heute 46,15 statt „Einnahmen 48,77“ | Rückfrage der Initiative 16.11.2026, v4.95 |
+| 94 | Ursache der Rentnerverluste v4.97 als „Dividende sinkt“ angegeben (Logbuch v4.97, Entscheidungsvorlage E5 Abschnitt 10, Antwort an die Initiative) | Rentner erhalten keine Dividende zusätzlich (Korrektur 65); Ursache Label −44 €, Tarif −13 €, Zuschlag −11 €, Satz −2 € (rentner_eichung.json) | Varianten zur Rentnerregel, v4.98 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5593,7 +5631,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.97
+## 7 | Offene Punkte, Stand v4.98
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5618,7 +5656,9 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R14 | **erledigt v4.53** (`modell/pruefe_kennzahlen.py`, 40 Werte; Korrektur 81) – **Kennzahlen maschinell prüfen (v4.52):** Werte in `KENNZAHLEN.md` mit Status „geltend“ gegen die Ergebnisdateien abgleichen (Korrekturen 74, 79, 80) | keine; Verlässlichkeit der Angaben | v4.52 |
 | R12 | **Verhaltenswirkungen, Stufe 2 (v4.48):** V1 Grenzbelastung 0–30.000 € mit Aufstockung je Haushaltstyp; V2 Arbeitsangebot als Band (Elastizitäten mit Quelle) in der Mikrosimulation; V3 asymmetrische Überwälzung der Mehrwertsteuer im Preisniveau; V4 Ausweichband Vermögen gegen Jakobsen u. a. 2020; V5 Länderwerte (Nicht-Inanspruchnahme, nicht erklärte Arbeit, Vertrauen; zu R5); V6 Akzeptanzbefragung | Aufkommen und Dividende (V2–V4), Darstellung (V6) | v4.48, `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md` |
 | R15 | **Rentnerregel BS35 je Staat (v4.72):** Verteilung von Zusagen und Versicherungsjahren außerhalb Deutschlands (bisher DE-Form, Annahme; LU 29,6 % als Grenzfall); Versicherungsjahre in DE aus Daten statt Zuschätzung (DRV-Statistik, Anhang A 3.1 des Rentenversicherungsberichts); Rentnerhaushalte FR/IT/ES/PL; Boden und SDG 1.2 | Rentner aller Staaten; Zuschlag über die Verrechnung | v4.69–v4.72 |
-| R16 | **Rentnerregel nach der Umstellung v4.97 neu eichen:** Rentnerhaushalte mit mehr 23,1 % (vorher 63,7 %), Mittel −197 €; BS35 ist auf die frühere Dividende geeicht (Boden, Freibetrag, Sätze 27,5 / 55,1 %); dazu Kursgewinne (später), Fortschrittskriterium der Brücke, Automatisierungs- und Erbschaftstrend im Langfristpfad | Rentner; Zuschlag | v4.97 |
+| R16 | **Rentnerregel nach der Umstellung v4.97 neu eichen:** Rentnerhaushalte mit mehr 23,1 % (vorher 63,7 %), Mittel −197 €; Ursache vor allem das Label (v4.98, Korrektur 94); Varianten R0–R4, Empfehlung Altersausgleich R4 (55 € je Person, 0,23 % BIP), Entscheidung offen; dazu Kursgewinne (später), Fortschrittskriterium der Brücke, Automatisierungs- und Erbschaftstrend im Langfristpfad | Rentner; Zuschlag | v4.97 |
+| R17 | **CO₂-Position (B-3, v4.98):** freie Zuteilung im EU-ETS 1 nicht abgezogen (−0,38 % BIP); Entscheidung K1 (berichtigen) oder K2 (nationale Abgabe auf frei zugeteilte Mengen) oder K3 (150 €/t); Rechtsprüfung (P1) | Dividende −20 bis +12 € | v4.98 |
+| R18 | **CO₂-Kosten in den Haushaltsrechnungen (B-4, v4.98):** heute und neu aufnehmen; Mehrlast 2028 gegen 2025 rund 0,6 % BIP, Rentner grob −41 € | alle Haushalte, vor allem Rentner | v4.98 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 

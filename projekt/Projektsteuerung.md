@@ -1,11 +1,11 @@
-# Projektsteuerung TAX 28:28 (Stand v4.97, 16. November 2026)
+# Projektsteuerung TAX 28:28 (Stand v4.98, 16. November 2026)
 
 Maßgeblich ist das private Repository `archicrowd/2828` (main). Der Projektraum „2525" spiegelt Logbuch
 Band I bis III und diese Anleitung; der Abgleich geschieht von Hand.
 Autorin des Konzepts: Initiative 28:28 (Name nur im Impressum der Webseite). Lizenz: Skripte MIT, Texte und Ergebnisse CC BY 4.0.
 
 ## Geltende Fassung
-**Geltend ist Stand C „Das Goldene Drittel“** (Skripte im README, Abschnitt „Aktueller Stand“). **v4.97 (16.11.2026):** belegte Einnahmen (`modell/deckung_belegt.py`) und Regeln vom 16.11.2026 (Satz ein Drittel, Grundbedarf im Tarif 12.072 €, Label 7/13/19/27 mit Stufenwanderung, Erbschaftsfreibetrag 2 × Grundbedarf, Stundungskredit Elternhaus 1 % bis 20 Jahre); Dividende DE 245 € je Erwachsenem 2028 (Kaufkraft 2026), Fondsbeitrag 5,32 % BIP; Rentnerhaushalte mit mehr 23,1 % (R16 offen). Der folgende Absatz beschreibt den Vorläufer Stand B.
+**Geltend ist Stand C „Das Goldene Drittel“** (Skripte im README, Abschnitt „Aktueller Stand“). **v4.97 (16.11.2026):** belegte Einnahmen (`modell/deckung_belegt.py`) und Regeln vom 16.11.2026 (Satz ein Drittel, Grundbedarf im Tarif 12.072 €, Label 7/13/19/27 mit Stufenwanderung, Erbschaftsfreibetrag 2 × Grundbedarf, Stundungskredit Elternhaus 1 % bis 20 Jahre); Dividende DE 245 € je Erwachsenem 2028 (Kaufkraft 2026), Fondsbeitrag 5,32 % BIP; Rentnerhaushalte mit mehr 23,1 % (R16 offen). **v4.98:** Kurzdarstellung mit Varianten (`projekt/Kurzdarstellung-Rentner-Unternehmen-CO2-2026-11-16.md`): Ursache der Rentnerverluste ist vor allem das Label (Korrektur 94), Empfehlung Altersausgleich R4; CO₂-Position um 0,38 % BIP zu hoch (freie Zuteilung), Empfehlung nationale Abgabe K2; Entscheidungen offen. Der folgende Absatz beschreibt den Vorläufer Stand B.
 
 Gesamtkonzept vom 12. Oktober 2026 (Einführung als RTF, dazu Kurzfassung und PDF-Fassung): Quote 30,2 %, Obergrenze des Daches 32 % des Einzugs, Dividende als gleicher Anteil am eigenen BIP je Kopf (Entscheidung E2), Mindestniveau halbes Existenzminimum als Kriterium im Durchschnitt der Staaten; Deutschland 634 € je Erwachsenem und Monat 2028, 860 € 2060; Durchschnitt 535 € je Einwohner 2028, Tiefpunkt 526 € 2032 (Preise 2028); Tarif 0/9/16/21/28 % mit Stufen beim 1-, 1,5-, 2- und 3-fachen Grundbedarf (DE 2028: 12.847 / 19.270 / 25.694 / 38.541 €); Erbschaftsfreibetrag 100.000 €, Vermögensteuer 1,5 %; Mehrwertsteuer-Label effektiv 16,9 %; Schuldenquote 2028 81,3 %. (Bis v3.40 stand hier noch die Fassung vom 7. Oktober; nachgeführt in v3.42.) Rechnung `modell/gesamtrechnung.py`.
 

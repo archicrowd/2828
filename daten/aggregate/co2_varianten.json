@@ -1,0 +1,85 @@
+{
+ "version": "v4.98",
+ "status": "Prüfrechnung (2028); Deckung unverändert bis zur Entscheidung",
+ "mengen_2028_mt": {
+  "ets1": 259,
+  "nehs_ets2": 268
+ },
+ "ets1_bezahlt_2025_anteil": 0.258,
+ "varianten": [
+  {
+   "id": "K0",
+   "name": "geltend: alle bepreisten Mengen × 100 €/t",
+   "preis_eur_t": 100.0,
+   "menge_bezahlt_mt": 527,
+   "aufkommen_pct_bip": 1.07,
+   "aufkommen_mrd": 52.7,
+   "gegen_geltend_pct_bip": 0.0,
+   "dividende_erw_monat_eur": 0,
+   "mehrlast_gegen_2025_pct_bip": 0.6,
+   "rentner_mittel_monat_eur": -41
+  },
+  {
+   "id": "K1",
+   "name": "berichtigt: nur bezahlte Mengen (freie Zuteilung im EU-ETS abgezogen)",
+   "preis_eur_t": 100.0,
+   "menge_bezahlt_mt": 341,
+   "aufkommen_pct_bip": 0.69,
+   "aufkommen_mrd": 34.1,
+   "gegen_geltend_pct_bip": -0.38,
+   "dividende_erw_monat_eur": -20,
+   "mehrlast_gegen_2025_pct_bip": 0.22,
+   "rentner_mittel_monat_eur": -15
+  },
+  {
+   "id": "K2",
+   "name": "K1 + nationale Abgabe auf frei zugeteilte Mengen (100 €/t)",
+   "preis_eur_t": 100.0,
+   "menge_bezahlt_mt": 481,
+   "aufkommen_pct_bip": 0.98,
+   "aufkommen_mrd": 48.1,
+   "gegen_geltend_pct_bip": -0.09,
+   "dividende_erw_monat_eur": -5,
+   "mehrlast_gegen_2025_pct_bip": 0.51,
+   "rentner_mittel_monat_eur": -34
+  },
+  {
+   "id": "K3",
+   "name": "K2 mit 150 €/t",
+   "preis_eur_t": 150.0,
+   "menge_bezahlt_mt": 426,
+   "aufkommen_pct_bip": 1.3,
+   "aufkommen_mrd": 63.8,
+   "gegen_geltend_pct_bip": 0.23,
+   "dividende_erw_monat_eur": 12,
+   "mehrlast_gegen_2025_pct_bip": 0.83,
+   "rentner_mittel_monat_eur": -56
+  },
+  {
+   "id": "K4",
+   "name": "K2 mit 200 €/t",
+   "preis_eur_t": 200.0,
+   "menge_bezahlt_mt": 390,
+   "aufkommen_pct_bip": 1.59,
+   "aufkommen_mrd": 78.1,
+   "gegen_geltend_pct_bip": 0.52,
+   "dividende_erw_monat_eur": 27,
+   "mehrlast_gegen_2025_pct_bip": 1.12,
+   "rentner_mittel_monat_eur": -76
+  },
+  {
+   "id": "K5",
+   "name": "K2 + Landwirtschaft (Methan, Lachgas) mit 100 €/t",
+   "preis_eur_t": 100.0,
+   "menge_bezahlt_mt": 528,
+   "aufkommen_pct_bip": 1.07,
+   "aufkommen_mrd": 52.8,
+   "gegen_geltend_pct_bip": 0.0,
+   "dividende_erw_monat_eur": 0,
+   "mehrlast_gegen_2025_pct_bip": 0.6,
+   "rentner_mittel_monat_eur": -41
+  }
+ ],
+ "erloese_2025_pct_bip": 0.47,
+ "hinweis": "Die Haushaltsrechnungen (haushalte33, mikro_de, Rentner) enthalten keine CO₂-Kosten, weder heute noch neu; die Mehrlast gegenüber den Erlösen 2025 fehlt dort. Rentnerlast als grobe Ableitung aus der Labelwirkung (gleiche Inzidenz, Annahme; Heizung und Kraftstoff wiegen bei Rentnern eher schwerer). Preise nominal 2028 (Annahme). Recht: nationale Abgabe neben dem EU-ETS und Preis über der ETS2-Preisbremse sind rechtlich zu prüfen (P1)."
+}

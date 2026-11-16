@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.97 · höchste Korrekturnummer 93 · 636 Dateien im Repository
+Modellstand v4.98 · höchste Korrekturnummer 94 · 643 Dateien im Repository
 
 ## Bausteine
 
@@ -101,6 +101,8 @@ Modellstand v4.97 · höchste Korrekturnummer 93 · 636 Dateien im Repository
 | N56 | B31 Drittel-System | B31 Drittel-System | ok |
 | N57 | B31 Drittel-System | B32 Länderseiten | offen |
 | N58 | B31 Drittel-System | Webseite | ok |
+| N59 | B32 Länderseiten | B32 Länderseiten | offen |
+| N60 | B31 Drittel-System | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -134,3 +136,5 @@ Modellstand v4.97 · höchste Korrekturnummer 93 · 636 Dateien im Repository
 - Hinweis: Naht N54 offen: B31 Drittel-System -> B31 Drittel-System: v4.93: intern; Lösungsbereich in der Kopie erweitert; v4.96: Labelregel [label] in deckung_varianten.toml, gelesen von projektion33 (nur Kopie); Varianten Aplus aus e5_hebel.json
 - Hinweis: Naht N55 offen: B31 Drittel-System -> B31 Drittel-System: v4.95: Konten getrennt; Grundsteuer doppelt (Korrektur 92) behoben in einnahmen_belege; Prüfpunkt Subventionsabbau gegen Einkommen ohne Abzüge
 - Hinweis: Naht N57 offen: B31 Drittel-System -> B32 Länderseiten: v4.97: konzept33-bau.js liest G26T nicht aus der Datei (Wert 12072 von Hand, zu prüfen bei Änderung)
+- Hinweis: Naht N59 offen: B32 Länderseiten -> B32 Länderseiten: v4.98: Prüfrechnung; Werte [alt] bei Änderung von v4.96-Daten nicht automatisch nachgezogen
+- Hinweis: Naht N60 offen: B31 Drittel-System -> B31 Drittel-System: v4.98: Befund B-3 (freie Zuteilung) und B-4 (CO₂-Kosten fehlen in den Haushalten) offen, R17/R18
