@@ -1,6 +1,6 @@
 # Entscheidungsvorlage E5: Was trägt die Lücke der Einnahmen?
 
-Initiative 28:28 · 15. November 2026 · Modellstand v4.94 (Zahlen nach Korrektur 91) · Rechnung: `modell/e5_varianten.py` (+ `.toml`) → `daten/aggregate/e5_varianten.json`
+Initiative 28:28 · 15. November 2026 · Modellstand v4.95 (Zahlen nach Korrekturen 91 und 92) · Rechnung: `modell/e5_varianten.py` (+ `.toml`) → `daten/aggregate/e5_varianten.json`
 Status: **interne Vorlage** (Beschluss 15.11.2026: Rechnungen bis zum Abschluss von Weg C intern). Grundlage: `einnahmen_belege.json`,
 `unternehmensbasis.json`, Vorlagen `Einnahmen-Belege-2026-11-15.md` und `Unternehmensbasis-Entscheidungen-2026-11-15.md`.
 
@@ -11,10 +11,10 @@ Vier Einnahmepositionen der geltenden Deckung (33,53 % BIP) lassen sich nach amt
 | Position | Modell | belegt (mittel) | Lücke | Grund |
 |---|---|---|---|---|
 | Unternehmen und Plattformen | 4,42 | 2,37 | −2,05 | heutige Basis der Kapitalgesellschaften 6,0 % BIP statt 13,4 %; alle beschlossenen Hebel eingerechnet |
-| Übrige Steuern | 3,93 | 3,26 | −0,67 | Emissionshandel doppelt gezählt (auch im CO₂-Preis); Zölle sind Einnahmen der EU (Korrektur 91) |
+| Übrige Steuern | 3,93 | 2,89 | −1,04 | Emissionshandel und Grundsteuer doppelt gezählt (eigene Positionen CO₂-Preis und Grundstücksabgabe; Korrektur 92); Zölle sind Einnahmen der EU (Korrektur 91) |
 | CO₂-Preis 2028 | 1,38 | 1,07 | −0,31 | die Emissionen sinken in Tonnen, das BIP wächst |
 | Erbschaft | 1,16 | 0,97 | −0,19 | Basis 2022–2025 im Mittel |
-| **zusammen** | | | **−3,22** (−2,57 bis −3,72) | |
+| **zusammen** | | | **−3,59** (−2,94 bis −4,09) | |
 
 ## 2 Was die belegten Werte bewirken, mit allen Rückwirkungen
 
@@ -26,17 +26,17 @@ Dividende je Erwachsenem und Monat in € (Kaufkraft 2026, ohne Kinderanteil; mi
 | | 2028 | 2035 | 2045 | 2060 | Fondsbeitrag |
 |---|---|---|---|---|---|
 | geltend | 384 | 309 | 261 | 256 | 5,04 % BIP |
-| belegt, hoch | 235 | 149 | 87 | 50 | 5,34 |
-| **belegt, mittel** | **195** | **108** | **43** | **−7** | **5,42** |
-| belegt, vorsichtig | 168 | 80 | 10 | **−47** | 5,47 |
+| belegt, hoch | 212 | 124 | 62 | 16 | 5,38 |
+| **belegt, mittel** | **185** | **97** | **29** | **−24** | **5,44** |
+| belegt, vorsichtig | 151 | 58 | **−10** | **−72** | 5,51 |
 
 **Drei Befunde:**
 1. **Die Dividende fällt stärker als die Lücke.**
    - Ein Punkt weniger Deckung kostet die Dividende etwa 1,08 Punkte.
    - Der Grund: Alte Rentenzusagen werden oberhalb der Dividende abgegolten. Sinkt die Dividende, steigt diese Altlast, und der Fondsbeitrag
-     wächst von 5,04 auf 5,42 % BIP.
-2. **Langfristig verschwindet die Dividende.** Im mittleren Fall sind es 2045 noch 43 €; 2060 wäre sie negativ (−7 €). Im vorsichtigen Fall
-   ist sie schon 2045 fast null.
+     wächst von 5,04 auf 5,44 % BIP.
+2. **Langfristig verschwindet die Dividende.** Im mittleren Fall sind es 2045 noch 29 €; 2060 wäre sie negativ (−24 €). Im vorsichtigen Fall
+   ist sie schon 2045 negativ.
 3. **Allein trägt Option A nicht.** Die belegten Werte sind die ehrliche Grundlage. Ohne Ergänzung bleibt aber kein Puffer, und die
    Transformationsdividende verliert ab etwa 2045 ihren Sinn.
 
@@ -56,17 +56,17 @@ Bodenwertabgabe, Abbau klimaschädlicher Subventionen“. Beide stehen schon in 
 BIP) und sind keine zusätzlichen Einnahmen.
 
 **Größenordnung der Ergänzung:**
-- Zwischen hohem und mittlerem Fall bringt jeder Punkt Deckung der Dividende 2060 rund 88 € (Ableitung, linear angenommen).
-- Für mindestens 100 € im Jahr 2060 (mittel) braucht es **rund 1,2 Punkte BIP** mehr. Die Dividende 2028 läge dann bei rund 270 €.
-- Für die geltende Dividende braucht es die ganzen 3,2 Punkte. Allein über das Label wären das gut 8 Punkte mehr; das ist nicht plausibel.
+- Zwischen hohem und mittlerem Fall bringt jeder Punkt Deckung der Dividende 2060 rund 62 € (Ableitung, linear angenommen).
+- Für mindestens 100 € im Jahr 2060 (mittel) braucht es **rund 2 Punkte BIP** mehr. Die Dividende 2028 läge dann bei rund 270 €.
+- Für die geltende Dividende braucht es die ganzen 3,6 Punkte. Allein über das Label wären das gut 8 Punkte mehr; das ist nicht plausibel.
 
 ## 4 Optionen
 
 | Option | Inhalt | Dividende 2028 / 2060 (mittel) | Bewertung |
 |---|---|---|---|
-| A | belegte Werte, Dividende als Rest | 195 / −7 € | ehrlich, aber 2060 nicht tragfähig |
-| **A+ (Empfehlung)** | belegte Werte und eine Ergänzung um rund 1,2 Punkte BIP aus Tarif und Label, beide innerhalb des Drittels | rund 270 / 100 € (Ableitung) | tragfähig, mit Puffer; die Dividende bleibt ein spürbarer Rest |
-| A++ | belegte Werte und volle Ergänzung um 3,2 Punkte | 384 / 256 € | verlangt starke Eingriffe in Tarif und Label |
+| A | belegte Werte, Dividende als Rest | 185 / −24 € | ehrlich, aber 2060 nicht tragfähig |
+| **A+ (Empfehlung)** | belegte Werte und eine Ergänzung um rund 2 Punkte BIP: Automatisierung und Erbe (rund 1 Punkt, zu belegen), dazu Tarif und Label, alles innerhalb des Drittels | rund 270 / 100 € (Ableitung) | tragfähig, mit Puffer; die Dividende bleibt ein spürbarer Rest |
+| A++ | belegte Werte und volle Ergänzung um 3,6 Punkte | 384 / 256 € | verlangt starke Eingriffe in Tarif und Label |
 | D | Fonds strecken | höher | verschiebt die Last auf spätere Generationen |
 
 **Empfehlung A+.** Beschlossen würden die belegten Werte und ein Ziel: Die Dividende bleibt im mittleren Fall bis 2060 bei mindestens
@@ -94,3 +94,10 @@ rund 100 € (Kaufkraft 2026).
   Lücken jetzt direkt aus `einnahmen_belege.json`.
 - **Automatisierung und Erbe** (Hinweis der Initiative): erste Abschätzung rund +1 Punkt BIP um 2045, also in der Größe der Ergänzung A+. Siehe
   `Haushaltsplan-Deutschland-2026-11-15.md`, Abschnitt 4. Noch nicht durch die Kette gerechnet.
+
+## 8 Nachtrag v4.95
+
+- **Korrektur 92:** Die Grundsteuer steckt in „Übrige“ und geht zugleich in der Grundstücksabgabe auf. Übrige belegt 2,89; die Lücke beträgt
+  −3,59 % BIP.
+- **Folge:** Für mindestens 100 € im Jahr 2060 braucht es jetzt rund 2 Punkte Ergänzung. Automatisierung und Erbe (rund 1 Punkt) decken etwa
+  die Hälfte.

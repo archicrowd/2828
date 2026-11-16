@@ -46,6 +46,26 @@ def tabelle(zeilen, titel_heute):
     return f'<div class="tw"><table>{kopf}<tbody>{"".join(out)}</tbody></table></div>'
 
 
+def fonds_tabelle():
+    S, F = D["summen"], D["fondskonto"]
+    z = [("Heute 2024", "Finanzierungssaldo Gesamtstaat (Aufkommen − Ausgaben)", S["finanzierungssaldo_heute_pct"], "gedeckt durch neue Kredite (Finanzierung, keine Einnahme)"),
+         ("Nachher 2028", "Saldo Landeshaushalt (Aufkommen − Ausgaben)", S["saldo_nachher_pct"], "ausgeglichen; keine neuen Kredite des Landes")]
+    z += [("Fonds 2028", "Einnahme: " + x["position"], x["pct_bip"], x["art"]) for x in F["einnahmen"]]
+    z += [("Fonds 2028", "Ausgabe: " + x["position"], -x["pct_bip"], x["art"]) for x in F["ausgaben"]]
+    z += [("Fonds 2028", "Finanzierung: " + x["position"], x["pct_bip"], x["art"]) for x in F["finanzierung"]]
+    rows = "".join(f'<tr><td>{html.escape(a)}</td><th scope="row">{html.escape(b)}</th><td class="num stark">{f(c)}</td><td class="txt">{html.escape(d)}</td></tr>' for a, b, c, d in z)
+    return ('<div class="tw"><table class="schmal"><thead><tr><th scope="col">Konto</th><th scope="col">Position</th><th scope="col" class="num">% BIP</th>'
+            f'<th scope="col">Art</th></tr></thead><tbody>{rows}</tbody></table></div>'
+            '<p class="hinweis">Konsolidiert (ohne den Beitrag, der nur vom Landeshaushalt in den Fonds fließt): Ausgaben 2028 '
+            f'{f(S["ausgaben_konsolidiert_nachher_pct"])} % BIP, davon Landeshaushalt {f(S["ausgaben_nachher_pct"] - F["einnahmen"][0]["pct_bip"])} und Fonds {f(S["fonds_ausgaben_pct"])}.</p>')
+
+
+def pruef_tabelle():
+    rows = "".join(f'<tr><th scope="row">{html.escape(a)}</th><td>{html.escape(b)}</td><td>{html.escape(c)}</td><td class="txt">{html.escape(d)}</td></tr>' for a, b, c, d in D["pruefung"])
+    return ('<div class="tw"><table class="schmal"><thead><tr><th scope="col">Position</th><th scope="col">Art</th><th scope="col">Konto</th>'
+            f'<th scope="col">Befund</th></tr></thead><tbody>{rows}</tbody></table></div>')
+
+
 E, A = D["einnahmen"], D["ausgaben"]
 g = lambda L, s: next(x for x in L if x["position"].startswith(s))
 sozial = sum(x["heute_pct_bip"] for x in E if x["gruppe"] == "Sozialbeiträge")
@@ -53,7 +73,7 @@ vorher = dict(
     quellen=[["Einkommensteuern", g(E, "Lohn")["heute_pct_bip"]], ["Gewinnsteuern", g(E, "Körperschaft")["heute_pct_bip"]],
              ["Mehrwertsteuer", g(E, "Mehrwert")["heute_pct_bip"]], ["Verbrauch- und übrige Steuern", g(E, "Verbrauch")["heute_pct_bip"]],
              ["Emissionshandel", g(E, "Emission")["heute_pct_bip"]], ["Grund- und Erbschaftsteuer", g(E, "Grundsteuer")["heute_pct_bip"] + g(E, "Erbschaft")["heute_pct_bip"]],
-             ["Sozialbeiträge", round(sozial, 2)], ["Gebühren, Erträge, Transfers", g(E, "Verkäufe")["heute_pct_bip"]], ["Neue Schulden", g(E, "Neue")["heute_pct_bip"]]],
+             ["Sozialbeiträge", round(sozial, 2)], ["Gebühren, Erträge, Transfers", g(E, "Verkäufe")["heute_pct_bip"]], ["Finanzierung: neue Kredite", -D["summen"]["finanzierungssaldo_heute_pct"]]],
     mitte=["Gesamtstaat 2024"],
     ziele=[["Renten, Pensionen, Hinterbliebene", g(A, "Alter")["heute_pct_bip"]], ["Gesundheit", g(A, "Gesundheit")["heute_pct_bip"]],
            ["Familie, Wohnen, Grundsicherung", g(A, "Familie")["heute_pct_bip"]], ["Krankheit, Pflege, Invalidität", g(A, "Krankheit")["heute_pct_bip"]],
@@ -68,15 +88,17 @@ nachher = dict(
              ["Übrige Steuern", np_("Übrige")], ["CO₂-Preis", np_("CO₂")], ["Kapitalerträge", np_("Kapital")], ["Erbschaften", np_("Erbschaften")],
              ["Große Vermögen", np_("Große")], ["Grundstücksabgabe", np_("Grundstück")], ["Subventionsabbau", np_("Subvention")],
              ["Progression", np_("Progression")]],
-    fonds=[["Fondsbeitrag", np_("Fondsbeitrag")], ["Fondsanleihen", np_("Fondsanleihen")]],
+    zuschlag=[["Altlastenzuschlag", np_("Altlastenzuschlag")]],
     ziele_steuern=[["Dividende", np_("Dividende")], ["Netz: Gesundheit", np_("Gesundheit")],
                    ["Netz: Pflege, Invalidität, Arbeit, Härtefall", round(g(A, "Krankheit")["nachher_pct_bip"] + g(A, "Arbeitslos")["nachher_pct_bip"] + g(A, "Familie")["nachher_pct_bip"], 2)],
                    ["Gemeinden: Schulen", g(A, "Schulen")["nachher_pct_bip"]],
                    ["Gemeinden: Verwaltung, Verkehr, Kultur u. a.", 6.65],
                    ["Dach: Wirtschaftsraum", 2.10], ["Dach: Forschung, Hochschulen", g(A, "Hochschulen")["nachher_pct_bip"]],
-                   ["Dach: Verteidigung", g(A, "Verteidigung")["nachher_pct_bip"]], ["Dach: Außen, Standards, Polizei, Umwelt", 1.18]],
-    ziele_fonds=[["Altrenten über der Dividende", g(A, "Alter")["nachher_pct_bip"]], ["Zinsen auf Altschulden", g(A, "Zinsen")["nachher_pct_bip"]]])
-st = round(sum(v for _, v in nachher["steuern"]), 2)
+                   ["Dach: Verteidigung", g(A, "Verteidigung")["nachher_pct_bip"]], ["Dach: Außen, Standards, Polizei, Umwelt", 1.18],
+                   ["Beitrag an den Gemeinschaftsfonds", np_("Beitrag an den Fonds")]],
+    fonds_ein=[[x["position"], x["pct_bip"]] for x in D["fondskonto"]["einnahmen"]] + [[x["position"], x["pct_bip"]] for x in D["fondskonto"]["finanzierung"]],
+    fonds_aus=[[x["position"], x["pct_bip"]] for x in D["fondskonto"]["ausgaben"]])
+st = round(sum(v for _, v in nachher["steuern"] + nachher["zuschlag"]), 2)
 nachher["saldo"] = round(st - sum(v for _, v in nachher["ziele_steuern"]), 2)
 pf = D["dividendenpfad"]
 de = D["dividende_eur"]
@@ -124,6 +146,7 @@ section {{ display: grid; gap: 14px; min-width: 0; }}
 .legende i {{ display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }}
 .tw {{ overflow-x: auto; background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; }}
 table {{ border-collapse: collapse; width: 100%; min-width: 980px; font-size: 14px; }}
+table.schmal {{ min-width: 720px; }}
 th, td {{ padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; text-align: left; }}
 thead th {{ font-family: var(--f-head); font-weight: 650; font-size: 13px; background: var(--paper); position: sticky; top: 0; }}
 tbody th {{ font-weight: 600; max-width: 330px; }}
@@ -151,26 +174,29 @@ a:focus-visible {{ outline: 2px solid var(--ein); outline-offset: 2px; }}
   Alle Anteile in % des BIP, Euro nominal im jeweiligen Jahr.</p>
 </header>
 <div class="kennz">
-  <div class="kz"><b>{f(D["summen"]["ausgaben_heute_pct"],1)} %</b><span>Ausgaben heute (2024), BIP</span></div>
-  <div class="kz"><b>{f(D["summen"]["ausgaben_nachher_pct"],1)} %</b><span>Ausgaben nachher (2028), davon Fonds {f(D["summen"]["altlast_de_2028"],1)}</span></div>
-  <div class="kz"><b>{f(D["summen"]["steuern_nachher_pct"],1)} %</b><span>Steuern nachher; Sozialbeiträge entfallen</span></div>
+  <div class="kz"><b>{f(D["summen"]["aufkommen_heute_pct"],1)} / {f(D["summen"]["ausgaben_heute_pct"],1)} %</b><span>Heute 2024: Aufkommen / Ausgaben; Lücke {f(-D["summen"]["finanzierungssaldo_heute_pct"],1)} über Kredite</span></div>
+  <div class="kz"><b>{f(D["summen"]["aufkommen_nachher_pct"],1)} / {f(D["summen"]["ausgaben_nachher_pct"],1)} %</b><span>Landeshaushalt 2028: Aufkommen / Ausgaben (mit Beitrag an den Fonds); Saldo +{f(D["summen"]["saldo_nachher_pct"])}</span></div>
+  <div class="kz"><b>{f(D["summen"]["fonds_ausgaben_pct"],1)} %</b><span>Gemeinschaftsfonds, Anteil DE: Altrenten und Zinsen; davon {f(D["summen"]["fonds_kredite_pct"],1)} über Fondskredite</span></div>
   <div class="kz"><b>{de["geltend"]["2028"]} €</b><span>Dividende je Erwachsenem und Monat 2028 (Kaufkraft 2026); belegt {de["belegt_mittel"]["2028"]} €</span></div>
 </div>
 <section>
   <h2>Wie das Geld fließt</h2>
-  <p>Beide Bilder im selben Maßstab: Die Breite eines Bandes ist sein Anteil am BIP. Die private Pflichtvorsorge (4,1 % BIP, eigenes Konto) ist nicht enthalten.</p>
+  <p>Alle Bilder im selben Maßstab: Die Breite eines Bandes ist sein Anteil am BIP. Links steht das Aufkommen, grau die Finanzierung über Kredite;
+  Kredite sind keine Einnahme. Nachher gibt es zwei Konten: den Landeshaushalt und den Gemeinschaftsfonds, in den Deutschland seinen Beitrag zahlt.
+  Die private Pflichtvorsorge (4,1 % BIP, eigenes Konto) ist nicht enthalten.</p>
   <div class="sankeys">
-    <div class="sk"><h3>Heute, 2024</h3><div class="sv" id="sk-vorher"></div></div>
-    <div class="sk"><h3>Goldenes Drittel, 2028 (geltend)</h3><div class="sv" id="sk-nachher"></div></div>
+    <div class="sk"><h3>Heute, 2024: Gesamtstaat mit Sozialversicherung</h3><div class="sv" id="sk-vorher"></div></div>
+    <div class="sk"><h3>Goldenes Drittel 2028: Landeshaushalt Deutschland</h3><div class="sv" id="sk-nachher"></div></div>
+    <div class="sk"><h3>Goldenes Drittel 2028: Gemeinschaftsfonds, Anteil Deutschland</h3><div class="sv" id="sk-fonds"></div></div>
   </div>
   <div class="legende"><span><i style="background:var(--ein)"></i>Steuern</span><span><i style="background:var(--aus)"></i>Sozialbeiträge</span>
-  <span><i style="background:var(--fonds)"></i>Fonds (Altlasten)</span><span><i style="background:var(--kredit)"></i>Schulden, Gebühren</span><span><i style="background:var(--div)"></i>Dividende</span></div>
+  <span><i style="background:var(--fonds)"></i>Fonds (Altlasten)</span><span><i style="background:var(--kredit)"></i>Gebühren; Kredite (Finanzierung)</span><span><i style="background:var(--div)"></i>Dividende</span></div>
 </section>
 <section>
   <h2>Wohin die Dividende bis 2060 geht</h2>
   <p>Die Dividende ist der Rest, nachdem Gemeinden, Dach und Netz bezahlt sind. In der geltenden Rechnung sinkt sie von {f(pf["dividende_2028"])} auf {f(pf["dividende_2060"])} % BIP.
   Die Gründe: Verteidigung steigt, die Lenkungsabgaben schrumpfen mit den Emissionen und dem Verbrauch, und das Netz wächst mit dem Alter der Bevölkerung.
-  Die Progression gleicht einen Teil aus. Mit den belegten Einnahmen (intern) fehlen weitere rund 3,3 Punkte.</p>
+  Die Progression gleicht einen Teil aus. Mit den belegten Einnahmen (intern) fehlt noch mehr; die Dividende würde vor 2060 negativ.</p>
   <div class="pfad" id="pfad"></div>
 </section>
 <section>
@@ -181,6 +207,14 @@ a:focus-visible {{ outline: 2px solid var(--ein); outline-offset: 2px; }}
   <h2>Ausgaben nach Aufgaben</h2>
   {tabelle(A, "heute")}
 </section>
+<section>
+  <h2>Finanzierung und Gemeinschaftsfonds</h2>
+  {fonds_tabelle()}
+</section>
+<section>
+  <h2>Prüfung der Positionen</h2>
+  {pruef_tabelle()}
+</section>
 <div class="hinweis">
   <p><b>Quellen.</b> Heute: Eurostat, <a href="{D["quellen"]["steuern"]}">gov_10a_taxag</a>, <a href="{D["quellen"]["ausgaben"]}">gov_10a_exp</a> (COFOG),
   <a href="{D["quellen"]["haupt"]}">gov_10a_main</a>, Deutschland 2024, vorläufig, BIP 4.386,9 Mrd. €. Nachher: Rechnung der Initiative 28:28
@@ -188,8 +222,8 @@ a:focus-visible {{ outline: 2px solid var(--ein); outline-offset: 2px; }}
   <p><b>Zuordnung.</b> Die Zuordnung heutiger Steuern und Aufgaben zu den neuen Positionen ist eigene Arbeit (Annahme). Die deutschen Steuernamen zu den
   Eurostat-Kategorien sind eigene Kenntnis. Gebühren und Entgelte sind im Modell mit den Ausgaben verrechnet (netto). Die Zinsen 2028 sind mit der Quote 2024
   angesetzt; die Altrenten über der Dividende sind die Altlast Deutschlands (10,19 % BIP) abzüglich dieser Zinsen.</p>
-  <p><b>Belegt (intern).</b> Prüfbefund B-1: Werte nach amtlichen Daten, mittlerer Fall, mit allen Rückwirkungen durch die Kette. Prüfpunkte offen:
-  Grundsteuer zugleich in „Übrige“ und Grundstücksabgabe? Zölle sind Einnahmen der EU, nicht des Landes.</p>
+  <p><b>Belegt (intern).</b> Prüfbefund B-1: Werte nach amtlichen Daten, mittlerer Fall, mit allen Rückwirkungen durch die Kette. Seit v4.95 ohne
+  Zölle (Einnahme der EU) und ohne Grundsteuer in „Übrige“ (sie geht in der Grundstücksabgabe auf).</p>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
@@ -222,7 +256,7 @@ function zeichne(id, nodes, links, farbe) {{
 }}
 function vorher() {{
   const V = D.vorher, mid = V.mitte[0];
-  const fq = n => n === 'Sozialbeiträge' ? '--aus' : (n === 'Neue Schulden' || n.startsWith('Gebühren')) ? '--kredit' : '--ein';
+  const fq = n => n === 'Sozialbeiträge' ? '--aus' : (n.startsWith('Finanzierung') || n.startsWith('Gebühren')) ? '--kredit' : '--ein';
   const nodes = [...V.quellen.map(([n]) => ({{name: n, stufe: 0, farbe: fq(n)}})), {{name: mid, stufe: 1, farbe: '--ink'}},
                  ...V.ziele.map(([n]) => ({{name: n, stufe: 2, farbe: '--muted'}}))];
   const links = [...V.quellen.map(([n, v]) => ({{source: n, target: mid, value: v, stufe: 0, f: fq(n)}})),
@@ -230,24 +264,25 @@ function vorher() {{
   zeichne('sk-vorher', nodes, links, l => l.f);
 }}
 function nachher() {{
-  const N = D.nachher, H = 'Steuerhaushalt', F = 'Fonds';
-  const fz = n => n === 'Dividende' ? '--div' : n.startsWith('Altrenten') || n.startsWith('Zinsen') ? '--fonds' : '--muted';
+  const N = D.nachher, H = 'Landeshaushalt';
+  const fz = n => n === 'Dividende' ? '--div' : n.startsWith('Beitrag') ? '--fonds' : '--muted';
   const zs = [...N.ziele_steuern]; if (N.saldo > 0) zs.push(['Saldo', N.saldo]);
-  const nodes = [...N.steuern.map(([n]) => ({{name: n, stufe: 0, farbe: '--ein'}})), ...N.fonds.map(([n]) => ({{name: n, stufe: 0, farbe: n === 'Fondsanleihen' ? '--kredit' : '--fonds'}})),
-                 {{name: H, stufe: 1, farbe: '--ein'}}, {{name: F, stufe: 1, farbe: '--fonds'}},
-                 ...zs.map(([n]) => ({{name: n, stufe: 2, farbe: fz(n)}})), ...N.ziele_fonds.map(([n]) => ({{name: n, stufe: 2, farbe: '--fonds'}}))];
-  const links = [...N.steuern.map(([n, v]) => ({{source: n, target: H, value: v, stufe: 0, f: '--ein'}})),
-                 ...N.fonds.map(([n, v]) => ({{source: n, target: F, value: v, stufe: 0, f: n === 'Fondsanleihen' ? '--kredit' : '--fonds'}})),
-                 ...zs.map(([n, v]) => ({{source: H, target: n, value: v, stufe: 1, f: fz(n)}})),
-                 ...N.ziele_fonds.map(([n, v]) => ({{source: F, target: n, value: v, stufe: 1, f: '--fonds'}}))];
+  const q = [...N.steuern.map(([n, v]) => [n, v, '--ein']), ...N.zuschlag.map(([n, v]) => [n, v, '--fonds'])];
+  const nodes = [...q.map(([n, , c]) => ({{name: n, stufe: 0, farbe: c}})), {{name: H, stufe: 1, farbe: '--ein'}}, ...zs.map(([n]) => ({{name: n, stufe: 2, farbe: fz(n)}}))];
+  const links = [...q.map(([n, v, c]) => ({{source: n, target: H, value: v, stufe: 0, f: c}})), ...zs.map(([n, v]) => ({{source: H, target: n, value: v, stufe: 1, f: fz(n)}}))];
   zeichne('sk-nachher', nodes, links, l => l.f);
+  const F = 'Gemeinschaftsfonds';
+  const fq = n => n.startsWith('Kredite') ? '--kredit' : '--fonds';
+  const n2 = [...N.fonds_ein.map(([n]) => ({{name: n, stufe: 0, farbe: fq(n)}})), {{name: F, stufe: 1, farbe: '--fonds'}}, ...N.fonds_aus.map(([n]) => ({{name: n, stufe: 2, farbe: '--fonds'}}))];
+  const l2 = [...N.fonds_ein.map(([n, v]) => ({{source: n, target: F, value: v, stufe: 0, f: fq(n)}})), ...N.fonds_aus.map(([n, v]) => ({{source: F, target: n, value: v, stufe: 1, f: '--fonds'}}))];
+  zeichne('sk-fonds', n2, l2, l => l.f);
 }}
 function pfad() {{
   const p = D.pfad, el = document.getElementById('pfad'); el.innerHTML = '';
   const schritte = [['Dividende 2028', p.dividende_2028, 'start'], ['Verteidigung bis 2,5 %', p.verteidigung], ['CO₂-Preis sinkt mit den Emissionen', p.darin_co2],
     ['Verbrauchsteuern sinken', p.darin_verbrauchsteuern], ['Label: weniger schädlicher Konsum', p.darin_label], ['Netz: Alterung', p.netz_alterung],
     ['Progression', p.progression], ['Dividende 2060', p.dividende_2060, 'ende'], ['belegt (intern): Lücke der Einnahmen', +(D.belegt60 - p.dividende_2060).toFixed(2)], ['Dividende 2060 belegt', D.belegt60, 'ende']];
-  const Wd = 1100, H = 300, x0 = 40, bw = 82, gap = 22, y = v => 250 - v * 26;
+  const Wd = 1100, H = 320, x0 = 40, bw = 82, gap = 22, y = v => 236 - v * 26;
   const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${{Wd}} ${{H}}`).attr('width', Wd).attr('height', H).attr('role', 'img')
     .attr('aria-label', 'Zerlegung des Dividendenpfads 2028 bis 2060 in Prozent des BIP');
   svg.append('line').attr('x1', 20).attr('x2', Wd - 10).attr('y1', y(0)).attr('y2', y(0)).attr('stroke', css('--rule'));
@@ -260,7 +295,7 @@ function pfad() {{
     else {{ a = lauf; b = lauf + v; lauf = b; farbe = v < 0 ? css(name.startsWith('belegt') ? '--warn' : '--aus') : css('--ein'); }}
     svg.append('rect').attr('x', x).attr('width', bw).attr('y', y(Math.max(a, b))).attr('height', Math.max(1, Math.abs(y(a) - y(b)))).attr('fill', farbe);
     svg.append('text').attr('class', 'w').attr('x', x + bw / 2).attr('y', y(Math.max(a, b)) - 6).attr('text-anchor', 'middle').text((v > 0 && !art ? '+' : '') + fmt(v));
-    const fo = svg.append('foreignObject').attr('x', x - 6).attr('y', 256).attr('width', bw + 12).attr('height', 44);
+    const fo = svg.append('foreignObject').attr('x', x - 6).attr('y', 272).attr('width', bw + 12).attr('height', 44);
     fo.append('xhtml:div').style('font-size', '11px').style('line-height', '1.2').style('text-align', 'center').style('color', css('--muted')).text(name);
   }});
 }}

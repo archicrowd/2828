@@ -1,5 +1,5 @@
 {
- "version": "v4.94",
+ "version": "v4.95",
  "status": "Prüfrechnung; Spalte belegt intern",
  "einheit": "% BIP; Mrd. € nominal (vorher 2024, nachher 2028)",
  "quellen": {
@@ -60,8 +60,8 @@
    "nachher_position": "Übrige Steuern",
    "nachher_pct_bip": 3.93,
    "nachher_mrd_2028": 193.2,
-   "belegt_pct_bip": 3.26,
-   "einfluss": "Weitgehend wie heute (Annahme der Gesamtrechnung); Lenkung über die Sonderstufe im Label. Im Modellwert steckt der Emissionshandel ein zweites Mal (Prüfbefund B-1)"
+   "belegt_pct_bip": 2.89,
+   "einfluss": "Weitgehend wie heute (Annahme der Gesamtrechnung); Lenkung über die Sonderstufe im Label. Der Modellwert 3,93 enthält den Emissionshandel (eigene Position CO₂-Preis) und die Grundsteuer (geht in der Grundstücksabgabe auf) ein zweites Mal (Prüfbefund B-1, Korrektur 92)"
   },
   {
    "gruppe": "Steuern",
@@ -116,7 +116,7 @@
    "nachher_pct_bip": 0.48,
    "nachher_mrd_2028": 23.6,
    "belegt_pct_bip": null,
-   "einfluss": "20 Mrd. € nach UBA-Liste; im Modell als Einnahme geführt"
+   "einfluss": "20 Mrd. € nach UBA-Liste, überwiegend Steuervergünstigungen (Mehraufkommen) und zum Teil Finanzhilfen (weniger Ausgaben); im Modell als Einnahme geführt. Prüfpunkt: Entfernungspauschale und Dienstwagen fallen schon mit „ohne Abzüge“ im Einkommen weg"
   },
   {
    "gruppe": "Steuern",
@@ -174,26 +174,15 @@
    "einfluss": "entfallen; laufende Pensionen als Altlast über den Fonds"
   },
   {
-   "gruppe": "Fonds",
-   "position": "–",
+   "gruppe": "Abgabe für Altlasten",
+   "position": "– (neu)",
    "heute_mrd_2024": null,
    "heute_pct_bip": null,
-   "nachher_position": "Fondsbeitrag",
+   "nachher_position": "Altlastenzuschlag",
    "nachher_pct_bip": 4.9,
    "nachher_mrd_2028": 240.8,
    "belegt_pct_bip": null,
-   "einfluss": "Beitrag zum gemeinsamen Fonds für Altrenten und Altschulden (Zuschlag 14,6 % auf alle Steuern, DE 2028), bis 2098"
-  },
-  {
-   "gruppe": "Kredit",
-   "position": "Neue Schulden (Defizit)",
-   "heute_mrd_2024": 115.3,
-   "heute_pct_bip": 2.63,
-   "nachher_position": "Fondsanleihen",
-   "nachher_pct_bip": 5.29,
-   "nachher_mrd_2028": 260.0,
-   "belegt_pct_bip": null,
-   "einfluss": "Laufender Haushalt ausgeglichen (Saldo +0,11); Fondsanleihen für den Teil der Altlast über dem Beitrag, getilgt bis 2098"
+   "einfluss": "Altlastenzuschlag auf alle Steuern (DE 2028 14,6 %), zweckgebunden: fließt vollständig als Beitrag an den Gemeinschaftsfonds (Ausgabe), bis 2098"
   },
   {
    "gruppe": "Übrige Einnahmen",
@@ -204,7 +193,7 @@
    "nachher_pct_bip": null,
    "nachher_mrd_2028": null,
    "belegt_pct_bip": null,
-   "einfluss": "im Modell nicht gesondert: Ausgaben der Gemeinden und des Dachs netto nach Gebühren (Annahme)"
+   "einfluss": "im Modell nicht gerechnet: Ausgaben der Gemeinden und des Dachs sind netto nach Gebühren angesetzt (Annahme); heute brutto. Vergleich der Summen deshalb nur eingeschränkt"
   }
  ],
  "ausgaben": [
@@ -221,14 +210,14 @@
   },
   {
    "gruppe": "Verwaltung",
-   "position": "Zinsen auf Altschulden",
+   "position": "Zinsen (Schuldendienst)",
    "heute_mrd_2024": 49.3,
    "heute_pct_bip": 1.12,
-   "nachher_position": "Fonds: Zinsen",
-   "nachher_pct_bip": 1.04,
-   "nachher_mrd_2028": 51.1,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.0,
+   "nachher_mrd_2028": 0.0,
    "belegt_pct_bip": null,
-   "einfluss": "über den Fonds (Altlast), nicht aus dem laufenden Haushalt"
+   "einfluss": "Ausgabe des Gemeinschaftsfonds, nicht des Landeshaushalts (1.04 % BIP, siehe Fondskonto)"
   },
   {
    "gruppe": "Sicherheit",
@@ -334,11 +323,11 @@
    "position": "Alter und Hinterbliebene (Renten, Pensionen)",
    "heute_mrd_2024": 508.1,
    "heute_pct_bip": 11.58,
-   "nachher_position": "Fonds: Altrenten über der Dividende",
-   "nachher_pct_bip": 9.15,
-   "nachher_mrd_2028": 449.7,
+   "nachher_position": null,
+   "nachher_pct_bip": 0.0,
+   "nachher_mrd_2028": 0.0,
    "belegt_pct_bip": null,
-   "einfluss": "Alte Ansprüche über der Dividende als Altlast über den Fonds; neue Ansprüche: Dividende und Pflichtvorsorge (eigenes Konto, 4,1 % BIP, privat)"
+   "einfluss": "Landeshaushalt: keine eigene Position. Alte Ansprüche bis zur Höhe der Dividende trägt die Dividende, darüber der Gemeinschaftsfonds (9.15 % BIP, siehe Fondskonto); neue Ansprüche: Dividende und Pflichtvorsorge (eigenes Konto, 4,1 % BIP, privat)"
   },
   {
    "gruppe": "Soziale Sicherung",
@@ -381,15 +370,188 @@
    "nachher_position": "Dividende",
    "nachher_pct_bip": 7.34,
    "nachher_mrd_2028": 360.8,
-   "belegt_pct_bip": 3.74,
+   "belegt_pct_bip": 3.53,
    "einfluss": "Transformationsdividende für alle Erwachsenen, halb für Kinder; DE 2028 384 € je Erwachsenem und Monat (Kaufkraft 2026)"
+  },
+  {
+   "gruppe": "Gemeinschaftsfonds",
+   "position": "– (neu)",
+   "heute_mrd_2024": null,
+   "heute_pct_bip": null,
+   "nachher_position": "Beitrag an den Fonds",
+   "nachher_pct_bip": 4.9,
+   "nachher_mrd_2028": 240.8,
+   "belegt_pct_bip": null,
+   "einfluss": "Beitrag Deutschlands an den Gemeinschaftsfonds, finanziert aus dem Altlastenzuschlag"
   }
  ],
+ "fondskonto": {
+  "einnahmen": [
+   {
+    "position": "Beitrag Deutschlands",
+    "pct_bip": 4.9,
+    "art": "Aufkommen (aus dem Altlastenzuschlag)"
+   }
+  ],
+  "ausgaben": [
+   {
+    "position": "Altrenten über der Dividende",
+    "pct_bip": 9.15,
+    "art": "Ausgabe"
+   },
+   {
+    "position": "Zinsen auf übernommene Altschulden",
+    "pct_bip": 1.04,
+    "art": "Ausgabe (Annahme: Zinsquote 2024)"
+   }
+  ],
+  "finanzierung": [
+   {
+    "position": "Fondskredite",
+    "pct_bip": 5.29,
+    "art": "Finanzierung, keine Einnahme; Tilgung aus späteren Beiträgen bis 2098"
+   }
+  ],
+  "hinweis": "Rechnung für den Anteil Deutschlands im Fonds der 30 (fonds_geltend, Verrechnung je Staat)"
+ },
+ "pruefung": [
+  [
+   "Einkommen",
+   "Aufkommen (Steuer)",
+   "Landeshaushalt",
+   "Wert aus der Tarifrechnung, nicht amtlich belegt; enthält die Steuer auf die Dividende selbst, weil sie steuerpflichtig ist"
+  ],
+  [
+   "Kapitalerträge",
+   "Aufkommen (Steuer)",
+   "Landeshaushalt",
+   "heute in den Einkommensteuern der Haushalte enthalten; getrennt nicht gelesen"
+  ],
+  [
+   "Unternehmen und Plattformen",
+   "Aufkommen (Steuer)",
+   "Landeshaushalt",
+   "Modellwert 4,42 nicht belegt, belegt 2,37 (Prüfbefund B-1)"
+  ],
+  [
+   "Konsum (Label)",
+   "Aufkommen (Steuer)",
+   "Landeshaushalt",
+   "heute Mehrwertsteuer 6,81; Anstieg aus Sonderstufe und Labelstufen (Modell)"
+  ],
+  [
+   "Übrige Steuern",
+   "Aufkommen (Steuer)",
+   "Landeshaushalt",
+   "Modellwert 3,93 enthält Emissionshandel und Grundsteuer, die eigene Positionen haben (Korrektur 92); wie heute: 2,89"
+  ],
+  [
+   "CO₂-Preis",
+   "Aufkommen (Abgabe)",
+   "Landeshaushalt",
+   "heute Emissionshandel 0,42; 100 €/t auf alle bepreisten Emissionen; sinkt mit den Emissionen"
+  ],
+  [
+   "Grundstücksabgabe",
+   "Aufkommen (Abgabe)",
+   "Landeshaushalt (Gemeinden)",
+   "ersetzt die Grundsteuer (0,37); 0,82 ist der Gesamtbetrag"
+  ],
+  [
+   "Erbschaften, Große Vermögen",
+   "Aufkommen (Steuer)",
+   "Landeshaushalt",
+   "Erbschaft belegt 0,97 statt 1,16"
+  ],
+  [
+   "Subventionsabbau",
+   "überwiegend Aufkommen (Wegfall von Steuervergünstigungen), zum Teil weniger Ausgaben",
+   "Landeshaushalt",
+   "Mischposition; mögliche Überschneidung mit „Einkommen ohne Abzüge“ (Entfernungspauschale, Dienstwagen) und mit dem Label; zu prüfen"
+  ],
+  [
+   "Progression und Dynamik",
+   "Aufkommen (Steuer)",
+   "Landeshaushalt",
+   "Mehraufkommen aus dem Tarif 2028"
+  ],
+  [
+   "Altlastenzuschlag",
+   "Aufkommen (zweckgebundene Abgabe)",
+   "Landeshaushalt",
+   "Durchlauf: geht vollständig als Beitrag an den Fonds; bis v4.94 ohne Gegenbuchung als Einnahme geführt (Korrektur 93)"
+  ],
+  [
+   "Sozialbeiträge (heute)",
+   "Aufkommen (Abgabe)",
+   "Gesamtstaat (Sozialversicherung)",
+   "entfallen nachher; unterstellte Beiträge der Beamtenversorgung stehen heute zugleich in Aufkommen und Ausgaben"
+  ],
+  [
+   "Gebühren, Erträge, Transfers (heute)",
+   "Aufkommen",
+   "Gesamtstaat",
+   "nachher nicht gerechnet, Ausgaben netto (Annahme); Summen deshalb nur eingeschränkt vergleichbar"
+  ],
+  [
+   "Neue Kredite (heute)",
+   "Finanzierung",
+   "Gesamtstaat",
+   "keine Einnahme; deckt den Finanzierungssaldo; bis v4.94 als Einnahme geführt (Korrektur 93)"
+  ],
+  [
+   "Kredite des Fonds",
+   "Finanzierung",
+   "Gemeinschaftsfonds",
+   "keine Einnahme des Landes; bis v4.94 in den Einnahmen des Landes (Korrektur 93)"
+  ],
+  [
+   "Dach und Gemeinden",
+   "Ausgabe",
+   "Landeshaushalt",
+   "Werte netto nach Gebühren (Annahme); Zuordnung zu COFOG eigene"
+  ],
+  [
+   "Netz (Gesundheit, Pflege, Invalidität, Arbeitslosigkeit, Waisen, Härtefall)",
+   "Ausgabe",
+   "Landeshaushalt",
+   "aus Steuern statt Beiträgen"
+  ],
+  [
+   "Dividende",
+   "Ausgabe (Transfer)",
+   "Landeshaushalt",
+   "Rest nach allen anderen Ausgaben; steuerpflichtig"
+  ],
+  [
+   "Beitrag an den Gemeinschaftsfonds",
+   "Ausgabe (Transfer)",
+   "Landeshaushalt",
+   "Gegenbuchung zum Altlastenzuschlag; neu seit v4.95"
+  ],
+  [
+   "Altrenten über der Dividende",
+   "Ausgabe",
+   "Gemeinschaftsfonds",
+   "bis v4.94 im Landeshaushalt geführt (Korrektur 93)"
+  ],
+  [
+   "Zinsen (Schuldendienst)",
+   "Ausgabe",
+   "heute Gesamtstaat, nachher Gemeinschaftsfonds",
+   "nachher für übernommene Altschulden; Zinsquote 2024 angenommen; bis v4.94 im Landeshaushalt geführt (Korrektur 93)"
+  ]
+ ],
  "summen": {
-  "einnahmen_heute_pct": 48.77,
+  "aufkommen_heute_pct": 46.15,
   "ausgaben_heute_pct": 48.77,
-  "einnahmen_nachher_pct": 43.8,
-  "ausgaben_nachher_pct": 43.68,
+  "finanzierungssaldo_heute_pct": -2.63,
+  "aufkommen_nachher_pct": 38.51,
+  "ausgaben_nachher_pct": 38.39,
+  "saldo_nachher_pct": 0.12,
+  "fonds_ausgaben_pct": 10.19,
+  "fonds_kredite_pct": 5.29,
+  "ausgaben_konsolidiert_nachher_pct": 43.68,
   "steuern_nachher_pct": 33.61,
   "altlast_de_2028": 10.19
  },
@@ -413,17 +575,17 @@
    "2060": 256
   },
   "belegt_mittel": {
-   "2028": 195,
-   "2035": 108,
-   "2045": 43,
-   "2060": -7
+   "2028": 185,
+   "2035": 97,
+   "2045": 29,
+   "2060": -24
   }
  },
  "dividende_pct_belegt_mittel": {
-  "2028": 3.74,
-  "2035": 1.91,
-  "2045": 0.69,
-  "2060": -0.1
+  "2028": 3.53,
+  "2035": 1.7,
+  "2045": 0.47,
+  "2060": -0.33
  },
  "pflichtvorsorge_pct_bip": 4.1
 }

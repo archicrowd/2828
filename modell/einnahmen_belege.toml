@@ -1,6 +1,6 @@
 # Beleg der vier Einnahmepositionen aus Prüfbefund B-1 (14.11.2026): modell/einnahmen_belege.py (Logbuch v4.87). Prüfrechnung, ändert die Deckung nicht.
 # Alle Werte mit Quelle und Abrufdatum 15.11.2026. Fälle vorsichtig / mittel / hoch.
-version = "v4.94"
+version = "v4.95"
 satz = 0.33
 bip_2024_mio = 4386940.0          # Eurostat nama_10_gdp, Stand 10/2026 (laender_2024.csv, Spalte eurostat_2026_10); gleicher Stand wie gov_10a_taxag
 bip_2028_mrd = 4914.9             # parameter.toml de_bip_2028
@@ -17,6 +17,7 @@ url = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_1
 D2_D5_D91 = 1012663
 D211 = 298764                     # Mehrwertsteuer
 D212 = 34266                      # Einfuhrabgaben ohne MwSt (Zölle 5.517, Verbrauchsteuern auf Einfuhren 28.749)
+grundsteuer = 16222               # v4.95, Korrektur 92: Grundsteuer (D29A) geht in der Grundstücksabgabe auf (Kernmodell „Bodenwertabgabe statt Grundsteuer“, 0,82 % BIP gesamt)
 zoelle = 5517                     # v4.94, Korrektur 91: Zölle sind Eigenmittel der EU (im neueren Eurostat-Stand D2121 = 0), keine Einnahme des Landes
 D214 = 74502                      # Produktsteuern ohne MwSt: Verbrauchsteuern 36.022, Stempel (Grunderwerb) 12.750, Versicherung 19.042, Lotterie 3.094, übrige
 D29 = 41688                       # sonstige Produktionsabgaben: Grund 16.222, Anlagen 2.310, Umwelt (Emissionshandel) 18.628, übrige

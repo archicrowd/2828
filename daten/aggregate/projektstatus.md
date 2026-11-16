@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.94 · höchste Korrekturnummer 91 · 629 Dateien im Repository
+Modellstand v4.95 · höchste Korrekturnummer 93 · 629 Dateien im Repository
 
 ## Bausteine
 
@@ -129,4 +129,4 @@ Modellstand v4.94 · höchste Korrekturnummer 91 · 629 Dateien im Repository
 - Hinweis: Naht N52 offen: B31 Drittel-System -> B31 Drittel-System: v4.88: Entscheidungen E1–E5; Rechnung intern; v4.90: E2, E3, E4 beschlossen; E1 und E5 offen
 - Hinweis: Naht N53 offen: Fonds -> Fonds: v4.92: Brücke festgelegt (wahlweise, 25/33/50 %); Webseite Regel 4; Fortschrittskriterium offen; rechtsstaat_zweitquelle liest staatenauswahl.toml und fonds_5050.toml
 - Hinweis: Naht N54 offen: B31 Drittel-System -> B31 Drittel-System: v4.93: intern; Lösungsbereich in der Kopie erweitert
-- Hinweis: Naht N55 offen: B31 Drittel-System -> B31 Drittel-System: v4.94: Prüfpunkt Grundsteuer in Übrige und Grundstücksabgabe
+- Hinweis: Naht N55 offen: B31 Drittel-System -> B31 Drittel-System: v4.95: Konten getrennt; Grundsteuer doppelt (Korrektur 92) behoben in einnahmen_belege; Prüfpunkt Subventionsabbau gegen Einkommen ohne Abzüge

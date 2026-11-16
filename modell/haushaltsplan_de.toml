@@ -2,7 +2,7 @@
 # Vorher: Gesamtstaat (Bund, Länder, Gemeinden, Sozialversicherung) 2024, Eurostat, Mio. € nominal, vorläufig; abgerufen 15.11.2026.
 # Nachher: Stand C „Das Goldene Drittel“, geltende Rechnung 2028 (% BIP; Euro nominal 2028 mit BIP 2028 4.914,9 Mrd. €, parameter.toml).
 # Belegt: interne Prüfrechnung B-1 (einnahmen_belege.json, e5_varianten.json), mittlerer Fall; nicht veröffentlichen (Beschluss 15.11.2026).
-version = "v4.94"
+version = "v4.95"
 bip_2024_mio = 4386940.0
 bip_2028_mrd = 4914.9
 url_steuern = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_taxag?format=JSON&geo=DE&time=2024&unit=MIO_EUR&sector=S13"

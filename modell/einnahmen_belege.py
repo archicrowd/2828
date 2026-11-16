@@ -32,7 +32,7 @@ def main():
     for i, fall in enumerate(["vorsichtig", "mittel", "hoch"]):
         unternehmen = UB["faelle"][fall]["unternehmen_pct_bip"]
         u_basis = UB["faelle"][fall]["basis_mrd"]["zusammen"] * 1000
-        uebrige = pct(V["D212"] - V.get("zoelle", 0) + V["D214"] + V["D29"] + V["D59"] - V["D29F"])
+        uebrige = pct(V["D212"] - V.get("zoelle", 0) + V["D214"] + V["D29"] + V["D59"] - V["D29F"] - V.get("grundsteuer", 0))
         C = P["co2"]
         mt28 = C["mt_2025"] * (1 - C["rueckgang_je_jahr"][i]) ** 3
         co2 = mt28 * C["preis_2028"] / 1000 / P["bip_2028_mrd"] * 100

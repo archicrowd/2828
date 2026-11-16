@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.94**
+Stand: 24. Oktober 2026 · Modellstand **v4.95**
 
 ---
 
@@ -5385,6 +5385,29 @@ privat, mit interner Spalte); Vorlage `projekt/Haushaltsplan-Deutschland-2026-11
 **Datenquelle:** Eurostat 2024 (vorläufig); Böckler Impuls 12/2017 (DIW/WSI, Erbschaften); eigene Kette. **Bewegte Zahl:** keine geltende; intern
 Lücke B-1 −3,09 → −3,22 % BIP. **Wodurch aufgefallen:** neuer Eurostat-Stand beim Haushaltsplan (D2121 = 0).
 
+### v4.95 — Haushaltsplan: Aufkommen, Ausgaben und Finanzierung getrennt; Korrekturen 92 und 93
+
+**Art der Änderung: PATCH (Prüfrechnung berichtigt), geltende Zahlen unverändert.** 16. November 2026.
+
+**Rückfrage der Initiative (16.11.2026):** Warum sind Schuldendienst und Fondsbeiträge Einnahmen? Jede Position nach Aufkommen und Ausgabe prüfen.
+
+**Befund:** Die Rückfrage trifft zu (Korrektur 93). Neu gegliedert in drei Konten:
+- **Heute, Gesamtstaat:** Aufkommen 46,15, Ausgaben 48,77, Finanzierungssaldo −2,63 über Kredite.
+- **Nachher, Landeshaushalt Deutschland 2028:** Aufkommen 38,51 = Steuern 33,61 + Altlastenzuschlag 4,90; Ausgaben 38,39 einschließlich Beitrag
+  an den Fonds 4,90; Saldo +0,12.
+- **Nachher, Gemeinschaftsfonds (Anteil Deutschland):** Beitrag 4,90; Ausgaben 10,19 (Altrenten 9,15, Zinsen 1,04); Fondskredite 5,29.
+- Konsolidiert: Ausgaben 43,68 % BIP.
+- Die Prüftabelle je Position steht in `haushaltsplan_de.json → pruefung` und in der Vorlage.
+
+**Dabei gefunden (Korrektur 92):** Die Grundsteuer steckt in „Übrige“ (165 Modell-Mrd. ≈ heutige Summe mit Grundsteuer und Emissionshandel) und
+geht zugleich in der Grundstücksabgabe auf.
+- `einnahmen_belege` zieht sie ab: Lücke B-1 −3,59 % BIP (mittel).
+- e5_varianten (mittel): Dividende 185 / 97 / 29 / −24 €; Fonds 5,44 % BIP.
+
+**Prüfpunkt offen:** Der Subventionsabbau (0,48) überschneidet sich möglicherweise mit „Einkommen ohne Abzüge“ (Entfernungspauschale, Dienstwagen).
+
+**Datenquelle:** wie v4.94. **Bewegte Zahl:** keine geltende; intern Lücke B-1 −3,22 → −3,59 % BIP. **Wodurch aufgefallen:** Rückfrage der Initiative.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5428,6 +5451,8 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 89 | Unternehmenszeile der Prüfrechnung B-1 (v4.87, `einnahmen_belege`, intern): VGR-Aufkommen D51B (125,1 Mrd. €) als Aufkommen nur der Kapitalgesellschaften gelesen, Basis 417 Mrd. €, belegt 3,41 % BIP | D51B enthält die ganze Gewerbesteuer (Personengesellschaften in S.11); Basis aus KSt und Gewerbesteuer-Anteil 260–283 Mrd. € (2025), belegt 2,37 % BIP, Lücke der vier Positionen −3,10 statt −2,06 % BIP | Abgleich mit der Gewerbesteuerstatistik, v4.88 |
 | 90 | Vorlage Unternehmensbasis (v4.88–v4.90, Option C zu E5): „weitere Einnahmen, z. B. Bodenwertabgabe, Abbau klimaschädlicher Subventionen“ | beide stehen schon in der Deckung (0,82 / 0,48 % BIP); weitere Einnahmen nur über Tarif, Label, Erbschaftsfreibetrag | Arbeit an der Vorlage E5, v4.93 |
 | 91 | Belegrechnung B-1 (v4.87–v4.93, `einnahmen_belege`, intern): Position Übrige mit D212 einschließlich Zöllen (5,5 Mrd. €) | Zölle sind Eigenmittel der EU (neuerer Eurostat-Stand D2121 = 0); Übrige belegt 3,26 statt 3,39 % BIP, Lücke −3,22 statt −3,09; Dividende belegt 2028 195 statt 212 € | Haushaltsplan Deutschland, Abgleich mit dem neuen Eurostat-Stand, v4.94 |
+| 92 | Belegrechnung B-1 (v4.87–v4.94): „Übrige“ belegt einschließlich Grundsteuer (0,37 % BIP), obwohl sie in der Grundstücksabgabe (0,82, Gesamtbetrag; Kernmodell „Bodenwertabgabe statt Grundsteuer“) aufgeht | Übrige belegt 2,89 statt 3,26; Lücke B-1 −3,59 statt −3,22 % BIP; Dividende belegt 2028 185 statt 195 € | Prüfung jeder Position im Haushaltsplan, v4.95 |
+| 93 | Haushaltsplan Deutschland v4.94: neue Kredite (heute) und Fondsanleihen unter den Einnahmen, Fondsbeitrag als Einnahme ohne Gegenbuchung, Altrenten und Zinsen im Landeshaushalt | Kredite als Finanzierung; Altlastenzuschlag als Aufkommen, Beitrag an den Fonds als Ausgabe; Altrenten, Zinsen und Fondskredite im eigenen Konto des Fonds; Aufkommen heute 46,15 statt „Einnahmen 48,77“ | Rückfrage der Initiative 16.11.2026, v4.95 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5467,7 +5492,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.94
+## 7 | Offene Punkte, Stand v4.95
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
