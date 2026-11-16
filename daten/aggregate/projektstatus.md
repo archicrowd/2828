@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.96 · höchste Korrekturnummer 93 · 632 Dateien im Repository
+Modellstand v4.97 · höchste Korrekturnummer 93 · 636 Dateien im Repository
 
 ## Bausteine
 
@@ -98,6 +98,9 @@ Modellstand v4.96 · höchste Korrekturnummer 93 · 632 Dateien im Repository
 | N53 | Fonds | Fonds | offen |
 | N54 | B31 Drittel-System | B31 Drittel-System | offen |
 | N55 | B31 Drittel-System | B31 Drittel-System | offen |
+| N56 | B31 Drittel-System | B31 Drittel-System | ok |
+| N57 | B31 Drittel-System | B32 Länderseiten | offen |
+| N58 | B31 Drittel-System | Webseite | ok |
 
 ## Ergebnis dieses Laufs
 
@@ -130,3 +133,4 @@ Modellstand v4.96 · höchste Korrekturnummer 93 · 632 Dateien im Repository
 - Hinweis: Naht N53 offen: Fonds -> Fonds: v4.92: Brücke festgelegt (wahlweise, 25/33/50 %); Webseite Regel 4; Fortschrittskriterium offen; rechtsstaat_zweitquelle liest staatenauswahl.toml und fonds_5050.toml
 - Hinweis: Naht N54 offen: B31 Drittel-System -> B31 Drittel-System: v4.93: intern; Lösungsbereich in der Kopie erweitert; v4.96: Labelregel [label] in deckung_varianten.toml, gelesen von projektion33 (nur Kopie); Varianten Aplus aus e5_hebel.json
 - Hinweis: Naht N55 offen: B31 Drittel-System -> B31 Drittel-System: v4.95: Konten getrennt; Grundsteuer doppelt (Korrektur 92) behoben in einnahmen_belege; Prüfpunkt Subventionsabbau gegen Einkommen ohne Abzüge
+- Hinweis: Naht N57 offen: B31 Drittel-System -> B32 Länderseiten: v4.97: konzept33-bau.js liest G26T nicht aus der Datei (Wert 12072 von Hand, zu prüfen bei Änderung)

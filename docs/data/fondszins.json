@@ -13,301 +13,301 @@
  "varianten": [
   {
    "fall": "fest 2.45 %",
-   "beitrag_pct_bip": 5.04,
-   "zuschlag_pct": 15.1,
-   "spitze_zehn": 149.1,
+   "beitrag_pct_bip": 5.32,
+   "zuschlag_pct": 17.3,
+   "spitze_zehn": 155.7,
    "spitzenjahr_zehn": 2056,
    "zins_2028": 2.45,
    "zins_ab_2036": 2.45,
-   "beitrag_zehn_pct_bip": 5.22,
+   "beitrag_zehn_pct_bip": 5.49,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 627,
-     "alleinerziehend, 1 Kind": 634,
-     "Paar, ein Einkommen, 2 Kinder": 716
+     "alleinstehend": 449,
+     "alleinerziehend, 1 Kind": 351,
+     "Paar, ein Einkommen, 2 Kinder": 609
     },
     "anteil_mit_mehr": {
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
-    "zuschlag_de_pct": 14.6
+    "zuschlag_de_pct": 16.8
    }
   },
   {
    "fall": "fest 3.0 %",
-   "beitrag_pct_bip": 5.59,
-   "zuschlag_pct": 16.7,
-   "spitze_zehn": 151.7,
+   "beitrag_pct_bip": 5.89,
+   "zuschlag_pct": 19.1,
+   "spitze_zehn": 158.2,
    "spitzenjahr_zehn": 2057,
    "zins_2028": 3.0,
    "zins_ab_2036": 3.0,
-   "beitrag_zehn_pct_bip": 5.79,
+   "beitrag_zehn_pct_bip": 6.09,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 606,
-     "alleinerziehend, 1 Kind": 613,
-     "Paar, ein Einkommen, 2 Kinder": 694
+     "alleinstehend": 425,
+     "alleinerziehend, 1 Kind": 328,
+     "Paar, ein Einkommen, 2 Kinder": 597
     },
     "anteil_mit_mehr": {
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
-    "zuschlag_de_pct": 16.1
+    "zuschlag_de_pct": 18.5
    }
   },
   {
    "fall": "fest 3.5 %",
-   "beitrag_pct_bip": 6.11,
-   "zuschlag_pct": 18.3,
-   "spitze_zehn": 153.5,
+   "beitrag_pct_bip": 6.44,
+   "zuschlag_pct": 20.9,
+   "spitze_zehn": 160.0,
    "spitzenjahr_zehn": 2058,
    "zins_2028": 3.5,
    "zins_ab_2036": 3.5,
-   "beitrag_zehn_pct_bip": 6.33,
+   "beitrag_zehn_pct_bip": 6.65,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 585,
-     "alleinerziehend, 1 Kind": 592,
-     "Paar, ein Einkommen, 2 Kinder": 672
+     "alleinstehend": 402,
+     "alleinerziehend, 1 Kind": 304,
+     "Paar, ein Einkommen, 2 Kinder": 584
     },
     "anteil_mit_mehr": {
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
-    "zuschlag_de_pct": 17.7
+    "zuschlag_de_pct": 20.3
    }
   },
   {
    "fall": "fest 4.0 %",
-   "beitrag_pct_bip": 6.65,
-   "zuschlag_pct": 19.9,
-   "spitze_zehn": 155.0,
+   "beitrag_pct_bip": 7.0,
+   "zuschlag_pct": 22.7,
+   "spitze_zehn": 161.5,
    "spitzenjahr_zehn": 2059,
    "zins_2028": 4.0,
    "zins_ab_2036": 4.0,
-   "beitrag_zehn_pct_bip": 6.89,
+   "beitrag_zehn_pct_bip": 7.23,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 565,
-     "alleinerziehend, 1 Kind": 570,
-     "Paar, ein Einkommen, 2 Kinder": 649
+     "alleinstehend": 379,
+     "alleinerziehend, 1 Kind": 280,
+     "Paar, ein Einkommen, 2 Kinder": 572
     },
     "anteil_mit_mehr": {
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
-    "zuschlag_de_pct": 19.2
+    "zuschlag_de_pct": 22.0
    }
   },
   {
    "fall": "Übergang 2.22 → 3.5 %",
-   "beitrag_pct_bip": 6.04,
-   "zuschlag_pct": 18.1,
-   "spitze_zehn": 150.8,
+   "beitrag_pct_bip": 6.36,
+   "zuschlag_pct": 20.6,
+   "spitze_zehn": 157.2,
    "spitzenjahr_zehn": 2058,
    "zins_2028": 2.22,
    "zins_ab_2036": 3.5,
-   "beitrag_zehn_pct_bip": 6.26,
+   "beitrag_zehn_pct_bip": 6.57,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 588,
-     "alleinerziehend, 1 Kind": 594,
-     "Paar, ein Einkommen, 2 Kinder": 674
+     "alleinstehend": 406,
+     "alleinerziehend, 1 Kind": 308,
+     "Paar, ein Einkommen, 2 Kinder": 586
     },
     "anteil_mit_mehr": {
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
-    "zuschlag_de_pct": 17.5
+    "zuschlag_de_pct": 20.0
    }
   },
   {
    "fall": "Übergang 2.22 → 4.0 %",
-   "beitrag_pct_bip": 6.54,
-   "zuschlag_pct": 19.5,
-   "spitze_zehn": 151.1,
+   "beitrag_pct_bip": 6.88,
+   "zuschlag_pct": 22.3,
+   "spitze_zehn": 157.5,
    "spitzenjahr_zehn": 2059,
    "zins_2028": 2.22,
    "zins_ab_2036": 4.0,
-   "beitrag_zehn_pct_bip": 6.77,
+   "beitrag_zehn_pct_bip": 7.1,
    "haushalt_de": {
     "mehr_monat_42000": {
-     "alleinstehend": 570,
-     "alleinerziehend, 1 Kind": 576,
-     "Paar, ein Einkommen, 2 Kinder": 655
+     "alleinstehend": 384,
+     "alleinerziehend, 1 Kind": 285,
+     "Paar, ein Einkommen, 2 Kinder": 575
     },
     "anteil_mit_mehr": {
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
-    "zuschlag_de_pct": 18.9
+    "zuschlag_de_pct": 21.7
    }
   }
  ],
  "abgleich_beschluss": {
-  "altlasten_json_zehn": 5.22,
-  "hier_zehn": 5.22
+  "altlasten_json_zehn": 5.49,
+  "hier_zehn": 5.49
  },
  "zins_wachstum": [
   {
    "wachstum": 2.0,
    "zins": 2.45,
-   "beitrag_pct_bip": 6.07,
-   "zuschlag_pct": 18.1,
-   "spitze_zehn": 153.4,
+   "beitrag_pct_bip": 6.39,
+   "zuschlag_pct": 20.7,
+   "spitze_zehn": 159.9,
    "spitzenjahr_zehn": 2058,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 87.1,
-    "spitze_zehn": 190.7,
+    "restschuld_2098_zehn": 90.4,
+    "spitze_zehn": 199.0,
     "spitzenjahr_zehn": 2064
    }
   },
   {
    "wachstum": 2.0,
    "zins": 3.0,
-   "beitrag_pct_bip": 6.66,
-   "zuschlag_pct": 19.9,
-   "spitze_zehn": 155.1,
+   "beitrag_pct_bip": 7.01,
+   "zuschlag_pct": 22.7,
+   "spitze_zehn": 161.5,
    "spitzenjahr_zehn": 2059,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 168.3,
-    "spitze_zehn": 228.8,
+    "restschuld_2098_zehn": 174.6,
+    "spitze_zehn": 238.6,
     "spitzenjahr_zehn": 2071
    }
   },
   {
    "wachstum": 2.0,
    "zins": 3.5,
-   "beitrag_pct_bip": 7.22,
-   "zuschlag_pct": 21.6,
-   "spitze_zehn": 156.2,
+   "beitrag_pct_bip": 7.59,
+   "zuschlag_pct": 24.6,
+   "spitze_zehn": 162.6,
    "spitzenjahr_zehn": 2060,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 273.3,
-    "spitze_zehn": 285.8,
-    "spitzenjahr_zehn": 2082
+    "restschuld_2098_zehn": 283.4,
+    "spitze_zehn": 297.4,
+    "spitzenjahr_zehn": 2081
    }
   },
   {
    "wachstum": 2.0,
    "zins": 4.0,
-   "beitrag_pct_bip": 7.78,
-   "zuschlag_pct": 23.3,
-   "spitze_zehn": 156.9,
+   "beitrag_pct_bip": 8.17,
+   "zuschlag_pct": 26.5,
+   "spitze_zehn": 163.2,
    "spitzenjahr_zehn": 2061,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 419.6,
-    "spitze_zehn": 419.6,
+    "restschuld_2098_zehn": 434.8,
+    "spitze_zehn": 434.8,
     "spitzenjahr_zehn": 2098
    }
   },
   {
    "wachstum": 2.5,
    "zins": 2.45,
-   "beitrag_pct_bip": 5.54,
-   "zuschlag_pct": 16.6,
-   "spitze_zehn": 151.4,
+   "beitrag_pct_bip": 5.84,
+   "zuschlag_pct": 18.9,
+   "spitze_zehn": 158.0,
    "spitzenjahr_zehn": 2057,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 35.8,
-    "spitze_zehn": 166.9,
+    "restschuld_2098_zehn": 37.2,
+    "spitze_zehn": 174.2,
     "spitzenjahr_zehn": 2059
    }
   },
   {
    "wachstum": 2.5,
    "zins": 3.0,
-   "beitrag_pct_bip": 6.12,
-   "zuschlag_pct": 18.3,
-   "spitze_zehn": 153.6,
+   "beitrag_pct_bip": 6.44,
+   "zuschlag_pct": 20.9,
+   "spitze_zehn": 160.1,
    "spitzenjahr_zehn": 2058,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 93.0,
-    "spitze_zehn": 193.4,
+    "restschuld_2098_zehn": 96.5,
+    "spitze_zehn": 201.8,
     "spitzenjahr_zehn": 2064
    }
   },
   {
    "wachstum": 2.5,
    "zins": 3.5,
-   "beitrag_pct_bip": 6.66,
-   "zuschlag_pct": 19.9,
-   "spitze_zehn": 155.1,
+   "beitrag_pct_bip": 7.0,
+   "zuschlag_pct": 22.7,
+   "spitze_zehn": 161.5,
    "spitzenjahr_zehn": 2059,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 167.4,
-    "spitze_zehn": 228.4,
+    "restschuld_2098_zehn": 173.7,
+    "spitze_zehn": 238.1,
     "spitzenjahr_zehn": 2071
    }
   },
   {
    "wachstum": 2.5,
    "zins": 4.0,
-   "beitrag_pct_bip": 7.21,
-   "zuschlag_pct": 21.6,
-   "spitze_zehn": 156.1,
+   "beitrag_pct_bip": 7.58,
+   "zuschlag_pct": 24.6,
+   "spitze_zehn": 162.5,
    "spitzenjahr_zehn": 2060,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 271.5,
-    "spitze_zehn": 284.7,
+    "restschuld_2098_zehn": 281.6,
+    "spitze_zehn": 296.2,
     "spitzenjahr_zehn": 2081
    }
   },
   {
    "wachstum": 3.0,
    "zins": 2.45,
-   "beitrag_pct_bip": 5.04,
-   "zuschlag_pct": 15.1,
-   "spitze_zehn": 149.1,
+   "beitrag_pct_bip": 5.32,
+   "zuschlag_pct": 17.3,
+   "spitze_zehn": 155.7,
    "spitzenjahr_zehn": 2056,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 0.2,
-    "spitze_zehn": 149.2,
+    "restschuld_2098_zehn": 0.1,
+    "spitze_zehn": 155.7,
     "spitzenjahr_zehn": 2056
    }
   },
   {
    "wachstum": 3.0,
    "zins": 3.0,
-   "beitrag_pct_bip": 5.59,
-   "zuschlag_pct": 16.7,
-   "spitze_zehn": 151.7,
+   "beitrag_pct_bip": 5.89,
+   "zuschlag_pct": 19.1,
+   "spitze_zehn": 158.2,
    "spitzenjahr_zehn": 2057,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 40.2,
-    "spitze_zehn": 168.9,
+    "restschuld_2098_zehn": 41.7,
+    "spitze_zehn": 176.3,
     "spitzenjahr_zehn": 2060
    }
   },
   {
    "wachstum": 3.0,
    "zins": 3.5,
-   "beitrag_pct_bip": 6.11,
-   "zuschlag_pct": 18.3,
-   "spitze_zehn": 153.5,
+   "beitrag_pct_bip": 6.44,
+   "zuschlag_pct": 20.9,
+   "spitze_zehn": 160.0,
    "spitzenjahr_zehn": 2058,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 92.7,
-    "spitze_zehn": 193.2,
+    "restschuld_2098_zehn": 96.2,
+    "spitze_zehn": 201.6,
     "spitzenjahr_zehn": 2064
    }
   },
   {
    "wachstum": 3.0,
    "zins": 4.0,
-   "beitrag_pct_bip": 6.65,
-   "zuschlag_pct": 19.9,
-   "spitze_zehn": 155.0,
+   "beitrag_pct_bip": 7.0,
+   "zuschlag_pct": 22.7,
+   "spitze_zehn": 161.5,
    "spitzenjahr_zehn": 2059,
    "beschlussbeitrag_fest": {
-    "restschuld_2098_zehn": 166.6,
-    "spitze_zehn": 228.0,
+    "restschuld_2098_zehn": 172.8,
+    "spitze_zehn": 237.7,
     "spitzenjahr_zehn": 2071
    }
   }

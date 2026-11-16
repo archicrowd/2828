@@ -87,7 +87,7 @@ def progression(f):
     if f not in _PROG:
         K, inf = SVM.KERN, float("inf")
         K.TARIF_SAETZE[:] = [x / 100 for x in sy["einkommen_saetze"]]
-        K.TARIF_GRENZEN[:] = [12348.0 * x for x in (1, 1.5, 2, 3)] + [inf]
+        K.TARIF_GRENZEN[:] = [sy.get("grundbedarf_tarif", 12348.0) * x for x in (1, 1.5, 2, 3)] + [inf]   # v4.97
         v0, d0 = list(K.VERT), dict(K.DD_EUR)
 
         def rev(x):
@@ -140,7 +140,7 @@ def main():
         reihe = []
         for j in range(P["jahre"][0], P["jahre"][1] + 1):
             eff = label(j) + lab.get("plus_punkte", 0.0)
-            if lab.get("halten"):                                            # Stufenwanderung: nicht unter den Ausgangswert
+            if lab.get("halten") or P.get("label_stufenwanderung"):          # v4.97 geltend: Stufenwanderung (Beschluss 16.11.2026)                                            # Stufenwanderung: nicht unter den Ausgangswert
                 eff = max(eff, eff_check + lab.get("plus_punkte", 0.0))
             konsum = SVM.konsum(eff) * KONSUM_EICH                           # auf den Ausgangswert geeicht
             co2 = pos["CO₂-Preis"] * lin("co2_index", j)

@@ -22,7 +22,7 @@ ERSATZ = {
   ("b2_p",) + _Z("Betriebe geben mindestens 80 % der gesparten Arbeitgeberbeiträge in den Lohn.",
                  " Das sind die Beiträge, die wegfallen – für Krankheit, Pflege, Rente, Arbeitslosigkeit und Familie; Unfallversicherung und Abgaben "
                  "für Ausbildung, Wohnungsbau und Verkehr bleiben beim Betrieb."),
-  ("b8_p",) + _Z("33 % gelten nur für Schädliches.",
+  ("b8_p",) + _Z("33⅓ % gelten nur für Schädliches.",
                  " Günstigere Stufen erreichen Anbieter durch Zertifizierung bei zugelassenen, staatlich überwachten Stellen – ein Wettbewerb um "
                  "Nachhaltigkeit."),
   ("b10_p", "Sie gibt vor allem zurück, was der Wandel einbringt.",
@@ -47,7 +47,7 @@ ERSATZ = {
   ("b2_p",) + _Z("Employers pass at least 80% of the employer contributions they save into wages.",
                  " These are the contributions that disappear – for health, long-term care, pensions, unemployment and family; accident insurance and "
                  "levies for training, housing and transport stay with the employer."),
-  ("b8_p",) + _Z("33% applies only to harmful goods.",
+  ("b8_p",) + _Z("33⅓% applies only to harmful goods.",
                  " Suppliers reach a lower rate through certification by approved, state-supervised bodies – a competition for sustainability."),
   ("b10_p", "Above all, it returns what the transformation brings in.",
    "It gives everyone a share of what the transformation brings in: steering taxes and the gains of digitalisation."),
@@ -71,7 +71,7 @@ ERSATZ = {
   ("b2_p",) + _Z("Les entreprises reversent au moins 80 % des cotisations patronales économisées dans les salaires.",
                  " Il s'agit des cotisations qui disparaissent – maladie, dépendance, retraite, chômage et famille ; les accidents du travail et les "
                  "contributions à la formation, au logement et aux transports restent à la charge de l'employeur."),
-  ("b8_p",) + _Z("33 % ne s'appliquent qu'aux produits nocifs.",
+  ("b8_p",) + _Z("33⅓ % ne s'appliquent qu'aux produits nocifs.",
                  " Les fournisseurs obtiennent un taux plus bas par une certification auprès d'organismes agréés et contrôlés par l'État – une "
                  "concurrence pour la durabilité."),
   ("b10_p", "Il rend avant tout ce que la transition rapporte.",
@@ -97,7 +97,7 @@ ERSATZ = {
   ("b2_p",) + _Z("Le imprese trasferiscono nei salari almeno l'80% dei contributi risparmiati.",
                  " Si tratta dei contributi che vengono meno – malattia, assistenza, pensione, disoccupazione e famiglia; l'assicurazione contro gli "
                  "infortuni e i contributi per formazione, casa e trasporti restano a carico dell'impresa."),
-  ("b8_p",) + _Z("Il 33 % vale solo per i prodotti dannosi.",
+  ("b8_p",) + _Z("Il 33⅓ % vale solo per i prodotti dannosi.",
                  " I fornitori ottengono un'aliquota più bassa con la certificazione presso enti autorizzati e vigilati dallo Stato – una concorrenza "
                  "per la sostenibilità."),
   ("b10_p", "Restituisce soprattutto ciò che la trasformazione porta.",
@@ -122,7 +122,7 @@ ERSATZ = {
   ("b2_p",) + _Z("Las empresas trasladan al salario al menos el 80 % de las cotizaciones empresariales que ahorran.",
                  " Son las cotizaciones que desaparecen – contingencias comunes, desempleo y equidad intergeneracional; los accidentes de trabajo, "
                  "el FOGASA y la formación profesional siguen a cargo de la empresa."),
-  ("b8_p",) + _Z("El 33 % solo se aplica a lo dañino.",
+  ("b8_p",) + _Z("El 33⅓ % solo se aplica a lo dañino.",
                  " Los proveedores alcanzan un tipo más bajo mediante la certificación de entidades autorizadas y supervisadas por el Estado: una "
                  "competencia por la sostenibilidad."),
   ("b10_p", "Devuelve sobre todo lo que aporta la transformación.",
@@ -148,7 +148,7 @@ ERSATZ = {
   ("b2_p",) + _Z("Firmy przekazują do wynagrodzeń co najmniej 80% zaoszczędzonych składek pracodawcy.",
                  " Chodzi o składki, które znikają – emerytalne, rentowe i na Fundusz Pracy; składka wypadkowa i na Fundusz Gwarantowanych "
                  "Świadczeń Pracowniczych pozostają po stronie pracodawcy."),
-  ("b8_p",) + _Z("Stawka 33 % dotyczy tylko produktów szkodliwych.",
+  ("b8_p",) + _Z("Stawka 33⅓ % dotyczy tylko produktów szkodliwych.",
                  " Niższą stawkę dostawcy uzyskują dzięki certyfikacji w uprawnionych jednostkach nadzorowanych przez państwo – to konkurencja "
                  "o zrównoważony rozwój."),
   ("b10_p", "Oddaje przede wszystkim to, co przynosi transformacja.",

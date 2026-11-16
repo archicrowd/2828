@@ -196,7 +196,7 @@ wage distribution, scaled from Germany (assumption). Surcharge: legacy surcharge
 <h2>Four core topics</h2><div class="karten">{k}</div>
 <h2>The building blocks</h2>
 <div class="tab"><table><tbody>
-<tr><td><b>Income tax</b></td><td>0 / 11 / 19 / 25 / 33 % in steps tied to each country's basic needs; capital income, profits and inheritance at most
+<tr><td><b>Income tax</b></td><td>0 / 11 / 19 / 25 % and one third in steps tied to each country's basic needs; capital income, profits and inheritance at most
 33 %; company profits taxed where customers are, including digital platforms</td></tr>
 <tr><td><b>Contributions</b></td><td>Social contributions abolished; employers must pass at least 80 % of the contributions that disappear into wages
 (health, long-term care, pensions, unemployment, family)</td></tr>
@@ -205,7 +205,7 @@ wage distribution, scaled from Germany (assumption). Surcharge: legacy surcharge
 <tr><td><b>Dividend</b></td><td>Monthly payment to every adult, children 80 %, without application; financed from steering taxes and the gains of
 digitalisation; it shrinks as emissions disappear – by design</td></tr>
 <tr><td><b>Own route</b></td><td>Compulsory saving of 10 % of gross wages into a personal account, locked until retirement age, few investment options and a default fund</td></tr>
-<tr><td><b>VAT label</b></td><td>5 / 11 / 17 / 25 %, special rate 33 % only for harmful goods; lower rates through certification by supervised bodies</td></tr>
+<tr><td><b>VAT label</b></td><td>7 / 13 / 19 / 27 %, special rate one third only for harmful goods; lower rates through certification by supervised bodies</td></tr>
 <tr><td><b>Legacy</b></td><td>Public debt and unfunded pension promises in a common fund of the participating states: contribution {en(FG['beitrag_pct_bip'], 2)} % of GDP,
 debt peak {en(FG['schuldenquote_spitze'], 1)} % of GDP in {FG['spitzenjahr']}, repaid by {FG['zieljahr']}; existing pension promises free up to twice basic needs after 35 insurance years (at least basic needs), reduced in steps above</td></tr>
 </tbody></table></div>
@@ -253,7 +253,7 @@ tax and benefit law of each country. The same rules apply everywhere; the amount
 {tabelle(["Country", "Household", "½ × av. wage", "1 × av. wage", "2 × av. wage", "Better off"], tz, rechts=(2, 3, 4, 5))}
 <p class="meta">Purchasing power 2026; Poland in złoty. Today: income tax, employee contributions and cash benefits under 2026 law, including minimum
 income schemes where modelled (Germany: Bürgergeld approximation incl. housing and child supplements; France: APL; Italy: Assegno di Inclusione;
-Spain: IMV and CAPI; Poland: zasiłek okresowy). New: tax 0/11/19/25/33 %, dividend, pass-through of 80 % of the employer contributions that disappear
+Spain: IMV and CAPI; Poland: zasiłek okresowy). New: tax 0/11/19/25 % and one third, dividend, pass-through of 80 % of the employer contributions that disappear
 (capped at six times basic needs), VAT label, the country's own legacy surcharge, compulsory saving of 10 % (counted as outflow), basic income floor
 with own earnings counted by half. Average wage: OECD Taxing Wages 2024 ({AW_TEXT}). Better off: share of employees of this type across the wage
 distribution, scaled from Germany (assumption).</p>
@@ -338,7 +338,7 @@ def p_vat():
     p0 = PN["reihe"][0]
     inhalt = f"""
 <h1>VAT label by income</h1>
-<p class="lede">VAT becomes a label: A+ 5 %, A 11 %, B 17 %, C 25 %, special rate 33 % only for harmful goods. How strongly a household feels the change
+<p class="lede">VAT becomes a label: A+ 7 %, A 13 %, B 19 %, C 27 %, special rate one third only for harmful goods. How strongly a household feels the change
 depends on how much it consumes and on what: rent, health, education and insurance are exempt.</p>
 <h2>Germany (household budget survey EVS 2023)</h2>
 {tabelle(["Household net income per month", "Factor: additional burden", "Factor: VAT paid", "visible tax only"], z1, rechts=(1, 2, 3))}
@@ -471,7 +471,7 @@ th{{color:#5a7186}}td.z{{text-align:right;white-space:nowrap}}ul{{margin:4pt 0}}
 <h1>The Golden Third – research kit</h1>
 <p class="meta">Initiative 28:28 · model version {VERSION} · {DATUM} · CC BY 4.0 · contact {KONTAKT}</p>
 <h2>The proposal</h2>
-<p>Taxation and social protection shared by a group of states: no tax rate above one third, with income, capital income, company profits and inheritances each taxed at no more than one third (0/11/19/25/33 % in steps tied to basic
+<p>Taxation and social protection shared by a group of states: no tax rate above one third, with income, capital income, company profits and inheritances each taxed at no more than one third (0/11/19/25 % and one third in steps tied to basic
 needs); social contributions abolished, employers pass at least 80 % of the contributions that disappear into wages; a strong safety net (health,
 long-term care, minimum pension, basic needs) without premiums; a monthly transformation dividend for every adult; compulsory saving of 10 % into a
 personal account locked until retirement; VAT as a label; legacy debt and pension promises in a common fund.</p>

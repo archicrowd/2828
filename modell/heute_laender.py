@@ -16,6 +16,10 @@ import json, tomllib
 from pathlib import Path
 
 W = Path(__file__).resolve().parent.parent
+# v4.97: Tarif Stand C aus systemvarianten.toml (Variante 33R): Sätze und Grundbedarf im Tarif (Beschluss 16.11.2026)
+_TC = next(s for s in tomllib.loads((W / "modell" / "systemvarianten.toml").read_text(encoding="utf-8"))["system"] if s["id"] == "33R")
+TARIF_C = [float(x) for x in _TC["einkommen_saetze"]]
+TARIF_GB_FAKTOR = _TC.get("grundbedarf_tarif", 12348.0) / 12348.0
 import importlib.util as _ilu
 _spec_mv = _ilu.spec_from_file_location("mwst_verteilung", W / "modell" / "mwst_verteilung.py")   # v4.29: Mehrwertsteuer nach Einkommen (DE)
 MV = _ilu.module_from_spec(_spec_mv)
@@ -295,7 +299,7 @@ def neu(c, b, e, k, j):
     DIV = st_c["dividende_erw_eur"][JAHRE.index(j)] * 12 * fx
     EFF = EFF_NEU[j]
     grenzen = [g * fx for g in st_c["tarif_stufen"]]
-    saetze = [0.0, 11.0, 19.0, 25.0, 33.0]
+    saetze = TARIF_C
     est = lambda x: stufen(x, grenzen, saetze)
     brutto = b + P["weitergabe"] * ag_weitergabe(c, b)
     st = est(brutto + DIV) + (e - 1) * est(DIV)
@@ -347,7 +351,7 @@ def main():
             for k in range(4):
                 ras["heute"][f"{e}|{k}"] = [round(heute(b, e, k)["netto"]) for b in br]
         ras.update(jahre=JAHRE, div=[round(d * faktor(c), 2) for d in LS["staaten"][c]["dividende_erw_eur"]], eff=[EFF_NEU[j] for j in JAHRE],
-                   stufen=[g * faktor(c) for g in LS["staaten"][c]["tarif_stufen"]], saetze=[0.0, 11.0, 19.0, 25.0, 33.0], eff_alt=round(eff_alt(c), 2),
+                   stufen=[g * faktor(c) for g in LS["staaten"][c]["tarif_stufen"]], saetze=TARIF_C, eff_alt=round(eff_alt(c), 2),
                    weitergabe=P["weitergabe"], zuschlag=LS["staaten"][c]["fonds"]["zuschlag_pct"], vorsorge=P["vorsorge"],
                    zu=[round(LS["staaten"][c]["fonds"]["zuschlag_pct"] * zu_faktor(c, j), 4) for j in JAHRE],   # v4.38: Zuschlag je Jahr
                    kq=[[x * LS["staaten"][c]["grundbedarf_jahr_eur"] / LS["staaten"]["DE"]["grundbedarf_jahr_eur"] * faktor(c), y]

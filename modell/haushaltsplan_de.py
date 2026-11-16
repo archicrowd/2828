@@ -18,7 +18,6 @@ NZ = json.loads((AGG / "netz33.json").read_text(encoding="utf-8"))["beschluss"][
 PJ = json.loads((AGG / "projektion33.json").read_text(encoding="utf-8"))["reihe"]
 FG = json.loads((AGG / "fonds_geltend.json").read_text(encoding="utf-8"))
 EB = json.loads((AGG / "einnahmen_belege.json").read_text(encoding="utf-8"))
-E5 = json.loads((AGG / "e5_varianten.json").read_text(encoding="utf-8"))
 DB = json.loads((AGG / "dach_beitrag.json").read_text(encoding="utf-8"))
 
 
@@ -37,9 +36,7 @@ def main():
     zins = round(E24["D41PAY"] / b24 * 100, 2)                 # Annahme: Zinsquote 2028 wie 2024
     altrenten = round(altlast - zins, 2)
     progression = round(n28[2028]["dividende_pct_bip"] - v["dividende_pct_bip_2028"] - (11.12 - n28[2028]["netz_pct_bip"]), 2)
-    m = EB["faelle"]["mittel"]["positionen"]
-    bel = {"Unternehmen und Plattformen": m["unternehmen"]["belegt_pct_bip"], "Übrige Steuern": m["uebrige"]["belegt_pct_bip"],
-           "CO₂-Preis": round(dp["CO₂-Preis"] + m["co2_2028"]["luecke_pct_bip"], 2), "Erbschaften": m["erbschaft"]["belegt_pct_bip"]}
+    bel = {k: None for k in ("Unternehmen und Plattformen", "Übrige Steuern", "CO₂-Preis", "Erbschaften")}   # v4.97: belegte Werte sind geltend
     pct = lambda mio: round(mio / b24 * 100, 2)
     mrd28 = lambda p: round(p * b28 / 100, 1)
 
@@ -50,25 +47,25 @@ def main():
                     belegt_pct_bip=belegt, einfluss=einfluss)
     ein = [
         z("Steuern", "Lohn- und Einkommensteuer, Soli (Haushalte), sonstige Einkommensteuern", E24["D51A_C1"] - 0 + E24["D51E"], dp["Einkommen"],
-          "Ein Tarif 0/11/19/25/33 % auf alle Einkommen einschließlich Dividende und Gewinnen der Personengesellschaften; Grundbedarf frei; keine Abzüge; Soli entfällt",
+          "Ein Tarif 0/11/19/25 % und ein Drittel auf alle Einkommen einschließlich Dividende und Gewinnen der Personengesellschaften; Grundbedarf 12.072 € (2026) frei; keine Abzüge; Soli entfällt",
           nachher_name="Einkommen"),
         z("Steuern", "darin heute: Kapitalertrag- und Abgeltungsteuer", None, dp["Kapitalerträge"],
-          "Kapitalerträge einschließlich Kursgewinnen höchstens 33 % (heute 26,375 %); je Einkommensart ein Drittel", nachher_name="Kapitalerträge"),
+          "Kapitalerträge einschließlich Kursgewinnen höchstens ein Drittel (heute 26,375 %); je Einkommensart ein Drittel", nachher_name="Kapitalerträge"),
         z("Steuern", "Körperschaft- und Gewerbesteuer (Kapitalgesellschaften)", E24["D51B_C2"], dp["Unternehmen und Plattformen"],
-          "Unternehmen 33 % auf den Konzerngewinn, verteilt nach Kundenumsatz; Plattformen mit Untergrenze; Gewerbesteuer entfällt (Gemeinden über feste Anteile); Altverluste 5 Jahre, Verrechnung über 1 Mio. € höchstens 50 %",
+          "Unternehmen ein Drittel auf den Konzerngewinn, verteilt nach Kundenumsatz; Plattformen mit Untergrenze; Gewerbesteuer entfällt (Gemeinden über feste Anteile); Altverluste 5 Jahre, Verrechnung über 1 Mio. € höchstens 50 %",
           bel["Unternehmen und Plattformen"], "Unternehmen und Plattformen"),
         z("Steuern", "Mehrwertsteuer", E24["D211"], dp["Konsum (Label)"],
-          "Label 5/11/17/25 % nach Wirkung auf Gesundheit und Umwelt, Sonderstufe 33 % (Alkohol, Tabak, Kraftstoffe, Fahrzeuge 31 %); effektiv 18,8 % (heute 19/7 %)",
+          "Label 7/13/19/27 % nach Wirkung auf Gesundheit und Umwelt, Sonderstufe ein Drittel (Alkohol, Tabak, Kraftstoffe; Fahrzeuge 31 %); effektiv 20,6 % (heute 19/7 %); Produkte wandern mit dem Klimapfad in höhere Stufen",
           nachher_name="Konsum (Label)"),
         z("Steuern", "Verbrauchsteuern (Energie, Strom, Tabak, Alkohol, Kaffee), Versicherung-, Grunderwerb- und Verkehrsteuern, Kfz-Steuer, übrige",
           E24["D2122C"] + E24["D214A"] + E24["D214G"] + E24["D214B"] + E24["D214_rest"] + E24["D29_rest"] + E24["D59"], dp["Übrige Steuern"],
-          "Weitgehend wie heute (Annahme der Gesamtrechnung); Lenkung über die Sonderstufe im Label. Der Modellwert 3,93 enthält den Emissionshandel (eigene Position CO₂-Preis) und die Grundsteuer (geht in der Grundstücksabgabe auf) ein zweites Mal (Prüfbefund B-1, Korrektur 92)",
+          "Wie heute, ohne Emissionshandel (eigene Position CO₂-Preis) und Grundsteuer (geht in der Grundstücksabgabe auf); Lenkung über die Sonderstufe im Label",
           bel["Übrige Steuern"], "Übrige Steuern"),
         z("Steuern", "Emissionshandel (Abgaben auf Verschmutzung)", E24["D29F"], dp["CO₂-Preis"],
           "CO₂-Preis 100 €/t auf alle bepreisten Emissionen, Pfad bis 150 €/t; sinkt mit den Emissionen", bel["CO₂-Preis"], "CO₂-Preis"),
         z("Steuern", "Grundsteuer", E24["D29A"], dp["Grundstücksabgabe"], "Bodenwertabgabe bis 1 % des Bodenwerts (Gemeinden)", nachher_name="Grundstücksabgabe"),
         z("Steuern", "Erbschaft- und Schenkungsteuer", E24["D91"], dp["Erbschaften"],
-          "33 % auf Erwerbe über 100.000 € je Erbe, ohne Verschonung von Betriebsvermögen (heute bis 50 %, viele Ausnahmen)", bel["Erbschaften"], "Erbschaften"),
+          "Ein Drittel auf Erwerbe über dem doppelten jährlichen Grundbedarf (rund 25.100 € je Erbe, 2028), ohne Verschonung von Betriebsvermögen; für das selbst bewohnte Elternhaus Stundungskredit zu 1 %, bis 20 Jahre", bel["Erbschaften"], "Erbschaften"),
         z("Steuern", "Vermögensteuer (seit 1997 nicht erhoben)", 0, dp["Große Vermögen"], "Mindeststeuer (anrechenbar) und 1 % ab 2 Mio. €", nachher_name="Große Vermögen"),
         z("Steuern", "Abbau klimaschädlicher Subventionen (heute Ausgabe oder Steuervergünstigung)", None, dp["Subventionsabbau"],
           "20 Mrd. € nach UBA-Liste, überwiegend Steuervergünstigungen (Mehraufkommen) und zum Teil Finanzhilfen (weniger Ausgaben); im Modell als Einnahme geführt. Prüfpunkt: Entfernungspauschale und Dienstwagen fallen schon mit „ohne Abzüge“ im Einkommen weg", nachher_name="Subventionsabbau"),
@@ -115,7 +112,7 @@ def main():
           round(pos["Waisen"] + pos["Härtefall"], 2), "Waisen 0,05 + Härtefall 0,65; Kindergeld, Wohngeld und Grundsicherung gehen in der Dividende auf"),
         z("Dividende", "– (neu)", None, n28[2028]["dividende_pct_bip"],
           f"Transformationsdividende für alle Erwachsenen, halb für Kinder; DE 2028 {n28[2028]['dividende_erw_eur2026']} € je Erwachsenem und Monat (Kaufkraft 2026)",
-          belegt=E5["varianten"]["A_mittel"]["dividende_pct_bip"].get("2028", E5["varianten"]["A_mittel"]["dividende_pct_bip"].get(2028)), nachher_name="Dividende"),
+          nachher_name="Dividende"),
     ]
     aus.append(z("Gemeinschaftsfonds", "– (neu)", None, fonds_beitrag, "Beitrag Deutschlands an den Gemeinschaftsfonds, finanziert aus dem Altlastenzuschlag",
                  nachher_name="Beitrag an den Fonds"))
@@ -171,8 +168,7 @@ def main():
                          ausgaben_konsolidiert_nachher_pct=round(summe(aus, "nachher_pct_bip") - fonds_beitrag + altlast, 2),
                          steuern_nachher_pct=round(sum(dp.values()) + progression, 2), altlast_de_2028=altlast),
              dividendenpfad=zer,
-             dividende_eur=dict(geltend=E5["geltend"]["dividende_erw_eur2026"], belegt_mittel=E5["varianten"]["A_mittel"]["dividende_erw_eur2026"]),
-             dividende_pct_belegt_mittel=E5["varianten"]["A_mittel"]["dividende_pct_bip"],
+             dividende_eur=dict(geltend={str(j): n28[j]["dividende_erw_eur2026"] for j in (2028, 2035, 2045, 2060)}),
              pflichtvorsorge_pct_bip=4.1)
     (AGG / "haushaltsplan_de.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print("Summen:", E["summen"])

@@ -19,32 +19,32 @@
      0.15
     ]
    ],
-   "anteil_mehr_pct": 33.8,
-   "mittel_monat": -114,
+   "anteil_mehr_pct": 19.3,
+   "mittel_monat": -191,
    "fuenftel_monat": [
-    26,
-    7,
-    -24,
-    -122,
-    -461
+    3,
+    -41,
+    -91,
+    -215,
+    -620
    ],
    "fuenftel_anteil_mehr_pct": [
-    71,
-    27,
-    51,
-    19,
+    39,
+    24,
+    33,
+    0,
     0
    ],
    "nach_zusage_monat": {
-    "bis 1 G": 66,
-    "1–1,5 G": 15,
-    "1,5–2 G": -84,
-    "2–3 G": -246,
-    "über 3 G": -635
+    "bis 1 G": 37,
+    "1–1,5 G": -43,
+    "1,5–2 G": -162,
+    "2–3 G": -355,
+    "über 3 G": -805
    },
    "nach_zusage_anteil_mehr_pct": {
-    "bis 1 G": 72,
-    "1–1,5 G": 60,
+    "bis 1 G": 70,
+    "1–1,5 G": 14,
     "1,5–2 G": 0,
     "2–3 G": 0,
     "über 3 G": 0
@@ -56,7 +56,7 @@
     "2–3 G": 19,
     "über 3 G": 11
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": 0.0
   },
   {
@@ -67,35 +67,35 @@
      0.0
     ]
    ],
-   "anteil_mehr_pct": 68.5,
-   "mittel_monat": 4,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -77,
    "fuenftel_monat": [
-    32,
-    50,
-    39,
-    7,
-    -107
+    8,
+    0,
+    -30,
+    -89,
+    -277
    ],
    "fuenftel_anteil_mehr_pct": [
-    71,
-    100,
-    71,
-    70,
-    30
+    46,
+    24,
+    49,
+    0,
+    0
    ],
    "nach_zusage_monat": {
-    "bis 1 G": 66,
-    "1–1,5 G": 55,
-    "1,5–2 G": 31,
-    "2–3 G": -46,
-    "über 3 G": -209
+    "bis 1 G": 37,
+    "1–1,5 G": -5,
+    "1,5–2 G": -50,
+    "2–3 G": -162,
+    "über 3 G": -392
    },
    "nach_zusage_anteil_mehr_pct": {
-    "bis 1 G": 72,
-    "1–1,5 G": 100,
-    "1,5–2 G": 100,
-    "2–3 G": 22,
-    "über 3 G": 1
+    "bis 1 G": 70,
+    "1–1,5 G": 30,
+    "1,5–2 G": 0,
+    "2–3 G": 0,
+    "über 3 G": 0
    },
    "anteil_personen_je_zusage_pct": {
     "bis 1 G": 21,
@@ -104,7 +104,7 @@
     "2–3 G": 19,
     "über 3 G": 11
    },
-   "entlastung_fonds_mrd": -2.3,
+   "entlastung_fonds_mrd": -2.5,
    "gegen_E_mrd": -27.2
   },
   {
@@ -127,33 +127,33 @@
      0.33
     ]
    ],
-   "anteil_mehr_pct": 53.6,
-   "mittel_monat": -105,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -182,
    "fuenftel_monat": [
-    32,
-    43,
-    -1,
-    -73,
-    -530
+    8,
+    -6,
+    -68,
+    -167,
+    -686
    ],
    "fuenftel_anteil_mehr_pct": [
-    71,
-    81,
-    51,
-    64,
+    46,
+    24,
+    49,
+    0,
     0
    ],
    "nach_zusage_monat": {
-    "bis 1 G": 66,
-    "1–1,5 G": 55,
-    "1,5–2 G": -5,
-    "2–3 G": -213,
-    "über 3 G": -843
+    "bis 1 G": 37,
+    "1–1,5 G": -5,
+    "1,5–2 G": -85,
+    "2–3 G": -323,
+    "über 3 G": -1006
    },
    "nach_zusage_anteil_mehr_pct": {
-    "bis 1 G": 72,
-    "1–1,5 G": 100,
-    "1,5–2 G": 42,
+    "bis 1 G": 70,
+    "1–1,5 G": 30,
+    "1,5–2 G": 0,
     "2–3 G": 0,
     "über 3 G": 0
    },
@@ -164,7 +164,7 @@
     "2–3 G": 19,
     "über 3 G": 11
    },
-   "entlastung_fonds_mrd": 23.7,
+   "entlastung_fonds_mrd": 23.6,
    "gegen_E_mrd": -1.2
   },
   {
@@ -187,33 +187,33 @@
      0.33
     ]
    ],
-   "anteil_mehr_pct": 56.4,
-   "mittel_monat": -87,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -165,
    "fuenftel_monat": [
-    32,
-    46,
-    11,
+    8,
+    -4,
     -58,
-    -469
+    -152,
+    -627
    ],
    "fuenftel_anteil_mehr_pct": [
-    71,
-    87,
-    51,
-    70,
-    2
+    46,
+    24,
+    49,
+    0,
+    0
    ],
    "nach_zusage_monat": {
-    "bis 1 G": 66,
-    "1–1,5 G": 55,
-    "1,5–2 G": 7,
-    "2–3 G": -170,
-    "über 3 G": -775
+    "bis 1 G": 37,
+    "1–1,5 G": -5,
+    "1,5–2 G": -73,
+    "2–3 G": -282,
+    "über 3 G": -940
    },
    "nach_zusage_anteil_mehr_pct": {
-    "bis 1 G": 72,
-    "1–1,5 G": 100,
-    "1,5–2 G": 57,
+    "bis 1 G": 70,
+    "1–1,5 G": 30,
+    "1,5–2 G": 0,
     "2–3 G": 0,
     "über 3 G": 0
    },
@@ -224,7 +224,7 @@
     "2–3 G": 19,
     "über 3 G": 11
    },
-   "entlastung_fonds_mrd": 19.5,
+   "entlastung_fonds_mrd": 19.3,
    "gegen_E_mrd": -5.4
   },
   {
@@ -239,33 +239,33 @@
      0.243
     ]
    ],
-   "anteil_mehr_pct": 51.5,
-   "mittel_monat": -110,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -188,
    "fuenftel_monat": [
-    32,
-    39,
-    -14,
-    -81,
-    -533
+    8,
+    -10,
+    -82,
+    -174,
+    -689
    ],
    "fuenftel_anteil_mehr_pct": [
-    71,
-    76,
-    51,
-    58,
+    46,
+    24,
+    49,
+    0,
     0
    ],
    "nach_zusage_monat": {
-    "bis 1 G": 66,
-    "1–1,5 G": 55,
-    "1,5–2 G": -28,
-    "2–3 G": -255,
-    "über 3 G": -789
+    "bis 1 G": 37,
+    "1–1,5 G": -5,
+    "1,5–2 G": -107,
+    "2–3 G": -363,
+    "über 3 G": -954
    },
    "nach_zusage_anteil_mehr_pct": {
-    "bis 1 G": 72,
-    "1–1,5 G": 100,
-    "1,5–2 G": 30,
+    "bis 1 G": 70,
+    "1–1,5 G": 30,
+    "1,5–2 G": 0,
     "2–3 G": 0,
     "über 3 G": 0
    },
@@ -276,7 +276,7 @@
     "2–3 G": 19,
     "über 3 G": 11
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": 0.0
   },
   {
@@ -295,33 +295,33 @@
      0.389
     ]
    ],
-   "anteil_mehr_pct": 52.4,
-   "mittel_monat": -110,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -187,
    "fuenftel_monat": [
-    32,
-    41,
-    -4,
-    -73,
-    -552
+    8,
+    -8,
+    -71,
+    -167,
+    -708
    ],
    "fuenftel_anteil_mehr_pct": [
-    71,
-    78,
-    51,
-    61,
+    46,
+    24,
+    49,
+    0,
     0
    ],
    "nach_zusage_monat": {
-    "bis 1 G": 66,
-    "1–1,5 G": 55,
-    "1,5–2 G": -16,
-    "2–3 G": -213,
-    "über 3 G": -873
+    "bis 1 G": 37,
+    "1–1,5 G": -5,
+    "1,5–2 G": -96,
+    "2–3 G": -323,
+    "über 3 G": -1036
    },
    "nach_zusage_anteil_mehr_pct": {
-    "bis 1 G": 72,
-    "1–1,5 G": 100,
-    "1,5–2 G": 35,
+    "bis 1 G": 70,
+    "1–1,5 G": 30,
+    "1,5–2 G": 0,
     "2–3 G": 0,
     "über 3 G": 0
    },
@@ -332,7 +332,7 @@
     "2–3 G": 19,
     "über 3 G": 11
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": -0.0
   },
   {
@@ -347,32 +347,32 @@
      0.191
     ]
    ],
-   "anteil_mehr_pct": 44.2,
-   "mittel_monat": -112,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -189,
    "fuenftel_monat": [
-    32,
-    22,
-    -18,
-    -100,
-    -500
+    8,
+    -27,
+    -85,
+    -193,
+    -657
    ],
    "fuenftel_anteil_mehr_pct": [
-    71,
-    56,
-    51,
-    42,
+    46,
+    24,
+    49,
+    0,
     0
    ],
    "nach_zusage_monat": {
-    "bis 1 G": 66,
-    "1–1,5 G": 43,
-    "1,5–2 G": -65,
-    "2–3 G": -256,
-    "über 3 G": -708
+    "bis 1 G": 37,
+    "1–1,5 G": -16,
+    "1,5–2 G": -144,
+    "2–3 G": -364,
+    "über 3 G": -876
    },
    "nach_zusage_anteil_mehr_pct": {
-    "bis 1 G": 72,
-    "1–1,5 G": 94,
+    "bis 1 G": 70,
+    "1–1,5 G": 30,
     "1,5–2 G": 0,
     "2–3 G": 0,
     "über 3 G": 0
@@ -384,7 +384,7 @@
     "2–3 G": 19,
     "über 3 G": 11
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": -0.0
   },
   {
@@ -403,34 +403,34 @@
      0.557
     ]
    ],
-   "anteil_mehr_pct": 65.8,
-   "mittel_monat": -108,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -186,
    "fuenftel_monat": [
-    32,
-    50,
-    21,
-    -68,
-    -582
+    8,
+    0,
+    -48,
+    -161,
+    -738
    ],
    "fuenftel_anteil_mehr_pct": [
-    71,
-    100,
-    66,
-    70,
-    22
+    46,
+    24,
+    49,
+    0,
+    0
    ],
    "nach_zusage_monat": {
-    "bis 1 G": 66,
-    "1–1,5 G": 55,
-    "1,5–2 G": 31,
-    "2–3 G": -153,
-    "über 3 G": -1034
+    "bis 1 G": 37,
+    "1–1,5 G": -5,
+    "1,5–2 G": -50,
+    "2–3 G": -266,
+    "über 3 G": -1192
    },
    "nach_zusage_anteil_mehr_pct": {
-    "bis 1 G": 72,
-    "1–1,5 G": 100,
-    "1,5–2 G": 100,
-    "2–3 G": 9,
+    "bis 1 G": 70,
+    "1–1,5 G": 30,
+    "1,5–2 G": 0,
+    "2–3 G": 0,
     "über 3 G": 0
    },
    "anteil_personen_je_zusage_pct": {
@@ -440,7 +440,7 @@
     "2–3 G": 19,
     "über 3 G": 11
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": 0.0
   }
  ],

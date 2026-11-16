@@ -41,8 +41,8 @@
     }
    },
    "luecke_pct_bip": -4.09,
-   "dividende_eur_erw_monat": -214,
-   "dividende_2028_mit_kinderanteil_eur": 161,
+   "dividende_eur_erw_monat": -213,
+   "dividende_2028_mit_kinderanteil_eur": 30,
    "hilfsgroessen": {
     "unternehmen_basis_mrd_2025": 285,
     "co2_mt_2028": 511,
@@ -73,8 +73,8 @@
     }
    },
    "luecke_pct_bip": -3.59,
-   "dividende_eur_erw_monat": -188,
-   "dividende_2028_mit_kinderanteil_eur": 186,
+   "dividende_eur_erw_monat": -187,
+   "dividende_2028_mit_kinderanteil_eur": 55,
    "hilfsgroessen": {
     "unternehmen_basis_mrd_2025": 326,
     "co2_mt_2028": 528,
@@ -106,7 +106,7 @@
    },
    "luecke_pct_bip": -2.94,
    "dividende_eur_erw_monat": -154,
-   "dividende_2028_mit_kinderanteil_eur": 218,
+   "dividende_2028_mit_kinderanteil_eur": 87,
    "hilfsgroessen": {
     "unternehmen_basis_mrd_2025": 385,
     "co2_mt_2028": 544,
@@ -114,6 +114,6 @@
    }
   }
  },
- "eur_je_bip_punkt_2028": 52.3,
- "dividende_2028_geltend_eur": 364
+ "eur_je_bip_punkt_2028": 52.2,
+ "dividende_2028_geltend_eur": 232
 }

@@ -173,11 +173,16 @@ zins_ausserhalb = true
 # 0,8 × 33 + 0,2 × 25 = 31,4 → 31 % (Annahme 80 % Verbrenner wie 33F). Sonst wie 33F (prämienfrei, Dividende so bemessen, dass +0,2 bleibt).
 [[system]]
 id = "33R"
-name = "33:33 prämienfrei, Label 5/11/17/25 + Sonderstufe 33 % (Beschluss v3.48)"
-spitzensatz = 33
-einkommen_saetze = [0, 11, 19, 25, 33]
-label_saetze = [5, 11, 17, 25, 25]
-label_sonder = { alkohol_tabak = 33, kraftstoffe = 33, fahrzeuge = 31 }
+name = "Drittel prämienfrei: Satz ein Drittel, Label 7/13/19/27 + Sonderstufe ein Drittel, belegte Einnahmen (Beschlüsse v3.48 und 16.11.2026, v4.97)"
+# v4.97 (Beschluss 16.11.2026): Spitzensatz genau ein Drittel; Labelstufen je +2 Punkte (vorher 5/11/17/25, effektiv 18,8 → 20,6 %; Obergrenze der
+# Initiative +2 Punkte); Grundbedarf im Tarif ohne Gesundheitspflege und Bildung (12.072 statt 12.348 € 2026); belegte Werte für Unternehmen, Übrige,
+# CO₂ und Erbschaft mit Freibetrag 2 × Grundbedarf und Stundung (deckung_belegt.json); Stufenwanderung im Label (projektion33.toml).
+spitzensatz = 33.333333
+einkommen_saetze = [0, 11, 19, 25, 33.333333]
+grundbedarf_tarif = 12072.0
+belegt = true
+label_saetze = [7, 13, 19, 27, 27]
+label_sonder = { alkohol_tabak = 33.333333, kraftstoffe = 33.333333, fahrzeuge = 31 }
 mindestniveau_anteil = 0.25
 loese_saldo = 0.2
 bezugswert = "grundbedarf"

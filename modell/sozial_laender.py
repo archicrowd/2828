@@ -16,6 +16,10 @@ import contextlib, importlib.util, io, json, tomllib
 from pathlib import Path
 
 W = Path(__file__).resolve().parent.parent
+# v4.97: Tarif Stand C aus systemvarianten.toml (Variante 33R): Sätze und Grundbedarf im Tarif (Beschluss 16.11.2026)
+_TC = next(s for s in tomllib.loads((W / "modell" / "systemvarianten.toml").read_text(encoding="utf-8"))["system"] if s["id"] == "33R")
+TARIF_C = [float(x) for x in _TC["einkommen_saetze"]]
+TARIF_GB_FAKTOR = _TC.get("grundbedarf_tarif", 12348.0) / 12348.0
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "sozial_laender.toml").read_text(encoding="utf-8"))
 P["zuschlag_de"] = round(json.loads((W / "daten" / "aggregate" / "fonds_geltend.json").read_text(encoding="utf-8"))["zuschlag_haushalte"]["laender"]["DE"]["2028"], 1)   # v4.38 (E11): DE 2028 nach Verrechnung   # v4.11; v4.20 geltender Fonds der 30
@@ -130,7 +134,7 @@ def neu(c, b, e, k, j=2028, s=0.5, boden=True, lohn_faktor=1.0, vorsorge_frei=Fa
     topf = (1 - K / 2) / (1 - K + s * K)
     DIV = st_c["dividende_erw_eur"][JAHRE.index(j)] * 12 * fx * topf
     EFF = HL.EFF_NEU[j]
-    est = lambda x: HL.stufen(x, [g * fx for g in st_c["tarif_stufen"]], [0.0, 11.0, 19.0, 25.0, 33.0])
+    est = lambda x: HL.stufen(x, [g * fx for g in st_c["tarif_stufen"]], TARIF_C)
     lohn = b * lohn_faktor
     brutto = lohn + HL.P["weitergabe"] * ag(c, b)       # Weitergabe bemisst sich an den heutigen Arbeitgeberbeiträgen
     st = est(brutto + DIV) + (e - 1) * est(DIV)

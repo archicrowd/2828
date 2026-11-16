@@ -26,6 +26,9 @@ from pathlib import Path
 import numpy as np
 from scipy.stats import norm
 
+# v4.97: Tarif Stand C aus systemvarianten.toml (Variante 33R)
+TARIF_C = [float(x) for x in next(s_ for s_ in tomllib.loads((Path(__file__).resolve().parent / "systemvarianten.toml").read_text(encoding="utf-8"))["system"] if s_["id"] == "33R")["einkommen_saetze"]]
+
 W = Path(__file__).resolve().parent.parent
 P = tomllib.loads((W / "modell" / "mikro_rentner_de.toml").read_text(encoding="utf-8"))
 
@@ -116,7 +119,7 @@ def neu_haushalt(g_person, n_pers, a, w, eps=0.0):
     p, an, b, v, e = (g_person * a[x] for x in ("grv", "andere", "bav", "privat", "erwerb"))
     # v4.72 Regel BS35 (haushalte33.rente_regel) auf die Zusagen, Versicherungsjahre zugeschätzt (Annahme); eigene Vorsorge ungekürzt
     eink = H.kuerze(p + an, jahre=H.jahre_zu(p + an, eps)) + b + v + e + w * H.ag(e)
-    st = HL.stufen(eink, DE["tarif_stufen"], [0.0, 11.0, 19.0, 25.0, 33.0]) * n_pers
+    st = HL.stufen(eink, DE["tarif_stufen"], TARIF_C) * n_pers
     y = eink * n_pers - st
     konsum = HL.kq(y, "DE") * y
     fm, fb = HL.mwst_phi("DE", y)                                                       # v4.29

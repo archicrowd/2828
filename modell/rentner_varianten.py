@@ -15,6 +15,10 @@ from pathlib import Path
 import numpy as np
 
 W = Path(__file__).resolve().parent.parent
+# v4.97: Tarif Stand C aus systemvarianten.toml (Variante 33R): Sätze und Grundbedarf im Tarif (Beschluss 16.11.2026)
+_TC = next(s for s in tomllib.loads((W / "modell" / "systemvarianten.toml").read_text(encoding="utf-8"))["system"] if s["id"] == "33R")
+TARIF_C = [float(x) for x in _TC["einkommen_saetze"]]
+TARIF_GB_FAKTOR = _TC.get("grundbedarf_tarif", 12348.0) / 12348.0
 P = tomllib.loads((W / "modell" / "rentner_varianten.toml").read_text(encoding="utf-8"))
 spec = importlib.util.spec_from_file_location("rk", W / "modell" / "rentner_kombi.py")
 RK = importlib.util.module_from_spec(spec)
@@ -40,7 +44,7 @@ def neu(g, n, stufen, boden, kfun=None):
     zusage = p + an
     kb = kfun(zusage) if kfun else kuerzung(zusage, stufen)
     eink = zusage - kb + b + v + e + RK.P["weitergabe"] * H.ag(e)
-    st = HL.stufen(eink, DE["tarif_stufen"], [0.0, 11.0, 19.0, 25.0, 33.0]) * n
+    st = HL.stufen(eink, DE["tarif_stufen"], TARIF_C) * n
     y = eink * n - st
     kon = HL.kq(y, "DE") * y
     fm, fb = HL.mwst_phi("DE", y)

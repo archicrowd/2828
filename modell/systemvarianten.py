@@ -48,14 +48,15 @@ def zeile(*praef):
     return sum(v for k, v in ZEILE.items() if k.startswith(praef))
 
 
-def einkommen(saetze):
-    g26, eti, inf = 12348.0, KERN.SZ["Robust"]["eti"], float("inf")
+def einkommen(saetze, g26=12348.0):
+    """v4.97: Grundbedarf als Parameter (Regel vom 16.11.2026: 12.072 € ohne Gesundheitspflege und Bildung); Bezug bleibt Stand B mit 12.348 €."""
+    eti, inf = KERN.SZ["Robust"]["eti"], float("inf")
 
-    def auf(s):
+    def auf(s, g):
         KERN.TARIF_SAETZE[:] = [x / 100 for x in s]
-        KERN.TARIF_GRENZEN[:] = [g26 * x for x in (1, 1.5, 2, 3)] + [inf]
+        KERN.TARIF_GRENZEN[:] = [g * x for x in (1, 1.5, 2, 3)] + [inf]
         return KERN.est_aufkommen(50, eti)
-    return zeile("01") * auf(saetze) / auf([0, 9, 16, 21, 28])
+    return zeile("01") * auf(saetze, g26) / auf([0, 9, 16, 21, 28], 12348.0)
 
 
 def label_effektiv(saetze, sonder=None):
@@ -82,7 +83,7 @@ def deckung(sy):
     r = sy["spitzensatz"] / 28
     eff = label_effektiv(sy["label_saetze"], sy.get("label_sonder"))
     pos = {
-        "Einkommen": einkommen(sy["einkommen_saetze"]),
+        "Einkommen": einkommen(sy["einkommen_saetze"], sy.get("grundbedarf_tarif", 12348.0)),
         "Kapitalerträge": zeile("02") * r,
         "Konsum (Label)": konsum(eff),
         "Unternehmen und Plattformen": zeile("05") * r,
@@ -93,6 +94,13 @@ def deckung(sy):
         "Übrige Steuern": zeile("Sonstige"),
         "Grundstücksabgabe": zeile("04a"),
     }
+    # v4.97: belegte Werte (Prüfbefund B-1) mit den Regeln vom 16.11.2026 aus deckung_belegt.json (Stufe davor)
+    if sy.get("belegt"):
+        DB = json.loads((W / "daten" / "aggregate" / "deckung_belegt.json").read_text(encoding="utf-8"))["positionen"]
+        pos["Unternehmen und Plattformen"] = DB["Unternehmen und Plattformen"]
+        pos["Übrige Steuern"] = DB["Übrige Steuern"]
+        pos["CO₂-Preis"] += DB["CO₂-Abzug 2028"]
+        pos["Erbschaften"] = DB["Erbschaften"]
     # v4.93: Abweichende Deckung nur für Variantenrechnungen in einer Arbeitskopie (modell/e5_varianten.py); im Repository liegt die Datei nie.
     ueber = W / "modell" / "deckung_varianten.toml"
     if ueber.exists():
@@ -124,7 +132,7 @@ def loese(sy, ziel):
     tr = sy["steuer_traegt"]
     ga = sy.get("gesundheit_anteil", 1.0) if "gesundheit" in tr else 0.0
     dk = sum(deckung(sy)[0].values())
-    lo, hi = 0.05, 0.6
+    lo, hi = 0.0, 0.6   # v4.97: Untergrenze 0 (vorher 0,05; mit belegter Deckung lag die Lösung am Rand)
     for _ in range(40):
         mid = (lo + hi) / 2
         q = mindestquote(dict(sy, mindestniveau_anteil=mid))[0]

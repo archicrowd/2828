@@ -3,141 +3,141 @@
  "status": "geltend: Verrechnung je Staat (E11, Beschluss 24.10.2026); Vergleich gleicher Satz",
  "laender": {
   "DE": {
-   "zuschlag_gleich": 15.1,
-   "zuschlag_verrechnung_2028": 14.6,
+   "zuschlag_gleich": 17.3,
+   "zuschlag_verrechnung_2028": 16.8,
    "gleich": {
     "mehr_monat": {
-     "0.5": 596,
-     "1": 735,
-     "2": 716
+     "0.5": 439,
+     "1": 514,
+     "2": 408
     },
     "anteil_mehr": {
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": 596,
-      "1": 735,
-      "2": 716
+      "0.5": 439,
+      "1": 514,
+      "2": 408
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 605,
-      "1": 738,
-      "2": 721
+      "0.5": 371,
+      "1": 413,
+      "2": 308
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 575,
-      "1": 722,
-      "2": 110
+      "0.5": 564,
+      "1": 160,
+      "2": -538
      }
     },
     "durchschnittslohn": 63288
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": 600,
-     "1": 745,
-     "2": 737
+     "0.5": 444,
+     "1": 525,
+     "2": 429
     },
     "anteil_mehr": {
      "alleinstehend": 98,
      "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": 600,
-      "1": 745,
-      "2": 737
+      "0.5": 444,
+      "1": 525,
+      "2": 429
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 610,
-      "1": 749,
-      "2": 742
+      "0.5": 373,
+      "1": 424,
+      "2": 329
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 578,
-      "1": 734,
-      "2": 131
+      "0.5": 567,
+      "1": 172,
+      "2": -517
      }
     },
     "durchschnittslohn": 63288
    }
   },
   "FR": {
-   "zuschlag_gleich": 15.1,
-   "zuschlag_verrechnung_2028": 20.6,
+   "zuschlag_gleich": 17.3,
+   "zuschlag_verrechnung_2028": 23.0,
    "gleich": {
     "mehr_monat": {
-     "0.5": -114,
-     "1": 377,
-     "2": 677
+     "0.5": -141,
+     "1": 213,
+     "2": 427
     },
     "anteil_mehr": {
      "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 100,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "alleinerziehend, 1 Kind": 82,
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": -114,
-      "1": 377,
-      "2": 677
+      "0.5": -141,
+      "1": 213,
+      "2": 427
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 227,
-      "1": 335,
-      "2": 477
+      "0.5": 220,
+      "1": 95,
+      "2": 150
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 788,
-      "1": 440,
-      "2": 237
+      "0.5": 782,
+      "1": 410,
+      "2": -263
      }
     },
     "durchschnittslohn": 44968
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": -138,
-     "1": 294,
-     "2": 495
+     "0.5": -153,
+     "1": 127,
+     "2": 235
     },
     "anteil_mehr": {
-     "alleinstehend": 73,
-     "alleinerziehend, 1 Kind": 100,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "alleinstehend": 71,
+     "alleinerziehend, 1 Kind": 44,
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": -138,
-      "1": 294,
-      "2": 495
+      "0.5": -153,
+      "1": 127,
+      "2": 235
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 214,
-      "1": 252,
-      "2": 295
+      "0.5": 207,
+      "1": 9,
+      "2": -42
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 774,
-      "1": 398,
-      "2": 55
+      "0.5": 769,
+      "1": 367,
+      "2": -454
      }
     },
     "durchschnittslohn": 44968
    }
   },
   "IT": {
-   "zuschlag_gleich": 15.1,
-   "zuschlag_verrechnung_2028": 21.6,
+   "zuschlag_gleich": 17.3,
+   "zuschlag_verrechnung_2028": 24.5,
    "gleich": {
     "mehr_monat": {
-     "0.5": 348,
-     "1": 508,
-     "2": 965
+     "0.5": 224,
+     "1": 352,
+     "2": 743
     },
     "anteil_mehr": {
      "alleinstehend": 100,
@@ -146,28 +146,28 @@
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": 348,
-      "1": 508,
-      "2": 965
+      "0.5": 224,
+      "1": 352,
+      "2": 743
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 440,
-      "1": 520,
-      "2": 1030
+      "0.5": 434,
+      "1": 273,
+      "2": 719
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 1087,
-      "1": 742,
-      "2": 1244
+      "0.5": 1081,
+      "1": 638,
+      "2": 729
      }
     },
     "durchschnittslohn": 35616
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": 315,
-     "1": 429,
-     "2": 797
+     "0.5": 189,
+     "1": 264,
+     "2": 556
     },
     "anteil_mehr": {
      "alleinstehend": 100,
@@ -176,147 +176,147 @@
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": 315,
-      "1": 429,
-      "2": 797
+      "0.5": 189,
+      "1": 264,
+      "2": 556
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 423,
-      "1": 439,
-      "2": 862
+      "0.5": 416,
+      "1": 185,
+      "2": 530
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 1069,
-      "1": 658,
-      "2": 1074
+      "0.5": 1061,
+      "1": 593,
+      "2": 539
      }
     },
     "durchschnittslohn": 35616
    }
   },
   "ES": {
-   "zuschlag_gleich": 15.1,
-   "zuschlag_verrechnung_2028": 18.0,
+   "zuschlag_gleich": 17.3,
+   "zuschlag_verrechnung_2028": 20.4,
    "gleich": {
     "mehr_monat": {
-     "0.5": 237,
-     "1": 362,
-     "2": 420
+     "0.5": 134,
+     "1": 230,
+     "2": 228
     },
     "anteil_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 100,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": 237,
-      "1": 362,
-      "2": 420
+      "0.5": 134,
+      "1": 230,
+      "2": 228
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 490,
-      "1": 364,
-      "2": 491
+      "0.5": 483,
+      "1": 160,
+      "2": 227
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 1251,
-      "1": 690,
-      "2": 805
+      "0.5": 1244,
+      "1": 669,
+      "2": 379
      }
     },
     "durchschnittslohn": 31698
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": 225,
-     "1": 331,
-     "2": 354
+     "0.5": 121,
+     "1": 197,
+     "2": 156
     },
     "anteil_mehr": {
      "alleinstehend": 98,
-     "alleinerziehend, 1 Kind": 100,
-     "Paar, ein Einkommen, 2 Kinder": 100
+     "alleinerziehend, 1 Kind": 98,
+     "Paar, ein Einkommen, 2 Kinder": 98
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": 225,
-      "1": 331,
-      "2": 354
+      "0.5": 121,
+      "1": 197,
+      "2": 156
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 483,
-      "1": 333,
-      "2": 425
+      "0.5": 477,
+      "1": 127,
+      "2": 155
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 1244,
-      "1": 674,
-      "2": 738
+      "0.5": 1237,
+      "1": 652,
+      "2": 307
      }
     },
     "durchschnittslohn": 31698
    }
   },
   "PL": {
-   "zuschlag_gleich": 15.1,
-   "zuschlag_verrechnung_2028": 13.4,
+   "zuschlag_gleich": 17.3,
+   "zuschlag_verrechnung_2028": 15.5,
    "gleich": {
     "mehr_monat": {
-     "0.5": 1407,
-     "1": 1380,
-     "2": 1472
+     "0.5": 1384,
+     "1": 976,
+     "2": 885
     },
     "anteil_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 91,
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": 1407,
-      "1": 1380,
-      "2": 1472
+      "0.5": 1384,
+      "1": 976,
+      "2": 885
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 1981,
-      "1": 901,
-      "2": 272
+      "0.5": 1957,
+      "1": 260,
+      "2": -552
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 4050,
-      "1": 2255,
-      "2": 690
+      "0.5": 4023,
+      "1": 2195,
+      "2": -665
      }
     },
     "durchschnittslohn": 96421
    },
    "verrechnung_2028": {
     "mehr_monat": {
-     "0.5": 1426,
-     "1": 1427,
-     "2": 1581
+     "0.5": 1394,
+     "1": 1026,
+     "2": 1002
     },
     "anteil_mehr": {
-     "alleinstehend": 100,
-     "alleinerziehend, 1 Kind": 98,
-     "Paar, ein Einkommen, 2 Kinder": 98
+     "alleinstehend": 98,
+     "alleinerziehend, 1 Kind": 91,
+     "Paar, ein Einkommen, 2 Kinder": 91
     },
     "mehr_monat_typen": {
      "alleinstehend": {
-      "0.5": 1426,
-      "1": 1427,
-      "2": 1581
+      "0.5": 1394,
+      "1": 1026,
+      "2": 1002
      },
      "alleinerziehend, 1 Kind": {
-      "0.5": 1991,
-      "1": 949,
-      "2": 382
+      "0.5": 1967,
+      "1": 311,
+      "2": -434
      },
      "Paar, ein Einkommen, 2 Kinder": {
-      "0.5": 4062,
-      "1": 2280,
-      "2": 802
+      "0.5": 4034,
+      "1": 2221,
+      "2": -546
      }
     },
     "durchschnittslohn": 96421

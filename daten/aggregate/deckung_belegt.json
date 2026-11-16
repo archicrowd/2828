@@ -1,0 +1,29 @@
+{
+ "version": "v4.97",
+ "status": "geltend ab v4.97",
+ "fall": "mittel",
+ "satz": 33.3333,
+ "positionen": {
+  "Unternehmen und Plattformen": 2.3939,
+  "Übrige Steuern": 2.8896,
+  "CO₂-Abzug 2028": -0.3067,
+  "Erbschaften": 1.3069
+ },
+ "erbschaft": {
+  "belegt_100k": 0.966,
+  "freibetrag_eur_2028": 25119,
+  "faktor_freibetrag": 1.489,
+  "brutto_drittel": 1.452,
+  "stundung_kasse": -0.145,
+  "zinsvorteil_dauerhaft": -0.021,
+  "hinweis": "Kassenausfall durch Stundung vorsichtig dauerhaft angesetzt; ab etwa 2038 bleibt nur der Zinsvorteil"
+ },
+ "quelle": {
+  "einnahmen_belege": "einnahmen_belege.positionen",
+  "hilf": {
+   "unternehmen_basis_mrd_2025": 326,
+   "co2_mt_2028": 528,
+   "erbschaft_basis_2028_mrd": 139
+  }
+ }
+}

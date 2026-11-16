@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.96**
+Stand: 16. November 2026 · Modellstand **v4.97**
 
 ---
 
@@ -5438,6 +5438,70 @@ geht zugleich in der Grundstücksabgabe auf.
 
 ---
 
+### v4.97 — Umstellung auf belegte Einnahmen und die Regeln vom 16.11.2026; Stundung für das Elternhaus; Geldfluss auf der Startseite
+
+**Art der Änderung: MAJOR in der Sache (geltende Zahlen bewegt), als v4.97 geführt.** 16. November 2026.
+
+**Beschlüsse der Initiative (16.11.2026):**
+- Die neuen Regeln gelten (Punkte 1 und 2 der Hebelvorlage v4.96):
+  - Satz ein Drittel (33⅓ %) als höchster Satz je Einkommensart.
+  - Grundbedarf im Tarif knapper gefasst (12.072 € 2026 statt 12.348 €, ohne Gesundheitspflege und Bildung; Begründung: mehr Grundvorsorge durch den Staat).
+  - Label 7/13/19/27 % (+2 Punkte) und Sonderstufe ein Drittel; Produkte wandern mit dem Klimapfad in höhere Stufen.
+  - Erbschaftsfreibetrag 2 × jährlicher Grundbedarf.
+  - Fonds, Netz und Gemeinden bleiben.
+- Für das selbst bewohnte Elternhaus gibt es einen Stundungskredit zu 1 % fest, bis 20 Jahre (Antwort der Initiative).
+- Umstellung jetzt, nicht erst nach C (Antwort der Initiative).
+
+**Rechnung:**
+- Neue Stufe `modell/deckung_belegt.py` (+ `.toml`) → `deckung_belegt.json`. Sie läuft vor `systemvarianten`; die Positionen kommen aus `einnahmen_belege.positionen()`, ohne Werte aus späteren Stufen.
+  - Unternehmen 2,39 % BIP (belegt, Fall mittel; bis v4.96 Modellwert 4,42).
+  - Übrige 2,89 % BIP, CO₂-Abzug 2028 −0,31 % BIP.
+  - Erbschaften 1,31 % BIP. Herleitung: belegt beim Freibetrag 100.000 € 0,97; Faktor für den Freibetrag 25.119 € (2028) 1,489 aus der SOEP-Lognormalverteilung (DIW Wochenbericht 5/2021; Sekundärquelle, Annahme der Form); Stundung als Kassenausfall −0,145 (Anteil Elternhaus 10 %, Annahme); Zinsvorteil gegen den Fondszins 2,45 % −0,021.
+- `systemvarianten.toml` 33R:
+  - `belegt = true`, Einkommen mit `grundbedarf_tarif` 12.072 €.
+  - Satz 33,333333, Label 7/13/19/27, effektiver Labelsatz 20,56 %.
+  - Lösungsintervalle erweitert (systemvarianten 0, gesamtrechnung 5), weil die Lösung an der alten Untergrenze lag.
+- Tarif zentral: `TARIF_C` und `TARIF_GB_FAKTOR` aus systemvarianten.toml. Angepasst in heute_laender, rentner_kombi, rentner_varianten, sozial_laender, laenderseiten, haushalte33, mikro_de, mikro_rentner_de, projektion33, drittel_bau und konzept33-bau.js.
+  - In mikro_de lag das Lesen der Datei zunächst in einer oft gerufenen Funktion; der Lauf dauerte über 30 Minuten. Jetzt liest das Modul die Datei einmal.
+- `projektion33`: Stufenwanderung des Labels (effektiver Satz nie unter dem Prüfwert).
+- Kette:
+  - `unternehmensbasis` und `deckung_belegt` laufen vor `systemvarianten`.
+  - `e5_hebel` und `e5_varianten` sind aus der Kette genommen; ihre Ergebnisse bleiben als Stand v4.96 eingefroren, weil sie Varianten gegen die alte Rechnung sind.
+- `haushaltsplan_de`: ohne E5-Spalte; neu = geltend.
+
+**Ergebnis (geltend, 2028, Kaufkraft 2026):**
+- Dividende je Erwachsenem (dynamisch) 245 / 175 / 112 / 104 € (2028/2035/2050/2060); bis v4.96 384 / 309 / 249 / 256 €. Statisch 237 / 165 / 100 / 90 €. Mit Kinderanteil 232 € je Erwachsenem, 186 € je Kind (bis v4.96: 364 / 291 €).
+- Fondsbeitrag 5,32 % BIP (5,04), Zuschlag 17,3 % (15,1), Spitze 151,3 % (144,4), Z 2028 9,93 % BIP (9,35).
+- Gesamtlast A 36,54 (38,64), B 40,64 (42,74).
+- Vorteil alleinstehend, 42.000 €: +449 € (627).
+- **Verteilung (Mikrosimulation DE, Weitergabe 80 %):**
+  - Haushalte mit mehr: alle 63,1 % (79,5), erwerbsfähige 79,9 % (86,1).
+  - **Rentnerhaushalte mit mehr 23,1 %, Mittel −197 € (bis v4.96: 63,7 %, −118 €).** Rentnerregel BS35 24,0 %, Mittel −187 €, oberstes Fünftel −739 €.
+  - Ursache: die Dividende sinkt um rund 140 € je Erwachsenem, während die Kürzung der Altrenten unverändert bleibt. Die Rentnerregel ist auf eine Dividende von rund 380 € geeicht. Offen als R16.
+- **Zur Einordnung der Dividende:** Die Lücke kommt nicht aus den neuen Regeln (sie bringen +1,46 % BIP, v4.96), sondern aus dem Ersatz der Modellwerte durch belegte Werte (B-1, v4.87–v4.93; vor allem Unternehmen −2,0 % BIP). Die Rechnung war bis v4.96 an dieser Stelle zu hoch.
+
+**Webseite:**
+- Neuer Abschnitt „Wohin das Geld fließt“ (`seite/werkzeuge/geldfluss_bau.py`, nach `gemeinschaft_bau`) in sechs Sprachen.
+  - Flussdiagramm heute (2024, Eurostat Staatsfinanzen, vorläufig) gegen Goldenes Drittel (2028, `haushaltsplan_de.json`).
+  - Umschalter und Wechsel alle 6 s; aus bei reduzierter Bewegung.
+- Übersetzungen maschinell erstellt (Gegenlesen offen, P3).
+- Texte zu Satz, Label, Freibetrag und Stundung in Seite, Konzept, Kurzfassung, Working Paper und Forschungsseite nachgezogen. Die PDFs sind neu gebaut.
+
+**Datenquelle:**
+- Eurostat gov_10a_main/gov_10a_exp 2024 (vorläufig).
+- `einnahmen_belege.toml` (VGR 2024, Destatis).
+- `unternehmensbasis.json`.
+- SOEP-Erbschaften (DIW 5/2021, Sekundärquelle).
+- Beschlüsse der Initiative 16.11.2026.
+
+**Bewegte Zahl:** Dividende 2028 384 → 245 € je Erwachsenem; Fondsbeitrag 5,04 → 5,32 % BIP; Rentnerhaushalte mit mehr 63,7 → 23,1 %.
+
+**Wodurch aufgefallen:** Prüfbefund B-1 (14.11.2026) und Beschluss der Initiative zur Umstellung.
+
+**Keine neue Korrektur.** Bis v4.96 standen die Modellwerte als Annahme, offen gekennzeichnet (B23, B-1).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5520,7 +5584,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.96
+## 7 | Offene Punkte, Stand v4.97
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5545,6 +5609,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R14 | **erledigt v4.53** (`modell/pruefe_kennzahlen.py`, 40 Werte; Korrektur 81) – **Kennzahlen maschinell prüfen (v4.52):** Werte in `KENNZAHLEN.md` mit Status „geltend“ gegen die Ergebnisdateien abgleichen (Korrekturen 74, 79, 80) | keine; Verlässlichkeit der Angaben | v4.52 |
 | R12 | **Verhaltenswirkungen, Stufe 2 (v4.48):** V1 Grenzbelastung 0–30.000 € mit Aufstockung je Haushaltstyp; V2 Arbeitsangebot als Band (Elastizitäten mit Quelle) in der Mikrosimulation; V3 asymmetrische Überwälzung der Mehrwertsteuer im Preisniveau; V4 Ausweichband Vermögen gegen Jakobsen u. a. 2020; V5 Länderwerte (Nicht-Inanspruchnahme, nicht erklärte Arbeit, Vertrauen; zu R5); V6 Akzeptanzbefragung | Aufkommen und Dividende (V2–V4), Darstellung (V6) | v4.48, `projekt/Verhaltenswirkungen-Voruntersuchung-2026-10-24.md` |
 | R15 | **Rentnerregel BS35 je Staat (v4.72):** Verteilung von Zusagen und Versicherungsjahren außerhalb Deutschlands (bisher DE-Form, Annahme; LU 29,6 % als Grenzfall); Versicherungsjahre in DE aus Daten statt Zuschätzung (DRV-Statistik, Anhang A 3.1 des Rentenversicherungsberichts); Rentnerhaushalte FR/IT/ES/PL; Boden und SDG 1.2 | Rentner aller Staaten; Zuschlag über die Verrechnung | v4.69–v4.72 |
+| R16 | **Rentnerregel nach der Umstellung v4.97 neu eichen:** Rentnerhaushalte mit mehr 23,1 % (vorher 63,7 %), Mittel −197 €; BS35 ist auf die frühere Dividende geeicht (Boden, Freibetrag, Sätze 27,5 / 55,1 %); dazu Kursgewinne (später), Fortschrittskriterium der Brücke, Automatisierungs- und Erbschaftstrend im Langfristpfad | Rentner; Zuschlag | v4.97 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 
@@ -5570,6 +5635,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E18 | Staatenauswahl nach Rechtsstaatlichkeit und UN-Grundlagen (v4.73): Leitbild, Kriterien, Schwellen, Umgang mit SK, HR, RO, EL, BG, HU, Fonds je Währungsraum, Verfahren (EV1–EV9, `projekt/Entscheidungsvorlage-Staatenauswahl-2026-11-07.md`) |
 | E19 | **entschieden v4.75 (7.11.2026), Bestätigung offen: Partner ganz selbst, Obergrenze 32 % je Staat.** Spielregeln (v4.74): fünf Regeln, Schwelle 0,66, Fonds 50/50, Partner ganz selbst oder Brücke 25 %, Wegfall des Dachs (gemeinsame Kasse, Sicherheitsunion, Einzug durch das Dach) (`projekt/Spielregeln-Staaten-und-Fonds-2026-11-07.md`) |
 | E20 | Gemeinschaft der Staaten (v4.76): Variante B, Kasse G1 mit Erweiterung zu G2, Gericht (eigenes oder Anbindung), Freizügigkeit ohne Wartezeit, Sicherheit als Angebot (`projekt/Gemeinschaft-der-Staaten-2026-11-07.md`) |
+| E21 | **entschieden v4.97 (16.11.2026):** Lücke der belegten Einnahmen (B-1, E5 der Vorlage vom 15.11.2026): Satz ein Drittel, Grundbedarf im Tarif 12.072 €, Label 7/13/19/27 + Stufenwanderung, Erbschaftsfreibetrag 2 × Grundbedarf, Stundungskredit Elternhaus 1 % bis 20 Jahre; Verlustvorträge 5 Jahre, über 1 Mio. € höchstens 50 % Verrechnung; Personengesellschaften in Einkommen; Brücke 25 → 33 → 50 % |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

@@ -10,55 +10,55 @@
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 154.2,
-     "z_2028": 11.46,
-     "beitrag_pct_bip": 6.81,
-     "zuschlag_pct": 19.8,
-     "spitze": 211
+     "z_2028": 12.27,
+     "beitrag_pct_bip": 7.17,
+     "zuschlag_pct": 22.7,
+     "spitze": 220
     },
     {
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 154.2,
-     "z_2028": 10.1,
-     "beitrag_pct_bip": 6.22,
-     "zuschlag_pct": 18.1,
-     "spitze": 198
+     "z_2028": 10.91,
+     "beitrag_pct_bip": 6.57,
+     "zuschlag_pct": 20.8,
+     "spitze": 206
     },
     {
      "schnitt": 0.2,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 123.4,
-     "z_2028": 11.46,
-     "beitrag_pct_bip": 6.45,
-     "zuschlag_pct": 18.7,
-     "spitze": 193
+     "z_2028": 12.27,
+     "beitrag_pct_bip": 6.8,
+     "zuschlag_pct": 21.5,
+     "spitze": 201
     },
     {
      "schnitt": 0.2,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 123.4,
-     "z_2028": 10.1,
-     "beitrag_pct_bip": 5.86,
-     "zuschlag_pct": 17.0,
-     "spitze": 179
+     "z_2028": 10.91,
+     "beitrag_pct_bip": 6.21,
+     "zuschlag_pct": 19.7,
+     "spitze": 187
     },
     {
      "schnitt": 0.33,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 103.3,
-     "z_2028": 11.46,
-     "beitrag_pct_bip": 6.22,
-     "zuschlag_pct": 18.0,
-     "spitze": 181
+     "z_2028": 12.27,
+     "beitrag_pct_bip": 6.57,
+     "zuschlag_pct": 20.8,
+     "spitze": 190
     },
     {
      "schnitt": 0.33,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 103.3,
-     "z_2028": 10.1,
-     "beitrag_pct_bip": 5.62,
-     "zuschlag_pct": 16.3,
-     "spitze": 167
+     "z_2028": 10.91,
+     "beitrag_pct_bip": 5.97,
+     "zuschlag_pct": 18.9,
+     "spitze": 175
     }
    ]
   },
@@ -70,55 +70,55 @@
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 134.7,
-     "z_2028": 11.72,
-     "beitrag_pct_bip": 6.7,
-     "zuschlag_pct": 20.2,
-     "spitze": 202
+     "z_2028": 12.56,
+     "beitrag_pct_bip": 7.06,
+     "zuschlag_pct": 23.3,
+     "spitze": 211
     },
     {
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 134.7,
-     "z_2028": 10.35,
-     "beitrag_pct_bip": 6.1,
-     "zuschlag_pct": 18.4,
-     "spitze": 188
+     "z_2028": 11.19,
+     "beitrag_pct_bip": 6.47,
+     "zuschlag_pct": 21.4,
+     "spitze": 197
     },
     {
      "schnitt": 0.2,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 107.8,
-     "z_2028": 11.72,
-     "beitrag_pct_bip": 6.38,
-     "zuschlag_pct": 19.2,
+     "z_2028": 12.56,
+     "beitrag_pct_bip": 6.75,
+     "zuschlag_pct": 22.3,
+     "spitze": 195
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 107.8,
+     "z_2028": 11.19,
+     "beitrag_pct_bip": 6.15,
+     "zuschlag_pct": 20.3,
+     "spitze": 181
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 90.2,
+     "z_2028": 12.56,
+     "beitrag_pct_bip": 6.54,
+     "zuschlag_pct": 21.6,
      "spitze": 186
     },
     {
-     "schnitt": 0.2,
-     "altrenten_kuerzung": 0.1,
-     "schuld_nach": 107.8,
-     "z_2028": 10.35,
-     "beitrag_pct_bip": 5.78,
-     "zuschlag_pct": 17.4,
-     "spitze": 172
-    },
-    {
-     "schnitt": 0.33,
-     "altrenten_kuerzung": 0.0,
-     "schuld_nach": 90.2,
-     "z_2028": 11.72,
-     "beitrag_pct_bip": 6.17,
-     "zuschlag_pct": 18.6,
-     "spitze": 176
-    },
-    {
      "schnitt": 0.33,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 90.2,
-     "z_2028": 10.35,
-     "beitrag_pct_bip": 5.58,
-     "zuschlag_pct": 16.8,
-     "spitze": 162
+     "z_2028": 11.19,
+     "beitrag_pct_bip": 5.94,
+     "zuschlag_pct": 19.6,
+     "spitze": 171
     }
    ]
   },
@@ -130,55 +130,55 @@
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 112.6,
-     "z_2028": 11.55,
-     "beitrag_pct_bip": 6.36,
-     "zuschlag_pct": 19.4,
-     "spitze": 187
+     "z_2028": 12.13,
+     "beitrag_pct_bip": 6.62,
+     "zuschlag_pct": 21.6,
+     "spitze": 194
     },
     {
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 112.6,
-     "z_2028": 10.29,
-     "beitrag_pct_bip": 5.81,
-     "zuschlag_pct": 17.7,
-     "spitze": 174
+     "z_2028": 10.87,
+     "beitrag_pct_bip": 6.07,
+     "zuschlag_pct": 19.8,
+     "spitze": 180
     },
     {
      "schnitt": 0.2,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 90.1,
-     "z_2028": 11.55,
-     "beitrag_pct_bip": 6.1,
-     "zuschlag_pct": 18.6,
-     "spitze": 175
+     "z_2028": 12.13,
+     "beitrag_pct_bip": 6.35,
+     "zuschlag_pct": 20.8,
+     "spitze": 181
     },
     {
      "schnitt": 0.2,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 90.1,
-     "z_2028": 10.29,
-     "beitrag_pct_bip": 5.55,
-     "zuschlag_pct": 16.9,
-     "spitze": 161
-    },
-    {
-     "schnitt": 0.33,
-     "altrenten_kuerzung": 0.0,
-     "schuld_nach": 75.4,
-     "z_2028": 11.55,
-     "beitrag_pct_bip": 5.93,
-     "zuschlag_pct": 18.1,
+     "z_2028": 10.87,
+     "beitrag_pct_bip": 5.8,
+     "zuschlag_pct": 19.0,
      "spitze": 167
     },
     {
      "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 75.4,
+     "z_2028": 12.13,
+     "beitrag_pct_bip": 6.18,
+     "zuschlag_pct": 20.2,
+     "spitze": 173
+    },
+    {
+     "schnitt": 0.33,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 75.4,
-     "z_2028": 10.29,
-     "beitrag_pct_bip": 5.38,
-     "zuschlag_pct": 16.4,
-     "spitze": 153
+     "z_2028": 10.87,
+     "beitrag_pct_bip": 5.63,
+     "zuschlag_pct": 18.4,
+     "spitze": 159
     }
    ]
   },
@@ -190,55 +190,55 @@
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 103.9,
-     "z_2028": 8.83,
-     "beitrag_pct_bip": 5.07,
-     "zuschlag_pct": 15.4,
-     "spitze": 154
+     "z_2028": 9.46,
+     "beitrag_pct_bip": 5.35,
+     "zuschlag_pct": 17.6,
+     "spitze": 160
     },
     {
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 103.9,
-     "z_2028": 7.82,
-     "beitrag_pct_bip": 4.63,
-     "zuschlag_pct": 14.0,
-     "spitze": 143
+     "z_2028": 8.45,
+     "beitrag_pct_bip": 4.91,
+     "zuschlag_pct": 16.2,
+     "spitze": 150
     },
     {
      "schnitt": 0.2,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 83.1,
-     "z_2028": 8.83,
-     "beitrag_pct_bip": 4.83,
-     "zuschlag_pct": 14.6,
-     "spitze": 142
+     "z_2028": 9.46,
+     "beitrag_pct_bip": 5.1,
+     "zuschlag_pct": 16.8,
+     "spitze": 148
     },
     {
      "schnitt": 0.2,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 83.1,
-     "z_2028": 7.82,
-     "beitrag_pct_bip": 4.39,
-     "zuschlag_pct": 13.3,
-     "spitze": 131
+     "z_2028": 8.45,
+     "beitrag_pct_bip": 4.66,
+     "zuschlag_pct": 15.4,
+     "spitze": 137
     },
     {
      "schnitt": 0.33,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 69.6,
-     "z_2028": 8.83,
-     "beitrag_pct_bip": 4.67,
-     "zuschlag_pct": 14.2,
-     "spitze": 134
+     "z_2028": 9.46,
+     "beitrag_pct_bip": 4.95,
+     "zuschlag_pct": 16.3,
+     "spitze": 141
     },
     {
      "schnitt": 0.33,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 69.6,
-     "z_2028": 7.82,
-     "beitrag_pct_bip": 4.23,
-     "zuschlag_pct": 12.8,
-     "spitze": 123
+     "z_2028": 8.45,
+     "beitrag_pct_bip": 4.5,
+     "zuschlag_pct": 14.8,
+     "spitze": 130
     }
    ]
   },
@@ -250,55 +250,55 @@
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 101.6,
-     "z_2028": 10.05,
-     "beitrag_pct_bip": 5.58,
-     "zuschlag_pct": 16.7,
-     "spitze": 165
+     "z_2028": 10.7,
+     "beitrag_pct_bip": 5.86,
+     "zuschlag_pct": 19.0,
+     "spitze": 172
     },
     {
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 101.6,
-     "z_2028": 8.89,
-     "beitrag_pct_bip": 5.07,
-     "zuschlag_pct": 15.2,
+     "z_2028": 9.54,
+     "beitrag_pct_bip": 5.36,
+     "zuschlag_pct": 17.3,
+     "spitze": 160
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 81.3,
+     "z_2028": 10.7,
+     "beitrag_pct_bip": 5.62,
+     "zuschlag_pct": 18.2,
+     "spitze": 161
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 81.3,
+     "z_2028": 9.54,
+     "beitrag_pct_bip": 5.12,
+     "zuschlag_pct": 16.6,
+     "spitze": 148
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 68.1,
+     "z_2028": 10.7,
+     "beitrag_pct_bip": 5.47,
+     "zuschlag_pct": 17.7,
      "spitze": 153
     },
     {
-     "schnitt": 0.2,
-     "altrenten_kuerzung": 0.0,
-     "schuld_nach": 81.3,
-     "z_2028": 10.05,
-     "beitrag_pct_bip": 5.34,
-     "zuschlag_pct": 16.0,
-     "spitze": 154
-    },
-    {
-     "schnitt": 0.2,
+     "schnitt": 0.33,
      "altrenten_kuerzung": 0.1,
-     "schuld_nach": 81.3,
-     "z_2028": 8.89,
-     "beitrag_pct_bip": 4.84,
-     "zuschlag_pct": 14.4,
+     "schuld_nach": 68.1,
+     "z_2028": 9.54,
+     "beitrag_pct_bip": 4.96,
+     "zuschlag_pct": 16.1,
      "spitze": 141
-    },
-    {
-     "schnitt": 0.33,
-     "altrenten_kuerzung": 0.0,
-     "schuld_nach": 68.1,
-     "z_2028": 10.05,
-     "beitrag_pct_bip": 5.19,
-     "zuschlag_pct": 15.5,
-     "spitze": 146
-    },
-    {
-     "schnitt": 0.33,
-     "altrenten_kuerzung": 0.1,
-     "schuld_nach": 68.1,
-     "z_2028": 8.89,
-     "beitrag_pct_bip": 4.68,
-     "zuschlag_pct": 14.0,
-     "spitze": 134
     }
    ]
   },
@@ -310,55 +310,55 @@
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 93.5,
-     "z_2028": 9.66,
-     "beitrag_pct_bip": 5.31,
-     "zuschlag_pct": 15.7,
-     "spitze": 156
+     "z_2028": 10.33,
+     "beitrag_pct_bip": 5.61,
+     "zuschlag_pct": 17.8,
+     "spitze": 163
     },
     {
      "schnitt": 0.0,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 93.5,
-     "z_2028": 8.48,
-     "beitrag_pct_bip": 4.8,
-     "zuschlag_pct": 14.2,
-     "spitze": 144
+     "z_2028": 9.16,
+     "beitrag_pct_bip": 5.1,
+     "zuschlag_pct": 16.2,
+     "spitze": 151
     },
     {
      "schnitt": 0.2,
      "altrenten_kuerzung": 0.0,
      "schuld_nach": 74.8,
-     "z_2028": 9.66,
-     "beitrag_pct_bip": 5.09,
-     "zuschlag_pct": 15.0,
+     "z_2028": 10.33,
+     "beitrag_pct_bip": 5.39,
+     "zuschlag_pct": 17.1,
+     "spitze": 153
+    },
+    {
+     "schnitt": 0.2,
+     "altrenten_kuerzung": 0.1,
+     "schuld_nach": 74.8,
+     "z_2028": 9.16,
+     "beitrag_pct_bip": 4.88,
+     "zuschlag_pct": 15.5,
+     "spitze": 140
+    },
+    {
+     "schnitt": 0.33,
+     "altrenten_kuerzung": 0.0,
+     "schuld_nach": 62.6,
+     "z_2028": 10.33,
+     "beitrag_pct_bip": 5.25,
+     "zuschlag_pct": 16.6,
      "spitze": 146
     },
     {
-     "schnitt": 0.2,
-     "altrenten_kuerzung": 0.1,
-     "schuld_nach": 74.8,
-     "z_2028": 8.48,
-     "beitrag_pct_bip": 4.58,
-     "zuschlag_pct": 13.5,
-     "spitze": 133
-    },
-    {
-     "schnitt": 0.33,
-     "altrenten_kuerzung": 0.0,
-     "schuld_nach": 62.6,
-     "z_2028": 9.66,
-     "beitrag_pct_bip": 4.95,
-     "zuschlag_pct": 14.6,
-     "spitze": 139
-    },
-    {
      "schnitt": 0.33,
      "altrenten_kuerzung": 0.1,
      "schuld_nach": 62.6,
-     "z_2028": 8.48,
-     "beitrag_pct_bip": 4.44,
-     "zuschlag_pct": 13.1,
-     "spitze": 126
+     "z_2028": 9.16,
+     "beitrag_pct_bip": 4.73,
+     "zuschlag_pct": 15.0,
+     "spitze": 134
     }
    ]
   }

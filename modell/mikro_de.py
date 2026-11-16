@@ -31,6 +31,9 @@ from pathlib import Path
 import numpy as np
 from scipy.stats import norm
 
+# v4.97: Tarif Stand C aus systemvarianten.toml (Variante 33R)
+TARIF_C = [float(x) for x in next(s_ for s_ in tomllib.loads((Path(__file__).resolve().parent / "systemvarianten.toml").read_text(encoding="utf-8"))["system"] if s_["id"] == "33R")["einkommen_saetze"]]
+
 W = Path(__file__).resolve().parent.parent
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "mikro_de.toml").read_text(encoding="utf-8"))
@@ -61,7 +64,7 @@ MIDI_OBEN = 2000 * 12                      # Ãœbergangsbereich 2026 bis 2.000 â‚
 
 
 def est_neu(x):
-    return HL.stufen(x, DE["tarif_stufen"], [0.0, 11.0, 19.0, 25.0, 33.0])
+    return HL.stufen(x, DE["tarif_stufen"], TARIF_C)
 
 
 # ------------------------------------------------------------------ heute (Recht 2026)

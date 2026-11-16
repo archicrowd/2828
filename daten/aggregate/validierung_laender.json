@@ -172,9 +172,9 @@
     ],
     "keil_paar_2k_aw": 33.5,
     "anteile_mit_mehr": {
-     "alleinstehend": 35.6,
-     "alleinerziehend, 1 Kind": 35.6,
-     "Paar, ein Einkommen, 2 Kinder": 17.8
+     "alleinstehend": 33.3,
+     "alleinerziehend, 1 Kind": 6.7,
+     "Paar, ein Einkommen, 2 Kinder": 0.0
     }
    },
    "mit_forfait": {
@@ -236,9 +236,9 @@
     ],
     "keil_paar_2k_aw": 37.2,
     "anteile_mit_mehr": {
-     "alleinstehend": 62.2,
-     "alleinerziehend, 1 Kind": 35.6,
-     "Paar, ein Einkommen, 2 Kinder": 33.3
+     "alleinstehend": 33.3,
+     "alleinerziehend, 1 Kind": 6.7,
+     "Paar, ein Einkommen, 2 Kinder": 0.0
     }
    }
   },
@@ -246,14 +246,14 @@
    "keil_allein": 38.1,
    "keil_paar_2k": 17.8,
    "anteile_mit_mehr_ohne_rest_in_weitergabe": {
-    "alleinstehend": 100.0,
-    "alleinerziehend, 1 Kind": 97.8,
-    "Paar, ein Einkommen, 2 Kinder": 97.8
+    "alleinstehend": 97.8,
+    "alleinerziehend, 1 Kind": 80.0,
+    "Paar, ein Einkommen, 2 Kinder": 51.1
    },
    "anteile_mit_mehr_geltend": {
     "alleinstehend": 100.0,
-    "alleinerziehend, 1 Kind": 97.8,
-    "Paar, ein Einkommen, 2 Kinder": 97.8
+    "alleinerziehend, 1 Kind": 91.1,
+    "Paar, ein Einkommen, 2 Kinder": 66.7
    }
   }
  },

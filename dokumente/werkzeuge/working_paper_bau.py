@@ -48,7 +48,7 @@ def t_objectives():
     gz = {z["brutto"]: z for z in GB["zeilen"]}
     gs = ", ".join(f"{c} {pm(G[c]['reihe'][0]['mitte'] - G[c]['gini_amtlich_2025'], 1)}" for c in LAENDER)
     z = [
-     ["<b>Tax fairness</b>", "one ceiling of 33 % for all kinds of income; no contributions on wages only; profits taxed where customers are",
+     ["<b>Tax fairness</b>", "one ceiling of one third for each kind of income; no contributions on wages only; profits taxed where customers are",
       f"Gini 2025 → 2028: {gs} points. Marginal burden at € 42,000 {en(gz[42000]['heute_pct'], 1)} → {en(gz[42000]['neu_2028_pct'], 1)} %; at € 100,000 "
       f"{en(gz[100000]['heute_pct'], 1)} → {en(gz[100000]['neu_2028_pct'], 1)} %. Effective burden per euro: labour {en(100 * DYP['belastung_arbeit_heute'])} → "
       f"{en(100 * DYP['belastung_arbeit_33'])} %, capital {en(100 * DYP['belastung_kapital_heute'])} → {en(100 * DYP['belastung_kapital_33'])} % (approximation)",
@@ -57,7 +57,7 @@ def t_objectives():
       f"fund {en(F.FG['beitrag_pct_bip'], 2)} % of GDP until {F.FG['zieljahr']}, peak {en(F.FG['schuldenquote_spitze'], 1)} % ({F.FG['spitzenjahr']}); "
       f"German pensioner households: mean {en(RE['mittel_monat'])} € per month, lowest fifth {pm(RE['fuenftel_monat'][0])} €, highest fifth {en(RE['fuenftel_monat'][4])} €",
       "no generational accounting by birth cohort; dividend path of later cohorts only as average"],
-     ["<b>Climate</b>", "carbon price and 33 % rate on harmful goods returned as a dividend; lower VAT for certified goods",
+     ["<b>Climate</b>", "carbon price and a one-third rate on harmful goods returned as a dividend; lower VAT for certified goods",
       f"steering revenue {en(NZ0['lenkung_pct_bip'], 2)} % of GDP (2028) → {en(NZ60['lenkung_pct_bip'], 2)} % (2060); dividend "
       f"{en(NZ0['dividende_pct_bip'], 2)} → {en(NZ60['dividende_pct_bip'], 2)} % of GDP",
       "emissions are an exogenous path; no estimate of emission reductions caused by the rules"],
@@ -308,7 +308,7 @@ basic need are reduced, so that today's pensioners carry a share; basic need is 
 rather than promised by later contributors. The dividend is justified as a share for everyone in what earlier generations built – knowledge,
 technology, infrastructure.</p>
 <p><b>Climate change.</b> The proposal relies on economic incentives rather than on control of individual products and firms. A carbon price
-and a special VAT rate of 33 % on harmful goods make harmful consumption more expensive; their revenue is returned to everyone through the
+and a special VAT rate of one third on harmful goods make harmful consumption more expensive; their revenue is returned to everyone through the
 dividend, so that households that consume little gain. VAT becomes a label with five classes. Suppliers move their products into lower classes by
 certification at approved bodies under state supervision: the state supervises the certifiers, not each product. The intended result is a
 competition for sustainability in which a lower rate is a price advantage that suppliers earn. The dividend shrinks as emissions fall; the
@@ -320,8 +320,8 @@ The dividend is meant to give everyone a share of what automation and digitalisa
 
 <h2>3 The proposal</h2>
 <table><tbody>
-<tr><td><b>Income tax</b></td><td>Rates 0 / 11 / 19 / 25 / 33 % in brackets defined as multiples of each country's basic need. Gross income without
-deductions; individual taxation (no splitting or family quotient). Capital income, profits and inheritance are taxed at most at 33 %; company
+<tr><td><b>Income tax</b></td><td>Rates 0 / 11 / 19 / 25 % and one third in brackets defined as multiples of each country's basic need. Gross income without
+deductions; individual taxation (no splitting or family quotient). Capital income, profits and inheritance are taxed at most at one third; company
 profits are taxed where customers are, including digital platforms.</td></tr>
 <tr><td><b>Contributions</b></td><td>Social contributions are abolished. Employers are legally obliged to pass at least 80 % of the employer
 contributions to social security that disappear into gross wages, up to six times basic need; a fallback rule applies if contracts are not adjusted
@@ -334,7 +334,7 @@ up on an application that the authority pre-fills.</td></tr>
 other) and from gains of digitalisation. It falls as emissions fall.</td></tr>
 <tr><td><b>Own route</b></td><td>Compulsory saving of 10 % of gross wages into a personal account, locked until retirement age, with few investment
 options and a default fund.</td></tr>
-<tr><td><b>VAT label</b></td><td>Rates 5 / 11 / 17 / 25 %, special rate 33 % only for harmful goods. Suppliers obtain lower rates through certification
+<tr><td><b>VAT label</b></td><td>Rates 7 / 13 / 19 / 27 %, special rate one third only for harmful goods. Suppliers obtain lower rates through certification
 by supervised bodies.</td></tr>
 <tr><td><b>Legacy</b></td><td>Public debt and unfunded pension promises above the dividend move into a common fund of the participating states,
 financed by a surcharge on all taxes. Existing pension promises are protected up to an allowance of twice basic need after 35 insurance years
@@ -488,7 +488,7 @@ interest rates and wages.</p>
 which is the intended shift. The marginal burden on high wages also falls, however: at € 100,000 from {en(gz100['heute_pct'], 1)} % to
 {en(gz100['neu_2028_pct'], 1)} %, at € 250,000 from {en(gz250['heute_pct'], 1)} % to {en(gz250['neu_2028_pct'], 1)} % (Table 7). The proposal thus gives up part of the
 progressivity on high wages in exchange for equal treatment of income types;
-whether this is fair depends on whether top incomes actually pay the 33 % on capital income, inheritance and profits, which the model treats with an
+whether this is fair depends on whether top incomes actually pay one third on capital income, inheritance and profits, which the model treats with an
 avoidance band (section 6). One-earner couples lose the advantage of joint taxation; this is consistent with individual taxation but is a loss for
 these households.</p>
 <p><b>Intergenerational fairness.</b> Repayment by 2098 means that taxpayers after 2098 no longer carry today's legacy. The cost falls on taxpayers until
@@ -499,7 +499,7 @@ returned. Three elements work through prices rather than prohibitions:</p>
 <ul>
 <li><b>Carbon price.</b> The European carbon price for buildings and transport (ETS2) enters as a revenue path; its revenue falls with emissions
 even though the price rises. Road transport fuel expenditure follows the German projection report 2026 (with-measures scenario).</li>
-<li><b>Special rate on harmful goods.</b> Goods classified as harmful to health or the environment carry 33 % – in the model
+<li><b>Special rate on harmful goods.</b> Goods classified as harmful to health or the environment carry one third – in the model
 motor fuels, combustion-engine vehicles, tobacco and alcohol; chemical pesticides and mineral fertilisers are included by decision of 4 November 2026
 (not yet in the calculation; the household share of these purchases is small). Because firms deduct VAT as input tax, the special rate does not
 reach agricultural use of pesticides and fertilisers; a levy differentiated by harmfulness, as in Denmark, is an open proposal. The model assumes that the share of

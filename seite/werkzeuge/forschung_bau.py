@@ -299,7 +299,7 @@ Haushalte; die Verteilung zeigt die Mikrosimulation weiter unten.</p>
 <h2>Geltende Rechnung, Deutschland 2028</h2>
 {tabelle(["Haushalt", "verfügbar heute (€/Jahr)", "verfügbar neu (€/Jahr)", "Unterschied (€/Jahr)", "Unterschied (€/Monat)"], z1, rechts=(1, 2, 3, 4))}
 <p class="meta">Kaufkraft 2026. Heute: Lohnsteuer, Solidaritätszuschlag und Sozialbeiträge der Beschäftigten nach Recht 2026, Kindergeld. Neu:
-Tarif 0/11/19/25/33 % am Grundbedarf, Dividende ({de(DIV_ERW)} € je Erwachsenem, Kinder 80 %), Weitergabe von 80 % der wegfallenden
+Tarif 0/11/19/25 % und ein Drittel am Grundbedarf, Dividende ({de(DIV_ERW)} € je Erwachsenem, Kinder 80 %), Weitergabe von 80 % der wegfallenden
 Arbeitgeberbeiträge, Mehrwertsteuer-Label nach Einkommen, Altlastenzuschlag Deutschlands nach Verrechnung ({de(ZU_DE, 1)} %), Pflichtvorsorge
 10 % des Bruttolohns auf ein eigenes Konto (als Abfluss gerechnet, nicht als Vermögen).</p>
 <h2>Wovon das Ergebnis abhängt (alleinstehend, €/Monat)</h2>
@@ -366,7 +366,7 @@ def p_mwst():
     p0 = PN["reihe"][0]
     inhalt = f"""
 <h1>Mehrwertsteuer-Faktoren nach Einkommen</h1>
-<p class="lede">Die Mehrwertsteuer wird zum Label: A+ 5 %, A 11 %, B 17 %, C 25 %, Sonderstufe 33 % nur für Schädliches. Wie stark ein Haushalt
+<p class="lede">Die Mehrwertsteuer wird zum Label: A+ 7 %, A 13 %, B 19 %, C 27 %, Sonderstufe ein Drittel nur für Schädliches. Wie stark ein Haushalt
 die Umstellung spürt, hängt davon ab, wie viel er konsumiert und was: Miete, Gesundheit, Bildung und Versicherungen sind steuerfrei.</p>
 <h2>Deutschland (EVS 2023)</h2>
 {tabelle(["Haushaltsnetto je Monat", "Faktor Mehrbelastung", "Faktor gezahlte Steuer", "nur sichtbare Steuer"], z1, rechts=(1, 2, 3))}
@@ -484,7 +484,7 @@ th{{color:#5a7186}}td.z{{text-align:right;white-space:nowrap}}ul{{margin:4pt 0}}
 <h1>Das Goldene Drittel – Forschungs-Kit</h1>
 <p class="meta">Initiative 28:28 · Modellstand {VERSION} · {DATUM} · CC BY 4.0 · Kontakt {KONTAKT}</p>
 <h2>Worum es geht</h2>
-<p>Ein Vorschlag für Steuern und soziale Sicherung in Europa: kein Steuersatz liegt über einem Drittel, Einkommen, Kapitalerträge, Unternehmensgewinne und Erbschaften je für sich (Tarif 0/11/19/25/33 % am
+<p>Ein Vorschlag für Steuern und soziale Sicherung in Europa: kein Steuersatz liegt über einem Drittel, Einkommen, Kapitalerträge, Unternehmensgewinne und Erbschaften je für sich (Tarif 0/11/19/25 % und ein Drittel am
 Grundbedarf); Sozialbeiträge entfallen, Betriebe geben mindestens 80 % der wegfallenden Arbeitgeberbeiträge in den Lohn; ein starkes Netz
 (Gesundheit, Pflege, Mindestrente, Grundbedarf) ohne Prämien; eine monatliche Transformationsdividende für jeden Erwachsenen; Pflichtvorsorge
 10 % auf ein eigenes, bis zur Altersgrenze gesperrtes Konto; Mehrwertsteuer als Label; Altlasten in einem gemeinsamen Fonds.</p>

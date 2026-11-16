@@ -6,18 +6,18 @@ version = "v4.53"
 
 pruefungen = [
   # Dividende und Altlasten
-  { zeile = "| **384 € (2028)", datei = "netz33.json", pfad = "beschluss/reihe/0/dividende_erw_eur2026", stellen = 0 },
+  { zeile = "| **245 € (2028)", datei = "netz33.json", pfad = "beschluss/reihe/0/dividende_erw_eur2026", stellen = 0 },
   { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "beitrag_pct_bip", stellen = 2 },
   { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "zuschlag_auf_alle_steuern_pct", stellen = 1 },
   { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "schuldenquote_spitze", stellen = 1 },
   { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "zieljahr", stellen = 0 },
   { zeile = "| **Fondsbeitrag", datei = "fonds_geltend.json", pfad = "zins", stellen = 2 },
-  { zeile = "| Z 2028 = 9,35", datei = "altlasten.json", pfad = "beschluss/verhandlungsmasse_z_2028_pct_bip", stellen = 2 },
+  { zeile = "| Z 2028 = 9,93", datei = "altlasten.json", pfad = "beschluss/verhandlungsmasse_z_2028_pct_bip", stellen = 2 },
   # Gesamtlast
-  { zeile = "| **38,64**", datei = "gesamtlast33.json", pfad = "reihe/0/a_steuern_und_fonds", stellen = 2 },
-  { zeile = "| **42,74**", datei = "gesamtlast33.json", pfad = "reihe/0/b_mit_pflichtvorsorge", stellen = 2 },
-  { zeile = "| 45,58 / 49,68", datei = "gesamtlast33.json", pfad = "c_ohne_fonds_2028/summe", stellen = 2 },
-  { zeile = "| 45,58 / 49,68", datei = "gesamtlast33.json", pfad = "c_ohne_fonds_2028/mit_route", stellen = 2 },
+  { zeile = "| **36,54**", datei = "gesamtlast33.json", pfad = "reihe/0/a_steuern_und_fonds", stellen = 2 },
+  { zeile = "| **40,64**", datei = "gesamtlast33.json", pfad = "reihe/0/b_mit_pflichtvorsorge", stellen = 2 },
+  { zeile = "| 43,78 / 47,88", datei = "gesamtlast33.json", pfad = "c_ohne_fonds_2028/summe", stellen = 2 },
+  { zeile = "| 43,78 / 47,88", datei = "gesamtlast33.json", pfad = "c_ohne_fonds_2028/mit_route", stellen = 2 },
   # Haushalte und Grenzbelastung
   { zeile = "| Grenzbelastung je Euro Bruttolohn", datei = "grenzbelastung33.json", pfad = "zeilen/5/heute_pct", stellen = 1 },
   { zeile = "| Grenzbelastung je Euro Bruttolohn", datei = "grenzbelastung33.json", pfad = "zeilen/5/neu_2028_pct", stellen = 1 },

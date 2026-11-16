@@ -151,7 +151,7 @@ def pfad(quote, *, i_alt=None, vorlauf=None, d0=None, v_ziel=V_ZIEL, g_nom=G_NOM
 
 def mindestquote(feld="de_fix", schwelle=None, **kw):
     schwelle = VERSPRECHEN if schwelle is None else schwelle
-    lo, hi = 20.0, 45.0
+    lo, hi = 5.0, 45.0   # v4.97: Untergrenze 5 (vorher 20; Lösungsbereich für die belegte Deckung)
     for _ in range(90):
         m = (lo + hi) / 2
         if min(r[feld] for r in pfad(m, **kw)) < schwelle:

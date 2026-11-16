@@ -11,8 +11,8 @@
    "kasse": 2.65,
    "angerechnet": 3.54,
    "kasse_anteil_pct": 42.8,
-   "steuern": 33.6,
-   "obergrenze": 10.75,
+   "steuern": 31.22,
+   "obergrenze": 9.99,
    "unter_obergrenze": true,
    "kasse_zu_eu_obergrenze": 1.89
   },
@@ -23,8 +23,8 @@
    "kasse": 2.77,
    "angerechnet": 3.73,
    "kasse_anteil_pct": 42.7,
-   "steuern": 33.52,
-   "obergrenze": 10.73,
+   "steuern": 31.2,
+   "obergrenze": 9.98,
    "unter_obergrenze": true,
    "kasse_zu_eu_obergrenze": 1.98
   },
@@ -35,8 +35,8 @@
    "kasse": 3.09,
    "angerechnet": 4.2,
    "kasse_anteil_pct": 42.4,
-   "steuern": 33.12,
-   "obergrenze": 10.6,
+   "steuern": 31.01,
+   "obergrenze": 9.92,
    "unter_obergrenze": true,
    "kasse_zu_eu_obergrenze": 2.21
   },
@@ -47,8 +47,8 @@
    "kasse": 3.09,
    "angerechnet": 4.2,
    "kasse_anteil_pct": 42.4,
-   "steuern": 32.22,
-   "obergrenze": 10.31,
+   "steuern": 30.5,
+   "obergrenze": 9.76,
    "unter_obergrenze": true,
    "kasse_zu_eu_obergrenze": 2.21
   }
@@ -213,85 +213,85 @@
    "jahr": 2028,
    "anteil_verteidigung": 0.4,
    "kasse_pct_bip": 0.56,
-   "mwst_pct_bip": 8.51,
-   "anteil_der_mwst_pct": 6.6
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 6.1
   },
   {
    "jahr": 2028,
    "anteil_verteidigung": 0.5,
    "kasse_pct_bip": 0.7,
-   "mwst_pct_bip": 8.51,
-   "anteil_der_mwst_pct": 8.2
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 7.6
   },
   {
    "jahr": 2028,
    "anteil_verteidigung": 0.6,
    "kasse_pct_bip": 0.84,
-   "mwst_pct_bip": 8.51,
-   "anteil_der_mwst_pct": 9.9
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 9.2
   },
   {
    "jahr": 2028,
    "anteil_verteidigung": 1.0,
    "kasse_pct_bip": 1.4,
-   "mwst_pct_bip": 8.51,
-   "anteil_der_mwst_pct": 16.5
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 15.3
   },
   {
    "jahr": 2035,
    "anteil_verteidigung": 0.4,
    "kasse_pct_bip": 1.0,
-   "mwst_pct_bip": 8.28,
-   "anteil_der_mwst_pct": 12.1
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 10.9
   },
   {
    "jahr": 2035,
    "anteil_verteidigung": 0.5,
    "kasse_pct_bip": 1.25,
-   "mwst_pct_bip": 8.28,
-   "anteil_der_mwst_pct": 15.1
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 13.6
   },
   {
    "jahr": 2035,
    "anteil_verteidigung": 0.6,
    "kasse_pct_bip": 1.5,
-   "mwst_pct_bip": 8.28,
-   "anteil_der_mwst_pct": 18.1
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 16.4
   },
   {
    "jahr": 2035,
    "anteil_verteidigung": 1.0,
    "kasse_pct_bip": 2.5,
-   "mwst_pct_bip": 8.28,
-   "anteil_der_mwst_pct": 30.2
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 27.3
   },
   {
    "jahr": 2060,
    "anteil_verteidigung": 0.4,
    "kasse_pct_bip": 1.0,
-   "mwst_pct_bip": 8.09,
-   "anteil_der_mwst_pct": 12.4
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 10.9
   },
   {
    "jahr": 2060,
    "anteil_verteidigung": 0.5,
    "kasse_pct_bip": 1.25,
-   "mwst_pct_bip": 8.09,
-   "anteil_der_mwst_pct": 15.5
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 13.6
   },
   {
    "jahr": 2060,
    "anteil_verteidigung": 0.6,
    "kasse_pct_bip": 1.5,
-   "mwst_pct_bip": 8.09,
-   "anteil_der_mwst_pct": 18.5
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 16.4
   },
   {
    "jahr": 2060,
    "anteil_verteidigung": 1.0,
    "kasse_pct_bip": 2.5,
-   "mwst_pct_bip": 8.09,
-   "anteil_der_mwst_pct": 30.9
+   "mwst_pct_bip": 9.16,
+   "anteil_der_mwst_pct": 27.3
   }
  ],
  "hinweis": "Kassenanteile sind Annahmen (dach_beitrag.toml). Verteidigung heute: COFOG GF02 2024 (Eurostat gov_10a_exp), nicht NATO-Abgrenzung. Rückfall 2035 = Betrag, den ein Staat in die Kasse zahlen müsste, wenn er seine Verteidigungsausgaben auf dem Stand 2024 ließe und die übrigen Aufgaben voll erfüllte. Die Rechnung ändert weder Dividende noch Netz."

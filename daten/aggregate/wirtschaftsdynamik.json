@@ -2,9 +2,9 @@
  "version": "v4.85",
  "status": "Prüfrechnung auf dem statischen Pfad (Spannen); der mittlere Fall ist seit v4.85 geltend (dynamik_geltend.py)",
  "nachfrage": {
-  "mehr_haushalte_mrd_jahr_eur2026": 221.8,
+  "mehr_haushalte_mrd_jahr_eur2026": 221.4,
   "impuls_pct_bip": 5.08,
-  "fonds_neuaufnahme_2028_pct_bip": 6.9,
+  "fonds_neuaufnahme_2028_pct_bip": 7.19,
   "erwachsene_mio": 69.6,
   "hinweis": "Mehr der Haushalte 2028 (Mittel 442 € je Haushalt und Monat, 41,1 Mio. Haushalte, 80 % Weitergabe) in % des BIP über Euro je BIP-Punkt der Dividende; in der Größenordnung der Neuaufnahme des Fonds: Der Nachfrageschub ist zu einem großen Teil über die Streckung der Altlasten finanziert und kehrt sich in der Tilgungsphase um (nicht gerechnet)."
  },
@@ -42,9 +42,9 @@
      "bip_pct": 0.77,
      "bip_je_einwohner_pct": 0.76,
      "fachkraefte_bestand_pct_bev": 0.003,
-     "dividende_erw_eur2026": 377,
-     "dividende_grundpfad_eur2026": 373,
-     "dividende_mehr_eur": 4,
+     "dividende_erw_eur2026": 240,
+     "dividende_grundpfad_eur2026": 237,
+     "dividende_mehr_eur": 3,
      "grundpfad_jahr": 2028
     },
     "2030": {
@@ -60,9 +60,9 @@
      "bip_pct": 0.82,
      "bip_je_einwohner_pct": 0.81,
      "fachkraefte_bestand_pct_bev": 0.009,
-     "dividende_erw_eur2026": 360,
-     "dividende_grundpfad_eur2026": 355,
-     "dividende_mehr_eur": 5,
+     "dividende_erw_eur2026": 223,
+     "dividende_grundpfad_eur2026": 219,
+     "dividende_mehr_eur": 4,
      "grundpfad_jahr": 2030
     },
     "2033": {
@@ -78,8 +78,8 @@
      "bip_pct": 0.15,
      "bip_je_einwohner_pct": 0.13,
      "fachkraefte_bestand_pct_bev": 0.017,
-     "dividende_erw_eur2026": 321,
-     "dividende_grundpfad_eur2026": 320,
+     "dividende_erw_eur2026": 188,
+     "dividende_grundpfad_eur2026": 187,
      "dividende_mehr_eur": 1,
      "grundpfad_jahr": 2033
     },
@@ -96,8 +96,8 @@
      "bip_pct": 0.2,
      "bip_je_einwohner_pct": 0.17,
      "fachkraefte_bestand_pct_bev": 0.023,
-     "dividende_erw_eur2026": 295,
-     "dividende_grundpfad_eur2026": 294,
+     "dividende_erw_eur2026": 166,
+     "dividende_grundpfad_eur2026": 165,
      "dividende_mehr_eur": 1,
      "grundpfad_jahr": 2035
     },
@@ -114,8 +114,8 @@
      "bip_pct": -0.2,
      "bip_je_einwohner_pct": -0.23,
      "fachkraefte_bestand_pct_bev": 0.029,
-     "dividende_erw_eur2026": 271,
-     "dividende_grundpfad_eur2026": 272,
+     "dividende_erw_eur2026": 141,
+     "dividende_grundpfad_eur2026": 142,
      "dividende_mehr_eur": -1,
      "grundpfad_jahr": 2040
     },
@@ -132,8 +132,8 @@
      "bip_pct": -0.2,
      "bip_je_einwohner_pct": -0.23,
      "fachkraefte_bestand_pct_bev": 0.029,
-     "dividende_erw_eur2026": 246,
-     "dividende_grundpfad_eur2026": 247,
+     "dividende_erw_eur2026": 114,
+     "dividende_grundpfad_eur2026": 115,
      "dividende_mehr_eur": -1,
      "grundpfad_jahr": 2045
     },
@@ -150,8 +150,8 @@
      "bip_pct": -0.2,
      "bip_je_einwohner_pct": -0.23,
      "fachkraefte_bestand_pct_bev": 0.029,
-     "dividende_erw_eur2026": 234,
-     "dividende_grundpfad_eur2026": 235,
+     "dividende_erw_eur2026": 99,
+     "dividende_grundpfad_eur2026": 100,
      "dividende_mehr_eur": -1,
      "grundpfad_jahr": 2050
     },
@@ -168,8 +168,8 @@
      "bip_pct": -0.19,
      "bip_je_einwohner_pct": -0.22,
      "fachkraefte_bestand_pct_bev": 0.029,
-     "dividende_erw_eur2026": 238,
-     "dividende_grundpfad_eur2026": 239,
+     "dividende_erw_eur2026": 89,
+     "dividende_grundpfad_eur2026": 90,
      "dividende_mehr_eur": -1,
      "grundpfad_jahr": 2060
     }
@@ -182,9 +182,9 @@
     "dln_netto": 0.184
    },
    "fonds": {
-    "beitrag_pct_bip": 5.17,
-    "beitrag_ohne_dynamik_pct_bip": 5.15,
-    "spitze_zehn": 149.5,
+    "beitrag_pct_bip": 5.45,
+    "beitrag_ohne_dynamik_pct_bip": 5.43,
+    "spitze_zehn": 156.0,
     "spitzenjahr": 2056
    }
   },
@@ -210,9 +210,9 @@
      "bip_pct": 1.79,
      "bip_je_einwohner_pct": 1.79,
      "fachkraefte_bestand_pct_bev": 0.007,
-     "dividende_erw_eur2026": 383,
-     "dividende_grundpfad_eur2026": 373,
-     "dividende_mehr_eur": 10,
+     "dividende_erw_eur2026": 245,
+     "dividende_grundpfad_eur2026": 237,
+     "dividende_mehr_eur": 8,
      "grundpfad_jahr": 2028
     },
     "2030": {
@@ -228,9 +228,9 @@
      "bip_pct": 2.49,
      "bip_je_einwohner_pct": 2.46,
      "fachkraefte_bestand_pct_bev": 0.021,
-     "dividende_erw_eur2026": 369,
-     "dividende_grundpfad_eur2026": 355,
-     "dividende_mehr_eur": 14,
+     "dividende_erw_eur2026": 230,
+     "dividende_grundpfad_eur2026": 219,
+     "dividende_mehr_eur": 11,
      "grundpfad_jahr": 2030
     },
     "2033": {
@@ -246,9 +246,9 @@
      "bip_pct": 1.76,
      "bip_je_einwohner_pct": 1.7,
      "fachkraefte_bestand_pct_bev": 0.043,
-     "dividende_erw_eur2026": 329,
-     "dividende_grundpfad_eur2026": 320,
-     "dividende_mehr_eur": 9,
+     "dividende_erw_eur2026": 194,
+     "dividende_grundpfad_eur2026": 187,
+     "dividende_mehr_eur": 7,
      "grundpfad_jahr": 2033
     },
     "2035": {
@@ -264,9 +264,9 @@
      "bip_pct": 2.46,
      "bip_je_einwohner_pct": 2.38,
      "fachkraefte_bestand_pct_bev": 0.057,
-     "dividende_erw_eur2026": 307,
-     "dividende_grundpfad_eur2026": 294,
-     "dividende_mehr_eur": 13,
+     "dividende_erw_eur2026": 174,
+     "dividende_grundpfad_eur2026": 165,
+     "dividende_mehr_eur": 9,
      "grundpfad_jahr": 2035
     },
     "2040": {
@@ -282,9 +282,9 @@
      "bip_pct": 2.49,
      "bip_je_einwohner_pct": 2.4,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 284,
-     "dividende_grundpfad_eur2026": 272,
-     "dividende_mehr_eur": 12,
+     "dividende_erw_eur2026": 151,
+     "dividende_grundpfad_eur2026": 142,
+     "dividende_mehr_eur": 9,
      "grundpfad_jahr": 2040
     },
     "2045": {
@@ -300,9 +300,9 @@
      "bip_pct": 2.7,
      "bip_je_einwohner_pct": 2.6,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 259,
-     "dividende_grundpfad_eur2026": 247,
-     "dividende_mehr_eur": 12,
+     "dividende_erw_eur2026": 124,
+     "dividende_grundpfad_eur2026": 115,
+     "dividende_mehr_eur": 9,
      "grundpfad_jahr": 2045
     },
     "2050": {
@@ -318,9 +318,9 @@
      "bip_pct": 2.7,
      "bip_je_einwohner_pct": 2.62,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 247,
-     "dividende_grundpfad_eur2026": 235,
-     "dividende_mehr_eur": 12,
+     "dividende_erw_eur2026": 109,
+     "dividende_grundpfad_eur2026": 100,
+     "dividende_mehr_eur": 9,
      "grundpfad_jahr": 2050
     },
     "2060": {
@@ -336,9 +336,9 @@
      "bip_pct": 2.71,
      "bip_je_einwohner_pct": 2.64,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 252,
-     "dividende_grundpfad_eur2026": 239,
-     "dividende_mehr_eur": 13,
+     "dividende_erw_eur2026": 99,
+     "dividende_grundpfad_eur2026": 90,
+     "dividende_mehr_eur": 9,
      "grundpfad_jahr": 2060
     }
    },
@@ -350,9 +350,9 @@
     "dln_netto": 0.184
    },
    "fonds": {
-    "beitrag_pct_bip": 5.04,
-    "beitrag_ohne_dynamik_pct_bip": 5.15,
-    "spitze_zehn": 146.1,
+    "beitrag_pct_bip": 5.32,
+    "beitrag_ohne_dynamik_pct_bip": 5.43,
+    "spitze_zehn": 152.4,
     "spitzenjahr": 2056
    }
   },
@@ -378,9 +378,9 @@
      "bip_pct": 3.08,
      "bip_je_einwohner_pct": 3.06,
      "fachkraefte_bestand_pct_bev": 0.014,
-     "dividende_erw_eur2026": 391,
-     "dividende_grundpfad_eur2026": 373,
-     "dividende_mehr_eur": 18,
+     "dividende_erw_eur2026": 251,
+     "dividende_grundpfad_eur2026": 237,
+     "dividende_mehr_eur": 14,
      "grundpfad_jahr": 2028
     },
     "2030": {
@@ -396,9 +396,9 @@
      "bip_pct": 4.6,
      "bip_je_einwohner_pct": 4.55,
      "fachkraefte_bestand_pct_bev": 0.043,
-     "dividende_erw_eur2026": 381,
-     "dividende_grundpfad_eur2026": 355,
-     "dividende_mehr_eur": 26,
+     "dividende_erw_eur2026": 239,
+     "dividende_grundpfad_eur2026": 219,
+     "dividende_mehr_eur": 20,
      "grundpfad_jahr": 2030
     },
     "2033": {
@@ -414,9 +414,9 @@
      "bip_pct": 3.77,
      "bip_je_einwohner_pct": 3.65,
      "fachkraefte_bestand_pct_bev": 0.086,
-     "dividende_erw_eur2026": 340,
-     "dividende_grundpfad_eur2026": 320,
-     "dividende_mehr_eur": 20,
+     "dividende_erw_eur2026": 202,
+     "dividende_grundpfad_eur2026": 187,
+     "dividende_mehr_eur": 15,
      "grundpfad_jahr": 2033
     },
     "2035": {
@@ -432,9 +432,9 @@
      "bip_pct": 5.14,
      "bip_je_einwohner_pct": 4.99,
      "fachkraefte_bestand_pct_bev": 0.115,
-     "dividende_erw_eur2026": 320,
-     "dividende_grundpfad_eur2026": 294,
-     "dividende_mehr_eur": 26,
+     "dividende_erw_eur2026": 185,
+     "dividende_grundpfad_eur2026": 165,
+     "dividende_mehr_eur": 20,
      "grundpfad_jahr": 2035
     },
     "2040": {
@@ -450,9 +450,9 @@
      "bip_pct": 5.73,
      "bip_je_einwohner_pct": 5.53,
      "fachkraefte_bestand_pct_bev": 0.143,
-     "dividende_erw_eur2026": 300,
-     "dividende_grundpfad_eur2026": 272,
-     "dividende_mehr_eur": 28,
+     "dividende_erw_eur2026": 163,
+     "dividende_grundpfad_eur2026": 142,
+     "dividende_mehr_eur": 21,
      "grundpfad_jahr": 2040
     },
     "2045": {
@@ -468,9 +468,9 @@
      "bip_pct": 6.25,
      "bip_je_einwohner_pct": 6.05,
      "fachkraefte_bestand_pct_bev": 0.143,
-     "dividende_erw_eur2026": 276,
-     "dividende_grundpfad_eur2026": 247,
-     "dividende_mehr_eur": 29,
+     "dividende_erw_eur2026": 136,
+     "dividende_grundpfad_eur2026": 115,
+     "dividende_mehr_eur": 21,
      "grundpfad_jahr": 2045
     },
     "2050": {
@@ -486,9 +486,9 @@
      "bip_pct": 6.26,
      "bip_je_einwohner_pct": 6.08,
      "fachkraefte_bestand_pct_bev": 0.143,
-     "dividende_erw_eur2026": 266,
-     "dividende_grundpfad_eur2026": 235,
-     "dividende_mehr_eur": 31,
+     "dividende_erw_eur2026": 122,
+     "dividende_grundpfad_eur2026": 100,
+     "dividende_mehr_eur": 22,
      "grundpfad_jahr": 2050
     },
     "2060": {
@@ -504,9 +504,9 @@
      "bip_pct": 6.27,
      "bip_je_einwohner_pct": 6.12,
      "fachkraefte_bestand_pct_bev": 0.143,
-     "dividende_erw_eur2026": 269,
-     "dividende_grundpfad_eur2026": 239,
-     "dividende_mehr_eur": 30,
+     "dividende_erw_eur2026": 110,
+     "dividende_grundpfad_eur2026": 90,
+     "dividende_mehr_eur": 20,
      "grundpfad_jahr": 2060
     }
    },
@@ -518,10 +518,10 @@
     "dln_netto": 0.184
    },
    "fonds": {
-    "beitrag_pct_bip": 4.89,
-    "beitrag_ohne_dynamik_pct_bip": 5.15,
-    "spitze_zehn": 142.1,
-    "spitzenjahr": 2055
+    "beitrag_pct_bip": 5.17,
+    "beitrag_ohne_dynamik_pct_bip": 5.43,
+    "spitze_zehn": 148.2,
+    "spitzenjahr": 2056
    }
   }
  },
@@ -545,9 +545,9 @@
      "bip_pct": 1.87,
      "bip_je_einwohner_pct": 1.8,
      "fachkraefte_bestand_pct_bev": 0.007,
-     "dividende_erw_eur2026": 384,
-     "dividende_grundpfad_eur2026": 373,
-     "dividende_mehr_eur": 11,
+     "dividende_erw_eur2026": 245,
+     "dividende_grundpfad_eur2026": 237,
+     "dividende_mehr_eur": 8,
      "grundpfad_jahr": 2028
     },
     "2030": {
@@ -564,9 +564,9 @@
      "bip_pct": 2.72,
      "bip_je_einwohner_pct": 2.52,
      "fachkraefte_bestand_pct_bev": 0.021,
-     "dividende_erw_eur2026": 370,
-     "dividende_grundpfad_eur2026": 355,
-     "dividende_mehr_eur": 15,
+     "dividende_erw_eur2026": 230,
+     "dividende_grundpfad_eur2026": 219,
+     "dividende_mehr_eur": 11,
      "grundpfad_jahr": 2030
     },
     "2033": {
@@ -583,9 +583,9 @@
      "bip_pct": 2.23,
      "bip_je_einwohner_pct": 1.84,
      "fachkraefte_bestand_pct_bev": 0.043,
-     "dividende_erw_eur2026": 330,
-     "dividende_grundpfad_eur2026": 320,
-     "dividende_mehr_eur": 10,
+     "dividende_erw_eur2026": 194,
+     "dividende_grundpfad_eur2026": 187,
+     "dividende_mehr_eur": 7,
      "grundpfad_jahr": 2033
     },
     "2035": {
@@ -602,9 +602,9 @@
      "bip_pct": 3.1,
      "bip_je_einwohner_pct": 2.57,
      "fachkraefte_bestand_pct_bev": 0.057,
-     "dividende_erw_eur2026": 307,
-     "dividende_grundpfad_eur2026": 294,
-     "dividende_mehr_eur": 13,
+     "dividende_erw_eur2026": 175,
+     "dividende_grundpfad_eur2026": 165,
+     "dividende_mehr_eur": 10,
      "grundpfad_jahr": 2035
     },
     "2040": {
@@ -621,9 +621,9 @@
      "bip_pct": 3.57,
      "bip_je_einwohner_pct": 2.74,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 286,
-     "dividende_grundpfad_eur2026": 272,
-     "dividende_mehr_eur": 14,
+     "dividende_erw_eur2026": 152,
+     "dividende_grundpfad_eur2026": 142,
+     "dividende_mehr_eur": 10,
      "grundpfad_jahr": 2040
     },
     "2045": {
@@ -640,9 +640,9 @@
      "bip_pct": 4.22,
      "bip_je_einwohner_pct": 3.11,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 262,
-     "dividende_grundpfad_eur2026": 247,
-     "dividende_mehr_eur": 15,
+     "dividende_erw_eur2026": 126,
+     "dividende_grundpfad_eur2026": 115,
+     "dividende_mehr_eur": 11,
      "grundpfad_jahr": 2045
     },
     "2050": {
@@ -659,9 +659,9 @@
      "bip_pct": 4.69,
      "bip_je_einwohner_pct": 3.37,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 251,
-     "dividende_grundpfad_eur2026": 235,
-     "dividende_mehr_eur": 16,
+     "dividende_erw_eur2026": 111,
+     "dividende_grundpfad_eur2026": 100,
+     "dividende_mehr_eur": 11,
      "grundpfad_jahr": 2050
     },
     "2060": {
@@ -678,16 +678,16 @@
      "bip_pct": 5.66,
      "bip_je_einwohner_pct": 3.91,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 258,
-     "dividende_grundpfad_eur2026": 239,
-     "dividende_mehr_eur": 19,
+     "dividende_erw_eur2026": 103,
+     "dividende_grundpfad_eur2026": 90,
+     "dividende_mehr_eur": 13,
      "grundpfad_jahr": 2060
     }
    },
    "fonds": {
-    "beitrag_pct_bip": 4.92,
-    "beitrag_ohne_dynamik_pct_bip": 5.15,
-    "spitze_zehn": 144.2,
+    "beitrag_pct_bip": 5.2,
+    "beitrag_ohne_dynamik_pct_bip": 5.43,
+    "spitze_zehn": 150.4,
     "spitzenjahr": 2055
    }
   },
@@ -710,9 +710,9 @@
      "bip_pct": 1.94,
      "bip_je_einwohner_pct": 1.82,
      "fachkraefte_bestand_pct_bev": 0.007,
-     "dividende_erw_eur2026": 384,
-     "dividende_grundpfad_eur2026": 373,
-     "dividende_mehr_eur": 11,
+     "dividende_erw_eur2026": 245,
+     "dividende_grundpfad_eur2026": 237,
+     "dividende_mehr_eur": 8,
      "grundpfad_jahr": 2028
     },
     "2030": {
@@ -729,9 +729,9 @@
      "bip_pct": 2.95,
      "bip_je_einwohner_pct": 2.58,
      "fachkraefte_bestand_pct_bev": 0.021,
-     "dividende_erw_eur2026": 370,
-     "dividende_grundpfad_eur2026": 355,
-     "dividende_mehr_eur": 15,
+     "dividende_erw_eur2026": 230,
+     "dividende_grundpfad_eur2026": 219,
+     "dividende_mehr_eur": 11,
      "grundpfad_jahr": 2030
     },
     "2033": {
@@ -748,9 +748,9 @@
      "bip_pct": 2.7,
      "bip_je_einwohner_pct": 1.98,
      "fachkraefte_bestand_pct_bev": 0.043,
-     "dividende_erw_eur2026": 331,
-     "dividende_grundpfad_eur2026": 320,
-     "dividende_mehr_eur": 11,
+     "dividende_erw_eur2026": 195,
+     "dividende_grundpfad_eur2026": 187,
+     "dividende_mehr_eur": 8,
      "grundpfad_jahr": 2033
     },
     "2035": {
@@ -767,9 +767,9 @@
      "bip_pct": 3.74,
      "bip_je_einwohner_pct": 2.77,
      "fachkraefte_bestand_pct_bev": 0.057,
-     "dividende_erw_eur2026": 308,
-     "dividende_grundpfad_eur2026": 294,
-     "dividende_mehr_eur": 14,
+     "dividende_erw_eur2026": 176,
+     "dividende_grundpfad_eur2026": 165,
+     "dividende_mehr_eur": 11,
      "grundpfad_jahr": 2035
     },
     "2040": {
@@ -786,9 +786,9 @@
      "bip_pct": 4.64,
      "bip_je_einwohner_pct": 3.08,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 288,
-     "dividende_grundpfad_eur2026": 272,
-     "dividende_mehr_eur": 16,
+     "dividende_erw_eur2026": 154,
+     "dividende_grundpfad_eur2026": 142,
+     "dividende_mehr_eur": 12,
      "grundpfad_jahr": 2040
     },
     "2045": {
@@ -805,9 +805,9 @@
      "bip_pct": 5.74,
      "bip_je_einwohner_pct": 3.61,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 264,
-     "dividende_grundpfad_eur2026": 247,
-     "dividende_mehr_eur": 17,
+     "dividende_erw_eur2026": 127,
+     "dividende_grundpfad_eur2026": 115,
+     "dividende_mehr_eur": 12,
      "grundpfad_jahr": 2045
     },
     "2050": {
@@ -824,9 +824,9 @@
      "bip_pct": 6.67,
      "bip_je_einwohner_pct": 4.1,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 254,
-     "dividende_grundpfad_eur2026": 235,
-     "dividende_mehr_eur": 19,
+     "dividende_erw_eur2026": 114,
+     "dividende_grundpfad_eur2026": 100,
+     "dividende_mehr_eur": 14,
      "grundpfad_jahr": 2050
     },
     "2060": {
@@ -843,17 +843,17 @@
      "bip_pct": 8.62,
      "bip_je_einwohner_pct": 5.15,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 264,
-     "dividende_grundpfad_eur2026": 239,
-     "dividende_mehr_eur": 25,
+     "dividende_erw_eur2026": 107,
+     "dividende_grundpfad_eur2026": 90,
+     "dividende_mehr_eur": 17,
      "grundpfad_jahr": 2060
     }
    },
    "fonds": {
-    "beitrag_pct_bip": 4.81,
-    "beitrag_ohne_dynamik_pct_bip": 5.15,
-    "spitze_zehn": 142.4,
-    "spitzenjahr": 2054
+    "beitrag_pct_bip": 5.08,
+    "beitrag_ohne_dynamik_pct_bip": 5.43,
+    "spitze_zehn": 148.5,
+    "spitzenjahr": 2055
    }
   },
   "hoch": {
@@ -875,9 +875,9 @@
      "bip_pct": 2.09,
      "bip_je_einwohner_pct": 1.86,
      "fachkraefte_bestand_pct_bev": 0.007,
-     "dividende_erw_eur2026": 384,
-     "dividende_grundpfad_eur2026": 373,
-     "dividende_mehr_eur": 11,
+     "dividende_erw_eur2026": 246,
+     "dividende_grundpfad_eur2026": 237,
+     "dividende_mehr_eur": 9,
      "grundpfad_jahr": 2028
     },
     "2030": {
@@ -894,9 +894,9 @@
      "bip_pct": 3.4,
      "bip_je_einwohner_pct": 2.7,
      "fachkraefte_bestand_pct_bev": 0.021,
-     "dividende_erw_eur2026": 371,
-     "dividende_grundpfad_eur2026": 355,
-     "dividende_mehr_eur": 16,
+     "dividende_erw_eur2026": 231,
+     "dividende_grundpfad_eur2026": 219,
+     "dividende_mehr_eur": 12,
      "grundpfad_jahr": 2030
     },
     "2033": {
@@ -913,9 +913,9 @@
      "bip_pct": 3.65,
      "bip_je_einwohner_pct": 2.25,
      "fachkraefte_bestand_pct_bev": 0.043,
-     "dividende_erw_eur2026": 332,
-     "dividende_grundpfad_eur2026": 320,
-     "dividende_mehr_eur": 12,
+     "dividende_erw_eur2026": 196,
+     "dividende_grundpfad_eur2026": 187,
+     "dividende_mehr_eur": 9,
      "grundpfad_jahr": 2033
     },
     "2035": {
@@ -932,9 +932,9 @@
      "bip_pct": 5.03,
      "bip_je_einwohner_pct": 3.15,
      "fachkraefte_bestand_pct_bev": 0.057,
-     "dividende_erw_eur2026": 310,
-     "dividende_grundpfad_eur2026": 294,
-     "dividende_mehr_eur": 16,
+     "dividende_erw_eur2026": 177,
+     "dividende_grundpfad_eur2026": 165,
+     "dividende_mehr_eur": 12,
      "grundpfad_jahr": 2035
     },
     "2040": {
@@ -951,9 +951,9 @@
      "bip_pct": 6.79,
      "bip_je_einwohner_pct": 3.75,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 291,
-     "dividende_grundpfad_eur2026": 272,
-     "dividende_mehr_eur": 19,
+     "dividende_erw_eur2026": 156,
+     "dividende_grundpfad_eur2026": 142,
+     "dividende_mehr_eur": 14,
      "grundpfad_jahr": 2040
     },
     "2045": {
@@ -970,9 +970,9 @@
      "bip_pct": 8.79,
      "bip_je_einwohner_pct": 4.58,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 269,
-     "dividende_grundpfad_eur2026": 247,
-     "dividende_mehr_eur": 22,
+     "dividende_erw_eur2026": 131,
+     "dividende_grundpfad_eur2026": 115,
+     "dividende_mehr_eur": 16,
      "grundpfad_jahr": 2045
     },
     "2050": {
@@ -989,9 +989,9 @@
      "bip_pct": 10.64,
      "bip_je_einwohner_pct": 5.52,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 263,
-     "dividende_grundpfad_eur2026": 235,
-     "dividende_mehr_eur": 28,
+     "dividende_erw_eur2026": 120,
+     "dividende_grundpfad_eur2026": 100,
+     "dividende_mehr_eur": 20,
      "grundpfad_jahr": 2050
     },
     "2060": {
@@ -1008,16 +1008,16 @@
      "bip_pct": 14.53,
      "bip_je_einwohner_pct": 7.52,
      "fachkraefte_bestand_pct_bev": 0.072,
-     "dividende_erw_eur2026": 280,
-     "dividende_grundpfad_eur2026": 239,
-     "dividende_mehr_eur": 41,
+     "dividende_erw_eur2026": 119,
+     "dividende_grundpfad_eur2026": 90,
+     "dividende_mehr_eur": 29,
      "grundpfad_jahr": 2060
     }
    },
    "fonds": {
-    "beitrag_pct_bip": 4.61,
-    "beitrag_ohne_dynamik_pct_bip": 5.15,
-    "spitze_zehn": 139.1,
+    "beitrag_pct_bip": 4.86,
+    "beitrag_ohne_dynamik_pct_bip": 5.43,
+    "spitze_zehn": 145.0,
     "spitzenjahr": 2053
    }
   }

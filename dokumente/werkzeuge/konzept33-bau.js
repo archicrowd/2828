@@ -41,7 +41,7 @@ const rent=(r,zu)=>H.rentner.find(x=>x.rente_monat===r&&x.zuschlag_pct===zu);
 const dyn=(b,ki,kv)=>DY.szenarien.find(x=>x.beschaeftigung_pct===b&&x.ki_pp===ki&&x.kapital_verschiebung_pp===kv).reihe['2060'];
 const dyn0=dyn(0,0,0);
 const ew=(m,a)=>EW.szenarien.find(s=>s.zusatz_pct===m&&s.integration===a);
-const G26=12348, f26=1.0404;
+const G26=12348, f26=1.0404, G26T=12072;   // v4.97: Grundbedarf im Tarif (Beschluss 16.11.2026)
 const kind28=dv(NB['2028'].dividende_erw_eur2026)*SK;
 const dRent=0;   // v4.10, Korrektur 65: Die Dividende ist in der Bestandsrente enthalten (Fonds zahlt nur den Anspruch darüber); R1 ändert das Rentnernetto nicht
 
@@ -80,13 +80,13 @@ add(new Paragraph({spacing:{before:1800,after:200},children:[new TextRun({text:"
 // ---- 1 Kurzfassung
 add(H1("1  Kurzfassung"),
   kasten("Der Bauplan in vier Sätzen",[
-    "Sie zahlen höchstens das Goldene Drittel: 33 % auf jeden Euro, ob aus Arbeit, Kapital, Gewinn oder Erbe – keine Sozialbeiträge, keine Prämien.",
+    "Sie zahlen höchstens das Goldene Drittel: kein Satz über einem Drittel, ob auf Arbeit, Kapital, Gewinn oder Erbe – keine Sozialbeiträge, keine Prämien.",
     "Das starke Netz trägt Sie: eine brauchbare Grundversorgung ohne Extras – geknüpft aus vielen Knoten, jeder hält mit, keiner fällt durch.",
     "Die Transformationsdividende kommt jeden Monat aufs Konto: Sie gibt zurück, was der Wandel einbringt, und wird kleiner, wenn das Schädliche verschwindet.",
     "Alles darüber ist Ihre eigene Route: eigene Vorsorge auf Ihrem Konto, Zusatzversicherungen, eigener Einsatz."]),
   P("",{sp:120}),
   tab([{t:"Kennzahl",w:5426},{t:"Wert",w:3600,al:RT}],[
-    ["Höchstsatz auf jedes Einkommen","33 %"],
+    ["Höchstsatz je Einkommensart","ein Drittel (33⅓ %)"],
     ["Sozialbeiträge, Prämien","0 €"],
     ["Pflichtvorsorge auf eigenem Konto",pr(NZ.beschluss.pflicht_satz*100,0)+" des Lohns"],
     ["Mehrwertsteuer (Label) im Mittel",pr(V.label_effektiv,1)],
@@ -101,7 +101,7 @@ add(H1("1  Kurzfassung"),
     ["Ungleichheit (Gini, 0–100): heute 2025 / 2028",de(GI.staaten.DE.gini_amtlich_2025,1)+" / "+de(GI.staaten.DE.reihe.find(z=>z.jahr===2028).mitte,1)],
     ["Pflichtzahlungen 2028 in % des BIP: heute / neu (Steuern + Altlastenfonds; mit Pflichtvorsorge aufs eigene Konto)",de(GL.heute,1)+" / "+de(GL.reihe[0].a_steuern_und_fonds,1)+" ("+de(GL.reihe[0].b_mit_pflichtvorsorge,1)+")"],
     ["Grenzbelastung bei 55.000 € brutto: heute / neu",pr(RA.grenz_heute[gi],0)+" / "+pr(RA.grenz_neu['0.8'][gi],0)]]),
-  Q("Geltungsbereich (v4.82): 33 % ist der höchste Steuersatz auf jeden Euro. Mit dem Altlastenzuschlag liegt die Grenzbelastung je Euro Bruttolohn 2028 bei bis zu "+pr(Math.max(...GB.filter(z=>z.brutto>=42000).map(z=>z.neu_2028_pct)),1)+", nach der Tilgung bei bis zu "+pr(Math.max(...GB.filter(z=>z.brutto>=42000).map(z=>z.neu_nach_tilgung_pct)),1)+" (ab 42.000 €; mit Pflichtvorsorge aufs eigene Konto jeweils 9–10 Punkte mehr). Die Pflichtzahlungen 2028 ("+de(GL.reihe[0].a_steuern_und_fonds,1)+" % des BIP) sind ein Kassenvergleich: Der Fonds nimmt 2028 "+de(GL.c_ohne_fonds_2028_dynamisch.fonds_neuaufnahme,1)+" % des BIP neu auf; ohne Streckung "+de(GL.c_ohne_fonds_2028_dynamisch.summe,1)+" %. Mehr verfügbares Einkommen bei 80 % Weitergabe (Mikrosimulation, Haushalte): mit Vollzeit-Hauptverdiener "+pr(MK.status['Hauptperson Vollzeit'].anteil_mehr_haushalte_pct,1)+", Teilzeit "+pr(MK.status['Hauptperson Teilzeit'].anteil_mehr_haushalte_pct,1)+", alle Haushalte "+pr(MK.gesamt.anteil_mehr_haushalte_pct,0)+"; Minijob "+pr(MK.status['Hauptperson Minijob'].anteil_mehr_haushalte_pct,0)+", ohne Erwerb (Bürgergeld) "+pr(MK.status['ohne Erwerb (Bürgergeld)'].anteil_mehr_haushalte_pct,0)+", Rentnerhaushalte "+pr(MK.status['Rentner'].anteil_mehr_haushalte_pct,0)+" (im Mittel "+vz(MK.status['Rentner'].mittel_mehr_monat_eur)+" im Monat)."),
+  Q("Geltungsbereich (v4.82, v4.97): Ein Drittel (33⅓ %) ist der höchste Satz je Einkommensart. Mit dem Altlastenzuschlag liegt die Grenzbelastung je Euro Bruttolohn 2028 bei bis zu "+pr(Math.max(...GB.filter(z=>z.brutto>=42000).map(z=>z.neu_2028_pct)),1)+", nach der Tilgung bei bis zu "+pr(Math.max(...GB.filter(z=>z.brutto>=42000).map(z=>z.neu_nach_tilgung_pct)),1)+" (ab 42.000 €; mit Pflichtvorsorge aufs eigene Konto jeweils 9–10 Punkte mehr). Die Pflichtzahlungen 2028 ("+de(GL.reihe[0].a_steuern_und_fonds,1)+" % des BIP) sind ein Kassenvergleich: Der Fonds nimmt 2028 "+de(GL.c_ohne_fonds_2028_dynamisch.fonds_neuaufnahme,1)+" % des BIP neu auf; ohne Streckung "+de(GL.c_ohne_fonds_2028_dynamisch.summe,1)+" %. Mehr verfügbares Einkommen bei 80 % Weitergabe (Mikrosimulation, Haushalte): mit Vollzeit-Hauptverdiener "+pr(MK.status['Hauptperson Vollzeit'].anteil_mehr_haushalte_pct,1)+", Teilzeit "+pr(MK.status['Hauptperson Teilzeit'].anteil_mehr_haushalte_pct,1)+", alle Haushalte "+pr(MK.gesamt.anteil_mehr_haushalte_pct,0)+"; Minijob "+pr(MK.status['Hauptperson Minijob'].anteil_mehr_haushalte_pct,0)+", ohne Erwerb (Bürgergeld) "+pr(MK.status['ohne Erwerb (Bürgergeld)'].anteil_mehr_haushalte_pct,0)+", Rentnerhaushalte "+pr(MK.status['Rentner'].anteil_mehr_haushalte_pct,0)+" (im Mittel "+vz(MK.status['Rentner'].mittel_mehr_monat_eur)+" im Monat)."),
   P("",{sp:120}),
   P("Was das System leistet, liegt nicht in einer großen Geldzahlung, sondern in drei Dingen: Arbeit wird nicht mehr doppelt belastet, jeder ist ohne Prämie grundversorgt, und was jemand darüber hinaus verdient und spart, gehört ihm. Der Bauplan nimmt aus vielen erprobten Vorbildern die besten Teile; jeder Staat kann ihn übernehmen."));
 
@@ -118,31 +118,32 @@ add(H1("2  Begriffe"),
     ["Grundauskommen","Was jedem Haushalt sicher bleibt: Grundbedarf des Landes, je weitere/n Erwachsene/n × 0,5, je Kind × "+de(KW,2)+". Wer darunter liegt, wird aufgestockt – im Erwerbsalter wie im Alter (dort Mindestrente genannt). Dividenden und Renten aus dem alten System zählen voll, selbst verdientes Einkommen und eigene Vorsorge zur Hälfte. Pflichtvorsorge ab dem ersten Euro."],
     ["Härtefall","Zuschlag zum Grundauskommen für Wohnkosten über dem Wohnanteil, Mehrbedarf und einmalige Notlagen; ausgezahlt von der Gemeinde."],
     ["Rentenbeginn","67 Jahre; steigt um zwei Drittel des Zuwachses der Lebenserwartung mit 65 (ab 2030, 15 Jahre im Voraus festgestellt). Gilt für Mindestrente und Altansprüche."],
-    ["Grundbedarf","Das steuerliche Existenzminimum ("+eu(G26)+" im Jahr 2026). Erste Stufe des Tarifs und Maß des Netzes; folgt zu 70 % den Preisen und zu 30 % den Löhnen."],
+    ["Grundbedarf","Das steuerliche Existenzminimum ("+eu(G26)+" im Jahr 2026); im Tarif ohne Gesundheitspflege und Bildung, die das Goldene Drittel selbst trägt ("+eu(G26T)+"). Erste Stufe des Tarifs und Maß des Netzes; folgt zu 70 % den Preisen und zu 30 % den Löhnen."],
     ["Zukunftsschatz","Wahlweise: Bürgerfonds, in den ein Teil der Lenkungseinnahmen fließt; nur der Ertrag wird ausgeschüttet (Vorbild Norwegen)."],
     ["Starke Gemeinden","Die Gemeinde erhält feste Beträge je Einwohner und je Kind und entscheidet selbst über ihre Aufgaben und die Weitergabe an andere Verwaltungen. Sie zahlt Aufstockung und Härtefall vor Ort aus; Höhe und Anrechnung legt das Land fest."],
     ["Das gemeinsame Dach","Die europäische Ebene für das, was nur gemeinsam geht (Verteidigung, Binnenmarkt, digitale Souveränität); mit Obergrenze."],
     ["Altlasten","Staatsschulden und Rentenzusagen aus dem alten System. Sache der einzelnen Staaten; der Bauplan bietet Werkzeuge an."],
-    ["Lenkung","Steuern, die Schädliches verteuern (CO₂-Preis, Sonderstufe 33 %, Energie- und Tabaksteuer). Ihr Aufkommen soll mit dem Erfolg sinken."]]));
+    ["Lenkung","Steuern, die Schädliches verteuern (CO₂-Preis, Sonderstufe ein Drittel, Energie- und Tabaksteuer). Ihr Aufkommen soll mit dem Erfolg sinken."]]));
 
 const N_KURZ=inhalt.length;
 // ---- 3 Regeln
-const st=[1,1.5,2,3].map(x=>eu(G26*x));
+const st=[1,1.5,2,3].map(x=>eu(G26T*x));
 add(H1("3  Die Regeln"),
   H2("3.1  Das Goldene Drittel: Einnahmen"),
   tab([{t:"Einkommen im Jahr (Kaufkraft 2026)",w:5426},{t:"Satz",w:3600,al:RT}],[
-    ["bis "+st[0]+" (Grundbedarf)","0 %"],["bis "+st[1]+" (1,5-facher Grundbedarf)","11 %"],["bis "+st[2]+" (2-fach)","19 %"],["bis "+st[3]+" (3-fach)","25 %"],["darüber – Obergrenze","33 %"]]),
+    ["bis "+st[0]+" (Grundbedarf)","0 %"],["bis "+st[1]+" (1,5-facher Grundbedarf)","11 %"],["bis "+st[2]+" (2-fach)","19 %"],["bis "+st[3]+" (3-fach)","25 %"],["darüber – Obergrenze","ein Drittel (33⅓ %)"]]),
   P("",{sp:80}),
-  L([["Einkommen: ",true],["Besteuert wird das Brutto ohne Abzüge und ohne Splitting; die Dividende zählt mit. Die Stufen hängen am Grundbedarf."]]),
-  L([["Kapital: ",true],["alle Erträge einschließlich Veräußerungsgewinnen höchstens 33 %."]]),
-  L([["Unternehmen und Plattformen: ",true],["33 % am Ort der Kunden. Umsätze mit Endkunden zählen dort, wo die Leistung genutzt wird (Gerät, Rechnungsadresse); der Gewinn des Konzerns wird nach diesem Umsatzanteil auf die Staaten verteilt, gleich wo er gebucht ist. Untergrenze: 33 % auf eine pauschale Gewinnquote von "+pr(PF.regel.untergrenze_gewinnquote*100,0)+" des Umsatzes am Nutzungsort ("+pr(PF.regel.untergrenze_pct_umsatz,1)+" des Umsatzes), angerechnet auf die Gewinnsteuer. Die Mehrwertsteuer gilt für elektronische Leistungen schon heute am Ort der Kunden und bleibt unverändert."]]),
+  L([["Einkommen: ",true],["Besteuert wird das Brutto ohne Abzüge und ohne Splitting; die Dividende zählt mit. Die Stufen hängen am Grundbedarf im Tarif: dem steuerlichen Existenzminimum ohne die Anteile, die das Goldene Drittel selbst trägt (Gesundheitspflege und Bildung), 12.072 € im Jahr 2026."]]),
+  L([["Kapital: ",true],["alle Erträge einschließlich Veräußerungsgewinnen höchstens ein Drittel."]]),
+  L([["Unternehmen und Plattformen: ",true],["Ein Drittel am Ort der Kunden. Umsätze mit Endkunden zählen dort, wo die Leistung genutzt wird (Gerät, Rechnungsadresse); der Gewinn des Konzerns wird nach diesem Umsatzanteil auf die Staaten verteilt, gleich wo er gebucht ist. Untergrenze: ein Drittel auf eine pauschale Gewinnquote von "+pr(PF.regel.untergrenze_gewinnquote*100,0)+" des Umsatzes am Nutzungsort ("+pr(PF.regel.untergrenze_pct_umsatz,1)+" des Umsatzes), angerechnet auf die Gewinnsteuer. Die Mehrwertsteuer gilt für elektronische Leistungen schon heute am Ort der Kunden und bleibt unverändert."]]),
   L([["Verluste: ",true],["Verlustvorträge aus der Zeit vor dem Wechsel sind fünf Jahre nutzbar und verfallen danach. Verluste aus dem neuen System sind unbefristet vortragbar. Ein Verlustvortrag wird bis 1 Mio. € voll, darüber höchstens mit der Hälfte des Gewinns verrechnet (heute 70 %, ab 2028 60 %)."]]),
-  L([["Personengesellschaften: ",true],["Ihr Gewinn wird bei den Inhabern als Einkommen besteuert, höchstens 33 % wie bei Kapitalgesellschaften."]]),
-  L([["Erbschaft: ",true],["33 % über 100.000 € je Erwerb, ohne Verschonungsausnahmen, mit Stundung."]]),
+  L([["Personengesellschaften: ",true],["Ihr Gewinn wird bei den Inhabern als Einkommen besteuert, höchstens ein Drittel wie bei Kapitalgesellschaften."]]),
+  L([["Erbschaft: ",true],["Ein Drittel über dem doppelten jährlichen Grundbedarf je Erwerb (2028 rund 25.100 €), ohne Verschonungsausnahmen, mit Stundung. Für das selbst bewohnte Elternhaus gibt es einen Stundungskredit zu 1 % Zins für bis zu 20 Jahre."]]),
   L([["Große Vermögen: ",true],["1,5 % ab 2 Mio. €, anrechenbar auf die Einkommensteuer."]]),
   L([["Boden: ",true],["Die Gemeinde erhebt 0,1 bis 1 % auf den Bodenwert, nicht auf das Gebäude."]]),
   L([["Klima: ",true],["europäischer CO₂-Preis; das Aufkommen geht über die Transformationsdividende zurück."]]),
-  L([["Konsum: ",true],["Die Mehrwertsteuer wird zum Label: A+ 5 % (Grundbedarf, Reparatur), A 11 % (nachhaltige Güter), B 17 % (Standardgüter), C 25 % (ressourcenintensiv, Luxus); Sonderstufe S 33 % nur für Schädliches: Tabak, Alkohol, Kraftstoffe, Fahrzeuge mit Verbrennungsmotor, chemische Pflanzenschutzmittel (Pestizide) und mineralische Dünger. Weil Betriebe die Mehrwertsteuer als Vorsteuer abziehen, wirkt die Sonderstufe bei Pestiziden und Dünger nur beim privaten Kauf; für die Landwirtschaft ist eine Lenkungsabgabe nach der Schädlichkeit (Vorbild Dänemark) als Vorschlag offen. Im Mittel "+pr(V.label_effektiv,1)+" (heute in Deutschland rund 16,0 %). Anbieter erreichen eine günstigere Stufe durch Zertifizierung bei zugelassenen, staatlich überwachten Stellen; so entsteht ein Wettbewerb um Nachhaltigkeit."]]),
+  L([["Konsum: ",true],["Die Mehrwertsteuer wird zum Label: A+ 7 % (Grundbedarf, Reparatur), A 13 % (nachhaltige Güter), B 19 % (Standardgüter), C 27 % (ressourcenintensiv, Luxus); Sonderstufe S ein Drittel nur für Schädliches: Tabak, Alkohol, Kraftstoffe, Fahrzeuge mit Verbrennungsmotor, chemische Pflanzenschutzmittel (Pestizide) und mineralische Dünger. Weil Betriebe die Mehrwertsteuer als Vorsteuer abziehen, wirkt die Sonderstufe bei Pestiziden und Dünger nur beim privaten Kauf; für die Landwirtschaft ist eine Lenkungsabgabe nach der Schädlichkeit (Vorbild Dänemark) als Vorschlag offen. Im Mittel "+pr(V.label_effektiv,1)+" (heute in Deutschland rund 16,0 %). Anbieter erreichen eine günstigere Stufe durch Zertifizierung bei zugelassenen, staatlich überwachten Stellen; so entsteht ein Wettbewerb um Nachhaltigkeit."]]),
+  L([["Stufenwanderung: ",true],["Produkte wandern mit dem Klimapfad schrittweise in höhere Labelstufen (A+ → A → B …): Was zum Standard geworden ist, verliert die Bevorzugung. So hält der Label-Satz im Mittel sein Niveau, während die Wirtschaft nachhaltiger wird."]]),
   L([["Weitergabe: ",true],["Betriebe müssen mindestens 80 % der wegfallenden Arbeitgeberbeiträge in den Lohn geben. Wegfallend sind die Beiträge zur sozialen Sicherung (Krankheit, Pflege, Rente, Arbeitslosigkeit, Familie); Unfallversicherung, Garantiefonds und Abgaben für Ausbildung, Wohnungsbau und Verkehr bleiben beim Betrieb. Durchsetzung (Beschluss 20.10.2026): Ein Gesetz verpflichtet, alle Arbeitsverträge bis zum Stichtag der Einführung entsprechend anzupassen – neuer Bruttolohn = bisheriger Bruttolohn + mindestens 80 % des bisherigen Arbeitgeberbeitrags. Ein unabhängiges Monitoring der Bruttolöhne je Branche begleitet die ersten Jahre. Wer die Anpassung unterlässt, führt die Differenz an den Altlastenfonds ab; das Einbehalten bringt dem Betrieb damit nichts (bei 50 % tatsächlicher Weitergabe flössen 2,4 bis 2,8 % des BIP an den Fonds, modell/weitergabe_rueckfall.py). Ohne jede Weitergabe bliebe der Vorteil in Deutschland positiv (42.000 €: "+vz(WS.varianten["0.0"].de_mehr_monat.alleinstehend["42000"])+" statt "+vz(WS.varianten["0.8"].de_mehr_monat.alleinstehend["42000"])+" im Monat), in Frankreich und Spanien nicht (modell/weitergabe_sensitivitaet.py). Über die Lohnentwicklung nach dem Stichtag entscheidet wieder der Arbeitsmarkt; die Inzidenzforschung ist dazu uneinheitlich."]]),
   tab([{t:"Aufkommen 2028 (% des BIP)",w:5426},{t:"Wert",w:3600,al:RT}],
     Object.entries(V.deckung_positionen).map(([k,v])=>[k,de(v,2)]).concat([["Summe",de(V.deckung,2)]]),{hl:{[Object.keys(V.deckung_positionen).length]:1}}),

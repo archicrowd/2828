@@ -6,112 +6,112 @@
   "DE": {
    "grundbedarf_zu_median_pct": 41,
    "untere_schaetzung": {
-    "mrd_eur": 9.3,
-    "pct_bip": 0.2,
-    "anteil_mit_aufstockung": 9,
+    "mrd_eur": 22.4,
+    "pct_bip": 0.48,
+    "anteil_mit_aufstockung": 18,
     "grundbedarf": 12420,
     "boden_je_aequivalent": 13383,
-    "dividenden_je_aequivalent": 5913
+    "dividenden_je_aequivalent": 3773
    },
    "obere_schaetzung": {
-    "mrd_eur": 35.0,
-    "pct_bip": 0.75,
+    "mrd_eur": 54.2,
+    "pct_bip": 1.17,
     "anteil_mit_aufstockung": 20,
     "grundbedarf": 12420,
     "boden_je_aequivalent": 13383,
-    "dividenden_je_aequivalent": 5913
+    "dividenden_je_aequivalent": 3773
    },
-   "budget_pct_bip": 1.17,
+   "budget_pct_bip": 1.28,
    "budget_haertefall_pct_bip": 0.65,
    "dividende_je_erw_eur_bei_ueberschreitung": 0.0
   },
   "FR": {
    "grundbedarf_zu_median_pct": 42,
    "untere_schaetzung": {
-    "mrd_eur": 21.0,
-    "pct_bip": 0.68,
-    "anteil_mit_aufstockung": 21,
+    "mrd_eur": 36.3,
+    "pct_bip": 1.17,
+    "anteil_mit_aufstockung": 31,
     "grundbedarf": 11712,
     "boden_je_aequivalent": 12620,
-    "dividenden_je_aequivalent": 3200
+    "dividenden_je_aequivalent": 1619
    },
    "obere_schaetzung": {
-    "mrd_eur": 45.3,
-    "pct_bip": 1.46,
-    "anteil_mit_aufstockung": 21,
+    "mrd_eur": 60.5,
+    "pct_bip": 1.95,
+    "anteil_mit_aufstockung": 31,
     "grundbedarf": 11712,
     "boden_je_aequivalent": 12620,
-    "dividenden_je_aequivalent": 3200
+    "dividenden_je_aequivalent": 1619
    },
-   "budget_pct_bip": 1.74,
+   "budget_pct_bip": 1.88,
    "budget_haertefall_pct_bip": 0.65,
-   "dividende_je_erw_eur_bei_ueberschreitung": 0.0
+   "dividende_je_erw_eur_bei_ueberschreitung": 3.3
   },
   "IT": {
    "grundbedarf_zu_median_pct": 44,
    "untere_schaetzung": {
-    "mrd_eur": 11.3,
-    "pct_bip": 0.48,
-    "anteil_mit_aufstockung": 18,
+    "mrd_eur": 24.8,
+    "pct_bip": 1.06,
+    "anteil_mit_aufstockung": 29,
     "grundbedarf": 10404,
     "boden_je_aequivalent": 11210,
-    "dividenden_je_aequivalent": 4392
+    "dividenden_je_aequivalent": 2566
    },
    "obere_schaetzung": {
-    "mrd_eur": 27.1,
-    "pct_bip": 1.16,
-    "anteil_mit_aufstockung": 20,
+    "mrd_eur": 40.8,
+    "pct_bip": 1.74,
+    "anteil_mit_aufstockung": 29,
     "grundbedarf": 10404,
     "boden_je_aequivalent": 11210,
-    "dividenden_je_aequivalent": 4392
+    "dividenden_je_aequivalent": 2566
    },
-   "budget_pct_bip": 1.37,
+   "budget_pct_bip": 1.53,
    "budget_haertefall_pct_bip": 0.65,
-   "dividende_je_erw_eur_bei_ueberschreitung": 0.0
+   "dividende_je_erw_eur_bei_ueberschreitung": 7.9
   },
   "ES": {
    "grundbedarf_zu_median_pct": 45,
    "untere_schaetzung": {
-    "mrd_eur": 12.0,
-    "pct_bip": 0.71,
-    "anteil_mit_aufstockung": 22,
+    "mrd_eur": 22.2,
+    "pct_bip": 1.31,
+    "anteil_mit_aufstockung": 32,
     "grundbedarf": 9660,
     "boden_je_aequivalent": 10409,
-    "dividenden_je_aequivalent": 3602
+    "dividenden_je_aequivalent": 2141
    },
    "obere_schaetzung": {
-    "mrd_eur": 23.9,
-    "pct_bip": 1.41,
-    "anteil_mit_aufstockung": 22,
+    "mrd_eur": 34.1,
+    "pct_bip": 2.01,
+    "anteil_mit_aufstockung": 32,
     "grundbedarf": 9660,
     "boden_je_aequivalent": 10409,
-    "dividenden_je_aequivalent": 3602
+    "dividenden_je_aequivalent": 2141
    },
-   "budget_pct_bip": 2.05,
+   "budget_pct_bip": 2.29,
    "budget_haertefall_pct_bip": 0.65,
    "dividende_je_erw_eur_bei_ueberschreitung": 0.0
   },
   "PL": {
    "grundbedarf_zu_median_pct": 49,
    "untere_schaetzung": {
-    "mrd_eur": 5.9,
-    "pct_bip": 0.65,
-    "anteil_mit_aufstockung": 19,
+    "mrd_eur": 11.4,
+    "pct_bip": 1.26,
+    "anteil_mit_aufstockung": 31,
     "grundbedarf": 33985,
     "boden_je_aequivalent": 36619,
-    "dividenden_je_aequivalent": 12777
+    "dividenden_je_aequivalent": 8024
    },
    "obere_schaetzung": {
-    "mrd_eur": 13.9,
-    "pct_bip": 1.54,
-    "anteil_mit_aufstockung": 20,
+    "mrd_eur": 19.5,
+    "pct_bip": 2.16,
+    "anteil_mit_aufstockung": 31,
     "grundbedarf": 33985,
     "boden_je_aequivalent": 36619,
-    "dividenden_je_aequivalent": 12777
+    "dividenden_je_aequivalent": 8024
    },
-   "budget_pct_bip": 1.23,
+   "budget_pct_bip": 1.32,
    "budget_haertefall_pct_bip": 0.65,
-   "dividende_je_erw_eur_bei_ueberschreitung": 7.1
+   "dividende_je_erw_eur_bei_ueberschreitung": 19.2
   }
  },
  "hinweis": "Kosten der Aufstockung für Haushalte im Erwerbsalter, 2028, Preise 2026. Band aus der Annahme über Transfers in D1–D2. Budget: Härtefall + Arbeitslosigkeit + Invalidität des Netzes (moeglichkeitsraum33, 2028)."

@@ -12,48 +12,48 @@
  "einheit": "Beitrag zum Fonds in % des eigenen BIP je Jahr, dauerhaft; Entlastung in Mrd. € je Jahr, BIP 2024 nominal",
  "varianten": {
   "25_alle": {
-   "gemeinsamer_satz_pct_bip": 5.06,
-   "gemeinsamer_satz_ohne_bruecke_pct_bip": 5.079,
+   "gemeinsamer_satz_pct_bip": 5.336,
+   "gemeinsamer_satz_ohne_bruecke_pct_bip": 5.354,
    "partner": {
     "BG": {
-     "eigen": 2.42,
-     "mit_bruecke": 3.08,
-     "aenderung": 0.66,
+     "eigen": 2.75,
+     "mit_bruecke": 3.4,
+     "aenderung": 0.65,
      "in_bruecke": true
     },
     "EL": {
-     "eigen": 7.37,
-     "mit_bruecke": 6.79,
-     "aenderung": -0.58,
+     "eigen": 7.71,
+     "mit_bruecke": 7.12,
+     "aenderung": -0.59,
      "in_bruecke": true
     },
     "HR": {
-     "eigen": 4.23,
-     "mit_bruecke": 4.44,
+     "eigen": 4.5,
+     "mit_bruecke": 4.71,
      "aenderung": 0.21,
      "in_bruecke": true
     },
     "HU": {
-     "eigen": 3.69,
-     "mit_bruecke": 4.03,
+     "eigen": 3.98,
+     "mit_bruecke": 4.32,
      "aenderung": 0.34,
      "in_bruecke": true
     },
     "RO": {
-     "eigen": 3.88,
-     "mit_bruecke": 4.18,
-     "aenderung": 0.3,
+     "eigen": 4.19,
+     "mit_bruecke": 4.48,
+     "aenderung": 0.29,
      "in_bruecke": true
     },
     "SK": {
-     "eigen": 3.71,
-     "mit_bruecke": 4.05,
+     "eigen": 3.99,
+     "mit_bruecke": 4.33,
      "aenderung": 0.34,
      "in_bruecke": true
     }
    },
    "teilnehmer_aenderung_pct_bip": -0.009,
-   "entlastung_partner_mrd_eur_2024": -1.7,
+   "entlastung_partner_mrd_eur_2024": -1.61,
    "beispiel_teilnehmer": {
     "DE": -0.009,
     "FR": -0.009,
@@ -62,148 +62,148 @@
    }
   },
   "25_wahl": {
-   "gemeinsamer_satz_pct_bip": 5.093,
-   "gemeinsamer_satz_ohne_bruecke_pct_bip": 5.079,
+   "gemeinsamer_satz_pct_bip": 5.369,
+   "gemeinsamer_satz_ohne_bruecke_pct_bip": 5.354,
    "partner": {
     "BG": {
-     "eigen": 2.42,
-     "mit_bruecke": 2.42,
+     "eigen": 2.75,
+     "mit_bruecke": 2.75,
      "aenderung": 0.0,
      "in_bruecke": false
     },
     "EL": {
-     "eigen": 7.37,
-     "mit_bruecke": 6.8,
-     "aenderung": -0.57,
+     "eigen": 7.71,
+     "mit_bruecke": 7.12,
+     "aenderung": -0.59,
      "in_bruecke": true
     },
     "HR": {
-     "eigen": 4.23,
-     "mit_bruecke": 4.23,
+     "eigen": 4.5,
+     "mit_bruecke": 4.5,
      "aenderung": 0.0,
      "in_bruecke": false
     },
     "HU": {
-     "eigen": 3.69,
-     "mit_bruecke": 3.69,
+     "eigen": 3.98,
+     "mit_bruecke": 3.98,
      "aenderung": 0.0,
      "in_bruecke": false
     },
     "RO": {
-     "eigen": 3.88,
-     "mit_bruecke": 3.88,
+     "eigen": 4.19,
+     "mit_bruecke": 4.19,
      "aenderung": 0.0,
      "in_bruecke": false
     },
     "SK": {
-     "eigen": 3.71,
-     "mit_bruecke": 3.71,
+     "eigen": 3.99,
+     "mit_bruecke": 3.99,
      "aenderung": 0.0,
      "in_bruecke": false
     }
    },
-   "teilnehmer_aenderung_pct_bip": 0.007,
-   "entlastung_partner_mrd_eur_2024": 1.35,
+   "teilnehmer_aenderung_pct_bip": 0.008,
+   "entlastung_partner_mrd_eur_2024": 1.39,
    "beispiel_teilnehmer": {
-    "DE": 0.007,
-    "FR": 0.007,
-    "IT": 0.007,
-    "PL": 0.007
+    "DE": 0.008,
+    "FR": 0.008,
+    "IT": 0.008,
+    "PL": 0.008
    }
   },
   "33_alle": {
-   "gemeinsamer_satz_pct_bip": 5.055,
-   "gemeinsamer_satz_ohne_bruecke_pct_bip": 5.079,
+   "gemeinsamer_satz_pct_bip": 5.331,
+   "gemeinsamer_satz_ohne_bruecke_pct_bip": 5.354,
    "partner": {
     "BG": {
-     "eigen": 2.42,
-     "mit_bruecke": 3.29,
-     "aenderung": 0.87,
+     "eigen": 2.75,
+     "mit_bruecke": 3.6,
+     "aenderung": 0.85,
      "in_bruecke": true
     },
     "EL": {
-     "eigen": 7.37,
-     "mit_bruecke": 6.61,
-     "aenderung": -0.76,
+     "eigen": 7.71,
+     "mit_bruecke": 6.92,
+     "aenderung": -0.79,
      "in_bruecke": true
     },
     "HR": {
-     "eigen": 4.23,
-     "mit_bruecke": 4.5,
+     "eigen": 4.5,
+     "mit_bruecke": 4.77,
      "aenderung": 0.27,
      "in_bruecke": true
     },
     "HU": {
-     "eigen": 3.69,
-     "mit_bruecke": 4.14,
+     "eigen": 3.98,
+     "mit_bruecke": 4.43,
      "aenderung": 0.45,
      "in_bruecke": true
     },
     "RO": {
-     "eigen": 3.88,
-     "mit_bruecke": 4.27,
-     "aenderung": 0.39,
+     "eigen": 4.19,
+     "mit_bruecke": 4.57,
+     "aenderung": 0.38,
      "in_bruecke": true
     },
     "SK": {
-     "eigen": 3.71,
-     "mit_bruecke": 4.15,
+     "eigen": 3.99,
+     "mit_bruecke": 4.43,
      "aenderung": 0.44,
      "in_bruecke": true
     }
    },
-   "teilnehmer_aenderung_pct_bip": -0.012,
-   "entlastung_partner_mrd_eur_2024": -2.22,
+   "teilnehmer_aenderung_pct_bip": -0.011,
+   "entlastung_partner_mrd_eur_2024": -2.1,
    "beispiel_teilnehmer": {
-    "DE": -0.012,
-    "FR": -0.012,
-    "IT": -0.012,
-    "PL": -0.012
+    "DE": -0.011,
+    "FR": -0.011,
+    "IT": -0.011,
+    "PL": -0.011
    }
   },
   "33_wahl": {
-   "gemeinsamer_satz_pct_bip": 5.098,
-   "gemeinsamer_satz_ohne_bruecke_pct_bip": 5.079,
+   "gemeinsamer_satz_pct_bip": 5.374,
+   "gemeinsamer_satz_ohne_bruecke_pct_bip": 5.354,
    "partner": {
     "BG": {
-     "eigen": 2.42,
-     "mit_bruecke": 2.42,
+     "eigen": 2.75,
+     "mit_bruecke": 2.75,
      "aenderung": 0.0,
      "in_bruecke": false
     },
     "EL": {
-     "eigen": 7.37,
-     "mit_bruecke": 6.62,
-     "aenderung": -0.75,
+     "eigen": 7.71,
+     "mit_bruecke": 6.94,
+     "aenderung": -0.77,
      "in_bruecke": true
     },
     "HR": {
-     "eigen": 4.23,
-     "mit_bruecke": 4.23,
+     "eigen": 4.5,
+     "mit_bruecke": 4.5,
      "aenderung": 0.0,
      "in_bruecke": false
     },
     "HU": {
-     "eigen": 3.69,
-     "mit_bruecke": 3.69,
+     "eigen": 3.98,
+     "mit_bruecke": 3.98,
      "aenderung": 0.0,
      "in_bruecke": false
     },
     "RO": {
-     "eigen": 3.88,
-     "mit_bruecke": 3.88,
+     "eigen": 4.19,
+     "mit_bruecke": 4.19,
      "aenderung": 0.0,
      "in_bruecke": false
     },
     "SK": {
-     "eigen": 3.71,
-     "mit_bruecke": 3.71,
+     "eigen": 3.99,
+     "mit_bruecke": 3.99,
      "aenderung": 0.0,
      "in_bruecke": false
     }
    },
    "teilnehmer_aenderung_pct_bip": 0.01,
-   "entlastung_partner_mrd_eur_2024": 1.77,
+   "entlastung_partner_mrd_eur_2024": 1.83,
    "beispiel_teilnehmer": {
     "DE": 0.01,
     "FR": 0.01,

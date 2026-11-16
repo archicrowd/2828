@@ -15,6 +15,10 @@ import contextlib, importlib.util, io, itertools, json, sys, tomllib
 from pathlib import Path
 
 W = Path(__file__).resolve().parent.parent
+# v4.97: Tarif Stand C aus systemvarianten.toml (Variante 33R): Sätze und Grundbedarf im Tarif (Beschluss 16.11.2026)
+_TC = next(s for s in tomllib.loads((W / "modell" / "systemvarianten.toml").read_text(encoding="utf-8"))["system"] if s["id"] == "33R")
+TARIF_C = [float(x) for x in _TC["einkommen_saetze"]]
+TARIF_GB_FAKTOR = _TC.get("grundbedarf_tarif", 12348.0) / 12348.0
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "haushalte33.toml").read_text(encoding="utf-8"))
 _AL = W / "daten" / "aggregate" / "fonds_geltend.json"
@@ -39,7 +43,7 @@ SV = json.loads((AGG / "systemvarianten.json").read_text(encoding="utf-8"))
 PJ = json.loads((AGG / "projektion33.json").read_text(encoding="utf-8"))
 v = next(x for x in SV["varianten"] if x["id"] == P["system"])
 G26 = 12348.0
-STUFEN = [G26 * x for x in (1, 1.5, 2, 3)]
+STUFEN = [G26 * TARIF_GB_FAKTOR * x for x in (1, 1.5, 2, 3)]   # v4.97: Grundbedarf im Tarif 12.072 €
 SAETZE = v["einkommen_saetze"]
 EFF_ALT = P["mwst_heute_effektiv"]
 BASIS = (K.AN_KV_PV, K.AN_RV_AV)

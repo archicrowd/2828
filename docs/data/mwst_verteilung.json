@@ -2,19 +2,19 @@
  "version": "v4.29",
  "status": "Prüfrechnung",
  "variante": "mit_vorsteuer",
- "eff_neu": 18.84,
+ "eff_neu": 20.61,
  "eff_heute": 15.97,
  "bisher": {
-  "mehr_pct_konsum": 2.475,
-  "bezahlt_pct_konsum": 15.853
+  "mehr_pct_konsum": 4.001,
+  "bezahlt_pct_konsum": 17.088
  },
  "sichtbar_mittel": {
-  "mehr_pct_konsum": 1.536,
-  "bezahlt_pct_konsum": 10.761
+  "mehr_pct_konsum": 2.522,
+  "bezahlt_pct_konsum": 11.748
  },
  "rest_gleichmaessig": {
-  "mehr_pct_konsum": 0.939,
-  "bezahlt_pct_konsum": 5.092
+  "mehr_pct_konsum": 1.479,
+  "bezahlt_pct_konsum": 5.34
  },
  "saetze_heute": {
   "lebensmittel": 7,
@@ -34,21 +34,21 @@
   "sonstiges": 19
  },
  "saetze_neu": {
-  "lebensmittel": 5,
-  "alkohol_tabak": 33,
-  "kleidung": 25,
+  "lebensmittel": 7,
+  "alkohol_tabak": 33.333333,
+  "kleidung": 27,
   "wohnen_miete": 0.0,
-  "haushaltsenergie": 25,
-  "einrichtung": 25,
+  "haushaltsenergie": 27,
+  "einrichtung": 27,
   "gesundheit_bildung": 0.0,
   "fahrzeuge": 31,
-  "kraftstoffe": 33,
-  "verkehrsdienste": 5,
-  "kommunikation": 17,
-  "freizeit": 25,
-  "gaststaetten_hotels": 11,
-  "reparatur_persoenliche_dienste": 5,
-  "sonstiges": 25
+  "kraftstoffe": 33.333333,
+  "verkehrsdienste": 7,
+  "kommunikation": 19,
+  "freizeit": 27,
+  "gaststaetten_hotels": 13,
+  "reparatur_persoenliche_dienste": 7,
+  "sonstiges": 27
  },
  "klassen": [
   {
@@ -57,18 +57,18 @@
    "konsum": 1121,
    "summe_gueter": 1123,
    "steuerpflichtig": 0.619,
-   "sichtbar_mehr_pct": 1.215,
-   "sichtbar_bezahlt_neu_pct": 9.531,
+   "sichtbar_mehr_pct": 2.164,
+   "sichtbar_bezahlt_neu_pct": 10.48,
    "sichtbar_bezahlt_heute_pct": 8.316,
    "konsumquote_evs": 1.401,
    "phi": {
     "mit_vorsteuer": [
-     0.8703,
-     0.9224
+     0.9105,
+     0.9258
     ],
     "sichtbar": [
-     0.491,
-     0.6012
+     0.5409,
+     0.6133
     ],
     "einheitlich": [
      1.0,
@@ -82,18 +82,18 @@
    "konsum": 1280,
    "summe_gueter": 1279,
    "steuerpflichtig": 0.623,
-   "sichtbar_mehr_pct": 1.315,
-   "sichtbar_bezahlt_neu_pct": 9.752,
+   "sichtbar_mehr_pct": 2.274,
+   "sichtbar_bezahlt_neu_pct": 10.711,
    "sichtbar_bezahlt_heute_pct": 8.437,
    "konsumquote_evs": 1.113,
    "phi": {
     "mit_vorsteuer": [
-     0.9107,
-     0.9363
+     0.938,
+     0.9393
     ],
     "sichtbar": [
-     0.5314,
-     0.6151
+     0.5684,
+     0.6268
     ],
     "einheitlich": [
      1.0,
@@ -107,18 +107,18 @@
    "konsum": 1459,
    "summe_gueter": 1460,
    "steuerpflichtig": 0.635,
-   "sichtbar_mehr_pct": 1.335,
-   "sichtbar_bezahlt_neu_pct": 10.032,
+   "sichtbar_mehr_pct": 2.312,
+   "sichtbar_bezahlt_neu_pct": 11.009,
    "sichtbar_bezahlt_heute_pct": 8.697,
    "konsumquote_evs": 1.042,
    "phi": {
     "mit_vorsteuer": [
-     0.9188,
-     0.954
+     0.9474,
+     0.9568
     ],
     "sichtbar": [
-     0.5394,
-     0.6328
+     0.5779,
+     0.6442
     ],
     "einheitlich": [
      1.0,
@@ -132,18 +132,18 @@
    "konsum": 1717,
    "summe_gueter": 1716,
    "steuerpflichtig": 0.645,
-   "sichtbar_mehr_pct": 1.441,
-   "sichtbar_bezahlt_neu_pct": 10.31,
+   "sichtbar_mehr_pct": 2.417,
+   "sichtbar_bezahlt_neu_pct": 11.287,
    "sichtbar_bezahlt_heute_pct": 8.869,
    "konsumquote_evs": 0.981,
    "phi": {
     "mit_vorsteuer": [
-     0.9616,
-     0.9715
+     0.9737,
+     0.973
     ],
     "sichtbar": [
-     0.5823,
-     0.6503
+     0.6041,
+     0.6605
     ],
     "einheitlich": [
      1.0,
@@ -157,18 +157,18 @@
    "konsum": 2090,
    "summe_gueter": 2091,
    "steuerpflichtig": 0.655,
-   "sichtbar_mehr_pct": 1.532,
-   "sichtbar_bezahlt_neu_pct": 10.611,
+   "sichtbar_mehr_pct": 2.513,
+   "sichtbar_bezahlt_neu_pct": 11.592,
    "sichtbar_bezahlt_heute_pct": 9.079,
    "konsumquote_evs": 0.909,
    "phi": {
     "mit_vorsteuer": [
-     0.9984,
-     0.9905
+     0.9977,
+     0.9909
     ],
     "sichtbar": [
-     0.619,
-     0.6693
+     0.6281,
+     0.6784
     ],
     "einheitlich": [
      1.0,
@@ -182,18 +182,18 @@
    "konsum": 2591,
    "summe_gueter": 2591,
    "steuerpflichtig": 0.661,
-   "sichtbar_mehr_pct": 1.568,
-   "sichtbar_bezahlt_neu_pct": 10.78,
+   "sichtbar_mehr_pct": 2.553,
+   "sichtbar_bezahlt_neu_pct": 11.765,
    "sichtbar_bezahlt_heute_pct": 9.212,
    "konsumquote_evs": 0.836,
    "phi": {
     "mit_vorsteuer": [
-     1.0129,
-     1.0012
+     1.0077,
+     1.001
     ],
     "sichtbar": [
-     0.6336,
-     0.68
+     0.6381,
+     0.6885
     ],
     "einheitlich": [
      1.0,
@@ -207,18 +207,18 @@
    "konsum": 3273,
    "summe_gueter": 3273,
    "steuerpflichtig": 0.674,
-   "sichtbar_mehr_pct": 1.606,
-   "sichtbar_bezahlt_neu_pct": 11.052,
+   "sichtbar_mehr_pct": 2.601,
+   "sichtbar_bezahlt_neu_pct": 12.047,
    "sichtbar_bezahlt_heute_pct": 9.446,
    "konsumquote_evs": 0.761,
    "phi": {
     "mit_vorsteuer": [
-     1.0283,
-     1.0183
+     1.0197,
+     1.0175
     ],
     "sichtbar": [
-     0.6489,
-     0.6971
+     0.6501,
+     0.705
     ],
     "einheitlich": [
      1.0,
@@ -232,18 +232,18 @@
    "konsum": 4760,
    "summe_gueter": 4760,
    "steuerpflichtig": 0.694,
-   "sichtbar_mehr_pct": 1.703,
-   "sichtbar_bezahlt_neu_pct": 11.565,
+   "sichtbar_mehr_pct": 2.709,
+   "sichtbar_bezahlt_neu_pct": 12.572,
    "sichtbar_bezahlt_heute_pct": 9.863,
    "konsumquote_evs": 0.635,
    "phi": {
     "mit_vorsteuer": [
-     1.0675,
-     1.0507
+     1.0467,
+     1.0482
     ],
     "sichtbar": [
-     0.6881,
-     0.7295
+     0.6771,
+     0.7357
     ],
     "einheitlich": [
      1.0,

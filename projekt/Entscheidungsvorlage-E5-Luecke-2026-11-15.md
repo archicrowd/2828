@@ -148,3 +148,25 @@ Fall sind es 81 €. Automatisierung und Erbschaftswelle sind darin noch nicht e
 1. Die Hebel so übernehmen?
 2. Die Regel zur Stufenwanderung im Label beschließen?
 3. Das Elternhaus bei der Erbschaft regeln?
+
+## 10 Beschluss (16.11.2026) und Umsetzung in v4.97
+
+**Beschluss der Initiative:**
+1. Die Hebel werden übernommen: Satz ein Drittel, Grundbedarf im Tarif 12.072 € (2026), Label 7/13/19/27 % mit Sonderstufe ein Drittel,
+   Erbschaftsfreibetrag 2 × jährlicher Grundbedarf.
+2. Die Stufenwanderung im Label gilt: Produkte wandern mit dem Klimapfad in höhere Stufen.
+3. Für das selbst bewohnte Elternhaus gibt es einen Stundungskredit zu 1 % fest, bis 20 Jahre.
+4. Die Umstellung auf die belegten Einnahmen erfolgt sofort.
+
+**Umsetzung (Logbuch v4.97, `modell/deckung_belegt.py`):**
+- Belegte Positionen (2028, % BIP): Unternehmen 2,39; Übrige 2,89; CO₂-Abzug −0,31; Erbschaften 1,31.
+- Stundung: Als Kassenausfall ist −0,145 % BIP vorsichtig dauerhaft angesetzt, als Zinsvorteil gegen den Fondszins 2,45 % −0,021 % BIP.
+  Der Anteil der Elternhäuser (10 %) und die mittlere Dauer (10 Jahre) sind Annahmen.
+
+**Ergebnis (geltend, Kaufkraft 2026):**
+- Dividende je Erwachsenem 245 / 175 / 112 / 104 € (2028/2035/2050/2060); bis v4.96 384 / 309 / 249 / 256 €.
+  - Die Werte liegen unter A+ aus Abschnitt 9 (262 / 194 / 150 / 131 €). Ursache ist der einheitlich durchgerechnete Tarif mit Grundbedarf 12.072 €
+    in allen Haushaltsrechnungen und die vorsichtig angesetzte Stundung.
+- Fondsbeitrag 5,32 % BIP.
+- **Rentnerhaushalte mit mehr: 23,1 % (vorher 63,7 %), im Mittel −197 € im Monat.** Die Rentnerregel BS35 ist auf die frühere Dividende geeicht
+  und muss neu bewertet werden (Logbuch 7.1, R16).

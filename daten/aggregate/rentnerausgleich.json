@@ -5,9 +5,9 @@
   "Beschluss v4.72 (Regel BS35, 45 Versicherungsjahre, Boden 1.083 €)": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 46,
-    "1600": 69,
-    "2200": 43
+    "1200": 20,
+    "1600": 33,
+    "2200": -7
    },
    "mehrkosten_mrd": 0.0,
    "mehrkosten_pct_bip": 0.0
@@ -16,91 +16,91 @@
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -26,
-    "2200": -45
+    "1600": -57,
+    "2200": -91
    },
-   "mehrkosten_mrd": -12.3,
-   "mehrkosten_pct_bip": -0.25
+   "mehrkosten_mrd": -10.5,
+   "mehrkosten_pct_bip": -0.21
   },
   "Kürzung 12,3 %": {
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -91,
-    "2200": -124
+    "1600": -120,
+    "2200": -167
    },
-   "mehrkosten_mrd": -20.2,
-   "mehrkosten_pct_bip": -0.41
+   "mehrkosten_mrd": -18.0,
+   "mehrkosten_pct_bip": -0.37
   },
   "Kürzung 10,0 %": {
    "differenz_monat_je_rente": {
     "900": 0,
     "1200": 0,
-    "1600": -59,
-    "2200": -86
+    "1600": -90,
+    "2200": -129
    },
-   "mehrkosten_mrd": -16.4,
-   "mehrkosten_pct_bip": -0.33
+   "mehrkosten_mrd": -14.3,
+   "mehrkosten_pct_bip": -0.29
   },
   "Besteuerungsanteil 83 % wie heute": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 67,
-    "1600": 107,
-    "2200": 127
+    "1200": 44,
+    "1600": 74,
+    "2200": 80
    },
-   "mehrkosten_mrd": 7.7,
-   "mehrkosten_pct_bip": 0.16
+   "mehrkosten_mrd": 8.2,
+   "mehrkosten_pct_bip": 0.17
   },
   "Befreiung vom Altlastenzuschlag": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 73,
-    "1600": 111,
-    "2200": 110
+    "1200": 54,
+    "1600": 84,
+    "2200": 75
    },
-   "mehrkosten_mrd": 7.3,
-   "mehrkosten_pct_bip": 0.15
+   "mehrkosten_mrd": 9.0,
+   "mehrkosten_pct_bip": 0.18
   },
   "Pauschale 25 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 70,
-    "1600": 93,
-    "2200": 67
+    "1200": 44,
+    "1600": 56,
+    "2200": 16
    },
-   "mehrkosten_mrd": 3.9,
+   "mehrkosten_mrd": 3.8,
    "mehrkosten_pct_bip": 0.08
   },
   "Pauschale 50 € steuerfrei": {
    "differenz_monat_je_rente": {
     "900": 0,
-    "1200": 94,
-    "1600": 117,
-    "2200": 91
+    "1200": 67,
+    "1600": 80,
+    "2200": 40
    },
-   "mehrkosten_mrd": 7.8,
-   "mehrkosten_pct_bip": 0.16
+   "mehrkosten_mrd": 7.6,
+   "mehrkosten_pct_bip": 0.15
   }
  },
  "kleine_bestandsrenten": {
   "600": {
-   "neu_ohne_grundauskommen": 576,
+   "neu_ohne_grundauskommen": 564,
    "neu_mit_grundauskommen": 1083,
    "grundbedarf": 1035,
    "heute_ohne_grundsicherung": 526,
    "heute_mit_grundsicherung": 1083
   },
   "900": {
-   "neu_ohne_grundauskommen": 863,
+   "neu_ohne_grundauskommen": 846,
    "neu_mit_grundauskommen": 1083,
    "grundbedarf": 1035,
    "heute_ohne_grundsicherung": 789,
    "heute_mit_grundsicherung": 1083
   },
   "1200": {
-   "neu_ohne_grundauskommen": 1129,
-   "neu_mit_grundauskommen": 1129,
+   "neu_ohne_grundauskommen": 1103,
+   "neu_mit_grundauskommen": 1103,
    "grundbedarf": 1035,
    "heute_ohne_grundsicherung": 1052,
    "heute_mit_grundsicherung": 1083
@@ -121,22 +121,22 @@
    "2045": {
     "rentenbeginn_plus_jahre": 1.05,
     "entlastung_pct_bip": 0.37,
-    "dividende_plus_eur_monat": 21.8
+    "dividende_plus_eur_monat": 22.0
    },
    "2050": {
     "rentenbeginn_plus_jahre": 1.4,
     "entlastung_pct_bip": 0.44,
-    "dividende_plus_eur_monat": 27.1
+    "dividende_plus_eur_monat": 27.6
    },
    "2060": {
     "rentenbeginn_plus_jahre": 2.1,
-    "entlastung_pct_bip": 0.5,
-    "dividende_plus_eur_monat": 34.1
+    "entlastung_pct_bip": 0.51,
+    "dividende_plus_eur_monat": 35.5
    },
    "2070": {
     "rentenbeginn_plus_jahre": 2.8,
-    "entlastung_pct_bip": 0.43,
-    "dividende_plus_eur_monat": 29.2
+    "entlastung_pct_bip": 0.45,
+    "dividende_plus_eur_monat": 30.9
    }
   },
   "2zu3_NL": {
@@ -153,22 +153,22 @@
    "2045": {
     "rentenbeginn_plus_jahre": 0.7,
     "entlastung_pct_bip": 0.25,
-    "dividende_plus_eur_monat": 14.5
+    "dividende_plus_eur_monat": 14.7
    },
    "2050": {
     "rentenbeginn_plus_jahre": 0.93,
-    "entlastung_pct_bip": 0.29,
-    "dividende_plus_eur_monat": 18.1
+    "entlastung_pct_bip": 0.3,
+    "dividende_plus_eur_monat": 18.4
    },
    "2060": {
     "rentenbeginn_plus_jahre": 1.4,
-    "entlastung_pct_bip": 0.33,
-    "dividende_plus_eur_monat": 22.8
+    "entlastung_pct_bip": 0.34,
+    "dividende_plus_eur_monat": 23.7
    },
    "2070": {
     "rentenbeginn_plus_jahre": 1.87,
-    "entlastung_pct_bip": 0.29,
-    "dividende_plus_eur_monat": 19.5
+    "entlastung_pct_bip": 0.3,
+    "dividende_plus_eur_monat": 20.6
    }
   },
   "keine": {
@@ -207,43 +207,43 @@
  "fonds_zerlegung": [
   {
    "schritt": "vorher (v4.10: Kürzung 12,35 %, volle Verrechnung, ohne B1, ohne Kopplung)",
-   "beitrag_pct_bip": 4.59,
+   "beitrag_pct_bip": 5.04,
    "aenderung": null
   },
   {
    "schritt": "+ A: Kürzung 7,5 %",
-   "beitrag_pct_bip": 4.84,
+   "beitrag_pct_bip": 5.3,
    "aenderung": 0.26
   },
   {
    "schritt": "+ T1: anteilige Verrechnung",
-   "beitrag_pct_bip": 5.34,
-   "aenderung": 0.5
+   "beitrag_pct_bip": 5.62,
+   "aenderung": 0.32
   },
   {
    "schritt": "+ B1: Grundauskommen im Bestand",
-   "beitrag_pct_bip": 5.41,
+   "beitrag_pct_bip": 5.69,
    "aenderung": 0.07
   },
   {
    "schritt": "+ L1: Rentenbeginn ⅔ gekoppelt (= Beschluss v4.11)",
-   "beitrag_pct_bip": 5.23,
-   "aenderung": -0.18
+   "beitrag_pct_bip": 5.5,
+   "aenderung": -0.19
   },
   {
    "schritt": "+ E: 15 % über dem Grundbedarf, Boden 1.083 € (= Beschluss v4.26)",
-   "beitrag_pct_bip": 5.26,
+   "beitrag_pct_bip": 5.53,
    "aenderung": 0.03
   },
   {
    "schritt": "+ R6: Kürzungssatz je Staat (= v4.37)",
-   "beitrag_pct_bip": 5.22,
+   "beitrag_pct_bip": 5.49,
    "aenderung": -0.04
   },
   {
    "schritt": "Prüfung T1 (v4.37): geltend ohne anteilige Verrechnung",
-   "beitrag_pct_bip": 4.77,
-   "aenderung": -0.46
+   "beitrag_pct_bip": 5.2,
+   "aenderung": -0.29
   }
  ],
  "grundsicherung_heute": {

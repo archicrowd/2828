@@ -10,46 +10,46 @@
    "preisniveau_de_100": 103,
    "abgabenquote_heute": 43.8,
    "z2028": {
-    "deckung_pct_bip": 32.51,
-    "netz_pct_bip": 10.69,
+    "deckung_pct_bip": 30.07,
+    "netz_pct_bip": 10.8,
     "netz": {
      "Gesundheit": 8.55,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.18,
-     "Arbeitslosigkeit": 0.41,
+     "Invalidität": 0.22,
+     "Arbeitslosigkeit": 0.48,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 5.17,
-    "dividende_erw_eur": 276,
-    "dividende_erw_kaufkraft_de": 268,
+    "dividende_pct_bip": 2.5,
+    "dividende_erw_eur": 133,
+    "dividende_erw_kaufkraft_de": 130,
     "grundbedarf_monat_eur": 1058
    },
    "dauer": {
-    "deckung_pct_bip": 31.24,
-    "netz_pct_bip": 12.62,
+    "deckung_pct_bip": 29.44,
+    "netz_pct_bip": 12.87,
     "netz": {
      "Gesundheit": 8.82,
      "Pflege": 1.41,
-     "Mindestrente": 1.1,
-     "Invalidität": 0.18,
-     "Arbeitslosigkeit": 0.41,
+     "Mindestrente": 1.26,
+     "Invalidität": 0.21,
+     "Arbeitslosigkeit": 0.47,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 0.87,
-    "dividende_erw_eur": 65,
-    "dividende_erw_kaufkraft_de": 63,
+    "dividende_pct_bip": -1.3,
+    "dividende_erw_eur": -97,
+    "dividende_erw_kaufkraft_de": -95,
     "grundbedarf_monat_eur": 1171
    },
    "altlasten": {
-    "z_2028": 11.55,
-    "beitrag_pct_bip": 5.98,
-    "zuschlag_pct": 18.4,
-    "spitze": 169
+    "z_2028": 12.13,
+    "beitrag_pct_bip": 6.23,
+    "zuschlag_pct": 20.7,
+    "spitze": 175
    },
-   "gesamtlast_2028": 38.5
+   "gesamtlast_2028": 36.3
   },
   "BE": {
    "name": "Belgien",
@@ -58,46 +58,46 @@
    "preisniveau_de_100": 99,
    "abgabenquote_heute": 45.1,
    "z2028": {
-    "deckung_pct_bip": 32.98,
-    "netz_pct_bip": 9.72,
+    "deckung_pct_bip": 30.36,
+    "netz_pct_bip": 9.89,
     "netz": {
      "Gesundheit": 7.41,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.36,
-     "Arbeitslosigkeit": 0.4,
+     "Invalidität": 0.44,
+     "Arbeitslosigkeit": 0.49,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 6.61,
-    "dividende_erw_eur": 338,
-    "dividende_erw_kaufkraft_de": 343,
+    "dividende_pct_bip": 3.7,
+    "dividende_erw_eur": 189,
+    "dividende_erw_kaufkraft_de": 192,
     "grundbedarf_monat_eur": 1015
    },
    "dauer": {
-    "deckung_pct_bip": 31.69,
-    "netz_pct_bip": 11.54,
+    "deckung_pct_bip": 29.73,
+    "netz_pct_bip": 11.86,
     "netz": {
      "Gesundheit": 7.68,
      "Pflege": 1.41,
-     "Mindestrente": 0.99,
-     "Invalidität": 0.36,
-     "Arbeitslosigkeit": 0.4,
+     "Mindestrente": 1.17,
+     "Invalidität": 0.42,
+     "Arbeitslosigkeit": 0.48,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 2.4,
-    "dividende_erw_eur": 172,
-    "dividende_erw_kaufkraft_de": 175,
+    "dividende_pct_bip": -0.0,
+    "dividende_erw_eur": 0,
+    "dividende_erw_kaufkraft_de": 0,
     "grundbedarf_monat_eur": 1123
    },
    "altlasten": {
-    "z_2028": 8.83,
-    "beitrag_pct_bip": 5.07,
-    "zuschlag_pct": 15.4,
-    "spitze": 154
+    "z_2028": 9.46,
+    "beitrag_pct_bip": 5.35,
+    "zuschlag_pct": 17.6,
+    "spitze": 160
    },
-   "gesamtlast_2028": 38.0
+   "gesamtlast_2028": 35.7
   },
   "BG": {
    "name": "Bulgarien",
@@ -106,46 +106,46 @@
    "preisniveau_de_100": 54,
    "abgabenquote_heute": 30.5,
    "z2028": {
-    "deckung_pct_bip": 33.51,
-    "netz_pct_bip": 7.4,
+    "deckung_pct_bip": 30.87,
+    "netz_pct_bip": 7.48,
     "netz": {
      "Gesundheit": 5.13,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.15,
-     "Arbeitslosigkeit": 0.57,
+     "Invalidität": 0.17,
+     "Arbeitslosigkeit": 0.63,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 9.46,
-    "dividende_erw_eur": 151,
-    "dividende_erw_kaufkraft_de": 279,
+    "dividende_pct_bip": 6.62,
+    "dividende_erw_eur": 105,
+    "dividende_erw_kaufkraft_de": 195,
     "grundbedarf_monat_eur": 555
    },
    "dauer": {
-    "deckung_pct_bip": 32.2,
-    "netz_pct_bip": 10.25,
+    "deckung_pct_bip": 30.22,
+    "netz_pct_bip": 10.53,
     "netz": {
      "Gesundheit": 5.4,
      "Pflege": 1.41,
-     "Mindestrente": 2.08,
-     "Invalidität": 0.14,
-     "Arbeitslosigkeit": 0.52,
+     "Mindestrente": 2.3,
+     "Invalidität": 0.15,
+     "Arbeitslosigkeit": 0.58,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 4.2,
-    "dividende_erw_eur": 94,
-    "dividende_erw_kaufkraft_de": 174,
+    "dividende_pct_bip": 1.83,
+    "dividende_erw_eur": 41,
+    "dividende_erw_kaufkraft_de": 76,
     "grundbedarf_monat_eur": 614
    },
    "altlasten": {
-    "z_2028": 4.5,
-    "beitrag_pct_bip": 2.24,
-    "zuschlag_pct": 6.7,
-    "spitze": 62
+    "z_2028": 5.23,
+    "beitrag_pct_bip": 2.56,
+    "zuschlag_pct": 8.3,
+    "spitze": 70
    },
-   "gesamtlast_2028": 35.8
+   "gesamtlast_2028": 33.4
   },
   "CH": {
    "name": "Schweiz",
@@ -154,46 +154,46 @@
    "preisniveau_de_100": 144,
    "abgabenquote_heute": 27.8,
    "z2028": {
-    "deckung_pct_bip": 33.75,
-    "netz_pct_bip": 8.49,
+    "deckung_pct_bip": 31.24,
+    "netz_pct_bip": 8.61,
     "netz": {
      "Gesundheit": 6.65,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.13,
-     "Arbeitslosigkeit": 0.16,
+     "Invalidität": 0.19,
+     "Arbeitslosigkeit": 0.22,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 8.61,
-    "dividende_erw_eur": 839,
-    "dividende_erw_kaufkraft_de": 581,
+    "dividende_pct_bip": 5.86,
+    "dividende_erw_eur": 571,
+    "dividende_erw_kaufkraft_de": 396,
     "grundbedarf_monat_eur": 1485
    },
    "dauer": {
-    "deckung_pct_bip": 32.43,
-    "netz_pct_bip": 9.86,
+    "deckung_pct_bip": 30.59,
+    "netz_pct_bip": 10.12,
     "netz": {
      "Gesundheit": 6.92,
      "Pflege": 1.41,
-     "Mindestrente": 0.52,
-     "Invalidität": 0.14,
-     "Arbeitslosigkeit": 0.17,
+     "Mindestrente": 0.68,
+     "Invalidität": 0.19,
+     "Arbeitslosigkeit": 0.22,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 4.82,
-    "dividende_erw_eur": 658,
-    "dividende_erw_kaufkraft_de": 456,
+    "dividende_pct_bip": 2.6,
+    "dividende_erw_eur": 355,
+    "dividende_erw_kaufkraft_de": 246,
     "grundbedarf_monat_eur": 1643
    },
    "altlasten": {
-    "z_2028": 4.66,
-    "beitrag_pct_bip": 2.47,
-    "zuschlag_pct": 7.3,
-    "spitze": 71
+    "z_2028": 5.24,
+    "beitrag_pct_bip": 2.72,
+    "zuschlag_pct": 8.7,
+    "spitze": 77
    },
-   "gesamtlast_2028": 36.2
+   "gesamtlast_2028": 34.0
   },
   "CY": {
    "name": "Zypern",
@@ -202,46 +202,46 @@
    "preisniveau_de_100": 82,
    "abgabenquote_heute": 37.6,
    "z2028": {
-    "deckung_pct_bip": 33.26,
-    "netz_pct_bip": 7.7,
+    "deckung_pct_bip": 30.75,
+    "netz_pct_bip": 7.78,
     "netz": {
      "Gesundheit": 5.7,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.06,
-     "Arbeitslosigkeit": 0.39,
+     "Invalidität": 0.07,
+     "Arbeitslosigkeit": 0.46,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 8.91,
-    "dividende_erw_eur": 311,
-    "dividende_erw_kaufkraft_de": 378,
+    "dividende_pct_bip": 6.2,
+    "dividende_erw_eur": 217,
+    "dividende_erw_kaufkraft_de": 263,
     "grundbedarf_monat_eur": 846
    },
    "dauer": {
-    "deckung_pct_bip": 31.96,
-    "netz_pct_bip": 9.45,
+    "deckung_pct_bip": 30.11,
+    "netz_pct_bip": 9.66,
     "netz": {
      "Gesundheit": 5.97,
      "Pflege": 1.41,
-     "Mindestrente": 0.95,
-     "Invalidität": 0.05,
-     "Arbeitslosigkeit": 0.37,
+     "Mindestrente": 1.1,
+     "Invalidität": 0.06,
+     "Arbeitslosigkeit": 0.42,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 4.76,
-    "dividende_erw_eur": 233,
-    "dividende_erw_kaufkraft_de": 283,
+    "dividende_pct_bip": 2.58,
+    "dividende_erw_eur": 126,
+    "dividende_erw_kaufkraft_de": 154,
     "grundbedarf_monat_eur": 936
    },
    "altlasten": {
-    "z_2028": 7.76,
-    "beitrag_pct_bip": 4.13,
-    "zuschlag_pct": 12.4,
-    "spitze": 119
+    "z_2028": 8.29,
+    "beitrag_pct_bip": 4.35,
+    "zuschlag_pct": 14.2,
+    "spitze": 124
    },
-   "gesamtlast_2028": 37.4
+   "gesamtlast_2028": 35.1
   },
   "CZ": {
    "name": "Tschechien",
@@ -250,46 +250,46 @@
    "preisniveau_de_100": 71,
    "abgabenquote_heute": 35.0,
    "z2028": {
-    "deckung_pct_bip": 32.24,
-    "netz_pct_bip": 10.52,
+    "deckung_pct_bip": 29.23,
+    "netz_pct_bip": 10.61,
     "netz": {
      "Gesundheit": 8.36,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.33,
-     "Arbeitslosigkeit": 0.28,
+     "Invalidität": 0.38,
+     "Arbeitslosigkeit": 0.33,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 5.08,
-    "dividende_erw_eur": 146,
-    "dividende_erw_kaufkraft_de": 207,
+    "dividende_pct_bip": 1.84,
+    "dividende_erw_eur": 53,
+    "dividende_erw_kaufkraft_de": 75,
     "grundbedarf_monat_eur": 729
    },
    "dauer": {
-    "deckung_pct_bip": 30.98,
-    "netz_pct_bip": 12.83,
+    "deckung_pct_bip": 28.62,
+    "netz_pct_bip": 13.13,
     "netz": {
      "Gesundheit": 8.63,
      "Pflege": 1.41,
-     "Mindestrente": 1.5,
-     "Invalidität": 0.32,
-     "Arbeitslosigkeit": 0.27,
+     "Mindestrente": 1.72,
+     "Invalidität": 0.36,
+     "Arbeitslosigkeit": 0.31,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 0.41,
-    "dividende_erw_eur": 16,
-    "dividende_erw_kaufkraft_de": 23,
+    "dividende_pct_bip": -2.38,
+    "dividende_erw_eur": -96,
+    "dividende_erw_kaufkraft_de": -136,
     "grundbedarf_monat_eur": 807
    },
    "altlasten": {
-    "z_2028": 7.4,
-    "beitrag_pct_bip": 3.74,
-    "zuschlag_pct": 11.6,
-    "spitze": 104
+    "z_2028": 8.13,
+    "beitrag_pct_bip": 4.06,
+    "zuschlag_pct": 13.9,
+    "spitze": 112
    },
-   "gesamtlast_2028": 36.0
+   "gesamtlast_2028": 33.3
   },
   "DE": {
    "name": "Deutschland",
@@ -298,46 +298,46 @@
    "preisniveau_de_100": 100,
    "abgabenquote_heute": 40.9,
    "z2028": {
-    "deckung_pct_bip": 33.54,
-    "netz_pct_bip": 9.1,
+    "deckung_pct_bip": 31.15,
+    "netz_pct_bip": 9.21,
     "netz": {
      "Gesundheit": 7.03,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.29,
-     "Arbeitslosigkeit": 0.23,
+     "Invalidität": 0.35,
+     "Arbeitslosigkeit": 0.28,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 7.79,
-    "dividende_erw_eur": 401,
-    "dividende_erw_kaufkraft_de": 401,
+    "dividende_pct_bip": 5.17,
+    "dividende_erw_eur": 266,
+    "dividende_erw_kaufkraft_de": 266,
     "grundbedarf_monat_eur": 1029
    },
    "dauer": {
-    "deckung_pct_bip": 32.23,
-    "netz_pct_bip": 10.96,
+    "deckung_pct_bip": 30.5,
+    "netz_pct_bip": 11.22,
     "netz": {
      "Gesundheit": 7.3,
      "Pflege": 1.41,
-     "Mindestrente": 1.03,
-     "Invalidität": 0.29,
-     "Arbeitslosigkeit": 0.23,
+     "Mindestrente": 1.21,
+     "Invalidität": 0.34,
+     "Arbeitslosigkeit": 0.27,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 3.52,
-    "dividende_erw_eur": 254,
-    "dividende_erw_kaufkraft_de": 254,
+    "dividende_pct_bip": 1.41,
+    "dividende_erw_eur": 101,
+    "dividende_erw_kaufkraft_de": 101,
     "grundbedarf_monat_eur": 1139
    },
    "altlasten": {
-    "z_2028": 8.67,
-    "beitrag_pct_bip": 4.51,
-    "zuschlag_pct": 13.5,
-    "spitze": 128
+    "z_2028": 9.31,
+    "beitrag_pct_bip": 4.79,
+    "zuschlag_pct": 15.4,
+    "spitze": 135
    },
-   "gesamtlast_2028": 38.0
+   "gesamtlast_2028": 35.9
   },
   "DK": {
    "name": "Dänemark",
@@ -346,46 +346,46 @@
    "preisniveau_de_100": 115,
    "abgabenquote_heute": 45.5,
    "z2028": {
-    "deckung_pct_bip": 31.45,
-    "netz_pct_bip": 10.35,
+    "deckung_pct_bip": 29.13,
+    "netz_pct_bip": 10.53,
     "netz": {
      "Gesundheit": 7.89,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.47,
-     "Arbeitslosigkeit": 0.45,
+     "Invalidität": 0.56,
+     "Arbeitslosigkeit": 0.53,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 4.45,
-    "dividende_erw_eur": 292,
-    "dividende_erw_kaufkraft_de": 255,
+    "dividende_pct_bip": 1.84,
+    "dividende_erw_eur": 120,
+    "dividende_erw_kaufkraft_de": 105,
     "grundbedarf_monat_eur": 1179
    },
    "dauer": {
-    "deckung_pct_bip": 30.22,
-    "netz_pct_bip": 12.3,
+    "deckung_pct_bip": 28.53,
+    "netz_pct_bip": 12.61,
     "netz": {
      "Gesundheit": 8.15,
      "Pflege": 1.41,
-     "Mindestrente": 1.09,
-     "Invalidität": 0.48,
-     "Arbeitslosigkeit": 0.46,
+     "Mindestrente": 1.25,
+     "Invalidität": 0.56,
+     "Arbeitslosigkeit": 0.53,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 0.17,
-    "dividende_erw_eur": 16,
-    "dividende_erw_kaufkraft_de": 14,
+    "dividende_pct_bip": -1.95,
+    "dividende_erw_eur": -179,
+    "dividende_erw_kaufkraft_de": -156,
     "grundbedarf_monat_eur": 1304
    },
    "altlasten": {
-    "z_2028": 0.15,
-    "beitrag_pct_bip": 0.43,
-    "zuschlag_pct": 1.4,
+    "z_2028": 0.55,
+    "beitrag_pct_bip": 0.6,
+    "zuschlag_pct": 2.1,
     "spitze": 30
    },
-   "gesamtlast_2028": 31.9
+   "gesamtlast_2028": 29.7
   },
   "EE": {
    "name": "Estland",
@@ -394,46 +394,46 @@
    "preisniveau_de_100": 81,
    "abgabenquote_heute": 36.1,
    "z2028": {
-    "deckung_pct_bip": 32.98,
-    "netz_pct_bip": 8.59,
+    "deckung_pct_bip": 30.6,
+    "netz_pct_bip": 8.73,
     "netz": {
      "Gesundheit": 5.89,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.28,
-     "Arbeitslosigkeit": 0.87,
+     "Invalidität": 0.32,
+     "Arbeitslosigkeit": 0.98,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 7.74,
-    "dividende_erw_eur": 220,
-    "dividende_erw_kaufkraft_de": 274,
+    "dividende_pct_bip": 5.09,
+    "dividende_erw_eur": 145,
+    "dividende_erw_kaufkraft_de": 180,
     "grundbedarf_monat_eur": 829
    },
    "dauer": {
-    "deckung_pct_bip": 31.7,
-    "netz_pct_bip": 10.87,
+    "deckung_pct_bip": 29.96,
+    "netz_pct_bip": 11.15,
     "netz": {
      "Gesundheit": 6.16,
      "Pflege": 1.41,
-     "Mindestrente": 1.53,
-     "Invalidität": 0.26,
-     "Arbeitslosigkeit": 0.81,
+     "Mindestrente": 1.7,
+     "Invalidität": 0.29,
+     "Arbeitslosigkeit": 0.9,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 3.08,
-    "dividende_erw_eur": 123,
-    "dividende_erw_kaufkraft_de": 152,
+    "dividende_pct_bip": 0.94,
+    "dividende_erw_eur": 37,
+    "dividende_erw_kaufkraft_de": 46,
     "grundbedarf_monat_eur": 917
    },
    "altlasten": {
-    "z_2028": 5.94,
-    "beitrag_pct_bip": 2.87,
-    "zuschlag_pct": 8.7,
-    "spitze": 77
+    "z_2028": 6.53,
+    "beitrag_pct_bip": 3.13,
+    "zuschlag_pct": 10.2,
+    "spitze": 84
    },
-   "gesamtlast_2028": 35.8
+   "gesamtlast_2028": 33.7
   },
   "EL": {
    "name": "Griechenland",
@@ -442,46 +442,46 @@
    "preisniveau_de_100": 71,
    "abgabenquote_heute": 41.7,
    "z2028": {
-    "deckung_pct_bip": 34.44,
-    "netz_pct_bip": 8.68,
+    "deckung_pct_bip": 31.59,
+    "netz_pct_bip": 8.89,
     "netz": {
      "Gesundheit": 5.61,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.24,
-     "Arbeitslosigkeit": 1.28,
+     "Invalidität": 0.28,
+     "Arbeitslosigkeit": 1.45,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 9.11,
-    "dividende_erw_eur": 203,
-    "dividende_erw_kaufkraft_de": 285,
+    "dividende_pct_bip": 5.93,
+    "dividende_erw_eur": 133,
+    "dividende_erw_kaufkraft_de": 186,
     "grundbedarf_monat_eur": 734
    },
    "dauer": {
-    "deckung_pct_bip": 33.09,
-    "netz_pct_bip": 11.31,
+    "deckung_pct_bip": 30.93,
+    "netz_pct_bip": 11.72,
     "netz": {
      "Gesundheit": 5.87,
      "Pflege": 1.41,
-     "Mindestrente": 1.93,
-     "Invalidität": 0.22,
-     "Arbeitslosigkeit": 1.18,
+     "Mindestrente": 2.16,
+     "Invalidität": 0.25,
+     "Arbeitslosigkeit": 1.33,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 4.03,
-    "dividende_erw_eur": 126,
-    "dividende_erw_kaufkraft_de": 177,
+    "dividende_pct_bip": 1.34,
+    "dividende_erw_eur": 42,
+    "dividende_erw_kaufkraft_de": 59,
     "grundbedarf_monat_eur": 813
    },
    "altlasten": {
-    "z_2028": 11.46,
-    "beitrag_pct_bip": 6.81,
-    "zuschlag_pct": 19.8,
-    "spitze": 211
+    "z_2028": 12.27,
+    "beitrag_pct_bip": 7.17,
+    "zuschlag_pct": 22.7,
+    "spitze": 220
    },
-   "gesamtlast_2028": 41.2
+   "gesamtlast_2028": 38.8
   },
   "ES": {
    "name": "Spanien",
@@ -490,46 +490,46 @@
    "preisniveau_de_100": 78,
    "abgabenquote_heute": 37.3,
    "z2028": {
-    "deckung_pct_bip": 33.48,
-    "netz_pct_bip": 9.23,
+    "deckung_pct_bip": 30.92,
+    "netz_pct_bip": 9.46,
     "netz": {
      "Gesundheit": 6.27,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.34,
-     "Arbeitslosigkeit": 1.06,
+     "Invalidität": 0.4,
+     "Arbeitslosigkeit": 1.24,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 7.6,
-    "dividende_erw_eur": 243,
-    "dividende_erw_kaufkraft_de": 313,
+    "dividende_pct_bip": 4.69,
+    "dividende_erw_eur": 150,
+    "dividende_erw_kaufkraft_de": 193,
     "grundbedarf_monat_eur": 801
    },
    "dauer": {
-    "deckung_pct_bip": 32.17,
-    "netz_pct_bip": 11.25,
+    "deckung_pct_bip": 30.27,
+    "netz_pct_bip": 11.63,
     "netz": {
      "Gesundheit": 6.54,
      "Pflege": 1.41,
-     "Mindestrente": 1.27,
-     "Invalidität": 0.33,
-     "Arbeitslosigkeit": 1.01,
+     "Mindestrente": 1.45,
+     "Invalidität": 0.38,
+     "Arbeitslosigkeit": 1.16,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 3.16,
-    "dividende_erw_eur": 142,
-    "dividende_erw_kaufkraft_de": 183,
+    "dividende_pct_bip": 0.77,
+    "dividende_erw_eur": 35,
+    "dividende_erw_kaufkraft_de": 45,
     "grundbedarf_monat_eur": 886
    },
    "altlasten": {
-    "z_2028": 10.05,
-    "beitrag_pct_bip": 5.58,
-    "zuschlag_pct": 16.7,
-    "spitze": 165
+    "z_2028": 10.7,
+    "beitrag_pct_bip": 5.86,
+    "zuschlag_pct": 19.0,
+    "spitze": 172
    },
-   "gesamtlast_2028": 39.1
+   "gesamtlast_2028": 36.8
   },
   "FI": {
    "name": "Finnland",
@@ -538,46 +538,46 @@
    "preisniveau_de_100": 104,
    "abgabenquote_heute": 42.3,
    "z2028": {
-    "deckung_pct_bip": 32.3,
-    "netz_pct_bip": 9.89,
+    "deckung_pct_bip": 29.88,
+    "netz_pct_bip": 10.08,
     "netz": {
      "Gesundheit": 7.22,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.38,
-     "Arbeitslosigkeit": 0.74,
+     "Invalidität": 0.44,
+     "Arbeitslosigkeit": 0.87,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 5.75,
-    "dividende_erw_eur": 277,
-    "dividende_erw_kaufkraft_de": 265,
+    "dividende_pct_bip": 3.04,
+    "dividende_erw_eur": 146,
+    "dividende_erw_kaufkraft_de": 140,
     "grundbedarf_monat_eur": 1075
    },
    "dauer": {
-    "deckung_pct_bip": 31.03,
-    "netz_pct_bip": 12.16,
+    "deckung_pct_bip": 29.26,
+    "netz_pct_bip": 12.51,
     "netz": {
      "Gesundheit": 7.49,
      "Pflege": 1.41,
-     "Mindestrente": 1.45,
-     "Invalidität": 0.38,
-     "Arbeitslosigkeit": 0.74,
+     "Mindestrente": 1.65,
+     "Invalidität": 0.43,
+     "Arbeitslosigkeit": 0.84,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 1.12,
-    "dividende_erw_eur": 76,
-    "dividende_erw_kaufkraft_de": 72,
+    "dividende_pct_bip": -1.12,
+    "dividende_erw_eur": -76,
+    "dividende_erw_kaufkraft_de": -73,
     "grundbedarf_monat_eur": 1189
    },
    "altlasten": {
-    "z_2028": 9.21,
-    "beitrag_pct_bip": 4.99,
-    "zuschlag_pct": 15.4,
-    "spitze": 145
+    "z_2028": 9.91,
+    "beitrag_pct_bip": 5.29,
+    "zuschlag_pct": 17.7,
+    "spitze": 153
    },
-   "gesamtlast_2028": 37.3
+   "gesamtlast_2028": 35.2
   },
   "FR": {
    "name": "Frankreich",
@@ -586,46 +586,46 @@
    "preisniveau_de_100": 94,
    "abgabenquote_heute": 45.3,
    "z2028": {
-    "deckung_pct_bip": 32.8,
-    "netz_pct_bip": 11.0,
+    "deckung_pct_bip": 30.6,
+    "netz_pct_bip": 11.15,
     "netz": {
      "Gesundheit": 8.36,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.37,
-     "Arbeitslosigkeit": 0.72,
+     "Invalidität": 0.42,
+     "Arbeitslosigkeit": 0.81,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 5.15,
-    "dividende_erw_eur": 215,
-    "dividende_erw_kaufkraft_de": 228,
+    "dividende_pct_bip": 2.69,
+    "dividende_erw_eur": 112,
+    "dividende_erw_kaufkraft_de": 119,
     "grundbedarf_monat_eur": 971
    },
    "dauer": {
-    "deckung_pct_bip": 31.52,
-    "netz_pct_bip": 13.25,
+    "deckung_pct_bip": 29.96,
+    "netz_pct_bip": 13.52,
     "netz": {
      "Gesundheit": 8.63,
      "Pflege": 1.41,
-     "Mindestrente": 1.44,
-     "Invalidität": 0.37,
-     "Arbeitslosigkeit": 0.71,
+     "Mindestrente": 1.6,
+     "Invalidität": 0.41,
+     "Arbeitslosigkeit": 0.78,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 0.52,
-    "dividende_erw_eur": 31,
-    "dividende_erw_kaufkraft_de": 32,
+    "dividende_pct_bip": -1.43,
+    "dividende_erw_eur": -84,
+    "dividende_erw_kaufkraft_de": -88,
     "grundbedarf_monat_eur": 1075
    },
    "altlasten": {
-    "z_2028": 11.55,
-    "beitrag_pct_bip": 6.36,
-    "zuschlag_pct": 19.4,
-    "spitze": 187
+    "z_2028": 12.13,
+    "beitrag_pct_bip": 6.62,
+    "zuschlag_pct": 21.6,
+    "spitze": 194
    },
-   "gesamtlast_2028": 39.2
+   "gesamtlast_2028": 37.2
   },
   "HR": {
    "name": "Kroatien",
@@ -634,46 +634,46 @@
    "preisniveau_de_100": 63,
    "abgabenquote_heute": 38.6,
    "z2028": {
-    "deckung_pct_bip": 32.51,
-    "netz_pct_bip": 9.73,
+    "deckung_pct_bip": 30.14,
+    "netz_pct_bip": 9.82,
     "netz": {
      "Gesundheit": 7.31,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.23,
-     "Arbeitslosigkeit": 0.63,
+     "Invalidität": 0.25,
+     "Arbeitslosigkeit": 0.7,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 6.13,
-    "dividende_erw_eur": 133,
-    "dividende_erw_kaufkraft_de": 211,
+    "dividende_pct_bip": 3.55,
+    "dividende_erw_eur": 77,
+    "dividende_erw_kaufkraft_de": 122,
     "grundbedarf_monat_eur": 650
    },
    "dauer": {
-    "deckung_pct_bip": 31.24,
-    "netz_pct_bip": 12.46,
+    "deckung_pct_bip": 29.52,
+    "netz_pct_bip": 12.71,
     "netz": {
      "Gesundheit": 7.58,
      "Pflege": 1.41,
-     "Mindestrente": 1.95,
-     "Invalidität": 0.21,
-     "Arbeitslosigkeit": 0.6,
+     "Mindestrente": 2.13,
+     "Invalidität": 0.23,
+     "Arbeitslosigkeit": 0.66,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 1.03,
-    "dividende_erw_eur": 32,
-    "dividende_erw_kaufkraft_de": 50,
+    "dividende_pct_bip": -1.07,
+    "dividende_erw_eur": -33,
+    "dividende_erw_kaufkraft_de": -52,
     "grundbedarf_monat_eur": 719
    },
    "altlasten": {
-    "z_2028": 7.41,
-    "beitrag_pct_bip": 3.91,
-    "zuschlag_pct": 12.0,
-    "spitze": 112
+    "z_2028": 8.06,
+    "beitrag_pct_bip": 4.19,
+    "zuschlag_pct": 13.9,
+    "spitze": 119
    },
-   "gesamtlast_2028": 36.4
+   "gesamtlast_2028": 34.3
   },
   "HU": {
    "name": "Ungarn",
@@ -682,46 +682,46 @@
    "preisniveau_de_100": 61,
    "abgabenquote_heute": 35.3,
    "z2028": {
-    "deckung_pct_bip": 31.3,
-    "netz_pct_bip": 6.84,
+    "deckung_pct_bip": 28.55,
+    "netz_pct_bip": 6.95,
     "netz": {
      "Gesundheit": 4.46,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.29,
-     "Arbeitslosigkeit": 0.53,
+     "Invalidität": 0.33,
+     "Arbeitslosigkeit": 0.6,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 7.81,
-    "dividende_erw_eur": 165,
-    "dividende_erw_kaufkraft_de": 269,
+    "dividende_pct_bip": 4.83,
+    "dividende_erw_eur": 102,
+    "dividende_erw_kaufkraft_de": 166,
     "grundbedarf_monat_eur": 631
    },
    "dauer": {
-    "deckung_pct_bip": 30.08,
-    "netz_pct_bip": 9.19,
+    "deckung_pct_bip": 27.95,
+    "netz_pct_bip": 9.48,
     "netz": {
      "Gesundheit": 4.73,
      "Pflege": 1.41,
-     "Mindestrente": 1.59,
-     "Invalidität": 0.27,
-     "Arbeitslosigkeit": 0.49,
+     "Mindestrente": 1.79,
+     "Invalidität": 0.3,
+     "Arbeitslosigkeit": 0.55,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 3.14,
-    "dividende_erw_eur": 93,
-    "dividende_erw_kaufkraft_de": 151,
+    "dividende_pct_bip": 0.6,
+    "dividende_erw_eur": 18,
+    "dividende_erw_kaufkraft_de": 29,
     "grundbedarf_monat_eur": 698
    },
    "altlasten": {
-    "z_2028": 5.82,
-    "beitrag_pct_bip": 3.41,
-    "zuschlag_pct": 10.9,
-    "spitze": 104
+    "z_2028": 6.5,
+    "beitrag_pct_bip": 3.7,
+    "zuschlag_pct": 13.0,
+    "spitze": 111
    },
-   "gesamtlast_2028": 34.7
+   "gesamtlast_2028": 32.2
   },
   "IE": {
    "name": "Irland",
@@ -730,46 +730,46 @@
    "preisniveau_de_100": 108,
    "abgabenquote_heute": 22.4,
    "z2028": {
-    "deckung_pct_bip": 28.64,
-    "netz_pct_bip": 6.56,
+    "deckung_pct_bip": 24.42,
+    "netz_pct_bip": 6.7,
     "netz": {
      "Gesundheit": 4.84,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.04,
-     "Arbeitslosigkeit": 0.13,
+     "Invalidität": 0.07,
+     "Arbeitslosigkeit": 0.23,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 5.43,
-    "dividende_erw_eur": 553,
-    "dividende_erw_kaufkraft_de": 512,
+    "dividende_pct_bip": 0.95,
+    "dividende_erw_eur": 97,
+    "dividende_erw_kaufkraft_de": 90,
     "grundbedarf_monat_eur": 1112
    },
    "dauer": {
-    "deckung_pct_bip": 27.52,
-    "netz_pct_bip": 7.81,
+    "deckung_pct_bip": 23.91,
+    "netz_pct_bip": 8.17,
     "netz": {
      "Gesundheit": 5.11,
      "Pflege": 1.41,
-     "Mindestrente": 0.39,
-     "Invalidität": 0.05,
-     "Arbeitslosigkeit": 0.15,
+     "Mindestrente": 0.62,
+     "Invalidität": 0.08,
+     "Arbeitslosigkeit": 0.25,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 1.96,
-    "dividende_erw_eur": 280,
-    "dividende_erw_kaufkraft_de": 259,
+    "dividende_pct_bip": -2.14,
+    "dividende_erw_eur": -305,
+    "dividende_erw_kaufkraft_de": -282,
     "grundbedarf_monat_eur": 1231
    },
    "altlasten": {
-    "z_2028": 2.41,
-    "beitrag_pct_bip": 1.5,
-    "zuschlag_pct": 5.2,
-    "spitze": 48
+    "z_2028": 3.16,
+    "beitrag_pct_bip": 1.83,
+    "zuschlag_pct": 7.5,
+    "spitze": 56
    },
-   "gesamtlast_2028": 30.1
+   "gesamtlast_2028": 26.2
   },
   "IS": {
    "name": "Island",
@@ -778,46 +778,46 @@
    "preisniveau_de_100": 132,
    "abgabenquote_heute": 36.9,
    "z2028": {
-    "deckung_pct_bip": 32.07,
-    "netz_pct_bip": 9.74,
+    "deckung_pct_bip": 29.81,
+    "netz_pct_bip": 9.84,
     "netz": {
      "Gesundheit": 7.69,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.27,
-     "Arbeitslosigkeit": 0.23,
+     "Invalidität": 0.32,
+     "Arbeitslosigkeit": 0.27,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 5.68,
-    "dividende_erw_eur": 441,
-    "dividende_erw_kaufkraft_de": 335,
+    "dividende_pct_bip": 3.2,
+    "dividende_erw_eur": 248,
+    "dividende_erw_kaufkraft_de": 189,
     "grundbedarf_monat_eur": 1353
    },
    "dauer": {
-    "deckung_pct_bip": 30.82,
-    "netz_pct_bip": 11.27,
+    "deckung_pct_bip": 29.19,
+    "netz_pct_bip": 11.47,
     "netz": {
      "Gesundheit": 7.96,
      "Pflege": 1.41,
-     "Mindestrente": 0.7,
-     "Invalidität": 0.27,
-     "Arbeitslosigkeit": 0.23,
+     "Mindestrente": 0.81,
+     "Invalidität": 0.32,
+     "Arbeitslosigkeit": 0.27,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 1.79,
-    "dividende_erw_eur": 195,
-    "dividende_erw_kaufkraft_de": 148,
+    "dividende_pct_bip": -0.15,
+    "dividende_erw_eur": -16,
+    "dividende_erw_kaufkraft_de": -12,
     "grundbedarf_monat_eur": 1498
    },
    "altlasten": {
-    "z_2028": 2.07,
-    "beitrag_pct_bip": 1.62,
-    "zuschlag_pct": 5.1,
-    "spitze": 62
+    "z_2028": 2.49,
+    "beitrag_pct_bip": 1.81,
+    "zuschlag_pct": 6.1,
+    "spitze": 65
    },
-   "gesamtlast_2028": 33.7
+   "gesamtlast_2028": 31.6
   },
   "IT": {
    "name": "Italien",
@@ -826,46 +826,46 @@
    "preisniveau_de_100": 84,
    "abgabenquote_heute": 42.5,
    "z2028": {
-    "deckung_pct_bip": 33.2,
-    "netz_pct_bip": 8.45,
+    "deckung_pct_bip": 30.28,
+    "netz_pct_bip": 8.6,
     "netz": {
      "Gesundheit": 6.17,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.19,
-     "Arbeitslosigkeit": 0.53,
+     "Invalidität": 0.23,
+     "Arbeitslosigkeit": 0.65,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 8.09,
-    "dividende_erw_eur": 297,
-    "dividende_erw_kaufkraft_de": 355,
+    "dividende_pct_bip": 4.91,
+    "dividende_erw_eur": 180,
+    "dividende_erw_kaufkraft_de": 215,
     "grundbedarf_monat_eur": 862
    },
    "dauer": {
-    "deckung_pct_bip": 31.9,
-    "netz_pct_bip": 10.63,
+    "deckung_pct_bip": 29.65,
+    "netz_pct_bip": 11.01,
     "netz": {
      "Gesundheit": 6.44,
      "Pflege": 1.41,
-     "Mindestrente": 1.37,
-     "Invalidität": 0.19,
-     "Arbeitslosigkeit": 0.52,
+     "Mindestrente": 1.62,
+     "Invalidität": 0.22,
+     "Arbeitslosigkeit": 0.62,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 3.52,
-    "dividende_erw_eur": 181,
-    "dividende_erw_kaufkraft_de": 216,
+    "dividende_pct_bip": 0.77,
+    "dividende_erw_eur": 40,
+    "dividende_erw_kaufkraft_de": 47,
     "grundbedarf_monat_eur": 954
    },
    "altlasten": {
-    "z_2028": 11.72,
-    "beitrag_pct_bip": 6.7,
-    "zuschlag_pct": 20.2,
-    "spitze": 202
+    "z_2028": 12.56,
+    "beitrag_pct_bip": 7.06,
+    "zuschlag_pct": 23.3,
+    "spitze": 211
    },
-   "gesamtlast_2028": 39.9
+   "gesamtlast_2028": 37.3
   },
   "LT": {
    "name": "Litauen",
@@ -874,46 +874,46 @@
    "preisniveau_de_100": 69,
    "abgabenquote_heute": 33.3,
    "z2028": {
-    "deckung_pct_bip": 33.28,
-    "netz_pct_bip": 7.6,
+    "deckung_pct_bip": 30.71,
+    "netz_pct_bip": 7.79,
     "netz": {
      "Gesundheit": 4.94,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.46,
-     "Arbeitslosigkeit": 0.65,
+     "Invalidität": 0.54,
+     "Arbeitslosigkeit": 0.76,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 9.03,
-    "dividende_erw_eur": 244,
-    "dividende_erw_kaufkraft_de": 355,
+    "dividende_pct_bip": 6.15,
+    "dividende_erw_eur": 166,
+    "dividende_erw_kaufkraft_de": 242,
     "grundbedarf_monat_eur": 707
    },
    "dauer": {
-    "deckung_pct_bip": 31.98,
-    "netz_pct_bip": 9.57,
+    "deckung_pct_bip": 30.07,
+    "netz_pct_bip": 9.91,
     "netz": {
      "Gesundheit": 5.21,
      "Pflege": 1.41,
-     "Mindestrente": 1.22,
-     "Invalidität": 0.43,
-     "Arbeitslosigkeit": 0.61,
+     "Mindestrente": 1.4,
+     "Invalidität": 0.5,
+     "Arbeitslosigkeit": 0.7,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 4.66,
-    "dividende_erw_eur": 177,
-    "dividende_erw_kaufkraft_de": 257,
+    "dividende_pct_bip": 2.29,
+    "dividende_erw_eur": 87,
+    "dividende_erw_kaufkraft_de": 126,
     "grundbedarf_monat_eur": 783
    },
    "altlasten": {
-    "z_2028": 4.88,
-    "beitrag_pct_bip": 2.58,
-    "zuschlag_pct": 7.7,
-    "spitze": 74
+    "z_2028": 5.52,
+    "beitrag_pct_bip": 2.86,
+    "zuschlag_pct": 9.3,
+    "spitze": 81
    },
-   "gesamtlast_2028": 35.9
+   "gesamtlast_2028": 33.6
   },
   "LU": {
    "name": "Luxemburg",
@@ -922,46 +922,46 @@
    "preisniveau_de_100": 117,
    "abgabenquote_heute": 42.7,
    "z2028": {
-    "deckung_pct_bip": 29.69,
-    "netz_pct_bip": 6.88,
+    "deckung_pct_bip": 27.0,
+    "netz_pct_bip": 7.05,
     "netz": {
      "Gesundheit": 5.13,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.08,
-     "Arbeitslosigkeit": 0.11,
+     "Invalidität": 0.15,
+     "Arbeitslosigkeit": 0.22,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 6.17,
-    "dividende_erw_eur": 779,
-    "dividende_erw_kaufkraft_de": 667,
+    "dividende_pct_bip": 3.18,
+    "dividende_erw_eur": 402,
+    "dividende_erw_kaufkraft_de": 344,
     "grundbedarf_monat_eur": 1201
    },
    "dauer": {
-    "deckung_pct_bip": 28.53,
-    "netz_pct_bip": 8.05,
+    "deckung_pct_bip": 26.44,
+    "netz_pct_bip": 8.34,
     "netz": {
      "Gesundheit": 5.4,
      "Pflege": 1.41,
-     "Mindestrente": 0.27,
-     "Invalidität": 0.12,
-     "Arbeitslosigkeit": 0.16,
+     "Mindestrente": 0.41,
+     "Invalidität": 0.18,
+     "Arbeitslosigkeit": 0.25,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 2.73,
-    "dividende_erw_eur": 483,
-    "dividende_erw_kaufkraft_de": 414,
+    "dividende_pct_bip": 0.23,
+    "dividende_erw_eur": 40,
+    "dividende_erw_kaufkraft_de": 34,
     "grundbedarf_monat_eur": 1329
    },
    "altlasten": {
-    "z_2028": 6.3,
-    "beitrag_pct_bip": 3.06,
-    "zuschlag_pct": 10.3,
-    "spitze": 83
+    "z_2028": 6.79,
+    "beitrag_pct_bip": 3.27,
+    "zuschlag_pct": 12.1,
+    "spitze": 88
    },
-   "gesamtlast_2028": 32.8
+   "gesamtlast_2028": 30.3
   },
   "LV": {
    "name": "Lettland",
@@ -970,46 +970,46 @@
    "preisniveau_de_100": 68,
    "abgabenquote_heute": 35.5,
    "z2028": {
-    "deckung_pct_bip": 33.9,
-    "netz_pct_bip": 7.99,
+    "deckung_pct_bip": 31.63,
+    "netz_pct_bip": 8.14,
     "netz": {
      "Gesundheit": 5.13,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
+     "Invalidität": 0.51,
+     "Arbeitslosigkeit": 0.95,
+     "Waisen": 0.05,
+     "Härtefall": 0.65
+    },
+    "dividende_pct_bip": 6.72,
+    "dividende_erw_eur": 145,
+    "dividende_erw_kaufkraft_de": 213,
+    "grundbedarf_monat_eur": 698
+   },
+   "dauer": {
+    "deckung_pct_bip": 30.97,
+    "netz_pct_bip": 10.68,
+    "netz": {
+     "Gesundheit": 5.4,
+     "Pflege": 1.41,
+     "Mindestrente": 1.86,
      "Invalidität": 0.46,
      "Arbeitslosigkeit": 0.85,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 9.26,
-    "dividende_erw_eur": 199,
-    "dividende_erw_kaufkraft_de": 294,
-    "grundbedarf_monat_eur": 698
-   },
-   "dauer": {
-    "deckung_pct_bip": 32.57,
-    "netz_pct_bip": 10.41,
-    "netz": {
-     "Gesundheit": 5.4,
-     "Pflege": 1.41,
-     "Mindestrente": 1.7,
-     "Invalidität": 0.42,
-     "Arbeitslosigkeit": 0.78,
-     "Waisen": 0.05,
-     "Härtefall": 0.65
-    },
-    "dividende_pct_bip": 4.42,
-    "dividende_erw_eur": 133,
-    "dividende_erw_kaufkraft_de": 197,
+    "dividende_pct_bip": 2.42,
+    "dividende_erw_eur": 73,
+    "dividende_erw_kaufkraft_de": 108,
     "grundbedarf_monat_eur": 772
    },
    "altlasten": {
-    "z_2028": 5.93,
-    "beitrag_pct_bip": 3.13,
-    "zuschlag_pct": 9.2,
-    "spitze": 90
+    "z_2028": 6.52,
+    "beitrag_pct_bip": 3.39,
+    "zuschlag_pct": 10.7,
+    "spitze": 96
    },
-   "gesamtlast_2028": 37.0
+   "gesamtlast_2028": 35.0
   },
   "MT": {
    "name": "Malta",
@@ -1018,46 +1018,46 @@
    "preisniveau_de_100": 81,
    "abgabenquote_heute": 29.3,
    "z2028": {
-    "deckung_pct_bip": 32.07,
-    "netz_pct_bip": 6.58,
+    "deckung_pct_bip": 28.86,
+    "netz_pct_bip": 6.66,
     "netz": {
      "Gesundheit": 4.75,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.07,
-     "Arbeitslosigkeit": 0.21,
+     "Invalidität": 0.09,
+     "Arbeitslosigkeit": 0.27,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 8.84,
-    "dividende_erw_eur": 351,
-    "dividende_erw_kaufkraft_de": 431,
+    "dividende_pct_bip": 5.43,
+    "dividende_erw_eur": 216,
+    "dividende_erw_kaufkraft_de": 265,
     "grundbedarf_monat_eur": 839
    },
    "dauer": {
-    "deckung_pct_bip": 30.82,
-    "netz_pct_bip": 8.21,
+    "deckung_pct_bip": 28.26,
+    "netz_pct_bip": 8.48,
     "netz": {
      "Gesundheit": 5.02,
      "Pflege": 1.41,
-     "Mindestrente": 0.82,
-     "Invalidität": 0.07,
-     "Arbeitslosigkeit": 0.2,
+     "Mindestrente": 1.02,
+     "Invalidität": 0.09,
+     "Arbeitslosigkeit": 0.25,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 4.86,
-    "dividende_erw_eur": 270,
-    "dividende_erw_kaufkraft_de": 332,
+    "dividende_pct_bip": 1.9,
+    "dividende_erw_eur": 106,
+    "dividende_erw_kaufkraft_de": 130,
     "grundbedarf_monat_eur": 928
    },
    "altlasten": {
-    "z_2028": 4.98,
-    "beitrag_pct_bip": 2.71,
-    "zuschlag_pct": 8.5,
-    "spitze": 79
+    "z_2028": 5.67,
+    "beitrag_pct_bip": 3.01,
+    "zuschlag_pct": 10.4,
+    "spitze": 87
    },
-   "gesamtlast_2028": 34.8
+   "gesamtlast_2028": 31.9
   },
   "NL": {
    "name": "Niederlande",
@@ -1066,46 +1066,46 @@
    "preisniveau_de_100": 100,
    "abgabenquote_heute": 39.4,
    "z2028": {
-    "deckung_pct_bip": 31.74,
-    "netz_pct_bip": 8.84,
+    "deckung_pct_bip": 29.01,
+    "netz_pct_bip": 9.0,
     "netz": {
      "Gesundheit": 6.74,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.34,
-     "Arbeitslosigkeit": 0.21,
+     "Invalidität": 0.43,
+     "Arbeitslosigkeit": 0.27,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 6.24,
-    "dividende_erw_eur": 379,
-    "dividende_erw_kaufkraft_de": 380,
+    "dividende_pct_bip": 3.24,
+    "dividende_erw_eur": 197,
+    "dividende_erw_kaufkraft_de": 197,
     "grundbedarf_monat_eur": 1027
    },
    "dauer": {
-    "deckung_pct_bip": 30.5,
-    "netz_pct_bip": 10.55,
+    "deckung_pct_bip": 28.4,
+    "netz_pct_bip": 10.88,
     "netz": {
      "Gesundheit": 7.01,
      "Pflege": 1.41,
-     "Mindestrente": 0.86,
-     "Invalidität": 0.35,
-     "Arbeitslosigkeit": 0.22,
+     "Mindestrente": 1.05,
+     "Invalidität": 0.43,
+     "Arbeitslosigkeit": 0.27,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 2.19,
-    "dividende_erw_eur": 187,
-    "dividende_erw_kaufkraft_de": 187,
+    "dividende_pct_bip": -0.35,
+    "dividende_erw_eur": -30,
+    "dividende_erw_kaufkraft_de": -30,
     "grundbedarf_monat_eur": 1136
    },
    "altlasten": {
-    "z_2028": 4.59,
-    "beitrag_pct_bip": 2.52,
-    "zuschlag_pct": 7.9,
-    "spitze": 74
+    "z_2028": 5.26,
+    "beitrag_pct_bip": 2.81,
+    "zuschlag_pct": 9.7,
+    "spitze": 81
    },
-   "gesamtlast_2028": 34.3
+   "gesamtlast_2028": 31.8
   },
   "NO": {
    "name": "Norwegen",
@@ -1114,46 +1114,46 @@
    "preisniveau_de_100": 112,
    "abgabenquote_heute": 39.2,
    "z2028": {
-    "deckung_pct_bip": 30.64,
-    "netz_pct_bip": 8.75,
+    "deckung_pct_bip": 27.36,
+    "netz_pct_bip": 8.97,
     "netz": {
      "Gesundheit": 6.65,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.36,
-     "Arbeitslosigkeit": 0.19,
+     "Invalidität": 0.5,
+     "Arbeitslosigkeit": 0.27,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 5.24,
-    "dividende_erw_eur": 426,
-    "dividende_erw_kaufkraft_de": 382,
+    "dividende_pct_bip": 1.62,
+    "dividende_erw_eur": 132,
+    "dividende_erw_kaufkraft_de": 118,
     "grundbedarf_monat_eur": 1148
    },
    "dauer": {
-    "deckung_pct_bip": 29.44,
-    "netz_pct_bip": 10.31,
+    "deckung_pct_bip": 26.79,
+    "netz_pct_bip": 10.73,
     "netz": {
      "Gesundheit": 6.92,
      "Pflege": 1.41,
-     "Mindestrente": 0.69,
-     "Invalidität": 0.39,
-     "Arbeitslosigkeit": 0.21,
+     "Mindestrente": 0.91,
+     "Invalidität": 0.52,
+     "Arbeitslosigkeit": 0.28,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 1.38,
-    "dividende_erw_eur": 157,
-    "dividende_erw_kaufkraft_de": 141,
+    "dividende_pct_bip": -1.81,
+    "dividende_erw_eur": -207,
+    "dividende_erw_kaufkraft_de": -185,
     "grundbedarf_monat_eur": 1270
    },
    "altlasten": {
-    "z_2028": 6.2,
-    "beitrag_pct_bip": 3.22,
-    "zuschlag_pct": 10.5,
-    "spitze": 91
+    "z_2028": 6.94,
+    "beitrag_pct_bip": 3.55,
+    "zuschlag_pct": 13.0,
+    "spitze": 99
    },
-   "gesamtlast_2028": 33.9
+   "gesamtlast_2028": 30.9
   },
   "PL": {
    "name": "Polen",
@@ -1162,46 +1162,46 @@
    "preisniveau_de_100": 65,
    "abgabenquote_heute": 37.6,
    "z2028": {
-    "deckung_pct_bip": 33.16,
-    "netz_pct_bip": 7.54,
+    "deckung_pct_bip": 30.26,
+    "netz_pct_bip": 7.63,
     "netz": {
      "Gesundheit": 5.42,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.27,
-     "Arbeitslosigkeit": 0.31,
+     "Invalidität": 0.31,
+     "Arbeitslosigkeit": 0.36,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 8.96,
-    "dividende_erw_eur": 205,
-    "dividende_erw_kaufkraft_de": 317,
+    "dividende_pct_bip": 5.86,
+    "dividende_erw_eur": 134,
+    "dividende_erw_kaufkraft_de": 207,
     "grundbedarf_monat_eur": 665
    },
    "dauer": {
-    "deckung_pct_bip": 31.86,
-    "netz_pct_bip": 9.76,
+    "deckung_pct_bip": 29.63,
+    "netz_pct_bip": 10.04,
     "netz": {
      "Gesundheit": 5.68,
      "Pflege": 1.41,
-     "Mindestrente": 1.43,
-     "Invalidität": 0.25,
-     "Arbeitslosigkeit": 0.29,
+     "Mindestrente": 1.64,
+     "Invalidität": 0.28,
+     "Arbeitslosigkeit": 0.33,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 4.35,
-    "dividende_erw_eur": 139,
-    "dividende_erw_kaufkraft_de": 215,
+    "dividende_pct_bip": 1.72,
+    "dividende_erw_eur": 55,
+    "dividende_erw_kaufkraft_de": 85,
     "grundbedarf_monat_eur": 736
    },
    "altlasten": {
-    "z_2028": 7.97,
-    "beitrag_pct_bip": 4.12,
-    "zuschlag_pct": 12.4,
-    "spitze": 116
+    "z_2028": 8.66,
+    "beitrag_pct_bip": 4.42,
+    "zuschlag_pct": 14.6,
+    "spitze": 124
    },
-   "gesamtlast_2028": 37.3
+   "gesamtlast_2028": 34.7
   },
   "PT": {
    "name": "Portugal",
@@ -1210,46 +1210,46 @@
    "preisniveau_de_100": 69,
    "abgabenquote_heute": 37.0,
    "z2028": {
-    "deckung_pct_bip": 33.85,
-    "netz_pct_bip": 8.75,
+    "deckung_pct_bip": 31.52,
+    "netz_pct_bip": 8.86,
     "netz": {
      "Gesundheit": 6.37,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.16,
-     "Arbeitslosigkeit": 0.68,
+     "Invalidität": 0.18,
+     "Arbeitslosigkeit": 0.77,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 8.45,
-    "dividende_erw_eur": 213,
-    "dividende_erw_kaufkraft_de": 310,
+    "dividende_pct_bip": 5.88,
+    "dividende_erw_eur": 148,
+    "dividende_erw_kaufkraft_de": 216,
     "grundbedarf_monat_eur": 708
    },
    "dauer": {
-    "deckung_pct_bip": 32.53,
-    "netz_pct_bip": 11.22,
+    "deckung_pct_bip": 30.86,
+    "netz_pct_bip": 11.49,
     "netz": {
      "Gesundheit": 6.63,
      "Pflege": 1.41,
-     "Mindestrente": 1.68,
-     "Invalidität": 0.15,
-     "Arbeitslosigkeit": 0.65,
+     "Mindestrente": 1.87,
+     "Invalidität": 0.17,
+     "Arbeitslosigkeit": 0.72,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 3.56,
-    "dividende_erw_eur": 126,
-    "dividende_erw_kaufkraft_de": 183,
+    "dividende_pct_bip": 1.49,
+    "dividende_erw_eur": 53,
+    "dividende_erw_kaufkraft_de": 77,
     "grundbedarf_monat_eur": 784
    },
    "altlasten": {
-    "z_2028": 9.66,
-    "beitrag_pct_bip": 5.31,
-    "zuschlag_pct": 15.7,
-    "spitze": 156
+    "z_2028": 10.33,
+    "beitrag_pct_bip": 5.61,
+    "zuschlag_pct": 17.8,
+    "spitze": 163
    },
-   "gesamtlast_2028": 39.2
+   "gesamtlast_2028": 37.1
   },
   "RO": {
    "name": "Rumänien",
@@ -1258,46 +1258,46 @@
    "preisniveau_de_100": 52,
    "abgabenquote_heute": 28.8,
    "z2028": {
-    "deckung_pct_bip": 34.12,
-    "netz_pct_bip": 6.82,
+    "deckung_pct_bip": 31.14,
+    "netz_pct_bip": 6.94,
     "netz": {
      "Gesundheit": 4.56,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.17,
-     "Arbeitslosigkeit": 0.54,
+     "Invalidität": 0.19,
+     "Arbeitslosigkeit": 0.64,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 10.65,
-    "dividende_erw_eur": 194,
-    "dividende_erw_kaufkraft_de": 371,
+    "dividende_pct_bip": 7.43,
+    "dividende_erw_eur": 136,
+    "dividende_erw_kaufkraft_de": 259,
     "grundbedarf_monat_eur": 539
    },
    "dauer": {
-    "deckung_pct_bip": 32.79,
-    "netz_pct_bip": 8.87,
+    "deckung_pct_bip": 30.49,
+    "netz_pct_bip": 9.17,
     "netz": {
      "Gesundheit": 4.83,
      "Pflege": 1.41,
-     "Mindestrente": 1.28,
-     "Invalidität": 0.15,
-     "Arbeitslosigkeit": 0.49,
+     "Mindestrente": 1.49,
+     "Invalidität": 0.17,
+     "Arbeitslosigkeit": 0.57,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 6.17,
-    "dividende_erw_eur": 158,
-    "dividende_erw_kaufkraft_de": 302,
+    "dividende_pct_bip": 3.45,
+    "dividende_erw_eur": 88,
+    "dividende_erw_kaufkraft_de": 169,
     "grundbedarf_monat_eur": 596
    },
    "altlasten": {
-    "z_2028": 6.75,
-    "beitrag_pct_bip": 3.59,
-    "zuschlag_pct": 10.5,
-    "spitze": 103
+    "z_2028": 7.45,
+    "beitrag_pct_bip": 3.9,
+    "zuschlag_pct": 12.5,
+    "spitze": 111
    },
-   "gesamtlast_2028": 37.7
+   "gesamtlast_2028": 35.0
   },
   "SE": {
    "name": "Schweden",
@@ -1306,46 +1306,46 @@
    "preisniveau_de_100": 103,
    "abgabenquote_heute": 42.2,
    "z2028": {
-    "deckung_pct_bip": 30.32,
-    "netz_pct_bip": 9.74,
+    "deckung_pct_bip": 28.19,
+    "netz_pct_bip": 9.91,
     "netz": {
      "Gesundheit": 7.03,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.42,
-     "Arbeitslosigkeit": 0.74,
+     "Invalidität": 0.48,
+     "Arbeitslosigkeit": 0.85,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 3.93,
-    "dividende_erw_eur": 205,
-    "dividende_erw_kaufkraft_de": 199,
+    "dividende_pct_bip": 1.5,
+    "dividende_erw_eur": 79,
+    "dividende_erw_kaufkraft_de": 76,
     "grundbedarf_monat_eur": 1063
    },
    "dauer": {
-    "deckung_pct_bip": 29.14,
-    "netz_pct_bip": 11.85,
+    "deckung_pct_bip": 27.6,
+    "netz_pct_bip": 12.14,
     "netz": {
      "Gesundheit": 7.3,
      "Pflege": 1.41,
-     "Mindestrente": 1.28,
-     "Invalidität": 0.42,
-     "Arbeitslosigkeit": 0.74,
+     "Mindestrente": 1.43,
+     "Invalidität": 0.47,
+     "Arbeitslosigkeit": 0.83,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": -0.46,
-    "dividende_erw_eur": -34,
-    "dividende_erw_kaufkraft_de": -33,
+    "dividende_pct_bip": -2.41,
+    "dividende_erw_eur": -177,
+    "dividende_erw_kaufkraft_de": -171,
     "grundbedarf_monat_eur": 1176
    },
    "altlasten": {
-    "z_2028": 5.5,
-    "beitrag_pct_bip": 2.8,
-    "zuschlag_pct": 9.2,
-    "spitze": 78
+    "z_2028": 6.04,
+    "beitrag_pct_bip": 3.04,
+    "zuschlag_pct": 10.8,
+    "spitze": 84
    },
-   "gesamtlast_2028": 33.1
+   "gesamtlast_2028": 31.2
   },
   "SI": {
    "name": "Slowenien",
@@ -1354,46 +1354,46 @@
    "preisniveau_de_100": 76,
    "abgabenquote_heute": 38.8,
    "z2028": {
-    "deckung_pct_bip": 32.83,
-    "netz_pct_bip": 9.18,
+    "deckung_pct_bip": 30.47,
+    "netz_pct_bip": 9.28,
     "netz": {
      "Gesundheit": 6.93,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.34,
-     "Arbeitslosigkeit": 0.36,
+     "Invalidität": 0.38,
+     "Arbeitslosigkeit": 0.41,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 7.0,
-    "dividende_erw_eur": 217,
-    "dividende_erw_kaufkraft_de": 285,
+    "dividende_pct_bip": 4.42,
+    "dividende_erw_eur": 137,
+    "dividende_erw_kaufkraft_de": 180,
     "grundbedarf_monat_eur": 785
    },
    "dauer": {
-    "deckung_pct_bip": 31.54,
-    "netz_pct_bip": 11.42,
+    "deckung_pct_bip": 29.83,
+    "netz_pct_bip": 11.67,
     "netz": {
      "Gesundheit": 7.2,
      "Pflege": 1.41,
-     "Mindestrente": 1.44,
-     "Invalidität": 0.32,
-     "Arbeitslosigkeit": 0.35,
+     "Mindestrente": 1.61,
+     "Invalidität": 0.36,
+     "Arbeitslosigkeit": 0.39,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 2.37,
-    "dividende_erw_eur": 103,
-    "dividende_erw_kaufkraft_de": 135,
+    "dividende_pct_bip": 0.29,
+    "dividende_erw_eur": 13,
+    "dividende_erw_kaufkraft_de": 17,
     "grundbedarf_monat_eur": 869
    },
    "altlasten": {
-    "z_2028": 9.04,
-    "beitrag_pct_bip": 4.72,
-    "zuschlag_pct": 14.4,
-    "spitze": 134
+    "z_2028": 9.65,
+    "beitrag_pct_bip": 4.99,
+    "zuschlag_pct": 16.4,
+    "spitze": 141
    },
-   "gesamtlast_2028": 37.5
+   "gesamtlast_2028": 35.5
   },
   "SK": {
    "name": "Slowakei",
@@ -1402,59 +1402,59 @@
    "preisniveau_de_100": 70,
    "abgabenquote_heute": 36.0,
    "z2028": {
-    "deckung_pct_bip": 33.9,
-    "netz_pct_bip": 8.93,
+    "deckung_pct_bip": 30.97,
+    "netz_pct_bip": 9.09,
     "netz": {
      "Gesundheit": 6.27,
      "Pflege": 0.85,
      "Mindestrente": 0.0,
-     "Invalidität": 0.48,
-     "Arbeitslosigkeit": 0.63,
+     "Invalidität": 0.54,
+     "Arbeitslosigkeit": 0.72,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 8.32,
-    "dividende_erw_eur": 196,
-    "dividende_erw_kaufkraft_de": 279,
+    "dividende_pct_bip": 5.12,
+    "dividende_erw_eur": 120,
+    "dividende_erw_kaufkraft_de": 172,
     "grundbedarf_monat_eur": 721
    },
    "dauer": {
-    "deckung_pct_bip": 32.57,
-    "netz_pct_bip": 11.07,
+    "deckung_pct_bip": 30.33,
+    "netz_pct_bip": 11.39,
     "netz": {
      "Gesundheit": 6.54,
      "Pflege": 1.41,
-     "Mindestrente": 1.41,
-     "Invalidität": 0.44,
-     "Arbeitslosigkeit": 0.58,
+     "Mindestrente": 1.6,
+     "Invalidität": 0.49,
+     "Arbeitslosigkeit": 0.66,
      "Waisen": 0.05,
      "Härtefall": 0.65
     },
-    "dividende_pct_bip": 3.75,
-    "dividende_erw_eur": 124,
-    "dividende_erw_kaufkraft_de": 176,
+    "dividende_pct_bip": 1.06,
+    "dividende_erw_eur": 35,
+    "dividende_erw_kaufkraft_de": 50,
     "grundbedarf_monat_eur": 798
    },
    "altlasten": {
-    "z_2028": 6.25,
-    "beitrag_pct_bip": 3.43,
-    "zuschlag_pct": 10.1,
-    "spitze": 101
+    "z_2028": 6.89,
+    "beitrag_pct_bip": 3.71,
+    "zuschlag_pct": 12.0,
+    "spitze": 108
    },
-   "gesamtlast_2028": 37.3
+   "gesamtlast_2028": 34.7
   }
  },
  "raum": {
   "staaten": 30,
   "einwohner_mio": 465.6,
   "bip_mrd_eur_2024": 19515,
-  "dividende_erw_kaufkraft_de_2028": 326,
-  "dividende_erw_kaufkraft_de_dauer": 175,
-  "netz_pct_bip_2028": 9.16,
-  "altlasten_beitrag_pct_bip": 4.66,
+  "dividende_erw_kaufkraft_de_2028": 195,
+  "dividende_erw_kaufkraft_de_dauer": 23,
+  "netz_pct_bip_2028": 9.31,
+  "altlasten_beitrag_pct_bip": 4.95,
   "abgabenquote_heute": 39.8,
-  "deckung_pct_bip_2028": 32.82,
-  "zuschlag_pct": 14.2
+  "deckung_pct_bip_2028": 30.23,
+  "zuschlag_pct": 16.4
  },
  "quellen": {
   "gf07..gf1005": "Eurostat gov_10a_exp, S13, TE, PC_GDP, 2023 (SDMX-TSV, abgerufen 17.10.2026; DE, FR, SK vorläufig)",

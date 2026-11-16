@@ -15,6 +15,10 @@ import contextlib, importlib.util, io, json, tomllib
 from pathlib import Path
 
 W = Path(__file__).resolve().parent.parent
+# v4.97: Tarif Stand C aus systemvarianten.toml (Variante 33R): Sätze und Grundbedarf im Tarif (Beschluss 16.11.2026)
+_TC = next(s for s in tomllib.loads((W / "modell" / "systemvarianten.toml").read_text(encoding="utf-8"))["system"] if s["id"] == "33R")
+TARIF_C = [float(x) for x in _TC["einkommen_saetze"]]
+TARIF_GB_FAKTOR = _TC.get("grundbedarf_tarif", 12348.0) / 12348.0
 AGG = W / "daten" / "aggregate"
 P = tomllib.loads((W / "modell" / "laenderseiten.toml").read_text(encoding="utf-8"))
 spec = importlib.util.spec_from_file_location("mr", W / "modell" / "moeglichkeitsraum33.py")
@@ -113,7 +117,7 @@ def main():
                  deckung_delta_pct_bip=[round(x[j]["deckung_pct_bip"] - de[j]["deckung_pct_bip"], 3) for j in JAHRE],
                  grundbedarf_jahr_eur=round(x[2028]["grundbedarf_monat_eur"] * 12),
                  gemeinde_einw=round(G["formel_einw"] * f), gemeinde_kind=round(G["formel_kind"] * f), f_kopf=round(f, 4))
-        e["tarif_stufen"] = [round(e["grundbedarf_jahr_eur"] * m) for m in (1, 1.5, 2, 3)]
+        e["tarif_stufen"] = [round(e["grundbedarf_jahr_eur"] * TARIF_GB_FAKTOR * m) for m in (1, 1.5, 2, 3)]   # v4.97: Grundbedarf im Tarif
         if c != "EU30":
             d0 = P["schuld_2028"][c]
             e["fonds_eigen"] = fonds(c, d0)

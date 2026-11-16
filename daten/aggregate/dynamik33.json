@@ -11,29 +11,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 5.36,
-     "dividende_erw_eur2026": 294
+     "dividende_pct_bip": 2.99,
+     "dividende_erw_eur2026": 165
     },
     "2045": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 4.05,
-     "dividende_erw_eur2026": 247
+     "dividende_pct_bip": 1.91,
+     "dividende_erw_eur2026": 115
     },
     "2060": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 3.4,
-     "dividende_erw_eur2026": 239
+     "dividende_pct_bip": 1.27,
+     "dividende_erw_eur2026": 90
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.15,
+   "fondsbeitrag_naeherung_pct_bip": 5.44,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -44,29 +44,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.07,
-     "dividende_pct_bip": 5.43,
-     "dividende_erw_eur2026": 298
+     "dividende_pct_bip": 3.06,
+     "dividende_erw_eur2026": 169
     },
     "2045": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.18,
-     "dividende_pct_bip": 4.23,
-     "dividende_erw_eur2026": 258
+     "dividende_pct_bip": 2.09,
+     "dividende_erw_eur2026": 126
     },
     "2060": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.33,
-     "dividende_pct_bip": 3.73,
-     "dividende_erw_eur2026": 262
+     "dividende_pct_bip": 1.6,
+     "dividende_erw_eur2026": 113
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.15,
+   "fondsbeitrag_naeherung_pct_bip": 5.44,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -77,29 +77,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.005,
      "aufkommen_aenderung_33_pct_bip": 0.02,
-     "dividende_pct_bip": 5.38,
-     "dividende_erw_eur2026": 297
+     "dividende_pct_bip": 3.01,
+     "dividende_erw_eur2026": 167
     },
     "2045": {
      "bip_faktor": 1.01,
      "aufkommen_aenderung_33_pct_bip": 0.04,
-     "dividende_pct_bip": 4.09,
-     "dividende_erw_eur2026": 252
+     "dividende_pct_bip": 1.95,
+     "dividende_erw_eur2026": 119
     },
     "2060": {
      "bip_faktor": 1.016,
      "aufkommen_aenderung_33_pct_bip": 0.05,
-     "dividende_pct_bip": 3.45,
-     "dividende_erw_eur2026": 246
+     "dividende_pct_bip": 1.32,
+     "dividende_erw_eur2026": 95
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.11,
+   "fondsbeitrag_naeherung_pct_bip": 5.4,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -110,29 +110,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.005,
      "aufkommen_aenderung_33_pct_bip": 0.09,
-     "dividende_pct_bip": 5.45,
-     "dividende_erw_eur2026": 301
+     "dividende_pct_bip": 3.08,
+     "dividende_erw_eur2026": 171
     },
     "2045": {
      "bip_faktor": 1.01,
      "aufkommen_aenderung_33_pct_bip": 0.21,
-     "dividende_pct_bip": 4.26,
-     "dividende_erw_eur2026": 263
+     "dividende_pct_bip": 2.12,
+     "dividende_erw_eur2026": 129
     },
     "2060": {
      "bip_faktor": 1.016,
      "aufkommen_aenderung_33_pct_bip": 0.38,
-     "dividende_pct_bip": 3.78,
-     "dividende_erw_eur2026": 270
+     "dividende_pct_bip": 1.65,
+     "dividende_erw_eur2026": 119
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.11,
+   "fondsbeitrag_naeherung_pct_bip": 5.4,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -143,29 +143,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.021,
      "aufkommen_aenderung_33_pct_bip": 0.09,
-     "dividende_pct_bip": 5.45,
-     "dividende_erw_eur2026": 305
+     "dividende_pct_bip": 3.08,
+     "dividende_erw_eur2026": 173
     },
     "2045": {
      "bip_faktor": 1.044,
-     "aufkommen_aenderung_33_pct_bip": 0.17,
-     "dividende_pct_bip": 4.22,
-     "dividende_erw_eur2026": 269
+     "aufkommen_aenderung_33_pct_bip": 0.16,
+     "dividende_pct_bip": 2.07,
+     "dividende_erw_eur2026": 130
     },
     "2060": {
      "bip_faktor": 1.068,
-     "aufkommen_aenderung_33_pct_bip": 0.23,
-     "dividende_pct_bip": 3.63,
-     "dividende_erw_eur2026": 272
+     "aufkommen_aenderung_33_pct_bip": 0.22,
+     "dividende_pct_bip": 1.49,
+     "dividende_erw_eur2026": 113
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.98,
+   "fondsbeitrag_naeherung_pct_bip": 5.26,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -176,29 +176,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.021,
      "aufkommen_aenderung_33_pct_bip": 0.16,
-     "dividende_pct_bip": 5.52,
-     "dividende_erw_eur2026": 309
+     "dividende_pct_bip": 3.15,
+     "dividende_erw_eur2026": 178
     },
     "2045": {
      "bip_faktor": 1.044,
      "aufkommen_aenderung_33_pct_bip": 0.34,
-     "dividende_pct_bip": 4.39,
-     "dividende_erw_eur2026": 280
+     "dividende_pct_bip": 2.25,
+     "dividende_erw_eur2026": 141
     },
     "2060": {
      "bip_faktor": 1.068,
-     "aufkommen_aenderung_33_pct_bip": 0.56,
-     "dividende_pct_bip": 3.96,
-     "dividende_erw_eur2026": 297
+     "aufkommen_aenderung_33_pct_bip": 0.55,
+     "dividende_pct_bip": 1.82,
+     "dividende_erw_eur2026": 138
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.98,
+   "fondsbeitrag_naeherung_pct_bip": 5.26,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -209,29 +209,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.043,
      "aufkommen_aenderung_33_pct_bip": 0.17,
-     "dividende_pct_bip": 5.53,
-     "dividende_erw_eur2026": 316
+     "dividende_pct_bip": 3.16,
+     "dividende_erw_eur2026": 182
     },
     "2045": {
      "bip_faktor": 1.091,
      "aufkommen_aenderung_33_pct_bip": 0.32,
-     "dividende_pct_bip": 4.37,
-     "dividende_erw_eur2026": 291
+     "dividende_pct_bip": 2.23,
+     "dividende_erw_eur2026": 146
     },
     "2060": {
      "bip_faktor": 1.141,
      "aufkommen_aenderung_33_pct_bip": 0.49,
-     "dividende_pct_bip": 3.89,
-     "dividende_erw_eur2026": 312
+     "dividende_pct_bip": 1.76,
+     "dividende_erw_eur2026": 143
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.81,
+   "fondsbeitrag_naeherung_pct_bip": 5.08,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -242,29 +242,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.043,
      "aufkommen_aenderung_33_pct_bip": 0.24,
-     "dividende_pct_bip": 5.6,
-     "dividende_erw_eur2026": 320
+     "dividende_pct_bip": 3.23,
+     "dividende_erw_eur2026": 186
     },
     "2045": {
      "bip_faktor": 1.091,
      "aufkommen_aenderung_33_pct_bip": 0.5,
-     "dividende_pct_bip": 4.55,
-     "dividende_erw_eur2026": 303
+     "dividende_pct_bip": 2.41,
+     "dividende_erw_eur2026": 158
     },
     "2060": {
      "bip_faktor": 1.141,
      "aufkommen_aenderung_33_pct_bip": 0.82,
-     "dividende_pct_bip": 4.22,
-     "dividende_erw_eur2026": 339
+     "dividende_pct_bip": 2.09,
+     "dividende_erw_eur2026": 169
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.81,
+   "fondsbeitrag_naeherung_pct_bip": 5.08,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -275,29 +275,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.018,
      "aufkommen_aenderung_33_pct_bip": 0.08,
-     "dividende_pct_bip": 5.44,
-     "dividende_erw_eur2026": 304
+     "dividende_pct_bip": 3.07,
+     "dividende_erw_eur2026": 172
     },
     "2045": {
      "bip_faktor": 1.018,
      "aufkommen_aenderung_33_pct_bip": 0.07,
-     "dividende_pct_bip": 4.12,
-     "dividende_erw_eur2026": 256
+     "dividende_pct_bip": 1.98,
+     "dividende_erw_eur2026": 121
     },
     "2060": {
      "bip_faktor": 1.018,
      "aufkommen_aenderung_33_pct_bip": 0.06,
-     "dividende_pct_bip": 3.46,
-     "dividende_erw_eur2026": 248
+     "dividende_pct_bip": 1.33,
+     "dividende_erw_eur2026": 96
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.1,
+   "fondsbeitrag_naeherung_pct_bip": 5.39,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -308,29 +308,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.018,
      "aufkommen_aenderung_33_pct_bip": 0.15,
-     "dividende_pct_bip": 5.51,
-     "dividende_erw_eur2026": 308
+     "dividende_pct_bip": 3.14,
+     "dividende_erw_eur2026": 176
     },
     "2045": {
      "bip_faktor": 1.018,
      "aufkommen_aenderung_33_pct_bip": 0.24,
-     "dividende_pct_bip": 4.29,
-     "dividende_erw_eur2026": 267
+     "dividende_pct_bip": 2.15,
+     "dividende_erw_eur2026": 132
     },
     "2060": {
      "bip_faktor": 1.018,
      "aufkommen_aenderung_33_pct_bip": 0.39,
-     "dividende_pct_bip": 3.79,
-     "dividende_erw_eur2026": 272
+     "dividende_pct_bip": 1.66,
+     "dividende_erw_eur2026": 120
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.1,
+   "fondsbeitrag_naeherung_pct_bip": 5.39,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -341,29 +341,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.023,
      "aufkommen_aenderung_33_pct_bip": 0.09,
-     "dividende_pct_bip": 5.45,
-     "dividende_erw_eur2026": 306
+     "dividende_pct_bip": 3.08,
+     "dividende_erw_eur2026": 174
     },
     "2045": {
      "bip_faktor": 1.029,
-     "aufkommen_aenderung_33_pct_bip": 0.11,
-     "dividende_pct_bip": 4.16,
-     "dividende_erw_eur2026": 261
+     "aufkommen_aenderung_33_pct_bip": 0.1,
+     "dividende_pct_bip": 2.01,
+     "dividende_erw_eur2026": 125
     },
     "2060": {
      "bip_faktor": 1.034,
      "aufkommen_aenderung_33_pct_bip": 0.12,
-     "dividende_pct_bip": 3.52,
-     "dividende_erw_eur2026": 256
+     "dividende_pct_bip": 1.39,
+     "dividende_erw_eur2026": 102
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.06,
+   "fondsbeitrag_naeherung_pct_bip": 5.35,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -374,29 +374,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.023,
      "aufkommen_aenderung_33_pct_bip": 0.17,
-     "dividende_pct_bip": 5.53,
-     "dividende_erw_eur2026": 310
+     "dividende_pct_bip": 3.16,
+     "dividende_erw_eur2026": 178
     },
     "2045": {
      "bip_faktor": 1.029,
      "aufkommen_aenderung_33_pct_bip": 0.28,
-     "dividende_pct_bip": 4.33,
-     "dividende_erw_eur2026": 272
+     "dividende_pct_bip": 2.19,
+     "dividende_erw_eur2026": 136
     },
     "2060": {
      "bip_faktor": 1.034,
      "aufkommen_aenderung_33_pct_bip": 0.45,
-     "dividende_pct_bip": 3.85,
-     "dividende_erw_eur2026": 280
+     "dividende_pct_bip": 1.72,
+     "dividende_erw_eur2026": 126
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.06,
+   "fondsbeitrag_naeherung_pct_bip": 5.35,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -407,29 +407,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.04,
      "aufkommen_aenderung_33_pct_bip": 0.16,
-     "dividende_pct_bip": 5.52,
-     "dividende_erw_eur2026": 315
+     "dividende_pct_bip": 3.15,
+     "dividende_erw_eur2026": 181
     },
     "2045": {
      "bip_faktor": 1.064,
      "aufkommen_aenderung_33_pct_bip": 0.23,
-     "dividende_pct_bip": 4.28,
-     "dividende_erw_eur2026": 278
+     "dividende_pct_bip": 2.14,
+     "dividende_erw_eur2026": 137
     },
     "2060": {
      "bip_faktor": 1.088,
      "aufkommen_aenderung_33_pct_bip": 0.34,
-     "dividende_pct_bip": 3.74,
-     "dividende_erw_eur2026": 286
+     "dividende_pct_bip": 1.61,
+     "dividende_erw_eur2026": 124
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.93,
+   "fondsbeitrag_naeherung_pct_bip": 5.21,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -440,29 +440,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.04,
      "aufkommen_aenderung_33_pct_bip": 0.23,
-     "dividende_pct_bip": 5.59,
-     "dividende_erw_eur2026": 319
+     "dividende_pct_bip": 3.22,
+     "dividende_erw_eur2026": 185
     },
     "2045": {
      "bip_faktor": 1.064,
-     "aufkommen_aenderung_33_pct_bip": 0.41,
-     "dividende_pct_bip": 4.46,
-     "dividende_erw_eur2026": 289
+     "aufkommen_aenderung_33_pct_bip": 0.4,
+     "dividende_pct_bip": 2.31,
+     "dividende_erw_eur2026": 148
     },
     "2060": {
      "bip_faktor": 1.088,
      "aufkommen_aenderung_33_pct_bip": 0.67,
-     "dividende_pct_bip": 4.07,
-     "dividende_erw_eur2026": 311
+     "dividende_pct_bip": 1.94,
+     "dividende_erw_eur2026": 149
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.93,
+   "fondsbeitrag_naeherung_pct_bip": 5.21,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -473,29 +473,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.062,
      "aufkommen_aenderung_33_pct_bip": 0.24,
-     "dividende_pct_bip": 5.6,
-     "dividende_erw_eur2026": 326
+     "dividende_pct_bip": 3.23,
+     "dividende_erw_eur2026": 189
     },
     "2045": {
      "bip_faktor": 1.111,
-     "aufkommen_aenderung_33_pct_bip": 0.42,
-     "dividende_pct_bip": 4.47,
-     "dividende_erw_eur2026": 303
+     "aufkommen_aenderung_33_pct_bip": 0.41,
+     "dividende_pct_bip": 2.32,
+     "dividende_erw_eur2026": 155
     },
     "2060": {
      "bip_faktor": 1.162,
      "aufkommen_aenderung_33_pct_bip": 0.55,
-     "dividende_pct_bip": 3.95,
-     "dividende_erw_eur2026": 323
+     "dividende_pct_bip": 1.82,
+     "dividende_erw_eur2026": 150
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.76,
+   "fondsbeitrag_naeherung_pct_bip": 5.03,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -506,29 +506,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.062,
      "aufkommen_aenderung_33_pct_bip": 0.31,
-     "dividende_pct_bip": 5.67,
-     "dividende_erw_eur2026": 331
+     "dividende_pct_bip": 3.3,
+     "dividende_erw_eur2026": 194
     },
     "2045": {
      "bip_faktor": 1.111,
      "aufkommen_aenderung_33_pct_bip": 0.59,
-     "dividende_pct_bip": 4.64,
-     "dividende_erw_eur2026": 314
+     "dividende_pct_bip": 2.5,
+     "dividende_erw_eur2026": 167
     },
     "2060": {
      "bip_faktor": 1.162,
      "aufkommen_aenderung_33_pct_bip": 0.88,
-     "dividende_pct_bip": 4.28,
-     "dividende_erw_eur2026": 350
+     "dividende_pct_bip": 2.15,
+     "dividende_erw_eur2026": 177
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.76,
+   "fondsbeitrag_naeherung_pct_bip": 5.03,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -539,29 +539,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.03,
      "aufkommen_aenderung_33_pct_bip": 0.12,
-     "dividende_pct_bip": 5.48,
-     "dividende_erw_eur2026": 310
+     "dividende_pct_bip": 3.11,
+     "dividende_erw_eur2026": 177
     },
     "2045": {
      "bip_faktor": 1.03,
-     "aufkommen_aenderung_33_pct_bip": 0.12,
-     "dividende_pct_bip": 4.17,
-     "dividende_erw_eur2026": 262
+     "aufkommen_aenderung_33_pct_bip": 0.11,
+     "dividende_pct_bip": 2.02,
+     "dividende_erw_eur2026": 126
     },
     "2060": {
      "bip_faktor": 1.03,
      "aufkommen_aenderung_33_pct_bip": 0.1,
-     "dividende_pct_bip": 3.5,
-     "dividende_erw_eur2026": 254
+     "dividende_pct_bip": 1.37,
+     "dividende_erw_eur2026": 100
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.07,
+   "fondsbeitrag_naeherung_pct_bip": 5.36,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -572,29 +572,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.03,
      "aufkommen_aenderung_33_pct_bip": 0.19,
-     "dividende_pct_bip": 5.55,
-     "dividende_erw_eur2026": 314
+     "dividende_pct_bip": 3.18,
+     "dividende_erw_eur2026": 181
     },
     "2045": {
      "bip_faktor": 1.03,
      "aufkommen_aenderung_33_pct_bip": 0.29,
-     "dividende_pct_bip": 4.34,
-     "dividende_erw_eur2026": 273
+     "dividende_pct_bip": 2.2,
+     "dividende_erw_eur2026": 136
     },
     "2060": {
      "bip_faktor": 1.03,
      "aufkommen_aenderung_33_pct_bip": 0.43,
-     "dividende_pct_bip": 3.83,
-     "dividende_erw_eur2026": 278
+     "dividende_pct_bip": 1.7,
+     "dividende_erw_eur2026": 124
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.07,
+   "fondsbeitrag_naeherung_pct_bip": 5.36,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -605,29 +605,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.035,
      "aufkommen_aenderung_33_pct_bip": 0.14,
-     "dividende_pct_bip": 5.5,
-     "dividende_erw_eur2026": 313
+     "dividende_pct_bip": 3.13,
+     "dividende_erw_eur2026": 179
     },
     "2045": {
      "bip_faktor": 1.041,
      "aufkommen_aenderung_33_pct_bip": 0.15,
-     "dividende_pct_bip": 4.2,
-     "dividende_erw_eur2026": 267
+     "dividende_pct_bip": 2.06,
+     "dividende_erw_eur2026": 129
     },
     "2060": {
      "bip_faktor": 1.046,
      "aufkommen_aenderung_33_pct_bip": 0.15,
-     "dividende_pct_bip": 3.55,
-     "dividende_erw_eur2026": 261
+     "dividende_pct_bip": 1.42,
+     "dividende_erw_eur2026": 105
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.03,
+   "fondsbeitrag_naeherung_pct_bip": 5.32,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -638,29 +638,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.035,
      "aufkommen_aenderung_33_pct_bip": 0.21,
-     "dividende_pct_bip": 5.57,
-     "dividende_erw_eur2026": 317
+     "dividende_pct_bip": 3.2,
+     "dividende_erw_eur2026": 183
     },
     "2045": {
      "bip_faktor": 1.041,
      "aufkommen_aenderung_33_pct_bip": 0.33,
-     "dividende_pct_bip": 4.38,
-     "dividende_erw_eur2026": 278
+     "dividende_pct_bip": 2.24,
+     "dividende_erw_eur2026": 140
     },
     "2060": {
      "bip_faktor": 1.046,
      "aufkommen_aenderung_33_pct_bip": 0.48,
-     "dividende_pct_bip": 3.88,
-     "dividende_erw_eur2026": 286
+     "dividende_pct_bip": 1.75,
+     "dividende_erw_eur2026": 130
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 5.03,
+   "fondsbeitrag_naeherung_pct_bip": 5.32,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -671,29 +671,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.052,
-     "aufkommen_aenderung_33_pct_bip": 0.21,
-     "dividende_pct_bip": 5.57,
-     "dividende_erw_eur2026": 321
+     "aufkommen_aenderung_33_pct_bip": 0.2,
+     "dividende_pct_bip": 3.19,
+     "dividende_erw_eur2026": 185
     },
     "2045": {
      "bip_faktor": 1.076,
      "aufkommen_aenderung_33_pct_bip": 0.27,
-     "dividende_pct_bip": 4.32,
-     "dividende_erw_eur2026": 284
+     "dividende_pct_bip": 2.18,
+     "dividende_erw_eur2026": 141
     },
     "2060": {
      "bip_faktor": 1.101,
      "aufkommen_aenderung_33_pct_bip": 0.37,
-     "dividende_pct_bip": 3.77,
-     "dividende_erw_eur2026": 292
+     "dividende_pct_bip": 1.64,
+     "dividende_erw_eur2026": 128
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.9,
+   "fondsbeitrag_naeherung_pct_bip": 5.18,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -704,29 +704,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.052,
      "aufkommen_aenderung_33_pct_bip": 0.28,
-     "dividende_pct_bip": 5.64,
-     "dividende_erw_eur2026": 325
+     "dividende_pct_bip": 3.27,
+     "dividende_erw_eur2026": 190
     },
     "2045": {
      "bip_faktor": 1.076,
      "aufkommen_aenderung_33_pct_bip": 0.45,
-     "dividende_pct_bip": 4.5,
-     "dividende_erw_eur2026": 295
+     "dividende_pct_bip": 2.36,
+     "dividende_erw_eur2026": 153
     },
     "2060": {
      "bip_faktor": 1.101,
      "aufkommen_aenderung_33_pct_bip": 0.7,
-     "dividende_pct_bip": 4.1,
-     "dividende_erw_eur2026": 318
+     "dividende_pct_bip": 1.97,
+     "dividende_erw_eur2026": 154
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.9,
+   "fondsbeitrag_naeherung_pct_bip": 5.18,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   },
   {
@@ -737,29 +737,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.074,
      "aufkommen_aenderung_33_pct_bip": 0.29,
-     "dividende_pct_bip": 5.65,
-     "dividende_erw_eur2026": 333
+     "dividende_pct_bip": 3.28,
+     "dividende_erw_eur2026": 194
     },
     "2045": {
      "bip_faktor": 1.124,
      "aufkommen_aenderung_33_pct_bip": 0.45,
-     "dividende_pct_bip": 4.5,
-     "dividende_erw_eur2026": 309
+     "dividende_pct_bip": 2.36,
+     "dividende_erw_eur2026": 160
     },
     "2060": {
      "bip_faktor": 1.175,
-     "aufkommen_aenderung_33_pct_bip": 0.59,
-     "dividende_pct_bip": 3.99,
-     "dividende_erw_eur2026": 330
+     "aufkommen_aenderung_33_pct_bip": 0.54,
+     "dividende_pct_bip": 1.81,
+     "dividende_erw_eur2026": 151
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.74,
+   "fondsbeitrag_naeherung_pct_bip": 5.0,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.0
   },
   {
@@ -770,29 +770,29 @@
     "2028": {
      "bip_faktor": 1.0,
      "aufkommen_aenderung_33_pct_bip": 0.0,
-     "dividende_pct_bip": 7.25,
-     "dividende_erw_eur2026": 373
+     "dividende_pct_bip": 4.6,
+     "dividende_erw_eur2026": 237
     },
     "2035": {
      "bip_faktor": 1.074,
      "aufkommen_aenderung_33_pct_bip": 0.36,
-     "dividende_pct_bip": 5.72,
-     "dividende_erw_eur2026": 337
+     "dividende_pct_bip": 3.35,
+     "dividende_erw_eur2026": 199
     },
     "2045": {
      "bip_faktor": 1.124,
      "aufkommen_aenderung_33_pct_bip": 0.63,
-     "dividende_pct_bip": 4.68,
-     "dividende_erw_eur2026": 321
+     "dividende_pct_bip": 2.54,
+     "dividende_erw_eur2026": 172
     },
     "2060": {
      "bip_faktor": 1.175,
-     "aufkommen_aenderung_33_pct_bip": 0.92,
-     "dividende_pct_bip": 4.32,
-     "dividende_erw_eur2026": 357
+     "aufkommen_aenderung_33_pct_bip": 0.87,
+     "dividende_pct_bip": 2.14,
+     "dividende_erw_eur2026": 178
     }
    },
-   "fondsbeitrag_naeherung_pct_bip": 4.74,
+   "fondsbeitrag_naeherung_pct_bip": 5.0,
    "heute_aufkommen_aenderung_2060_pct_bip": -0.64
   }
  ],

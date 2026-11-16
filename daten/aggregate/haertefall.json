@@ -50,117 +50,117 @@
  },
  "staaten": {
   "DE": {
-   "budget_pct_bip": 1.17,
+   "budget_pct_bip": 1.28,
    "band": {
     "untere": {
-     "boden": 0.2,
-     "h1": 0.04,
+     "boden": 0.48,
+     "h1": 0.08,
      "h2": 0.03,
      "h3": 0.027,
-     "summe": 0.3,
-     "reserve": 0.87,
+     "summe": 0.61,
+     "reserve": 0.67,
      "dividende_minus_monat": 0.0
     },
     "obere": {
-     "boden": 0.75,
+     "boden": 1.17,
      "h1": 0.09,
      "h2": 0.03,
      "h3": 0.027,
-     "summe": 0.89,
-     "reserve": 0.28,
-     "dividende_minus_monat": 0.0
+     "summe": 1.31,
+     "reserve": -0.03,
+     "dividende_minus_monat": 1.7
     }
    }
   },
   "FR": {
-   "budget_pct_bip": 1.74,
+   "budget_pct_bip": 1.88,
    "band": {
     "untere": {
-     "boden": 0.68,
-     "h1": 0.1,
+     "boden": 1.17,
+     "h1": 0.15,
      "h2": 0.03,
      "h3": 0.031,
-     "summe": 0.85,
-     "reserve": 0.89,
+     "summe": 1.38,
+     "reserve": 0.5,
      "dividende_minus_monat": 0.0
     },
     "obere": {
-     "boden": 1.46,
-     "h1": 0.1,
+     "boden": 1.95,
+     "h1": 0.15,
      "h2": 0.03,
      "h3": 0.031,
-     "summe": 1.63,
-     "reserve": 0.11,
-     "dividende_minus_monat": 0.0
+     "summe": 2.16,
+     "reserve": -0.28,
+     "dividende_minus_monat": 13.5
     }
    }
   },
   "IT": {
-   "budget_pct_bip": 1.37,
+   "budget_pct_bip": 1.53,
    "band": {
     "untere": {
-     "boden": 0.48,
-     "h1": 0.09,
+     "boden": 1.06,
+     "h1": 0.14,
      "h2": 0.03,
      "h3": 0.032,
-     "summe": 0.63,
-     "reserve": 0.74,
+     "summe": 1.27,
+     "reserve": 0.26,
      "dividende_minus_monat": 0.0
     },
     "obere": {
-     "boden": 1.16,
-     "h1": 0.1,
+     "boden": 1.74,
+     "h1": 0.14,
      "h2": 0.03,
      "h3": 0.032,
-     "summe": 1.32,
+     "summe": 1.95,
+     "reserve": -0.42,
+     "dividende_minus_monat": 15.7
+    }
+   }
+  },
+  "ES": {
+   "budget_pct_bip": 2.29,
+   "band": {
+    "untere": {
+     "boden": 1.31,
+     "h1": 0.17,
+     "h2": 0.03,
+     "h3": 0.034,
+     "summe": 1.54,
+     "reserve": 0.75,
+     "dividende_minus_monat": 0.0
+    },
+    "obere": {
+     "boden": 2.01,
+     "h1": 0.17,
+     "h2": 0.03,
+     "h3": 0.034,
+     "summe": 2.24,
      "reserve": 0.05,
      "dividende_minus_monat": 0.0
     }
    }
   },
-  "ES": {
-   "budget_pct_bip": 2.05,
-   "band": {
-    "untere": {
-     "boden": 0.71,
-     "h1": 0.12,
-     "h2": 0.03,
-     "h3": 0.034,
-     "summe": 0.89,
-     "reserve": 1.16,
-     "dividende_minus_monat": 0.0
-    },
-    "obere": {
-     "boden": 1.41,
-     "h1": 0.12,
-     "h2": 0.03,
-     "h3": 0.034,
-     "summe": 1.59,
-     "reserve": 0.46,
-     "dividende_minus_monat": 0.0
-    }
-   }
-  },
   "PL": {
-   "budget_pct_bip": 1.23,
+   "budget_pct_bip": 1.32,
    "band": {
     "untere": {
-     "boden": 0.65,
-     "h1": 0.12,
+     "boden": 1.26,
+     "h1": 0.19,
      "h2": 0.03,
      "h3": 0.039,
-     "summe": 0.84,
-     "reserve": 0.39,
-     "dividende_minus_monat": 0.0
+     "summe": 1.52,
+     "reserve": -0.2,
+     "dividende_minus_monat": 19.5
     },
     "obere": {
-     "boden": 1.54,
-     "h1": 0.12,
+     "boden": 2.16,
+     "h1": 0.19,
      "h2": 0.03,
      "h3": 0.039,
-     "summe": 1.73,
-     "reserve": -0.5,
-     "dividende_minus_monat": 49.0
+     "summe": 2.42,
+     "reserve": -1.1,
+     "dividende_minus_monat": 106.9
     }
    }
   }

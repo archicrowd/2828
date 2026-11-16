@@ -57,94 +57,94 @@
     "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0,
     "kurze Laufbahn, Rente in Höhe des Grundbedarfs (10 J., v4.71)": 0
    },
-   "anteil_mehr_pct": 33.8,
-   "mittel_monat": -114,
+   "anteil_mehr_pct": 19.3,
+   "mittel_monat": -191,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 37,
-    "mittel_monat": -18,
+    "anteil_mehr_pct": 17,
+    "mittel_monat": -80,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -251,
+    "mittel_monat": -359,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 65,
-    "mittel_monat": 42,
+    "anteil_mehr_pct": 42,
+    "mittel_monat": 4,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 57,
-     "mittel": 22
-    },
-    "35–40 J.": {
-     "mehr_pct": 49,
+     "mehr_pct": 37,
      "mittel": -22
     },
+    "35–40 J.": {
+     "mehr_pct": 29,
+     "mittel": -84
+    },
     "40–45 J.": {
-     "mehr_pct": 33,
-     "mittel": -81
+     "mehr_pct": 17,
+     "mittel": -154
     },
     "ab 45 J.": {
-     "mehr_pct": 13,
-     "mittel": -259
+     "mehr_pct": 5,
+     "mittel": -366
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 70,
+     "mittel": 37
     },
     "1–1,5 G": {
-     "mehr_pct": 60,
-     "mittel": 15
+     "mehr_pct": 14,
+     "mittel": -43
     },
     "1,5–2 G": {
      "mehr_pct": 0,
-     "mittel": -84
+     "mittel": -162
     },
     "2–3 G": {
      "mehr_pct": 0,
-     "mittel": -246
+     "mittel": -355
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -635
+     "mittel": -805
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 71,
+     "bis 1 G": 59,
+     "1–1,5 G": 19,
      "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 63,
+     "bis 1 G": 81,
+     "1–1,5 G": 16,
      "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 56,
+     "bis 1 G": 81,
+     "1–1,5 G": 10,
      "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 49,
+     "1–1,5 G": 10,
      "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": 0.0
   },
   {
@@ -172,94 +172,94 @@
     "kurze Laufbahn, niedrige Rente (20 J., 1,0 EP je Jahr)": 0,
     "kurze Laufbahn, Rente in Höhe des Grundbedarfs (10 J., v4.71)": 0
    },
-   "anteil_mehr_pct": 65.8,
-   "mittel_monat": -108,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -186,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 98,
-    "mittel_monat": 47,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -17,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
-    "anteil_mehr_pct": 7,
-    "mittel_monat": -168,
+    "anteil_mehr_pct": 0,
+    "mittel_monat": -280,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 77,
-    "mittel_monat": 57,
+    "anteil_mehr_pct": 50,
+    "mittel_monat": 18,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 77,
-     "mittel": 47
+     "mehr_pct": 44,
+     "mittel": 2
     },
     "35–40 J.": {
-     "mehr_pct": 84,
-     "mittel": 21
+     "mehr_pct": 36,
+     "mittel": -42
     },
     "40–45 J.": {
-     "mehr_pct": 74,
-     "mittel": -34
+     "mehr_pct": 21,
+     "mittel": -108
     },
     "ab 45 J.": {
-     "mehr_pct": 45,
-     "mittel": -307
+     "mehr_pct": 8,
+     "mittel": -414
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 70,
+     "mittel": 37
     },
     "1–1,5 G": {
-     "mehr_pct": 100,
-     "mittel": 55
+     "mehr_pct": 30,
+     "mittel": -5
     },
     "1,5–2 G": {
-     "mehr_pct": 100,
-     "mittel": 31
+     "mehr_pct": 0,
+     "mittel": -50
     },
     "2–3 G": {
-     "mehr_pct": 9,
-     "mittel": -153
+     "mehr_pct": 0,
+     "mittel": -266
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -1034
+     "mittel": -1192
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 7,
+     "bis 1 G": 59,
+     "1–1,5 G": 37,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 12,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 11,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 8,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.8,
    "gegen_E_mrd": 0.0
   },
   {
@@ -280,94 +280,94 @@
    "satz_oben": null,
    "freibetrag_45_jahre_monat": 1552,
    "je_jahr_monat": 34.5,
-   "anteil_mehr_pct": 45.1,
-   "mittel_monat": -112,
+   "anteil_mehr_pct": 22.4,
+   "mittel_monat": -189,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 68,
-    "mittel_monat": 23,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -41,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -330,
+    "mittel_monat": -434,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 59,
-    "mittel_monat": 36,
+    "anteil_mehr_pct": 41,
+    "mittel_monat": -2,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 52,
-     "mittel": 10
+     "mehr_pct": 36,
+     "mittel": -33
     },
     "35–40 J.": {
-     "mehr_pct": 61,
-     "mittel": -15
+     "mehr_pct": 36,
+     "mittel": -77
     },
     "40–45 J.": {
-     "mehr_pct": 53,
-     "mittel": -62
+     "mehr_pct": 21,
+     "mittel": -135
     },
     "ab 45 J.": {
-     "mehr_pct": 28,
-     "mittel": -260
+     "mehr_pct": 8,
+     "mittel": -368
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 65
+     "mehr_pct": 69,
+     "mittel": 35
     },
     "1–1,5 G": {
-     "mehr_pct": 87,
-     "mittel": 39
+     "mehr_pct": 25,
+     "mittel": -20
     },
     "1,5–2 G": {
-     "mehr_pct": 17,
-     "mittel": -49
+     "mehr_pct": 0,
+     "mittel": -128
     },
     "2–3 G": {
      "mehr_pct": 0,
-     "mittel": -246
+     "mittel": -355
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -735
+     "mittel": -902
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 60,
-     "1–1,5 G": 58,
+     "bis 1 G": 56,
+     "1–1,5 G": 20,
      "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 93,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
      "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 19,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 29,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": 0.0
   },
   {
@@ -388,94 +388,94 @@
    "satz_oben": null,
    "freibetrag_45_jahre_monat": 2070,
    "je_jahr_monat": 46.0,
-   "anteil_mehr_pct": 60.5,
-   "mittel_monat": -109,
+   "anteil_mehr_pct": 23.7,
+   "mittel_monat": -187,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 96,
-    "mittel_monat": 46,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -18,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -388,
+    "mittel_monat": -490,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 73,
-    "mittel_monat": 52,
+    "anteil_mehr_pct": 48,
+    "mittel_monat": 14,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 66,
-     "mittel": 26
+     "mehr_pct": 42,
+     "mittel": -17
     },
     "35–40 J.": {
-     "mehr_pct": 74,
-     "mittel": 1
+     "mehr_pct": 36,
+     "mittel": -62
     },
     "40–45 J.": {
-     "mehr_pct": 70,
-     "mittel": -46
+     "mehr_pct": 21,
+     "mittel": -120
     },
     "ab 45 J.": {
-     "mehr_pct": 45,
-     "mittel": -280
+     "mehr_pct": 8,
+     "mittel": -387
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 69,
+     "mittel": 36
     },
     "1–1,5 G": {
-     "mehr_pct": 98,
-     "mittel": 52
+     "mehr_pct": 29,
+     "mittel": -7
     },
     "1,5–2 G": {
-     "mehr_pct": 79,
-     "mittel": 11
+     "mehr_pct": 0,
+     "mittel": -69
     },
     "2–3 G": {
-     "mehr_pct": 4,
-     "mittel": -209
+     "mehr_pct": 0,
+     "mittel": -320
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -909
+     "mittel": -1071
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 91,
-     "1,5–2 G": 18,
+     "bis 1 G": 58,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 100,
-     "1,5–2 G": 54,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 91,
-     "2–3 G": 1,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 6,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": 0.0
   },
   {
@@ -496,94 +496,94 @@
    "satz_oben": 0.52,
    "freibetrag_45_jahre_monat": 2070,
    "je_jahr_monat": 46.0,
-   "anteil_mehr_pct": 61.5,
-   "mittel_monat": -109,
+   "anteil_mehr_pct": 23.8,
+   "mittel_monat": -187,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 97,
-    "mittel_monat": 47,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -18,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -331,
+    "mittel_monat": -436,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 75,
-    "mittel_monat": 53,
+    "anteil_mehr_pct": 48,
+    "mittel_monat": 15,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 68,
-     "mittel": 32
+     "mehr_pct": 42,
+     "mittel": -12
     },
     "35–40 J.": {
-     "mehr_pct": 76,
-     "mittel": 7
+     "mehr_pct": 36,
+     "mittel": -56
     },
     "40–45 J.": {
-     "mehr_pct": 71,
-     "mittel": -38
+     "mehr_pct": 21,
+     "mittel": -112
     },
     "ab 45 J.": {
-     "mehr_pct": 45,
-     "mittel": -290
+     "mehr_pct": 8,
+     "mittel": -397
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 70,
+     "mittel": 36
     },
     "1–1,5 G": {
-     "mehr_pct": 99,
-     "mittel": 53
+     "mehr_pct": 29,
+     "mittel": -7
     },
     "1,5–2 G": {
-     "mehr_pct": 82,
-     "mittel": 17
+     "mehr_pct": 0,
+     "mittel": -64
     },
     "2–3 G": {
-     "mehr_pct": 6,
-     "mittel": -166
+     "mehr_pct": 0,
+     "mittel": -278
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -989
+     "mittel": -1148
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 94,
-     "1,5–2 G": 27,
+     "bis 1 G": 58,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 100,
-     "1,5–2 G": 61,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 93,
-     "2–3 G": 2,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 8,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": -0.0
   },
   {
@@ -604,95 +604,95 @@
    "satz_oben": 0.545,
    "freibetrag_45_jahre_monat": 2070,
    "je_jahr_monat": 46.0,
-   "anteil_mehr_pct": 64.4,
-   "mittel_monat": -109,
+   "anteil_mehr_pct": 23.9,
+   "mittel_monat": -186,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 98,
-    "mittel_monat": 47,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -17,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -284,
+    "mittel_monat": -391,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 76,
-    "mittel_monat": 56,
+    "anteil_mehr_pct": 49,
+    "mittel_monat": 17,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 72,
-     "mittel": 39
+     "mehr_pct": 43,
+     "mittel": -5
     },
     "35–40 J.": {
-     "mehr_pct": 82,
-     "mittel": 18
+     "mehr_pct": 36,
+     "mittel": -46
     },
     "40–45 J.": {
-     "mehr_pct": 74,
-     "mittel": -33
+     "mehr_pct": 21,
+     "mittel": -107
     },
     "ab 45 J.": {
-     "mehr_pct": 45,
-     "mittel": -302
+     "mehr_pct": 8,
+     "mittel": -408
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 70,
+     "mittel": 37
     },
     "1–1,5 G": {
-     "mehr_pct": 100,
-     "mittel": 54
+     "mehr_pct": 29,
+     "mittel": -5
     },
     "1,5–2 G": {
-     "mehr_pct": 94,
-     "mittel": 26
+     "mehr_pct": 0,
+     "mittel": -55
     },
     "2–3 G": {
-     "mehr_pct": 8,
-     "mittel": -158
+     "mehr_pct": 0,
+     "mittel": -270
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -1019
+     "mittel": -1177
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 99,
-     "1,5–2 G": 56,
+     "bis 1 G": 58,
+     "1–1,5 G": 36,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 100,
-     "1,5–2 G": 94,
-     "2–3 G": 2,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 11,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 8,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
-   "gegen_E_mrd": -0.0
+   "entlastung_fonds_mrd": 24.7,
+   "gegen_E_mrd": 0.0
   },
   {
    "name": "B2/1-35 – wie B2/1, Freibetrag voll ab 35 Jahren",
@@ -712,94 +712,94 @@
    "satz_oben": 0.554,
    "freibetrag_45_jahre_monat": 2070,
    "je_jahr_monat": 46.0,
-   "anteil_mehr_pct": 65.4,
-   "mittel_monat": -108,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -186,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 98,
-    "mittel_monat": 47,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -17,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -215,
+    "mittel_monat": -325,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 77,
-    "mittel_monat": 57,
+    "anteil_mehr_pct": 49,
+    "mittel_monat": 18,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 75,
-     "mittel": 44
+     "mehr_pct": 43,
+     "mittel": 0
     },
     "35–40 J.": {
-     "mehr_pct": 84,
-     "mittel": 22
+     "mehr_pct": 36,
+     "mittel": -42
     },
     "40–45 J.": {
-     "mehr_pct": 74,
-     "mittel": -33
+     "mehr_pct": 21,
+     "mittel": -108
     },
     "ab 45 J.": {
-     "mehr_pct": 45,
-     "mittel": -306
+     "mehr_pct": 8,
+     "mittel": -412
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 70,
+     "mittel": 37
     },
     "1–1,5 G": {
-     "mehr_pct": 100,
-     "mittel": 54
+     "mehr_pct": 30,
+     "mittel": -5
     },
     "1,5–2 G": {
-     "mehr_pct": 98,
-     "mittel": 29
+     "mehr_pct": 0,
+     "mittel": -51
     },
     "2–3 G": {
-     "mehr_pct": 9,
-     "mittel": -154
+     "mehr_pct": 0,
+     "mittel": -267
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -1030
+     "mittel": -1188
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 100,
-     "1,5–2 G": 84,
+     "bis 1 G": 59,
+     "1–1,5 G": 37,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 12,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 11,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 8,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": -0.0
   },
   {
@@ -820,94 +820,94 @@
    "satz_oben": 0.554,
    "freibetrag_45_jahre_monat": 2070,
    "je_jahr_monat": 46.0,
-   "anteil_mehr_pct": 65.5,
-   "mittel_monat": -108,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -186,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 98,
-    "mittel_monat": 47,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -17,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -215,
+    "mittel_monat": -325,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 77,
-    "mittel_monat": 57,
+    "anteil_mehr_pct": 49,
+    "mittel_monat": 18,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 75,
-     "mittel": 44
+     "mehr_pct": 43,
+     "mittel": 0
     },
     "35–40 J.": {
-     "mehr_pct": 84,
-     "mittel": 22
+     "mehr_pct": 36,
+     "mittel": -42
     },
     "40–45 J.": {
-     "mehr_pct": 74,
-     "mittel": -33
+     "mehr_pct": 21,
+     "mittel": -108
     },
     "ab 45 J.": {
-     "mehr_pct": 45,
-     "mittel": -306
+     "mehr_pct": 8,
+     "mittel": -412
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 70,
+     "mittel": 37
     },
     "1–1,5 G": {
-     "mehr_pct": 100,
-     "mittel": 54
+     "mehr_pct": 30,
+     "mittel": -5
     },
     "1,5–2 G": {
-     "mehr_pct": 98,
-     "mittel": 29
+     "mehr_pct": 0,
+     "mittel": -51
     },
     "2–3 G": {
-     "mehr_pct": 9,
-     "mittel": -154
+     "mehr_pct": 0,
+     "mittel": -267
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -1030
+     "mittel": -1188
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 100,
-     "1,5–2 G": 84,
+     "bis 1 G": 59,
+     "1–1,5 G": 37,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 12,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 11,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 8,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": 0.0
   },
   {
@@ -928,94 +928,94 @@
    "satz_oben": 0.545,
    "freibetrag_45_jahre_monat": 2070,
    "je_jahr_monat": 46.0,
-   "anteil_mehr_pct": 64.5,
-   "mittel_monat": -108,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -186,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 98,
-    "mittel_monat": 47,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -17,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -284,
+    "mittel_monat": -391,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 77,
-    "mittel_monat": 56,
+    "anteil_mehr_pct": 49,
+    "mittel_monat": 18,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 72,
-     "mittel": 39
+     "mehr_pct": 43,
+     "mittel": -5
     },
     "35–40 J.": {
-     "mehr_pct": 82,
-     "mittel": 18
+     "mehr_pct": 36,
+     "mittel": -46
     },
     "40–45 J.": {
-     "mehr_pct": 74,
-     "mittel": -33
+     "mehr_pct": 21,
+     "mittel": -107
     },
     "ab 45 J.": {
-     "mehr_pct": 45,
-     "mittel": -302
+     "mehr_pct": 8,
+     "mittel": -408
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 70,
+     "mittel": 37
     },
     "1–1,5 G": {
-     "mehr_pct": 100,
-     "mittel": 54
+     "mehr_pct": 29,
+     "mittel": -5
     },
     "1,5–2 G": {
-     "mehr_pct": 94,
-     "mittel": 26
+     "mehr_pct": 0,
+     "mittel": -55
     },
     "2–3 G": {
-     "mehr_pct": 8,
-     "mittel": -158
+     "mehr_pct": 0,
+     "mittel": -270
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -1019
+     "mittel": -1177
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 99,
-     "1,5–2 G": 56,
+     "bis 1 G": 59,
+     "1–1,5 G": 36,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 100,
-     "1,5–2 G": 94,
-     "2–3 G": 2,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 11,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 8,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
+   "entlastung_fonds_mrd": 24.7,
    "gegen_E_mrd": 0.0
   },
   {
@@ -1036,95 +1036,95 @@
    "satz_oben": null,
    "freibetrag_45_jahre_monat": 2588,
    "je_jahr_monat": 57.5,
-   "anteil_mehr_pct": 67.4,
-   "mittel_monat": -108,
+   "anteil_mehr_pct": 24.0,
+   "mittel_monat": -186,
    "lange_laufbahn_bis_2G": {
-    "anteil_mehr_pct": 98,
-    "mittel_monat": 47,
+    "anteil_mehr_pct": 23,
+    "mittel_monat": -17,
     "anteil_personen_pct": 31
    },
    "kurze_laufbahn_ueber_2G": {
     "anteil_mehr_pct": 0,
-    "mittel_monat": -402,
+    "mittel_monat": -505,
     "anteil_personen_pct": 1
    },
    "kurze_laufbahn_bis_1_5G": {
-    "anteil_mehr_pct": 77,
-    "mittel_monat": 56,
+    "anteil_mehr_pct": 49,
+    "mittel_monat": 18,
     "anteil_personen_pct": 19
    },
    "nach_jahren": {
     "unter 35 J.": {
-     "mehr_pct": 74,
-     "mittel": 36
+     "mehr_pct": 43,
+     "mittel": -8
     },
     "35–40 J.": {
-     "mehr_pct": 85,
-     "mittel": 12
+     "mehr_pct": 36,
+     "mittel": -51
     },
     "40–45 J.": {
-     "mehr_pct": 77,
-     "mittel": -32
+     "mehr_pct": 21,
+     "mittel": -106
     },
     "ab 45 J.": {
-     "mehr_pct": 49,
-     "mittel": -297
+     "mehr_pct": 8,
+     "mittel": -404
     }
    },
    "nach_zusage": {
     "bis 1 G": {
-     "mehr_pct": 72,
-     "mittel": 66
+     "mehr_pct": 70,
+     "mittel": 37
     },
     "1–1,5 G": {
-     "mehr_pct": 100,
-     "mittel": 54
+     "mehr_pct": 29,
+     "mittel": -5
     },
     "1,5–2 G": {
-     "mehr_pct": 97,
-     "mittel": 27
+     "mehr_pct": 0,
+     "mittel": -53
     },
     "2–3 G": {
-     "mehr_pct": 20,
-     "mittel": -118
+     "mehr_pct": 0,
+     "mittel": -232
     },
     "über 3 G": {
      "mehr_pct": 0,
-     "mittel": -1086
+     "mittel": -1242
     }
    },
    "matrix_mehr_pct": {
     "unter 35 J.": {
-     "bis 1 G": 61,
-     "1–1,5 G": 99,
-     "1,5–2 G": 73,
+     "bis 1 G": 59,
+     "1–1,5 G": 36,
+     "1,5–2 G": 0,
      "2–3 G": 0,
      "über 3 G": 0
     },
     "35–40 J.": {
-     "bis 1 G": 83,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 16,
+     "bis 1 G": 81,
+     "1–1,5 G": 34,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "40–45 J.": {
-     "bis 1 G": 84,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 26,
+     "bis 1 G": 81,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     },
     "ab 45 J.": {
      "bis 1 G": 90,
-     "1–1,5 G": 100,
-     "1,5–2 G": 100,
-     "2–3 G": 21,
+     "1–1,5 G": 23,
+     "1,5–2 G": 0,
+     "2–3 G": 0,
      "über 3 G": 0
     }
    },
-   "entlastung_fonds_mrd": 24.9,
-   "gegen_E_mrd": -0.0
+   "entlastung_fonds_mrd": 24.7,
+   "gegen_E_mrd": 0.0
   }
  ],
  "hinweis": "Versicherungsjahre zugeschätzt (Annahme), kalibriert an Rentenversicherungsbericht 2025 Übersichten A 3.1/A 3.2 (Bestand 31.12.2024, maschinell aus dem PDF gelesen). Freibetrag F = min(Jahre,45)/45 × f × G; Kürzung auf den Teil über F; Satz neutral zur Entlastung des Fonds unter E gesucht. Gruppen nach Zusage je Person und zugeschätzten Jahren.",

@@ -3,49 +3,49 @@
  "status": "Prüfrechnung",
  "zins": 2.45,
  "beschluss_zehn": {
-  "beitrag_pct_bip": 5.22,
-  "zuschlag_pct": 15.6
+  "beitrag_pct_bip": 5.49,
+  "zuschlag_pct": 17.8
  },
  "klubs": [
   {
    "klub": "zehn (Beschluss)",
    "staaten": 10,
-   "beitrag_mr_pct_bip": 4.72,
-   "zuschlag_mr_pct": 14.4,
-   "beitrag_skaliert_pct_bip": 5.22,
-   "zuschlag_skaliert_pct": 15.6
+   "beitrag_mr_pct_bip": 5.0,
+   "zuschlag_mr_pct": 16.5,
+   "beitrag_skaliert_pct_bip": 5.49,
+   "zuschlag_skaliert_pct": 17.8
   },
   {
    "klub": "zehn + Italien",
    "staaten": 11,
-   "beitrag_mr_pct_bip": 5.03,
-   "zuschlag_mr_pct": 15.3,
-   "beitrag_skaliert_pct_bip": 5.56,
-   "zuschlag_skaliert_pct": 16.6
+   "beitrag_mr_pct_bip": 5.31,
+   "zuschlag_mr_pct": 17.5,
+   "beitrag_skaliert_pct_bip": 5.84,
+   "zuschlag_skaliert_pct": 18.9
   },
   {
    "klub": "zehn + Polen",
    "staaten": 11,
-   "beitrag_mr_pct_bip": 4.69,
-   "zuschlag_mr_pct": 14.3,
-   "beitrag_skaliert_pct_bip": 5.18,
-   "zuschlag_skaliert_pct": 15.5
+   "beitrag_mr_pct_bip": 4.96,
+   "zuschlag_mr_pct": 16.4,
+   "beitrag_skaliert_pct_bip": 5.45,
+   "zuschlag_skaliert_pct": 17.6
   },
   {
    "klub": "zwölf (zehn + Italien + Polen)",
    "staaten": 12,
-   "beitrag_mr_pct_bip": 4.98,
-   "zuschlag_mr_pct": 15.2,
-   "beitrag_skaliert_pct_bip": 5.5,
-   "zuschlag_skaliert_pct": 16.4
+   "beitrag_mr_pct_bip": 5.26,
+   "zuschlag_mr_pct": 17.4,
+   "beitrag_skaliert_pct_bip": 5.78,
+   "zuschlag_skaliert_pct": 18.7
   },
   {
    "klub": "alle 30",
    "staaten": 30,
-   "beitrag_mr_pct_bip": 4.66,
-   "zuschlag_mr_pct": 14.2,
-   "beitrag_skaliert_pct_bip": 5.15,
-   "zuschlag_skaliert_pct": 15.4
+   "beitrag_mr_pct_bip": 4.95,
+   "zuschlag_mr_pct": 16.4,
+   "beitrag_skaliert_pct_bip": 5.44,
+   "zuschlag_skaliert_pct": 17.6
   }
  ],
  "hinweis": "BIP 2024 (bip_kopf × Einwohner, moeglichkeitsraum33). Skaliert = Beschluss × Verhältnis zur Zehnergruppe in der Abgrenzung des Möglichkeitsraums (Annahme). Tilgung bis 2098 wie im Beschluss."

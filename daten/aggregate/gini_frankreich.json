@@ -4,21 +4,21 @@
  "staaten": {
   "DE": {
    "gini_amtlich": 30.1,
-   "gini_2028": 25.8,
-   "gini_weitergabe_gedeckelt_1x": 25.55,
-   "gini_weitergabe_gedeckelt_1_5x": 25.8,
-   "gini_abbildung_familie": 23.8,
+   "gini_2028": 25.9,
+   "gini_weitergabe_gedeckelt_1x": 25.64,
+   "gini_weitergabe_gedeckelt_1_5x": 25.9,
+   "gini_abbildung_familie": 23.6,
    "aenderung_je_dezil_pct": [
     53.1,
-    33.0,
-    40.1,
-    35.1,
-    31.6,
-    29.1,
-    27.2,
-    25.5,
-    20.6,
-    10.8
+    24.8,
+    29.0,
+    24.9,
+    22.2,
+    20.2,
+    18.9,
+    17.7,
+    13.6,
+    5.2
    ],
    "stufen": [
     {
@@ -26,102 +26,102 @@
      "brutto": 18986,
      "ag_beitraege_pct_brutto": 21.1,
      "heute_pct_brutto": 90.4,
-     "neu_pct_brutto": 110.7,
-     "aenderung_pct": 22.4
+     "neu_pct_brutto": 104.0,
+     "aenderung_pct": 15.0
     },
     {
      "lohn_x_durchschnitt": 0.5,
      "brutto": 31644,
      "ag_beitraege_pct_brutto": 21.1,
      "heute_pct_brutto": 70.5,
-     "neu_pct_brutto": 93.2,
-     "aenderung_pct": 32.3
+     "neu_pct_brutto": 87.3,
+     "aenderung_pct": 23.9
     },
     {
      "lohn_x_durchschnitt": 0.75,
      "brutto": 47466,
      "ag_beitraege_pct_brutto": 21.1,
      "heute_pct_brutto": 65.8,
-     "neu_pct_brutto": 82.2,
-     "aenderung_pct": 24.9
+     "neu_pct_brutto": 77.4,
+     "aenderung_pct": 17.7
     },
     {
      "lohn_x_durchschnitt": 1,
      "brutto": 63288,
      "ag_beitraege_pct_brutto": 21.1,
      "heute_pct_brutto": 62.5,
-     "neu_pct_brutto": 76.7,
-     "aenderung_pct": 22.6
+     "neu_pct_brutto": 72.5,
+     "aenderung_pct": 15.9
     },
     {
      "lohn_x_durchschnitt": 1.5,
      "brutto": 94932,
      "ag_beitraege_pct_brutto": 16.0,
      "heute_pct_brutto": 59.3,
-     "neu_pct_brutto": 68.9,
-     "aenderung_pct": 16.1
+     "neu_pct_brutto": 65.5,
+     "aenderung_pct": 10.4
     },
     {
      "lohn_x_durchschnitt": 2,
      "brutto": 126576,
      "ag_beitraege_pct_brutto": 12.0,
      "heute_pct_brutto": 57.5,
-     "neu_pct_brutto": 64.5,
-     "aenderung_pct": 12.2
+     "neu_pct_brutto": 61.5,
+     "aenderung_pct": 7.1
     },
     {
      "lohn_x_durchschnitt": 3,
      "brutto": 189864,
      "ag_beitraege_pct_brutto": 8.0,
      "heute_pct_brutto": 56.7,
-     "neu_pct_brutto": 59.7,
-     "aenderung_pct": 5.2
+     "neu_pct_brutto": 57.1,
+     "aenderung_pct": 0.6
     },
     {
      "lohn_x_durchschnitt": 5,
      "brutto": 316440,
      "ag_beitraege_pct_brutto": 4.8,
      "heute_pct_brutto": 56.1,
-     "neu_pct_brutto": 55.9,
-     "aenderung_pct": -0.5
+     "neu_pct_brutto": 53.5,
+     "aenderung_pct": -4.6
     },
     {
      "lohn_x_durchschnitt": 8,
      "brutto": 506304,
      "ag_beitraege_pct_brutto": 3.0,
      "heute_pct_brutto": 54.8,
-     "neu_pct_brutto": 53.7,
-     "aenderung_pct": -1.9
+     "neu_pct_brutto": 51.5,
+     "aenderung_pct": -5.9
     }
    ],
    "kenngroessen": {
-    "dividende_zu_median_pct": 14.3,
+    "dividende_zu_median_pct": 9.1,
     "boden_zu_median_pct": 40.6,
-    "netz_pct_bip": 9.1,
+    "netz_pct_bip": 9.21,
     "gesundheit_pct_bip": 7.03,
-    "arbeitslosigkeit_pct_bip": 0.23,
-    "dividende_pct_bip": 7.79,
+    "arbeitslosigkeit_pct_bip": 0.28,
+    "dividende_pct_bip": 5.17,
     "preisniveau_de_100": 100,
     "median_zu_bip_kopf": 0.58
    }
   },
   "FR": {
    "gini_amtlich": 30.4,
-   "gini_2028": 28.85,
-   "gini_weitergabe_gedeckelt_1x": 26.76,
-   "gini_weitergabe_gedeckelt_1_5x": 28.74,
-   "gini_abbildung_familie": 24.42,
+   "gini_2028": 28.13,
+   "gini_weitergabe_gedeckelt_1x": 25.97,
+   "gini_weitergabe_gedeckelt_1_5x": 28.01,
+   "gini_abbildung_familie": 23.52,
    "aenderung_je_dezil_pct": [
-    58.6,
-    16.8,
-    3.3,
-    6.4,
-    14.1,
-    13.2,
-    14.1,
-    17.4,
-    17.0,
-    7.5
+    58.5,
+    16.4,
+    2.9,
+    0.9,
+    6.0,
+    5.5,
+    6.6,
+    10.2,
+    10.2,
+    2.0
    ],
    "stufen": [
     {
@@ -129,102 +129,102 @@
      "brutto": 13490,
      "ag_beitraege_pct_brutto": 0.0,
      "heute_pct_brutto": 110.0,
-     "neu_pct_brutto": 122.1,
-     "aenderung_pct": 10.9
+     "neu_pct_brutto": 121.6,
+     "aenderung_pct": 10.5
     },
     {
      "lohn_x_durchschnitt": 0.5,
      "brutto": 22484,
      "ag_beitraege_pct_brutto": 0.0,
      "heute_pct_brutto": 91.8,
-     "neu_pct_brutto": 84.4,
-     "aenderung_pct": -8.0
+     "neu_pct_brutto": 83.6,
+     "aenderung_pct": -8.9
     },
     {
      "lohn_x_durchschnitt": 0.75,
      "brutto": 33726,
      "ag_beitraege_pct_brutto": 20.2,
      "heute_pct_brutto": 75.5,
-     "neu_pct_brutto": 83.9,
-     "aenderung_pct": 11.1
+     "neu_pct_brutto": 79.0,
+     "aenderung_pct": 4.6
     },
     {
      "lohn_x_durchschnitt": 1,
      "brutto": 44968,
      "ag_beitraege_pct_brutto": 26.9,
      "heute_pct_brutto": 72.4,
-     "neu_pct_brutto": 80.2,
-     "aenderung_pct": 10.9
+     "neu_pct_brutto": 75.7,
+     "aenderung_pct": 4.7
     },
     {
      "lohn_x_durchschnitt": 1.5,
      "brutto": 67452,
      "ag_beitraege_pct_brutto": 37.5,
      "heute_pct_brutto": 67.5,
-     "neu_pct_brutto": 78.5,
-     "aenderung_pct": 16.4
+     "neu_pct_brutto": 74.5,
+     "aenderung_pct": 10.4
     },
     {
      "lohn_x_durchschnitt": 2,
      "brutto": 89936,
      "ag_beitraege_pct_brutto": 29.3,
      "heute_pct_brutto": 65.0,
-     "neu_pct_brutto": 71.7,
-     "aenderung_pct": 10.2
+     "neu_pct_brutto": 68.2,
+     "aenderung_pct": 4.8
     },
     {
      "lohn_x_durchschnitt": 3,
      "brutto": 134904,
      "ag_beitraege_pct_brutto": 19.6,
      "heute_pct_brutto": 61.3,
-     "neu_pct_brutto": 63.9,
-     "aenderung_pct": 4.2
+     "neu_pct_brutto": 61.0,
+     "aenderung_pct": -0.6
     },
     {
      "lohn_x_durchschnitt": 5,
      "brutto": 224840,
      "ag_beitraege_pct_brutto": 11.7,
      "heute_pct_brutto": 55.8,
-     "neu_pct_brutto": 57.5,
-     "aenderung_pct": 2.9
+     "neu_pct_brutto": 54.9,
+     "aenderung_pct": -1.7
     },
     {
      "lohn_x_durchschnitt": 8,
      "brutto": 359744,
      "ag_beitraege_pct_brutto": 7.3,
      "heute_pct_brutto": 51.1,
-     "neu_pct_brutto": 53.9,
-     "aenderung_pct": 5.5
+     "neu_pct_brutto": 51.5,
+     "aenderung_pct": 0.8
     }
    ],
    "kenngroessen": {
-    "dividende_zu_median_pct": 8.4,
+    "dividende_zu_median_pct": 4.3,
     "boden_zu_median_pct": 41.8,
-    "netz_pct_bip": 11.0,
+    "netz_pct_bip": 11.15,
     "gesundheit_pct_bip": 8.36,
-    "arbeitslosigkeit_pct_bip": 0.72,
-    "dividende_pct_bip": 5.15,
+    "arbeitslosigkeit_pct_bip": 0.81,
+    "dividende_pct_bip": 2.69,
     "preisniveau_de_100": 94,
     "median_zu_bip_kopf": 0.66
    }
   },
   "IT": {
    "gini_amtlich": 31.0,
-   "gini_2028": 26.88,
-   "gini_weitergabe_gedeckelt_1x": 25.46,
-   "gini_weitergabe_gedeckelt_1_5x": 26.49,
-   "gini_abbildung_familie": 25.65,
+   "gini_2028": 26.53,
+   "gini_weitergabe_gedeckelt_1x": 25.05,
+   "gini_weitergabe_gedeckelt_1_5x": 26.12,
+   "gini_abbildung_familie": 25.06,
    "aenderung_je_dezil_pct": [
-    109.8,
-    39.7,
-    31.1,
-    30.1,
-    25.5,
-    23.7,
-    26.6,
-    27.7,
-    26.5,
-    16.4
+    109.1,
+    38.7,
+    21.9,
+    19.0,
+    15.5,
+    14.3,
+    17.4,
+    18.9,
+    18.4,
+    9.8
    ],
    "stufen": [
     {
@@ -232,102 +232,102 @@
      "brutto": 10685,
      "ag_beitraege_pct_brutto": 31.6,
      "heute_pct_brutto": 102.9,
-     "neu_pct_brutto": 143.4,
-     "aenderung_pct": 39.3
+     "neu_pct_brutto": 143.2,
+     "aenderung_pct": 39.1
     },
     {
      "lohn_x_durchschnitt": 0.5,
      "brutto": 17808,
      "ag_beitraege_pct_brutto": 31.6,
      "heute_pct_brutto": 89.7,
-     "neu_pct_brutto": 111.0,
-     "aenderung_pct": 23.7
+     "neu_pct_brutto": 102.4,
+     "aenderung_pct": 14.2
     },
     {
      "lohn_x_durchschnitt": 0.75,
      "brutto": 26712,
      "ag_beitraege_pct_brutto": 31.6,
      "heute_pct_brutto": 80.3,
-     "neu_pct_brutto": 97.0,
-     "aenderung_pct": 20.8
+     "neu_pct_brutto": 90.6,
+     "aenderung_pct": 12.8
     },
     {
      "lohn_x_durchschnitt": 1,
      "brutto": 35616,
      "ag_beitraege_pct_brutto": 31.6,
      "heute_pct_brutto": 74.1,
-     "neu_pct_brutto": 88.5,
-     "aenderung_pct": 19.5
+     "neu_pct_brutto": 82.9,
+     "aenderung_pct": 12.0
     },
     {
      "lohn_x_durchschnitt": 1.5,
      "brutto": 53424,
      "ag_beitraege_pct_brutto": 31.6,
      "heute_pct_brutto": 64.5,
-     "neu_pct_brutto": 80.1,
-     "aenderung_pct": 24.2
+     "neu_pct_brutto": 75.5,
+     "aenderung_pct": 17.0
     },
     {
      "lohn_x_durchschnitt": 2,
      "brutto": 71232,
      "ag_beitraege_pct_brutto": 27.7,
      "heute_pct_brutto": 60.8,
-     "neu_pct_brutto": 74.2,
-     "aenderung_pct": 22.1
+     "neu_pct_brutto": 70.1,
+     "aenderung_pct": 15.4
     },
     {
      "lohn_x_durchschnitt": 3,
      "brutto": 106848,
      "ag_beitraege_pct_brutto": 18.5,
      "heute_pct_brutto": 57.0,
-     "neu_pct_brutto": 65.8,
-     "aenderung_pct": 15.5
+     "neu_pct_brutto": 62.5,
+     "aenderung_pct": 9.7
     },
     {
      "lohn_x_durchschnitt": 5,
      "brutto": 178080,
      "ag_beitraege_pct_brutto": 11.1,
      "heute_pct_brutto": 53.9,
-     "neu_pct_brutto": 58.9,
-     "aenderung_pct": 9.2
+     "neu_pct_brutto": 56.0,
+     "aenderung_pct": 3.8
     },
     {
      "lohn_x_durchschnitt": 8,
      "brutto": 284928,
      "ag_beitraege_pct_brutto": 6.9,
      "heute_pct_brutto": 52.2,
-     "neu_pct_brutto": 55.0,
-     "aenderung_pct": 5.3
+     "neu_pct_brutto": 52.4,
+     "aenderung_pct": 0.2
     }
    ],
    "kenngroessen": {
-    "dividende_zu_median_pct": 13.9,
+    "dividende_zu_median_pct": 8.1,
     "boden_zu_median_pct": 44.5,
-    "netz_pct_bip": 8.45,
+    "netz_pct_bip": 8.6,
     "gesundheit_pct_bip": 6.17,
-    "arbeitslosigkeit_pct_bip": 0.53,
-    "dividende_pct_bip": 8.09,
+    "arbeitslosigkeit_pct_bip": 0.65,
+    "dividende_pct_bip": 4.91,
     "preisniveau_de_100": 84,
     "median_zu_bip_kopf": 0.62
    }
   },
   "ES": {
    "gini_amtlich": 30.8,
-   "gini_2028": 24.76,
-   "gini_weitergabe_gedeckelt_1x": 23.25,
-   "gini_weitergabe_gedeckelt_1_5x": 24.29,
-   "gini_abbildung_familie": 23.45,
+   "gini_2028": 24.21,
+   "gini_weitergabe_gedeckelt_1x": 22.64,
+   "gini_weitergabe_gedeckelt_1_5x": 23.72,
+   "gini_abbildung_familie": 22.6,
    "aenderung_je_dezil_pct": [
-    123.1,
-    44.2,
-    25.6,
-    25.2,
-    24.9,
+    122.9,
+    43.7,
     21.3,
-    18.3,
-    15.9,
-    14.5,
-    7.1
+    15.5,
+    15.8,
+    12.9,
+    10.4,
+    8.6,
+    7.8,
+    1.5
    ],
    "stufen": [
     {
@@ -335,102 +335,102 @@
      "brutto": 9509,
      "ag_beitraege_pct_brutto": 29.8,
      "heute_pct_brutto": 93.5,
-     "neu_pct_brutto": 148.0,
-     "aenderung_pct": 58.3
+     "neu_pct_brutto": 147.3,
+     "aenderung_pct": 57.5
     },
     {
      "lohn_x_durchschnitt": 0.5,
      "brutto": 15849,
      "ag_beitraege_pct_brutto": 29.8,
      "heute_pct_brutto": 93.5,
-     "neu_pct_brutto": 110.5,
-     "aenderung_pct": 18.2
+     "neu_pct_brutto": 102.7,
+     "aenderung_pct": 9.8
     },
     {
      "lohn_x_durchschnitt": 0.75,
      "brutto": 23774,
      "ag_beitraege_pct_brutto": 29.8,
      "heute_pct_brutto": 80.1,
-     "neu_pct_brutto": 97.4,
-     "aenderung_pct": 21.6
+     "neu_pct_brutto": 91.6,
+     "aenderung_pct": 14.3
     },
     {
      "lohn_x_durchschnitt": 1,
      "brutto": 31698,
      "ag_beitraege_pct_brutto": 29.8,
      "heute_pct_brutto": 76.5,
-     "neu_pct_brutto": 89.0,
-     "aenderung_pct": 16.4
+     "neu_pct_brutto": 83.9,
+     "aenderung_pct": 9.8
     },
     {
      "lohn_x_durchschnitt": 1.5,
      "brutto": 47547,
      "ag_beitraege_pct_brutto": 29.8,
      "heute_pct_brutto": 71.7,
-     "neu_pct_brutto": 80.6,
-     "aenderung_pct": 12.4
+     "neu_pct_brutto": 76.4,
+     "aenderung_pct": 6.5
     },
     {
      "lohn_x_durchschnitt": 2,
      "brutto": 63396,
      "ag_beitraege_pct_brutto": 27.3,
      "heute_pct_brutto": 68.7,
-     "neu_pct_brutto": 75.3,
-     "aenderung_pct": 9.8
+     "neu_pct_brutto": 71.6,
+     "aenderung_pct": 4.3
     },
     {
      "lohn_x_durchschnitt": 3,
      "brutto": 95094,
      "ag_beitraege_pct_brutto": 18.2,
      "heute_pct_brutto": 64.3,
-     "neu_pct_brutto": 67.0,
-     "aenderung_pct": 4.3
+     "neu_pct_brutto": 64.0,
+     "aenderung_pct": -0.4
     },
     {
      "lohn_x_durchschnitt": 5,
      "brutto": 158490,
      "ag_beitraege_pct_brutto": 10.9,
      "heute_pct_brutto": 60.5,
-     "neu_pct_brutto": 60.1,
-     "aenderung_pct": -0.7
+     "neu_pct_brutto": 57.5,
+     "aenderung_pct": -5.1
     },
     {
      "lohn_x_durchschnitt": 8,
      "brutto": 253584,
      "ag_beitraege_pct_brutto": 6.8,
      "heute_pct_brutto": 58.4,
-     "neu_pct_brutto": 56.2,
-     "aenderung_pct": -3.8
+     "neu_pct_brutto": 53.8,
+     "aenderung_pct": -7.9
     }
    ],
    "kenngroessen": {
-    "dividende_zu_median_pct": 12.3,
+    "dividende_zu_median_pct": 7.3,
     "boden_zu_median_pct": 44.7,
-    "netz_pct_bip": 9.23,
+    "netz_pct_bip": 9.46,
     "gesundheit_pct_bip": 6.27,
-    "arbeitslosigkeit_pct_bip": 1.06,
-    "dividende_pct_bip": 7.6,
+    "arbeitslosigkeit_pct_bip": 1.24,
+    "dividende_pct_bip": 4.69,
     "preisniveau_de_100": 78,
     "median_zu_bip_kopf": 0.66
    }
   },
   "PL": {
    "gini_amtlich": 24.9,
-   "gini_2028": 18.71,
-   "gini_weitergabe_gedeckelt_1x": 17.59,
-   "gini_weitergabe_gedeckelt_1_5x": 18.28,
-   "gini_abbildung_familie": 17.98,
+   "gini_2028": 18.47,
+   "gini_weitergabe_gedeckelt_1x": 17.31,
+   "gini_weitergabe_gedeckelt_1_5x": 18.04,
+   "gini_abbildung_familie": 16.6,
    "aenderung_je_dezil_pct": [
-    91.8,
-    48.5,
-    40.8,
-    36.0,
-    31.2,
-    27.2,
-    23.4,
-    19.8,
-    17.2,
-    14.1
+    91.0,
+    43.2,
+    30.1,
+    26.3,
+    22.3,
+    18.8,
+    15.5,
+    12.3,
+    10.4,
+    8.2
    ],
    "stufen": [
     {
@@ -438,81 +438,81 @@
      "brutto": 28926,
      "ag_beitraege_pct_brutto": 18.7,
      "heute_pct_brutto": 78.5,
-     "neu_pct_brutto": 161.9,
-     "aenderung_pct": 106.1
+     "neu_pct_brutto": 161.3,
+     "aenderung_pct": 105.4
     },
     {
      "lohn_x_durchschnitt": 0.5,
      "brutto": 48210,
      "ag_beitraege_pct_brutto": 18.7,
      "heute_pct_brutto": 76.4,
-     "neu_pct_brutto": 111.9,
-     "aenderung_pct": 46.5
+     "neu_pct_brutto": 111.1,
+     "aenderung_pct": 45.4
     },
     {
      "lohn_x_durchschnitt": 0.75,
      "brutto": 72316,
      "ag_beitraege_pct_brutto": 18.7,
      "heute_pct_brutto": 73.6,
-     "neu_pct_brutto": 98.6,
-     "aenderung_pct": 33.9
+     "neu_pct_brutto": 92.5,
+     "aenderung_pct": 25.6
     },
     {
      "lohn_x_durchschnitt": 1,
      "brutto": 96421,
      "ag_beitraege_pct_brutto": 18.7,
      "heute_pct_brutto": 72.3,
-     "neu_pct_brutto": 90.0,
-     "aenderung_pct": 24.6
+     "neu_pct_brutto": 85.0,
+     "aenderung_pct": 17.7
     },
     {
      "lohn_x_durchschnitt": 1.5,
      "brutto": 144632,
      "ag_beitraege_pct_brutto": 18.7,
      "heute_pct_brutto": 70.7,
-     "neu_pct_brutto": 80.4,
-     "aenderung_pct": 13.7
+     "neu_pct_brutto": 76.3,
+     "aenderung_pct": 7.9
     },
     {
      "lohn_x_durchschnitt": 2,
      "brutto": 192842,
      "ag_beitraege_pct_brutto": 18.7,
      "heute_pct_brutto": 65.7,
-     "neu_pct_brutto": 75.6,
-     "aenderung_pct": 15.0
+     "neu_pct_brutto": 72.0,
+     "aenderung_pct": 9.5
     },
     {
      "lohn_x_durchschnitt": 3,
      "brutto": 289263,
      "ag_beitraege_pct_brutto": 13.2,
      "heute_pct_brutto": 60.9,
-     "neu_pct_brutto": 68.1,
-     "aenderung_pct": 11.8
+     "neu_pct_brutto": 65.2,
+     "aenderung_pct": 6.9
     },
     {
      "lohn_x_durchschnitt": 5,
      "brutto": 482105,
      "ag_beitraege_pct_brutto": 7.9,
      "heute_pct_brutto": 59.6,
-     "neu_pct_brutto": 61.6,
-     "aenderung_pct": 3.5
+     "neu_pct_brutto": 59.2,
+     "aenderung_pct": -0.7
     },
     {
      "lohn_x_durchschnitt": 8,
      "brutto": 771368,
      "ag_beitraege_pct_brutto": 4.9,
      "heute_pct_brutto": 58.8,
-     "neu_pct_brutto": 58.0,
-     "aenderung_pct": -1.4
+     "neu_pct_brutto": 55.7,
+     "aenderung_pct": -5.3
     }
    ],
    "kenngroessen": {
-    "dividende_zu_median_pct": 13.5,
+    "dividende_zu_median_pct": 8.5,
     "boden_zu_median_pct": 48.5,
-    "netz_pct_bip": 7.54,
+    "netz_pct_bip": 7.63,
     "gesundheit_pct_bip": 5.42,
-    "arbeitslosigkeit_pct_bip": 0.31,
-    "dividende_pct_bip": 8.96,
+    "arbeitslosigkeit_pct_bip": 0.36,
+    "dividende_pct_bip": 5.86,
     "preisniveau_de_100": 65,
     "median_zu_bip_kopf": 0.71
    }

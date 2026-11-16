@@ -118,50 +118,50 @@
  "fonds_varianten": {
   "alle 30 (geltend)": {
    "staaten": 30,
-   "beitrag_pct_bip": 5.04,
-   "zuschlag_pct": 15.1
+   "beitrag_pct_bip": 5.32,
+   "zuschlag_pct": 17.3
   },
   "Teilnahme (WJP ≥ 0,66), CH und IS eingeschlossen": {
    "staaten": 24,
-   "beitrag_pct_bip": 5.08,
-   "zuschlag_pct": 15.2
+   "beitrag_pct_bip": 5.35,
+   "zuschlag_pct": 17.4
   },
   "nur WJP ≥ 0,75 (Information), CH und IS eingeschlossen": {
    "staaten": 14,
-   "beitrag_pct_bip": 4.0,
-   "zuschlag_pct": 12.1
+   "beitrag_pct_bip": 4.27,
+   "zuschlag_pct": 14.0
   }
  },
  "staaten_unter_0_66": {
   "BG": {
-   "beitrag_eigen_mr_pct_bip": 2.24,
+   "beitrag_eigen_mr_pct_bip": 2.56,
    "schuld_2024_pct_bip": 23.8
   },
   "EL": {
-   "beitrag_eigen_mr_pct_bip": 6.81,
+   "beitrag_eigen_mr_pct_bip": 7.17,
    "schuld_2024_pct_bip": 154.2
   },
   "HR": {
-   "beitrag_eigen_mr_pct_bip": 3.91,
+   "beitrag_eigen_mr_pct_bip": 4.19,
    "schuld_2024_pct_bip": 57.4
   },
   "HU": {
-   "beitrag_eigen_mr_pct_bip": 3.41,
+   "beitrag_eigen_mr_pct_bip": 3.7,
    "schuld_2024_pct_bip": 73.5
   },
   "RO": {
-   "beitrag_eigen_mr_pct_bip": 3.59,
+   "beitrag_eigen_mr_pct_bip": 3.9,
    "schuld_2024_pct_bip": 54.8
   },
   "SK": {
-   "beitrag_eigen_mr_pct_bip": 3.43,
+   "beitrag_eigen_mr_pct_bip": 3.71,
    "schuld_2024_pct_bip": 59.7
   }
  },
  "anteil_bip_unter_0_66_pct": 5.7,
  "geltend_kontrolle": {
-  "beitrag_pct_bip": 5.04,
-  "zuschlag_pct": 15.1
+  "beitrag_pct_bip": 5.32,
+  "zuschlag_pct": 17.3
  },
  "hinweis": "v4.74 Spielregel 1: Grundlagen (beide Menschenrechtspakte, Pariser Abkommen) und WJP 2025 ≥ 0,66 = Teilnahme, sonst Partner; SDG Index, UN-Mi und Zahl der sieben Kernabkommen nur ausgewiesen. Fonds: Abgrenzung des Möglichkeitsraums, skaliert mit dem Beschluss (wie fonds_klub.py); nur Staaten des Fonds der 30."
 }

@@ -1,0 +1,27 @@
+# Belegte Deckung mit den Regeln vom 16.11.2026 (modell/deckung_belegt.py, Logbuch v4.97). Geltende Rechnung ab v4.97 (Beschluss: jetzt umstellen).
+# Belegte Werte: einnahmen_belege.positionen("mittel") (Prüfbefund B-1, Korrekturen 89, 91, 92). Regeln: Satz ein Drittel (33⅓ %),
+# Erbschaftsfreibetrag 2 × jährlicher Grundbedarf, Stundungskredit 1 % bis 20 Jahre für das selbst bewohnte Elternhaus.
+version = "v4.97"
+fall = "mittel"
+satz = 33.333333
+modell_co2_2028 = 1.38            # Modellwert CO₂ 2028 (einnahmen_belege.toml [modell]); Abstand wird vom Pfad der Deckung abgezogen
+
+[erbschaft]
+# Verteilung der Erbschaften (SOEP, DIW Wochenbericht 5/2021, 2002–2017, Preise 2015): Mittelwert 85.052 €, Median 32.148 €; lognormal angepasst
+# (Annahme; Gegenprobe 99. Perzentil 825.000 gegen 772.400 €). Preisfaktor 2015 → 2028 (Annahme).
+mittel_2015 = 85052
+median_2015 = 32148
+preisfaktor_2015_2028 = 1.38
+freibetrag_alt = 100000           # Freibetrag, auf den sich der belegte Wert bezieht (Regel bis v4.96)
+grundbedarf_2026 = 12072          # Grundbedarf nach der Regel vom 16.11.2026 (ohne Gesundheitspflege und Bildung)
+vielfaches = 2
+preissteigerung = 0.02
+
+[stundung]
+# Selbst bewohntes Elternhaus: Stundungskredit zu 1 % fest, längstens 20 Jahre (Beschluss 16.11.2026).
+zins = 0.01
+fondszins = 0.0245                # Refinanzierung zum Fondszins (Beschluss: Fondszins aus der Vergangenheit)
+anteil_elternhaus = 0.10          # Anteil der Erbschaftsteuer auf selbst bewohnte Elternhäuser (Annahme; Immobilien rund die Hälfte des Erbvolumens, davon ein Teil selbst bewohnt)
+mittlere_dauer = 10               # Jahre bis Verkauf, Vermietung oder Tilgung (Annahme)
+# Kassenwirkung: In den ersten Jahren fließt der gestundete Teil nicht zu; angesetzt wird dieser Ausfall (vorsichtig) dauerhaft, obwohl er ab
+# etwa 2038 durch Rückzahlungen bis auf den Zinsvorteil zurückgeht.

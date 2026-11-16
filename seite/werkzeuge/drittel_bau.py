@@ -17,7 +17,7 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 AGG = WURZEL / "daten" / "aggregate"
 ZIEL = WURZEL / "seite" / "stand-c"
-VERSION = "v4.96"
+VERSION = "v4.97"
 spec = importlib.util.spec_from_file_location("seite_bau", Path(__file__).resolve().parent / "seite_bau.py")
 SB = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(SB)
@@ -34,7 +34,8 @@ PR = {r["jahr"]: r for r in PJ["reihe"]}
 NB = {r["jahr"]: r for r in NZ["beschluss"]["reihe"]}
 NBS = {r["jahr"]: r for r in NZ["beschluss"].get("reihe_statisch", NZ["beschluss"]["reihe"])}   # v4.85: ohne Dynamik
 JAHRE = list(range(2028, 2061))
-G26 = 12348
+import tomllib as _tl
+G26 = next(x for x in _tl.loads((WURZEL / "modell" / "systemvarianten.toml").read_text(encoding="utf-8"))["system"] if x["id"] == "33R").get("grundbedarf_tarif", 12348.0)   # v4.97: Grundbedarf im Tarif
 de = lambda x, nk=0: SB.zahl(x, nk, "de")
 eur = lambda x, nk=0: SB.eur(x, "de", nk)
 pct = lambda x, nk=0: SB.pct(x, "de", nk)
@@ -165,7 +166,7 @@ def werte_neu(sp, c):
     E = lambda x, nk=0: SB.eur(x, sp, nk)
     P = lambda x, nk=0: SB.pct(x, sp, nk)
     fzm = [v["zuschlag_pct"] for v in FZ["varianten"] if v["fall"] in ("fest 3.5 %", "fest 4.0 %")]   # v4.19: Marktzins Oktober 2026
-    w = {"zins_fonds": P(FGJ["zins"], 2), "zu_markt": P(min(fzm), 1) + "–" + P(max(fzm), 1), "p33": P(33), "e0": E(0), "e100k": E(100000 * fx), "e2m": E(2e6 * fx), "staaten": str(RM["staaten"]), "einw": SB.zahl(RM["einwohner_mio"], 1, sp)}
+    w = {"zins_fonds": P(FGJ["zins"], 2), "zu_markt": P(min(fzm), 1) + "–" + P(max(fzm), 1), "p33": P(33).replace("33", "33⅓"), "e0": E(0), "e100k": E(100000 * fx), "e2g": E(round(2 * G26 * 1.0404 / 100) * 100 * fx), "e2m": E(2e6 * fx), "staaten": str(RM["staaten"]), "einw": SB.zahl(RM["einwohner_mio"], 1, sp)}
     zg = P(FGJ["zuschlag_auf_alle_steuern_pct"], 1)                          # v4.38 (E11): gemeinsamer Satz, Ziel der Verrechnung
     w["zu_verr"] = ZU_VERR[sp].format(zg=zg) if FGJ.get("zuschlag_haushalte", {}).get("aktiv") else ""
     if c == "DE":

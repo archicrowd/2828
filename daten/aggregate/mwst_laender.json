@@ -2,17 +2,17 @@
  "version": "v4.54",
  "status": "Prüfrechnung",
  "quelle": "Eurostat hbs_str_t223 (Household Budget Survey 2020: Struktur der Konsumausgaben nach Einkommensfünfteln und COICOP, ‰), amtlich; Abruf 24.10.2026 über die API; Werte von Eurostat als geschätzt gekennzeichnet (Status e)",
- "eff_neu": 18.84,
+ "eff_neu": 20.61,
  "staaten": {
   "FR": {
    "eff_alt": 16.34,
    "bisher": {
-    "mehr_pct": 2.15,
-    "bezahlt_pct": 15.853
+    "mehr_pct": 3.671,
+    "bezahlt_pct": 17.088
    },
    "sichtbar_mittel": {
-    "mehr_pct": 1.627,
-    "bezahlt_neu_pct": 10.211,
+    "mehr_pct": 2.593,
+    "bezahlt_neu_pct": 11.177,
     "bezahlt_heute_pct": 8.584
    },
    "fuenftel": [
@@ -20,60 +20,60 @@
      "fuenftel": 1,
      "aequivalent_jahr": 13477,
      "steuerpflichtig": 0.651,
-     "sichtbar_mehr_pct": 1.42,
-     "sichtbar_bezahlt_neu_pct": 9.579,
+     "sichtbar_mehr_pct": 2.39,
+     "sichtbar_bezahlt_neu_pct": 10.549,
      "sichtbar_bezahlt_heute_pct": 8.159,
      "phi": [
-      0.9038,
-      0.9601
+      0.9448,
+      0.9632
      ]
     },
     {
      "fuenftel": 2,
      "aequivalent_jahr": 20471,
      "steuerpflichtig": 0.651,
-     "sichtbar_mehr_pct": 1.428,
-     "sichtbar_bezahlt_neu_pct": 9.654,
+     "sichtbar_mehr_pct": 2.382,
+     "sichtbar_bezahlt_neu_pct": 10.608,
      "sichtbar_bezahlt_heute_pct": 8.226,
      "phi": [
-      0.9075,
-      0.9649
+      0.9426,
+      0.9667
      ]
     },
     {
      "fuenftel": 3,
      "aequivalent_jahr": 26459,
      "steuerpflichtig": 0.662,
-     "sichtbar_mehr_pct": 1.636,
-     "sichtbar_bezahlt_neu_pct": 10.096,
+     "sichtbar_mehr_pct": 2.59,
+     "sichtbar_bezahlt_neu_pct": 11.049,
      "sichtbar_bezahlt_heute_pct": 8.46,
      "phi": [
-      1.0043,
-      0.9927
+      0.9992,
+      0.9925
      ]
     },
     {
      "fuenftel": 4,
      "aequivalent_jahr": 33542,
      "steuerpflichtig": 0.681,
-     "sichtbar_mehr_pct": 1.76,
-     "sichtbar_bezahlt_neu_pct": 10.584,
+     "sichtbar_mehr_pct": 2.722,
+     "sichtbar_bezahlt_neu_pct": 11.546,
      "sichtbar_bezahlt_heute_pct": 8.824,
      "phi": [
-      1.062,
-      1.0235
+      1.0352,
+      1.0216
      ]
     },
     {
      "fuenftel": 5,
      "aequivalent_jahr": 61726,
      "steuerpflichtig": 0.701,
-     "sichtbar_mehr_pct": 1.89,
-     "sichtbar_bezahlt_neu_pct": 11.143,
+     "sichtbar_mehr_pct": 2.88,
+     "sichtbar_bezahlt_neu_pct": 12.134,
      "sichtbar_bezahlt_heute_pct": 9.253,
      "phi": [
-      1.1224,
-      1.0588
+      1.0782,
+      1.056
      ]
     }
    ]

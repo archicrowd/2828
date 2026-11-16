@@ -37,106 +37,106 @@
  "schuldenquote_2028": 81.3,
  "systeme": {
   "33R": {
-   "name": "33:33 prämienfrei, Label 5/11/17/25 + Sonderstufe 33 % (Beschluss v3.48)",
-   "steuerquote": 33.42,
-   "dividende_de_erw_2028": 308.0,
-   "z_2028": 9.35,
+   "name": "Drittel prämienfrei: Satz ein Drittel, Label 7/13/19/27 + Sonderstufe ein Drittel, belegte Einnahmen (Beschlüsse v3.48 und 16.11.2026, v4.97)",
+   "steuerquote": 30.92,
+   "dividende_de_erw_2028": 174.0,
+   "z_2028": 9.93,
    "faelle": [
     {
      "z_anteil": 1.0,
      "zins": 2.45,
      "zieljahr": 2098,
      "zielquote": 0.0,
-     "beitrag_pct_bip": 5.22,
-     "zuschlag_auf_alle_steuern_pct": 15.6,
-     "je_einwohner_monat_eur": 236,
-     "schuldenquote_spitze": 149.1,
+     "beitrag_pct_bip": 5.49,
+     "zuschlag_auf_alle_steuern_pct": 17.8,
+     "je_einwohner_monat_eur": 248,
+     "schuldenquote_spitze": 155.7,
      "spitzenjahr": 2056,
-     "schuldenquote_2050": 145.7
+     "schuldenquote_2050": 151.5
     },
     {
      "z_anteil": 1.0,
      "zins": 2.45,
      "zieljahr": 2098,
      "zielquote": 60.0,
-     "beitrag_pct_bip": 4.2,
-     "zuschlag_auf_alle_steuern_pct": 12.6,
-     "je_einwohner_monat_eur": 189,
-     "schuldenquote_spitze": 177.4,
+     "beitrag_pct_bip": 4.47,
+     "zuschlag_auf_alle_steuern_pct": 14.4,
+     "je_einwohner_monat_eur": 201,
+     "schuldenquote_spitze": 184.2,
      "spitzenjahr": 2060,
-     "schuldenquote_2050": 167.0
+     "schuldenquote_2050": 172.8
     },
     {
      "z_anteil": 1.0,
      "zins": 3.0,
      "zieljahr": 2098,
      "zielquote": 0.0,
-     "beitrag_pct_bip": 5.79,
-     "zuschlag_auf_alle_steuern_pct": 17.3,
-     "je_einwohner_monat_eur": 261,
-     "schuldenquote_spitze": 151.7,
+     "beitrag_pct_bip": 6.09,
+     "zuschlag_auf_alle_steuern_pct": 19.7,
+     "je_einwohner_monat_eur": 274,
+     "schuldenquote_spitze": 158.2,
      "spitzenjahr": 2057,
-     "schuldenquote_2050": 146.8
+     "schuldenquote_2050": 152.5
     },
     {
      "z_anteil": 1.0,
      "zins": 3.0,
      "zieljahr": 2098,
      "zielquote": 60.0,
-     "beitrag_pct_bip": 4.94,
-     "zuschlag_auf_alle_steuern_pct": 14.8,
-     "je_einwohner_monat_eur": 223,
-     "schuldenquote_spitze": 178.1,
+     "beitrag_pct_bip": 5.23,
+     "zuschlag_auf_alle_steuern_pct": 16.9,
+     "je_einwohner_monat_eur": 236,
+     "schuldenquote_spitze": 184.8,
      "spitzenjahr": 2061,
-     "schuldenquote_2050": 165.7
+     "schuldenquote_2050": 171.4
     },
     {
      "z_anteil": 0.5,
      "zins": 2.45,
      "zieljahr": 2098,
      "zielquote": 0.0,
-     "beitrag_pct_bip": 3.09,
-     "zuschlag_auf_alle_steuern_pct": 9.2,
-     "je_einwohner_monat_eur": 139,
-     "schuldenquote_spitze": 99.0,
-     "spitzenjahr": 2050,
-     "schuldenquote_2050": 99.0
-    },
-    {
-     "z_anteil": 0.5,
-     "zins": 2.45,
-     "zieljahr": 2098,
-     "zielquote": 60.0,
-     "beitrag_pct_bip": 2.06,
-     "zuschlag_auf_alle_steuern_pct": 6.2,
-     "je_einwohner_monat_eur": 93,
-     "schuldenquote_spitze": 124.1,
-     "spitzenjahr": 2058,
-     "schuldenquote_2050": 120.4
-    },
-    {
-     "z_anteil": 0.5,
-     "zins": 3.0,
-     "zieljahr": 2098,
-     "zielquote": 0.0,
-     "beitrag_pct_bip": 3.48,
+     "beitrag_pct_bip": 3.22,
      "zuschlag_auf_alle_steuern_pct": 10.4,
-     "je_einwohner_monat_eur": 157,
-     "schuldenquote_spitze": 101.4,
+     "je_einwohner_monat_eur": 145,
+     "schuldenquote_spitze": 102.0,
      "spitzenjahr": 2051,
-     "schuldenquote_2050": 101.3
+     "schuldenquote_2050": 102.0
+    },
+    {
+     "z_anteil": 0.5,
+     "zins": 2.45,
+     "zieljahr": 2098,
+     "zielquote": 60.0,
+     "beitrag_pct_bip": 2.2,
+     "zuschlag_auf_alle_steuern_pct": 7.1,
+     "je_einwohner_monat_eur": 99,
+     "schuldenquote_spitze": 127.5,
+     "spitzenjahr": 2059,
+     "schuldenquote_2050": 123.3
+    },
+    {
+     "z_anteil": 0.5,
+     "zins": 3.0,
+     "zieljahr": 2098,
+     "zielquote": 0.0,
+     "beitrag_pct_bip": 3.62,
+     "zuschlag_auf_alle_steuern_pct": 11.7,
+     "je_einwohner_monat_eur": 163,
+     "schuldenquote_spitze": 104.3,
+     "spitzenjahr": 2052,
+     "schuldenquote_2050": 104.1
     },
     {
      "z_anteil": 0.5,
      "zins": 3.0,
      "zieljahr": 2098,
      "zielquote": 60.0,
-     "beitrag_pct_bip": 2.62,
-     "zuschlag_auf_alle_steuern_pct": 7.8,
-     "je_einwohner_monat_eur": 118,
-     "schuldenquote_spitze": 124.8,
-     "spitzenjahr": 2059,
-     "schuldenquote_2050": 120.1
+     "beitrag_pct_bip": 2.77,
+     "zuschlag_auf_alle_steuern_pct": 8.9,
+     "je_einwohner_monat_eur": 125,
+     "schuldenquote_spitze": 128.1,
+     "spitzenjahr": 2060,
+     "schuldenquote_2050": 123.0
     }
    ],
    "deckel": [
@@ -144,37 +144,37 @@
      "z_anteil": 1.0,
      "zins": 2.45,
      "deckel": 100.0,
-     "beitrag_pct_bip": 7.49,
-     "zuschlag_auf_alle_steuern_pct": 22.4,
-     "je_einwohner_monat_eur": 338,
-     "schuldenquote_2100": -146.4
+     "beitrag_pct_bip": 8.06,
+     "zuschlag_auf_alle_steuern_pct": 26.1,
+     "je_einwohner_monat_eur": 363,
+     "schuldenquote_2100": -164.7
     },
     {
      "z_anteil": 1.0,
      "zins": 2.45,
      "deckel": 120.0,
-     "beitrag_pct_bip": 6.46,
-     "zuschlag_auf_alle_steuern_pct": 19.3,
-     "je_einwohner_monat_eur": 291,
-     "schuldenquote_2100": -84.4
+     "beitrag_pct_bip": 7.01,
+     "zuschlag_auf_alle_steuern_pct": 22.7,
+     "je_einwohner_monat_eur": 316,
+     "schuldenquote_2100": -101.7
     },
     {
      "z_anteil": 0.5,
      "zins": 2.45,
      "deckel": 100.0,
-     "beitrag_pct_bip": 3.04,
-     "zuschlag_auf_alle_steuern_pct": 9.1,
-     "je_einwohner_monat_eur": 137,
-     "schuldenquote_2100": -3.4
+     "beitrag_pct_bip": 3.32,
+     "zuschlag_auf_alle_steuern_pct": 10.7,
+     "je_einwohner_monat_eur": 150,
+     "schuldenquote_2100": -12.1
     },
     {
      "z_anteil": 0.5,
      "zins": 2.45,
      "deckel": 120.0,
-     "beitrag_pct_bip": 2.21,
-     "zuschlag_auf_alle_steuern_pct": 6.6,
-     "je_einwohner_monat_eur": 100,
-     "schuldenquote_2100": 46.3
+     "beitrag_pct_bip": 2.47,
+     "zuschlag_auf_alle_steuern_pct": 8.0,
+     "je_einwohner_monat_eur": 111,
+     "schuldenquote_2100": 38.7
     }
    ]
   },
@@ -326,324 +326,324 @@
   "z_anteil": 1.0,
   "zins": 2.45,
   "zieljahr": 2098,
-  "beitrag_pct_bip": 5.22,
-  "zuschlag_auf_alle_steuern_pct": 15.6,
-  "je_einwohner_monat_eur": 236,
-  "schuldenquote_spitze": 149.1,
+  "beitrag_pct_bip": 5.49,
+  "zuschlag_auf_alle_steuern_pct": 17.8,
+  "je_einwohner_monat_eur": 248,
+  "schuldenquote_spitze": 155.7,
   "spitzenjahr": 2056,
   "schuldenquote": {
-   "2030": 88.7,
-   "2040": 123.5,
-   "2050": 145.7,
-   "2060": 147.2,
-   "2070": 128.7,
-   "2080": 91.8,
-   "2090": 42.3,
-   "2098": 0.0
+   "2030": 89.3,
+   "2040": 127.1,
+   "2050": 151.5,
+   "2060": 153.9,
+   "2070": 134.9,
+   "2080": 96.4,
+   "2090": 44.5,
+   "2098": -0.0
   },
-  "verhandlungsmasse_z_2028_pct_bip": 9.35,
+  "verhandlungsmasse_z_2028_pct_bip": 9.93,
   "laender": {
    "Belgien": {
-    "altlast_2028_pct_bip": 11.79,
+    "altlast_2028_pct_bip": 12.36,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 5.56,
-      "zuschlag_pct": 16.6
+      "beitrag_pct_bip": 5.82,
+      "zuschlag_pct": 18.8
      },
      "2035": {
-      "beitrag_pct_bip": 5.48,
-      "zuschlag_pct": 16.4
+      "beitrag_pct_bip": 5.74,
+      "zuschlag_pct": 18.6
      },
      "2040": {
-      "beitrag_pct_bip": 5.42,
-      "zuschlag_pct": 16.2
+      "beitrag_pct_bip": 5.69,
+      "zuschlag_pct": 18.4
      },
      "2050": {
-      "beitrag_pct_bip": 5.31,
-      "zuschlag_pct": 15.9
+      "beitrag_pct_bip": 5.58,
+      "zuschlag_pct": 18.0
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Dänemark": {
-    "altlast_2028_pct_bip": 0.84,
+    "altlast_2028_pct_bip": 0.92,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 0.4,
-      "zuschlag_pct": 1.2
+      "beitrag_pct_bip": 0.43,
+      "zuschlag_pct": 1.4
      },
      "2035": {
-      "beitrag_pct_bip": 1.52,
-      "zuschlag_pct": 4.6
+      "beitrag_pct_bip": 1.61,
+      "zuschlag_pct": 5.2
      },
      "2040": {
-      "beitrag_pct_bip": 2.33,
-      "zuschlag_pct": 7.0
+      "beitrag_pct_bip": 2.46,
+      "zuschlag_pct": 7.9
      },
      "2050": {
-      "beitrag_pct_bip": 3.94,
-      "zuschlag_pct": 11.8
+      "beitrag_pct_bip": 4.14,
+      "zuschlag_pct": 13.4
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Deutschland": {
-    "altlast_2028_pct_bip": 10.96,
+    "altlast_2028_pct_bip": 11.6,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 5.16,
-      "zuschlag_pct": 15.4
+      "beitrag_pct_bip": 5.46,
+      "zuschlag_pct": 17.6
      },
      "2035": {
-      "beitrag_pct_bip": 5.18,
-      "zuschlag_pct": 15.5
+      "beitrag_pct_bip": 5.47,
+      "zuschlag_pct": 17.7
      },
      "2040": {
-      "beitrag_pct_bip": 5.19,
-      "zuschlag_pct": 15.5
+      "beitrag_pct_bip": 5.47,
+      "zuschlag_pct": 17.7
      },
      "2050": {
-      "beitrag_pct_bip": 5.21,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.48,
+      "zuschlag_pct": 17.7
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Estland": {
-    "altlast_2028_pct_bip": 7.78,
+    "altlast_2028_pct_bip": 8.36,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 3.67,
-      "zuschlag_pct": 11.0
+      "beitrag_pct_bip": 3.94,
+      "zuschlag_pct": 12.7
      },
      "2035": {
-      "beitrag_pct_bip": 4.03,
-      "zuschlag_pct": 12.1
+      "beitrag_pct_bip": 4.3,
+      "zuschlag_pct": 13.9
      },
      "2040": {
-      "beitrag_pct_bip": 4.29,
-      "zuschlag_pct": 12.8
+      "beitrag_pct_bip": 4.56,
+      "zuschlag_pct": 14.7
      },
      "2050": {
-      "beitrag_pct_bip": 4.81,
-      "zuschlag_pct": 14.4
+      "beitrag_pct_bip": 5.08,
+      "zuschlag_pct": 16.4
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Irland": {
-    "altlast_2028_pct_bip": 3.38,
+    "altlast_2028_pct_bip": 3.84,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 1.59,
-      "zuschlag_pct": 4.8
+      "beitrag_pct_bip": 1.81,
+      "zuschlag_pct": 5.8
      },
      "2035": {
-      "beitrag_pct_bip": 2.44,
-      "zuschlag_pct": 7.3
+      "beitrag_pct_bip": 2.67,
+      "zuschlag_pct": 8.6
      },
      "2040": {
-      "beitrag_pct_bip": 3.05,
-      "zuschlag_pct": 9.1
+      "beitrag_pct_bip": 3.28,
+      "zuschlag_pct": 10.6
      },
      "2050": {
-      "beitrag_pct_bip": 4.26,
-      "zuschlag_pct": 12.7
+      "beitrag_pct_bip": 4.51,
+      "zuschlag_pct": 14.6
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Frankreich": {
-    "altlast_2028_pct_bip": 13.84,
+    "altlast_2028_pct_bip": 14.43,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 6.52,
-      "zuschlag_pct": 19.5
+      "beitrag_pct_bip": 6.79,
+      "zuschlag_pct": 22.0
      },
      "2035": {
-      "beitrag_pct_bip": 6.22,
-      "zuschlag_pct": 18.6
+      "beitrag_pct_bip": 6.49,
+      "zuschlag_pct": 21.0
      },
      "2040": {
-      "beitrag_pct_bip": 6.0,
-      "zuschlag_pct": 18.0
+      "beitrag_pct_bip": 6.27,
+      "zuschlag_pct": 20.3
      },
      "2050": {
-      "beitrag_pct_bip": 5.57,
-      "zuschlag_pct": 16.7
+      "beitrag_pct_bip": 5.84,
+      "zuschlag_pct": 18.9
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Niederlande": {
-    "altlast_2028_pct_bip": 6.21,
+    "altlast_2028_pct_bip": 6.82,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 2.92,
-      "zuschlag_pct": 8.7
-     },
-     "2035": {
-      "beitrag_pct_bip": 3.46,
+      "beitrag_pct_bip": 3.21,
       "zuschlag_pct": 10.4
      },
+     "2035": {
+      "beitrag_pct_bip": 3.74,
+      "zuschlag_pct": 12.1
+     },
      "2040": {
-      "beitrag_pct_bip": 3.84,
-      "zuschlag_pct": 11.5
+      "beitrag_pct_bip": 4.12,
+      "zuschlag_pct": 13.3
      },
      "2050": {
-      "beitrag_pct_bip": 4.61,
-      "zuschlag_pct": 13.8
+      "beitrag_pct_bip": 4.88,
+      "zuschlag_pct": 15.8
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Österreich": {
-    "altlast_2028_pct_bip": 14.97,
+    "altlast_2028_pct_bip": 15.55,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 7.05,
-      "zuschlag_pct": 21.1
+      "beitrag_pct_bip": 7.32,
+      "zuschlag_pct": 23.7
      },
      "2035": {
-      "beitrag_pct_bip": 6.63,
-      "zuschlag_pct": 19.8
+      "beitrag_pct_bip": 6.89,
+      "zuschlag_pct": 22.3
      },
      "2040": {
-      "beitrag_pct_bip": 6.32,
-      "zuschlag_pct": 18.9
+      "beitrag_pct_bip": 6.59,
+      "zuschlag_pct": 21.3
      },
      "2050": {
-      "beitrag_pct_bip": 5.71,
-      "zuschlag_pct": 17.1
+      "beitrag_pct_bip": 5.98,
+      "zuschlag_pct": 19.3
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Slowenien": {
-    "altlast_2028_pct_bip": 11.93,
+    "altlast_2028_pct_bip": 12.57,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 5.62,
-      "zuschlag_pct": 16.8
+      "beitrag_pct_bip": 5.92,
+      "zuschlag_pct": 19.1
      },
      "2035": {
-      "beitrag_pct_bip": 5.53,
-      "zuschlag_pct": 16.5
+      "beitrag_pct_bip": 5.82,
+      "zuschlag_pct": 18.8
      },
      "2040": {
-      "beitrag_pct_bip": 5.46,
-      "zuschlag_pct": 16.3
+      "beitrag_pct_bip": 5.75,
+      "zuschlag_pct": 18.6
      },
      "2050": {
-      "beitrag_pct_bip": 5.33,
-      "zuschlag_pct": 15.9
+      "beitrag_pct_bip": 5.61,
+      "zuschlag_pct": 18.1
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    },
    "Spanien": {
-    "altlast_2028_pct_bip": 13.63,
+    "altlast_2028_pct_bip": 14.22,
     "reihe": {
      "2028": {
-      "beitrag_pct_bip": 6.42,
-      "zuschlag_pct": 19.2
+      "beitrag_pct_bip": 6.69,
+      "zuschlag_pct": 21.7
      },
      "2035": {
-      "beitrag_pct_bip": 6.14,
-      "zuschlag_pct": 18.4
+      "beitrag_pct_bip": 6.41,
+      "zuschlag_pct": 20.7
      },
      "2040": {
-      "beitrag_pct_bip": 5.94,
-      "zuschlag_pct": 17.8
+      "beitrag_pct_bip": 6.21,
+      "zuschlag_pct": 20.1
      },
      "2050": {
-      "beitrag_pct_bip": 5.54,
-      "zuschlag_pct": 16.6
+      "beitrag_pct_bip": 5.81,
+      "zuschlag_pct": 18.8
      },
      "2058": {
-      "beitrag_pct_bip": 5.22,
-      "zuschlag_pct": 15.6
+      "beitrag_pct_bip": 5.49,
+      "zuschlag_pct": 17.8
      }
     }
    }
   },
   "ungerundet": {
-   "beitrag_pct_bip": 5.223282245178169,
-   "zuschlag_auf_alle_steuern_pct": 15.629210787487038
+   "beitrag_pct_bip": 5.492538157744146,
+   "zuschlag_auf_alle_steuern_pct": 17.763706849107848
   },
-  "altlast_schnitt_2028": 11.09,
+  "altlast_schnitt_2028": 11.67,
   "hinweis": "Beitrag je Staat = gemeinsamer Beitrag × (Anteil nach eigener Altlast, linear in 30 Jahren abschmelzend auf gleichen Satz); Zuschlag bezogen auf die Steuerquote der Variante (vereinfachend für alle Staaten gleich)"
  },
  "verteilung_gemeinsamer_fonds": {
   "system": "33R",
-  "schnitt_pct_bip": 11.09,
+  "schnitt_pct_bip": 11.67,
   "laender": {
    "Belgien": {
-    "altlast_2028_pct_bip": 11.79,
-    "gegen_schnitt": 0.71
+    "altlast_2028_pct_bip": 12.36,
+    "gegen_schnitt": 0.69
    },
    "Dänemark": {
-    "altlast_2028_pct_bip": 0.84,
-    "gegen_schnitt": -10.25
+    "altlast_2028_pct_bip": 0.92,
+    "gegen_schnitt": -10.75
    },
    "Deutschland": {
-    "altlast_2028_pct_bip": 10.96,
-    "gegen_schnitt": -0.13
+    "altlast_2028_pct_bip": 11.6,
+    "gegen_schnitt": -0.07
    },
    "Estland": {
-    "altlast_2028_pct_bip": 7.78,
+    "altlast_2028_pct_bip": 8.36,
     "gegen_schnitt": -3.31
    },
    "Irland": {
-    "altlast_2028_pct_bip": 3.38,
-    "gegen_schnitt": -7.7
+    "altlast_2028_pct_bip": 3.84,
+    "gegen_schnitt": -7.83
    },
    "Frankreich": {
-    "altlast_2028_pct_bip": 13.84,
+    "altlast_2028_pct_bip": 14.43,
     "gegen_schnitt": 2.76
    },
    "Niederlande": {
-    "altlast_2028_pct_bip": 6.21,
-    "gegen_schnitt": -4.88
+    "altlast_2028_pct_bip": 6.82,
+    "gegen_schnitt": -4.85
    },
    "Österreich": {
-    "altlast_2028_pct_bip": 14.97,
+    "altlast_2028_pct_bip": 15.55,
     "gegen_schnitt": 3.88
    },
    "Slowenien": {
-    "altlast_2028_pct_bip": 11.93,
-    "gegen_schnitt": 0.84
+    "altlast_2028_pct_bip": 12.57,
+    "gegen_schnitt": 0.9
    },
    "Spanien": {
-    "altlast_2028_pct_bip": 13.63,
-    "gegen_schnitt": 2.54
+    "altlast_2028_pct_bip": 14.22,
+    "gegen_schnitt": 2.55
    }
   },
   "hinweis": "Altlast 2028 = Z + Zinsen auf die eigene Schuld (Zins 2028 der Gesamtrechnung); positiv: das Land bringt mehr Altlast mit, als es nach BIP-Anteil beiträgt"
