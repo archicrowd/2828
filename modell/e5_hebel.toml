@@ -1,0 +1,40 @@
+# Hebel zu E5 nach den Vorgaben der Initiative vom 16.11.2026 (modell/e5_hebel.py, Logbuch v4.96). Interne Prüfrechnung.
+version = "v4.96"
+# Vorgaben: Label ungern, höchstens +2 Punkte; Produkte wandern mit dem Klimapfad schrittweise in höhere Labelstufen (A → B …), die Bevorzugung
+# entfällt, wenn das Ziel Standard ist. Einkommen: Ansatz des Grundbedarfs hinterfragen, ggf. knapper. Erbschaft: Freibetrag = 2 × jährlicher
+# Grundbedarf. Fonds, Netz, Gemeinden bleiben. Satz: 33,33 % statt 33 %.
+
+[label]
+plus_punkte = [1.0, 2.0]          # effektiver Satz; Obergrenze der Initiative 2 Punkte
+# Stufenwanderung: der effektive Satz fällt nicht unter den Ausgangswert des Jahres 2028 (Regel: Einstufung wird mit dem Klimapfad
+# nachgeführt; was Standard ist, verliert die Bevorzugung). Umsetzung in der Projektion als Untergrenze (Annahme zur Wirkung).
+halten = true
+
+[grundbedarf]
+# Grundbedarf heute = steuerliches Existenzminimum 12.348 € (2026). Sächliches Existenzminimum 2026 (15. Existenzminimumbericht, BT-Drs. 20/13550):
+# Regelsatz 6.756, Bruttokaltmiete 4.212, Heizkosten 1.128 = 12.096 €; Kranken- und Pflegeversicherung gehören dazu, werden aber heute
+# gesondert als Vorsorgeaufwand abgezogen (im Drittel entfallen Beiträge und Abzug).
+# Was der Staat im Drittel zusätzlich trägt und im Regelsatz steckt (Abteilungen nach EVS, Modellrechnung, Sekundärquelle buerger-geld.org):
+# Gesundheitspflege 21 €/Monat (Zuzahlungen, Arzneien; Grundversorgung aus Steuern), Verkehr 52 €/Monat (nur wenn der Nahverkehr der Gemeinden
+# frei wäre; nicht beschlossen), Bildung 2 €/Monat.
+gesundheitspflege_monat = 21
+verkehr_monat = 52
+bildung_monat = 2
+basis_jahr = 12348
+# Varianten der Kürzung in % des Grundbedarfs: nur Gesundheitspflege und Bildung; zusätzlich Verkehr
+varianten = ["gesundheit_bildung", "mit_verkehr"]
+
+[erbschaft]
+# Verteilung der Erbschaften (SOEP, DIW Wochenbericht 5/2021, 2002–2017, Preise 2015): Mittelwert 85.052 €, Median 32.148 €; lognormal angepasst
+# (Annahme; Prüfung: 99. Perzentil der Anpassung gegen 772.400 € im SOEP). Preisfaktor 2015 → 2028 (Verbraucherpreise, Annahme).
+mittel_2015 = 85052
+median_2015 = 32148
+p99_2015 = 772400
+preisfaktor_2015_2028 = 1.38
+freibetrag_heute_modell = 100000
+freibetrag_vielfaches_grundbedarf = 2
+preissteigerung = 0.02             # Grundbedarf 2026 → 2028
+
+[satz]
+neu = 33.333333                    # „ein Drittel“ genau; alle Positionen mit Spitzensatz 33 % (Einkommen oberste Stufe, Kapitalerträge,
+                                   # Unternehmen, Erbschaften, Sonderstufe im Label für Alkohol, Tabak, Kraftstoffe)

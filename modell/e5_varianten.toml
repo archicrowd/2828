@@ -1,6 +1,6 @@
 # Varianten zu E5 (modell/e5_varianten.py, Logbuch v4.93): Wie wirkt die belegte Deckung auf Dividende, Fonds und Netz, mit allen Rückwirkungen
 # der Kette (Altrenten über der Dividende, Aufstockung, Dynamik)? Rechnet in einer Arbeitskopie; die geltende Rechnung bleibt unverändert.
-version = "v4.95"
+version = "v4.96"
 stufen = ["modell/systemvarianten.py", "modell/altlasten.py", "modell/dynamik_geltend.py", "modell/projektion33.py", "modell/mwst_verteilung.py",
           "modell/mwst_laender.py", "modell/netz33.py", "modell/moeglichkeitsraum33.py", "modell/fonds_klub.py"]
 jahre = [2028, 2035, 2045, 2060]
@@ -14,3 +14,10 @@ loeserbereich = [["modell/systemvarianten.py", "    lo, hi = 0.05, 0.6", "    lo
 A_mittel = "mittel"
 A_vorsichtig = "vorsichtig"
 A_hoch = "hoch"
+
+# v4.96: belegte Werte und Hebel der Initiative (e5_hebel.json): Label +2 mit Stufenwanderung, Grundbedarf ohne Gesundheitspflege und Bildung,
+# Erbschaftsfreibetrag 2 × Grundbedarf, Satz 33⅓ %
+[varianten_plus]
+Aplus_mittel = "mittel"
+Aplus_vorsichtig = "vorsichtig"
+Aplus_hoch = "hoch"

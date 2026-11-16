@@ -35,8 +35,21 @@ def main():
                      "CO₂-Änderung wirkt nur 2028, weil projektion33 den CO₂-Pfad selbst rechnet")
     EB = json.loads((W / "daten" / "aggregate" / "einnahmen_belege.json").read_text(encoding="utf-8"))
     namen = {"unternehmen": "Unternehmen und Plattformen", "uebrige": "Übrige Steuern", "co2_2028": "CO₂-Preis", "erbschaft": "Erbschaften"}
-    for name, fall in P["varianten"].items():
+    H = json.loads((W / "daten" / "aggregate" / "e5_hebel.json").read_text(encoding="utf-8"))
+    lab_var = {}
+    plan = dict(P["varianten"])
+    for name, fall in P.get("varianten_plus", {}).items():           # v4.96: belegte Werte plus Hebel der Initiative
+        plan[name] = fall
+    for name, fall in plan.items():
         aend = {namen[k]: v["luecke_pct_bip"] for k, v in EB["faelle"][fall]["positionen"].items()}
+        if name in P.get("varianten_plus", {}):
+            s = H["satz_33_drittel"]
+            plus = {"Einkommen": H["grundbedarf"]["gesundheit_bildung"]["mehr_pct_bip"] + s["einkommen"],
+                    "Erbschaften": H["erbschaft"]["mehr_pct_bip"] + s["erbschaft_belegt"], "Kapitalerträge": s["kapitalertraege"],
+                    "Unternehmen und Plattformen": s["unternehmen_belegt"], "Konsum (Label)": H["label"]["plus_2"] + s["label_sonderstufe"]}
+            for a, v in plus.items():
+                aend[a] = round(aend.get(a, 0.0) + v, 3)
+            lab_var[name] = dict(plus_punkte=round(2.0 + s["label_sonderstufe"] / H["label"]["plus_1"], 3), halten=H["label_halten"])
         with tempfile.TemporaryDirectory() as t:
             k = Path(t) / "repo"
             shutil.copytree(W, k, ignore=shutil.ignore_patterns(".git", "roh", "*.pdf", "docs", "seite", "deckung_varianten.toml"))
@@ -46,8 +59,10 @@ def main():
                 if s.count(alt) != 1:
                     raise SystemExit(f"Lösungsbereich: {datei} unerwartet")
                 f.write_text(s.replace(alt, neu), encoding="utf-8")
-            (k / "modell" / "deckung_varianten.toml").write_text(
-                "[aenderung_pct_bip]\n" + "".join(f'"{a}" = {v}\n' for a, v in aend.items()), encoding="utf-8")
+            text = "[aenderung_pct_bip]\n" + "".join(f'"{a}" = {v}\n' for a, v in aend.items())
+            if name in lab_var:
+                text += f"[label]\nplus_punkte = {lab_var[name]['plus_punkte']}\nhalten = {str(lab_var[name]['halten']).lower()}\n"
+            (k / "modell" / "deckung_varianten.toml").write_text(text, encoding="utf-8")
             fehler = None
             for st in P["stufen"]:
                 r = subprocess.run([sys.executable, st], cwd=k, capture_output=True, text=True)

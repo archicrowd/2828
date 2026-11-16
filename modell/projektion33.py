@@ -130,11 +130,18 @@ def main():
     # Grundpfad der Gesamtrechnung mit der Quote von 33F (Dach mit Verteidigungspfad, Zinsen außerhalb, Wachstum je Kopf der Gesamtrechnung)
     basis = {r["jahr"]: r for r in SVM.GR.pfad(v["quote_kern"], i_alt=0.0, i_ziel=0.0)}
     f_erw = SVM.GR.F_DE / (1 - k / 2) / f                          # Klub je Einwohner (Preise 2028) -> DE je Erwachsenem (Euro 2026)
+    # v4.96: Labelregel nur für Variantenrechnungen in einer Arbeitskopie (modell/e5_varianten.py); im Repository liegt die Datei nie.
+    lab = {}
+    ueber = W / "modell" / "deckung_varianten.toml"
+    if ueber.exists():
+        lab = tomllib.loads(ueber.read_text(encoding="utf-8")).get("label", {})
     def pfad(dyn):
         """v4.85: dyn = True mit der erwarteten Dynamik (dynamik_geltend.json, Faktor BIP je Einwohner), False statisch."""
         reihe = []
         for j in range(P["jahre"][0], P["jahre"][1] + 1):
-            eff = label(j)
+            eff = label(j) + lab.get("plus_punkte", 0.0)
+            if lab.get("halten"):                                            # Stufenwanderung: nicht unter den Ausgangswert
+                eff = max(eff, eff_check + lab.get("plus_punkte", 0.0))
             konsum = SVM.konsum(eff) * KONSUM_EICH                           # auf den Ausgangswert geeicht
             co2 = pos["CO₂-Preis"] * lin("co2_index", j)
             verbr = (P["energiesteuer_kraftstoffe_pct_bip"] * (1 - lin("kraftstoffe", j))

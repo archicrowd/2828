@@ -1,6 +1,6 @@
 # Entscheidungsvorlage E5: Was trägt die Lücke der Einnahmen?
 
-Initiative 28:28 · 15. November 2026 · Modellstand v4.95 (Zahlen nach Korrekturen 91 und 92) · Rechnung: `modell/e5_varianten.py` (+ `.toml`) → `daten/aggregate/e5_varianten.json`
+Initiative 28:28 · 15. November 2026 · Modellstand v4.96 (Zahlen nach Korrekturen 91 und 92; Hebel nach Vorgaben vom 16.11.2026 in Abschnitt 9) · Rechnung: `modell/e5_varianten.py` (+ `.toml`) → `daten/aggregate/e5_varianten.json`
 Status: **interne Vorlage** (Beschluss 15.11.2026: Rechnungen bis zum Abschluss von Weg C intern). Grundlage: `einnahmen_belege.json`,
 `unternehmensbasis.json`, Vorlagen `Einnahmen-Belege-2026-11-15.md` und `Unternehmensbasis-Entscheidungen-2026-11-15.md`.
 
@@ -101,3 +101,50 @@ rund 100 € (Kaufkraft 2026).
   −3,59 % BIP.
 - **Folge:** Für mindestens 100 € im Jahr 2060 braucht es jetzt rund 2 Punkte Ergänzung. Automatisierung und Erbe (rund 1 Punkt) decken etwa
   die Hälfte.
+
+## 9 Hebel nach den Vorgaben der Initiative (16.11.2026), gerechnet in v4.96
+
+Rechnung: `modell/e5_hebel.py` (+ `.toml`) → `e5_hebel.json`; Kette: `e5_varianten.py`, Varianten `Aplus_*`.
+
+| Hebel | Vorgabe der Initiative | Umsetzung | Wirkung 2028, % BIP | Stand |
+|---|---|---|---|---|
+| Label | ungern, höchstens +2 Punkte; Produkte wandern mit dem Klimapfad in höhere Stufen | effektiver Satz 18,8 → 20,8 %; Stufenwanderung: der effektive Satz fällt nicht unter den Ausgangswert | +0,75; im Pfad zusätzlich bis +0,4 (2060) | gerechnet; Verteilung auf Haushalte noch zu prüfen (`mwst_verteilung`) |
+| Grundbedarf | Ansatz hinterfragen, ggf. knapper; Begründung: mehr Grundvorsorge durch den Staat | ohne die Abteilungen Gesundheitspflege (21 €) und Bildung (2 € im Monat): 12.348 → 12.072 € (−2,2 %) | +0,14 | gerechnet; mit Verkehr (nur bei freiem Nahverkehr, nicht beschlossen) −7,3 % und +0,45 |
+| Erbschaft | Freibetrag = 2 × jährlicher Grundbedarf | 25.694 € (2028) statt 100.000 € je Erbe | +0,47 (Spanne der Ableitung +0,3 bis +0,7) | gerechnet, Verteilung angenommen |
+| Satz | 33,33 % | Spitzensatz aller Drittel-Positionen genau ein Drittel | +0,10 | gerechnet |
+| Fonds, Netz, Gemeinden | bleiben | – | – | – |
+| **zusammen** | | | **+1,46** und Stufenwanderung | |
+
+**Dividende je Erwachsenem und Monat** (Kaufkraft 2026, ohne Kinderanteil; belegte Werte plus Hebel):
+
+| Fall | 2028 | 2035 | 2045 | 2060 | Fondsbeitrag 2028 |
+|---|---|---|---|---|---|
+| geltend | 384 | 309 | 261 | 256 | 5,04 % BIP |
+| **A+ mittel** | **262** | **194** | **150** | **131** | **5,29** |
+| A+ vorsichtig | 230 | 158 | 111 | 81 | 5,35 |
+| A+ hoch | 296 | 229 | 189 | 179 | 5,22 |
+| nur belegt (A), mittel | 185 | 97 | 29 | −24 | 5,44 |
+
+**Ergebnis:** Mit den Vorgaben der Initiative bleibt die Dividende im mittleren Fall dauerhaft über 100 €; 2060 sind es 131 €. Im vorsichtigen
+Fall sind es 81 €. Automatisierung und Erbschaftswelle sind darin noch nicht enthalten (Haushaltsplan, Abschnitt 6: rund +1 Punkt um 2045).
+
+**Was zu den Hebeln noch zu sagen ist:**
+- **Erbschaft:**
+  - Der Wert für 2 × Grundbedarf beruht auf einer angenommenen Lognormalverteilung der Erbschaften, angepasst an Mittelwert und Median im SOEP
+    2002–2017. Die Gegenprobe am 99. Perzentil passt: 825.000 gegen 772.000 € (Preise 2015).
+  - Der Median einer Erbschaft liegt in Preisen von 2028 bei rund 44.000 €. Mit dem neuen Freibetrag zahlt damit gut die Hälfte der Erben.
+  - Offen ist, ob das selbst genutzte Elternhaus gesondert behandelt wird.
+- **Grundbedarf:**
+  - Das Bundesverfassungsgericht verlangt, dass das Existenzminimum steuerfrei bleibt.
+  - Eine Kürzung lässt sich nur mit Leistungen begründen, die der Staat im Drittel tatsächlich stellt, etwa die Grundversorgung bei Gesundheit.
+    Die Abteilungsbeträge stammen aus einer Modellrechnung nach EVS (Sekundärquelle) und sind an der Regelbedarfsermittlung zu prüfen.
+  - Wird der Grundbedarf auch im Netz gekürzt (Arbeitslosigkeit, Invalidität), sinken dort zusätzlich die Ausgaben. Das ist nicht gerechnet,
+    weil das Netz bleibt.
+- **Label:**
+  - +2 Punkte heben die Preise im Mittel um rund 1,7 % (2 / 120, Ableitung).
+  - Die Stufenwanderung ist eine Regel; ihre Wirkung ist als Untergrenze angesetzt (Annahme).
+
+**Zu entscheiden:**
+1. Die Hebel so übernehmen?
+2. Die Regel zur Stufenwanderung im Label beschließen?
+3. Das Elternhaus bei der Erbschaft regeln?

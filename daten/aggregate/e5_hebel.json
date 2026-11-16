@@ -1,0 +1,52 @@
+{
+ "version": "v4.96",
+ "status": "interne Prüfrechnung zu E5 (Vorgaben der Initiative 16.11.2026)",
+ "label_effektiv_2028": 18.82,
+ "label": {
+  "plus_1": 0.377,
+  "plus_2": 0.748
+ },
+ "label_halten": true,
+ "grundbedarf": {
+  "gesundheit_bildung": {
+   "grundbedarf_eur_2026": 12072,
+   "kuerzung_pct": 2.2,
+   "einkommen_pct_bip": 10.344,
+   "mehr_pct_bip": 0.138
+  },
+  "mit_verkehr": {
+   "grundbedarf_eur_2026": 11448,
+   "kuerzung_pct": 7.3,
+   "einkommen_pct_bip": 10.657,
+   "mehr_pct_bip": 0.451
+  }
+ },
+ "erbschaft": {
+  "freibetrag_neu_eur_2028": 25694,
+  "sigma": 1.395,
+  "p99_anpassung_2015": 824991,
+  "p99_soep_2015": 772400,
+  "anteil_ueber_freibetrag_alt": 0.553,
+  "anteil_ueber_freibetrag_neu": 0.82,
+  "faktor": 1.483,
+  "belegt_alt_pct_bip": 0.97,
+  "belegt_neu_pct_bip": 1.438,
+  "mehr_pct_bip": 0.468
+ },
+ "satz_33_drittel": {
+  "einkommen": 0.041,
+  "kapitalertraege": 0.014,
+  "unternehmen_belegt": 0.024,
+  "erbschaft_belegt": 0.015,
+  "label_sonderstufe": 0.011,
+  "zusammen": 0.105
+ },
+ "paket_2028_pct_bip": {
+  "label": 0.748,
+  "grundbedarf": 0.138,
+  "erbschaft": 0.468,
+  "satz": 0.105,
+  "zusammen": 1.459
+ },
+ "paket_hinweis": "Label +2, Grundbedarf ohne Gesundheitspflege und Bildung, Erbschaftsfreibetrag 2 × Grundbedarf, Satz 33⅓ %; dazu Stufenwanderung im Pfad (e5_varianten)"
+}

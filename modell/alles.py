@@ -50,6 +50,7 @@ STUFEN = [
     ("Plattformen am Ort der Nutzung mit Untergrenze (Variante)", ["modell/plattformen33.py"]),
     ("Unternehmensbasis nach Rechtsform und Hebeln (Option C, intern)", ["modell/unternehmensbasis.py"]),
     ("Beleg der vier Einnahmepositionen (Prüfbefund B-1, Prüfrechnung)", ["modell/einnahmen_belege.py"]),
+    ("E5: Hebel nach Vorgaben der Initiative (intern)", ["modell/e5_hebel.py"]),
     ("E5: belegte Deckung durch die Kette (Arbeitskopie, intern)", ["modell/e5_varianten.py"]),
     ("Haushaltsplan Deutschland vorher – nachher", ["modell/haushaltsplan_de.py"]),
     ("Drittel-System: Haushalte gegen heute", ["modell/haushalte33.py"]),

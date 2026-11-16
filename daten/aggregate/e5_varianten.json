@@ -1,5 +1,5 @@
 {
- "version": "v4.95",
+ "version": "v4.96",
  "status": "Variantenrechnung zu E5; geltende Rechnung unverändert",
  "geltend": {
   "dividende_erw_eur2026": {
@@ -113,6 +113,105 @@
    },
    "fonds_beitrag_pct_bip": 5.38,
    "z_2028_pct_bip": 10.07
+  },
+  "Aplus_mittel": {
+   "aenderung_pct_bip": {
+    "Unternehmen und Plattformen": -2.026,
+    "Übrige Steuern": -1.04,
+    "CO₂-Preis": -0.31,
+    "Erbschaften": 0.293,
+    "Einkommen": 0.179,
+    "Kapitalerträge": 0.014,
+    "Konsum (Label)": 0.759
+   },
+   "summe_pct_bip": -2.13,
+   "tragfaehig": true,
+   "dividende_erw_eur2026": {
+    "2028": 262,
+    "2035": 194,
+    "2045": 150,
+    "2060": 131
+   },
+   "dividende_pct_bip": {
+    "2028": 5.01,
+    "2035": 3.43,
+    "2045": 2.4,
+    "2060": 1.82
+   },
+   "netz_pct_bip": {
+    "2028": 9.74,
+    "2035": 10.02,
+    "2045": 10.49,
+    "2060": 11.15
+   },
+   "fonds_beitrag_pct_bip": 5.29,
+   "z_2028_pct_bip": 9.86
+  },
+  "Aplus_vorsichtig": {
+   "aenderung_pct_bip": {
+    "Unternehmen und Plattformen": -2.316,
+    "Übrige Steuern": -1.04,
+    "CO₂-Preis": -0.34,
+    "Erbschaften": 0.113,
+    "Einkommen": 0.179,
+    "Kapitalerträge": 0.014,
+    "Konsum (Label)": 0.759
+   },
+   "summe_pct_bip": -2.63,
+   "tragfaehig": true,
+   "dividende_erw_eur2026": {
+    "2028": 230,
+    "2035": 158,
+    "2045": 111,
+    "2060": 81
+   },
+   "dividende_pct_bip": {
+    "2028": 4.37,
+    "2035": 2.8,
+    "2045": 1.77,
+    "2060": 1.15
+   },
+   "netz_pct_bip": {
+    "2028": 9.78,
+    "2035": 10.06,
+    "2045": 10.54,
+    "2060": 11.25
+   },
+   "fonds_beitrag_pct_bip": 5.35,
+   "z_2028_pct_bip": 10.0
+  },
+  "Aplus_hoch": {
+   "aenderung_pct_bip": {
+    "Unternehmen und Plattformen": -1.596,
+    "Übrige Steuern": -1.04,
+    "CO₂-Preis": -0.27,
+    "Erbschaften": 0.473,
+    "Einkommen": 0.179,
+    "Kapitalerträge": 0.014,
+    "Konsum (Label)": 0.759
+   },
+   "summe_pct_bip": -1.48,
+   "tragfaehig": true,
+   "dividende_erw_eur2026": {
+    "2028": 296,
+    "2035": 229,
+    "2045": 189,
+    "2060": 179
+   },
+   "dividende_pct_bip": {
+    "2028": 5.65,
+    "2035": 4.07,
+    "2045": 3.03,
+    "2060": 2.47
+   },
+   "netz_pct_bip": {
+    "2028": 9.7,
+    "2035": 9.98,
+    "2045": 10.44,
+    "2060": 11.07
+   },
+   "fonds_beitrag_pct_bip": 5.22,
+   "z_2028_pct_bip": 9.72
   }
  },
  "hinweis": "Rückwirkung über die Altrenten über der Dividende (Z) enthalten; Lösungsbereich in der Kopie erweitert (loeserbereich); CO₂-Änderung wirkt nur 2028, weil projektion33 den CO₂-Pfad selbst rechnet"

@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 24. Oktober 2026 · Modellstand **v4.95**
+Stand: 24. Oktober 2026 · Modellstand **v4.96**
 
 ---
 
@@ -5408,6 +5408,34 @@ geht zugleich in der Grundstücksabgabe auf.
 
 **Datenquelle:** wie v4.94. **Bewegte Zahl:** keine geltende; intern Lücke B-1 −3,22 → −3,59 % BIP. **Wodurch aufgefallen:** Rückfrage der Initiative.
 
+### v4.96 — Hebel zu E5 nach den Vorgaben der Initiative; Dividende A+ dauerhaft über 100 €
+
+**Art der Änderung: MINOR (neue Prüfrechnung), geltende Zahlen unverändert.** 16. November 2026.
+
+**Vorgaben der Initiative (16.11.2026):**
+- Label höchstens +2 Punkte, Produkte wandern mit dem Klimapfad in höhere Stufen.
+- Grundbedarf hinterfragen, ggf. knapper (Begründung: mehr Grundvorsorge durch den Staat).
+- Erbschaftsfreibetrag 2 × jährlicher Grundbedarf.
+- Fonds, Netz und Gemeinden bleiben.
+- Satz 33,33 %.
+
+**Rechnung:** `modell/e5_hebel.py` (+ `.toml`) → `e5_hebel.json`; `e5_varianten` mit Varianten `Aplus_*`.
+- `projektion33.py` liest in der Arbeitskopie `[label]` aus `deckung_varianten.toml` (plus_punkte, halten); `projektion33.json` ist unverändert
+  (geprüft).
+
+**Ergebnis (2028, % BIP):**
+- Hebel: Label +2 = +0,75; Grundbedarf ohne Gesundheitspflege und Bildung (−2,2 %) = +0,14; Erbschaftsfreibetrag 25.694 € = +0,47; 33⅓ % = +0,10.
+  Zusammen +1,46.
+- Dazu die Stufenwanderung im Label: Untergrenze des effektiven Satzes.
+- **Dividende A+ (mittel):** 262 / 194 / 150 / 131 € (2028/2035/2045/2060); vorsichtig 81 €, hoch 179 € im Jahr 2060. Fondsbeitrag 5,29 % BIP.
+
+**Datenquelle:**
+- 15. Existenzminimumbericht (BT-Drs. 20/13550).
+- Regelsatz-Aufteilung nach EVS (buerger-geld.org, Sekundärquelle).
+- SOEP-Verteilung der Erbschaften (DIW Wochenbericht 5/2021).
+
+**Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Vorgaben der Initiative zu den Hebeln.
+
 ---
 
 ## 4 | Korrekturen, Fortsetzung
@@ -5492,7 +5520,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.95
+## 7 | Offene Punkte, Stand v4.96
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
