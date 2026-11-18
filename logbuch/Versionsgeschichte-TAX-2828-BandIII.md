@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 18. November 2026 · Modellstand **v4.99**
+Stand: 18. November 2026 · Modellstand **v4.100**
 
 ---
 
@@ -5593,6 +5593,48 @@ Die Empfehlungen S1–S7 stehen in `projekt/Strukturanalyse-Einnahmen-Ausgaben-2
 
 ---
 
+### v4.100 — Satz und Puffer für eine auf Dauer leicht steigende Dividende; Wirkungslogik nach UNDG
+
+**Art der Änderung: MINOR (neue Prüfrechnung), geltende Zahlen unverändert.** 18. November 2026.
+
+**Auftrag der Initiative (18.11.2026):** Die Ausgabenteilung ist im guten Verhältnis, das Aufkommen zu gering; das stellt die 33 % in Frage. Wo läge
+die Quote mit Puffer und auf Dauer leicht steigender Dividende? Was bedeutet die beigefügte UNDG-Handreichung „Theory of Change“ (2017)?
+
+**Rechnung:** `modell/quote_optimum.py` (+ `.toml`) → `quote_optimum.json`.
+- Varianten:
+  - Satz 33⅓, 35, 36, 37, 38, 40 % für Einkommensspitze, Kapital, Unternehmen und Erbschaft.
+  - Label fest oder mit dem Satz skaliert.
+  - Regel 0 (Dividende als Rest) oder L (Lenkungsabgaben an den Fonds, die Dividende erhält die barwertgleiche Konstante 1,24 % BIP aus dem Zuschlag; Barwert bei Fondszins 2,45 % und Wachstum 3 % bis 2098).
+- Weitere Setzungen:
+  - Puffer 0,5 % BIP je Jahr.
+  - Glättung mit realem Wachstum von 0,5 bzw. 1 % je Jahr und einer Rücklage ohne Zins.
+  - Verhalten über die Elastizitäten des Kernmodells (Robust).
+  - Empfindlichkeit Staatsebene +1,2 % BIP.
+- Gegenprobe: geltend 174 / 102 / 81 / 47 / 48 € (projektion33: 174 / 102 / 81 / 47 / 49 €).
+
+**Ergebnis:**
+- Ohne Regel fällt die Dividende bei jedem Satz um rund 2,6 Punkte BIP bis 2060.
+- Mit Regel L ist das Kriterium (ab 2035 nicht fallend, 2060 ≥ 2028) ab 37 % bei festem Label erfüllt. Mit Glättung von 1 % beginnt die Dividende bei 100 € und erreicht 137 € im Jahr 2060. Steuern 32,4 % BIP, mit Fonds 37,7 %, wirksamer Spitzensatz 43,1 %.
+- Mit Staatsebene sind 40 % nötig (86 → 118 €).
+- Bei ein Drittel mit Regel L und Puffer: 34 → 47 €.
+- Je Punkt Satz rund 0,3 % BIP oder 17 €.
+
+**Wirkungslogik (UNDG 2017):** Empfohlen werden:
+- ein Register der Annahmen und Risiken (`projekt/annahmen.csv`, prüfbar in alles.py);
+- die Wirkungslogik auf einer Seite;
+- die Wirkung nach Geschlecht (Lücke);
+- Beteiligung Betroffener vor der Veröffentlichung.
+
+Der Puffer entspricht dem Prüfpunkt „Widerstandskraft“, der Altersausgleich R4 dem Prüfpunkt „niemanden zurücklassen“.
+
+**Datenquelle:**
+- Projektrechnungen (systemvarianten 33R, projektion33, gesamtlast33, fonds_geltend, struktur_vergleich).
+- UNDG, Theory of Change – UNDAF Companion Guidance (2017), von der Initiative bereitgestellt.
+
+**Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5676,7 +5718,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.99
+## 7 | Offene Punkte, Stand v4.100
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5707,6 +5749,8 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R19 | **Ausgleichsregel statt Restgröße (v4.99, S1/S2/S7):** Dividende an stabile Basis binden, Ausgleichsrücklage; Lenkungsabgaben (2,8 % BIP 2028) dem auslaufenden Fonds zuweisen | Dividende, Fonds | v4.99 |
 | R20 | **Staatsebene und Abdeckung (v4.99, S5/S6):** Verwaltung der Staaten (−2,22 % BIP gegen DE), Justiz (−0,27), Fernverkehrswege, EU-Beiträge abgrenzen; Einnahmen und Ausgaben für dasselbe Land rechnen | Deckung, Dividende | v4.99 |
 | R21 | **Trends Kapital und Erbe, kalte Progression (v4.99, S3/S4):** Kapitalquote und Erbvolumen als Trend; Progression +1,25 % BIP bis 2060 offen ausweisen und entscheiden | Langfristpfad | v4.99 |
+| R22 | **Quote und Regel L (v4.100):** Regel L und Glättung beschließen; Satz 37 % (ohne Staatsebene) oder 40 % (mit); Verlagerung bei 37–40 % mit ausweichen33 prüfen; Name „Goldenes Drittel“ als Ziel nach Tilgung erklären | Dividende, Zuschlag | v4.100 |
+| R23 | **Wirkungslogik (v4.100, UNDG 2017):** Register der Annahmen und Risiken, Wirkungslogik auf einer Seite, Wirkung nach Geschlecht, Beteiligung | Methode | v4.100 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 
