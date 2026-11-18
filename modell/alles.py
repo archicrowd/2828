@@ -90,6 +90,7 @@ STUFEN = [
     ("Rentner: Kürzungssatz der Zusagen je Staat (R6)", ["modell/kuerzung_laender.py"]),
     ("Rentnerregel nach der Umstellung neu eichen: Zerlegung und Varianten R0–R4 (Prüfrechnung)", ["modell/rentner_eichung.py"]),
     ("CO₂-Position: bezahlte Mengen und strengere Bepreisung K0–K5 (Prüfrechnung)", ["modell/co2_varianten.py"]),
+    ("Strukturvergleich Einnahmen nach Quelle und Ausgaben nach Zweck, heute gegen Goldenes Drittel (Prüfrechnung)", ["modell/struktur_vergleich.py"]),
     ("Gesamtlast Stand C mit Fonds und Pflichtvorsorge", ["modell/gesamtlast33.py"]),
     ("Gemeinsame Aufgaben: Pflichtquote, Kasse und Anrechnung", ["modell/dach_beitrag.py"]),
     ("Gemeindeformel je Kreis (Deutschland), Strukturzuschlag", ["modell/regionen_de.py"]),

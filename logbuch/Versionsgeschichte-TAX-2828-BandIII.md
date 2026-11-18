@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 16. November 2026 · Modellstand **v4.98**
+Stand: 18. November 2026 · Modellstand **v4.99**
 
 ---
 
@@ -5548,6 +5548,51 @@ Bestandsrente enthalten (Korrektur 65). Die Ursache sind Label, Tarif und Zuschl
 
 ---
 
+### v4.99 — Strukturanalyse: Einnahmen nach Quelle, Ausgaben nach Zweck, heute gegen Goldenes Drittel
+
+**Art der Änderung: MINOR (neue Prüfrechnung), geltende Zahlen unverändert.** 18. November 2026.
+
+**Auftrag der Initiative (18.11.2026):** Die immer neuen Lücken deuten auf ein strukturelles Problem. Einnahmen grob nach Arbeit, Kapital (mit
+Vermietung) und Konsum, Ausgaben nach Gemeinwesen, Unterstützung und Verwaltung; Anteile im Bestand und im Goldenen Drittel für das Durchschnittsland.
+
+**Rechnung:** `modell/struktur_vergleich.py` (+ `.toml`) → `struktur_vergleich.json`. Spalten: EU-27 (Kommission 2024, Eurostat COFOG 2023),
+Deutschland 2024 (Eurostat, eigene Zuordnung) und Modellland 33R 2028/2040/2050.
+- **Einnahmen** (% BIP):
+  - Arbeit: EU-27 20,3; DE 24,0; neu 9,0 (Steuern), 10,6 mit Fondszuschlag, 14,7 mit Pflichtvorsorge.
+  - Kapital: EU-27 8,5; DE 6,1; neu 8,5 bzw. 10,0.
+  - Konsum: EU-27 10,6; DE 9,5; neu 12,8 bzw. 15,0.
+  - Anteile Arbeit / Kapital / Konsum: DE 60 / 15 / 24 %, neu 37 / 25 / 37 %.
+- **Ausgaben** (% BIP):
+  - Gemeinwesen: EU-27 16,7; DE 14,8; neu 13,6 (2028) bzw. 14,7 (ab 2035).
+  - Unterstützung: EU-27 26,5; DE 27,6; neu 25,3, davon Altrenten 10,8 und Dividende 3,3.
+  - Verwaltung: EU-27 4,2; DE 5,2; neu 3,0.
+  - Zinsen: EU-27 1,7; DE 1,1; neu 1,8.
+- **Abdeckung:** Allgemeine Verwaltung −2,22, Justiz −0,27 und Fernverkehrswege sind nicht eigens abgebildet (offen). Übrige Geldleistungen −3,69 (Seil, Härtefall und Dividende statt Familie, Grundsicherung, Wohngeld, Lohnersatz).
+- **Gleichgewicht 2028:** Ausgaben 43,62 gegen Steuern 31,15 + Fondsbeitrag 5,32. Der Fonds nimmt 7,15 % BIP Kredit auf (gesamtlast33 dynamisch 7,09).
+- **Dividende 2028 → 2060:** 3,33 → 0,67 % BIP. Zerlegung: Verteidigung −1,10, Lenkungsabgaben −1,96, Gesundheit −0,84, kalte Progression +1,25.
+
+**Befunde (offen, R19–R21):**
+- Die Dividende ist die einzige Ausgleichsgröße.
+- Lenkungsabgaben (2,8 % BIP) tragen Daueraufgaben.
+- Kapital ist ohne Trend gerechnet.
+- Die Verwaltung der Staatsebene fehlt.
+- Das Modellland mischt die Ausgaben der zehn Staaten mit Einnahmen auf deutscher Basis.
+
+Die Empfehlungen S1–S7 stehen in `projekt/Strukturanalyse-Einnahmen-Ausgaben-2026-11-18.md`.
+
+**Datenquelle:**
+- GD TAXUD, Annual Report on Taxation 2026 (Pressemitteilung 10.07.2026).
+- Eurostat Statistics Explained COFOG (EU-27 2023; maschinell gelesen, an der Quelle zu prüfen).
+- Eurostat gov_10a_* DE 2024.
+- BMF 2025 (Sekundärquelle).
+- EU-SILC 2025.
+
+**Zuordnungen** (Einkommensteuer auf Gewinn- und Mieteinkünfte 13,3 %, Grunderwerbsteuer zu Kapital, nicht zuordenbare Abgaben 0,36–0,70 % BIP) sind Annahmen.
+
+**Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5631,7 +5676,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.98
+## 7 | Offene Punkte, Stand v4.99
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5659,6 +5704,9 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R16 | **Rentnerregel nach der Umstellung v4.97 neu eichen:** Rentnerhaushalte mit mehr 23,1 % (vorher 63,7 %), Mittel −197 €; Ursache vor allem das Label (v4.98, Korrektur 94); Varianten R0–R4, Empfehlung Altersausgleich R4 (55 € je Person, 0,23 % BIP), Entscheidung offen; dazu Kursgewinne (später), Fortschrittskriterium der Brücke, Automatisierungs- und Erbschaftstrend im Langfristpfad | Rentner; Zuschlag | v4.97 |
 | R17 | **CO₂-Position (B-3, v4.98):** freie Zuteilung im EU-ETS 1 nicht abgezogen (−0,38 % BIP); Entscheidung K1 (berichtigen) oder K2 (nationale Abgabe auf frei zugeteilte Mengen) oder K3 (150 €/t); Rechtsprüfung (P1) | Dividende −20 bis +12 € | v4.98 |
 | R18 | **CO₂-Kosten in den Haushaltsrechnungen (B-4, v4.98):** heute und neu aufnehmen; Mehrlast 2028 gegen 2025 rund 0,6 % BIP, Rentner grob −41 € | alle Haushalte, vor allem Rentner | v4.98 |
+| R19 | **Ausgleichsregel statt Restgröße (v4.99, S1/S2/S7):** Dividende an stabile Basis binden, Ausgleichsrücklage; Lenkungsabgaben (2,8 % BIP 2028) dem auslaufenden Fonds zuweisen | Dividende, Fonds | v4.99 |
+| R20 | **Staatsebene und Abdeckung (v4.99, S5/S6):** Verwaltung der Staaten (−2,22 % BIP gegen DE), Justiz (−0,27), Fernverkehrswege, EU-Beiträge abgrenzen; Einnahmen und Ausgaben für dasselbe Land rechnen | Deckung, Dividende | v4.99 |
+| R21 | **Trends Kapital und Erbe, kalte Progression (v4.99, S3/S4):** Kapitalquote und Erbvolumen als Trend; Progression +1,25 % BIP bis 2060 offen ausweisen und entscheiden | Langfristpfad | v4.99 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 

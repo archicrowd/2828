@@ -1,0 +1,378 @@
+{
+ "version": "v4.99",
+ "status": "Prüfrechnung (Auftrag 18.11.2026); geltende Rechnung unverändert",
+ "einnahmen": {
+  "eu27_2024": {
+   "pct_bip": {
+    "arbeit": 20.29,
+    "kapital": 8.51,
+    "konsum": 10.56
+   },
+   "anteil_pct": {
+    "arbeit": 51.6,
+    "kapital": 21.6,
+    "konsum": 26.8
+   },
+   "summe": 39.4
+  },
+  "de_2024": {
+   "mrd": {
+    "arbeit": 1052.0,
+    "kapital": 265.4,
+    "konsum": 415.7,
+    "nicht_zugeordnet": 30.9
+   },
+   "pct_bip": {
+    "arbeit": 23.98,
+    "kapital": 6.05,
+    "konsum": 9.48,
+    "nicht_zugeordnet": 0.7
+   },
+   "anteil_pct": {
+    "arbeit": 59.6,
+    "kapital": 15.0,
+    "konsum": 23.6,
+    "nicht_zugeordnet": 1.8
+   },
+   "summe": 40.21
+  },
+  "neu_2028_steuern": {
+   "pct_bip": {
+    "arbeit": 9.01,
+    "kapital": 8.54,
+    "konsum": 12.76,
+    "nicht_zugeordnet": 0.36
+   },
+   "subventionsabbau": 0.48,
+   "anteil_pct": {
+    "arbeit": 29.4,
+    "kapital": 27.8,
+    "konsum": 41.6,
+    "nicht_zugeordnet": 1.2
+   },
+   "summe": 31.15
+  },
+  "neu_2028_mit_fonds": {
+   "pct_bip": {
+    "arbeit": 10.57,
+    "kapital": 10.02,
+    "konsum": 14.97,
+    "nicht_zugeordnet": 0.42
+   },
+   "subventionsabbau": 0.48,
+   "zuschlag_pct": 17.3,
+   "summe": 36.47
+  },
+  "neu_2028_mit_pflichtvorsorge": {
+   "pct_bip": {
+    "arbeit": 14.67,
+    "kapital": 10.02,
+    "konsum": 14.97,
+    "nicht_zugeordnet": 0.42
+   },
+   "subventionsabbau": 0.48,
+   "anteil_pct": {
+    "arbeit": 36.6,
+    "kapital": 25.0,
+    "konsum": 37.4,
+    "nicht_zugeordnet": 1.0
+   },
+   "summe": 40.57
+  },
+  "neu_pfad_steuern": {
+   "2028": {
+    "arbeit": 9.08,
+    "kapital": 8.54,
+    "konsum": 12.76,
+    "nicht_zugeordnet": 0.36,
+    "subventionsabbau": 0.48,
+    "lenkung": 2.8,
+    "summe": 31.22
+   },
+   "2040": {
+    "arbeit": 9.59,
+    "kapital": 8.54,
+    "konsum": 11.75,
+    "nicht_zugeordnet": 0.36,
+    "subventionsabbau": 0.48,
+    "lenkung": 1.87,
+    "summe": 30.72
+   },
+   "2050": {
+    "arbeit": 9.96,
+    "kapital": 8.54,
+    "konsum": 11.0,
+    "nicht_zugeordnet": 0.36,
+    "subventionsabbau": 0.48,
+    "lenkung": 1.14,
+    "summe": 30.34
+   },
+   "2060": {
+    "arbeit": 10.33,
+    "kapital": 8.54,
+    "konsum": 10.79,
+    "nicht_zugeordnet": 0.36,
+    "subventionsabbau": 0.48,
+    "lenkung": 0.95,
+    "summe": 30.5
+   }
+  },
+  "hilf": {
+   "kapitalanteil_einkommensteuer": 0.133,
+   "grunderwerb_pct_bip": 0.29,
+   "nicht_zugeordnet_neu_pct_bip": 0.36
+  }
+ },
+ "ausgaben": {
+  "eu27_2023": {
+   "einzeln": {
+    "gemeinwesen": 16.7,
+    "verwaltung": 4.19,
+    "gesundheit": 7.3,
+    "alter": 10.4,
+    "geldleistungen_uebrige": 8.8,
+    "dividende": 0.0,
+    "zinsen": 1.72
+   },
+   "drei": {
+    "gemeinwesen": 16.7,
+    "unterstuetzung": 26.5,
+    "verwaltung": 4.19
+   },
+   "drei_ohne_altlasten": {
+    "gemeinwesen": 16.7,
+    "unterstuetzung": 16.1,
+    "verwaltung": 4.19
+   },
+   "anteil_drei_pct": {
+    "gemeinwesen": 35.2,
+    "unterstuetzung": 55.9,
+    "verwaltung": 8.8
+   },
+   "summe": 49.1
+  },
+  "de_2024": {
+   "einzeln": {
+    "gemeinwesen": 14.8,
+    "verwaltung": 5.21,
+    "gesundheit": 7.51,
+    "alter": 9.74,
+    "geldleistungen_uebrige": 10.39,
+    "dividende": 0.0,
+    "zinsen": 1.12
+   },
+   "drei": {
+    "gemeinwesen": 14.8,
+    "unterstuetzung": 27.64,
+    "verwaltung": 5.21
+   },
+   "drei_ohne_altlasten": {
+    "gemeinwesen": 14.8,
+    "unterstuetzung": 17.9,
+    "verwaltung": 5.21
+   },
+   "anteil_drei_pct": {
+    "gemeinwesen": 31.1,
+    "unterstuetzung": 58.0,
+    "verwaltung": 10.9
+   },
+   "summe": 48.77,
+   "mrd": {
+    "gemeinwesen": 649.4,
+    "verwaltung": 228.6,
+    "gesundheit": 329.3,
+    "alter": 427.2,
+    "geldleistungen_uebrige": 456.0,
+    "dividende": 0.0,
+    "zinsen": 49.3
+   }
+  },
+  "neu_2028": {
+   "einzeln": {
+    "gemeinwesen": 13.55,
+    "verwaltung": 2.99,
+    "gesundheit": 7.75,
+    "alter": 10.83,
+    "geldleistungen_uebrige": 3.37,
+    "dividende": 3.33,
+    "zinsen": 1.8
+   },
+   "drei": {
+    "gemeinwesen": 13.55,
+    "unterstuetzung": 25.28,
+    "verwaltung": 2.99
+   },
+   "drei_ohne_altlasten": {
+    "gemeinwesen": 13.55,
+    "unterstuetzung": 14.45,
+    "verwaltung": 2.99
+   },
+   "anteil_drei_pct": {
+    "gemeinwesen": 32.4,
+    "unterstuetzung": 60.4,
+    "verwaltung": 7.1
+   },
+   "summe": 43.62
+  },
+  "neu_2040": {
+   "einzeln": {
+    "gemeinwesen": 14.65,
+    "verwaltung": 2.99,
+    "gesundheit": 8.12,
+    "alter": 10.28,
+    "geldleistungen_uebrige": 3.37,
+    "dividende": 1.37,
+    "zinsen": 1.43
+   },
+   "drei": {
+    "gemeinwesen": 14.65,
+    "unterstuetzung": 23.14,
+    "verwaltung": 2.99
+   },
+   "drei_ohne_altlasten": {
+    "gemeinwesen": 14.65,
+    "unterstuetzung": 12.86,
+    "verwaltung": 2.99
+   },
+   "anteil_drei_pct": {
+    "gemeinwesen": 35.9,
+    "unterstuetzung": 56.7,
+    "verwaltung": 7.3
+   },
+   "summe": 42.21
+  },
+  "neu_2050": {
+   "einzeln": {
+    "gemeinwesen": 14.65,
+    "verwaltung": 2.99,
+    "gesundheit": 8.38,
+    "alter": 8.24,
+    "geldleistungen_uebrige": 3.37,
+    "dividende": 0.72,
+    "zinsen": 1.06
+   },
+   "drei": {
+    "gemeinwesen": 14.65,
+    "unterstuetzung": 20.71,
+    "verwaltung": 2.99
+   },
+   "drei_ohne_altlasten": {
+    "gemeinwesen": 14.65,
+    "unterstuetzung": 12.47,
+    "verwaltung": 2.99
+   },
+   "anteil_drei_pct": {
+    "gemeinwesen": 38.2,
+    "unterstuetzung": 54.0,
+    "verwaltung": 7.8
+   },
+   "summe": 39.41
+  },
+  "abdeckung": [
+   {
+    "bereich": "Verteidigung (GF02)",
+    "de_2024": 1.34,
+    "modell_2028": 1.4,
+    "differenz": 0.06,
+    "bemerkung": "Pfad 1,40 → 2,50 % bis 2035 (Entscheidung)"
+   },
+   {
+    "bereich": "Öffentliche Ordnung, Justiz (GF03)",
+    "de_2024": 1.61,
+    "modell_2028": 1.34,
+    "differenz": -0.27,
+    "bemerkung": "Gerichte und Strafvollzug nicht eigens abgebildet (offen)"
+   },
+   {
+    "bereich": "Wirtschaft und Verkehr (GF04)",
+    "de_2024": 5.35,
+    "modell_2028": 3.58,
+    "differenz": -1.77,
+    "bemerkung": "Kürzung 1,65 Punkte beschlossen (P8); Fernverkehrswege nicht eigens genannt (offen)"
+   },
+   {
+    "bereich": "Umwelt (GF05)",
+    "de_2024": 0.56,
+    "modell_2028": 0.86,
+    "differenz": 0.3,
+    "bemerkung": "abgebildet"
+   },
+   {
+    "bereich": "Wohnen, Gemeinwesen (GF06)",
+    "de_2024": 0.47,
+    "modell_2028": 0.71,
+    "differenz": 0.24,
+    "bemerkung": "abgebildet"
+   },
+   {
+    "bereich": "Kultur, Sport (GF08)",
+    "de_2024": 1.05,
+    "modell_2028": 1.22,
+    "differenz": 0.17,
+    "bemerkung": "abgebildet"
+   },
+   {
+    "bereich": "Bildung (GF09)",
+    "de_2024": 4.44,
+    "modell_2028": 4.44,
+    "differenz": 0.0,
+    "bemerkung": "abgebildet (Kitas: Teil der Schulen oder der Familie, zu prüfen)"
+   },
+   {
+    "bereich": "Allgemeine Verwaltung ohne Zinsen (GF01)",
+    "de_2024": 5.21,
+    "modell_2028": 2.99,
+    "differenz": -2.22,
+    "bemerkung": "Ebene der Staaten (Parlamente, Ministerien, Steuer- und Finanzverwaltung, Statistik) und Beiträge an die EU nicht eigens abgebildet (offen)"
+   },
+   {
+    "bereich": "Gesundheit (GF07)",
+    "de_2024": 7.51,
+    "modell_2028": 7.75,
+    "differenz": 0.24,
+    "bemerkung": "Netz, Schnitt der zehn; steigt mit der Alterung"
+   },
+   {
+    "bereich": "Alter (GF1002)",
+    "de_2024": 9.74,
+    "modell_2028": 10.83,
+    "differenz": 1.09,
+    "bemerkung": "Altrenten Z im Fonds, laufen bis 2092 aus; neue Renten aus Pflichtvorsorge (eigenes Konto) und Dividende"
+   },
+   {
+    "bereich": "übrige Geldleistungen (GF10 ohne Alter)",
+    "de_2024": 10.39,
+    "modell_2028": 6.7,
+    "differenz": -3.69,
+    "bemerkung": "Seil, Härtefall und Dividende ersetzen Familie, Grundsicherung, Wohngeld, Lohnersatz"
+   },
+   {
+    "bereich": "Zinsen (GF0107)",
+    "de_2024": 1.12,
+    "modell_2028": 1.8,
+    "differenz": 0.68,
+    "bemerkung": "Fonds (Altlasten)"
+   }
+  ]
+ },
+ "finanzierung_2028": {
+  "ausgaben_2028": 43.62,
+  "steuern_2028": 31.15,
+  "fondsbeitrag": 5.32,
+  "luecke_2028_fondskredit": 7.15,
+  "fonds_neuaufnahme_2028_gesamtlast33": 7.09,
+  "fonds_schuldenquote_spitze": 151.3,
+  "spitzenjahr": 2055,
+  "zieljahr": 2098
+ },
+ "dividende_zerlegung_2028_2060": {
+  "dividende_2028": 3.33,
+  "dividende_2060": 0.67,
+  "verteidigung": -1.1,
+  "lenkung_erosion": -1.96,
+  "gesundheit_pflege": -0.84,
+  "progression": 1.25,
+  "summe": -2.65
+ },
+ "hinweis": "% des jeweiligen BIP. EU-27: Einnahmen 2024, Ausgaben 2023 (verschiedene Jahre). Modellland: Ausgaben der zehn Staaten, Einnahmen auf deutscher Basis. Zuordnung der Einkommensteuer zu Arbeit und Kapital und der übrigen Steuern sind Annahmen (struktur_vergleich.toml)."
+}

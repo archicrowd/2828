@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.98 · höchste Korrekturnummer 94 · 643 Dateien im Repository
+Modellstand v4.99 · höchste Korrekturnummer 94 · 647 Dateien im Repository
 
 ## Bausteine
 
@@ -103,6 +103,7 @@ Modellstand v4.98 · höchste Korrekturnummer 94 · 643 Dateien im Repository
 | N58 | B31 Drittel-System | Webseite | ok |
 | N59 | B32 Länderseiten | B32 Länderseiten | offen |
 | N60 | B31 Drittel-System | B31 Drittel-System | offen |
+| N61 | B31 Drittel-System | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -138,3 +139,4 @@ Modellstand v4.98 · höchste Korrekturnummer 94 · 643 Dateien im Repository
 - Hinweis: Naht N57 offen: B31 Drittel-System -> B32 Länderseiten: v4.97: konzept33-bau.js liest G26T nicht aus der Datei (Wert 12072 von Hand, zu prüfen bei Änderung)
 - Hinweis: Naht N59 offen: B32 Länderseiten -> B32 Länderseiten: v4.98: Prüfrechnung; Werte [alt] bei Änderung von v4.96-Daten nicht automatisch nachgezogen
 - Hinweis: Naht N60 offen: B31 Drittel-System -> B31 Drittel-System: v4.98: Befund B-3 (freie Zuteilung) und B-4 (CO₂-Kosten fehlen in den Haushalten) offen, R17/R18
+- Hinweis: Naht N61 offen: B31 Drittel-System -> B31 Drittel-System: v4.99: Prüfrechnung; Zuordnungen Annahme; EU-27 Einnahmen 2024 und Ausgaben 2023 aus verschiedenen Jahren
