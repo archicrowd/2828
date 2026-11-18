@@ -1,0 +1,603 @@
+{
+ "version": "v4.101",
+ "status": "Prüfrechnung (Auftrag 18.11.2026); geltende Rechnung unverändert",
+ "regeln": {
+  "satz": 38.0,
+  "label": "fest 7/13/19/27 + Sonderstufe ein Drittel",
+  "regel": "L",
+  "puffer_pct_bip": 0.5,
+  "glaettung": 0.01,
+  "co2": "K2",
+  "rentner": "R4 neu geeicht"
+ },
+ "makro": {
+  "steuern_2028": 32.71,
+  "steuern_2060": 32.17,
+  "fondsbeitrag": 5.32,
+  "zuschlag_pct": 16.3,
+  "effektiver_spitzensatz": 44.2,
+  "lenkung_konstante": 1.24,
+  "last_steuern_fonds_2028": 38.03,
+  "pflichtvorsorge": 4.1,
+  "last_mit_pflichtvorsorge_2028": 42.13,
+  "geltend": {
+   "steuern_2028": 31.22,
+   "zuschlag_pct": 17.0,
+   "effektiver_spitzensatz": 39.0,
+   "dividende_eur": {
+    "2028": 246,
+    "2035": 175,
+    "2040": 153,
+    "2050": 112,
+    "2060": 103
+   }
+  },
+  "zusatzausgaben_pct_bip": {
+   "co2_k2": 0.09,
+   "rentner_r4": 0.45
+  },
+  "info_mehrkosten_grundauskommen_mikro_pct_bip": 0.29,
+  "gegenprobe_geltend_netz33_eur": {
+   "2028": 246,
+   "2035": 175,
+   "2050": 112,
+   "2060": 103
+  }
+ },
+ "dividende": {
+  "d0_eur": 150,
+  "pfad": {
+   "2028": {
+    "jahr": 2028,
+    "dividende_eur": 150,
+    "dividende_pct_bip": 2.87,
+    "rest_mit_netz_pct_bip": 3.72,
+    "ruecklage_pct_bip": 0.85,
+    "steuern_pct_bip": 32.71,
+    "ohne_glaettung_eur": 197
+   },
+   "2030": {
+    "jahr": 2030,
+    "dividende_eur": 153,
+    "dividende_pct_bip": 2.85,
+    "rest_mit_netz_pct_bip": 3.47,
+    "ruecklage_pct_bip": 2.21,
+    "steuern_pct_bip": 32.71,
+    "ohne_glaettung_eur": 189
+   },
+   "2035": {
+    "jahr": 2035,
+    "dividende_eur": 161,
+    "dividende_pct_bip": 2.86,
+    "rest_mit_netz_pct_bip": 2.73,
+    "ruecklage_pct_bip": 2.94,
+    "steuern_pct_bip": 32.55,
+    "ohne_glaettung_eur": 153
+   },
+   "2040": {
+    "jahr": 2040,
+    "dividende_eur": 169,
+    "dividende_pct_bip": 2.86,
+    "rest_mit_netz_pct_bip": 2.74,
+    "ruecklage_pct_bip": 2.34,
+    "steuern_pct_bip": 32.28,
+    "ohne_glaettung_eur": 162
+   },
+   "2045": {
+    "jahr": 2045,
+    "dividende_eur": 178,
+    "dividende_pct_bip": 2.86,
+    "rest_mit_netz_pct_bip": 2.73,
+    "ruecklage_pct_bip": 1.72,
+    "steuern_pct_bip": 32.02,
+    "ohne_glaettung_eur": 169
+   },
+   "2050": {
+    "jahr": 2050,
+    "dividende_eur": 187,
+    "dividende_pct_bip": 2.86,
+    "rest_mit_netz_pct_bip": 2.73,
+    "ruecklage_pct_bip": 1.08,
+    "steuern_pct_bip": 31.95,
+    "ohne_glaettung_eur": 178
+   },
+   "2055": {
+    "jahr": 2055,
+    "dividende_eur": 197,
+    "dividende_pct_bip": 2.86,
+    "rest_mit_netz_pct_bip": 2.76,
+    "ruecklage_pct_bip": 0.52,
+    "steuern_pct_bip": 32.08,
+    "ohne_glaettung_eur": 189
+   },
+   "2060": {
+    "jahr": 2060,
+    "dividende_eur": 207,
+    "dividende_pct_bip": 2.86,
+    "rest_mit_netz_pct_bip": 2.76,
+    "ruecklage_pct_bip": -0.0,
+    "steuern_pct_bip": 32.17,
+    "ohne_glaettung_eur": 198
+   }
+  },
+  "ruecklage_hoechst_pct_bip": 3.07
+ },
+ "mit_staatsebene": {
+  "d0_eur": 81,
+  "pfad": {
+   "2028": {
+    "jahr": 2028,
+    "dividende_eur": 81,
+    "dividende_pct_bip": 1.55,
+    "rest_mit_netz_pct_bip": 2.44,
+    "ruecklage_pct_bip": 0.89,
+    "steuern_pct_bip": 32.71,
+    "ohne_glaettung_eur": 131
+   },
+   "2030": {
+    "jahr": 2030,
+    "dividende_eur": 83,
+    "dividende_pct_bip": 1.54,
+    "rest_mit_netz_pct_bip": 2.2,
+    "ruecklage_pct_bip": 2.32,
+    "steuern_pct_bip": 32.71,
+    "ohne_glaettung_eur": 120
+   },
+   "2035": {
+    "jahr": 2035,
+    "dividende_eur": 87,
+    "dividende_pct_bip": 1.55,
+    "rest_mit_netz_pct_bip": 1.45,
+    "ruecklage_pct_bip": 3.24,
+    "steuern_pct_bip": 32.55,
+    "ohne_glaettung_eur": 81
+   },
+   "2040": {
+    "jahr": 2040,
+    "dividende_eur": 92,
+    "dividende_pct_bip": 1.55,
+    "rest_mit_netz_pct_bip": 1.45,
+    "ruecklage_pct_bip": 2.76,
+    "steuern_pct_bip": 32.28,
+    "ohne_glaettung_eur": 85
+   },
+   "2045": {
+    "jahr": 2045,
+    "dividende_eur": 96,
+    "dividende_pct_bip": 1.55,
+    "rest_mit_netz_pct_bip": 1.42,
+    "ruecklage_pct_bip": 2.18,
+    "steuern_pct_bip": 32.02,
+    "ohne_glaettung_eur": 88
+   },
+   "2050": {
+    "jahr": 2050,
+    "dividende_eur": 101,
+    "dividende_pct_bip": 1.55,
+    "rest_mit_netz_pct_bip": 1.4,
+    "ruecklage_pct_bip": 1.49,
+    "steuern_pct_bip": 31.95,
+    "ohne_glaettung_eur": 90
+   },
+   "2055": {
+    "jahr": 2055,
+    "dividende_eur": 106,
+    "dividende_pct_bip": 1.55,
+    "rest_mit_netz_pct_bip": 1.41,
+    "ruecklage_pct_bip": 0.77,
+    "steuern_pct_bip": 32.08,
+    "ohne_glaettung_eur": 95
+   },
+   "2060": {
+    "jahr": 2060,
+    "dividende_eur": 112,
+    "dividende_pct_bip": 1.55,
+    "rest_mit_netz_pct_bip": 1.39,
+    "ruecklage_pct_bip": -0.0,
+    "steuern_pct_bip": 32.17,
+    "ohne_glaettung_eur": 98
+   }
+  }
+ },
+ "rentner": {
+  "geltend": {
+   "mit_mehr_pct": 24.0,
+   "mittel_eur": -187,
+   "fuenftel_eur": [
+    8,
+    0,
+    -49,
+    -162,
+    -739
+   ],
+   "boden_mrd": 2.5,
+   "ausgleich_mrd": 0.0
+  },
+  "satz38_ohne_ausgleich": {
+   "mit_mehr_pct": 18.8,
+   "mittel_eur": -255,
+   "fuenftel_eur": [
+    3,
+    -23,
+    -90,
+    -235,
+    -943
+   ],
+   "boden_mrd": 2.4,
+   "ausgleich_mrd": 0.0
+  },
+  "satz38_mit_r4": {
+   "mit_mehr_pct": 64.3,
+   "mittel_eur": -110,
+   "fuenftel_eur": [
+    82,
+    105,
+    66,
+    -59,
+    -750
+   ],
+   "boden_mrd": 1.4,
+   "ausgleich_mrd": 22.3
+  },
+  "ausgleich_person_monat": 103,
+  "kosten_mrd": 21.3,
+  "kosten_pct_bip": 0.45
+ },
+ "haushalte_mikro": {
+  "geltend": {
+   "gesamt": {
+    "mit_mehr_pct": 63.1,
+    "mittel_eur": 214
+   },
+   "erwerbsfaehige": {
+    "mit_mehr_pct": 79.9,
+    "mittel_eur": 386
+   },
+   "status": {
+    "Hauptperson Beamte": {
+     "mit_mehr_pct": 30.9,
+     "mittel_eur": -212
+    },
+    "Hauptperson Minijob": {
+     "mit_mehr_pct": 48.1,
+     "mittel_eur": 108
+    },
+    "Hauptperson Teilzeit": {
+     "mit_mehr_pct": 99.6,
+     "mittel_eur": 500
+    },
+    "Hauptperson Vollzeit": {
+     "mit_mehr_pct": 97.0,
+     "mittel_eur": 618
+    },
+    "Hauptperson selbständig": {
+     "mit_mehr_pct": 57.2,
+     "mittel_eur": -33
+    },
+    "Rentner": {
+     "mit_mehr_pct": 23.1,
+     "mittel_eur": -197
+    },
+    "ohne Erwerb (Bürgergeld)": {
+     "mit_mehr_pct": 22.7,
+     "mittel_eur": -25
+    }
+   },
+   "haushaltstyp": {
+    "allein": {
+     "mit_mehr_pct": 69.9,
+     "mittel_eur": 222
+    },
+    "alleinerziehend": {
+     "mit_mehr_pct": 87.9,
+     "mittel_eur": 267
+    },
+    "paar_ohne": {
+     "mit_mehr_pct": 87.9,
+     "mittel_eur": 592
+    },
+    "paar_mit": {
+     "mit_mehr_pct": 82.0,
+     "mittel_eur": 377
+    },
+    "rentner_allein": {
+     "mit_mehr_pct": 17.8,
+     "mittel_eur": -152
+    },
+    "rentner_paar": {
+     "mit_mehr_pct": 28.9,
+     "mittel_eur": -246
+    }
+   },
+   "dezile": [
+    {
+     "dezil": 1,
+     "mit_mehr_pct": 41.1,
+     "mittel_eur": 12
+    },
+    {
+     "dezil": 2,
+     "mit_mehr_pct": 81.5,
+     "mittel_eur": 235
+    },
+    {
+     "dezil": 3,
+     "mit_mehr_pct": 72.8,
+     "mittel_eur": 233
+    },
+    {
+     "dezil": 4,
+     "mit_mehr_pct": 61.5,
+     "mittel_eur": 272
+    },
+    {
+     "dezil": 5,
+     "mit_mehr_pct": 65.1,
+     "mittel_eur": 324
+    },
+    {
+     "dezil": 6,
+     "mit_mehr_pct": 66.9,
+     "mittel_eur": 354
+    },
+    {
+     "dezil": 7,
+     "mit_mehr_pct": 67.2,
+     "mittel_eur": 384
+    },
+    {
+     "dezil": 8,
+     "mit_mehr_pct": 65.9,
+     "mittel_eur": 351
+    },
+    {
+     "dezil": 9,
+     "mit_mehr_pct": 64.2,
+     "mittel_eur": 262
+    },
+    {
+     "dezil": 10,
+     "mit_mehr_pct": 51.9,
+     "mittel_eur": -195
+    }
+   ],
+   "armut": {
+    "median_aequiv_monat_heute": 2673,
+    "median_aequiv_monat_neu": 2886,
+    "quote_heute_pct": 18.3,
+    "quote_neu_relativ_pct": 16.5,
+    "quote_neu_verankert_pct": 13.1,
+    "rentner": {
+     "heute_pct": 22.3,
+     "neu_relativ_pct": 26.9,
+     "neu_verankert_pct": 21.7
+    },
+    "erwerbsfaehige": {
+     "heute_pct": 17.1,
+     "neu_relativ_pct": 13.5,
+     "neu_verankert_pct": 10.7
+    },
+    "untere40_zuwachs_pct": 8.2,
+    "alle_zuwachs_pct": 5.2,
+    "hinweis": "Modellpopulation (synthetisch, 2028, Kaufkraft 2026); Äquivalenzeinkommen neu = heute × neu/heute je Haushalt; Quote heute ist die des Modells, nicht die amtliche (16,1 %, EU-SILC 2025); statisch, ohne Preisniveauschub"
+   },
+   "grundauskommen_mrd": 47.4
+  },
+  "szenario38": {
+   "gesamt": {
+    "mit_mehr_pct": 51.8,
+    "mittel_eur": -57
+   },
+   "erwerbsfaehige": {
+    "mit_mehr_pct": 66.0,
+    "mittel_eur": 32
+   },
+   "status": {
+    "Hauptperson Beamte": {
+     "mit_mehr_pct": 5.9,
+     "mittel_eur": -585
+    },
+    "Hauptperson Minijob": {
+     "mit_mehr_pct": 41.6,
+     "mittel_eur": 7
+    },
+    "Hauptperson Teilzeit": {
+     "mit_mehr_pct": 94.2,
+     "mittel_eur": 290
+    },
+    "Hauptperson Vollzeit": {
+     "mit_mehr_pct": 81.3,
+     "mittel_eur": 177
+    },
+    "Hauptperson selbständig": {
+     "mit_mehr_pct": 32.9,
+     "mittel_eur": -493
+    },
+    "Rentner": {
+     "mit_mehr_pct": 17.9,
+     "mittel_eur": -269
+    },
+    "ohne Erwerb (Bürgergeld)": {
+     "mit_mehr_pct": 27.9,
+     "mittel_eur": -16
+    }
+   },
+   "haushaltstyp": {
+    "allein": {
+     "mit_mehr_pct": 64.3,
+     "mittel_eur": 24
+    },
+    "alleinerziehend": {
+     "mit_mehr_pct": 80.6,
+     "mittel_eur": 142
+    },
+    "paar_ohne": {
+     "mit_mehr_pct": 72.4,
+     "mittel_eur": 125
+    },
+    "paar_mit": {
+     "mit_mehr_pct": 56.1,
+     "mittel_eur": -117
+    },
+    "rentner_allein": {
+     "mit_mehr_pct": 13.9,
+     "mittel_eur": -201
+    },
+    "rentner_paar": {
+     "mit_mehr_pct": 22.1,
+     "mittel_eur": -341
+    }
+   },
+   "dezile": [
+    {
+     "dezil": 1,
+     "mit_mehr_pct": 44.0,
+     "mittel_eur": 15
+    },
+    {
+     "dezil": 2,
+     "mit_mehr_pct": 75.5,
+     "mittel_eur": 209
+    },
+    {
+     "dezil": 3,
+     "mit_mehr_pct": 61.1,
+     "mittel_eur": 130
+    },
+    {
+     "dezil": 4,
+     "mit_mehr_pct": 50.2,
+     "mittel_eur": 89
+    },
+    {
+     "dezil": 5,
+     "mit_mehr_pct": 53.8,
+     "mittel_eur": 89
+    },
+    {
+     "dezil": 6,
+     "mit_mehr_pct": 56.1,
+     "mittel_eur": 73
+    },
+    {
+     "dezil": 7,
+     "mit_mehr_pct": 57.6,
+     "mittel_eur": 53
+    },
+    {
+     "dezil": 8,
+     "mit_mehr_pct": 53.5,
+     "mittel_eur": -39
+    },
+    {
+     "dezil": 9,
+     "mit_mehr_pct": 50.1,
+     "mittel_eur": -213
+    },
+    {
+     "dezil": 10,
+     "mit_mehr_pct": 19.5,
+     "mittel_eur": -959
+    }
+   ],
+   "armut": {
+    "median_aequiv_monat_heute": 2673,
+    "median_aequiv_monat_neu": 2701,
+    "quote_heute_pct": 18.3,
+    "quote_neu_relativ_pct": 13.7,
+    "quote_neu_verankert_pct": 13.3,
+    "rentner": {
+     "heute_pct": 22.3,
+     "neu_relativ_pct": 22.8,
+     "neu_verankert_pct": 22.1
+    },
+    "erwerbsfaehige": {
+     "heute_pct": 17.1,
+     "neu_relativ_pct": 11.1,
+     "neu_verankert_pct": 10.7
+    },
+    "untere40_zuwachs_pct": 5.0,
+    "alle_zuwachs_pct": -1.2,
+    "hinweis": "Modellpopulation (synthetisch, 2028, Kaufkraft 2026); Äquivalenzeinkommen neu = heute × neu/heute je Haushalt; Quote heute ist die des Modells, nicht die amtliche (16,1 %, EU-SILC 2025); statisch, ohne Preisniveauschub"
+   },
+   "grundauskommen_mrd": 61.1
+  }
+ },
+ "beispiele": {
+  "geltend": {
+   "20000": {
+    "alleinstehend": 239,
+    "alleinerziehend, 1 Kind": 272,
+    "Paar, ein Einkommen, 2 Kinder": 297
+   },
+   "30000": {
+    "alleinstehend": 445,
+    "alleinerziehend, 1 Kind": 421,
+    "Paar, ein Einkommen, 2 Kinder": 534
+   },
+   "42000": {
+    "alleinstehend": 449,
+    "alleinerziehend, 1 Kind": 351,
+    "Paar, ein Einkommen, 2 Kinder": 609
+   },
+   "60000": {
+    "alleinstehend": 508,
+    "alleinerziehend, 1 Kind": 407,
+    "Paar, ein Einkommen, 2 Kinder": 171
+   },
+   "90000": {
+    "alleinstehend": 495,
+    "alleinerziehend, 1 Kind": 396,
+    "Paar, ein Einkommen, 2 Kinder": -52
+   },
+   "150000": {
+    "alleinstehend": 304,
+    "alleinerziehend, 1 Kind": 204,
+    "Paar, ein Einkommen, 2 Kinder": -779
+   },
+   "anteil_mit_mehr_pct": {
+    "alleinstehend": 98,
+    "alleinerziehend, 1 Kind": 98,
+    "Paar, ein Einkommen, 2 Kinder": 91
+   }
+  },
+  "szenario38": {
+   "20000": {
+    "alleinstehend": 243,
+    "alleinerziehend, 1 Kind": 278,
+    "Paar, ein Einkommen, 2 Kinder": 307
+   },
+   "30000": {
+    "alleinstehend": 334,
+    "alleinerziehend, 1 Kind": 412,
+    "Paar, ein Einkommen, 2 Kinder": 530
+   },
+   "42000": {
+    "alleinstehend": 281,
+    "alleinerziehend, 1 Kind": 115,
+    "Paar, ein Einkommen, 2 Kinder": 575
+   },
+   "60000": {
+    "alleinstehend": 252,
+    "alleinerziehend, 1 Kind": 82,
+    "Paar, ein Einkommen, 2 Kinder": -6
+   },
+   "90000": {
+    "alleinstehend": 102,
+    "alleinerziehend, 1 Kind": -67,
+    "Paar, ein Einkommen, 2 Kinder": -673
+   },
+   "150000": {
+    "alleinstehend": -331,
+    "alleinerziehend, 1 Kind": -501,
+    "Paar, ein Einkommen, 2 Kinder": -1638
+   },
+   "anteil_mit_mehr_pct": {
+    "alleinstehend": 98,
+    "alleinerziehend, 1 Kind": 91,
+    "Paar, ein Einkommen, 2 Kinder": 80
+   }
+  }
+ },
+ "hinweis": "Euro je Monat, 2028, Kaufkraft 2026, Deutschland. Rentner aus rentner_eichung (BS35), übrige Haushalte aus mikro_de (eine Ziehung, Weitergabe 80 %); die Rentnerzeilen in mikro_de enthalten R4 nicht. Haushaltsrechnungen ohne CO₂-Kosten (B-4). Mehrkosten des Netzes (Aufstockung bis zum Grundbedarf) über netz33 je Jahr mit der gezahlten Dividende; Mikrosimulation nur zur Information."
+}

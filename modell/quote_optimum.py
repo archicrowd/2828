@@ -25,6 +25,32 @@ BASIS33 = dict(PJ.sy)
 S0 = 33.333333
 R = SVM.KERN.SZ["Robust"]
 GL = json.loads((AGG / "gesamtlast33.json").read_text(encoding="utf-8"))
+# v4.101 (Korrektur 95): Rückwirkung der Dividende auf das Netz wie netz33 (Aufstockung bis zum Grundbedarf hängt an der gezahlten Dividende)
+spec_nz = importlib.util.spec_from_file_location("nz_q", W / "modell" / "netz33.py")
+NZ = importlib.util.module_from_spec(spec_nz)
+with contextlib.redirect_stdout(io.StringIO()):
+    spec_nz.loader.exec_module(NZ)
+K_B, GR_B = NZ.P["gesundheit_kuerzung_basis"], f"mindestrente_{NZ.P['pflicht_satz']}"
+BISHER0 = NZ.SV["gesundheit"] + NZ.SV["seil"] + NZ.P["haertefall_pct_bip"]
+
+
+def netz_korrektur(j, eur):
+    """Im Netz bisher finanziert − Netz bei gezahlter Dividende eur (Euro 2026 je Erwachsenem und Monat), % BIP; Rechenweg netz33."""
+    r = NZ.R[j]
+    NZ.R[j] = dict(r, dividende_erw_eur2026=eur)
+    try:
+        pos, _ = NZ.netz(j, K_B, False, GR_B)
+    finally:
+        NZ.R[j] = r
+    return BISHER0 + r["gesundheit_plus"] - sum(pos.values())
+
+
+def fixpunkt(div, epp, j):
+    """Dividende als Rest mit Netz-Rückwirkung (wie netz33.beschluss_reihe), Euro."""
+    eur = div * epp
+    for _ in range(20):
+        eur = epp * (div + netz_korrektur(j, eur))
+    return eur
 FONDS, ZUSCHLAG = GL["fonds"]["beitrag_pct_bip"], GL["fonds"]["zuschlag_pct"]
 
 
@@ -47,7 +73,7 @@ def deckung(sy):
     return pos, eff
 
 
-def pfad(sy, regel, puffer, extra_ausgaben=0.0):
+def pfad(sy, regel, puffer, extra_ausgaben=0.0, mit_reihe=False):
     PJ.sy.clear(); PJ.sy.update(sy); PJ._PROG.clear()
     pos, eff0 = deckung(sy)
     deck0 = sum(pos.values())
@@ -86,7 +112,7 @@ def pfad(sy, regel, puffer, extra_ausgaben=0.0):
         for r in reihe:
             r["div"] += lbar - lenk[r["jahr"]]
     for r in reihe:
-        r["eur"] = r["div"] * r["eur_je_punkt"]
+        r["eur"] = fixpunkt(r["div"], r["eur_je_punkt"], r["jahr"])          # v4.101: mit Netz-Rückwirkung
     e = {r["jahr"]: r["eur"] for r in reihe}
     ab35 = [e[j + 1] - e[j] for j in range(2035, 2060)]
     ok = min(ab35) >= -0.5 and e[2060] >= e[2028]
@@ -95,25 +121,28 @@ def pfad(sy, regel, puffer, extra_ausgaben=0.0):
     glatt = {}
     for g in Q["glaettung_wachstum"]:
         lo, hi = 0.0, 1000.0
-        for _ in range(50):
+        for _ in range(30):
             d0 = (lo + hi) / 2
             rl, ok_g = 0.0, True
             for r in reihe:
-                rl += r["div"] - d0 * (1 + g) ** (r["jahr"] - 2028) / r["eur_je_punkt"]
+                d = d0 * (1 + g) ** (r["jahr"] - 2028)
+                rl += r["div"] + netz_korrektur(r["jahr"], d) - d / r["eur_je_punkt"]
                 ok_g &= rl >= -1e-9
             lo, hi = (d0, hi) if ok_g else (lo, d0)
         rl, rmax = 0.0, 0.0
         for r in reihe:
-            rl += r["div"] - lo * (1 + g) ** (r["jahr"] - 2028) / r["eur_je_punkt"]
+            d = lo * (1 + g) ** (r["jahr"] - 2028)
+            rl += r["div"] + netz_korrektur(r["jahr"], d) - d / r["eur_je_punkt"]
             rmax = max(rmax, rl)
         glatt[str(g)] = dict(d0_eur2026=round(lo), d2060_eur2026=round(lo * (1 + g) ** 32), ruecklage_hoechst_pct_bip=round(rmax, 2))
     s28 = reihe[0]["steuern"]
     zuschlag_neu = FONDS / s28 * 100        # Gesamtlast unverändert: Zuschlag bleibt 5,32 % BIP; bei Regel L gehen davon L̄ an die Dividende
     return dict(steuern_2028=round(s28, 2), steuern_2060=round(reihe[-1]["steuern"], 2), lenkung_2028=round(lenk[2028], 2), lenkung_konstante=round(lbar, 2),
-                dividende_pct_bip={str(j): round(next(r["div"] for r in reihe if r["jahr"] == j), 2) for j in (2028, 2035, 2040, 2050, 2060)},
+                dividende_pct_bip={str(j): round(next(r["eur"] / r["eur_je_punkt"] for r in reihe if r["jahr"] == j), 2) for j in (2028, 2035, 2040, 2050, 2060)},
                 dividende_eur2026={str(j): round(e[j]) for j in (2028, 2035, 2040, 2050, 2060)}, min_eur=round(min(e.values())),
                 kriterium_erfuellt=ok, glaettung=glatt, zuschlag_pct=round(zuschlag_neu, 1), effektiver_spitzensatz=round(sy["spitzensatz"] * (1 + zuschlag_neu / 100), 1),
-                last_steuern_und_fonds_2028=round(s28 + FONDS, 2), fonds_aus_zuschlag_pct_bip=round(FONDS - lbar, 2))
+                last_steuern_und_fonds_2028=round(s28 + FONDS, 2), fonds_aus_zuschlag_pct_bip=round(FONDS - lbar, 2),
+                **({"reihe": [dict(jahr=r["jahr"], div=r["div"], steuern=r["steuern"], eur_je_punkt=r["eur_je_punkt"]) for r in reihe]} if mit_reihe else {}))
 
 
 def main():
@@ -136,7 +165,7 @@ def main():
     E = dict(version=Q["version"], status="Prüfrechnung (Auftrag 18.11.2026); geltende Rechnung unverändert", kriterium=Q["kriterium"],
              puffer_pct_bip=Q["puffer_pct_bip"], gegenprobe_geltend=geltend, varianten=erg, empfindlichkeit_staatsebene=sens,
              hinweis="% BIP; Euro je Erwachsenem und Monat, Kaufkraft 2026, Deutschland, mit Dynamik. Verhalten nur über die Elastizitäten des Kernmodells "
-                     "(Robust); Label ohne Verhaltensreaktion. Regel L: Zuschlag bleibt 5,32 % BIP, davon gehen L̄ an die Dividende, der Fonds erhält dafür die Lenkung (Barwert bei Fondszins "
+                     "(Robust); Label ohne Verhaltensreaktion. Seit v4.101 (Korrektur 95) mit Rückwirkung der Dividende auf das Netz (netz33). Regel L: Zuschlag bleibt 5,32 % BIP, davon gehen L̄ an die Dividende, der Fonds erhält dafür die Lenkung (Barwert bei Fondszins "
                      "2,45 % und Wachstum 3 % nominal; Lenkung nach 2060 konstant, Annahme).")
     (AGG / "quote_optimum.json").write_text(json.dumps(E, ensure_ascii=False, indent=1), encoding="utf-8")
     print("geltend", geltend["dividende_eur2026"], geltend["steuern_2028"])

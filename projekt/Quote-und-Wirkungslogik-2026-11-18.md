@@ -4,6 +4,8 @@ Initiative 28:28 · 18. November 2026 · Modellstand v4.100 (Prüfrechnung; die 
 Rechnung: `modell/quote_optimum.py` (+ `.toml`) → `daten/aggregate/quote_optimum.json`.
 Euro je Erwachsenem und Monat, Kaufkraft 2026, Deutschland, mit erwarteter Dynamik; Anteile in % des BIP.
 
+> **Berichtigt in v4.101 (Korrektur 95):** Die Euro-Werte dieses Teils sind zu niedrig. Die Rückwirkung der Dividende auf das Netz fehlte (Aufstockung bis zum Grundbedarf). Berichtigt, Regel L, Glättung 1 %: 33⅓ % 90 → 124 €, 36 % 144 → 197 €, **37 % 163 → 224 €**, 38 % 181 → 249 €, 40 % 217 → 298 €; mit Staatsebene 37 % 94 → 129 €, 40 % 148 → 204 €. Die Schwelle des Kriteriums (37 %, mit Staatsebene 40 %) bleibt. Einzelheiten: `Szenario-38-2026-11-18.md`, Abschnitt 5.
+
 ## Teil 1: Satz, Puffer und eine auf Dauer leicht steigende Dividende
 
 ### 1.1 Ergebnis in Kürze

@@ -92,6 +92,7 @@ STUFEN = [
     ("CO₂-Position: bezahlte Mengen und strengere Bepreisung K0–K5 (Prüfrechnung)", ["modell/co2_varianten.py"]),
     ("Strukturvergleich Einnahmen nach Quelle und Ausgaben nach Zweck, heute gegen Goldenes Drittel (Prüfrechnung)", ["modell/struktur_vergleich.py"]),
     ("Satz und Puffer für eine auf Dauer steigende Dividende, Regel L und Glättung (Prüfrechnung)", ["modell/quote_optimum.py"]),
+    ("Szenario 38: neue Regeln mit einheitlichem Satz 38 %, Haushalte und Rentner (Prüfrechnung)", ["modell/szenario38.py"]),
     ("Gesamtlast Stand C mit Fonds und Pflichtvorsorge", ["modell/gesamtlast33.py"]),
     ("Gemeinsame Aufgaben: Pflichtquote, Kasse und Anrechnung", ["modell/dach_beitrag.py"]),
     ("Gemeindeformel je Kreis (Deutschland), Strukturzuschlag", ["modell/regionen_de.py"]),

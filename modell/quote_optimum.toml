@@ -1,7 +1,7 @@
 # Satz und Puffer für eine auf Dauer leicht steigende Dividende (modell/quote_optimum.py, Logbuch v4.100). Prüfrechnung, ändert die geltende Rechnung nicht.
 # Auftrag der Initiative vom 18.11.2026: „Die Ausgabenteilung ist in gutem Verhältnis, das Aufkommen zu gering. Wo läge die perfekte Quote mit
 # Puffer und auf Dauer eher leicht steigender Dividende?“
-version = "v4.100"
+version = "v4.101"   # Korrektur 95 (Netz-Rückwirkung)
 saetze = [33.333333, 35.0, 36.0, 37.0, 38.0, 40.0]   # einheitlicher Satz (Spitze Einkommen, Kapital, Unternehmen, Erbschaft; Label je Variante)
 puffer_pct_bip = 0.5          # Ausgleichsrücklage je Jahr (Annahme; geltend 0,23 als Saldo)
 staatsebene_pct_bip = 1.2     # Empfindlichkeit: Verwaltung der Staatsebene, Lücke gegen EU-27 (struktur_vergleich.json, v4.99)

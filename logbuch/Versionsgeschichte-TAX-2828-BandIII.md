@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 18. November 2026 · Modellstand **v4.100**
+Stand: 18. November 2026 · Modellstand **v4.101**
 
 ---
 
@@ -5635,6 +5635,54 @@ Der Puffer entspricht dem Prüfpunkt „Widerstandskraft“, der Altersausgleich
 
 ---
 
+### v4.101 — Szenario 38: neue Regeln mit einheitlichem Satz von 38 % durchgespielt; Korrektur 95
+
+**Art der Änderung: MINOR (neue Prüfrechnung, berichtigte Prüfrechnung v4.100), geltende Zahlen unverändert.** 18. November 2026.
+
+**Auftrag der Initiative (18.11.2026):** Die vorgeschlagenen neuen Regeln mit einem einheitlichen Satz von 38 % durchspielen.
+
+**Rechnung:** `modell/szenario38.py` (+ `.toml`) → `szenario38.json`.
+- Regeln:
+  - Satz 38 % mit Label fest.
+  - Regel L, Puffer 0,5 % BIP, Glättung 1 %.
+  - Altersausgleich R4, bei 38 % neu geeicht: 103 € je Person, 0,45 % BIP.
+  - CO₂ K2 (−0,09 % BIP).
+- Rückwirkung der Dividende auf das Netz über netz33 je Jahr mit der gezahlten Dividende.
+- Haushalte 2028:
+  - mikro_de (eine Ziehung, Weitergabe 80 %) und regel_boden, mit Tarif × 38/33⅓, Dividende D0 und Zuschlag × 16,3/17,0.
+  - Rentner aus rentner_eichung (BS35 mit R4).
+- Gegenprobe der geltenden Regeln über denselben Weg: 246 / 175 / 112 / 103 € gegen netz33 245 / 175 / 112 / 104 €.
+
+**Ergebnis:**
+- **Dividende:** 150 € (2028), 161 € (2035), 187 € (2050), 207 € (2060), geglättet; geltend 245 → 104 €. Ab 2038 liegt sie über der geltenden.
+- Rücklage höchstens 2,9 % BIP (2035), 2060 aufgebraucht.
+- **Last:** Steuern 32,7 % BIP, mit Fonds 38,0 %, mit Pflichtvorsorge 42,1 % (geltend 40,6). Spitzensatz mit Zuschlag 44,2 %.
+- **Haushalte 2028, mit mehr:**
+  - alle 52 % (geltend 63), Erwerbsalter 66 % (80), Vollzeit 81 % (97);
+  - Selbständige 33 %, −493 €; Beamte 6 %, −585 €; oberstes Dezil −959 €;
+  - Rentner mit R4 64 %, −110 € (geltend 24 %, −187 €);
+  - alleinstehend 42.000 € +281 € (449).
+  - Relative Armutsquote 13,7 % (16,5).
+- **Mit Staatsebene** (+1,2 % BIP): 81 → 112 €.
+
+**Korrektur 95:** `quote_optimum.py` (v4.100) hat die Rückwirkung der Dividende auf das Netz nicht gerechnet (Aufstockung bis zum Grundbedarf, netz33). Die ausgewiesenen Dividenden waren zu niedrig. Berichtigt (Regel L, Label fest, Glättung 1 %):
+
+| Satz | v4.100 | berichtigt |
+|---|---|---|
+| 33⅓ % | 34 → 47 € | 90 → 124 € |
+| 37 % | 100 → 137 € | 163 → 224 € |
+| 40 % | 149 → 204 € | 217 → 298 € |
+| 37 % mit Staatsebene | – | 94 → 129 € |
+| 40 % mit Staatsebene | 86 → 118 € | 148 → 204 € |
+
+Die Schwelle des Kriteriums (37 % bzw. 40 % mit Staatsebene) bleibt. Die Aussage, ein Drittel trage keine nennenswerte Dividende, war zu scharf. Mit der Korrektur rechnet `quote_optimum.py` jetzt mit der Netz-Rückwirkung (netz_korrektur, fixpunkt); `szenario38.py` nutzt dieselben Funktionen. Die Gegenprobe geltend trifft jetzt 246 € statt 174 €. **Aufgefallen** bei der Gegenprobe des Szenarios gegen die geltende Dividende.
+
+**Datenquelle:** Projektrechnungen (systemvarianten 33R, projektion33, netz33, gesamtlast33, rentner_eichung, co2_varianten, mikro_de mit EU-SILC 2025 und ASID 2023).
+
+**Bewegte Zahl:** keine geltende. Berichtigt wurde die Prüfrechnung v4.100. **Wodurch aufgefallen:** Auftrag der Initiative; Korrektur 95 bei der Gegenprobe.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5679,6 +5727,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 92 | Belegrechnung B-1 (v4.87–v4.94): „Übrige“ belegt einschließlich Grundsteuer (0,37 % BIP), obwohl sie in der Grundstücksabgabe (0,82, Gesamtbetrag; Kernmodell „Bodenwertabgabe statt Grundsteuer“) aufgeht | Übrige belegt 2,89 statt 3,26; Lücke B-1 −3,59 statt −3,22 % BIP; Dividende belegt 2028 185 statt 195 € | Prüfung jeder Position im Haushaltsplan, v4.95 |
 | 93 | Haushaltsplan Deutschland v4.94: neue Kredite (heute) und Fondsanleihen unter den Einnahmen, Fondsbeitrag als Einnahme ohne Gegenbuchung, Altrenten und Zinsen im Landeshaushalt | Kredite als Finanzierung; Altlastenzuschlag als Aufkommen, Beitrag an den Fonds als Ausgabe; Altrenten, Zinsen und Fondskredite im eigenen Konto des Fonds; Aufkommen heute 46,15 statt „Einnahmen 48,77“ | Rückfrage der Initiative 16.11.2026, v4.95 |
 | 94 | Ursache der Rentnerverluste v4.97 als „Dividende sinkt“ angegeben (Logbuch v4.97, Entscheidungsvorlage E5 Abschnitt 10, Antwort an die Initiative) | Rentner erhalten keine Dividende zusätzlich (Korrektur 65); Ursache Label −44 €, Tarif −13 €, Zuschlag −11 €, Satz −2 € (rentner_eichung.json) | Varianten zur Rentnerregel, v4.98 |
+| 95 | Quote mit Puffer v4.100 (`quote_optimum.py`, Papier Quote-und-Wirkungslogik, Antwort an die Initiative): Dividende ohne Rückwirkung auf das Netz gerechnet, zu niedrig (37 %: 100 → 137 €) | mit Netz-Rückwirkung wie netz33: 37 % 163 → 224 €; 33⅓ % 90 → 124 €; Schwelle 37 % unverändert | Gegenprobe Szenario 38, v4.101 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5718,7 +5767,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.100
+## 7 | Offene Punkte, Stand v4.101
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5751,6 +5800,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R21 | **Trends Kapital und Erbe, kalte Progression (v4.99, S3/S4):** Kapitalquote und Erbvolumen als Trend; Progression +1,25 % BIP bis 2060 offen ausweisen und entscheiden | Langfristpfad | v4.99 |
 | R22 | **Quote und Regel L (v4.100):** Regel L und Glättung beschließen; Satz 37 % (ohne Staatsebene) oder 40 % (mit); Verlagerung bei 37–40 % mit ausweichen33 prüfen; Name „Goldenes Drittel“ als Ziel nach Tilgung erklären | Dividende, Zuschlag | v4.100 |
 | R23 | **Wirkungslogik (v4.100, UNDG 2017):** Register der Annahmen und Risiken, Wirkungslogik auf einer Seite, Wirkung nach Geschlecht, Beteiligung | Methode | v4.100 |
+| R24 | **Szenario 38 feinsteuern (v4.101):** Altersausgleich auf untere Fünftel begrenzen; 38 % nur für Kapital, Unternehmen, Erbschaft (Arbeit bei ein Drittel); Glättung 0,5 %; Selbständige und Beamte (Zulage) prüfen | Haushalte, Dividende | v4.101 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 

@@ -1,0 +1,13 @@
+# Szenario 38: die vorgeschlagenen neuen Regeln mit einheitlichem Satz 38 % durchgespielt (modell/szenario38.py, Logbuch v4.101).
+# Prüfrechnung, ändert die geltende Rechnung nicht. Auftrag der Initiative vom 18.11.2026.
+version = "v4.101"
+satz = 38.0                   # Spitze Einkommen, Kapitalerträge, Unternehmen, Erbschaft; untere Einkommensstufen im Verhältnis 38/33⅓
+label_fest = true             # Label 7/13/19/27 + Sonderstufe ein Drittel (Beschluss 16.11.2026: höchstens +2 Punkte)
+regel = "L"                   # Lenkungsabgaben an den Fonds, Dividende erhält die barwertgleiche Konstante (quote_optimum, v4.100)
+puffer_pct_bip = 0.5          # Ausgleichsrücklage je Jahr (Annahme)
+glaettung_wachstum = 0.01     # Dividende wächst real 1 % je Jahr; Überschüsse früher Jahre in die Glättungsrücklage (ohne Zins)
+co2_k2_pct_bip = 0.09         # CO₂-Position nach Variante K2 (nationale Abgabe auf frei zugeteilte Mengen) gegen geltend (co2_varianten.json, v4.98)
+rentner_ziel_mittel = -109    # Altersausgleich R4: geeicht auf das Mittel der Rentnerhaushalte v4.96 (rentner_eichung, v4.98)
+staatsebene_pct_bip = 1.2     # Empfindlichkeit: Verwaltung der Staatsebene (struktur_vergleich, v4.99)
+bip_2028_kaufkraft_2026_mrd = 4724.0   # 4.914,9 Mrd. € (2028, nominal, parameter.toml) / 1,0404 (projektion33 preis_2026_zu_2028)
+# Rückwirkung: kleinere Dividende → mehr Aufstockung im Netz → weniger Dividende; Rechenweg netz33 (geltend), je Jahr mit der gezahlten Dividende
