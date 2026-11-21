@@ -1,0 +1,283 @@
+{
+ "version": "v4.104",
+ "status": "Prüfrechnung (Auftrag 21.11.2026); geltende Rechnung unverändert",
+ "modell_e": {
+  "eingaben": {
+   "impuls_pct_bip": 1.82,
+   "arbeitsvolumen_pct": 1.22,
+   "investition_pct_bip": -0.95,
+   "dln_netto_fachkraefte": 0.146,
+   "lasten_nicht_in_mikro_pct_bip": 1.64
+  },
+  "dynamik": {
+   "2028": {
+    "bip_pct": 0.65,
+    "je_kopf_pct": 0.64,
+    "kanaele": {
+     "A1": 0.0,
+     "B1": 0.0,
+     "M1": 0.0,
+     "I1": -0.0,
+     "Z1": 0.0,
+     "N1": 0.64,
+     "F1": 0.01,
+     "KI": 0.0
+    }
+   },
+   "2030": {
+    "bip_pct": 1.77,
+    "je_kopf_pct": 1.74,
+    "kanaele": {
+     "A1": 0.17,
+     "B1": 0.39,
+     "M1": 0.08,
+     "I1": -0.16,
+     "Z1": 0.0,
+     "N1": 0.64,
+     "F1": 0.04,
+     "KI": 0.6
+    }
+   },
+   "2035": {
+    "bip_pct": 3.95,
+    "je_kopf_pct": 3.89,
+    "kanaele": {
+     "A1": 0.61,
+     "B1": 1.35,
+     "M1": 0.29,
+     "I1": -0.56,
+     "Z1": 0.0,
+     "N1": 0.0,
+     "F1": 0.11,
+     "KI": 2.12
+    }
+   },
+   "2045": {
+    "bip_pct": 6.36,
+    "je_kopf_pct": 6.28,
+    "kanaele": {
+     "A1": 0.61,
+     "B1": 1.35,
+     "M1": 0.7,
+     "I1": -0.95,
+     "Z1": 0.0,
+     "N1": 0.0,
+     "F1": 0.14,
+     "KI": 4.44
+    }
+   },
+   "2060": {
+    "bip_pct": 8.79,
+    "je_kopf_pct": 8.73,
+    "kanaele": {
+     "A1": 0.61,
+     "B1": 1.35,
+     "M1": 0.7,
+     "I1": -0.95,
+     "Z1": 0.0,
+     "N1": 0.0,
+     "F1": 0.15,
+     "KI": 6.81
+    }
+   }
+  },
+  "anteil_stabil_pct": 34.5,
+  "paket": {
+   "2028": {
+    "anteil_grundbedarf_pct": 34.5,
+    "bar_erwachsen": 337,
+    "bar_kind": 270,
+    "netz_x_je_einwohner": 444,
+    "gesamt_erwachsen": 781,
+    "gesamt_kind": 714,
+    "netz_pct_bip": 9.35,
+    "halber_grundbedarf": 516,
+    "mindest_bar_erfuellt": true
+   },
+   "2035": {
+    "anteil_grundbedarf_pct": 34.5,
+    "bar_erwachsen": 348,
+    "bar_kind": 278,
+    "netz_x_je_einwohner": 500,
+    "gesamt_erwachsen": 847,
+    "gesamt_kind": 778,
+    "netz_pct_bip": 9.53,
+    "halber_grundbedarf": 531,
+    "mindest_bar_erfuellt": true
+   },
+   "2045": {
+    "anteil_grundbedarf_pct": 35.5,
+    "bar_erwachsen": 371,
+    "bar_kind": 297,
+    "netz_x_je_einwohner": 583,
+    "gesamt_erwachsen": 954,
+    "gesamt_kind": 880,
+    "netz_pct_bip": 9.86,
+    "halber_grundbedarf": 551,
+    "mindest_bar_erfuellt": true
+   },
+   "2060": {
+    "anteil_grundbedarf_pct": 50.0,
+    "bar_erwachsen": 549,
+    "bar_kind": 439,
+    "netz_x_je_einwohner": 705,
+    "gesamt_erwachsen": 1254,
+    "gesamt_kind": 1144,
+    "netz_pct_bip": 10.07,
+    "halber_grundbedarf": 579,
+    "mindest_bar_erfuellt": true
+   }
+  },
+  "fortschritt": [
+   {
+    "jahr": 2028,
+    "anteil_pct": 34.5,
+    "ruecklage_pct_bip": 0.11
+   },
+   {
+    "jahr": 2030,
+    "anteil_pct": 34.5,
+    "ruecklage_pct_bip": 0.27
+   },
+   {
+    "jahr": 2035,
+    "anteil_pct": 34.5,
+    "ruecklage_pct_bip": -0.01
+   },
+   {
+    "jahr": 2040,
+    "anteil_pct": 34.5,
+    "ruecklage_pct_bip": 0.79
+   },
+   {
+    "jahr": 2045,
+    "anteil_pct": 35.5,
+    "ruecklage_pct_bip": 3.79
+   },
+   {
+    "jahr": 2050,
+    "anteil_pct": 40.5,
+    "ruecklage_pct_bip": 6.57
+   },
+   {
+    "jahr": 2055,
+    "anteil_pct": 45.5,
+    "ruecklage_pct_bip": 7.79
+   },
+   {
+    "jahr": 2060,
+    "anteil_pct": 50.0,
+    "ruecklage_pct_bip": 7.77
+   }
+  ],
+  "ruecklage_min_pct_bip": -0.03,
+  "ruecklage_max_pct_bip": 7.88,
+  "fonds": {
+   "beitrag_eigen_pct_bip": 3.11,
+   "an_dividende_pct_bip": 2.21,
+   "schuld_spitze_pct_bip": 181
+  },
+  "steuern_2028": 31.17
+ },
+ "stress": {
+  "Fondszins 3,0 %": {
+   "anteil_stabil_pct": 30.7,
+   "bar_2028": 300,
+   "bar_kind_2028": 240,
+   "anteil_2060_mit_regel_pct": 45.7,
+   "bar_2060": 502,
+   "fonds_spitze_pct_bip": 189,
+   "mindest_bar_erfuellt": true,
+   "bip_2045_pct": 6.39
+  },
+  "Fondszins 3,5 %": {
+   "anteil_stabil_pct": 26.8,
+   "bar_2028": 262,
+   "bar_kind_2028": 209,
+   "anteil_2060_mit_regel_pct": 41.8,
+   "bar_2060": 459,
+   "fonds_spitze_pct_bip": 196,
+   "mindest_bar_erfuellt": true,
+   "bip_2045_pct": 6.42
+  },
+  "ohne KI-Trend": {
+   "anteil_stabil_pct": 32.4,
+   "bar_2028": 317,
+   "bar_kind_2028": 253,
+   "anteil_2060_mit_regel_pct": 43.4,
+   "bar_2060": 468,
+   "fonds_spitze_pct_bip": 193,
+   "mindest_bar_erfuellt": true,
+   "bip_2045_pct": 1.85
+  },
+  "Rezession 2032 (BIP −4 %)": {
+   "anteil_stabil_pct": 34.1,
+   "bar_2028": 333,
+   "bar_kind_2028": 267,
+   "anteil_2060_mit_regel_pct": 50.0,
+   "bar_2060": 549,
+   "fonds_spitze_pct_bip": 182,
+   "mindest_bar_erfuellt": true,
+   "bip_2045_pct": 6.36
+  },
+  "Bodenrendite 2 %": {
+   "anteil_stabil_pct": 32.7,
+   "bar_2028": 320,
+   "bar_kind_2028": 256,
+   "anteil_2060_mit_regel_pct": 48.7,
+   "bar_2060": 535,
+   "fonds_spitze_pct_bip": 183,
+   "mindest_bar_erfuellt": true,
+   "bip_2045_pct": 6.37
+  },
+  "Kapital: halbes Mehraufkommen": {
+   "anteil_stabil_pct": 33.2,
+   "bar_2028": 325,
+   "bar_kind_2028": 260,
+   "anteil_2060_mit_regel_pct": 49.2,
+   "bar_2060": 541,
+   "fonds_spitze_pct_bip": 182,
+   "mindest_bar_erfuellt": true,
+   "bip_2045_pct": 6.37
+  },
+  "alles zusammen (Zins 3,0, ohne KI, Boden 2 %, Ausweichen)": {
+   "anteil_stabil_pct": 25.2,
+   "bar_2028": 246,
+   "bar_kind_2028": 197,
+   "anteil_2060_mit_regel_pct": 34.2,
+   "bar_2060": 368,
+   "fonds_spitze_pct_bip": 204,
+   "mindest_bar_erfuellt": true,
+   "bip_2045_pct": 1.9
+  }
+ },
+ "geltend_als_paket": {
+  "2028": {
+   "bar_erwachsen": 232,
+   "bar_kind": 186,
+   "netz_x_je_einwohner": 468,
+   "gesamt_erwachsen": 700
+  },
+  "2035": {
+   "bar_erwachsen": 166,
+   "bar_kind": 133,
+   "netz_x_je_einwohner": 519,
+   "gesamt_erwachsen": 685
+  },
+  "2045": {
+   "bar_erwachsen": 121,
+   "bar_kind": 97,
+   "netz_x_je_einwohner": 600,
+   "gesamt_erwachsen": 721
+  },
+  "2060": {
+   "bar_erwachsen": 99,
+   "bar_kind": 79,
+   "netz_x_je_einwohner": 740,
+   "gesamt_erwachsen": 839
+  }
+ },
+ "kinderanteil": 0.8,
+ "topf": 0.948,
+ "hinweis": "Euro je Monat, Kaufkraft 2026, Deutschland. Gesamtwert = Baranteil + Netz je Einwohner (Durchschnitt; Versicherungswert, keine Auszahlung). Bar Erwachsene = Dividende × topf (Kinderanteil 0,8). Stellschrauben und Kanäle überwiegend Annahmen (stellschrauben.toml, modell_e.toml)."
+}

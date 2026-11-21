@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. November 2026 · Modellstand **v4.103**
+Stand: 21. November 2026 · Modellstand **v4.104**
 
 ---
 
@@ -5793,6 +5793,56 @@ Wirkungen der Stellschrauben überwiegend Annahmen (toml).
 
 ---
 
+### v4.104 — Dividendenpaket (Netz + Baranteil); Modell E mit eigener Dynamik, Fortschrittsregel und Stresstests
+
+**Art der Änderung: MINOR (Beschluss zur Form der Dividende, neue Prüfrechnung), geltende Zahlen unverändert.** 21. November 2026.
+
+**Beschluss der Initiative (21.11.2026):**
+- Die Dividende darf ein Paket aus den steuerfinanzierten Sozialleistungen und einem Baranteil sein.
+- Der Baranteil beträgt bei Erwachsenen und Kindern mindestens 100 €.
+- Kommuniziert wird der Gesamtwert, von dem die Summe X für das Netz abgezogen wird.
+- Auftrag: Modell E auf Dynamik und Stabilität prüfen.
+
+**Rechnung:** `modell/modell_e.py` (+ `.toml`) → `modell_e.json`.
+- **Dynamik E** (Kanäle wie dynamik_geltend, mittlerer Fall):
+  - Arbeitsvolumen 1,22 % (Arbeit ein Drittel, Einkommenseffekt proportional zum Baranteil);
+  - Investition −0,95;
+  - Bürokratie 40 %;
+  - KI +0,3 Pp/Jahr bis 2040, halb bis 2060;
+  - Fachkräfte ln 0,146;
+  - Nachfrage 1,82 % BIP (Mikrosimulation mit Baranteil E, abzüglich 1,64 % BIP nicht enthaltener Lasten).
+  - Fixpunkt Baranteil ↔ Impuls.
+- **Fonds** bis 2125 mit der Dividende von E (Z kleiner): eigener Beitrag 3,11 % BIP, 2,21 % an die Dividende, Schuld bis 181 % BIP.
+- **Fortschrittsregel:** Rücklage drei Jahre über 2 % BIP → +1 Punkt je Jahr, höchstens ½.
+- **Paket:** Netz X je Einwohner (netz33 mit der Dividende E, Gesundheit −4 %).
+
+**Ergebnis:**
+- Fester Anteil 34,5 % des Grundbedarfs.
+- Bar 337 € je Erwachsenem / 270 € je Kind (2028), Gesamtwert 781 / 714 €.
+- Mit Fortschrittsregel 2060 ½ Grundbedarf (bar 549 / 439 €, Gesamtwert 1.254 / 1.144 €). Die Rücklage bleibt nie negativ und liegt höchstens bei 7,9 % BIP.
+- Dynamik: BIP 2045 +6,4 % (ohne KI +1,9 %).
+- Gesamtlast 42,9 % BIP mit Vorsorge (geltend 40,6).
+
+**Stresstests (fester Anteil, bar Erw./Kind 2028, Fondsschuld höchstens):**
+
+| Test | fester Anteil | bar Erw./Kind 2028 | Fondsschuld höchstens |
+|---|---|---|---|
+| Zins 3,0 % | 30,7 % | 300/240 € | 189 % |
+| Zins 3,5 % | 26,8 % | 262/209 € | 196 % |
+| ohne KI | 32,4 % | 317/253 € | 193 % |
+| Rezession 2032 | 34,1 % | – | – |
+| Boden r = 2 % | 32,7 % | – | – |
+| Kapital halb | 33,2 % | – | – |
+| alles zusammen | 25,2 % | 246/197 € | 204 % |
+
+**Befund geltend:** Der Gesamtwert ist ähnlich (700 € je Erwachsenem 2028), aber der Baranteil fällt unter 100 € (je Kind ab 2045: 97 €; je Erwachsenem 2060: 99 €). Die neue Mindestregel wäre verletzt.
+
+**Datenquelle:** Projektrechnungen (stellschrauben, dynamik_satz, dynamik_geltend, netz33, mikro_de, regel_boden, altlasten). Wirkungen überwiegend Annahmen.
+
+**Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5878,7 +5928,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.103
+## 7 | Offene Punkte, Stand v4.104
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5914,6 +5964,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R24 | **Szenario 38 feinsteuern (v4.101):** Altersausgleich auf untere Fünftel begrenzen; 38 % nur für Kapital, Unternehmen, Erbschaft (Arbeit bei ein Drittel); Glättung 0,5 %; Selbständige und Beamte (Zulage) prüfen | Haushalte, Dividende | v4.101 |
 | R25 | **Geltende Dynamik nachführen (v4.102, Korrektur 96):** Eingaben in wirtschaftsdynamik.toml [geltend] auf Stand v4.97 (Impuls 2,46, Arbeitsvolumen +1,3, ln Netto 0,135); Rückwirkung der Beschäftigung auf das Netz aufnehmen; Variante 38 % nur für Kapital, Unternehmen, Erbschaft mit eigener Dynamik rechnen | Dividende, Kennzahlen, Webseite | v4.102 |
 | R26 | **Maxime stabile Dividende (v4.103):** Formulierung beschließen (fester Anteil am Grundbedarf, nie sinkend, Fortschrittsregel bis ½); Paket A als erste Stufe; Bodenabgabe: Übergang, Stundung für Rentner mit Wohneigentum, Mieten; Staatsebene digital belegen | Dividende, Regeln | v4.103 |
+| R27 | **Modell E (v4.104):** fester Anteil (Vorschlag 30 %), Zinsregel (Boden- und Kapitalsätze in fester Spanne bei Fondszins über Wachstum), Obergrenze der Rücklage beschließen; Bodenabgabe, Kapital 38 % und CO₂ in die Mikrosimulation aufnehmen | Dividende, Fonds, Haushalte | v4.104 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 
@@ -5940,6 +5991,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E19 | **entschieden v4.75 (7.11.2026), Bestätigung offen: Partner ganz selbst, Obergrenze 32 % je Staat.** Spielregeln (v4.74): fünf Regeln, Schwelle 0,66, Fonds 50/50, Partner ganz selbst oder Brücke 25 %, Wegfall des Dachs (gemeinsame Kasse, Sicherheitsunion, Einzug durch das Dach) (`projekt/Spielregeln-Staaten-und-Fonds-2026-11-07.md`) |
 | E20 | Gemeinschaft der Staaten (v4.76): Variante B, Kasse G1 mit Erweiterung zu G2, Gericht (eigenes oder Anbindung), Freizügigkeit ohne Wartezeit, Sicherheit als Angebot (`projekt/Gemeinschaft-der-Staaten-2026-11-07.md`) |
 | E21 | **entschieden v4.97 (16.11.2026):** Lücke der belegten Einnahmen (B-1, E5 der Vorlage vom 15.11.2026): Satz ein Drittel, Grundbedarf im Tarif 12.072 €, Label 7/13/19/27 + Stufenwanderung, Erbschaftsfreibetrag 2 × Grundbedarf, Stundungskredit Elternhaus 1 % bis 20 Jahre; Verlustvorträge 5 Jahre, über 1 Mio. € höchstens 50 % Verrechnung; Personengesellschaften in Einkommen; Brücke 25 → 33 → 50 % |
+| E22 | **entschieden v4.104 (21.11.2026):** Die Dividende ist ein Paket aus steuerfinanziertem Netz und Baranteil; Baranteil mindestens 100 € je Erwachsenem und je Kind; Kommunikation mit dem Gesamtwert, davon X für das Netz |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

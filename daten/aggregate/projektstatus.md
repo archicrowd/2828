@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.103 · höchste Korrekturnummer 96 · 663 Dateien im Repository
+Modellstand v4.104 · höchste Korrekturnummer 96 · 667 Dateien im Repository
 
 ## Bausteine
 
@@ -108,6 +108,7 @@ Modellstand v4.103 · höchste Korrekturnummer 96 · 663 Dateien im Repository
 | N63 | B31 Drittel-System | B32 Länderseiten | offen |
 | N64 | B31 Drittel-System | B31 Drittel-System | offen |
 | N65 | B31 Drittel-System | B31 Drittel-System | offen |
+| N66 | B31 Drittel-System | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -148,3 +149,4 @@ Modellstand v4.103 · höchste Korrekturnummer 96 · 663 Dateien im Repository
 - Hinweis: Naht N63 offen: B31 Drittel-System -> B32 Länderseiten: v4.101: Prüfrechnung; Gegenprobe 246/175/112/103 gegen netz33 245/175/112/104; Rentnerzeilen der Mikrosimulation ohne R4
 - Hinweis: Naht N64 offen: B31 Drittel-System -> B31 Drittel-System: v4.102: Prüfrechnung; Gegenprobe geltend 246/175/153/112/103 unverändert; Eingaben dynamik_geltend weiter v4.84 (R25)
 - Hinweis: Naht N65 offen: B31 Drittel-System -> B31 Drittel-System: v4.103: Prüfrechnung; Wirkungen überwiegend Annahmen; Rücklage ohne Zins
+- Hinweis: Naht N66 offen: B31 Drittel-System -> B31 Drittel-System: v4.104: Prüfrechnung; Netz X je Einwohner aus netz33 mit Dividende E; Lasten außerhalb der Mikrosimulation pauschal

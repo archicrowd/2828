@@ -1,0 +1,41 @@
+# Modell E näher betrachtet: Dividendenpaket (Netz + Baranteil), eigene Dynamik, Stabilität und Stresstests (modell/modell_e.py, Logbuch v4.104).
+# Prüfrechnung, ändert die geltende Rechnung nicht. Auftrag der Initiative vom 21.11.2026:
+# „Die Dividende darf ein Paket aus den steuerfinanzierten Sozialleistungen und einem Baranteil sein, der bei Erwachsenen und Kindern mindestens
+# 100 € beträgt; das Paket wird mit dem Gesamtwert kommuniziert, von dem die Summe X für das Netz abgezogen wird. Modell E näher betrachten
+# hinsichtlich Dynamik und Stabilität.“
+version = "v4.104"
+bar_mindest_eur = 100.0           # Baranteil je Erwachsenem und je Kind mindestens (Kaufkraft 2026)
+puffer_pct_bip = 0.5
+regel = "L"
+fonds_zieljahr = 2125
+# Stellschrauben des Modells E (stellschrauben.toml); Wachstumskanäle stecken in der Dynamik unten
+stellschrauben = ["Boden 2.0 %", "Kapital 38 %", "Subventionen mittel", "CO₂ 150 €/t (K3, über Regel L)", "Gesundheit digital mittel",
+                  "Staatsebene digital verschlankt", "Erbschaftswelle (Trend)"]
+kapital_satz = 38.0
+gesundheit_digital = 0.04         # Anteil am Netzposten Gesundheit (mittel)
+
+[dynamik]
+# Kanäle wie wirtschaftsdynamik.toml (mittlerer Fall); E: Arbeit ein Drittel (Arbeitsvolumen wie geltend Stand v4.97), Investition wie Satz 38
+# (−0,95), Bürokratieabbau 40 % statt 20 %, KI-Trend +0,3 Pp je Jahr bis 2040, halb bis 2060 (dynamik33), Fachkräfte mit Netto des Modells E.
+buerokratie_anteil = 0.40
+ki_pp = 0.3
+kapital_verschiebung_pp = 3.0
+# Einkommenseffekt der Dividende auf das Arbeitsvolumen (−0,3 % bei 245 €, wirtschaftsdynamik.toml) proportional zum Baranteil (Annahme)
+einkommenseffekt_bezug_eur = 245.0
+# Nachfrageimpuls: Mittel der Haushalte aus mikro_de mit dem Baranteil von E, abzüglich der Lasten, die die Mikrosimulation nicht enthält
+# (Anteile der Haushalte, Annahme): Boden 76 % (Bodenwert der Haushalte 5.179 von 6.778 Mrd. €), Kapital-Mehr 50 %, Subventionen 50 %, CO₂ 100 %
+lasten_haushalte = { boden = 0.76, kapital = 0.5, subventionen = 0.5, co2 = 1.0 }
+
+[fortschritt]   # Fortschrittsregel: liegt die Rücklage drei Jahre in Folge über dem Ziel, steigt der Anteil am Grundbedarf jedes weitere Jahr über dem Ziel um 1 Punkt; höchstens ½
+ziel_ruecklage_pct_bip = 2.0
+schritt = 0.01
+hoechst = 0.5
+jahre_ueber = 3
+
+[stress]
+zins = [3.0, 3.5]                 # Fondszins statt 2,45 % (Rendite Euroraum 2025: 3,09 %, altlasten.toml)
+schock_jahr = 2032                # Rezession: BIP −4 % im Schockjahr, Erholung linear in drei Jahren (Annahme); Netz +0,2 % BIP im Schockjahr
+schock_bip = -0.04
+schock_netz = 0.2
+boden_r = 0.02                    # Bodenrendite 2 % statt 3 % (stärkere Kapitalisierung)
+kapital_ausweichen = 0.5          # nur die Hälfte des Mehraufkommens Kapital 38 % (stärkeres Ausweichen)
