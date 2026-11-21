@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 21. November 2026 · Modellstand **v4.102**
+Stand: 21. November 2026 · Modellstand **v4.103**
 
 ---
 
@@ -5726,6 +5726,73 @@ Szenario 38 mit eigener Dynamik: 51 % der Haushalte mit mehr (52), Mittel −67 
 
 ---
 
+### v4.103 — Stabile Dividende als Maxime (½ Grundbedarf): Bedarf, Stellschrauben, Pakete
+
+**Art der Änderung: MINOR (neue Prüfrechnung), geltende Zahlen unverändert.** 21. November 2026.
+
+**Auftrag der Initiative (21.11.2026):**
+- Die stabile Dividende (ursprünglicher Ansatz: halber Grundbedarf) als Maxime formulieren und anderweitig für Stabilität sorgen.
+- Arbeit bleibt bei ein Drittel.
+- Änderungsbedarf der übrigen Stellschrauben untersuchen, mit Blick auf Digitalisierung und Vereinfachung der Arbeitswelt.
+
+**Rechnung:** `modell/stellschrauben.py` (+ `.toml`) → `stellschrauben.json`.
+- Grundlage:
+  - geltende Regeln mit Regel L und Puffer 0,5 % BIP;
+  - Dynamik auf Stand v4.97 (dynamik_satz);
+  - Netz-Rückwirkung (netz33);
+  - Fonds mit von der Dividende abhängigen Altrenten Z (sozialschutz.z_klub, Lösung wie dynamik_geltend.fonds).
+- Stellschrauben:
+  - Boden 1/1,5/2 % des Bodenwerts, mit Kapitalisierung bei r = 3 %;
+  - Kapital 38/40 % mit Investitionskanal;
+  - Subventionen;
+  - CO₂ K3;
+  - Gesundheit digital;
+  - Staatsebene 1,2 bzw. 0,6;
+  - Bürokratie 40 %;
+  - Trends KI und Erbschaftswelle;
+  - Fonds bis 2125.
+- Pakete A–E; Kennzahlen „stabil“ (fester Anteil mit Rücklage ohne Zins) und „erreichbar“ (je Jahr).
+
+**Ergebnis:**
+- ½ Grundbedarf = 516 € (2028) bis 568 € (2060).
+- Lücke 6,1 / 6,7 / 6,0 / 5,1 % BIP (2028/2035/2045/2060), nach Netz-Entlastung (0,4–0,8) und Fonds-Entlastung (0,69).
+- Ohne Stellschrauben stabil: 8,3 % des Grundbedarfs (86 → 94 €).
+- Stärkste Hebel:
+  - Fonds bis 2125: +1,77 (Schuld 206 % statt 154 % BIP);
+  - Boden 2 %: +1,25;
+  - Boden 1,5 %: +0,93;
+  - KI-Trend: +0,69 bis 2060;
+  - Kapital 40 %: +0,60, Wachstum −0,69 %;
+  - Gesundheit digital: +0,31;
+  - Subventionen: +0,30.
+- Risiko: Staatsebene −0,6 bis −1,2.
+
+| Paket | stabil | Dividende | 2060 erreichbar |
+|---|---|---|---|
+| A | 16,0 % | 165 → 182 € | 17,1 % |
+| B | 18,8 % | 194 → 214 € | – |
+| C | 17,8 % | – | 24,2 % |
+| D | 22,5 % | 233 → 256 € | 30,9 % |
+| E | 33,7 % | 348 → 383 € | 46,6 % |
+
+**Befund zur Maxime:**
+- Der halbe Grundbedarf des ursprünglichen Ansatzes (535 €, v3.43) war brutto. Davon gingen die Prämien für Gesundheit und Seil ab (472 € je Einwohner, v3.44).
+- Heute sind Netz und Gesundheit steuerfinanziert (468 € je Einwohner, netz33 2028).
+- Ein halber Grundbedarf in bar ist damit ein neues, höheres Ziel.
+- Vorschlag: Die Dividende ist ein fester Anteil des Grundbedarfs, sinkt nie und steigt mit der Rücklage bis ½ (Fortschrittsregel).
+
+**Datenquelle:**
+- Bundesbank, Vermögensbilanzen (Bodenwert 2024 ohne Staat 6.777,6 Mrd. €; maschinell gelesen, an der Quelle zu prüfen).
+- UBA, umweltschädliche Subventionen (65,4 Mrd. €, 2018).
+- Destatis PM 395/2026 (Grundsteuerwerte).
+- Projektrechnungen.
+
+Wirkungen der Stellschrauben überwiegend Annahmen (toml).
+
+**Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Auftrag der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5811,7 +5878,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.102
+## 7 | Offene Punkte, Stand v4.103
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5846,6 +5913,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R23 | **Wirkungslogik (v4.100, UNDG 2017):** Register der Annahmen und Risiken, Wirkungslogik auf einer Seite, Wirkung nach Geschlecht, Beteiligung | Methode | v4.100 |
 | R24 | **Szenario 38 feinsteuern (v4.101):** Altersausgleich auf untere Fünftel begrenzen; 38 % nur für Kapital, Unternehmen, Erbschaft (Arbeit bei ein Drittel); Glättung 0,5 %; Selbständige und Beamte (Zulage) prüfen | Haushalte, Dividende | v4.101 |
 | R25 | **Geltende Dynamik nachführen (v4.102, Korrektur 96):** Eingaben in wirtschaftsdynamik.toml [geltend] auf Stand v4.97 (Impuls 2,46, Arbeitsvolumen +1,3, ln Netto 0,135); Rückwirkung der Beschäftigung auf das Netz aufnehmen; Variante 38 % nur für Kapital, Unternehmen, Erbschaft mit eigener Dynamik rechnen | Dividende, Kennzahlen, Webseite | v4.102 |
+| R26 | **Maxime stabile Dividende (v4.103):** Formulierung beschließen (fester Anteil am Grundbedarf, nie sinkend, Fortschrittsregel bis ½); Paket A als erste Stufe; Bodenabgabe: Übergang, Stundung für Rentner mit Wohneigentum, Mieten; Staatsebene digital belegen | Dividende, Regeln | v4.103 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 

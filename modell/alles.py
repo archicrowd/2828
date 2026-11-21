@@ -94,6 +94,7 @@ STUFEN = [
     ("Satz und Puffer für eine auf Dauer steigende Dividende, Regel L und Glättung (Prüfrechnung)", ["modell/quote_optimum.py"]),
     ("Szenario 38: neue Regeln mit einheitlichem Satz 38 %, Haushalte und Rentner (Prüfrechnung)", ["modell/szenario38.py"]),
     ("Dynamik je Regelstand: Eingaben neu bestimmt, Szenario 38 mit eigener Dynamik (Prüfrechnung)", ["modell/dynamik_satz.py"]),
+    ("Stabile Dividende als Maxime (½ Grundbedarf): Stellschrauben und Pakete (Prüfrechnung)", ["modell/stellschrauben.py"]),
     ("Gesamtlast Stand C mit Fonds und Pflichtvorsorge", ["modell/gesamtlast33.py"]),
     ("Gemeinsame Aufgaben: Pflichtquote, Kasse und Anrechnung", ["modell/dach_beitrag.py"]),
     ("Gemeindeformel je Kreis (Deutschland), Strukturzuschlag", ["modell/regionen_de.py"]),

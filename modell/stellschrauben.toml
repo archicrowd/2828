@@ -1,0 +1,57 @@
+# Stabile Dividende als Maxime (halber Grundbedarf), Arbeit bei ein Drittel: Änderungsbedarf und Wirkung der übrigen Stellschrauben
+# (modell/stellschrauben.py, Logbuch v4.103). Prüfrechnung, ändert die geltende Rechnung nicht. Auftrag der Initiative vom 21.11.2026.
+version = "v4.103"
+ziel_anteil_grundbedarf = 0.5     # Dividende je Erwachsenem = ½ Grundbedarf (netz33.toml grundbedarf_eur_2026, folgt zu 30 % den Löhnen)
+puffer_pct_bip = 0.5              # Ausgleichsrücklage je Jahr (wie v4.100)
+regel = "L"                       # Lenkungsabgaben an den Fonds (v4.100)
+jahre = [2028, 2035, 2045, 2060]
+
+[boden]   # Grundstücksabgabe auf den Bodenwert (heute 0,82 % BIP im Modell)
+# Bodenwert 2024 ohne Staat: 5.179,1 (Haushalte) + 1.598,5 (Kapitalgesellschaften) = 6.777,6 Mrd. € (Deutsche Bundesbank, Sektorale und
+# gesamtwirtschaftliche Vermögensbilanzen, Datenblatt; maschinell aus dem PDF gelesen, an der Quelle zu prüfen); BIP 2024 4.386,9 Mrd. €.
+bodenwert_mrd_2024 = 6777.6
+bip_2024_mrd = 4386.94
+bestand_pct_bip = 0.82
+# Kapitalisierung: Bodenwert = Bodenrente / (r + τ); r = 3 % (Annahme); Bodenwert wächst mit dem BIP (Annahme)
+r = 0.03
+saetze = [0.010, 0.015, 0.020]
+# Wachstum: wiederkehrende Grundsteuern am wenigsten schädlich (Heady u. a. 2009, OECD); Ansatz 0 (Annahme)
+wachstum_je_pct_bip = 0.0
+
+[kapital]   # Satz nur für Kapitalerträge, Unternehmen, Erbschaft; Arbeit bleibt ein Drittel
+saetze = [38.0, 40.0]
+# Wachstum: Investitionskanal −0,5 % BIP für 4,8 Punkte mittleren Abstand zu heute (wirtschaftsdynamik.toml) ⇒ −0,104 % BIP je Punkt (Annahme linear)
+wachstum_je_punkt = -0.104
+
+[subventionen]   # weiterer Abbau umweltschädlicher Subventionen über die 0,48 % BIP der Deckung hinaus
+# UBA: 65,4 Mrd. € (2018, Untergrenze; neuere Werte liegen nicht vor). Teile entfallen im Drittel ohnehin (Entfernungspauschale, Dieselprivileg
+# über die Sonderstufe Kraftstoffe). Zusätzlich erreichbar: Annahme.
+pct_bip = [0.2, 0.3, 0.5]
+
+[co2]   # K3 statt K2 (150 statt 100 €/t); mit Regel L an den Fonds, die Dividende erhält den barwertgleichen Anteil
+k3_minus_k2_2028 = 0.32           # co2_varianten.json: 1,30 − 0,98 % BIP
+anteil_konstante = 0.44           # Verhältnis barwertgleiche Konstante / Lenkung 2028 (1,24 / 2,8; quote_optimum, Annahme gleiche Form)
+
+[gesundheit]   # Effizienz durch Digitalisierung (Patientenakte, Telemedizin, Abrechnung); Anteil des Netzpostens Gesundheit
+# Größenordnung: Beratungsstudien nennen für DE bis zu 42 Mrd. € Nutzenpotenzial (McKinsey 2022; Interessenlage, Sekundärquelle). Ansatz: Annahme.
+anteil = [0.02, 0.04, 0.06]
+
+[staatsebene]   # Verwaltung der Staatsebene, im Modell nicht abgebildet (v4.99): Bedarf gegen EU-27 1,2 % BIP; digital verschlankt (Annahme)
+bedarf_pct_bip = 1.2
+digital_pct_bip = 0.6
+
+[buerokratie]   # Privatwirtschaft: Abbau 20 % → 40 % der Bürokratiekosten (ifo 146 Mrd. €, eine Studie) durch digitale Abwicklung
+# (Lohnabrechnung, Steuer und Leistungen automatisch): BIP-Niveau +0,67 % ⇒ +1,35 % (wirtschaftsdynamik.toml, Kanal B1)
+bip_plus_pct = 0.67
+
+[ki]   # Automatisierung/KI als Trend (dynamik33.toml): Produktivität +0,3 Pp je Jahr 2028–2040, halb bis 2060; Verschiebung zu Kapital +3 Pp bis 2060
+pp = 0.3
+kapital_verschiebung_pp = 3.0
+belastung_kapital = 0.32
+belastung_arbeit = 0.21
+
+[erbe]   # Erbschaftswelle als Trend: Erbvolumen 2045 +25 % gegen den Grundpfad, danach konstant (Annahme)
+plus_2045 = 0.25
+
+[fonds]   # Streckung: Zieljahr 2098 → 2125 (wie Drittel-Praemienfrei, Variante „auf 60 % bis 2125“)
+zieljahr_lang = 2125
