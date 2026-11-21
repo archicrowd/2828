@@ -1,0 +1,359 @@
+{
+ "version": "v4.102",
+ "status": "Prüfrechnung (Frage 21.11.2026); geltende Rechnung unverändert",
+ "faelle": {
+  "geltend_v484": {
+   "eingaben": {
+    "impuls_pct_bip": 5.08,
+    "arbeitsvolumen_pct": 2.8,
+    "investition_pct_bip": -0.5,
+    "dln_netto_fachkraefte": 0.184
+   },
+   "dynamik": {
+    "2028": {
+     "bip_pct": 1.79,
+     "je_kopf_pct": 1.79,
+     "kanaele": {
+      "A1": 0.0,
+      "B1": 0.0,
+      "M1": 0.0,
+      "I1": -0.0,
+      "Z1": 0.0,
+      "N1": 1.78,
+      "F1": 0.02
+     }
+    },
+    "2030": {
+     "bip_pct": 2.49,
+     "je_kopf_pct": 2.46,
+     "kanaele": {
+      "A1": 0.47,
+      "B1": 0.19,
+      "M1": 0.08,
+      "I1": -0.08,
+      "Z1": 0.0,
+      "N1": 1.78,
+      "F1": 0.05
+     }
+    },
+    "2035": {
+     "bip_pct": 2.46,
+     "je_kopf_pct": 2.38,
+     "kanaele": {
+      "A1": 1.65,
+      "B1": 0.67,
+      "M1": 0.29,
+      "I1": -0.29,
+      "Z1": 0.0,
+      "N1": 0.0,
+      "F1": 0.14
+     }
+    },
+    "2045": {
+     "bip_pct": 2.7,
+     "je_kopf_pct": 2.6,
+     "kanaele": {
+      "A1": 1.65,
+      "B1": 0.67,
+      "M1": 0.7,
+      "I1": -0.5,
+      "Z1": 0.0,
+      "N1": 0.0,
+      "F1": 0.18
+     }
+    },
+    "2060": {
+     "bip_pct": 2.71,
+     "je_kopf_pct": 2.64,
+     "kanaele": {
+      "A1": 1.65,
+      "B1": 0.67,
+      "M1": 0.7,
+      "I1": -0.5,
+      "Z1": 0.0,
+      "N1": 0.0,
+      "F1": 0.18
+     }
+    }
+   },
+   "dividende_eur": {
+    "2028": 246,
+    "2035": 175,
+    "2040": 153,
+    "2050": 112,
+    "2060": 103
+   },
+   "fonds_pct_bip": 5.32
+  },
+  "geltend_v497": {
+   "eingaben": {
+    "impuls_pct_bip": 2.46,
+    "arbeitsvolumen_pct": 1.33,
+    "investition_pct_bip": -0.5,
+    "dln_netto_fachkraefte": 0.135,
+    "grenzbelastung_neu_pct": 41.9,
+    "grenzbelastung_heute_pct": 46.8
+   },
+   "dynamik": {
+    "2028": {
+     "bip_pct": 0.87,
+     "je_kopf_pct": 0.87,
+     "kanaele": {
+      "A1": 0.0,
+      "B1": 0.0,
+      "M1": 0.0,
+      "I1": -0.0,
+      "Z1": 0.0,
+      "N1": 0.86,
+      "F1": 0.01
+     }
+    },
+    "2030": {
+     "bip_pct": 1.28,
+     "je_kopf_pct": 1.26,
+     "kanaele": {
+      "A1": 0.19,
+      "B1": 0.19,
+      "M1": 0.08,
+      "I1": -0.08,
+      "Z1": 0.0,
+      "N1": 0.86,
+      "F1": 0.04
+     }
+    },
+    "2035": {
+     "bip_pct": 1.45,
+     "je_kopf_pct": 1.4,
+     "kanaele": {
+      "A1": 0.68,
+      "B1": 0.67,
+      "M1": 0.29,
+      "I1": -0.29,
+      "Z1": 0.0,
+      "N1": 0.0,
+      "F1": 0.1
+     }
+    },
+    "2045": {
+     "bip_pct": 1.68,
+     "je_kopf_pct": 1.61,
+     "kanaele": {
+      "A1": 0.68,
+      "B1": 0.67,
+      "M1": 0.7,
+      "I1": -0.5,
+      "Z1": 0.0,
+      "N1": 0.0,
+      "F1": 0.13
+     }
+    },
+    "2060": {
+     "bip_pct": 1.69,
+     "je_kopf_pct": 1.64,
+     "kanaele": {
+      "A1": 0.68,
+      "B1": 0.67,
+      "M1": 0.7,
+      "I1": -0.5,
+      "Z1": 0.0,
+      "N1": 0.0,
+      "F1": 0.14
+     }
+    }
+   },
+   "dividende_eur": {
+    "2028": 241,
+    "2035": 170,
+    "2040": 149,
+    "2050": 108,
+    "2060": 98
+   },
+   "fonds_pct_bip": 5.36
+  },
+  "satz38": {
+   "eingaben": {
+    "impuls_pct_bip": -0.77,
+    "arbeitsvolumen_pct": 0.87,
+    "investition_pct_bip": -0.95,
+    "dln_netto_fachkraefte": 0.054,
+    "grenzbelastung_neu_pct": 47.0,
+    "grenzbelastung_heute_pct": 46.8
+   },
+   "dynamik": {
+    "2028": {
+     "bip_pct": -0.26,
+     "je_kopf_pct": -0.27,
+     "kanaele": {
+      "A1": 0.0,
+      "B1": 0.0,
+      "M1": 0.0,
+      "I1": -0.0,
+      "Z1": 0.0,
+      "N1": -0.27,
+      "F1": 0.0
+     }
+    },
+    "2030": {
+     "bip_pct": -0.03,
+     "je_kopf_pct": -0.04,
+     "kanaele": {
+      "A1": 0.11,
+      "B1": 0.19,
+      "M1": 0.08,
+      "I1": -0.16,
+      "Z1": 0.0,
+      "N1": -0.27,
+      "F1": 0.01
+     }
+    },
+    "2035": {
+     "bip_pct": 0.82,
+     "je_kopf_pct": 0.8,
+     "kanaele": {
+      "A1": 0.38,
+      "B1": 0.67,
+      "M1": 0.29,
+      "I1": -0.55,
+      "Z1": 0.0,
+      "N1": -0.0,
+      "F1": 0.04
+     }
+    },
+    "2045": {
+     "bip_pct": 0.85,
+     "je_kopf_pct": 0.82,
+     "kanaele": {
+      "A1": 0.38,
+      "B1": 0.67,
+      "M1": 0.7,
+      "I1": -0.95,
+      "Z1": 0.0,
+      "N1": -0.0,
+      "F1": 0.05
+     }
+    },
+    "2060": {
+     "bip_pct": 0.85,
+     "je_kopf_pct": 0.83,
+     "kanaele": {
+      "A1": 0.38,
+      "B1": 0.67,
+      "M1": 0.7,
+      "I1": -0.95,
+      "Z1": 0.0,
+      "N1": -0.0,
+      "F1": 0.05
+     }
+    }
+   },
+   "dividende_eur": {
+    "2028": 142,
+    "2035": 153,
+    "2040": 160,
+    "2050": 177,
+    "2060": 196
+   },
+   "d0_eur": 142,
+   "fonds_pct_bip": 5.39,
+   "zuschlag_pct": 16.5,
+   "haushalte": {
+    "gesamt": {
+     "mit_mehr_pct": 51.1,
+     "mittel_eur": -67
+    },
+    "erwerbsfaehige": {
+     "mit_mehr_pct": 65.1,
+     "mittel_eur": 19
+    },
+    "dezile": [
+     {
+      "dezil": 1,
+      "mit_mehr_pct": 44.0,
+      "mittel_eur": 15
+     },
+     {
+      "dezil": 2,
+      "mit_mehr_pct": 75.3,
+      "mittel_eur": 209
+     },
+     {
+      "dezil": 3,
+      "mit_mehr_pct": 61.0,
+      "mittel_eur": 125
+     },
+     {
+      "dezil": 4,
+      "mit_mehr_pct": 49.3,
+      "mittel_eur": 81
+     },
+     {
+      "dezil": 5,
+      "mit_mehr_pct": 52.1,
+      "mittel_eur": 78
+     },
+     {
+      "dezil": 6,
+      "mit_mehr_pct": 55.4,
+      "mittel_eur": 61
+     },
+     {
+      "dezil": 7,
+      "mit_mehr_pct": 56.9,
+      "mittel_eur": 39
+     },
+     {
+      "dezil": 8,
+      "mit_mehr_pct": 53.1,
+      "mittel_eur": -53
+     },
+     {
+      "dezil": 9,
+      "mit_mehr_pct": 49.2,
+      "mittel_eur": -229
+     },
+     {
+      "dezil": 10,
+      "mit_mehr_pct": 18.0,
+      "mittel_eur": -980
+     }
+    ]
+   },
+   "beispiel_42000": {
+    "alleinstehend": 274,
+    "alleinerziehend, 1 Kind": 102,
+    "Paar, ein Einkommen, 2 Kinder": 576
+   },
+   "iteration": [
+    {
+     "iteration": 1,
+     "mehr_eur": -67,
+     "d0_eur": 142
+    },
+    {
+     "iteration": 2,
+     "mehr_eur": -67,
+     "d0_eur": 142
+    },
+    {
+     "iteration": 3,
+     "mehr_eur": -67,
+     "d0_eur": 142
+    }
+   ],
+   "ohne_eigene_dynamik": {
+    "dividende_eur": {
+     "2028": 150,
+     "2035": 161,
+     "2040": 169,
+     "2050": 187,
+     "2060": 207
+    },
+    "gesamt": {
+     "mit_mehr_pct": 51.8,
+     "mittel_eur": -57
+    }
+   }
+  }
+ },
+ "hinweis": "Mittlerer Fall der Kanäle (Beschluss 14.11.2026). Euro je Erwachsenem und Monat, Kaufkraft 2026, Deutschland; Szenario 38 geglättet (D0 × 1,01^t). Grenzbelastung alleinstehend 55.000 € (grenzbelastung33, heute ohne Bereinigung um den Rentenanspruch). Investitionskanal linear im Abstand der Sätze (Annahme). Dieselbe Dynamik für alle 30 Staaten (Annahme wie geltend)."
+}

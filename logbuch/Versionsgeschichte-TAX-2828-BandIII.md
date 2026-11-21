@@ -5,7 +5,7 @@ v3.5 und Korrektur 46. Dieser Band führt ab v3.5.1 weiter und ist der erste, de
 direkt in diesem Repository entsteht und nicht aus dem Projektraum übernommen
 wurde.
 
-Stand: 18. November 2026 · Modellstand **v4.101**
+Stand: 21. November 2026 · Modellstand **v4.102**
 
 ---
 
@@ -5683,6 +5683,49 @@ Die Schwelle des Kriteriums (37 % bzw. 40 % mit Staatsebene) bleibt. Die Aussage
 
 ---
 
+### v4.102 — Dynamik je Regelstand neu bestimmt; Szenario 38 mit eigener Dynamik; Korrektur 96
+
+**Art der Änderung: MINOR (neue Prüfrechnung), geltende Zahlen unverändert.** 21. November 2026.
+
+**Frage der Initiative (21.11.2026):** Der höhere Satz führt vermutlich nicht zu mehr Dynamik – war die Dynamik aus wirtschaftlicher Belebung
+zuletzt angemessen eingerechnet?
+
+**Rechnung:** `modell/dynamik_satz.py` (+ `.toml`) → `dynamik_satz.json`. Die vier vom Regelstand abhängigen Eingangswerte der Dynamik werden je Fall bestimmt:
+- Nachfrageimpuls aus dem Mittel der Haushalte (mikro_de);
+- Arbeitsvolumen = 0,9 + 0,05 × ln(Nettoanteil neu/heute) bei 55.000 € (grenzbelastung33; Elastizität wie im geltenden mittleren Fall);
+- Investition linear im Abstand der Sätze (Annahme);
+- Netto-Anreiz Fachkräfte bei 75.000 € (regel_boden).
+
+Bürokratie, Markt und Zuversicht bleiben. Die Dividende wird mit fallbezogener Dynamik über quote_optimum/netz33 gerechnet, der Fondsbeitrag mit dynamik_geltend.fonds. Szenario 38 ist iteriert (Mittel der Haushalte ↔ Dividende).
+
+**Ergebnis:**
+
+| Fall | Impuls | Arbeitsvolumen | Investition | ln Netto | BIP 2028 | BIP 2060 | Dividende |
+|---|---|---|---|---|---|---|---|
+| geltend (Eingaben v4.84) | 5,08 | +2,8 | −0,5 | 0,184 | +1,8 % | +2,7 % | 246 / 175 / 153 / 112 / 103 € |
+| geltend, Stand v4.97 (Grenzbelastung 41,9 % gegen heute 46,8 %) | 2,46 | +1,3 | −0,5 | 0,135 | +0,9 % | +1,7 % | 241 / 170 / 149 / 108 / 98 €; Fonds 5,36 % |
+| Satz 38 (Grenzbelastung 47,0 %) | −0,77 | +0,9 | −0,95 | 0,054 | −0,3 % | +0,9 % | 142 → 196 € geglättet (statt 150 → 207 €); Fonds 5,39 %, Zuschlag 16,5 % |
+
+Szenario 38 mit eigener Dynamik: 51 % der Haushalte mit mehr (52), Mittel −67 €, oberstes Dezil −980 €.
+
+**Korrektur 96:**
+- Szenario 38 (v4.101) und die Quotenrechnung (v4.100) haben die Dynamik des geltenden Stands übernommen, obwohl drei Kanäle (Beschäftigung, Investition, Fachkräfte) und der Nachfrageimpuls vom Satz abhängen.
+- Die geltende Dynamik selbst (dynamik_geltend, v4.85) beruht auf festen Eingangswerten v4.84 und wurde nach der Umstellung v4.97 nicht nachgeführt.
+- Folge: Die Belebung ist überzeichnet (geltend +2,7 statt +1,7 % BIP auf Dauer; Szenario 38 +2,7 statt +0,9 %). Die Dividende ist geltend um 4–6 € zu hoch, in Szenario 38 um 8–11 €.
+- Die geltenden Werte sind nicht berichtigt. Die Umstellung der Eingaben in `wirtschaftsdynamik.toml [geltend]` braucht einen Beschluss, weil sie Kennzahlen und Webseite bewegt (R25).
+- Aufgefallen durch die Frage der Initiative.
+
+**Grenzen:**
+- Mehr Beschäftigung senkt im Modell die Kosten der Arbeitslosigkeit im Netz nicht (fester Anteil).
+- Die Grenzbelastung ist aus Sicht der Beschäftigten gerechnet, die Arbeitgeberseite steckt im Nachfragekanal.
+- Belegstufen B/C.
+
+**Datenquelle:** Projektrechnungen (wirtschaftsdynamik.toml, dynamik33.toml, dynamik_geltend, grenzbelastung33, mikro_de, regel_boden, szenario38, quote_optimum, netz33).
+
+**Bewegte Zahl:** keine geltende. **Wodurch aufgefallen:** Frage der Initiative.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5728,6 +5771,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 93 | Haushaltsplan Deutschland v4.94: neue Kredite (heute) und Fondsanleihen unter den Einnahmen, Fondsbeitrag als Einnahme ohne Gegenbuchung, Altrenten und Zinsen im Landeshaushalt | Kredite als Finanzierung; Altlastenzuschlag als Aufkommen, Beitrag an den Fonds als Ausgabe; Altrenten, Zinsen und Fondskredite im eigenen Konto des Fonds; Aufkommen heute 46,15 statt „Einnahmen 48,77“ | Rückfrage der Initiative 16.11.2026, v4.95 |
 | 94 | Ursache der Rentnerverluste v4.97 als „Dividende sinkt“ angegeben (Logbuch v4.97, Entscheidungsvorlage E5 Abschnitt 10, Antwort an die Initiative) | Rentner erhalten keine Dividende zusätzlich (Korrektur 65); Ursache Label −44 €, Tarif −13 €, Zuschlag −11 €, Satz −2 € (rentner_eichung.json) | Varianten zur Rentnerregel, v4.98 |
 | 95 | Quote mit Puffer v4.100 (`quote_optimum.py`, Papier Quote-und-Wirkungslogik, Antwort an die Initiative): Dividende ohne Rückwirkung auf das Netz gerechnet, zu niedrig (37 %: 100 → 137 €) | mit Netz-Rückwirkung wie netz33: 37 % 163 → 224 €; 33⅓ % 90 → 124 €; Schwelle 37 % unverändert | Gegenprobe Szenario 38, v4.101 |
+| 96 | Dynamik: Szenario 38 (v4.101) und Quote (v4.100) mit der Dynamik des geltenden Stands; geltende Dynamik (v4.85) auf Eingaben v4.84, nach v4.97 nicht nachgeführt | je Fall neu bestimmt (dynamik_satz.json): geltend +1,7 statt +2,7 % BIP auf Dauer (Dividende −4 bis −6 €), Szenario 38 +0,9 % (142 → 196 € statt 150 → 207 €); geltende Werte nicht berichtigt, Beschluss offen (R25) | Frage der Initiative, v4.102 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5767,7 +5811,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.101
+## 7 | Offene Punkte, Stand v4.102
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5801,6 +5845,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R22 | **Quote und Regel L (v4.100):** Regel L und Glättung beschließen; Satz 37 % (ohne Staatsebene) oder 40 % (mit); Verlagerung bei 37–40 % mit ausweichen33 prüfen; Name „Goldenes Drittel“ als Ziel nach Tilgung erklären | Dividende, Zuschlag | v4.100 |
 | R23 | **Wirkungslogik (v4.100, UNDG 2017):** Register der Annahmen und Risiken, Wirkungslogik auf einer Seite, Wirkung nach Geschlecht, Beteiligung | Methode | v4.100 |
 | R24 | **Szenario 38 feinsteuern (v4.101):** Altersausgleich auf untere Fünftel begrenzen; 38 % nur für Kapital, Unternehmen, Erbschaft (Arbeit bei ein Drittel); Glättung 0,5 %; Selbständige und Beamte (Zulage) prüfen | Haushalte, Dividende | v4.101 |
+| R25 | **Geltende Dynamik nachführen (v4.102, Korrektur 96):** Eingaben in wirtschaftsdynamik.toml [geltend] auf Stand v4.97 (Impuls 2,46, Arbeitsvolumen +1,3, ln Netto 0,135); Rückwirkung der Beschäftigung auf das Netz aufnehmen; Variante 38 % nur für Kapital, Unternehmen, Erbschaft mit eigener Dynamik rechnen | Dividende, Kennzahlen, Webseite | v4.102 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 

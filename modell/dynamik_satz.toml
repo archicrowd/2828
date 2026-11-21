@@ -1,0 +1,17 @@
+# Dynamik je Regelstand neu bestimmt (modell/dynamik_satz.py, Logbuch v4.102). Prüfrechnung, ändert die geltende Rechnung nicht.
+# Frage der Initiative (21.11.2026): Führt der höhere Satz nicht zu weniger Dynamik? War die Dynamik aus wirtschaftlicher Belebung angemessen eingerechnet?
+# Kanäle und Werte wie wirtschaftsdynamik.toml (mittlerer Fall, Beschluss 14.11.2026). Vier Eingangswerte hängen vom Regelstand ab und werden hier
+# je Fall neu bestimmt; die übrigen (Bürokratie, Markt, Zuversicht) bleiben.
+version = "v4.102"
+mehr_bezug_eur = 442.0            # Mittel der Haushalte, auf dem der Impuls 5,08 % BIP beruht (v4.84, wirtschaftsdynamik.toml)
+impuls_bezug_pct_bip = 5.08
+brutto_arbeit = 55000             # Bezugslohn des Angebotskanals (dynamik33.toml: Grenzbelastung bei 55.000 €)
+nachfrage_arbeit_pct = 0.9        # Arbeitsnachfrage aus der Weitergabe der Arbeitgeberbeiträge (dynamik33.toml), unabhängig vom Satz
+elastizitaet_angebot = 0.05       # wie der geltende mittlere Fall: wirtschaftsdynamik.toml übernimmt 2,8 % = 0,9 + 0,05 × ln(0,64/0,44) (dynamik33 „vorsichtig“)
+# Investitionskanal: mittlerer Fall −0,5 % BIP für Kapital 33 statt 26,4 % und Gewinne 33 statt rund 30 % (wirtschaftsdynamik.toml);
+# bei anderem Satz linear im mittleren Abstand der Sätze zu heute (Annahme)
+investition_mittel = -0.5
+satz_heute_kapital = 26.4
+satz_heute_gewinne = 30.0
+brutto_fachkraft = 75000          # Bezugslohn des Fachkräftekanals (wirtschaftsdynamik.toml)
+iterationen = 3                   # Impuls hängt vom Mittel der Haushalte, dieses von der Dividende ab
