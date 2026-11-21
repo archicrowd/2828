@@ -5891,6 +5891,40 @@ Wirkungen der Stellschrauben überwiegend Annahmen (toml).
 
 ---
 
+### v4.106 — Baranteil ein Drittel des Grundbedarfs; Nicht-Arbeit einheitlich, Vermögensteuer geprüft, Übergang über den Fonds; Korrektur 99
+
+**Art der Änderung: MINOR (Beschluss, neue Prüfrechnung), geltende Zahlen unverändert.** 21. November 2026.
+
+**Beschluss der Initiative (21.11.2026), E24 (ersetzt den Anteil aus E23):**
+- Fester Baranteil ein Drittel des Grundbedarfs statt 30 %.
+- Keine Bodenabgabe über 2 % hinaus.
+- Mehrbedarf und Zinsregel über eine gleichmäßige Belastung aller Einkommensarten außer Arbeit; Vermögensteuer prüfen.
+- Übergang über den Fonds.
+
+**Rechnung:** `modell/anteil_drittel.py` (+ `.toml`) → `anteil_drittel.json`. In `modell_e.py` neuer Schalter `kapital_satz` (Mehraufkommen über `stellschrauben.kapital`, Investitionskanal und Lasten außerhalb der Mikrosimulation mit dem Satz).
+- Kosten wie v4.105: R4 und Stundung.
+- Boden in Schritten bis 2030 bzw. 2032; der Fehlbetrag ist ein Fondskredit, zurückgezahlt als Annuität über 15 Jahre zu 2,45 %.
+- Suche des kleinsten Satzes (38 bis 48 %), bei dem ein Drittel tragbar ist.
+- Vermögensteuer-Varianten (Pareto wie vermoegensbasis33, PHF und DIW, 50 % Ausweichen).
+- Zinsfall 3,0 %.
+
+**Ergebnis:**
+- Paket 2028: 325 / 260 € bar, Gesamtwert 769 / 704 €.
+- Übergang bis 2030: Kredit 1,17 % BIP, Rückzahlung 0,094 % BIP 2031–2045.
+- V1: nur Nicht-Arbeit 44 % (BIP 2045 +5,8 statt +6,4 %, Rücklage min. +0,37).
+- V2: 40 % und Vermögensteuer 1,5 % ab 1 Mio. € (Rücklage min. +0,04, knapp).
+- V3: 38 % und 2 % ab 1 Mio. € (+0,46 bis +0,77 % BIP).
+- Zinsfall 3,0 %: über Nicht-Arbeit allein nicht erreichbar (48 %: 31,0 %); mit Vermögensteuer 2 % ab 1 Mio. € und 42 % erreichbar.
+- Befund: Die Fortschrittsregel kann die Rücklage ins Negative führen (Übergang bis 2032: −0,78 % BIP). Vorschlag einer Zehnjahresvorschau (R30).
+
+**Datenquelle:** Projektrechnungen; PHF 2021 (Bundesbank), DIW WB 29/2020 (eine Studie); Literatur zur Vermögensteuer (BVerfG 2 BvL 37/91, OECD 2018, Jakobsen u. a. 2020, Brülhart u. a. 2022; nicht erneut an der Quelle geprüft).
+
+**Bewegte Zahl:** keine geltende. Prüfrechnung: Baranteil 293 → 325 € je Erwachsenem (2028).
+
+**Wodurch aufgefallen:** Auftrag der Initiative. Korrektur 99: beim Rechnen der Kapitalseite.
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5939,6 +5973,7 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 96 | Dynamik: Szenario 38 (v4.101) und Quote (v4.100) mit der Dynamik des geltenden Stands; geltende Dynamik (v4.85) auf Eingaben v4.84, nach v4.97 nicht nachgeführt | je Fall neu bestimmt (dynamik_satz.json): geltend +1,7 statt +2,7 % BIP auf Dauer (Dividende −4 bis −6 €), Szenario 38 +0,9 % (142 → 196 € statt 150 → 207 €); geltende Werte nicht berichtigt, Beschluss offen (R25) | Frage der Initiative, v4.102 |
 | 97 | Bodenabgabe in `stellschrauben.boden` (v4.103, übernommen in v4.104 Modell E): kapitalisiert gegen den Satz von Stand C (0,82 % BIP / Bodenwert = 0,53 %), obwohl der beobachtete Bodenwert 2024 nur die heutige Grundsteuer enthält (0,24 %) | gegen den heutigen Satz: Boden 2 % +1,13 statt +1,25 % BIP (1,5 %: +0,81 statt +0,93; 1 %: +0,41 statt +0,52); Wertverlust 37 statt 33 %; Modell E 33,7 statt 34,5 %, Stresstests −0,7 bis −0,8 Punkte; Papiere v4.103/v4.104 mit Hinweis versehen. Offen: Auch die Grundstücksabgabe von Stand C (0,82 % BIP) ist auf den unkapitalisierten Wert gerechnet (R28) | Aufbau der Haushaltsrechnung, v4.105 |
 | 98 | Fixpunkt in `modell_e.rechne` (v4.104): Abbruch, sobald der Baranteil konvergiert, auch wenn der Nachfrageimpuls noch aus dem Startwert stammt | Abbruch erst, wenn auch das Haushaltsmittel stabil ist. In v4.104 ohne Wirkung (Konvergenz erst im zweiten Schritt); nach Korrektur 97 hätte der Impuls 0,92 statt 1,84 % BIP betragen | Gegenprobe nach Korrektur 97, v4.105 |
+| 99 | Papier `CO2-und-Bodenabgabe-Haushalte-2026-11-21.md` (v4.105), Abschnitt 5, und R28: `stellschrauben.kapital` liefere über 38 % keine plausible Abstufung | Bedienfehler: Satz als Anteil (0,38) statt in Prozent (38) übergeben. Die Funktion ist richtig: +0,08 % BIP je Punkt, Wachstum −0,1 % BIP je Punkt (`anteil_drittel.json`). Papier und R28 berichtigt; keine Zahl der Rechnung betroffen | Rechnung der Kapitalseite, v4.106 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5978,7 +6013,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.105
+## 7 | Offene Punkte, Stand v4.106
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -6015,7 +6050,9 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R25 | **Geltende Dynamik nachführen (v4.102, Korrektur 96):** Eingaben in wirtschaftsdynamik.toml [geltend] auf Stand v4.97 (Impuls 2,46, Arbeitsvolumen +1,3, ln Netto 0,135); Rückwirkung der Beschäftigung auf das Netz aufnehmen; Variante 38 % nur für Kapital, Unternehmen, Erbschaft mit eigener Dynamik rechnen | Dividende, Kennzahlen, Webseite | v4.102 |
 | R26 | **Maxime stabile Dividende (v4.103):** Formulierung beschließen (fester Anteil am Grundbedarf, nie sinkend, Fortschrittsregel bis ½); Paket A als erste Stufe; Bodenabgabe: Übergang, Stundung für Rentner mit Wohneigentum, Mieten; Staatsebene digital belegen | Dividende, Regeln | v4.103 |
 | R27 | **teilweise erledigt v4.105** (fester Anteil 30 % beschlossen, E23; Bodenabgabe und CO₂ als Hintergrundrechnung) – **Modell E (v4.104):** fester Anteil (Vorschlag 30 %), Zinsregel (Boden- und Kapitalsätze in fester Spanne bei Fondszins über Wachstum), Obergrenze der Rücklage beschließen; Bodenabgabe, Kapital 38 % und CO₂ in die Mikrosimulation aufnehmen | Dividende, Fonds, Haushalte | v4.104 |
-| R28 | **Bodenabgabe und Zinsregel (v4.105):** Eigentümerquote und Bodenwert nach Einkommen und Region belegen (EVS/Mikrozensus Wohnen, Gutachterausschüsse); Rückflüsse der Stundung; Härtefall für Eigentümer im Erwerbsalter; Kapitalseite der Zinsregel (`stellschrauben.kapital` liefert über 38 % keine plausible Abstufung); Grundstücksabgabe von Stand C (0,82 % BIP) gegen den kapitalisierten Wert prüfen (Korrektur 97); CO₂-Kosten in die geltende Haushaltsrechnung (R18) | Haushalte, Dividende, geltender Stand | v4.105 |
+| R28 | **Bodenabgabe und Zinsregel (v4.105):** Eigentümerquote und Bodenwert nach Einkommen und Region belegen (EVS/Mikrozensus Wohnen, Gutachterausschüsse); Rückflüsse der Stundung; Härtefall für Eigentümer im Erwerbsalter; Kapitalseite der Zinsregel (**v4.106: erledigt**, die frühere Aussage, `stellschrauben.kapital` liefere keine Abstufung, war falsch, Korrektur 99); Grundstücksabgabe von Stand C (0,82 % BIP) gegen den kapitalisierten Wert prüfen (Korrektur 97); CO₂-Kosten in die geltende Haushaltsrechnung (R18) | Haushalte, Dividende, geltender Stand | v4.105 |
+| R29 | **Nicht-Arbeit und Vermögen (v4.106):** Mieteinkünfte aus der Position Einkommen lösen und mit dem Satz für Nicht-Arbeit belasten; Anrechnung der Bodenabgabe auf die Vermögensteuer rechnen; höheren Satz auf Kapitaleinkommen und Vermögensteuer in die Mikrosimulation; Ausweichen der Vermögensteuer gegen Literatur (Jakobsen u. a. 2020, Brülhart u. a. 2022) belegen; Bewertung (BVerfG 1995) | oberes Dezil, Dividende | v4.106 |
+| R30 | **Fortschrittsregel mit Vorschau (v4.106):** Anteil nur anheben, wenn die Rücklage in der Zehnjahresvorschau nicht unter null fällt; schnellere Anhebung über 4 % BIP, Überschuss über 6 % BIP an den Fonds | Dividende, Rücklage | v4.106 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 
@@ -6044,6 +6081,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E21 | **entschieden v4.97 (16.11.2026):** Lücke der belegten Einnahmen (B-1, E5 der Vorlage vom 15.11.2026): Satz ein Drittel, Grundbedarf im Tarif 12.072 €, Label 7/13/19/27 + Stufenwanderung, Erbschaftsfreibetrag 2 × Grundbedarf, Stundungskredit Elternhaus 1 % bis 20 Jahre; Verlustvorträge 5 Jahre, über 1 Mio. € höchstens 50 % Verrechnung; Personengesellschaften in Einkommen; Brücke 25 → 33 → 50 % |
 | E22 | **entschieden v4.104 (21.11.2026):** Die Dividende ist ein Paket aus steuerfinanziertem Netz und Baranteil; Baranteil mindestens 100 € je Erwachsenem und je Kind; Kommunikation mit dem Gesamtwert, davon X für das Netz |
 | E23 | **entschieden v4.105 (21.11.2026):** Fester Baranteil 30 % des Grundbedarfs in Modell E; Empfehlungen v4.104 übernommen (Modell E als Arbeitsgrundlage, Zinsregel, Obergrenze der Rücklage, Bodenabgabe durchrechnen). Offen: Spanne der Zinsregel, Obergrenze (Vorschlag 4 % / 6 % BIP), Umlageverbot, Stundung ab 65, Einführung bis 2030 mit Kassenkredit (`projekt/CO2-und-Bodenabgabe-Haushalte-2026-11-21.md`) |
+| E24 | **entschieden v4.106 (21.11.2026), ersetzt den Anteil aus E23:** Baranteil ein Drittel des Grundbedarfs; Boden höchstens 2 %; Mehrbedarf und Zinsregel über eine gleichmäßige Belastung aller Einkommensarten außer Arbeit, Vermögensteuer prüfen; Übergang über den Fonds. Offen: Wahl V1/V2/V3, Spanne der Zinsregel (Vorschlag 40–44 %) (`projekt/Baranteil-ein-Drittel-2026-11-21.md`) |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

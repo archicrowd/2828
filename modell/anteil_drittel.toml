@@ -1,0 +1,26 @@
+# Baranteil ein Drittel des Grundbedarfs in Modell E (modell/anteil_drittel.py, Logbuch v4.106). Prüfrechnung.
+# Vorgaben der Initiative (21.11.2026): fester Anteil 33,33 % statt 30 % (kommunikativ ein Drittel); Boden nicht über 2 % hinaus;
+# Mehrbedarf und Zinsregel über eine gleichmäßige Belastung aller Einkommensarten außer Arbeit, Vermögensteuer prüfen; Übergang über den Fonds.
+version = "v4.106"
+anteil = 0.333333
+bip_2028_mrd = 4724.0                        # Kaufkraft 2026, wie szenario38.toml
+
+[uebergang]   # Bodenabgabe in Schritten bis zum Zieljahr; Fehlbetrag als Kredit des Fonds, Rückzahlung als Annuität zum Fondszins
+bis = [2030, 2032]
+rueckzahlung_ab = 2031
+rueckzahlung_jahre = 15
+fondszins = 0.0245
+
+[kapital]   # einheitlicher Satz auf Kapitalerträge, Unternehmen und Plattformen, Erbschaften (Arbeit bleibt ein Drittel); Suche in ganzen Punkten
+saetze = [38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]
+
+[vermoegen]
+# Heutige Position im Drittel: 1,5 % über 2 Mio. € je Haushalt, 50 % Ausweichen (Annahme), 0,97 % BIP (vermoegensbasis33, DIW-Spitze).
+# Varianten: Pareto über der Schwelle wie vermoegensbasis33 (Befragung PHF 2021 und DIW mit Millionärsstichprobe); Mehraufkommen gegen heute.
+satz_heute = 1.5
+schwelle_heute = 2000000
+varianten = [ { satz = 2.0, schwelle = 2000000 }, { satz = 1.5, schwelle = 1000000 }, { satz = 2.0, schwelle = 1000000 } ]
+ausweichen = 0.5
+
+[zinsfall]
+zins = 3.0

@@ -1,6 +1,6 @@
 # Projektstatus (erzeugt von projekt/pruefe_projekt.py)
 
-Modellstand v4.104 · höchste Korrekturnummer 98 · 671 Dateien im Repository
+Modellstand v4.104 · höchste Korrekturnummer 99 · 675 Dateien im Repository
 
 ## Bausteine
 
@@ -110,6 +110,7 @@ Modellstand v4.104 · höchste Korrekturnummer 98 · 671 Dateien im Repository
 | N65 | B31 Drittel-System | B31 Drittel-System | offen |
 | N66 | B31 Drittel-System | B31 Drittel-System | offen |
 | N67 | B31 Drittel-System | B31 Drittel-System | offen |
+| N68 | B31 Drittel-System | B31 Drittel-System | offen |
 
 ## Ergebnis dieses Laufs
 
@@ -152,3 +153,4 @@ Modellstand v4.104 · höchste Korrekturnummer 98 · 671 Dateien im Repository
 - Hinweis: Naht N65 offen: B31 Drittel-System -> B31 Drittel-System: v4.103: Prüfrechnung; Wirkungen überwiegend Annahmen; Rücklage ohne Zins
 - Hinweis: Naht N66 offen: B31 Drittel-System -> B31 Drittel-System: v4.104: Prüfrechnung; Netz X je Einwohner aus netz33 mit Dividende E; Lasten außerhalb der Mikrosimulation pauschal
 - Hinweis: Naht N67 offen: B31 Drittel-System -> B31 Drittel-System: v4.105: Prüfrechnung; Eigentümer und Mieter als gewichtete Teilfälle; Bodenwert und Eigentümerquote nach Einkommen Annahmen
+- Hinweis: Naht N68 offen: B31 Drittel-System -> B31 Drittel-System: v4.106: Prüfrechnung; Reihenfolge der Kette: co2_boden_haushalte vor anteil_drittel

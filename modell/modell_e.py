@@ -53,19 +53,27 @@ def ki_ln(pp):
     return out
 
 
-def dynamik_e(d_bar, ki_pp, mehr_hh):
+@__import__("functools").lru_cache(maxsize=None)
+def kapital_faktor(ks):
+    """v4.106: Mehraufkommen bei einheitlichem Satz ks auf Kapitalerträge, Unternehmen, Erbschaft im Verhältnis zu 38 %."""
+    with contextlib.redirect_stdout(io.StringIO()):
+        return ST.kapital(ks)[0] / ST.kapital(P["kapital_satz"])[0]
+
+
+def dynamik_e(d_bar, ki_pp, mehr_hh, ks=None):
     D = P["dynamik"]
+    ks = P["kapital_satz"] if ks is None else ks
     # Eingaben
     e97 = ST.E97
     av = e97["arbeitsvolumen_pct"] + DGM.P["beschaeftigung"]["einkommenseffekt_dividende_pct"] * (d_bar / D["einkommenseffekt_bezug_eur"] - 1)
-    inv = DS.P["investition_mittel"] * ((P["kapital_satz"] - DS.P["satz_heute_kapital"]) + (P["kapital_satz"] - DS.P["satz_heute_gewinne"])) / (
+    inv = DS.P["investition_mittel"] * ((ks - DS.P["satz_heute_kapital"]) + (ks - DS.P["satz_heute_gewinne"])) / (
         (ST.QO.S0 - DS.P["satz_heute_kapital"]) + (ST.QO.S0 - DS.P["satz_heute_gewinne"]))
     S38.setze(d_bar)
     dln = math.log(MD.RB.neu("DE", DS.P["brutto_fachkraft"], 1, 0) / MD.SL.heute("DE", DS.P["brutto_fachkraft"], 1, 0))
     S38.setze()
     L = D["lasten_haushalte"]
     sw = {n: SCHRAUBEN[n]["wirkung"][2028] for n in P["stellschrauben"]}
-    last = L["boden"] * sw["Boden 2.0 %"] + L["kapital"] * sw["Kapital 38 %"] + L["subventionen"] * sw["Subventionen mittel"] + L["co2"] * ST.P["co2"]["k3_minus_k2_2028"]
+    last = L["boden"] * sw["Boden 2.0 %"] + L["kapital"] * sw["Kapital 38 %"] * kapital_faktor(ks) + L["subventionen"] * sw["Subventionen mittel"] + L["co2"] * ST.P["co2"]["k3_minus_k2_2028"]
     impuls = DS.P["impuls_bezug_pct_bip"] * mehr_hh / DS.P["mehr_bezug_eur"] - last
     alt_b = DGM.P["buerokratie"]["anteil_abgebaut"][I]
     DGM.P["buerokratie"]["anteil_abgebaut"][I] = D["buerokratie_anteil"]
@@ -101,6 +109,8 @@ def extra_e(stress):
                 v = boden_mit_r(0.020, stress["boden_r"])
             if n == "Boden 2.0 %" and "boden_einschleifen_bis" in stress:     # v4.105: linear von heute bis 2 % im Zieljahr
                 v *= min(1.0, (j - 2027) / (stress["boden_einschleifen_bis"] - 2027))
+            if n == "Kapital 38 %" and "kapital_satz" in stress:           # v4.106: einheitlicher Satz auf alle Einkommensarten außer Arbeit
+                v *= kapital_faktor(stress["kapital_satz"])
             if n == "Kapital 38 %" and "kapital_ausweichen" in stress:
                 v *= stress["kapital_ausweichen"]
             ex[j] += v
@@ -143,7 +153,7 @@ def rechne(stress=None, mit_regel=True):
     # Fixpunkt: Baranteil ↔ Nachfrageimpuls ↔ Dynamik
     d_bar, mehr = 330.0, 214.0
     for _ in range(5):
-        reihe, ein = dynamik_e(d_bar, ki, mehr)
+        reihe, ein = dynamik_e(d_bar, ki, mehr, stress.get("kapital_satz"))
         B, rb = basis(reihe)
         dy = {j: r["dy"] for j, r in reihe.items()}
         ex = extra_e(stress)

@@ -134,7 +134,7 @@ Euro je Haushalt und Monat, 2028, Kaufkraft 2026, Deutschland, gegen heute. Ante
 3. **Zinsregel:** Bei einem Fondszins von 3,0 % fehlen 0,52 % BIP im Jahr.
    - Allein über den Boden wäre dafür ein Satz von 3,15 % nötig. Das lässt den Bodenwert weiter fallen.
    - **Vorschlag für die Spanne:** Boden bis 2,5 % (+0,26 % BIP), den Rest über Kapitalerträge und Erbschaft.
-   - Wie viel die Kapitalseite bringt, lässt sich mit dem Modell noch nicht verlässlich beziffern: Die Rechnung für die Kapitalseite (`stellschrauben.kapital`) liefert für Sätze über 38 % keine plausible Abstufung. Das prüfe ich gesondert (R28).
+   - **Berichtigt in v4.106 (Korrektur 99):** Hier stand, die Rechnung für die Kapitalseite liefere über 38 % keine plausible Abstufung. Das war ein Bedienfehler meinerseits (Satz als 0,38 statt 38 übergeben). Richtig: Jeder Punkt über 38 % bringt rund +0,08 % BIP und kostet rund 0,1 % BIP Wachstum (`anteil_drittel.json`). Die Initiative hat am 21.11.2026 entschieden, den Boden nicht über 2 % anzuheben (`projekt/Baranteil-ein-Drittel-2026-11-21.md`).
 4. **Obergrenze der Rücklage:** Mit der Fortschrittsregel (Ziel 2 % BIP, +1 Punkt je Jahr darüber) steigt die Rücklage bis auf 8 % BIP. Die Regel bremst zu langsam.
    - **Vorschlag:** Über 4 % BIP steigt der Anteil um 2 Punkte je Jahr. Über 6 % BIP fließt der Überschuss an den Fonds zur schnelleren Tilgung.
    - Der Pfad der Fortschrittsregel hängt vom zeitlichen Verlauf der Rücklage ab. Er ist deshalb nicht in jedem Fall monoton im Aufwand: Mit R4 und Stundung liegt der Anteil 2060 höher als ohne, weil der Zufluss der Stundung nach zwölf Jahren endet.

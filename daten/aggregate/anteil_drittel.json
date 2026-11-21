@@ -1,0 +1,832 @@
+{
+ "version": "v4.106",
+ "status": "Prüfrechnung (Vorgaben 21.11.2026: Anteil ein Drittel, Boden höchstens 2 %, Nicht-Arbeit gleichmäßig, Übergang über den Fonds)",
+ "kapital_mehr_je_satz_pct_bip": {
+  "38": {
+   "mehr_gegen_38": 0.0,
+   "wachstum_gegen_38_pct_bip": -0.0
+  },
+  "39": {
+   "mehr_gegen_38": 0.084,
+   "wachstum_gegen_38_pct_bip": -0.1
+  },
+  "40": {
+   "mehr_gegen_38": 0.166,
+   "wachstum_gegen_38_pct_bip": -0.21
+  },
+  "41": {
+   "mehr_gegen_38": 0.245,
+   "wachstum_gegen_38_pct_bip": -0.31
+  },
+  "42": {
+   "mehr_gegen_38": 0.321,
+   "wachstum_gegen_38_pct_bip": -0.42
+  },
+  "43": {
+   "mehr_gegen_38": 0.394,
+   "wachstum_gegen_38_pct_bip": -0.52
+  },
+  "44": {
+   "mehr_gegen_38": 0.464,
+   "wachstum_gegen_38_pct_bip": -0.62
+  },
+  "45": {
+   "mehr_gegen_38": 0.532,
+   "wachstum_gegen_38_pct_bip": -0.73
+  },
+  "46": {
+   "mehr_gegen_38": 0.598,
+   "wachstum_gegen_38_pct_bip": -0.83
+  },
+  "47": {
+   "mehr_gegen_38": 0.66,
+   "wachstum_gegen_38_pct_bip": -0.94
+  },
+  "48": {
+   "mehr_gegen_38": 0.72,
+   "wachstum_gegen_38_pct_bip": -1.04
+  }
+ },
+ "referenz_38_voll": {
+  "kapital_satz": 38,
+  "anteil_tragbar_pct": 30.7,
+  "ruecklage_min_pct_bip": -4.84,
+  "ruecklage_max_pct_bip": 10.42,
+  "bip_2045_pct": 6.37,
+  "investition_2045": -0.95,
+  "fonds_spitze_pct_bip": 182,
+  "paket": {
+   "2028": {
+    "bar_erwachsen": 326,
+    "bar_kind": 260,
+    "netz_x": 444,
+    "gesamt_erwachsen": 770,
+    "gesamt_kind": 705,
+    "anteil_pct": 33.3
+   },
+   "2035": {
+    "bar_erwachsen": 335,
+    "bar_kind": 268,
+    "netz_x": 500,
+    "gesamt_erwachsen": 836,
+    "gesamt_kind": 769,
+    "anteil_pct": 33.3
+   },
+   "2045": {
+    "bar_erwachsen": 348,
+    "bar_kind": 278,
+    "netz_x": 585,
+    "gesamt_erwachsen": 933,
+    "gesamt_kind": 863,
+    "anteil_pct": 33.3
+   },
+   "2060": {
+    "bar_erwachsen": 443,
+    "bar_kind": 354,
+    "netz_x": 716,
+    "gesamt_erwachsen": 1158,
+    "gesamt_kind": 1070,
+    "anteil_pct": 40.3
+   }
+  },
+  "fortschritt": [
+   [
+    2028,
+    33.3
+   ],
+   [
+    2030,
+    33.3
+   ],
+   [
+    2035,
+    33.3
+   ],
+   [
+    2040,
+    33.3
+   ],
+   [
+    2045,
+    33.3
+   ],
+   [
+    2050,
+    33.3
+   ],
+   [
+    2055,
+    35.3
+   ],
+   [
+    2060,
+    40.3
+   ]
+  ]
+ },
+ "faelle": {
+  "Boden in Schritten bis 2030, Fonds überbrückt": {
+   "uebergang": {
+    "kredit_pct_bip": 1.17,
+    "annuitaet_pct_bip": 0.094,
+    "rueckzahlung": "2031–2045"
+   },
+   "bei_38": {
+    "kapital_satz": 38,
+    "anteil_tragbar_pct": 31.0,
+    "ruecklage_min_pct_bip": -4.56,
+    "ruecklage_max_pct_bip": 10.14,
+    "bip_2045_pct": 6.37,
+    "investition_2045": -0.95,
+    "fonds_spitze_pct_bip": 182,
+    "paket": {
+     "2028": {
+      "bar_erwachsen": 326,
+      "bar_kind": 260,
+      "netz_x": 444,
+      "gesamt_erwachsen": 770,
+      "gesamt_kind": 705,
+      "anteil_pct": 33.3
+     },
+     "2035": {
+      "bar_erwachsen": 335,
+      "bar_kind": 268,
+      "netz_x": 500,
+      "gesamt_erwachsen": 836,
+      "gesamt_kind": 769,
+      "anteil_pct": 33.3
+     },
+     "2045": {
+      "bar_erwachsen": 348,
+      "bar_kind": 278,
+      "netz_x": 585,
+      "gesamt_erwachsen": 933,
+      "gesamt_kind": 863,
+      "anteil_pct": 33.3
+     },
+     "2060": {
+      "bar_erwachsen": 443,
+      "bar_kind": 354,
+      "netz_x": 716,
+      "gesamt_erwachsen": 1158,
+      "gesamt_kind": 1070,
+      "anteil_pct": 40.3
+     }
+    },
+    "fortschritt": [
+     [
+      2028,
+      33.3
+     ],
+     [
+      2030,
+      33.3
+     ],
+     [
+      2035,
+      33.3
+     ],
+     [
+      2040,
+      33.3
+     ],
+     [
+      2045,
+      33.3
+     ],
+     [
+      2050,
+      33.3
+     ],
+     [
+      2055,
+      35.3
+     ],
+     [
+      2060,
+      40.3
+     ]
+    ]
+   },
+   "noetiger_satz": {
+    "kapital_satz": 44,
+    "anteil_tragbar_pct": 33.5,
+    "ruecklage_min_pct_bip": 0.37,
+    "ruecklage_max_pct_bip": 8.63,
+    "bip_2045_pct": 5.76,
+    "investition_2045": -1.54,
+    "fonds_spitze_pct_bip": 183,
+    "paket": {
+     "2028": {
+      "bar_erwachsen": 325,
+      "bar_kind": 260,
+      "netz_x": 444,
+      "gesamt_erwachsen": 769,
+      "gesamt_kind": 704,
+      "anteil_pct": 33.3
+     },
+     "2035": {
+      "bar_erwachsen": 335,
+      "bar_kind": 268,
+      "netz_x": 499,
+      "gesamt_erwachsen": 834,
+      "gesamt_kind": 767,
+      "anteil_pct": 33.3
+     },
+     "2045": {
+      "bar_erwachsen": 368,
+      "bar_kind": 294,
+      "netz_x": 580,
+      "gesamt_erwachsen": 948,
+      "gesamt_kind": 875,
+      "anteil_pct": 35.3
+     },
+     "2060": {
+      "bar_erwachsen": 548,
+      "bar_kind": 439,
+      "netz_x": 701,
+      "gesamt_erwachsen": 1249,
+      "gesamt_kind": 1140,
+      "anteil_pct": 50.0
+     }
+    },
+    "fortschritt": [
+     [
+      2028,
+      33.3
+     ],
+     [
+      2030,
+      33.3
+     ],
+     [
+      2035,
+      33.3
+     ],
+     [
+      2040,
+      33.3
+     ],
+     [
+      2045,
+      35.3
+     ],
+     [
+      2050,
+      40.3
+     ],
+     [
+      2055,
+      45.3
+     ],
+     [
+      2060,
+      50.0
+     ]
+    ]
+   }
+  },
+  "Boden in Schritten bis 2032, Fonds überbrückt": {
+   "uebergang": {
+    "kredit_pct_bip": 2.42,
+    "annuitaet_pct_bip": 0.195,
+    "rueckzahlung": "2033–2047"
+   },
+   "bei_38": {
+    "kapital_satz": 38,
+    "anteil_tragbar_pct": 31.3,
+    "ruecklage_min_pct_bip": -4.02,
+    "ruecklage_max_pct_bip": 9.75,
+    "bip_2045_pct": 6.37,
+    "investition_2045": -0.95,
+    "fonds_spitze_pct_bip": 182,
+    "paket": {
+     "2028": {
+      "bar_erwachsen": 326,
+      "bar_kind": 260,
+      "netz_x": 444,
+      "gesamt_erwachsen": 770,
+      "gesamt_kind": 705,
+      "anteil_pct": 33.3
+     },
+     "2035": {
+      "bar_erwachsen": 335,
+      "bar_kind": 268,
+      "netz_x": 500,
+      "gesamt_erwachsen": 836,
+      "gesamt_kind": 769,
+      "anteil_pct": 33.3
+     },
+     "2045": {
+      "bar_erwachsen": 348,
+      "bar_kind": 278,
+      "netz_x": 585,
+      "gesamt_erwachsen": 933,
+      "gesamt_kind": 863,
+      "anteil_pct": 33.3
+     },
+     "2060": {
+      "bar_erwachsen": 443,
+      "bar_kind": 354,
+      "netz_x": 716,
+      "gesamt_erwachsen": 1158,
+      "gesamt_kind": 1070,
+      "anteil_pct": 40.3
+     }
+    },
+    "fortschritt": [
+     [
+      2028,
+      33.3
+     ],
+     [
+      2030,
+      33.3
+     ],
+     [
+      2035,
+      33.3
+     ],
+     [
+      2040,
+      33.3
+     ],
+     [
+      2045,
+      33.3
+     ],
+     [
+      2050,
+      33.3
+     ],
+     [
+      2055,
+      35.3
+     ],
+     [
+      2060,
+      40.3
+     ]
+    ]
+   },
+   "noetiger_satz": {
+    "kapital_satz": 43,
+    "anteil_tragbar_pct": 33.5,
+    "ruecklage_min_pct_bip": -0.78,
+    "ruecklage_max_pct_bip": 11.45,
+    "bip_2045_pct": 5.86,
+    "investition_2045": -1.44,
+    "fonds_spitze_pct_bip": 183,
+    "paket": {
+     "2028": {
+      "bar_erwachsen": 326,
+      "bar_kind": 260,
+      "netz_x": 444,
+      "gesamt_erwachsen": 770,
+      "gesamt_kind": 704,
+      "anteil_pct": 33.3
+     },
+     "2035": {
+      "bar_erwachsen": 345,
+      "bar_kind": 276,
+      "netz_x": 498,
+      "gesamt_erwachsen": 844,
+      "gesamt_kind": 775,
+      "anteil_pct": 34.3
+     },
+     "2045": {
+      "bar_erwachsen": 358,
+      "bar_kind": 286,
+      "netz_x": 581,
+      "gesamt_erwachsen": 939,
+      "gesamt_kind": 868,
+      "anteil_pct": 34.3
+     },
+     "2060": {
+      "bar_erwachsen": 508,
+      "bar_kind": 406,
+      "netz_x": 706,
+      "gesamt_erwachsen": 1214,
+      "gesamt_kind": 1112,
+      "anteil_pct": 46.3
+     }
+    },
+    "fortschritt": [
+     [
+      2028,
+      33.3
+     ],
+     [
+      2030,
+      33.3
+     ],
+     [
+      2035,
+      34.3
+     ],
+     [
+      2040,
+      34.3
+     ],
+     [
+      2045,
+      34.3
+     ],
+     [
+      2050,
+      36.3
+     ],
+     [
+      2055,
+      41.3
+     ],
+     [
+      2060,
+      46.3
+     ]
+    ]
+   }
+  }
+ },
+ "vermoegen_varianten": [
+  {
+   "satz_pct": 2.0,
+   "schwelle_eur": 2000000,
+   "PHF 2021 (Befragung)": {
+    "haushalte_mio": 0.73,
+    "position_pct_bip": 0.53,
+    "mehr_gegen_heute_pct_bip": 0.13
+   },
+   "DIW (mit Spitze)": {
+    "haushalte_mio": 1.08,
+    "position_pct_bip": 1.37,
+    "mehr_gegen_heute_pct_bip": 0.34
+   }
+  },
+  {
+   "satz_pct": 1.5,
+   "schwelle_eur": 1000000,
+   "PHF 2021 (Befragung)": {
+    "haushalte_mio": 2.37,
+    "position_pct_bip": 0.64,
+    "mehr_gegen_heute_pct_bip": 0.24
+   },
+   "DIW (mit Spitze)": {
+    "haushalte_mio": 2.83,
+    "position_pct_bip": 1.35,
+    "mehr_gegen_heute_pct_bip": 0.32
+   }
+  },
+  {
+   "satz_pct": 2.0,
+   "schwelle_eur": 1000000,
+   "PHF 2021 (Befragung)": {
+    "haushalte_mio": 2.37,
+    "position_pct_bip": 0.85,
+    "mehr_gegen_heute_pct_bip": 0.46
+   },
+   "DIW (mit Spitze)": {
+    "haushalte_mio": 2.83,
+    "position_pct_bip": 1.8,
+    "mehr_gegen_heute_pct_bip": 0.77
+   }
+  }
+ ],
+ "mit_vermoegen_2_pct_ab_1_mio": {
+  "diw": {
+   "kapital_satz": 38,
+   "anteil_tragbar_pct": 35.6,
+   "ruecklage_min_pct_bip": 0.52,
+   "ruecklage_max_pct_bip": 9.2,
+   "bip_2045_pct": 6.37,
+   "investition_2045": -0.95,
+   "fonds_spitze_pct_bip": 182,
+   "paket": {
+    "2028": {
+     "bar_erwachsen": 326,
+     "bar_kind": 260,
+     "netz_x": 444,
+     "gesamt_erwachsen": 770,
+     "gesamt_kind": 705,
+     "anteil_pct": 33.3
+    },
+    "2035": {
+     "bar_erwachsen": 376,
+     "bar_kind": 301,
+     "netz_x": 498,
+     "gesamt_erwachsen": 874,
+     "gesamt_kind": 799,
+     "anteil_pct": 37.3
+    },
+    "2045": {
+     "bar_erwachsen": 390,
+     "bar_kind": 312,
+     "netz_x": 582,
+     "gesamt_erwachsen": 971,
+     "gesamt_kind": 893,
+     "anteil_pct": 37.3
+    },
+    "2060": {
+     "bar_erwachsen": 549,
+     "bar_kind": 439,
+     "netz_x": 705,
+     "gesamt_erwachsen": 1254,
+     "gesamt_kind": 1144,
+     "anteil_pct": 50.0
+    }
+   },
+   "fortschritt": [
+    [
+     2028,
+     33.3
+    ],
+    [
+     2030,
+     33.3
+    ],
+    [
+     2035,
+     37.3
+    ],
+    [
+     2040,
+     37.3
+    ],
+    [
+     2045,
+     37.3
+    ],
+    [
+     2050,
+     42.3
+    ],
+    [
+     2055,
+     47.3
+    ],
+    [
+     2060,
+     50.0
+    ]
+   ]
+  },
+  "phf": {
+   "kapital_satz": 38,
+   "anteil_tragbar_pct": 33.7,
+   "ruecklage_min_pct_bip": 0.71,
+   "ruecklage_max_pct_bip": 8.28,
+   "bip_2045_pct": 6.37,
+   "investition_2045": -0.95,
+   "fonds_spitze_pct_bip": 182,
+   "paket": {
+    "2028": {
+     "bar_erwachsen": 326,
+     "bar_kind": 260,
+     "netz_x": 444,
+     "gesamt_erwachsen": 770,
+     "gesamt_kind": 705,
+     "anteil_pct": 33.3
+    },
+    "2035": {
+     "bar_erwachsen": 335,
+     "bar_kind": 268,
+     "netz_x": 500,
+     "gesamt_erwachsen": 836,
+     "gesamt_kind": 769,
+     "anteil_pct": 33.3
+    },
+    "2045": {
+     "bar_erwachsen": 379,
+     "bar_kind": 303,
+     "netz_x": 582,
+     "gesamt_erwachsen": 962,
+     "gesamt_kind": 886,
+     "anteil_pct": 36.3
+    },
+    "2060": {
+     "bar_erwachsen": 549,
+     "bar_kind": 439,
+     "netz_x": 705,
+     "gesamt_erwachsen": 1254,
+     "gesamt_kind": 1144,
+     "anteil_pct": 50.0
+    }
+   },
+   "fortschritt": [
+    [
+     2028,
+     33.3
+    ],
+    [
+     2030,
+     33.3
+    ],
+    [
+     2035,
+     33.3
+    ],
+    [
+     2040,
+     33.3
+    ],
+    [
+     2045,
+     36.3
+    ],
+    [
+     2050,
+     41.3
+    ],
+    [
+     2055,
+     46.3
+    ],
+    [
+     2060,
+     50.0
+    ]
+   ]
+  }
+ },
+ "vermoegen_je_variante": [
+  {
+   "satz_pct": 2.0,
+   "schwelle_eur": 2000000,
+   "noetiger_satz_phf": 42,
+   "noetiger_satz_diw": 39
+  },
+  {
+   "satz_pct": 1.5,
+   "schwelle_eur": 1000000,
+   "noetiger_satz_phf": 40,
+   "noetiger_satz_diw": 39
+  },
+  {
+   "satz_pct": 2.0,
+   "schwelle_eur": 1000000,
+   "noetiger_satz_phf": 38,
+   "noetiger_satz_diw": 38
+  }
+ ],
+ "zinsfall_3_0": {
+  "ohne_vermoegen": {
+   "kapital_satz": null,
+   "hinweis": "bis 48 % nicht tragbar",
+   "letzter": {
+    "kapital_satz": 48,
+    "anteil_tragbar_pct": 31.0,
+    "ruecklage_min_pct_bip": -4.38,
+    "ruecklage_max_pct_bip": 9.87,
+    "bip_2045_pct": 5.35,
+    "investition_2045": -1.93,
+    "fonds_spitze_pct_bip": 189,
+    "paket": {
+     "2028": {
+      "bar_erwachsen": 325,
+      "bar_kind": 260,
+      "netz_x": 444,
+      "gesamt_erwachsen": 769,
+      "gesamt_kind": 704,
+      "anteil_pct": 33.3
+     },
+     "2035": {
+      "bar_erwachsen": 335,
+      "bar_kind": 268,
+      "netz_x": 498,
+      "gesamt_erwachsen": 833,
+      "gesamt_kind": 766,
+      "anteil_pct": 33.3
+     },
+     "2045": {
+      "bar_erwachsen": 347,
+      "bar_kind": 277,
+      "netz_x": 580,
+      "gesamt_erwachsen": 926,
+      "gesamt_kind": 857,
+      "anteil_pct": 33.3
+     },
+     "2060": {
+      "bar_erwachsen": 442,
+      "bar_kind": 353,
+      "netz_x": 709,
+      "gesamt_erwachsen": 1151,
+      "gesamt_kind": 1062,
+      "anteil_pct": 40.3
+     }
+    },
+    "fortschritt": [
+     [
+      2028,
+      33.3
+     ],
+     [
+      2030,
+      33.3
+     ],
+     [
+      2035,
+      33.3
+     ],
+     [
+      2040,
+      33.3
+     ],
+     [
+      2045,
+      33.3
+     ],
+     [
+      2050,
+      33.3
+     ],
+     [
+      2055,
+      35.3
+     ],
+     [
+      2060,
+      40.3
+     ]
+    ]
+   }
+  },
+  "mit_vermoegen_diw": {
+   "kapital_satz": 42,
+   "anteil_tragbar_pct": 33.6,
+   "ruecklage_min_pct_bip": 0.45,
+   "ruecklage_max_pct_bip": 9.36,
+   "bip_2045_pct": 5.96,
+   "investition_2045": -1.34,
+   "fonds_spitze_pct_bip": 188,
+   "paket": {
+    "2028": {
+     "bar_erwachsen": 326,
+     "bar_kind": 260,
+     "netz_x": 444,
+     "gesamt_erwachsen": 770,
+     "gesamt_kind": 704,
+     "anteil_pct": 33.3
+    },
+    "2035": {
+     "bar_erwachsen": 335,
+     "bar_kind": 268,
+     "netz_x": 499,
+     "gesamt_erwachsen": 835,
+     "gesamt_kind": 767,
+     "anteil_pct": 33.3
+    },
+    "2045": {
+     "bar_erwachsen": 368,
+     "bar_kind": 295,
+     "netz_x": 581,
+     "gesamt_erwachsen": 949,
+     "gesamt_kind": 876,
+     "anteil_pct": 35.3
+    },
+    "2060": {
+     "bar_erwachsen": 549,
+     "bar_kind": 439,
+     "netz_x": 702,
+     "gesamt_erwachsen": 1251,
+     "gesamt_kind": 1141,
+     "anteil_pct": 50.0
+    }
+   },
+   "fortschritt": [
+    [
+     2028,
+     33.3
+    ],
+    [
+     2030,
+     33.3
+    ],
+    [
+     2035,
+     33.3
+    ],
+    [
+     2040,
+     33.3
+    ],
+    [
+     2045,
+     35.3
+    ],
+    [
+     2050,
+     40.3
+    ],
+    [
+     2055,
+     45.3
+    ],
+    [
+     2060,
+     50.0
+    ]
+   ]
+  }
+ },
+ "hinweis": "Euro je Monat, Kaufkraft 2026, Deutschland. Satz gilt für Kapitalerträge, Unternehmen und Plattformen, Erbschaften; Mieteinkünfte stehen in der Position Einkommen (Stufentarif) und sind nicht gesondert erhöht. Mehraufkommen und Investitionskanal wie stellschrauben/dynamik_satz (Annahmen). Vermögensteuer: Pareto über P90, 50 % Ausweichen (Annahmen). Fondskredit in % BIP ohne Wachstumsentlastung (vorsichtig)."
+}
