@@ -114,7 +114,7 @@ def erreichbar(extra, dlnf=None):
 def boden(tau):
     b = P["boden"]
     v0 = b["bodenwert_mrd_2024"] / b["bip_2024_mrd"] * 100          # Bodenwert in % BIP
-    t0 = b["bestand_pct_bip"] / v0
+    t0 = b["grundsteuer_heute_mrd_2024"] / b["bodenwert_mrd_2024"]      # Korrektur 97: heute kapitalisierter Satz
     v = v0 * b["r"] / (b["r"] + tau - t0)
     return tau * v - b["bestand_pct_bip"]
 

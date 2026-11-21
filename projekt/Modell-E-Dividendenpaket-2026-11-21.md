@@ -3,6 +3,11 @@
 Initiative 28:28 · 21. November 2026 · Modellstand v4.104 (Prüfrechnung; die geltenden Zahlen bleiben unverändert)
 Rechnung: `modell/modell_e.py` (+ `.toml`) → `daten/aggregate/modell_e.json`. Euro je Monat, Kaufkraft 2026, Deutschland; Anteile in % BIP.
 
+> **Berichtigt in v4.105 (Korrektur 97):** Bodenabgabe 2 % +1,13 statt +1,25 % BIP. Fester Anteil 33,7 statt 34,5 % (bar 329 / 264 €,
+> Gesamtwert 774 / 708 €); Stresstests: Zins 3,0 % 29,9 %, Zins 3,5 % 26,1 %, ohne KI 31,6 %, alles zusammen 24,4 % (238 / 191 €).
+> Beschluss vom 21.11.2026: fester Anteil 30 %. Hintergrundrechnung CO₂ und Boden: `projekt/CO2-und-Bodenabgabe-Haushalte-2026-11-21.md`.
+> Die Tabellen unten zeigen den Stand v4.104; maßgeblich ist `modell_e.json`.
+
 **Vorgabe der Initiative (21.11.2026):**
 - Die Dividende ist ein Paket aus den steuerfinanzierten Sozialleistungen (Netz) und einem Baranteil von mindestens 100 € für Erwachsene und Kinder.
 - Kommuniziert wird der Gesamtwert, von dem die Summe X für das Netz abgezogen wird.

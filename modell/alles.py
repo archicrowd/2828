@@ -96,6 +96,7 @@ STUFEN = [
     ("Dynamik je Regelstand: Eingaben neu bestimmt, Szenario 38 mit eigener Dynamik (Prüfrechnung)", ["modell/dynamik_satz.py"]),
     ("Stabile Dividende als Maxime (½ Grundbedarf): Stellschrauben und Pakete (Prüfrechnung)", ["modell/stellschrauben.py"]),
     ("Modell E: Dividendenpaket, eigene Dynamik, Stabilität und Stresstests (Prüfrechnung)", ["modell/modell_e.py"]),
+    ("CO₂ und Bodenabgabe in den Haushalten, fester Anteil 30 % (Prüfrechnung)", ["modell/co2_boden_haushalte.py"]),
     ("Gesamtlast Stand C mit Fonds und Pflichtvorsorge", ["modell/gesamtlast33.py"]),
     ("Gemeinsame Aufgaben: Pflichtquote, Kasse und Anrechnung", ["modell/dach_beitrag.py"]),
     ("Gemeindeformel je Kreis (Deutschland), Strukturzuschlag", ["modell/regionen_de.py"]),

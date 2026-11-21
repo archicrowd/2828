@@ -5843,6 +5843,54 @@ Wirkungen der Stellschrauben überwiegend Annahmen (toml).
 
 ---
 
+### v4.105 — Beschluss fester Anteil 30 %; Hintergrundrechnung CO₂ und Bodenabgabe in den Haushalten; Korrekturen 97 und 98
+
+**Art der Änderung: MINOR (Beschluss, neue Prüfrechnung, zwei Korrekturen an Prüfrechnungen), geltende Zahlen unverändert.** 21. November 2026.
+
+**Beschluss der Initiative (21.11.2026), E23:**
+- Fester Baranteil 30 % des Grundbedarfs (293 € je Erwachsenem, 235 € je Kind, Gesamtwert 739 / 680 €, 2028).
+- Die Empfehlungen aus v4.104 werden übernommen: Modell E als Arbeitsgrundlage, Zinsregel, Obergrenze der Rücklage, Bodenabgabe durchrechnen.
+- Ausgestaltung der Zinsregel und der Obergrenze: Vorschlag in v4.105 (Abschnitt 5 des Papiers), Beschluss offen.
+
+**Rechnung:** `modell/co2_boden_haushalte.py` (+ `.toml`) → `co2_boden_haushalte.json`. Dazu in `modell/modell_e.py` neue Schalter: `anteil_fest`, `boden_einschleifen_bis`, `ausgaben`; Ausgabe `anteil_tragbar_pct`.
+- **CO₂ (K3):**
+  - direkt 141,6 Mt (2028) nach Quintilprofil (Ariadne 2023), Aufschlag 85 €/t mit 19 % Label;
+  - indirekt 27 Mrd. € Mehraufkommen, davon 60 % bei Haushalten nach Konsum (Annahme).
+- **Boden 2 %:**
+  - Eigentümerquote 51,3 % (65+) und 37,8 % (unter 65), logistisch im Einkommensrang (Annahme);
+  - 60 % des Bodens der Haushalte selbst genutzt (Annahme), Bodenwert je Eigentümer ∝ Äquivalenzeinkommen^0,5 (Annahme);
+  - Vermieter 70 % des vermieteten Bodens (Annahme);
+  - Stundung ab 65 zu 1 %, 12 Jahre (Annahme); R4 für Rentner.
+- **Fiskalisch:** `modell_e.rechne` mit festem Anteil 30 %, R4 (0,23 % BIP), Stundung (Zufluss 12 Jahre, ohne Rückflüsse), Einschleifen 2030/2032/2037, Zinsfall 3,0 % mit nötigem Mehraufkommen.
+
+**Ergebnis:**
+- **CO₂:** 62 € je Haushalt und Monat (Dezil 1: 32 €, 2,2 % des Nettos; Dezil 10: 98 €, 1,0 %); zusammen 30,6 Mrd. €.
+- **Boden:**
+  - Eigentümer +166 € im Monat; Mieter −21 € ohne Umlage, +112 € mit Umlage; Vermieter 15,9 Mrd. €.
+  - Wertverlust 37 % (72.000 € je Eigentümer, 2.063 Mrd. € bei Haushalten).
+- **Haushalte, alles zusammen** (Stundung, keine Umlage, R4):
+  - 70 % mit mehr, Mittel +182 €; Erwerbsalter 76 % / +321 €; Rentner 57 % / −147 €.
+  - Ohne Stundung: Rentner mit Eigentum 5 %. Mit Umlage: alle 59 %, Rentner zur Miete 13 %. Ohne R4: Rentner 15 %.
+- **Fester Anteil 30 %:**
+  - Mit R4 und Stundung tragbar bis 30,7 %, Rücklage mindestens +0,25 % BIP.
+  - Einschleifen bis 2030: Brücke −0,66 % BIP; bis 2037: −4,09 % BIP.
+  - Zinsfall 3,0 %: es fehlen 0,52 % BIP (Boden allein 3,15 %).
+
+**Datenquelle:**
+- DIW Wochenbericht 42/2024; Ariadne/PIK-MCC (November 2023, an der Quelle zu prüfen).
+- Bundesbank Vermögensbilanzen (maschinell gelesen).
+- Mikrozensus 2022 (Destatis; Altersverteilung über Haus & Grund, Sekundärquelle).
+- Grundsteuer D29A; Projektrechnungen.
+
+**Bewegte Zahl (Prüfrechnungen, nicht geltend):**
+- Boden 2 %: +1,25 → +1,13 % BIP.
+- Modell E: fester Anteil 34,5 → 33,7 %, bar 337 → 329 €.
+- Stellschrauben-Paket A: 16,0 → 15,2 %; Paket D: 22,5 → 21,7 %.
+
+**Wodurch aufgefallen:** Beim Aufbau der Haushaltsrechnung (Grundsteuer je € Bodenwert gegen τ₀ der Kapitalisierung).
+
+---
+
 ## 4 | Korrekturen, Fortsetzung
 
 Neu ab v3.8: die Nummern 47 bis 61. **Nächste freie Nummer: 62.** Die Nummern 31 bis 41 sind
@@ -5889,6 +5937,8 @@ besetzt (Band I). Punkt B1 ist seit v3.12 Korrektur 52.
 | 94 | Ursache der Rentnerverluste v4.97 als „Dividende sinkt“ angegeben (Logbuch v4.97, Entscheidungsvorlage E5 Abschnitt 10, Antwort an die Initiative) | Rentner erhalten keine Dividende zusätzlich (Korrektur 65); Ursache Label −44 €, Tarif −13 €, Zuschlag −11 €, Satz −2 € (rentner_eichung.json) | Varianten zur Rentnerregel, v4.98 |
 | 95 | Quote mit Puffer v4.100 (`quote_optimum.py`, Papier Quote-und-Wirkungslogik, Antwort an die Initiative): Dividende ohne Rückwirkung auf das Netz gerechnet, zu niedrig (37 %: 100 → 137 €) | mit Netz-Rückwirkung wie netz33: 37 % 163 → 224 €; 33⅓ % 90 → 124 €; Schwelle 37 % unverändert | Gegenprobe Szenario 38, v4.101 |
 | 96 | Dynamik: Szenario 38 (v4.101) und Quote (v4.100) mit der Dynamik des geltenden Stands; geltende Dynamik (v4.85) auf Eingaben v4.84, nach v4.97 nicht nachgeführt | je Fall neu bestimmt (dynamik_satz.json): geltend +1,7 statt +2,7 % BIP auf Dauer (Dividende −4 bis −6 €), Szenario 38 +0,9 % (142 → 196 € statt 150 → 207 €); geltende Werte nicht berichtigt, Beschluss offen (R25) | Frage der Initiative, v4.102 |
+| 97 | Bodenabgabe in `stellschrauben.boden` (v4.103, übernommen in v4.104 Modell E): kapitalisiert gegen den Satz von Stand C (0,82 % BIP / Bodenwert = 0,53 %), obwohl der beobachtete Bodenwert 2024 nur die heutige Grundsteuer enthält (0,24 %) | gegen den heutigen Satz: Boden 2 % +1,13 statt +1,25 % BIP (1,5 %: +0,81 statt +0,93; 1 %: +0,41 statt +0,52); Wertverlust 37 statt 33 %; Modell E 33,7 statt 34,5 %, Stresstests −0,7 bis −0,8 Punkte; Papiere v4.103/v4.104 mit Hinweis versehen. Offen: Auch die Grundstücksabgabe von Stand C (0,82 % BIP) ist auf den unkapitalisierten Wert gerechnet (R28) | Aufbau der Haushaltsrechnung, v4.105 |
+| 98 | Fixpunkt in `modell_e.rechne` (v4.104): Abbruch, sobald der Baranteil konvergiert, auch wenn der Nachfrageimpuls noch aus dem Startwert stammt | Abbruch erst, wenn auch das Haushaltsmittel stabil ist. In v4.104 ohne Wirkung (Konvergenz erst im zweiten Schritt); nach Korrektur 97 hätte der Impuls 0,92 statt 1,84 % BIP betragen | Gegenprobe nach Korrektur 97, v4.105 |
 | 84 | `DATENZUGANG.md`, Prüfmappe, Forschungsseite, Working Paper: Repository „privat, Zugang auf Anfrage“; Webseite: Datum des Modellstands fest „18. Oktober 2026“ seit v4.8 | Repository seit 02.11.2026 öffentlich; Datum aus dem Logbuch je Version | Prüfbericht 4 (B28, B29); Vorschau der Webseite (v4.65) |
 | 83 | Forschungsseite v4.56/v4.57 (deutsch und englisch, Übersicht und Kit): „bisher 81 Korrekturen“, „68 Stufen“, beide von Hand geschrieben | 82 Korrekturen (Korrektur 82 in v4.56), 69 Stufen; seit v4.58 aus den Korrekturtabellen des Logbuchs und aus `modell/alles.py` gelesen | Rückmeldung der intern veranlassten Prüfung vom 01.11.2026 („Korrekturlog bei 81“), Gegenprobe gegen das Logbuch (v4.58) |
 | 82 | `DATENZUGANG.md`, Prüfmappe: Repository „öffentlich“ (Stand 24.10.2026) | am 01.11.2026 privat; Zugang für Prüfende auf Anfrage | Abfrage der Repository-Einstellungen für GitHub Pages (v4.56) |
@@ -5928,7 +5978,7 @@ nicht geklärt.
 
 ---
 
-## 7 | Offene Punkte, Stand v4.104
+## 7 | Offene Punkte, Stand v4.105
 
 Bereinigt am 23.10.2026 (v4.27). Die ungeordnete Sammelliste der Versionen v3.23 bis v4.26 ist aufgelöst: Erledigtes steht mit der Version, in der es
 abgeschlossen wurde, Überholtes mit dem Grund; nur Offenes bleibt in 7.1. Die frühere Fassung dieses Abschnitts steht im Git-Verlauf (Commit v4.26).
@@ -5964,7 +6014,8 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | R24 | **Szenario 38 feinsteuern (v4.101):** Altersausgleich auf untere Fünftel begrenzen; 38 % nur für Kapital, Unternehmen, Erbschaft (Arbeit bei ein Drittel); Glättung 0,5 %; Selbständige und Beamte (Zulage) prüfen | Haushalte, Dividende | v4.101 |
 | R25 | **Geltende Dynamik nachführen (v4.102, Korrektur 96):** Eingaben in wirtschaftsdynamik.toml [geltend] auf Stand v4.97 (Impuls 2,46, Arbeitsvolumen +1,3, ln Netto 0,135); Rückwirkung der Beschäftigung auf das Netz aufnehmen; Variante 38 % nur für Kapital, Unternehmen, Erbschaft mit eigener Dynamik rechnen | Dividende, Kennzahlen, Webseite | v4.102 |
 | R26 | **Maxime stabile Dividende (v4.103):** Formulierung beschließen (fester Anteil am Grundbedarf, nie sinkend, Fortschrittsregel bis ½); Paket A als erste Stufe; Bodenabgabe: Übergang, Stundung für Rentner mit Wohneigentum, Mieten; Staatsebene digital belegen | Dividende, Regeln | v4.103 |
-| R27 | **Modell E (v4.104):** fester Anteil (Vorschlag 30 %), Zinsregel (Boden- und Kapitalsätze in fester Spanne bei Fondszins über Wachstum), Obergrenze der Rücklage beschließen; Bodenabgabe, Kapital 38 % und CO₂ in die Mikrosimulation aufnehmen | Dividende, Fonds, Haushalte | v4.104 |
+| R27 | **teilweise erledigt v4.105** (fester Anteil 30 % beschlossen, E23; Bodenabgabe und CO₂ als Hintergrundrechnung) – **Modell E (v4.104):** fester Anteil (Vorschlag 30 %), Zinsregel (Boden- und Kapitalsätze in fester Spanne bei Fondszins über Wachstum), Obergrenze der Rücklage beschließen; Bodenabgabe, Kapital 38 % und CO₂ in die Mikrosimulation aufnehmen | Dividende, Fonds, Haushalte | v4.104 |
+| R28 | **Bodenabgabe und Zinsregel (v4.105):** Eigentümerquote und Bodenwert nach Einkommen und Region belegen (EVS/Mikrozensus Wohnen, Gutachterausschüsse); Rückflüsse der Stundung; Härtefall für Eigentümer im Erwerbsalter; Kapitalseite der Zinsregel (`stellschrauben.kapital` liefert über 38 % keine plausible Abstufung); Grundstücksabgabe von Stand C (0,82 % BIP) gegen den kapitalisierten Wert prüfen (Korrektur 97); CO₂-Kosten in die geltende Haushaltsrechnung (R18) | Haushalte, Dividende, geltender Stand | v4.105 |
 
 ### 7.2 Offen – Entscheidungen der Initiative
 
@@ -5992,6 +6043,7 @@ Reihenfolge in 7.1: erwartete Wirkung auf die Rechnung der verfügbaren Einkomme
 | E20 | Gemeinschaft der Staaten (v4.76): Variante B, Kasse G1 mit Erweiterung zu G2, Gericht (eigenes oder Anbindung), Freizügigkeit ohne Wartezeit, Sicherheit als Angebot (`projekt/Gemeinschaft-der-Staaten-2026-11-07.md`) |
 | E21 | **entschieden v4.97 (16.11.2026):** Lücke der belegten Einnahmen (B-1, E5 der Vorlage vom 15.11.2026): Satz ein Drittel, Grundbedarf im Tarif 12.072 €, Label 7/13/19/27 + Stufenwanderung, Erbschaftsfreibetrag 2 × Grundbedarf, Stundungskredit Elternhaus 1 % bis 20 Jahre; Verlustvorträge 5 Jahre, über 1 Mio. € höchstens 50 % Verrechnung; Personengesellschaften in Einkommen; Brücke 25 → 33 → 50 % |
 | E22 | **entschieden v4.104 (21.11.2026):** Die Dividende ist ein Paket aus steuerfinanziertem Netz und Baranteil; Baranteil mindestens 100 € je Erwachsenem und je Kind; Kommunikation mit dem Gesamtwert, davon X für das Netz |
+| E23 | **entschieden v4.105 (21.11.2026):** Fester Baranteil 30 % des Grundbedarfs in Modell E; Empfehlungen v4.104 übernommen (Modell E als Arbeitsgrundlage, Zinsregel, Obergrenze der Rücklage, Bodenabgabe durchrechnen). Offen: Spanne der Zinsregel, Obergrenze (Vorschlag 4 % / 6 % BIP), Umlageverbot, Stundung ab 65, Einführung bis 2030 mit Kassenkredit (`projekt/CO2-und-Bodenabgabe-Haushalte-2026-11-21.md`) |
 
 ### 7.3 Offen – Prüfungen von außen, Texte, Verwaltung
 

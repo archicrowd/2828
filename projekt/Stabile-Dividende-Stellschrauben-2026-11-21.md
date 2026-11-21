@@ -4,6 +4,10 @@ Initiative 28:28 · 21. November 2026 · Modellstand v4.103 (Prüfrechnung; die 
 Rechnung: `modell/stellschrauben.py` (+ `.toml`) → `daten/aggregate/stellschrauben.json`.
 Euro je Erwachsenem und Monat, Kaufkraft 2026, Deutschland; Anteile in % BIP.
 
+> **Berichtigt in v4.105 (Korrektur 97):** Die Bodenabgabe war gegen den Satz von Stand C kapitalisiert statt gegen die heutige Grundsteuer.
+> Neu: Boden 1,0 / 1,5 / 2,0 % bringen +0,41 / +0,81 / +1,13 % BIP (bisher 0,52 / 0,93 / 1,25). Pakete, fester Anteil: A 15,2 % (157 → 173 €),
+> B 18,1 %, C 17,0 %, D 21,7 % (224 → 247 €), E 32,9 %. Die Tabellen unten zeigen den Stand v4.103; maßgeblich ist `stellschrauben.json`.
+
 **Vorgaben (Auftrag 21.11.2026):**
 - Maxime: eine stabile Dividende von ½ Grundbedarf.
 - Arbeit bleibt bei ein Drittel, das Label bleibt bei 7/13/19/27 %.

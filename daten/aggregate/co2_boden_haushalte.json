@@ -1,0 +1,971 @@
+{
+ "version": "v4.105",
+ "status": "Prüfrechnung (Beschluss 21.11.2026: fester Anteil 30 %, Empfehlungen v4.104)",
+ "dividende_2028": {
+  "je_erwachsenem_vor_kinderanteil": 310,
+  "bar_erwachsen": 294,
+  "bar_kind": 235,
+  "zuschlag_faktor": 0.936
+ },
+ "co2": {
+  "direkt_mt_2028": 141.6,
+  "direkt_mrd": 14.3,
+  "indirekt_mrd": 16.3,
+  "je_haushalt_monat": 62,
+  "je_rentnerhaushalt_monat": 52,
+  "dezile": [
+   {
+    "dezil": 1,
+    "eur_monat": 32,
+    "anteil_netto_pct": 2.17
+   },
+   {
+    "dezil": 2,
+    "eur_monat": 39,
+    "anteil_netto_pct": 1.84
+   },
+   {
+    "dezil": 3,
+    "eur_monat": 49,
+    "anteil_netto_pct": 1.89
+   },
+   {
+    "dezil": 4,
+    "eur_monat": 53,
+    "anteil_netto_pct": 1.67
+   },
+   {
+    "dezil": 5,
+    "eur_monat": 63,
+    "anteil_netto_pct": 1.72
+   },
+   {
+    "dezil": 6,
+    "eur_monat": 66,
+    "anteil_netto_pct": 1.58
+   },
+   {
+    "dezil": 7,
+    "eur_monat": 72,
+    "anteil_netto_pct": 1.52
+   },
+   {
+    "dezil": 8,
+    "eur_monat": 76,
+    "anteil_netto_pct": 1.38
+   },
+   {
+    "dezil": 9,
+    "eur_monat": 83,
+    "anteil_netto_pct": 1.28
+   },
+   {
+    "dezil": 10,
+    "eur_monat": 98,
+    "anteil_netto_pct": 0.99
+   }
+  ]
+ },
+ "boden": {
+  "eigentuemer_mio": 17.2,
+  "grundsteuer_heute_je_eur_bodenwert_pct": 0.239,
+  "satz_neu_auf_heutigen_wert_pct": 1.26,
+  "wertverlust_kapitalisierung_pct": 37.0,
+  "bodenwert_je_eigentuemer_mittel_eur": 194819,
+  "mehr_je_eigentuemer_monat": 166,
+  "mehr_je_rentner_eigentuemer_monat": 152,
+  "wertverlust_je_eigentuemer_eur": 72051,
+  "mieter_umlage_heute_monat": 21,
+  "mieter_umlage_neu_falls_erlaubt_monat": 112,
+  "vermieter_mehr_mrd": 15.9
+ },
+ "stundung": {
+  "zufluss_mrd_jahr": 11.3,
+  "zufluss_pct_bip": 0.24,
+  "bestand_mrd": 136,
+  "bestand_pct_bip": 2.9,
+  "zinsvorteil_mrd": 2.0
+ },
+ "haushalte": {
+  "E ohne CO₂ und Boden (wie Mikrosimulation)": {
+   "gesamt": {
+    "mit_mehr_pct": 78.3,
+    "mittel_eur": 311
+   },
+   "erwerbsalter": {
+    "mit_mehr_pct": 81.9,
+    "mittel_eur": 485
+   },
+   "rentner": {
+    "mit_mehr_pct": 69.5,
+    "mittel_eur": -106
+   },
+   "rentner_eigentuemer": {
+    "mit_mehr_pct": 58.4,
+    "mittel_eur": -197
+   },
+   "rentner_mieter": {
+    "mit_mehr_pct": 81.1,
+    "mittel_eur": -9
+   },
+   "eigentuemer": {
+    "mit_mehr_pct": 74.3,
+    "mittel_eur": 258
+   },
+   "mieter": {
+    "mit_mehr_pct": 81.1,
+    "mittel_eur": 349
+   },
+   "dezile": [
+    {
+     "mit_mehr_pct": 53.4,
+     "mittel_eur": 38
+    },
+    {
+     "mit_mehr_pct": 99.3,
+     "mittel_eur": 278
+    },
+    {
+     "mit_mehr_pct": 98.9,
+     "mittel_eur": 325
+    },
+    {
+     "mit_mehr_pct": 97.3,
+     "mittel_eur": 381
+    },
+    {
+     "mit_mehr_pct": 86.4,
+     "mittel_eur": 434
+    },
+    {
+     "mit_mehr_pct": 82.5,
+     "mittel_eur": 465
+    },
+    {
+     "mit_mehr_pct": 81.0,
+     "mittel_eur": 499
+    },
+    {
+     "mit_mehr_pct": 68.5,
+     "mittel_eur": 470
+    },
+    {
+     "mit_mehr_pct": 67.0,
+     "mittel_eur": 385
+    },
+    {
+     "mit_mehr_pct": 56.4,
+     "mittel_eur": -51
+    }
+   ]
+  },
+  "E mit CO₂": {
+   "gesamt": {
+    "mit_mehr_pct": 71.7,
+    "mittel_eur": 249
+   },
+   "erwerbsalter": {
+    "mit_mehr_pct": 79.7,
+    "mittel_eur": 419
+   },
+   "rentner": {
+    "mit_mehr_pct": 52.7,
+    "mittel_eur": -157
+   },
+   "rentner_eigentuemer": {
+    "mit_mehr_pct": 41.3,
+    "mittel_eur": -254
+   },
+   "rentner_mieter": {
+    "mit_mehr_pct": 64.7,
+    "mittel_eur": -55
+   },
+   "eigentuemer": {
+    "mit_mehr_pct": 66.6,
+    "mittel_eur": 190
+   },
+   "mieter": {
+    "mit_mehr_pct": 75.4,
+    "mittel_eur": 291
+   },
+   "dezile": [
+    {
+     "mit_mehr_pct": 50.2,
+     "mittel_eur": 6
+    },
+    {
+     "mit_mehr_pct": 98.7,
+     "mittel_eur": 240
+    },
+    {
+     "mit_mehr_pct": 84.7,
+     "mittel_eur": 276
+    },
+    {
+     "mit_mehr_pct": 80.8,
+     "mittel_eur": 328
+    },
+    {
+     "mit_mehr_pct": 81.6,
+     "mittel_eur": 371
+    },
+    {
+     "mit_mehr_pct": 74.3,
+     "mittel_eur": 399
+    },
+    {
+     "mit_mehr_pct": 68.2,
+     "mittel_eur": 426
+    },
+    {
+     "mit_mehr_pct": 66.9,
+     "mittel_eur": 394
+    },
+    {
+     "mit_mehr_pct": 65.5,
+     "mittel_eur": 302
+    },
+    {
+     "mit_mehr_pct": 53.3,
+     "mittel_eur": -150
+    }
+   ]
+  },
+  "E mit CO₂ und Boden (Stundung ab 65, keine Umlage)": {
+   "gesamt": {
+    "mit_mehr_pct": 70.2,
+    "mittel_eur": 182
+   },
+   "erwerbsalter": {
+    "mit_mehr_pct": 75.6,
+    "mittel_eur": 321
+   },
+   "rentner": {
+    "mit_mehr_pct": 57.2,
+    "mittel_eur": -147
+   },
+   "rentner_eigentuemer": {
+    "mit_mehr_pct": 41.3,
+    "mittel_eur": -254
+   },
+   "rentner_mieter": {
+    "mit_mehr_pct": 74.1,
+    "mittel_eur": -34
+   },
+   "eigentuemer": {
+    "mit_mehr_pct": 60.6,
+    "mittel_eur": 37
+   },
+   "mieter": {
+    "mit_mehr_pct": 77.0,
+    "mittel_eur": 287
+   },
+   "dezile": [
+    {
+     "mit_mehr_pct": 49.4,
+     "mittel_eur": 10
+    },
+    {
+     "mit_mehr_pct": 97.2,
+     "mittel_eur": 239
+    },
+    {
+     "mit_mehr_pct": 92.0,
+     "mittel_eur": 271
+    },
+    {
+     "mit_mehr_pct": 82.2,
+     "mittel_eur": 312
+    },
+    {
+     "mit_mehr_pct": 80.1,
+     "mittel_eur": 341
+    },
+    {
+     "mit_mehr_pct": 75.1,
+     "mittel_eur": 350
+    },
+    {
+     "mit_mehr_pct": 66.9,
+     "mittel_eur": 355
+    },
+    {
+     "mit_mehr_pct": 63.1,
+     "mittel_eur": 299
+    },
+    {
+     "mit_mehr_pct": 60.0,
+     "mittel_eur": 164
+    },
+    {
+     "mit_mehr_pct": 42.4,
+     "mittel_eur": -425
+    }
+   ]
+  },
+  "E mit CO₂ und Boden ohne Stundung": {
+   "gesamt": {
+    "mit_mehr_pct": 64.7,
+    "mittel_eur": 159
+   },
+   "erwerbsalter": {
+    "mit_mehr_pct": 75.6,
+    "mittel_eur": 321
+   },
+   "rentner": {
+    "mit_mehr_pct": 38.6,
+    "mittel_eur": -225
+   },
+   "rentner_eigentuemer": {
+    "mit_mehr_pct": 4.9,
+    "mittel_eur": -406
+   },
+   "rentner_mieter": {
+    "mit_mehr_pct": 74.1,
+    "mittel_eur": -34
+   },
+   "eigentuemer": {
+    "mit_mehr_pct": 47.4,
+    "mittel_eur": -18
+   },
+   "mieter": {
+    "mit_mehr_pct": 77.0,
+    "mittel_eur": 287
+   },
+   "dezile": [
+    {
+     "mit_mehr_pct": 39.9,
+     "mittel_eur": -2
+    },
+    {
+     "mit_mehr_pct": 88.2,
+     "mittel_eur": 224
+    },
+    {
+     "mit_mehr_pct": 79.5,
+     "mittel_eur": 248
+    },
+    {
+     "mit_mehr_pct": 72.4,
+     "mittel_eur": 288
+    },
+    {
+     "mit_mehr_pct": 71.4,
+     "mittel_eur": 317
+    },
+    {
+     "mit_mehr_pct": 71.2,
+     "mittel_eur": 326
+    },
+    {
+     "mit_mehr_pct": 66.9,
+     "mittel_eur": 331
+    },
+    {
+     "mit_mehr_pct": 63.1,
+     "mittel_eur": 271
+    },
+    {
+     "mit_mehr_pct": 60.0,
+     "mittel_eur": 136
+    },
+    {
+     "mit_mehr_pct": 42.4,
+     "mittel_eur": -456
+    }
+   ]
+  },
+  "E mit CO₂ und Boden, Umlage auf Mieter erlaubt": {
+   "gesamt": {
+    "mit_mehr_pct": 58.9,
+    "mittel_eur": 117
+   },
+   "erwerbsalter": {
+    "mit_mehr_pct": 72.0,
+    "mittel_eur": 251
+   },
+   "rentner": {
+    "mit_mehr_pct": 27.6,
+    "mittel_eur": -202
+   },
+   "rentner_eigentuemer": {
+    "mit_mehr_pct": 41.3,
+    "mittel_eur": -254
+   },
+   "rentner_mieter": {
+    "mit_mehr_pct": 13.2,
+    "mittel_eur": -146
+   },
+   "eigentuemer": {
+    "mit_mehr_pct": 60.6,
+    "mittel_eur": 37
+   },
+   "mieter": {
+    "mit_mehr_pct": 57.7,
+    "mittel_eur": 175
+   },
+   "dezile": [
+    {
+     "mit_mehr_pct": 21.4,
+     "mittel_eur": -78
+    },
+    {
+     "mit_mehr_pct": 75.6,
+     "mittel_eur": 156
+    },
+    {
+     "mit_mehr_pct": 70.9,
+     "mittel_eur": 194
+    },
+    {
+     "mit_mehr_pct": 68.6,
+     "mittel_eur": 239
+    },
+    {
+     "mit_mehr_pct": 70.9,
+     "mittel_eur": 273
+    },
+    {
+     "mit_mehr_pct": 67.8,
+     "mittel_eur": 287
+    },
+    {
+     "mit_mehr_pct": 64.8,
+     "mittel_eur": 298
+    },
+    {
+     "mit_mehr_pct": 62.0,
+     "mittel_eur": 248
+    },
+    {
+     "mit_mehr_pct": 58.8,
+     "mittel_eur": 119
+    },
+    {
+     "mit_mehr_pct": 41.1,
+     "mittel_eur": -465
+    }
+   ]
+  },
+  "E mit CO₂ und Boden, ohne Altersausgleich": {
+   "gesamt": {
+    "mit_mehr_pct": 57.7,
+    "mittel_eur": 158
+   },
+   "erwerbsalter": {
+    "mit_mehr_pct": 75.6,
+    "mittel_eur": 321
+   },
+   "rentner": {
+    "mit_mehr_pct": 15.2,
+    "mittel_eur": -228
+   },
+   "rentner_eigentuemer": {
+    "mit_mehr_pct": 7.2,
+    "mittel_eur": -338
+   },
+   "rentner_mieter": {
+    "mit_mehr_pct": 23.6,
+    "mittel_eur": -113
+   },
+   "eigentuemer": {
+    "mit_mehr_pct": 48.3,
+    "mittel_eur": 7
+   },
+   "mieter": {
+    "mit_mehr_pct": 64.5,
+    "mittel_eur": 267
+   },
+   "dezile": [
+    {
+     "mit_mehr_pct": 31.3,
+     "mittel_eur": -17
+    },
+    {
+     "mit_mehr_pct": 73.6,
+     "mittel_eur": 212
+    },
+    {
+     "mit_mehr_pct": 61.0,
+     "mittel_eur": 236
+    },
+    {
+     "mit_mehr_pct": 59.6,
+     "mittel_eur": 280
+    },
+    {
+     "mit_mehr_pct": 64.1,
+     "mittel_eur": 315
+    },
+    {
+     "mit_mehr_pct": 65.8,
+     "mittel_eur": 328
+    },
+    {
+     "mit_mehr_pct": 65.9,
+     "mittel_eur": 336
+    },
+    {
+     "mit_mehr_pct": 63.1,
+     "mittel_eur": 279
+    },
+    {
+     "mit_mehr_pct": 60.0,
+     "mittel_eur": 146
+    },
+    {
+     "mit_mehr_pct": 42.4,
+     "mittel_eur": -441
+    }
+   ]
+  }
+ },
+ "modell_e_30": {
+  "ohne_zusatz": {
+   "anteil_tragbar_pct": 33.7,
+   "ruecklage_min_pct_bip": 0.69,
+   "ruecklage_max_pct_bip": 5.12,
+   "fortschritt": [
+    {
+     "jahr": 2028,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 0.76
+    },
+    {
+     "jahr": 2030,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 2.2
+    },
+    {
+     "jahr": 2035,
+     "anteil_pct": 34.0,
+     "ruecklage_pct_bip": 4.05
+    },
+    {
+     "jahr": 2040,
+     "anteil_pct": 39.0,
+     "ruecklage_pct_bip": 3.09
+    },
+    {
+     "jahr": 2045,
+     "anteil_pct": 41.0,
+     "ruecklage_pct_bip": 1.12
+    },
+    {
+     "jahr": 2050,
+     "anteil_pct": 41.0,
+     "ruecklage_pct_bip": 0.82
+    },
+    {
+     "jahr": 2055,
+     "anteil_pct": 41.0,
+     "ruecklage_pct_bip": 2.42
+    },
+    {
+     "jahr": 2060,
+     "anteil_pct": 45.0,
+     "ruecklage_pct_bip": 5.12
+    }
+   ],
+   "paket": {
+    "2028": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 293,
+     "bar_kind": 235,
+     "netz_x_je_einwohner": 446,
+     "gesamt_erwachsen": 739,
+     "gesamt_kind": 680
+    },
+    "2035": {
+     "anteil_grundbedarf_pct": 34.0,
+     "bar_erwachsen": 343,
+     "bar_kind": 274,
+     "netz_x_je_einwohner": 500,
+     "gesamt_erwachsen": 843,
+     "gesamt_kind": 774
+    },
+    "2045": {
+     "anteil_grundbedarf_pct": 41.0,
+     "bar_erwachsen": 428,
+     "bar_kind": 343,
+     "netz_x_je_einwohner": 579,
+     "gesamt_erwachsen": 1007,
+     "gesamt_kind": 921
+    },
+    "2060": {
+     "anteil_grundbedarf_pct": 45.0,
+     "bar_erwachsen": 494,
+     "bar_kind": 396,
+     "netz_x_je_einwohner": 711,
+     "gesamt_erwachsen": 1205,
+     "gesamt_kind": 1106
+    }
+   },
+   "fonds": {
+    "beitrag_eigen_pct_bip": 3.17,
+    "an_dividende_pct_bip": 2.15,
+    "schuld_spitze_pct_bip": 185
+   }
+  },
+  "mit_r4_und_stundung": {
+   "anteil_tragbar_pct": 30.7,
+   "ruecklage_min_pct_bip": 0.25,
+   "ruecklage_max_pct_bip": 7.98,
+   "fortschritt": [
+    {
+     "jahr": 2028,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 0.25
+    },
+    {
+     "jahr": 2030,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 0.66
+    },
+    {
+     "jahr": 2035,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 0.93
+    },
+    {
+     "jahr": 2040,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 2.32
+    },
+    {
+     "jahr": 2045,
+     "anteil_pct": 34.0,
+     "ruecklage_pct_bip": 5.79
+    },
+    {
+     "jahr": 2050,
+     "anteil_pct": 39.0,
+     "ruecklage_pct_bip": 7.64
+    },
+    {
+     "jahr": 2055,
+     "anteil_pct": 44.0,
+     "ruecklage_pct_bip": 7.9
+    },
+    {
+     "jahr": 2060,
+     "anteil_pct": 49.0,
+     "ruecklage_pct_bip": 6.86
+    }
+   ],
+   "paket": {
+    "2028": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 293,
+     "bar_kind": 235,
+     "netz_x_je_einwohner": 446,
+     "gesamt_erwachsen": 739,
+     "gesamt_kind": 680
+    },
+    "2035": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 302,
+     "bar_kind": 242,
+     "netz_x_je_einwohner": 502,
+     "gesamt_erwachsen": 805,
+     "gesamt_kind": 744
+    },
+    "2045": {
+     "anteil_grundbedarf_pct": 34.0,
+     "bar_erwachsen": 355,
+     "bar_kind": 284,
+     "netz_x_je_einwohner": 584,
+     "gesamt_erwachsen": 940,
+     "gesamt_kind": 869
+    },
+    "2060": {
+     "anteil_grundbedarf_pct": 49.0,
+     "bar_erwachsen": 538,
+     "bar_kind": 431,
+     "netz_x_je_einwohner": 706,
+     "gesamt_erwachsen": 1244,
+     "gesamt_kind": 1137
+    }
+   },
+   "fonds": {
+    "beitrag_eigen_pct_bip": 3.17,
+    "an_dividende_pct_bip": 2.15,
+    "schuld_spitze_pct_bip": 185
+   }
+  },
+  "mit_r4_stundung_einschleifen_bis_2030": {
+   "anteil_tragbar_pct": 27.1,
+   "ruecklage_min_pct_bip": -0.66,
+   "ruecklage_max_pct_bip": 10.46,
+   "fortschritt": [
+    {
+     "jahr": 2028,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -0.5
+    },
+    {
+     "jahr": 2030,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -0.46
+    },
+    {
+     "jahr": 2035,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -0.2
+    },
+    {
+     "jahr": 2040,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 1.19
+    },
+    {
+     "jahr": 2045,
+     "anteil_pct": 32.0,
+     "ruecklage_pct_bip": 5.39
+    },
+    {
+     "jahr": 2050,
+     "anteil_pct": 37.0,
+     "ruecklage_pct_bip": 8.63
+    },
+    {
+     "jahr": 2055,
+     "anteil_pct": 42.0,
+     "ruecklage_pct_bip": 10.22
+    },
+    {
+     "jahr": 2060,
+     "anteil_pct": 47.0,
+     "ruecklage_pct_bip": 10.43
+    }
+   ],
+   "paket": {
+    "2028": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 293,
+     "bar_kind": 235,
+     "netz_x_je_einwohner": 446,
+     "gesamt_erwachsen": 739,
+     "gesamt_kind": 680
+    },
+    "2035": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 302,
+     "bar_kind": 242,
+     "netz_x_je_einwohner": 502,
+     "gesamt_erwachsen": 805,
+     "gesamt_kind": 744
+    },
+    "2045": {
+     "anteil_grundbedarf_pct": 32.0,
+     "bar_erwachsen": 334,
+     "bar_kind": 267,
+     "netz_x_je_einwohner": 586,
+     "gesamt_erwachsen": 920,
+     "gesamt_kind": 853
+    },
+    "2060": {
+     "anteil_grundbedarf_pct": 47.0,
+     "bar_erwachsen": 516,
+     "bar_kind": 413,
+     "netz_x_je_einwohner": 708,
+     "gesamt_erwachsen": 1225,
+     "gesamt_kind": 1121
+    }
+   },
+   "fonds": {
+    "beitrag_eigen_pct_bip": 3.17,
+    "an_dividende_pct_bip": 2.15,
+    "schuld_spitze_pct_bip": 185
+   }
+  },
+  "mit_r4_stundung_einschleifen_bis_2032": {
+   "anteil_tragbar_pct": 26.3,
+   "ruecklage_min_pct_bip": -1.44,
+   "ruecklage_max_pct_bip": 11.44,
+   "fortschritt": [
+    {
+     "jahr": 2028,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -0.65
+    },
+    {
+     "jahr": 2030,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -1.36
+    },
+    {
+     "jahr": 2035,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -1.33
+    },
+    {
+     "jahr": 2040,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 0.06
+    },
+    {
+     "jahr": 2045,
+     "anteil_pct": 31.0,
+     "ruecklage_pct_bip": 4.41
+    },
+    {
+     "jahr": 2050,
+     "anteil_pct": 36.0,
+     "ruecklage_pct_bip": 8.35
+    },
+    {
+     "jahr": 2055,
+     "anteil_pct": 41.0,
+     "ruecklage_pct_bip": 10.59
+    },
+    {
+     "jahr": 2060,
+     "anteil_pct": 46.0,
+     "ruecklage_pct_bip": 11.44
+    }
+   ],
+   "paket": {
+    "2028": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 293,
+     "bar_kind": 235,
+     "netz_x_je_einwohner": 446,
+     "gesamt_erwachsen": 739,
+     "gesamt_kind": 680
+    },
+    "2035": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 302,
+     "bar_kind": 242,
+     "netz_x_je_einwohner": 502,
+     "gesamt_erwachsen": 805,
+     "gesamt_kind": 744
+    },
+    "2045": {
+     "anteil_grundbedarf_pct": 31.0,
+     "bar_erwachsen": 324,
+     "bar_kind": 259,
+     "netz_x_je_einwohner": 587,
+     "gesamt_erwachsen": 911,
+     "gesamt_kind": 846
+    },
+    "2060": {
+     "anteil_grundbedarf_pct": 46.0,
+     "bar_erwachsen": 505,
+     "bar_kind": 404,
+     "netz_x_je_einwohner": 709,
+     "gesamt_erwachsen": 1215,
+     "gesamt_kind": 1114
+    }
+   },
+   "fonds": {
+    "beitrag_eigen_pct_bip": 3.17,
+    "an_dividende_pct_bip": 2.15,
+    "schuld_spitze_pct_bip": 185
+   }
+  },
+  "mit_r4_stundung_einschleifen_bis_2037": {
+   "anteil_tragbar_pct": 25.6,
+   "ruecklage_min_pct_bip": -4.09,
+   "ruecklage_max_pct_bip": 14.13,
+   "fortschritt": [
+    {
+     "jahr": 2028,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -0.76
+    },
+    {
+     "jahr": 2030,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -2.04
+    },
+    {
+     "jahr": 2035,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -4.03
+    },
+    {
+     "jahr": 2040,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": -2.75
+    },
+    {
+     "jahr": 2045,
+     "anteil_pct": 30.0,
+     "ruecklage_pct_bip": 1.59
+    },
+    {
+     "jahr": 2050,
+     "anteil_pct": 33.0,
+     "ruecklage_pct_bip": 7.19
+    },
+    {
+     "jahr": 2055,
+     "anteil_pct": 38.0,
+     "ruecklage_pct_bip": 11.41
+    },
+    {
+     "jahr": 2060,
+     "anteil_pct": 43.0,
+     "ruecklage_pct_bip": 14.13
+    }
+   ],
+   "paket": {
+    "2028": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 293,
+     "bar_kind": 235,
+     "netz_x_je_einwohner": 446,
+     "gesamt_erwachsen": 739,
+     "gesamt_kind": 680
+    },
+    "2035": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 302,
+     "bar_kind": 242,
+     "netz_x_je_einwohner": 502,
+     "gesamt_erwachsen": 805,
+     "gesamt_kind": 744
+    },
+    "2045": {
+     "anteil_grundbedarf_pct": 30.0,
+     "bar_erwachsen": 313,
+     "bar_kind": 251,
+     "netz_x_je_einwohner": 588,
+     "gesamt_erwachsen": 901,
+     "gesamt_kind": 838
+    },
+    "2060": {
+     "anteil_grundbedarf_pct": 43.0,
+     "bar_erwachsen": 472,
+     "bar_kind": 378,
+     "netz_x_je_einwohner": 713,
+     "gesamt_erwachsen": 1185,
+     "gesamt_kind": 1091
+    }
+   },
+   "fonds": {
+    "beitrag_eigen_pct_bip": 3.17,
+    "an_dividende_pct_bip": 2.15,
+    "schuld_spitze_pct_bip": 185
+   }
+  }
+ },
+ "zinsregel": {
+  "zins_pct": 3.0,
+  "anteil_tragbar_ohne_regel_pct": 26.8,
+  "ruecklage_min_ohne_regel_pct_bip": -5.96,
+  "mehraufkommen_noetig_pct_bip": 0.52,
+  "boden_satz_dafuer_pct": 3.15,
+  "anteil_tragbar_mit_regel_pct": 30.0,
+  "ruecklage_min_mit_regel_pct_bip": -0.07,
+  "boden_satz_25_mehr_pct_bip": 0.26,
+  "boden_satz_30_mehr_pct_bip": 0.47
+ },
+ "vermoegen": {
+  "wertverlust_boden_haushalte_mrd": 2063,
+  "wertverlust_boden_alle_mrd": 2699
+ },
+ "hinweis": "Euro je Monat, 2028, Kaufkraft 2026, Deutschland. Eigentümerquote nach Einkommen, Bodenwert je Eigentümer, Vermieteranteil, indirekte CO₂-Überwälzung und Stundungsdauer sind Annahmen (toml). Die Abgabe auf Boden von Unternehmen ist nicht den Haushalten zugerechnet."
+}

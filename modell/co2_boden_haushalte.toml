@@ -1,0 +1,58 @@
+# Hintergrundrechnung CO₂ und Bodenabgabe für Modell E mit festem Anteil 30 % (modell/co2_boden_haushalte.py, Logbuch v4.105).
+# Prüfrechnung zu den Beschlüssen der Initiative vom 21.11.2026 (fester Anteil 30 %, Empfehlungen v4.104 übernommen).
+version = "v4.105"
+anteil_fest = 0.30
+jahr = 2028
+bip_2028_kaufkraft_2026_mrd = 4724.0      # wie szenario38.toml
+haushalte_mio = 41.1                       # mikro_de
+
+[co2]
+# Direkte Emissionen der Haushalte (Heizen, Kraftstoffe): 10,4 Mrd. € Belastung bei 65 €/t (ohne MwSt., Energieverbrauch 2024) ⇒ 160 Mt
+# (DIW Wochenbericht 42/2024, SOEP-Mikrosimulation; Sekundärquelle der Studie, Ableitung eigene). Rückgang 3 % je Jahr bis 2028 (wie co2_varianten).
+direkt_mt_2024 = 160.0
+rueckgang = 0.03
+preis_heute = 65.0                         # €/t nationaler Emissionshandel 2026 (Korridor 55–65 €, oberer Wert wie DIW)
+preis_neu = 150.0                          # K3
+aufschlag_label = 0.19                     # Label/Mehrwertsteuer auf den CO₂-Anteil (Annahme: Kraftstoffe und Heizstoffe in Stufe C)
+# Emissionen je Haushalt nach Quintil des Äquivalenzeinkommens (t, 2018): Q1 3,0, Q3 5,1, Q5 6,2 (Ariadne-Analyse PIK/MCC, Nov. 2023, Abb. 11,
+# EVS 2018; aus dem PDF gelesen, an der Quelle zu prüfen); Q2 und Q4 interpoliert (Annahme). Nur die Form wird verwendet.
+profil_quintil = [3.0, 4.05, 5.1, 5.65, 6.2]
+# Indirekt: CO₂-Aufkommen E 2028 (K3, 1,30 % BIP) gegen heute (Erlöse 2025, 0,47 % BIP), ohne den direkten Teil der Haushalte; davon tragen
+# inländische Haushalte über die Preise den Anteil θ (Annahme; Rest Exporte, CBAM, Gewinne), verteilt nach dem Konsum.
+aufkommen_neu_pct_bip = 1.30
+aufkommen_heute_pct_bip = 0.47
+anteil_haushalte_indirekt = 0.6
+
+[boden]
+# Bodenwert 2024: Haushalte 5.179,1, Kapitalgesellschaften 1.598,5 Mrd. € (Bundesbank, Vermögensbilanzen; maschinell gelesen, an der Quelle zu prüfen)
+haushalte_mrd_2024 = 5179.1
+anteil_selbstgenutzt = 0.60                # Anteil des Bodens der Haushalte unter selbst genutztem Wohneigentum (Annahme, Spanne 0,5–0,7)
+anteil_vermieter_in_mikro = 0.70           # Anteil des vermieteten Bodens, dessen Eigentümer in der Mikrosimulation mit Mieteinkünften stehen (Annahme)
+wohnungsunternehmen_mrd_2024 = 300.0       # Boden unter Mietwohnungen von Unternehmen (Annahme; für die Umlage heute)
+grundsteuer_mrd_2024 = 16.222              # D29A, einnahmen_belege.toml
+bip_2024_mrd = 4386.94
+satz_neu = 0.02
+r = 0.03                                   # Kapitalisierung wie stellschrauben.toml
+# Eigentümerquote: 41,8 % der Haushalte (Mikrozensus 2022, 16,4 von 39,3 Mio.); Anteil 65+ an Eigentümern 36,1 %, an Mietern 24,6 %
+# (Haus & Grund nach Mikrozensus 2022, aus der Grafik gelesen) ⇒ 65+: 51,3 %, unter 65: 37,8 % (Ableitung)
+quote_65plus = 0.513
+quote_unter65 = 0.378
+# Anstieg mit dem Einkommen: logistisch im Rang des Äquivalenzeinkommens, Steigung so, dass das untere Fünftel rund 20 %, das obere rund 65 %
+# hat (Annahme; amtliche Werte nach Einkommen nicht gefunden)
+steigung = 2.4
+bodenwert_elastizitaet = 0.5               # Bodenwert der Eigentümer steigt mit dem Äquivalenzeinkommen^0,5 (Annahme)
+
+[stundung]   # Stundungskredit wie Elternhaus: 1 % fest; für Eigentümer ab 65 (Rentnerhaushalte) bis Verkauf oder Erbfall
+zins = 0.01
+fondszins = 0.0245
+dauer_jahre = 12                           # mittlere Laufzeit bis Verkauf oder Erbfall (Annahme)
+
+[rentner]
+altersausgleich_person_monat = 55.0        # R4 (rentner_eichung, v4.98), Kosten 0,23 % BIP
+altersausgleich_pct_bip = 0.23
+
+[einschleifen]
+varianten = [2030, 2032, 2037]             # Bodenabgabe linear von heute auf 2 % bis zum Zieljahr (Vorschläge)
+
+[zinsregel]   # Zinsfall für die Zinsregel (Vorschlag v4.104): Fondszins 3,0 % (Rendite Euroraum 2025 rund 3,1 %, altlasten.toml)
+zins = 3.0

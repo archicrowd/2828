@@ -70,12 +70,12 @@
   "Boden 1.0 %": {
    "gruppe": "Einnahmen",
    "pct_bip": {
-    "2028": 0.52,
-    "2035": 0.52,
-    "2045": 0.52,
-    "2060": 0.52
+    "2028": 0.41,
+    "2035": 0.41,
+    "2045": 0.41,
+    "2060": 0.41
    },
-   "eur_2028": 27,
+   "eur_2028": 21,
    "bip_niveau_2045_pct": 0.0,
    "verteilung": "Eigentümer, nach Bodenwert; Rentner mit Wohneigentum (Stundung wie Elternhaus nötig)",
    "einfachheit": "einfach: eine Bemessung (Bodenrichtwert × Fläche), digital aus Kataster und Grundsteuerwerten"
@@ -83,12 +83,12 @@
   "Boden 1.5 %": {
    "gruppe": "Einnahmen",
    "pct_bip": {
-    "2028": 0.93,
-    "2035": 0.93,
-    "2045": 0.93,
-    "2060": 0.93
+    "2028": 0.81,
+    "2035": 0.81,
+    "2045": 0.81,
+    "2060": 0.81
    },
-   "eur_2028": 48,
+   "eur_2028": 42,
    "bip_niveau_2045_pct": 0.0,
    "verteilung": "Eigentümer, nach Bodenwert; Rentner mit Wohneigentum (Stundung wie Elternhaus nötig)",
    "einfachheit": "einfach: eine Bemessung (Bodenrichtwert × Fläche), digital aus Kataster und Grundsteuerwerten"
@@ -96,12 +96,12 @@
   "Boden 2.0 %": {
    "gruppe": "Einnahmen",
    "pct_bip": {
-    "2028": 1.25,
-    "2035": 1.25,
-    "2045": 1.25,
-    "2060": 1.25
+    "2028": 1.13,
+    "2035": 1.13,
+    "2045": 1.13,
+    "2060": 1.13
    },
-   "eur_2028": 65,
+   "eur_2028": 58,
    "bip_niveau_2045_pct": 0.0,
    "verteilung": "Eigentümer, nach Bodenwert; Rentner mit Wohneigentum (Stundung wie Elternhaus nötig)",
    "einfachheit": "einfach: eine Bemessung (Bodenrichtwert × Fläche), digital aus Kataster und Grundsteuerwerten"
@@ -313,39 +313,39 @@
     "Bürokratieabbau 40 % (digital)"
    ],
    "luecke_bei_halbem_grundbedarf_pct_bip": {
-    "2028": 5.05,
-    "2035": 5.53,
-    "2045": 4.87,
-    "2060": 3.9
+    "2028": 5.17,
+    "2035": 5.65,
+    "2045": 4.99,
+    "2060": 4.01
    },
    "erreichbar": {
     "2028": {
-     "anteil_grundbedarf_pct": 19.8,
-     "eur": 204
+     "anteil_grundbedarf_pct": 19.1,
+     "eur": 197
     },
     "2035": {
-     "anteil_grundbedarf_pct": 14.5,
-     "eur": 153
+     "anteil_grundbedarf_pct": 13.8,
+     "eur": 145
     },
     "2045": {
-     "anteil_grundbedarf_pct": 15.4,
-     "eur": 168
+     "anteil_grundbedarf_pct": 14.6,
+     "eur": 158
     },
     "2060": {
-     "anteil_grundbedarf_pct": 17.1,
-     "eur": 194
+     "anteil_grundbedarf_pct": 16.0,
+     "eur": 182
     }
    },
    "stabil": {
-    "anteil_grundbedarf_pct": 16.0,
+    "anteil_grundbedarf_pct": 15.2,
     "eur": {
-     "2028": 165,
-     "2035": 169,
-     "2045": 174,
-     "2060": 182
+     "2028": 157,
+     "2035": 161,
+     "2045": 165,
+     "2060": 173
     },
-    "ruecklage_hoechst_pct_bip": 1.99,
-    "ruecklage_2060_pct_bip": 0.63
+    "ruecklage_hoechst_pct_bip": 2.06,
+    "ruecklage_2060_pct_bip": 0.45
    },
    "traegt_ab": null
   },
@@ -360,39 +360,39 @@
     "Kapital 38 %"
    ],
    "luecke_bei_halbem_grundbedarf_pct_bip": {
-    "2028": 4.62,
-    "2035": 5.12,
-    "2045": 4.47,
-    "2060": 3.49
+    "2028": 4.74,
+    "2035": 5.24,
+    "2045": 4.59,
+    "2060": 3.61
    },
    "erreichbar": {
     "2028": {
-     "anteil_grundbedarf_pct": 22.4,
-     "eur": 231
+     "anteil_grundbedarf_pct": 21.6,
+     "eur": 223
     },
     "2035": {
-     "anteil_grundbedarf_pct": 17.3,
-     "eur": 182
+     "anteil_grundbedarf_pct": 16.5,
+     "eur": 174
     },
     "2045": {
-     "anteil_grundbedarf_pct": 18.4,
-     "eur": 200
+     "anteil_grundbedarf_pct": 17.6,
+     "eur": 191
     },
     "2060": {
-     "anteil_grundbedarf_pct": 20.7,
-     "eur": 235
+     "anteil_grundbedarf_pct": 19.6,
+     "eur": 223
     }
    },
    "stabil": {
-    "anteil_grundbedarf_pct": 18.8,
+    "anteil_grundbedarf_pct": 18.1,
     "eur": {
-     "2028": 194,
-     "2035": 199,
-     "2045": 205,
-     "2060": 214
+     "2028": 186,
+     "2035": 190,
+     "2045": 196,
+     "2060": 205
     },
-    "ruecklage_hoechst_pct_bip": 1.82,
-    "ruecklage_2060_pct_bip": 1.39
+    "ruecklage_hoechst_pct_bip": 1.87,
+    "ruecklage_2060_pct_bip": 1.15
    },
    "traegt_ab": null
   },
@@ -408,39 +408,39 @@
     "Erbschaftswelle (Trend)"
    ],
    "luecke_bei_halbem_grundbedarf_pct_bip": {
-    "2028": 5.05,
-    "2035": 5.19,
-    "2045": 4.11,
-    "2060": 2.88
+    "2028": 5.17,
+    "2035": 5.31,
+    "2045": 4.23,
+    "2060": 3.0
    },
    "erreichbar": {
     "2028": {
-     "anteil_grundbedarf_pct": 19.8,
-     "eur": 204
+     "anteil_grundbedarf_pct": 19.1,
+     "eur": 197
     },
     "2035": {
-     "anteil_grundbedarf_pct": 16.1,
-     "eur": 170
+     "anteil_grundbedarf_pct": 15.4,
+     "eur": 162
     },
     "2045": {
-     "anteil_grundbedarf_pct": 19.8,
-     "eur": 215
+     "anteil_grundbedarf_pct": 18.9,
+     "eur": 205
     },
     "2060": {
-     "anteil_grundbedarf_pct": 24.2,
-     "eur": 275
+     "anteil_grundbedarf_pct": 23.1,
+     "eur": 262
     }
    },
    "stabil": {
-    "anteil_grundbedarf_pct": 17.8,
+    "anteil_grundbedarf_pct": 17.0,
     "eur": {
-     "2028": 183,
-     "2035": 187,
-     "2045": 193,
-     "2060": 202
+     "2028": 175,
+     "2035": 179,
+     "2045": 185,
+     "2060": 193
     },
-    "ruecklage_hoechst_pct_bip": 8.44,
-    "ruecklage_2060_pct_bip": 8.44
+    "ruecklage_hoechst_pct_bip": 7.96,
+    "ruecklage_2060_pct_bip": 7.96
    },
    "traegt_ab": null
   },
@@ -457,39 +457,39 @@
     "Kapital 38 %"
    ],
    "luecke_bei_halbem_grundbedarf_pct_bip": {
-    "2028": 4.29,
-    "2035": 4.45,
-    "2045": 3.39,
-    "2060": 2.15
+    "2028": 4.42,
+    "2035": 4.58,
+    "2045": 3.51,
+    "2060": 2.28
    },
    "erreichbar": {
     "2028": {
-     "anteil_grundbedarf_pct": 24.3,
-     "eur": 251
+     "anteil_grundbedarf_pct": 23.5,
+     "eur": 243
     },
     "2035": {
-     "anteil_grundbedarf_pct": 21.0,
-     "eur": 222
+     "anteil_grundbedarf_pct": 20.2,
+     "eur": 213
     },
     "2045": {
-     "anteil_grundbedarf_pct": 25.2,
-     "eur": 274
+     "anteil_grundbedarf_pct": 24.3,
+     "eur": 264
     },
     "2060": {
-     "anteil_grundbedarf_pct": 30.9,
-     "eur": 351
+     "anteil_grundbedarf_pct": 29.8,
+     "eur": 338
     }
    },
    "stabil": {
-    "anteil_grundbedarf_pct": 22.5,
+    "anteil_grundbedarf_pct": 21.7,
     "eur": {
-     "2028": 233,
-     "2035": 238,
-     "2045": 245,
-     "2060": 256
+     "2028": 224,
+     "2035": 229,
+     "2045": 236,
+     "2060": 247
     },
-    "ruecklage_hoechst_pct_bip": 11.34,
-    "ruecklage_2060_pct_bip": 11.34
+    "ruecklage_hoechst_pct_bip": 10.81,
+    "ruecklage_2060_pct_bip": 10.81
    },
    "traegt_ab": null
   },
@@ -507,39 +507,39 @@
     "Fonds gestreckt bis 2125"
    ],
    "luecke_bei_halbem_grundbedarf_pct_bip": {
-    "2028": 2.53,
-    "2035": 2.69,
-    "2045": 1.62,
-    "2060": 0.39
+    "2028": 2.65,
+    "2035": 2.81,
+    "2045": 1.74,
+    "2060": 0.51
    },
    "erreichbar": {
     "2028": {
-     "anteil_grundbedarf_pct": 34.9,
-     "eur": 360
+     "anteil_grundbedarf_pct": 34.1,
+     "eur": 352
     },
     "2035": {
-     "anteil_grundbedarf_pct": 32.5,
-     "eur": 343
+     "anteil_grundbedarf_pct": 31.7,
+     "eur": 334
     },
     "2045": {
-     "anteil_grundbedarf_pct": 38.2,
-     "eur": 415
+     "anteil_grundbedarf_pct": 37.3,
+     "eur": 405
     },
     "2060": {
-     "anteil_grundbedarf_pct": 46.6,
-     "eur": 529
+     "anteil_grundbedarf_pct": 45.5,
+     "eur": 517
     }
    },
    "stabil": {
-    "anteil_grundbedarf_pct": 33.7,
+    "anteil_grundbedarf_pct": 32.9,
     "eur": {
-     "2028": 348,
-     "2035": 356,
-     "2045": 366,
-     "2060": 383
+     "2028": 340,
+     "2035": 347,
+     "2045": 358,
+     "2060": 374
     },
-    "ruecklage_hoechst_pct_bip": 18.78,
-    "ruecklage_2060_pct_bip": 18.78
+    "ruecklage_hoechst_pct_bip": 18.24,
+    "ruecklage_2060_pct_bip": 18.24
    },
    "traegt_ab": null
   }

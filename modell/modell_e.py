@@ -99,6 +99,8 @@ def extra_e(stress):
             v = w[j]
             if n == "Boden 2.0 %" and "boden_r" in stress:
                 v = boden_mit_r(0.020, stress["boden_r"])
+            if n == "Boden 2.0 %" and "boden_einschleifen_bis" in stress:     # v4.105: linear von heute bis 2 % im Zieljahr
+                v *= min(1.0, (j - 2027) / (stress["boden_einschleifen_bis"] - 2027))
             if n == "Kapital 38 %" and "kapital_ausweichen" in stress:
                 v *= stress["kapital_ausweichen"]
             ex[j] += v
@@ -108,6 +110,8 @@ def extra_e(stress):
     if "schock_jahr" in stress:
         sj = stress["schock_jahr"]
         ex[sj] -= stress["schock_netz"]
+    for j in JAHRE:                                    # v4.105: zusätzliche Ausgaben je Jahr (Altersausgleich, Stundung)
+        ex[j] -= stress.get("ausgaben", {}).get(j, 0.0)
     return ex
 
 
@@ -138,7 +142,7 @@ def rechne(stress=None, mit_regel=True):
     ki = stress.get("ki_pp", P["dynamik"]["ki_pp"])
     # Fixpunkt: Baranteil ↔ Nachfrageimpuls ↔ Dynamik
     d_bar, mehr = 330.0, 214.0
-    for _ in range(3):
+    for _ in range(5):
         reihe, ein = dynamik_e(d_bar, ki, mehr)
         B, rb = basis(reihe)
         dy = {j: r["dy"] for j, r in reihe.items()}
@@ -166,12 +170,12 @@ def rechne(stress=None, mit_regel=True):
                 rl += b[j]
                 ok &= rl >= -1e-9
             lo, hi = (m, hi) if ok else (lo, m)
-        a0 = lo
+        a0 = stress.get("anteil_fest", lo)               # v4.105: fester Anteil (Beschluss 30 %) statt des größten tragbaren
         d_neu = ziel_eur(2028, a0) * TOPF
         S38.setze(ziel_eur(2028, a0))
-        mehr = S38.mikro()["gesamt"]["mittel_eur"]
+        mehr_alt, mehr = mehr, S38.mikro()["gesamt"]["mittel_eur"]
         S38.setze()
-        if abs(d_neu - d_bar) < 2:
+        if abs(d_neu - d_bar) < 2 and abs(mehr - mehr_alt) < 5:   # Korrektur 98: auch der Impuls muss zum Baranteil passen
             d_bar = d_neu
             break
         d_bar = d_neu
@@ -208,7 +212,7 @@ def rechne(stress=None, mit_regel=True):
                         kanaele={k: r2(v) for k, v in reihe[j]["kanaele"].items()}) for j in (2028, 2030, 2035, 2045, 2060)}
     rmin = min(p["ruecklage_pct_bip"] for p in pfad)
     DS.zuruecksetzen()
-    return dict(eingaben=ein, dynamik=dyn, anteil_stabil_pct=round(a0 * 100, 1), paket=paket, fortschritt=[p for p in pfad if p["jahr"] in (2028, 2030, 2035, 2040, 2045, 2050, 2055, 2060)],
+    return dict(eingaben=ein, dynamik=dyn, anteil_stabil_pct=round(a0 * 100, 1), anteil_tragbar_pct=round(lo * 100, 1), paket=paket, fortschritt=[p for p in pfad if p["jahr"] in (2028, 2030, 2035, 2040, 2045, 2050, 2055, 2060)],
                 ruecklage_min_pct_bip=rmin, ruecklage_max_pct_bip=max(p["ruecklage_pct_bip"] for p in pfad),
                 fonds=dict(beitrag_eigen_pct_bip=r2(QO.FONDS * c / ST.C_G), an_dividende_pct_bip=r2(ent), schuld_spitze_pct_bip=round(sp)),
                 steuern_2028=rb["steuern_2028"])

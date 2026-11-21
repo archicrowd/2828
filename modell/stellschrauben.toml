@@ -12,6 +12,9 @@ jahre = [2028, 2035, 2045, 2060]
 bodenwert_mrd_2024 = 6777.6
 bip_2024_mrd = 4386.94
 bestand_pct_bip = 0.82
+# Korrektur 97 (v4.105): Der beobachtete Bodenwert enthält die heute erhobene Grundsteuer (16,222 Mrd. € 2024, D29A, einnahmen_belege.toml;
+# 0,239 % des Bodenwerts), nicht die Abgabe von Stand C. Kapitalisiert wird deshalb gegen den heutigen Satz (bis v4.104: gegen 0,82 % BIP / Bodenwert).
+grundsteuer_heute_mrd_2024 = 16.222
 # Kapitalisierung: Bodenwert = Bodenrente / (r + τ); r = 3 % (Annahme); Bodenwert wächst mit dem BIP (Annahme)
 r = 0.03
 saetze = [0.010, 0.015, 0.020]
